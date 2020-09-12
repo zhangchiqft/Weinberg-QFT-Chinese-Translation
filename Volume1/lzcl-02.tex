@@ -1,0 +1,2184 @@
+\chapter{相对论量子力学} \label{cha:2}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[49]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[49]}}}
+  \markboth{第2章\quad 相对论量子力学}{第2章\quad 相对论量子力学}
+
+本书的观点是量子场论是(在一定条件下)协调量子力学和狭义相对论的唯一途径.
+因此我们的第一个任务就是研究类似\,Lorentz\,不变性这样的对称性怎样出现在量子中.
+
+\section{量子力学} \label{sec:2.1}
+\setcounter{equation}{0}
+
+首先, 好消息是: 量子场论基于的量子力学正是\,Schr\"{o}dinger, Heisenberg, Pauli, Born\,和其他一些人在\,1925\yzx 1926\,年所建立的量子力学, 而且时至今日这个量子力学依然在原子物理, 分子物理, 核物理和凝聚态物理中使用着. 我们假定读者熟悉量子力学; 本节仅提供一个最简洁的量子力学概述, 这个概述是\,Dirac\textsuperscript{\cite{1}}的推广版本.
+\vspace{2mm}
+
+\noindent (i)\quad
+物理态由\,Hilbert\,空间中的射线表示. Hilbert\,空间是一种复矢量空间; 即如果$\Phi$和$\Psi$%
+是该空间中的矢量(通常称为``态矢''), 那么对任意复数$\xi$和$\eta$, $\xi\Phi+\eta\Psi$也是这个空间中的矢量. 它有一个范数{}$^*$\footnote{$^*${}我们将经常使用\,Dirac\,左矢\lzx 右矢记号: 取代$(\Psi_{1},\Psi_{2})$, 我们可以写成$\langle
+1|2\rangle$.}: 对于任意一对矢量, 存在复数$(\Phi,\Psi)$, 使得
+  \begin{gather}
+  \left(\Phi,\Psi\right)  =\left(  \Psi,\Phi\right)  ^{\ast} \:, \label{2.1.1}\\
+  \left(  \Phi,\xi_{1}\Psi_{1}+\xi_{2}\Psi_{2}\right)  =\xi_{1}\left(  \Phi
+  ,\Psi_{1}\right)  +\xi_{2}\left(  \Phi,\Psi_{2}\right)  \:, %
+  \label{2.1.2}\\
+  \left(  \eta_{1}\Phi_{1}+\eta_{2}\Phi_{2},\Psi\right)  =\eta_{1}^{\ast}\left(
+  \Phi_{1},\Psi\right)  +\eta_{2}^{\ast}\left(  \Phi_{2},\Psi\right)  \text{\ }.
+  \label{2.1.3}%
+  \end{gather}
+  范数$(\Psi,\Psi)$还满足一个正定条件: $(\Psi,\Psi)\geq0$, 并且仅当$\Psi=0$时为\,0. (还有一些技术性的假定使得我们可以对\,Hilbert\,空间中的矢量取极限.) {\KAI{射线}}是一个归一化(即, $(\Psi,\Psi)  =1$)的\marginpar[\flushright{\small[50]\hspace*{5mm}}]{{\small\hspace*{5mm}[50]}}矢量集, 如果$\Psi^{\prime}=\xi
+  \Psi$, 则$\Psi$和$\Psi^{\prime}$%
+  属于同一射线, 其中$\xi$是满足$\lvert \xi\rvert =1$的任意复数.
+
+
+\noindent (ii)\quad
+可观测量由厄米算符表示, 这些算符是\,Hilbert\,空间到自身的映射$\Psi\to A\Psi$, 在如下意义下是线性的\begin{equation}
+A(\xi\Psi+\eta\Phi)  = \xi A\Psi+\eta A\Phi\label{2.1.4}%
+\end{equation}
+并满足实条件$A^{\dag}=A$, 其中对于任意的线性算符$A$, 其共轭算符$A^{\dag}$定义成
+\begin{equation}
+(\Phi,A^{\dag}\Psi)\equiv\left(  A\Phi,\Psi\right)  =\left(  \Psi
+,A\Phi\right)  ^{\ast}\text{\ .} \label{2.1.5}%
+\end{equation}
+(就作为$\Psi$的函数的$A\Psi$, 这里还有一些关于它的连续性的技术性假设.) 如果属于射线$\mathscr{R}$的矢量$\Psi$是$A$的本征值为$\alpha$ 的本征矢,
+\begin{equation}
+A\Psi=\alpha\Psi \qquad \Psi\text{属于}\mathscr{R},
+\label{2.1.6}%
+\end{equation}
+  那么这个射线表示的态对于算符$A$表示的可观测量有确定值$\alpha$: 一个基本定理告诉我们, 对于厄米算符$A$, $\alpha$是实的, 并且$\alpha$ 不同的本征矢是正交的.
+
+\noindent (iii)\quad
+  如果系统处在射线$\mathscr{R}$所表示的态中, 并且还做一个实验以检验它是否处在由互相正交的射线$\mathscr{R}_{1}
+  ,\mathscr{R}_{2},\cdots$%
+  所表示的不同态中(例如, 通过测量一个或多个可观测量), 那么发现它处在$\mathscr{R}_{n}$所表示的态中概率为
+\begin{equation}
+P(\mathscr{R}\to \mathscr{R}_{n})  =\lvert(\Psi,\Psi_{n})\rvert^{2}\:, \label{2.1.7}%
+\end{equation}
+其中$\Psi$和$\Psi_{n}$分别是属于射线$\mathscr{R}$和$\mathscr{R}_{n}$的任意矢量. (如果两个射线中的态的标量积为零, 则称这对射线是正交的.) 如果态矢$\Psi_{n}$构成一个完备集, 则另一个基本定理给出归一的总概率:
+\begin{equation}
+\sum_{n}P(\mathscr{R}\to \mathscr{R}_{n})=1\text{\ .}
+\label{2.1.8}%
+\end{equation}
+
+%\end{enumerate}
+
+\section{对称性} \label{sec:2.2}
+\setcounter{equation}{0}
+
+按照我们的观点, 一个对称变换就是不改变各种可能实验的结果的变化. 如果观测者$O$%
+看到一个系统处在由射线$\mathscr{R}$%
+或$\mathscr{R}_{1}$或$\mathscr{R}_{2}\cdots$所表示的态中, 那么另一个观测{\KAI{同一}}系统的等价观测者$O^{\prime}$会看到这个系统处在不同的态中, 这些态相应地由射\marginpar[\flushright{\small[51]\hspace*{5mm}}]{{\small\hspace*{5mm}[51]}}线$\mathscr{R}^{\prime}$或$\mathscr{R}_{1}^{\prime}$或
+$\mathscr{R}_{2}^{\prime}\cdots$表示, 但是这两个观测者必得到相同的概率
+\begin{equation}
+P(\mathscr{R}\to\mathscr{R}_{n})=P(\mathscr{R}^{\prime}\to\mathscr{R}_{n}^{\prime})\text{\ }. \label{2.2.1}%
+\end{equation}
+(这仅是射线变换是对称变换的一个必要条件; 进一步的条件将在下一章讨论.) Wigner\textsuperscript{\cite{2}}%
+在\,20\,世纪\,30\,年代早期证明的一个重要定理告诉我们, 对于任意这样的射线变换$\mathscr{R}\to\mathscr{R}^{\prime}$, 我们可以定义\,Hilbert\,空间上的一个算符$U$, 使得如果$\Psi$在射线$\mathscr{R}$中, 那么$U\Psi$就在射线$\mathscr{R}^{\prime}$中, 而这样的$U$%
+要么是{\KAI{幺正}}且{\KAI{线性}}的
+\begin{gather}
+(U\Phi,U\Psi) = (\Phi,\Psi)  \:, \label{2.2.2} \\
+U(\xi\Phi+\eta\Psi) = \xi U\Phi+\eta U\Psi \label{2.2.3}%
+\end{gather}
+要么是{\KAI{反幺正}}且{\KAI{反线性}}的
+\begin{gather}
+( U\Phi,U\Psi ) = (\Phi,\Psi)^{\ast} \:, \label{2.2.4} \\
+U(\xi\Phi+\eta\Psi) = \xi^{\ast}U\Phi+\eta^{\ast}U\Psi \:. \label{2.2.5}
+\end{gather}
+Wigner\,的证明遗漏了一些步骤. 本章的附录\,A\,会给出一个更加完整的证明.
+
+如前所述, 线性算符$L$的共轭定义为
+\begin{equation}
+(\Phi,L^{\dag}\Psi)\equiv (L\Phi,\Psi)  \:. \label{2.2.6}%
+\end{equation}
+对于反线性算符, 这个条件是无法满足的, 因为在这种情况下, 方程(\ref{2.2.6})的右边对于$\Phi$是线性的, 而左边对于$\Phi$是反线性的. 作为替代, 反线性算符$A$的共轭定义为
+\begin{equation}
+(\Phi,A^{\dag}\Psi)\equiv (A\Phi,\Psi)^{\ast}=(\Psi,A\Phi) \: . \label{2.2.7}%
+\end{equation}
+在这个定义下, 幺正或反幺正条件均取以下形式\begin{equation}
+U^{\dag}=U^{-1}\text{\ .} \label{2.2.8}%
+\end{equation}
+
+总有一个平庸的对称变换$\mathscr{R}\to\mathscr{R}$, 由单位算符$U=1$表示. 当然, 这个算符是幺正且线性的. 那么连续性就要求, 如果一个对称性(如旋转变换、 平移变换或\,Lorentz\,变换)可以通过某些参量(如角度、 距离或速度)的连续改变变成平庸变换, 那么该对称性必须由一个线性幺正算符$U$而不是反幺正反线性算符 表示. (反线性反幺正算符表示的对称性在物理中不是那么突出: 它们都牵扯到时间流方向的反转. 见\,\ref{sec:2.6}\,节.)
+
+特别地, 一个无限接近平庸变换\marginpar[\flushright{\raisebox{-3ex}[0pt]{{\small[52]\hspace*{5mm}}}}]{{\raisebox{-3ex}[0pt]{\small\hspace*{5mm}[52]}}}的对称变换可以用一个无限接近单位算符的线性幺正算符表示:
+\begin{equation}
+U=1+\mi\epsilon t \label{2.2.9}%
+\end{equation}
+其中$\epsilon$是一个无限小的实参量. 为了使这个算符是幺正且线性的, $t$必须是厄米且线性的,  所以它可以作为一个可观测量. 其实, 物理中的大多数(也许是全部)可观测量, 诸如角动量或动量, 都是以这种方式从对称变换中产生的.
+
+对称变换的集合具有的一些性质使其可以被定义为{\KAI{群}}. 如果$T_{1}$是使射线$\mathscr{R}_{n}$变为$\mathscr{R}_{n}^{\prime}$的变换, $T_{2}$ 是使射线$\mathscr{R}_{n}^{\prime}$变为$\mathscr{R}_{n}^{\prime\prime}$的变换, 那么进行这两个变换的结果是给出另一对称变换, 我们可以将其记为$T_{2}T_{1}$, 它使$\mathscr{R}_{n}$变为$\mathscr{R}_{n}^{\prime\prime}$. 另外, 让射线从$\mathscr{R}_{n}$变为$\mathscr{R}_{n}^{\prime}$ 的对称变换$T$存在逆, 记为$T^{-1}$, 它使射线$\mathscr{R}_{n}^{\prime}$变为$\mathscr{R}_{n}$, 并且总存在一个单位变换, $T=1$, 它保持射线不变.
+
+与对称变换对应的幺正或反幺正算符$U(T)$具有体现群结构的性质, 但是却更加复杂, 这是因为不像对称变换本身, 算符$U(T)$作用在\,Hilbert\,空间中的矢量上, 而不是射线上. 如果$T_{1}$将$\mathscr{R}_{n}$变为$\mathscr{R}_{n}^{\prime}$, 那么对于作用在射线$\mathscr{R}_{n}$中的矢量$\Psi_{n}$上的$U(T_{1})$, 它在作用完后给出的矢量$U(T_{1})\Psi_{n}$必在射线$\mathscr{R}_{n}^{\prime}$内, 而如果$T_{2}$将这个射线变成$\mathscr{R}_{n}^{\prime\prime}$, 那么它作用在$U(T_{1})\Psi_{n}$所给出的矢量$U(T_{2})U(T_{1})\Psi_{n}$%
+必在射线$\mathscr{R}_{n}^{\prime\prime}$内. 但是$U(T_{2}T_{1})\Psi_{n}$也在这个射线内, 所以这些矢量仅能相差一个相位$\phi_{n}(T_{2},T_{1})$
+\begin{equation}
+U(T_{2})  U(T_{1})\Psi_{n}=\me^{\mi\phi_{n}(T_{2},T_{1})}U(T_{2}T_{1})\Psi_{n}\:.
+\label{2.2.10}%
+\end{equation}
+进一步, 除了一个重要的例外, $U(T)$的线性(或反线性)性质告诉我们这些相位独立于态$\Psi_{n}$. 证明如下. 考虑任意两个不同的矢量$\Psi_{A},\Psi_{B}$, 彼此不成正比. 那么对态$\Psi_{AB}\equiv\Psi_{A}+\Psi_{B}$使用方程(\ref{2.2.10}), 我们得到
+\begin{align}
+\me^{\mi\phi_{AB}}\,U(T_{2}T_{1}) (\Psi_{A}+\Psi_{B})
+& = U(T_{2}) U(T_{1}) (\Psi_{A}+\Psi_{B}) \nonumber\\
+& = U(T_{2}) U(T_{1})  \Psi_{A} + U(T_{2}) U(T_{1}) \Psi_{B} \nonumber\\
+& = \me^{\mi\phi_{A}} \,U(T_{2}T_{1})\Psi_{A} + \me^{\mi\phi_{B}}\,U(T_{2}T_{1})\Psi_{B}\:. \label{2.2.11}%
+\end{align}
+任何幺正或反幺正算符都存在逆(它的共轭), 它们的逆同时也是幺正或反幺正的. 对(\ref{2.2.11})左乘$U^{-1}(T_{2}T_{1})$, 我们得到
+\begin{equation}
+\me^{\pm \mi\phi_{AB}} (\Psi_{A}+\Psi_{B}) = \me^{\pm \mi\phi_{A}}\Psi
+_{A} + \me^{\pm \mi\phi_{B}}\Psi_{B}\text{\  , } \label{2.2.12}%
+\end{equation}
+正号和负号分别对应于$U(T_{2}T_{1})$是\marginpar[\flushright{\raisebox{-3ex}[0pt]{{\small[53]\hspace*{5mm}}}}]{{\raisebox{-3ex}[0pt]{\small\hspace*{5mm}[53]}}}幺正算符和反幺正算符的情况. 由于$\Psi_{A}$和$\Psi_{B}$线性独立, 因而只有一种可能
+\begin{equation}
+\me^{\mi\phi_{AB}}=\me^{\mi\phi_{A}}=\me^{\mi\phi_{B}}\:. \label{2.2.13}%
+\end{equation}
+正如前面所说的, 方程(\ref{2.2.10})中的相位独立于态矢$\Psi_{n}$, 因而这可以写成算符关系
+\begin{equation}
+U(T_{2}) U(T_{1}) = \me^{\mi\phi(T_{2},T_{1})}U(T_{2}T_{1})  \:. \label{2.2.14}%
+\end{equation}
+对$\phi=0$, 这就是说$U(T)$构成了对称变换群的一个表示. 对于一般相位$\phi(T_{2},T_{1})$, 这就是所谓的投影表示, 或者``只差一个相位的(up to a phase)'' 表示. Lie\,群不能通过自身的结构告诉我们物理态矢给出的是普通表示还是投影表示, 但正如我们将看到的, 它可以告诉我们这个群到底有没有内禀投影表\nolinebreak
+示.
+
+在给出方程(\ref{2.2.14})的论证中有一个例外, 未必能够制备出一个系统使得它处在$\Psi_{A}+\Psi_{B}$表示的态中.
+例如, 已然形成共识的是: 不可能制备出一个系统使得它处在由两个总角动量分别是整数的态和半整数的态叠加出的态中. 在这种情况下, 我们称在不同类的态之间存在一个``超选择定则''\textsuperscript{\cite{3}}, 并且相位$\phi(T_{2},T_{1})${\KAI{可能}}依赖于算符$U(T_{2})U(T_{1})$和$U(T_{2}T_{1})$所作用的态的种类. 在\,\ref{sec:2.7}\, 节, 我们将会进一步讨论这些相位和投影表示. 正如我们在那里所看到的, 任何有投影表示的对称群总能以如下的方式扩张(而不用改变它的物理意义): 它的表示总能定义为$\phi=0$的非投影表示. 直到\,\ref{sec:2.7}\,节, 我们都假定已经做了这个扩张, 并在方程(\ref{2.2.14})中令$\phi=0$.
+
+有一类群, 称为{\KAI{连通}}\,{\textit{Lie}}\,{\KAI{群}}, 在物理中有特殊的重要性. 它们是由有限多个连续实参量描述的变换$T(\theta)$构成的群, 这组实参量可记作$\theta^{a}$, 这个群的每个群元通过群内的一条路径与单位元相连. 这个群的乘法规则采取如下的形式
+\begin{equation}
+T(\bar{\theta})T(\theta) = T\Big(f(\bar{\theta},\theta)\Big) \label{2.2.15}%
+\end{equation}
+其中$f^{a}(\bar{\theta},\theta)$是$\bar{\theta}$和$\theta$的函数. 取单位元的坐标为$\theta^{a}=0$, 我们必须有
+\begin{equation}
+f^{a}(\theta,0) = f^{a}(0,\theta) = \theta^{a} \:. \label{2.2.16}%
+\end{equation}
+如前所述, 在物理\,Hilbert\,空间上, 这类连续群的变换只能由幺正(而不是反幺正)算符$U(T(\theta))$表示. 对于一个\,Lie\,群, 至少在其单位元的有限邻域内, 这些算符可以用幂级数表示\marginpar[\flushright{\raisebox{-3ex}[0pt]{{\small[54]\hspace*{5mm}}}}]{{\raisebox{-3ex}[0pt]{\small\hspace*{5mm}[54]}}}
+\begin{equation}
+U\Bigl(T(\theta)\Bigr)=1+\mi\theta^{a}t_{a}+\tfrac{1}{2}\theta^{b}\theta^{c}t_{bc}+\cdots\:, \label{2.2.17}%
+\end{equation}
+其中$t_{a},t_{bc}=t_{cb}$等是独立于$\theta$的厄米算符. 假定$U(T(\theta))$构成这个变换群的普通(即非投影的)表示, 即,
+\begin{equation}
+U\Bigl(T(\bar{\theta})\Bigr)U\Bigl(T(\theta)\Bigr)=U\Bigl(T(f(\bar{\theta},\theta))\Bigr)\:. \label{2.2.18}%
+\end{equation}
+让我们看看当它被展为$\theta^{a}$和$\bar{\theta}^{a}$的幂级数时, 这个条件变成什么. 根据方程(\ref{2.2.16}), $f^{a}(\bar{\theta},\theta)$到二阶的展开必须取如下的形式
+\begin{equation}
+f^{a}(\bar{\theta},\theta)=\theta^{a}+\bar{\theta}^{a}+f^{a}{}_{\!bc}\bar{\theta}^{b}\theta^{c}+\cdots\label{2.2.19}%
+\end{equation}
+其中系数$f^{a}{}_{\!bc}$是实数. (出现任何$\theta^{2}$或$\bar{\theta}^{2}$的项都将违反方程(\ref{2.2.16}).) 于是方程(\ref{2.2.18})变为
+\begin{align}
+&\Bigl[1+\mi\bar{\theta}^{a}t_{a}+\tfrac{1}{2}\bar{\theta}^{b}\bar{\theta}^{c}t_{bc}+\cdots\Bigr]\times
+\Bigl[ 1 + \mi\theta^{a}t_{a}+\tfrac{1}{2}\theta^{b}\theta^{c}t_{bc}+\cdots\Bigr] \nonumber\\
+& \quad =1+ \mi\Bigl(\theta^{a}+\bar{\theta}^{a}+f^{a}{}_{\!bc}\bar{\theta}^{b}\theta^{c}+\cdots\Bigr)t_{a} \nonumber\\
+&  \qquad+\tfrac{1}{2}(\theta^{b}+\bar{\theta}^{b}+\cdots)\,(\theta^{c}%
++\bar{\theta}^{c}+\cdots)t_{bc}+\cdots \:.\label{2.2.20}%
+\end{align}
+$1,\theta,\bar{\theta},\theta^{2}$和$\bar{\theta}^{2}$的项在方程(\ref{2.2.20})两边自动匹配, 但从$\bar{\theta}\theta$项中, 我们得到一个不平庸的条件
+\begin{equation}
+t_{bc}=-t_{b}t_{c}-\mi\,f^{a}{}_{\!bc}\,t_{a}\:.\label{2.2.21}%
+\end{equation}
+这说明, 如果给定群的结构, 即给定函数$f(\bar{\theta},\theta)$以及由此得到的二次项系数$f^{a}{}_{\!bc}$, 我们可以从出现在一阶项中的生成元$t_{a}$ 计算出$U(T(\theta))$中的二阶项. 然而, 存在一个相容性条件: 算符$t_{bc}$关于$b$和$c$必须是{\KAI{对称的}}(因为它是$U(T(\theta))$%
+对$\theta^{b}$和$\theta^{c}$的二阶导数), 所以方程(\ref{2.2.21})要求
+\begin{equation}
+[t_{b},t_{c}] = \mi \,C^{a}{}_{\!bc}\,t_{a}\text{\  , }
+\label{2.2.22}%
+\end{equation}
+其中$C^{a}{}_{\!bc}$是一组实常数, 称为{\KAI{结构常数}},
+\begin{equation}
+C^{a}{}_{\!bc} \equiv -f^{a}{}_{\!bc}+f^{a}{}_{\!cb}\:. \label{2.2.23}%
+\end{equation}
+这样一组对易关系称为{\textit{Lie}}{\KAI{代数}}. 我们将在\,\ref{sec:2.7}\,节证明, 只需要对易关系(\ref{2.2.22}), 我们就可以确保这一手续会一直进行下去: 假如我们知道了一阶项, 即生成元$t_{a}$,  $U(T(\theta))$的完整幂级数就可以从无限多个类似方程(\ref{2.2.21})的关系中计算出来. 这并不意味着, 如果我们知道$t_{a}$, 那么对于所有的$\theta^{a}$,
+算符$U(T(\theta))$就\marginpar[\flushright{{\small[55]\hspace*{5mm}}}]{{\small\hspace*{5mm}[55]}}一定可以唯一地确定下来, 但是至少在单位元的坐标$\theta^{a}=0$ 的有限邻域内, 它确实意味着$U(T(\theta))$被唯一地确定了: 只要$\theta,\bar{\theta}$和$f(\bar{\theta},\theta)$处在这个邻域内, 且方程(\ref{2.2.15})被满足, 这些条件就在这个邻域内确定了$U(T(\theta))$. 扩张到所有$\theta^{a}$的情形将在\,\ref{sec:2.7}\,节讨论.
+
+这里有一种重要的特殊情况, 我们会反复遇到. 假定函数$f(\theta,\bar{\theta})$(或许只对坐标$\theta^{a}$的一些子集)是简单地相加
+\begin{equation}
+f^{a}(\theta,\bar{\theta})=\theta^{a}+\bar{\theta}^{a}\text{\ .}
+\label{2.2.24}%
+\end{equation}
+时空中的平移, 或是关于任意固定轴的旋转就是这样的例子. (这两个变化同时发生则{\KAI{不}}是.) 那么方程(\ref{2.2.19})中的系数$f^{a}{}_{\!bc}$为零, 结构常数(\ref{2.2.23})也随之为零. 于是所有的生成元都对易
+\begin{equation}
+[t_{b},t_{c}]  =0 \:. \label{2.2.25}%
+\end{equation}
+这样的群被称为是{\KAI{阿贝尔的}}. 在这种情况下, 可以很轻松地对所有$\theta^{a}$计算出$U(T(\theta))$. 从方程(\ref{2.2.18})和(\ref{2.2.24}), 对于任意整数$N$, 我们有
+\[
+U\Big(T(\theta)\Big)=\left[  U\left(  T\left(  \frac{\theta}{N}\right)
+\right)  \right]  ^{N}\text{\ .}%
+\]
+令$N\to\infty$, 仅保持$U(T(\theta/N))$中的一阶项, 那么我们就有
+\[
+U\Big(T(\theta)\Big)=\lim_{N\to\infty}\left[  1+\frac{\mi}{N}\theta^{a}t_{a}\right]^{N}
+\]
+因而
+\begin{equation}
+U\Big(T(\theta)\Big)=\exp(\mi t_{a}\theta^{a}) \: . \label{2.2.26}%
+\end{equation}
+
+\section{量子\,Lorentz\,变换} \label{sec:2.3}
+\setcounter{equation}{0}
+
+Einstein\,的相对性原理陈述了一些特定``惯性''参考系之间的等价性. 它与牛顿力学所服从的伽利略相对性原理的区别在于联系不同惯性系的坐标变换. 如果$x^{\mu}$ 是一个惯性系的坐标($x^{1},x^{2},x^{3}$是空间笛卡儿坐标, $x^{0}=t$是时间坐标, 光速取为\,1), 那么在任何其他的惯性系中, 坐标$x^{\prime\mu}$必须满足
+\begin{equation}
+\eta_{\mu\nu}\dif x^{\prime\mu}\dif x^{\prime\nu} = \eta_{\mu\nu}\dif x^{\mu}\dif x^{\nu} \label{2.3.1}%
+\end{equation}
+或等价的\begin{equation}
+\eta_{\mu\nu}\,\frac{\partial x^{\prime\mu}}{\partial x^{\rho}}\,\frac{\partial
+x^{\prime\nu}}{\partial x^{\sigma}}=\eta_{\rho\sigma}\text{\ }. \label{2.3.2}%
+\end{equation}
+这\marginpar[\flushright{{\small[56]\hspace*{5mm}}}]{{\small\hspace*{5mm}[56]}}里$\eta_{\mu\nu}$是对角矩阵, 矩阵元是
+\begin{equation}
+\eta_{11}=\eta_{22}=\eta_{33}=+1,\qquad \eta_{00}=-1\:, \label{2.3.3}%
+\end{equation}
+这里采用了求和约定: 对方程(\ref{2.3.2})中像$\mu$和$\nu$这样在同一项中出现两次且一次在上一次在下的指标求和. 这些变换有一个特殊性质, 即所有惯性系中的光速都相同(在我们的单位制中, 光速等于1);{}$^*$\footnote{$^*${}有一大类坐标变换, 称为{\KAI{共形变换}}, 在这类变换中, $\eta_{\mu\nu}\dif x^{\prime\mu}\dif x^{\prime\nu}$一般不等于$\eta_{\mu\nu}\dif x^{\mu}\dif x^{\nu}$但正比于它, 并且因此也保持光速不变. 两维的共形变换已经证明在弦论和统计力学中是极为重要的, 但在四维时空中, 这些共形变换与物理的关系依旧是不清楚的.} 一个光波以满足$\lvert \dif\bx/\dif t\rvert =1$的单位速度传播, 换句话说$\eta_{\mu\nu}\dif x^{\mu}\dif x^{\nu}=\dif \bx^{2}-\dif t^{2}=0$, 从中得出$\eta_{\mu\nu}\dif x^{\prime\mu}\dif x^{\prime\nu}=0$, 因而$\lvert \dif\bx^{\prime}/\dif t^{\prime}\rvert =1$.
+
+任何满足方程(\ref{2.3.2})的坐标变换$x^{\mu}\to x^{\prime\mu}$都是{\KAI{线性}}的\textsuperscript{\cite{3a}}%
+\begin{equation}
+x^{\prime\mu}=\Lambda^{\mu}{}_{\!\nu}x^{\nu}+a^{\mu} \:,\label{2.3.4}%
+\end{equation}
+其中$a^{\mu}$是任意常数, 而$\Lambda^{\mu}{}_{\!\nu}$是常矩阵, 它满足如下条件
+\begin{equation}
+\eta_{\mu\nu}\Lambda^{\mu}{}_{\!\rho}\Lambda^{\nu}{}_{\!\sigma}=\eta_{\rho\sigma}\:. \label{2.3.5}%
+\end{equation}
+由于某些目的, 将\,Lorentz\,变换写成另一种的形式是有用的.
+矩阵$\eta_{\mu\nu}$有逆, 记为$\eta^{\mu\nu}$, 它与$\eta_{\mu\nu}$碰巧有相同的分量: 它是对角的, 且$\eta^{00}=-1,\,\eta^{11}=\eta^{22}=\eta^{33}=+1$. 在方程(\ref{2.3.5})两边乘上%
+$\eta^{\sigma\tau}\Lambda^{\kappa}{}_{\!\tau}$, 并适当地插入括号, 我们得到
+\[
+\eta_{\mu\nu}\Lambda^{\mu}{}_{\!\rho}(\Lambda^{\nu}{}_{\!\sigma}\Lambda^{\kappa}{}_{\!\tau}\eta^{\sigma\tau})
+=\Lambda^{\kappa}{}_{\!\rho}=\eta_{\mu\nu}\eta^{\nu\kappa}\Lambda^{\mu}{}_{\!\rho} \:.
+\]
+再乘以矩阵$\eta_{\mu\nu}\Lambda^{\mu}{}_{\!\rho}$的逆就给出
+\begin{equation}
+\Lambda^{\nu}{}_{\!\sigma}\Lambda^{\kappa}{}_{\!\tau}\eta^{\sigma\tau}=\eta^{\nu\kappa}\:. \label{2.3.6}%
+\end{equation}
+
+
+这些变换构成一个群. 如果我们首先做\,Lorentz\,变换(\ref{2.3.4}), 然后再做第二个\,Lorentz\,变换$x^{\prime\mu}\to x^{\prime\prime\mu}$, 就会得到
+\[
+x^{\prime\prime\mu}=\bar{\Lambda}^{\mu}{}_{\!\rho}x^{\prime\rho}+\bar{a}^{\mu}
+=\bar{\Lambda}^{\mu}{}_{\!\rho}(\Lambda^{\rho}{}_{\!\nu}x^{\nu}+a^{\rho})+\bar{a}^{\mu}
+\]
+那么它的效果就与$x^{\mu}\to x^{\prime\prime\mu}$的\,Lorentz\,变换是一样的, 即
+\begin{equation}
+x^{\prime\prime\mu}=(\bar{\Lambda}^{\mu}{}_{\!\rho}\Lambda^{\rho}{}_{\!\nu})x^{\nu}
++(\bar{\Lambda}^{\mu}{}_{\!\rho}a^{\rho}+\bar{a}^{\nu})\:. \label{2.3.7}%
+\end{equation}
+(注意到, 如果$\Lambda^{\mu}{}_{\!\nu}$和$\bar{\Lambda}^{\mu}{}_{\!\nu}$均满足方程(\ref{2.3.5}), 那么$\bar{\Lambda}^{\mu}{}_{\!\rho}\Lambda^{\rho}{}_{\!\nu}$也满足这个方程, 所以这是一个\,Lorentz变换. 这里用到上横线只是为了区分两个\,Lorentz\,变换.) 因\marginpar[\flushright{{\small[57]\hspace*{5mm}}}]{{\small\hspace*{5mm}[57]}}此作用在物理态上的变换$T(\Lambda,a)$满足合成规则
+\begin{equation}
+T(\bar{\Lambda},\bar{a})T(\Lambda,a) =T(\bar{\Lambda}\Lambda,\bar{\Lambda}a+\bar{a})\:. \label{2.3.8}%
+\end{equation}
+取方程(\ref{2.3.5})的行列式给出
+\begin{equation}
+\left(  \operatorname{Det}\Lambda\right)  ^{2}=1 \label{2.3.9}%
+\end{equation}
+所以$\Lambda^{\mu}{}_{\!\nu}$有逆$(\Lambda^{-1})^{\nu}{}_{\!\rho}$, 从方程(\ref{2.3.5})可以看出它有如下形式
+\begin{equation}
+(\Lambda^{-1})^{\rho}{}_{\nu}=\Lambda_{\nu}{}^{\rho}\equiv
+\eta_{\nu\mu}\eta^{\rho\sigma}\Lambda^{\mu}{}_{\!\sigma}\:.
+\label{2.3.10}%
+\end{equation}
+从方程(\ref{2.3.8})看到, 变换$T(\Lambda,a)$的逆就是$T(\Lambda^{-1},-\Lambda^{-1}a)$, 并且, 单位变换显然是$T(1,0)$.
+
+根据上一节的讨论, 变换$T(\Lambda,a)$在物理\,Hilbert\,空间中诱导出矢量上的幺正线性变换
+\[
+\Psi\to U(\Lambda,a)  \Psi\:.
+\]
+算符$U$满足合成规则
+\begin{equation}
+U(\bar{\Lambda},\bar{a})U(\Lambda,a) = U(\bar{\Lambda}\Lambda,\bar{\Lambda}a+\bar{a})\:. \label{2.3.11}%
+\end{equation}
+(正如已经提到的, 为了避免在方程(\ref{2.3.11})的右边出现一个相位因子, 扩张\,Lorentz\,群一般是必要的. %
+我们将在\,\ref{sec:2.7}\,节给出合适的扩张.)
+
+变换$T(\Lambda,a)$构成的整个群称为{\KAI{非齐次}}\,{\textit{Lorentz}}\,{\KAI{群}}, 或{\textit{Poincar\'{e}}}{\KAI{群}}. 它有一些重要的子群. 首先, $a^{\mu}=0$的变换显然构成一个子群, 它具有
+\begin{equation}
+T(\bar{\Lambda},0)\,T(\Lambda,0) = T(\bar{\Lambda}\Lambda,0)\:, \label{2.3.12}%
+\end{equation}
+这个子群被称为{\KAI{齐次}}\,{\textit{Lorentz}}\,{\KAI{群}}. 另外, %
+我们从方程(\ref{2.3.9})可以看出, 要么$\operatorname{Det}\Lambda=+1$, 要么$\operatorname{Det}\Lambda=-1$; %
+那些$\operatorname{Det}\Lambda=+1$的变换显然构成齐次或非齐次\,Lorentz\,群的子群. %
+更近一步, 从方程(\ref{2.3.5})和(\ref{2.3.6})的\,00\,-分量, 我们得到
+\begin{equation}
+(\Lambda^{0}{}_{0})^{2}=1+\Lambda^{i}{}_{0}\Lambda^{i}{}_{0}=1+\Lambda^{0}{}_{i}\Lambda^{0}{}_{i}\text{\ } \label{2.3.13}%
+\end{equation}
+其中$i$对$1,2,3$求和. 我们看到, 要么$\Lambda^{0}{}_{0}\geq+1$, 要么$\Lambda^{0}{}_{0}\leq-1$. 那些$\Lambda^{0}{}_{0}\geq+1$的变换构成一个子群. 注意到, 如果$\Lambda^{\mu}{}_{\!\nu}$和$\bar{\Lambda}^{\mu}{}_{\!\nu}$是这样的两个$\Lambda$, 那么
+\[
+(\bar{\Lambda}\Lambda)^{0}{}_{0}=\bar{\Lambda}^{0}{}_{0}\Lambda^{0}{}_{0}
++\bar{\Lambda}^{0}{}_{1}\Lambda^{1}{}_{0}+\bar{\Lambda}^{0}{}_{2}\Lambda^{2}{}_{0}
++\bar{\Lambda}^{0}{}_{3}\Lambda^{3}{}_{0}\:.
+\]
+但是方程(\ref{2.3.13})证明了\,3\,-矢$(\Lambda^{1}{}_{0},\Lambda^{2}{}_{0},\Lambda^{3}{}_{0})$的长度是
+$\sqrt{(\Lambda^{0}{}_{0})^{2}-1}$, 类\marginpar[\flushright{{\small[58]\hspace*{5mm}}}]{{\small\hspace*{5mm}[58]}}似地, 3\,-矢$(\bar{\Lambda}^{0}{}_{1},\bar{\Lambda}^{0}{}_{2},\bar{\Lambda}^{0}{}_{3})$的长度是
+$\sqrt{\vphantom{\big[}(\bar{\Lambda}^{0}{}_{0})^{2}-1}$, 所以这两个\,3\,-矢的标量积有上下界
+\begin{equation}
+\lvert\bar{\Lambda}^{0}{}_{1}\Lambda^{1}{}_{0}+
+\bar{\Lambda}^{0}{}_{2}\Lambda^{2}{}_{0}
++\bar{\Lambda}^{0}{}_{3}\Lambda^{3}{}_{0}\rvert\leq
+\sqrt{\vphantom{\big[}(\Lambda^{0}{}_{0})^{2}-1}
+\sqrt{(\bar{\Lambda}^{0}{}_{0})^{2}-1}\:, \label{2.3.14}%
+\end{equation}
+从而
+\[
+(\bar{\Lambda}\Lambda)^{0}{}_{0}\geq\bar{\Lambda}^{0}{}_{0}\Lambda^{0}{}_{0}
+-\sqrt{\vphantom{\big[}(\Lambda^{0}{}_{0})^{2}-1}
+\sqrt{(\bar{\Lambda}^{0}{}_{0})^{2}-1}\geq1 \:.
+\]
+Lorentz\,变换中$\operatorname{Det}\Lambda=+1$且$\Lambda^{0}{}_{0}\geq+1$的子群称为
+{\KAI{固有正时}}\,{\textit{Lorentz}}\,{\KAI{群}}. %
+由于无法通过参量的连续改变从$\operatorname{Det}\Lambda=+1$跳到$\operatorname{Det}\Lambda=-1$, %
+或从$\Lambda^{0}{}_{0}\geq+1$跳到$\Lambda^{0}{}_{0}\leq-1$, %
+所以任何通过参量的连续改变从恒等变换得到的\,Lorentz\,变换, %
+它的$\operatorname{Det}\Lambda$和$\Lambda^{0}{}_{0}$必须与恒等变换同号, %
+从而一定属于固有正时\,Lorentz\,群.
+
+任何\,Lorentz\,变换要么是固有且正时的, 要么可以写成固有正时\,Lorentz\,群中的元素与一个离散变换的乘积, %
+这里的离散变换有$\mathscr{P}$, $\mathscr{T}$和$\mathscr{PT}$, 其中$\mathscr{P}$是空间反演, 它的非零元素是
+\begin{equation}
+\mathscr{P}^{0}{}_{0}=1,\qquad\mathscr{P}^{1}{}_{1}%
+=\mathscr{P}^{2}{}_{2}=\mathscr{P}^{3}{}_{3}=-1\:,
+\label{2.3.15}%
+\end{equation}
+而$\mathscr{T}$是时间反演矩阵, 它的非零元素是
+\begin{equation}
+\mathscr{T}^{0}{}_{0}=-1,\qquad\mathscr{T}^{1}{}_{1}
+=\mathscr{T}^{2}{}_{2}=\mathscr{T}^{3}{}_{3}=1 \:.
+\label{2.3.16}%
+\end{equation}
+因此对整个\,Lorentz\,群的研究简化为对固有正时子群, 以及对空间反演和时间反演的研究. 我们将在\,\ref{sec:2.6}\,节分别考虑空间反演和时间反演. 在此之前, 我们只处理齐次或非齐次固有正时\,Lorentz\,群.
+
+\section{Poincar\'{e}\,代数} \label{sec:2.4}
+\setcounter{equation}{0}
+
+正如在\,\ref{sec:2.2}\,节看到的, 任何Lie对称群的大部分信息都包含在单位元附近的群元的性质中. 对非齐次\,Lorentz\,群, 单位元是$\Lambda^{\mu}{}_{\!\nu}=\updelta^{\mu}{}_{\!\nu}$, $a^{\mu}=0$, 所以我们想研究的那些变换是
+\begin{equation}
+\Lambda^{\mu}{}_{\!\nu}=\updelta^{\mu}{}_{\!\nu}+\omega^{\mu}{}_{\!\nu}\text{ ,}\qquad\quad a^{\mu}=\epsilon^{\mu}\text{\  ,}\label{2.4.1}%
+\end{equation}
+其中$\omega^{\mu}{}_{\!\nu}$和$\epsilon^{\mu}$是无限小量. Lorentz\,条件(\ref{2.3.5})现在变成\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[59]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[59]}}}
+\begin{align*}
+\eta_{\rho\sigma}  &  =\eta_{\mu\nu}(\updelta^{\mu}{}_{\!\rho}+\omega^{\mu}{}_{\!\rho})\,
+(\updelta^{\nu}{}_{\!\sigma}+\omega^{\nu}{}_{\!\sigma}) \\
+&  =\eta_{\sigma\rho}+\omega_{\sigma\rho}+\omega_{\rho\sigma}+O(\omega^{2})\text{\ .}%
+\end{align*}
+我们在这里使用的约定将贯穿本书的始终, 指标可以通过与$\eta_{\mu\nu}$和$\eta^{\mu\nu}$收缩进行升降
+\begin{align*}
+\omega_{\sigma\rho}  &  \equiv\eta_{\mu\sigma}\omega^{\mu}{}_{\!\rho} \\
+\omega^{\mu}{}_{\!\rho} & \equiv\eta^{\mu\sigma}\omega_{\sigma\rho}  \:. %
+\end{align*}
+在\,Lorentz\,条件(\ref{2.3.5})中仅保留$\omega$的一阶项, 我们看到这个条件现在退化成要求$\omega_{\mu\nu}$反对称
+\begin{equation}
+\omega_{\mu\nu}=-\omega_{\nu\mu}\text{\ .} \label{2.4.2}%
+\end{equation}
+四维反对称二阶张量有$(4\times3)/2=6$个独立分量, 再加上$\epsilon^{\mu}$的四个分量, %
+一个非齐次\,Lorentz\,变换由$6+4=10$个参量描述.
+
+由于$U(1,0)$将任何射线变到本身, 所以它必须正比于单位算符,{}$^*$\footnote{$^*${}在有超选择定则的情况下, 比例因子可能依赖于$U(1,0)$作用的态, 而如果没有超选择定则, 这种可能性就被排除了, 其原因与\,\ref{sec:2.2}\,节相同, 即没有超选择定则, 对称群的投影表示中的相位不可能依赖于对称操作所作用的态. 在应用超选择定则的地方, 依赖$U(1,0)$作用的区域, 通过相位因子对$U(1,0)$ 重定义可能是必须的.} 并可以通过相位选择使它等于单位算符. 因此对于无限小的\,Lorentz\, 变换(\ref{2.4.1}), $U(  1+\omega,\epsilon)$ 必须等于$1$加上$\omega_{\rho\sigma}$和$\epsilon_{\rho}$的线性项. 我们将其写为
+\begin{equation}
+U\left(  1+\omega,\epsilon\right)  =1+\tfrac{1}{2}\mi\,\omega_{\rho\sigma}%
+J^{\rho\sigma}-\mi\epsilon_{\rho}P^{\rho}+\cdots\text{ \ \ }. \label{2.4.3}%
+\end{equation}
+这里$J^{\rho\sigma}$和$P^{\rho}$分别是与$\omega$和$\epsilon$无关的算符, 而省略号代表$\omega$和(或)$\epsilon$的高阶项. 为了使$U(1+\omega,\epsilon)$ 是幺正的, 算符$J^{\rho\sigma}$和$P^{\rho}$必须是厄米的
+\begin{equation}
+J^{\rho\sigma\dag}=J^{\rho\sigma}\:, \qquad P^{\rho\dag}=P^{\rho}\:.
+\label{2.4.4}%
+\end{equation}
+由于$\omega_{\rho\sigma}$是反对称的, 我们可以将它的系数$J^{\rho\sigma}$也取成反对称的
+\begin{equation}
+J^{\rho\sigma}=-J^{\sigma\rho}\: . \label{2.4.5}%
+\end{equation}
+我们将会看到, $P^{1},P^{2},P^{3}$是动量算符的分量, $J^{23},J^{31},J^{12}$是角动量算符的分量, 而$P^{0}$是能量算符, 或者说{\KAI{哈密顿量}}.{}$^{*}$\footnote{$^{*}${}我们将会看到, $J^{\mu\nu}$满足的对易关系让我们认定它是角动量生成元. 另一方面, 对易关系使得我们无法区分$P^{\mu}$和$-P^{\mu}$, 所以(\ref{2.4.3})中$\epsilon_{\rho}P^{\rho}$项的符号是一个约定. %
+我们将在3.1节说明(\ref{2.4.3})中的选择与哈密顿量$P^{0}$通常 的定义是一致的.}
+
+
+我\marginpar[\flushright{\small[60]\hspace*{5mm}}]{{\small\hspace*{5mm}[60]}}们现在检验$J^{\rho\sigma}$和$P^{\rho}$的\,Lorentz\,变换性质. 考虑乘积
+\[
+U(\Lambda,a)\,U(1+\omega,\epsilon)\,U^{-1}(\Lambda,a)  \:,
+\]
+其中$\Lambda^{\mu}{}_{\!\nu}$和$a^{\mu}$在这里是新变换的参量, 与$\omega$和$\epsilon$无关. 根据方程(\ref{2.3.11}), $U(\Lambda^{-1},-\Lambda^{-1}a)U(\Lambda,a)$等于$U(1,0)$, 所以$U(\Lambda^{-1},-\Lambda^{-1}a)$是$U(\Lambda,a)$的逆. 于是从(\ref{2.3.11}) 可以得到
+\begin{equation}
+U(\Lambda,a)\,U(1+\omega,\epsilon)\,U^{-1}(\Lambda,a) =
+U\Bigl(\Lambda(1+\omega)\Lambda^{-1},\Lambda\epsilon-\Lambda\omega\Lambda^{-1}a\Bigr)\:. \label{2.4.6}%
+\end{equation}
+取到$\omega$和$\epsilon$的第一阶, 我们就有
+\begin{align}
+U(\Lambda,a)\,  \bigl[\tfrac{1}{2}\omega_{\rho\sigma}J^{\rho\sigma}-\epsilon_{\rho}P^{\rho}\bigr]\,
+U^{-1}(\Lambda,a) &= \tfrac{1}{2}(\Lambda\omega\Lambda^{-1})_{\mu\nu}J^{\mu\nu}\nonumber\\
+& \quad -(\Lambda\epsilon-\Lambda\omega\Lambda^{-1}a)_{\mu}P^{\mu}\:. \label{2.4.7}%
+\end{align}
+从方程两边$\omega_{\rho\sigma}$和$\epsilon_{\rho}$的系数相等(并利用(\ref{2.3.10})), 我们发现
+\begin{align}
+U(\Lambda,a) J^{\rho\sigma} U^{-1}(\Lambda,a)
+&=\Lambda_{\mu}{}^{\rho}\Lambda_{\nu}{}^{\sigma}(J^{\mu\nu}-a^{\mu}P^{\nu}+a^{\nu}P^{\mu})  \:, \label{2.4.8}\\
+U(\Lambda,a)  P^{\rho}\,U^{-1}(\Lambda,a) &=\Lambda_{\mu}{}^{\rho}P^{\mu}\:. \label{2.4.9}%
+\end{align}
+对于齐次\,Lorentz\,变换($a^{\mu}=0$), 这些变换规则就是告诉我们$J^{\mu\nu}$是张量, $P^{\mu}$是矢量. 对于纯平移($\Lambda^{\mu}{}_{\!\nu}=\updelta^{\mu}{}_{\!\nu}$), 它告诉我们$P^{\rho}$是平移不变的, 而$J^{\rho\sigma}$则不是. 特别地, 在一个空间平移下, $J^{\rho\sigma}$的空间\lzx 空间分量的变化就是通常的因改变计算角动量的原点而引起的角动量变化.
+
+接下来, 我们将规则(\ref{2.4.8})和(\ref{2.4.9})应用到无限小变换, 即$\Lambda^{\mu}{}_{\!\nu}=\updelta^{\mu}{}_{\!\nu}+\omega^{\mu}{}_{\!\nu}$且$a^{\mu}=\epsilon^{\mu}$的变换, 无限小量$\omega^{\mu}{}_{\!\nu}$和$\epsilon^{\mu}$与此前的$\omega$和$\epsilon$无关. 利用方程(\ref{2.4.3}), 并只保留$\omega^{\mu}{}_{\!\nu}$和$\epsilon^{\mu}$的一阶项, 方程(\ref{2.4.8})和(\ref{2.4.9})现在变成
+\begin{gather}
+\mi\bigl[\tfrac{1}{2}\omega_{\mu\nu}J^{\mu\nu}-\epsilon_{\mu}P^{\mu},J^{\rho\sigma}\bigr] =
+\omega_{\mu}{}^{\rho}J^{\mu\sigma}+\omega_{\nu}{}^{\sigma}J^{\rho\nu}
+-\epsilon^{\rho}P^{\sigma}+\epsilon^{\sigma}P^{\rho} \:, \label{2.4.10}\\
+\mi\bigl[\tfrac{1}{2}\omega_{\mu\nu}J^{\mu\nu}-\epsilon_{\mu}P^{\mu},P^{\rho}\bigr] = \omega_{\mu}{}^{\rho}P^{\mu}\:. \label{2.4.11}%
+\end{gather}
+从方程两边$\omega_{\mu\nu}$和$\epsilon_{\mu}$的系数相等, 我们发现对易规则
+\begin{align}
+\mi\,[  J^{\mu\nu},J^{\rho\sigma}]   &  =\eta^{\nu\rho}J^{\mu\sigma
+}-\eta^{\mu\rho}J^{\nu\sigma}-\eta^{\sigma\mu}J^{\rho\nu}+\eta^{\sigma\nu
+}J^{\rho\mu}\text{ , }\label{2.4.12}\\
+\mi\,[  P^{\mu},J^{\rho\sigma}]   &  =\eta^{\mu\rho}P^{\sigma}%
+-\eta^{\mu\sigma}P^{\rho}\text{ , }\label{2.4.13}\\
+[  P^{\mu},P^{\rho}]   &  =0\text{ }. \label{2.4.14}%
+\end{align}
+这是\,Poincar\'{e}\,群的Lie代数.
+
+在量子\marginpar[\flushright{\small[61]\hspace*{5mm}}]{{\small\hspace*{5mm}[61]}}力学中, {\KAI{守恒}}量, 即与能量算符$H=P^{0}$对易的量扮演着特殊的角色. 观察方程(\ref{2.4.13})和(\ref{2.4.14}), 可以看出守恒量是动量\,3\,-矢
+\begin{equation}
+\bP=\Big\{P^{1},P^{2},P^{3}\Big\} \label{2.4.15}%
+\end{equation}
+和角动量\,3\,-矢\begin{equation}
+\bJ=\Big\{J^{23},J^{31},J^{12}\Big\} \label{2.4.16}%
+\end{equation}
+当然, 还有能量$P^{0}$本身. 剩下的生成元构成所谓的``增速(boost)''\,3\,-矢
+\begin{equation}
+\bK=\Big\{J^{01},J^{02},J^{03}\Big\}\text{ }. \label{2.4.17}%
+\end{equation}
+它们是{\KAI{不}}守恒的, 这就是为什么我们不用$\bK$的本征值标记物理态的原因. 用三维符号, 对易关系(\ref{2.4.12}), (\ref{2.4.13}), (\ref{2.4.14}) 可以写成
+\begin{align}
+[J_{i},J_{j}]  &= \mi\,\epsilon_{ijk}J_{k} \:, \label{2.4.18} \\
+[J_{i},K_{j}]  &= \mi\,\epsilon_{ijk}K_{k} \:, \label{2.4.19} \\
+[K_{i},K_{j}]  &= -\mi\,\epsilon_{ijk}J_{k}\:, \label{2.4.20} \\
+[J_{i},P_{j}]  &=  \mi\,\epsilon_{ijk}P_{k}\:, \label{2.4.21} \\
+[K_{i},P_{j}]  &=  -\mi H\,\updelta_{ij} \:, \label{2.4.22} \\
+[J_{i},H]      &= [P_{i},H] = [H,H] =0 \: ,\label{2.4.23} \\
+[K_{i},H]      &= -\mi P_{i}\: ,  \label{2.4.24}
+\end{align}
+其中$i,j,k$等取遍\,1,2,3, 而$\epsilon_{ijk}$是全反对称量, 并有$\epsilon_{123}=+1$. 对易关系(\ref{2.4.18})被视为角动量算符的对易关系.
+
+纯平移$T(1,a)$构成非齐次\,Lorentz\,群的一个子群, 它的群乘积规则由(\ref{2.3.8})给定
+\begin{equation}
+T(1,\bar{a})  T(1,a) = T(1,\bar{a}+a)\:. \label{2.4.25}%
+\end{equation}
+在(\ref{2.2.24})的意义上, 群的乘积规则是加法, 所以通过利用(\ref{2.4.3}), 并重复导出(\ref{2.2.26})的讨论, 我们发现有限平移在物理\,Hilbert\,空间上可以表示为
+\begin{equation}
+U(1,a) = \exp (-\mi P^{\mu}a_{\mu})  \:. \label{2.4.26}%
+\end{equation}
+以精确相同的方式, 我们可以证明以$\bm{\theta}$方向为轴, 角度为$\lvert\bm{\theta }\rvert$的旋转$R_{\bm{\theta }}$ 在物理\,Hilbert\,空间上表示为
+\begin{equation}
+U(R_{\bm{\theta }},0) = \exp (\mi \bJ\cdot\bm{\theta })\:. \label{2.4.27}
+\end{equation}
+
+
+将\,Poincar\'{e}\,代数与牛顿力学的对称群\ezx 伽利略群的\,Lie\,代数进行比较是有益的.
+从\marginpar[\flushright{\small[62]\hspace*{5mm}}]{{\small\hspace*{5mm}[62]}}伽利略群的变换法则出发, 然后利用导出\,Poincar\'{e}\,代数的步骤, 我们就可以导出这个代数. 然而, 既然我们已经有了方程(\ref{2.4.18})\yzx (\ref{2.4.24}), 通过\,{\textit{In\"{o}n\"{u}-Wigner}}\,{\KAI{收缩}}\textsuperscript{\cite{4,5}}, 很容易得到作为\,Poincar\'{e}代数\,的低速近似的伽利略代数. %
+对一个典型质量为$m$, 典型速度为$v$的粒子系统, 可以期待动量和角动量算符的量级是$\bJ\sim1,\bP\sim mv$. %
+另一方面, 能量算符是$H=M+W$, 其中总质量是$M$, 而非质量能量为$W$(动能+势能), %
+量级是$M\sim m,\,W\sim mv^{2}$. 观察方程(\ref{2.4.18})\yzx (\ref{2.4.24}), %
+可以看出对易关系在$v\ll1$的极限下在形式上取
+\begin{align*}
+[J_{i},J_{j}]   &= \mi\,\epsilon_{ijk}\,J_{k}\:,\qquad [J_{i},K_{j}]=\mi\,\epsilon_{ijk}\,K_{k}\:, \qquad [K_{i},K_{j}]=0 \:, \\
+[J_{i},P_{j}]  &= \mi\,\epsilon_{ijk}\,P_{k}\:,\qquad [K_{i},P_{j}] = -\mi\,M\,\updelta_{ij} \:, \\
+[J_{i}, W]   &= [P_{i},W] = 0, \qquad [K_{i},W]  =-\mi\,P_{i} \:, \\
+[J_{i},M]   &=[P_{i},M] = [K_{i},M]=[W,M] = 0,
+\end{align*}
+其中$\bK$是$1/v$阶的. 注意到, 平移$\bx\to\bx+\ba$与``增速''$\bx\to \bx+\bv t$的乘积本应是变换$\bx\to \bx+\bv t+\ba$, 但是, 对于作用在\,Hilbert\,空间上的算符, 这是不对的:
+\[
+ \exp(- \mi\bK\cdot\bv )\exp(-\mi\bP\cdot\ba)
+=\exp(\mi M\ba\cdot\bv /2)\exp(-\mi(\bK\cdot\bv +\bP\cdot\ba))  \:.
+\]
+出现相因子$\exp(\mi M\ba\cdot\bv /2)$表明这是一个投影表示, 它有一个超选择定则禁止不同质量态的叠加. 从这方面看, Poincar\'{e}\,群的数学结构比伽利略群简单. 然而, 没有什么来阻止我们给伽利略群的\,Lie\,代数增加一个生成元来形式上地扩张伽利略群, 这个生成元与其他所有生成元对易且它的本征值是不同态的质量. 在这种情况下, 物理态给出了这个扩张对称群的普通表示而非投影表示. 除了在重新解释这个伽利略群时不再需要质量的超选择定则外, 所有的不同都只是符号上的不同.
+
+%+++++++++++++++++++2.5++++++++++++++++++++++++++++++++++
+
+
+\section{单粒子态} \label{sec:2.5}
+\setcounter{equation}{0}
+
+我们现在考虑根据单粒子态在非齐次\,Lorentz\,群下的变换如何对它们进行分类的问题.
+
+能动量\,4\,-矢的分量全部彼此对易, 所以用四动量的本征矢表示物理态矢是自然的.
+引\marginpar[\flushright{\small[63]\hspace*{5mm}}]{{\small\hspace*{5mm}[63]}}入指标$\sigma$来标记所有其他自由度, 因此我们考虑的态矢$\Psi$满足
+\begin{equation}
+P^{\mu}\Psi_{p,\sigma}=p^{\mu}\Psi_{p,\sigma}\:. \label{2.5.1}%
+\end{equation}
+对于一般的态, 例如几个非束缚粒子构成的态, 指标$\sigma$不但可以是离散的, 也可以是连续的. 作为{\KAI{单}}粒子态定义的一部分, 我们要求指标$\sigma$ 是纯离散的, 并且我们将只考虑这种情况. (然而, 两个或多个粒子的特定束缚态, 如氢原子的最低态, 将被认为是单粒子态. 它不是{\KAI{基本}}粒子, 但是复合粒子与基本粒子的区别在这里是无所谓的.)
+
+方程(\ref{2.5.1})和(\ref{2.4.26})告诉我们态$\Psi_{p,\sigma}$在平移下如何变换:
+\[
+U(1,a)\Psi_{p,\sigma}=\me^{-\mi p\cdot a}\Psi_{p,\sigma} \:.
+\]
+我们现在必须考察这些态在齐次\,Lorentz\,变换下如何变换.
+
+利用(\ref{2.4.9}), 我们看到量子齐次\,Lorentz\,变换$U(\Lambda,0)\equiv U(\Lambda)$作用在$\Psi_{p,\sigma}$上的效果是产生一个\,4\,-动量本征值为$\Lambda p$的本征矢
+\begin{align}
+P^{\mu} U(\Lambda) \Psi_{p,\sigma}  &= U(\Lambda)\Big[U^{-1}(\Lambda)P^{\mu}U(\Lambda)\Big]
+\Psi_{p,\sigma} = U(\Lambda) (\Lambda^{-1}{}_{\rho}{}^{\mu}P^{\rho})\Psi_{p,\sigma}\nonumber\\
+& = \Lambda^{\mu}{}_{\!\rho} p^{\rho} U(\Lambda) \Psi_{p,\sigma}\:. \label{2.5.2}%
+\end{align}
+因此$U(\Lambda)\Psi_{p,\sigma}$必须是态矢$\Psi_{\Lambda p,\sigma^{\prime}}$的线性组合:
+\begin{equation}
+U(\Lambda)\Psi_{p,\sigma}=\sum_{\sigma^{\prime}}C_{\sigma^{\prime}\sigma}(\Lambda,p)
+\Psi_{\Lambda p,\sigma^{\prime}}\:. \label{2.5.3}%
+\end{equation}
+一般而言, 通过对$\Psi_{p,\sigma}$使用合适的线性组合, 有可能选择$\sigma$指标使得矩阵$C_{\sigma^{\prime}\sigma}(\Lambda,p)$是分块对角的; 换句话说, 使得对任何一个$\sigma$, $\Psi_{p,\sigma}$自己在任何一个块中就构成非齐次\,Lorentz\,群的一个表示. 将种类给定的粒子态与非齐次\,Lorentz\,群不可约表示的分量等同起来是自然的, 在这个意义上, 不能以\vspace{-5mm}\linebreak
+\pagebreak
+
+\noindent
+这种方式做进一步的分解.{}$^*$\footnote{$^*${}当然, 不同的粒子种类可以对应于同构的表示, 即, 存在多个矩阵$C_{\sigma^{\prime}\sigma}(\Lambda,p)$, 它们要么相等, 要么通过一个相似变换相互关联. 在某些情况下, 可以方便地将粒子种类定义为一个更大的群的不可约表示, 这个更大的群包含非齐次固有正时\,Lorentz\,群作为它的子群; 例如, 正如我们将看到的, 对于相互作用具有空间反演对称性的无质量粒子, 我们通常用包含空间反演的非齐次\,Lorentz\,群的不可约表示的全部分量对单个粒子进行分类. }
+现在, 我们的任务是解出系\marginpar[\flushright{\small[64]\hspace*{5mm}}]{{\small\hspace*{5mm}[64]}}数$C_{\sigma^{\prime}\sigma}(\Lambda,p)$在非齐次\,Lorentz\,群不可约表示中的结构.
+
+出于这个目的, 注意到在$p^{\mu}$的函数中, 在任何固有正时\,Lorentz\,变换$\Lambda^{\mu}{}_{\!\nu}$下保持不变的只有平方不变量%
+$p^{2}\equiv\eta_{\mu\nu}p^{\mu}p^{\nu}$, 以及$p^{2}\leq0$时$p^{0}$的符号. 因此, 对于$p^{2}$的每个值, 以及($p^{2}\leq0$时)$p^{0}$ 的每个符号, 我们可以选择``标准''\,4\,-矢, 记做$k^{\mu}$, 并将这类中的任何$p^{\mu}$表示为
+\begin{equation}
+p^{\mu}=L^{\mu}{}_{\!\nu}(p)  k^{\nu} \:, \label{2.5.4}%
+\end{equation}
+其中$L^{\mu}{}_{\!\nu}$是依赖于$p^{\mu}$的标准\,Lorentz\,变换, 并且暗含地也依赖于我们对标准$k^{\mu}$的选择. 这样, 我们可以将动量为$p$ 的态$\Psi_{p,\sigma}${\KAI{定义}}为
+\begin{equation}
+\Psi_{p,\sigma}\equiv N(p)\, U(L(p))\Psi_{k,\sigma}\:, \label{2.5.5}%
+\end{equation}
+其中$N(  p)$是作为归一化因子的数, 稍后进行选择. 到这里, 我们还没有对$\sigma$怎样与不同动量相联系做任何说明; 现在方程(\ref{2.5.5})补上了这一空隙.
+
+用任意的齐次\,Lorentz\,变换$U(\Lambda)$作用在(\ref{2.5.5})上, 我们发现
+\begin{align}
+U(\Lambda) \Psi_{p,\sigma}  &= N(p)\, U(\Lambda L(p))\Psi_{k,\sigma}\nonumber\\
+&= N(p)\,U(L(\Lambda p))\,U(L^{-1}(\Lambda p)\Lambda L(p))\,\Psi_{k,\sigma} \:. \label{2.5.6}%
+\end{align}
+最后一步的关键是\,Lorentz\,变换$L^{-1}(\Lambda p)\Lambda L(p)$, 它使$k$变为$L(p)k=p$, 然后变到$\Lambda p$, 最后再变回到$k$, 所以它属于保持$k^{\mu}$不变的\,Lorentz\,变换$W^{\mu}{}_{\!\nu}$组成的齐次\,Lorentz\,群的子群:
+\begin{equation}
+W^{\mu}{}_{\!\nu}k^{\nu}=k^{\mu}\:. \label{2.5.7}%
+\end{equation}
+这个子群被称为{\KAI{小群}}.\textsuperscript{\cite{5}} 对于满足方程(\ref{2.5.7})的任意$W$, 我们有
+\begin{equation}
+U(W)\Psi_{k,\sigma}=\sum_{\sigma^{\prime}}D_{\sigma^{\prime}\sigma}(W) \Psi_{k,\sigma^{\prime}}\:. \label{2.5.8}%
+\end{equation}
+系数$D(W)$给出了小群的一个表示; 即, 对于任意元素$\bar{W}$, $W$, 我们有
+\begin{align*}
+&\sum_{\sigma^{\prime}}D_{\sigma^{\prime}\sigma}(\bar{W}W)\Psi_{k,\sigma^{\prime}}
+=U(\bar{W}W)\Psi_{k,\sigma}= U(\bar{W})U(W) \Psi_{k,\sigma} \\
+&\qquad  = U(\bar{W})\sum_{\sigma^{\prime\prime}}D_{\sigma^{\prime\prime}\sigma}(W)\Psi_{k,\sigma^{\prime\prime}}
+=\sum_{\sigma^{\prime}\sigma^{\prime\prime}}D_{\sigma^{\prime\prime}\sigma}(W)
+D_{\sigma^{\prime}\sigma^{\prime\prime}}(\bar{W})\Psi_{k,\sigma^{\prime}}%
+\end{align*}
+因而\begin{equation}
+D_{\sigma^{\prime}\sigma}(\bar{W}W)=\sum_{\sigma^{\prime\prime}}%
+D_{\sigma^{\prime}\sigma^{\prime\prime}}(\bar{W})D_{\sigma^{\prime\prime}\sigma}(W)  \:. \label{2.5.9}%
+\end{equation}
+特\marginpar[\flushright{\small[65]\hspace*{5mm}}]{{\small\hspace*{5mm}[65]}}别的, 我们可以将方程(\ref{2.5.8}%
+)应用于小群变换\begin{equation}
+W(\Lambda,p) \equiv L^{-1}(\Lambda p) \Lambda L(p)  \label{2.5.10}%
+\end{equation}
+那么方程(\ref{2.5.6})采取如下形式
+\[
+U(\Lambda)\Psi_{p,\sigma}=N(p)
+\sum_{\sigma^{\prime}}D_{\sigma^{\prime}\sigma}(W(\Lambda,p))\,U(L(\Lambda p))\, \Psi_{k,\sigma^{\prime}}\:,%
+\]
+或者, 回顾定义(\ref{2.5.5}):
+\begin{equation}
+U(\Lambda)\Psi_{p,\sigma}=\left(\frac{N(p)}{N(\Lambda p)}\right)\sum_{\sigma^{\prime}}
+D_{\sigma^{\prime}\sigma}(W(\Lambda,p))\,\Psi_{\Lambda p,\sigma^{\prime}} \:. \label{2.5.11}%
+\end{equation}
+除了归一化的问题, 在变换规则(\ref{2.5.3}%
+)中确定系数$C_{\sigma^{\prime}\sigma}%
+$%
+的问题已经退化成寻找小群表示的问题. 这种从小群表示导出一个群表示的方法, 例如从小群导出非齐次\,Lorentz\,群的表示,
+称为诱导表示法.\textsuperscript{\cite{6}}
+
+表2.1%
+给出了标准动量$k^{\mu}$一个方便的选择以及各类\,4\,-动量对应的小群.
+
+\vspace{0.5cm}
+
+\begin{small}
+\noindent {\bf 表~2.1\quad 各类\,4\,-动量的标准动量和对应的小群. 这里$\kappa$是任意的正能量, 例如$1\,\mathrm{eV}$. 小群几乎是相当显然的: $SO(3)$是三维中的普通旋转群(剔除了空间反演), 这是因为旋转是唯一使零动量粒子保持静止的固有正时\,Lorentz\,变换, 而$SO(2,1)$和$SO(3,1)$分别是$(2+1)$维和$(3+1)$维中的\,Lorentz\,群. 群$ISO(2)$是欧几里得几何下的群, 由二维的旋转和平移组成. 它将作为$p^{2}=0$的小群出现, 我们将在后面对此给出解释.
+
+} \vspace{-0.4cm}
+\end{small}
+
+\begin{center}
+\begin{footnotesize}
+\def\temptablewidth{\textwidth}{\footnotesize {\rule{\temptablewidth}{1pt}}\\%[0.5mm]
+\renewcommand{\arraystretch}{1.2}
+\tabcolsep=23.1pt\begin{tabular}{llc}
+ & 标准~$k^{\mu}$ & 小群\\ \hline
+(a)\quad$p^{2}=-M^{2}<0,~p^{0}>0\qquad$ & $(0,0,0,M)  $ & $SO(3)  $\\
+(b)\quad$p^{2}=-M^{2}<0,~p^{0}<0$ & $(0,0,0,-M)\qquad  $ & $SO(3)  $\\
+(c)\quad$p^{2}=0,~p^{0}>0$ & $(  0,0,\kappa,\kappa)  $ & $ISO(2)  $\\
+(d)\quad$p^{2}=0,~p^{0}<0$ & $(  0,0,\kappa,-\kappa)  $ &$ISO(  2)  $\\
+(e)\quad$p^{2}=N^{2}>0$ & $(  0,0,N,0)  $ & $SO(  2,1)$\\
+(f)\quad$p^{\mu}=0$ & $(0,0,0,0)$ & $SO(  3,1) $
+\end{tabular}\\[-0.3mm]
+\def\temptablewidth{\textwidth}{\rule{\temptablewidth}{1pt}}
+}\vspace{-0.6cm}
+\end{footnotesize}
+\end{center}
+
+这六类\,4\,-动量中, 只有\,(a), (c)\,和\,(f)\,有已知的物理态解释. 对于情况\,(f)\,\ezx
+\linebreak
+$p^{\mu}=0$, 不需要多说; 它描述的是真空, 在$U(\Lambda)$下不变. 在后面, 我们只考虑情况\,(a)\,和\,(c),  它们分别对应质量$M>0$和零质量粒子的情况.
+
+是时候停下来谈一谈这些态的归一化. 利用量子力学中通常的正交归一化步骤, 我们可以选择这些用标准动量$k^{\mu}$标记的态使得它们是正交的, 在这个意义下
+\begin{equation}
+(\Psi_{k^{\prime},\sigma^{\prime}},\Psi_{k,\sigma})=\updelta^{3}(\bk %
+^{\prime}-\bk )\updelta_{\sigma^{\prime}\sigma}\:. \label{2.5.12}%
+\end{equation}
+(这里出现$\updelta$-函数是因为$\Psi_{k,\sigma}$和$\Psi_{k^{\prime},\sigma^{\prime}}$是一厄米算符的两个本征态, 而它们的本征值分别是$\bk $ 和$\bk ^{\prime}$.) 一个立即就可以看到的结果是,
+方程(\ref{2.5.8})和(\ref{2.5.11})中的小群表示必须是幺正的{}$^{*}$\footnote{$^{*}${}对于$p^{2}>0$和$p^{\mu}=0$的情况, 小群$SO(2,1)$和$SO(3,1)$没有非平庸的有限维幺正表示, 因此, 对于任何满足$p^{2}>0$或$p^{\mu}=0$的给定动量$p^{\mu}$, 如果在小群下有变换不平庸的态, 那么这些态的数目必然是无限个.}%
+\begin{equation}
+D^{\dag}(W) = D^{-1}(W)  \:. \label{2.5.13}%
+\end{equation}
+
+
+那么对于任意动量, 态的标量积是什么呢? 利用方程(\ref{2.5.5})和(\ref{2.5.11})中算符$U(\Lambda)$的幺正性, 对于标量积,
+我们发现:
+\begin{align*}
+(\Psi_{p^{\prime},\sigma^{\prime}},\Psi_{p,\sigma})  &= N(p)\,\Bigl(U^{-1}(L(p))\,\Psi_{p^{\prime},\sigma^{\prime}}%
+,\Psi_{k,\sigma}\Bigr)\\
+&  =N(p) N^{\ast}(p^{\prime}) D\Bigl(W(L^{-1}(p),p^{\prime})\Bigr)_{\sigma\sigma^{\prime}}^{\ast}\updelta^{3}(\bk ^{\prime
+}-\bk )
+\end{align*}
+其\marginpar[\flushright{\raisebox{10ex}[0pt]{{\small[66]\hspace*{5mm}}}}]{{\raisebox{10ex}[0pt]{\small\hspace*{5mm}[66]}}}中$k^{\prime}\equiv L^{-1}(p)p^{\prime}$. 又因为$k=L^{-1}(p)p$, 所以$\updelta$-函数$\updelta^{3}(\bk -\bk ^{\prime})$正比于
+$\updelta^{3}(\bp-\bp^{\prime})$. 当$p^{\prime}=p$时, 这里的小群变换是平庸的, $W(L^{-1}(p),p)=1$, 因而标量积是
+\begin{equation}
+(\Psi_{p^{\prime},\sigma^{\prime}},\Psi_{p,\sigma})=\lvert N(p)\rvert^{2}\updelta_{\sigma^{\prime}\sigma}\updelta^{3}%
+(\bk ^{\prime}-\bk )\:. \label{2.5.14}%
+\end{equation}
+剩下要做的是解出联系$\updelta^{3}(\bk -\bk ^{\prime})$与
+$\updelta^{3}(\bp-\bp^{\prime})$的比例因子. 注意到任意标量函数$f(p)$在\,4\,-动量满足$-p^{2}=M^{2}\geq0$以及$p^{0}>0$ (即情况\,(a)\, 或\,(c))的区域上的\,Lorentz\,不\marginpar[\flushright{\small[67]\hspace*{5mm}}]{{\small\hspace*{5mm}[67]}}变积分可以写为
+\begin{align*}
+&\int \dif^{4}p\: \updelta(p^{2}+M^{2})\theta(p^{0})f(p) \\
+&\quad =\int \dif^{3}\bp\,\dif p^{0}\: \updelta((p^{0})^{2}-\bp^{2}-M^{2})\theta(p^{0})f(\bp,p^{0})\\
+& \quad =\int \dif^{3}\bp\: \frac{f(\bp,\sqrt{\bp^{2}+M^{2}}%
+)}{2\sqrt{\bp^{2}+M^{2}}}%
+\end{align*}
+($\theta(p^{0})$是阶跃函数: $x\geq0$时$\theta(x)=1$, $x<0$时$\theta(x)=0$.) 我们看到, 当在``质量壳''$p^{2}+M^{2}=0$上积分时, 不变体积元是
+\begin{equation}
+\dif^{3}\bp\big/{\sqrt{\bp^{2}+M^{2}}}. \label{2.5.15}%
+\end{equation}
+$\updelta$-函数定义为\begin{align*}
+F(\bp)  &= \int F(\bp^{\prime})\updelta^{3}(\bp-\bp^{\prime})\,\dif^{3}\bp^{\prime}\\
+&  =\int F(\bp^{\prime})\,\Bigl[\sqrt{\bp^{\prime2}+M^{2}}%
+\updelta^{3}(\bp^{\prime}-\bp)\Bigr]  \frac{\dif^{3}\bp%
+^{\prime}}{\sqrt{\bp^{\prime2}+M^{2}}}%
+\end{align*}
+所以我们看到不变$\updelta$-函数是
+\begin{equation}
+\sqrt{\bp^{\prime2}+M^{2}}\updelta^{3}(\bp^{\prime}-\bp%
+)=p^{0}\updelta^{3}(\bp^{\prime}-\bp)\text{ }. \label{2.5.16}%
+\end{equation}
+因为$p^{\prime}$和$p$通过\,Lorentz\,变换$L(p)$分别与$k^{\prime}$和$k$相关, 于是我们有
+\[
+p^{0}\updelta^{3}(\bp^{\prime}-\bp)=k^{0}\updelta^{3}(\bk %
+^{\prime}-\bk )
+\]
+因而\begin{equation}
+(\Psi_{p^{\prime},\sigma^{\prime}},\Psi_{p,\sigma})=|N(p)|^{2}\updelta
+_{\sigma^{\prime}\sigma}\left(  \frac{p^{0}}{k^{0}}\right)  \updelta
+^{3}(\bp^{\prime}-\bp)\text{ }. \label{2.5.17}%
+\end{equation}
+归一化因子$N(p)$有时就选成$N(p)=1$, 但是这样我们会在标量积中保留$p^{0}/k^{0}$的踪迹.  我在这里将代之以更加通常的约定
+\begin{equation}
+N(p) = \sqrt{\vphantom{\big(}k^{0}/p^{0}} \label{2.5.18}%
+\end{equation}
+这样\begin{equation}
+(\Psi_{p^{\prime},\sigma^{\prime}},\Psi_{p,\sigma})=\updelta_{\sigma^{\prime
+}\sigma}\updelta^{3}(\bp^{\prime}-\bp) \:. \label{2.5.19}%
+\end{equation}
+
+我们现在来考察物理上感兴趣的两种情况: 质量$M>0$的粒子以及质量为零的粒子.
+
+\subsection*{正定质量}
+\marginpar[\flushright{\raisebox{3ex}[0pt]{{\small[68]\hspace*{5mm}}}}]{{\raisebox{3ex}[0pt]{\small\hspace*{5mm}[68]}}}
+
+这里的小群是三维旋转群. 它的幺正表示可以分解为$2j+1$维不可约表示\textsuperscript{\cite{7}} $D_{\sigma^{\prime}\sigma}^{(j)}(R)$的直和, 其中$j=0,\frac{1}{2},1,\cdots$. 这些表示可以通过无限小旋转$R_{ik}=\updelta_{ik}+\Theta_{ik}$的标准矩阵进行构造, 其中$\Theta_{ik}=-\Theta_{ki}$是无限小量:
+\begin{align}
+D_{\sigma^{\prime}\sigma}^{(j)}(1+\Theta) &= \updelta_{\sigma^{\prime}\sigma}
++\frac{\mi}{2}\Theta_{ik}(J_{ik}^{(j)})_{\sigma^{\prime}\sigma}\:, \label{2.5.20}\\
+(J_{23}^{(j)}\pm \mi J_{31}^{(j)})_{\sigma^{\prime}\sigma} &= (J_{1}^{(j)}\pm \mi J_{2}^{(j)})_{\sigma^{\prime}\sigma} \nonumber\\
+&= \updelta_{\sigma^{\prime},\sigma\pm1}\sqrt{(j\mp\sigma)(j\pm\sigma+1)}\:, \label{2.5.21} \\
+(J_{12}^{(j)})_{\sigma^{\prime}\sigma} &= (J_{3}^{(j)})_{\sigma^{\prime}\sigma}
+=\sigma\updelta_{\sigma^{\prime}\sigma} \:, \label{2.5.22}%
+\end{align}
+其中$\sigma$取遍值$j,j-1,\cdots,-j$. 对于质量$M>0$, 自旋为$j$的粒子, 方程(\ref{2.5.11})现在变成
+\begin{equation}
+U(\Lambda)\Psi_{p,\sigma} = \sqrt{\frac{ (\Lambda p)^{0}}{p^{0}}}
+\sum_{\sigma^{\prime}}D_{\sigma^{\prime}\sigma}^{(j)}(W(\Lambda,p))\,\Psi_{\Lambda
+p,\sigma^{\prime}}\text{ , } \label{2.5.23}%
+\end{equation}
+其中小群群元$W(\Lambda,p)$ (Wigner转动)$^{[5]}$由方程(\ref{2.5.10})给定:
+\[
+W(\Lambda,p) = L^{-1}(\Lambda p) \Lambda L(p)  \: .
+\]
+为了计算这个转动, 我们需要选择一个``标准增速''$L(p)$, 它使\,4\,-动量$k^{\mu}=(0,0,0,M)$变为$p^{\mu}$. 下面给出一个方便的选择
+\begin{align}
+L^{i}{}_{\!k}(p)   &= \updelta_{ik}+ (\gamma-1)\hat{p}_{i}\hat{p}_{k} \:, \nonumber\\
+L^{i}{}_{0}(p)     &= L^{0}{}_{i}(p)=\hat{p}_{i}\sqrt{\gamma^{2}-1}\:,\label{2.5.24}\\
+L^{0}{}_{0}(p)     &= \gamma \:, \nonumber
+\end{align}
+其中\[
+\hat{p}_{i}\equiv p_{i}/\lvert\bp\rvert \:, \qquad
+\gamma\equiv \sqrt{\bp^{2}+M^{2}}/M  \:.
+\]
+
+
+有一个非常重要的情况是$\Lambda^{\mu}{}_{\!\nu}$是任意的三维旋转$\mathscr{R}$, %
+此时\,Wigner\,旋转$W(\Lambda,p)$对于所有$p$都与$\mathscr{R}$相同. 为了看到这一点, %
+注意到增速(\ref{2.5.24})可以表示为
+\[
+L(p) = R(\hat{\bp}) B(\lvert\bp\rvert) R^{-1}(\hat{\bp}) \:,%
+\]
+其中$R(\hat{\bp})$是一个旋转(后面将用一个标准的方式定义, 见方\marginpar[\flushright{\small[69]\hspace*{5mm}}]{{\small\hspace*{5mm}[69]}}程(\ref{2.5.47})), 它使得第3坐标轴指向$\bp$的方向, 而
+\[
+B(\lvert \bp\rvert) = \left[
+\begin{array}
+[c]{ccccccc}%
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& \gamma &\hspace*{3mm}& \sqrt{\gamma^{2}-1}\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& \sqrt{\gamma^{2}-1} &\hspace*{3mm}& \gamma
+\end{array}
+\right]  \text{ }.
+\]
+那么对于任意旋转$\mathscr{R}$
+\[
+W(\mathscr{R},p) = R(\mathscr{R}\hat{\bp})B^{-1}(\lvert\bp\rvert)
+R^{-1}(\mathscr{R}\hat{\bp})\,\mathscr{R}\,R(\hat{\bp}) B(\lvert\bp\rvert)
+R^{-1}(\hat{\bp})  \:.
+\]
+但是旋转$R^{-1}(\mathscr{R}\hat{\bp})\mathscr{R} R(\hat{\bp})$使第3轴转向$\hat{\bp}$方向, 然后再转向$\mathscr{R}\hat{\bp}$方向,  然后再回到第3 轴, 所以, 它一定是绕第\,3\,轴转动某个$\theta$角的旋转
+\[
+R^{-1}(\mathscr{R}\hat{\bp}) \, \mathscr{R}\,R(\hat{\bp}) = R(\theta)  \equiv\left[
+\begin{array}
+[c]{ccccccc}%
+\cos\theta &\hspace*{3mm}& \sin\theta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+-\sin\theta &\hspace*{3mm}& \cos\theta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1
+\end{array}
+\right]  \text{ }.
+\]
+由于$R(\theta)$与$B(\lvert\bp\rvert)$对易, 这样就给出
+\[
+W(\mathscr{R},p) = R(\mathscr{R}\hat{\bp})B^{-1}(\lvert\bp\rvert) R(\theta) B(\lvert\bp\rvert)
+R^{-1}(\hat{\bp}) = R(\mathscr{R}\hat{\bp}) R(\theta) R^{-1}(\hat{\bp})
+\]
+因而
+\[
+W(\mathscr{R},p) = \mathscr{R} \:,
+\]
+这正是所要证明的. 因此, 对于一个运动的有质量粒子的态(以及通过扩张所得到的多粒子态), 它在旋转下的变换与非相对论量子力学中相同. 另一条好消息\ezx 球谐函数, Clebsch-Gordon\,系数等全套工具可以批量地从非相对论量子力学搬到相对论量子力学.
+
+\subsection*{零质量}
+
+
+首先, 我们必须要计算出小群的结构. 考虑一任意的小群群元$W^{\mu}{}_{\!\nu}$, 它满足$W^{\mu}{}_{\!\nu}k^{\nu}=k^{\mu}$, 其中$k^{\mu}=(0,0,1,1)$ 是该情况下的标准\,4\,-矢.   这类\,Lorentz\,变换作用在类时\,4\,-矢$t^{\mu}=(0,0,0,1)$上给出的\,4\,-矢$Wt$, 它的长度以及它与$Wk=k$的标量积必须与$t$ 的长度以及$t$与$k$的标量积相同:
+\begin{gather*}
+(Wt)^{\mu}(Wt)_{\mu} = t^{\mu}t_{\mu} = -1 \:,\\
+(Wt)^{\mu}k_{\mu}=t^{\mu}k_{\mu}=-1 \:.
+\end{gather*}
+任何满足第二个条件的\,4\,-矢可以写成
+\[
+(Wt)^{\mu} = (\alpha,\beta,\zeta,1+\zeta )
+\]
+那么第\marginpar[\flushright{\small[70]\hspace*{5mm}}]{{\small\hspace*{5mm}[70]}}一个条件给出如下关系
+\begin{equation}
+\zeta = (\alpha^{2}+\beta^{2})/2 \:. \label{2.5.25}%
+\end{equation}
+由此可知, $W^{\mu}{}_{\!\nu}$作用在$t^{\nu}$上的效果与如下\,Lorentz\,变换相同
+\begin{equation}
+S^{\mu}{}_{\!\nu}(\alpha,\beta) = \left[
+\begin{array}
+[c]{ccccccc}%
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& -\alpha &\hspace*{3mm}& \alpha\\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& -\beta &\hspace*{3mm}& \beta\\
+\alpha &\hspace*{3mm}& \beta &\hspace*{3mm}& 1-\zeta &\hspace*{3mm}& \zeta\\
+\alpha &\hspace*{3mm}& \beta &\hspace*{3mm}& -\zeta &\hspace*{3mm}& 1+\zeta
+\end{array}
+\right]  \text{ }. \label{2.5.26}%
+\end{equation}
+这并不意味着$W$等于$S(\alpha,\beta)$, 但是它确实意味着$S^{-1}(\alpha,\beta)W$是一个保类时\,4\,-矢$(0,0,0,1)$不变的\,Lorentz\,变换, 所以它是一个纯旋转. 另外, 和$W^{\mu}{}_{\!\nu}$一样, $S^{\mu}{}_{\!\nu}$保类光\,4\,-矢$(0,0,1,1)$不变, 所以$S^{-1}(\alpha,\beta)W$必然是绕第\,3\, 轴转动某个$\theta$角的旋转
+\begin{equation}
+S^{-1}(\alpha,\beta) W = R(\theta)  \:,
+\label{2.5.27}%
+\end{equation}
+其中\[
+R^{\mu}{}_{\!\nu}(\theta) \equiv \left[
+\begin{array}
+[c]{ccccccc}%
+\cos\theta &\hspace*{3mm}& \sin\theta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+-\sin\theta &\hspace*{3mm}& \cos\theta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1
+\end{array}
+\right]  \text{ }.
+\]
+因此, 小群群元的最普遍形式是
+\begin{equation}
+W(\theta,\alpha,\beta) = S(\alpha,\beta) R(\theta)  \:. \label{2.5.28}%
+\end{equation}
+
+
+这是什么群呢? 我们注意到$\theta=0$或$\alpha=\beta=0$的变换构成子群:
+\begin{equation}
+S(\bar{\alpha},\bar{\beta})S(\alpha,\beta) = S(\bar{\alpha}+\alpha,\bar{\beta}+\beta) \label{2.5.29}%
+\end{equation}%
+\begin{equation}
+R(\bar{\theta}) R(\theta) = R(\bar{\theta}+\theta)  \:. \label{2.5.30}%
+\end{equation}
+这些子群是{\KAI{阿贝尔}}的\ezx 即它们的全部群元彼此对易. 更进一步, $\theta=0$的子群是{\KAI{不变}}子群, 也就是说, 这个群中的任何的一个元素将这个子群中的一个元素变换到同一子群中的另一个元素
+\begin{equation}
+R(\theta) S(\alpha,\beta) R^{-1}(\theta) = S(\alpha\cos\theta+\beta\sin\theta,-\alpha\sin\theta+\beta\cos\theta) \:.  \label{2.5.31}%
+\end{equation}
+通过方程(\ref{2.5.29})\yzx (\ref{2.5.31}), 我们可以计算出任意群元的乘积. 读者会发现, 这些乘法规则是群$ISO(2)$的乘积规则, 由二维中的平移(平移矢量为\,$(\alpha,\beta)$)和旋转(旋转角度为$\theta$)构成.
+
+如果一个群{\KAI{没有}}不变阿贝尔子群, 那么它有一些简单性质, 由于这个原因称它是{\KAI{半单}}的. 正如我们已经看到的,
+小\marginpar[\flushright{\small[71]\hspace*{5mm}}]{{\small\hspace*{5mm}[71]}}群$ISO(2)$和非齐次\,Lorentz\, 群一样都{\KAI{不}}是半单的, 这导致了有趣的复杂性. 首先, 我们来看一下$ISO(2)$的\,Lie\,代数. 对于无限小的$\theta,\alpha,\beta$, 一般群元是
+\begin{align*}
+&W(\theta,\alpha,\beta)^{\mu}{}_{\!\nu} = \updelta^{\mu}{}_{\!\nu}+\omega^{\mu}{}_{\!\nu} \:, \\
+&\omega_{\mu\nu}=\left[
+\begin{array}
+[c]{ccccccc}%
+0 &\hspace*{3mm}& \theta &\hspace*{3mm}& -\alpha &\hspace*{3mm}& \alpha\\
+-\theta &\hspace*{3mm}& 0 &\hspace*{3mm}& -\beta &\hspace*{3mm}& \beta\\
+\alpha &\hspace*{3mm}& \beta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+-\alpha &\hspace*{3mm}& -\beta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0
+\end{array}
+\right]  \text{ }.
+\end{align*}
+通过(\ref{2.4.3}%
+), 我们看到相应的Hilbert空间算符是\begin{equation}
+U(W(\theta,\alpha,\beta)) = 1 + \mi\alpha A + \mi\beta B + \mi\theta J_{3}\:, \label{2.5.32}%
+\end{equation}
+其中$A$和$B$是厄米算符
+\begin{align}
+A &= -J^{13}+J^{10}=J_{2}+K_{1}\text{ , }\label{2.5.33}\\
+B &= -J^{23}+J^{20}=-J_{1}+K_{2}\text{ , } \label{2.5.34}%
+\end{align}
+并且, 像前面一样, $J_{3}=J_{12}$. 无论是通过(\ref{2.4.18})\yzx (\ref{2.4.20}), 还是直接由方程(\ref{2.5.29})\yzx (\ref{2.5.31}), 我们看到这些生成元有如下的对易关系
+\begin{align}
+[J_{3},A]   &= +\mi B\:,\label{2.5.35}\\
+[J_{3},B]   &= -\mi A\:,\label{2.5.36}\\
+[A,    B]   &= 0 \:. \label{2.5.37}%
+\end{align}
+由于$A$和$B$是对易的厄米算符, 所以它们(类似于非齐次\,Lorentz\,群的动量生成元)可以同时被态$\Psi_{k,a,b}$对角化
+\begin{align*}
+A\Psi_{k,a,b}  &= a\Psi_{k,a,b} \:, \\
+B\Psi_{k,a,b}  &= b\Psi_{k,a,b} \:.
+\end{align*}
+问题是: 如果我们找到$A,B$的这样一组非零本征值, 那么我们就得到一个完全连续的谱. 通过方程(\ref{2.5.31}), 我们有
+\begin{align*}
+U[R(\theta)] \,A\, U^{-1}[R(\theta)] &= A\cos\theta-B\sin\theta \:, \\
+U[R(\theta)]  \,B\, U^{-1}[R(\theta)] &= A\sin\theta+B\cos\theta \:,
+\end{align*}
+因而, 对任意$\theta$,
+\begin{align*}
+A\Psi_{k,a,b}^{\theta}  &= (a\cos\theta-b\sin\theta)\Psi_{k,a,b}^{\theta} \:, \\
+B\Psi_{k,a,b}^{\theta}  &= (a\sin\theta+b\cos\theta)\Psi_{k,a,b}^{\theta} \:,%
+\end{align*}
+其中\[
+\Psi_{k,a,b}^{\theta}\equiv U^{-1}(R(\theta))\,\Psi_{k,a,b}\: .
+\]
+但是\marginpar[\flushright{\small[72]\hspace*{5mm}}]{{\small\hspace*{5mm}[72]}}对无质量粒子的观测没有发现任何像$\theta$这样的连续自由度; 为了避免这类连续态, 我们必须要求物理态(现在称为$\Psi_{k,\sigma}$)是$A$和$B$ 的$a=b=0$的本征矢:
+\begin{equation}
+A\Psi_{k,\sigma}=B\Psi_{k,\sigma}=0\text{ }. \label{2.5.38}%
+\end{equation}
+那么, 这些态通过其余的生成元的本征值进行区分\begin{equation}
+J_{3}\Psi_{k,\sigma}=\sigma\Psi_{k,\sigma}\text{ }. \label{2.5.39}%
+\end{equation}
+由于动量$\bk $在$3$-方向上, $\sigma$给出角动量在运动方向上的分量, 或者说, {\KAI{螺旋度}}.
+
+现在, 我们可以着手计算一般无质量粒子态的\,Lorentz\,变换性质. 首先注意到, 通过\,\ref{sec:2.2}\,节的一般讨论, 对有限的$\alpha$ 和$\beta$, 方程(\ref{2.5.32})推广为
+\begin{equation}
+U(S(\alpha,\beta)) = \exp(\mi\alpha A+\mi\beta B)  \label{2.5.40}%
+\end{equation}
+对有限的$\theta$则推广为
+\begin{equation}
+U(R(\theta)) = \exp(\mi J_{3}\theta) \:. \label{2.5.41}%
+\end{equation}
+小群的任意一个群元$W$可以写成(\ref{2.5.28})的形式, 从而有
+\[
+U(W)\Psi_{k,\sigma} = \exp(\mi\alpha A+\mi\beta B)\exp(\mi\theta J_{3})\Psi_{k,\sigma}
+=\exp(\mi\theta\sigma) \Psi_{k,\sigma}%
+\]
+因而, 方程(\ref{2.5.8})给出\[
+D_{\sigma^{\prime}\sigma}(W) = \exp(\mi\theta\sigma)\updelta_{\sigma^{\prime}\sigma} \:, %
+\]
+其中$\theta$是通过将$W$按方程(\ref{2.5.28})表达定义的角度. 对于任意螺旋度的无质量粒子, 它们的\,Lorentz\,变换规则现在由方程(\ref{2.5.11})和(\ref{2.5.18})给出
+\begin{equation}
+U(\Lambda) \Psi_{p,\sigma}=\sqrt{\frac{(\Lambda p)^{0}}{p^{0}}}\,\exp(\mi\sigma\theta(\Lambda,p))\,
+\Psi_{\Lambda p,\sigma} \label{2.5.42}%
+\end{equation}
+其中$\theta(\Lambda,p)$定义为
+\begin{equation}
+W(\Lambda,p) \equiv L^{-1}(\Lambda p) \Lambda L(p) \equiv
+S(\alpha(\Lambda,p),\beta(\Lambda,p)) R(\theta(\Lambda,p))  \:. \label{2.5.43}%
+\end{equation}
+在\,\ref{sec:5.9}\,节, 我们将看到电磁规范不变性来自于小群中被$\alpha$和$\beta$参数化的那部分.
+
+到目前为止, 我们还没有遇到什么理由阻止无质量粒子的螺旋度$\sigma$取任意实数. 我们将在\,\ref{sec:2.7}\,节看到, 有一些拓扑上的原因使得$\sigma$与有质量粒子的情况一样只能取整数或半整数.
+
+为了\marginpar[\flushright{\small[73]\hspace*{5mm}}]{{\small\hspace*{5mm}[73]}}计算给定$\Lambda$和$p$的小群群元(\ref{2.5.43}), (并使我们能够在下一节计算时间反演或空间反演在这些态上的作用效果)对于那些将%
+$k^{\mu}=(0,0,\kappa,\kappa)$变到$p^{\mu}$的标准\,Lorentz\,变换, 我们需要确定一个约定. 将这个变换选成如下形式将是方便的
+\begin{equation}
+L(p) = R(\hat{\bp}) B(\lvert\bp\rvert/\kappa)  \label{2.5.44}%
+\end{equation}
+其中, $B(u)\,\!$是沿第3方向上的纯增速:
+\begin{equation}
+B(u)  \equiv\left[
+\begin{array}
+[c]{ccccccc}%
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& \left(  u^{2}+1\right)  /2u &\hspace*{3mm}& \left(  u^{2}-1\right)  /2u\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& \left(  u^{2}-1\right)  /2u &\hspace*{3mm}& \left(  u^{2}+1\right)  /2u
+\end{array}
+\right]  \label{2.5.45}%
+\end{equation}
+而$R(\hat{\bp})$是使第3轴转向单位矢量$\hat{\bp}$方向的纯转动. 例如, 假设我们让$\hat{\bp}$有极角$\theta$和方位角$\phi$:
+\begin{equation}
+\hat{\bp} = (\sin\theta \cos\phi , \sin\theta \sin\phi , \cos\theta)  \:. \label{2.5.46}%
+\end{equation}
+那么, 我们可以将$R(\hat{\bp})$取成, 先绕第2轴转动角度$\theta$, 这使$(0,0,1)$变为$(\sin\theta,0,\cos\theta)$, 然后绕第3轴转动角度$\phi$:
+\begin{equation}
+U(R(\hat{\bp})) = \exp(-\mi\phi J_{3}) \exp(-\mi \theta J_{2}) \:, \label{2.5.47}%
+\end{equation}
+其中$0\leq\theta\leq\uppi$, $0\leq\phi<2\uppi$. (我们给出$U(R(\hat{\bp}))$而不是$R(\hat{\bp})$并指定$\phi$和$\theta$的范围, 是因为$\theta$或$\phi$改变$2\uppi$会给出相同的旋转$R(\hat{\bp})$, 但是对于$U(R(\hat{\bp}))$, 当其作用在一个半整数自旋态上时, $\theta$ 或$\phi$改变$2\uppi$会产生一个符号差异.) 由于(\ref{2.5.47}%
+)是一个转动, 并使第3轴转到方向(\ref{2.5.46}), 这类$R(\hat{\bp})$的所有其他选择与这个选择至多相差一个绕第3轴的初始旋转, 而这仅相当于重新定义一个单粒子态相位.
+
+注意到螺旋度是\,Lorentz\,不变的; 螺旋度$\sigma$给定的无质量粒子在所有惯性系中(除了它的动量)看起来是相同的. 事实上, 我们有道理认为螺旋度不同的无质量粒子是不同种类的粒子. 然而, 我们将在下一节看到,  螺旋度相反的粒子通过空间反演对称性相关联. 因此, 由于电磁力和引力是空间反演对称的, 与电磁现象相联系的螺旋度为$\pm1$的无质量粒子都被称为{\KAI{光子}}, %
+而螺旋度为$\pm2$的, 被认为与引力相联系的无质量粒子都被称为{\KAI{引力子}}. 另一方面, %
+在核$\beta$-衰变中发射出的粒子中可能有螺旋度为$\pm1/2$的无质量粒子, %
+它们不参与具有空间反演对称性的相互作用(引力除外), 所以这些粒子被赋予了不同的名字: %
+螺\marginpar[\flushright{\small[74]\hspace*{5mm}}]{{\small\hspace*{5mm}[74]}}旋度为$+1/2$的粒子称为{\KAI{中微子}}, 螺旋度为$-1/2$的粒子称为{\KAI{反中微子}}.
+
+虽然无质量粒子的螺旋度是\,Lorentz\,不变的, 但态本身却不是这样. 特别地, %
+由于方程(\ref{2.5.42})中有依赖螺旋度的相因子$\exp(\mi\sigma\theta)$, %
+螺旋度相反的单粒子态线性叠加形成的态在一个\,Lorentz\,变换后会变成另一个不同的叠加. %
+例如, 4\,-动量为$p$的一般单光子态可以写成
+\[
+\Psi_{p;\alpha}=\alpha_{+}\Psi_{p,+1}+\alpha_{-}\Psi_{p,-1}\:,%
+\]
+其中
+\[
+\lvert \alpha_{+}\rvert^{2}+\lvert \alpha_{-} \rvert^{2} = 1 \:.
+\]
+一般情况下, 这是{\KAI{椭圆偏振}}的一种情况, 其中$\lvert\alpha_{\pm}\rvert$非零且不相等. {\KAI{圆偏振}}是$\alpha_{+}$和$\alpha_{-}$中有一个为零的极端情况, 而{\KAI{线偏振}}是相反的极端情况, 它满足$\lvert\alpha_{+}\rvert = \lvert \alpha_{-}\rvert$. $\alpha_{+}$和$\alpha_{-}$的总相位没有物理意义, 对线偏振可以调整总相位使得$\alpha_{-}=\alpha_{+}^{\ast}$, 但是相对相位仍然是重要的. 事实上, 对于$\alpha_{-}=\alpha_{+}^{\ast}$ 的线偏振, $\alpha_{+}$ 的相位可以视为偏振面与某个垂直于$\bp$的固定参考系之间的夹角. 方程(\ref{2.5.42}) 表明, %
+在\,Lorentz\,变换$\Lambda^{\mu}{}_{\!\nu}$下, 这个角度旋转了$\theta(\Lambda,p)$. %
+可以用一种类似的方式定义面偏振引力子, 此时方程(\ref{2.5.42})有如下结果: %
+Lorentz\,变换$\Lambda$会将偏振面旋转角度$2\theta(\Lambda,p)$.
+
+
+%++++++++++++++++2.6+++++++++++++
+
+
+\section{空间反演和时间反演} \label{sec:2.6}
+\setcounter{equation}{0}
+
+
+我们在\,\ref{sec:2.3}\,节看到, 任何齐次\,Lorentz\,变换要么是固有且正时的(即, $\operatorname{Det}\Lambda=+1$且$\Lambda^{0}{}_{0}\geq+1$)要么等于固有正时变换乘以$\mathscr{P}$%
+或$\mathscr{T}$或$\mathscr{PT}$, 这里的$\mathscr{P}$和$\mathscr{T}$是空间反演变换和时间反演变换
+\[
+\mathscr{P}^{\mu}{}_{\!\nu}=\left[
+\begin{array}
+[c]{ccccccc}%
+-1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& -1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& -1 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1
+\end{array}
+\right]  \:, \qquad
+\mathscr{T}^{\mu}{}_{\!\nu}=\left[
+\begin{array}
+[c]{ccccccc}%
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& -1
+\end{array}
+\right]  \:.
+\]
+Poincar\'{e}\,群的基本乘积规则曾被认为是不证自明的
+\[
+U(\bar{\Lambda},\bar{a})\, U(\Lambda,a) = U(\bar{\Lambda}\Lambda,\Lambda a+\bar{a})
+\]
+哪\marginpar[\flushright{\small[75]\hspace*{5mm}}]{{\small\hspace*{5mm}[75]}}怕$\Lambda$和(或)$\bar{\Lambda}$包含$\mathscr{P}$或$\mathscr{T}$或$\mathscr{PT}$因子.  特别的, 我们相信存在对应$\mathscr{P}$ 和$\mathscr{T}$ 本身的算符:
+\[
+\mathsf{P} \equiv U(\mathscr{P},0) \qquad \mathsf{T}\equiv U(\mathscr{T},0)
+\]
+使得对任意固有正时\,Lorentz\,变换$\Lambda^{\mu}{}_{\!\nu}$和平移$a^{\mu}$有
+\begin{align}
+\mathsf{P}U(\Lambda,a)\mathsf{P}^{-1}  &= U(\mathscr{P}\Lambda\mathscr{P}^{-1},\mathscr{P}a) \:, \label{2.6.1}\\
+\mathsf{T}U(\Lambda,a)\mathsf{T}^{-1}  &= U(\mathscr{T}\Lambda\mathscr{T}^{-1},\mathscr{T}a) \:. \label{2.6.2}%
+\end{align}
+这些变换规则体现了我们称$\mathscr{P}$或$\mathscr{T}$``守恒''时的大部分含义.
+
+1956\yzx 1957\,年, 人们开始明白,\textsuperscript{\cite{8}} 仅在弱作用(就是那些引起核$\beta$-衰变的作用)效应可以忽略的近似下, 对于$\mathsf{P}$这才是正确. 时间反演幸存了一段时间, 但在\,1964\,年, 出现了一些间接的证据\textsuperscript{\cite{9}}表明$\mathsf{T}$的这些性质也只是近似地满足. (见\,\ref{sec:3.3}\,节.) 在下文中, 我们先假设满足方程(\ref{2.6.1})和(\ref{2.6.2})的算符$\mathsf{P}$和$\mathsf{T}$真地存在, 但要记住这只是一个近似.
+
+我们将方程(\ref{2.6.1})和(\ref{2.6.2})应用于无限小变换的情况, 即,
+\[
+\Lambda^{\mu}{}_{\!\nu} = \updelta^{\mu}{}_{\!\nu} + \omega^{\mu}{}_{\!\nu}\qquad a^{\mu}=\epsilon^{\mu}
+\]
+其中$\omega_{\mu\nu}=-\omega_{\nu\mu}$和$\epsilon_{\mu}$均是无限小量. 利用(\ref{2.4.3}), 以及方程(\ref{2.6.1})和(\ref{2.6.2})中$\omega_{\rho\sigma}$和$\epsilon_{\rho}$的系数相等, 我们得到了\,Poincar\'{e}\,生成元的$\mathsf{P}$变换性质和$\mathsf{T}$变换性质
+\begin{align}
+\mathsf{P}\,\mi J^{\rho\sigma}\,\mathsf{P}^{-1} &= \mi\mathscr{P}_{\mu}{}^{\rho}\mathscr{P}_{\nu}{}^{\sigma}J^{\mu\nu}\:,\label{2.6.3}\\
+\mathsf{P}\,\mi P^{\rho}\,\mathsf{P}^{-1} &=\mi\mathscr{P}_{\mu}{}^{\rho}P^{\mu} \:, \label{2.6.4}\\
+\mathsf{T}\,\mi J^{\rho\sigma}\,\mathsf{T}^{-1}  &= \mi\mathscr{T}_{\mu}{}^{\rho}\mathscr{T}_{\nu}{}^{\sigma}J^{\mu\nu}  \:, \label{2.6.5}\\
+\mathsf{T}\,\mi P^{\rho}\,\mathsf{T}^{-1}  &= \mi\mathscr{T}_{\mu}{}^{\rho}P^{\mu} \:. \label{2.6.6}%
+\end{align}
+除了没有消掉方程两边的$\mi$因子, 这与方程(\ref{2.4.8})和(\ref{2.4.9})非常相像, 没有消掉$\mi$因子是因为我们现在还没有决定$\mathsf{P}$ 和$\mathsf{T}$是线性且幺正的%
+还是反线性且反幺正的.
+
+做出这个判断很容易. 在方程(\ref{2.6.4})中令$\rho=0$给出
+\[
+\mathsf{P}\,\mi H\,\mathsf{P}^{-1}=\mi H \:,
+\]
+其中$H\equiv P^{0}$是能量算符. 如果$\mathsf{P}$是反线性且反幺正的, 那么它与$\mi$反对易, 从而$\mathsf{P}H\mathsf{P}^{-1}=-H$. 但这样一来, 对任意能量$E>0$的态$\Psi$, 必存在另一个能量为$-E<0$的\marginpar[\flushright{\small[76]\hspace*{5mm}}]{{\small\hspace*{5mm}[76]}}态$\mathsf{P}^{-1}\Psi$. 由于不存在负能态(能量小于真空的态), 所以我们被迫选择另一种可能: $\mathsf{P}${\KAI{是线性和幺正的, 并且与}}$H${\KAI{对易而非反对易}}.
+
+另一方面, 在方程(\ref{2.6.6})中令$\rho=0$给出
+\[
+\mathsf{T} \,\mi H\,\mathsf{T}^{-1}=-\mi H \:.
+\]
+如果我们假定$\mathsf{T}$是线性且幺正的, 那么我们就能消掉两个$\mi$, 并得到$\mathsf{T}H\mathsf{T}^{-1}=-H$, 这又是一个灾难性的结果, 对于任何能量为$E$的态$\Psi$, 总存在另一态$\mathsf{T}^{-1}\Psi$, 其能量为$-E$. 为了避免这个结果, 我们只能得到结论: $\mathsf{T}${\KAI{是反线性且反幺正的}}.
+
+既然我们已经确定$\mathsf{P}$是线性而$\mathsf{T}$是反线性的, 利用生成元(\ref{2.4.15})\yzx (\ref{2.4.17}), 我们可以方便地将方程(\ref{2.6.3})\yzx (\ref{2.6.6})重写为三维形式
+\begin{align}
+\mathsf{P}\bJ\mathsf{P}^{-1}  &= +\bJ \:, \label{2.6.7}\\
+\mathsf{P}\bK\mathsf{P}^{-1}  &= -\bK\:, \label{2.6.8}\\
+\mathsf{P}\bP\mathsf{P}^{-1}  &= -\bP\:, \label{2.6.9}\\
+\mathsf{T}\bJ\mathsf{T}^{-1}  &= -\bJ\:, \label{2.6.10}\\
+\mathsf{T}\bK\mathsf{T}^{-1}  &= +\bK\:, \label{2.6.11}\\
+\mathsf{T}\bP\mathsf{T}^{-1}  &= -\bP\:, \label{2.6.12}%
+\end{align}
+以及前面证明的,
+\begin{equation}
+\mathsf{P}H\mathsf{P}^{-1}=\mathsf{T}H\mathsf{T}^{-1}=H \:.
+\label{2.6.13}%
+\end{equation}
+$\mathsf{P}$应该保持$\bJ$%
+的符号在物理上是合理的, 这是因为仅轨道角动量而言, 它是两个矢量的矢量积$\br\times\bp$, 在空间坐标系的反演下, 它们两个均改变符号. 另一方面, $\mathsf{T}$使$\bJ$反号, 这是因为在时间反演下, 观察者将会看到所有物体向相反方向旋转. 另外, 注意到方程(\ref{2.6.10})与角动量对易关系$\bJ\times\bJ=\mi\bJ$相容, 这是因为$\mathsf{T}$不仅使$\bJ$反号, 也使$\mi$反号. 读者可以轻松证明方程(\ref{2.6.7})\yzx (\ref{2.6.13})与所有的对易关系(\ref{2.4.18})\yzx (\ref{2.4.24})相容.
+
+现在, 我们来考察$\mathsf{P}$和$\mathsf{T}$对单粒子态做了什么:
+
+\noindent\textbf{{\textsf{P}}}\text{\ }:\text{\ }$\boldsymbol{M>0}$
+
+\noindent 单粒子态$\Psi_{k,\sigma}$%
+定义成$\bP$, $H$和$J_{3}$的本征矢, 本征值分别为$0$, $M$和$\sigma$. 从方程(\ref{2.6.7}), (\ref{2.6.9})和(\ref{2.6.13}), 我们看到对于态$\mathsf{P}\Psi_{k,\sigma}$, 这也必须成立, 因此(除非简并)这些态仅相差一个相位
+\[
+\mathsf{P}\Psi_{k,\sigma}=\eta_{\sigma}\Psi_{k,\sigma}%
+\]
+它的相位因子($\lvert \eta\rvert=1$)可能与自旋相关, 也可能与自旋无关. 为\marginpar[\flushright{\small[77]\hspace*{5mm}}]{{\small\hspace*{5mm}[77]}}了看到$\eta_{\sigma}$独立于$\sigma$, 我们从(\ref{2.5.8}), (\ref{2.5.20}) 和(\ref{2.5.21})看到
+\begin{equation}
+(J_{1}\pm \mi J_{2})\Psi_{k,\sigma} = \sqrt{(j\mp\sigma)(j\pm\sigma+1)} \, \Psi_{k,\sigma\pm1}\text{
+, } \label{2.6.14}%
+\end{equation}
+其中$j$是粒子自旋. 两边用$\mathsf{P}$作用, 我们发现
+\[
+\eta_{\sigma}=\eta_{\sigma\pm1}%
+\]
+所以, $\eta_{\sigma}$确实独立于$\sigma$. 我们因此写出
+\begin{equation}
+\mathsf{P}\Psi_{k,\sigma}=\eta\Psi_{k,\sigma} \label{2.6.15}%
+\end{equation}
+其中$\eta$是一个相位, 被称为{\KAI{内禀宇称}}, 仅依赖于$\mathsf{P}$所作用的粒子种类.
+
+为了得到有限动量态, 我们必须要使用对应``增速''(\ref{2.5.24})的幺正算符$U(L(p))$:
+\[
+\Psi_{p,\sigma}=\sqrt{M/p^{0}}\,U(L(p))\,\Psi_{k,\sigma} \:.
+\]
+我们注意到\begin{gather*}
+\mathscr{P}L(p)\mathscr{P}^{-1} = L(\mathscr{P}p) \\
+\mathscr{P}p=\Bigl(-\bp,\sqrt{\bp^{2}+M^{2}}\Bigr)
+\end{gather*}
+所以, 利用方程(\ref{2.6.1})和(\ref{2.6.15}), 我们有
+\[
+\mathsf{P}\Psi_{p,\sigma}=\sqrt{M/p^{0}}\,U(L(\mathscr{P}p))\eta\Psi_{k,\sigma}%
+\]
+或者, 换种形式
+\begin{equation}
+\mathsf{P}\Psi_{p,\sigma}=\eta\Psi_{\mathscr{P}p,\sigma} \:.
+\label{2.6.16}%
+\end{equation}
+
+
+\noindent\textbf{{\textsf{T}}}\text{\ }:\text{\ }$\boldsymbol{M>0}$
+
+\noindent 从方程(\ref{2.6.10}), (\ref{2.6.12})和(\ref{2.6.13})中, 我们看到$\mathsf{T}$作用在零动量单粒子态$\Psi_{k,\sigma}$的效果是产生一个态, 满足
+\begin{align*}
+\bP (\mathsf{T}\Psi_{k,\sigma}) &= 0  \:, \\
+H(\mathsf{T}\Psi_{k,\sigma})   &= M(\mathsf{T}\Psi_{k,\sigma})  \:, \\
+J_{3}(\mathsf{T}\Psi_{k,\sigma}) &= -\sigma(\mathsf{T}\Psi_{k,\sigma})  \:,
+\end{align*}
+因此
+\[
+\mathsf{T}\Psi_{k,\sigma}=\zeta_{\sigma}\Psi_{k,-\sigma} \: , %
+\]
+其中$\zeta_{\sigma}$是相因子. 用算符$\mathsf{T}$作用(\ref{2.6.14}), 而$\mathsf{T}$又与$\bJ$ {\KAI{和}} $\mi$反对易, 我们发现
+\[
+(-J_{1}\pm \mi J_{2}) \zeta_{\sigma}\Psi_{k,-\sigma} = \sqrt{(j\mp\sigma)(j\pm\sigma+1)}\zeta_{\sigma\pm1}
+\Psi_{k,-\sigma\mp1}\text{ }.
+\]
+再在方程左边使用方程(\ref{2.6.14}), 我们看到平方根因子消掉了, 于是
+\[
+-\zeta_{\sigma}=\zeta_{\sigma\pm1} \:.
+\]
+我们将这个解写\marginpar[\flushright{\small[78]\hspace*{5mm}}]{{\small\hspace*{5mm}[78]}}成$\zeta_{\sigma}=\zeta(-)^{j-\sigma}$, 其中$\zeta$是另一个相位, 它只依赖粒子的种类:
+\begin{equation}
+\mathsf{T}\Psi_{k,\sigma}=\zeta(-)^{j-\sigma}\Psi_{k,-\sigma} \:. \label{2.6.17}%
+\end{equation}
+然而, 不像``内禀宇称''$\eta$, 时间反演相位$\zeta$没有物理意义. 这是因为我们可以通过改变相位来重新定义单粒子态
+\[
+\Psi_{k,\sigma} \to \Psi_{k,\sigma}^{\prime}=\zeta^{1/2}\Psi_{k,\sigma} \:.
+\]
+这样一来, 相位$\zeta$在变换规则中就被消除了
+\[
+\mathsf{T}\Psi_{k,\sigma}^{\prime}=\zeta^{\ast1/2}\mathsf{T}\Psi_{k,\sigma}
+=\zeta^{\ast1/2}\zeta(-)^{j-\sigma}\Psi_{k,-\sigma}=(-)^{j-\sigma}\Psi_{k,-\sigma}^{\prime}\: .
+\]
+在下文中, 我们将在方程(\ref{2.6.17})中保留这个任意相位$\zeta$, 这样做仅仅是为了留有一个选择相位的余地, 但应记住这个相位不是真正重要的.
+
+为了处理有限动量态, 我们再次使用``增速''(\ref{2.5.24}). 注意到
+\[
+\mathscr{T}L(p)\mathscr{T}^{-1}=L(\mathscr{P}p) \: ,
+\]%
+\[
+\mathscr{P}p=\Bigl(-\bp,\sqrt{\bp^{2}+M^{2}}\Bigr) \:.
+\]
+(这就是说, 在$L^{\mu}{}_{\!\nu}$中, 对于那些带有奇数个{\KAI{时间}}指标的元素, 和那些带有奇数个{\KAI{空间}}指标的元素, 改变前者的符号等于改变后者的符号) 利用方程(\ref{2.6.2})和(\ref{2.5.5}), 我们就有\begin{equation}
+\mathsf{T}\Psi_{p,\sigma}=\zeta (-)^{j-\sigma}\Psi_{\mathscr{P}p,-\sigma} \:. \label{2.6.18}%
+\end{equation}
+
+
+\noindent\textbf{{\textsf{P}}}\text{\ }:\text{\ }$\boldsymbol{M=0}$
+
+\noindent 态$\Psi_{k,\sigma}$的定义是$P^{\mu}$和$J_{3}$的本征矢, 本征值分别是$k^{\mu}=(0,0,\kappa,\kappa)$和$\sigma$, 当宇称算符$\mathsf{P}$ 作用在这个态上时, 它会产生四动量为$(\mathscr{P}k)^{\mu}=(0,0,-\kappa,\kappa)$而$J_{3}$等于$\sigma$的态.
+因此, 它使螺旋度(自旋在运动方向上的投影)为$\sigma$的态变成螺旋度为$-\sigma$的态. 正如前面提到的, 这证明了存在空间反演对称性将会要求任何种类的螺旋度非零的无质量粒子都必须伴随着另一个螺旋度相反的粒子. 由于$\mathsf{P}$并不保持标准动量不变, 考察算符$U(R_{2}^{-1})\mathsf{P}$反而更方便, 这里的$R_{2}$ 也是一个能使$k$变为$\mathscr{P}k$的旋转, 可以方便地选成绕第2轴的$180^{\circ}$旋转
+\begin{equation}
+U (R_{2}) = \exp(\mi\uppi J_{2})  \:.
+\label{2.6.19}%
+\end{equation}
+由于$U(R_{2}^{-1})$使$J_{3}$变号, 我们有
+\begin{equation}
+U(R_{2}^{-1})\mathsf{P}\Psi_{k,\sigma}=\eta_{\sigma}\Psi_{k,-\sigma}
+\label{2.6.20}%
+\end{equation}
+其\marginpar[\flushright{\small[79]\hspace*{5mm}}]{{\small\hspace*{5mm}[79]}}中$\eta_{\sigma}$是相因子. 现在, $R_{2}^{-1}\mathscr{P}$与\,Lorentz\,``增速''(\ref{2.5.45})对易, 并且$\mathscr{P}$与使第3轴朝向$\bp$ 方向的旋转$R(\hat{\bp})$对易, 所以, 通过用$\mathsf{P}$作用(\ref{2.5.5}), 对于一般四动量$p^{\mu}$, 我们发现
+\begin{align*}
+\mathsf{P}\Psi_{p,\sigma}  &= \sqrt{\frac{\kappa}{p^{0}}} \, U\biggl(  R(\hat{\bp})R_{2}B\biggl(\frac{\lvert\bp\rvert}{\kappa}\biggr)\biggr) \, U(R_{2}^{-1}) \mathsf{P}%
+\Psi_{k,\sigma}\\
+&= \sqrt{\frac{\kappa}{p^{0}}}\,\eta_{\sigma}\, U\biggl( R(\hat{\bp})R_{2}B\biggl(\frac{\lvert\bp\rvert}{\kappa}\biggr)\biggr) \,\Psi_{k,-\sigma} \: .
+\end{align*}
+注意到$R(\hat{\bp})R_{2}$是使第3轴转向$-\hat{\bp}$方向的旋转, 但是$U(R(\hat{\bp})R_{2})$并不等于$U(R(-\hat{\bp}))$. 根据(\ref{2.5.47}),
+\[
+U(R(-\hat{\bp})) = \exp\Bigl( -\mi(\phi\pm\uppi)J_{3}\Bigr)\,\exp\Bigl(-\mi(\uppi-\theta)J_{2}\Bigr)
+\]
+其中, 根据$0\leq\phi<\uppi$还是$\uppi\leq\phi<2\uppi$, 分别将方位角选成$\phi+\uppi$或$\phi-\uppi$, 使得方位角保持在$0$到$2\uppi$ 的范围内. 于是
+\begin{align*}
+& U^{-1}\Bigl(R(-\hat{\bp})\Bigr) U\Bigl(R(\hat{\bp}) R_{2}\Bigr)
+=\exp\Bigl(\mi(\uppi-\theta) J_{2}\Bigr) \\
+& \quad \times\exp\Bigl(\mi(\phi\pm\uppi)J_{3}\Bigr)\exp(-\mi\phi J_{3}) \exp(-\mi\theta J_{2})
+\exp(\mi\uppi J_{2}) \\
+&= \exp\Bigl(\mi (\uppi-\theta)J_{2}\Bigr)\exp(\pm \mi\uppi J_{3}) \exp\Bigl(\mi(\uppi-\theta)J_{2}\Bigr)\:.
+\end{align*}
+但是绕第3轴的$\pm180^{\circ}$旋转会改变$J_{2}$的符号, 所以
+\begin{equation}
+U\Bigl(R(\hat{\bp}) R_{2}\Bigr) = U\Bigl(R(-\hat{\bp})\Bigr)\exp(\pm \mi\uppi J_{3}) \:.
+\label{2.6.21}%
+\end{equation}
+另外, $R(-\hat{\bp})B(\lvert\bp\rvert /\kappa)$正是$\mathscr{P}p=(-\bp,p^{0})$方向上的标准增速$L(\mathscr{P}p)$. 于是, 我们最终有
+\begin{equation}
+\mathsf{P}\Psi_{p,\sigma}=\eta_{\sigma} \exp(\mp \mi\uppi\sigma)\Psi_{\mathscr{P}p,-\sigma} \label{2.6.22}%
+\end{equation}
+其中, 根据$\bp$的第二个分量是正还是负, 相位分别是$-\uppi\sigma$或$+\uppi\sigma$. 对于半整数自旋的无质量粒子, 宇称算符中符号的古怪改变是由于方程(\ref{2.5.47})中用于定义任意动量的无质量粒子态的旋转时所采取的约定. 因为旋转群不是单连通的, 这样的一些不连续性是不可避免的.
+
+
+\noindent\textbf{{\textsf{T}}}\text{\ }:\text{\ }$\boldsymbol{M=0}$
+
+\noindent 态对$P^{\mu}$和$J_{3}$有本征值$k^{\mu}=(0,0,\kappa,\kappa)$和$\sigma$, 当时间反演算符$\mathsf{T}$作用在态$\Psi_{k,\sigma}$ 上时, 得到的态对$P^{\mu}$和$J_{3}$有本征值$(\mathscr{P}k)^{\mu}=(0,0,-\kappa,\kappa)$和$-\sigma$. 因此, $\mathsf{T}$不改变螺旋度$\bJ\cdot\hat{k}$, 并且也没有说明螺旋度为$\sigma$的无质量粒子是否要伴随另一个螺旋度为$-\sigma$的粒子. 因为$\mathsf{T}$像$\mathsf{P}$ 一样并不保标准四动量$k$不变, 考察生成元$U(R_{2}^{-1})\mathsf{T}$要\marginpar[\flushright{\small[80]\hspace*{5mm}}]{{\small\hspace*{5mm}[80]}}方便一些, 这里的$R_{2}$是旋转(\ref{2.6.19}), 它也使$k$变为$\mathscr{P}k$. 这个生成元与$J_{3}$对易, 所以
+\begin{equation}
+U(R_{2}^{-1})\,\mathsf{T}\,\Psi_{k,\sigma}=\zeta_{\sigma}\Psi_{k,\sigma}
+\label{2.6.23}%
+\end{equation}
+其中$\zeta_{\sigma}$是另一相位. 由于$R_{2}^{-1}\mathscr{T}$与``增速''(\ref{2.5.45})对易, 并且$\mathscr{T}$与旋转$R(\hat{p})$对易, 用$\mathsf{T}$ 作用在态(\ref{2.5.5})上给出
+\begin{equation}
+\mathsf{T}\Psi_{p,\sigma}=\sqrt{\frac{\kappa}{p^{0}}}\, U\biggl[ R(\hat{\bp})R_{2}B\biggl(\frac{\lvert\bp\rvert}{\kappa}\biggr)\biggr]
+\zeta_{\sigma}\Psi_{k,\sigma} \:.
+\label{2.6.24}%
+\end{equation}
+利用方程(\ref{2.6.21}%
+), 最终得到\begin{equation}
+\mathsf{T}\Psi_{p,\sigma}=\zeta_{\sigma}\exp(\pm \mi\uppi\sigma)\Psi_{\mathscr{P}p,\sigma}\:. \label{2.6.25}%
+\end{equation}
+再一次的, 正负号分别对应于$\bp$的第2分量是正的还是负的.
+
+\subsection*{* * *}
+
+一个有趣的事情是, 时间反演算符的平方$\mathsf{T}^{2}$在有质量和无质量单粒子态上的作用都是非常简单的. 利用方程(\ref{2.6.18}), 并考虑到$\mathsf{T}$ 是反幺正的, 对于有质量单粒子态, 我们看到:
+\[
+\mathsf{T}^{2}\Psi_{p,\sigma}=\mathsf{T}\zeta(-)^{j-\sigma}\Psi_{\mathscr{P}p,-\sigma}
+=\zeta^{\ast}(-)^{j-\sigma}\zeta(-)^{j+\sigma}\Psi_{p,\sigma}%
+\]
+换句话说
+\begin{equation}
+\mathsf{T}^{2}\Psi_{p,\sigma} = (-)^{2j} \Psi_{p,\sigma} \:.
+\label{2.6.26}%
+\end{equation}
+对于无质量粒子我们会得到相同的结果. 如果$\bp$的第2分量是正的, 那么$\mathscr{P}\bp$的第2分量就是负的, 反之亦然. 所以, 方程(\ref{2.6.25}) 给出
+\begin{align*}
+\mathsf{T}^{2}\Psi_{p,\sigma}  &= \mathsf{T}\zeta_{\sigma}\exp(\pm\mi\uppi\sigma)\Psi_{\mathscr{P}p,\sigma}
+=\zeta_{\sigma}^{\ast}\exp(\mp \mi\uppi\sigma)\zeta_{\sigma}\exp(\mp \mi\uppi\sigma)\Psi_{p,\sigma}\\
+&  =\exp(\mp2\mi\uppi\sigma)  \Psi_{p,\sigma}\text{ }.
+\end{align*}
+只要$\sigma$是整数或半整数, 这个结果就可以写成
+\begin{equation}
+\mathsf{T}^{2}\Psi_{p,\sigma}=(-)^{2\lvert \sigma \rvert }\Psi_{p,\sigma} \:. \label{2.6.27}%
+\end{equation}
+对于无质量粒子的``自旋'', 我们通常说的是它的螺旋度的绝对值, 所以方程(\ref{2.6.27})与方程(\ref{2.6.26})是相同的.
+
+这个结果有一个有趣的推论. 当$\mathsf{T}^{2}$作用在无相互作用粒子系统的任意态$\Psi$上时, 无论这个态有质量还是无质量, 它对于每个粒子都会产生因子$(-)^{2j}$或$(-)^{2\lvert\sigma\rvert}$.
+因此, 如果这个态包含奇数个自旋或螺旋度为半整数的粒子(加上任意个自旋或螺旋度为整数的粒子), 我们会得到一个总的符号改变
+\begin{equation}
+\mathsf{T}^{2} \Psi = -\Psi \:.  \label{2.6.28}%
+\end{equation}
+如果\marginpar[\flushright{\small[81]\hspace*{5mm}}]{{\small\hspace*{5mm}[81]}}我们现在``打开''各种相互作用, 并假定这些相互作用在时间反演下不变, 即使它们不遵守旋转不变性, 这个结果也仍将成立. (例如, 即使我们的系统处在任意静引力场和静电场中, 这些讨论仍可以使用.) 现在, 假设态$\Psi$是哈密顿量的本征态. 由于$\mathsf{T}$与哈密顿量对易, $\mathsf{T}\Psi$也是该哈密顿量的本征态. 它们是同一个态吗? 如果是, 那么$\mathsf{T}\Psi$与$\Psi$的差异只能是一个相位
+\[
+\mathsf{T}\Psi=\zeta\Psi \:,%
+\]
+但这样一来
+\[
+\mathsf{T}^{2}\Psi=\mathsf{T}(\zeta\Psi)  =\zeta^{\ast}%
+\mathsf{T}\Psi= \lvert \zeta \rvert ^{2}\Psi=\Psi \:,%
+\]
+这与方程(\ref{2.6.28})矛盾. 我们看到任何满足方程(\ref{2.6.28})的能量本征态都必然会与另一能量相同的本征态简并. 这就是所谓的``Kramers\,(克拉默斯)简并''.\textsuperscript{\cite{10}} 当然, 如果系统处在旋转不变的环境下, 这个结论是平庸的, 这是因为在这个系统的任何态, 其总角动量只能是半整数, 因此一定会有$2j+1=2,4,\cdots$ 个简并态. 一个令人惊奇的结果是, 即使旋转不变性被诸如静电场这样的外场扰动了, 只要这些场在$\mathsf{T}$下不变, 至少二重简并性还是会保留下来. 特别的, 如果粒子有电偶极矩或引力偶极矩, 那么在静电场和静引力场中, 它的$2j+1$个自旋态的简并性将被完全消除, 这使得这样的偶极矩被时间反演不变性禁止.
+
+完整起见, 我们还应提及$\mathsf{P}$和$\mathsf{T}$对质量相同的粒子多重态会有更加复杂的效应. 这种可能性将在本章的附录C进行考察. 不过还没有已知的与物理相关的例子.
+
+%++++++++++++++++++++++++++++2.7+++++++++++++++++
+
+
+\section[投影表示]%
+{投影表示{}$^*$\footnote{$^*${}本节有些脱离本书的发展主线, 可以在第一次阅读时跳过. }%
+} \label{sec:2.7}
+\setcounter{equation}{0}
+
+我们现在回到\,\ref{sec:2.2}\,节提到的那个可能性, 对称群可以在物理态上投影表示; 即, 对称群的群元$T,\bar{T}$等在物理态\,Hilbert\, 空间上可以被$U(T),U(\bar{T})$等表示,
+而这些算符满足合成规则\marginpar[\flushright{\raisebox{-4ex}[0pt]{{\small[82]\hspace*{5mm}}}}]{{\raisebox{-4ex}[0pt]{\small\hspace*{5mm}[82]}}}
+\begin{equation}
+U(T) U(\bar{T})  = \exp\Bigl(\mi\phi(T,\bar{T})\Bigr) U(T\bar{T}) \:, \label{2.7.1}%
+\end{equation}
+其中$\phi$是实相位. (这里使用的上划线仅是为了区分不同的对称算符.) 方程(\ref{2.7.1})中的相位需要满足的基本要求是结合律
+\[
+U(T_{3})  (U(T_{2})U(T_{1})) = (U(T_{3})U(T_{2}))U(T_{1}) \:,%
+\]
+它在$\phi$上给出的相应条件是
+\begin{equation}
+\phi(T_{2},T_{1}) + \phi(T_{3},T_{2}T_{1}) = \phi(T_{3},T_{2}) + \phi(T_{3}T_{2},T_{1}) \:. \label{2.7.2}%
+\end{equation}
+显然, 如果相位的形式是
+\begin{equation}
+\phi(T,\bar{T}) = \alpha(T\bar{T}) - \alpha(T) - \alpha(\bar{T}) \:, \label{2.7.3}%
+\end{equation}
+那么它将自动满足方程(\ref{2.7.2}), 但是, 通过对$U(T)$做替换
+\[
+\tilde{U}(T) \equiv U(T) \exp\Bigl(\mi\alpha(T)\Bigr)
+\]
+带有这种相位的投影表示就被替换成了普通表示, 对$\tilde{U}$有
+\[
+\tilde{U}(T) \tilde{U}(\bar{T})= \tilde{U}(T\bar{T})  \:.
+\]
+满足方程(\ref{2.7.2})的函数$\phi(T,\bar{T})$加上仅相差形如(\ref{2.7.3})的$\Delta\phi(T,\bar{T})$的函数, 这些函数构成的任意集合被称为``\,2\,-闭上链''(two-cocycle). 平庸的闭上链是包含函数$\phi=0$的那个, 因此由形如(\ref{2.7.3})的函数构成, 它可以通过重新定义$U(T)$被消除掉. 这里我们感兴趣的是一个对称群是否允许任意的非平庸\,2\,-闭上链; 也就是说, 在物理Hilbert空间上是否可以有一个表示是{\KAI{内禀}}投影的, 在这个意义下, 相位$\phi(T,\bar{T})${\KAI{无法}}以这种方式消除掉.
+
+为了回答这个问题, 首先来考察方程(\ref{2.7.1})中的相位$\phi$对无限小旋转生成元的对易关系的影响. 当$\bar{T}$或$T$中有一个是单位算符, 相位$\phi$ 显然为零
+\begin{equation}
+\phi(T,1) = \phi(1,\bar{T}) = 0  \:.
+\label{2.7.4}%
+\end{equation}
+当$\bar{T}$和$T$很接近单位算符时, 相位一定很小. 用坐标$\theta^{a}$来参数化群元(就像\,\ref{sec:2.2}\,节), 再加上$T(0) \equiv 1$, 方程(\ref{2.7.4}) 告诉我们$\phi(T(\theta),T(\bar{\theta}))$
+在$\theta=\bar{\theta}=0$附近的展开是必须从$\theta\bar{\theta}$阶项开始:
+\begin{equation}
+\phi\Bigl(T(\theta) , T(\bar{\theta})\Bigr)
+=f_{ab}\theta^{a}\bar{\theta}^{b}+\cdots \:, \label{2.7.5}%
+\end{equation}
+其\marginpar[\flushright{\small[83]\hspace*{5mm}}]{{\small\hspace*{5mm}[83]}}中$f_{ab}$是实常数. 将这个展开式代入方程(\ref{2.7.1})的级数展开式, 并重复导出(\ref{2.2.22})的步骤, 我们现在有
+\begin{equation}
+[t_{b},t_{c}] = \mi C^{a}{}_{\!bc}t_{a} + \mi C_{bc} 1 \:,  \label{2.7.6}%
+\end{equation}
+其中$C_{bc}$是反对称系数
+\begin{equation}
+C_{bc}=-f_{bc}+f_{cb}  \:. \label{2.7.7}%
+\end{equation}
+在对易关系右边出现了正比于单位元的项(所谓的{\KAI{中心荷}}), 这正是群的投影表示出现相位在\,Lie\,代数中的对应物.
+
+常数$C_{bc}$以及$C^{a}{}_{\!bc}$服从一个重要约束, 这一约束来源于\,Jacobi\,恒等式.
+取(\ref{2.7.6})与$t_{d}$的对易子, 再加上将$b,c,d$换成$c,d,b$和$d,b,c$的表达式, 左边的三个双重对易子的和恒等于零, 所以
+\begin{equation}
+C^{a}{}_{\!bc}C^{e}{}_{\!ad} + C^{a}{}_{\!cd}C^{e}{}_{\!ab} + C^{a}{}_{\!db}C^{e}{}_{\!ac}=0 \label{2.7.8}%
+\end{equation}
+以及
+\begin{equation}
+C^{a}{}_{\!bc}C_{ad} + C^{a}{}_{\!cd}C_{ab} + C^{a}{}_{\!db}C_{ac}=0 \:. \label{2.7.9}%
+\end{equation}
+对于$C_{ab}$, 方程(\ref{2.7.9})有一类显然的非零解:
+\begin{equation}
+C_{ab} = C^{e}{}_{\!ab}\phi_{e} \:, \label{2.7.10}%
+\end{equation}
+其中$\phi_{e}$是任意一组实常数. 对这些解, 我们可以通过重新定义生成元从方程(\ref{2.7.6})中消除中心荷
+\begin{equation}
+t_{a} \to \tilde{t}_{a} \equiv t_{a}+\phi_{a} \:. \label{2.7.11}%
+\end{equation}
+这样, 新的生成元就满足没有中心荷的对易关系
+\begin{equation}
+[\tilde{t}_{b},\tilde{t}_{c}] = \mi C^{a}{}_{\!bc} \tilde{t}_{a} \:. \label{2.7.12}%
+\end{equation}
+取决于具体情况, 一个给定的Lie代数可能允许方程(\ref{2.7.9})有除了方程(\ref{2.7.10})以外的其他解, 也可能不允许.
+
+现在, 我们可以陈述决定内禀投影表示是否存在的关键定理. 对于给定群的任意表示$U(T)$, 如果满足以下两个条件:
+\begin{itemize}%[leftmargin=2em]
+\item[(a)] 在该表示中, 可以通过重新定义群的生成元(像方程(\ref{2.7.11})中那样)消除Lie代数中的所有中心荷.\vspace{-2mm}
+
+\item[(b)] 群是单连\marginpar[\flushright{\small[84]\hspace*{5mm}}]{{\small\hspace*{5mm}[84]}}通的, 即任意两个群元可以被群内的一条路径连接, 并且任意两个这样的路径可以连续地变换到彼此. (一个等价的表述是: 开始并结束于同一群元的环路可以连续地收缩到一个点.)
+\end{itemize}
+那么我们就可以选择$U(T)$的相位使得方程(\ref{2.7.1})中的$\phi=0$.
+
+本章的附录B会给出这个定理的证明, 同时还给出了对非单连通群的一些评论. 它证明了仅有两种方式(彼此不是不相容的)会有内禀投影表示: 要么是代数的, 这是因为即使在单位元附近, 群也是投影表示的, 要么是拓扑的, 因为这个群不是单连通的, 所以从$1$到$T$然后从$T$到$\bar{T}$的路径不能连续的变形成某个从$1$ 到$T\bar{T}$的路径. 在后一种情况下, 方程(\ref{2.7.1})中的相位$\phi$依赖于对从原点到达不同群元的标准路径的选择, 这被用来定义对应的$U$-算符.
+
+现在, 对非齐次\,Lorentz\,群这个特殊情况, 依次考察这些可能性.
+
+\subsection*{$\left(  A\right)  $ \quad 代数}
+
+有中心荷的情况下, 代替方程(\ref{2.4.12})\yzx (\ref{2.4.14}), 非齐次\,Lorentz\,群生成元的对易关系是\vspace{-.1mm}
+\begin{align}
+\mi[J^{\mu\nu},J^{\rho\sigma}] &= \eta^{\nu\rho}J^{\mu\sigma}
+-\eta^{\mu\rho}J^{\nu\sigma}-\eta^{\sigma\mu}J^{\rho\nu}\nonumber\\
+&\quad +\eta^{\sigma\nu}J^{\rho\mu} + C^{\rho\sigma,\mu\nu} \:, \label{2.7.13}\\
+\mi[P^{\mu},J^{\rho\sigma}] &= \eta^{\mu\rho}P^{\sigma}
+-\eta^{\mu\sigma}P^{\rho}+C^{\rho\sigma,\mu}   \:, \label{2.7.14} \\
+\mi [J^{\mu\nu},P^{\rho}] &= \eta^{\nu\rho}P^{\mu}
+-\eta^{\mu\rho}P^{\nu}+C^{\rho,\mu\nu} \:, \label{2.7.15}\\
+\mi [P^{\mu},P^{\rho}] &= C^{\rho,\mu} \label{2.7.16}
+\end{align}
+我们看到, 这些$C$也满足反对称条件
+\begin{align}
+C^{\rho\sigma,\mu\nu} &= -C^{\mu\nu,\rho\sigma} \:, \label{2.7.17}\\
+C^{\rho\sigma,\mu}  &= -C^{\mu,\rho\sigma} \:, \label{2.7.18}\\
+C^{\rho,\mu}  &= -C^{\mu,\rho}  \:. \label{2.7.19}%
+\end{align}
+我们现在要证明所有这些常数都有额外的代数性质, 这些性质使得可以通过将$J^{\mu\nu}$和$P^{\mu}$的定义偏移一个常数项将这些常数消掉. (这相当于重新定义算符$U(\Lambda,a)$的相位.) 为了导出这些性质,
+我们应用\,Jacobi\,等式\marginpar[\flushright{\raisebox{-6ex}[0pt]{{\small[85]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[85]}}}
+\begin{gather}
+\Bigl[J^{\mu\nu}, [P^{\rho},P^{\sigma}]\Bigr]
++ \Bigl[P^{\sigma},[J^{\mu\nu},P^{\rho}]\Bigr]
++ \Bigl[P^{\rho},[P^{\sigma},J^{\mu\nu}]\Bigr] = 0   \:, \label{2.7.20}\\
+ \Bigl[J^{\lambda\eta},[J^{\mu\nu},P^{\rho}]\Bigr]
++\Bigl[P^{\rho},[J^{\lambda\eta},J^{\mu\nu}]\Bigr]
++\Bigl[J^{\mu\nu},[P^{\rho},J^{\lambda\eta}]\Bigr]=0  \:, \label{2.7.21}\\
+ \Bigl[J^{\lambda\eta},[J^{\mu\nu},J^{\rho\sigma}]\Bigr]
++\Bigl[J^{\rho\sigma},[J^{\lambda\eta},J^{\mu\nu}]\Bigr]
++\Bigl[J^{\mu\nu},[J^{\rho\sigma},J^{\lambda\eta}]\Bigr]=0 \:. \label{2.7.22}%
+\end{gather}
+(包含三个$P$的\,Jacobi\,恒等式自动满足, 因而不会给出进一步信息.) 在方程(\ref{2.7.20})\yzx (\ref{2.7.22})中使用方程(\ref{2.7.13})\yzx (\ref{2.7.16}), 我们得到了$C$上的代数条件
+\begin{align}
+0 &= \eta^{\nu\rho}C^{\mu,\sigma} - \eta^{\mu\rho}C^{\nu,\sigma}
+- \eta^{\nu\sigma}C^{\mu,\rho} + \eta^{\mu\sigma}C^{\nu,\rho} \:, \label{2.7.23}\\
+0 &= \eta^{\nu\rho}C^{\mu,\lambda\eta} - \eta^{\mu\rho}C^{\nu,\lambda\eta} - \eta^{\mu\eta}C^{\rho,\lambda\nu}+\eta^{\lambda\mu}C^{\rho,\eta\nu} \nonumber\\
+&\quad + \eta^{\lambda\nu}C^{\rho,\mu\eta}-\eta^{\eta\nu}C^{\rho,\mu\lambda}%
++\eta^{\rho\lambda}C^{\eta,\mu\nu}-\eta^{\rho\eta}C^{\lambda,\mu\nu} \:, \label{2.7.24}\\
+0 &= \eta^{\nu\rho}C^{\mu\sigma,\lambda\eta}-\eta^{\mu\rho}C^{\nu\sigma,\lambda\eta}
+-\eta^{\sigma\mu}C^{\rho\nu,\lambda\eta}+\eta^{\sigma\nu}C^{\rho\mu,\lambda\eta}\nonumber\\
+&\quad +\eta^{\eta\mu}C^{\lambda\nu,\rho\sigma}-\eta^{\lambda\mu}C^{\eta\nu,\rho\sigma}
+-\eta^{\nu\lambda}C^{\mu\eta,\rho\sigma}+\eta^{\nu\eta}C^{\mu\lambda,\rho\sigma}\nonumber\\
+&\quad +\eta^{\sigma\lambda}C^{\rho\eta,\mu\nu}-\eta^{\rho\lambda}C^{\sigma\eta,\mu\nu}
+-\eta^{\eta\rho}C^{\lambda\sigma,\mu\nu}+\eta^{\eta\sigma}C^{\lambda\rho,\mu\nu} \:. \label{2.7.25}%
+\end{align}
+用$\eta_{\nu\rho}$收缩方程(\ref{2.7.23})给出
+\begin{equation}
+C^{\mu,\sigma}=0 \:. \label{2.7.26}%
+\end{equation}
+另一方面, 常数$C^{\mu,\lambda\eta}$和$C^{\rho\sigma,\mu\nu}$不一定是零, 但是它们的代数结构非常简单, 这使得我们可以通过分别偏移$P^{\mu}$和$J^{\mu\nu}$的定义消掉它们. 用$\eta_{\nu\rho}$收缩方程(\ref{2.7.24})给出
+\begin{equation}
+C^{\mu,\lambda\eta} = \eta^{\mu\eta}C^{\lambda}-\eta^{\mu\lambda}C^{\eta} \:, \label{2.7.27}%
+\end{equation}%
+\begin{equation}
+C^{\lambda}\equiv\frac{1}{3}\,\eta_{\rho\nu}C^{\rho,\lambda\nu} \:.
+\label{2.7.28}%
+\end{equation}
+另外, 用$\eta_{\nu\rho}$收缩方程(\ref{2.7.25})给出
+\begin{align}
+C^{\mu\sigma,\lambda\eta}  &= \eta^{\eta\mu}C^{\lambda\sigma}
+-\eta^{\lambda\mu}C^{\eta\sigma} + \eta^{\sigma\lambda}C^{\eta\mu}
+-\eta^{\eta\sigma}C^{\lambda\mu}  \:, \label{2.7.29}\\
+C^{\lambda\sigma}  &\equiv \frac{1}{2}\,\eta_{\nu\rho}C^{\lambda\nu,\sigma\rho} \:. \label{2.7.30}%
+\end{align}
+(这些表达式自动满足方程(\ref{2.7.24})和(\ref{2.7.25}), 所以我们无法从Jacobi恒等式得到进一步信息.) 我们现在看到, 如果这些$C$不为零, 通过定义新的生成元,
+\begin{align}
+\tilde{P}^{\mu}  &\equiv P^{\mu}+C^{\mu} \:, \label{2.7.31} \\
+\tilde{J}^{\mu\sigma}  &\equiv J^{\mu\sigma}+C^{\mu\sigma} \:, \label{2.7.32}%
+\end{align}
+它\marginpar[\flushright{\small[86]\hspace*{5mm}}]{{\small\hspace*{5mm}[86]}}们可以被消除, 这样, 它们的对易关系就是一个普通表示的对易关系
+\begin{align}
+\mi [\tilde{J}^{\mu\nu},\tilde{J}^{\rho\sigma}] &= \eta^{\nu\rho}\tilde{J}^{\mu\sigma} -\eta^{\mu\rho}\tilde{J}^{\nu\sigma}-\eta^{\sigma\mu}\tilde{J}^{\rho\nu}
++\eta^{\sigma\nu}\tilde{J}^{\rho\mu} \:, \label{2.7.33}\\
+\mi [\tilde{J}^{\mu\nu},\tilde{P}^{\rho}]  &= \eta^{\nu\rho}\tilde{P}^{\mu}
+-\eta^{\mu\rho}\tilde{P}^{\nu} \:,\label{2.7.34}\\
+\mi [\tilde{P}^{\mu},\tilde{P}^{\rho}]  &= 0 \:.
+\label{2.7.35}%
+\end{align}
+对易关系将总被取成方程(\ref{2.7.33})\yzx (\ref{2.7.35})的形式, 但是去掉了上面的波浪符号.
+
+顺便地提一下, $J^{\mu\nu}$的代数没有中心荷这个性质也可以立即从这类代数的``半单''性推断出来. (半单\,Lie\,代数是那些没有``不变阿贝尔''子代数的代数, 不变阿贝尔子代数由那些互相对易的生成元组成, 同时这些生成元与其他生成元的对易子也属于这个子代数.)  有一个普适定理\textsuperscript{\cite{11}}: 半单\,Lie\, 代数中的任何中心荷总可以通过生成元的重定义被消掉, 就像方程(\ref{2.7.32})中那样. 另一方面, $J^{\mu\nu}$和$P^{\mu}$张开的全\,Poincar\'{e}\,代数不是半单的($P^{\mu}$ 构成一个不变阿贝尔子代数), 因此我们需要一个专门的讨论来证明它的中心荷也可以用这种方式消除掉. 诚然, \ref{sec:2.4}\,节讨论的非半单的伽利略代数确实允许一个中心荷, 即质量$M$.
+
+我们看到非齐次\,Lorentz\,群满足将内禀投影表示排除在外的第一个条件. 那么第二个呢?
+
+\subsection*{$\left(  B\right)  $ \quad 拓扑}
+
+为了研究非齐次\,Lorentz\,群的拓扑, 将齐次\,Lorentz\,变换表示成$2\times2$复矩阵是非常方便的. 任何一个实\,4\,-矢$V^{\mu}$都可以用来构造一个厄米$2\times 2$矩阵
+\begin{equation}
+v \equiv V^{\mu}\sigma_{\mu}=\left(
+\begin{array}
+[c]{ccc}%
+V^{0}+V^{3} &\hspace*{3mm}& V^{1} - \mi V^{2}\\
+V^{1}+\mi V^{2} &\hspace*{3mm}& V^{0}-V^{3}%
+\end{array}
+\right)  \text{ , } \label{2.7.36}%
+\end{equation}
+其中$\sigma_{\mu}$是通常的\,Pauli\,矩阵并有$\sigma_{0}\equiv1$. 反过来, 任何$2\times2$厄米矩阵都可以写成这种形式, 因此定义了一个实\,4\,-矢$V^{\mu}$.
+
+厄米性会在如下变换下保留下来
+\begin{equation}
+v \to \lambda v\lambda^{\dag} \label{2.7.37}%
+\end{equation}
+其中$\lambda$是任意的$2\times2$复矩阵. 更进一步,
+4\,-矢的协变平方是\marginpar[\flushright{\raisebox{-6ex}[0pt]{{\small[87]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[87]}}}
+\begin{equation}
+V_{\mu}V^{\mu} = (V^{1})^{2} + (V^{2})^{2} + (V^{3})^{2} - (V^{0})^{2} = -\operatorname{Det}v
+\label{2.7.38}%
+\end{equation}
+并且只要
+\begin{equation}
+\lvert \operatorname{Det}\lambda \rvert =1 \:. \label{2.7.39}%
+\end{equation}
+变换(\ref{2.7.37})就可以保这个行列式不变. 因此每个满足方程(\ref{2.7.39})的$2\times2$复矩阵定义了一个保方程(\ref{2.7.38})不变的
+$V^{\mu}$的实线性变换, 即齐次\,Lorentz\,变换$\Lambda(\lambda)$:
+\begin{equation}
+\lambda V^{\mu}\sigma_{\mu}\lambda^{\dag} = (\Lambda^{\mu}{}_{\!\nu}(\lambda) V^{\nu}) \sigma_{\mu}\:. \label{2.7.40}%
+\end{equation}
+更进一步, 对于两个这样的矩阵$\lambda$和$\bar{\lambda}$, 我们有
+\begin{align*}
+(\lambda\bar{\lambda}) V^{\mu}\sigma_{\mu} (\lambda\bar{\lambda})^{\dag}
+&= \lambda(\bar{\lambda}V^{\mu}\sigma_{\mu}\bar{\lambda}^{\dag}) \lambda^{\dag} \\
+&= \lambda\Lambda^{\mu}{}_{\!\nu}(\bar{\lambda}) V^{\nu}\sigma_{\mu}\lambda^{\dag}
+= \Lambda^{\mu}{}_{\!\rho}(\lambda)\Lambda^{\rho}{}_{\!\nu}(\bar{\lambda}) V^{\nu}\sigma_{\mu}
+\end{align*}
+因此
+\begin{equation}
+\Lambda(\lambda\bar{\lambda}) = \Lambda(\lambda)\Lambda(\bar{\lambda}) \:. \label{2.7.41}%
+\end{equation}
+然而, 如果两个$\lambda$仅相差一个总相位, 那么它们对于方程(\ref{2.7.37})中的$v$有相同的效果, 因此对应同一个\,Lorentz\,变换. 因此, 调整$\lambda$ 的相位, 使得
+\begin{equation}
+\operatorname{Det}\lambda=1 \:, \label{2.7.42}%
+\end{equation}
+这将方便我们的讨论, 并且它与方程(\ref{2.7.41})是一致的. 这个行列式为\,1\,的$2\times2$复矩阵构成一个群, 这个群被称为$SL(2,C)$. ($SL$代表``特殊线性(special linear)'', ``特殊''是指行列式为\,1, 而$C$代表``复数''.) 这个群的群元依赖$4-1=3$个复参量, 或者说$6$个实参量, 这与\,Lorentz\, 群的独立参量个数是相同的. 然而, $SL(2,C)$并不等于\,Lorentz\,群; 如果$\lambda$是$SL(2,C)$中的一个矩阵, 那么$-\lambda$也是, 并且$\lambda$ 和$-\lambda$ 在方程(\ref{2.7.37})中给出的\,Lorentz\,变换相同. 其实, 很容易看到矩阵
+\[
+\lambda(\theta)  =\left(
+\begin{array}
+[c]{ccc}%
+\me^{\mi\theta/2} &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& \me^{-\mi\theta/2}%
+\end{array}
+\right)
+\]
+产生的\,Lorentz\,变换$\Lambda(\lambda(\theta))$是一个绕第\,3\,轴的旋转, 旋转角度是$\theta$, 因此$\lambda=-1$产生的是角度为$2\uppi$的旋转. Lorentz 群与$SL(2,C)$不相同, 但\marginpar[\flushright{\small[88]\hspace*{5mm}}]{{\small\hspace*{5mm}[88]}}与
+{}$^{*}$\footnote{$^{*}${}群$Z_{2}$仅由元素$+1$和$-1$构成. 一般而言, 当我们写出$G/H$, 其中$H$是$G$的不变子群, 我们是指, 在群$G$中, 如果$g\in G$ 且$h\in H$, 那么就把$g$和$gh$等同起来. 子群$Z_{2}$是平庸的不变子群, 这是因为它的元素与$SL(2,C)$的所有元素都对易.}$SL(2,C)/Z_{2}$ 相同, 这个群由行列式为\,1\, 的$2\times2$ 复矩阵构成, 并且在这个群中$\lambda$与$-\lambda$等价.
+
+现在的问题是, Lorentz\,群的拓扑是什么? 通过极分解定理,\textsuperscript{\cite{12}} 任何非奇异复矩阵$\lambda$可以写成如下的形式
+\[
+\lambda=u\,\me^{h} \:,
+\]
+其中$u$幺正, $h$厄米
+\[
+u^{\dag}u=1 \:, \qquad\qquad h^{\dag}=h \:.
+\]
+因为$\operatorname{Det}u$是相因子, 并且$\operatorname{Det}\exp h=\exp\operatorname{Tr}h$是正实的, 条件(\ref{2.7.42})要求
+\begin{align*}
+&\operatorname{Det}u=1 \:, \\
+&\operatorname{Tr}h=0  \:.
+\end{align*}
+(因子$u$给出了\,Lorentz\,群的旋转子群; 如果$u$是幺正的, 那么$\operatorname{Tr}(uvu^{\dag})=\operatorname{Tr}v$, 所以$V^{0}=\frac{1}{2}\operatorname{Tr}v$在变换$\Lambda(u)$下不变.) 更进一步, 这个分解是唯一的, 所以$SL(2,C)$在拓扑上就是全体$u$构成的空间与全体$h$ 构成的空间的直积(即, 成对点的集合). 任何$2\times2$无迹厄米矩阵$h$可以表示为
+\[
+h=\left(
+\begin{array}
+[c]{ccc}%
+c &\hspace*{3mm}& a-\mi b\\
+a+ \mi b &\hspace*{3mm}& -c
+\end{array}
+\right)
+\]
+其中除了$a,b,c$是实数之外没有其他约束, 所以全体$h$构成的空间在拓扑上与普通的三维平直空间$R_{3}$相同. 另一方面, 任何行列式为\,1\,的$2\times2$ 幺正矩阵可以表示为
+\[
+u=\left(
+\begin{array}
+[c]{ccc}%
+d+\mi e &\hspace*{3mm}& f+\mi g\\
+-f+\mi g &\hspace*{3mm}& d-\mi e
+\end{array}
+\right)
+\]
+其中$d,e,f,g$服从非线性约束
+\[
+d^{2}+e^{2}+f^{2}+g^{2}=1  \:, %
+\]
+所以全体$u$构成的空间$SU(2)$在拓扑上与$S_{3}$相同, 即四维平直空间中的四维球的三维表面. %
+因此$SL(2,C)$在拓扑上与直积空间$R_{3}\times S_{3}$相同. 它是单连通的: 在$R_{3}$或$S_{3}$中, 连接两点的任意曲线可以变换到彼此, 这对于直积空间也同样成立. (除\marginpar[\flushright{\small[89]\hspace*{5mm}}]{{\small\hspace*{5mm}[89]}}了圆$S_{1}$以外的所有球面$S_{n}$都是单连通的.) 然而, 我们感兴趣的不是$SL(2,C)$而是$SL(2,C)/Z_{2}$. 等同$\lambda$ 与$-\lambda$ 就是等同幺正因子$u$和$-u$ (因为$\me^{h}$总是正的), 所以\,Lorentz\,群拥有$R_{3}\times S_{3}/Z_{2}$的拓扑, 其中$S_{3}/Z_{2}$ 是等同对径点后的三维球面. 它{\KAI{不}}是单连通的; 例如, $S_{3}$上从$u$到$u^{\prime}$的路径不能连续变换成$u$到$-u^{\prime}$的路径, 哪怕这两个路径连接的是$S_{3}/Z_{2}$ 上的同一个点. 事实上, $S_{3}/Z_{2}$是{\KAI{双}}连通的; %
+任意两点间的路径根据它们是否包含反演$u\to-u$而被分成两类, 同一类中的路径可以连续变换到彼此. %
+一个等价表述是双圈可以连续地收缩到一个点, 即从任意元素出发沿相同路径走两次回到它自身的路径可以连续地收缩到一个点. %
+(如附录\,B\,所讨论的, 在数学上, 这个结果表述为, $S_{3}/Z_{2}$的基本群或者说第一同伦群是$Z_{2}$.) 类似地, %
+非齐次\,Lorentz\,群与$R_{4}\times R_{3}\times S_{3}/Z_{2}$有相同的拓扑, 因而也是双连通的.
+
+因为\,Lorentz\,群(齐次或非齐次的)不是单连通的, 它具有内禀投影表示. 然而, %
+由于从$1$到$\Lambda$再到$\Lambda\bar{\Lambda}$再回到$1$的路径走两次构成的双圈{\KAI{能}}%
+收缩至一个点, 我们必须有
+\[
+\Bigl[U(\Lambda) U(\bar{\Lambda}) U^{-1}(\Lambda\bar{\Lambda})\Bigr]^{2}=1
+\]
+因此相位$\me^{\mi\phi(\Lambda,\bar{\Lambda})}$只能是正负号
+\begin{equation}
+U(\Lambda) U(\bar{\Lambda}) = \pm U(\Lambda\bar{\Lambda})  \:. \label{2.7.43}%
+\end{equation}
+同样, 对非齐次\,Lorentz\,群有
+\begin{equation}
+U(\Lambda,a) U(\bar{\Lambda},\bar{a}) = \pm U(\Lambda\bar{\Lambda},\Lambda\bar{a}+a) \:.
+\label{2.7.44}%
+\end{equation}
+这些``相差一个正负号的表示''对我们而言是熟悉的; 它们就是整数自旋态和半整数自旋态, 对于整数自旋态, 方程(\ref{2.7.43})和(\ref{2.7.44})中的符号总是$+1$, 对于半整数自旋态, 根据从$1$到$\Lambda$再到$\Lambda\bar{\Lambda}$再回到$1$的路径能否收缩成一个点, 这些符号分别取$+1$或者$-1$. 产生这个差异的原因是: 绕第\,3\,轴角度为$2\uppi$的旋转作用在角动量第\,3\,分量为$\sigma$的态上会产生相位$\me^{2\mi\uppi\sigma}$,  因此对整数自旋态没有影响, 但作用在半整数自旋态上会产生一个符号变化. (这两种情况对应第一同伦群$Z_{2}$的两个不可约表示.) 因此, 方程(\ref{2.7.43})或方程(\ref{2.7.44}) 附加了一个超选择定则: 我们不能混合整数自旋态和半整数自旋态.
+
+对于有限质量, 对整数或半整数自旋的限制是预先用纯\marginpar[\flushright{\small[90]\hspace*{5mm}}]{{\small\hspace*{5mm}[90]}}代数方法从熟知的小群生成元的表示中导出的, 这里的小群生成元就是角动量矩阵$\bJ^{\,(j)}$, 其中$j$ 是整数或半整数. 另一方面, 对于零质量, 小群在物理单粒子态上的作用就是绕动量方向的旋转, 并且这里没有{\KAI{代数}}上的
+原因去限制螺旋度为整数或半整数. 但是, 这里有一个{\KAI{拓扑}}上的原因: 绕动量方向角度为$4\uppi$的旋转可以连续地变换成完全不旋转, 所以因子$\exp(4\uppi \mi\sigma)$必须是\,1, 因此$\sigma$必须是整数或半整数.
+
+代替采用投影表示并附加超选择定则的做法, 我们也可以扩张\,Lorentz\,群, 将其取成$SL(2,C)$本身, 而不是像前面一样取成$SL(2,C)/Z_{2}$. 通常的旋转不变性禁止了总自旋为整数的态和总自旋为半整数的态之间的跃迁, 所以现在唯一的差异是群是单连通的, 因此它仅有普通表示, 没有投影表示, 这使得我们无法推断出超选择定则.  这并不意味着我们真的可以制备出由整数自旋态和半整数自旋态线性组合而成的物理系统, 只是说明不能用观测到的\,Lorentz\,不变性证明这样的叠加是不可能的.
+
+类似的论述适用于任何对称群. 如果它的\,Lie\,代数包含中心荷, 那么我们总能够扩张这个代数, 使其包含与一切生成元都对易的生成元, 并且该生成元的本征值是中心荷, 就像我们在\,\ref{sec:2.4}\,节末尾给伽利略群的\,Lie\,代数加上质量算符. %
+那么, 这个扩张后的\,Lie\,代数当然是无中心荷的,  所以单位元附近的那部分群只有普通表示, 并且不需要任何超选择定则. %
+同样, 即便一个\,Lie\,群$G$不是单连通的, 它总可以表示成$C/H$, 其中$C$是单连通群, %
+称为$G$的``通用覆盖群'', 而$H$是$C$的一个不变子群.{}$^\dag$\footnote{$^\dag${}$C/H$ 的第一同伦群是$H$. %
+我们已经看到齐次\,Lorentz\,群的覆盖群是$SL(2,C)$, 三维旋转群的覆盖群是$SU(2)$. %
+对于三维, 四维或六维情况, $SL$群和$SU$群之间的关系是特殊的; %
+对于一般维数$d$, $SO(d)$的覆盖群被赋予了特殊的名称, ``$Spin(d)$''.} 一般而言, %
+我们也可以将对称群取成$C$而非$G$, 这是因为除了$G$暗含了超选择定则而$C$没有以外, %
+它们的结果没有任何差异. 简言之, 超选择定则的问题有点无关紧要; %
+{\KAI{有可能制备出也有可能制备不出处在任意叠加态中的物理系统, %
+但是不能通过参照对称性原理来解答问题, 这是因为无论认为自然的对称群是什么, %
+总存在另外一个群, 它的结果除了没有超选择定则以外与原先的结果是相同的.}}
+
+\section*{附录~A\quad 对称表示定理}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[91]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[91]}}}
+
+
+\addcontentsline{toc}{section}{附录~A\quad 对称表示定理}                %自动提目录
+\markright{附录~A\quad 对称表示定理}      %%单书眉
+
+\def\theequation{\arabic{chapter}.A.\arabic{equation}}
+
+\setcounter{equation}{0}
+
+
+这个附录给出\,Wigner\,基本定理\textsuperscript{\cite{2}}的证明, 即任何对称变换可以表示成物理态\,Hilbert\,空间上的算符, 这个算符要么是线性且幺正的, 要么是反线性且反幺正的. 针对我们现在的目的, 我们主要依据的对称变换的性质是它们是保跃迁概率不变的射线变换$T$, 在这个意义下, 如果$\Psi_{1}$和$\Psi_{2}$是属于射线$\mathscr{R}_{1}$和$\mathscr{R}_{2}$的态矢, 那么属于变换后射线$T\mathscr{R}_{1}$和$T\mathscr{R}_{2}$的态矢$\Psi_{1}^{\prime}$%
+和$\Psi_{2}^{\prime}$满足
+\begin{equation}
+\lvert (\Psi_{1}^{\prime},\Psi_{2}^{\prime})\rvert^{2} = \lvert(\Psi_{1},\Psi_{2})\rvert^{2} \:.
+\label{2.A.1}%
+\end{equation}
+我们同时要求对称变换存在逆变换, 并且这个逆变换以同样的方式保跃迁概率不变.
+
+首先, 考察属于射线$\mathscr{R}_{k}$的态矢$\Psi_{k}$的某个正交完备集, 它满足
+\begin{equation}
+(\Psi_{k},\Psi_{l}) = \updelta_{kl} \:, \label{2.A.2}%
+\end{equation}
+并令$\Psi_{k}^{\prime}$是属于变换后射线$T\mathscr{R}_{k}$的某个任意态矢. 由方程(\ref{2.A.1}), 我们有
+\[
+\lvert(\Psi_{k}^{\prime},\Psi_{l}^{\prime})\rvert^{2}
+=\lvert(\Psi_{k},\Psi_{l})\rvert^{2}=\updelta_{kl}  \:.
+\]
+但是$(\Psi_{k}^{\prime},\Psi_{k}^{\prime})$自动为正实量, 因此这要求它的值应该为\,1, 于是就有
+\begin{equation}
+(\Psi_{k}^{\prime},\Psi_{l}^{\prime}) = \updelta_{kl} \:.
+\label{2.A.3}%
+\end{equation}
+容易看到这些变换后的态$\Psi_{k}^{\prime}$也构成一个完备集, 若非如此则会存在非零态矢$\Psi^{\prime}$, 它与所有的$\Psi_{k}^{\prime}$正交, 那么$\Psi^{\prime}$所属射线的逆变换将由非零态矢$\Psi^{\prime\prime}$构成, 它对于所有的$k$有:
+\[
+\lvert (\Psi_{k},\Psi^{\prime\prime})\rvert^{2} = \lvert(\Psi_{k}^{\prime},\Psi^{\prime})\rvert^{2}=0 \:,
+\]
+因为已假定了$\Psi_{k}$构成完备集, 所以这是不可能的.
+
+我们现在必须确定态$\Psi_{k}^{\prime}$的相位约定. 出于这个目的, 我们挑出$\Psi_{k}$中的一个, 例如$\Psi_{1}$, 并考虑态矢
+\begin{equation}
+\Upsilon_{k}\equiv\frac{1}{\sqrt{2}} [\Psi_{1}+\Psi_{k}] \:,
+\label{2.A.4}%
+\end{equation}
+这个态矢属于某个射\marginpar[\flushright{\small[92]\hspace*{5mm}}]{{\small\hspace*{5mm}[92]}}线$\mathscr{S}_{k}$, 其中$k\neq1$. 对于任意态矢$\Upsilon_{k}^{\prime}$, 如果它属于变换后的射线$T\mathscr{S}_{k}$, 那么它可以用态矢$\Psi_{l}^{\prime}$展开,
+\[
+\Upsilon_{k}^{\prime}=\sum\nolimits_{l}c_{kl}\Psi_{l}^{\prime} \:.
+\]
+从方程(\ref{2.A.1})中我们得到
+\[
+\lvert c_{kk}\rvert =\lvert c_{k1}\rvert =\frac{1}{\sqrt{2}}%
+\]
+并且当$l\neq k$且$l\neq1$时:
+\[
+c_{kl}=0  \:.
+\]
+对于任意给定的$k$, 通过对两个态矢$\Upsilon_{k}^{\prime}$和$\Psi_{k}^{\prime}$的相位做合适的选择, 我们显然可以调整两个非零系数$c_{kk}$和$c_{k1}$ 的相位, 使得两个系数就是$1/\sqrt{2}$. 从现在起, 以这种方式选出的态矢$\Upsilon_{k}^{\prime}$和$\Psi_{k}^{\prime}$将被记作$U\Upsilon_{k}$%
+和$U\Psi_{k}$, 正如我们已经看到的,
+\begin{equation}
+U\frac{1}{\sqrt{2}} [\Psi_{k}+\Psi_{1}] = U \Upsilon_{k}
+= \frac{1}{\sqrt{2}}[U\Psi_{k}+U\Psi_{1}]  \:.
+\label{2.A.5}%
+\end{equation}
+然而, 对于一般态矢$\Psi$, $U\Psi$仍有待定义.
+
+现在考察属于任意射线$\mathscr{R}$的任意态矢$\Psi$, 并用$\Psi_{k}$将其展开:
+\begin{equation}
+\Psi=\sum_{k} C_{k}\Psi_{k} \:. \label{2.A.6}%
+\end{equation}
+类似地, 属于变换后射线$T\mathscr{R}$的任意态矢$\Psi^{\prime}$可以用正交完备集$U\Psi_{k}$展开:
+\begin{equation}
+\Psi^{\prime}=\sum_{k}C_{k}^{\prime}U\Psi_{k}\text{ }. \label{2.A.7}%
+\end{equation}
+$\lvert(\Psi_{k},\Psi)\rvert ^{2}$与$\lvert(U\Psi_{k},\Psi^{\prime})\rvert ^{2}$相等告诉我们, 对所有$k$ (包括$k=1$):
+\begin{equation}
+\lvert C_{k}\rvert ^{2}=\lvert C_{k}^{\prime}\rvert
+^{2}\text{ , } \label{2.A.8}%
+\end{equation}
+而$\lvert(\Upsilon_{k},\Psi)\rvert^{2}$与$\lvert(U\Upsilon_{k},\Psi^{\prime})\rvert ^{2}$相等则告诉我们, 对于所有的$k\neq1$:
+\begin{equation}
+\lvert C_{k}+C_{1}\rvert ^{2}=\lvert C_{k}^{\prime}+C_{1}%
+^{\prime}\rvert ^{2}\text{ }. \label{2.A.9}%
+\end{equation}
+方程(\ref{2.A.9})和(\ref{2.A.8})的比给出公式
+\begin{equation}
+\operatorname{Re}(C_{k}/C_{1}) = \operatorname{Re}(C_{k}^{\prime}/C_{1}^{\prime}) \label{2.A.10}%
+\end{equation}
+加上方程(\ref{2.A.8}), 这又要求
+\begin{equation}
+\operatorname{Im} (C_{k}/C_{1}) = \pm\operatorname{Im} (C_{k}^{\prime}/C_{1}^{\prime}), \label{2.A.11}
+\end{equation}
+因此要么\marginpar[\flushright{\raisebox{-4ex}[0pt]{{\small[93]\hspace*{5mm}}}}]{{\raisebox{-4ex}[0pt]{\small\hspace*{5mm}[93]}}}
+\begin{equation}
+C_{k}/C_{1}=C_{k}^{\prime}/C_{1}^{\prime} \:, \label{2.A.12}%
+\end{equation}
+要么
+\begin{equation}
+C_{k}/C_{1} = (C_{k}^{\prime}/C_{1}^{\prime})^{\ast} \:. \label{2.A.13}%
+\end{equation}
+更进一步, 我们可以证明对每一个$k$都必须做出相同的选择. (Wigner\,的证明中遗漏了这一步.) 为了看到这一点, 假定对某些$k$, 我们有$C_{k}/C_{1}=C_{k}^{\prime}/C_{1}^{\prime}$, 而对某些$l\neq k$, 我们则有$C_{l}/C_{1} = (C_{l}^{\prime}/C_{1}^{\prime})^{\ast}$. 再假定这两个比值都是复数, 使得它们是不同的. (这附带要求了$k\neq1$, $l\neq1$以及$k\neq l$.) 我们将证明这是不可能的.
+
+定义态矢$\Phi\equiv\frac{1}{\sqrt{3}}[\Psi_{1}+\Psi_{k}+\Psi_{l}]$. 由于这个态矢中所有系数的比值是实的, 所以对于属于变换后射线的任意态矢$\Phi^{\prime}$, 我们必须得到同样的比值:
+\[
+\Phi^{\prime}=\frac{\alpha}{\sqrt{3}}[U\Psi_{1}+U\Psi_{k}+U\Psi_{l}]  \:,
+\]
+其中$\alpha$是满足$\lvert\alpha\rvert =1$的相位因子. 那么, 跃迁概率$\lvert(\Phi,\Psi)\rvert$和$\lvert(\Phi^{\prime},\Psi^{\prime})\rvert$ 相等要求
+\[
+\left\lvert 1+\frac{C_{k}^{\prime}}{C_{1}^{\prime}}+\frac{C_{l}^{\prime}}%
+{C_{1}^{\prime}}\right\rvert^{2}= \left\lvert 1+\frac{C_{k}}{C_{1}}+\frac{C_{l}%
+}{C_{1}}\right\rvert^{2}%
+\]
+因而
+\[
+ \left\lvert 1+\frac{C_{k}}{C_{1}}+\frac{C_{l}^{\ast}}{C_{1}^{\ast}}\right\rvert^{2}
+=\left\lvert 1+\frac{C_{k}}{C_{1}}+\frac{C_{l}}{C_{1}}\right\rvert^{2} \:.
+\]
+要使上式成立, 当且仅当
+\[
+ \operatorname{Re}\left(\frac{C_{k}}{C_{1}}\frac{C_{l}^{\ast}}{C_{1}^{\ast}}\right)
+=\operatorname{Re}\left(\frac{C_{k}}{C_{1}}\frac{C_{l}}{C_{1}}\right)
+\]
+或者, 换一种形式,
+\[
+\operatorname{Im}\left(\frac{C_{k}}{C_{1}}\right) \operatorname{Im}\left(\frac{C_{l}}{C_{1}}\right)=0 \:.
+\]
+因此, 对任意一对$k,l$, 要么$C_{k}/C_{1}$是实的, 要么$C_{l}/C_{1}$是实的, 这与我们的假定矛盾. 于是我们看到, 当一给定对称变换$T$作用在给定态矢$\sum_{k}C_{k}U_{k}$上时, 对所有$k$, 我们要么有方程(\ref{2.A.12}), 要么有方程(\ref{2.A.13}).
+
+Wigner\,排除了第二种可能性, 即方程(\ref{2.A.13}), 原因是, 他证明了任何实现这种可能性的对称群都将必须在时间坐标上引入一个负号, 并且在他所给出的证明中, 他仅考虑了类似旋转那样的不影响时间方向的对称\marginpar[\flushright{\small[94]\hspace*{5mm}}]{{\small\hspace*{5mm}[94]}}性. 在这里, 我们将含有时间反演在内的对称性与其他对称性放在同等基础上进行处理, 所以我们只能认为, 对于每个对称性$T$以及态矢$\sum_{k}C_{k}\Psi_{k}$, 要么取方程(\ref{2.A.12}), 要么取(\ref{2.A.13}). 根据采用的是哪一种选择, 我们会将$U\Psi$定义为属于射线$T\mathscr{R}$的态矢$\Psi^{\prime}$中的一个, 并且对其相位的选择使得不是$C_{1}=C_{1}^{\prime}$就是$C_{1}=C_{1}^{\prime\ast}$. 于是, 要么
+\begin{equation}
+U\left(\sum_{k}C_{k}\Psi_{k}\right)=\sum_{k}C_{k}\, U\Psi_{k} \:, \label{2.A.14}%
+\end{equation}
+要么
+\begin{equation}
+U\left(\sum_{k}C_{k}\Psi_{k}\right)=\sum_{k}C_{k}^{\ast}\,U\Psi_{k} \:. \label{2.A.15}%
+\end{equation}
+
+
+仍需证明的是, 对于给定的对称变换, 无论系数$C_{k}$取什么值, 我们在方程(\ref{2.A.14})和(\ref{2.A.15})之间做出的选择都必须是相同的. 假定方程(\ref{2.A.14})对态矢$\sum_{k}A_{k}\Psi_{k}$成立, 而方程(\ref{2.A.15})对另一态矢$\sum_{k}B_{k}\Psi_{k}$成立. 那么, 跃迁概率不变要求
+\[
+\left\lvert \sum_{k}B_{k}^{\ast}A_{k}\right\rvert^{2}=\left\lvert \sum_{k}B_{k}A_{k}\right\rvert^{2}
+\]
+或者等价地
+\begin{equation}
+\sum_{kl}\operatorname{Im}\left(  A_{k}^{\ast}A_{l}\right)
+\operatorname{Im}\left(  B_{k}^{\ast}B_{l}\right)  =0\text{ }. \label{2.A.16}%
+\end{equation}
+对于属于不同射线的一对态矢$\sum_{k}A_{k}\Psi_{k}$和$\sum\nolimits_{k}B_{k}\Psi_{k}$, 我们不能排除方程(\ref{2.A.16})被满足的可能性. 然而, 对于任意一对这样的态矢, 且$A_{k}$和$B_{k}$没有相同的相位(使得方程(\ref{2.A.14})和(\ref{2.A.15})不相同),  我们总能找到第三个态矢$\sum_{k}C_{k}\Psi_{k}$,
+使得{}$^*$\footnote{$^*${}如果对于某个$k,l$对, $A_{k}^{\ast}A_{l}$和$B_{k}^{\ast}B_{l}$都是复的, 那么, 选择$C$使得$C_{k}$和$C_{l}$以外的其他$C$ 都为零, 并对这两个系数进行选择使得它们有不同的相位. 如果对于某个$k,l$对, $A_{k}^{\ast}A_{l}$是复的而$B_{k}^{\ast}B_{l}$是实的, 那么一定存在某个其他的$m,n$ 对(可能$m$ 和$n$ 中的一个等于$k$或$l$, 但不能两个都等于$k$或$l$), 使得$B_{m}^{\ast}B_{n}$是复的. 如果$A_{m}^{\ast}A_{n}$ 也是复的, 那么, 除了$C_{m}$和$C_{n}$, 选择其它的$C$为零, 并选择这些系数使得它们有不同的相位. 如果$A_{m}^{\ast}A_{n}$是实的, 那么除了$C_{k},C_{l},C_{m}$ 和$C_{n}$之外, 选择其他的$C$ 为零, 并选择这四个系数使它们有不同的相位. 如果$B_{k}^{\ast}B_{l}$是复的而$A_{k}^{\ast}A_{l}$是实的, 就以相同的方式处理. }
+\begin{equation}
+\sum\limits_{kl}\operatorname{Im}\left(  C_{k}^{\ast}C_{l}\right)
+\operatorname{Im}\left(  A_{k}^{\ast}A_{l}\right)  \neq0 \label{2.A.17}%
+\end{equation}
+并且\begin{equation}
+\sum\limits_{kl}\operatorname{Im}\left(  C_{k}^{\ast}C_{l}\right)
+\operatorname{Im}\left(  B_{k}^{\ast}B_{l}\right)  \neq0\text{ }.
+\label{2.A.18}%
+\end{equation}
+正如\marginpar[\flushright{\small[95]\hspace*{5mm}}]{{\small\hspace*{5mm}[95]}}我们所看到的, 从方程(\ref{2.A.17})可以得出, 我们在方程(\ref{2.A.14})和(\ref{2.A.15})之间的选择对于$\sum_{k}A_{k}\Psi_{k}$%
+和$\sum_{k}C_{k}\Psi_{k}$必须是相同的, 从方程(\ref{2.A.18})可以得出, 我们在方程(\ref{2.A.14})和(\ref{2.A.15})之间的选择对于$\sum_{k}B_{k}\Psi_{k}$ 和$\sum_{k}C_{k}\Psi_{k}$%
+必须是相同的, 所以, 对于我们的出发点, 态矢$\sum_{k}A_{k}\Psi_{k}$和$\sum_{k}B_{k}\Psi_{k}$, 我们在方程(\ref{2.A.14})和(\ref{2.A.15})之间的选择必须是相同的. 因此, 我们证明了, 对于给定的对称变换$T$,  所有的态矢要么满足方程(\ref{2.A.14}), 要么满足方程(\ref{2.A.15}).
+
+现在证明我们的命题很容易, 即量子力学算符$U$要么是线性且幺正的, 要么是反线性且反幺正的. 首先, 假定所有态矢$\sum_{k}C_{k}\Psi_{k}$都满足方程(\ref{2.A.14}). 任意两个态矢$\Psi$和$\Phi$可以展成
+\[
+\Psi = \sum_{k}A_{k}\Psi_{k}\:,\qquad \Phi = \sum_{k}B_{k}\Psi_{k}%
+\]
+因而, 利用方程(\ref{2.A.14}),
+\begin{align*}
+U(\alpha\Psi+\beta\Phi) &= U\sum_{k}(\alpha A_{k} + \beta B_{k}) \Psi_{k}
+= \sum_{k}(\alpha A_{k}+\beta B_{k}) U\Psi_{k} \\
+&= \alpha\sum_{k}A_{k}U\Psi_{k} + \beta\sum_{k}B_{k}U\Psi_{k}  \:.
+\end{align*}
+再\marginpar[\flushright{\small[96]\hspace*{5mm}}]{{\small\hspace*{5mm}[96]}}次利用方程(\ref{2.A.14}), 给出
+\begin{equation}
+U(\alpha\Psi+\beta\Phi) = \alpha U\Psi+\beta U\Phi  \:, \label{2.A.19}%
+\end{equation}
+所以$U$是{\KAI{线性}}的. 同样, 利用方程(\ref{2.A.2})和(\ref{2.A.3}), 变换后, 态的标量积是
+\[
+(U\Psi , U\Phi) = \sum_{kl} A_{k}^{\ast}B_{l}(U\Psi_{k},U\Psi_{l}) = \sum_{k}A_{k}^{\ast}B_{k} \:,
+\]
+因此
+\begin{equation}
+(U\Psi,U\Phi) = (\Psi,\Phi)  \:, \label{2.A.20}%
+\end{equation}
+所以$U$是{\KAI{幺正}}的.
+
+对所有态矢, 满足方程(\ref{2.A.15}%
+)的对称性情况可以用非常类似的方式处理. 读者或许能够在没有帮助的情况下完成这个论证, 但是由于大家可能不熟悉反线性算符, 我们将在这里给出证明细节. 假定所有态矢$\sum_{k}C_{k}\Psi_{k}$满足方程(\ref{2.A.15}). 任意两个态矢$\Psi$和$\Phi$可以像之前那样展开, 因此:
+\begin{align*}
+U(\alpha\Psi+\beta\Phi) &= U\sum_{k}(\alpha A_{k}+\beta B_{k}) \Psi_{k} \\
+&= \sum_{k} (\alpha^{\ast}A_{k}^{\ast}+\beta^{\ast}B_{k}^{\ast})U\Psi_{k}
+= \alpha^{\ast}\sum_{k}A_{k}^{\ast}U\Psi_{k}+\beta^{\ast}\sum_{k}B_{k}^{\ast}U\Psi_{k} \:.
+\end{align*}
+再次利用方程(\ref{2.A.15}), 给出
+\begin{equation}
+U(\alpha\Psi+\beta\Phi) = \alpha^{\ast}U\Psi+\beta^{\ast}U\Phi \:, \label{2.A.21}%
+\end{equation}
+所以$U$是{\KAI{反线性}}的. 另外, 利用方程(\ref{2.A.2})和(\ref{2.A.3}), 变换后, 态的标量积是
+\[
+(U\Psi,U\Phi) = \sum_{kl} A_{k}B_{l}^{\ast}(U\Psi_{k},U\Psi_{l}) = \sum_{k}A_{k}B_{k}^{\ast}
+\]
+因此
+\begin{equation}
+( U\Psi,U\Phi ) = (\Psi,\Phi)^{\ast} \:, \label{2.A.22}%
+\end{equation}
+所以$U$是{\KAI{反幺正}}的.
+
+\section*{附录~B\quad 群算符和同伦类}
+
+\addcontentsline{toc}{section}{附录~B\quad 群算符和同伦类}                %自动提目录
+\markright{附录~B\quad 群算符和同伦类}      %%前双后单书眉
+
+\def\theequation{\arabic{chapter}.B.\arabic{equation}}
+
+\setcounter{equation}{0}
+
+
+在这个附录里, 我们将证明\,\ref{sec:2.7}\,节中陈述的定理: 只要\,(a)\,对群生成元的定义可以使得\,Lie\,代数中没有中心荷, (b)\,群是单连通的, 我们就可以对有限对称变换$T$的算符$U(T)$的相位进行选择, 使得这些算符构成对称群的表示, 而非投影表示. 我们也会论述非连通群将遇到的投影表示, 以及它们与该群同伦类的关系.
+
+为了证明这个定理, 让我们先回忆一下构造对应对称变换的算符的方法. 正如\,\ref{sec:2.2}\,节所描述的, 我们引入了一组用来参数化这些变换的实变量$\theta^{a}$, 在这种方式下, 变换满足合成规则(\ref{2.2.15}):
+\[
+T(\bar{\theta})\,T(\theta) = T\Big(f(\bar{\theta},\theta)\Big) \:.%
+\]
+我们要构造满足如下相应条件 的算符$U(T(\theta))\equiv U[\theta]${}$^*$\footnote{$^*${}这里使用方括号是为了区分作为群参量函数的$U$算符%
+与表示为群变换本身函数的$U$算符. }
+\begin{equation}
+U[\bar{\theta}]\,U[\theta] = U\Big[f(\bar{\theta},\theta)\Big] \:.\label{2.B.1}%
+\end{equation}
+为了做到这一点, 我们在群参数空间中取一个任意的``标准''路径$\Theta_{\theta}^{a}(s)$, 这个路径从原点通向各个点$\theta$, 并满足$\Theta_{\theta}^{a}(0)=0$和$\Theta_{\theta}^{a}(1)=\theta^{a}$,
+并通过如下微分方程定义沿这样路径的$U_{\theta}(s)$\marginpar[\flushright{\raisebox{-6ex}[0pt]{{\small[97]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[97]}}}
+\begin{equation}
+\frac{\dif}{\dif s}U_{\theta}(s) = \mi t_{a} U_{\theta}(s)h^{a}{}_{\!b}(\Theta_{\theta}(s))\,
+\frac{\dif\Theta_{\theta}^{b}(s)}{\dif s} \label{2.B.2}%
+\end{equation}
+它有初始条件
+\begin{equation}
+U_{\theta}(0) = 1 \:, \label{2.B.3}%
+\end{equation}
+其中
+\begin{equation}
+[h^{-1}]^{a}{}_{\!b}(\theta) \equiv \left[
+\frac{\partial f^{a}(\bar{\theta},\theta)}{\partial\bar{\theta}^{b}}\right]_{\bar{\theta}=0}\:.\label{2.B.4}%
+\end{equation}
+我们最终要把算符$U[\theta]$与$U_{\theta}(1)$等同起来, 但首先我们必须确定$U_{\theta}(s)$的一些性质.
+
+为了检验合成规则, 考虑两个点$\theta_{1}$和$\theta_{2}$, 定义从$0$到$\theta_{1}$的路径$\mathscr{P}$, 并由此给出$f(\theta_{2},\theta_{1})$:
+\begin{equation}
+\Theta_{\mathscr{P}}^{a}(s) \equiv
+\left\{
+\begin{array}
+[c]{l}%
+\Theta_{\theta_{1}}^{a}(2s) \\
+f^{a}(\Theta_{\theta_{2}}(2s-1),\theta_{1})
+\end{array}
+\right.
+\begin{array}{c}
+0\leq s\leq \tfrac{1}{2} \:, \\
+\tfrac{1}{2}\leq s \leq 1 \:.
+\end{array}\label{2.B.5}%
+\end{equation}
+在第一个路径的末端, 我们有$U_{\mathscr{P}}(\frac{1}{2})=U_{\theta_{1}}(1)$. 为了确定沿第二段路径的$U_{\mathscr{P}}(s)$, 我们需要$f^{a}(\Theta_{\theta_{2}}(2s-1),\theta_{1})$的导数. 为了这个目的, 我们利用基本的结合律:
+\begin{equation}
+f^{a}(f(\theta_{3},\theta_{2}),\theta_{1})
+=f^{a}(\theta_{3},f(\theta_{2},\theta_{1})) \: .\label{2.B.6}%
+\end{equation}
+在$\theta_{3}\to0$的极限下, 匹配$\theta_{3}^{c}$的系数得到:
+\begin{equation}
+\frac{\partial f^{a}(\theta_{2},\theta_{1})}{\partial\theta_{2}^{b}}
+h^{c}{}_{\!a}(f(\theta_{2},\theta_{1})) = h^{c}{}_{\!b}(\theta_{2})  \:. \label{2.B.7}%
+\end{equation}
+因此$U_{\mathscr{P}}(s)$沿着第二段路径的微分方程(\ref{2.B.2})与$U_{\theta_{2}}(2s-1)$的微分方程相同. 它们满足不同的初始条件, 但$U_{\mathscr{P}}(s)U_{\theta_{1}}^{-1}(1)$也满足与$U_{\theta_{2}}(2s-1)$%
+相同的微分方程, 并且有相同的初始条件: 在$s=\frac{1}{2}$处均为$1$. 我们由此得出, %
+对$\frac{1}{2}\leq s\leq1$,
+\[
+U_{\mathscr{P}}(s)\, U_{\theta_{1}}^{-1}(s)
+=U_{\mathscr{\theta }_{2}}(2s-1)
+\]
+并且, 特别地
+\begin{equation}
+U_{\mathscr{P}}(1) = U_{\theta_{2}}(1)\,U_{\theta_{1}}(1) \:. \label{2.B.8}%
+\end{equation}
+然而, 这并{\KAI{不}}是说$U_{\theta}(1)$满足期望的合成法则(\ref{2.B.1}), 这是因为, %
+尽管路径$\Theta_{\mathscr{P}}(s)$从$\theta^{a}=0$到$\theta^{a}=f^{a}(\theta_{2},\theta_{1})$, 但一般而言, 它与我们选择的直接从$\theta^{a}=0$ 到%
+$\theta^{a}=f^{a}(\theta_{2},\theta_{1})$的``标准''路径%
+$\Theta_{f(\theta_{2},\theta_{1})}$并不同. 为了能使$U[\theta]$等于$U_{\theta}(1)$, 我们需要证明$U_{\theta}(1)$与从$0$到$\theta$的路径无关.
+
+为\marginpar[\flushright{\small[98]\hspace*{5mm}}]{{\small\hspace*{5mm}[98]}}此, 考察从$0$到$\theta$的路径变分$\updelta\Theta(s)$产生的$U_{\theta}(s)$ 的变分$\updelta U$. 取方程(\ref{2.B.2})的变分, 这给出微分方程
+\[
+\frac{\dif}{\dif s}\updelta U = \mi t_{a}\updelta U h^{a}{}_{\!b}(\Theta)\frac{\dif\Theta^{b}}{\dif s} +
+\mi t_{a} U h^{a}{}_{\!b,c}(\Theta) \updelta\Theta^{c}\frac{\dif\Theta^{b}}{\dif s} +
+\mi t_{a} U h^{a}{}_{\!b}(\Theta) \frac{\dif\updelta\Theta^{b}}{\dif s}
+\]
+其中$h^{a}{}_{\!b,c}\equiv\partial h^{a}{}_{\!b}/\partial\Theta^{c}$. 利用\,Lie\,对易关系(\ref{2.2.22})(没有中心荷), 并稍微整理一下, 这给出
+\begin{align}
+\frac{\dif}{\dif s}\Bigl(U^{-1}\updelta U\Bigr) &= \frac{\dif}{\dif s}
+\Bigl(\mi\,U^{-1} t_{a} U h^{a}{}_{\!b}\updelta\Theta^{b}\Bigr)  \nonumber\\
+&\quad + \mi\, U^{-1}t_{a}U\updelta\Theta^{b}\frac{\dif \Theta^{c}}{\dif s}
+\,\Bigl(h^{a}{}_{\!c,b} - h^{a}{}_{\!b,c} + C^{a}{}_{\!ed}h^{e}{}_{\!b}h^{d}{}_{\!c}\Bigr) \:. \label{2.B.9}%
+\end{align}
+然而, 在结合律条件(\ref{2.B.6})中取极限$\theta_{3},\theta_{2}\to0$, 我们发现对所有的$\theta$:
+\begin{equation}
+h(\theta)^{a}{}_{\!b,c} = -f^{a}{}_{\!de} h(\theta)^{d}{}_{\!b} h(\theta)^{e}{}_{\!c} \:, \label{2.B.10}%
+\end{equation}
+其中$f^{a}{}_{\!de}$是(\ref{2.2.19})定义的系数. $b$和$c$的反对称性表明方程(\ref{2.B.9})中的最后一项为零
+\begin{equation}
+h^{a}{}_{\!c,b} - h^{a}{}_{\!b,c} + C^{a}{}_{\!ed}h^{e}{}_{\!b}h^{d}{}_{\!c}=0 \:.\label{2.B.11}%
+\end{equation}
+因此方程(\ref{2.B.9})告诉我们,
+\[
+U^{-1}\updelta U - \mi U^{-1} t_{a}U h^{a}{}_{\!b}\updelta\Theta^{b}%
+\]
+在路径$\theta(s)$上是常数. 由此可知, 对于端点固定在$\Theta(0)=0$和$\Theta(1)=\theta$的路径, (并且$U_{\theta}(0)=1$) $U_{\theta}(1)$在这种路径的任意无限小变分下是稳定的. 但是, 假设\,(b)\,告诉我们, 从$\Theta(0)=0$到$\Theta(1)=\theta$的路径可以连续地变换到彼此, 所以我们现在可以认为$U_{\theta}(1)$ 仅是$\theta$的函数, 它与路径无关:
+\begin{equation}
+U_{\theta}(1) \equiv U[\theta]  \:. \label{2.B.12}%
+\end{equation}
+特别的, 因为路径$\mathscr{P}$从$0$到$f(\theta_{2},\theta_{1})$, 我们有
+\[
+U_{\mathscr{P}}(1) = U[f(\theta_{2},\theta_{1})]
+\]
+从而方程(\ref{2.B.8})证明了$U[\theta]$满足群的乘法法则(\ref{2.B.1}), 这正是所要证明的.
+
+既然我们已经建立了一个非投影表示$U[\theta]$, 剩下要证明的是, 对于有相同表示生成元$t_{a}$的同一个群, 它的任何投影表示$\tilde{U}[\theta]$与$U[\theta]$仅差一个相位:
+\[
+\tilde{U}[\theta] = \me^{\mi\alpha(\theta)} U[\theta]
+\]
+使得$\tilde{U}[\theta]$的\marginpar[\flushright{\small[99]\hspace*{5mm}}]{{\small\hspace*{5mm}[99]}}乘法法则中的相位$\phi$
+\[
+\tilde{U}[\theta^{\prime}]\tilde{U}[\theta] = \me^{\mi\phi(\theta^{\prime},\theta)}\tilde{U}[f(\theta^{\prime},\theta)]
+\]
+可以通过对$\tilde{U}[\theta]$的相位做一个简单变换移除掉. 为了看到这点, 考察算符
+\[
+U[\theta]^{-1} U[\theta^{\prime}]^{-1} \tilde{U}[\theta^{\prime}] \tilde{U}[\theta] = U[f(\theta^{\prime},\theta)]^{-1} \tilde{U}[f(\theta^{\prime},\theta)]
+\me^{\mi\phi(\theta^{\prime},\theta)} \:.
+\]
+因为$U[\theta]$和$\tilde{U}[\theta]$有相同的生成元, %
+左边对$\theta^{\prime a}$的导数在$\theta^{\prime}=0$处为零, 所以
+\[
+0=\frac{\partial}{\partial\theta^{b}}\Bigl\{U[\theta]^{-1}\tilde{U}[\theta]\Bigr\}
++ \mi\phi_{b}(\theta) U[\theta]^{-1}\tilde{U} [\theta] \:,
+\]
+其中
+\[
+\phi_{b}(\theta) \equiv h^{a}{}_{\!b}(\theta)\left[\frac{\partial}{\partial\theta^{\prime b}}
+\phi(\theta^{\prime},\theta) \right]_{\theta^{\prime}=0} \:.
+\]
+对这个结果做相对$\theta^{c}$的微分, $b$和$c$的反对称性立刻给出
+\[
+0=\frac{\partial\phi_{b}(\theta)}{\partial\theta^{c}}
+-\frac{\partial\phi_{c}(\theta)}{\partial\theta^{b}} \:.
+\]
+一个熟悉的定理\textsuperscript{\cite{13}}告诉我们, 在单连通空间中, 这要求$\phi_{b}$恰好是某个函数$\beta$的梯度:
+\[
+\phi_{b}(\theta) = \frac{\partial\beta(\theta)}{\partial\theta^{b}} \:.
+\]
+因此$U[\theta]^{-1}\tilde{U}[\theta]\me^{\mi\beta(\theta)}$实际上对于$\theta$是常量. 令它等于它在$\theta=0$处的值, 我们看到$\tilde{U}$ 恰好正比于$U$:
+\[
+\tilde{U}[\theta] = U[\theta] \exp(-\mi\beta(\theta) + \mi\beta(0))
+\]
+这正是前面声明的.
+
+\subsection*{* * *}
+
+当\,Lie\,代数中没有中心荷, 但群不是单连通群时, 群的乘法规则中会出现相位因子, 而上面的分析告诉了我们一些关于相因子本质的信息. 假定从$0$到$\theta$ 再到$f(\bar{\theta},\theta)$的路径$\mathscr{P}$不能变换成我们选择的从%
+$0$到$f(\bar{\theta},\theta)$的标准路径, 或者换句话说, 从$0$到$\theta$再到$f(\bar{\theta},\theta)$再回到$0$的圈不能连续地形变至点. 那么$U^{-1}(f(\theta_{2},\theta_{1}))U(\theta_{2})U(\theta_{1})$可以是相位因子%
+$\exp(\mi\phi(\theta_{2},\theta_{1}))\neq1$, 但是对于所有可以互相变形到彼此的圈, $\phi$是相同的. 对于起始并结束于原点并能够连续变形到给定圈的所有圈, 我们称这些圈的集合为给定圈的{\KAI{同伦类}};\textsuperscript{\cite{14}} 因此我们看到$\phi(\theta_{2},\theta_{1})$仅依赖于从$0$到
+$\theta$再\marginpar[\flushright{\small[100]\hspace*{5mm}}]{{\small\hspace*{5mm}[100]}}到$f(\bar{\theta},\theta)$%
+再回到$0$的圈的同伦类. 同伦类的集合构成群; 圈$\mathscr{L}_{1}$的同伦类和$\mathscr{L}_{2}$的同伦类的``乘积''是先沿着$\mathscr{L}_{1}$ 绕行
+再沿着$\mathscr{L}_{2}$绕行得到的圈的同伦类; 圈$\mathscr{L}$的同伦类的``逆''是反方向绕行$\mathscr{L}$得到圈的同伦类; 而``单位元''是指可以形变至原点的圈的同伦类. 这个群被称为所考察空间的{\KAI{第一同伦群}}或{\KAI{基本群}}. 很容易看出相位因子构成该群的表示: 如果沿着$\mathscr{L}$走一圈给出相位因子$\me^{\mi\phi}$, 沿着$\mathscr{\bar{L}}$走一圈给出相位因子$\me^{\mi\bar{\phi}}$, 那么沿着这两个圈走一圈给出相位因子$\me^{\mi\phi}\me^{\mi\bar{\phi}}$. 因此, 如果我们知道了一个给定群$\mathscr{G}$(没有中心荷)的参量空间的第一同伦群的一维表示, 我们可以标记出群$\mathscr{G}$的所有可能类型的投影表示. 卷\,II\,中将会更加详细地讨论同伦群.
+
+
+\section*{附录~C\quad 反演和简并多重态}
+
+\addcontentsline{toc}{section}{附录~C\quad 反演和简并多重态}                %自动提目录
+\markright{附录~C\quad 反演和简并多重态}      %%前双后单书眉
+
+\def\theequation{\arabic{chapter}.C.\arabic{equation}}
+
+\setcounter{equation}{0}
+
+
+通常假定反演$\mathsf{T}$和$\mathsf{P}$使单粒子态变成同种粒子的另一单粒子态, 这个粒子态或许会带有依赖粒子种类的相位因子. 在\,\ref{sec:2.6}\, 节, 我们顺带注意到了, 当反演作用在单粒子态的简并多重态上时, 它产生的效果可能会更加复杂, 这种可能性似乎是\,Wigner\textsuperscript{\cite{15}}在\,1964\,年首先提到的. 这个附录将会探讨反演算符的一个推广版本, 用有限矩阵取代反演相位, 但是没有采取\,Wigner\,做过的一些限制性假定.
+
+让我们从时间反演开始. Wigner\,对反演算符的作用做了一些限制, 他假定了反演算符的平方正比于单位算符. 因为$\mathsf{T}$是反幺正的, 很容易看出对应$\mathsf{T}^{2}$的比例因子只能是$\pm1$, 而由超选择定则划分的子空间可能有不同的符号. 在$2j$取奇值或偶值的态构成的空间上, 如果$\mathsf{T}^{2}$ 的符号与\,\ref{sec:2.6}\,节发现的符号$(-1)^{2j}$相反, 那么涉及的物理态对$\mathsf{T}$算符构成的表示必然要比迄今为止假定的要复杂. 但是, 如果我们愿意承认这种可能性, 似乎不存在好的理由强制$\mathsf{T}^{2}$满足正比单位算符的条件, 即\,Wigner\,条件. 将期望寄予扩张\,Poincar\'{e}\,群的结构是无法让人信服的; 对任意反演算符, 唯一有用的定义是算符是精确守恒还是近似守恒, 而这并不是使得$\mathsf{T}^{2}$正比于单位算符的定义.
+
+为了探\marginpar[\flushright{\small[101]\hspace*{5mm}}]{{\small\hspace*{5mm}[101]}}讨时间反演更普遍的可能性, 假定它在有质量单粒子态上有如下作用
+\begin{equation}
+\mathsf{T}\Psi_{\bp,\sigma,n}
+= (-1)^{j-\sigma} \sum_{m}\mathscr{T}_{mn}\Psi_{-\bp,-\sigma,m} \:, \label{2.C.1}%
+\end{equation}
+其中$\bp,j$和$\sigma$分别是粒子的动量, 自旋和自旋$z$-分量, 而$n,m$用来标记粒子种类简并多重态的不同成员. (因子$(-1)^{j-\sigma}$ 以及$\bp$和$\sigma$%
+的反号可以用\,\ref{sec:2.6}\,节中的方法推断出来.) 由于$\mathsf{T}$是反幺正的, 所以$\mathscr{T}$必须是幺正的, 除此之外, 对矩阵$\mathscr{T}_{mn}$ 一无所知.
+
+现在来看看, 如何通过对单粒子态基的合理选择来简化这个变换. 通过幺正变换定义新的态%
+$\Psi_{\bp,\sigma,n}^{\prime}=\sum_{m}\mathscr{U}_{mn}\Psi_{\bp,\sigma,m}$, 对这个态, 我们会得到相同的变换
+(\ref{2.C.1}), 只是矩阵$\mathscr{T}_{mn}$要变成
+\begin{equation}
+\mathscr{T}^{\prime}=\mathscr{U}^{-1}\mathscr{T}\mathscr{U}^{\ast}  \:. \label{2.C.2}%
+\end{equation}
+不同于$\mathsf{T}$是幺正的情况, 一般而言, 我们不能通过选择单粒子态的基使得$\mathscr{T}^{\prime}$对角化. 但是, 我们可以做到分块对角化, 其分块要么是$1\times1$的相位, 要么是形式如下的$2\times2$矩阵
+\begin{equation}
+\left(
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{3mm}& \me^{\mi\phi/2}\\
+\me^{-\mi\phi/2} &\hspace*{3mm}& 0
+\end{array}
+\right)  \:, \label{2.C.3}%
+\end{equation}
+其中$\phi$是各种实相位.
+
+(证明如下. 首先, 注意到方程(\ref{2.C.2})给出
+\[
+\mathscr{T}^{\prime}\mathscr{T}^{\prime\ast}=\mathscr{U}^{-1}%
+\mathscr{T}\mathscr{T}^{\ast}\mathscr{U} \:.
+\]
+这是一个幺正变换, 所以, 通过选择$\mathscr{U}$, 我们可以使幺正矩阵$\mathscr{T}\mathscr{T}^{\ast
+}$%
+对角化. 假定对角化已经完成, 并去掉撇号, 我们有
+\begin{equation}
+\mathscr{T}=D\mathscr{T}^{\zT} \:, \label{2.C.4}%
+\end{equation}
+其中$D$是幺正对角矩阵, 设它的对角元是相位$\me^{\mi\phi_{n}}$. 一个显然的结果是: 除非$\me^{\mi\phi_{n}}=1$, 否则对角元$\mathscr{T}_{nn}$为零. 更进一步, 如果$\me^{\mi\phi_{n}}=1$但$\me^{\mi\phi_{m}}\neq1$, 那么方程(\ref{2.C.4})告诉我们$\mathscr{T}_{nm}=\mathscr{T}_{mn}=0$. 通过先列出$\me^{\mi\phi_{n}}=1$的所有行与列, 我们可以将矩阵$\mathscr{T}$写成如下形式
+\begin{equation}
+\mathscr{T}=\left(
+\begin{array}
+[c]{ccc}%
+\mathscr{A} &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& \mathscr{B}
+\end{array}
+\right)  \text{ , }\label{2.C.5}%
+\end{equation}
+其中$\mathscr{A}$是对称且幺正的, 而$\mathscr{B}$的对角元全为零. 因为$\mathscr{A}$是对称的,  它可以表示为一个对称反厄米矩阵的指数, 所以, 通过仅作用在$\mathscr{A}$上的变换(\ref{2.C.2})就\marginpar[\flushright{\small[102]\hspace*{5mm}}]{{\small\hspace*{5mm}[102]}}可以使其对角化, $\mathscr{U}$的相应子矩阵是实的并且因此是正交的. 因此只需考虑联系$\me^{\mi\phi_{n}}\neq1$ 的行与列的子矩阵$\mathscr{B}$. 对于$n\neq m$, 方程(\ref{2.C.4})给出$\mathscr{T}_{nm}=\me^{\mi\phi_{n}}\mathscr{T}_{mn}$ 和%
+$\mathscr{T}_{mn}=\me^{\mi\phi_{m}}\mathscr{T}_{nm}$, 所以$\mathscr{T}_{nm}=\me^{\mi\phi_{n}}\me^{\mi\phi_{m}}\mathscr{T}_{nm}$%
+且$\mathscr{T}_{mn}=\me^{\mi\phi_{n}}\me^{\mi\phi_{m}}\mathscr{T}_{mn}$. 因此, 除非$\me^{\mi\phi_{n}}\me^{\mi\phi_{m}}=1$, 否则$\mathscr{T}_{nm}=\mathscr{T}_{mn}=0$. 如果我们先列出所有相位$\me^{\mi\phi_{1}}\neq1$的行与列, 再列出所有相位相反的行与列, 再列出其他所有不等于$\me^{\pm\mi\phi_{1}}$且$\me^{\mi\phi_{2}}\neq1$的行与列, 再列出相位相反的行与列, 一直做下去, 矩阵$\mathscr{B}$就变成分块对角形式
+\begin{equation}
+\mathscr{B}=\left(
+\begin{array}
+[c]{ccccc}%
+\mathscr{B}_{1} &\hspace*{3mm}& 0 &\hspace*{3mm}& \cdots\\
+0 &\hspace*{3mm}& \mathscr{B}_{2} &\hspace*{3mm}& \cdots\\
+\cdots &\hspace*{3mm}& \cdots &\hspace*{3mm}& \cdots
+\end{array}
+\right)  \text{ , }\label{2.C.6}%
+\end{equation}
+其中
+\begin{equation}
+\mathscr{B}_{i}=\left(
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{3mm}& \me^{\mi\phi_{i}/2}\mathscr{C}_{i}\\
+\me^{-\mi\phi_{i}/2}\mathscr{C}_{i}^{\zT} &\hspace*{3mm}& 0
+\end{array}
+\right)  \text{ }.\label{2.C.7}%
+\end{equation}
+更进一步, $\mathscr{T}$的幺正性以及随之的$\mathscr{B}$的幺正性要求%
+$\mathscr{C}_{i}\mathscr{C}_{i}^{\dag}=\mathscr{C}_{i}^{\dag}\mathscr{C}_{i}=1$, 因此$\mathscr{C}_{i}$是幺正方阵. 通过作用一个变换(\ref{2.C.2}), 其中$\mathscr{U}$的分块对角形式与$\mathscr{T}$相同, 且第$i$个分块矩阵形式为
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+V_{i} &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& W_{i}%
+\end{array}
+\right)
+\]
+以及$V_{i}$和$W_{i}$幺正, 那么子矩阵$\mathscr{C}_{i}$服从变换$\mathscr{C}_{i}\to V_{i}^{-1}\mathscr{C}_{i}W_{i}^{\ast}$, 所以我们显然可以选择变换使得$\mathscr{C}_{i}=1$. 这建立了相位为$\me^{\mi\phi_{i}}$和$\me^{-\mi\phi_{i}}$的分块中各对单行与单列间的对应. 为了将矩阵$\mathscr{B}$ 变成(\ref{2.C.3}) 的$2\times2$分块的分块对角形式. 现在仅需要重新排行与列, 使得在第$i$个分块内, 我们交替地列出相位分别为$\me^{\mi\phi_{i}}$ 和$\me^{-\mi\phi_{i}}$ 的行与列.)
+
+注意到, 在$\me^{\mi\phi}\neq1$的情况下, 我们无法通过选择态来对角化时间反演算符, 这是非常重要的. 如果有一对态$\Psi_{\bp,\sigma,\pm}$, $\mathsf{T}$作用在上面有矩阵(\ref{2.C.3}), 那么
+\begin{equation}
+\mathsf{T}\Psi_{\bp,\sigma,\pm}= \me^{\pm \mi\phi/2}(-1)^{j-\sigma}
+\Psi_{-\bp,-\sigma,\mp}  \:.\label{2.C.8}%
+\end{equation}
+那么, 在这些态的线性组合上, 用时间反演算符作用给出
+\[
+\mathsf{T}(c_{+}\Psi_{\bp,\sigma,+}+c_{-}\Psi_{\bp,\sigma,-})
+= (-)^{j-\sigma} (\me^{\mi\phi/2}c_{+}^{\ast}\Psi_{-\bp,-\sigma,-}
++\me^{-\mi\phi/2}c_{-}^{\ast}\Psi_{-\bp,-\sigma,+}) \:.
+\]
+为了\marginpar[\flushright{\small[103]\hspace*{5mm}}]{{\small\hspace*{5mm}[103]}}使得$c_{+}\Psi_{\bp,\sigma,+}+c_{-}\Psi_{\bp,\sigma,-}$在$\mathsf{T}$ 的作用下%
+只变换相位$\lambda$, 必须有
+\[
+\me^{\mi\phi/2}c_{+}^{\ast} = \lambda c_{-},\qquad\qquad
+\me^{-\mi\phi/2}c_{-}^{\ast}=\lambda c_{+} \:.
+\]
+但是, 联合求解这些方程给出$\me^{\pm \mi\phi/2}c_{\pm}^{\ast}=\lvert \lambda\rvert ^{2}c_{\pm}^{\ast}\me^{\mp\mi\phi/2}$, 除非$c_{+}=c_{-}=0$或$\me^{\mi\phi}$是\,1, 否则这是不可能的. 因此当$\me^{\mi\phi}\neq1$时, 在那些与自旋联系的简并外, 时间反演不变性又在这些态上加上了一个二重简并.
+
+当然, 如果存在一个额外的``内禀''对称算符$\mathsf{S}$, 使得这些态服从如下的变换
+\[
+\mathsf{S}\Psi_{\bp,\sigma,\pm}=\me^{\pm \mi\phi/2}\Psi_{-\bp,\sigma,\mp} \:,%
+\]
+那么我们可以将时间算符重新定义为$\mathsf{T}^{\prime}\equiv\mathsf{S}^{-1}\mathsf{T}$, 并且这个算符并不会把$\Psi
+_{\bp,\sigma,\pm}$彼此混合在一起. 仅在没有这类内禀对称性存在的情况下, 我们才可以把粒子态的二重简并归因于时间反演.
+
+现在我们回到$\mathsf{T}$平方的问题上来. 重复变换(\ref{2.C.8})给出
+\begin{equation}
+\mathsf{T}^{2}\Psi_{\bp,\sigma,\pm}
+=(-1)^{2j}\me^{\mp\mi\phi}\Psi_{\bp,\sigma,\pm} \:.\label{2.C.9}%
+\end{equation}
+如果我们像\,Wigner\,一样假定$\mathsf{T}^{2}$正比于单位算符, 那么我们就必须有$\me^{\mi\phi}=\me^{-\mi\phi}$, 由于相位是实的, 所以必须是$+1$ 或$-1$. 选择$\me^{\mi\phi}=-1$仍将要求单粒子态在与自旋相联系的简并外还有一个二重简并, 在\,Wigner\,的假定下, {\KAI{所有}}的粒子都会显现出这个二重简并. 但是, 没有什么理由阻止我们在方程(\ref{2.C.8})中取一般相位$\phi$, 使得它们对某些粒子是零, 对于某些不是. 因此, 已观测到的粒子没有显现出额外的二重简并不排除其他粒子具有这种简并的可能性.
+
+我们还可以考虑宇称算符$\mathsf{P}$的更复杂表示的可能性, 即
+\begin{equation}
+\mathsf{P}\Psi_{\bp,\sigma,n}=\sum_{m}\mathscr{P}_{nm}\Psi
+_{-\bp,\sigma,m}  \:, \label{2.C.10}%
+\end{equation}
+其中矩阵$\mathscr{P}$除幺正外没有其他约束. 不像时间反演的情况, 在这里我们总可以通过对态的基的选择使这个矩阵对角化. 但是对基的选择可能并不是简单地采用时间反演中的选择,
+所以, 原则上, $\mathsf{P}$和$\mathsf{T}$合起来可能会%
+将强加一个仅有$\mathsf{P}$或仅有$\mathsf{T}$时没有的额外简并.
+
+我们会在第5章提到, 任何量子场论都被期望遵守一个被称为$\mathsf{CPT}$的对称性, 它以如下方式作用在单粒子态上
+\begin{equation}
+\mathsf{CPT}\Psi_{\bp,\sigma,n}=\left(  -1\right)  ^{j-\sigma}%
+\Psi_{\bp,-\sigma,n^{c}}\text{ , }\label{2.C.11}%
+\end{equation}
+其中$n^{c}$代\marginpar[\flushright{\small[104]\hspace*{5mm}}]{{\small\hspace*{5mm}[104]}}表粒子$n$的反粒子(或者说``荷共轭''). 在这个变换中不允许出现相位或矩阵(虽然我们总能通过结合$\mathsf{CPT}$与一些好的内禀对称性来引入相位或矩阵). 由此得出
+\begin{equation}
+(\mathsf{CPT})^{2}\Psi_{\bp,\sigma,n}
+=(-1)^{2j}\Psi_{\bp,-\sigma,n} \:,\label{2.C.12}%
+\end{equation}
+Wigner\,提出$(\mathsf{CPT})^{2}$的作用可能会出现符号$-(-1)^{2j}$, 但这种可能性并不出现在量子场论中.
+
+如果$\mathsf{T}$是某类现象中的好对称性, 那么反演$\mathsf{CP}\equiv(\mathsf{CPT})\mathsf{T}^{-1}$也同样如此. 对于那些在$\mathsf{T}$变换下以通常方式变换的态
+\begin{equation}
+\mathsf{T}\Psi_{\bp,\sigma,n}\propto\Psi_{-\bp,-\sigma,n} \:, \label{2.C.13}%
+\end{equation}
+$\mathsf{CP}$算符也按通常的方式作用
+\begin{equation}
+\mathsf{CP}\Psi_{\bp,\sigma,n}\propto\Psi_{-\bp,\sigma,n^{c}} \:. \label{2.C.14}%
+\end{equation}
+这样, 算符$\mathsf{C}\equiv \mathsf{CPP}^{-1}$仅是将粒子变为反粒子
+\begin{equation}
+\mathsf{C}\Psi_{\bp,\sigma,n}\propto\Psi_{\bp,\sigma,n^{c}%
+}\text{ .}\label{2.C.15}%
+\end{equation}
+另一方面, 当$\mathsf{T}$采用非常规表示(\ref{2.C.8})时, 方程(\ref{2.C.11})给出
+\begin{equation}
+\mathsf{CP}\Psi_{\bp,\sigma,\pm}=\me^{\mp \mi\phi/2}\Psi_{-\bp,\sigma,\mp^{c}}\:.\label{2.C.16}%
+\end{equation}
+特别的, 由$\pm$标记的简并性可能与粒子\lzx 反粒子简并性相同, 这使得态$\Psi_{\pm}$的反粒子(由$\mathsf{CPT}$定义)就是$\Psi_{\mp}$. 在这种情况下, $\mathsf{CP}$将拥有{\KAI{不}}交换粒子和反粒子的异常性质. 只要这些粒子被考虑在内, $\mathsf{CP}$和$\mathsf{T}$就是我们通常所说的$\mathsf{P}$ 和$\mathsf{CT}$. 然而, 这不仅仅是定义的问题; 对于其他粒子, $\mathsf{CP}$和$\mathsf{T}$仍具有它们通常的效果.
+
+在已知的粒子中, 没有一个构成了反演的非常规表示, 所以这些可能性不在这里进一步讨论. 从现在起, %
+我们将假定所有反演具有\,\ref{sec:2.6}\,节中所给出的传统作用方式.
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+
+\begin{KAI}
+
+1. 假定观测者$\mathcal{O}$看到一个$W$玻色子(自旋为$1$且质量$m\neq 0$), %
+动量为$\bp$, 动量方向为$y$-方向且自旋$z$-分量为$\sigma$. %
+第二个观测者$\mathcal{O}^{\prime}$相对第一个观测者以速度$\bv $沿着$z$-方向运动. %
+$\mathcal{O}^{\prime}$会怎样描述$W$的这个态?
+
+2. 假定\marginpar[\flushright{\small[105]\hspace*{5mm}}]{{\small\hspace*{5mm}[105]}}观测者$\mathcal{O}$看到一个光子, 动量为$\bp$, %
+动量方向是$y$-方向且极化矢量在$z$-方向, %
+第二个观测者$\mathcal{O}^{\prime}$相对第一个观测者以速度$\bv $沿着$z$-方向运动. %
+$\mathcal{O}^{\prime}$会如何描述这个光子?
+
+3. 直接从群的乘法规则出发(不用我们关于\,Lorentz\,群的结果), %
+推导伽利略群生成元的对易关系. 要求包含不能通过重新定义群生成元消除的中心荷的最一般集合.
+
+4. 定义$W_{\mu}\equiv\epsilon_{\mu\nu\rho\lambda}J^{\nu\rho}P^{\lambda}$, %
+证明算符$P_{\mu}P^{\mu}$和$W_{\mu}W^{\mu}$与所有\,Lorentz\,变换算符$U(\Lambda,a)$对易.
+
+5. 考虑两个空间维和一个时间维中的物理, 假定具有``Lorentz''群$SO(2,1)$不变性. %
+如何描述单个{\KAI{有质量}}粒子的自旋态? 它们在\,Lorentz\,变换下会怎样? %
+在反演$\mathsf{P}$和$\mathsf{T}$下又会怎样?
+
+6. 像习题\,5\,那样, 考虑两个空间维和一个时间维中的物理, %
+假定具有``Lorentz''群$O(2,1)$不变性. 如何描述单个{\KAI{无质量}}粒子的自旋态? %
+它们在\,Lorentz\,变换下会怎样? 在反演$\mathsf{P}$和$\mathsf{T}$下又会怎样?
+ \end{KAI}
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}P. A. M. Dirac, {\textit{The principles of Quantum mechanics}}, 4th edn (Oxford University Press, Oxford, 1958).
+     \addcontentsline{toc}{section}{参考文献}
+
+\bibitem {2}E. P. Wigner, {\textit{Gruppentheorie und ihre Anwendung auf die
+Quantenmechanik der Atomspektren}}(Braunschweig, 1931): pp. 251-3(英译, Academic Press, Inc, New York, 1959).
+无质量粒子另见\,E. P. Wigner, {\textit{Theoretical Physics}}(International Atomic Energy Agency,
+Vienna, 1963): p. 64.
+
+\bibitem {3}G. C. Wick, A. S. Wightman, and E. P. Wigner, {\textit{Phys. Rev}%
+}. \textbf{{88}}, 101 (1952).
+
+\bibitem[3a]{3a}可参看\,S. Weinberg, {\textit{Gravitation and Cosmology}} (Wiley, New York, 1972): section 2.1.
+
+\bibitem {4}E. In\"{o}n\"{u} and E. P. Wigner, {\textit{Nuovo Cimento}}
+\textbf{{\textrm{IX}}}, 705 (1952)
+
+\bibitem {5}E. P. Wigner, {\textit{Ann. Math. }} \textbf{{40}}, 149 (1939).
+
+\bibitem {6}G. W. Mackey\marginpar[\flushright{\small[106]\hspace*{5mm}}]{{\small\hspace*{5mm}[106]}}, {\textit{Ann. Math}}. \textbf{{55}}, 101 (1952);
+\textbf{{58}}, 193 (1953); {\textit{Acta. Math}}. \textbf{{99}}, 265 (1958);
+{\textit{Induced Representations of Groups and Quantum Mechanics}} (Benjamin,
+New Youk, 1968).
+
+\bibitem {7}可参看\,A. R. Edmonds, {\textit{Angular Momentum in
+Quantum Mechanics,}} (Princeton University Press, Princeton, 1957): Chapter 4; M. E. Rose, {\textit{Elementary theory of Angular Momentum}} (John Wiley \& Sons, New York, 1957): Chapter IV; L. D. Landau and
+E. M. Lifshitz, {\textit{Quantum Mechanics \bzx Non Relativistic Theory,}} 3rd edn. (Pergamon Press, Oxford, 1977): section 58; Wu-Ki Tung, {\textit{Group Theory in Physics}} (World Scientific, Singapore, 1985);
+Sections 7.3 and 8.1.
+
+\bibitem {8}T. D. Lee and C. N. Yang, {\textit{Phys. Rev.}} \textbf{{104}},
+254 (1956); C. S. Wu {\textit{et al., Phys. Rev.}} \textbf{{105}}, 1413
+(1957); R. Garwin, L. Lederman, and M. Weinrich, {\textit{Phys. Rev.}}
+\textbf{{105}}, 1415 (1957); J. I. Friedman and V. L. Telegdi, {\textit{Phys.
+Rev.} \textbf{{105}}}, 1681 (1957).
+
+\bibitem {9}J. H. Christenson, J. W. Cronin, V. L. Fitch, and R. Turlay,
+{\textit{Phys. Rev. Letters}}, \textbf{{13}}, 138 (1964).
+
+\bibitem {10}H. A. Kramres, {\textit{Proc. Acad. Sci Amsterdam}} \textbf{{33}%
+}, 959 (1930); 另见 F. J. Dyson, {\textit{J. Math. Phys.}}
+\textbf{{3}}, 140 (1962).
+\bibitem{11} V. Bargmann, {\textit{Ann. Math.}} {\bf{59}}, 1 (1954): Theorem 7.1.
+\bibitem{12} 可参看\,H. W. Turnbull and A. C. Aitken, {\textit{An Introduction to the Theory of Canonical Matrices}} (Dover Publications, New York, 1961): p. 194.
+\bibitem{13} 可参看\,H. Flanders, {\textit{Differential Forms}} (Academic Press, New York, 1963): Section 3.6.
+\bibitem{14} 关于同伦类和同伦群的介绍, 参看\,J. G. Hocking and G. S. Young, {\textit{Topology}} (Addison-Wesley, Reading, MA, 1961): Chapter 4; C. Nash and S. Sen, {\textit{Topology and Geometry for Physicists}} (Academic Press, London, 1983): Chapter 3 and 5.
+\bibitem{15} E. P. Wigner, in {\textit{Group Theoretical Concepts and Methods in Elementary Particle Physics,}} F. G\"{u}rsey\,编辑\,(Gordon and Breach, New York, 1964): p. 37.
+\end{thebibliography}

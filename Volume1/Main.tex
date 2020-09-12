@@ -1,0 +1,167 @@
+%\documentclass[hep,10pt,draft]{hepbook}
+\documentclass[hep]{hepbook}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}   %  花体
+
+\usepackage{multicol}                 % 分栏宏包
+%\usepackage{cancel}
+%\usepackage{color}
+%\usepackage{multirow}
+%\usepackage{eso-pic}
+%\usepackage{dsfont}
+
+%\usepackage{enumerate}
+%\usepackage{cleveref}
+%\usepackage{varioref}
+
+\input XeCJKfont
+\usepackage{HEP}
+%\usepackage{wrapfig}                  % 图文混排
+\usepackage[body={125mm,192mm},centering]{geometry}
+%\usepackage[body={125mm,192mm},centering]{geometry}
+%\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+%\renewcommand{\thetheorem}{\arabic{chapter}.\arabic{theorem}}%
+\input HZcaption
+%\input command
+%\renewcommand{\labelenumi}{{\bf{\arabic{enumi}}}}   %控制enumerate环境的计数器
+
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+\renewcommand{\thechapter}{\arabic{chapter}}   % 定义方程编号
+% \definecolor{historyboxcolor}{gray}{0.8}
+%   \definecolor{proofboxcolor}{gray}{0.1}
+%\usepackage{lettrine}
+%\definecolor{orangeda}{cmyk}{1,0,0,0}
+%\definecolor{orangedaa}{cmyk}{0,0,0,0}
+%\usepackage{titlesec}                 % 标题格式
+\input paper2018.sty
+
+\def\lzx{\hspace*{.2mm}\mbox{-}\hspace*{.2mm}} % 半字线
+\def\bzx{\hspace*{.2mm}\mbox{--}\hspace*{.2mm}} % 半字线
+\def\yzx{\hspace*{.2mm}\mbox{---}\hspace*{.2mm}}  % 一字线
+\def\ezx{\hspace*{.2mm}\mbox{------}\hspace*{.2mm}} % 二字线
+\newcommand\Index[1]{#1\index{#1}}
+
+\newcommand{\liuhaaa}{\fontsize{20pt}{\baselineskip}\selectfont}%需要加
+\newcommand{\liuhaa}{\fontsize{11pt}{\baselineskip}\selectfont}%需要加
+\newcommand{\liuhab}{\fontsize{13pt}{\baselineskip}\selectfont}%需要加
+\newcommand{\liuhabb}{\fontsize{18pt}{\baselineskip}\selectfont}%需要加
+
+\renewcommand{\baselinestretch}{1.28}   %行间距
+\setlength{\arraycolsep}{0.5mm}
+\setlength{\parindent}{2em} %段首空
+\newcommand{\cdp}{\clearpage{\pagestyle{empty}\cleardoublepage}}
+
+%\includeonly{lzcl-14}
+
+
+%\newcommand{\jishu}[1]{\mathop{\overline{\overline{#1}}}}
+
+\makeindex
+
+\graphicspath{{figs/}}
+
+
+\makeindex                  %制作索引文件
+
+%\renewcommand\thefootnote{\textcircled{\tiny{\arabic{footnote}}}}
+
+\renewcommand\thefootnote{}
+
+\newenvironment{OExercises}[1][10..]{
+%\begin{small}
+\begin{list}
+{\hfill[\arabic{enumi}]}{
+\settowidth{\labelwidth}{\bfseries #1}%
+\setlength{\labelsep}{5pt}%
+\setlength{\topsep}{5bp}%
+\setlength{\partopsep}{0pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\itemsep}{0bp}%
+\setlength{\leftmargin}{\labelwidth}%
+\usecounter{enumi}}}{\end{list}%\end{small}
+}
+
+\newenvironment{OOExercises}[1][10.....]{
+%\begin{small}
+\begin{list}
+{\hfill[\arabic{enumi}]}{
+\settowidth{\labelwidth}{\bfseries #1}%
+\setlength{\labelsep}{5pt}%
+\setlength{\topsep}{5bp}%
+\setlength{\partopsep}{0pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\itemsep}{0bp}%
+\setlength{\leftmargin}{\labelwidth}%
+\usecounter{enumi}}}{\end{list}%\end{small}
+}
+
+\newenvironment{OEOExercises}[1][10...]{
+%\begin{small}
+\begin{list}
+{\hfill[\arabic{enumi}]}{
+\settowidth{\labelwidth}{\bfseries #1}%
+\setlength{\labelsep}{5pt}%
+\setlength{\topsep}{5bp}%
+\setlength{\partopsep}{0pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\itemsep}{0bp}%
+\setlength{\leftmargin}{\labelwidth}%
+\usecounter{enumi}}}{\end{list}%\end{small}
+}
+
+\usepackage[footnotesize]{caption2}%去掉图注后昌号%%%[hang,footnotesize]表示图注在图号后自控对齐
+\renewcommand{\captionlabeldelim}{\quad}%去掉图注后昌号
+
+%\documentclass{ctexart}
+%\usepackage{ctexart}
+%\ziju{1}
+
+\begin{document}
+
+
+%
+
+\include{lzcl-wq}
+
+\include{lzcl-ml}\cdp
+%\tableofcontents
+%\mainmatter
+
+\include{lzcl-01}\cdp
+\include{lzcl-02}\cdp
+\include{lzcl-03}\cdp
+\include{lzcl-04}\cdp
+\include{lzcl-05}\cdp
+\include{lzcl-06}\cdp
+\include{lzcl-07}\cdp
+\include{lzcl-08}\cdp
+\include{lzcl-09}\cdp
+\include{lzcl-10}\cdp
+\include{lzcl-11}\cdp
+\include{lzcl-12}\cdp
+\include{lzcl-13}\cdp
+\include{lzcl-14}\cdp
+\include{lzcl-rmsy}\cdp
+\include{lzcl-ztsy}\cdp
+
+\backmatter
+
+
+%\balance        %%分栏
+\begin{small}      %%小字号
+\thispagestyle{empty} \printindex
+%\include{lzcl-sy}\cdp
+\end{small}
+\vfill
+\eject
+
+
+
+\end{document}
+
+
+
+
+

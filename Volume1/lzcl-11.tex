@@ -1,0 +1,917 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+
+\chapter{量子电动力学中的单圈辐射修正} \label{cha:11}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[472]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[472]}}}
+  \markboth{第11章\quad 量子电动力学中的单圈辐射修正}{第11章\quad 量子电动力学中的单圈辐射修正}
+
+本章中, 我们将在带电轻子的理论\ezx 仅与电磁场有相互作用的自旋$\frac{1}{2}$有质量粒子的理论中做一些经典地单圈计算.
+已知存在的轻子有三种或三``味'': 电子和$\mu$子, 以及更重的, 最近才发现的$\tau$子. 尽管我们的大多数计算将等价地适用于$\mu$子和$\tau$子, 明确起见, 这里计算中的带荷粒子指的是``电子''. 在\,\ref{sec:11.1}\,节的一些普遍讨论后, %
+我们将在\,\ref{sec:11.2}\,节计算真空极化, 在\,\ref{sec:11.3}\,节计算电子的反常磁矩, 在\,\ref{sec:11.4}\,节计算电子自能. %
+在这个过程中, 我们将引入数个在这些计算中被证实有用的数学技巧, 包括\,Feynman\,参量的应用、 Wick\,旋转, %
+以及\,`t Hooft\,和\,Veltman\,的维数正规化和\,Pauli\,和\,Villars\,(维拉斯)的旧正规化方法. 尽管会遇到无限大, 但我们将看到, 如果用重正化荷和重正化质量表述, 最终的结果是有限的. 在下一章, 我们在这里关于重正化所学到的东西将推广至一般理论的微扰论任意阶.
+
+\section{抵消项} \label{sec:11.1}
+\setcounter{equation}{0}
+
+电子和光子的拉格朗日量密度取如下形式{}$^*$\footnote{$^*${}在本章, 我们不会\,在Heisenberg\,绘景算符和相互作用绘景算符之间做变换, 所以我们将回到传统的记法, 在这个记法中分别用大写的$A$和小写的$\psi$来标记光子场和带电粒子场.}
+\begin{equation}
+\mathscr{L}=-\tfrac{1}{4}F_{\text{B}}^{\mu \nu}F_{\text{B}\,\mu \nu}-
+\bar{\psi}_{\text{B}}\Bigl[ \gamma_{\mu}\,[\partial^{\mu}+ \mi e_{\text{B}}A_{\text{B}}^{\mu}]
++m_{\text{B}}\Bigr] \psi_{\text{B}},  \label{11.1.1}
+\end{equation}%
+其中$F_{\text{B}}^{\mu\nu}\equiv \partial^{\mu}A_{\text{B}}^{\nu}-\partial^{\nu}A_{\text{B}}^{\mu };$ $A_{\text{B}}^{\mu}$和$\psi _{\text{B}}$ 是光子和电子的裸场(即, 非重正化的场),
+而$-e_{\text{B}}$和$m_{\text{B}}$是电子的裸荷和裸质量. 正如上一章所描述的, 我们引入重正化场, 重正化荷以及重正化质量:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[473]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[473]}}}
+\begin{equation}
+\psi \equiv Z_{2}^{-1/2}\psi _{\text{B}}\:,  \label{11.1.2}
+\end{equation}%
+\begin{equation}
+A^{\mu }\equiv Z_{3}^{-1/2}A_{\text{B}}^{\mu }\:,  \label{11.1.3}
+\end{equation}%
+\begin{equation}
+e\equiv Z_{3}^{+1/2}e_{\text{B}}\:,  \label{11.1.4}
+\end{equation}%
+\begin{equation}
+m\equiv m_{\text{B}}+\updelta m\:,  \label{11.1.5}
+\end{equation}%
+这里调整了常数$Z_{2}$, $Z_{3}$和$\updelta m$以使重正化场传播子的极点与没有相互作用时的自由场传播子的极点具有相同的位置和留数. 那么,
+拉格朗日量用重正化量表示出来就是
+\begin{equation}
+\mathscr{L}=\mathscr{L}_{0}+\mathscr{L}_{1}+\mathscr{L}_{2}\:, \label{11.1.6}
+\end{equation}%
+其中
+\begin{equation}
+\mathscr{L}_{0}=-\tfrac{1}{4}F^{\mu\nu}F_{\mu\nu}-\bar{\psi}\Bigl[\gamma_{\mu}\partial^{\mu}+m\Bigr] \psi \:,  \label{11.1.7}
+\end{equation}%
+\begin{equation}
+\mathscr{L}_{1}=-\mi eA_{\mu}\bar{\psi}\gamma^{\mu}\psi \:, \label{11.1.8}
+\end{equation}%
+而$\mathscr{L}_{2}$是``抵消项''之和
+\begin{align}
+\mathscr{L}_{2} &= -\tfrac{1}{4}(Z_{3}-1)F^{\mu \nu }F_{\mu \nu }-(Z_{2}-1)%
+\bar{\psi}\Big[ \gamma _{\mu }\partial ^{\mu }+m\Big] \psi   \nonumber \\
+&\qquad+Z_{2}\updelta m\bar{\psi}\psi -\mi e(Z_{2}-1)A_{\mu }\bar{\psi}\gamma ^{\mu
+}\psi \:.\label{11.1.9}
+\end{align}%
+$\mathscr{L}_{2}$中的所有项是$e$的二阶或更高阶, 并且这些项正好抵消了圈图产生的发散.
+
+\section{真空极化}    \label{sec:11.2}
+\setcounter{equation}{0}
+
+我们现在开始我们首个包含圈图的辐射修正计算, 即所谓的真空极化效应, 由与内光子线相关的传播子修正构成. 在氢原子能级中, 真空极化会产生可以观测到的位移, 并对束缚在重核周围原子轨道上的$\mu$子能量给出重要修正. 另外, 正如我们将在卷\,\textrm{II}\,中讨论的, 在电动力学或其他规范理论中计算高能行为时, 真空极化的计算提供了一个关键要素.
+
+就像\,\ref{sec:10.5}\,节中那样\marginpar[\flushright{\small[474]\hspace*{5mm}}]{{\small\hspace*{5mm}[474]}}, 我们定义$\mi(2\uppi)^{4}\Pi^{\ast\mu\nu}(q)$ 为所有具有两个光子外线的连通图之和, 这些连通图带有极化指标$\mu$和$\nu$ 并携带\,4\,-动量$q$进入并离开图, 不包含两条外线的光子传播子, 而星号表示我们排除了那些可以通过剪断某条内光子线而变得不连通的图. 全光子传播子$\Delta^{\prime\mu\nu}(q)$由方程(\ref{10.5.13})给出:%
+\begin{equation}
+\Delta ^{\prime }=\Delta \lbrack 1-\Pi ^{\ast }\Delta ]^{-1}\:, \label{11.2.1}
+\end{equation}%
+其中$\Delta^{\mu\nu}(q)$是没有辐射修正的光子传播子.
+在这里我们的任务是计算对$\Pi^{\ast\mu\nu}(q)$的领头阶贡献.
+
+在最低阶中有对$\Pi^{\ast}$的单圈贡献, 对应于图\,11.1\,中的图:%
+\begin{align}
+&\mi(2\uppi)^{4}\Pi_{1\,\text{loop}}^{\ast\rho\sigma}(q) =-\int\dif^{4}p\:
+\operatorname{Tr}\biggl\{\biggl[\frac{-\mi}{(2\uppi)^{4}}\,\frac{-\mi\xxp+m}{p^{2}+m^{2}-\mi\epsilon}%
+\biggr]   \nonumber \\
+&\times \Bigl[ (2\uppi)^{4}e\gamma^{\rho}\Bigr]\, \biggl[ \frac{-\mi}{(2\uppi)^{4}}\,
+\frac{-\mi(\xxp-\xxq)+m}{(p-q)^{2}+m^{2}-\mi\epsilon}\biggr]
+\Bigl[ (2\uppi)^{4}e\gamma^{\sigma}\Bigr]  \biggr\}  \label{11.2.2}
+\end{align}%
+其中右边的负号是存在费米子圈所要求的. 更简洁些, 有
+\begin{equation}
+\Pi _{1\,\text{loop}}^{\ast\rho\sigma}(q)=\frac{-\mi e^{2}}{(2\uppi)^{4}}
+\int\dif^{4}p\:\frac{\operatorname{Tr}\bigl\{[-\mi\xxp+m]\gamma^{\rho}\,
+\bigl[-i(\xxp-\xxq)+m\bigr]\gamma^{\sigma}\bigr\}}{(p^{2}+m^{2}-\mi\epsilon)
+\bigl((p-q)^{2}+m^{2}-\mi\epsilon \bigr)}\:.\label{11.2.3}
+\end{equation}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1101.eps}\\
+ \caption{量子电动力学中真空极化的单圈图. 这里波浪线代表光子; 带箭头的线代表电子}
+ \label{fig:11.1}
+\end{figure}
+
+做这个积分的第一步要用到\,Feynman\,引入的一个技巧.\textsuperscript{\cite{1}} 我们使用基本公式
+\begin{equation}
+\frac{1}{AB}=\int_{0}^{1}\frac{\dif x}{[(1-x)A+xB]^{2}}  \label{11.2.4}
+\end{equation}%
+将方程(\ref{11.2.3})中的标量传播子的乘积写成\marginpar[\flushright{\small[475]\hspace*{5mm}}]{{\small\hspace*{5mm}[475]}}
+\begin{align*}
+&\frac{1}{(p^{2}+m^{2}-\mi\epsilon )((p-q)^{2}+m^{2}-\mi\epsilon )}
+=\int_{0}^{1}\Bigl[(p^{2}+m^{2}-\mi\epsilon )(1-x) \\
+&\qquad\quad+\Bigl((p-q)^{2}+m^{2}-\mi\epsilon \Bigr) x\Bigr]^{-2}\dif x \\
+&\quad\quad=\int_{0}^{1}\Bigl[p^{2}+m^{2}-\mi\epsilon-2p\cdot qx+q^{2}x\Bigr]^{-2}\dif x \\
+&\quad\quad=\int_{0}^{1}\Bigl[(p-qx)^{2}+m^{2}-\mi\epsilon +q^{2}x(1-x)\Bigr]^{-2}\dif x \:.
+\end{align*}%
+(这是本章附录所给出的一类积分中的特殊情况.) 我们现在可以偏移动量空间中的积分变量{}$^*$\footnote{$^*${}严格地讲, 这一步仅在收敛积分中适用. 原则上, 为了证明这种变量的偏移合理. 我们应该引入一些正规化方案使得所有积分收敛, 例如下面要讨论的维数正规化方案.}%
+\[
+p\to  p+qx\:,
+\]%
+使方程(\ref{11.2.3})变成
+\begin{align}
+&\Pi_{1\,\text{loop}}^{\ast\rho\sigma}(q)= \frac{-\mi e^{2}}{(2\uppi)^{4}}%
+\int_{0}^{1}\dif x\int \dif^{4}p\:\Bigl[ p^{2}+m^{2}-\mi\epsilon+q^{2}x(1-x)\Bigr]^{-2}  \nonumber \\
+&\times \operatorname{Tr}\bigl\{\bigl[-\mi(\xxp+\xxq x)+m\bigr]\,\gamma^{\rho}\,
+\bigl[-\mi\big(\xxp-\xxq(1-x)\bigr)+m\bigr]\,\gamma^{\sigma }\bigr\}\:. \label{11.2.5}
+\end{align}%
+利用第8章附录中的结果, 可以轻松地计算出这里的迹
+\begin{align}
+&\operatorname{Tr}\bigl\{\bigl[-\mi(\xxp+\xxq x)+m\bigr]\,\gamma^{\rho}\,
+\bigl[-\mi\bigl(\xxp-\xxq(1-x)\bigr)+m\bigr]\,\gamma^{\sigma}\bigr\} \nonumber \\
+&=4\Bigl[-(p+qx)^{\rho}\,(p-q(1-x))^{\sigma}+(p+qx)\cdot (p-q(1-x))\eta^{\rho\sigma}  \nonumber \\
+&\qquad-(p+qx)^{\sigma }\,(p-q(1-x))^{\rho}+m^{2}\eta^{\rho\sigma}\Bigr]\:.  \label{11.2.6}
+\end{align}
+
+我们的下一步被称为\,\textit{Wick}\,{\KAI{旋转}}.\textsuperscript{\cite{2}} 只要$-q^{2}<4m^{2}$, 对于$0$和$1$之间的所有$x$, $m^{2}+q^{2}x(1-x)$都是正的, 所以方程(\ref{11.2.5})中的被积函数的极点处在$p^{0}=\pm\sqrt{\bp^{2}+m^{2}+q^{2}x(1-x)-\mi\epsilon}$, 即, 恰好处在负实轴的上方和正实轴的下方. (见图\,11.2.) 我们可以逆时针旋转$p^{0}$的围道而不穿过任何极点, 从而取代在实轴上从$-\infty$到$+\infty$对$p^{0}$积分, 我们转而在虚轴上从$-\mi\infty$ 到$+\mi\infty$对它积分. 也就是说, 我们可以写成$p^{0}=\mi p^{4}$, 其中$p^{4}$取实值从$-\infty$积到$+\infty$. (如果不是$-\mi\epsilon$而是$\mi\epsilon$ 出现在传播子的分母中, 那么我们将会令$p^{0}=-\mi p^{4}$, 其中$p^{4}$仍取实值从$-\infty$积到$+\infty$. 它的影响是改变$\Pi_{1\,\text{loop}}^{\ast\rho\sigma}(q)$的符号.) 方程(\ref{11.2.5})现在变成\marginpar[\flushright
+{\raisebox{-16ex}[0pt]{{\small[476]\hspace*{5mm}}}}]{{\raisebox{-16ex}[0pt]{\small\hspace*{5mm}[476]}}}
+\begin{align}
+\Pi _{1\,\text{loop}}^{\ast\rho\sigma}(q) &=\frac{4e^{2}}{(2\uppi)^{4}}%
+\int_{0}^{1}\dif x\int (\dif^{4}p)_{E}\:\bigl[p^{2}+m^{2}+q^{2}x(1-x)\bigr]^{-2} \nonumber \\
+&\quad\times \Bigl[-(p+qx)^{\rho}(p-q(1-x))^{\sigma}+(p+qx)\cdot(p-q(1-x))\,\eta^{\rho\sigma} \nonumber \\
+&\quad\qquad-(p+qx)^{\sigma }(p-q(1-x))^{\rho }+m^{2}\eta^{\rho\sigma}\Bigr]\:,  \label{11.2.7}
+\end{align}%
+其中
+\[
+(\dif^{4}p)_{E}=\dif p^{1}\dif p^{2}\dif p^{3}\dif p^{4}
+\]%
+且所有标量积都按照欧几里得模进行计算
+\[
+a\cdot b=a^{1}b^{1}+a^{2}b^{2}+a^{3}b^{3}+a^{4}b^{4}
+\]%
+这里约定了$q^{4}\equiv -\mi q^{0}$. 另外, $\eta^{\rho\sigma}$可以被取为克罗内克$\updelta$-符号, 此时指标取$1,2,3,4$, 或者取为通常的\,Minkowski\, 张量, 此时指标取$1,2,3,0$.
+\begin{figure}[h!]
+\centering
+\includegraphics{1102.eps}\\
+   \caption{$p^{0}$积分围道的\,Wick\,旋转. 小\,x\,标记$p^{0}$复平面中的极点; 箭头代表积分围道旋转的方向, 从实$p^{0}$-轴到虚$p^{0}$-轴.}
+\label{fig:11.2}
+\end{figure}
+
+积分(\ref{11.2.7})严重发散. 最终所有无穷大会抵消, 但是为了看到这点,
+必须在计算的中间阶段使用一些正规化技术使得积分有限. 不是简单地在某个最大动量$\Lambda$处截断积分, 而是只对满足$p^{2}<\Lambda^{2}$的$p^{\mu}$ 积分,
+因为这相当于在电子传播子中引入阶跃函数$\theta(\Lambda^{2}-p^{2})$, 而\,Ward\,恒等式(\ref{10.4.25})
+表\marginpar[\flushright{\small[477]\hspace*{5mm}}]{{\small\hspace*{5mm}[477]}}明为了保持规范不变性, 对电子传播子的任何修正必须伴随着对电子\lzx 光子顶点的修正. 事实上, 伴随着一个普通的截断, 辐射修正会引入一个光子质量, 这是对规范不变性要求的一个显然的破坏.
+
+经验表明正规化一个发散积分而不损害规范不变性的最方便方法是维数正规化, 这一技巧是\,'t Hooft\,和\,Veltman\,\textsuperscript{\cite{3}}在\,1972\,年引入的, 它基于从\,4\,维到任意时空维数$d$的一个延拓. 这相当于在类似(\ref{11.2.7})的积分中做角度平均, 方法是扔掉所有的$p$的奇次项, 而将具有偶数个$p$-因子的项替换成{}$^*$\footnote{$^*${}%
+注意到这些表达式的形式是由\,Lorentz\,不变性以及指标$\mu,\nu,\rho$等之间的对称性确定的, 我们可以轻松地导出它们, 其中的因子可以通过要求两边在与$\eta$收缩后给出相同的结果得到.}%
+\begin{align}
+&p^{\mu}p^{\nu} \to  p^{2}\eta^{\mu\nu}\Big/d\:, \label{11.2.8} \\
+&p^{\mu}p^{\nu}p^{\rho}p^{\sigma} \to  (p^{2})^{2}[\eta ^{\mu\nu}\eta^{\rho\sigma}
++\eta^{\mu \rho}\eta^{\nu \sigma}+\eta^{\mu\sigma}\eta ^{\nu \rho }]\Big/d(d+2)\:.  \label{11.2.9}
+\end{align}%
+另外, 在以这种方式将被积函数写成仅是$p^{2}$的函数后, 体积元$(\dif^{4}p)_{E}$被替换成了$\Omega_{d}\kappa^{d-1}\dif\kappa$, 其中$\kappa \equiv\sqrt{p^{2}}$, 而$\Omega_{d}$是$d$维单位球的面积%
+\begin{equation}
+\Omega_{d}=2\uppi^{d/2}\Big/\Gamma(d/2)\:.\label{11.2.10}
+\end{equation}%
+
+积分(\ref{11.2.7})现在对复时空维数$d$收敛. 我们可以通过复$d$值将积分延拓至$d=4$, 这时无穷大将作为因子$(d-4)^{-1}$重新出现.
+
+对于积分(\ref{11.2.7}), 维数正规化给出
+\begin{align*}
+\Pi_{1\,\text{loop}}^{\ast\rho\sigma }(q) &= \frac{4e^{2}\Omega_{d}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\int_{0}^{\infty}\kappa^{d-1}\dif\kappa\: \Bigl[\kappa^{2}+m^{2}+q^{2}x(1-x)\Bigr]^{-2} \\
+&\quad\times \biggl[\frac{-2\kappa^{2}}{d}\eta^{\rho\sigma}+2q^{\rho}q^{\sigma}x(1-x)
++\Bigl(\kappa^{2}-q^{2}x(1-x)\Bigr) \eta^{\rho\sigma}+m^{2}\eta^{\rho\sigma}\biggr] \:.
+\end{align*}%
+对$\kappa$的积分对任意复数的$d$(或除了偶数以外任意实数$d$)做出. 利用著名公式(本章附录中将给出更普遍的形式):%
+\begin{align}
+\int_{0}^{\infty}\kappa^{d-1}[\kappa ^{2}+\nu^{2}]^{-2}\,\dif\kappa &=
+\tfrac{1}{2}(\nu^{2})^{\frac{d}{2}-2}\,\Gamma(d/2)\,\Gamma(2-d/2)\:,  \label{11.2.11} \\
+\int_{0}^{\infty }\kappa^{d+1}[\kappa^{2}+\nu^{2}]^{-2}\,\dif\kappa &=
+\tfrac{1}{2}(\nu^{2})^{\frac{d}{2}-1}\,\Gamma(1+d/2)\,\Gamma(1-d/2)\:,  \label{11.2.12}
+\end{align}%
+得到\marginpar[\flushright{\small[478]\hspace*{5mm}}]{{\small\hspace*{5mm}[478]}}
+\begin{align*}
+&\Pi_{1\,\text{loop}}^{\ast \rho\sigma}(q) = \frac{2e^{2}\Omega_{d}}{(2\uppi)^{4}} \\
+&\quad\times\int_{0}^{1}\dif x\:\Biggl[(1-2/d)\eta^{\rho\sigma}\,
+\Bigl(m^{2}+q^{2}x(1-x)\Bigr)^{\frac{d}{2}-1}\,\Gamma(1+d/2)\,\Gamma (1-d/2) \\
+&+\Bigl(2q^{\rho}q^{\sigma}x(1-x)-q^{2}\eta^{\rho\sigma}x(1-x)+m^{2}\eta^{\rho\sigma}\Bigr) \Bigl(m^{2}+q^{2}x(1-x)\Bigr)^{\frac{d}{2}-2} \\
+&\qquad\quad\times \Gamma(d/2)\,\Gamma(2-d/2)\Biggr]\:.
+\end{align*}%
+通过利用
+\[
+(1-2/d)\,\Gamma(1+d/2)\,\Gamma(1-d/2)= -\Gamma(d/2)\,\Gamma (2-d/2)\:,
+\]%
+积分中的两项可以合并. 我们发现
+\begin{align}
+\Pi_{1\,\text{loop}}^{\ast\rho\sigma}(q) &= \frac{4e^{2}\Omega _{d}}{(2\uppi)^{4}}\,
+\Gamma(d/2)\,\Gamma(2-d/2)\,(q^{\rho}q^{\sigma}-q^{2}\eta^{\rho\sigma})  \nonumber \\
+&\quad\times \int_{0}^{1}\dif x\:x(1-x)(m^{2}+q^{2}x(1-x))^{\frac{d}{2}-2}\:.
+\label{11.2.13}
+\end{align}%
+我们注意到一个重要的结果, 对$\Pi^{\ast\rho\sigma}$, 这一贡献满足关系
+\begin{equation}
+q_{\rho}\Pi_{1\,\text{loop}}^{\ast\rho\sigma}(q)=0  \label{11.2.14}
+\end{equation}%
+这正是\,\ref{sec:10.5}\,节中基于电流的守恒与中性推导出的结果. 我们利用维数正规化方案精确地得到了这个结果. 维数正规化能够给出这一结果的原因是流的守恒不依赖于时空的维数.
+
+方程(\ref{11.2.13})中的$\Gamma$-函数$\Gamma(2-d/2)$在$d\to4$时发散. 幸运的是, 正如我们在\,\ref{sec:11.1}\,节中看到的, 存在另外一个必须加到$\Pi^{\ast\rho\sigma}$上的项, %
+它来自于相互作用拉格朗日量中的$-\frac{1}{4}(Z_{3}-1)F_{\mu\nu}F^{\mu\nu}$项. 这一项具有类似方程(\ref{11.2.13})的结构
+\begin{equation}
+\Pi_{\mathscr{L}_{2}}^{\ast\rho\sigma}(q) =
+-(Z_{3}-1)(q^{2}\eta^{\rho\sigma}-q^{\rho}q^{\sigma})\:,  \label{11.2.15}
+\end{equation}%
+所以到$e^{2}$阶, 完整的$\Pi^{\ast}$具有形式
+\begin{equation}
+\Pi^{\ast \rho\sigma}(q)=(q^{2}\eta^{\rho\sigma}-q^{\rho}q^{\sigma})\pi(q^{2})\:,  \label{11.2.16}
+\end{equation}%
+其中
+\begin{align}
+\pi(q^{2}) &= -\frac{4e^{2}\Omega_{d}}{(2\uppi)^{4}}\,\Gamma(\tfrac{d}{2})\,\Gamma(2-\tfrac{d}{2})
+\int_{0}^{1}\dif x\:x(1-x)(m^{2}+q^{2}x(1-x))^{\frac{d}{2}-2}  \nonumber \\
+&\quad-(Z_{3}-1)\:.\label{11.2.17}
+\end{align}%
+正如我们在\,\ref{sec:10.5}\,节所看到的\marginpar[\flushright{\small[479]\hspace*{5mm}}]{{\small\hspace*{5mm}[479]}}, 重正化电磁场的定义要求$\pi(0)=0$ (这是为了, 除依赖规范的项以外, %
+全光子传播子在$q^{2}=0$处极点的留数与裸传播子相同). 因此, 到$e^{2}$阶,%
+\begin{equation}
+Z_{3}=1-\frac{4e^{2}\Omega_{d}}{(2\uppi)^{4}}\Gamma(\tfrac{d}{2})\,\Gamma(2-\tfrac{d}{2})
+\,(m^{2})^{\frac{d}{2}-2}\int_{0}^{1}x(1-x)\:\dif x\:, \label{11.2.18}
+\end{equation}%
+使得到$e^{2}$阶,%
+\begin{align}
+\pi (q^{2}) &= -\frac{4e^{2}\Omega_{d}}{(2\uppi)^{4}}\,\Gamma(\tfrac{d}{2})\,
+\Gamma(2-\tfrac{d}{2}) \int_{0}^{1}\dif x\:x(1-x)  \nonumber \\
+&\quad \times \biggl[ \Bigl(m^{2}+q^{2}x(1-x)\Bigr)^{\frac{d}{2}-2}-(m^{2})^{\frac{d}{2}-2}\biggr]\:.
+\label{11.2.19}
+\end{align}
+
+现在我们可以移除正规化, 允许$d$趋于它的物理值$d=4$. 正如上面所提及的, 在单圈贡献中存在一个无限大, 源于$\Gamma$-函数的极限行为
+\[
+\Gamma (2-\tfrac{d}{2})\to  \frac{1}{(2-d/2)}-\gamma \:,
+\]%
+其中$\gamma$是\,Euler\,常数, $\gamma =0.5772157$. 通过对$\Gamma(2-d/2)$使用$1/(2-d/2)$, 再将其他的$d$替换成$4$, 就给出了$(Z_{3}-1)$ 的无限部分:%
+\begin{equation}
+(Z_{3}-1)_{\infty }=-\frac{4e^{2}\cdot 2\uppi^{2}}{6(2\uppi)^{4}}\,\frac{1}{2-d/2}
+=\frac{e^{2}}{6\uppi^{2}}\,\frac{1}{d-4}\:.\label{11.2.20}
+\end{equation}%
+我们将在卷$\mathrm{II}$看到, 这一结果将被用来推导电荷重正化群方程中的领头项.
+
+在$d=4$处的极点在$\pi(q^{2})$中显然抵消了, 这是因为$(m^{2}+q^{2}x(1-x))^{\frac{d}{2}-2}$与$(m^{2})^{\frac{d}{2}-2}$在$d=4$时有相同的极限\,1. 由于同样的原因, $\Gamma(2-d/2)$中的$-\gamma$项尽管对$Z_{3}-1$有有限的贡献, 但在总的$\pi(q^{2})$中也抵消了. 存在其他对$Z_{3}-1$有限的贡献, 这些贡献来源于$\Gamma (2-d/2)$中的极点与$\Omega_{d}\Gamma(d/2)$在$d=4$附加展开的线性项的乘积, 但这些在总的$\pi(q^{2})$中也抵消了. 其实, 在维数正规化中, 我们也可以将$(2\uppi)^{-4}$替换成$(2\uppi)^{-d}$, 而将因子$\operatorname{Tr}1=4$替换成$\gamma$-矩阵在任意偶数时空维$d$ 中的维数$2^{d/2}$, 并且这些也将会对$(Z_{3}-1)$的有限部分有贡献, 但是对$\pi(q^{2})$没有贡献. 更进一步, $e^{2}$不能认为与$d$无关, 这是因为对方程(\ref{11.2.13})的观察表明, 它有$d$-相关的量纲$[\text{质量}]^{4-d}$. 如果我们取$e^{2}\propto \mu^{4-d}$, 其中$\mu$是某个带有质量量纲的量,
+那么\marginpar[\flushright{\small[480]\hspace*{5mm}}]{{\small\hspace*{5mm}[480]}}在$Z_{3}{-}1$存在额外的有限项, 它们源于$\Gamma(2-d/2)$中的极点与$\mu^{4-d}$按照$(4-d)$展开的级数中的项$(4-d)\ln\mu$ 的乘积, 但是,
+又一次地, 它们在$Z_{3}{-}1$与$\pi(q^{2})$的单圈贡献之间抵消了.
+
+在$d\to4$的极限下, 唯一对$\pi(q^{2})${\KAI{有}}贡献的项, 来自于$\Gamma(2-d/2)$中的极点与$(m^{2}+q^{2}x(1-x))^{\frac{d}{2}-2}$和$(m^{2})^{\frac{d}{2}-2}$%
+按照$d-4$展开的级数中的线性项的乘积:%
+\begin{equation}
+(m^{2}+q^{2}x(1-x))^{\frac{d}{2}-2}-(m^{2})^{\frac{d}{2}-2}\to(\tfrac{d}{2}-2)
+\ln\biggl( 1+\frac{q^{2}x(1-x)}{m^{2}}\biggr) \:. \label{11.2.21}
+\end{equation}%
+这最终给出了
+\begin{equation}
+\pi (q^{2})=\frac{e^{2}}{2\uppi^{2}}\int_{0}^{1}x(1-x)
+\ln\biggl(1+\frac{q^{2}x(1-x)}{m^{2}}\biggr) \:\dif x\:.\label{11.2.22}
+\end{equation}%
+
+真空极化的物理意义可以通过考察它在两个自旋$\frac{1}{2}$带电粒子散射上的效应来研究.
+图\,11.3\,中的\,Feynman\,图对散射$S$-矩阵元有如下形式的贡献
+\begin{align*}
+&S_{a}(1,2 \to 1^{\prime},2^{\prime})=(2\uppi)^{-12/2}
+\updelta^{4}(p_{1^{\prime }}+p_{2^{\prime }}-p_{1}-p_{2})\,\Bigl[ e_{1}(2\uppi)^{4}\bar{u}_{1^{\prime}}\gamma^{\mu}u_{1}\Bigr]  \\
+&\times \biggl[-\mi(2\uppi)^{-4}\frac{1}{q^{2}}\biggr]\,\Bigl[e_{2}(2\uppi)^{4}\bar{u}_{2^{\prime}}
+\gamma_{\mu}u_{2}\Bigr]\:,
+\end{align*}
+\begin{align*}
+&S_{b}(1,2 \to 1^{\prime},2^{\prime}) = (2\uppi)^{-12/2}
+\updelta^{4}(p_{1^{\prime }}+p_{2^{\prime }}-p_{1}-p_{2})\,\Bigl[
+e_{1}(2\uppi)^{4}\bar{u}_{1^{\prime}}\gamma^{\mu}u_{1}\Bigr]  \\
+&\times \biggl[-\mi(2\uppi)^{-4}\frac{1}{q^{2}}\biggr]^{2}\,
+\Bigl[\mi(2\uppi)^{4}(q^{2}\eta_{\mu\nu}-q_{\mu}q_{\nu})\pi(q^{2})\Bigr]\,
+\Bigl[e_{2}(2\uppi)^{4}\bar{u}_{2^{\prime}}\gamma ^{\nu}u_{2}\Bigr]\:,
+\end{align*}%
+其中$e_{1}$和$e_{2}$是两个参与散射的粒子的电荷; 方程(\ref{11.2.22})中计算$\pi (q^{2})$采用的$e$是图11.3的圈中环流粒子电荷的大小; 而$q^{\mu}$是动量转移%
+$q\equiv p_{1}-p_{1^{\prime}}=p_{2^{\prime}}-p_{2}$. 利用守恒性质$q_{\mu}\bar{u}_{1^{\prime}}\gamma^{\mu}u_{1}=0$, 这两个图合起来给出$S$-矩阵元:%
+\begin{align}
+S_{a+b}(1,2 \to 1^{\prime},2^{\prime}) &= \frac{-\mi e_{1}e_{2}}{4\uppi^{2}q^{2}}\,[1+\pi(q^{2})]\,
+\updelta^{4}(p_{1^{\prime}}+p_{2^{\prime}}-p_{1}-p_{2})  \nonumber \\
+&\quad\times \Bigl[\bar{u}_{1^{\prime}}\gamma^{\mu}u_{1}\Bigr] \,\Bigl[\bar{u}_{2^{\prime}}\gamma_{\mu}u_{2}\Bigr] \:.\label{11.2.23}
+\end{align}%
+在非相对论极限下, $\bar{u}_{1^{\prime}}\gamma^{0}u_{1}\simeq-\mi\updelta_{\sigma_{1}^{\prime}\sigma_{1}}$%
+而$\bar{u}_{1^{\prime }}\gamma^{i}u_{1}\simeq 0$, 对粒子$2$同样如此. 另外,
+在这一极限下$q^{0}$与$\lvert\bq\rvert$相比可以忽略. 方程(\ref{11.2.23})在这一极限下变成
+\begin{equation}
+S_{a+b}(1,2\to  1^{\prime},2^{\prime}) = \frac{-\mi e_{1}e_{2}}{4\uppi^{2}\bq^{2}}\,
+[1+\pi(\bq^{2})]\,\updelta^{4}(p_{1^{\prime}}+p_{2^{\prime}}-p_{1}-p_{2})\,
+\updelta_{\sigma_{1}^{\prime}\sigma_{1}}\updelta_{\sigma_{2}^{\prime}\sigma_{2}}\:.\label{11.2.24}
+\end{equation}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1103.eps}\\
+  \caption{带荷粒子散射的两个图. 这里带箭头的线是带荷粒子; 波浪线是光子. 图(b)表示对树级近似图(a)的最低阶真空极化修正.}
+ \label{fig:11.3}
+\end{figure}
+
+\noindent
+这个结果可以与\marginpar[\flushright{\small[481]\hspace*{5mm}}]{{\small\hspace*{5mm}[481]}}一个定域且不依赖自旋的中心势$V(r)$在\,Born\,近似下给出的$S$- 矩阵比较一下
+\begin{equation}
+S_{\text{Born}}(1,2\to 1^{\prime},2^{\prime})=-2\mi\uppi\updelta(E_{1^{\prime}}
++E_{2^{\prime}}-E_{1}-E_{2})T_{\text{Born}}(1,2\to1^{\prime},2^{\prime})\:.\label{11.2.25}
+\end{equation}%
+\begin{align}
+&T_{\text{Born}}(1,2\to 1^{\prime},2^{\prime})=\updelta _{\sigma_{1}^{\prime}\sigma_{1}}
+\updelta_{\sigma_{2}^{\prime}\sigma_{2}}\int\dif^{3}x_{1}\int\dif^{3}x_{2}\:
+V\Bigl(\lvert \bx_{1}-\bx_{2}\rvert \Bigr)   \nonumber \\
+&\qquad\times (2\uppi)^{-12/2}\,\me^{-\mi\bp_{1^{\prime}}\cdot \bx_{1}}\,
+\me^{-\mi\bp_{2^{\prime}}\cdot\bx_{2}}\, \me^{\mi\bp_{1}\cdot\bx_{1}}\,\me^{\mi\bp_{2}\cdot\bx_{2}}\:. \label{11.2.26}
+\end{align}%
+令$\bx_{1}=\bx_{2}+\br$, 给出
+\begin{align}
+S_{\text{Born}} &= \frac{-\mi}{4\uppi^{2}}\,
+\updelta ^{4}(p_{1^{\prime}}+p_{2^{\prime}}-p_{1}-p_{2})\updelta_{\sigma_{1}^{\prime}\sigma_{1}}
+\updelta_{\sigma_{2}^{\prime}\sigma_{2}}  \nonumber \\
+&\quad\times \int \dif^{3}r\:V(r)\,\me^{-\mi\bq\cdot\br}\:. \label{11.2.27}
+\end{align}%
+比较该式与方程(\ref{11.2.23})表明, 在非相对论极限下, 图\,11.3\,所给出的$S$-矩阵与满足
+\[
+\int \dif^{3}r\:V(r)\,\me^{-\mi\bq\cdot \br}=
+e_{1}e_{2}\,\frac{1+\pi(\bq^{2})}{\bq^{2}}
+\]%
+或逆\,Fourier\,变换
+\begin{equation}
+V(r)=\frac{e_{1}e_{2}}{(2\uppi)^{3}} \int \dif^{3}q\:\me^{-\mi\bq\cdot \br}\,
+\Biggl[ \frac{1+\pi(\bq^{2})}{\bq^{2}}\Biggr]  \label{11.2.28}
+\end{equation}%
+的势$V(r)$给出的结果相同. 到辐射修正的第一阶,
+方程(\ref{11.2.28})与两个相距为$r$的延展的电荷分布$e_{1}\eta(\bx)$和%
+$e_{2}\eta(\by)$所产生的静电相互作用给出的是同一个势能:%
+\begin{equation}
+V(\lvert\br\rvert)=e_{1}e_{2}\int \dif^{3}x\int \dif^{3}y\:\frac{\eta (\bx)\eta (\by)}{4\uppi \lvert\bx-\by+\br\rvert }\:,  \label{11.2.29}
+\end{equation}%
+其中
+\begin{equation}
+\eta (\br)=\updelta^{3}(\br)+\frac{1}{2(2\uppi)^{3}}
+\int\dif^{3}q\:\pi(\bq^{2})\,\me^{\mi\bq\cdot \br}\:. \label{11.2.30}
+\end{equation}%
+注意到
+\begin{equation}
+\int \dif^{3}r\:\eta (\br)=1+\tfrac{1}{2}\pi (0)=1\:,  \label{11.2.31}
+\end{equation}%
+所以粒子\,1\,和\,2\,的总电荷, 正如由\,Coulomb\,势的长程部分所决定的, 与支配重正化电磁场相互作用的常数$e_{1}$和$e_{2}$相同.
+
+对于$\left\vert \br\right\vert \neq 0$, 通过一个直接的围道积分,
+积分(\ref{11.2.30})可以被积掉:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[482]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[482]}}}
+\[
+\eta (\br)=-\frac{e^{2}}{8\uppi^{3}r^{3}}\int_{0}^{1}x(1-x)\,\dif x\,
+\biggl[ 1+\frac{mr}{\sqrt{x(1-x)}}\biggr] \exp \biggl( \frac{-mr}{\sqrt{x(1-x)}}\biggr) \:.
+\]%
+这个表达式总是负的. 然而, 我们已经看到$\eta(\br)$对所有$\br$积分等于1. 因此$\eta(\br)$必须含有在$\br=0$处奇异的项$(1+L)\updelta^{3}(\br)$, 其中对$L$进行选择使其满足方程(\ref{11.2.31}):%
+\begin{equation}
+L=\frac{e^{2}}{8\uppi^{3}}\int \frac{\dif^{3}r}{r^{3}}\int_{0}^{1}x(1-x)\,\dif x\,
+\biggl[ 1+\frac{mr}{\sqrt{x(1-x)}}\biggr] \exp \biggl( \frac{-mr}{\sqrt{x(1-x)}}\biggr) \:.\label{11.2.32}
+\end{equation}%
+于是电荷分布函数的完整表达式是
+\begin{align}
+\eta (\br) &=(1+L)\updelta ^{3}(\br)
+-\frac{e^{2}}{8\uppi^{3}r^{3}}\int_{0}^{1}x(1-x)\:\dif x  \nonumber \\
+&\quad\times \biggl[ 1+\frac{mr}{\sqrt{x(1-x)}}\biggr] \exp\biggl(\frac{-mr}{\sqrt{x(1-x)}}\biggr)\:.\label{11.2.33}
+\end{align}%
+这一结果的物理解释是, 一个裸点电荷吸引真空中产生的带相反符号电荷的粒子, 排斥它们的反粒子至无穷远,
+从而使裸电荷部分地被屏蔽了, 产生了一个变小了$1/(1+L)$倍的重正化电荷. 作为一个检验, 我们会注意到如果我们截断发散积分(\ref{11.2.32}), 使积分仅覆盖$r\geq a$的部分, 我们发现这部分在$a\to0$时的发散是
+\begin{equation}
+L_{\infty }=\frac{e^{2}}{12\uppi^{2}}\ln a^{-1}\:.\label{11.2.34}
+\end{equation}%
+因此如果我们将动量空间截断$\Lambda$与$a^{-1}$等同起来, $L$的发散部分与$(Z_{3}-1)$的发散部分的关系是\marginpar[\flushright
+{\raisebox{-3ex}[0pt]{{\small[483]\hspace*{5mm}}}}]{{\raisebox{-3ex}[0pt]{\small\hspace*{5mm}[483]}}}\vspace{-2mm}
+\begin{equation}
+(Z_{3}-1)_{\infty }=-2L_{\infty }\:,  \label{11.2.35}
+\end{equation}%
+这是因为到$e^{2}$阶的重正化荷(\ref{10.4.18})由下式给定
+\begin{equation}
+e_{\ell }=Z_{3}^{1/2}\,e_{\text{B}\ell }\simeq \bigl(1+\tfrac{1}{2}(Z_{3}-1)\bigr)\,e_{\text{B}\ell}
+\simeq (1+L)^{-1}\,e_{\text{B}\ell} \:.\label{11.2.36}
+\end{equation}%
+下面来证明方程(\ref{11.2.35}).
+
+真空极化在$\mu$子原子的能级上有一个可观测的效应. 我们将在第14章看到, 图\,11.3\,中\,Feynman
+图(b)的效应是将波函数为$\psi(\br)$的原子态能级位移
+\begin{equation}
+\Delta E=\int \dif^{3}r\: \Delta V(\br)\,\lvert\psi(\br)\rvert ^{2}\:,  \label{11.2.37}
+\end{equation}%
+其中$\Delta V(\br)$是势(\ref{11.2.28})中的微扰
+\begin{equation}
+\Delta V(\br)=\frac{e_{1}e_{2}}{(2\uppi)^{3}}\int \dif^{3}q\:\me^{\mi\bq\cdot\br}\,
+\Biggl[\frac{\pi (\bq^{2})}{\bq^{2}}\Biggr]
+\:.\label{11.2.38}
+\end{equation}%
+这个微扰在$r\gg m^{-1}$时指数衰减. 另一方面, 普通原子的电子波函数一般被限制在一个大得多的半径$a\gg m^{-1}$之内; 例如, 对绕电荷为$Ze$的核的电子的类氢轨道, 我们有$a=137/Zm$(这里$m=m_{e}$). 这样一来, 能量位移将仅依赖于$r\ll a$处的波函数行为. 对轨道角动量$\ell$, 波函数的行为在$r\ll a$ 时类似于$r^{\ell}$, 所以方程(\ref{11.2.37})给出了正比于$(ma)^{-(2\ell +1)}$%
+的因子. 因此与更高的轨道角动量相比, $\ell=0$的真空极化效应要大得多. 对$\ell =0$, 波函数在$r$小于或等于$m^{-1}$阶时近似等于常数$\psi(0)$, 所以方程(\ref{11.2.37})变成
+\begin{equation}
+\Delta E= \lvert \psi(0) \rvert^{2}\int \dif^{3}r\:\Delta V(\br)\:.\label{11.2.39}
+\end{equation}%
+利用方程(\ref{11.2.38})和(\ref{11.2.22}), 对势($e_{1}e_{1}=-Ze^{2}$)的偏移的积分是
+\begin{equation}
+\int \dif^{3}r\:\Delta V(\br)=-Ze^{2}\pi^{\prime}(0)
+=-\frac{4Z\alpha^{2}}{15m^{2}}\:.\label{11.2.40}
+\end{equation}%
+另外, 在$\ell=0$且主量子数为$n$的类氢原子态中, 原点处的波函数是
+\begin{equation}
+\psi (0)=\frac{2}{\sqrt{4\uppi}}\biggl(\frac{Z\alpha m}{n}\biggr)^{3/2}\:,  \label{11.2.41}
+\end{equation}%
+所以能量位移(\ref{11.2.39})是\marginpar[\flushright{\small[484]\hspace*{5mm}}]{{\small\hspace*{5mm}[484]}}
+\begin{equation}
+\Delta E=-\frac{4Z^{4}\alpha^{5}m}{15\uppi n^{3}}\:.\label{11.2.42}
+\end{equation}%
+例如, 在氢原子的$2s$态中, 这个能量偏移是$-1.122\times 10^{-7}\,\mathrm{eV}$, 对应的频率偏移$\Delta E/2\uppi\hbar$ 是$-27.13\,\mathrm{MHz}$. 这有时被称作\,\textit{Uehling}\,({\KAI{尤林}}){\KAI{效应}}.\textsuperscript{\cite{4}}
+正如我们在第1章所讨论过的, 这样微弱的能量偏移变得可观测的原因是, 在没有各种辐射修正时, 纯粹\,Dirac\,理论将预言氢原子的$2s$态和$2p$ 态是精确简并的. 我们将在第14章看到, %
+$2s$态和$2p$态之间$+1580\,\mathrm{MHz}$的``Lamb\, 位移''中的大部分来自%
+于其他的辐射修正, 但是理论与实验吻合得相当好, 足以证实由真空极化引起的$-37.13$\,\textrm{MHz}\,偏移确实出现了.
+
+尽管在普通原子的辐射修正中, 真空极化只贡献一小部分, 但在$\mu$子原子中, 即轨道电子被$\mu$子取代的原子,
+真空极化占据主导地位. 这是因为在$\mu$子原子中, 由于量纲的原因, 大部分辐射修正给出的能量偏移正比于$m_{\mu}$, 而真空极化能积分$\int \dif^{3}r\,\Delta V$由于是一个{\KAI{电子}}圈产生的, 所以仍然像方程(\ref{11.2.40})中那样正比于$m_{e}^{-2}$, 给出的能量偏移正比于$m_{\mu}^{3}m_{e}^{-2}=(210)^{2}m_{\mu}$. 然而, 在这种情况下, $\mu$子原子半径并不比电子\,Compton\,波长大多少, 所以近似结果(\ref{11.2.39})仅给出真空极化量级的能量偏移.
+
+\subsection{* * *}
+
+为了与后面的计算相比较, 注意到如果我们在$\kappa=\Lambda$处截断积分, 那么取代方程(\ref{11.2.20}), 我们将遇到如下形式的积分
+\[
+(Z_{3}-1)_{\infty }=-\frac{e^{2}}{6\uppi^{2}}\int_{\mu}^{\Lambda}\kappa^{d-5}\:\dif\kappa
+=\frac{e^{2}}{6\uppi^{2}}\frac{\mu^{d-4}-\Lambda^{d-4}}{d-4} \:,
+\]%
+其中$\mu$是红外有效截断, 与图11.1的圈中环流的带电粒子的质量是同一阶的. (找到这里的常数因子的最简单方法是, 要求这个表达式在$d<3$时的\,$\Lambda\to\infty$的极限与方程(\ref{11.2.20})相匹配.) 代之以这样一个紫外截断, 我们可以得到$d\to 4$的极限, 并得到
+\begin{equation}
+(Z_{3}-1)_{\infty }=-\frac{e^{2}}{6\uppi^{2}}\ln (\Lambda /\mu )\:. \label{11.2.43}
+\end{equation}
+
+\section{反常磁矩与电荷半径}   \label{sec:11.3}
+\setcounter{equation}{0}
+\marginpar[\flushright
+{\raisebox{5.5ex}[0pt]{{\small[485]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[485]}}}
+
+
+我们的下一个例子是计算最低阶辐射修正所带来的电子或$\mu$子的磁矩或荷半径的偏移.
+光子\lzx 轻子顶点的单圈图以及重正化修正如图\,11.4\,所示. 正如我们在\,\ref{sec:10.3}\,节中讨论过的那样, %
+由于轻子在质壳上, 那些在入轻子线或出轻子线上有额外插入的图为零. 在外光子线上有插入的图是上一节所讨论的真空极化效应. %
+这样一来, 这里需要计算的就只剩一个单圈图(图\,11.4\,中的最后一个):
+\begin{align}
+\Gamma _{1\,\text{loop}}^{\mu }(p^{\prime },p) &=\int \dif^{4}k\:\Bigl[e\gamma^{\rho}(2\uppi)^{4}\Bigr]\,
+\biggl[\frac{-\mi}{(2\uppi)^{4}}\frac{-\mi(\xxp^{\prime}-\xxk)+m}{(p^{\prime }-k)^{2}+m^{2}-\mi\epsilon}\biggr]\,[\gamma^{\mu}]  \nonumber \\
+&\quad\times \biggl[\frac{-\mi}{(2\uppi)^{4}}\frac{-\mi(\xxp-\xxk)+m}{%
+(p-k)^{2}+m^{2}-\mi\epsilon}\biggr] \,\Bigl[ e\gamma_{\rho}(2\uppi)^{4}\Bigr]\, %
+\biggl[ \frac{-\mi}{(2\uppi)^{4}}\frac{1}{k^{2}-\mi\epsilon }\biggr] \:, \label{11.3.1}
+\end{align}%
+其中$p^{\prime}$和$p$分别是末态轻子4-动量和初态轻子4-动量. (连接外光子线与内轻子线的顶点的贡献被取为了$\gamma^{\mu}$, 这是因为$\Gamma^{\mu}$ 的定义中抽取了一个$e(2\uppi)^{4}$的因子.)
+ \begin{figure}[h!]
+\centering
+\includegraphics{1104.eps}\\
+  \caption{光子\lzx 轻子顶点函数$\Gamma^{\mu}$的单圈图. 这里波浪线代表光子; 其他线代表电子或$\mu$子. 图(a)和图(b)被轻子场重正化项抵消了; 图(c)源于\,\ref{sec:11.2}\,节中计算的真空极化; 而图(d)是\,\ref{sec:11.3}\,节所要计算的.}
+ \label{fig:11.4}
+\end{figure}
+
+这个积分有一个明显的紫外发散, 粗略地类似于$\int\dif^{4}k/(k^{2})^{2}$. 不同于真空极化,
+在这里我们不\marginpar[\flushright{\small[486]\hspace*{5mm}}]{{\small\hspace*{5mm}[486]}}需要为了保持规范不变性所要求的结构而采用一个像维数正规化那样精妙的重正化处理, 这是因为光子是一个中性粒子, 因此通过对光子传播子的适当修正(例如引入一个有很大截断质量$M$的因子$M^{2}/(k^{2}+M^{2})$), 无需在其他地方引入修正以保持规范不变性, 就可以使积分有限. 无论如何, 正如我们将看到的,
+反常磁矩和电荷半径的计算中根本就不会遇到任何紫外发散. 在下文中,
+本着如有必要任何发散积分都可以用截断质量$M$来表示这一理念, 我们将保留顶点函数积分的无限形式.
+
+我们从整合分母开始, 采用本章附录中介绍的\,Feynman\,技巧的多重版本
+\begin{equation}
+\frac{1}{ABC}=2\int_{0}^{1}\dif x\int_{0}^{x}\dif y\:\Bigl[ Ay+B(x-y)+C(1-x)\Bigr]^{-3}\:.\label{11.3.2}
+\end{equation}%
+应用于方程(\ref{11.3.1})中的分母, 给出
+\begin{align}
+&\frac{1}{(p^{\prime }-k)^{2}+m^{2}-\mi\epsilon }\,\frac{1}{(p-k)^{2}+m^{2}-\mi\epsilon}\,
+\frac{1}{k^{2}-\mi\epsilon }  \nonumber \\
+&=2\int_{0}^{1}\dif x\int_{0}^{x}\dif y\:\Bigl[\Bigl( (p^{\prime}-k)^{2}+m^{2}-\mi\epsilon\Bigr)y
++\Bigl( (p-k)^{2}+m^{2}-\mi\epsilon \Bigr) (x-y)  \nonumber \\
+&\qquad+\Bigl(k^{2}-\mi\epsilon \Bigr)(1-x)\Bigr]^{-3}  \nonumber \\
+&=2\int_{0}^{1}\dif x\int_{0}^{x}\dif y\:\Bigl[ \Bigl( k-p^{\prime }y-p(x-y)\Bigr)^{2}
++m^{2}x^{2}+q^{2}y(x-y)-\mi\epsilon \Bigr] ^{-3}\:,  \label{11.3.3}
+\end{align}%
+其中$q\equiv p-p^{\prime}$是传递给光子的动量. 偏移积分变量
+\[
+k\to  k+p^{\prime}y + p(x-y)
+\]%
+积分(\ref{11.3.1})变成
+\begin{align}
+\Gamma _{1\,\text{loop}}^{\mu}(p^{\prime},p) &=\frac{2\mi e^{2}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y\int \frac{\dif^{4}k}{\Bigl[k^{2}+m^{2}x^{2}+q^{2}y(x-y)-\mi\epsilon
+\Bigr] ^{3}}  \nonumber \\
+&\quad\times \gamma ^{\rho}\Bigl[ -\mi\Big( \xxp^{\prime}(1-y)-\xxk%
+-\xxp(x-y)\Bigr) +m\Bigr] \gamma ^{\mu }  \nonumber \\
+&\quad\times \Bigl[ -\mi\Bigl( \xxp(1-x+y)-\xxk-\xxp^{\prime}%
+y\Bigr) +m\Bigr] \gamma_{\rho }\:.\label{11.3.4}
+\end{align}
+
+我们的下一步是\,Wick\,旋转\marginpar[\flushright{\small[487]\hspace*{5mm}}]{{\small\hspace*{5mm}[487]}}. 正如上一节所解释的那样, 分母中的$-\mi\epsilon$ 要求, 当我们把$k^{0}$的积分围道旋转至虚轴时, 必须逆时针旋转, 使得对$k^{0}$ 从$-\infty$到$+\infty$的积分被替换成对虚值$k^{0}$从$-\mi\infty\,
+$到$+\mi\infty$的积分, 或者等价地, 对实值$k^{4}\equiv-\mi k^{0}$从$-\infty$到$+\infty$的积分. 我们还利用方程(\ref{11.3.4})中分母的旋转对称性; 扔掉分子中$k$的奇数次项, 将$k^{\lambda}k^{\sigma}$替换成$\eta^{\lambda\sigma}k^{2}/4$, 并将体积元$\dif^{4}k=\mi\dif k^{1}\dif k^{2}\dif k^{3}\dif k^{4}$ 替换成%
+$2\mi\uppi^{2}\kappa^{3}\dif\kappa$, 其中$\kappa$是\,4\,-矢$k$的欧几里得长度. 汇总以上结果, 方程(\ref{11.3.4})变成
+\begin{align}
+\Gamma _{1\,\text{loop}}^{\mu}(p^{\prime},p) &=\frac{-4\uppi^{2}e^{2}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y\int_{0}^{\infty}\kappa^{3}\dif\kappa\:
+\Bigl\{-\kappa^{2}\gamma^{\rho}\gamma^{\sigma}\gamma^{\mu}\gamma_{\sigma}\gamma_{\rho}/4  \nonumber \\
+&\quad+\gamma^{\rho}\Bigl[-\mi\Bigl( \xxp^{\prime}(1-y)-\xxp(x-y)\Bigr)
++m\Bigr] \gamma^{\mu}  \nonumber \\
+&\quad\times \Bigl[-\mi\Bigl( \xxp(1-x+y)-\xxp^{\prime}y\Bigr)
++m\Bigr] \gamma_{\rho}\Bigr\}  \nonumber \\
+&\quad\times \Bigl[ \kappa^{2}+m^{2}x^{2}+q^{2}y(x-y)\Bigr]^{-3}\:. \label{11.3.5}
+\end{align}
+
+这里我们仅对顶点函数在\,Dirac\,旋量之间的矩阵元$\bar{u}^{\prime}\Gamma u$感兴趣, 这些旋量满足关系
+\[
+\bar{u}^{\prime}[\mi\,\xxp^{\prime }+m]=0 \:,\qquad [\mi\,\xxp+m]u=0\:.
+\]%
+这样, 我们可以通过\,Dirac\,矩阵的反对易关系把所有的因子$\xxp^{\prime}$%
+挪到左边而把所有的因子$\xxp$挪到右边, 移至两边后再把它们替换成$\mi m$, 来简化这个表达式. 在一个直接但冗长的计算后, 方程(\ref{11.3.5})变成
+\begin{align}
+&\bar{u}^{\prime}\Gamma _{1\,\text{loop}}^{\mu}(p^{\prime},p)u
+= \frac{-4\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\int_{0}^{x}\dif y
+\int_{0}^{\infty}\kappa^{3}\,\dif\kappa   \nonumber \\
+&\bar{u}^{\prime}\Bigl\{\gamma^{\mu}\Bigl[-\kappa^{2}
++2m^{2}(x^{2}-4x+2)+2q^{2}(y(x-y)+1-x)\Bigr]   \nonumber \\
+&+4\mi m\,p^{\prime \mu}(y-x+xy)+4\mi m\,p^{\mu}(x^{2}-xy-y)\Bigr\}u  \nonumber \\
+&\times \Bigl[ \kappa^{2}+m^{2}x^{2}+q^{2}y(x-y)\Bigr]^{-3}\:. \label{11.3.6}
+\end{align}
+
+接下来我们利用最后的因子在反射$y\to  x{-}y$下的对称性. 在这个反射下,
+乘在$p^{\prime \mu}$和$p^{\mu}$的函数$y-x+xy$和$x^{2}-xy-y$互换, 所以这两个函数均可以被它们的平均替代:
+\[
+\tfrac{1}{2}(y-x+xy)+\tfrac{1}{2}(x^{2}-xy-y)=-\tfrac{1}{2}x(1-x)\:.
+\]%
+这最终给出\marginpar[\flushright{\small[488]\hspace*{5mm}}]{{\small\hspace*{5mm}[488]}}
+\begin{align}
+&\quad\bar{u}^{\prime }\Gamma _{1\,\text{loop}}^{\mu }(p^{\prime },p)u
+=\frac{-4\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\int_{0}^{x}\dif y
+\int_{0}^{\infty}\kappa^{3}\,\dif\kappa   \nonumber \\
+&\times \bar{u}^{\prime}\Bigl\{\gamma^{\mu}\Bigl[-\kappa^{2}
++2m^{2}(x^{2}-4x+2)+2q^{2}(y(x-y)+1-x)\Bigr]   \nonumber \\
+& \qquad\qquad-2\mi m(p^{\prime \mu}+p^{\mu})x(1-x)\Bigr\}u  \nonumber \\
+&\times \Bigl[ \kappa^{2}+m^{2}x^{2}+q^{2}y(x-y)\Bigr]^{-3}\:. \label{11.3.7}
+\end{align}%
+注意到$p^{\mu}$和$p^{\prime \mu}$现在仅出现在组合$p^{\mu }+p^{\prime \mu}$中, 正如流守恒所要求的那样.
+
+还有其他需要考虑的图. 当然, $\Gamma^{\mu}$中有零阶项$\gamma^{\mu}$. 修正项(\ref{11.1.9})中正比于$Z_{2}-1$的项在$\Gamma^{\mu}$中产生了
+\begin{equation}
+\Gamma_{\mathscr{L}_{2}}^{\mu }=(Z_{2}-1)\gamma^{\mu}\:. \label{11.3.8}
+\end{equation}%
+另外, 在外光子传播子中插入修正的效果是:%
+\begin{equation}
+\Gamma _{\text{vac pol}}^{\mu}(p^{\prime},p)=\frac{1}{(p^{\prime}-p)^{2}-\mi\epsilon}
+\Pi^{\mu\nu}(p^{\prime}-p)\,\gamma_{\nu}\:. \label{11.3.9}
+\end{equation}%
+这些项中的每个项的形式都与($H(q^{2})=0$的)一般结果(\ref{10.6.10})一致
+\begin{equation}
+\bar{u}^{\prime}\Gamma^{\mu}(p^{\prime},p)u = \bar{u}^{\prime}
+\biggl[\gamma^{\mu}F(q^{2})-\frac{\mi}{2m}\,(p+p^{\prime})^{\mu}G(q^{2})\biggr]u \:.\label{11.3.10}
+\end{equation}%
+到$e^{2}$阶, 形状因子是
+\begin{align}
+F(q^{2}) &= Z_{2}+\pi (q^{2})+\frac{4\uppi^{2}e^{2}}{(2\uppi)^{4}}%
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y\int_{0}^{\infty}\kappa^{3}\dif\kappa  \nonumber \\
+&\quad\times \frac{\Bigl[ \kappa^{2}-2m^{2}(x^{2}-4x+2)-2q^{2}(y(x-y)+1-x)\Bigr]}{\Bigl[
+\kappa^{2}+m^{2}x^{2}+q^{2}y(x-y)\Bigr]^{3}}\:,  \label{11.3.11}
+\end{align}%
+\begin{equation}
+G(q^{2})=\frac{-4\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\int_{0}^{x}\dif y%
+\int_{0}^{\infty}\frac{4m^{2}x(1-x)\kappa^{3}\:\dif\kappa}{\Bigl[
+\kappa^{2}+m^{2}x^{2}+q^{2}y(x-y)\Bigr]^{3}}\:,  \label{11.3.12}
+\end{equation}%
+其中$\pi(q^{2})$是真空极化函数(\ref{11.2.22}).
+
+现在, 形状因子$G(q^{2})$的积分是有限的:%
+\begin{equation}
+G(q^{2})=\frac{-e^{2}m^{2}}{4\uppi^{2}}\int_{0}^{1}\dif x\int_{0}^{x}\dif y\:
+\frac{x(1-x)}{m^{2}x^{2}+q^{2}y(x-y)}\:.\label{11.3.13}
+\end{equation}%
+这使计算反常磁矩变得简单\marginpar[\flushright{\small[489]\hspace*{5mm}}]{{\small\hspace*{5mm}[489]}}. 在\,\ref{sec:10.6}\,节我们注意到, 仅$\gamma^{\mu}$ 项对磁矩有贡献, %
+所以辐射修正的效果是给磁矩的\,Dirac\,值$e/2m$乘上因子$F(0)$. 但是$e$作为真正轻子电荷的定义要求
+\begin{equation}
+F(0)+G(0)=1\:,  \label{11.3.14}
+\end{equation}%
+所以磁矩可以表示为
+\begin{equation}
+\mu =\frac{e}{2m}\Bigl(1-G(0)\Bigr)\:.\label{11.3.15}
+\end{equation}%
+由方程(\ref{11.3.13}), 我们发现
+\begin{equation}
+{-}G(0)=\frac{e^{2}}{8\uppi^{2}}=0.001161\:.\label{11.3.16}
+\end{equation}%
+这是由\,Schwinger\,首次计算出的著名的$\alpha/2\uppi$的修正.\textsuperscript{\cite{5}}
+ \begin{figure}[h!]
+\centering
+\includegraphics{1105.eps}\\
+ \caption{$\mu$子磁矩的两圈图. 这里粗直线代表$\mu$子; 细的波浪线代表光子; 而其他细线是电子. 这个图对四阶的$\mu$子旋磁比有一个相对较大的贡献, 这个贡献正比于$\ln (m_{\mu}/m_{e})$.}
+ \label{fig:11.5}
+\end{figure}
+
+当然, 这只是磁矩的辐射修正中的第一项. 即使就在下一阶, $e$的$4$次方阶, 项的个数变得非常多从而使计算变得相当复杂. 然而, 由于$\mu$子\lzx 电子质量比值很大, 在$\mu${\KAI{子}}的磁矩中有一个四阶项要比其他几个四阶项都大一些. 这一项源于在二阶图的虚光子线中插入了一个{\KAI{电子}}圈. 如图\,11.5\,所示. 这个电子圈的效果是将方程(\ref{11.3.1})中的光子传播子$1/k^{2}$变成$(1+\pi_{e}(k^{2}))/k^{2}$, $\pi_{e}(k^{2})$由方程(\ref{11.2.22})给出, 但其中的质量$m$取为{\KAI{电子}}质量:\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[490]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[490]}}}
+\[
+\pi_{e}(k^{2})=\frac{e^{2}}{2\uppi^{2}}\int_{0}^{1}x(1-x)\ln\biggl(
+1+\frac{k^{2}x(1-x)}{m_{e}^{2}}\biggr)\: \dif x\:.
+\]%
+对方程(\ref{11.3.12})的考察表明, 在$\mu$子磁矩的计算中, 虚光子动量$k$上的有效截断是$m_{\mu}$. 比值$m_{\mu}/m_{e}$非常大使我们可以对$m_{\mu}^{2}$ 阶的$k^{2}$取近似
+\begin{equation}
+\pi_{e}(k^{2})\simeq \frac{e^{2}}{2\uppi^{2}}\int_{0}^{1}\dif x\:x(1-x)
+\ln (m_{\mu }^{2}/m_{e}^{2}) =\frac{e^{2}}{12\uppi^{2}}\ln(m_{\mu}^{2}/m_{e}^{2})  \label{11.3.17}
+\end{equation}%
+其中被忽略的是系数阶为\,1\,的项而不是系数阶为$\ln(m_{\mu}^{2}/m_{e}^{2})$的项. 由于这是一个常数, 在$-G(0)$中, 通过在虚光子线中增加一个电子圈所带来的变化, 就是给前面$-G(0)$的结果(\ref{11.3.16})乘上方程(\ref{11.3.17}), 使得现在
+\begin{equation}
+\mu_{\mu}=\frac{e}{2m_{\mu}}\left( 1+\frac{e^{2}}{8\uppi^{2}}+
+\frac{e^{4}}{96\uppi^{4}}\left[ \ln \frac{m_{\mu}^{2}}{m_{e}^{2}}+O(1)\right] \right) \:.\label{11.3.18}
+\end{equation}%
+(我们将在卷\,\textrm{II}\,看到, 这个讨论是重正化群方法的一个原始版本.)
+可以将这个结果(\ref{11.3.18})与整个\,4\,阶结果\textsuperscript{\cite{6}}相比较:%
+\begin{align}
+\mu_{\mu} &= \frac{e}{2m_{\mu}}\Biggl(1+\frac{e^{2}}{8\uppi^{2}}+\frac{e^{4}}{96\uppi^{4}}
+\biggl[\ln \frac{m_{\mu }^{2}}{m_{e}^{2}}  \nonumber \\
+&\quad-\frac{25}{6}+\frac{197}{24}+\frac{\uppi^{2}}{2}+\frac{9\zeta (3)}{2}
+-3\uppi^{2}\ln 2+O\biggl(\frac{m_{e}}{m_{\mu}}\biggr)\biggr]\Biggr)\:.\label{11.3.19}
+\end{align}%
+结果是乘以$e^{4}/96\uppi^{4}$的``$O(1)$''项增加到了$-6.137$, 这比$\ln (m_{\mu}^{2}/m_{e}^{2})=10.663$小不了多少, 所以近似(\ref{11.3.18})给出的是仅是相差一个量级为\,2\,的因子的第四阶项. 与二阶结果$\mu_{\mu}=1.001161\,e/2m_{\mu}$以及当前的实验值\textsuperscript{\cite{7}}%
+$\mu_{\mu}=1.001165923(8)\,e/2m_{\mu}$相比, 正确的\,4\,阶结果给出$\mu_{\mu}=1.00116546\,e/2m_{\mu}$.
+
+现在我们考虑另一个形状因子. 方程(\ref{11.3.11})中$F(q^{2})$的积分有紫外发散. 然而为了满足电荷的非重正化条件(\ref{11.3.14}), $Z_{2}$必须取如下值
+\begin{align}
+Z_{2} &= 1+\frac{e^{2}}{8\uppi^{2}}-\frac{4\uppi^{2}e^{2}}{(2\uppi)^{4}}%
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y\int_{0}^{\infty}\kappa^{3}\,\dif\kappa   \nonumber\\
+&\quad\times \frac{\kappa^{2}-2m^{2}(x^{2}-4x+2)}{\Bigl[\kappa^{2}+m^{2}x^{2}\Bigr]^{3}}\:.\label{11.3.20}
+\end{align}%
+(回忆$\pi(0)=0$.\marginpar[\flushright{\small[491]\hspace*{5mm}}]{{\small\hspace*{5mm}[491]}}) 它本身是紫外发散, 其中无限大部分是
+\begin{equation}
+(Z_{2}-1)_{\infty }= -\frac{e^{2}}{8\uppi^{2}}\int^{\infty}\frac{\dif\kappa}{\kappa}\:.\label{11.3.21}
+\end{equation}%
+将方程(\ref{11.3.20})代回方程(\ref%
+{11.3.11})给出\begin{align}
+F(q^{2}) &= 1+\frac{e^{2}}{8\uppi^{2}}+\pi(q^{2}) + \frac{4\uppi^{2}e^{2}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y\int_{0}^{\infty}\kappa^{3}\,\dif\kappa \nonumber \\
+&\quad\times \left\{ \frac{\Bigl[\kappa^{2}-2m^{2}(x^{2}-4x+2)-2q^{2}(y(x-y)+1-x)\Bigr]}{\Bigl[
+\kappa^{2}+m^{2}x^{2}+q^{2}y(x-y)\Bigr]^{3}}\right.   \nonumber \\
+&\quad-\left. \frac{\Bigl[\kappa^{2}-2m^{2}(x^{2}-4x+2)\Bigr] }{\Bigl[
+\kappa^{2}+m^{2}x^{2}\Bigr]^{3}}\right\} \:.\label{11.3.22}
+\end{align}%
+$\kappa$的积分现在是收敛的:%
+\begin{align}
+F(q^{2}) &= 1+\frac{e^{2}}{8\uppi^{2}} + \pi(q^{2}) + \frac{2\uppi^{2}e^{2}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y \nonumber \\
+&\quad\times \left\{ \frac{-m^{2}[x^{2}-4x+2]-q^{2}[y(x-y)+1-x)]}{%
+m^{2}x^{2}+q^{2}y(x-y)}+\frac{x^{2}-4x+2}{x^{2}}\right. \nonumber \\
+&\quad-\left. \ln \left[ \frac{m^{2}x^{2}+q^{2}y(x-y)}{m^{2}x^{2}}\right] \right\} \:.\label{11.3.23}
+\end{align}%
+然而, 我们看到, 对$x$和$y$的积分现在在$x=0$和$y=0$处对数发散, 这是因为在分母中有$x$和(或)$y$的二次项, 而在分子上只有两个微分$\dif x\,\dif y$. 这个发散可以追溯到方程(\ref{11.3.11})中在$x=0$, $y=0$和$\kappa=0$处为零的分母%
+$[\kappa^{2}+m^{2}x^{2}+q^{2}y(x-y)]^{3}$. 由于这个发散来自于小$\kappa$区域而非大$\kappa$区域, 它%
+被称为{\KAI{红外发散}}而不是紫外发散.
+
+我们将在第13章给出红外发散的一个全面的处理. 在那里将证明, 对于类似电子\lzx 电子散射的过程, 截面中的红外发散,
+例如电子形状因子$F(q^{2})$中的红外发散所带来的那些发散, 在我们将低能光子发射以及弹性散射包含在内后,
+将会被抵消掉. 另外, 我们将在第14章看到, 当我们计算原子能级的辐射修正时, 由于束缚态电子不精确地在自由粒子质量壳上, $F(q^{2})$中的红外发散是截断的. 现在, 我们将简单地通过引入一个假想的光子质量$\mu$以截断$F(q^{2})$中的红外发散来继续我们的计算, 而将这个问题留给第14章, 看看如何应用这个结果.
+
+若光子有质量$\mu$\marginpar[\flushright{\small[492]\hspace*{5mm}}]{{\small\hspace*{5mm}[492]}}, 方程(\ref{11.3.1})中的分母$k^{2}-\mi\epsilon$将被%
+$k^{2}+\mu^{2}-\mi\epsilon$所替代. 这样的效果就是在方程(\ref{11.3.3})\yzx (\ref{11.3.7}), (\ref{11.3.11}), (\ref{11.3.20}) 以及(\ref{11.3.22})的分母中给立方的项加上一项$\mu^{2}(1-x)$. 这样方程(\ref{11.3.23})被替换成
+\begin{align}
+F(q^{2}) &= 1+\frac{e^{2}}{8\uppi^{2}}+\pi(q^{2})+\frac{2\uppi^{2}e^{2}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y  \nonumber \\
+&\quad\times \Biggl\{ \frac{-m^{2}[x^{2}-4x+2]-q^{2}[y(x-y)+1-x]}{%
+m^{2}x^{2}+q^{2}y(x-y)+\mu^{2}(1-x)}+\frac{m^{2}[x^{2}-4x+2]}{m^{2}x^{2}+\mu^{2}(1-x)}\nonumber \\
+&\quad- \ln\Biggl[\frac{m^{2}x^{2}+q^{2}y(x-y)+\mu^{2}(1-x)}{m^{2}x^{2}+\mu^{2}(1-x)}\Biggr]\Biggr\} \:.\label{11.3.24}
+\end{align}%
+这个积分现在是完全收敛的. 它可以表示成\,Spence\,函数的形式, 但是这个结果并没有多少启发性. 就我们第14章的目的而言, 计算$F(q^{2})$在$q^{2}$很小时的行为就足够了. 由\,Ward\,恒等式, 我们已经知道$F(0)=1-G(0)=1+e^{2}/8\uppi^{2}$, 所以我们来考虑$q^{2}=0$处的一阶导数$F^{\prime}(q^{2})$. 根据方程(\ref{11.3.24}), 有
+\begin{align}
+F^{\prime}(0) &= \pi^{\prime}(0)+\frac{2\uppi^{2}e^{2}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\int_{0}^{x}\dif y  \nonumber \\
+&\quad\times \Biggl\{ -\frac{2y(x-y)+1-x}{m^{2}x^{2}+\mu^{2}(1-x)}
++\frac{m^{2}[x^{2}-4x+2]y(x-y)}{[m^{2}x^{2}+\mu^{2}(1-x)]^{2}}\Biggr\} \:. \label{11.3.25}
+\end{align}%
+方程(\ref{11.2.22})所给出的真空极化贡献是
+\begin{equation}
+\pi ^{\prime }(0)=\frac{e^{2}}{60\uppi^{2}m^{2}}\:.\label{11.3.26}
+\end{equation}%
+扔掉方程(\ref{11.3.25})中所有正比于$\mu/m$的幂次的项,
+我们就有{}$^*$\footnote{$^*${}$y$-积分是平庸的. 在$\mu\ll m$的极限下, $x$-积分的计算变得非常容易, 方法是将积分区间分成两部分, 一个从$0$到$s$, 其中$\mu/m\ll s\ll 1$, 而另一个是从$s$到$1$.}%
+\begin{equation}
+F^{\prime}(0) = \frac{e^{2}}{24\uppi^{2}m^{2}}\left[ \ln \biggl( \frac{\mu^{2}}{m^{2}}\biggr)
++\frac{2}{5}+\frac{1}{4}\right]   \label{11.3.27}
+\end{equation}%
+其中$\frac{2}{5}$是真空极化的贡献. 另一方面, 方程(\ref{11.3.13})表明$G(q^{2})$在$q^{2}=0$处有一个有限的导数,%
+\begin{equation}
+G^{\prime}(0)=\frac{e^{2}}{48\uppi^{2}m^{2}}\:.\label{11.3.28}
+\end{equation}%
+这些结果用顶点函数的\marginpar[\flushright{\small[493]\hspace*{5mm}}]{{\small\hspace*{5mm}[493]}}另一个表达式(\ref{10.6.15})中所定义的电荷形状因子$F_{1}(q^{2})$来表示最为方便
+\begin{align}
+&\bar{u}(\bp^{\prime},\sigma^{\prime})\Gamma^{\mu}(p^{\prime},p)u(\bp,\sigma)  \nonumber \\
+&\quad=\bar{u}(\bp^{\prime},\sigma^{\prime })\,\Bigl[ \gamma^{\mu}F_{1}(q^{2})
++\tfrac{1}{2}\mi[\gamma^{\mu},\gamma^{\nu}]\,(p^{\prime}-p)_{\nu }\,F_{2}(q^{2})\Bigr]\,
+u(\bp,\sigma )\:.  \label{11.3.29}
+\end{align}%
+根据方程(\ref{10.6.17})和(\ref{10.6.18})%
+\begin{equation}
+F_{1}(q^{2})=F(q^{2})+G(q^{2})\:.\label{11.3.30}
+\end{equation}%
+对$\lvert q^{2}\rvert \ll m^{2}$, 这一形状因子近似是
+\begin{equation}
+F_{1}(q^{2})\simeq 1+\frac{e^{2}}{24\uppi^{2}}\biggl(\frac{q^{2}}{m^{2}}\biggr)
+\left[ \ln \biggl(\frac{\mu ^{2}}{m^{2}}\biggr)+\frac{2}{5}+\frac{3}{4}\right] \:.\label{11.3.31}
+\end{equation}%
+它可以表示成{\KAI{电荷半径}}$a$的形式, 电荷半径由电荷形状因子在$q^{2}\to0$时的极限行为定义:%
+\begin{equation}
+F_{1}(q^{2}) \to 1-q^{2}a^{2}/6\:.\label{11.3.32}
+\end{equation}%
+(这样来定义的初衷是, $\exp(\mi\bq\cdot\bx)$对于半径为$a$的球壳的平均在%
+$\bq^{2}a^{2}\ll 1$时趋于$1-\bq^{2}a^{2}/6$.) 我们看到电子的电荷半径由下式给出
+\begin{equation}
+a^{2}=-\frac{e^{2}}{4\uppi^{2}m^{2}}\left[ \ln \biggl(\frac{\mu^{2}}{m^{2}}\biggr)
++\frac{2}{5}+\frac{3}{4}\right] \:.\label{11.3.33}
+\end{equation}%
+我们将在第14章看到, 对于原子中的电子, 光子质量的角色由一个远小于$m$的有效红外截断扮演, 所以这里的对数很大且是负值, 这给出了一个正的$a^{2}$值.
+
+\section{电子自能}  \label{sec:11.4}
+\setcounter{equation}{0}
+
+我们以电子自能的计算结束本章. 尽管其本身没有什么直接的实验含义, 但是这里的一些结果在第14章%
+和卷\,\textrm{II}\,中将是有用的.
+
+同\,\ref{sec:10.3}\,节一样,
+我们将所有具有一条入电子线和一条出电子线的图之和定义为$\mi(2\uppi)^{4}[\Sigma^{\ast}(p)]_{\beta,\alpha}$, 其中$p$是两条电子线携带的动量, $\alpha,\beta$分别是入电子线和出电子线的\,Dirac\,指标, 而星号表示我们排除掉了可以通过剪断某个内电子线就变得不连通的那些图, 并且两个外线上的传播子被省略掉了. 那么全电子传播子就由如下的求和给出
+\begin{align}
+&[-\mi(2\uppi)^{-4}S^{\prime}(p)] = [-\mi(2\uppi)^{-4}S(p)]  \nonumber \\
+&+[-\mi(2\uppi)^{-4}S(p)]\,[\mi(2\uppi)^{4}\Sigma^{\ast}(p)]\,[-\mi(2\uppi)^{-4}S(p)]+\cdots \:, \label{11.4.1}
+\end{align}%
+其中\marginpar[\flushright{\small[494]\hspace*{5mm}}]{{\small\hspace*{5mm}[494]}}
+\begin{equation}
+S(p)\equiv \frac{-\mi\xxp+m_{e}}{p^{2}+m_{e}^{2}-\mi\epsilon }\:. \label{11.4.2}
+\end{equation}%
+这个求和是简单的, 可以直接给出
+\begin{equation}
+S^{\prime}(p)=[\mi\xxp+m_{e}-\Sigma^{\ast }(p)-\mi\epsilon]^{-1}\:.\label{11.4.3}
+\end{equation}
+
+在最低阶中有一个对$\Sigma^{\ast}$的单圈贡献, 由图\,11.6\,给出:%
+\begin{align*}
+\mi(2\uppi)^{4}\Sigma_{1\,\text{loop}}^{\ast}(p) &=\int \dif^{4}k\:
+\biggl[\frac{-\mi}{(2\uppi)^{4}}\frac{\eta_{\rho\sigma}}{k^{2}-\mi\epsilon}\biggr]  \\
+&\quad\times [(2\uppi)^{2}e\gamma^{\rho}]\,
+\biggl[\frac{-\mi}{(2\uppi)^{4}}\frac{-\mi\xxp+\mi\xxk+m_{e}}
+{(p-k)^{2}+m_{e}^{2}-\mi\epsilon}\biggr]\, [(2\uppi)^{4}e\gamma^{\sigma}]
+\end{align*}
+或者简化一些
+\begin{align}
+\Sigma_{1\,\text{loop}}^{\ast}(p) &= \frac{\mi e^{2}}{(2\uppi)^{4}}\int \dif^{4}k\:%
+\biggl[\frac{1}{k^{2}-\mi\epsilon}\biggr]   \nonumber \\
+&\quad\times \biggl[\frac{\gamma^{\rho}(-\mi\xxp+\mi\xxk+m_{e})\gamma_{\rho}}{
+(p-k)^{2}+m_{e}^{2}-\mi\epsilon}\biggr] \:. \label{11.4.4}
+\end{align}%
+(这是在\,Feynman\,规范下的结果, 带电粒子不在质壳上的振幅不是规范不变的.) 为了在我们计算\,Lamb\,位移时使用, 采用\,Pauli\,和\,Villars\textsuperscript{\cite{8}}引入的正规化方法将是方便的. 我们将光子传播子$(k^{2}-\mi\epsilon)^{-1}$换成
+\[
+\frac{1}{k^{2}-\mi\epsilon}-\frac{1}{k^{2}+\mu^{2}-\mi\epsilon }\:,
+\]%
+从而使电子自能函数变成
+\begin{align}
+\Sigma_{1\,\text{loop}}^{\ast}(p) &=\frac{\mi e^{2}}{(2\uppi)^{4}}\int \dif^{4}k\:
+\biggl[\frac{1}{k^{2}-\mi\epsilon}-\frac{1}{k^{2}+\mu^{2}-\mi\epsilon}\biggr] \nonumber \\
+&\quad\times \biggl[ \frac{\gamma^{\rho}(-\mi\xxp+\mi\xxk+m_{e})\gamma_{\rho }}{(p-k)^{2}+m_{e}^{2}-\mi\epsilon}\biggr] \:. \label{11.4.5}
+\end{align}%
+后面我们可以通过令正规化子质量$\mu$趋于$\infty$来扔掉正规化子. 而在第14章, %
+我们也会关心$\mu\ll m_{e}$的情况.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1106.eps}\\
+ \caption{电子自能函数的单圈图. 像往常一样, 直线代表电子, 波浪线代表光子.}
+ \label{fig:11.6}
+\end{figure}
+
+我们仍采用\,Feynman\,技巧来整合分母, 并忆及$\gamma^{\rho}\gamma^{\kappa}\gamma_{\rho}=-2\gamma^{\kappa}$%
+和$\gamma^{\rho}\gamma_{\rho}=4$. 这给出\marginpar[\flushright
+{\raisebox{-8ex}[0pt]{{\small[495]\hspace*{5mm}}}}]{{\raisebox{-8ex}[0pt]{\small\hspace*{5mm}[495]}}}
+\begin{align}
+\Sigma_{1\,\text{loop}}^{\ast}(p) &= \frac{\mi e^{2}}{(2\uppi)^{4}}
+\int\dif^{4}k\:[2\mi(\xxp-\xxk)+4m_{e}]  \nonumber \\
+&\quad \times \int_{0}^{1}\dif x\:\biggl[\frac{1}{((k-px)^{2}+p^{2}x(1-x)+m_{e}^{2}x-\mi\epsilon)^{2}}  \nonumber \\
+&\quad -\frac{1}{((k-px)^{2}+p^{2}x(1-x)+m_{e}^{2}x+\mu ^{2}(1-x)-\mi\epsilon)^{2}}\biggr]\:.\label{11.4.6}
+\end{align}%
+偏移积分变量$k\to k+px$并旋转积分围道, 给出
+\begin{align}
+&\Sigma _{1\,\text{loop}}^{\ast}(p) = \frac{-2\uppi^{2}e^{2}}{(2\uppi)^{4}}%
+\int_{0}^{1}\dif x\:[2\mi(1-x)\xxp+4m_{e}]\int_{0}^{\infty}\dif\kappa\:\kappa^{3}  \nonumber \\
+&\times \left[ \frac{1}{(\kappa ^{2}+p^{2}x(1-x)+m_{e}^{2}x)^{2}}-\frac{1}{%
+(\kappa ^{2}+p^{2}x(1-x)+m_{e}^{2}x+\mu ^{2}(1-x))^{2}}\right] \:.
+\label{11.4.7}
+\end{align}%
+$\kappa$-积分是简单的
+\begin{align}
+\Sigma_{1\,\text{loop}}^{\ast}(p) &= \frac{-\uppi^{2}e^{2}}{(2\uppi)^{4}}
+\int_{0}^{1}\dif x\:[2\mi(1-x)\xxp+4m_{e}]  \nonumber \\
+&\qquad\quad\times \ln \biggl(\frac{p^{2}x(1-x)+m_{e}^{2}x+\mu^{2}(1-x)}{p^{2}x(1-x)+m_{e}^{2}x}\biggr) \:.\label{11.4.8}
+\end{align}
+
+相互作用(\ref{11.1.9})也在$\Sigma^{\ast}(p)$中贡献了一个重正化抵消项%
+$-(Z_{2}-1)(\mi\xxp+m_{e})+Z_{2}\updelta m_{e}$, 其中确定$Z_{2}$与$\updelta m_{e}$的条件是,
+被看作$\mi\xxp$函数的全传播子$S^{\prime}(p)$应该在$\mi\xxp=-m_{e}$处有一个留数为%
+\,1\,的极点. (我们将在下一章看到, 这使得当$\mu\to\infty$时, $\Sigma^{\ast}$在$e$的所有阶有限.) 在最低阶, 这给出
+\begin{align}
+\updelta m_{e} &= -\Sigma_{1\,\text{loop}}^{\ast}\Bigr\rvert_{\mi\xxp=-m_{e}}  \nonumber \\
+&=\frac{2m_{e}\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\:[1+x]\,
+\ln \biggl(\frac{m_{e}^{2}x^{2}+\mu^{2}(1-x)}{m_{e}^{2}x^{2}}\biggr) \:, \label{11.4.9} \\
+Z_{2}-1 &= -\mi\frac{\partial \Sigma _{1\,\text{loop}}^{\ast}}{%
+\partial \xxp}\Bigg\rvert_{\mi\xxp=-m_{e}}  \nonumber \\
+&=-\frac{2\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\:\biggl\{(1-x)\ln
+\biggl( \frac{m_{e}^{2}x^{2}+\mu ^{2}(1-x)}{m_{e}^{2}x^{2}}\biggr)   \nonumber \\
+&\qquad\quad-\frac{2\mu^{2}(1-x)^{2}(1+x)}{x(m_{e}^{2}x^{2}+\mu^{2}(1-x))}\biggr\}\:. \label{11.4.10}
+\end{align}%
+(到这一阶\marginpar[\flushright{\small[496]\hspace*{5mm}}]{{\small\hspace*{5mm}[496]}}, 我们不区分$\updelta m_{e}$和$Z_{2}\updelta m_{e}$.) 扔掉在$\mu^{2}\to\infty$时为零的项, 方程(\ref{11.4.8})\yzx (\ref{11.4.10})给出
+\begin{align}
+\Sigma_{1\,\text{loop}}^{\ast}(p) &= \frac{-\uppi^{2}e^{2}}{(2\uppi)^{4}}%
+\int_{0}^{1}\dif x\:[2\mi(1-x)\xxp-4m_{e}]\ln
+\biggl( \frac{\mu^{2}(1-x)}{p^{2}x(1-x)+m_{e}^{2}x}\biggr) \:,  \label{11.4.11} \\
+\updelta m_{e} &=\frac{2m_{e}\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\:[1+x]%
+\ln \biggl( \frac{\mu ^{2}(1-x)}{m_{e}^{2}x^{2}}\biggr) \:, \label{11.4.12} \\
+Z_{2}-1 &=\frac{-2\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\: \biggl\{
+(1-x)\ln\biggl(\frac{\mu^{2}(1-x)}{m_{e}^{2}x^{2}}\biggr)-\frac{2(1-x^{2})}{x}\biggr\}  \:.\label{11.4.13}
+\end{align}%
+观察后发现, $\ln\mu^{2}$项在全自能函数中抵消了, 留下了
+\begin{align}
+\Sigma_{\text{order}\,e^{2}}^{\ast}(p) &= \Sigma_{1\,\text{loop}}^{\ast}(p)-(Z_{2}-1)(\mi\xxp+m_{e})+Z_{2}\updelta m_{e}  \nonumber \\
+&=\frac{-2\uppi^{2}e^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\:\Biggl\{[\mi(1-x)\xxp
++2m_{e}]\ln \biggl( \frac{m_{e}^{2}(1-x)}{p^{2}x(1-x)+m_{e}^{2}x}\biggr) \nonumber \\
+&\quad-m_{e}[1+x]\ln \biggl( \frac{1-x}{x^{2}}\biggr) \nonumber  \\
+&\quad-(\mi\xxp+m_{e})\biggl[ (1-x)\ln \biggl(\frac{1-x}{x^{2}}\biggr)
+-\frac{2(1-x^{2})}{x}\biggr] \Biggr\}\:. \label{11.4.14}
+\end{align}
+
+还有一个发散来自最后一项在$x\to0$时的行为, 这个发散可以追溯到在我们取$p^{2}$为计算$Z_{2}-1$时所在的$p=-m_{e}^{2}$那一点后, 方程(\ref{11.4.5}) 中对光子动量$k$的积分在$k^{2}=0$处的奇异行为. %
+这种红外发散将在第13章进行详细讨论. 现在, 我们关心的是紫外发散已经抵消掉了.
+
+\subsection*{* * *}
+$\updelta m_{e}$的结果(\ref{11.4.9})本身有一些值得注意的地方.
+注意到$\updelta m_{e}/m_{e}>0$, 这正是我们对电荷与其自身的场的相互作用所产生的电磁自能所预期的. 但是不像\,Poincar\'{e}, Adraham(亚伯拉罕)以及其他人\cite{9}对电磁自能所做的经典估计, 在$\mu\to\infty$的极限下, 这时截断已经移除, 方程(\ref{11.4.9})只是对数发散的. 在这一极限下:%
+\begin{equation}
+\updelta m_{e}\to \frac{6m_{e}\uppi^{2}e^{2}}{(2\uppi)^{4}}\ln\biggl(\frac{\mu}{m_{e}}\biggr) \:.\label{11.4.15}
+\end{equation}%
+在\,\ref{sec:14.3}\,节我们将对\,Lamb\,位移的进行计算中, 我们将致力于相反的极限, $\mu \ll m_{e}$.
+这里方程(\ref{11.4.9})给出\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[497]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[497]}}}
+\begin{equation}
+\updelta m_{e}\to  \frac{e^{2}\mu }{8\uppi}\biggl[1-\frac{3\mu}{2\uppi m_{e}}+\cdots\biggr] \:.\label{11.4.16}
+\end{equation}
+
+
+\section*{附录~A\quad 各种积分}
+
+\addcontentsline{toc}{section}{附录~A\quad 各种积分}                %自动提目录
+\markright{附录~A\quad 各种积分}      %%前双后单书眉
+
+\def\theequation{\arabic{chapter}.A.\arabic{equation}}
+
+\setcounter{equation}{0}
+
+
+为了整合$N$个传播子的分母, 我们需要将类似$D_{1}^{-1}D_{2}^{-1}\cdots D_{N}^{-1}$的乘积替换成对一个函数的积分, 而这个函数包含$D_{1}$, $D_{2}$, $\cdots D_{N}$的一个线性组合.
+出于这个目的, 采用如下的公式通常是方便的
+\begin{align}
+&\frac{1}{D_{1}D_{2}\cdots D_{N}} = (N-1)!\int_{0}^{1}\dif x_{1}%
+\int_{0}^{x_{1}}\dif x_{2}\cdots \int_{0}^{x_{N-2}}\dif x_{N-1}  \nonumber \\
+&\times [D_{1}x_{N-1}+D_{2}(x_{N-2}-x_{N-1})+\cdots +D_{N}(1-x_{1})]^{-N}\:.\label{11.A.1}
+\end{align}%
+在本章我们用到了这一公式在$N=2$和$N=3$时的特殊情况.
+
+整合分母, 偏移\,4\,-动量积分变量, Wick\,旋转并利用\,4\,维旋转不变性之后, 我们通常会遇到如下形式的积分
+\[
+\int \dif^{4}k\:\frac{(k^{2})^{n}}{(k^{2}+\nu^{2})^{m}}
+\]%
+其中$(k^{2}+\nu^{2})^{m}$来自整合后的传播子分母, 而$(k^{2})^{n}$来自传播子分子以及顶点动量因子. 这个积分在$2n+4\geq 2m$时是发散的, 但是通过解析延拓, 将时空维数从$4$延拓到复值的$d$, 这个积分可以给出有限值. 为了计算由此得到的积分, 我们利用著名的公式
+\begin{equation}
+\int_{0}^{\infty}\dif\kappa \:\frac{\kappa^{\ell-1}}{(\kappa^{2}+\nu^{2})^{m}}
+=\nu^{\ell-2m}\,\frac{\Gamma(\ell/2)\Gamma(m-\ell /2)}{2\Gamma (m)}\:,  \label{11.A.2}
+\end{equation}%
+其中$\ell=d+2n$. 在\,\ref{sec:11.2}\,节中, 我们用到了这一公式的特殊情况$n=0,m=2$和$n=1,m=2$.
+
+紫外发散在方程(\ref{11.A.2})中表现为: 对固定的$n$, 因子$\Gamma(m-\ell /2)=\Gamma(m-n-d/2)$在$d\to4$处的极点. 对$2+n=m$, 这个因子变成
+\begin{equation}
+\Gamma \biggl( \frac{4-d}{2}\biggr) \to \frac{2}{d-4}+\gamma \:, \label{11.A.3}
+\end{equation}%
+其中$\gamma =0.5772157\cdots $是\,Euler\,常数. 由(\ref{11.A.3})以及$\Gamma$-函数的递推公式, 我们可以得到$2+n>m$时的极限行为.
+
+
+
+\subsection*{\bf 习\qquad 题}
+\marginpar[\flushright
+{\raisebox{4.5ex}[0pt]{{\small[498]\hspace*{5mm}}}}]{{\raisebox{4.5ex}[0pt]{\small\hspace*{5mm}[498]}}}
+
+ \addcontentsline{toc}{section}{习题}
+
+
+\begin{KAI}
+
+1. 计算包含一个质量为$m_{s}$的无自旋带电粒子的单圈图对真空极化函数$\pi(q^{2})$和$Z_{3}$的贡献. 如果$m_{s}\gg Z\alpha m_{e}$, 这对氢原子的$2s$能级位移有什么影响?
+
+2. 假定一个质量为$m_{\phi}$的中性场$\phi$与电子场有相互作用$g\phi\bar{\psi}\psi$. 考虑到单圈, %
+它对电子磁矩和$Z_{2}$有什么影响?
+
+3. 考虑一个质量为$m_{\phi}$且有自相互作用$g\phi^{3}/6$的中性标量场$\phi$. %
+计算标量\lzx 标量散射$S$-矩阵直到单圈阶.
+
+4. 计算问题\,2\,中的中性标量场对电子质量位移$\updelta m_{e}$直到单圈阶的影响.
+
+ \end{KAI}
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}R. P. Feynman, {\textit{Phys. Rev.}} {\bf{76}}, 769 (1949).
+     \addcontentsline{toc}{section}{参考文献}
+\bibitem {2}G. C. Wick, {\textit{Phys. Rev.}} {\bf{96}}, 1124 (1954).
+\bibitem {3}G. 't Hooft and M. Veltman, {\textit{Nucl. Phys.}} {\bf{B44}}, 189 (1972).
+\bibitem {4}E. A. Uehling, {\textit{Phys. Rev.}} {\bf{48}}, 55 (1935). $q^{2}\neq0$的单圈函数$\pi(q^{2})$由\,J. Schwinger\,首次给出, {\textit{Phys. Rev.}} {\bf{75}}, 651 (1949).
+\bibitem {5}J. Schwinger, {\textit{Phys. Rev.}} {\bf{73}}, 416 (1948).
+\bibitem {6}这是\,H. Suura\,和\,E. Wichmann\,给出的计算(包含那些$m_{e}\ll m_{\mu}$时为零的项), {\textit{Phys. Rev.}} {\bf{105}}, 1930 (1957); A. Petermann, {\textit{Phys. Rev.}} {\bf{105}}, 1931 (1957); H. H. Elend, {\textit{Phys. Lett.}} {\bf{20}}, 682 (1966); {\bf{21}}, 720 (1966); G. W. Erickson and H. H. T. Liu, UCD-CNL-81 report (1968).
+\bibitem {7}J. Bailey {\textit{et. al.}} (CERN-Mainz-Daresbury Collaboration), {\textit{Nucl. Phys.}} {\bf{B150}}, 1 (1979). 这些实验是通过观察$\mu$子自旋在储存环内的进动实现的.
+\bibitem {8}W. Pauli and F. Villars, {\textit{Rev. Mod. Phys.}} {\bf{21}}, 434 (1949). 另见\,J. Rayski, {\textit{Phys. Rev.}} {\bf{75}}, 1961 (1949).
+\bibitem {9}可参看\,A. I. Miller, {\textit{Theory of Relativity \yzx  Emergence (1905) and Early Interpretation (1905-1911)}} (Addison-Wesley, Reading, MA, 1981): Chapter 1.
+\end{thebibliography}

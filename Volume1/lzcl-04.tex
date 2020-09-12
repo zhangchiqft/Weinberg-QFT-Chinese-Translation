@@ -1,0 +1,578 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+\chapter{集团分解原理} \label{cha:4}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[169]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[169]}}}
+  \markboth{第4章\quad 集团分解原理}{第4章\quad 集团分解原理}
+
+直到现在, 我们还没有对哈密顿量算符$H$的详细结构进行过深入的讨论. 这个算符可以通过给出它在两个粒子数任意的态之间的所有矩阵元来定义. 等价地, 正如我们在这里所要展示的, 任何这样的算符也可以表示为某些产生或湮没单粒子的算符的函数. %
+我们在第1章看到, 这种产生湮没算符是在量子力学早期对电磁场和其他场进行正则量子化时首次遇到的. 对于那些能够产生或湮没有质量粒子以及光子的理论, 它们提供了一个自然的形式体系, 这样的理论始于\,20\,世纪\,30\,年代早期\,Fermi\,的$\beta$-衰变理论.
+
+然而, 用产生和湮没算符构建哈密顿量有更深层次的原因, 这个原因已经超出量子化像电磁场这样已然存在的场的需要, 并与粒子是否真的会被产生或消灭无关. 这一形式体系的巨大优势是, 如果我们将哈密顿量表达成产生和湮没算符乘积的和, 并有恰当且不奇异的系数, 那么$S$-矩阵会自动满足一个关键的物理要求, 集团分解原理,\cite{1} 即相距甚远的实验产生的结果不相关. 事实上, 正是由于这个原因, 产生和湮没算符的形式体系才被广泛应用在非相对论量子统计力学中, 那里的粒子数一般是固定的. 在相对论量子理论中, 集团分解原理在使场论成为必需的过程中扮演了关键角色. 曾有过很多不用定域场论形式化一个相对论不变理论的尝试, 对于两体散射, 确实可能构建出一个非场论的理论却依旧得到\,Lorentz\,不变的$S$-矩阵,\textsuperscript{\cite{2}} 但是这样的努力总在粒子数超过两个时陷入困境: 要么\,3\,-粒子的$S$-矩阵不是\,Lorentz\,不变的, 要么就违背了集团分解原理.
+
+在本章中, 我们将首先讨论包含任意个玻色子和费米子的态的基,
+然\marginpar[\flushright{\small[170]\hspace*{5mm}}]{{\small\hspace*{5mm}[170]}}后定义产生湮没算符, 最后展示它们是怎样帮助构建哈密顿量, 使得这个哈密顿量给出的$S$-矩阵满足集团分解条件.
+
+\section{玻色子与费米子} \label{sec:4.1}
+\setcounter{equation}{0}
+
+物理态的\,Hilbert\,空间由包含$0,1,2,\cdots$个自由粒子的态张成. 它们可以是自由粒子态, ``入''态, 或``出''态; 明确起见, 我们在这里处理自由粒子态$\Phi_{\bp_{1}\,\sigma_{1}\,n_{1},\bp_{2}\,\sigma_{2}\,n_{2},\cdots}$, 但是我们的所有结果同样适用于``入''态或``出''态. 像以往一样, $\sigma$标记自旋$z$-分量(对于无质量粒子则是螺旋度), $n$标记粒子种类.
+
+我们现在必须对第3章中忽略的一个问题做深入研究; 这些态的对称性. 就目前我们所知道的, 所有的粒子不是{\KAI{玻色子}}就是{\KAI{费米子}}, 二者的差异是: 态在两个全同玻色子的交换下不变, 而在两个全同费米子的交换下要变一个符号. 即
+\begin{equation}
+\Phi_{\cdots\,\bp\,\sigma\,n\,\cdots\,\bp^{\prime
+}\,\sigma^{\prime}\,n\,\cdots}=\pm\,\Phi_{\cdots\,\bp^{\prime
+}\,\sigma^{\prime}\,n\,\cdots\,\bp\,\sigma\,n\,\cdots} \:, \label{4.1.1}%
+\end{equation}
+其中, 如果$n$是玻色子则取正号, 如果$n$是费米子则取负号, 省略号代表该态中可能出现的其他粒子. (等价地, 这可以表述为加在``波函数''上的条件, 波函数即这些多粒子基矢在物理上允许的态矢中的系数.) 这两种情况通常指代为玻色或费米``统计''. 我们在下一章将会看到, 整数自旋或半整数自旋的粒子只能分别对应玻色统计和费米统计, 但在本章中我们并不需要知道这件事. 本节中, 我们将给出一个所有粒子都必须是玻色子或费米子的不严格论证, 然后给出多玻色子态或多费米子态的归一化条件.
+
+首先注意到, 如果分别具有动量和自旋$\bp,\sigma$和$\bp^{\prime},\sigma^{\prime}$的两个粒子属于同一种类$n$, 那么态矢$\Phi_{\cdots\,\bp\,\sigma\,n\,\cdots\,\bp^{\prime}\,\sigma^{\prime}\,n\,\cdots}$与%
+$\Phi_{\cdots\,\bp^{\prime}\,\sigma^{\prime}\,n\,\cdots\,\bp\,\sigma\,n\,\cdots}$%
+代表同一物理态; 如果不是这种情况, 那么粒子可以通过它们在态矢中被标记的顺序被区分开来, 此时第一个列出的态矢与第二个不是全同的. 既然两个态矢在物理上是不可区分的, 它们必属于同一射线, 因此%
+\begin{equation}
+\Phi_{\cdots\,\bp\,\sigma\,n\,\cdots\,\bp^{\prime}\,\sigma^{\prime}\,n\,\cdots}
+=\alpha_{n}\,\Phi_{\cdots\,\bp^{\prime}\,\sigma^{\prime}\,n\,\cdots\,\bp\,\sigma\,n\,\cdots}\:, \label{4.1.2}%
+\end{equation}
+其中$\alpha_{n}$是绝对值为\,1\,的复数. 我们可以认为这是所谓全同粒子的部分定义.
+
+问题的\marginpar[\flushright{\small[171]\hspace*{5mm}}]{{\small\hspace*{5mm}[171]}}关键是确定相因子$\alpha_{n}$由什么决定. {\KAI{如果}}它仅依赖种类指标$n$, 那么我们几乎已经完成了这个任务. 在方程(\ref{4.1.2})中再一次交换两个粒子, 我们发现
+\[
+\Phi_{\cdots\,\bp\,\sigma\,n\,\cdots\,\bp^{\prime}\,\sigma^{\prime}\,n\,\cdots}
+=\alpha_{n}^{2}\,\Phi_{\cdots\,\bp\,\sigma\,n\,\cdots\,\bp^{\prime}\,\sigma^{\prime}\,n\,\cdots}%
+\]
+这使得$\alpha_{n}^{2}=1$%
+, 表明方程(\ref{4.1.1})正是仅有的两种可能性.
+
+$\alpha_{n}$还能依赖什么呢? 它可能依赖态中其他粒子的数目与种类(由方程(\ref{4.1.1})和(\ref{4.1.2})中的省略号标记), 但是这会导致一个令人不安的结果, 地球上的态矢在粒子交换下的对称性可能依赖于出现在宇宙别处的粒子. 集团分解原理就是要排除这类情况, 我们会在本章后面对此进行讨论. 相位$\alpha_{n}$不能与参与交换的粒子的自旋有任何不平庸的关系, 这是因为, 如果这样, 那么这些依赖自旋的相位因子将构成旋转群的一个表示, 而三维旋转群的非平庸表示没有一个是一维表示\ezx 即, 相位因子. 不难想到相位$\alpha_{n}$可能会依赖要交换的两个粒子的动量, 但是\,Lorentz\,不变性要求$\alpha_{n}$只能依赖于标量$p_{1}^{\mu}p_{2\mu}$; 这是在交换粒子\,1\,和\,2\,下的对称性, 因而这类依赖性不会影响我们关于$\alpha_{n}^{2}=1$的论证.
+
+以上论证的逻辑破绽是(尽管我们的符号约定掩盖了这个事实), 态$\Phi_{\bp_{1}\,\sigma_{1}\,n,\bp_{2}\,\sigma_{2}\,n,\cdots}$可能会携带%
+依赖动量空间路径的相位因子, 这条路径将粒子的动量值变为$\bp_{1},\bp_{2},$等. 在这种情况下, 交换两个粒子两次也可能使态变化一个相位, 使得$\alpha_{n}^{2}\neq1$. 我们将在\,\ref{sec:9.7}\,节看到, 这在二维空间中是可能的, 但三维及维数更高的空间则不存在这种可能性.
+
+交换不同种类的粒子会怎样呢? 如果我们愿意, 我们可以避免这个问题, 在最初标记态矢时, 先列出所有光子的动量和螺旋度, 然后再列出所有电子的动量和自旋$z$-分量, 一直做下去直到列出所有基本粒子类型, 通过这一方法我们就可以避免这一问题. 或者, 我们可以允许粒子指标以任何次序出现, 并{\KAI{定义}}%
+粒子指标顺序任意的态矢等于粒子指标以某种标准顺序排列的态矢乘以相因子, 这个相因子对要交换的两个不同种类粒子的依赖关系是什么都行. 为了处理类似同位旋对称性这样涉及不同种类粒子的对称性, 采取如下推广方程(\ref{4.1.1})的约定是方便的: 在任何情况下, 无论粒子的种类是否相同, 态矢取为,
+在任意玻色子之间或者在任意\marginpar[\flushright{\small[172]\hspace*{5mm}}]{{\small\hspace*{5mm}[172]}}玻色子与任意费米子之间的交换下对称, 而在任意两个费米子之间的交换下反对称.{}$^*$\footnote{$^*${}事实上, 由于相同的原因, 在种类相同但螺旋度或者自旋$z$-分量不同的粒子的交换下, 态矢的对称性或反对称性是一个纯粹的约定, 这是因为从开始我们就可以约定, 将螺旋度为\,1\,的光子的动量排在第一位, 接着是所有螺旋度为$-1$ 的光子的动量, 接着是所有自旋$z$-分量为$+\frac{1}{2}$的电子的动量, 以此类推. 我们{\KAI{约定}}: 态矢在自旋$z$-分量或螺旋度不同的全同玻色子或费米子的交换下分别是对称或反对称的, 这样做是为了方便使用旋转不变性. }
+
+这些态的归一化必须与这些对称性条件一致. 为了节省篇幅, 我们将用一个指标$q$标记单粒子的所有量子数: 它的动量$\bp$, 自旋$z$-分量(或者无质量粒子的螺旋度)$\sigma$, 以及种类$n$. 因此, $N$-粒子态就被记为$\Phi_{q_{1}\cdots q_{N}}$(对于真空态$\Phi_{0}$, $N=0$.) 对于$N=0$以及$N=1$, 对称性的问题不会出现: 这时我们有
+\begin{equation}
+(\Phi_{0},\Phi_{0})=1\label{4.1.3}%
+\end{equation}
+和
+\begin{equation}
+\left(  \Phi_{q^{\prime}},\Phi_{q}\right) = \updelta(q^{\prime}-q) \:, \label{4.1.4}%
+\end{equation}
+其中$\updelta(q^{\prime}-q)$是粒子量子数的所有$\updelta$-函数与克罗内克$\updelta$-符号的乘积, \begin{equation}
+\updelta(q^{\prime}-q)\equiv\updelta^{3}(\bp^{\prime}-\bp)
+\updelta_{\sigma^{\prime}\sigma}\updelta_{n^{\prime}n}\:. \label{4.1.5}%
+\end{equation}
+另一方面, 对于$N=2$, 态$\Phi_{q_{1}^{\prime}q_{2}^{\prime}}$与$\Phi_{q_{2}^{\prime}q_{1}^{\prime}}$在物理上是相同的, 所以在这里我们必须取
+\begin{equation}
+\Bigl( \Phi_{q_{1}^{\prime}q_{2}^{\prime}}\, ,\Phi_{q_{1}q_{2}} \Bigr)  =\updelta(q_{1}^{\prime}-q_{1})\updelta(q_{2}^{\prime}-q_{2})
+\pm\updelta(q_{2}^{\prime}-q_{1})\updelta(q_{1}^{\prime}-q_{2})\label{4.1.6}%
+\end{equation}
+符号$\pm$%
+在两个粒子都是费米子时取$-$号, 其他情况取$+$号. 这显然与上面陈述的态的对称性一致. 更普遍地, \begin{equation}
+\Bigl(\Phi_{q_{1}^{\prime}q_{2}^{\prime}\cdots q_{M}^{\prime}}\,,\Phi_{q_{1}q_{2}\cdots q_{N}}\Bigr)  =\updelta_{NM}\sum_{\mathscr{P}}\delta_{\mathscr{P}}\prod_{i}\updelta(q_{i}-q_{\mathscr{P}i}^{\prime})\:. \label{4.1.7}%
+\end{equation}
+这里的求和对整数$1,2,\cdots,N$的所有置换$\mathscr{P}$求和. (例如, 在方程(\ref{4.1.6})中的第一项, $\mathscr{P}$%
+是恒等操作, $\mathscr{P}1=1,\mathscr{P}2=2$, 而在第二项, $\mathscr{P}1=2,\mathscr{P}2=1$.) 另外, $\delta_{\mathscr{P}}$是符号因子, 如果$\mathscr{P}$ 包含费米子的奇置换(奇数次的费米子交换), 那么$\delta_{\mathscr{P}}$等于$-1$, 否则等于$+1$. 很容易看到, 在$q_{i}$的交换下, 或者在$q_{j}^{\prime}$ 的交换下, 方程(\ref{4.1.7})有着所需的对称性和反对称性.
+
+\section{产生和湮没算符} \label{sec:4.2}
+\setcounter{equation}{0}
+\marginpar[\flushright{\raisebox{6ex}[0pt]{{\small[173]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[173]}}}
+
+产生和湮没算符可以通过它们在上节讨论的归一化多粒子态上的作用效果来定义. {\KAI{产生算符}} $a^{\dag}(q)$ (或者更详细些, $a^{\dag}(\bp,\sigma,n)$) 被定义成在态中粒子队列前面增加一个量子数为$q$的粒子
+\begin{equation}
+a^{\dag}(q)\Phi_{q_{1}q_{2}\cdots q_{N}} \equiv \Phi_{qq_{1}q_{2}\cdots q_{N}}\:. \label{4.2.1}%
+\end{equation}
+特别地, 将$N$个产生算符作用在真空态上就可以获得$N$-粒子态
+\begin{equation}
+a^{\dag}(q_{1})a^{\dag}(q_{2})\cdots a^{\dag}(q_{N})\Phi%
+_{0}=\Phi_{q_{1}\cdots q_{N}}\:. \label{4.2.2}%
+\end{equation}
+习惯称这个算符为$a^{\dag}(q)$; 它的共轭, 记为$a(q)$, 可以从方程(\ref{4.1.7})中计算出来. 正如我们现在所要展示的, $a(q)$从它所作用的态中移除一个粒子, 因而被称为{\KAI{湮没算符}}. 特别地, 当粒子$q\,q_{1}\cdots q_{N}$%
+全是玻色子或全是费米子时, 我们有
+\begin{equation}
+a(q)\Phi_{q_{1}q_{2}\cdots q_{N}}=\sum_{r=1}^{N}(\pm)^{r+1}%
+\updelta(q-q_{r})\Phi_{q_{1}\cdots q_{r-1}q_{r+1}\cdots q_{N}}\:, \label{4.2.3}%
+\end{equation}
+其中, 对玻色子和费米子分别取$+1$和$-1$. (下面是证明. 我们希望计算$a(q)\Phi_{q_{1}q_{2}\cdots q_{N}}$与任意态$\Phi_{q_{1}^{\prime}\cdots q_{M}^{\prime}}$的标量积. 利用方程(\ref{4.2.1}), 这个标量积是
+\[
+ \left(  \Phi_{q_{1}^{\prime}\cdots q_{M}^{\prime}},a(q)\Phi_{q_{1}\cdots q_{N}}\right)  \equiv
+ \left(  a^{\dag}(q)\Phi_{q_{1}^{\prime}\cdots q_{M}^{\prime}},\Phi_{q_{1}\cdots q_{N}}\right)
+=\left(  \Phi_{qq_{1}^{\prime}\cdots q_{M}^{\prime}},\Phi_{q_{1}\cdots q_{N}}\right)  \:.
+\]
+我们现在使用方程(\ref{4.1.7}). 对$1,2,\cdots,N$的置换$\mathscr{P}$的求和可以写为对置换到第一个位置上的整数$r$的求和, 即$\mathscr{P}r=1$, 和对剩余整数$1,\cdots,r-1,r+1,\cdots,N$到$1,\cdots,N-1$的映射$\bar
+{\mathscr{P}}$求和. 更进一步, 符号因子是
+\[
+\delta_{\mathscr{P}}=(\pm)^{r-1}\delta_{\bar{\mathscr{P}}}%
+\]
+其中, 对于玻色子和费米子分别是正号和负号. 因此, 使用方程(\ref{4.1.7})两次,
+\begin{align*}
+&  \left(  \Phi_{q_{1}^{\prime}\cdots q_{M}^{\prime}},a(q)\Phi_{q_{1}\cdots q_{N}}\right) = \updelta_{N,M+1}\\
+&  \qquad\times\sum_{r=1}^{N}\sum_{\bar{\mathscr{P}}}(\pm)^{r-1}\delta_{\bar{\mathscr{P}}}\updelta(q-q_{r})
+\prod_{i=1}^{M}\updelta(q_{i}^{\prime}-q_{\mathscr{P}i})\\
+&  \qquad=\updelta_{N,M+1}\sum_{r=1}^{N}(\pm)^{r-1}\updelta(q-q_{r})
+\left(\Phi_{q_{1}^{\prime}\cdots q_{M}^{\prime}},\Phi_{q_{1}\cdots q_{r-1}q_{r+1}\cdots q_{N}}\right)  \:. %
+\end{align*}
+因此\marginpar[\flushright{\small[174]\hspace*{5mm}}]{{\small\hspace*{5mm}[174]}}方程(\ref{4.2.3})两边对任意态$\Phi_{q_{1}^{\prime}\cdots q_{M}^{\prime}}$的矩阵元相同, 因而相等, 这正是所要证明的.) 作为方程(\ref{4.2.3})的一种特殊情况, 我们注意到无论玻色子还是费米子, $a(q)$均湮没真空
+\begin{equation}
+a(q)\Phi_{0}=0\:. \label{4.2.4}%
+\end{equation}
+
+正如这里所定义的, 产生算符和湮没算符满足一个重要的对易或反对易关系. 用算符$a(q^{\prime})$作用方程(\ref{4.2.1}), 并利用方程(\ref{4.2.3}), 这给出
+\begin{align*}
+a(q^{\prime})a^{\dag}(q)\Phi_{q_{1}\cdots q_{N}} &= \updelta (q^{\prime}-q)\Phi_{q_{1}\cdots q_{N}}\\
+&  \quad+\sum_{r=1}^{N} (\pm)^{r+2}\updelta(q^{\prime}-q_{r})\Phi_{qq_{1}\cdots q_{r-1}q_{r+1}\cdots q_{N}}\:. %
+\end{align*}
+(因为$q_{r}$处在$\Phi_{qq_{1}\cdots q_{N}}$中的第$r+1$个位置, 所以第二项中的符号是$(\pm)^{r+2}$.) 另一方面, 用算符$a^{\dag}(q)$作用方程(\ref{4.2.3})给出
+\[
+a^{\dag}(q)a(q^{\prime})\Phi_{q_{1}\cdots q_{N}}=\sum_{r=1}^{N}(\pm)^{r+1}\updelta(q^{\prime}-q_{r})
+\Phi_{qq_{1}\cdots q_{r-1}q_{r+1}\cdots q_{N}}\:. %
+\]
+相减或相加, 于是我们有
+\[
+\left[  a(q^{\prime})a^{\dag}(q)\mp a^{\dag}(q)a(q^{\prime})\right]
+\Phi_{q_{1}\cdots q_{N}}=\updelta(q^{\prime}-q)\Phi%
+_{q_{1}\cdots q_{N}}\:. %
+\]
+由于这个结果对所有态$\Phi_{q_{1}\cdots q_{N}}$均成立(并且很容易看到对于既包含玻色子又包含费米子的态也成立), 因而暗示着算符关系
+\begin{equation}
+a(q^{\prime})a^{\dag}(q)\mp a^{\dag}(q)a(q^{\prime})=\updelta(q^{\prime}-q)\:. \label{4.2.5}%
+\end{equation}
+另外, 方程(\ref{4.2.2})立即给出\
+\begin{equation}
+a^{\dag}(q^{\prime})a^{\dag}(q)\mp a^{\dag}(q)a^{\dag}(q^{\prime})=0 \label{4.2.6}%
+\end{equation}
+以及
+\begin{equation}
+a(q^{\prime})a(q)\mp a(q)a(q^{\prime})=0\:. \label{4.2.7}%
+\end{equation}
+像通常一样, 上面的符号和下面的符号分别用于玻色子和费米子. 根据上一节所讨论的约定. 对于两个不同种类的粒子, 如果其中一个粒子是玻色子, 那么产生算符和(或)湮没算符对易, 如果两个都是费米子, 则反对易.
+
+以上的讨论也可以按照相反的顺序来讲(在大多数教科书中通常是这样的). 就是说, 我们可以从对易或反对易关系\ezx 方程(\ref{4.2.5})\yzx (\ref{4.2.7})出发, 从某些给定场论的正则量子化开始推导. 那么, 多粒子态由方程(\ref{4.2.2})定\marginpar[\flushright{\small[175]\hspace*{5mm}}]{{\small\hspace*{5mm}[175]}}义, 并且它们的标量积\ezx 方程(\ref{4.1.7})由对易或反对易关系导出. 事实上, 正如第1 章所讨论的, 这样的处理更接近历史发展的脉络. 我们在这里不沿着历史的途径是因为我们想摆脱对预设场论的依赖, 而更希望理解场论为什么是它们现在所呈现的形式.
+
+我们现在要证明本章开头引述的基本定理: {\KAI{任何}}算符$\mathcal{O}$都可以表示为产生和湮没算符乘积的和
+\begin{align}
+\mathcal{O} &= \sum_{N=0}^{\infty}\sum_{M=0}^{\infty}\int \dif q_{1}^{\prime}\cdots \dif q_{N}^{\prime}\:
+\dif q_{1}\cdots \dif q_{M}\nonumber\\
+&  \quad\times a^{\dag}(q_{1}^{\prime})\cdots a^{\dag}(q_{N}^{\prime})a(q_{M})\cdots a(q_{1})\nonumber\\
+&  \quad\times C_{NM}(q_{1}^{\prime}\cdots q_{N}^{\prime}q_{1}\cdots q_{M})\:. \label{4.2.8}%
+\end{align}
+就是说, 我们希望证明, 通过选择系数$C_{NM}$, 我们可以赋予这个表达式的矩阵元以任意想要的值. 我们通过数学归纳法证明它. 首先, 很平庸地, 无论$N>0$和(或)$M>0$的$C_{NM}$值是多少, 通过正确选择$C_{00}$, 我们可以给$(\Phi_{0},\mathcal{O}\Phi_{0})$任何所需的值. 仅从方程(\ref{4.2.4}), 我们就可以看到方程(\ref{4.2.8})具有真空期望值
+\[
+(\Phi_{0},\mathcal{O}\Phi_{0})=C_{00}\:. %
+\]
+现在假定, 对$N<L,M\leq K$或$N\leq L,M<K$, 同样的结果对$\mathcal{O}$在所有$N$-粒子态和$M$-粒子态之间的矩阵元也成立; 即, 通过对相应系数$C_{NM}$ 的恰当选择, 这些矩阵元已被赋予了一些希望的值. 为了看到同样的结果对$\mathcal{O}$在任何$L$-粒子态和$K$-粒子态之间的矩阵元同样成立, 利用方程(\ref{4.2.8}) 计算
+\begin{align*}
+&  \left(  \Phi_{q_{1}^{\prime}\cdots q_{L}^{\prime}}%
+,\mathcal{O}\Phi_{q_{1}\cdots q_{K}}\right)  =L!K!C_{LK}%
+(q_{1}^{\prime}\cdots q_{L}^{\prime}q_{1}\cdots q_{K})\\
+&  +\text{包含}\,C_{NM}\,\text{的项, 其中}\,N<L,M\leq K\,\text{或}\,N\leq L,M<K \:,
+\end{align*}
+无论给了$N<L,M\leq K$或$N\leq L,M<K$的$C_{NM}$什么值, 显然可以通过选择$C_{LK}$赋予这个矩阵元任何所需的值.
+
+当然, 一个算符不需要一定以(\ref{4.2.8})中的形式表示, 即所有的产生算符处在所有湮没算符的左边. (这通常称为算符的``正规''编序.) 然而, 如果对于某些算符, 这个表达式以某种其他的方式排列产生和湮没算符, 通过反复应用对易或反对易关系, 用方程(\ref{4.2.5})的$\updelta$-函数挑出新的项, 我们总可以将产生算符移至湮没算符的左边.
+
+例如\marginpar[\flushright{\small[176]\hspace*{5mm}}]{{\small\hspace*{5mm}[176]}}, 考察任何形式的加性算符$F$(像动量, 荷等), 其有
+\begin{equation}
+F\Phi_{q_{1}\cdots q_{N}}=(f(q_{1})+\cdots f(q_{N}))\Phi_{q_{1}\cdots q_{N}}\:. \label{4.2.9}%
+\end{equation}
+这样的算符可以写成方程(\ref{4.2.8})中那样, 但仅用到$N=M=1$的项:
+\begin{equation}
+F=\int \dif q\:a^{\dag}(q)a(q)f(q)\:. \label{4.2.10}%
+\end{equation}
+特别地, 自由粒子哈密顿量总是
+\begin{equation}
+H_{0}=\int \dif q\: a^{\dag}(q)a(q)E(q)\label{4.2.11}%
+\end{equation}
+其中$E(q)$是单粒子能量
+\[
+E(\bp,\sigma,n)=\sqrt{\bp^{2}+m_{n}^{2}}\:. %
+\]
+
+
+对于各种对称性, 我们会需要产生算符和湮没算符的变换性质. 首先, 考察非齐次固有正时\,Lorentz\,变换. 回忆, $N$-粒子态具有如下的\,Lorentz\,变换性质
+\begin{align*}
+U_{0}(\Lambda,\alpha)\Phi_{\bp_{1}\sigma_{1}n_{1},\bp_{2}\sigma_{2}n_{2},\cdots}
+&= \me^{-\mi(\Lambda p_{1})\cdot\alpha}\,\me^{-\mi(\Lambda p_{2})\cdot\alpha}\cdots \\
+&\quad \sqrt{\frac{(\Lambda p_{1})^{0}(\Lambda p_{2})^{0}\cdots}{p_{1}^{0}p_{2}^{0}\cdots}}\\
+&\quad \times\sum_{\bar{\sigma}_{1}\bar{\sigma}_{2}\cdots}D_{\bar{\sigma}_{1}\sigma_{1}%
+}^{(j_{1})}\Big(W(\Lambda,p_{1})\Big)D_{\bar{\sigma}_{2}\sigma_{2}}^{(j_{2})}\Big(W(\Lambda,p_{2})\Big)\cdots \\
+&\quad \Phi_{\bp_{1\Lambda}\bar{\sigma}_{1}n_{1},\bp_{2\Lambda}\bar{\sigma}_{2}n_{2},\cdots}\:. %
+\end{align*}
+这里的$\bp_{\Lambda}$是$\Lambda p$的\,3\,-矢部分, $D_{\bar{\sigma}\sigma}^{(j)}(R)$是\,\ref{sec:2.5}\,节用到的三维旋转群自旋\lzx $j$ 幺正表示, 而$W(\Lambda,p)$是特定旋转
+\[
+W(\Lambda,p)\equiv L^{-1}(\Lambda p)\Lambda L(p)\:, %
+\]
+其中$L(p)$是使质量为$m$的粒子从静止变换到\,4\,-动量$p^{\mu}$的标准``增速''. (当然, $m$和$j$依赖粒子种类指标$n$. 这里的讨论针对的都是$m\neq0$ 的情况; 下一章我们将回到无质量粒子的情况.) 现在, 这些态可以像方程(\ref{4.2.2})中那样表示
+\[
+\Phi_{\bp_{1}\sigma_{1}n_{1},\bp_{2}\sigma_{2}n_{2},\cdots}
+=a^{\dag}(\bp_{1}\sigma_{1}n_{1})a^{\dag}(\bp_{2}\sigma_{2}n_{2})\cdots\Phi_{0}\:, %
+\]
+其中$\Phi_{0}$是\,Lorentz\,不变的真空态
+\[
+U_{0}(\Lambda,a)\Phi_{0}=\Phi_{0}\:. %
+\]
+为了\marginpar[\flushright{\small[177]\hspace*{5mm}}]{{\small\hspace*{5mm}[177]}}使态(\ref{4.2.2})做正确的变换, 产生算符需要如下充要的变换规则
+\begin{align}
+U_{0}(\Lambda,\alpha)a^{\dag}(\bp\sigma n)U_{0}^{-1}(\Lambda,\alpha)
+&=\me^{-\mi(\Lambda p)\cdot\alpha}\sqrt{(\Lambda p)^{0}/p^{0}}\nonumber\\
+&  \quad\times\sum_{\bar{\sigma}}D_{\bar{\sigma}\sigma}^{(j)}\Big(W(\Lambda,p)\Big)
+a^{\dag}(\bp_{\Lambda}\,\bar{\sigma}\,n)\:. \label{4.2.12}%
+\end{align}
+按照同样的方式, 对于那些在自由粒子态上诱导出荷共轭变换, 空间反演变换以及时间反演变换的算符$\mathsf{C}%
+$, $\mathsf{P}$和$\mathsf{T}$,{}$^*$\footnote{$^*${}我们省略了这些算符的下标``0'', 这是因为在所有$\mathsf{C}$, $\mathsf{P}$和(或) $\mathsf{T}$守恒的实际情况中, 在``入''态和``出''态上诱导出这些变换的算符与那些通过它们在自由态上的作用定义的算符相同. 对于连续的\,Lorentz\,变换则不是这样, 因而有必要区分算符$U(\Lambda,a)$和$U_{0}(\Lambda,a)$. } 这些算符在产生算符上引起的变换是:
+\begin{equation}
+\mathsf{C}a^{\dag}(\bp\,\sigma\,n)\mathsf{C}^{-1}=\xi_{n}\,a^{\dag
+}(\bp\,\sigma\,n^{c})\:,\label{4.2.13}%
+\end{equation}%
+\begin{equation}
+\mathsf{P}a^{\dag}(\bp\,\sigma\,n)\mathsf{P}^{-1}=\eta_{n}\,a^{\dag
+}(-\bp\,\sigma\,n)\:,\label{4.2.14}%
+\end{equation}%
+\begin{equation}
+\mathsf{T}a^{\dag}(\bp\,\sigma\,n)\mathsf{T}^{-1}=\zeta_{n}%
+(-1)^{j-\sigma}\,a^{\dag}(-\bp\,-\sigma\,n)\:.\label{4.2.15}%
+\end{equation}
+正如上一节所提及的, 尽管我们所处理的算符产生和湮没的是自由态中的粒子, 但整个形式体系可以应用于``入''态和``出''态, 在这种情况下, 我们将引入算符$a_{\text{in}}$与$a_{\text{out}}$, 它们以相同的方式通过它们在这些态上的作用定义. 这些算符满足类似方程(\ref{4.2.12})的\,Lorentz\,变换规则, 但要用真正的\,Lorentz\,变换算符$U(\Lambda,a)$替代自由粒子算符$U_{0}(\Lambda,a)$.
+
+\section{集团分解和连通振幅} \label{sec:4.3}
+\setcounter{equation}{0}
+
+
+空间距离充分远的实验结果互不相关, 这是物理(诚然, 也是所有科学)的基本原理之一. 在费米实验室(Fermilab)测量的各种碰撞的概率不应与欧洲核子中心(CERN)在该时刻所做的实验相关. 如果这个原理不成立, 那么在不知道宇宙所有详情的情况下, 我们无法对任何实验做出预测.
+
+在$S$-矩阵理论中, 集团分解原理表述为: 如果在$\mathscr{N}$个相距甚远的实验室中研究多粒子过程%
+$\alpha_{1}\to \beta_{1},\alpha_{2}\to \beta_{2},\cdots,\alpha_{\mathcal{\mathscr{N}}}\to\beta_{\mathcal{\mathscr{N}}}$, 那么整个过程的$S$-矩阵元会因子化. 即, 如果对于所有的$i\neq j$, 态$\alpha_{i}$和$\beta_{i}$中的{\KAI{所有}}粒子与态$\alpha_{j}$和$\beta_{j}$中的{\KAI{所有}}%
+粒子都相距甚远, 那么{}$^*$\footnote{$^*${}我们在这里回到了第3章所使用的符号约定; 希腊字母$\alpha$或$\beta$代表粒子的集合, 这其中包括对每一粒子的动量, 自旋以及种类的指定. 另外, $\alpha_{1}+\alpha_{2}+\cdots+\alpha_{\mathscr{N}}$是将态$\alpha_{1},\alpha_{2},\cdots,\alpha_{\mathscr{N}}$%
+中所有粒子合在一起形成的态, 对于$\beta_{1}+\beta_{2}+\cdots+\beta_{\mathscr{N}}$同样如此. } %
+\begin{equation}
+S_{\beta_{1}+\beta_{2}+\cdots+\beta_{\mathcal{\mathscr{N}}},\,\alpha
+_{1}+\alpha_{2}+\cdots+\alpha_{\mathcal{\mathscr{N}}}}\to  S_{\beta
+_{1}\alpha_{1}}\,S_{\beta_{2}\alpha_{2}}\cdots S_{\beta_{\mathcal{\mathscr{N}}%
+}\alpha_{\mathcal{\mathscr{N}}}}\:. \label{4.3.1}%
+\end{equation}
+$S$-矩\marginpar[\flushright{\raisebox{5ex}[0pt]{{\small[178]\hspace*{5mm}}}}]{{\raisebox{5ex}[0pt]{\small\hspace*{5mm}[178]}}}阵元的这个因子化将保证相应跃迁概率的因子化, 相应的结果就是实验结果彼此不相关.
+
+用一个组合学上的技巧可以使我们以更明显的形式重写方程(\ref{4.3.1}). 假定我们定义$S$-矩阵的{\KAI{连通}}部分, $S_{\beta\alpha}^{\text{C}}$,
+为如下形式{}$^{**}$\footnote{$^{**}${}在经典统计力学中, Ursell (乌泽尔), Mayer (迈耶)和一些作者, 在量子统计力学中李政道, 杨振宁和一些作者\textsuperscript{\cite{3}}已经使用过这个分解. 它也被Goldstone(戈德斯通)\textsuperscript{\cite{4}}和Hugenholte(胡根霍兹)\textsuperscript{\cite{5}}用来计算多体基态的能量. 在所有这些应用中, 分离出Green函数, 配分函数, 预解式等的连通部分是为了使研究对象对体积的依赖是简单的. 这显然也是我们的目的, 这是因为, 我们将会看到, $S$-矩阵连通部分的关键性质是它们正比于一个动量守恒$\updelta$-函数, 而在箱中, 这个$\updelta$-函数会变成克罗内克$\updelta$-符号乘以箱体积.
+集团分解也是噪声理论\textsuperscript{\cite{6}}中的标准方法, 将几个随机变量的关联函数分解成它的`` 累积量''; 如果随机变量接受了$N$($N$非常大)个独立涨落的贡献, 那么每个累积量正比于$N$. }%
+\begin{equation}
+S_{\beta\alpha}=\sum_{\text{PART}}(\pm)S_{\beta_{1}\alpha_{1}}^{\text{C}}S_{\beta_{2}\alpha_{2}}^{\text{C}}\cdots\:. \label{4.3.2}%
+\end{equation}
+这里的求和是对将态$\alpha$中的粒子分割进不同集团$\alpha_{1},\alpha_{2},\cdots$的不同方式求和, 同样也要对将态$\beta$中的粒子分割进不同集团$\beta_{1},\beta_{2},\cdots$的不同方式求和, 在求和中, 不计入集团内部粒子的重排以及整个集团的置换. $+$号和$-$号分别由重排$\alpha\to\alpha_{1}\alpha_{2}\cdots$和$\beta\to \beta_{1}\beta_{2}\cdots$%
+中包含偶数次还是奇数次的费米子交换决定. 这里用``连通''这个术语是因为$S_{\beta\alpha}^{\text{C}}$的图形表示, 这样的图在微扰论中代表不同的贡献, 这将在下一节讨论.
+
+这是一个递推定义. 对于每个$\alpha$和$\beta$, 方程(\ref{4.3.2})右边的求和由一项$S_{\beta\alpha}^{\text{C}}$加上对两个或多个$S^{\text{C}}$-矩阵元乘积的%
+求和$\Sigma^{\prime}$组成, 其中每个$\alpha_{j}$态和$\beta_{j}$态中的粒子总数要{\KAI{少}}于态$\alpha$和$\beta$中的粒子数
+\[
+S_{\beta\alpha}=S_{\beta\alpha}^{\text{C}}+\sideset{}{^{\prime}}\sum_{\text{PART}}
+\,(\pm)\,S_{\beta_{1}\alpha_{1}}^{\text{C}}S_{\beta_{2}\alpha_{2}}^{\text{C}}\cdots\:. %
+\]
+假定\marginpar[\flushright{\raisebox{8ex}[0pt]{{\small[179]\hspace*{5mm}}}}]{{\raisebox{8ex}[0pt]{\small\hspace*{5mm}[179]}}}已经对求和中的$S^{\text{C}}$-矩阵元做了选择, 使得方程(\ref{4.3.2})对总粒子数少于$N$的态%
+$\beta,\alpha$成立. 那么以这种方式, 无论发现求和$\Sigma^{\prime}$中的$S$-矩阵元取什么值, 我们总能选择剩余项$S_{\beta\alpha}^{\text{C}}$, 使得方程(\ref{4.3.2})对总粒子数为$N$的态$\alpha,\beta$成立.{}$^\dag$\footnote{$^\dag${}在这里需要提及一个技巧. 要使这个论证成立, 我们需要忽略如下的可能性: 对方程(\ref{4.3.2}) 中的一个或多个连通$S$-矩阵元, 态$\alpha_{j}$和$\beta_{j}$中均无粒子. 因此, 我们必须将连通真空\lzx 真空元$S_{0,0}^{\text{C}}$ 定义成零. 我们对真空\lzx 真空$S$-矩阵$S_{0,0}$不使用方程(\ref{4.3.2}), 在没有随时间变化的外场的情况下, 定义它为\,1, 即$S_{0,0}=1$. 在卷\,II\, 中, 我们将详细讨论有外场时的真空\lzx 真空振幅. } %
+因此方程(\ref{4.3.2})本身不包含任何信息; 它仅是$S^{\text{C}}$的定义.
+
+如果态$\alpha$和$\beta$均由一个单粒子构成, 将它们的量子数记为$q$和$q^{\prime}$, 那么方程(\ref{4.3.2})右边仅有一项, 即$S_{\beta\alpha}^{\text{C}}$ 本身, 所以对于单粒子态
+\begin{equation}
+S_{q^{\prime}q}^{\text{C}}\equiv S_{q^{\prime}q}=\updelta(q^{\prime}-q)\:. \label{4.3.3}%
+\end{equation}
+(除了可能的简并, $S_{q^{\prime}q}$正比$\updelta(q^{\prime}-q)$是因为守恒律. 方程(\ref{4.3.3})中没有比例因子是因为对``入''态和``出''态的相对相位做了合适的选择.) 我们在这里假定单粒子态是稳定的, 这使得单粒子态无法跃迁到任何其他态, 例如真空.
+
+对于\,2\,-粒子态之间的跃迁, 方程(\ref{4.3.2})变为
+\begin{equation}
+S_{q_{1}^{\prime}q_{2}^{\prime},q_{1}q_{2}}=S_{q_{1}^{\prime}q_{2}^{\prime},q_{1}q_{2}}^{\text{C}}
+  +\updelta(q_{1}^{\prime}-q_{1})\updelta(q_{2}^{\prime}-q_{2})
+\pm\updelta(q_{1}^{\prime}-q_{2})\updelta(q_{2}^{\prime}-q_{1})\:. \label{4.3.4}%
+\end{equation}
+(这里我们使用了方程(\ref{4.3.3}).) 如果两个粒子都是费米子, 符号$\pm$取负号, 否则取正号. 我们看出两个$\updelta$-函数项加起来就是范数(\ref{4.1.6}), 所以这里的$S_{\beta\alpha}^{\text{C}}$就是$(S-1)_{\beta\alpha}$. 但是一般情况会更加复杂.
+
+对于\,3\,-粒子态和\,4\,-粒子态之间的跃迁, 方程(\ref{4.3.2})变为
+\begin{align}
+&  S_{q_{1}^{\prime}q_{2}^{\prime}q_{3}^{\prime},q_{1}q_{2}q_{3}}%
+=S_{q_{1}^{\prime}q_{2}^{\prime}q_{3}^{\prime},q_{1}q_{2}q_{3}}^{\text{C}}\nonumber\\
+&+\updelta(q_{1}^{\prime}-q_{1})S_{q_{2}^{\prime}q_{3}^{\prime},q_{2}q_{3}}^{\text{C}}\pm\text{置换}\nonumber\\
+&+\updelta(q_{1}^{\prime}-q_{1})\updelta(q_{2}^{\prime}-q_{2})\updelta(q_{3}^{\prime}-q_{3})\pm\text{置换}\label{4.3.5}%
+\end{align}
+以及\begin{align}
+& S_{q_{1}^{\prime}q_{2}^{\prime}q_{3}^{\prime}q_{4}^{\prime},q_{1}q_{2}q_{3}q_{4}}
+ =S_{q_{1}^{\prime}q_{2}^{\prime}q_{3}^{\prime}q_{4}^{\prime},q_{1}q_{2}q_{3}q_{4}}^{\text{C}}\nonumber\\
+&+S_{q_{1}^{\prime}q_{2}^{\prime},q_{1}q_{2}}^{\text{C}}S_{q_{3}^{\prime}q_{4}^{\prime},q_{3}q_{4}}^{\text{C}}
+ \pm\text{置换}\nonumber\\
+&+\updelta(q_{1}^{\prime}-q_{1})S_{q_{2}^{\prime}q_{3}^{\prime}q_{4}^{\prime},q_{2}q_{3}q_{4}}^{\text{C}}
+ \pm\text{置换}\nonumber\\
+&+\updelta(q_{1}^{\prime}-q_{1})\updelta(q_{2}^{\prime}-q_{2})S_{q_{3}^{\prime}q_{4}^{\prime},q_{3}q_{4}}^{\text{C}}
+ \pm\text{置换}\nonumber\\
+&+\updelta(q_{1}^{\prime}-q_{1})\updelta(q_{2}^{\prime}-q_{2})\updelta(q_{3}^{\prime}-q_{3})\updelta(q_{4}^{\prime}-q_{4})
+ \pm\text{置换} \:.\label{4.3.6}%
+\end{align}
+(将所有置\marginpar[\flushright{\raisebox{6ex}[0pt]{{\small[180]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[180]}}}换考虑在内, 方程(\ref{4.3.5})中总共有$1+9+6=16$项, 方程(\ref{4.3.6})中总共有$1+18+16+72+24=131$项. 如果我们没有假定单粒子态稳定, 会有更多的项.) 正如前面所解释的, $S_{\beta\alpha}^{\text{C}}$的定义是递归的: 对于\,2\,-粒子态, 我们用方程(\ref{4.3.4})定义$S_{\beta\alpha}^{\text{C}}$, 然后, 当我们定义\,3\,-粒子态的$S_{\beta\alpha}^{\text{C}}$时, 我们在方程(\ref{4.3.5})中用到了这个定义, 然后在方程(\ref{4.3.6})中用这两个定义以获得\,4\,-粒子态的$S_{\beta\alpha}^{\text{C}}$的定义, 以此类推.
+
+定义$S$-矩阵连通部分的关键点在于, 集团分解原理等价于要求当态$\beta$和(或)$\alpha$中有一个或多个粒子在空间上远离其他粒子时,{}$^\ddag$\footnote{$^\ddag${} 为了给出%
+``远''的含义, 我们将不得不对$S^{\text{C}}$做\,Fourier\,变换, 这使得每个\,3\,-动量指标$\bp$被空间坐标\,3\,-矢$\bx$替代.} $S_{\beta\alpha}^{\text{C}}$ 必须为零. 为了看到这点, 假定态$\beta$和$\alpha$中的粒子被分入了数个集团$\beta_{1},\beta_{2},\cdots$和%
+$\alpha_{1},\alpha_{2},\cdots$, 并且对于$i\neq j$, 集合$\alpha_{i}+\beta_{i}$中的所有粒子与集合$\alpha_{j}+\beta_{j}$中的所有粒子相距甚远. 这样的话, 如果态$\beta^{\prime}$或$\alpha^{\prime}$中有任何粒子远离其他粒子都会导致%
+$S_{\beta^{\prime}\alpha^{\prime}}^{\text{C}}$为零, 那么, 当态中有粒子处在不同集团时, $S_{\beta^{\prime}\alpha^{\prime}}^{\text{C}}$为零, 所以定义(\ref{4.3.2})给出
+\begin{equation}
+S_{\beta\alpha}\to \mathop{{\sum}^{(1)}}(\pm)S_{\beta_{11}\alpha_{11}%
+}^{\text{C}}S_{\beta_{12}\alpha_{12}}^{\text{C}}\cdots
+\times \mathop{{\sum}^{(2)}}(\pm)S_{\beta_{21}\alpha_{21}}^{\text{C}}S_{\beta_{22}\alpha_{22}}^{\text{C}%
+}\cdots\times\cdots\:, \label{4.3.7}%
+\end{equation}
+其中$\Sigma^{(j)}$是对将集团$\beta_{j}$和$\alpha_{j}$分解成子集团%
+$\beta_{j1},\beta_{j2},\cdots$和$\alpha_{j1},\alpha_{j2},\cdots$的不同方法求和. 但是回到方程(\ref{4.3.2}), 这正是期望中的因子化性质(\ref{4.3.1}).
+
+例如, 假定在\,4\,-粒子反应$1234\to1^{\prime}2^{\prime}3^{\prime}4^{\prime}$中,
+我们让粒子$1,2,1^{\prime},2^{\prime}$远离$3,4,3^{\prime},4^{\prime}$. 那么如果$\beta$和(或)$\alpha$中有任意粒子远离其他粒子时, $S_{\beta\alpha}^{\text{C}}$为零, 方程(\ref{4.3.6})中能留下来的项
+(以一种更加简略的记\marginpar[\flushright{\raisebox{-6ex}[0pt]{{\small[181]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[181]}}}法)是
+\begin{align*}
+S_{1^{\prime}2^{\prime}3^{\prime}4^{\prime},1234}&\to    S_{1^{\prime
+}2^{\prime},12}^{\text{C}}S_{3^{\prime}4^{\prime},34}^{\text{C}}\\
+& \quad \qquad+(\updelta_{1^{\prime}1}\updelta_{2^{\prime}2}\pm\updelta_{1^{\prime}%
+2}\updelta_{2^{\prime}1})S_{3^{\prime}4^{\prime},34}^{\text{C}}\\
+&  \quad\qquad+(\updelta_{3^{\prime}3}\updelta_{4^{\prime}4}\pm\updelta_{3^{\prime}%
+4}\updelta_{4^{\prime}3})S_{1^{\prime}2^{\prime},12}^{\text{C}}\\
+&  \quad\qquad+(\updelta_{1^{\prime}1}\updelta_{2^{\prime}2}\pm\updelta_{1^{\prime}%
+2}\updelta_{2^{\prime}1})(\updelta_{3^{\prime}3}\updelta_{4^{\prime}4}\pm
+\updelta_{3^{\prime}4}\updelta_{4^{\prime}3})\:. %
+\end{align*}
+与方程(\ref{4.3.4})的比较表明这正是所要求的因子化条件(\ref{4.3.1})
+\[
+S_{1^{\prime}2^{\prime}3^{\prime}4^{\prime},1234}\to S_{1^{\prime}2^{\prime},12}S_{3^{\prime}4^{\prime},34}\:.
+\]
+
+
+我们已经在坐标空间中表述了集团分解原理: 如果态$\beta$或$\alpha$中有任何粒子远离其他粒子, 则$S_{\beta\alpha}^{\text{C}}$为零. 在动量空间重新表述将会便于我们后面的讨论. 坐标空间矩阵元被定义成一个\,Fourier\,变换
+\begin{align}
+S_{\bx_{1}^{\prime}\bx_{2}^{\prime}\cdots,\bx%
+_{1}\bx_{2}\cdots}^{\text{C}} &  \equiv\int \dif^{3}\bp_{1}%
+^{\prime}\dif^{3}\bp_{2}^{\prime}\cdots \dif^{3}\bp_{1}\dif^{3}%
+\bp_{2}\cdots\:S_{\bp_{1}^{\prime}\bp_{2}^{\prime}%
+\cdots,\,\bp_{1}\bp_{2}\cdots}^{\text{C}}\nonumber\\
+&  \quad\times \me^{\mi\bp_{1}^{\prime}\cdot\bx_{1}^{\prime}}\,
+\me^{\mi\bp_{2}^{\prime}\cdot\bx_{2}^{\prime}}\cdots
+\me^{-\mi\bp_{1}\cdot\bx_{1}}\,\me^{-\mi\bp_{2}\cdot\bx_{2}}\cdots\:. \label{4.3.8}%
+\end{align}
+(我们在这里暂时扔掉紧随在动量指标或坐标指标之后的自旋指标和粒子种类指标.) 如果$\lvert S_{\bp%
+_{1}^{\prime}\bp_{2}^{\prime}\cdots,\bp_{1}\bp_{2}\cdots}^{\text{C}}\rvert$%
+的性质足够好(具体些, 如果它是\,Lebesgue\,(勒贝格)可积的), 那么根据\,Riemann-Lebesgue\,定理,\textsuperscript{\cite{7}} 当空间坐标的任意组合趋于无限大时, 积分(\ref{4.3.8})会趋于零. 目前, 这显然是一个过强的要求. 平移不变性告诉我们, 同$S$-矩阵本身一样, $S$-矩阵的连通部分可以只依赖于坐标矢量之差, 因此, 如果所有的$x_{i}$和$x_{j}^{\prime}$在一起变化的同时保持它们的差不变, $S$-矩阵的连通部分就不会变. 这要求$S^{\text{C}}$在动量基下的矩阵元同$S$ 一样必须正比于保证动量守恒的\,3\,-维$\updelta$-函数%
+(而这使得$\lvert S_{\bp_{1}^{\prime}\bp_{2}^{\prime}\cdots,\bp_{1}\bp_{2}\cdots}^{\text{C}}\rvert$%
+{\KAI{不是}}\,Lebesgue\,可积的)和散射理论要求的能量守恒$\updelta$-函数. 就是说我们可以给出
+\begin{align}
+S_{\bp_{1}^{\prime}\bp_{2}^{\prime}\cdots,\,\bp%
+_{1}\bp_{2}\cdots}^{\text{C}} &  =\updelta^{3}(\bp_{1}^{\prime
+}+\bp_{2}^{\prime}+\cdots-\bp_{1}-\bp_{2}-\cdots
+)\nonumber\\
+&  \quad\times\updelta(E_{1}^{\prime}+E_{2}^{\prime}+\cdots-E_{1}-E_{2}%
+-\cdots)C_{\bp_{1}^{\prime}\bp_{2}^{\prime}\cdots,\,\bp%
+_{1}\bp_{2}\cdots}\:. \label{4.3.9}%
+\end{align}
+这是没有问题的: 集团分解原理仅要求方程(\ref{4.3.8})在某些$\bx_{i}$和(或)$\bx_{i}^{\prime}$之{\KAI{差}}%
+变得很大时为零. 然而, 如果方程(\ref{4.3.9})中的$C$本身包含额外的\,3\,-动量线性组合的$\updelta$-函数, 那么这个原理就不会被满足. 例如, 假定$C$ 中有一$\updelta$-函数要求对于粒子的某些子集, $\bp_{i}^{\prime}$和$-\bp_{j}$之和为零. 那么, 如果该子集中的粒子(保持彼此之间的距离不变)一起运动, 以至于该子集中所有的$\bx_{i}^{\prime}$和$\bx_{j}$远\marginpar[\flushright{\small[182]\hspace*{5mm}}]{{\small\hspace*{5mm}[182]}}离所有其他的%
+$\bx_{k}^{\prime}$和$\bx_{\ell}$, 方程(\ref{4.3.8})会保持不变, 这与集团分解原理相矛盾. 粗略地讲, 集团分解原理就是说: {\KAI{与$S$-矩阵本身不同, $S$-矩阵的连通部分仅包含一个动量守恒$\updelta$-函数.}}
+
+
+为了说得稍微精确些, 我们可以说方程(\ref{4.3.9})中的系数函数$C_{\bp_{1}^{\prime
+}\bp_{2}^{\prime}\cdots,\,\bp_{1}\bp_{2}\cdots}$是其动量指标的光滑函数. 但是, 有多光滑? 最直接的做法就是要求$C_{\bp%
+_{1}^{\prime}\bp_{2}^{\prime}\cdots,\,\bp_{1}\bp_{2}\cdots}$%
+在动量$\bp_{1}^{\prime}=\bp_{2}^{\prime
+}=\cdots=\bp_{1}=\bp_{2}=\cdots=0$处对所有动量解析. 当$\bx$和$\bx^{\prime}$中的一个与其他$\bx$和$\bx^{\prime}$相距极远时, 这个要求确保了$S_{\bx_{1}^{\prime}\bx_{2}^{\prime}\cdots,\,\bx_{1}\bx_{2}\cdots
+}^{\text{C}}$以指数衰减的速度趋于零. 然而, $S^{\text{C}}$的指数衰减不是集团分解原理的本质部分, 事实上, 在所有理论中都没有遇到解析性的要求. 特别值得注意的是, 当理论含有无质量粒子时, $S^{\text{C}}$可以在某些$\bp$和$\bp^{\prime}$值处有极点. 例如, 我们将在第10章看到, 如果在$1\to3$的跃迁中发射一个无质量粒子, 而在$2\to4$的跃迁中吸收它, 那么$S_{34,12}^{\text{C}}$将有一个正比于$1/(p_{1}-p_{3})^{2}$ 的项. 在\,Fourier\, 变换后, 这样的极点在$S_{\bx
+_{1}^{\prime}\bx_{2}^{\prime}\cdots,\,\bx_{1}\bx_{2}\cdots
+}^{\text{C}}$中产生的项仅以坐标差的负幂次衰减.\textsuperscript{\cite{1}} 这里没有必要如此严格地在集团分解原理的公式化中排除这种情况. 因此$S^{\text{C}}$上的``光滑''条件应该理解为: 在某些$\bp$和$\bp^{\prime}$值处允许有各种极点以及分支割线, 但不允许有$\updelta$-函数那么强的奇异性.
+
+\section{相互作用的结构}  \label{sec:4.4}
+\setcounter{equation}{0}
+
+我们现在问, 什么样的哈密顿量会产生满足集团分解原理的$S$-矩阵? 这里正是产生和湮没算符的形式体系的用武之地. 答案包含在如下的定理中, $S$-矩阵满足集团分解原理的条件(并且据我所知, 这是唯一条件)是哈密顿量可以表示成方程(\ref{4.2.8})中那样:
+\begin{align}
+H &  =\sum_{N=0}^{\infty}\sum_{M=0}^{\infty}\int \dif q_{1}^{\prime}\cdots
+\dif q_{N}^{\prime}\:\dif q_{1}\cdots \dif q_{M} \nonumber\\
+&  \qquad\times a^{\dag}(q_{1}^{\prime})\cdots a^{\dag}(q_{N}^{\prime}%
+)a(q_{M})\cdots a(q_{1})\nonumber\\
+&  \qquad\times h_{NM}(q_{1}^{\prime}\cdots q_{N}^{\prime}\,,\,q_{1}\cdots
+q_{M})\label{4.4.1}%
+\end{align}
+其中系数函数$h_{NM}$只包含{\KAI{一}}个\,3\,-动量守恒$\updelta$-函数
+(这里回到更加清晰的记法)\marginpar[\flushright{\raisebox{-6ex}[0pt]{{\small[183]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[183]}}}
+\begin{align}
+&  h_{NM}(\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}%
+\cdots\bp_{N}^{\prime}\sigma_{N}^{\prime}n_{N}^{\prime}\,,\,\bp%
+_{1}\sigma_{1}n_{1}\cdots\bp_{M}\sigma_{M}n_{M})\nonumber\\
+&  \quad=\updelta^{3}(\bp_{1}^{\prime}+\cdots+\bp_{N}^{\prime
+}-\bp_{1}-\cdots-\bp_{M})\nonumber\\
+&  \qquad\times\tilde{h}_{NM}(\bp_{1}^{\prime}\sigma_{1}^{\prime}%
+n_{1}^{\prime}\cdots\bp_{N}^{\prime}\sigma_{N}^{\prime}n_{N}^{\prime
+}\,,\,\bp_{1}\sigma_{1}n_{1}\cdots\bp_{M}\sigma_{M}n_{M})\:, \label{4.4.2}%
+\end{align}
+其中$\tilde{h}_{NM}$不包含$\updelta$-函数因子. 注意到, %
+方程(\ref{4.4.1})本身并没有说明什么\ezx 我们在\,\ref{sec:4.2}\,节看到{\KAI{任何}}算符都可以写成这样的形式. %
+仅当方程(\ref{4.4.1})与$h_{NM}$只包含方程(\ref{4.4.2})中所示的单个$\updelta$-函数的要求相结合, %
+才能保证$S$-矩阵满足集团分解原理.
+
+在我们于第6章发展了Feynman图体系后, 该定理在微扰论中的适用性将变得显然. 容易被说服的读者或许倾向于跳过本章的剩余部分, 直接跳到第5章去考虑这个定理的各种结果. 然而, 这个证明有一些启发性特征, 并有助于阐明在什么样的意义下, 下章的场论是必然的.
+
+为了证明这个定理, 我们采用微扰论的含时形式. (含时微扰论的优势之一是使暗含于集团分解原理之中的组合数学变得显然; 如果$E$是单粒子能量之和, 那么$\me^{-\mi Et}$就是各个能量的函数的乘积, 而$[E-E_{\alpha}+\mi\epsilon]^{-1}$则不是.) $S$-矩阵由方程(\ref{3.5.10})给出{}$^*$\footnote{$^*${}我们现在采取约定, 对于$n=0$, 方程(\ref{4.4.3})中的编时乘积取成单位算符, 所以求和中$n=0$的项在$S_{\beta\alpha}$中仅产生$\updelta(\beta-\alpha)$. }%
+\begin{equation}
+S_{\beta\alpha}=\sum_{n=0}^{\infty}\frac{(-\mi)^{n}}{n!}\int_{-\infty}^{\infty
+}\dif t_{1}\cdots \dif t_{n}\Big(\Phi_{\beta},T\Big\{V(t_{1})\cdots
+V(t_{n})\Big\}\Phi_{\alpha}\Big)\:, \label{4.4.3}%
+\end{equation}
+其中哈密顿量被分成了自由部分$H_{0}$与相互作用部分$V$, 且
+\begin{equation}
+V(t)\equiv\exp(\mi H_{0}t)V\exp(-\mi H_{0}t)\:. \label{4.4.4}%
+\end{equation}
+现在, 态$\Phi_{\alpha}$和$\Phi_{\beta}$可以像方程(\ref{4.2.2})中那样用产生算符的乘积作用在真空态%
+$\Phi_{0}$上来表示, 而$V(t)$本身是产生和湮没算符乘积的和, 所以求和(\ref{4.4.3})中的每一项都可以写为产生与湮没算符乘积的真空期望值的和. 利用对易或反对易关系, 我们可以将每一湮没算符依次移至所有产生算符的右边. 对于每个跃过一个产生算符的湮没算符, 我们有两项, 这两项是将方程(\ref{4.2.5})写成如下形式得到的
+\[
+a(q^{\prime})a^{\dag}(q)=\pm a^{\dag}(q)a(q^{\prime})+\updelta(q^{\prime}-q)\:. %
+\]
+其他\marginpar[\flushright{\small[184]\hspace*{5mm}}]{{\small\hspace*{5mm}[184]}}产生算符跃过第一项中的湮没算符还会生成更多的项. 但是方程(\ref{4.2.4}%
+)证明了一直移到右边的所有湮没算符作用到$\Phi_{0}$上得到零, 所以最后剩下的都是$\updelta$-函数. 按照这种方式, 产生和湮没算符乘积的真空期望值由不同项的和给出, 每一项等于$\updelta$-函数与来自对易子或反对易子的符号$\pm$的乘积. 由此得出方程(\ref{4.4.3})中的每一项可以表达为一些项的求和, 求和中的每一项等于$\updelta$-函数与对易子或反对易子贡献的符号$\pm$以及任何$V(t)$贡献的因子的乘积, 然后对所有时间积分, 并对$\updelta$-函数变量中的动量, 自旋和粒子种类积分并求和.
+
+以这种方式生成的每一项可以用一个图来表示. (这还不是全部的Feynman图体系, 因为我们还没准备将数值量与图的成分联系起来; 我们在这里仅将图用作追踪\,3\,- 动量$\updelta$-函数的方法.) 画$n$个点, 称为{\KAI{顶点}}, 每个顶点对应一个$V(t)$算符. 将$V(t)$算符中的湮没算符移至初态$\Phi_{\alpha}$ 中的产生算符的右边会产生$\updelta$-函数, 对于每个这样的$\updelta$-函数, 由图中画一条由底部进来到相应顶点的入线. 将末态$\Phi_{\beta}$的共轭中的湮没算符移至其中一个$V(t)$算符中的产生算符的右边会产生$\updelta$-函数, 对于每个这样的$\updelta$-函数, 由相应顶点向上画一条出线. 将其中一个$V(t)$ 算符中的湮没算符移至其他$V(t)$中的产生算符右边会产生$\updelta$-函数,  对于每个这样的$\updelta$-函数, 用线连接两个相应顶点. 最后, 将末态$\Phi_{\beta}$%
+的共轭中的湮没算符移至初态$\Phi_{\alpha}$中的产生算符的右边会产生$\updelta$-函数, 对于每个这样的$\updelta$-函数, 从底部到顶部穿过图画一条线. 与这些线相联系的每一个$\updelta$-函数保证该线所代表的那对产生和湮没算符的动量变量相等. 另外, 每个顶点至少会贡献一个$\updelta$-函数, 保证顶点处的动量守恒.
+
+这样的图可以是连通的(每个点通过一组线与所有其他点相连), 而如果是不连通的, 它可以分解成几个连通分支. 一个连通分支中的顶点所关联的$V(t)$算符实际上与任意其他连通分支中顶点所关联的$V(t)$对易, 这是因为对于这样的图, 我们无法引入如下的项: 一个顶点中的湮没算符湮没掉了其他顶点中的产生算符产生的粒子\ezx 如果我们这样做了, 那么这两个顶点应处在同一个连通分支中. 因\marginpar[\flushright{\small[185]\hspace*{5mm}}]{{\small\hspace*{5mm}[185]}}此, 方程(\ref{4.4.3})中的矩阵元可以表示为对来自每个连通分支贡献之{\KAI{积}}的求和:
+\begin{align}
+&  \Big(\Phi_{\beta},T\Big\{V(t_{1})\cdots V(t_{n})\Big\}\Phi_{\alpha}\Big)\nonumber\\
+&  \qquad=\sum_{\text{clusterings}}(\pm)\prod\limits_{j=1}^{\nu}\left(
+\Phi_{\beta_{j}},T\left\{  V(t_{j_{1}})\cdots V(t_{j_{n_{j}}%
+})\right\}  \Phi_{\alpha_{j}}\right)  _{\text{C}}\:. \label{4.4.5}%
+\end{align}
+这里是对将入粒子, 出粒子以及$V(t)$算符分成$\nu$个集团的所有方式求和(包含对$\nu$从$1$到$n$的求和), 其中$n_{j}$个算符$V(t_{j_{1}})\cdots V(t_{j_{n_{j}}})$, 初粒子的子集$\alpha_{j}$,  以及末粒子的子集$\beta_{j}$全部在第$j$个集团中. 当然, 这意味着
+\[
+n=n_{1}+\cdots+n_{\nu} \:,
+\]
+另外, 集合$\alpha$是子集$\alpha_{1},\alpha_{2},\cdots\alpha_{\nu}$中所有粒子的并集, 对末态亦是如此. 方程(\ref{4.4.5})中的某些集团也许根本不包含任何粒子, 即, $n_{j}=0$; 对这些因子, 除非$\beta_{j}$和$\alpha_{j}$全是单粒子态(在这种情况下它就是一个$\updelta$-函数%
+$\updelta(\alpha_{j}-\beta_{j})$), 否则我们必须要将方程(\ref{4.4.5})中的矩阵元取为零, 这是因为不包含顶点的唯一连通图由一条从底部到顶部穿过图的线组成. 最重要的是, 方程(\ref{4.4.5})中的下标\,C\,意味着我们排除了所有与不连通图对应的贡献, 也就是那些任意$V(t)$%
+算符或任意初末粒子与所有其他部分不通过一系列的粒子产生和湮没相连时的贡献.
+
+现在, 在求和(\ref{4.4.3})中使用方程(\ref{4.4.5}). 每个时间变量从$-\infty$积到$+\infty$, 从而不论每个集团分到了$t_{1},\cdots,t_{n}$中的哪几个都不会影响结果. 因此对集团的求和产生因子$n!/n_{1}!n_{2}!\cdots n_{\nu}!$, 它等于将$n$个顶点分成$\nu$个集团, 每个集团又分别包含$n_{1},n_{2},\cdots$ 个顶点的不同方法的数量:
+\begin{eqnarray*}
+&&  \int_{-\infty}^{\infty}\dif t_{1}\cdots \dif t_{n}\:\left(  \Phi_{\beta
+},T\left\{  V(t_{1})\cdots V(t_{n})\right\}  \Phi_{\alpha}\right)  \cr
+&&  =\sum_{\text{PART}}\left(  \pm\right)  \sum_{\substack{n_{1}\cdots n_{\nu}\\
+n_{1}+\cdots+n_{\nu}=n}}\frac{n!}{n_{1}!n_{2}!\cdots n_{\nu}!}%
+\prod\limits_{j=1}^{\nu}\int_{-\infty}^{\infty}\dif t_{j_{1}}\cdots \dif t_{j_{n_{j}}%
+}\\
+&&  \quad\times\left(  \Phi_{\beta_{j}},T\left\{  V(t_{j_{1}})\cdots
+V(t_{j_{n_{j}}})\right\}  \Phi_{\alpha_{j}}\right)  _{\text{C}}\:. %
+\end{eqnarray*}
+这里的第一个求和是对将初态和末态中的粒子分到集团$\alpha_{1}\cdots\alpha_{\nu}$%
+与集团$\beta_{1}\cdots\beta_{\nu}$(包含对集团数目$\nu$的求和)的总方法数求和. 这里的因子$n!$与方程(\ref{4.4.3})中的$1/n!$相抵消, 并且(\ref{4.4.5}) 的微扰级数中的因子%
+$(-\mi)^{n}$可以写为乘积$(-\mi)^{n_{1}}\cdots(-\mi)^{n_{\nu}}$, 所以取代先对$n$求和再分别对满足约束$n_{1}+\cdots+n_{\nu}=n$\marginpar[\flushright{\small[186]\hspace*{5mm}}]{{\small\hspace*{5mm}[186]}} 的$n_{1},\cdots, n_{\nu}$ 求和, 我们可以简单地对每一$n_{1},\cdots ,n_{\nu}$独立地求和. 这最终给出
+\begin{align*}
+S_{\beta\alpha} &  =\sum_{\text{PART}}(\pm)\prod\limits_{j=1}^{\nu}\sum
+_{n_{j}=0}^{\infty}\frac{(-\mi)^{n_{j}}}{n_{j}!}\int_{-\infty}^{\infty}%
+\zd t_{j_{1}}\cdots \zd t_{j_{n_{j}}}\\
+&  \times\left(  \Phi_{\beta_{j}},T\left\{  V(t_{j_{1}})\cdots
+V(t_{j_{n_{j}}})\right\}  \Phi_{\alpha_{j}}\right)  _{\text{C}}\:. %
+\end{align*}
+将其与连通矩阵元$S_{\beta\alpha}^{\text{C}}$的定义(\ref{4.3.2})进行比较, 我们看到这些矩阵元恰好由这里乘积中的因子给出
+\begin{equation}
+S_{\beta\alpha}^{\text{C}}=\sum_{n=0}^{\infty}\frac{(-\mi)^{n}}{n!}\int%
+_{-\infty}^{\infty} \dif t_{1}\cdots \dif t_{n}\: \left(  \Phi_{\beta},T\left\{
+V(t_{1})\cdots V(t_{n})\right\}  \Phi_{\alpha}\right)  _{\text{C}%
+}\:. \label{4.4.6}%
+\end{equation}
+(由于$t$和$n$现在仅仅是积分变量和求和变量, 所以扔掉了它们的下标$j$.) 我们看到$S_{\beta\alpha}^{\text{C}}$通过一个非常简单的方法算出: $S_{\beta\alpha}^{\text{C}}$%
+{\KAI{是对连通$S$-矩阵的所有贡献求和, 也就是说我们扔掉了所有下述这样的项, 在这些项中有任意初末粒子或算符$V(t)$与所有其他部分不通过一系列的粒子产生和湮没相连}}. 这验证了$S^{\text{C}}$%
+的形容词``连通''.
+
+正如我们所看到的, 动量在每个顶点处守恒并沿着每条线守恒, 所以$S$-矩阵的连通部分单独动量守恒: $S_{\beta\alpha}^{\text{C}}$包含一个因子$\updelta^{3}(\bp_{\beta}-\bp_{\alpha})$. 我们想要证明的是$S_{\beta\alpha}^{\text{C}}$不再包含其他$\updelta$-函数.
+
+我们现在假定: 将哈密顿量写成用产生和湮没算符表示的展开式(\ref{4.4.1})时, 它的系数部分$h_{NM}$正比于{\KAI{一}}个确保动量守恒的\,3\,-维$\updelta$-函数. 对于自由粒子哈密顿量$H_{0}$, 这是自动成立的, 所以, 它对相互作用$V$也单独成立. 回到我们所采用的矩阵元的图形表示, 这意味着每个顶点贡献一个\,3\,-维$\updelta$-函数. (矩阵元$V_{\gamma\updelta}$中的其他$\updelta$-函数保证不在相应顶点产生或湮没的粒子的动量不变) 现在, 这些$\updelta$-函数中的大多数用来决定中间态粒子的动量. 剩下的没有被这样的$\updelta$-函数确定的动量是那些在内线圈中循环的动量. (任何如果剪断就会使图不连通的线, 它们携带的动量由动量守恒确定, 由进入或离开该图的线的动量的某种线性组合给出, 如果一个图有$L$条可以同时剪断却不破坏连通性的线, 那么我们说它有$L$个独立的圈, 这样就有$L$ 个不被动量守恒固定的动量.) 如果一个图有$V$个\marginpar[\flushright{\small[187]\hspace*{5mm}}]{{\small\hspace*{5mm}[187]}}顶点, $I$条内线以及$L$个圈, 那么就有$V$个$\updelta$-函数, 其中$I-L$个用来确定内动量, 剩下的$V-I+L$ 个$\updelta$-函数联系入射和出射粒子. 但是一个著名的拓扑学等式{}$^*$\footnote{$^*${} 只由一个顶点组成的图有$V=1$, $L=0$以及$C=1$. 如果我们增加$V-1$ 个顶点以及恰好足够保持图连通的内线, 我们就有$I=V-1$, $L=0$以及$C=1$. 任何加入(在不增加新顶点的情况下)该图的内线会产生相同数目的圈, 所以$I=V+L-1$ 且$C=1$.   如果一个非连通图有$C$个这样的连通分支, 每个连通分支中的$I$, $V$和$L$之和将会满足%
+$\sum I=\sum V+\sum L-C$. }%
+告诉我们, 对于任何由$C$个连通分支构成的图, 它的顶点, 内线以及圈的数量有如下关系
+\begin{equation}
+V-I+L=C\:. \label{4.4.7}%
+\end{equation}
+因此, 对于$S_{\beta\alpha}^{\text{C}}$这样的连通矩阵元, 它来自$C=1$的图, 我们仅发现一个\,3\,-维$\updelta$-函数$\updelta^{3}(\bp_{\beta}-\bp_{\alpha})$, 这正是所要证明的.
+
+上述讨论中并不重要的是时间变量的积分是从$-\infty$到$+\infty$. 因此用精确相同的讨论可以证明, 如果哈密顿量中的系数$h_{NM}$只包含一个$\updelta$-函数, 那么$U(t,t_{0})$可以分解成几个连通的部分, 每部分包含一个动量守恒$\updelta$-函数因子. 另一方面, $S$-矩阵的连通部分也包含一个能量守恒$\updelta$-函数, 并且, 当我们在第6章接触\,Feynman\,图后, 我们将看到$S_{\beta\alpha}^{\text{C}}$只包含一个能量守恒$\updelta$-函数, $\updelta(E_{\beta}-E_{\alpha})$, 而$U(t,t_{0})$根本不包含能量守恒$\updelta$-函数.
+
+应该强调的是, 要求方程(\ref{4.4.1})中的$h_{NM}$只有一个$3$-动量守恒$\updelta$-函数因子这一点绝不平庸, 且有深刻含义. 例如, 假定$V$在\,2\,-粒子态之间有非零矩阵元. 那么, 方程(\ref{4.4.1})必然包含$N=M=2$的项, 且系数
+\begin{equation}
+v_{2,2}(\bp_{1}^{\prime}\bp_{2}^{\prime},\bp%
+_{1}\bp_{2})=V_{\bp_{1}^{\prime}\bp_{2}^{\prime
+},\,\bp_{1}\bp_{2}}\:. \label{4.4.8}%
+\end{equation}
+(在这里我们暂时扔掉了自旋和粒子种类指标.) 但这样一来, 相互作用在\,3\,-粒子态之间的矩阵元就变成
+\begin{align}
+&  V_{\bp_{1}^{\prime}\bp_{2}^{\prime}\bp_{3}^{\prime},
+\,\bp_{1}\bp_{2}\bp_{3}}=v_{3,3}(\bp_{1}^{\prime
+}\bp_{2}^{\prime}\bp_{3}^{\prime},\bp_{1}\bp%
+_{2}\bp_{3})\nonumber\\
+&  \qquad+v_{2,2}(\bp_{1}^{\prime}\bp_{2}^{\prime}%
+,\bp_{1}\bp_{2})\updelta^{3}(\bp_{3}^{\prime}%
+-\bp_{3})\pm\text{置换.}\label{4.4.9}%
+\end{align}
+
+
+正如本章开始\marginpar[\flushright{\small[188]\hspace*{5mm}}]{{\small\hspace*{5mm}[188]}}提到的, 通过选择$v_{2,2}$使得两体$S$-矩阵\,Lorentz\,不变, 并调整哈密顿量的剩余部分使得在包含\,3\,个及以上粒子的态中没有散射, 我们或许可以得到一个非场论的相对论量子理论. 这样, 我们将不得不让$v_{3,3}$与方程(\ref{4.4.9})中的其他项相抵消
+\begin{equation}
+v_{3,3}(\bp_{1}^{\prime}\bp_{2}^{\prime}\bp_{3}^{\prime
+},\bp_{1}\bp_{2}\bp_{3})=-v_{2,2}(\bp_{1}^{\prime
+}\bp_{2}^{\prime},\bp_{1}\bp_{2})\updelta^{3}%
+(\bp_{3}^{\prime}-\bp_{3})\mp\text{置换.}%
+\label{4.4.10}%
+\end{equation}
+然而, 这意味着$v_{3,3}$中的每一项包含{\KAI{两个}}$\updelta$-函数因子(回忆, $v_{2,2}(\bp_{1}^{\prime}\bp_{2}^{\prime},\bp_{1}\bp_{2}%
+)$含有因子$\updelta^{3}(\bp_{1}^{\prime}+\bp_{2}^{\prime}-\bp_{1}-\bp_{2})$)%
+而这将违背集团分解原理. 因此, 在满足集团分解原理的理论中, 如果存在两个粒子的散射过程, 那么三个及其以上粒子的散射过程是不可避免的.
+
+\subsection*{* * *}
+
+对于满足集团分解原理的量子理论, 当我们着手解决其中的三体问题时, 方程(\ref{4.4.9})中的$v_{3,3}$项没有带来什么特别的麻烦,
+但是其他项中额外的$\updelta$-函数使得直接求解\,Lippmann-Schwinger\,方程变得困难. 困难在于, 哪怕在我们分离出总的动量守恒$\updelta$-函数之后,  这些$\updelta$-函数使得方程的核$[E_{\alpha}-E_{\beta}+\mi\epsilon]^{-1}V_{\beta\alpha}$不是平方可积的. 结果是, 它不能近似为一个有限矩阵, 哪怕是一个秩很大的矩阵. 为了解决包含三个或三个以上粒子的问题, 有必要将\,Lippmann-Schwinger\,方程替换为一个右边为连通的方程.
+人们已经为三个及三个以上粒子的散射建立了这样的方程,\textsuperscript{\cite{8,9}} 并且在非相对论散射问题中可以对它们迭代求解, 但是, 它们在相对论理论中的有效性还没有被证明, 所以在这里不做详细讨论.
+
+然而, 将\,Lippmann-Schwinger\,方程按这种方式重塑在另一方面是有用的. 迄今为止, 我们在本节中的讨论都依赖微扰论. 我不知道本节主要定理的任何非微扰论证明, 但是现已证明,\textsuperscript{\cite{9}} 假定哈密顿量满足每个系数函数$h_{NM}$各包含一个动量守恒$\updelta$-函数的条件,  这些重新表述的非微扰动力学方程, 与要求$U^{\text{C}}(t,t_{0})$(从而$S^{\text{C}}$)应该也只包含一个动量守恒$\updelta$-函数{\KAI{相容}}, 而这正是集团分解原理所要求的.
+
+
+
+\subsection*{\bf 习\qquad 题}
+\marginpar[\flushright{\raisebox{3ex}[0pt]{{\small[189]\hspace*{5mm}}}}]{{\raisebox{3ex}[0pt]{\small\hspace*{5mm}[189]}}}
+
+ \addcontentsline{toc}{section}{习题}
+
+
+\begin{KAI}
+
+1. 定义$S$-矩阵和它连通部分的生成泛函:
+\begin{align*}
+F[v] &\equiv 1 + \sum_{N=1}^{\infty}\sum_{M=1}^{\infty}\frac{1}{N!M!}
+\int v^{\ast}(q_{1}^{\prime})\cdots v^{\ast}(q_{N}^{\prime}) v(q_{1})\cdots v(q_{M})  \\
+&\quad \times S_{q_{1}^{\prime}\cdots q_{N}^{\prime},\, q_{1}\cdots q_{M}}\: \dif q_{1}^{\prime} \cdots \dif q_{N}^{\prime} \,\dif q_{1}\cdots \dif q_{M} \\
+F^{\text{C}}[v] &\equiv \sum_{N=1}^{\infty}\sum_{M=1}^{\infty}\frac{1}{N!M!}
+\int v^{\ast}(q_{1}^{\prime})\cdots v^{\ast}(q_{N}^{\prime}) v(q_{1})\cdots v(q_{M})  \\
+&\quad \times S^{\text{C}}_{q_{1}^{\prime}\cdots q_{N}^{\prime},\, q_{1}\cdots q_{M}}\: \dif q_{1}^{\prime} \cdots \dif q_{N}^{\prime} \,\dif q_{1}\cdots \dif q_{M} \:.
+\end{align*}
+推导出$F[v]$和$F^{\text{C}}[v]$之间的关系. (可以只考虑纯玻色情况.)
+
+
+2. 考虑相互作用
+\begin{align*}
+V &= g \int \dif^{3}\bp_{1}\,\dif^{3}\bp_{2}\,\dif^{3}\bp_{3}\,\dif^{3}\bp_{4}\:
+     \updelta^{3}(\bp_{1}+\bp_{2}-\bp_{3}-\bp_{4}) \\
+&\quad \times a^{\dag}(\bp_{1})\,a^{\dag}(\bp_{2})\,a(\bp_{3})\,a(\bp_{4}) \:,
+\end{align*}
+其中$g$是实常数, $a(\bp)$是质量$ M>0$的无自旋玻色子的湮没算符. %
+利用微扰论计算这些粒子在质心系中散射的$S$-矩阵元, 并计算至$g$阶. 相应的微分截面又是什么?
+
+3. {\KAI{相干态}}$\Phi_{\lambda}$被定义成湮没算符$a(q)$本征值为$\lambda(q)$的本征态. %
+试用多粒子态$\Phi_{q_{1}q_{2}\cdots q_{N}}$的叠加构造这个态.
+ \end{KAI}
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}集团分解原理似乎首先是由\,E. H. Wichmann\,和\,J. H. Crichton\,在量子场论中明确陈述的, {\textit{Phys. Rev.}} {\bf{132}}, 2788 (1963).
+     \addcontentsline{toc}{section}{参考文献}
+\bibitem {2}可参看\,B. Bakamijian and L. H. Thomas, {\textit{Phys. Rev.}} {\bf{92}}, 1300 (1953).
+\bibitem {3}相关参考文献见\,T. D. Lee and C. N. Yang, {\textit{Phys. Rev.}} {\bf{133}}, 1165 (1959).
+\bibitem {4}J. Goldstone {\textit{Proc. Roy. Soc. Londan}} {\bf{A239}}, 267 (1957)
+\bibitem {5}N. M. Hugenholtz\marginpar[\flushright{\small[190]\hspace*{5mm}}]{{\small\hspace*{5mm}[190]}}, {\textit{Physica}} {\bf{23}}, 481 (1957).
+\bibitem {6}可参看\,R. Kubo, {\textit{J. Math. Phys.}} {\bf{4}}, 174 (1963).
+\bibitem {7}E. C. Titchmarch, {\textit{Introduction to the theory of Fourier Intergrals}} (Oxford University Press, Oxford, 1937): Section 1.8
+\bibitem {8}L. D. Faddeev. {\textit{Zh. Ekxper. i Teor. Fiz.}} {\bf{39}}. 1459 (1961)(英译: {\textit{Soviet Phys \yzx  JETP}} {\bf{12}}, 1014 (1961)); {\textit{Dokl. Akad. Nauk. SSSR}} {\bf{138}}, 565 (1961) and {\bf{145}}, 30 (1962) (英译 {\textit{Soviet Physics \yzx  Doklady}} {\bf{6}}, 384 (1961) and {\bf{7}}, 600 (1963)).
+\bibitem {9}S. Weinberg, {\textit{Phys. Rev.}} {\bf{133}}, B232 (1964).
+\end{thebibliography}

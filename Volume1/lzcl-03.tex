@@ -1,0 +1,1928 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+\chapter{散射理论} \label{cha:3}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[107]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[107]}}}
+  \markboth{第3章\quad 散射理论}{第3章\quad 散射理论}
+
+上一章所阐述的相对论量子力学的一般原理, 迄今为止在这里只适用于单个稳定粒子的态. 这样的单粒子态本身并不是非常有趣\ezx 只有当两个或多个粒子发生相互作用时才会变得有趣起来. 但是, 实验中一般不会去跟踪粒子相互作用过程中的详尽细节. 相反,
+在典范实验中(至少在核物理或基本粒子物理中), 数个粒子从一个宏观距离开始彼此接近, 在一个微观小区域内相互作用, 之后相互作用的产物再一次跑到宏观的距离之外. 碰撞前后的物理态由那些相距很远且彼此不再有相互作用的粒子构成, 所以它们可以被描述成上一章所讨论的单粒子态的直积. 在这样的实验中, 测量到的是, 相距很远且相当于没有相互作用的粒子从初态跃迁到末态的概率分布, 或者说``截面''. 这章将概述计算这些概率和截面的形式理论.\textsuperscript{\cite{1}}
+
+\section{``入''态和``出''态} \label{sec:3.1}
+\setcounter{equation}{0}
+
+如果一个态由数个无相互作用的粒子构成, 在非齐次\,Lorentz\,群的变换下, 这个态可以看作单粒子态的直积.  为了标记这个单粒子态, 我们使用它们的\,4\,-动量$p^{\mu}$, 自旋$z$-分量(对于无质量粒子用螺旋度)$\sigma$,  并且由于我们可能要处理多种粒子, 还要用额外的离散指标$n$来标记粒子种类, 这个指标包括了对质量、 自旋、 电荷等的描述. 对于这样的态, 一般的变换规则是\marginpar[\flushright {\raisebox{-4ex}[0pt]{{\small[108]\hspace*{5mm}}}}]{{\raisebox{-4ex}[0pt]{\small\hspace*{5mm}[108]}}}
+\begin{eqnarray}
+&&U(\Lambda,a)\Psi_{p_{1},\sigma_{1},n_{1};p_{2},\sigma_{2},n_{2};\cdots}
+=\exp\Bigl(-\mi a_{\mu}((\Lambda p_{1})^{\mu}+(\Lambda p_{2})^{\mu}+\cdots)\Bigr)\nonumber\cr
+&&\quad\times\sqrt{\frac{(\Lambda p_{1})^{0}(\Lambda p_{2})^{0}\cdots}{p_{1}^{0}p_{2}^{0}\cdots}}
+\sum_{\sigma_{1}^{\prime}\sigma_{2}^{\prime}\cdots}
+D_{\sigma_{1}^{\prime}\sigma_{1}}^{(j_{1})}\Bigl(W(\Lambda,p_{1})\Bigr)
+D_{\sigma_{2}^{\prime}\sigma_{2}}^{(j_{2})}\Bigl(W(\Lambda,p_{2})\Bigr)\cdots\nonumber\\
+&& \quad \times\Psi_{\Lambda p_{1},\sigma_{1}^{\prime},n_{1};\Lambda p_{2},\sigma_{2}^{\prime},n_{2};\cdots} \:, \label{3.1.1}%
+\end{eqnarray}
+其中$W(\Lambda,p)$是\,Wigner\,旋转(\ref{2.5.10}), 而$D_{\sigma^{\prime}\sigma}^{(j)}(W)$是三维旋转群常规的$(2j+1)$-维幺正矩阵表示. (这是针对有质量粒子的; 对于任意无质量粒子, 矩阵$D_{\sigma^{\prime}\sigma}^{(j)}(W(\Lambda,p))$要换成%
+$\updelta_{\sigma^{\prime}\sigma}\exp(\mi\sigma\theta(\Lambda,p))$, 其中$\theta$是方程(\ref{2.5.43})中定义的角度.) 这个态的归一化同方程(\ref{2.5.19})一样
+\begin{align}
+&\Bigl(\Psi_{p_{1}^{\prime},\sigma_{1}^{\prime},n_{1}^{\prime
+};p_{2}^{\prime},\sigma_{2}^{\prime},n_{2}^{\prime};\cdots}\, , \,
+\Psi_{p_{1},\sigma_{1},n_{1};p_{2},\sigma_{2},n_{2};\cdots
+}\Big)\nonumber\\
+&\quad  =\updelta^{3}(\bp_{1}^{\prime}-\bp_{1})\updelta_{\sigma
+_{1}^{\prime}\sigma_{1}}\updelta_{n_{1}^{\prime}n_{1}}\updelta^{3}(\bp%
+_{2}^{\prime}-\bp_{2})\updelta_{\sigma_{2}^{\prime}\sigma_{2}}%
+\updelta_{n_{2}^{\prime}n_{2}}\cdots\nonumber\\
+&  \qquad \pm\text{置换} \:, \label{3.1.2}%
+\end{align}
+其中``$\pm$置换''项是考虑到粒子种类$n_{1}^{\prime},n_{2}^{\prime},\cdots$的某个置换可能与$n_{1}%
+,n_{2},\cdots$相同. (在第4章将会对此进行更加完整地讨论, 如果这个置换包含半整数自旋粒子的奇次置换, 符号是$-1$, 否则是$+1$. 在本章的内容里, 这些是不重要的.)
+
+我们通常使用一个缩写记法, 用一个希腊字母, 例如$\alpha$, 代表整个集合$p_{1},\sigma_{1},n_{1};p_{2},\sigma_{2},n_{2};\cdots$. 在这种记法下, 方程(\ref{3.1.2})简单地写成
+\begin{equation}
+(\Psi_{\alpha^{\prime}},\Psi_{\alpha})=\updelta(\alpha^{\prime}-\alpha) \:, \label{3.1.3}%
+\end{equation}
+其中$\updelta(\alpha^{\prime}-\alpha)$代表出现在方程(\ref{3.1.2})右边的$\updelta$-函数%
+与克罗内克$\updelta$-符号乘积的和. 另外, 我们把对态的求和写成
+\begin{equation}
+\int d\alpha\cdots\equiv\sum_{n_{1}\sigma_{1}n_{2}\sigma_{2}\cdots}\int
+\dif^{3}p_{1}\:\dif^{3}p_{2}\:\cdots \:,\label{3.1.4}%
+\end{equation}
+它被理解成, 在这样的求和与积分下, 对于那些仅在全同粒子的交换下发生变化的构形, 我们只计入其中的一种. 特别的, 对于像方程(\ref{3.1.3})那样归一化的态, 它的完备性关系写成
+\begin{equation}
+\Psi =\int \dif \alpha \: \Psi_{\alpha}(\Psi_{a},\Psi)  \:. \label{3.1.5}%
+\end{equation}
+
+
+对于那些由于种种原因而无法参与相互作用的粒子, 变换规则(\ref{3.1.1})是唯一的可能. 令$\Lambda^{\mu}{}_{\!\nu}=\updelta^{\mu}{}_{\!\nu}$以及$a^{\mu}=(0,0,0,\tau)$, %
+这样$U(\Lambda,a)=\exp(\mi H\tau)$, 方程(\ref{3.1.1})的另一个要求是$\Psi_{\alpha}$
+是能量本征态\marginpar[\flushright{\raisebox{-4.5ex}[0pt]{{\small[109]\hspace*{5mm}}}}]{{\raisebox{-4.5ex}[0pt]{\small\hspace*{5mm}[109]}}}
+\begin{equation}
+H\Psi_{\alpha}=E_{\alpha}\Psi_{\alpha}\:, \label{3.1.6}%
+\end{equation}
+它的能量等于单粒子能量的和
+\begin{equation}
+E_{\alpha}=p_{1}^{0}+p_{2}^{0}+\cdots\label{3.1.7}%
+\end{equation}
+这里没有相互作用项, 那样的项将会同时涉及多个粒子.
+
+另一方面, 变换规则(\ref{3.1.1})确实适用于时间$t\to\pm\infty$的散射过程. 就像本章开头所解释的, 在典型的散射实验中, 我们开始于时间$t\to -\infty$ 时的粒子, 它们相距如此之远以至于还没有相互作用, 而结束于$t\to +\infty$, 此时粒子间隔得如此之远以至于它们之间没有了相互作用. 我们因而有了两组而非一组按照方程(\ref{3.1.1})变换的态: {\KAI{``入''态}}$\Psi_{\alpha}{}^{\!+}${\KAI{和``出''态}}$\Psi_{\alpha}{}^{\!-}$,%
+{}$^*$\footnote{$^*${}用``$+$''和``$-$''标记``入''态和``出''态看起来有点落伍, 但是它们似乎已经成为传统. 它们源于方程(\ref{3.1.16})中的符号. } {\KAI{如果分别在}}$t\to -\infty${\KAI{时和}}$t\to+\infty$%
+{\KAI{时进行观察, 将会发现它们包含指标}}$\alpha${\KAI{所描述的粒子.}}
+
+现在来看一下这个定义是如何构造出来的. 为了保持明显的\,Lorentz\,不变性, 在我们这里采用的形式体系中,  态矢不随时间改变\ezx 态矢$\Psi$描述了粒子系统的整个时空历史. (这被称为\,Heisenberg\,绘景, 以区别于\,Schr\"{o}dinger\,绘景, 在\,Schr\"{o}dinger\,绘景中, 算符是不变的, 而态随时间变化.) 因此, 我们{\KAI{不}}称$\Psi_{\alpha}{}^{\!\pm}$是某个依赖时间的态矢$\Psi(t)$在$t\to\mp\infty$时的极限.
+
+
+然而, 在态的定义中隐含的是对观察者所处惯性系的选择; 不同的观测者看到的是{\KAI{等价的}}态矢, 但不是{\KAI{相同的}}态矢. 特别的, 假定标准观测者$\mathcal{O}$对他或她的时钟进行设定, 使得$t=0$是碰撞过程中的某个时刻, 而另一个相对第一个观测者静止的观测者$\mathcal{O}^{\prime}$将他(她)的$t^{\prime}=0$设置成$t=\tau$; 即, 两个观测者的时间坐标的关系是$t^{\prime}=t-\tau$. 那么, 如果$\mathcal{O}$看到系统处在态$\Psi$中, $\mathcal{O}^{\prime}$将会看到系统处在态$U(1,-\tau)\Psi=\exp(-\mi H\tau)\Psi$中. 因此, 态在发生碰撞(在$\mathcal{O}$所处的基准下)的遥远过去和遥远未来的表现可以分别通过%
+$\tau\to-\infty$和$\tau\to +\infty$的时间平移算符$\exp(-\mi H\tau)$得到. 当然, 如果态真的是一个能量本征态, 那么它不可能在时间上被定位\ezx  算符$\exp(-\mi H\tau)$会产生一个无关紧要的相位因子$\exp(-\mi E_{\alpha}\tau)$. 因此, 我们必须考察波包, %
+即叠加态$\int \dif\alpha \,g(\alpha)\Psi_{\alpha}$, 其中振幅$g(\alpha)$非零且在能量的某个有限范围
+$\Delta E$内\marginpar[\flushright{\small[110]\hspace*{5mm}}]{{\small\hspace*{5mm}[110]}}光滑. ``入''态和``出''态的定义使得叠加态
+\[
+\exp(-\mi H\tau)  \int \dif\alpha\:g(\alpha)\Psi_{\alpha}{}^{\!\pm}
+=\int \dif\alpha \: \me^{-\mi E_{\alpha}\tau} g(\alpha) \Psi_{\alpha}{}^{\!\pm}
+\]
+在$\tau\ll-1/\Delta E$或$\tau\gg+1/\Delta E$时分别表现为自由粒子态的对应叠加.
+
+更具体一点, 假定我们能够将时间平移算符的生成元$H$分为两项, 自由粒子哈密顿量$H_{0}$和相互作用$V$, \begin{equation}
+H=H_{0}+V \label{3.1.8}%
+\end{equation}
+使得$H_{0}$的本征态$\Phi_{\alpha}$与完整哈密顿量$H$的本征态$\Psi_{\alpha}{}^{\!+}$和%
+$\Psi_{\alpha}{}^{\!-}$有相同的表现
+\begin{gather}
+H_{0}\Phi_{\alpha}=E_{\alpha}\Phi_{\alpha}\text{
+, }\label{3.1.9}\\
+\left(  \Phi_{\alpha^{\prime}},\Phi_{\alpha}\right)
+=\updelta(\alpha^{\prime}-\alpha)\text{ }. \label{3.1.10}%
+\end{gather}
+注意, 这里假定了$H_{0}$的谱与完整哈密顿量$H$的谱相同. 这要求出现在$H_{0}$中的质量是实际测量到的物理质量, 这个质量不一定与$H$中出现的`` 裸''质量项相同;  任何这两个质量之间有差异, 这个差异必须被纳入相互作用$V$中, 而不是$H_{0}$. 此外, $H$谱中的任何相关束缚态都应该像一个基本粒子一样被引入$H_{0}$ 中.{}$^*$\footnote{$^*${}换一种做法, 在非相对论问题中, 我们可以在$H_{0}$中引入结合势. 该方法在``重排碰撞''%
+的应用中, 即某些束缚态出现在初态而不出现在末态, 或是相反的情况, 我们将$H$分成$H_{0}$和$V$的方式在初态和末态中必须是不同的. }%
+
+
+``入''态和``出''态现在可以定义成$H$而非$H_{0}$的本征态
+\begin{equation}
+H\Psi_{\alpha}{}^{\!\pm}=E_{\alpha}\Psi_{\alpha}{}^{\!\pm} \:, \label{3.1.11}%
+\end{equation}
+它在$\tau\to -\infty$和$\tau\to +\infty$时分别满足条件
+\begin{equation}
+\int \dif \alpha \: \me^{-\mi E_{\alpha}\tau} g(\alpha)\Psi_{\alpha}{}^{\!\pm}
+\to \int \dif \alpha \: \me^{-\mi E_{\alpha}\tau}g(\alpha)\Phi_{\alpha} \:. \label{3.1.12}%
+\end{equation}
+
+
+当$\tau\rightarrow-\infty$或$\tau\rightarrow+\infty$时, 方程(\ref{3.1.12})可以按照要求分别写成:
+\[
+\exp(-\mi H\tau)\int \dif \alpha\: g(\alpha)\Psi_{\alpha}{}^{\!\pm}
+\to\exp(-\mi H_{0}\tau)\int \dif \alpha \: g(\alpha) \Phi_{\alpha} \:.
+\]
+这有时写成``入''态和``出''态的公式:
+\begin{equation}
+\Psi_{\alpha}{}^{\!\pm}=\Omega(\mp\infty)\Phi_{\alpha} \:, \label{3.1.13}%
+\end{equation}
+其\marginpar[\flushright{\raisebox{-3.5ex}[0pt]{{\small[111]\hspace*{5mm}}}}]{{\raisebox{-3.5ex}[0pt]{\small\hspace*{5mm}[111]}}}中
+\begin{equation}
+\Omega(\tau) \equiv \exp(+\mi H\tau)\exp(-\mi H_{0}\tau) \:. \label{3.1.14}%
+\end{equation}
+然而, 应当记住的是, 对于方程(\ref{3.1.13})中的$\Omega(\mp\infty)$, 仅当它作用在能量本征态的光滑叠加态上时, 它才给出有意义的结果.
+
+从(\ref{3.1.12})定义中我们立刻可以看出``入''态和``出''态可以像自由粒子态那样归一化. 为了看到这一点, 注意到方程(\ref{3.1.12})的左边是通过幺正算符$\exp(-\mi H\tau)$作用在一个不依赖于时间的态上得到的, 所以它的范数独立于时间, 因此等于$\tau\to\infty$时的范数, 即方程(\ref{3.1.12})右边的范数:
+\begin{align*}
+&\int \dif \alpha \: \dif \beta\: \exp(-\mi(E_{\alpha}-E_{\beta})\tau)g(\alpha)g^{\ast}(\beta)
+(\Psi_{\beta}{}^{\!\pm},\Psi_{\alpha}{}^{\!\pm})\\
+&\quad  = \int \dif \alpha \: \dif \beta\: \exp(-\mi(E_{\alpha}-E_{\beta})\tau)g(\alpha)g^{\ast}(\beta)
+(\Phi_{\beta},\Phi_{\alpha}) \:.
+\end{align*}
+因为假定了这个结果对所有光滑函数$g(\alpha)$成立, 所以标量积必须相等
+\begin{equation}
+(\Psi_{\beta}{}^{\!\pm},\Psi_{\alpha}{}^{\!\pm}) = (\Phi_{\beta},\Phi_{\alpha})
+=\updelta(\beta-\alpha)  \:. \label{3.1.15}%
+\end{equation}
+
+
+出于一些原因, 得到能量本征值方程(\ref{3.1.11})满足条件(\ref{3.1.12})的显式解是有用的, 哪怕这种解只是形式的. 为了做到这点, 将方程(\ref{3.1.11})写为
+\[
+(E_{\alpha}-H_{0})\Psi_{\alpha}{}^{\!\pm}=V\Psi_{\alpha}{}^{\!\pm}\:.
+\]
+算符$E_{\alpha}-H_{0}$不是可逆的; 它不仅湮没自由粒子态$\Phi_{\alpha}$, 也湮没其他具有相同能量的自由粒子态$\Phi_{\beta}$, 这样的态是连续的. 因为``入''态和``出''态在$V\to0$时就变成了$\Phi_{\alpha}$, 我们尝试将这个形式解写成$\Phi_{\alpha}$加上正比于$V$的项:
+\begin{equation}
+\Psi_{\alpha}{}^{\!\pm}=\Phi_{\alpha}+(E_{\alpha}-H_{0}\pm \mi\epsilon)^{-1}V\Psi_{\alpha}{}^{\!\pm}\:, \label{3.1.16}%
+\end{equation}
+或者, 按自由粒子态的完备集展开,
+\begin{gather}
+\Psi_{\alpha}{}^{\!\pm}=\Phi_{\alpha}+\int \dif\beta\: \frac{T_{\beta\alpha}{}^{\!\pm}\,\Phi_{\beta}}
+{E_{\alpha}-E_{\beta}\pm \mi\epsilon} \: ,\label{3.1.17}\\
+T_{\beta\alpha}{}^{\!\pm}\equiv(\Phi_{\beta},V \Psi_{\alpha}{}^{\!\pm})\:, \label{3.1.18}%
+\end{gather}
+其中$\epsilon$是无限小的正数, 加入它是为了使$(E_{\alpha}-H_{0})$的倒数有意义.  这些被称作{\textit{Lippmann-Schwinger}}
+{\KAI{方程}}.\textsuperscript{\cite{1a}}. 在下一节末尾, 对于``入''态和``出''态的正交性, 我们会利用方程(\ref{3.1.17})给出一个不太严格的证明.
+
+还有待\marginpar[\flushright{\small[112]\hspace*{5mm}}]{{\small\hspace*{5mm}[112]}}证明的是, 对``入''态和``出''态, 分母分别带有$+\mi\epsilon$和$-\mi\epsilon$的方程(\ref{3.1.17})确实满足条件(\ref{3.1.12}). 为此, 考虑叠加态
+\begin{equation}
+\Psi_{g}{}^{\!\pm}(t) \equiv \int \dif \alpha \:\me^{-\mi E_{\alpha}t}g(\alpha)\Psi_{\alpha}{}^{\!\pm} \:, \label{3.1.19}%
+\end{equation}%
+\begin{equation}
+\Phi_{g}(t) \equiv \int \dif \alpha\:\me^{-\mi E_{\alpha}t} g(\alpha)\Phi_{\alpha} \:. \label{3.1.20}%
+\end{equation}
+我们想证明, $\Psi_{g}{}^{\!+}(t)$和$\Psi_{g}{}^{\!-}(t)$分别在$t\to-\infty$和$t\to+\infty$时%
+趋于$\Phi_{g}(t)$. 在方程(\ref{3.1.19})中使用方程(\ref{3.1.17})给出
+\begin{equation}
+\Psi_{g}{}^{\!\pm}(t)  = \Phi_{g}(t)
++\int\dif\alpha\int\dif\beta\:\frac{\me^{-\mi E_{\alpha}t} g(\alpha)T_{\beta\alpha}{}^{\!\pm}\Phi_{\beta}}
+{E_{\alpha}-E_{\beta}\pm \mi\epsilon} \:. \label{3.1.21}%
+\end{equation}
+我们先不计后果地交换一次积分次序, 并考察积分
+\[
+\mathscr{I}_{\beta}{}^{\pm}\equiv\int \dif \alpha \: \frac{\me^{-\mi E_{\alpha}t}g(\alpha)T_{\beta\alpha}{}^{\!\pm}}{E_{\alpha}-E_{\beta}\pm \mi\epsilon} \:.
+\]
+当$t\to-\infty$时, 我们可以在上半平面用一个大半圆来闭合能量变量$E_{\alpha}$的积分围道,  由于有因子$\exp(-\mi E_{\alpha}t)$, 这个因子在$t\to-\infty$ 且$\operatorname{Im}E_{\alpha}>0$时会指数衰减, 来自半圆的贡献被抹除了.  于是, 通过对被积函数在上半平面的奇点求和就得到了这个积分. 一般而言, 函数$g(\alpha)$和$T_{\beta\alpha}{}^{\!\pm}$预期在带有限正虚部的一些$E_{\alpha}$值处有奇点, 但和大半圆一样, 它们的贡献在$t\to -\infty$时被指数压低了. (特别地, $-t$必须远大于波包$g(\alpha)$中的时间不确定度以及碰撞的持续时间, 这二者分别决定了$g(\alpha)$和$T_{\beta\alpha}{}^{\!\pm}$在复$E_{\alpha}$ 平面上的奇点位置.) 现在剩下了$(E_{\alpha}-E_{\beta}\pm \mi\epsilon)^{-1}$中的奇点, 对于$\mathscr{I}_{\beta}{}^{\!-}$, 奇点在上半平面, 对$\mathscr{I}_{\beta}{}^{\!+}$则不是. 于是我们得出$\mathscr{I}_{\beta}{}^{\!+}$在$t\to-\infty$ 时为零. 同样地, 当$t\to+\infty$时, 我们必须取在下半平面闭合的积分围道, 所以$\mathscr{I}_{\beta}{}^{\!-}$在这个极限下为零. 我们得出结论: $\Psi_{g}{}^{\!\pm}(t)$在$t\to\mp\infty$时趋于$\Phi_{g}(t)$. 这与约束条件(\ref{3.1.12})一致.
+
+\subsection*{* * *}
+
+为了后面的应用, 我们给出方程(\ref{3.1.17})中因子$(E_{\alpha}-E_{\beta}\pm \mi\epsilon)^{-1}$的一个方便表示. 一般而言, 我们可以将这个因子写成
+\begin{equation}
+(E\pm \mi\epsilon)^{-1}=\frac{\mathscr{P}_{\epsilon}}{E}\mp
+\mi\uppi\updelta_{\epsilon}(E)  \:, \label{3.1.22}%
+\end{equation}
+其\marginpar[\flushright{\small[113]\hspace*{5mm}}]{{\small\hspace*{5mm}[113]}}中
+\begin{equation}
+\frac{\mathscr{P}_{\epsilon}}{E}\equiv\frac{E}{E^{2}+\epsilon^{2}}\text{
+, } \label{3.1.23}%
+\end{equation}%
+\begin{equation}
+\updelta_{\epsilon}(E) \equiv \frac{\epsilon}{\uppi(E^{2}+\epsilon^{2})} \:. \label{3.1.24}%
+\end{equation}
+函数(\ref{3.1.23})在$\lvert E\rvert\gg\epsilon$时就是$1/E$而在$E\to0$时为零, 所以, 当$\epsilon\to 0$时, 它的行为就像``主值函数''$\mathscr{P}/E$, 通过去掉$E=0$附近的一个无限小区间, 对于$1/E$与$E$的任何光滑函数乘积, 主值函数使得对这种乘积的积分有意义. 函数(\ref{3.1.24}) 在$\lvert E\rvert \gg\epsilon$时是$\epsilon$阶的, 并且在对所有$E$积分后给出1, 所以在$\epsilon\to0$的极限下, 它的行为就像熟悉的$\updelta$-函数$\updelta(E)$. 有了这个理解,  我们就可以去掉方程(\ref{3.1.22})中的指标$\epsilon$, 简单地写成
+\begin{equation}
+(E\pm \mi\epsilon )^{-1} = \frac{\mathscr{P}}{E}\mp \mi \uppi \updelta(E) \:. \label{3.1.25}%
+\end{equation}
+
+
+\section{$S$-矩阵} \label{sec:3.2}
+\setcounter{equation}{0}
+
+实验者一般在$t\to-\infty$时制备一个具有确定粒子内容的态, 然后在$t\to+\infty$时测量这个态变成什么. 如果制备的态在$t\to-\infty$时含有的粒子信息为$\alpha$, 那么它是``入''态$\Psi_{\alpha}{}^{\!+}$, 如果在$t\to+\infty$时发现它所含有的粒子信息是$\beta$, 那么它是``出''态$\Psi_{\beta}{}^{\!-}$. 因此, 跃迁$\alpha\to\beta$的概率振幅是标量积
+\begin{equation}
+S_{\beta\alpha}=(\Psi_{\beta}{}^{\!-},\Psi_{\alpha}{}^{\!+}) \:. \label{3.2.1}%
+\end{equation}
+这个复振幅的阵列被称为$S$-{\KAI{矩阵}}.\textsuperscript{\cite{2}} 如果没有相互作用, 那么``入''态和``出''态是相同的, 这样$S_{\beta\alpha}$就是$\updelta(\alpha-\beta)$. 反应$\alpha\to\beta$的速率因此正比于$\lvert S_{\beta\alpha}-\updelta(\alpha-\beta)\rvert^{2}$. 在\,\ref{sec:3.4}\,节, 我们将详细地看到$S_{\beta\alpha}$是如何与测量出的截面和速率相关联的.
+
+应该要强调一下, ``入''态和``出''态并不处在不同的\,Hilbert\,空间中. 它们的差异仅在于它们是如何被标记的; 即它们出现在$t\to-\infty$还是出现在$t\to+\infty$. 任何``入''态都可以展开成``出''态的和, 展开系数由$S$-矩阵(\ref{3.2.1})给出.
+
+因为$S_{\beta\alpha}$是联系两个正交完备集的矩阵, 所以它必须是幺正的. 为了更详细地看到这一点, 对``出''态使用完备性关系(\ref{3.1.5}), 并写出
+\[
+\int \dif \beta \: S_{\beta\gamma}^{\ast}S_{\beta\alpha}
+=\int \dif\beta\: (\Psi_{\gamma}{}^{\!+},\Psi_{\beta}{}^{\!-})
+(\Psi_{\beta}{}^{\!-},\Psi_{\alpha}{}^{\!+})
+=(\Psi_{\gamma}{}^{\!+},\Psi_{\alpha}{}^{\!+}) \:.
+\]
+利用(\ref{3.1.15}), 这\marginpar[\flushright{\small[114]\hspace*{5mm}}]{{\small\hspace*{5mm}[114]}}给出
+\begin{equation}
+\int \dif \beta\: S_{\beta\gamma}^{\ast}S_{\beta\alpha}=\updelta(\gamma-\alpha) \label{3.2.2}%
+\end{equation}
+或者, 简写成$S^{\dag}S=1$. 以相同的方式, ``入''态的完备性给出{}$^*$\footnote{$^*${}在本节末尾会给出另一种证明. 注意, 对于无限``矩阵'', 幺正条件$S^{\dag}S=1$ 和$SS^{\dag}=1$不是等价的. }%
+\begin{equation}
+\int \dif\beta\: S_{\gamma\beta}S_{\alpha\beta}^{\ast}=\updelta(\gamma-\alpha) \label{3.2.3}
+\end{equation}
+或者, 换一种形式, $SS^{\dag}=1$.
+
+取代处理$S$-矩阵, 更加方便的是处理一个算符$S$, 这个算符定义成它在{\KAI{自由粒子}}态之间的矩阵元等于$S$-矩阵的相应矩阵元:
+\begin{equation}
+(\Phi_{\beta},S\Phi_{\alpha})\equiv S_{\beta\alpha} \:.
+\label{3.2.4}%
+\end{equation}
+``入''态和``出''态的表达式(\ref{3.1.13})虽然非常形式化, 但是它是显式表达式, 它给出了$S$-算符的一个公式:
+\begin{equation}
+S=\Omega(\infty)^{\dag}\Omega(-\infty)=U(+\infty,-\infty) \:,
+\label{3.2.5}%
+\end{equation}
+其中\begin{equation}
+U(\tau,\tau_{0}) \equiv \Omega(\tau)^{\dag}\Omega(\tau_{0}) =\exp(\mi H_{0}\tau) \exp(-\mi H(\tau-\tau_{0})) \exp(-\mi H_{0}\tau_{0}) \:. \label{3.2.6}%
+\end{equation}
+在下一节, 我们将用这个公式检验$S$-矩阵的\,Lorentz\,不变性, 并在\,\ref{sec:3.5}\,节用它导出含时微扰论中的$S$-矩阵公式.
+
+上一节的方法可以用来推导$S$-矩阵的另一个有用的公式. 让我们回到``入''态$\Psi^{+}$的方程(\ref{3.1.21}), 不过这次取$t\to+\infty$. 现在, 我们必须取在{\KAI{下}}半$E_{\alpha}$平面闭合的积分围道, 尽管$T_{\beta\alpha}{}^{\!\pm}$和$g(\alpha)$中的奇点像前面一样在$t\to+\infty$时无贡献, 但是我们现在还是要计入来自奇异因子$(E_{\alpha}-E_{\beta}+\mi\epsilon)^{-1}$的贡献. 围道从$E_{\alpha}=-\infty$跑到$E_{\alpha}=+\infty$, 然后通过下半平面的大半圆再回到$E_{\alpha}=-\infty$, 所以它以{\KAI{顺时针}}方向绕奇点一圈. 利用留数方法, 对$E_{\alpha}$的积分就是被积函数在$E_{\alpha}=E_{\beta}-\mi\epsilon$ 的值再乘以因子$-2\mi\uppi$. 这就是说, 在$\epsilon\to0+$的极限下, (\ref{3.1.21})中对$\alpha$的积分在$t\to+\infty$时有如下渐近性质
+\[
+\mathscr{I}_{\beta}{}^{\!+}\to -2\mi\uppi \me^{-\mi E_{\beta}t}\int \dif \alpha\: \updelta(E_{\alpha}-E_{\beta})g(\alpha)T_{\beta\alpha}{}^{\!+}%
+\]
+因而, 当$t\to+\infty$时\marginpar[\flushright{\small[115]\hspace*{5mm}}]{{\small\hspace*{5mm}[115]}},
+\[
+\Psi_{g}{}^{\!+}(t) \to \int \dif\beta \: \me^{-\mi E_{\beta}t}\Phi_{\beta}\Bigl[g(\beta)-2\mi\uppi\int \dif\alpha\:\updelta(E_{\alpha}-E_{\beta})g(\alpha)T_{\beta\alpha}{}^{\!+}\Bigr]\:.
+\]
+但是, 将(\ref{3.1.19})给出的$\Psi_{g}{}^{\!+}$按``出''态的完备集展开给出
+\[
+\Psi_{g}{}^{\!+}(t) =\int\dif\alpha\: \me^{-\mi E_{\alpha}t}
+g(\alpha)\int \dif\beta \:\Psi_{\beta}{}^{\!-} \,S_{\beta\alpha} \:.
+\]
+由于$S_{\beta\alpha}$包含因子$\updelta(E_{\beta}-E_{\alpha})$, 这可以重新表示为
+\[
+\Psi_{g}{}^{\!+}(t)=\int \dif \beta \:\Psi_{\beta}{}^{\!-}\,\me^{-\mi E_{\beta}t}
+\int \dif \alpha \: g(\alpha)S_{\beta\alpha}
+\]
+并且, 利用``出''态的定义性质(\ref{3.1.12}), 它在$t\to +\infty$时有渐近性质
+\[
+\Psi_{g}{}^{\!+}(t) \to \int \dif \beta\: \Phi_{\beta}\,\me^{-\mi E_{\beta}t}\int \dif\alpha\: g(\alpha)S_{\beta\alpha} \:.%
+\]
+用上式与我们之前的结果进行比较, 我们发现
+\[
+\int \dif\alpha\: g(\alpha)S_{\beta\alpha} = g(\beta)-2\mi\uppi\int \dif\alpha \: \updelta(E_{\alpha}-E_{\beta})g(\alpha)T_{\beta\alpha}{}^{\!+}%
+\]
+换句话说
+\begin{equation}
+S_{\beta\alpha}=\updelta(\beta-\alpha)-2\mi\uppi\updelta(E_{\alpha}-E_{\beta}%
+)T_{\beta\alpha}{}^{\!+} \:. \label{3.2.7}%
+\end{equation}
+
+
+这给出了$S$-矩阵的一个简单近似: 对于较弱的相互作用$V$, 我们可以忽略(\ref{3.1.18})中``入''态与自由粒子态之间的差异, 在这种情况下, 方程(\ref{3.2.7}) 给出
+\begin{equation}
+S_{\beta\alpha}\simeq\updelta(\beta-\alpha)-2\mi\uppi\updelta(E_{\alpha}-E_{\beta})
+(\Phi_{\beta},V\Phi_{\alpha})\:.  \label{3.2.8}%
+\end{equation}
+这被称为{\textit{Born}}{\KAI{近似}}.\textsuperscript{\cite{3}} 我们会在\,\ref{sec:3.5}\,节讨论它的高阶项.
+
+\subsection*{* * *}
+
+利用``入''态和``出''态的\,Lippmann-Schwinger\,方程(\ref{3.1.16}), 无需处理$t\to\mp\infty$的极限, 我们就可以给出这些态的正交性, $S$-矩阵的幺正性以及方程(\ref{3.2.7})的一个证明\,\textsuperscript{\cite{4}}. 首先, 对矩阵元$(\Psi_{\beta}{}^{\!\pm},V\Psi_{\alpha}{}^{\!\pm})$的左边和右边分别使用方程(\ref{3.1.16}), 两边结果相等, 我们发现
+\begin{align*}
+& (\Psi_{\beta}{}^{\!\pm},V\Phi_{\alpha}) + (\Psi_{\beta}{}^{\!\pm},V(E_{\alpha}-H_{0}\pm \mi\epsilon)^{-1} V\Psi_{\alpha}{}^{\!\pm}) \\
+&\qquad =(\Phi_{\beta},V\Psi_{\alpha}{}^{\!\pm})+(\Psi_{\beta}{}^{\!\pm},V(E_{\beta}-H_{0}\mp \mi\epsilon)^{-1}V\Psi_{\alpha}{}^{\!\pm})  \:.
+\end{align*}
+对中间态的完备集$\Phi_{\gamma}$求和, 这给出方程:
+\begin{align}
+{T_{\alpha\beta}{}^{\!\pm}}^{\star}-T_{\beta\alpha}^{\text{ \ \ }\pm}
+&=  -\int \dif \gamma \: {T_{\gamma\beta}{}^{\!\pm}}^{\star}T_{\gamma\alpha}{}^{\!\pm}\nonumber\\
+& \quad \times\Bigl([E_{\alpha}-E_{\gamma}\pm \mi\epsilon]^{-1}-[E_{\beta
+}-E_{\gamma}\mp \mi\epsilon]^{-1}\Bigr) \:. \label{3.2.9}%
+\end{align}
+为了证明``入''态和``出''态\marginpar[\flushright{\raisebox{7ex}[0pt]{{\small[116]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[116]}}}的正交性, 用$E_{\alpha}-E_{\beta}\pm2\mi\epsilon$除方程(\ref{3.2.9}). 这给出
+\begin{align*}
+\left(  \frac{T_{\alpha\beta}{}^{\!\pm}}{E_{\beta}-E_{\alpha}\pm2\mi\epsilon}\right)^{\star}
+&+ \frac{T_{\beta\alpha}{}^{\!\pm}}{E_{\alpha}-E_{\beta}\pm2\mi\epsilon} \\
+& \quad =-\int \dif \gamma\:\left( \frac{T_{\gamma\beta}{}^{\!\pm}}{E_{\beta}-E_{\gamma}\pm \mi\epsilon}\right)  ^{\star}\frac{T_{\gamma\alpha}{}^{\!\pm}}{E_{\alpha}-E_{\gamma}\pm \mi\epsilon} \:.
+\end{align*}
+左边分母中的$2\epsilon$可以换成$\epsilon$, 这是因为它们唯一重要的性质是正的无限小量. 这样我们就看到$\updelta(\beta-\alpha)+T_{\beta\alpha}{}^{\!\pm}/(E_{\beta}-E_{\alpha}\pm\mi\epsilon)$%
+是幺正的. 结合(\ref{3.1.17}), 这正好表明$\Psi_{\alpha}{}^{\!\pm}$构成态矢的两个正交集. 用$\updelta(E_{\beta}-E_{\alpha})$而不是$(E_{\alpha}-E_{\beta}\pm2\mi\epsilon)^{-1}$乘以(\ref{3.2.9}), 就可以用类似的方式证明$S$-矩阵的幺正性.
+
+
+\section{$S$-矩阵的对称性} \label{sec:3.3}
+\setcounter{equation}{0}
+
+本节中, 我们将考察$S$-矩阵在各种对称性下不变的含义, 以及哈密顿量需要满足什么条件来确保这些不变性.
+
+\subsection*{\textit{Lorentz} 不变性}
+
+对任意固有正时\,Lorentz\,变换$x\to\Lambda x+a$, 我们可以定义一个幺正算符$U(\Lambda,a)$, 通过像在方程(\ref{3.1.1})中那样指定它作用在``入''态{\KAI{还是}}``出''态上, 我们以此来定义它. 当我们称一个理论\,Lorentz\,不变时, 我们的意思是同一个算符$U(\Lambda,a)$以(\ref{3.1.1})中的方式作用在`` 入''态{\KAI{和}}``出''态上. 由于算符$U(\Lambda,a)$幺正, 我们可以写下
+\[
+S_{\beta\alpha}=\Bigl(\Psi_{\beta}{}^{\!-},\Psi_{\alpha}{}^{\!+}\Bigr)
+=\Bigl(U(\Lambda,a)\Psi_{\beta}{}^{\!-},U(\Lambda,a)\Psi_{\alpha}{}^{\!+}\Bigr)
+\]
+所以, 利用(\ref{3.1.1}), 我们就获得了$S$-矩阵的Lorentz不变性(实际上是协变性): 对于任意\,Lorentz\,变换$\Lambda^{\mu}{}_{\!\nu}$以及平移$a^{\mu}$,
+\begin{align}
+& S_{p_{1}^{\prime},\sigma_{1}^{\prime},n_{1}^{\prime};p_{2}%
+^{\prime},\sigma_{2}^{\prime},n_{2}^{\prime};\cdots\:,\:
+p_{1},\sigma_{1},n_{1};p_{2},\sigma_{2},n_{2};\cdots}\nonumber\\
+& =\exp\Bigl(\mi a_{\mu}\Lambda^{\mu}{}_{\!\nu}(p_{1}^{\prime\nu}
++p_{2}^{\prime\nu}+\cdots-p_{1}^{\nu}-p_{2}^{\nu}-\cdots)\Bigr)\nonumber\\
+&  \quad\times\sqrt{\frac{(\Lambda p_{1})^{0}(\Lambda p_{2})^{0}\cdots(\Lambda
+p_{1}^{\prime})^{0}(\Lambda p_{2}^{\prime})^{0}\cdots}{p_{1}^{0}p_{2}%
+^{0}\cdots\text{ \ }p_{1}^{\prime0}p_{2}^{\prime0}\cdots}}\nonumber\\
+&  \quad\times\sum_{\bar{\sigma}_{1}\bar{\sigma}_{2}\cdots}D_{\bar{\sigma}%
+_{1}\sigma_{1}}^{(j_{1})}\Big(W(\Lambda,p_{1})\Big)D_{\bar{\sigma}_{2}%
+\sigma_{2}}^{(j_{2})}\Big(W(\Lambda,p_{2})\Big)\cdots\nonumber\\
+&  \quad\times\sum_{\bar{\sigma}_{1}^{\prime}\bar{\sigma}_{2}^{\prime}\cdots
+}D_{\bar{\sigma}_{1}^{\prime}\sigma_{1}^{\prime}}^{(j_{1}^{\prime})\ast
+}\Big(W(\Lambda,p_{1}^{\prime})\Big)D_{\bar{\sigma}_{2}^{\prime}\sigma
+_{2}^{\prime}}^{(j_{2}^{\prime})\ast}\Big(W(\Lambda,p_{2}^{\prime}%
+)\Big)\cdots\nonumber\\
+&  \quad\times S_{\Lambda p_{1}^{\prime},\bar{\sigma}_{1}^{\prime}%
+,n_{1}^{\prime};\Lambda p_{2}^{\prime},\bar{\sigma}_{2}^{\prime},n_{2}%
+^{\prime};\cdots\text{\ },\text{\ }\Lambda p_{1},\bar{\sigma}_{1}%
+,n_{1};\Lambda p_{2},\bar{\sigma}_{2},n_{2};\cdots}\text{ .} \label{3.3.1}%
+\end{align}
+(这里的撇号用来\marginpar[\flushright{\raisebox{9ex}[0pt]{{\small[117]\hspace*{5mm}}}}]{{\raisebox{9ex}[0pt]{\small\hspace*{5mm}[117]}}}区分初粒子和末粒子; 上横线用来区分求和变量.) 特别的, 因为左边与$a^{\mu}$无关, 所以右边也必须与$a^{\mu}$无关, 因此, 除非\,4\,-动量守恒, 否则$S$-矩阵为零. 因此, 我们可以将$S$矩阵中表示粒子间真实相互作用的那部分表示成:
+\begin{equation}
+S_{\beta\alpha}-\updelta(\beta-\alpha)=-2\uppi \mi\: M_{\beta\alpha}\updelta
+^{4}(p_{\beta}-p_{\alpha})\:. \label{3.3.2}%
+\end{equation}
+(然而, 正如我们将在下一章看到的, 振幅$M_{\beta\alpha}$本身中所含有的项会有更进一步的$\updelta$-函数因子.)
+
+方程(\ref{3.3.1})应当看作我们对$S$-矩阵的\,Lorentz\,不变性的定义, 而不是一个定理, 这是因为, 仅对于一些经过特殊选择的哈密顿量, 才会存在能够以(\ref{3.3.1})的方式作用在``入''态和``出''态上的幺正算符. 我们需要给出为了确保$S$-矩阵的Lorentz不变性而加在哈密顿量上的条件. 为此, 采用方程(\ref{3.2.4})定义的算符$S$是方便的:
+\[
+S_{\beta\alpha}=(\Phi_{\beta},S\Phi_{\alpha})\:.%
+\]
+我们已经在第2章定义了自由粒子态$\Phi_{\alpha}$, 它们构成了非齐次\,Lorentz\,群的一个表示, 所以我们总能定义幺正算符$U_{0}(\Lambda,a)$, 使得它诱导出自由粒子态上的变换(\ref{3.1.1}):
+\begin{align*}
+&  U_{0}(\Lambda,a)\Phi_{p_{1},\sigma_{1},n_{1};p_{2},\sigma
+_{2},n_{2};\cdots}=\exp\Bigl(-\mi a_{\mu}\Lambda^{\mu}{}_{\!\nu}
+(p_{1}^{\nu}+p_{2}^{\nu}+\cdots)\Bigr)\\
+&  \quad\times\sqrt{\frac{(\Lambda p_{1})^{0}(\Lambda p_{2})^{0}\cdots}%
+{p_{1}^{0}p_{2}^{0}\cdots}}\sum_{\sigma_{1}^{\prime}\sigma_{2}^{\prime}\cdots
+}D_{\sigma_{1}^{\prime}\sigma_{1}}^{(j_{1})}\Big(W(\Lambda,p_{1}%
+)\Big)D_{\sigma_{2}^{\prime}\sigma_{2}}^{(j_{2})}\Big(W(\Lambda,p_{2}%
+)\Big)\cdots\\
+&  \quad\times\Phi_{\Lambda p_{1},\sigma_{1}^{\prime},n_{1};\Lambda
+p_{2},\sigma_{2}^{\prime},n_{2};\cdots}\:.%
+\end{align*}
+因此, 如果这个幺\marginpar[\flushright{\small[118]\hspace*{5mm}}]{{\small\hspace*{5mm}[118]}}正算符与$S$-算符对易, 方程(\ref{3.3.1})就是成立的:
+\[
+U_{0}(\Lambda,a)^{-1}\,S\,U_{0}(\Lambda,a)=S\:.%
+\]
+这个条件也可以用无限小\,Lorentz\,变换的形式表达. 就像\,\ref{sec:2.4}\,节中那样, 将会存在一组厄米算符, 动量$\bP_{0}$, 角动量$\bJ_{0}$, 以及增速算符$\bK_{0}$, 再加上$H_{0}$, 当这些算符作用在自由粒子态上时, 它们就生成了非齐次\,Lorentz\,变换的无限小版本. 方程(\ref{3.3.1})等价于说$S$-矩阵在这类变换下不受影响, 换句话说, $S$-算符与这些生成元对易:
+\begin{equation}
+[H_{0},S]=[\bP_{0},S]=[\bJ_{0},S]=[\bK_{0},S]=0\:. \label{3.3.3}%
+\end{equation}
+因为算符$H_{0},\bP_{0},\bJ_{0}$和$\bK_{0}$生成了$\Phi_{\alpha}$上%
+的无限小非齐次Lorentz变换, 它们自动满足对易关系(\ref{2.4.18})\yzx (\ref{2.4.24}):
+\begin{align}
+[J_{0}^{i},J_{0}^{j}]  &= \mi\epsilon_{ijk}J_{0}^{k}  \:, \label{3.3.4}\\
+[J_{0}^{i},K_{0}^{j}]  &= \mi\epsilon_{ijk}K_{0}^{k}  \:, \label{3.3.5}\\
+[K_{0}^{i},K_{0}^{j}]  &= -\mi\epsilon_{ijk}J_{0}^{k}  \:, \label{3.3.6}\\
+[J_{0}^{i},P_{0}^{j}]  &= \mi\epsilon_{ijk}P_{0}^{k}     \:, \label{3.3.7}\\
+[K_{0}^{i},P_{0}^{j}]  &= -\mi H_{0}\updelta_{ij}        \:, \label{3.3.8}\\
+[J_{0}^{i},H_{0}]  &= [P_{0}^{i},H_{0}]=[P_{0}^{i},P_{0}^{j}]=0 \:, \label{3.3.9}\\
+[K_{0}^{i},H_{0}]  &= -\mi P_{0}^{i} \:, \label{3.3.10}%
+\end{align}
+其中$i,j,k$等取遍值$1,2,3$, $\epsilon_{ijk}$是全反对称量, 并有$\epsilon_{123}=+1$.
+
+以相同的方式, 我们可以定义一组``精确生成元'', 算符$\bP,\bJ,\bK$以及全哈密顿量$H$,
+它们一起生成了某个态上的变换(\ref{3.1.1}),  例如``入''态. (正如已经提及的, 尽管并非显而易见, 但同样的算符作用在``出''态生成了相同的变换.) 群结构告诉我们, 这些精确生成元满足相同的对易关系:
+\begin{align}
+[J^{i},J^{j}] &= \mi\epsilon_{ijk}J^{k} \:, \label{3.3.11} \\
+[J^{i},K^{j}] &= \mi\epsilon_{ijk}K^{k} \:, \label{3.3.12} \\
+[K^{i},K^{j}] &= -\mi\epsilon_{ijk}J^{k} \:, \label{3.3.13} \\
+[J^{i},P^{j}] &= \mi\epsilon_{ijk}P^{k} \:, \label{3.3.14} \\
+[K^{i},P^{j}] &= -\mi H\updelta_{ij}\:, \label{3.3.15}\\
+[J^{i},H]  &= [P^{i},H]=[P^{i},P^{j}]=0 \:,\label{3.3.16} \\
+[K^{i},H]  &=-\mi P^{i} \:. \label{3.3.17}%
+\end{align}
+在几乎所\marginpar[\flushright{\small[119]\hspace*{5mm}}]{{\small\hspace*{5mm}[119]}}有已知的场论中, 相互作用的效应是通过在哈密顿量加上相互作用项$V$引入, 与此同时保持动量和角动量不变:
+\begin{equation}
+H=H_{0}+V\:, \qquad \bP=\bP_{0}\:,\qquad\bJ=\bJ_{0}\:. \label{3.3.18}%
+\end{equation}
+(唯一已知的例外是存在拓扑扭挠(twisted)场的理论, 例如有磁单极的理论, 在这些理论中, 态的角动量会依赖相互作用.) 方程(\ref{3.3.18})意味着, 对易关系(\ref{3.3.11}), (\ref{3.3.14})和(\ref{3.3.16})成立的前提是相互作用与自由粒子的动量算符和角动量算符都对易
+\begin{equation}
+\lbrack V,\bP_{0}]=[V,\bJ_{0}]=0\:. \label{3.3.19}%
+\end{equation}
+很容易从\,Lippmann-Schwinger\,方程(\ref{3.1.16}), 或者等价地从(\ref{3.1.13})看出, 作用在``入''态(和``出''态)上且生成平移和旋转的算符就是$\bP_{0}$和$\bJ_{0}$. 我们也很容易看到, $\bP_{0}$和$\bJ_{0}$与方程(\ref{3.2.6})定义的算符$U(t,t_{0})$对易, 所以它们与$S$-算符$U(\infty,-\infty)$对易. 更进一步, 我们也已经知道$S$-算符与$H_{0}$对易的原因是(\ref{3.2.7})中的两项均有能量守恒$\updelta$-函数. 这样, 只需证明增速生成元$\bK_{0}$ 与$S$-算符对易即可.
+
+另一方面, {\KAI{不}}可能让增速生成元$\bK$等于对应的自由粒子的增速生成元$\bK_{0}$, 这是因为如果那样的话, 方程(\ref{3.3.15})和(\ref{3.3.8})将给出$H=H_{0}$, 这在有相互作用时显然是不正确的. 因此, 当我们给$H_{0}$加上相互作用$V$时, 也必须要在增速生成元上加一个修正$\bW$:
+\begin{equation}
+\bK=\bK_{0}+\bW\:. \label{3.3.20}%
+\end{equation}
+在剩下的对易关系中, 我们集中考虑方程(\ref{3.3.17}), 现在可以把它写成如下形式
+\begin{equation}
+[\bK_{0},V]=-[\bW,H]\:. \label{3.3.21}%
+\end{equation}
+仅有条件(\ref{3.3.21})是没有意义的, 因为对任意的$V$, 通过将$\bW$在$H$-本征矢$\Psi_{\alpha}$和$\Psi_{\beta}$之间的矩阵元给定为%
+$-(\Psi_{\beta},[\bK_{0},V]\Psi_{\alpha})/(E_{\beta}-E_{\alpha})$, 我们总可以这样来定义它. 记住, 一个理论的\,Lorentz\,不变性的关键不是应该存在一组满足方程(\ref{3.3.11})\yzx (\ref{3.3.17})的精确生成元, 而是这些算符应该以相同的方式作用在``入''态和``出''态上; 仅仅找到满足方程(\ref{3.3.21})的算符$\bK$是不够的. 然而, 如果我们要求$W$的矩阵元应该是能量的光滑函数, 并且没有形如$(E_{\beta}-E_{\alpha})^{-1}$的奇点, 方程(\ref{3.3.21}) 确实就变得重要了. 现在我们将证明, 方\marginpar[\flushright{\small[120]\hspace*{5mm}}]{{\small\hspace*{5mm}[120]}}程(\ref{3.3.21}), 连同$\bW$的一个合适的光滑条件, 确实暗示着剩下的\,Lorentz\,不变条件$[\bK_{0},S]=0$.
+
+为了证明这一点, 考察$K_{0}$与算符$U(t,t_{0})$的对易子, 其中算符$U(t,t_{0})$由方程(\ref{3.2.6})定义, 且$t$和$t_{0}$有限. 利用方程(\ref{3.3.10}) 以及$\bP_{0}$和$H_{0}$对易, 我们得出:
+\[
+[\bK_{0},\exp(\mi H_{0}t)]=t\bP_{0}\exp(\mi H_{0}t)
+\]
+而方程(\ref{3.3.21})(与方程(\ref{3.3.17})等价)给出
+\[
+[\bK,\exp(\mi Ht)]=t\bP\exp(\mi Ht)=t\bP_{0}\exp(\mi Ht) \:.
+\]
+这样, $\bK_{0}$与$U$的对易子中的动量算符就被消掉了, 并且我们发现:
+\begin{equation}
+[\bK_{0},U(\tau,\tau_{0})] = -\bW(\tau)U(\tau,\tau
+_{0})+U(\tau,\tau_{0})\bW(\tau_{0})\text{ , } \label{3.3.22}%
+\end{equation}
+其中
+\begin{equation}
+\bW(t)\equiv\exp(\mi H_{0}t)\bW\exp(-\mi H_{0}t)\:.
+\label{3.3.23}%
+\end{equation}
+如果$\bW$在$H_{0}$-本征态之间的矩阵元是能量的函数且足够光滑, 那么在$t\to\pm\infty$时, $\bW(t)$在能量本征态的光滑叠加态上的矩阵元为零, 所以方程(\ref{3.3.22})实际上给出:
+\begin{equation}
+0=[\bK_{0},U(\infty,-\infty)]=[\bK_{0},S] \:,
+\label{3.3.24}%
+\end{equation}
+这正是所要证明的. 这是一个重要结果: $\bW$矩阵元上的光滑条件确保了$\bW(t)$在$t\to\infty$时为零, 再加上方程(\ref{3.3.21}), 这二者给出$S$-矩阵\,Lorentz\,不变性的充分条件. 光滑条件是一个自然条件, 因为它很像$V$的矩阵元使得$V(t)$在$t\to\pm\infty$时为零所需要满足的条件, 而这也正是认可$S$-矩阵这个概念所需要的.
+
+我们也能利用$\tau=0$和$\tau_{0}=\mp\infty$的方程(\ref{3.3.22})来证明
+\begin{equation}
+\bK\Omega(\mp\infty)=\Omega(\mp\infty)\bK_{0} \:,
+\label{3.3.25}%
+\end{equation}
+其中$\Omega(\mp\infty)$是根据(\ref{3.1.13})定义的算符, 它将自由粒子态$\Phi_{\alpha}$变为相应的``入''态或``出''态$\Psi_{\alpha}{}^{\!\pm}$. 另外, 从方程(\ref{3.3.18})和(\ref{3.3.19})可以很容易得出, 上述结果对动量和角动量同样是正确的:
+\begin{align}
+\bP\Omega(\mp\infty)  &=\Omega(\mp\infty)\bP_{0}\:, \label{3.3.26}\\
+\bJ\Omega(\mp\infty)  &=\Omega(\mp\infty)\bJ_{0}\:.
+\label{3.3.27}%
+\end{align}
+最后, 因为所有的$\Phi_{\alpha}$和$\Psi_{\alpha}{}^{\!\pm}$分别是$H_{0}$和$H$的本征态, 且它们有相同的本征值$E_{\alpha}$, 我们有
+\begin{equation}
+H\Omega(\mp\infty)=\Omega(\mp\infty)H_{0}\:. \label{3.3.28}%
+\end{equation}
+方\marginpar[\flushright{\small[121]\hspace*{5mm}}]{{\small\hspace*{5mm}[121]}}程(\ref{3.3.25})\yzx (\ref{3.3.28})证明了, 在我们的假设下, ``入''态和`` 出''态在非齐次\,Lorentz\,变换下的变换确实就像自由粒子态. 另外, 因为都是相似变换, 我们现在可以看到精确生成元$\bK,\bP,\bJ,H$满足的对易关系与%
+$\bK_{0},\bP_{0},\bJ_{0},H_{0}$相同. 这就是在证明$S$-矩阵的\,Lorentz\,不变性时,包含$\bK$的 其他对易关系(\ref{3.3.12}), (\ref{3.3.13})和(\ref{3.3.15}) 无关紧要的原因.
+
+\subsection*{内部对称性}
+
+存在数个对称性, 例如核物理中质子和中子交换下的对称性, 或者粒子和反粒子之间的``荷共轭''对称性, 这些对称性与\,Lorentz\,不变性没有直接关系, 并且在所有惯性系中都相同. 这样的对称变换$T$以幺正算符$U(T)$的形式作用在物理态的\,Hilbert\,空间上, 而这个算符引入的线性变换作用在标记粒子种类的指标上
+\begin{align}
+U(T)\Psi_{p_{1}\sigma_{1}n_{1};p_{2}\sigma_{2}n_{2};\cdots
+} &= \sum_{\bar{n}_{1}\bar{n}_{2}\cdots}
+\mathscr{D}_{\bar{n}_{1}n_{1}}(T)\mathscr{D}_{\bar{n}_{2}n_{2}}(T)\cdots\nonumber\\
+& \quad \times\Psi_{p_{1}\sigma_{1}\bar{n}_{1};p_{2}\sigma_{2}\bar{n}%
+_{2};\cdots}\:. \label{3.3.29}%
+\end{align}
+依照第2章中的普遍讨论, $U(T)$必须满足群的乘法规则
+\begin{equation}
+U(\bar{T})U(T)=U(\bar{T}T)\text{ , } \label{3.3.30}%
+\end{equation}
+其中$\bar{T}T$是先进行变换$T$再进行某个其他的变换$\bar{T}$得到的变换. 用$U(\bar{T})$作用方程(\ref{3.3.29}), 我们看到矩阵$\mathscr{D}$ 满足相同的规则
+\begin{equation}
+\mathscr{D}(\bar{T})\mathscr{D}(T) = \mathscr{D}(\bar{T}T) \:. \label{3.3.31}%
+\end{equation}
+另外, 用$U(T)$作用两个不同的``入''态或两个不同的``出''态, 然后取这些态的标量积, 并使用归一化条件(\ref{3.1.2}), 我们看到$\mathscr{D}(T)$必须是幺正的
+\begin{equation}
+\mathscr{D}^{\dag}(T) =\mathscr{D}^{-1}(T) \:. \label{3.3.32}%
+\end{equation}
+最后, 用$U(T)$作用一个``出''态和一个``入''态, 然后取这两个态的标量积, 这样可以证明$\mathscr{D}$与$S$-矩阵对易, 也就是说
+\begin{align}
+& \sum_{\bar{N}_{1}\bar{N}_{2}\cdots} \sum_{\bar{N}_{1}^{\prime}\bar{N}_{2}^{\prime}\cdots}
+\mathscr{D}_{\bar{N}_{1}^{\prime}n_{1}^{\prime}}^{\ast}(T)
+\mathscr{D}_{\bar{N}_{2}^{\prime}n_{2}^{\prime}}^{\ast}(T)\cdots
+\: \mathscr{D}_{\bar{N}_{1}n_{1}}(T) \mathscr{D}_{\bar{N}_{2}n_{2}}(T) \cdots\nonumber\\
+& \qquad\times S_{p_{1}^{\prime}\sigma_{1}^{\prime}\bar{N}_{1}^{\prime}
+;\,p_{2}^{\prime}\sigma_{2}^{\prime}\bar{N}_{2}^{\prime};\cdots\:,\:
+p_{1}\sigma_{1}\bar{N}_{1} ;\,p_{2}\sigma_{2}\bar{N}_{2};\cdots} \nonumber\\
+& \qquad=S_{p_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime};\,p_{2}^{\prime
+}\sigma_{2}^{\prime}n_{2}^{\prime};\cdots \:,\: p_{1}\sigma_{1}%
+n_{1};\,p_{2}\sigma_{2}n_{2};\cdots}\:. \label{3.3.33}%
+\end{align}
+如前所\marginpar[\flushright{\small[122]\hspace*{5mm}}]{{\small\hspace*{5mm}[122]}}述, 这是当我们说一个理论在内部对称性$T$下不变的定义, 为了导出方程(\ref{3.3.33}), 我们仍然需要证明在``入''态和``出''态上诱导出变换(\ref{3.3.29})的是{\KAI{同一个}}幺正算符$U(T)$. 如果存在``非微扰''算符$U_{0}(T)$, 它在自由粒子态上诱导出这些变换,
+\begin{equation}
+U_{0}(T)\Phi_{p_{1}\sigma_{1}n_{1};p_{2}\sigma_{2}n_{2};\cdots}%
+=\sum_{\bar{N}_{1}\bar{N}_{2}\cdots}\mathscr{D}_{\bar{N}_{1}n_{1}%
+}(T)\mathscr{D}_{\bar{N}_{2}n_{2}}(T)\cdots\Phi_{p_{1}\sigma_{1}%
+\bar{N}_{1};p_{2}\sigma_{2}\bar{N}_{2};\cdots} \label{3.3.34}%
+\end{equation}
+且该算符与哈密顿量的自由粒子部分和相互作用部分均对易
+\begin{gather}
+U_{0}^{-1}(T)H_{0}U_{0}(T)=H_{0} \:, \label{3.3.35}\\
+U_{0}^{-1}(T)VU_{0}(T)=V\:. \label{3.3.36}%
+\end{gather}
+那么它就是我们所说的那种情况. 无论是从\,Lippmann-Schwinger\,方程(\ref{3.1.17})还是从(\ref{3.1.13}), 我们看到算符$U_{0}(T)$会在``入''态和``出''态上诱导出变换(\ref{3.3.29}), 就像它在自由粒子态上的作用, 这使得我们可以通过把$U(T)$取成$U_{0}(T)$来导出方程(\ref{3.3.29}).
+
+物理上非常重要的一个特殊情况是单参数\,Lie\,群, 其中$T$是单参数$\theta$的函数, 并有
+\begin{equation}
+T(\bar{\theta})T(\theta)=T(\bar{\theta}+\theta)\:. \label{3.3.37}%
+\end{equation}
+就像在\,\ref{sec:2.2}\,节中给出的, 在这种情况下, 相应的\,Hilbert\,空间算符必须取如下形式
+\begin{equation}
+U(T(\theta))=\exp(\mi Q\theta) \:, \label{3.3.38}%
+\end{equation}
+其中$Q$是厄米算符. 同样地, 矩阵$\mathscr{D}(T)$必须取
+\begin{equation}
+\mathscr{D}_{n^{\prime}n}(T(\theta))=\updelta_{n^{\prime}n}\exp(\mi q_{n}\theta) \:, \label{3.3.39}%
+\end{equation}
+其中$q_{n}$是一组与粒子种类相关的实数. 由方程(\ref{3.3.33})很容易看出$q$守恒: 除非
+\begin{equation}
+q_{n_{1}^{\prime}}+q_{n_{2}^{\prime}}+\cdots=q_{n_{1}}+q_{n_{2}}+\cdots\:, \label{3.3.40}%
+\end{equation}
+否则$S_{\beta\alpha}$为零. 这类守恒律的经典例子是电荷守恒. 另外, 在所有已知的过程中, 重子数守恒(重子数即重子的数目, 诸如质子、 中子和超子, 减去它们反粒子的数目), 轻子数守恒(轻子数即轻子的数目, 诸如电子、 $\mu$子、 $\tau$子和中微子, 减去它们反粒子的数目), 但我们将在卷\,II\,看到, 这些守恒律被认为仅是非常好的近似. 同样类型的还有一些守恒律已经确定只是近似, 例如被\marginpar[\flushright{\small[123]\hspace*{5mm}}]{{\small\hspace*{5mm}[123]}}称为奇异数的守恒量, 引入它是为了解释\,Rochester\,和\,Butler\textsuperscript{\cite{5}} 于\,1947\,年在宇宙射线中发现的一类寿命相对长的粒子. 例如, 现在被称为{}$^*$\footnote{$^*${}上标表示电荷, 单位是电子荷的绝对值. ``超子''是奇异数非零且重子数为\,1\,的粒子. }%
+$K^{+}$和$K^{0}$的介子, 它们被赋予奇异数$+1$, 超子$\Lambda^{0},\Sigma^{+},\Sigma^{0},\Sigma^{-}$被赋予奇异数$-1$, 而更熟悉的质子, 中子和$\pi$ 介子(或称$\pi$子), 它们的奇异数取$0$. 强相互作用中的奇异数守恒解释了为什么奇异粒子总是伴随着另一个奇异粒子产生,
+就像反应$\pi^{+}+n\to K^{+}+\Lambda^{0}$, 而奇异粒子衰变成非奇异粒子的反应, 例如$\Lambda^{0}\to p+\pi^{-}$和$K^{+}\to\pi^{+}+\pi^{0}$, 这些反应的速率比较慢, 这则说明奇异数不守恒的相互作用非常弱.
+
+``非阿贝尔''对称性, 即生成元互相不对易的对称性, 它一个经典例子是同位旋对称性, 它是在\,1937\,年基于一个实验提出的,\textsuperscript{\cite{6}} 这个实验表明强质子\lzx 质子力与质子和中子之间的力非常相似.\textsuperscript{\cite{7}} 数学上, 这个群是$SU(2)$, 类似于三维旋转群的覆盖群; 它的生成元记做$t_{i}$, 其中$i=1,2,3$, 并满足类似(\ref{2.4.18}) 的对易关系:
+\[
+\lbrack t_{i},t_{j}]=\mi\epsilon_{ijk}t_{k}\:.%
+\]
+就像旋转不变性要求简并自旋多重态一样, 在同位旋对称性得到遵循的范围内, 它要求粒子构成简并多重态, 这些态用整数或半整数$T$标记, 它有$2T+1$个分量, 这些分量用$t_{3}$的取值加以区分. 核子$p$和$n$被纳入到$T=\frac{1}{2}$的简并多重态中, 且$t_{3}=\frac{1}{2},-\frac{1}{2}$; $\pi$ 介子$\pi^{+},\pi^{0}$ 和$\pi^{-}$被纳入到$T=1$的简并多重态中, 且有$t_{3}=+1,0,1$; 超子$\Lambda^{0}$是$T=0$的态, 且有$t_{3}=0$. 这些例子表明, 电荷$Q$, 同位旋的第\,3\, 分量$t_{3}$, 超子数$B$, 以及奇异数$S$, 它们之间具有关系:
+\[
+Q=t_{3}+(B+S)/2\:.%
+\]
+这个关系最初是从观测所得的选择定则中推断出来的, 但是Gell-Mann(盖尔曼)和Ne'eman(内埃曼)在\,1960\,年提出了一种解释,\textsuperscript{\cite{8}} 他们认为这是同位旋$\cvec{T}$和``超荷''$Y\equiv B+S$被嵌入在一个更大\,Lie\,代数中的结果, 这个\,Lie\,代数是更大的非阿贝尔内部对称性的\,Lie\,代数, 这个对称性被严重破坏了, 而它所基于的对称群是非阿贝尔群$SU(3)$. 我们将在卷\,II\,看到, 现在, 以强相互作用的现代理论\ezx 量子色动力学的观点来看, 同位旋和$SU(3)$ 对称性均被认为是最轻的两个或三个夸克质量很小的偶然结果.
+
+在推\marginpar[\flushright{\small[124]\hspace*{5mm}}]{{\small\hspace*{5mm}[124]}}导旋转不变性所产生的结果时, 我们发明了一套方法, 借助同样的方法, 对于强相互作用粒子之间的反应, 我们可以得到同位旋对称性产生的影响. 特别的, 对两体反应$A+B\to C+D$, 方程(\ref{3.3.33})要求$S$-矩阵可以写成如下形式(除了同位旋以外, 所有指标都被省略了)
+\[
+S_{t_{C3}t_{D3},t_{A3}t_{B3}}=\sum_{T,t_{3}}C_{T_{C}T_{D}}(Tt_{3};t_{C3}%
+t_{D3})C_{T_{A}T_{B}}(Tt_{3};t_{A_{3}}t_{B3})S_{T}\text{ , }%
+\]
+其中$C_{j_{1}j_{2}}(j\sigma,\sigma_{1}\sigma_{2})$是通常的\,Clebsch-Gordan\,系数,\textsuperscript{\cite{9}} 它表示用自旋为$j_{1}$和$j_{2}$而自旋第\,3\,分量分别为$\sigma_{1}$和$\sigma_{2}$的态%
+合成自旋为$j$且第\,3\,分量为$\sigma$的态时的系数; $S_{T}$是``约化''$S$-矩阵, 它依赖$T$以及所有未写出的动量变量和自旋变量, 但不依赖同位旋第\,3\, 分量$t_{A3},t_{B3},t_{C3},t_{D3}$.  当然, 就像同位旋不变性的其他所有效应一样, 这仅是个近似, 这是因为电磁(以及其他)相互作用并不遵守这个对称性, 例如属于同一同位旋多重态的不同成员, 像$p$和$n$, 它们的电荷不同且有轻微的质量差异.
+
+\subsection*{宇称}
+
+在变换$x\to-x$的对称性确实有效的范围内, 必存在幺正算符$\mathsf{P}$, 使得``入''态和``出''态在这个幺正算符下均按照单粒子态的直积变换:
+\begin{equation}
+\mathsf{P}\Psi_{p_{1}\sigma_{1}n_{1};\,p_{2}\sigma_{2}n_{2};\cdots}^{\pm}
+=\eta_{n_{1}}\eta_{n_{2}}\cdots\Psi_{\mathscr{P}p_{1}%
+\sigma_{1}n_{1};\mathscr{P}p_{2}\sigma_{2}n_{2};\cdots}^{\pm}\label{3.3.41}%
+\end{equation}
+其中$\eta_{n}$是种类为$n$的粒子的内禀宇称, 而$\mathscr{P}$反转了$p^{\mu}$的空间分量. (这是针对有质量粒子的; 对于无质量粒子的修正是显然的.) 那么,
+$S$-矩阵的宇称守恒条件就是:
+\begin{gather}
+S_{p_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime};\,p_{2}^{\prime}\sigma
+_{2}^{\prime}n_{2}^{\prime};\cdots\:,\:p_{1}\sigma_{1}n_{1};\,
+p_{2}\sigma_{2}n_{2};\cdots}=\eta_{n_{1}^{\prime}}^{\ast}\eta_{n_{2}^{\prime
+}}^{\ast}\cdots\eta_{n_{1}}\eta_{n_{2}}\cdots\nonumber\\
+\times S_{\mathscr{P}p_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime
+};\mathscr{P}p_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime};\cdots\text{
+},\text{ }\mathscr{P}p_{1}\sigma_{1}n_{1};\mathscr{P}p_{2}\sigma_{2}%
+n_{2};\cdots}\text{\ .}\label{3.3.42}%
+\end{gather}
+和内部对称性一样, 将以这种方式作用在自由粒子态上的算符定义为$\mathsf{P}_{0}$, 如果$\mathsf{P}_{0}$与$V$和$H_{0}$对易, 那么就存在满足方程(\ref{3.3.41})的算符$\mathsf{P}$.
+
+相位$\eta_{n}$可以从动力学模型或者实验中推断出来, 但是这二者都不能唯一地确定这些$\eta$. 这是因为我们总可以通过将宇称算符$\mathsf{P}$与任意守恒的内部对称算符结合来重新定义它. 例如, 如果$\mathsf{P}$守恒, 那么
+\[
+\mathsf{P}^{\prime}\equiv\mathsf{P}\exp(\mi\alpha B+\mi\beta L+\mi\gamma Q)
+\]
+也守\marginpar[\flushright{\raisebox{5ex}[0pt]{{\small[125]\hspace*{5mm}}}}]{{\raisebox{5ex}[0pt]{\small\hspace*{5mm}[125]}}}恒, 其中$B,L$和$Q$分别是重子数, 轻子数和电荷, 而$\alpha,\beta$和$\gamma$是任意实相位; 因此, $\mathsf{P}$和$\mathsf{P}^{\prime}$ 都可以被称为宇称算符. 中子, 质子和电子在$B,L$和$Q$%
+的组合上有着不同的取值, 所以, 通过合理地选择相位$\alpha,\beta$和$\gamma$, 我们可以将全部三种粒子的内禀宇称定义为$+1$.
+然而, 一旦我们做出了这个选择, 其他粒子, 诸如带电的$\pi$子(可以通过$n\to p+\pi^{-}$的跃迁产生), 它们的内禀宇称就不再是任意的. 另外, 类似中性$\pi^{0}$这种不带守恒量子数的粒子, 它们的内禀宇称总是有意义的.
+
+以上的讨论帮助我们阐明了内禀宇称是否必须要取值$\pm1$这个问题. %
+声称空间反演$\mathsf{P}$有群乘法法则$\mathsf{P}^{2}=1$很容易; 但是, 守恒的宇称算符可能不是这个宇称算符, 而是与它相差某种相位变换的算符. 在任何情况下, 无论是否$\mathsf{P}^{2}=1$, 算符$\mathsf{P}^{2}$的性质就像一个内部对称变换:
+\[
+\mathsf{P}^{2}\Psi_{p_{1}\sigma_{1}n_{1};p_{2}\sigma_{2}n_{2};\cdots
+}^{\pm}=\eta_{n_{1}}^{2}\eta_{n_{2}}^{2}\cdots\Psi_{\mathscr{P}p_{1}%
+\sigma_{1}n_{1};\mathscr{P}p_{2}\sigma_{2}n_{2};\cdots}^{\pm}\:.%
+\]
+如果这个内部对称性是相位变换的连续对称群的一部分, 例如$\alpha,\beta,\gamma$为任意值的相位%
+$\exp(\mi\alpha B+\mi\beta L+\mi\gamma Q)$的乘法群, 那么它的平方根的倒数也必须是这个群的群元, 记其为$I_{P}$, 它有$I_{P}^{2}P^{2}=1$以及$[I_{P},P]=0$. (例如, 如果$\mathsf{P}^{2}=\exp(\mi\alpha B+\cdots)$, 那么取$I_{P}=\exp(-\frac{1}{2}\mi\alpha B+\cdots)$.) 这样, 我们就可以定义新的宇称算符$\mathsf{P}^{\prime}\equiv\mathsf{P}I_{P}$, 它满足$\mathsf{P}^{\prime2}=1$. 在$\mathsf{P}$守恒的范围内, 它也是守恒的, 所以没有什么理由不把{\KAI{这个}}算符称作宇称算符, 在这种情况下, 内禀宇称只能取值$\pm1$.
+
+
+只有一种理论, 不一定总能够通过定义宇称使得所有内禀宇称的值为$\pm1$, 在这种理论中, 有一些离散的内部对称性, 它们不属于任何相位变换的连续对称群.\cite{10} 例如, 角动量守恒的结果之一是, 所有半整数自旋的粒子总数$F$的变化只能是偶数, 从而内部对称算符$(-1)^{F}$守恒. 对于所有已知的半整数自旋粒子, 它们重子数与轻子数之和$B+L$是奇数, 所以就我们目前所知, $(-1)^{F}=(-1)^{B+L}$. 如果这是正确的, 那么$(-1)^{F}$就是连续对称群的一部分, 该群由$\alpha$ 为任意实数的算符$\exp(\mi\alpha(B+L))$构成, 它有平方根倒数$\exp(-\mi\alpha(B+L)/2)$. 在这种情况下, 如果$\mathsf{P}^{2}=(-1)^{F}$,
+那\marginpar[\flushright{\small[126]\hspace*{5mm}}]{{\small\hspace*{5mm}[126]}}么对$\mathsf{P}$ 可以重定义使得所有的内禀宇称是$\pm1$. 然而, 如果发现一个粒子, 它的自旋是半整数但$B+L$是偶数(例如所谓的\,Majorana\,中微子, 它的$j=\frac{1}{2}$且$B+L=0$), 那么就有可能存在$\mathsf{P}^{2}=(-1)^{F}$,  但不能通过重定义宇称算符本身使得本征值为$\pm1$. 当然, 在这种情况下, 我们有$\mathsf{P}^{4}=1$, 这使得所有粒子的内禀宇称为$\pm1$或(像\,Majorana\,中微子那样)$\pm\mi$.
+
+从方程(\ref{3.3.42})中得出, 如果末态中的内禀宇称之积等于初态的内禀宇称之积, 或者只相差一个负号, 那么$S$-矩阵将分别是全部\,3\,-动量的偶函数或奇函数. 例如, 在\,1951\,年观测到,\textsuperscript{\cite{11}} 在反应$\pi^{-}+d\to n+n$中, $\pi^{-}d$原子的$\ell=0$基态上的$\pi$介子可以被氘核吸收. (在相对论物理中可以用非相对论物理中的方式使用轨道角动量量子数$\ell$, 我们会在\,\ref{sec:3.7}\,节进行讨论.) 初态具有总角动量$j=1$($\pi$介子和氘核分别有自旋\,0\, 和\,1), 所以末态的总角动量必须有$\ell=1$, 并且中子的总自旋$s=1$. (角动量守恒还允许其他可能性: $\ell=1,s=0;\,\ell=0,s=1$和$\ell=2,s=1$, 这些可能性被末态必须关于两个中子反对称这一要求所禁戒.) 由于末态有$\ell=1$, 矩阵元在3-动量方向的反转下为奇, 所以我们可以得出这样的结论, 在这个反应中, 粒子内禀宇称必须有如下关系:
+\[
+\eta_{d}\eta_{\pi^{-}}=-\eta_{n}^{2}\:.%
+\]
+已知氘核是质子和中子的轨道角动量为偶(主要是$\ell=0$)的束缚态, 并且, 正如我们所看到的, 我们可以让中子和质子有相同的宇称, 所以$\eta_{d}=\eta_{n}^{2}$, 于是我们有$\eta_{\pi^{-}}=-1$; 即, 负$\pi$介子是{\KAI{赝标量}}粒子. $\pi^{+}$和$\pi^{0}$也被发现有负宇称, 这正是从这三个粒子间的对称性(同位旋不变性)所预期的.
+
+$\pi$介子的负宇称带来了一些引人注目的结果. 能够衰变成三个$\pi$介子的零自旋粒子必须有内禀宇称$\eta_{\pi}^{3}=-1$, 这是因为, 在衰变粒子的静止Lorentz 参考系中, 旋转不变性只允许矩阵元是三个$\pi$介子动量的标量积的函数, 所有这些标量积在全部动量的反转下为偶. (因为$\bp_{1}+\bp_{2}+\bp_{3}=0$, 由三个$\pi$ 介子动量构成的三重标量积$\bp_{1}\cdot(\bp_{2}\times\bp_{3})$ 为零.) 基于同样的原因, 衰变成两个$\pi$介子的零自旋粒子必须具有内禀宇称$\eta_{\pi}^{2}=+1$. 特别的, 在\,20\,世纪\,40\,年代后期发现的奇异粒子中,
+似乎存在两个不同的零自旋粒子(从\marginpar[\flushright{\small[127]\hspace*{5mm}}]{{\small\hspace*{5mm}[127]}}它们衰变产物的角分布中推断出来的): 一个是$\tau$子, 通过衰变成三个$\pi$子被识别出来, 因而被赋予宇称$-1$, 而另一个是$\theta$ 子, 通过衰变成两个$\pi$介子被识别出来, 因而被赋予宇称$+1$. 这其中的问题是, 随着对$\tau$和$\theta$进行更细致的研究, 越发地认为它们具有相同的质量和寿命. 在尝试了很多解决方案之后, 李政道和杨振宁最终在\,1956\, 年斩断了戈尔迪之结, 提出$\tau$和$\theta$ 是同一种粒子, (现在被称为$K^{\pm}$ 粒子) 并且宇称在导致它衰变的弱作用中根本不是守恒的.\textsuperscript{\cite{12}}
+
+我们会在本章下一节更详细地看到, 物理过程$\alpha\to\beta$($\alpha\neq\beta$)的速率正比于$\lvert S_{\beta\alpha}\rvert ^{2}$, 比例因子在所有\,3\,-动量的反转下不变. 只要态$\alpha$和$\beta$包含的每种粒子的数目是确定的, 方程(\ref{3.3.42})中的相因子就对$\lvert S_{\beta\alpha}\rvert^{2}$ 没有影响, 所以方程(\ref{3.3.42})意味着$\alpha\to\beta$的速率在所有3-动量方向的反转下不变. 而我们已经看到, 对于$K$介子衰变到两个$\pi$介子还是三个$\pi$ 介子, 这是旋转不变性的平庸结果,  但在更加复杂过程中, 这确实是一个不平庸的约束. 例如, 按照李政道和杨振宁在理论上的建议, 吴健雄与美国国家标准局的一个组测量了极化钴源的$\beta$衰变%
+$\mathrm{Co}^{60}\to\mathrm{Ni}^{60}+e^{-}+\bar{\nu}$中末态电子的角分布.\textsuperscript{\cite{13}} (在这个实验中没有尝试测量反中微子或镍荷的角动量.) 他们发现电子发射的优先方向与衰变核的自旋方向相反, 如果衰变速率在所有\,3\,-动量的反转下不变, 这显然是不可能的. 在正$\mu$子(它在产生过程$\pi^{+}\to\mu^{+}+\nu$ 中被极化)衰变到一个正电子, 中微子和一个反中微子的过程中发现了相似的结果. 沿着这条道路, 宇称在导致这些衰变的弱相互作用中不守恒变得明确起来. 然而, 基于将在\,\ref{sec:12.5}\,节中讨论的一些原因, 在强作用和电磁作用中, 宇称{\KAI{是}}守恒的, 因此它在理论物理中继续扮演着重要的角色.
+
+\subsection*{时间反演}
+
+我们在\,\ref{sec:2.6}\,节看到, 时间反演算符$\mathsf{T}$作用在单粒子态$\Psi_{p,\sigma,n}$上将给出自旋和动量反转的态%
+$\Psi_{\mathscr{P}p,-\sigma,n}$以及相因子$\zeta_{n}(-1)^{j-\sigma}$. 像往常一样, 多粒子态按照单粒子态的直积变换, 与以往不同的是, 由于这是时间反演变换, 我们预期``入''态和``出''态会交换:
+\begin{equation}
+\mathsf{T}\Psi_{p_{1}\sigma_{1}n_{1};p_{2}\sigma_{2}n_{2};\cdots
+}^{\pm}=\zeta_{n_{1}}\left(  -1\right)  ^{j_{1}-\sigma_{1}}\zeta_{n_{2}%
+}\left(  -1\right)  ^{j_{2}-\sigma_{2}}\cdots\Psi_{\mathscr{P}p_{1}%
+-\sigma_{1}n_{1};\mathscr{P}p_{2}-\sigma_{2}n_{2};\cdots}^{\mp}\:.\label{3.3.43}%
+\end{equation}
+(再重\marginpar[\flushright{\raisebox{4ex}[0pt]{{\small[128]\hspace*{5mm}}}}]{{\raisebox{4ex}[0pt]{\small\hspace*{5mm}[128]}}}申一次, 这是针对有质量粒子的, 对无质量粒子的修正是显然的.) 将这个假设缩写成如下方式将是方便的
+\begin{equation}
+\mathsf{T}\Psi_{\alpha}^{\pm}=\Psi_{\mathscr{T}\alpha}^{\mp} \:, \label{3.3.44}%
+\end{equation}
+其中$\mathscr{T}$表示对\,3\,-动量和自旋符号反号并乘以方程(\ref{3.3.43})中给出的相因子. 因为$\mathsf{T}$是反幺正的, 我们有
+\begin{equation}
+(\Psi_{\beta}^{-},\Psi_{\alpha}^{+})=(\mathsf{T}\Psi_{\alpha}^{+},\mathsf{T}\Psi_{\beta}^{-})\:,\label{3.3.45}
+\end{equation}
+所以$S$-矩阵在时间反演下不变的条件是
+\begin{equation}
+S_{\beta,\alpha}=S_{\mathscr{T}\alpha,\mathscr{T}\beta}\label{3.3.46}%
+\end{equation}
+或者再详细些
+\begin{align}
+&  S_{p_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime};\,p_{2}^{\prime}\sigma
+_{2}^{\prime}n_{2}^{\prime};\cdots\:,\: p_{1}\sigma_{1}n_{1}%
+;\,p_{2}\sigma_{2}n_{2};\cdots}\nonumber\\
+& =\zeta_{n_{1}^{\prime}}\left(  -1\right)  ^{j_{1}^{\prime}%
+-\sigma_{1}^{\prime}}\zeta_{n_{2}^{\prime}}(-1)^{j_{2}^{\prime}-\sigma
+_{2}^{\prime}}\cdots\zeta_{n_{1}}^{\ast}(-1)^{j_{1}-\sigma_{1}}\zeta_{n_{2}%
+}^{\ast}(-1)^{j_{2}-\sigma_{2}}\cdots\nonumber\\
+& \qquad \times S_{\mathscr{P}p_{1}-\sigma_{1}n_{1};\mathscr{P}p_{2}%
+-\sigma_{2}n_{2};\cdots\:,\:\mathscr{P}p_{1}^{\prime}-\sigma
+_{1}^{\prime}n_{1}^{\prime};\mathscr{P}p_{2}^{\prime}-\sigma_{2}^{\prime}%
+n_{2}^{\prime};\cdots}\:.\label{3.3.47}%
+\end{align}
+注意到除了动量和自旋的反转外, 初态和末态的角色调换了, 这正是包含时间反演的对称性所期望的.
+
+只要算符$\mathsf{T}_{0}$在自由粒子态上诱导的时间反演变换
+\begin{equation}
+\mathsf{T}_{0}\Phi_{\alpha}\equiv\Phi_{\mathscr{T}\alpha} \label{3.3.48}%
+\end{equation}
+不仅与自由粒子哈密顿量对易(这是自动的), 而且与相互作用对易:
+\begin{gather}
+\mathsf{T}_{0}^{-1}H_{0}\mathsf{T}_{0}=H_{0} \:, \label{3.3.49}\\
+\mathsf{T}_{0}^{-1}V\mathsf{T}_{0}=V \:,\label{3.3.50}%
+\end{gather}
+$S$-矩阵就满足这个变换规则.
+在这种情况下, 我们可以取$\mathsf{T}=\mathsf{T}_{0}$, 并用(\ref{3.1.13})或(\ref{3.1.16})
+证明时间反演算符的作用确实像方程(\ref{3.3.44})中所说的那样. 例如, 用算符$\mathsf{T}$作用\,Lippmann-Schwinger\,方程(\ref{3.1.16}), 并利用方程(\ref{3.3.48})\yzx (\ref{3.3.50}), 我们有
+\[
+\mathsf{T}\Psi_{\alpha}^{\pm}
+=\Phi_{\mathscr{T}\alpha}+[E_{\alpha}-H_{0}\mp \mi\epsilon]^{-1}V\mathsf{T}\Psi_{\alpha}^{\pm} \:,%
+\]
+其中$\pm \mi\epsilon$的\marginpar[\flushright{\small[129]\hspace*{5mm}}]{{\small\hspace*{5mm}[129]}}符号颠倒了是因为$\mathsf{T}$是反幺正的. 这正是$\Psi_{\mathscr{T}\alpha}^{\mp}$的\,Lippmann-Schwinger\,方程, 因此这验证了方程(\ref{3.3.44}). 类似地, 因为$\mathsf{T}$反幺正, 它改变了$\Omega(t)$的指数中$\mi$的符号, 使得
+\[
+\mathsf{T\Omega(-\infty)}\Phi_{\alpha}=\Omega(\infty)\Phi_{\mathscr{T}\alpha} \:,
+\]
+又一次给出了方程(\ref{3.3.44}).
+
+与宇称守恒的情况相反, 时间反演不变条件(\ref{3.3.46})一般{\KAI{不}}会告诉我们过程$\alpha\to\beta$的速率%
+与过程$\mathscr{T}\alpha\to\mathscr{T}\beta$相同. 然而, 当$S$-矩阵取如下形式,
+\begin{equation}
+S_{\beta\alpha}=S_{\beta\alpha}^{(0)}+S_{\beta\alpha}^{(1)}\text{
+, }\label{3.3.51}%
+\end{equation}
+其中$S^{(1)}$很小, 虽然$S^{(0)}$在一般情况下有比$S^{(1)}$大得多的矩阵元. 但当$S^{(0)}$对于某些感兴趣的特定过程的矩阵元碰巧为零时, 会有类似的情况存在. (例如, 这个过程可能是核$\beta$衰变, %
+$N\to N^{\prime}+e^{-}+\bar{\nu}$, 其中$S^{(0)}$是核的强作用和电磁作用单独产生的$S$-矩阵, 而$S^{(1)}$是弱作用对$S$-矩阵的修正. \ref{sec:3.5}\, 节将展示, 在这类情况下, ``扭曲波\,Born\,近似''是如何导出形如(\ref{3.3.51})的$S$-矩阵. 在某些情况下, $S^{(0)}$就是单位算符.) 取到$S^{(1)}$的一阶, $S$-算符的幺正条件是
+\[
+1=S^{\dag}S=S^{(0)\dag}S^{(0)}+S^{(0)\dag}S^{(1)}+S^{(1)\dag}S^{(0)}\:.%
+\]
+利用零阶关系$S^{(0)\dag}S^{(0)}=1$, 这给出了$S^{(1)}$的一个实条件(reality condition):
+\begin{equation}
+S^{(1)} = -S^{(0)}S^{(1)\dag}S^{(0)}\:.\label{3.3.52}%
+\end{equation}
+如果$S^{(1)}$和$S^{(0)}$都满足时间反演条件(\ref{3.3.46}), 那么这可以写成如下的形式
+\begin{equation}
+S_{\beta\alpha}^{(1)}=-\int \dif\gamma\int \dif\gamma^{\prime}\: S_{\beta\gamma^{\prime}}^{(0)} \:
+S_{\mathscr{T}\gamma^{\prime}\mathscr{T}\gamma}^{(1)\ast}\:S_{\gamma\alpha}^{(0)}\:.\label{3.3.53}%
+\end{equation}
+因为$S^{(0)}$是幺正的, 所以如果对末态和初态关于$S^{(0)}$的完备集$\mathscr{I}$%
+和$\mathscr{F}$求和, 那么过程$\alpha\to\beta$的速率与过程$\mathscr{T}\alpha\to\mathscr{T}\beta$的速率相同. (这里的``完备''是指当$S_{\alpha^{\prime}\alpha}^{(0)}$非零时, 若$\alpha$或$\alpha^{\prime}$处在$\mathscr{I}$中, 则这两个态均在$\mathscr{I}$中, 对$\mathscr{F}$ 类似.) 在最简单的情况下, 我们有分别仅由一个态构成的``完备''集$\mathscr{I}$和$\mathscr{F}$; 即, 初态和末态分别是$S^{(0)}$的本征值为$\me^{2\mi\delta_{\alpha}}$ 和$\me^{2\mi\delta_{\beta}}$的本征矢. ($\delta_{\alpha}$和$\delta_{\beta}$是所谓的``相移''; 因为$S^{(0)}$ 幺正, 所以它们是实的.) 在这种情况下, 方程(\ref{3.3.53})简单地变成:
+\begin{equation}
+S_{\beta\alpha}^{(1)}=-\me^{2\mi(\delta_{\alpha}+\delta_{\beta}%
+)}S_{\mathscr{T}\beta\mathscr{T}\alpha}^{(1)\ast} \:,
+\label{3.3.54}%
+\end{equation}
+并且, 显然过程$\alpha\to\beta$的$S$-矩阵的绝对值%
+与过程$\mathscr{T}\alpha\to\mathscr{T}\beta$的相同. 这样的一个例子是核$\beta$衰变(取了近似: 忽略末态中电子和核之间相对较弱的电磁相互作用), 因为初态和末态都是强相互作用$S$-矩阵($\delta_{\alpha}=\delta_{\beta}=0$)的本征态. 因此, 如果时间反演不变性是被遵守的, 那么如果我们反转所有粒子的动量和自旋
+$z$-分量$\sigma$, $\beta$衰变的微分速率应该是不变的. 这个预测与\,1956\,年发现宇称不守恒的实验\textsuperscript{\cite{13,14}}{\KAI{并不}}矛盾; 例如, 时间反演不变与衰变$\mathrm{Co}^{60}\to\mathrm{Ni}^{60}+e^{-}+\bar{\nu}$中%
+电子优先以$\mathrm{Co}^{60}$自旋的反方向发射的观察结果相容. 我们会在下文中看到, 违反时间反演不变性的间接证据在\,1964\,年显现出来, 但时间反演不变在弱相互作用, 强相互作用和电磁作用中依旧是一个有用的近似对称性.
+
+在某些情况下, 我们可以取$\mathscr{T}\alpha=\alpha$和$\mathscr{T}\beta=\beta$的态为基, 这样方程(\ref{3.3.54})变成
+\begin{equation}
+S_{\beta\alpha}^{(1)}=-\me^{2\mi(\delta_{\alpha}+\delta_{\beta})}S_{\beta\alpha}^{(1)\ast} \:,\label{3.3.55}%
+\end{equation}
+这就是说$\mi S_{\beta\alpha}^{(1)}$的相位是$\delta_{\alpha}+\delta_{\beta}$整除$\uppi$后的余数. 这被称为\textit{Watson} (沃森)
+{\KAI{定理}}.\textsuperscript{\cite{15}} 在不同末态发生干涉的过程中可以测量出方程(\ref{3.3.54})或(\ref{3.3.55})中的相位. 例如, 在自旋$1/2$的超子$\Lambda$到一个核子和一个$\pi$介子的衰变中, 末态的轨道角动量仅能为$\ell=0$或$\ell=1$; $\pi$介子相对$\Lambda$自旋的角分布包含了这些态的干涉, 因此根据Watson定理, 这个角分布依赖于它们的相移差$\delta_{s}-\delta_{p}$.
+
+\subsection*{$\mathsf{PT}$}
+
+尽管\,1957\,年宇称破坏的实验并没有否认时间反演不变性, 但它们确实立刻表明$\mathsf{PT}$不守恒. 如果守恒, 基于与$\mathsf{T}$相同的理由, 它必须是反幺正算等, 所以在类似核$\beta$衰变的过程中,  它的效应将取类似于方程(\ref{3.3.54})的形式:
+\[
+S_{\beta\alpha}^{(1)}=-\me^{2\mi(\delta_{\alpha}+\delta_{\beta})}
+S_{\mathscr{PT}\beta\mathscr{PT}\alpha}^{(1)\ast} \:,
+\]
+其中$\mathscr{PT}$反\marginpar[\flushright{\small[131]\hspace*{5mm}}]{{\small\hspace*{5mm}[131]}}转所有自旋$z$-分量的符号, 但{\KAI{不再}}反转所有的动量. 忽略末态的\,Coulomb\,相互作用, 那么, 它将得出这样的结果: 对于衰变$\mathrm{Co}^{60}\to\mathrm{Ni}^{60}+e^{-}+\bar{\nu}$中发射的电子, $\mathrm{Co}^{60}$自旋方向和反方向都不是它的优先方向, 这与观测到的结果矛盾.
+
+\subsection*{\textsf{C, CP} 和 \textsf{CPT}}
+
+前面提到过, 有一种称为荷共轭的内部对称变换, 它交换粒子和反粒子. 形式上地, 这要求存在幺正算符$\mathsf{C}$,  它在多粒子态上的作用是:
+\begin{equation}
+\mathsf{C}\Psi_{p_{1}\sigma_{1}n_{1};\,p_{2}\sigma_{2}n_{2};\cdots
+}^{\pm}=\xi_{n_{1}}\xi_{n_{2}}\cdots\Psi_{p_{1}\sigma_{1}n_{1}%
+^{c};\,p_{2}\sigma_{2}n_{2}^{c};\cdots}^{\pm}\text{ ,}\label{3.3.56}%
+\end{equation}
+其中$n^{c}$是种类$n$粒子的反粒子, $\xi_{n}$仍然是一个相位. 如果这对``入''态和``出''态都成立, 那么$S$-矩阵满足如下的不变性条件
+\begin{align}
+&  S_{p_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime};\,p_{2}^{\prime}\sigma
+_{2}^{\prime}n_{2}^{\prime};\cdots\:,\: p_{1}\sigma_{1}n_{1};\,p_{2}\sigma_{2}n_{2};\cdots}\nonumber\\
+&  =\text{\ }\xi_{n_{1}^{\prime}}^{\ast}\xi_{n_{2}^{\prime}}^{\ast}\cdots
+\xi_{n_{1}}\xi_{n_{2}}\cdots S_{p_{1}^{\prime}\sigma_{1}^{\prime}%
+n_{1}^{c\prime};\,p_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{c\prime};\cdots\text{
+},\text{ }p_{1}\sigma_{1}n_{1}^{c};\,p_{2}\sigma_{2}n_{2}^{c};\cdots}\:.\label{3.3.57}%
+\end{align}
+同其他内部对称性一样, 如果算符$\mathsf{C}_{0}$被定义为以方程(\ref{3.3.56})中的方式作用在自由粒子态上, 并且它与相互作用$V$以及$H_{0}$都对易,
+那么$S$-矩阵将满足这个条件; 在这种情况下, 我们取$\mathsf{C}=\mathsf{C}_{0}$.
+
+相位$\xi_{n}$称为荷共轭宇称. 同普通宇称$\eta_{n}$一样,  因为对任意一个定义成满足方程(\ref{3.3.56})的算符$\mathsf{C}$, 我们都能通过在$\mathsf{C}$ 上乘以任意内部对称相位变换, 例如$\exp(\mi\alpha B+\mi\beta L+\mi\gamma Q)$, 找到另一个$\xi_{n}$不同的荷共轭算符,  所以$\xi_{n}$ 一般不是唯一定义的; 能够单独测量荷共轭宇称的粒子只有那些完全中性的粒子, 例如光子和中性$\pi$介子, 它们不携带守恒量子数并且反粒子是它们自身. 在仅包含完全中性粒子的反应中, 方程(\ref{3.3.57}%
+)告诉我们初态和末态中的荷共轭宇称之积必须相等; 例如, 我们将看到, 量子电动力学要求光子具有荷共轭宇称$\eta_{\gamma}=-1$, 所以观测到的中性$\pi$介子衰变$\pi^{0}\to2\gamma$将会要求$\eta_{\pi^{0}}=+1$; 由此得出过程$\pi^{0}\to3\gamma$是被禁止的, 而事实也正是如此. 对于这两个粒子, 荷共轭宇称是实的, 只能是$+1$或$-1$. 同普通宇称一样, 如果所有内部相位变换对称性是相位变换连\marginpar[\flushright{\small[132]\hspace*{5mm}}]{{\small\hspace*{5mm}[132]}}续群中的一员, 就会是这种情况, 这是因为我们可以通过乘$\mathsf{C}^{2}$ 的平方根倒数来重定义$\mathsf{C}$, 结果是新的$\mathsf{C}$将满足$\mathsf{C}^{2}=1$.
+
+对于一般反应, 方程(\ref{3.3.57})要求某一过程的速率等于该过程中的粒子被相应的反粒子替换后的速率. 这与\,1957\,年关于宇称不守恒的实验不是直接矛盾的(在这之后很长的一段时间内, 人们都没有能力研究反钴的$\beta$衰变), 但是这些实验表明, 在李政道和杨振宁\textsuperscript{\cite{12}}将宇称不守恒考虑在内后得到的修正弱相互作用{\KAI{理论}}内, $\mathsf{C}$是不守恒的. (我们将在后面看到, 观测到$\mathsf{TP}$守恒被破坏就暗示着, 不仅限于李政道和杨振宁所考虑的特定理论, 在{\KAI{任何}}弱相互作用的场论中, $\mathsf{C}$守恒都被破坏了.) 现今我们知道了, 尽管$\mathsf{C}$和$\mathsf{P}$在强作用和电磁作用中都是守恒的, 但是在$\beta$衰变以及$\pi$ 介子和$\mu$子衰变这种弱相互作用引起的过程中, $\mathsf{C}$和$\mathsf{P}$是不守恒的.
+
+尽管关于宇称不守恒的早期实验表明$\mathsf{C}$和$\mathsf{P}$在弱作用中不守恒, 但它们的乘积$\mathsf{CP}$普遍守恒的可能性依旧存在. 在一段时间内, 人们一直期待(尽管没有绝对的信心)$\mathsf{CP}$终将被证实是普遍守恒的. 这在中性$K$介子的性质有一个特别重要的结果. 在\,1954\,年, Gell-Mann\, 和\,Pais\textsuperscript{\cite{16}} 就指出, 因为$K^{0}$介子的反粒子不是它自身($K^{0}$携带一个近似守恒的非零量, 即奇异数)具有确定衰变率的粒子不是$K^{0}$ 或$\overline{K}^{0}$, 而是线性组合$K^{0}\pm\overline{K}^{0}$. 这最初是用$\mathsf{C}$守恒解释的, 但是$\mathsf{C}$在弱作用中不守恒, 基于$\mathsf{CP}$守恒可以给出相同的论证. 如果我们随意定义$\mathsf{CP}$算符, $K^{0}$以及$\overline{K^{0}}$态中的相位, 使得
+\[
+\mathsf{CP}\Psi_{K^{0}}=\Psi_{\overline{K}^{0}}%
+\]
+并且
+\[
+\mathsf{CP}\Psi_{\overline{K}^{0}}=\Psi_{K^{0}}%
+\]
+那么我们就可以定义自荷共轭的单粒子态
+\[
+\Psi_{K_{1}^{0}}\equiv\frac{1}{\sqrt{2}}[\Psi_{K^{0}%
+}+\Psi_{\overline{K}^{0}}]
+\]
+以及
+\[
+\Psi_{K_{2}^{0}}\equiv\frac{1}{\sqrt{2}}[\Psi_{K^{0}%
+}-\Psi_{\overline{K}^{0}}]\text{ , }%
+\]
+它们\marginpar[\flushright{\small[133]\hspace*{5mm}}]{{\small\hspace*{5mm}[133]}}分别具有$\mathsf{CP}$本征值$+1$和$-1$. 这些粒子被允许的最快衰变模式是衰变成$2$-$\pi$介子态, 但是$\mathsf{CP}$守恒只允许{}$^*$\footnote{$^*${} 中性$K$ 介子自旋为零, 所以$2$-$\pi$介子末态有$\ell=0$, 因而$\mathsf{P}=+1$. 更进一步, 因为$\pi^{0}$有$\mathsf{C}=+1$, 所以对两个$\pi^{0}$ 有$\mathsf{C}=+1$, 由于$\mathsf{C}$交换了$\pi^{+}$介子和$\pi^{-}$介子, 所以对于$\ell=0$ 的$\pi^{+}$-$\pi^{-}$态也有$\mathsf{C}=+1$. }%
+$K_{1}$这样衰变, 不允许$K_{2}$这样衰变. 只能期望$K_{2}^{0}$以更慢的模式衰变, 衰变成\,3\,个$\pi$介子或者\,1\,个$\pi$介子, 1\,个$\mu$ 子或电子以及\,1\, 个中微子. 然而, Fitch\,和\,Cronin\,在\,1964\,年发现, 长寿命的中性$K$介子确实有一个很小的概率能够衰变到两个$\pi$介子.\textsuperscript{\cite{17}} 结论是: 尽管$\mathsf{CP}$比单独的$\mathsf{C}$或$\mathsf{P}$看起来更接近守恒, 但它在弱作用中不是精确守恒的.
+
+我们将在第3章看到, 有很好的理由相信, 尽管$\mathsf{C}$和$\mathsf{CP}$都不是严格守恒的, 但是, 至少在所有量子场论中, $\mathsf{CPT}$ 在所有相互作用中都是精确守恒的. 给出了粒子和反粒子之间一个精确对应的正是$\mathsf{CPT}$, 特别是$\mathsf{CPT}$与哈密顿量的对易告诉我们稳定的粒子和反粒子具有精确相同的质量. 因为$\mathsf{CPT}$反幺正, 它将任意过程的$S$-矩阵, 与所有自旋\,3\,-分量反转且粒子被替换为反粒子的{\KAI{逆}}过程的$S$-矩阵联系起来. 然而, 如果$S$-矩阵可以分成$S^{(1)}$和$S^{(0)}$, 其中$S^{(1)}$是产生给定反应的弱项, 而$S^{(0)}$是作用在初态和末态上的强项, 我们可以采用前面研究$\mathsf{T}$ 不变含义的讨论证明: 只要对关于$S^{(0)}$完备的初态和末态求和, 那么对于任意过程, 它的速率与粒子被替换为反粒子且自旋$3$-动量反转的同一过程的速率相等. 特别是, 尽管粒子衰变成$S_{\beta
+_{1}\beta_{2}}^{\left(  0\right)  }\neq0$%
+的一对末态$\beta_{1},\beta_{2}$%
+的那部分速率, 与反粒子衰变成相对应的末态$\mathscr{CPT}$%
+$\beta_{1}$和$\mathscr{CPT}$$\beta_{2}$的速率不相等, 我们将在\,\ref{sec:3.5}\,节看到, (不取任何近似), 任意粒子的总衰变速率与反粒子的总衰变速率仍是相等的.
+
+现在我们可以理解了, 1957\,年的宇称不守恒实验在弱相互作用现有理论中为什么可以被当作$\mathsf{C}$和$\mathsf{P}$%
+守恒被严重破坏的证据, 但却不能作为$\mathsf{CP}$不守恒的证据. 这些理论是场论, 因而自动有$\mathsf{CPT}$守恒. 既然实验证明了在核$\beta$衰变中$\mathsf{PT}$而非$\mathsf{T}$被严重破坏了, 与这些实验一致并且$\mathsf{CPT}$守恒的{\KAI{任何}}理论必须同时兼有$\mathsf{C}$不守恒%
+而非$\mathsf{CP}$不守恒.
+
+类似\marginpar[\flushright{\small[134]\hspace*{5mm}}]{{\small\hspace*{5mm}[134]}}地, 在\,1964\,年观测到弱相互作用中$\mathsf{CP}$的微小破坏, 加上所有相互作用在$\mathsf{CPT}$下都不变的假定, 我们可以立刻推断出$\mathsf{T}$ 在弱相互作用中也不是精确守恒的. 通过对$K^{0}$-$\overline{K}^{0}$系统更加详细的研究, 这一点已经被证明了,\textsuperscript{\cite{18}} 但是, 迄今为止, 仍然没有找到时间反演不变性失效的其他直接证据.
+
+\section{速率与截面} \label{sec:3.4}
+\setcounter{equation}{0}
+
+$S$-矩阵$S_{\beta\alpha}$是跃迁$\alpha\to\beta$的概率振幅, 但是这与实验中测量的跃迁速率和截面有什么关系呢? 尤其是, (\ref{3.3.2})表明$S_{\beta\alpha}$ 中含有一个确保能量和动量守恒的因子$\updelta^{4}(p_{\beta}-p_{\alpha})$, 那么我们该如何理解跃迁概率$\lvert S_{\beta\alpha}\rvert ^{2}$中的因子$[\updelta^{4}(p_{\beta}-p_{\alpha})]^{2}$呢? 解决这些问题的正确方法是研究实验究竟是如何进行的, 用波包表示在碰撞前远离彼此的定域粒子, 然后跟踪这些多粒子叠加态的时间历史. 在下文中, 鉴于(就我所知)在物理中没有什么有趣的开放性问题取决于对这些问题的正确理解, 我们将给出主要结果一个快速而简单的推导, 实际上这更像一个助记法而非推导.
+
+我们认为我们的整个物理系统被封装在具有宏观体积$V$的大箱子内. 例如, 我们可以取这个箱子为一个立方体, 但相对的两个面上的点等价, 这样, 空间波函数的单值性要求动量是量子化的
+\begin{equation}
+\bp=\frac{2\uppi}{L}(n_{1},n_{2},n_{3}) \:, \label{3.4.1}%
+\end{equation}
+其中$n_{i}$是整数, $L^{3}=V$. 那么所有三维$\updelta$-函数变成
+\begin{equation}
+\updelta_{V}^{3}(\bp^{\prime}-\bp) \equiv \frac{1}{(2\uppi)^{3}}%
+\int_{V}\dif^{3}x \: \me^{\mi(\bp-\bp^{\prime})\cdot\bx}
+=\frac{V}{(2\uppi)^{3}}\updelta_{\bp^{\prime},\bp} \:, \label{3.4.2}%
+\end{equation}
+其中$\updelta_{\bp^{\prime},\bp}$是通常的克罗内克$\updelta$-符号, 下标相等时为$1$, 否则为$0$. 因此, 归一化条件(\ref{3.1.2})意味着, 我们前面在箱中用到的态具有标量积, 它不仅仅是克罗内克$\updelta$的乘积之和, 还包含因子$[V/(2\uppi)^{3}]^{N}$, 其中$N$是态中的粒子数.
+为\marginpar[\flushright{\small[135]\hspace*{5mm}}]{{\small\hspace*{5mm}[135]}}了计算跃迁概率, 我们应该使用范数为$1$ 的态, 所以我们引入在箱中近似归一的态
+\begin{equation}
+\Psi_{\alpha}^{\text{Box}}\equiv\Bigl[(2\uppi)^{3}/V\Bigr]^{N_{\alpha}/2}\Psi_{\alpha}\label{3.4.3}%
+\end{equation}
+它的范数是
+\begin{equation}
+\Bigl(\Psi_{\beta}^{\text{Box}},\Psi_{\alpha}^{\text{Box}}\Bigr)=\updelta_{\beta\alpha}\label{3.4.4}%
+\end{equation}
+其中$\updelta_{\beta\alpha}$是克罗内克$\updelta$的积, 每个对应\,3\,-动量, 自旋以及种类指标, 再加上粒子置换后的项. 相应地, $S$-矩阵可以写为
+\begin{equation}
+S_{\beta\alpha}=\Bigl[V/(2\uppi)^{3}\Bigr]^{(N_{\beta}+N_{\alpha})/2} S_{\beta\alpha}^{\text{Box}}\:, \label{3.4.5}%
+\end{equation}
+其中$S_{\beta\alpha}^{\text{Box}}$利用态(\ref{3.4.3})计算.
+
+当然, 如果我们让粒子永远处在盒子中, 那么每一种可能的跃迁将会一次又一次地发生. 为了计算出一个有意义的跃迁概率, 我们还得把我们的系统放进一个``时间盒子''中. 我们假定相互作用仅在时间段$T$内起作用.  一个马上就能得到的结果是能量守恒$\updelta$-函数要被替换成
+\begin{equation}
+\updelta_{T}(E_{\alpha}-E_{\beta})=\frac{1}{2\uppi}\int_{-T/2}^{T/2}%
+\exp\Bigl(\mi(E_{\alpha}-E_{\beta})t\Bigr)\:\dif t\:.\label{3.4.6}%
+\end{equation}
+对于一个多粒子系统, 如果它在相互作用加入前处在态$\alpha$, 而在相互作用退出后处在态$\beta$, 那么概率为
+\begin{equation}
+P(\alpha\to\beta)=\Big\lvert S_{\beta\alpha}^{\text{Box}}\Big\rvert^{2}
+=\Bigl[(2\uppi)^{3}/V\Bigr]^{(N_{\alpha}+N_{\beta})}
+\lvert S_{\beta\alpha}\rvert^{2} \:. \label{3.4.7}%
+\end{equation}
+这是跃迁到特定的箱中态$\beta$的概率. 对于$\bp$附近体积为$\dif^{3}\bp$的动量空间体积元, 使得动量(\ref{3.4.1})处在这个空间中的三元整数组$n_{1},n_{2},n_{3}$ 的数目是%
+$V\,\dif^{3}\bp/(2\uppi)^{3}$, 所以在体积为$\dif^{3}\bp$的动量空间体积元中,  箱中单粒子态的数目是$V\,\dif^{3}\bp/(2\uppi)^{3}$. 我们将末态间隔$\dif\beta$ 定义为每个末态粒子$\dif^{3}\bp$的乘积, 所以这个范围内态的总数是
+\begin{equation}
+\dif \mathscr{N}_{\beta}=\Bigl[V/(2\uppi)^{3}\Bigr]^{N_{\beta}}\,\dif\beta\:.\label{3.4.8}%
+\end{equation}
+因此, 系统处于末态的$\dif\beta$范围内的总概率是
+\begin{equation}
+\dif P(\alpha\to\beta) = P(\alpha\to\beta)\dif\mathscr{N}_{\beta}
+=\Bigl[(2\uppi)^{3}/V\Bigr]^{N_{\alpha}}\lvert S_{\beta\alpha}\rvert^{2}\,\dif\beta\:.\label{3.4.9}%
+\end{equation}
+贯穿本节\marginpar[\flushright{\small[136]\hspace*{5mm}}]{{\small\hspace*{5mm}[136]}}, 我们关注的末态$\beta$不仅与初态$\alpha$不同(即使只是微小差异), 还要满足更加严格的条件, 即, 态$\beta$中任何一部分粒子(而不是整个态本身)与态$\alpha$中对应的那部分粒子都不具有精确相同的\,4\,-动量. (利用下一章引入的语言, 这就是说我们仅考察$S$-矩阵的连通部分.) 对于这样的态, 我们可以定义不依赖$\updelta$-函数的矩阵元$M_{\beta\alpha}$:
+\begin{equation}
+S_{\beta\alpha}\equiv-2\mi\uppi\updelta_{V}^{3}(\bp_{\beta}-\bp_{\alpha})
+\updelta_{T}(E_{\beta}-E_{\alpha})M_{\beta\alpha} \:.\label{3.4.10}%
+\end{equation}
+对于$\beta\neq\alpha$的$\lvert S_{\beta\alpha}\rvert^{2}$, 引入箱使得我们可以将其中的$\updelta$-函数平方解释成
+\begin{align*}
+\Bigl[\updelta_{V}^{3}(\bp_{\beta}-\bp_{\alpha})\Bigr]^{2}
+&=\updelta_{V}^{3}(\bp_{\beta}-\bp_{\alpha})\updelta_{V}^{3}(0)
+=\updelta_{V}^{3}(\bp_{\beta}-\bp_{\alpha})V/(2\uppi)^{3} \:, \\
+\Bigl[\updelta_{T}(E_{\beta}-E_{\alpha})\Bigr]^{2} &=
+\updelta_{T}(E_{\beta}-E_{\alpha})\updelta_{T}(0)
+=\updelta_{T}(E_{\beta}-E_{\alpha})T/2\uppi \:,
+\end{align*}
+所以, 方程(\ref{3.4.9})给出了微分跃迁概率
+\begin{align*}
+\dif P(\alpha\to\beta) &= (2\uppi)^{2}\Bigl[(2\uppi)^{3}/V\Bigr]^{N_{\alpha}-1}
+(T/2\uppi)\lvert M_{\beta\alpha}\rvert^{2} \\
+&  \quad \times \updelta_{V}^{3}(\bp_{\beta}-\bp_{\alpha})
+\updelta_{T}(E_{\beta}-E_{\alpha})\dif \beta \:.%
+\end{align*}
+如果我们令$V$和$T$非常大, 这里的$\updelta$-函数乘积就可以解释为通常的\,4\,维$\updelta$-函数$\updelta^{4}(p_{\beta}-p_{\alpha})$. 在这个极限下, 跃迁概率正比于相互作用起作用的时间$T$, 而系数可以解释为微分跃迁{\KAI{速率}}:
+\begin{align}
+\dif \Gamma(\alpha\to\beta) &\equiv \dif P(\alpha\to\beta)/T  \nonumber\\
+&\quad = (2\uppi)^{3N_{\alpha}-2} V^{1-N_{\alpha}}\lvert M_{\beta\alpha}\rvert^{2}\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta \:, \label{3.4.11}%
+\end{align}
+现在有
+\begin{equation}
+S_{\beta\alpha}\equiv-2\uppi \mi\updelta^{4}(p_{\beta}-p_{\alpha})M_{\beta\alpha}\:.\label{3.4.12}%
+\end{equation}
+这是将对$S$-矩阵元的计算解释成对真实实验的预测的最主要公式. 在本节后面, 我们将回到对因子$\updelta^{4}(p_{\alpha}-p_{\beta})\dif\beta$的解释上.
+
+有两种特别重要的情况:
+
+\noindent$\boldsymbol{N}_{\alpha}=\mathbf{1}$:
+
+\noindent 这时方程(\ref{3.4.11})中的体积$V$消掉了, 这给出了单粒子态$\alpha$衰变到一般的多粒子态$\beta$的跃迁概率
+\begin{equation}
+\dif\Gamma(\alpha\to\beta) = 2\uppi\lvert M_{\beta\alpha}\rvert^{2}
+\updelta^{4}(p_{\alpha}-p_{\beta})\dif \beta\:.\label{3.4.13}%
+\end{equation}
+当然, 仅\marginpar[\flushright{\small[137]\hspace*{5mm}}]{{\small\hspace*{5mm}[137]}}当相互作用起作用的时间段$T$远小于粒子$\alpha$的平均寿命$\tau_{\alpha}$时, 上式才是有意义的, 所以我们不能在$\updelta_{T}(E_{\beta}-E_{\alpha})$ 中取$T\to\infty$的极限. 在这个$\updelta$-函数中有一个无法移除的展宽$\Delta E\simeq1/T\gtrsim1/\tau_{\alpha}$, 所以仅当总衰变速率$1/\tau_{\alpha}$ 远小于过程中的任何一个特征能量时, %
+方程(\ref{3.4.13})才是有效的.
+
+\noindent$\boldsymbol{N}_{\alpha}=\mathbf{2}$:
+
+\noindent 这时速率(\ref{3.4.11})正比于$1/V$, 换句话说, 正比于任一粒子在另一粒子所在位置处的密度. 实验者一般不报告单位密度的跃迁速率, 而是每{\KAI{单位流的速率}}, 也被称为{\KAI{截面}}. 任一粒子在另一粒子所在位置的流定义为单位密度$1/V$与相对速度$u_{\alpha}$的乘积:
+\begin{equation}
+\Phi_{\alpha}=u_{\alpha}/V \: .\label{3.4.14}%
+\end{equation}
+($u_{\alpha}$的一般定义在下文中给出; 目前我们且暂时满足于这样的定义: 如果其中一个粒子静止, 那么$u_{\alpha}$就定义为另一个粒子的速度.) 因此微分截面是
+\begin{equation}
+\dif\sigma(\alpha\to\beta)\equiv \dif\Gamma(\alpha\to\beta) / \Phi_{\alpha}
+=(2\uppi)^{4} u_{\alpha}^{-1}\lvert M_{\beta\alpha}\rvert^{2}\updelta^{4}(p_{\alpha}-p_{\beta})\dif\beta\:.\label{3.4.15}%
+\end{equation}
+
+
+即使$N_{\alpha}=1$和$N_{\alpha}=2$的情况是最重要的, 但$N_{\alpha}\geq3$的跃迁速率原则上也都是可测的, 并且其中一些在化学, 天体物理学等学科中还非常重要. (例如, 太阳中的一个主要放能反应是两个质子和一个电子转化成一个氘和一个中微子.) %
+\ref{sec:3.6}\,节将给出初态粒子数$N_{\alpha}$任意的主跃迁速率公式(\ref{3.4.11})的一个应用.
+
+接下来, 我们着手解决速率与截面的\,Lorentz\,变换性质的问题, 这将帮助我们给出方程(\ref{3.4.15})中相对速度$u_{\alpha}$的更普遍定义. 对于$S$-矩阵的\,Lorentz\,变换规则(\ref{3.3.1}), 由于动量相关矩阵与每个粒子自旋都有关系. 因此变得复杂. 为了避免这种复杂性, (将方程(\ref{3.4.12})中的\,Lorentz\,不变$\updelta$-函数提出之后),  考察(\ref{3.3.1})的绝对值平方, 并对所有的自旋求和. 那么矩阵$D_{\bar{\sigma}\sigma}^{(j)}(W)$(或者它们在零质量情况下的相应矩阵)的幺正性表明, 除了(\ref{3.3.1})中的能量因子, 和是\,Lorentz\,不变的. 即, 如下的量
+\begin{equation}
+\sum_{\text{spins}}\lvert M_{\beta\alpha}\rvert^{2}\prod_{\beta}E\prod_{\alpha}E\equiv R_{\beta\alpha}\label{3.4.16}%
+\end{equation}
+是态$\alpha$和$\beta$中粒子$4$-动量的标量函数. ($\prod
+_{\alpha}E$和$\prod_{\beta}E$是指态$\alpha$和$\beta$中所有粒子的单粒子能量%
+$p^{0}=\sqrt{\bp^{2}+m^{2}}$的乘积.)
+
+我们现在可以将自旋求和的单粒子衰变速率(\ref{3.4.13})写成
+\[
+\sum_{\text{spins}}\dif\Gamma(\alpha\to\beta) =2\uppi E_{\alpha}^{-1}R_{\beta\alpha}\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta/\prod_{\beta}E\:.%
+\]
+可以辨认出因子$\dif\beta/\prod_{\beta}E$是\,Lorentz\,不变的动量空间体积元(\ref{2.5.15})的乘积, 所以它是\,Lorentz\,不变的. $R_{\beta\alpha}$和$\updelta^{4}(p_{\beta}-p_{\alpha})$也是如此, 这样只剩下非\,Lorentz\,不变的因子$1/E_{\alpha}$, 其中$E_{\alpha}$是单个初态粒子的能量.  那么我们的结论是: 衰变速率与$1/E_{\alpha}$的\,Lorentz\,变换性质相同. 显然,  这就是狭义相对论中通常的钟慢效应\ezx 粒子越快, 衰变越慢.
+
+类似地, 对于自旋求和的截面, 我们的结果(\ref{3.4.15})可以写为
+\[
+\sum_{\text{spins}}\dif\sigma(\alpha\to\beta) =
+(2\uppi)^{4}u_{\alpha}^{-1}E_{1}^{-1}E_{2}^{-1}R_{\beta\alpha}
+\updelta^{4}(p_{\alpha}-p_{\beta})\dif\beta/\prod_{\beta}E \:,
+\]
+其中$E_{1}$和$E_{2}$是初态$\alpha$中的两个粒子的能量. (当对自旋求和时)将截面定义为$4$-动量的\,Lorentz\,不变函数是方便的. 因子$R_{\beta\alpha}$, $\updelta^{4}(p_{\beta}-p_{\alpha})$和$\dif\beta/\prod_{\beta}E$已经是\,Lorentz\,不变的, 这意味着我们对任意惯性系定义的相对速度$u_{\alpha}$必须使$u_{\alpha}E_{1}E_{2}$是个标量. 早先我们也提到, 在其中一个粒子(记为粒子\,1\,)是静止的\,Lorentz\,参考系中, $u_{\alpha}$ 是另一粒子的速度. 这唯一地确定了$u_{\alpha}$在一般\,Lorentz\,参考系中的值{}$^*$\footnote{$^*${}从方程(\ref{3.4.17})可以看出%
+$E_{1}E_{2}u_{a}$显然是个标量. 另外, 当粒子\,1\,静止时, 我们有$\bp_{1}=0,E_{1}=m_{1}$, 所以$p_{1}\cdot p_{2}=-m_{1}E_{2}$, 因而方程(\ref{3.4.17})给出
+\[
+u_{\alpha}=\sqrt{E_{2}^{2}-m_{2}^{2}}/E_{2}=\lvert\bp_{2}\rvert/E_{2} \:,
+\]
+这正是粒子2的速率. }%
+\begin{equation}
+u_{\alpha}=\sqrt{(p_{1}\cdot p_{2})^{2}-m_{1}^{2}m_{2}^{2}}\bigg/E_{1}%
+E_{2}\label{3.4.17}%
+\end{equation}
+其中$p_{1},p_{2}$和$m_{1},m_{2}$是初态$\alpha$中的两个粒子的\,4\,-动量和质量.
+
+一个意外收获是, 我们注意到, 在总$3$-动量为零的``质心''参考系中, 我们有
+\[
+p_{1}=(\bp,E_{1}) \:, \qquad \qquad p_{2}=(-\bp,E_{2}) \:,
+\]
+这时方程(\ref{3.4.17})给出
+\begin{equation}
+u_{\alpha}=\frac{\lvert \bp\rvert (E_{1}+E_{2})}{E_{1}E_{2}}
+=\left\lvert \frac{\bp_{1}}{E_{1}}-\frac{\bp_{2}}{E_{2}}\right\rvert \: , \label{3.4.18}%
+\end{equation}
+这正是\marginpar[\flushright{\small[139]\hspace*{5mm}}]{{\small\hspace*{5mm}[139]}}我们对一个相对速度的预期. 然而, $u_{\alpha}$在这个参考系下 不是真实的物理速度; 尤其是, 方程(\ref{3.4.18})表明, 对于极端相对论性粒子, 它的值可以取到\,2\,那么大.
+
+我们现在来解释所谓的相空间因子$\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta$, 它出现在跃迁速率的普遍公式(\ref{3.4.11})中, 也出现在衰变速率和截面(\ref{3.4.13})和(\ref{3.4.15})中. 这里, 我们针对``质心''\,Lorentz\,参考系的情况进行讨论, 在这个参考系中初态的总\,3\,-动量为零
+\begin{equation}
+\bp_{\alpha}=0\:.\label{3.4.19}%
+\end{equation}
+(对于$N_{\alpha}=1$, 这就是衰变粒子静止的情况.) 如果末态由动量为$\bp_{1}^{\prime},\bp_{2}^{\prime},\cdots$的粒子组成, 那么
+\begin{equation}
+\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta=\updelta^{3}(\bp_{1}^{\prime
+}+\bp_{2}^{\prime}+\cdots)\updelta(E_{1}^{\prime}+E_{2}^{\prime}%
++\cdots-E)\dif^{3}\bp_{1}^{\prime}\dif^{3}\bp_{2}^{\prime}\cdots \: ,
+\label{3.4.20}%
+\end{equation}
+其中$E\equiv E_{\alpha}$是初态的总能量. $\bp_{k}^{\prime}$积分中的任何一个, 例如对$\bp_{1}^{\prime}$的积分, 通过扔掉动量$\updelta$-函数
+\begin{equation}
+\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta\to\updelta(E_{1}^{\prime}+E_{2}^{\prime}+\cdots-E)
+\dif^{3}\bp_{2}^{\prime}\cdots\label{3.4.21}%
+\end{equation}
+并对任何出现的$\bp_{1}^{\prime}$ (例如$E_{1}^{\prime}$中的)进行如下的替换
+\begin{equation}
+\bp_{1}^{\prime}=-\bp_{2}^{\prime}-\bp_{3}^{\prime}-\cdots\:,\label{3.4.22}%
+\end{equation}
+就能做掉$\bp_{1}^{\prime}$的积分. 类似地, 我们可以利用剩下的$\updelta$-函数做出其余的任何{\KAI{一个}}积分.
+
+在最简单的情况中, 末态只有两个粒子. 这时(\ref{3.4.21})给出
+\[
+\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta\to\updelta(E_{1}^{\prime}%
++E_{2}^{\prime}-E)\dif^{3}\bp_{2}^{\prime}\:.%
+\]
+更详细些就是
+\begin{equation}
+\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta\to\updelta
+\Bigl(\sqrt{\lvert\bp_{1}^{\prime}\rvert^{2}+m_{1}^{\prime}{}^{2}}
++\sqrt{\lvert\bp_{1}^{\prime}\rvert^{2}+m_{2}^{\prime}{}^{2}}-E\Bigr)  \lvert\bp_{1}^{\prime}\rvert^{2}\dif\lvert\bp_{1}^{\prime}\rvert \dif\Omega \:, \label{3.4.23}%
+\end{equation}
+其中
+\[
+\bp_{2}^{\prime}=-\bp_{1}^{\prime}%
+\]
+以及$\dif\Omega\equiv\sin\theta\,\dif\theta\,\dif\phi$是$\bp_{1}^{\prime}$的微分立体角. 通过利用如下标准公式可以对其进行简化
+\[
+\updelta(f(x)) = \updelta(x-x_{0}) /\lvert f^{\prime}(x_{0})\rvert \:,
+\]
+其中$f(x)$是在$x=x_{0}$处有一个单零点的任意实函数. 在我们的情况下, 方程(\ref{3.4.23})中$\updelta$-函数的变量$E_{1}^{\prime}+E_{2}^{\prime}-E$ 的唯一零点\marginpar[\flushright{\small[140]\hspace*{5mm}}]{{\small\hspace*{5mm}[140]}}是%
+$\lvert\bp_{1}^{\prime}\rvert =k^{\prime}$, 其中
+\begin{equation}
+k^{\prime}=\sqrt{(E^{2}-m_{1}^{\prime}{}^{2}-m_{2}^{\prime}{}^{2})^{2}
+-4m_{1}^{\prime}{}^{2}m_{2}^{\prime}{}^{2}}\Big/2E \:, \label{3.4.24}%
+\end{equation}%
+\begin{equation}
+E_{1}^{\prime}=\sqrt{k^{\prime}{}^{2}+m_{1}^{\prime}{}^{2}}=
+\frac{E^{2}-m_{2}^{\prime}{}^{2}+m_{1}^{\prime}{}^{2}}{2E} \:, \label{3.4.25}%
+\end{equation}%
+\begin{equation}
+E_{2}^{\prime}=\sqrt{k^{\prime}{}^{2}+m_{2}^{\prime}{}^{2}}
+=\frac{E^{2}-m_{1}^{\prime}{}^{2}+m_{2}^{\prime}{}^{2}}{2E} \: , \label{3.4.26}%
+\end{equation}
+导数是
+\begin{align}
+&\bigg[\frac{\dif}{\dif\lvert\bp_{1}^{\prime}\rvert}\bigg( \sqrt{\lvert\bp_{1}^{\prime}\rvert^{2}
++m_{1}^{\prime}{}^{2}}+\sqrt{\lvert\bp_{1}^{\prime}\rvert^{2}
++m_{2}^{\prime}{}^{2}}-E\bigg)\bigg]_{\lvert\bp_{1}^{\prime}\rvert=k^{\prime}%
+}\nonumber\\
+& \qquad =\frac{k^{\prime}}{E_{1}^{\prime}}+\frac{k^{\prime}}{E_{2}^{\prime}}%
+=\frac{k^{\prime}E}{E_{1}^{\prime}E_{2}^{\prime}}\:.\label{3.4.27}%
+\end{align}
+因此, 通过除掉(\ref{3.4.27}), 我们可以扔掉方程(\ref{3.4.23})中的$\updelta$-函数和微分$\dif\lvert\bp_{1}^{\prime}\rvert$, \begin{equation}
+\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta\to\frac{k^{\prime}E_{1}%
+^{\prime}E_{2}^{\prime}}{E}\dif\Omega\text{ , }\label{3.4.28}%
+\end{equation}
+其中$k^{\prime},E_{1}^{\prime},E_{2}^{\prime}$由方程(\ref{3.4.24})\yzx (\ref{3.4.26})给出. 特别地, 动量为零且能量为$E$的单粒子态衰变成两个粒子的微分速率(\ref{3.4.13})是
+\begin{equation}
+\frac{\dif\Gamma(\alpha\to\beta)}{\dif\Omega}=\frac{2\uppi
+k^{\prime}E_{1}^{\prime}E_{2}^{\prime}}{E}\lvert M_{\beta\alpha}\rvert^{2}\label{3.4.29}%
+\end{equation}
+而两体散射过程$1\,2\to1^{\prime}\,2^{\prime}$的微分截面由方程(\ref{3.4.15})给出
+\begin{equation}
+\frac{\dif\sigma(\alpha\to\beta)}{\dif\Omega}=\frac{(2\uppi)^{4}k^{\prime}E_{1}^{\prime}E_{2}^{\prime}}
+{Eu_{\alpha}}\:\lvert M_{\beta\alpha}\rvert ^{2} = \frac{(2\uppi)^{4}k^{\prime}E_{1}^{\prime}E_{2}^{\prime}E_{1}E_{2}}{E^{2}k} \:
+\lvert M_{\beta\alpha}\rvert^{2} \: , \label{3.4.30}%
+\end{equation}
+其中$k\equiv\lvert\bp_{1}\rvert=\lvert\bp_{2}\rvert$.
+
+上面$N_{\beta}=2$的情况特别简单, 但对于$N_{\beta}=3$, 有一个非常好的结果也值得说一下. 当$N_{\beta}=3$时, 方程(\ref{3.4.21})给出
+\[%
+\begin{split}
+&\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta \to \dif^{3}\bp_{2}^{\prime}\, \dif^{3}\bp_{3}^{\prime}\\
+& \qquad\times\updelta\left(\sqrt{(\bp_{2}^{\prime}+\bp_{3}^{\prime}) + m_{1}^{\prime}{}^{2}}
++\sqrt{\bp_{2}^{\prime}{}^{2}+m_{2}^{\prime}{}^{2}}
++\sqrt{\bp_{3}^{\prime}{}^{2}+m_{3}^{\prime}{}^{2}}-E\right)  \:.%
+\end{split}
+\]
+我们将动量空间体积元写为
+\[
+\dif^{3}\bp_{2}^{\prime}\,\dif^{3}\bp_{3}^{\prime}%
+=\lvert\bp_{2}^{\prime}\rvert^{2}\,\dif\lvert\bp_{2}^{\prime}\rvert\,
+\lvert\bp_{3}^{\prime}\rvert^{2}\, \dif\lvert\bp_{3}^{\prime}\rvert\,
+\dif\Omega_{3}\,\dif\phi_{23}\,\dif\cos\theta_{23} \:,
+\]
+其\marginpar[\flushright{\small[141]\hspace*{5mm}}]{{\small\hspace*{5mm}[141]}}中$\dif\Omega_{3}$是$\bp_{3}^{\prime}$的立体角微元, $\theta_{23}$和$\phi_{23}$是$\bp_{2}^{\prime}$相对$\bp_{3}^{\prime}$%
+方向的极角和方位角. 由$\bp_{2}^{\prime}$和$\bp_{3}^{\prime}$张成的平面, 它的方向由$\phi_{23}$和$\bp_{3}^{\prime}$ 的方向确定, 而剩下的角度$\theta_{23}$由能量守恒条件确定
+\begin{align*}
+\sqrt{\bp_{2}^{\prime}{}^{2}+2\lvert\bp_{2}^{\prime}\rvert\,
+\lvert\bp_{3}^{\prime}\rvert \cos\theta_{23}+\lvert\bp_{3}^{\prime}\rvert^{2}
++ m_{1}^{\prime}{}^{2}}
+&+ \sqrt{\lvert\bp_{2}^{\prime}\rvert^{2}+m_{2}^{\prime}{}^{2}} \\
+&+ \sqrt{\lvert\bp_{3}^{\prime}\rvert^{2}+m_{3}^{\prime}{}^{2}}\,=\,E.
+\end{align*}
+$\updelta$-函数中的变量对$\cos\theta_{23}$的导数是
+\[
+\frac{\partial E_{1}^{\prime}}{\partial\cos\theta_{23}}=
+\frac{\lvert\bp_{2}^{\prime}\rvert\,\lvert\bp_{3}^{\prime}\rvert}{E_{1}^{\prime}} \:,
+\]
+所以, 对$\cos\theta_{23}$的积分可以通过扔掉$\updelta$-函数并除以这个导数做出来
+\[
+\updelta^{4}(p_{\beta}-p_{\alpha})\dif \beta\to\lvert\bp_{2}^{\prime}\rvert\, \dif \lvert\bp_{2}^{\prime}\rvert \, \lvert \bp_{3}^{\prime}\rvert \,\dif\lvert\bp_{3}^{\prime}\rvert\, E_{1}^{\prime}\,\dif\Omega_{3}\,\dif\phi_{23}\:.%
+\]
+将动量替换为能量, 最终变成\begin{equation}
+\updelta^{4}(p_{\beta}-p_{\alpha})\dif\beta\to E_{1}^{\prime}\,E_{2}^{\prime}\,E_{3}^{\prime}\,
+\dif E_{2}^{\prime}\dif E_{3}^{\prime}\,\dif\Omega_{3}\,\dif\phi_{23}\:.\label{3.4.31}%
+\end{equation}
+但是, 回忆通过对$\lvert M_{\beta\alpha}\rvert ^{2}$做自旋求和并乘以能量之积得到的量(\ref{3.4.16}), 它是\,4\,-动量的标量函数. 如果我们对这个标量取近似, 视其为一个常量, 那么方程(\ref{3.4.31})告诉我们, 对于确定的初态, 事件点在$E_{2}^{\prime},E_{3}^{\prime}$-平面上的分布是均匀的. 因此, 在这张图中, 任何对事件均匀分布的偏离都为衰变过程提供了有用的线索, 这其中包含可能的离心势垒或共振中间态. Dalitz (达里兹)在\,1953\,年用它来分析衰变$K^{+}\to\pi^{+}+\pi^{+}+\pi^{-}$, 因此这被称为\,Dalitz\,图.\textsuperscript{\cite{19}}
+
+%++++++++++++++3.5++++++++++++
+
+
+\section{微扰论} \label{sec:3.5}
+\setcounter{equation}{0}
+
+历史上, 计算$S$-矩阵最有力的技术是微扰论, 即按照哈密顿量$H=H_{0}+V$中相互作用项$V$的幂级数展开. 方程(\ref{3.2.7})和(\ref{3.1.18})给出的$S$-矩阵是
+\begin{align*}
+S_{\beta\alpha}  &= \updelta(\beta-\alpha) - 2\mi\uppi\updelta(E_{\beta}-E_{\alpha})T_{\beta\alpha}{}^{\!+}\\
+T_{\beta\alpha}{}^{\!+}  &= (\Phi_{\beta},V\Psi_{\alpha}{}^{\!+})\:,
+\end{align*}
+其\marginpar[\flushright{\small[142]\hspace*{5mm}}]{{\small\hspace*{5mm}[142]}}中$\Psi_{\alpha}{}^{\!+}$满足\,Lippmann-Schwinger\,方程(\ref{3.1.17}):
+\[
+\Psi_{\alpha}{}^{\!+}=\Phi_{\alpha}+\int \dif\gamma\:
+\frac{T_{\gamma\alpha}{}^{\!+}\Phi_{\gamma}}{E_{\alpha}-E_{\gamma}+\mi\epsilon}\:.
+\]
+用$V$作用这个方程, 并和$\Phi_{\beta}$做标量积, 这给出了$T^{+}$的积分方程
+\begin{equation}
+T_{\beta\alpha}{}^{\!+}=V_{\beta\alpha}+\int \dif \gamma\:
+\frac{V_{\beta\gamma}T_{\gamma\alpha}{}^{\!+}}{E_{\alpha}-E_{\gamma}+\mi\epsilon} \:, \label{3.5.1}%
+\end{equation}
+其中\begin{equation}
+V_{\beta\alpha}\equiv(\Phi_{\beta},V\Phi_{\alpha})\:.
+\label{3.5.2}%
+\end{equation}
+反复迭代方程(\ref{3.5.1})就得到了$T_{\beta\alpha}{}^{\!+}$的微扰级数
+\begin{align}
+T_{\beta\alpha}{}^{\!+}  &= V_{\beta\alpha}+\int \dif \gamma\:
+\frac{V_{\beta\gamma}V_{\gamma\alpha}}{E_{\alpha}-E_{\gamma}+\mi\epsilon}\nonumber\\
+&  \quad+\int \dif\gamma \dif\gamma^{\prime}\:
+\frac{V_{\beta\gamma}V_{\gamma\gamma^{\prime}}V_{\gamma^{\prime}\alpha}}
+{(E_{\alpha}-E_{\gamma}+\mi\epsilon)(E_{\alpha}-E_{\gamma^{\prime}}+\mi\epsilon)}+\cdots\:.
+\label{3.5.3}%
+\end{align}
+
+
+在\,20\,世纪\,30\,年代, 这种基于方程(\ref{3.5.3})的计算方法是计算$S$-矩阵的主要方法, 现在被称为{\KAI{旧式微扰论}}. 它明显的缺点是分母上的能量掩盖了$S$-矩阵潜在的\,Lorentz\,不变性. 然而, 在阐明不同中间态产生的$S$-矩阵的奇异性方面, 它仍然有一些用处. 在本书的大多数部分, 我们将依赖于方程(\ref{3.5.3}) 的一个改写版, 这个改写版被称为{\KAI{含时微扰论}}, 它具有使\,Lorentz\,不变性更加显然的优点, 但却多多少少掩盖了各个中间态的贡献.
+
+导出编时微扰展开的最简单方法是利用方程(\ref{3.2.5}), 它给出的$S$-算符是:
+\[
+S=U(\infty,-\infty) \:,
+\]
+其中
+\[
+U(\tau,\tau_{0})\equiv\exp(\mi H_{0}\tau)\exp(-\mi H(\tau-\tau_{0}))\exp(-\mi H_{0}\tau_{0})\:.
+\]
+对这个公式的$U(\tau,\tau_{0})$做相对$\tau$的微分, 这给出微分方程
+\begin{equation}
+\mi\frac{\dif}{\dif\tau}U(\tau,\tau_{0})=V(\tau) U(\tau,\tau_{0}) \:, \label{3.5.4}%
+\end{equation}
+其中
+\begin{equation}
+V(t) \equiv \exp(\mi H_{0}t)V\exp(-\mi H_{0}t)\:. \label{3.5.5}%
+\end{equation}
+(以\marginpar[\flushright{\small[143]\hspace*{5mm}}]{{\small\hspace*{5mm}[143]}}这种方式依赖于时间的算符被称作定义在{\KAI{相互作用绘景}}中, 这是为了将这种依赖时间的方式与量子力学中的\,Heisenberg\,绘景区分开, 在\,Heisenberg\,绘景中, 要求算符依赖时间的方式是$O_{H}(t)=\exp(\mi Ht)O_{H}\exp(-\mi Ht)$.) 方程(\ref{3.5.4})和初值条件$U(\tau_{0},\tau_{0})=1$显然被如下积分方程的解所满足
+\begin{equation}
+U(\tau,\tau_{0})=1-\mi\int_{\tau_{0}}^{\tau}\dif t\: V(t)U(\tau,\tau_{0})\:. \label{3.5.6}%
+\end{equation}
+通过迭代这个积分方程, 我们得到了$U(\tau,\tau_{0})$按照$V$的幂次展开的表达式
+\begin{align}
+U(\tau,\tau_{0}) &= 1 - \mi\int_{\tau_{0}}^{\tau}\dif t_{1}\:V(t_{1})
++(-\mi)^{2}\int_{\tau_{0}}^{\tau}\dif t_{1}\int_{\tau_{0}}^{t_{1}}\dif t_{2}\:V(t_{1})\,V(t_{2})\nonumber\\
+& \quad+(-\mi)^{3}\int_{\tau_{0}}^{\tau}\dif t_{1}\int_{\tau_{0}}^{t_{1}}\dif t_{2}
+\int_{\tau_{0}}^{t_{2}}\dif t_{3}\:V(t_{1})\,V(t_{2})\,V(t_{3})+\cdots\:.
+\label{3.5.7}%
+\end{align}
+令$\tau=\infty$以及$\tau_{0}=-\infty$就给出了$S$-算符的微扰展开:
+\begin{align}
+S  &= 1-\mi\int_{-\infty}^{\infty}\dif t_{1}\: V(t_{1})
++(-\mi)^{2}\int_{-\infty}^{\infty}\dif t_{1}\int_{-\infty}^{t_{1}}\dif t_{2}\:V(t_{1})\,V(t_{2})\nonumber\\
+& \quad+(-\mi)^{3}\int_{-\infty}^{\infty}\dif t_{1}\int_{-\infty}^{t_{1}}\dif t_{2}%
+\int_{-\infty}^{t_{2}}\dif t_{3}\:V(t_{1})\,V(t_{2})\,V(t_{3})+\cdots\:. \label{3.5.8}%
+\end{align}
+这也可以从旧式微扰展开(\ref{3.5.3})中直接导出, 方法是使用方程(\ref{3.5.3})中能量因子的\,Fourier\,表示:
+\begin{equation}
+(E_{\alpha}-E_{\gamma}+\mi\epsilon)^{-1}=-\mi\int_{0}^{\infty}\dif\tau\:
+\exp(\mi(E_{\alpha}-E_{\gamma})\tau) \label{3.5.9}%
+\end{equation}
+注意, 这类积分是通过在被积函数中插入收敛因子$\me^{-\epsilon\tau}$计算出来的, 其中$\epsilon\to0_{+}$.
+
+有一种重写方程(\ref{3.5.8})的方法, 这种方法被证明在进行明显\,Lorentz\,不变的计算中非常有效. 定义算符的{\KAI{编时乘积}}, 对于任何依赖时间的算符, 它的编时乘积定义为按以下方式排列的因子的乘积: 使有最晚时间变量的因子处在最左边, 仅次于最后时间的算符紧接着最左边的算符, 这样一直做下去. 例如
+\begin{align*}
+T\{V(t)\}  &  =V(t) \:, \\
+T\{V(t_{1})V(t_{2})\}  &= \theta(t_{1}-t_{2})V(t_{1})V(t_{2})
++\theta(t_{2}-t_{1})V(t_{2})V(t_{1}) \:,
+\end{align*}
+等等, 其中$\theta(\tau)$是阶跃函数, $\tau>0$时等于$+1$, $\tau<0$时等于$0$. $n$个$V$的编时乘积等于对全部$n!$种$V$置换的求和, 其中的每一个都给出相同的对所有$t_{1}\cdots t_{n}$的积分, 所以方程(\ref{3.5.8})
+可以写\marginpar[\flushright{\raisebox{-6ex}[0pt]{{\small[144]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[144]}}}为
+\begin{equation}
+S=1+\sum_{n=1}^{\infty}\frac{(-\mi)^{n}}{n!}\int_{-\infty}^{\infty}\dif t_{1}%
+\dif t_{2}\cdots \dif t_{n}\:T\Bigl\{V(t_{1})\cdots V(t_{n})\Bigr\} \:.
+\label{3.5.10}%
+\end{equation}
+这有时被称作\textit{Dyson} {\KAI(戴森) 级数}.\textsuperscript{\cite{20}} 如果不同时刻的$V(t)$彼此都对易, 可以进行对这个级数求和; 结果是
+\[
+S=\exp\left(-\mi\int_{-\infty}^{\infty}\dif t\:V(t)\right)  \:.%
+\]
+当然, 通常不是这种情况; 一般而言, (\ref{3.5.10})甚至都不收敛, 它充其量是$V$中出现的任何耦合常数的渐近展开式. 然而, 在一般情况下, 方程(\ref{3.5.10})有时写成
+\[
+S=T\exp\left(-\mi\int_{-\infty}^{\infty}\dif t\:V(t)\right) \:,
+\]
+这里的$T$表明这个表达式是对指数的级数展开式中每一项进行编时后计算的.
+
+我们现在可以轻而易举地找到一大类使得$S$-矩阵明显\,Lorentz\,不变的理论. %
+由于$S$-矩阵的矩阵元就是$S$-算符在自由粒子态$\Phi_{\alpha},\Phi_{\beta}$等之间的矩阵元, %
+我们希望$S$-算符与在这些自由粒子态上给出\,Lorentz\,变换的算符$U_{0}(\Lambda,a)$对易. %
+等价地, $S$-算符必须与$U_{0}(\Lambda,a)$的生成元$H_{0},\bP_{0},\bJ_{0},\bK_{0}$对易. %
+为了满足这个要求, 试设$V(t)$ 是标量$\mathscr{H}(\bx,t)$的三维空间积分
+\begin{equation}
+V(t)=\int \dif^{3}x\:\mathscr{H}(\bx,t) \label{3.5.11}%
+\end{equation}
+$\mathscr{H}(x)$是标量是指
+\begin{equation}
+U_{0}(\Lambda,a)\mathscr{H}(x)U_{0}^{-1}(\Lambda,a) = \mathscr{H}(\Lambda x+a)\:. \label{3.5.12}%
+\end{equation}
+(通过在无限小变换下让$a^{0}$的系数相等, 可以看出$\mathscr{H}(x)$对时间的依赖与方程(\ref{3.5.5})一致.) 于是$S$可以写成四维积分的和
+\begin{equation}
+S=1+\sum_{n=1}^{\infty}\frac{(-\mi)^{n}}{n!}\int \dif^{4}x_{1}\cdots \dif^{4}x_{n}\:
+T\Bigl\{\mathscr{H}(x_{1})\cdots\mathscr{H}(x_{n})\Bigr\} \:. \label{3.5.13}%
+\end{equation}
+现在除了算符乘积的编时外, 剩下的一切都是明显\,Lorentz\,不变的.
+
+现在, 除非$x_{1}-x_{2}$类空, 即$(x_{1}-x_{2})^{2}>0$, 否则两个时空点$x_{1},x_{2}$的编时是\,Lorentz\,不变的, %
+所以当(尽\marginpar[\flushright{\small[145]\hspace*{5mm}}]{{\small\hspace*{5mm}[145]}}管不是仅当)类空间隔上和类光间隔{}$^*$\footnote{$^*${}我们在这里将加在$x$和$x^{\prime}$上的条件%
+写成$(x-x^{\prime})^{2}\geq0$而不是$(x-x^{\prime})^{2}>0$是因为, %
+Lorentz不变性会被$x=x^{\prime}$处麻烦的奇异性影响. 我们将在第6章看到这点. }%
+上的$\mathscr{H}(x)$全部对易时:
+\begin{equation}
+\bigl[\mathscr{H}(x),\mathscr{H}(x^{\prime})\bigr] =0 \qquad\text{当}\qquad (x-x^{\prime})^{2}\geq0 \:, \label{3.5.14}%
+\end{equation}
+方程(\ref{3.5.13})中的编时不会引入特殊的\,Lorentz\,参考系, 我们可以利用\,\ref{sec:3.3}\,节的结果给出一个形式化的非微扰证明, 证明满足方程(\ref{3.5.12})和(\ref{3.5.14})的相互作用(\ref{3.5.11})确实给出一个有着正确\,Lorentz\,%
+变换性质的$S$-矩阵. 对于无限小的增速变换, 方程(\ref{3.5.12})给出
+\begin{equation}
+-\mi[\bK_{0},\mathscr{H}(\bx,t)] = t\bm{\nabla}\mathscr{H}(\bx,t)
++\bx\frac{\partial}{\partial t}\mathscr{H}(\bx,t) \:, \label{3.5.15}%
+\end{equation}
+所以积掉$\bx$并令$t=0$给出
+\begin{equation}
+[\bK_{0},V]=\left[  \bK_{0},\int \dif^{3}x\:\mathscr{H}(\bx,0)\right]  =[H_{0},\bW] \: , \label{3.5.16}%
+\end{equation}
+其中\begin{equation}
+\bW\equiv -\int \dif^{3}x\:\bx\:\mathscr{H}(\bx,0)\:.
+\label{3.5.17}%
+\end{equation}
+如果(通常就是这种情况)$\mathscr{H}(\bx,0)$在$H_{0}$本征态之间的矩阵元是能量本征值的光滑函数, 那么$V$也是这样, 为了使散射理论有效, 这是必须的, $\bW$同样如此, 而这是在证明\,Lorentz\,不变性所必需的. 要使\,Lorentz\,不变的另一条件得到满足, 即对易关系(\ref{3.3.21})成立,  当且仅当
+\begin{equation}
+0=[\bW,V]=\int \dif^{3}x\int \dif^{3}y \:\bx \: [\mathscr{H}(\bx,0),\mathscr{H}(\by,0)]\:. \label{3.5.18}%
+\end{equation}
+这个条件源于``因果律''条件(\ref{3.5.14}), 但它为$S$-矩阵的\,Lorentz\,不变性提供了一个稍弱的充分条件.
+
+这类理论不是唯一的\,Lorentz\,不变的理论, 但与最普遍的\,Lorentz\,不变理论也没有太大不同. 尤其是, 总有类似于(\ref{3.5.14})这样的对易关系要被满足. 对于编时总是伽利略不变的非相对论性系统, 这个条件没有对应的版本, {\KAI{正是这个条件使得{\textit{Lorentz}不变性}与量子力学的结合受到那么多的限制}}.
+
+\subsection*{* * *}
+
+至此, \marginpar[\flushright{\small[146]\hspace*{5mm}}]{{\small\hspace*{5mm}[146]}}本节所描述的方法在相互作用算符$V$足够小时才是有效的. 也有这种近似的修正版本, 称为{\KAI{扭曲波}} {\textit{Born}} {\KAI{近似}}, 它在相互作用包含两项时有效
+\begin{equation}
+V=V_{\text{s}}+V_{\text{w}} \label{3.5.19}%
+\end{equation}
+其中$V_{\text{w}}$弱而$V_{\text{s}}$强. 如果$V_{\text{s}}$是全部的相互作用, 我们可以定义$\Psi_{\text{s}\alpha}{}^{\!\pm}$为``入''态和`` 出''态
+\begin{equation}
+\Psi_{\text{s}\alpha}{}^{\!\pm}=\Phi_{\alpha}+(E_{\alpha}-H_{0}\pm\mi\epsilon)^{-1}
+V_{\text{s}}\Psi_{\text{s}\alpha}{}^{\!\pm} \:. \label{3.5.20}%
+\end{equation}
+这样, 我们就可以将(\ref{3.1.16})写成
+\begin{align*}
+T_{\beta\alpha}{}^{\!+}  &= (\Phi_{\beta},V\Psi_{\alpha}{}^{\!+}) \\
+&= \Bigl( \Bigl[ \Psi_{\text{s}\beta}{}^{\!-}
+-(E_{\beta}-H_{0}-\mi\epsilon)^{-1} V_{\text{s}}\Psi_{\text{s}\beta}{}^{\!-}\Bigr],
+(V_{\text{s}}+V_{\text{w}})\Psi_{\alpha}{}^{\!+} \Bigr) \\
+&  =(\Psi_{\text{s}\beta}{}^{\!-},V_{\text{w}}\Psi_{\alpha}{}^{\!+}) \\
+&  \quad+\Bigl(\Psi_{\text{s}\beta}{}^{\!-},\Bigl[V_{\text{s}}-V_{\text{s}}
+(E_{\beta}-H_{0}+\mi\epsilon)^{-1}(V_{\text{s}}+V_{\text{w}})\Bigr]\Psi_{\alpha}{}^{\!+}\Bigr)
+\end{align*}
+于是
+\begin{equation}
+T_{\beta\alpha}{}^{\!+}=(\Psi_{\text{s}\beta}{}^{\!-},V_{\text{w}}\Psi_{\alpha}{}^{\!+})
++(\Psi_{\text{s}\beta}{}^{\!-},V_{\text{s}}\Phi_{\alpha})\:.
+\label{3.5.21}%
+\end{equation}
+右边的第二项正是$T_{\beta\alpha}{}^{\!+}$在仅有强的作用时的形式
+\begin{equation}
+T_{\text{s}\,\beta\alpha}{}^{\!+}\equiv(\Phi_{\beta},V_{\text{s}}\Psi_{\text{s}\alpha}{}^{\!+})
+=(\Psi_{\text{s}\beta}{}^{\!-},V_{\text{s}}\Phi_{\alpha})\:.
+\label{3.5.22}%
+\end{equation}
+(要证明方程(\ref{3.5.22}), 在导出方程(\ref{3.5.21})的推导中扔掉所有的$V_{\text{w}}$即可.) 方程(\ref{3.5.21})在它第二项为零时最有用: 此时过程$\alpha\to\beta$不能由强的作用单独产生. (例如, 在核$\beta$衰变中, 虽然我们不能忽略作用在核的初态和末态上强核力, 但我们需要弱核力将中子转变成质子.) 对于这样的过程, 矩阵元(\ref{3.5.22})为零, 所以方程(\ref{3.5.21})变成
+\begin{equation}
+T_{\beta\alpha}{}^{\!+}=(\Psi_{\text{s}\beta}{}^{\!-},V_{\text{w}}\Psi_{\alpha}{}^{\!+})\:. \label{3.5.23}%
+\end{equation}
+
+
+迄今为止, 全部的处理都是精确的. 然而, 当$V_{\text{w}\,}$非常弱以至于我们可以忽略它对方程(\ref{3.5.23})中的$\Psi_{\alpha}{}^{\!+}$态的影响时, 使得我们可以将$\Psi_{\alpha}{}^{\!+}$替换为仅考虑了强作用$V_{\text{s}}$的%
+$\Psi_{\text{s}\alpha}{}^{\!+}$, 只有这时, 这样重写$T$-矩阵才是有价值的. 在这个近似下, 方程(\ref{3.5.23})变成
+\begin{equation}
+T_{\beta\alpha}{}^{\!+}\simeq(\Psi_{\text{s}\beta}{}^{\!-},V_{\text{w}}\Psi_{\text{s}\alpha}{}^{\!+})\:.
+\label{3.5.24}%
+\end{equation}
+这个结果到$V_{\text{w}}$的第一阶有效, 但是它对$V_{\text{s}\,}$的所有阶都有效. 这个近似在物理中无处不在; 例如, 核$\beta$或$\gamma$衰变的$S$-矩阵元是利用方程(\ref{3.5.24})计\marginpar[\flushright{\small[147]\hspace*{5mm}}]{{\small\hspace*{5mm}[147]}}算的, 其中$V_{\zs}$是核的强相互作用, $V_{\text{w}\,}$ 要么是核的弱相互作用, 要么是电磁作用, 而$\Psi_{\text{s}\beta}{}^{\!-}$ 和$\Psi_{\text{s}\alpha}{}^{\!+}$分别是核的末态和初态.
+
+\section{幺正性的影响} \label{sec:3.6}
+\setcounter{equation}{0}
+
+$S$-矩阵的幺正性强加了一个有趣且有用的条件, 这个条件将任意多粒子态$\alpha$中的前向散射振幅$M_{\alpha\alpha}$%
+与该态中总反应速率联系起来. 回忆, 在一般情况下, 态$\beta$和态$\alpha$可以相同也可以不相同, 这时$S$-矩阵可以写成(\ref{3.3.2})那样:
+\[
+S_{\beta\alpha}=\updelta(\beta-\alpha)-2\uppi \mi\updelta^{4}(p_{\beta}-p_{\alpha})M_{\beta\alpha}\:.%
+\]
+于是幺正性条件给出
+\begin{align*}
+\updelta(\gamma-\alpha)  &= \int \dif\beta\: S_{\beta\gamma}^{\ast}S_{\beta\alpha}
+=\updelta(\gamma-\alpha)-2\uppi \mi\updelta^{4}(p_{\gamma}-p_{\alpha})M_{\gamma\alpha}\\
+& \quad+2\uppi \mi\updelta^{4}(p_{\gamma}-p_{\alpha})M_{\alpha\gamma}^{\ast}%
++4\uppi^{2}\int \dif\beta \: \updelta^{4}(p_{\beta}-p_{\gamma})
+\updelta^{4}(p_{\beta}-p_{\alpha})M_{\beta\gamma}^{\ast}M_{\beta\alpha}\:.%
+\end{align*}
+抵消掉$\updelta(\gamma-\alpha)$项并消去因子$2\uppi\updelta^{4}(p_{\gamma}-p_{\alpha})$, 我们发现, 对$p_{\gamma}=p_{\alpha}$
+\begin{equation}
+0=-\mi M_{\gamma\alpha}+\mi M_{\alpha\gamma}^{\ast}+2\uppi\int \dif\beta\:
+\updelta^{4}(p_{\beta}-p_{\alpha})M_{\beta\gamma}^{\ast}M_{\beta\alpha}\:.
+\label{3.6.1}%
+\end{equation}
+这在$\alpha=\gamma$的特殊情况下最有用, 这时它写成
+\begin{equation}
+\operatorname{Im}M_{\alpha\alpha}=-\uppi\int \dif\beta\:
+\updelta^{4}(p_{\beta}-p_{\alpha})\lvert M_{\beta\alpha}\rvert ^{2}\:. \label{3.6.2}%
+\end{equation}
+利用方程(\ref{3.4.11}), 它可以表示为一个处在体积$V$内的初态$\alpha$能够产生的所有反应的总速率公式
+\begin{align}
+\Gamma_{\alpha}  &\equiv \int \dif\beta\: \frac{\dif\Gamma(\alpha\to\beta)}{\dif\beta}\nonumber\\
+&= (2\uppi)^{3N_{\alpha}-2}V^{1-N_{\alpha}}\int \dif\beta \: \updelta^{4}(p_{\beta}-p_{\alpha})
+\lvert M_{\beta\alpha}\rvert ^{2} \nonumber\\
+&= -\frac{1}{\uppi}(2\uppi)^{3N_{\alpha}-2}V^{1-N_{\alpha}}\operatorname{Im}M_{\alpha\alpha}\:. \label{3.6.3}%
+\end{align}
+
+
+特别地, 当$\alpha$是二粒子态时, 这可以写为
+\begin{equation}
+\operatorname{Im}M_{\alpha\alpha}=-u_{\alpha}\sigma_{\alpha}/16\uppi^{3} \:, \label{3.6.4}%
+\end{equation}
+其中$u_{\alpha}$是态$\alpha$中的相对速度(\ref{3.4.17}), $\sigma_{\alpha}$是该态中的{\KAI{总}}截面, 由(\ref{3.4.15})给出
+\begin{equation}
+\sigma_{\alpha}\equiv\int \dif \beta\: \dif\sigma(\alpha\to\beta)/\dif\beta
+=(2\uppi)^{4}u_{\alpha}^{-1}\int \dif\beta\:\lvert M_{\beta\alpha}\rvert^{2}
+\updelta^{4}(p_{\beta}-p_{\alpha})\:. \label{3.6.5}%
+\end{equation}
+这个\marginpar[\flushright{\raisebox{6ex}[0pt]{{\small[148]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[148]}}}结果通常写成另一种稍微不同的形式, 即{\KAI{散射振幅}}$f(\alpha\to\beta)$. 方程(\ref{3.4.30})表明, 对质心系中的{\KAI{两体}}散射, 微分截面是
+\begin{equation}
+\frac{\dif\sigma(\alpha\to\beta)}{\dif\Omega}=\frac{(2\uppi)^{4}k^{\prime}
+E_{1}^{\prime}E_{2}^{\prime}E_{1}E_{2}}{kE^{2}}\,\lvert M_{\beta\alpha}\rvert^{2} \:, \label{3.6.6}%
+\end{equation}
+其中$k^{\prime}$和$k$是末态和初态中动量的大小. 因此, 我们将散射振幅定义为{}$^*$\footnote{$^*${}$f$的相位是一个约定, 这个约定源于不含时\,Schr\"{o}dinger\, 方程的解, $f$的波动力学解释\textsuperscript{\cite{21}}是这个解中的出射波的系数. 这里所采用的$f$的归一化对于非弹性散射有点非常规; 通常$f$的定义会使得末速度和初速度的比值出现在微分截面的公式中. }%
+\begin{equation}
+f(\alpha\to\beta)\equiv-\frac{4\uppi^{2}}{E}\sqrt{\frac{k^{\prime}%
+E_{1}^{\prime}E_{2}^{\prime}E_{1}E_{2}}{k}}\,M_{\beta\alpha}\text{ , }
+\label{3.6.7}%
+\end{equation}
+这使得微分截面就是
+\begin{equation}
+\frac{\dif\sigma(\alpha\to\beta)}{\dif\Omega}=\lvert f(\alpha\to\beta)\rvert^{2} \:. \label{3.6.8}%
+\end{equation}
+尤其对于{\KAI{弹性}}两体散射, 我们有
+\begin{equation}
+f(\alpha\to\beta)\equiv-\frac{4\uppi^{2}E_{1}E_{2}}{E}\,M_{\beta\alpha}\:. \label{3.6.9}%
+\end{equation}
+利用相对速率$u_{\alpha}$的公式(\ref{3.4.18}), 幺正性给出的(\ref{3.6.3})现在变成
+\begin{equation}
+\operatorname{Im}f(\alpha\to\alpha)=\frac{k}{4\uppi}\sigma_{\alpha}\:. \label{3.6.10}%
+\end{equation}
+幺正性条件(\ref{3.6.3})的这种形式被称为{\KAI{光学定理}}.\textsuperscript{\cite{22}}
+
+光学定理一个漂亮的结果是告诉我们高能散射模式的很多信息. 可以预期散射振幅$f$是角度的光滑函数, 所以必存在某个立体角$\Delta\Omega$使得这个立体角内的$\lvert f\rvert ^{2}$与前向方向的值接近相同(例如, 差异在\,2\,倍以内), %
+那么总截面会有界
+\[
+\sigma_{\alpha}\geq\int\lvert f\rvert^{2}\:\dif\Omega\geq
+\frac{1}{2}\,\lvert f(\alpha\to\alpha)\rvert^{2}\Delta\Omega\geq
+\frac{1}{2}\lvert \operatorname{Im}f(\alpha\to\alpha)\rvert^{2}\Delta\Omega\:.
+\]
+这样\marginpar[\flushright{\small[149]\hspace*{5mm}}]{{\small\hspace*{5mm}[149]}}, 利用方程(\ref{3.6.10})就给出$\Delta\Omega$的一个上界
+\begin{equation}
+\Delta\Omega\leq32\uppi^{2}\Big/k^{2}\sigma_{\alpha}\:. \label{3.6.11}%
+\end{equation}
+我们会在下一节看到, 在高能情况下, 总截面通常预期会接近一个常数或者增长得非常缓慢, 所以方程(\ref{3.6.11})证明了, 对于在前向方向上使得微分截面近似为常数的立体角, 在$k\to\infty$时, 它至少以$1/k^{2}$的速度减小. 这个在高能下处在前向方向上不断变窄的峰被称为{\KAI{衍射峰}}.
+
+现在回到反应包含任意数目粒子的一般情况, 利用方程(\ref{3.6.2})结合$\mathsf{CPT}$不变性, 我们可以讨论粒子和反粒子的总反应速率之间的一些关系. 由于$\mathsf{CPT}$是反幺正的, 它的守恒一般不会给出$\alpha\to\beta$的过程与粒子替换为反粒子的相同过程之间的简单关系. 反而, 它提供了一个过程与包含反粒子的{\KAI{逆}}过程之间的关系: 利用我们从时间反演不变性推出(\ref{3.3.46})的方法, 我们可以证明$\mathsf{CPT}$不变要求$S$-矩阵满足如下的条件
+\begin{equation}
+S_{\beta,\alpha}=S_{\mathscr{CPT}\alpha\, ,\,\mathscr{CPT}\beta} \:,
+\label{3.6.12}%
+\end{equation}
+其中$\mathscr{CPT}$表明我们必须反转所有的自旋$z$-分量, 将所有的粒子变为相应的反粒子, 并给矩阵元中初态的粒子乘上各种相位因子, 末态粒子乘上相位因子的复共轭. 由于$\mathsf{CPT}$不变性还要求粒子与相应的反粒子具有相同的质量, 相同的关系对$S_{\beta\alpha}$中$\updelta^{4}(p_{\alpha}-p_{\beta})$ 的系数也成立:
+\begin{equation}
+M_{\beta,\alpha}=M_{\mathscr{CPT}\alpha\,,\,\mathscr{CPT}\beta}\:.
+\label{3.6.13}%
+\end{equation}
+特别地, 当初态与末态相同时, 相位因子全部抵消, 方程(\ref{3.6.13})变成
+\begin{align}
+&  M_{p_{1}\sigma_{1}n_{1};\,p_{2}\sigma_{2}n_{2};\cdots \:,\:
+p_{1}\sigma_{1}n_{1};\,p_{2}\sigma_{2}n_{2};\cdots}\nonumber\\
+& \quad = M_{p_{1}\,-\sigma_{1}\,n_{1}^{c};\,p_{2}\,-\sigma_{2}\,n_{2}^{c};\cdots\:,\:
+p_{1}\,-\sigma_{1}\,n_{1}^{c};\,p_{2}\,-\sigma_{2}\,n_{2}^{c};\cdots}\:, \label{3.6.14}%
+\end{align}
+其中$n$上的上标$c$代表$n$的反粒子. 那么, 推广后的光学定理告诉我们, {\KAI{初态为某一组粒子的总反应速率与初态为相应的自旋反向的反粒子的总反应率相同}}:
+\begin{equation}
+\Gamma_{p_{1}\sigma_{1}n_{1};\,p_{2}\sigma_{2}n_{2};\cdots}
+=\Gamma_{p_{1}\,-\sigma_{1}\,n_{1}^{c};\,p_{2}\,-\sigma_{2}\,n_{2}^{c};\cdots}\:. \label{3.6.15}%
+\end{equation}
+特别地, 将其应用于单粒子态, 我们看到任何粒子的衰变速率都等于自旋反向的反粒子的衰变速率.
+旋转\marginpar[\flushright{\small[150]\hspace*{5mm}}]{{\small\hspace*{5mm}[150]}}不变性不允许粒子的衰变率依赖于衰变粒子的自旋$z$-分量, 所以, 普遍结果(\ref{3.6.15})的一个特殊情况是不稳定粒子的寿命与它们的反粒子的寿命精确相同.
+
+\subsection*{* * *}
+
+从幺正条件$S^{\dag}S=1$导出结果(\ref{3.6.2})的方法也使得我们可以从另一幺正关系$SS^{\dag}=1$%
+导出如下的结果
+\begin{equation}
+\operatorname{Im}M_{\alpha\alpha}=-\uppi\int \dif\beta\:\updelta^{4}(p_{\beta
+}-p_{\alpha})\lvert M_{\alpha\beta}\rvert ^{2}\:. \label{3.6.16}%
+\end{equation}
+结合方程(\ref{3.6.2}), 可以给出倒易率
+\begin{equation}
+\int\dif\beta\:\updelta^{4}(p_{\beta}-p_{\alpha})\lvert M_{\beta\alpha}\rvert^{2}
+=\int \dif\beta\:\updelta^{4}(p_{\beta}-p_{\alpha})\lvert M_{\alpha\beta}\rvert ^{2}\:, \label{3.6.17}%
+\end{equation}
+也就是说
+\begin{equation}
+ \int \dif\beta\:c_{\alpha}\,\frac{\dif\Gamma(\alpha\to\beta)}{\dif\beta}
+=\int \dif\beta\:c_{\beta}\,\frac{\dif\Gamma(\beta\to\alpha)}{\dif\alpha} \:, \label{3.6.18}%
+\end{equation}
+其中$c_{\alpha}\equiv [V/(2\pi)^{3}]^{N_{\alpha}}$. 这个结果可以用来导出动理学中最重要的一些结果.{\textsuperscript{\cite{23}}} 如果$P_{\alpha}\dif\alpha$是发现系统处在体积为$\dif\alpha$的多粒子态$\Phi_{\alpha}$空间中的概率, 那么, 由于跃迁到所有其他的态上导致的$P_{\alpha}$的衰减速率是$P_{\alpha}\int \dif\beta\:
+\dif\Gamma(\alpha\to\beta)/\dif\beta$, 而由于所有其他态跃迁到$\alpha$态而导致的增长速率是%
+$\int\dif\beta\:P_{\beta}\dif\Gamma(\beta\to\alpha)/\dif\alpha$; 所以, $P_{\alpha}$的变化率是
+\begin{equation}
+\frac{\dif P_{\alpha}}{\dif t}=\int \dif\beta\:P_{\beta}\,\frac{\dif\Gamma(\beta\to\alpha)}{\dif\alpha}
+-P_{\alpha}\int \dif\beta\:\frac{\dif\Gamma(\alpha\to\beta)}{\dif\beta}\:. \label{3.6.19}%
+\end{equation}
+由此可以立即得出$\int P_{\alpha}\dif\alpha$与时间无关. (交换一下方程(\ref{3.6.19})中第二项积分中的积分变量的指标即可.) 另一方面, 熵$(-\int\dif\alpha\:P_{\alpha}\ln(P_{\alpha}/c_{\alpha}))$的变化率是
+\begin{align*}
+-\frac{\dif}{\dif t}\int \dif\alpha\:P_{\alpha}\ln(P_{\alpha}/c_{\alpha})
+&= -\int\dif\alpha\int \dif\beta\:\Bigl(\ln(P_{\alpha}/c_{\alpha})+1\Bigr)\\
+&  \qquad\quad \times\left[  P_{\beta}\,\frac{\dif\Gamma(\beta\to\alpha)}{\dif\alpha}
+-P_{\alpha}\,\frac{\dif\Gamma(\alpha\to\beta)}{\dif\beta}\right]  \:.%
+\end{align*}
+交换第二项中积分变量的指标, 可以将其写为
+\[
+-\frac{\dif}{\dif t}\int \dif\alpha\:P_{\alpha}\ln(P_{\alpha}/c_{\alpha})
+=\int\dif\alpha\int \dif\beta\:P_{\beta}\ln\left(\frac{P_{\beta}c_{\alpha}}{P_{\alpha}c_{\beta}}\right)  \frac{\dif\Gamma(\beta\to\alpha)}{\dif\alpha} \:.
+\]
+现在, 对于任意\marginpar[\flushright{\small[151]\hspace*{5mm}}]{{\small\hspace*{5mm}[151]}}正量$x$和$y$, 函数$y\ln(y/x)$满足如下不等式{}$^*$\footnote{$^*${}当$x\to y$时, 左边和右边的差接近正量$(x-y)^{2}/2y$, 并相对$x$ 有一导数, 这个导数对于所有的$x>y$和$y<x$分别是正定和负定的. }%
+\[
+y\ln\left(  \frac{y}{x}\right)  \geq y-x\:.%
+\]
+熵的变化率因而满足约束
+\[
+-\frac{\dif}{\dif t}\int \dif\alpha\:P_{\alpha}\ln(P_{\alpha}/c_{\alpha})\geq
+\int\dif\alpha\int \dif\beta\:\left[\frac{P_{\beta}}{c_{\beta}}-\frac{P_{\alpha}}{c_{\alpha}}\right]  c_{\beta}\,\frac{\dif\Gamma(\beta\to\alpha)}{\dif\alpha}
+\]
+或者交换第二项中的积分变量
+\[
+-\frac{\dif}{\dif t}\int \dif\alpha\:P_{\alpha}\ln(P_{\alpha}/c_{\alpha})\geq
+\int\dif\alpha\int \dif\beta\:\frac{P_{\beta}}{c_{\beta}}
+\left[c_{\beta}\frac{\dif\Gamma(\beta\to\alpha)}{\dif\alpha}
+-c_{\alpha}\frac{\dif\Gamma(\alpha\to\beta)}{\dif\beta}\right]  \:.%
+\]
+但是(交换$\alpha$和$\beta$的)幺正关系(\ref{3.6.18})告诉我们, 不等式右边对$\alpha$的积分为零, 所以我们可以得出结论, 熵总是增长的:
+\begin{equation}
+-\frac{\dif}{\dif t}\int \dif\alpha\:P_{\alpha}\ln(P_{\alpha}/c_{\alpha})\geq0 \label{3.6.20}
+\end{equation}
+这就是``Boltzmann $H$-定理''. 在统计力学教科书中, 推导这个定理要么利用\,Born\,近似, 即$\lvert M_{\beta\alpha}\rvert ^{2}$关于$\alpha$和$\beta$ 对称, 从而使$c_{\beta}\dif\Gamma(\beta\to\alpha)/\dif\alpha=c_{\alpha}\dif\Gamma(\alpha\to\beta)/\dif\beta$, 要么通过假定时间反演不变, 这样如果我们交换$\alpha$和$\beta$并反转所有的动量和自旋, $\lvert M_{\beta\alpha}\rvert^{2}$是不变的. 当然, Born\, 近似和时间反演不变性都不是精确的,  所以这个处理的好处是幺正性(\ref{3.6.18})是我们导出$H$-定理唯一需要的.
+
+当概率$P_{\alpha}$变成仅是守恒量(诸如总能量, 荷等)的函数与因子$c_{\alpha}$之积时, 熵的增长停止了. 在这种情况下, 守恒率要求, 除非$P_{\alpha}/c_{\alpha}=P_{\beta}/c_{\beta}$, 否则$\dif\Gamma(\beta\to\alpha)/\dif\alpha$为零, 所以我们可以将方程(\ref{3.6.19})中第一项的$P_{\beta}$ 替换为$P_{\alpha}c_{\beta}/c_{\alpha}$. 再一次利用方程(\ref{3.6.18})则证明了$P_{\alpha}$在这种情况下与时间无关. 这里又一次地, 我们需要的只是幺正关系(\ref{3.6.18}), 而不是\,Born\,近似或时间反演不变.
+
+\section[分波展开]%
+{分波展开{}$^*$\footnote{$^*${}本节或多或少在本书发展主线之外, 可以在第一次阅读时跳过. }%
+}  \label{sec:3.7}
+\setcounter{equation}{0}
+
+用自由粒子态的基处理$S$-矩阵通常是方便的, 这时, 除了总动量和能量以外, 所有变量都是离散的.
+可\marginpar[\flushright{\small[152]\hspace*{5mm}}]{{\small\hspace*{5mm}[152]}}能出现这种情况是因为, 在具有确定总动量$\bp$ 以及总能量$E$ 的$n$-粒子态中, 动量$\bp_{1},\cdots,\bp_{n}$的分量张成了$(3n-4)$-维的{\KAI{紧致}}空间; 例如, 对于在$\bp\,=0$ 的质心系中$n=2$个粒子, 这个空间是二维球面. 这种紧致空间上的任何函数都可展成一个广义``分波''的级数, 例如, 球谐函数, 这个函数一般用来表示二维球面上的函数. 因此, 对于这些除了连续变量$\bp$和$E$以外的变量都是分立的$n$-粒子态, 我们可以定义一组基: 在这组基下, 我们将自由粒子态记为$\Phi_{E\,\bp\,N}$, 其中指标$N$包含所有自旋指标, 粒子种类指标以及所有用来标记广义分波的指标. 取这些态归一是方便的, 即它们的标积为:
+\begin{equation}
+\bigl(\Phi_{E^{\prime}\,\bp^{\prime}\,N^{\prime}},\Phi_{E\,\bp\,N}\bigr)  =\updelta(E^{\prime}-E)\updelta^{3}(\bp^{\prime}-\bp)\updelta_{N^{\prime},N}\:.
+\label{3.7.1}%
+\end{equation}
+那么在这种形式的基下, $S$-算符有如下矩阵元
+\begin{equation}
+\bigl(\Phi_{E^{\prime}\,\bp^{\prime}\,N^{\prime}}\,,S\Phi_{E\,\bp\,N}\bigr)  =\updelta(E^{\prime}-E)\updelta^{3}(\bp^{\prime}-\bp)S_{N^{\prime},N}(E,\bp)\:,\label{3.7.2}%
+\end{equation}
+其中$S_{N^{\prime},N}$是幺正矩阵. 类似地, $T$-算符的自由粒子矩阵元$(\Phi_{\beta},T\Phi_{\alpha})$定义为方程(\ref{3.1.18})%
+定义的量$T_{\beta\alpha}{}^{\!+}$, 在我们的新基下(依照方程(\ref{3.4.12}))它可以表示为
+\begin{equation}
+\bigl(  \Phi_{E^{\prime}\,\bp^{\prime}\,N^{\prime}}\,,T\Phi_{E\,\bp\,N}\bigr)=
+\updelta^{3}(\bp^{\prime}-\bp)M_{N^{\prime},N}(E,\bp) \label{3.7.3}%
+\end{equation}
+并且, (\ref{3.2.7})现在是一个普通的矩阵方程:
+\begin{equation}
+S_{N^{\prime},N}(E,\bp)=\updelta_{N^{\prime},N}
+-2\mi\uppi M_{N^{\prime},N}(E,\bp)\:.\label{3.7.4}%
+\end{equation}
+在下一节, 我们将采用这个普遍公式; 目前, 我们将集中于初态只包含两个粒子的反应.
+
+例如, 考察由两个非全同粒子构成的态, 两个粒子的种类分别为$n_{1},n_{2}$, 拥有非零的质量$M_{1},M_{2}$, 并具有任意自旋$s_{1},s_{2}$. 在这种情况下, 态可以用它们的总动量$\bp=\bp_{1}+\bp_{2}$, 能量$E$, 种类指标$n_{1},n_{2}$, 自旋$z$-分量$\sigma_{1},\sigma_{2}$以及一对整数$\ell,m$ 标记
+(其中$\lvert m\rvert \leq\ell$), 其中$\ell$和$m$用来标明态与方向的关系, 例如态与$\bp_{1}$方向的关系. 或者,
+通过\,Clebsch-Gordan\,系数,\textsuperscript{\cite{9}} 我们可以将两个自旋结合成一个$z$-分量为$\mu$的总自旋, 然后再一次利用\,Clebsch-Gordan\,系数, 将这个自旋与$3$-分量为$m$的轨道角动量$\ell$ 结合, 组成$3$-分量为$\sigma$的总角动量$j$, 由此我们可以构成一个便利的离散基. 这给出了态的一组基$\Phi_{E\,\bp\,j\,\sigma\,\ell\,s\,n}$ (其中$n$ 是用来标记两个粒子种类%
+$n_{1},n_{2}$的``道指标''),
+这组基由它们与具有确定的独立动量以及自旋\,3\,-分\marginpar[\flushright{\small[153]\hspace*{5mm}}]{{\small\hspace*{5mm}[153]}} 量的态的标积定义:
+\begin{align}
+&  (\Phi_{\bp_{1}\,\sigma_{1}\,\bp_{2}\,\sigma
+_{2}\,n^{\prime}}\:,\:\Phi_{E\,\bp\,j\,\sigma\,\ell
+\,s\,n})\equiv(\lvert \bp_{1}\rvert E_{1}E_{2}/E)^{-1/2}%
+\updelta^{3}(\bp-\bp_{1}-\bp_{2})\nonumber\\
+&  \qquad\times\updelta\left(  E-\sqrt{\bp_{1}^{2}+M_{1}^{2}}%
+-\sqrt{\bp_{2}^{2}+M_{2}^{2}}\right)  \updelta_{n^{\prime},n}\nonumber\\
+&  \qquad\times\sum_{m,\mu}C_{s_{1}s_{2}}(s,\mu;\sigma_{1},\sigma_{2})\,C_{\ell
+s}(j,\sigma;m,\mu)\zY_{\ell}^{m}(\hat{\bp}_{1})\:. \label{3.7.5}%
+\end{align}
+其中$\zY_{\ell}^{m}$是通常的球谐函数.\textsuperscript{\cite{24}} 插入因子$(\lvert \bp_{1}\rvert E_{1}E_{2}/E)^{-1/2}$是为了使得这些态在质心系中正确地归一化:
+\begin{equation}
+(\Phi_{E^{\prime}\,\bp^{\prime}\,j^{\prime}\,\sigma^{\prime}\,\ell^{\prime}\,s^{\prime}\,n^{\prime}}
+\:,\:\Phi_{E\,0\,j\,\sigma\,\ell\,s\,n})
+=\updelta^{3}(\bp^{\prime})\updelta(E^{\prime}-E)\updelta_{j^{\prime},j}\updelta_{\sigma^{\prime},\sigma
+}\updelta_{\ell^{\prime},\ell}\updelta_{s^{\prime},s}\updelta_{n^{\prime},n}\:. \label{3.7.6}%
+\end{equation}
+对于全同粒子, 为了避免二次计数, 我们仅对2-粒子动量空间的一半区域进行积分, 所以这时标量积(\ref{3.7.6})中应该出现额外的因子$\sqrt{2}$.
+
+在质心系中, 对于任何动量守恒且旋转不变的算符$O$, 它的矩阵元必须采取如下形式:
+\begin{equation}
+(\Phi_{E^{\prime}\,\bp^{\prime}\,j^{\prime}\,\sigma^{\prime
+}\,\ell^{\prime}\,s^{\prime}\,n^{\prime}}\:,\:O\,\Phi_{E\,0%
+\,j\,\sigma\,\ell\,s\,n})=\updelta^{3}(\bp^{\prime})O_{\ell^{\prime
+}\,s^{\prime}\,n^{\prime},\,\ell\,s\,n}^{j}(E)\updelta_{jj^{\prime}}%
+\updelta_{\sigma\sigma^{\prime}}\:. \label{3.7.7}%
+\end{equation}
+(关于$j$和$\sigma$对角是因为$O$与$\bJ^{2}$和$J_{3}$对易, 进一步地, $\updelta_{\sigma\sigma^{\prime}}$的系数与$\sigma^{\prime}$ 无关是因为$O$ 与$J_{1}\pm \mi J_{2}$对易. 这是更普遍的\,Wigner-Eckart\,定理\textsuperscript{\cite{25}}中的一个特殊情况.) 将这一结果应用于算符$M$, 它的矩阵元是$M_{\beta\alpha}$, 由此得出质心系中的散射振幅(\ref{3.6.7})取如下形式
+\begin{align}
+&  f(\bk\,\sigma_{1},-\bk\,\sigma_{2},n\to
+\bk^{\prime}\,\sigma_{1}^{\prime},-\bk^{\prime}\,\sigma
+_{2}^{\prime},n^{\prime})\nonumber\\
+&  \equiv-4\uppi^{2}\sqrt{\frac{k^{\prime}E_{1}^{\prime}E_{2}^{\prime
+}E_{1}E_{2}}{E^{2}k}}M_{\bk^{\prime}\,\sigma_{1}^{\prime}%
+\,-\bk^{\prime}\,\sigma_{2}^{\prime}\,n^{\prime},\:\bk%
+\,\sigma_{1}\,-\bk\,\sigma_{2}\,n}\nonumber\\
+&  =-\frac{4\uppi^{2}}{k}\sum_{j\sigma\ell^{\prime}m^{\prime}s^{\prime
+}\mu^{\prime}\ell ms\mu}C_{s_{1}s_{2}}(s,\mu;\sigma_{1},\sigma_{2})C_{\ell
+s}(j,\sigma;m,\mu)\nonumber\\
+& \quad\times C_{s_{1}^{\prime}s_{2}^{\prime}}(s^{\prime}%
+,\mu^{\prime};\sigma_{1}^{\prime},\sigma_{2}^{\prime})C_{\ell^{\prime
+}s^{\prime}}(j,\sigma;m^{\prime},\mu^{\prime})\nonumber\\
+& \quad\times Y_{\ell^{\prime}}^{m^{\prime}}(\hat{\bk^{\prime}})
+Y_{\ell}^{m\ast}(\hat{\bk})M_{\ell^{\prime}\,s^{\prime}\,n^{\prime
+},\:\ell\,s\,n}^{j}(E)\:. \label{3.7.8}%
+\end{align}
+
+
+微分散射截面是$\lvert f\rvert^{2}$. 我们取初动量$\bk$的方向为$3$-方向, 在这种情况下
+\begin{equation}
+Y_{\ell}^{m}(\hat{\bk})=\updelta_{m0}\sqrt{\frac{2\ell+1}{4\uppi}} \:. \label{3.7.9}%
+\end{equation}
+计算$\lvert f\rvert ^{2}$对\marginpar[\flushright{\small[154]\hspace*{5mm}}]{{\small\hspace*{5mm}[154]}}末动量$\bk^{\prime}$的方向的积分, 对末态自旋$3$-分量求和并对初态自旋$3$-分量取平均, 我们就得到了从$n$ 道跃迁到$n^{\prime}$ 道的总截面{}$^*$\footnote{$^*${}为了导出这个结果, 我们利用了\,Clebsch-Gordan\,系数的标准求和规则\textsuperscript{\cite{9}}: 首先
+\[
+\sum_{\sigma_{1},\sigma_{2}}C_{s_{1},s_{2}}(s,\mu;\sigma_{1},\sigma
+_{2})C_{s_{1},s_{2}}(\bar{s},\bar{\mu};\sigma_{1},\sigma_{2})=\updelta_{s\bar
+{s}}\updelta_{\mu\bar{\mu}}%
+\]
+带撇号的与此相同; 接着
+\[
+\sum_{m\tilde{\sigma}}C_{\ell\,s}(j,\sigma;m,\tilde{\sigma})C_{\ell\,s}%
+(\bar{j},\bar{\sigma};m,\tilde{\sigma})=\updelta_{j\bar{j}}\updelta_{\sigma
+\bar{\sigma}}%
+\]
+最终
+\[
+\sum_{\sigma\mu}C_{\ell\,s}(j,\sigma;0,\mu)C_{\bar{\ell}\,s}(j,\sigma
+;0,\mu)=\frac{2j+1}{2\ell+1}\updelta_{\bar{\ell}\ell}\:.%
+\]}:
+\begin{align}
+\sigma(n\to n^{\prime};E)  &  =\frac{\uppi}{k^{2}(2s_{1}+1)(2s_{2}%
++1)}\sum_{j\,\ell\,s\,\ell^{\prime}\,s^{\prime}}(2j+1)\nonumber\\
+&  \quad\times\left\vert \updelta_{\ell^{\prime}\ell}\updelta_{s^{\prime}s}%
+\updelta_{n^{\prime}n}-S_{\ell^{\prime}s^{\prime}n^{\prime},\ell sn}%
+^{j}(E)\right\vert ^{2}\text{ }. \label{3.7.10}%
+\end{align}
+计算(\ref{3.7.10})对所有两体道的求和, 这给出了所有弹性或非弹性两体反应的总截面:
+\begin{align}
+\sum_{n^{\prime}}\sigma(n\to n^{\prime};E)  &  =\frac{\uppi}%
+{k^{2}(2s_{1}+1)(2s_{2}+1)}\sum_{j\,\ell\,s}(2j+1)\nonumber\\
+&  \quad\times\Bigl[  (1-S^{j}(E))^{\dag}(1-S^{j}(E))\Bigr]_{\ell\,s\,n,\ell\,s\,n}\:. \label{3.7.11}%
+\end{align}
+可以做个比较, 方程(\ref{3.7.8}), (\ref{3.7.9}), (\ref{3.7.4})和\,Clebsch-Gordon\,求和规则\footnotemark[2]%
+给出的自旋平均的前向散射振幅是
+\[
+f(n;E)=\frac{\mi}{2k(2s_{1}+1)(2s_{2}+1)}\sum_{j\,\ell\,s}(2j+1)[1-S_{\ell sn,\ell sn}^{j}]
+\]
+这样, 光学定理(\ref{3.6.10})给出的总截面就是
+\begin{equation}
+\sigma_{\text{total}}(n;E)=\frac{2\uppi}{k^{2}(2s_{1}+1)(2s_{2}+1)}\sum
+_{j\,\ell\,s}(2j+1)\operatorname{Re}[1-S^{j}(E)]_{\ell sn,\ell sn}\:.
+\label{3.7.12}%
+\end{equation}
+如果在能量为$E$时从$n$道只能到达两体道, 那么矩阵$S^{j}(E)$(或者至少是某个包含道$n$的子矩阵)是幺正的, 因此
+\begin{equation}
+\Bigl[(1-S^{j}(E))^{\dag}(1-S^{j}(E))\Bigr]_{\ell\,s\,n,\ell\,s\,n}
+=2\operatorname{Re}[1-S^{j}(E)]_{\ell sn,\ell sn} \: , \label{3.7.13}%
+\end{equation}
+所以(\ref{3.7.12})和(\ref{3.7.11})相等. 另一方面, 如果包含三个或多个粒子的道是打开的, 那么, (\ref{3.7.12})与(\ref{3.7.11})
+之差就给出了产\marginpar[\flushright{\small[155]\hspace*{5mm}}]{{\small\hspace*{5mm}[155]}}生额外粒子的总截面:
+\begin{align}
+\sigma_{\text{production}}(n;E)  &= \frac{\uppi}{k^{2}(2s_{1}+1)(2s_{2}+1)}%
+\sum_{j\,\ell\,s}(2j+1)\nonumber\\
+&  \quad\times\Bigl[1-S^{j}(E)^{\dag}S^{j}(E)\Bigr]_{\ell\,s\,n,\ell\,s\,n} \: ,  \label{3.7.14}%
+\end{align}
+并且必须是正的.
+
+当$S$-矩阵与过程相关的部分是对角矩阵时, 分波展开是非常有用的. 例如下面的这种情况, 如果初道$n$仅包含两个无自旋粒子, 并且在这个能量下没有其他的道是打开的, 就像$\pi^{+}-\pi^{+}$或$\pi^{+}-\pi^{0}$在能量低于产生额外$\pi$介子(假定忽略弱作用和电磁作用)%
+阈值时的散射. 对于一对无自旋的粒子, 我们有$j=\ell$, 并且角动量守恒使$S$-矩阵对角化. 在某些包含有自旋粒子的过程中, $S$-矩阵也有可能是对角化的; 例如在$\pi$介子-核子散射中, 我们可以有$j=\ell+\frac{1}{2}$或$j=\ell-\frac{1}{2}$, 但是对于给定的$j$, 这两个态具有相反的宇称, 所以它们不能通过非零的$S$-矩阵元相连. 在任何情况下, 如果对于某些$n$和$E$, $S$-矩阵只在$N^{\prime}$是两体态$j,\ell,s,n$时不为零, 那么幺正性会要求
+\begin{equation}
+S_{\ell^{\prime}s^{\prime}n^{\prime},\ell sn}^{j}(E)=\exp[2\mi\delta_{j\ell
+sn}(E)]\updelta_{\ell^{\prime}\ell}\updelta_{s^{\prime}s}\updelta_{n^{\prime}n}\:, \label{3.7.15}%
+\end{equation}
+其中$\delta_{j\ell sn}(E)$%
+是实相位, 通常称为{\KAI{相移}}. 这个公式也经常应用于$S$-矩阵的两体部分是对角化的但包含三个或多个粒子的道同时打开的情况; 在这种情况下, 为了确保(\ref{3.7.14})为正, 相移必须有一个正虚部. 对于实相移, 弹性总截面由方程(\ref{3.7.10})或方程(\ref{3.7.12})给出:
+\begin{align}
+\sigma(n\to n;E)  &  =\sigma_{\text{total}}(n;E)\nonumber\\
+&  =\frac{4\uppi}{k^{2}(2s_{1}+1)(2s_{2}+1)}\sum_{j\,\ell\,s}(2j+1)\sin
+^{2}\delta_{j\ell sn}(E)\:. \label{3.7.16}%
+\end{align}
+在非相对论量子力学中, 这个熟悉的结果通常是通过研究粒子在有势时的坐标空间波函数得到的. 这里所给出的推导, 既给出了弹性散射的分波展开在相对论速度下也适用的证明, 也强调了它不依赖特别的动力学前提, 而只依赖幺正性和不变性原理.
+
+对于多个道都打开的问题, 若这些道构成某个内部对称群的几个不可约表示, 引入相移也经常是有用的. 这类内部对称性的一个经典例子是同位旋对称性, 对于这种对称性, 道指标$n$包含对两个粒子的同位旋$T_{1},T_{2}$以\marginpar[\flushright{\small[156]\hspace*{5mm}}]{{\small\hspace*{5mm}[156]}}及同位旋\,3\,-分量$t_{1},t_{2}$的描述; 道$n$中的态可以表示为不可约表示$T$的第$t$ 个分量的线性组合, 系数由熟悉的\,Clebsch-Gordan\,系数$C_{T_{1}T_{2}}(T,t;t_{1},t_{2})$给出.
+假定对于感兴趣的道和能量, $S$-矩阵对于$\ell,s$和$j,T,t$是对角的. 那么, 幺正性和同位旋对称性允许我们将$S$-矩阵写成
+\begin{equation}
+S_{\ell^{\prime}\,s^{\prime}\,T^{\prime}\,t^{\prime},\ell\,s\,T\,t}^{j}%
+=\exp[2\mi\delta_{j\,\ell\,s\,T}(E)]\updelta_{\ell^{\prime}\ell}\updelta_{s^{\prime
+}s}\updelta_{T^{\prime}T}\updelta_{t^{\prime}t} \:, \label{3.7.17}%
+\end{equation}
+其中$\delta_{j\,\ell\,s\,T}(E)$是实相位, 根据\,Wigner-Eckart\,定理, 它与$t$无关. 分波截面可以再一次从方程(\ref{3.7.10})得出, 而总截面由方程(\ref{3.7.12})给出
+\begin{align}
+\sigma_{\text{total}}(t_{1},t_{2};E)  &  =\frac{4\uppi}{k^{2}(2s_{1}%
++1)(2s_{2}+1)}\nonumber\\
+&  \quad\times\sum_{j\ell sTt}(2j+1)C_{T_{1},T_{2}}(T,t;t_{1},t_{2})^{2}%
+\sin^{2}\delta_{j\,\ell\,s\,T}(E) \label{3.7.18}%
+\end{align}
+例如, 在$\pi$-$\pi$散射中, 相移是$\delta_{\ell\,\ell\,0\,T}(E)$, 它对于偶数的$\ell$有$T=0$或$T=2$, 对于奇数的$\ell$则有$T=1$, 而对于$\pi$ 介子\lzx 核子散射, 相移是$\delta_{j\,j\pm\frac{1}{2}\,\frac{1}{2}\,T}$, 其中$T=\frac{1}{2}$或$T=\frac{3}{2}$.
+
+通过一些几乎与任何动力学假设无关的解析性考察, 我们可以得到对散射振幅和相移的阈值性质的一些深入理解. 除非存在动量空间产生奇异性的特殊情况, 我们可以预期, 在$k=0$或$k^{\prime}=0$或(对于弹性散射)$k=k^{\prime}=0$附近, 矩阵元$M_{\bk^{\prime
+}\,\sigma_{1}^{\prime}\,-\bk^{\prime}\,\sigma_{2}^{\prime}\,n^{\prime
+},\,\bk\,\sigma_{1}\,-\bk\,\sigma_{2}\,n}$
+是3-动量$\bk$和$\bk^{\prime}$的解析函数{}$^*$\footnote{$^*${}例如, 在\,Born\,近似(\ref{3.2.8})下, $M$正比于相互作用的坐标空间矩阵元的\,Fourier\, 变换, 因此, 只要这些矩阵元在距离很大时快速衰减, 它在零动量处就是解析的. 主要的例外是包含长程力的散射, 例如\,Coulomb\,力. }%
+. 现在着手处理$M$的分波展开(\ref{3.7.8}), 我们注意到$k^{\ell}\zY_{\ell}^{m}(\hat{\bk})$是\,3\,-矢$\bk$的简单多项式函数, 所以, 为了使$M_{\bk%
+^{\prime}\,\sigma_{1}^{\prime}\,-\bk^{\prime}\,\sigma_{2}^{\prime
+}\,n^{\prime},\,\bk\,\sigma_{1}\,-\bk\,\sigma_{2}\,n}%
+$在$k=0$或$k^{\prime}=0$附近关于\,3\,-动量$\bk$和$\bk^{\prime}$解析, 在$k$和(或)$k^{\prime}$趋于零时, 系数$M_{\ell^{\prime
+}\,s^{\prime}\,n^{\prime},\ell\,s\,n}^{j}$%
+, 或等价地, $\updelta_{\ell^{\prime}\ell
+}\updelta_{s^{\prime}s}\updelta_{n^{\prime}n}-S_{\ell^{\prime}s^{\prime}n^{\prime
+},\ell sn}^{j}$, 必须趋于$k^{\ell+\frac{1}{2}}k^{\prime\ell+\frac{1}{2}}$. 因此对于小的$k$和(或)$k^{\prime}$, 只有初态和(或)末态中最低阶的分波对散射振幅有明显的贡献. 我们有三种可能的情况:
+
+\subsection*{放热反应}
+\marginpar[\flushright{\raisebox{4ex}[0pt]{{\small[157]\hspace*{5mm}}}}]{{\raisebox{4ex}[0pt]{\small\hspace*{5mm}[157]}}}
+
+\noindent 这时, $k^{\prime}$在$k\to0$时趋于一个有限值, 并且$\updelta
+_{\ell^{\prime}\ell}\updelta_{s^{\prime}s}\updelta_{n^{\prime}n}-S_{\ell^{\prime
+}s^{\prime}n^{\prime},\ell sn}^{j}$在这个极限下趋于$k^{\ell+\frac{1}{2}}$. 截面(\ref{3.7.11})在这种情况下趋于$k^{2\ell-1}$, 其中$\ell$在这里是能引发这个反应的{\KAI{最低}}轨道角动量. 在最通常的情况下, $\ell=0$, 所以反应截面趋于$1/k$.
+(例如, 复杂核对慢中子的吸收, 或是去除\,Coulomb\,力的高阶效应后的正负电子对湮没成低能光子.) 反应速率等于截面乘以流, %
+而流又趋于$k$, 所以放热反应的速率在$k\to0$时像一个常数. 然而, 当粒子束穿过给定厚度的靶物质时, 决定吸收概率的是截面而不是反应速率, 在类似硼这样的吸收物质中, 因子$1/k$使得吸收概率对于慢中子非常高.
+
+\subsection*{吸热反应}
+
+\noindent 在$k$达到一个有限的阈值前, 这种反应一直都是被禁止的, 这里这个阈值是$k^{\prime}=0$. 仅在这个阈值以上, $\updelta_{\ell^{\prime}\ell}\updelta_{s^{\prime}s}\updelta_{n^{\prime}n}-S_{\ell^{\prime
+}s^{\prime}n^{\prime},\ell sn}^{j}$趋于$(k^{\prime})^{\ell^{\prime}+\frac{1}{2}}$. 截面(\ref{3.7.11})在这种情况下趋于$(k^{\prime})^{2\ell^{\prime}+1}$, $\ell^{\prime}$在这里是在阈值处能产生的{\KAI{最低}}轨道角动量. 在最通常的情况下, $\ell^{\prime}=0$, 所以反应截面在阈值之上就像$k^{\prime}$一样增大, 因而类似于$\sqrt{E-E_{\text{threshold}}}$. (例如, 奇异粒子的伴随产生, 或是光子散射中正负电子对的产生. )
+
+\subsection*{弹性反应}
+
+\noindent 这时$k=k^{\prime}$, 所以$k$和$k^{\prime}$一起趋于零. (当$n^{\prime}=n$时, 或者组成$n^{\prime}$的粒子与组成$n$的粒子处在相同的同位旋多重态时, 便是这种情况.) 在弹性散射中, $\ell=\ell^{\prime}=0$的分波总是出现, 所以在$k\to0$的极限下, 散射振幅(\ref{3.7.8})变成一个常数:
+\begin{align}
+&  f(\bk,\sigma_{1},-\bk,\sigma_{2},n\to\bk%
+^{\prime},\sigma_{1}^{\prime},-\bk^{\prime},\sigma_{2}^{\prime
+},n^{\prime})\quad\to\nonumber\\
+&  \sum_{s\sigma}C_{s_{1}s_{2}}(s,\sigma;\sigma_{1},\sigma_{2})C_{s_{1}%
+^{\prime}s_{2}^{\prime}}(s,\sigma;\sigma_{1}^{\prime},\sigma_{2}^{\prime
+})a_{s}(n\to n^{\prime}) \:, \label{3.7.19}%
+\end{align}
+其中$a$是常数, 称为{\KAI{散射长度}}, 由$k=k^{\prime}\to0$时的如下极限定义
+\begin{equation}
+S_{0sn^{\prime},0sn}^{s}\to\updelta_{n^{\prime},n}+2\mi ka_{s}(n-n^{\prime})\:. \label{3.7.20}%
+\end{equation}
+计算$4\uppi\lvert f\rvert ^{2}$对\marginpar[\flushright{\small[158]\hspace*{5mm}}]{{\small\hspace*{5mm}[158]}}末态自旋的求和以及对初态自旋的平均, 这给出跃迁$n\to n^{\prime}$在$k=k^{\prime}=0$时的总截面:
+\begin{equation}
+\sigma(n\to n^{\prime};k=0)=\frac{4\uppi}{(2s_{1}+1)(2s_{2}+1)}\sum
+_{s}(2s+1)a_{s}^{2}(n\to n^{\prime})\:. \label{3.7.21}%
+\end{equation}
+应用这一公式的一个经典例子是中子\lzx 质子散射, 这里有两个散射长度, 且自旋单态长度$a_{0}$远大于自旋三重态的长度$a_{1}$.
+
+分波展开也可用来对散射的高能行为做一些粗略的猜测. 随着波长的减小, 我们可以预期散射或多或少地可以用经典理论描述: 一个动量为$k$, 轨道角动量为$\ell$ 的粒子, 它的碰撞参量是$\ell/k$, 因此, 如果$\ell\leq kR$, 那么粒子将会打到一个半径为$R$的圆盘中. 这可以被解释成关于$S$-矩阵元的表达:
+\begin{equation}
+S_{\ell\,s\,n,\ell\,s\,n}^{j}\to\bigg\{
+\begin{array}
+[c]{c}%
+0\quad\ell\ll kR_{n}\\
+1\quad\ell\gg kR_{n}%
+\end{array}
+\: ,  \label{3.7.22}%
+\end{equation}
+其中$R_{n}$是道$n$的某种相互作用的半径. 对于给定的$\ell\gg s$, $j$的$2s+1$个值都足够接近$\ell$, 这使得可以做近似$2j+1\simeq2\ell+1$, 所以方程(\ref{3.7.12})中对$j$和$s$的求和仅给出阶因子
+\[
+\sum_{j\,s}(2j+1)=(2\ell+1)\sum_{s}(2s+1)=(2\ell+1)(2s_{1}+1)(2s_{2}+1)\:.%
+\]
+那么, 当$k\gg1/R_{n}$时, 总截面由方程(\ref{3.7.12})给定为
+\begin{equation}
+\sigma_{\text{total}}(n;E)\to\frac{2\uppi}{k^{2}}\sum_{\ell\leq kR_{n}%
+}(2\ell+1)\to2\uppi R_{n}^{2}\:. \label{3.7.23}%
+\end{equation}
+以精确相同的方式, 方程(\ref{3.7.10})给出了弹性散射截面
+\begin{equation}
+\sigma(n\to n;E)\to\uppi R_{n}^{2}\:. \label{3.7.24}%
+\end{equation}
+方程(\ref{3.7.23})与(\ref{3.7.24})之差给出非弹性截面$\uppi R_{n}^{2}$, 这正是我们对粒子与半径为$R_{n}$的不透圆盘预期的碰撞截面. (略微意外的是弹性散射截面$\uppi R_{n}^{2}$可以归于对盘的衍射.) 另一方面, 如果我们在方程(\ref{3.7.22})外又假定, 仅当碰撞参量$\ell/k$处在$\ell/k=R_{n}$周围一个宽度为$\Delta_{n}\ll R_{n}$的狭窄范围内时, $S_{\ell
+\,s\,n,\ell\,s\,n}^{j}$才是复的, 那么, 利用不等式$\lvert\operatorname{Im}(1-S_{\ell\,s\,n,\ell\,s\,n}^{j})\rvert\leq2$, 同样的分析会给出对前向散射振幅实部的限制
+\begin{equation}
+\lvert \operatorname{Re}f(n;E)\rvert \leq2kR_{n}\Delta_{n}%
+\ll \lvert \operatorname{Im}f(n;E)\rvert \:. \label{3.7.25}%
+\end{equation}
+前向散射振幅的实部在高能时很小已被实验证实.
+
+到现在\marginpar[\flushright{\small[159]\hspace*{5mm}}]{{\small\hspace*{5mm}[159]}}我们还没有说过相互作用半径$R_{n}$本身是否依赖能量. 做一个非常粗略的猜测, 我们可以取$R_{n}$对能量的依赖使得汤川(Yukawa)势(\ref{1.2.74}) 中的因子$\exp(-\mu r)$正比于$E$的某个幂次不定的幂函数, 在这种情况下, 当$E\to\infty$ 时, $R_{n}$趋于$\log E$, 截面则趋于$(\log E)^{2}$. 碰巧的是, 基于一些非常普遍的假设, 已经严格证明了总截面在$E\to\infty$时不能比$(\log E)^{2}$增长得更快,\textsuperscript{\cite{26}} 并且事实上已经观测到质子\lzx 质子总截面在高能下的增长类似于$(\log E)^{2}$, 所以高能散射的这个粗略描述似乎确实与现实世界有一些对应.
+
+\section[共振]%
+{共振{}$^*$\footnote{$^*${}本节或多或少地处在本书的发展主线之外, 可以在第一次阅读时略过. }%
+} \label{sec:3.8}
+\setcounter{equation}{0}
+
+经常发生的一种情况是参与多粒子碰撞的粒子会形成由{\KAI{单个}}不稳定粒子$R$组成的中间态, 这个中间态最终会衰变成末态中观测到的粒子. 如果$R$的总衰变速率小, 截面在中间态$R$%
+的能量处会呈现一个迅速的变化(通常是一个峰), 这称为{\KAI{共振}}%
+.
+
+我们将会看到, 共振附近的截面性质几乎是由幺正条件单独决定的, 这是一件好事, 数个相当不同的机制能产生近似稳定的态:
+\vspace{2mm}
+
+\noindent(a)
+最简单的可能性是哈密顿量能够分成两项, ``强''哈密顿量$H_{0}+V_{\text{s}}$和弱的微扰$V_{\text{w}}$, 粒子$R$是强哈密顿量的一个本征态, 而微扰项使得$R$ 可以衰变成各种态, 其中包括我们碰撞过程的初末态$\alpha,\beta$. 例如, 有一个中性粒子$Z^{0}$, 它有$j=1$且质量为$91\,\mathrm{GeV}$, 在没有电弱相互作用时, 它是稳定的. 这些相互作用使得$Z^{0}$可以衰变成正负电子对, 正负$\mu$子对等, 但其总衰变速率远小于$Z^{0}$的质量. 1989\, 年, 在欧洲核子中心和斯坦福直线加速器中心进行\marginpar[\flushright{\small[160]\hspace*{5mm}}]{{\small\hspace*{5mm}[160]}}的$e^{+}%
++e^{-}\to Z^{0}\to e^{+}+e^{-},\,e^{+}+e^{-}\to Z^{0}\to\mu^{+}+\mu^{-}$ 等反应中, $Z^{0}$粒子是作为正负电子对碰撞中的共振态{}$^{**}$\footnote{$^{**}${} 顺便说一下, 这个例子表明了共振态仅需要衰变得{\KAI{相对}}慢. $Z^{0}$的寿命是$2.6\times10^{-25}$ s, 这不足以使$Z^{0}$以接近光速的速度穿过一个原子核. 重要的是, 这个衰变速率是$Z^{0}$波函数在它的静止系下的振荡速率$\hbar/M_{Z}$的1/36. }被发现的.
+
+\noindent(b)
+在一些情况下, 一个粒子的寿命长是因为存在势垒, 这几乎阻止了粒子组分的逃逸. 典型的例子是核$\alpha$衰变: 原子核可能非常倾向于发射一个$\alpha$ 粒子($\mathrm{He}^{4}$核), 但是$\alpha$粒子与核之间的强静电斥力在子核周围形成了势垒区域, 从经典理论来看, $\alpha$粒子禁止进入这个区域. 于是衰变只能通过量子力学的隧穿效应进行, 而这个衰变速率是指数减小的. 在$\alpha$粒子与子核的散射中, 这种不稳定态表现为一个共振. 例如, $\mathrm{Be}^{8}$ 核的最低能态不稳定, 它会衰变成两个$\alpha$粒子, 因此它在$\mathrm{He}^{4}$-$\mathrm{He}^{4}$散射中作为一个共振被看到. (除了\,Coulomb\,势垒以外, 还存在离心势垒, 它帮助延长高自旋的$\alpha$-, $\beta$-和$\gamma$-不稳核的寿命. )
+
+\noindent(c)
+在没有任何势垒或弱作用的情况下, 复杂系统可能由于统计原因变成近不稳的. 例如, 对于重荷的激发态, 可能只当它经由统计涨落将大部分能量集中在一个中子上时, 它才能发生衰变. 这样, 在中子与子核的散射中, 这个态将会表现为一个共振.\vspace{2mm}
+
+这些产生长寿命态的机制差别如此之大, 幸而共振的大多数性质与产生共振的动力学机制无关, 而只是依赖幺正性.
+
+首先, 对于共振附近的一个反应, 我们来考察它的矩阵元与能量之间的关系.
+``入''态波包$\int \dif\alpha\:g(\alpha)\Psi_{\alpha}{}^{\!+}\exp(-\mi E_{\alpha}t)$对时间的依赖性由(\ref{3.1.19})给出
+\begin{align*}
+\int \dif\alpha\:g(\alpha)\Psi_{\alpha}{}^{\!+}\me^{-\mi E_{\alpha}t}
+&  =\int \dif\alpha\:g(\alpha)\Phi_{\alpha}\me^{-\mi E_{\alpha}t}\\
+&  \quad+\int \dif\beta\:\Phi_{\beta}\int \dif\alpha\:\frac{\me^{-\mi E_{\alpha
+}t}\,g(\alpha)\,T_{\beta\alpha}{}^{\!+}}{E_{\alpha}-E_{\beta
+}+\mi\epsilon}\:.%
+\end{align*}
+我们在\,\ref{sec:3.1}\,节中提到过, $T_{\beta\alpha}{}^{\!+}$在下半复$E_{\alpha}$平面中的极点对第二项有贡献, 这个贡献在$t\to\infty$时指数衰减. 特别地, $E_{\alpha}=E_{R}-\mi\Gamma/2$处的极点在{\KAI{振幅}}中产生的项行为类似于$\exp(-\mi E_{R}t-\Gamma t/2)$, 所以它对应{\KAI{概率}}像$\exp(-\Gamma t)$ 那样衰减的态. 于是我们可以得出这样的结论: 对于能量为$E_{R}$且有一个较慢的衰变速率$\Gamma$的长寿命态, 它在散射振幅中贡献的项正比于
+\begin{equation}
+T_{\beta\alpha}{}^{\!+}\sim(E_{\alpha}-E_{R}+\mi\Gamma/2)^{-1}+\text{常数} \:. \label{3.8.1}%
+\end{equation}
+
+
+更进一步\marginpar[\flushright{\raisebox{5ex}[0pt]{{\small[161]\hspace*{5mm}}}}]{{\raisebox{5ex}[0pt]{\small\hspace*{5mm}[161]}}}, 采用上一节所讨论的正交离散多粒子态$\Phi_{\bp\,E\,N}$作为基将会方便我们的讨论; $\bp$和$E$是总动量和总能量, $N$是只取离散值(尽管有无限多个)的指标. 在这个基下, $S$-矩阵可以写成
+\begin{equation}
+S_{\bp^{\prime}\,E^{\prime}\,N^{\prime}\,,\,\bp\,E\,N}%
+=\updelta^{3}(\bp^{\prime}-\bp)\updelta(E^{\prime}-E)S_{N^{\prime}%
+N}(\bp,E)\:. \label{3.8.2}%
+\end{equation}
+在共振附近, 我们预期质心系振幅$S(0,E)\equiv\mathscr{S}(E)$有如下形式
+\begin{equation}
+\mathscr{S}_{N^{\prime}N}(E)\equiv S_{N^{\prime}N}(0,E)
+=\mathscr{S}_{0N^{\prime}N}+\frac{\mathscr{R}_{N^{\prime}N}}{E-E_{R}+\mi\Gamma/2} \:, \label{3.8.3}%
+\end{equation}
+其中, 至少在能量的相对较小范围$\lvert E-E_{R}\rvert \lesssim\Gamma$内, $\mathscr{S}_{0}$和$\mathscr{R}$近似是个常数.
+
+在这个基下, $S$-矩阵的幺正性是一普通的矩阵方程
+\begin{equation}
+\mathscr{S}(E)^{\dag}\mathscr{S}(E)=1\:. \label{3.8.4}%
+\end{equation}
+将其应用于方程(\ref{3.8.3}), 这告诉我们非共振背景的$S$-矩阵是幺正的
+\begin{equation}
+\mathscr{S}_{0}^{\dag}\mathscr{S}_{0}=1 \: ,  \label{3.8.5}%
+\end{equation}
+以及剩下部分的矩阵$\mathscr{R}$满足如下两个条件
+\begin{equation}
+\mathscr{S}_{0}^{\dag}\mathscr{R}-\mathscr{R}^{\dag}\mathscr{S}_{0}=0\text{
+, } \label{3.8.6}%
+\end{equation}%
+\begin{equation}
+-\frac{\mi}{2}\Gamma\mathscr{S}_{0}^{\dag}\mathscr{R}+\frac{\mi}{2}\Gamma
+\mathscr{R}^{\dag}\mathscr{S}_{0}+\mathscr{R}^{\dag}\mathscr{R}=0\:.
+\label{3.8.7}%
+\end{equation}
+通过令\begin{equation}
+\mathscr{R}\equiv-\mi\Gamma\mathscr{A}\mathscr{S}_{0}\text{ , }
+\label{3.8.8}%
+\end{equation}
+这些条件可以写成更加明显的形式. 这样, 矩阵$\mathscr{A}$上的幺正条件就是
+\begin{equation}
+\mathscr{A}^{\dag}=\mathscr{A}\:,\qquad\quad\mathscr{A}^{2}=\mathscr{A}\:. \label{3.8.9}%
+\end{equation}
+任何这样的厄米幂等矩阵被称为{\KAI{投影矩阵}}. 这样的矩阵总可以表示成正交矢量$u^{(r)}$的并矢的和:
+\begin{equation}
+\mathscr{A}_{N^{\prime}N}=\sum_{r}u_{N^{\prime}}^{(r)}\:u_{N}^{(r)\ast} \:, \quad
+\sum_{N}u_{N}^{(r)\ast}\:u_{N}^{(s)}=\updelta_{rs}\:. \label{3.8.10}%
+\end{equation}
+于是, $S$-矩阵的离散部分就是
+\begin{equation}
+\mathscr{S}_{N^{\prime}N}(E)= \sum_{N^{\prime\prime}}\left[
+\updelta_{N^{\prime}N^{\prime\prime}}-\mi\frac{\Gamma}{E-E_{R}+\mi\Gamma/2}\sum
+_{r}u_{N^{\prime}}^{(r)}\:u_{N^{\prime\prime}}^{(r)\ast}\right]
+\mathscr{S}_{0N^{\prime\prime}N}\:. \label{3.8.11}%
+\end{equation}
+在\marginpar[\flushright{\small[162]\hspace*{5mm}}]{{\small\hspace*{5mm}[162]}}对$r$的求和中, 每一项都可以认为来源于不同的共振态, 所有这些态对于$E_{R}$ 和$\Gamma$有相同的值.
+
+这对速率和截面产生了什么影响呢? 简单起见, 我们忽略非共振背景散射, 令$\mathscr{S}_{0N^{\prime}N}$等于$\updelta_{N^{\prime}N}$; 稍后我们会回到更普遍的情况. 那么, 对于上节所描述的两体分立质心态, 方程(\ref{3.8.11})变成:
+\begin{align}
+\mathscr{S}_{j^{\prime}\sigma^{\prime}\ell^{\prime}s^{\prime}n^{\prime},j\sigma\ell sn}(E)
+&= \updelta_{j^{\prime}j}\updelta_{\sigma^{\prime}\sigma}
+\updelta_{\ell^{\prime}\ell}\updelta_{s^{\prime}s}\updelta_{n^{\prime}n}\nonumber\\
+&\quad-\mi\frac{\Gamma}{E-E_{R}+\mi\Gamma/2}\sum_{r}u_{j^{\prime}\sigma^{\prime}
+\ell^{\prime}s^{\prime}n^{\prime}}^{(r)}\,u_{j\sigma\ell sn}^{(r)\ast}\:. \label{3.8.12}%
+\end{align}
+在所有情况下, 指标$r$都将包含给出共振态总角动量$z$-分量的指标$\sigma_{R}$; 对于总角动量为$j_{R}$的共振态, $\sigma_{R}$取$2j_{R}+1$ 个值. 如果没有其他简并, 那么$r$仅标记$\sigma_{R}$的值, 并且
+\begin{equation}
+u_{j\sigma\ell sn}^{(\sigma_{R})}=\updelta_{j_{R},j}\updelta_{\sigma_{R},\sigma}u_{\ell sn}\:,\label{3.8.13}%
+\end{equation}
+其中$u_{\ell sn}$是一组(由于\,Wigner-Eckart\,定理)与$\sigma$无关的复振幅. 方程(\ref{3.8.12})现在给出了方程(\ref{3.7.7})定义的振幅$S^{j}$
+\begin{equation}
+S_{\ell^{\prime}s^{\prime}n^{\prime},\ell sn}^{j}\left(  E\right)
+=\updelta_{\ell^{\prime},\ell}\updelta_{s^{\prime}s}\updelta_{n^{\prime}n}%
+-\mi\updelta_{j,j_{R}}\frac{\Gamma}{E-E_{R}+\mi\Gamma/2}u_{\ell^{\prime}s^{\prime
+}n^{\prime}}\,u_{\ell sn}^{\ast}\:. \label{3.8.14}%
+\end{equation}
+另外, 方程(\ref{3.8.10}%
+)现在变为\begin{equation}
+\sum_{\ell sn}\lvert u_{\ell sn}\rvert^{2}+\cdots=1 \label{3.8.15}%
+\end{equation}
+其中省略号表示任何包含三个或多个粒子的态的正贡献. 我们将会看到, $\lvert u_{\ell sn}\rvert^{2}$可以解释为共振态衰变到各种允许的两体态的分支比.
+
+方程(\ref{3.7.12})现在给出了道$n$中所有反应的总截面:
+\begin{equation}
+\sigma_{\text{total}}(n;E)=\frac{\uppi(2j_{R}+1)}{k^{2}(2s_{1}+1)(2s_{2}%
++1)}\frac{\Gamma\Gamma_{n}}{(E-E_{R})^{2}+\Gamma^{2}/4} \: ,\label{3.8.16}%
+\end{equation}
+其中\begin{equation}
+\Gamma_{n}\equiv\Gamma\sum_{\ell s}\lvert u_{\ell sn}\rvert^{2}\:. \label{3.8.17}%
+\end{equation}
+这是著名的\,Breit-Wigner\,单能级公式的一个版本.\textsuperscript{\cite{27}} 我们也能用这些公式计算从初态两体道$n$到末态两体道$n^{\prime}$的共振散射的截面.
+在方程(\ref{3.7.10})中使用方程(\ref{3.8.14})
+给出\marginpar[\flushright{\raisebox{-6ex}[0pt]{{\small[163]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[163]}}}
+\begin{equation}
+\sigma(n\to n^{\prime};E)=\frac{\uppi(2j_{R}+1)}{k^{2}(2s_{1}%
++1)(2s_{2}+1)}\frac{\Gamma_{n}\Gamma_{n^{\prime}}}{(E-E_{R})^{2}+\Gamma^{2}%
+/4}\:. \label{3.8.18}%
+\end{equation}
+这证明了共振态衰变到任意末态两体道$n^{\prime}$的概率正比于$\Gamma_{n^{\prime}}$. 根据方程(\ref{3.8.15}), $\Gamma_{n}$的和(包括三个及三个以上粒子末态的贡献)恰好等于总衰变速率$\Gamma$, 所以我们可以得出结论:
+$\Gamma_{n}$就是共振态衰变到道$n$的速率.
+
+我们从方程(\ref{3.8.16})和(\ref{3.8.18})中看到, 特征共振峰在$E_{R}$处, 宽度(半峰值处的宽度)等于衰变速率$\Gamma$. (单个$\Gamma_{n}$通常称为分宽度.)
+由于$\Gamma_{n}\leq\Gamma$, 共振峰处的总截面粗略地说以波长平方为上界, 即$(2\uppi/k)^{2}$. 这个规则, 即单个共振处的截面粗略地以波长平方为上界, 即使在经典物理中也是适用的(其中能量守恒起到了这里幺正性的作用), 例如声波与海中泡沫的共振作用, 或者引力波与引力波天线的共振作用. (在后一种情况中, 任何实验室量级的质量通过引力波辐射损失能量的振荡分支比很小, 所以即使在共振峰处, 截面也远小于波长平方.\textsuperscript{\cite{28}})
+
+顺便提一下, 通常发生的情况是, 共振是探测到了, 但能量测量不足以精细到确定它的宽度. 在这种情况下, 实验上测量的是截面沿共振峰的积分. 对于总截面(\ref{3.8.16}), 这是
+\begin{equation}
+\int\sigma_{\text{total}}(n;E)\:\dif E=\frac{2\uppi^{2}(2j_{R}+1)\Gamma_{n}}{k_{R}%
+^{2}(2s_{1}+1)(2s_{2}+1)}\:. \label{3.8.19}%
+\end{equation}
+这样的实验只能揭示出共振态衰变到初态粒子的分宽度, 而不是总宽度或分支比.
+
+当自旋$z$-分量给定的共振态构成与某个对称群相关的多重态时, 也可使用这个体系. 例如, 在同位旋对称性被遵守的前提下, 对于总同位旋为$T_{R}$的共振, 指标$r$ 所标记的共振态不仅包含对角动量$z$-分量$\sigma_{R}$的标记, 还包含对同位旋\,3\,-分量$t_{R}$的标记, 后者的取值为$-T_{R},-T_{R}+1,\cdots, T_{R}$. 在这种情况下, 上面对总截面和分截面的结果没有变化, 这是因为每个两体道$n$具有两个粒子同位旋$z$-分量的确定值$t_{1},t_{2}$, 因而只能与$t_{R}$值为$t_{1}+t_{2}$ 的\marginpar[\flushright{\small[164]\hspace*{5mm}}]{{\small\hspace*{5mm}[164]}}共振态耦合. 这里的分宽度$\Gamma_{n}$只通过因子$C_{T_{1},T_{2}}(T_{R},t_{R};t_{1},t_{2})^{2}$与$t_{1},t_{2}$ 相关.
+
+共振的出现由共振附近相移的特征行为体现. 回到一般公式(\ref{3.8.11})(但仍令$\mathscr{S}_{0}=1$), 我们从方程(\ref{3.8.10})中看到, 对每个单独的共振态$r$, 存在$\mathscr{S}_{N^{\prime}N}(E)$的本征矢$u_{N}^{(r)}$, 其本征值为
+\[
+\exp(2\mi\delta^{(r)}(E))=1-\mi\frac{\Gamma}{E-E_{R}+\mi\Gamma/2}%
+\]
+或者换个形式,
+\begin{equation}
+\tan\delta^{(r)}(E)=-\frac{\Gamma/2}{E-E_{R}}\:.
+\label{3.8.20}%
+\end{equation}
+我们看到, 穿过以共振能量为中心, 量级为$\Gamma$的能量范围后, ``本征相位''$\delta^{(r)}(E)$从共振之下的值$\nu\uppi$($\nu$是整数)跃变到共振之上的值$(\nu+1)\uppi$. 然而, 为了应用这个结果对反应速率进行讨论, 我们还需要知道本征矢$u_{N}^{(r)}$, 一般而言, 它的分量包含任意多个动量, 自旋和种类各不相同的粒子.
+
+当处在某个特定道$N$中的粒子被(通常是守恒率)禁止跃迁到所有其他道时, 这些结果会在这类特殊情况下变得特别有用. 在这个假定下, 不难将非共振背景散射矩阵$\mathscr{S}_{0}$纳入到一般结果(\ref{3.8.11})中. 对于某些特殊的$N$, 为了使$\mathscr{S}_{N^{\prime}N}$对所有的$N^{\prime}\neq N$为零, $\mathscr{S}_{0N^{\prime}N}$也必须是这样, 并且对于任何满足$u_{N}^{(r)}\neq0$的$r$, $u_{N^{\prime}}^{(r)}$也是如此. 那么, 幺正性(\ref{3.8.5}) 要求对于这$N$有
+\[
+\mathscr{S}_{0N^{\prime}N}=\exp(2\mi\delta_{0N})\updelta_{N^{\prime}N}%
+\]
+而方程(\ref{3.8.10})要求
+\[
+u_{N}^{(r)\ast}\,u_{N}^{(s)}=\updelta_{rs} \:,
+\]
+这使得方程(\ref{3.8.11})中只有一项$r$使$u_{N}^{r}\neq 0$. 在这种情况下, 方程(\ref{3.8.11})给出
+\begin{align*}
+\mathscr{S}_{N^{\prime}N}(E)  &  =\updelta_{N^{\prime}N}\left[  1-\frac{\mi\Gamma
+}{E-E_{R}+\mi\Gamma/2}\right]  \exp(2\mi\delta_{0N})\\
+&  \equiv\updelta_{N^{\prime}N}\exp(2\mi\delta_{N}(E))
+\end{align*}
+以及总相移\begin{equation}
+\updelta_{N}(E)=\updelta_{0N}-\arctan\left(  \frac{\Gamma/2}{E-E_{R}}\right)
+\:. \label{3.8.21}%
+\end{equation}
+我们看到, 穿过以共振能量$E_{R}$为中心, 量级为$\Gamma$的能量范围后, 相移$\delta_{N}(E)$从共振之下的值$\delta_{0N}$跳到共振之上的值$\delta_{0N}+\uppi$. 例\marginpar[\flushright{\small[165]\hspace*{5mm}}]{{\small\hspace*{5mm}[165]}}如, 我们在上一节看到, 在各种两体反应中, 诸如$\pi$-$\pi$和$\pi$-核子在能量低于产生额外$\pi$子的阈值时的散射, 这些假定是满足的, 而$N$包含了总角动量和轨道角动量$j,\ell$(对于$\pi$-$\pi$散射, $j=\ell$), 总角动量的$z$-分量$\sigma$, 以及总的同位旋$T$ 和它的\,3\,-分量$t$. Wigner-Eckart\, 定理仅允许相移依赖于$j,\ell$和$T$, 而不能依赖于$t$或$\sigma$. 在这些道中有一些著名的共振: $\pi$-$\pi$ 散射中, 在$770\,\mathrm{MeV}$处有一共振, 称为$\rho$, 它有$j=\ell=1,T=1$以及$\Gamma=150\,\mathrm{MeV}$; $\pi$-核子散射中, 在$1232\,\mathrm{MeV}$ 处有一共振, 称为$\Delta$, 它有$j=\frac{3}{2},\ell=1,T=\frac{3}{2}$, $\Gamma$的取值范围是$110$至$120\,\mathrm{MeV}$.
+
+对方程(\ref{3.7.12})或方程(\ref{3.7.18})的观测表明, 当共振相移穿过$\uppi/2$(或$\uppi/2$的奇数倍)时, 总截面到达一个峰值. 非共振相移一般相当小, 所以正如我们之前所看到的, 当相移$\delta_{\ell}$穿过$\uppi/2$时, $\sigma_{\text{total}}$ 在能量接近$E_{R}$的地方会显示出一个尖锐的峰. 然而, 有时非共振背景相移$\delta_{0N}$接近$\uppi/2$, 在这种情况下, 当相移在$E_{R}$的附近穿过$\uppi$时, 截面会显示出一个迅速的{\KAI{跌落}}, 这是由共振振幅与非共振背景振幅之间的相消干涉造成的. 这种跌落首次由\,Ramsauer\,(冉绍耳)和\,Townsend\,(汤森德)\textsuperscript{\cite{29}}在\,1922\,年观测到, 他们在电子在惰性气体原子上的散射中看到了这种现象.
+
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+
+\begin{KAI}
+
+1. 考虑一个相互作用可分离的理论; 即相互作用满足
+\[
+(\Phi_{\beta},V\Phi_{\alpha}) =g\,u_{\beta}\,u_{\alpha}^{\ast} \:,
+\]
+其中$g$是实的耦合常数, $u_{\alpha}$是一组满足
+\[
+\sum_{\alpha}\lvert u_{\alpha}\rvert^{2} =1
+\]
+的复量. 利用\,Lippmann-Schwinger\,方程(\ref{3.1.16})得到``入''态, ``出''态和$S$-矩阵的显式解.
+
+
+2. 假设在\marginpar[\flushright{\small[166]\hspace*{5mm}}]{{\small\hspace*{5mm}[166]}}总能量为$150\,\mathrm{GeV}$的$e^{+}$-$e^{-}$散射中发现了一个自旋\,1\,的共振, %
+并且弹性$e^{+}$-$e^{-}$散射在共振峰处(质心系中, 对初态自旋求平均, 对末态自旋求和)%
+的截面等于$10^{-34}\,\mathrm{cm}^{2}$. 共振态$R$以$R\to e^{-}+e^{+}$的方式衰变的分支比是什么? %
+$e^{+}$-$e^{-}$散射在共振峰处的总截面是什么? (解答这两个问题时可忽略非共振背景散射.)
+
+3. 在{\KAI{实验室}}参考系下写出两体散射的微分截面, 其中初态两个粒子中的一个是静止的. %
+用运动学变量和矩阵元$M_{\beta\alpha}$来表示这个微分截面. %
+(直接推导这个结果, 不要使用本章推导出的微分截面在质心系中的结果.)
+
+4. 直接从旧式微扰论中的展开(\ref{3.5.3})推导出微扰展开(\ref{3.5.8}).
+
+5. 通过\,Lippmann-Schwinger\,方程的一个修正版
+\[
+\Psi_{\alpha}{}^{\!0}=\Phi_{\alpha} + \frac{\mathscr{P}}{E_{\alpha}-H_{0}}\,V\Psi_{\alpha}{}^{\!0}\:,
+\]
+我们可以定义``驻波''态$\Psi_{\alpha}{}^{\!0}$. 证明矩阵$K_{\beta\alpha}\equiv\uppi \updelta(E_{\beta}-E_{\alpha})(\Phi_{\beta},V\Psi_{\alpha}{}^{\!0})$ 是厄米的. %
+怎样用$K$-矩阵表示$S$-矩阵?
+
+
+6. 用具有确定的总角动量, 自旋以及同位旋的态的相移表示弹性$\pi^{+}$-质子和$\pi^{-}$-质子散射的微分截面.
+
+
+7. 证明方程(\ref{3.7.5})定义的态$\Phi_{E\,\bp\,j\,\sigma\,s\,n}$的归一化可以正确地%
+给出标量积(\ref{3.7.6}).
+ \end{KAI}
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}更多的细节参看\,M. L. Goldberger and K. M. Watson, {\textit{Collision Theory}} (John Wiley \& Sons, New York, 1964); R. G. Newton, {\textit{Scattering theory of Waves and Particles}}, 2nd edn (Springer-Verlag, New York, 1982).
+     \addcontentsline{toc}{section}{参考文献}
+\bibitem [1a]{1a}B. Lippmann and J. Schwinger, {\textit{Phys. Rev.}} {\bf{79}}, 469 (1950).
+\bibitem {2}J. A. Wheeler, {\textit{Phys. Rev.}} {\bf{52}}, 1107 (1937); W. Heisenberg, {\textit{Z. Phys.}} {\bf{120}}, 513, 673 (1943).
+\bibitem {3}M. Born, {\textit{Z. Phys.}} {\bf{37}}, 863 (1926); {\bf{38}}, 803 (1926).
+\bibitem {4}C. M{\o}ller, {\textit{Kgl. Danske Videnskab. Mat. Fys. Medd.}} {\bf{23}}, No. 1 (1945); {\bf{22}}, No. 19 (1946).
+\bibitem {5}G. D. Rochester\marginpar[\flushright{\small[167]\hspace*{5mm}}]{{\small\hspace*{5mm}[167]}} and C. C. Butler, {\textit{Nature}} {\bf{160}}, 855 (1947). 历史回顾参看\,G. D. Rochester, {\textit{Pions to Quarks \bzx Particle Physics in the 1950s}} L. M. Brown, M. Dresden, and L. Hoddeson\,编辑(Cambridge University Press, Cambridge, UK, 1989).
+\bibitem {6}G. Breit, E. U. Condon, and R. S. Present, {\textit{Phys. Rev.}} {\bf{50}}, 825 (1936); B. Cassen and E. U. Condon, {\textit{Phys. Rev.}} {\bf{50}}, 846 (1936); G. Breit and E. Feenberg, {\textit{Phys. Rev.}} {\bf{50}}, 850 (1936).
+\bibitem {7}M. A. Tuve, N. Heydenberg, and L. R. Hafstad, {\textit{Phys. Rev.}} {\bf{50}}, 806 (1936).
+\bibitem {8}M. Gell-Mann, Cal. Tech. Synchotron Laboratory Report CTSL-20 (1961); {\textit{Phys. Rev.}} {\bf{125}}, 1067 (1962); Y. Ne'eman, {\textit{Nucl. Phy.}} {\bf{26}}, 222 (1961).
+\bibitem {9}可参看\,A. R. Edmonds, {\textit{Angular Momentum in Quantum Mechanics}} (Princeton University Press, Princeton, 1957): Chapter 3 (其中$C_{j_{1}j_{2}}(jm;m_{1}m_{2})$被记为$(j_{1}j_{2}jm \vert j_{1}m_{1}j_{2}m_{2})$); M. E. Rose, {\textit{Elementary Theory of Angular Momentum}} (John Wiley \& Sons, New York, 1957): Chapter {\textrm{III}} %
+    (其中$C_{j_{1}j_{2}}(jm;m_{1}m_{2})$被记为$C(j_{1}j_{2}j;m_{1}m_{2}m)$).
+\bibitem {10}G. Feinberg and S. Weinberg, {\textit{Nuovo Cimento}} Serie {\textrm{X}}, {\bf{14}}, 571 (1959).
+\bibitem {11}W. Chinowsky and J. Steinberger, {\textit{Phys. Rev.}} {\bf{95}}, 1561 (1954); 另见B. Ferretti, {\textit{Report of an International Conference on Fundamental Particles and Low Temperatures, Cambridge. 1946}} (The Physical Society, London, 1947).
+\bibitem {12}T. D. Lee and C. N. Yang, {\textit{Phys. Rev.}} {\bf{104}}, 254 (1956).
+\bibitem {13}C. S. Wu {\textit{et al}}., {\textit{Phys. Rev.}} {\bf{105}}, 1413 (1957).
+\bibitem {14}R. Garwin, L. Lederman, and M. Weinrich, {\textit{Phys. Rev.}} {\bf{105}}, 1415 (1957); J. I. Friedman and V. L. Telegdi, {\textit{Phys. Rev.}} {\bf{105}}, 1681 (1957).
+\bibitem {15}K. M. Waston, {\textit{Phys. Rev.}} {\bf{88}}, 1163 (1952).
+\bibitem {16}M. Gell-Mann and A. Pais, {\textit{Phys. Rev.}} {\bf{97}}, 1387 (1955); 另见A. Pais and O. Piccioni, {\textit{Phys. Rev.}} {\bf{100}}, 1487 (1955).
+\bibitem {17}J. H. Christenson, J. W. Cronin, V. L. Fitch, and R. Turlay, {\textit{Phys. Rev. Letters}} {\bf{13}}, 138 (1964).
+\bibitem {18}K. R. Schubert {\textit{et al., Phys. Lett.}} {\bf{31B}}, 662 (1970). 这篇文献在不假设$\mathsf{CPT}$不变的情况下分析中性\,{\textit{K}}\,介子的数据, 并发现$\mathsf{CPT}$守恒而$\mathsf{T}$破
+    坏的$\mathsf{CP}$-破坏振幅部分的实部与虚部距零有\,5\,个标准差, 而$\mathsf{T}$守恒却$\mathsf{CPT}$破坏的部分距零在一个标准偏差以内.
+\bibitem {19}R. H. Dalitz\marginpar[\flushright{\small[168]\hspace*{5mm}}]{{\small\hspace*{5mm}[168]}}, {\textit{Phil. Mag.}} {\bf{44}}, 1068 (1953); 另见\,E. Fabri, {\textit{Nuovo Cimento}} {\bf{11}}, 479 (1954).
+\bibitem {20}F. J. Dyson, {\textit{Phys. Rev.}} {\bf{75}}, 486, 1736 (1953).
+\bibitem {21}可参看\,L. I. Schiff, {\textit{Quantum Mechanics}}, 1st edn (McGraw-Hill, New York, 1949):Section 19.
+\bibitem {22}这首先是在经典电动力学中证明的. 可参看\,H. A. Kramers, {\textit{Atti Congr. Intern. Fisici, Como, 1927}}; 重印于\,H. A. Kramers, {\textit{Collected Scientific Papers}} (North-Holland, Amsterdam, 1956). 量子力学中的证明参看\,%
+    E. Feenberg, {\textit{Phys. Rev.}} {\bf{40}}, 40 (1932); N. Bohr, R. E. Peierls, and G. Placzek, {\textit{Nature}} {\bf{144}}, 200 (1939).
+\bibitem {23}这个讨论的一个普遍的版本, 在杨振宁(C. N. Yang)和杨振平(C. P. Yang)\,20\,世纪\,60\,年代后期一个未发表的工作中给出. 另见\,A. Aharony, {\textit{Modern Developments in Thermodynamics}} (Wiley, New York, 1973)：pp. 95-114, 以及那里的参考文献.
+\bibitem {24}可参看\,A. R. Edmonds, {\textit{Angular Momentum in Quantum Mechanics}}, (Princeton University Press, Princeton, 1957): Chapter 2; M. E. Rose, {\textit{Elementary Theory of Angular Momentum}} (John Wiley \& Sons, New York, 1957): Appendix {\textrm{III}}; L. D. Landau and E. M. Lifshitz, {\textit{Quantum mechanics - Non Relativistic Theory,}} 3rd edn (Pergamon Press, Oxford, 1977): Section 28.
+\bibitem {25}E. P. Wigner, {\textit{Gruppentheorie}} (Friedrich Vieweg und Sohn, Braunschweig, 1931); C. Eckart, {\textit{Rev. Mod. Phys.}} {\bf{2}}, 305 (1930).
+\bibitem {26}M. Froissart, {\textit{Phys. Rev.}} {\bf{123}}, 1053 (1961).
+\bibitem {27}G. Breit and E. P. Wigner, {\textit{Phys. Rev.}} {\bf{49}}, 519 (1936).
+\bibitem {28}可参看\,S. Weinberg, {\textit{Gravitation and Cosmology}} (Wiley, New York, 1972): Section 10.7.
+\bibitem {29}R. Kollath, {\textit{Phys. Zeit.}} {\bf{31}}, 985 (1931).
+\end{thebibliography}

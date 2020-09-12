@@ -1,0 +1,1377 @@
+\chapter{历史介绍} \label{cha:1}\thispagestyle{empty}
+\marginpar[\flushright
+{\raisebox{17ex}[0pt]{{\small[1]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[1]}}}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+ \markboth{第1章\quad 历史介绍}{第1章\quad 历史介绍}
+
+沉浸在现代物理之中的我们很难理解哪怕只是几年前物理学家所遇到的困难, 也很难从他们的经验中获益. 与此同时, %
+历史知识对于我们而言是喜忧参半的, 它妨碍了我们按照逻辑的顺序重构物理理论, 而这种依逻辑顺序的重构向来又是必须的.
+
+在本书中, 我尝试按照逻辑的顺序建立场的量子理论, 强调从狭义相对论和量子力学的物理原理出发的演绎道路. %
+这种方法必然使我偏离史实发展的真实次序. 例如, 历史上, 量子场论部分衍生于对相对论波动方程的研究, 这包括\,Maxwell\,方程, %
+Klein-Gordon\,方程以及\,Dirac\,方程. 由于这些原因, 量子场论相关的教程和专著会很自然地先介绍这些波动方程, %
+并给予它们相当大的篇幅. 然而, 长时间以来, Wigner\,将粒子定义为非齐次\,Lorentz\,群的表示在我看来是一个更好的出发点%
+, 尽管这个工作直到\,1939\,年才发表, 并且在那以后的很多年里没有很大的影响. 在这本书里, 我们从粒子出发, 然后才是波动方程.
+
+这并不意味着粒子肯定比场更基本. 在\,1950\,年后的很多年, 大家普遍认为自然的基本定律应该采取量子场论的形式. %
+在本书中, 我从粒子出发, 并不是因为它们更基本, 而是因为对于我们而言, 粒子能够更{\KAI{确实}}, 更直接地从相对论和量子力学的原理中导出. 如果发现一些不能用量子场论描述的物理系统, 这将引起轰动; 如果发现不服从量子力学%
+和相对论法则的系统, 那则是一场灾\nolinebreak
+难.
+
+事实上, 稍后便有了反对将量子场论作为基础的观点. 基础理论可能不是%
+场{\KAI{或}}粒子的理论, 而是一些完全不同的东西, 比如弦. \marginpar[\flushright
+{\small[2]\hspace*{5mm}}]{{\small\hspace*{5mm}[2]}}这种观点认为: 我们引以为傲的量子电动力学和其他量子场论仅仅是``有效场论", 是更基础理论的低能近似. 我们的场论如此地成功并不是因为它们是基本真理, 而是因为, 将任何%
+相对论性量子理论应用于足够低能的粒子时, 它们看起来都像个场论. 基于此, 如果我们想知道为什么量子场论是这个样子, 就必须从粒子出发.
+
+然而我们不想以完全忘掉过去为代价. 因此本章将呈现量子场论从早期直到\,1949\,年的历史, 直到那时, %
+它才显露出它的现代形式. 在本书的其余部分, 我将会尽力避免在介绍物理时引入历史.
+
+在本章的撰写过程中, 我发现一个问题: 从一开始, 量子场论的历史与量子力学本身的历史就不可避免地纠缠在一起. 因此, 熟悉量子力学历史的读者可能会发现一些早已熟悉的材料, 尤其在第一节, 在这一节我讨论了将狭义相对论和量子力学融合在一起的早期尝试. 遇到这种情况, 我只能建议读者应该跳到那些不太熟悉的部分.
+
+另一方面, 那些没有接触过量子场论的读者会发现, 本章的部分内容过于简洁以至于无法完全理解. 我请这样的读者不要担心. %
+本章并不是作为一个自足的量子场论简介而准备的, 也不是本书其余部分的基础. 一些读者甚至可能更适合从下一章开始, %
+然后再回到历史. 然而, 对于大多数读者, 量子场论的历史应该是量子场论本身一个很好的导论.
+应该补充说明一下: 本章并不是作为历史研究的原始工作而准备的. 它是基于那些真正历史学家的书和文章, %
+以及一些我读过的历史综述和物理原始论文. 它们中的大多数列于本章最后的参考书目和参考文献中. %
+我建议那些想要更深入了解的读者去参考所列文献.
+
+关于符号的说明. 为了保留过去的一些偏好, 在本章, 我将会写出因子$\hbar$和$c$(甚至$h$), %
+但是为了方便与现代物理文献进行比较, 对于电荷, 我将会使用更加现代的{\KAI{有理}}化静电单位制, %
+使得精细结构常数$\alpha \simeq 1/137$为$e^{2}/4\uppi \hbar c$. %
+以后的章节我将几乎全部使用``自然''单位制, 简单地令$\hbar =c=1$.
+
+\section{相对论波动力学} \label{sec:1.1}\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[3]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[3]}}}
+
+波动力学开始是以相对论波动力学的面目出现的. 事实上, 正如我们将看到的, 波动力学的建立者, %
+Louis de Broglie\,(路易\,\textperiodcentered\,德布罗意)和Erwin Schr\"{o}dinger\,(埃尔文\,\textperiodcentered\,薛定谔), %
+从狭义相对论中获得了大量的灵感. 那以后不久, 人们就普遍地认识到, 相对论波动力学无法成为粒子数固定的相对论量子理论. %
+因此, 尽管相对论波动力学取得了大量成功, 却最终让位于量子场论. 然而, %
+相对论波动力学作为量子场论形式体系中的重要要素留存下来, 并向场论提出了挑战, 再现了它的成功.
+
+物质粒子可能像光一样用波的形式进行描述, 这是\,Louis de Broglie\,(路易\,\textperiodcentered\,德布罗意)%
+在\,1923\,年首先提出的\textsuperscript{\cite{1}}. 除了与辐射的相似性, 主要的线索是\,Lorentz\,不变: %
+如果粒子可以描述为在位置$\bx$和时间$t$处的相位形式为$2\uppi(%
+\bm{\kappa}\cdot \bx-\nu t)$的波, 并且, 如果这个相位是\,Lorentz\,不变的, %
+那么矢量$\bm{\kappa}$和频率$\nu$必须像$\bx$和$t$那样变换, %
+因而类似于$\bp$和$E$. 为此, $\bm{\kappa}$与$\nu$对速度的依赖关系必须与$\bp$和$E$相同, %
+因而必须正比于它们, 且比例常数相同. 对于光子, 已有\,Einstein\,关系$E=h\nu$, 因而, 对于实物粒子, 可以很自然地假定%\vspace{-2mm}
+\begin{equation}
+\bm\kappa =\bp/h\:,\qquad \qquad   \nu =E/h\:, \label{1.1.1}%\vspace{-2mm}
+\end{equation}%
+正好与光子相同. 这样一来, 波的群速度$\partial \nu /\partial \bm\kappa$就等价于粒子速度, %
+波包与它们所代表的粒子同步.
+
+通过假定任意闭合轨道是粒子波长$\lambda =1/\lvert \bm{\kappa}\rvert$的整数倍, de Broglie\,%
+可以导出\,Niels Bohr\,(尼尔森\,\textperiodcentered\,玻尔)和\,Arnold Sommerfeld\,(阿诺德\,\textperiodcentered\,索末菲)%
+的旧量子化条件, 这一条件虽然相当神秘, 但用来解释原子光谱却十分有效. %
+另外\,de Borglie\,和\,Walter Elsasser\,(沃尔特\,\textperiodcentered\,埃尔萨瑟)\textsuperscript{\cite{2}}认为, %
+通过寻找电子在晶体中散射的干涉效应, 就可以检验\,de Broglie\,的波动理论; 数年后, %
+这种效应被\,Clinton Joseph Davisson\,(克林顿\,\textperiodcentered\,约瑟夫\,\textperiodcentered\,戴维森)%
+和\,Lester H. Germer\,(莱斯特\,\textperiodcentered\,莱默)\textsuperscript{\cite{3}}发现. 然而, 对于非自由粒子, %
+例如处在普通\,Coulomb\,场中的电子, 该如何对\,de Broglie\,关系(\ref{1.1.1})进行修正依旧是不清楚的.
+
+在量子力学的历史中, 波动力学是进一步发展的一个分支, 另一个分支是Werner Heisenberg(沃纳\,\textperiodcentered\,海森伯), %
+Max Born\,(马克思\,\textperiodcentered\,玻恩), Pascual Jordan\,(帕斯夸尔\,\textperiodcentered\,约当)%
+和\,Wolfgang Pauli(沃尔夫冈\,\textperiodcentered\,泡利)在\,1925\yzx 1926\,年发展起来的矩阵力学\textsuperscript{\cite{4}}. %
+至少, 矩阵力学的部分灵感是坚持这个理论应该仅包含可观察量, \marginpar[\flushright{\small[4]\hspace*{5mm}}]{{\small\hspace*{5mm}[4]}}例如能级, 发射速率和吸收速率. %
+Heisenberg\,在他\,1925\,年的论文里以这样的宣言开头: ``本篇论文尝试去建立理论量子力学的基础, %
+这种基础只建立在原则上可观测的物理量之间的关系上." 尽管现代量子场论已经远离这种想法了, %
+这种实证主义在量子场论的历史上多次出现, 例如, John Wheeler\,(约翰\,\textperiodcentered\,惠勒)%
+和\,Heisenberg\,引入的$S$-矩阵(见第3章)以及\,20\,世纪\,50\,年代色散理论的%
+复兴(见第10章). 然而, 在任何程度详述矩阵力学都将使我们远离主题.
+
+众所周知, Erwin Schr\"{o}dinger\,(埃文\,\textperiodcentered\,薛定谔)再次发展了波动力学. %
+在他\,1926\,年的一系列论文\textsuperscript{\cite{5}}中, 著名的非相对论波动方程第一次出现, 然后被用来重现矩阵力学导出的结果. %
+在这之后不久, 在第四篇论文的第六节, 他给出了相对论波动方程. 按照\,Dirac\,的说法\textsuperscript{\cite{6}}, 历史是完全不同的: %
+Schr\"{o}dinger\,首先导出了相对论性方程, 却由于它给出错误的氢原子精细结构而感到沮丧, %
+数月之后, 他就意识到, 哪怕相对论性方程是错误的, 它的非相对论近似却是很有价值的!  %
+正当\,Schr\"{o}dinger\,准备去发表他的相对论波动方程时, Oskar Klein\,(奥斯卡\,\textperiodcentered\,克莱因)\textsuperscript{\cite{7}}和%
+\,Walter Gordon\,(沃尔特\,\textperiodcentered\,戈登)\textsuperscript{\cite{8}}再次独立地发现了这个方程, 由于这个原因, %
+这个方程通常称为\,``Klein-Gordon\,方程''.
+
+Schr\"{o}dinger\,的相对论波动方程的获得是通过, 首先注意到, %
+对于处在矢势为$\bA$和\,Coulomb\,势为$\phi$的外场中, %
+质量为$m$, 电荷为$e$的``Lorentz电子'', 哈密顿量$H$和动量$\bp$存在如下关系{}$^*$\footnote{$^*${}这是\,Lorentz\,不变的, 因为$\bA$和$\phi$与$c\bp$和$E$有着相同的\,Lorentz\,变换性质. Schr\"{o}dinger\, 实际上将$H$%
+和$\bp$写成了作用量函数的偏导数形式, 但这不会对我们现在的讨论造成任何影响. }:
+\begin{equation}
+0=(H+e\phi )^{2}-c^{2}(\bp+e\bA/c)^{2}-m^{2}c^{4} \:. \label{1.1.2}
+\end{equation}%
+对于由平面波$\exp \Bigl\{2\uppi
+\mi(\bm\kappa\cdot \bx-\nu t)\Bigr\}$描述的{\KAI{自由}}粒子, de Broglie关系(\ref{1.1.1})可以通过如下%
+的代换获得: \begin{equation}
+\bp=h\bm{\kappa} \rightarrow - \mi\hbar \bm\nabla  \:, \qquad  E=h\nu
+\rightarrow \mi\hbar \frac{\partial }{\partial t} \:,  \label{1.1.3}
+\end{equation}%
+其中$\hbar$是$h/2\uppi$的简写(由\,Dirac\,引入). 通过一个完全形式上的类比, Schr\"{o}dinger猜测, 在外场$\bA,\phi$中的电子%
+可以由波函数$\psi(\bx,t)$描述, 而这个波函数所满足的方程可以通过在(\ref{1.1.2})中做相同的替换获得: \begin{equation}
+0=\left[\left(\mi\hbar \frac{\partial }{\partial t}+e\phi \right)^{2}-c^{2}\left(-\mi\hbar
+\bm{\nabla }+e\frac{\bA}{c} \right)^{2}-m^{2}c^{4}\right]\psi (\bx,t) \:.
+\label{1.1.4}
+\end{equation}%
+特别\marginpar[\flushright
+{\raisebox{7ex}[0pt]{{\small[5]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[5]}}}地, 在氢原子的定态中, 我们有$\bA=0$和$\phi =e/4\uppi r
+$, 并且$\psi$对时间的依赖关系是$\exp (-\mi Et/\hbar)$, 所以(\ref{1.1.4})变成$^\za$\footnote{$^\za${}原书方程(\ref{1.1.5})有笔误.  \ezx 译者注}
+\begin{equation}
+0=\left[\left(E+\frac{e^{2}}{4\uppi r}\right)^{2}+c^{2}\hbar ^{2}\nabla %
+^{2}-m^{2}c^{4}\right]\psi (\bx)\:.  \label{1.1.5}
+\end{equation}%
+满足合适边界条件的解可以在如下能量值得到\textsuperscript{\cite{9}}:
+\begin{equation}
+E=mc^{2}\left[ 1-\frac{\alpha ^{2}}{2n^{2}}-\frac{\alpha ^{4}}{2n^{4}}\left(
+\frac{n}{\ell+\frac{1}{2}}-\frac{3}{4}\right) +\cdots \right]\:,\label{1.1.6}
+\end{equation}%
+其中$\alpha \equiv e^{2}/4\uppi \hbar c$是``精细结构常数'', 约为$1/137$; $n$是正整数; $%
+\ell$是以$\hbar$为单位的轨道角动量, 为一整数, 并满足$0\leq \ell\leq n-1$. $\alpha ^{2}$%
+项与氢原子光谱的总体特征非常一致(莱曼系, 巴尔末系等), 并且, 据\,Dirac\,所说\textsuperscript{\cite{6}}, 正是这种一致性引导\,Schr\"{o}dinger\,最终去发展他的非相对论波动方程. 另一方面, $%
+\alpha ^{4}$项所给出的精细结构与\,Friedrich Paschen\,(弗里德里希\textperiodcentered
+帕邢)当时已经得到的更精确测量结果却并不一致\textsuperscript{\cite{10}}.
+
+比较\,Arnold Sommerfeld\,(阿诺德\,\textperiodcentered\,索末菲)\textsuperscript{\cite{10a}}与\,Schr\"{o}dinger\,的结果是有意义的, %
+Sommerfeld\,的结果是通过旧量子论获得的: \begin{equation}
+E=mc^{2}\Bigg[ 1-\frac{\alpha ^{2}}{2n^{2}}-\frac{\alpha ^{4}}{2n^{4}}\left(
+\frac{n}{k}-\frac{3}{4}\right) +\cdots \Bigg]\:.   \label{1.1.7}
+\end{equation}%
+其中$m$是电子质量. 这里的$k$是介于$1$和$n$之间的整数, 在\,Sommerfeld\,的理论中则是%
+以轨道角动量$\ell \hbar$的形式给定: $k=\ell+1$. 这给出了与实验吻合%
+的精细结构分裂: 例如, 对于$n=2$, 方程(\ref%
+{1.1.7})给出了两个能级($k=1$和$k=2$), 观测到的分裂为$\alpha ^{4}mc^{2}/32$, %
+即$4.53\times 10^{-5}\,\mathrm{eV}$. 相反, Schr\"{o}dinger\,的结果(\ref{1.1.6}%
+)给出的$n=2$的精细结构分裂是$\alpha ^{4}mc^{2}/12$, 远大于实验值.
+
+Schr\"{o}dinger\,正确地意识到到这个不符的根源正是他对电子自旋的忽略. 碱原子中非平方反比的电场以及弱的外磁场所造成的原子能级分裂(所谓的反常\,Zeeman\,效应)揭示出, 态的%
+多重性要远超于\,Bohr-Sommerfeld\,理论所给出的数目; 这导致了\,1925\,年\,George Uhlenbeck\,(乔治\,\textperiodcentered\,乌伦贝克)和\,Samuel Goudsmit\,(塞缪尔\,\textperiodcentered\,古茲密特)\textsuperscript{\cite{11}}提出电子有一个内禀角动量$\hbar /2$. 并且, %
+Zeeman\,分裂\textsuperscript{\cite{12}}的大小使得他们进一步估计出: \marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[6]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[6]}}}电子存在磁矩
+\begin{equation}
+\mu =\frac{e\hbar }{2mc} \:.  \label{1.1.8}
+\end{equation}%
+很显然, 电子自旋应该与它的轨道角动量相耦合, 所以不能指望\,Schr\"{o}dinger\,的相对论波动方程给出正确的精细结构分裂.
+
+事实上, 在\,1927\,年, 数位学者\textsuperscript{\cite{13}}就已经能够证明自旋\bzx 轨道耦合能够解释\,Schr\"{o}dinger\,的结果(\ref{1.1.6})%
+与实验的差异. 这里其实有两个效应: 一个是电子的磁矩(\ref{1.1.8})与它在原子的静电场中运动时所感受到的磁场的直接耦合; 另一个是由自旋电子的圆周运动(即使没有磁矩)所引起的相对论\,``Thomas\,进动''\textsuperscript{\cite{14}}. 这两个效应使得总角动量$j=\ell+\frac{1}{2}$的能级被提高到\,Sommerfeld\,所给出的(\ref{1.1.7})中取$k=\ell+1=j+%
+\frac{1}{2}$给出的值, 而$j=\ell-\frac{1}{2}$的能级则降至对应\,Sommerfeld\,所给出的$k=\ell=j+\frac{1}{2}$的能级. %
+因此, 能级仅依赖于$n$和$j$, 而不另外依赖于$\ell$: \begin{equation}
+E=mc^{2}\left[ 1-\frac{\alpha ^{2}}{2n^{2}}-\frac{\alpha ^{4}}{2n^{4}}\left(
+\frac{n}{j+\frac{1}{2}}-\frac{3}{4}\right) +\cdots \right]  \:. \label{1.1.9}
+\end{equation}%
+尽管对于各能级, 轨道角动量值$\ell$是错误的, 但很巧合地, Sommerfeld\,的理论给出了氢原子能级分裂的正确大小($j+\frac{1}{2}$像$k$一样取遍从$1$ 到$n$ 的所有正整数). 补充一句, 氢原子的精细结构能级的简并度现在给出的预测是, 当$j=\frac{1}{2}$时, 简并度为$2$, 当$j>\frac{1}{2}$ 时, 简并度则是$2(2j+1)$%
+(对应于$\ell$取值$j\pm
+\frac{1}{2}$), 这与实验是吻合的.
+
+尽管如此成功, 但这并不是一个从开始就包含电子自旋的彻底的相对论理论. 那样的理论直到\,1928\,%
+年才被\,Paul Dirac\,(保罗\,\textperiodcentered\,狄拉克)发现. 然而, 他并不是简单地从做一个电子自旋的相对论理论出发; 相反, 他解决这一问题的方法是提出一个即使在今天看起来依旧十分奇怪的%
+问题, 在他的\,1928\,年论文\textsuperscript{\cite{15}}的开头, 他问, ``自然为什么要为电子选择这个特殊的模型, 而不是满足于%
+点电荷模型.'' 直到今天, 这个问题就像问为什么细菌只有一个细胞一样: 具有自旋$\hbar /2$是将%
+粒子定义为电子的众多性质之一, 这个性质将电子与现今已知的具有其他自旋的众多粒子区分开来. 然而, 在\,1928\,年, %
+大家完全有可能相信所有的物质是由电子以及原子核中一些带正电的类似物质组成. 因此, 本着那个时代的精神, %
+Dirac\,问题可以重新表述为: ``\marginpar[\flushright{\small[7]\hspace*{5mm}}]{{\small\hspace*{5mm}[7]}}为什么物质的基本组分必须有自旋$\hbar /2$?''
+
+对\,Dirac\,来说, 问题的关键在于概率必须为正这一要求. 当时已经知道\textsuperscript{\cite{16}}非相对论\,Schr\"{o}dinger
+方程的概率密度是$\lvert \psi\rvert ^{2}$, 并且它满足如下形式的连续性方程:
+\begin{equation*}
+\frac{\partial }{\partial t}(\lvert \psi \rvert ^{2})-\frac{\mi\hbar
+}{2m}\bm{\nabla }\cdot( \psi ^{\ast }\bm{\nabla }\psi -\psi
+\bm{\nabla }\psi ^{\ast }) =0
+\end{equation*}%
+所以$\lvert \psi \rvert ^{2}$的空间积分与时间无关. 另一方面, 可以用相对论\,Schr\"{o}dinger\,方程的解%
+构造出来的概率密度$\rho$和概率流$\bJ$, 并满足守恒律:
+\begin{equation}
+\frac{\partial \rho }{\partial t}+\bm\nabla \cdot \bJ=0 \:, \label{1.1.10}
+\end{equation}%
+它们的形式只能是
+\begin{align}
+\rho&=N\operatorname{Im}\psi ^{\ast }\left( \frac{\partial }{\partial t}-\frac{%
+\mi e\phi }{\hbar }\right) \psi \text{\  , }  \label{1.1.11}  \\
+\bJ&=Nc^{2}\operatorname{Im}\psi ^{\ast }\left( \bm{\nabla }+\frac{\mi e%
+\bA}{\hbar }\right) \psi \text{\  , }  \label{1.1.12}
+\end{align}%
+其中$N$是一任意常数. 把$\rho$定义成概率密度是不可能的, 因为(不管有没有外场势$\phi$)$\rho$没有一个确定的符号. 这里引述\,Dirac\,关于这个问题的回忆\cite{17}:
+\begin{center}
+\begin{minipage}[t]{0.8\textwidth}
+\qquad {\KAI{我记得有一次在哥本哈根, Bohr\,问我在研究什么, 我告诉他, 我正在尝试得到一个令人满意的电子的相对论理论, %
+Bohr\,说``但是\,Klein\,和\,Gordon\,已经得到了啊!'' 这个答案起初对我的触动非常大. %
+Bohr\,似乎对\,Klein\,的解非常满意, 但是我因为给出的负概率而对它并不满意. 在这个问题上, %
+我仍坚持为得到一个只含有正概率的理论而焦虑不已. }}
+\end{minipage}
+\end{center}
+
+
+
+根据\,George Gamow\,(乔治\,\textperiodcentered\,伽莫夫)的回忆,\textsuperscript{\cite{18}} 在\,1928\,年的一个晚上, 当Dirac在凝视剑桥大学圣约翰学院里的一个壁炉时, 他发现了这个问题的答案. 他意识到\,Klein-Gordon\,方程(或者相对论\,Schr\"{o}dinger\,方程)会给出负概率的原因是守恒方程(\ref{1.1.10})中的$\rho\, $包含了波函数对时间的一阶偏导数. %
+之所以会发生这件事, 是因为波函数满足的微分方程对于时间是{\KAI{二}}阶的. \marginpar[\flushright
+{\small[8]\hspace*{5mm}}]{{\small\hspace*{5mm}[8]}}于是问题变成了要将现在的波动方程换成另一个对时间是一阶导数的方程, 就像非相对论\,Schr\"{o}dinger\,方程那样.
+
+假定电子波函数是一个多分量的量$\psi_{n}(x)$, 并满足如下形式的波动方程,
+\begin{equation}
+\mi\hbar\, \frac{\partial \psi }{\partial t}=\mathscr{H}\psi \:, \label{1.1.13}
+\end{equation}%
+其中$\mathscr{H}$是空间导数的某个矩阵函数. 由于方程关于时间导数是线性的, 为了使理论\,Lorentz\,不变, 我们必须假定方程关于空间导数也是线性的, 这使得$\mathscr{H}$取如下的形式:
+\begin{equation}
+\mathscr{H}=-\mi\hbar c\bm\alpha \cdot \bm\nabla +\alpha _{4}mc^{2} \:, \label{1.1.14}
+\end{equation}%
+其中$\alpha _{1},\alpha _{2},\alpha_{3}$和$\alpha _{4}$是常矩阵. 我们可以从(\ref{1.1.13})中导出二阶方程:
+\begin{align*}
+-\hbar ^{2}\frac{\partial ^{2}\psi }{\partial t^{2}} =\mathscr{H}^{2}\psi
+&=-\hbar ^{2}c^{2}\alpha _{i}\alpha _{j}\,\frac{\partial ^{2}\psi }{\partial
+x_{i}\partial x_{j}}   \\
+&\quad-\mi\hbar mc^{3}( \alpha _{i}\alpha _{4}+\alpha _{4}\alpha _{i})\,
+\frac{\partial \psi }{\partial x_{i}}+m^{2}c^{4}\alpha _{4}^{2}\psi
+\end{align*}
+(这里采用了求和约定; $i$和$j$取遍值$1,2,3$或$x,y,z$.) 但是这必须与相对论\,Schr\"{o}dinger\,方程(\ref{1.1.4}%
+)的自由场形式一致, 这个形式恰好体现了相对论的能动量关系. 因此, 矩阵$\bm{\alpha}$和$\alpha_{4}$必须满足如下的关系:
+\begin{gather}
+\alpha _{i}\alpha _{j}+\alpha _{j}\alpha _{i}=2\updelta_{ij}1 \:, \label{1.1.15} \\
+\alpha _{i}\alpha _{4}+\alpha _{4}\alpha _{i}=0\:,    \label{1.1.16} \\
+\alpha _{4}^{2}=1\:,   \label{1.1.17}
+\end{gather}%
+其中$\updelta _{ij}$是克罗内克符号($i=j$时值为$1$; $i\neq j$时值为$0$), $1$是单位阵. %
+Dirac\,找到了一组满足这些关系的$4\times 4$矩阵
+\begin{equation}
+\begin{split}
+\alpha _{1} &=\left[
+\begin{array}{ccccccc}
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 \\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 \\
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0%
+\end{array}%
+\right] \:,\qquad \quad \alpha _{2}=%
+\begin{bmatrix}
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& -\mi \\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& \mi &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& -\mi &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 \\
+\mi &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0%
+\end{bmatrix}%
+\:,  \\
+\alpha _{3} &=%
+\begin{bmatrix}
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& -1 \\
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& -1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0%
+\end{bmatrix}%
+\:,\qquad \alpha _{4}=%
+\begin{bmatrix}
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& -1 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& -1%
+\end{bmatrix} \:.
+\end{split}
+\label{1.1.18}
+\end{equation}%
+
+\marginpar[\flushright{\small[9]\hspace*{5mm}}]{{\small\hspace*{5mm}[9]}}为了证明这套体系是\,Lorentz\,不变的, Dirac\,给这个方程左乘$\alpha _{4}$, 使它可以表示成如下的形式
+\begin{equation}
+\left[ \hbar c\gamma ^{\mu }\,\frac{\partial }{\partial x^{\mu }}+mc^{2}\right]\psi =0 \:, \label{1.1.19}
+\end{equation}%
+其中
+\begin{equation}
+\bm\gamma \equiv -\mi\alpha _{4}\bm\alpha \:,\qquad\quad\gamma ^{0}\equiv
+-\mi\alpha _{4} \:. \label{1.1.20}
+\end{equation}%
+(希腊指标$\mu ,\nu$等取遍值\,1,2,3,0, 其中$x^{0}=ct$. Dirac\,取$x_{4}=\mi ct$, 相应地, %
+$\gamma _{4}=\alpha_{4}$.) 矩阵$\gamma_{\mu}$满足反对易关系
+\begin{equation}
+\frac{1}{2}(\gamma ^{\mu }\gamma ^{\nu }+\gamma ^{\nu }\gamma ^{\mu })=\eta
+^{\mu \nu }\equiv \left\{
+\begin{array}{l}
++1 \qquad \mu =\nu =1,2,3 \\
+-1  \qquad \mu =\nu =0 \\
+\phantom{+}0 \qquad \mu \neq \nu
+\end{array}%
+\right.  \:. \label{1.1.21}
+\end{equation}%
+Dirac\,注意到这些反对易关系是\,Lorentz\,不变的, 也就是说, 矩阵$\Lambda^{\mu }{}_{\!\nu}\gamma ^{\nu }$%
+也满足上述的反对易关系, 这里$\Lambda^{\mu }{}_{\!\nu}$是任意\,Lorentz\,变换. 由此他指出$\Lambda^{\mu }{}_{\!\nu}\gamma ^{\nu }$必须通过一个相似变换与$\gamma ^{\mu}$相联系:
+\begin{equation*}
+\Lambda^{\mu }{}_{\!\nu}\gamma ^{\nu }=S^{-1}(\Lambda )\gamma ^{\mu }S(\Lambda)\:.
+\end{equation*}%
+这表明: 如果在\,Lorentz\,变换$x^{\mu }\rightarrow \Lambda^{\mu}{}_{\!\nu}x^{\nu }$下, %
+波函数发生的是一个矩阵变换$\psi \rightarrow S(\Lambda )\psi $, 那么波动方程就是不变的. (在5章, 这些内容将从一个相当不同的角度进行更加充分的讨论.)
+
+为了研究电子在任意外电磁场下的性质, Dirac\,沿用方程(\ref{1.1.4})中的``通用手续'', 做代换
+\begin{equation}
+\mi\hbar \frac{\partial }{\partial t}\rightarrow \mi\hbar \frac{\partial }{%
+\partial t}+e\phi \qquad-\mi\hbar \bm\nabla\rightarrow -%
+\mi\hbar \bm{\nabla} +\frac{e}{c}\bA \:. \label{1.1.22}
+\end{equation}%
+这样, 波动方程(\ref{1.1.13})就会变成如下的形式\begin{equation}
+\left( \mi\hbar \frac{\partial }{\partial t}+e\phi \right) \psi =(
+-\mi\hbar c\bm{\nabla} +e\bA) \cdot \bm\alpha %
+\psi +mc^{2}\alpha _{4}\psi  \:. \label{1.1.23}
+\end{equation}%
+Dirac\,利用这个方程证明了, 在中心力场, 角动量守恒采取如下的形式
+\begin{equation}
+[ \mathscr{H},-\mi\hbar \br\times \bm\nabla +\hbar %
+\bm\sigma /2] =0  \:,\label{1.1.24}
+\end{equation}%
+其中, $\mathscr{H}$是矩阵微分算符(\ref{1.1.14}), $\bm{\sigma}$是此前由\,Pauli\,引入的%
+自旋矩阵的$4\times 4$版\textsuperscript{\cite{19}}%
+\begin{equation}
+\bm\sigma =%
+\begin{bmatrix}
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 \\
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 \\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0%
+\end{bmatrix}%
+\bm\alpha \quad .\label{1.1.25}
+\end{equation}%
+由\marginpar[\flushright{\small[10]\hspace*{5mm}}]{{\small\hspace*{5mm}[10]}}于$\bm\sigma$的每个分量的本征值都是$\pm 1$, (\ref{1.1.24})中出现的额外项说明电子拥有内禀角动量$\hbar /2$.
+
+Dirac\,又对方程(\ref{1.1.23})进行迭代, 得到了一个二阶方程, 这个方程与\,Klein-Gordon\,方程的差异仅在于右边出现了如下额外的两项,
+\begin{equation}
+\left[ -e\hbar c\bm\sigma \cdot \bB-\mi e\hbar c\bm\alpha \cdot \bE%
+\right] \psi \:.  \label{1.1.26}
+\end{equation}%
+对于低速运动的电子, 第一项是主要的, 它代表磁矩, 这个磁矩的值与Goudsmit和 Uhlenbeck\textsuperscript{\cite{11}}所发现的(\ref{1.1.8})相符. %
+正如\,Dirac\,看到的, 磁矩再加上这个理论是相对论性的, 确保了这个理论所给出的精细结构分裂(到$\alpha ^{4}mc^{2}$阶)%
+与\,Heisenberg, Jordan\,和\,Charles G. Darwin\,(查尔斯\,\textperiodcentered\,G\,\textperiodcentered\,达尔%
+文)\textsuperscript{\cite{13}}发现的相符. 稍后不久, Darwin\textsuperscript{\cite{20}}和\,Gordon\textsuperscript{\cite{21}}导出了\,Dirac\,理论中氢原子能级的``精确''公式%
+\begin{equation}
+E=mc^{2}\left( 1+\frac{\alpha ^{2}}{\left\{ n-j-\frac{1}{2}+\left[ \left( j+%
+\frac{1}{2}\right) ^{2}-\alpha ^{2}\right] ^{{1}/{2}}\right\} ^{2}}%
+\right) ^{-1/2} \:.  \label{1.1.27}
+\end{equation}%
+这个结果关于$\alpha ^{2}$的级数展开式的前三项与近似结果(\ref{1.1.9})一致.
+
+这个理论实现了狄拉克的初衷: 一个概率为正的相对论性形式理论. 由(\ref{1.1.13}), 我们可以导出连续性方程
+\begin{equation}
+\frac{\partial \rho }{\partial t}+\bm\nabla \cdot \bJ =0 \label{1.1.28}
+\end{equation}%
+其中
+\begin{equation}
+\rho =\left\vert \psi \right\vert ^{2}\:,\qquad\quad\bJ=c\psi ^{\dag }%
+\bm\alpha \psi \:,  \label{1.1.29}
+\end{equation}%
+这样, 正值$\lvert\psi\rvert ^{2}$可以解释为概率振幅, 总概率$\int \,\lvert \psi \rvert
+^{2}\:\dif^{3}x$是一个常数. 然而, 还有一个困难是\,Dirac\,没能立刻解决的.
+
+对给定动量$\bp$, 波动方程(\ref{1.1.13})给出了四个平面波解
+\begin{equation}
+\psi \propto \exp \left[ \frac{\mi}{\hbar }(\bp\cdot \bx-Et)\right] \:.
+\label{1.1.30}
+\end{equation}%
+两个是能量$E=+\sqrt{\bp^{2}c^{2}+m^{2}c^{4}}$的解, 对应电子$J_{z}=\pm \hbar /2$的两个自旋态. %
+另外两个是$E=-\sqrt{\bp^{2}c^{2}+m^{2}c^{4}}$的解, 没有明显的物理解释. 正\marginpar[\flushright{\small[11]\hspace*{5mm}}]{{\small\hspace*{5mm}[11]}}如\,Dirac\,指出的, %
+相对论\,Schr\"{o}dinger\,方程也遇到过这个问题: 对于每一动量$\bp$, %
+存在两个形如(\ref{1.1.30})的解, 一个对应正$E$, 另一个对应负$E$.
+
+当然, 即使在经典物理中, 相对论关系$E^{2}=\bp^{2}c^{2}+m^{2}c^{4}$有两个解, $E=\pm \sqrt{%
+\bp^{2}c^{2}+m^{2}c^{4}}$. 然而, 在经典物理中, 我们可以简单地假定物理粒子是那些能量为正$E$的. %
+这是因为正值解有$E>mc^{2}$, 而负值解给出$E<-mc^{2}$, 它们之间有一个有限宽的能隙, 并且不存在连续的过程使得粒子能够从正能量到达负能量.
+
+负能量的问题在相对论量子力学中要麻烦得多. 正如\,Dirac\,在他\,1928\,年的论文\textsuperscript{\cite{15}}中指出的那样, %
+电子与辐射的相互作用可以产生跃迁, 在这个跃迁中, 电子从正能态落到负能态, 并通过两个或更多的光子带出能量. %
+那么为什么物质是稳定的呢?
+
+在\,1930\,年, Dirac\,给出了一个卓越的解决方法\textsuperscript{\cite{22}}. Dirac\,的方案基于不相容原理, 在这里简要陈述这个原理的历史.
+
+元素周期表和\,X\,射线光谱学分类法, 在\,1924\,年共同揭示出了原子能级的一个电子排布模式\textsuperscript{\cite{23}}: %
+在由主量子数$n$表征的壳层内, 电子的最大数目$N_{n}$等于$n$能级中的轨道态数的\,2\,倍
+\begin{equation}
+N_{n}=2\sum_{\ell=0}^{n-1}(2\ell+1)=2n^{2}=2,8,18,\cdots \:.   \label{1.1.31}
+\end{equation}%
+在\,1925\,年, Wolfgang Pauli\,(沃尔夫冈\,\textperiodcentered\,泡利)\textsuperscript{\cite{24}}提出, %
+如果$N_{n}$是第$n$个壳层内所有可能的态的总数, 并附加一个神秘的``不相容原理''以禁止超过一个的电子占据同一态, %
+这个模型就可以被解释. 他认为(\ref{1.1.31})中奇怪的因子\,2\,是缘于电子态的``奇怪的, 经典%
+不可描述的二重性'', 正如我们后来所了解到的, 这正是电子的自旋\textsuperscript{\cite{11}}. 不相容原理回答了\,Bohr\,和\,Sommerfeld\,的旧原子论中一个一直不清楚的问题: 为什么在重原子里不是所有的电子都掉到了最低能量的壳层里? 随后, 泡利的不相容原理被一些研究者\textsuperscript{\cite{25}}表述为要求多电子系统波函数关于所有电子的坐标, 轨道以及自旋是反对称的. %
+这个原理被包含在了\,Enrico Fermi\,(恩里克\,\textperiodcentered\,费米)\textsuperscript{\cite{26}}和\,Dirac\,\textsuperscript{\cite{27}}的统计力学中, %
+并且由于这个原因, 服从不相容原理的粒子被普遍地称为``费米子'', 类似地, 像光子这样的粒子, %
+它的波函数是对称的并服从\,Bose\marginpar[\flushright{\small[12]\hspace*{5mm}}]{{\small\hspace*{5mm}[12]}}\,和\,Einstein\,的统计, 因而被称为``玻色子''. 不相容原理在金属、白矮星、%
+中子星等理论中扮演了非常基本的角色, 但是对于这些问题的讨论将会使我们太远地偏离主线.
+
+Dirac\,的方案是: 之所以带正能的电子不会落入到负能态, 是因为``除了可能会有少量速度较小的态, 所有的负能态已经被占满了.''  %
+这几个空的态, 或者说``空穴'', 处在负能态电子的海洋中, 它们的行为就像带有相反量子数的粒子: 正能量和正电荷. %
+当时唯一知道的带正电的粒子是质子, 并且正如\,Dirac\,稍后回忆到的\textsuperscript{\cite{27a}}, ``当时所有观%
+点都趋向于反对新粒子'', 所以\,Dirac\,认为他的空穴就是质子; 事实上, 他\,1930\,年的论文\textsuperscript{\cite{22}}标题正是``电子和质子%
+的理论.''
+
+空穴理论面临着很多立刻就能看出的困难. 其中一个由这种无处不在的负能电子的无限大电荷密度引起的: 它们的电场在哪? %
+Dirac\,提议重新解释\,Maxwell\,方程中的电荷密度, 将其解释为: ``与世界正常带电量之差.'' 另外一个要解决%
+的问题是观测到的电子质量和质子质量有巨大差异, 并且它们的相互作用也有巨大差异. Dirac\,希望电子间的\,Coulomb\,相互作用将以某种方式解释这些差异, 但是\,Hermann Weyl\,(赫尔曼\,\textperiodcentered\,外尔)\textsuperscript{\cite{28}}证明了空穴理论实际上对正电%
+荷和负电荷完全是对称的. 最后, Dirac\,\textsuperscript{\cite{22}}预测存在一个电子\bzx 质子湮没过程, 在这个过程中, 一个正能量电子遇到了负能电子海中的一个空穴并掉入这个未被占据的能级上, 发射一对$\gamma$光子. 就其本身而言, 这本不会为空穴理论带来困难, 甚至有些人希望用它来解释当时还不清楚的恒星的能量来源问题. 然而, 不久之后\,Julius Robert Oppenheimer\,(朱利叶斯\,\textperiodcentered\,罗伯特%
+\,\textperiodcentered\,奥本海默)和\,Igor Tamm\,(伊戈尔\,\textperiodcentered\,塔姆)指出,\textsuperscript{\cite{29}} %
+原子中电子\bzx 质子湮没过程发生的速率会非常快以至于与观测到的普通物质的稳定性不合. 由于这些原因, %
+Dirac\,在\,1931\,年改变了他的想法, 并认定这个空穴并非以质子的形式出现, 而是一种新的正电荷粒子, %
+这种粒子与电子质量相同\textsuperscript{\cite{29a}}.
+
+随着\,Carl D. Anderson\,(卡尔\,\textperiodcentered\,D\,\textperiodcentered\,安德森)\textsuperscript{\cite{30}}发现正电子, %
+第二个问题和第三个问题被消除了, 而\,Anderson\,本人似乎并不知道\,Dirac\,关于正电子的预测. 1932\,年\,8\,月\,2\,日, %
+在一个磁场为$15\,\mathrm{kG}$的\,Wilson\,云室里观测到了一条特别的宇宙射线轨迹. 通过观察到的轨迹弯曲方向, %
+这预期是一个{\KAI{正}}电荷粒子, 可是轨迹的范围却至少是质子轨迹范围期望值的十倍大! %
+轨迹的范围和电离比都和这是一种新\marginpar[\flushright{\small[13]\hspace*{5mm}}]{{\small\hspace*{5mm}[13]}}粒子的假设相吻合, 这种新粒子与电子的差异仅是电荷的符号, %
+而这正是\,Dirac\,空穴所预期的. (P. M. S. Blackett\,(P. M. S.布莱克特)更早做出了这件事情, 但是他没有立即发表. %
+Anderson\,引用了在宇宙射线轨迹出现正电荷轻粒子的证据, 而这些证据正是由\,Blackett\,和\,Giuseppe Occhialini\,%
+(朱塞佩\,\textperiodcentered\,奥基亚利尼)获得的.) 因此\,Dirac\,的错误仅在于最初把空穴误认为质\nolinebreak
+子.
+
+对正电子或多或少的预言, 以及发现\,Dirac\,方程在解释电子磁矩和氢原子精细结构上的早期成功, 使得\,Dirac\,理论的声望保持了至少六十个年头. 然而, 尽管\,Dirac\,理论毫无疑问地会在任何未来物理理论中以某种形式留存下来, 但是有一些严格的原因使得它不满足本身最初的基本原理:
+\vspace{2mm}
+
+\noindent (i)\quad
+ Dirac\,对\,Schr\"{o}dinger\,相对论波动方程中负概率问题的分析, 似乎是排除了存在任何零自旋粒子的可能性. 然而, 即使是在\,20\, 世纪\,20\,年代, 我们就已经知道存在零自旋粒子\ezx 例如, 处在基态的氢原子, 以及氦核. 当然, 你可以说氢原子和$\alpha$粒子不是基本的, 所以不需要用一个相对论波动方程来描述, 然而, 如何将基本这%
+     个概念纳入相对论量子力学的形式体系中, 这在那时(现在依然是)是不清楚的. 现今, 我们知道大量的零自旋粒子\ezx $\pi$介子, $K$介子, 等等\ezx 质子与中子并不比它们基本. 我们同样也知道一些自旋$1$的粒子\ezx $W^{\pm }$和%
+     $Z^{0}$\ezx 它们看起来和电子以及其他粒子一样基本. 更进一步地, 先不管强作用的影响, 对于一个束缚在原子核周围的零自旋负$\pi$介子或$K$ 介子所组成的``介子原子'', 从相对论\,Klein-Gordon-Schr\"{o}dinger\,方程的定态解出发, 我们现在可以计算出它的精细结构! 因此, 我们很难认同如下的说法, 是因为零自旋相对论方程存在基本的错误, 人们才{\KAI{不得已}}去发展\,Dirac\,方程\ezx 问题仅仅是电子碰巧有自旋$\hbar /2$, 而不是零.
+
+\noindent (ii)\quad
+   就我们现在所知道的, 对于{\KAI{每一}}种类的粒子, 都存在一个``反粒子'', 它们质量相同, 荷相反. %
+    (一些纯中性粒子, 例如光子, 它们的反粒子就是它们本身.) 但是我们该怎样把诸如$\pi ^{\pm }$介子或$W^{\pm }$粒子这样的带荷{\KAI{玻色子}}解释为负能态海洋中的空穴呢? 对于\marginpar[\flushright{\small[14]\hspace*{5mm}}]{{\small\hspace*{5mm}[14]}}那些按照\,Bose-Einstein\,统计规则进行量子化的粒子, 并不存在不相容原理, 因此不管负能态是否被占据, 都没有什么机制阻止正能态粒子掉落到负能态. 而如果这个空穴理论对玻色反粒子并不奏效, 我们又凭什么相信它对费米子就是成立的呢? 在\,1972\,年, 我问过\,Dirac\,他对这一问题的看法; 他告诉我, 他并不认为诸如%
+    $\pi$介子或$W^{\pm }$粒子之类的玻色子是``重要的''. 在稍后几年的一个讲座\textsuperscript{\cite{27a}}中, Dirac\,提到: 对于玻色子, ``我们不再有一个负能态被填满的真空态的图景'', 并说, 在这种情况下, ``整个理论变得更复杂''. 下一节将会说明量子场论的发展是怎样使反粒子的空穴解释不再必要, 即使不幸的是, 它依旧在很多教科书中苟延残喘. 引用\,Julian Schwinger\,%
+    (朱利安\,\textperiodcentered\,施温格)的话\textsuperscript{\cite{30a}}, ``负能电子的无限海洋这一图景, 最好视为一个历史古董并忘掉它.''
+
+\noindent (iii)\quad
+ Dirac\,理论的伟大成功之一是它对电子磁矩的正确预测. 磁矩(\ref{1.1.8})相当于角动量为$\hbar /2$的带电点粒子做轨道运动时所期望磁矩值的两倍大, 这在当时是相当震撼的; 直到\,Dirac\,理论出现之前, 因子$2$一直是个迷. 然而, 在\,Dirac\,解决这个问题的路线中, 真的没有什么东西明确地引出了磁矩的这个特定值. 在波动方程(\ref{1.1.23})我们引入电场和磁场的地方, 我们可以再加上一个带任意系数$\kappa$
+     的\,``Pauli\,项''\textsuperscript{\cite{31}}
+      \begin{equation}
+    \kappa \alpha _{4}\left[ \gamma ^{\mu },\gamma ^{\nu }\right] \psi F_{\mu\nu }  \label{1.1.32}.
+     \end{equation}%
+  ($F_{\mu \nu }$是通常的电磁场强张量, $F^{12}=B_{3}$, $F^{01}=E_{1}$等) 这一项可以通过首先给自由场方程加上一正比于%
+  $[ \gamma ^{\mu},\gamma ^{\nu }](\partial ^{2}/\partial x^{\mu }\partial x^{\nu }) \psi$的项得到, 而这样的项显然为零, 然后像以前一样做代换(\ref{1.1.22}), 就可得到\,Pauli\,项. 一个更加现代的方法是简单地认为(\ref{1.1.32})项与所有已知的不变原理一致, 包括\,Lorentz\,不变和规范不变, 因而没有理由说为什么这样的项{\KAI{不}}应该被包含在场方程中. %
+  (见\,12.3\,节) 这一项对电子磁矩有一个正比于$\kappa$的额外贡献, 所以, 除了纯粹为了形式简单的可能需求, 没有理由去期待\,Dirac\,理论中的电子磁矩具有任何特定的值.
+%\end{enumerate}
+
+正如我们将在这本书中看到的, 通过量子场论的发展, 这些问题最终都将被解决(或者至少被理清).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%第二节%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{量子场论的诞生} \label{sec:1.2}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[15]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\hspace*{5mm}[15]}}}
+\setcounter{equation}{0}
+
+光子是唯一一个在被发现是粒子之前被当成场的粒子. 因此发展量子场论形式体系的第一个实例十分自然地与辐射相关, 然后 才应用到其他粒子和\nolinebreak
+场.
+
+1926\,年,在矩阵力学的核心文章之一中, Born, Heisenberg\,和\,Jordan\textsuperscript{\cite{32}}\,将他们的新方法应用到自由辐射场中. 为了简化讨论, 他们忽略了电磁波的极化并考虑一维情况, 坐标$x$从$0$取到$L$; 如果要求辐射场$u(x,t)\, $在端点处为零,那么可以将它代之以端点固定在$x=0$和$x=L$的弦, 它们的行为是相同的. 通过类比弦或全电磁场的情况, 哈密顿量取成如下的形式
+\begin{equation}
+H=\frac{1}{2}\int_{0}^{L}\left\{  \left(  \frac{\partial u}{\partial
+t}\right)  ^{2}+c^{2}\left(  \frac{\partial u}{\partial x}\right)^{2}\right\}  \:\dif x \:. \label{1.2.1}%
+\end{equation}
+为了将这个表达式简化为平方和, 将场$u$展为\,Fourier\,分量的和, 这些分量在$x=0$和$x=L$处为零:
+\begin{gather}
+u(x,t) =\sum_{k=1}^{\infty}q_{k}(t) \sin\left(  \frac{\omega_{k}x}{c}\right)
+\text{\ ,}\label{1.2.2}\\
+\omega_{k}\equiv k\uppi c/L\text{\ ,} \label{1.2.3}%
+\end{gather}
+这使得
+\begin{equation}
+H=\frac{L}{4}\sum_{k=1}^{\infty}\Big\{ \dot{q}_{k}^{2}( t) +\omega_{k}%
+^{2}q_{k}^{2}( t) \Big\} \:. \label{1.2.4}%
+\end{equation}
+因此弦或场的行为类似于独立谐振子的和, 而这些独立谐振子的频率是$\omega_{k}$, 在\,20\,年前, %
+Paul Ehrenfest\textsuperscript{\cite{32a}}(保罗\,\textperiodcentered\,埃伦菲斯特)就给出了这个结果.
+
+特别地, 就像粒子的力学中那样, 如果$H$表示成了$p$和$q$的函数, 正则共轭于$q_{k}(t)$的``动量''$p_{k}(t)$就被这一条件确定了, 那么
+\[
+\dot{q}_{k}( t) =\frac{\partial}{\partial p_{k}(t) } H(p(t),q(t))  \:.
+\]
+这给出``动量''%
+\begin{equation}
+p_{k}(t) =\frac{L}{2}\,\dot{q}_{k}(t)  \label{1.2.5}%
+\end{equation}
+所\marginpar[\flushright{\small[16]\hspace*{5mm}}]{{\small\hspace*{5mm}[16]}}以正则对易关系可以写成
+\begin{align}
+\Big[ \dot{q}_{k}(t) ,q_{j}(t) \Big]  &  =\frac{2}{L}\Big[ p_{k}(t) ,q_{j}(t)
+\Big] =\frac{-2\mi\hbar}{L} \, \updelta_{kj}\:,\label{1.2.6}\\
+\Big[ q_{k}(t) ,q_{j}(t) \Big]  &  =0\:. \label{1.2.7}%
+\end{align}
+另外, $q_{k}(t)$随时间的变化由哈密顿运动方程给定
+\begin{equation}
+\ddot{q}_{k}(t) =\frac{2}{L}\dot{p}_{k}( t) =-\frac{2}{L}\frac{\partial
+H}{\partial q_{k}( t) }=-\omega_{k}^{2}q_{k}( t) \text{\ } . \label{1.2.8}%
+\end{equation}
+
+
+通过前面在谐振子上的工作, Born, Heisenberg\,和\,Jordan\,已经知道方程(\ref{1.2.6})\yzx (\ref{1.2.8})所定义的矩阵的形式. %
+$q$-矩阵为
+\begin{equation}
+q_{k}( t) =\sqrt{\frac{\hbar}{L\omega_{k}}}\left[  a_{k}\exp(
+-\mi\omega_{k}t)  +a_{k}^{\dag}\exp(  +\mi\omega_{k}t)  \right] \label{1.2.9}%
+\end{equation}
+其中$a_{k}$是不含时的矩阵, $a_{k}^{\dag}$是它的厄米共轭, 它们满足如下对易关系
+\begin{align}
+\Big[ a_{k},a_{j}^{\dag}\Big]   &  =\updelta_{kj}\:,\label{1.2.10}\\
+\Big[ a_{k},a_{j}\Big]  &  =0\:. \label{1.2.11}%
+\end{align}
+这些矩阵的行与列由一组正整数$n_{1},n_{2},\cdots$标记, 每一个整数对应一个简正模. 矩阵元是
+\begin{align}
+\left(  a_{k}\right)  _{n_{1}^{\prime},n_{2}^{\prime},\cdots,n_{1},n_{2},%
+\cdots}  &  =\sqrt{n_{k}}\,\updelta_{n_{k}^{\prime},n_{k}-1}\prod\limits_{j\neq
+k}\updelta_{n_{j}^{\prime}n_{j}}\:,\label{1.2.12}\\
+( a_{k}^{\dag}) _{n_{1}^{\prime},n_{2}^{\prime},\cdots,n_{1},n_{2},\cdots}  &
+=\sqrt{n_{k}+1}\,\updelta_{n_{k}^{\prime},n_{k}+1}\prod\limits_{j\neq k}%
+\updelta_{n_{j}^{\prime}n_{j}}\:. \label{1.2.13}%
+\end{align}
+对于单个简正模, 这些矩阵可以显式地写出来\begin{align*}
+a=\left[
+\begin{array}
+[c]{cccccccccccccc}%
+0 &\hspace*{2mm}& \sqrt{1} &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+0 &\hspace*{2mm}& 0 &\hspace*{2mm}& \sqrt{2} &\hspace*{2mm}& 0 &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& \sqrt{3} &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}&  \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+\cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \\
+\cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \\
+\cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}&
+\end{array}
+\right]  \:,\quad a^{\dag}=\left[
+\begin{array}
+[c]{cccccccccccccc}%
+0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+\sqrt{1} &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+0 &\hspace*{2mm}& \sqrt{2} &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+0 &\hspace*{2mm}& 0 &\hspace*{2mm}& \sqrt{3} &\hspace*{2mm}& 0 &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot\\
+\cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \\
+\cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \\
+\cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}& \cdot &\hspace*{2mm}&
+\end{array}
+\right]  \:.
+\end{align*}
+可以直接验证(\ref{1.2.12})和(\ref{1.2.13})满足对易关系(\ref{1.2.10})和(\ref{1.2.11}).
+
+对于带有整数分量$n_{1},n_{2},\cdots$的列矢量, 它的物理解释是: 在简正模$k$下有$n_{k}$个量子的态. %
+矩阵$a_{k}$或$a_{k}^{\dag}$作用在这样的列矢量上将分别使$n_{k}$降低或提升一个单位, %
+而\marginpar[\flushright{\small[17]\hspace*{5mm}}]{{\small\hspace*{5mm}[17]}}所有$\ell\neq k$的$n_{\ell}$保持不变; 它们因此可以解释为在第$k$个简振模湮没或产生一个量子的算符. 特别的, %
+所有$n_{k}$都等于零的矢量代表真空态; 它被任意$a_{k}$湮没.
+
+这一解释可以通过考察哈密顿量进一步证实. 在(\ref{1.2.4})中使用(\ref{1.2.9})和(\ref{1.2.10})给出
+\begin{equation}
+H=\sum_{k}\hbar\omega_{k}\left(a_{k}^{\dag}a_{k}+\tfrac{1}{2}\right) \:. \label{1.2.14}%
+\end{equation}
+这样, 哈密顿量在$n$-表象中就是对角的\begin{equation}
+\left(  H\right)_{n_{1}^{\prime},n_{2}^{\prime},\cdots,n_{1},n_{2},\cdots
+}=\sum_{k}\hbar\omega_{k}\left(  n_{k}+\tfrac{1}{2}\right)\prod_{j}\updelta_{n_{j}^{\prime}n_{j}}\:. \label{1.2.15}%
+\end{equation}
+我们看到态的能量就是出现在态中的每个量子能量$\hbar\omega_{k}$之和, %
+再加上一个无限大零点能$E_{0}=\frac{1}{2}\sum_{k}\hbar\omega_{k}$. 将其应用到辐射场, %
+这套体系证实了根据每个简正模中的量子数目$n_{k}$对辐射态进行计数的\,Bose\,方法.
+
+Born, Heisenberg\,和\,Jordan\,利用这套体系导出黑体辐射中能量涨落的方均根表达式. (为了实现这个目标, 他们实际上仅用了对易关系(\ref{1.2.6})\yzx (\ref{1.2.7}).) 然而, 不久之后, 这个方法就应用到了一个更加急迫的问题上: 自发辐射速率的计算.
+
+为了领会这里的困难, 略微回溯一点历史是必要的. 在矩阵力学第一批文章中的一篇里, Born\,和\,Jordan\textsuperscript{\cite{33}}实际上做了这样的假定, 当一个原子从态$\beta$ 掉落到更低的态$\alpha$上时, 这个原子会像一个位移为
+\begin{equation}
+\br(t)=\br_{\beta\alpha}\exp(-2\uppi \mi\nu t)
++\br_{\beta\alpha}{}^{\ast}\exp(2\uppi \mi\nu t)
+\: \label{1.2.16}%
+\end{equation}
+的经典带电振子那样发生辐射, 其中
+\begin{equation}
+h\nu=E_{\beta}-E_{\alpha}, \label{1.2.17}%
+\end{equation}
+而$\br_{\beta\alpha}$是电子位置在态$\beta,\alpha$上的矩阵元. 这种振子的能量是
+\begin{equation}
+E=\frac{1}{2}m\Bigl( \dot{\br}^{2}+(2\uppi\nu)
+^{2}\br^{2}\Bigr)  =8\uppi^{2}m\nu^{2}\lvert \br_{\beta
+\alpha} \rvert ^{2}\:. \label{1.2.18}%
+\end{equation}
+直接的经典计算就可以给出辐射功率, 再除以每个光子的能量$h\nu$就给出了光子发射速率
+\begin{equation}
+A(\beta\rightarrow\alpha)=\frac{16\uppi^{3}e^{2}\nu^{3}}{3hc^{3}}\,\lvert
+\br_{\beta\alpha}\rvert ^{2}\:. \label{1.2.19}%
+\end{equation}
+然\marginpar[\flushright{\small[18]\hspace*{5mm}}]{{\small\hspace*{5mm}[18]}}而, 为什么在处理自发辐射的过程中可以用经典偶极子的辐射公式, 这一点依旧是不清楚的.
+
+稍后, Dirac\,\textsuperscript{\cite{34}}给出了一个尽管不够直接但更可信的推导. 他的方法是考察量子化原子态在{\KAI{经典}}的振荡电磁场中的行为,  假定电磁场在频率(\ref{1.2.17})处单位频率间隔的能量密度为$u$, 他可以导出吸收与受激辐射的速率$uB(\alpha\to\beta)$和$uB(\beta\to\alpha)$的公式:%
+\begin{equation}
+B(\alpha\to\beta)=B(\beta\to\alpha)\simeq\frac{2\uppi^{2}e^{2}%
+}{3h^{2}} \,\lvert \br_{\beta\alpha}\rvert ^{2}\:.
+\label{1.2.20}%
+\end{equation}
+(注意表达式的右边关于态$\alpha$和$\beta$是对称的, 这是因为$\br_{\alpha\beta}$就是$\br_{\beta\alpha}{}^{\ast}$.) Einstein\textsuperscript{\cite{34a}} 在\,1917\,年已经证明了, 原子和黑体辐射之间存在热平衡的可能性赋予了自发辐射速率$A(\beta\to\alpha)$与受激辐射或吸收速率$uB$一个关系:%
+\begin{equation}
+A(\beta\to\alpha) = \left(  \frac{8\uppi h\nu^{3}}{c^{3}%
+}\right)  \,B(\beta\to \alpha )  \:. \label{1.2.21}%
+\end{equation}
+在这个关系中应用(\ref{1.2.20})就立刻给出\,Born-Jordan\,的自发辐射速率结果(\ref{1.2.19}). 然而, 在推导仅包含单原子过程的公式中却需要通过热力学进行论证, 这一点看起来仍不让人满意.
+
+最终, 在\,1927\,年, Dirac\,\textsuperscript{\cite{35}}可以给出自发辐射一个完全量子力学的处理. 矢势$\bA(\bx,t)\,  $像在方程(\ref{1.2.2})中那样按简正模展开, 并且它的系数被证明满足类似(\ref{1.2.6})的对易关系.  结果是, %
+自由辐射场的每个态由一组整数$n_{k}$标记, 每个整数对应一个简正模, %
+而电磁场相互作用$e\dot{\br}\cdot \bA$的矩阵元则采取对简正模求和的形式, %
+矩阵系数正比于由方程(\ref{1.2.10})\yzx (\ref{1.2.13})定义的矩阵$a_{k}$和$a_{k}^{\dag}$, %
+这里的关键结果是方程(\ref{1.2.13})中的因子$\sqrt{n_{k}+1}$; %
+简正模$k$中的光子数目$n_{k}$升到$n_{k}+1$的跃迁概率正比于这个因子的平方, 即$n_{k}+1$. %
+但在简正模$k$中有$n_{k}$个光子的辐射场中, 单位频率间隔内的能量密度$u$是
+\[
+u(\nu_{k})=\left(  \frac{8\uppi\nu_{k}^{2}}{c^{3}}\right)  n_{k}\times h\nu
+_{k}\:,%
+\]
+所以简正模$k$中的自发辐射速率正比于
+\[
+n_{k}+1=\frac{c^{3}u(\nu_{k})}{8\uppi h\nu_{k}^{3}}+1\:.
+\]
+第\marginpar[\flushright{\small[19]\hspace*{5mm}}]{{\small\hspace*{5mm}[19]}}一项被解释为受激辐射的贡献, 而第二项则被解释为自发辐射的贡献. 因此, 不借助任何热力学讨论, Dirac\,就可以得出如下的结论, 受激辐射的速率$uB$和自发辐射速率$A$的比值由\,Einstein\,关系给定, 即方程(\ref{1.2.21}). 利用他关于$B$的早期结果(\ref{1.2.20}), Dirac\,就能重新导出自发辐射速率$A$ 的\,Born-Jordan\,公式\textsuperscript{\cite{33}}(\ref{1.2.19}). 不久之后, 利用类似的方法, 对于辐射的散射和原子激发态寿命, Dirac\,给出了量子力学处理,\cite{36} V. Weisskopf\,(维克托\,\textperiodcentered\,韦斯科普夫)和\,Eugene Wigner\,(尤金\,\textperiodcentered\,维格纳)则对谱线型进行了更细致的研究.\cite{36a} %
+Dirac\,在他的工作中将电磁势分离成辐射场$\bA$和静态\,Coulomb\,势$A^{0}$, %
+这个形式不能保证经典电磁学中明显的\,Lorentz\,不变性和规范不变性. 稍后, %
+这些结果被\,Enrico Fermi\,(恩里克\,\textperiodcentered\,费米)\textsuperscript{\cite{36b}}放到了一个更加坚实的基础上.  %
+20\,世纪\,30\,年代的很多物理学家从\,Fermi\,在\,1932\,年写的综述中学到了他们的量子电动力学.
+
+对$q$和$p$或$a$和$a^{\dag}$使用正则对易关系也为量子理论的\,Lorentz\,不变性带来了问题. 在\,1928\,年, Jordan\,和\,Pauli\textsuperscript{\cite{37}}就已经能够证明不同时空点的场的对易子实际上是\,Lorentz\,不变的. (这些对易子将在第5章进行计算.) 在这之后, 通过一些精巧的思想实验, Bohr\,和\,Leon Rosenfeld\,(利昂\,\textperiodcentered\,罗森菲尔德)\textsuperscript{\cite{38}}证明了这些对易关系限制了我们对类时间隔的不同时空点上的场进行测量的能\nolinebreak
+力.
+
+在成功量子化电磁场之后不久, 这些技巧就被应用到其他场. 起初, 这被看作``二次量子化''; 被量子化的场是单粒子量子力学中的波函数, 例如电子的\,Dirac\,波函数. 在这个方向上的第一步看来是\,Jordan\,在\,1927\,年迈出的.\textsuperscript{\cite{39}}
+Jordan\,和\,Wigner\,在\,1928\,年补充了一个基本要素.\textsuperscript{\cite{40}} 他们发现\,Pauli\,不相容原理不允许电子在任意简正模$k$上的占有数$n_{k}$%
+(算上自旋和位置变量)取\,0\,和\,1\,以外的任何值. 因此, 电子场不能展开为满足对易关系(\ref{1.2.10})和(\ref{1.2.11})的算符的叠加,  这是因为这些关系要求$n_{k}$取从$0$到$\infty$的任意整数值. 他们转而认为电子场应该展为满足如下{\KAI{反对易}}关系的算符$a_{k},a_{k}^{\dag}$的和
+\begin{align}
+a_{k}a_{j}^{\dag}+a_{j}^{\dag}a_{k}  &  =\updelta_{jk}\:,\label{1.2.22}\\
+a_{k}a_{j}+a_{j}a_{k}  &  =0\:. \label{1.2.23}%
+\end{align}
+这个关系可以被一组矩阵满足, 这些矩阵由一组整数$n_{1},n_{2},\cdots$标\marginpar[\flushright{\small[20]\hspace*{5mm}}]{{\small\hspace*{5mm}[20]}}记, 每一个整数对应一个简正模,
+每个整数只能取\,0\,或\,1:%
+\begin{align}
+(a_{k})_{n_{1}^{\prime},n_{2}^{\prime},\cdots,n_{1},n_{2},%
+\cdots}  &  =\left\{
+\begin{array}
+[c]{ll}%
+1\qquad n_{k}^{\prime}=0,\: n_{k}=1,\:\text{对于}\,j\neq
+k,\:n_{j}^{\prime}=n_{j} & \\
+0\qquad \text{其他情况,} &
+\end{array}
+\right. \label{1.2.24}\\
+(a_{k}^{\dag})_{n_{1}^{\prime},n_{2}^{\prime},\cdots,n_{1},n_{2},\cdots}  &
+=\left\{
+\begin{array}
+[c]{ll}%
+1\qquad n_{k}^{\prime}=1,\: n_{k}=0,\:\text{对于}\,j\neq
+k,\: n_{j}^{\prime}=n_{j} & \\
+0\qquad \text{其他情况.} &
+\end{array}
+\right.  \label{1.2.25}%
+\end{align}
+例如, 对于单个简正模, 我们只有两行两列, 对应于$n^{\prime}$和$n$取值$0$和$1$;
+矩阵$a$和$a^{\dag}$的形式为{}$^\za$\footnote{$^\za${}原书下式两个矩阵有笔误. \ezx 译者注}
+\[
+a=\left[
+\begin{array}
+[c]{lcl}%
+0 &\hspace*{2mm}& 1\\
+0 &\hspace*{2mm}& 0
+\end{array}
+\right]  \text{\ ,}\qquad\qquad a^{\dag}=\left[
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{2mm}& 0\\
+1 &\hspace*{2mm}& 0
+\end{array}
+\right]  \:.
+\]
+读者可以验证(\ref{1.2.24})和(\ref{1.2.25})确实满足反对易关系(\ref{1.2.22})和(\ref{1.2.23}).
+
+由整数$n_{1},n_{2},\cdots$表征的列矢量在含义上与玻色子相同, 即在简正模$k$上有$n_{k}$个量子的态. 当然, 不同的是, 正像\,Pauli\,不相容原理要求的那样, 由于每个$n_{k}$仅能取值$0$和$1$, 每个简正模上最多有一个量子. 另外, 如果简正模$k$上已经有一个量子, 那么$a_{k}$将会湮没掉这个量子, 否则就给出零; 同样地, {\KAI{除非}}简正模$k$上已经有一个量子, $a^{\dag}$将在简正模$k$上产生一个量子, 如果那里已有量子则给出$0$.  在这之后过了很长时间, %
+Fierz\,(菲尔兹)和\,Pauli\textsuperscript{\cite{40a}}证明了, 选择对易关系还是反对易关系由粒子的自旋唯一地决定: 对于像光子那样自旋为整数的粒子必须使用对易子, 而对于像电子那样自旋为半整数的粒子则必须使用反对易子. (在第5章将会以一种不同的方式证明它.)
+
+量子场的一般理论是\,Heisenberg\,和\,Pauli\,在\,1929\,年的两篇十分全面的文章中首次提出的.\textsuperscript{\cite{41}} 他们工作的出发点是将正则体系应用到场本身, 而不是场中出现的简正模的系数.  Heisenberg\,和\,Pauli\,将拉格朗日量$L$取为对场和场时空导数的一个定域函数的空间积分; 场方程由场变化时作用量$\int L\:\dif t$ 应该是稳定的这一原理确定; 而对易关系通过一个假设决定: 拉格朗日量对任意场量时间导数的变分导数, 其行为类似于共轭于这个场的``动量''(对于费米场,对易关系变成反对易关系). 他们同时将这个普遍的形式体系应用到电磁场和\,Dirac\,场, 并探讨了各种不变性和守恒律, 其中包括荷守恒, 动量守恒与能量守恒, 以及\,Lorentz\, 不变性和规范不变性.
+
+Heisenberg-Pauli\,体系本质上与我们第7章中的内\marginpar[\flushright{\small[21]\hspace*{5mm}}]{{\small\hspace*{5mm}[21]}}容是相同的, 因此我们现在仅限于讨论一个例子, 这个例子在本节后面是有用的. 对于一自由复标量场$\phi(x)$, 拉格朗日量取为
+\begin{equation}
+L=\int \dif^{3}x\:\left[  \dot{\phi}^{\dag}\dot{\phi}-c^{2}\left(
+\bm\nabla\phi\right)  ^{\dag}\cdot\left(  \bm\nabla
+\phi\right)  -\left(  \frac{mc^{2}}{\hbar}\right)  ^{2}\phi^{\dag}\phi\right]
+. \label{1.2.26}%
+\end{equation}
+如果我们使$\phi(x)$有一无限小变分$\updelta\phi(x)$, 那么拉格朗日量的变分是
+\begin{align}
+\updelta L  &  =\int \dif^{3}x\:\Bigg[\dot{\phi}^{\dag}\updelta\dot{\phi}+\dot{\phi
+}\updelta\dot{\phi}^{\dag}-c^{2}\bm\nabla\phi^{\dag}\cdot
+\bm\nabla\updelta\phi-c^{2}\bm\nabla\phi\cdot\bm\nabla
+\updelta\phi^{\dag}\nonumber\\
+&  \quad-\left(  \frac{mc^{2}}{\hbar}\right)  ^{2}\phi^{\dag}\updelta
+\phi-\left(  \frac{mc^{2}}{\hbar}\right)  ^{2}\phi\updelta\phi^{\dag
+}\Bigg]\:. \label{1.2.27}%
+\end{align}
+在使用最小作用量原理时, 假定了场的变分在时空积分的边界处为零. 因此, 在计算作用量$\int L\:\dif t$的变化时, 我们可以直接使用分部积分,
+得到
+\[
+\updelta\int L\:\dif t=c^{2}\int \dif^{4}x\:\left[  \updelta\phi^{\dag}\left(
+\square-\left(  \frac{mc}{\hbar}\right)  ^{2}\right)  \phi+\updelta\phi\left(
+\square-\left(  \frac{mc}{\hbar}\right)  ^{2}\right)  \phi^{\dag}\right]
+\:.
+\]
+但是由于上式对任意的$\updelta\phi^{\dag}$和$\updelta\phi$都必须为零, 所以$\phi$%
+必须满足熟悉的相对论波动方程\begin{equation}
+\left[  \square-\left(  \frac{mc}{\hbar}\right)  ^{2}\right]  \phi=0
+\label{1.2.28}%
+\end{equation}
+以及上式的伴随方程. 场$\phi$和$\phi^{\dag}$的正则共轭``动量''由$L$对$\dot{\phi}$和$\dot{\phi}^{\dag}$的变分导数确定,
+我们可以从(\ref{1.2.27})读出它们\begin{align}
+\pi &  \equiv\frac{\updelta L}{\updelta\dot{\phi}}=\dot{\phi}^{\dag}\text{\ ,
+}\label{1.2.29}\\
+\pi^{\dag}  &  \equiv\frac{\updelta L}{\updelta\dot{\phi}^{\dag}}=\dot{\phi
+}\:. \label{1.2.30}%
+\end{align}
+这\marginpar[\flushright{\small[22]\hspace*{5mm}}]{{\small\hspace*{5mm}[22]}}些场变量满足通常的正则对易关系, 不过克罗内克$\updelta $-符号要换成$\updelta $-函数
+\begin{align}
+\Bigl[\pi(\bx,t),\phi (\by,t)\Bigr]&  =\Bigl[  \pi^{\dag}(\bx,t) ,\phi^{\dag}(\by,t)  \Bigr]  =-\mi\hbar\delta ^{3}(\bx-\by)\:,\label{1.2.31}\\
+\Bigl[  \pi(\bx,t), \phi^{\dag}(\by,t) \Bigr]   &  =\Bigl[  \pi^{\dag}(\bx,t),\phi(\by,t)  \Bigr]  =0 \:,\label{1.2.32}\\
+\Bigl[\pi(\bx,t),\pi(\by,t )  \Bigr]&  =\Bigl[ \pi^{\dag} (\bx,t),\pi^{\dag}(\by,t)  \Bigr]  = \Bigl[  \pi (\bx,t ),\pi^{\dag}(\by,t)  \Bigr]  =0\:,\label{1.2.33}\\
+\Bigl[\phi(\bx,t)  ,\phi(\by,t)  \Bigr]&  =\Bigl[  \phi^{\dag}(  \bx,t)  ,\phi^{\dag}(\by,t)  \Bigr]  =\Bigl[  \phi(\bx,t)
+,\phi^{\dag}(\by,t)  \Bigr]  =0\:. \label{1.2.34}%
+\end{align}
+对所有的正则动量与相应场的时间导数的积求``和'',
+再减去拉格朗日量(就像粒子力学中那样)就得到这里的哈密顿量:
+\begin{equation}
+H=\int \dif^{3}x\,\Bigl[  \pi\dot{\phi}+\pi^{\dag}\dot{\phi}^{\dag}\Bigr]-L
+\label{1.2.35}%
+\end{equation}
+或者, 利用(\ref{1.2.26}), (\ref{1.2.29})和(\ref{1.2.30}):
+\begin{equation}
+H=\int \dif^{3}x\, \left[  \pi^{\dag}\pi+c^{2} (\bm{\nabla}\phi)
+^{\dag}\cdot(\bm{\nabla}\phi)  +\left(  \frac{m^{2}c^{4}%
+}{\hbar^{2}}\right)  \phi^{\dag}\phi\right]  \:. \label{1.2.36}%
+\end{equation}
+
+
+在\,Heisenberg\,和\,Pauli\,的文章之后, 量子场论离它最终的战前形式只差最后一个要素: 负能态问题的解答.  我们在上一节看到, 在\,1930\,年, 就在\,Heisenberg-Pauli\,的文章发表前后, Dirac\,已经提出了, 除了几个可观测的空穴外, 电子负能态是被填满的, 而电子负能态本身无法被观测. 而\,1932\,年正电子的发现似乎巩固了\,Dirac\,的想法, 这之后, 他的``空穴理论''被用来计算许多过程的最低阶微扰, 其中包括电子\bzx 正电子对的产生和散射.
+
+与此同时, 大量的工作投入到发展带有明显\,Lorentz\,不变性的形式体系中. %
+最有影响的工作是\,Dirac, Vladimir Fock\,(弗拉基米尔\,\textperiodcentered\,福克)和%
+\,Boris Podolsky\,(鲍里斯\,\textperiodcentered\,波多尔斯基)\textsuperscript{\cite{42}}的``多时(many-time)''体系, 在这个体系中, 态矢由一波函数表示, 这一波函数依赖于所有的, 无论是正能的还是负能的电子的时空和自旋坐标. 在这个形式体系中, 不论是正能电子还是负能电子的总数都是守恒的, 例如, 一个电子\bzx 正电子对的产生被描述为负能态电子到正能态的激发, 而电子和正电子的湮没被描述成相对应的退激发. 多时体系的优点在于它有明显的\,Lorentz\,不变性, 但它也有很多缺点: 尤其是在光子的处理与电子和正电子的处理上存在着深刻的差异, 光子是用量子化电磁场进行处理的.  不是所有的物理学家觉得这是个缺点; 不像电磁场, 电子场并没有一个经典极限, 所以关于它的物理意义存在疑问. 另\marginpar[\flushright{\small[23]\hspace*{5mm}}]{{\small\hspace*{5mm}[23]}}外, Dirac\textsuperscript{\cite{42a}} 相信场是我们观测粒子的手段, 所以他不期望粒子和场可以以相同的形式描述. 尽管我不知道这在当时是否困扰了所有人, 但多时体系有一个更实际的缺点: 它很难用来描述类似核衰变的过程, 在这类过程中, 电子和反中微子的产生并没有伴随着正电子或中微子的产生.  Fermi\textsuperscript{\cite{43}}对$\beta$衰变中电子能量分布所做的成功计算算得上是量子场论的早期成就之一.
+
+Dirac\,空穴理论与电子的量子场理论等效的基本思想是由\,Fock\textsuperscript{\cite{43a}}以及\,Wendell Furry\,(温德尔\,\textperiodcentered\,法雷)和\,Oppenheimer\,(奥本海默)\textsuperscript{\cite{44}}在\,1933\yzx 1934\,年提出并证明的重要概念. 为了从一个更现代的观点领会这一思想,  类比于电磁场或\,Born-Heisenberg-Jordan\,场(\ref{1.2.2}), 我们尝试建立一个电子场. 由于电子携带电荷, 我们不想将湮没算符和产生算符混在一起, 因而尝试将场写为
+\begin{equation}
+\psi(x)=\sum_{k}u_{k}(\bx)\me^{-\mi\omega_{k}t}a_{k}\:,
+\label{1.2.37}%
+\end{equation}
+其中$u_{k}(\bx)\me^{-\mi\omega_{k}t}$是\,Dirac\,方程(\ref{1.1.13})正交平面波解的一个完备集%
+($k$现在标记\,3\,-动量, 自旋以及能量的正负号):
+\begin{gather}
+\mathscr{H}u_{k}=\hbar\omega_{k}u_{k}\:,\label{1.2.38}
+\end{gather}
+\begin{gather}
+\mathscr{H} \equiv -\mi\hbar c\bm\alpha\cdot\bm\nabla+\alpha_{4}mc^{2}\text{\ ,
+}\label{1.2.39}\\
+\smallint u_{k}^{\dag}u_{\ell}\:\dif^{3}x=\updelta _{k\ell}\:, \label{1.2.40}%
+\end{gather}
+$a_{k}$是相应的湮没算符, 它满足\,Jordan-Wigner\,反对易关系(\ref{1.2.22})\yzx (\ref{1.2.23}). %
+根据``二次量子化''的思想或\,Heisenberg\,和\,Pauli\textsuperscript{\cite{41}}的正则量子化手续, %
+用量子化的场(\ref{1.2.37})代替``波函数''计算出$\mathscr{H}$的``期望值'', 从而构造出哈密顿量
+\begin{equation}
+H=\int \dif^{3}x\:\psi^{\dag}\mathscr{H}\psi=\sum_{k}\hbar\omega_{k}a_{k}^{\dag
+}a_{k}\:. \label{1.2.41}%
+\end{equation}
+问题显然是这并非一个正定算符\ezx 尽管算符$a_{k}^{\dag}a_{k}$仅取正本征值\,1\,和\,0\,%
+(见方程(\ref{1.2.24})和(\ref{1.2.25})), 但有一半的$\omega_{k}$是负的. 为了克服这个困难, %
+Furry\,和Oppenheimer 重拾了\,Dirac\,的想法, 将正电子看成是空缺的负能电子\textsuperscript{\cite{42}}; 反对易关系对于产生和湮没算符是对称的,
+所\marginpar[\flushright{\small[24]\hspace*{5mm}}]{{\small\hspace*{5mm}[24]}}以, 他们将正电子的产生和湮没算符定义为相应负能电子的湮没和产生算符
+\begin{equation}
+b_{k}^{\dag}\equiv a_{k}\:,\qquad b_{k}\equiv a_{k}^{\dag}%
+\text{\ \ }\qquad\text{(对于}\,\omega_{k}<0\text{)} \label{1.2.42}%
+\end{equation}
+其中$b$的指标$k$标记的是动量与自旋都与相应电子模$k$相反的正能正电子模. 那么, Dirac\,场(\ref{1.2.37})
+可以重写为\begin{equation}
+\psi(x)=\sideset{}{^{(+)}}\sum_{k}a_{k}u_{k}(x)+\sideset{}{^{(-)}}\sum_{k}b_{k}^{\dag}u_{k}(x)\:, \label{1.2.43}%
+\end{equation}
+其中$(+)$和$(-)$分别代表对$k$的求和取遍$\omega_{k}>0$的简正模和$\omega_{k}<0$的简正模, 并且$u_{k}(x)\equiv u_{k}(\bx)\me^{-\mi\omega_{k}t}$. 类似地, 利用$b$的反对易关系, 我们将能量算符(\ref{1.2.41})重写为
+\begin{equation}
+H=\sideset{}{^{(+)}}\sum_{k}\hbar\omega_{k}a_{k}^{\dag}a_{k}+\sideset{}{^{(-)}}\sum_{k}\hbar\lvert \omega_{k}\rvert b_{k}^{\dag}%
+b_{k}+E_{0}\:, \label{1.2.44}%
+\end{equation}
+其中$E_{0}$是无限大\,c\,-数\begin{equation}
+E_{0}=-\sideset{}{^{(-)}}\sum_{k}\hbar\lvert \omega_{k}\rvert
+\:. \label{1.2.45}%
+\end{equation}
+为了使这个新定义不仅仅是形式上的改变, 我们还必须将物理真空指定为不包含正能电子或正电子的态$\Psi_{0}$:
+\begin{align}
+a_{k}\Psi_{0}  &  =0\qquad\quad\left(  \omega_{k}>0\right)  \:,\label{1.2.46}\\
+b_{k}\Psi_{0}  &  =0\qquad\quad\left(  \omega_{k}<0\right)  \:.\label{1.2.47}%
+\end{align}
+因此, (\ref{1.2.44})所给出的$E_{0}$正是真空能. 如果我们测量的任意能量都是相对于真空能$E_{0}$的, %
+那么物理的能量算符是$H-E_{0}$; 并且方程(\ref{1.2.44})表明这是一个{\KAI{正定}}的算符.
+
+1934\,年, 零自旋带电粒子的负能态问题也被\,Pauli\,和\,Weisskopf\textsuperscript{\cite{45}}解决了, %
+他们的文章部分是为了挑战负能态被占满的\,Dirac\,图景. 这时, 产生湮没算符满足对易关系而非反对易关系, 所以像费米子那样自由地转换这些算符的角色是不可能的. 取而代之, 我们必须要返回到\,Heisenberg-Pauli\,正则体系\textsuperscript{\cite{41}}以确定各个简正模的系数是产生算符还是湮没算符.
+
+Pauli\,和\,Weisskopf\,在一个空间体积$V\equiv L^{3}$的正方体内将自由带荷标量场展成了平面波:
+\begin{equation}
+\phi(\bx,t)=\frac{1}{\sqrt{V}}\sum_{\bk}q(\bk%
+,t)\me^{\mi\bk\cdot\bx\label{1.2.48}}%
+\end{equation}
+波数\marginpar[\flushright{\small[25]\hspace*{5mm}}]{{\small\hspace*{5mm}[25]}}须满足周期性边界条件, 即$j=1,2,3$的$k_{j}L/2\uppi$应该是三个正整数或三个负整数. 类似地, 正则共轭变量(\ref{1.2.29})被展为\begin{equation}
+\pi(\bx,t)\equiv\frac{1}{\sqrt{V}}\sum_{\bk}p(\bk%
+,t)\me^{-\mi\bk\cdot \bx} \:.\label{1.2.49}%
+\end{equation}
+指数上放进负号是为了使(\ref{1.2.29})变成:
+\begin{equation}
+p(\bk,t)=\dot{q}^{\dag}(\bk,t) \:.\label{1.2.50}%
+\end{equation}
+逆\,Fourier\,变换给出\begin{align}
+q(\bk,t) &  =\frac{1}{\sqrt{V}}\int \dif^{3}x\: \phi(\bx%
+,t)\me^{-\mi\bk\cdot \bx} \:, \label{1.2.51}\\
+p(\bk,t) &  =\frac{1}{\sqrt{V}}\int \dif^{3}x\: \pi(\bx%
+,t)\me^{+\mi\bk\cdot\bx} \:,\label{1.2.52}%
+\end{align}
+因此, 对于$q$和$p$, 正则对易关系(\ref{1.2.31})\yzx (\ref{1.2.34})给出:
+\begin{align}
+\Bigl[p(\bk,t),q(\bl,t)\Bigr] &  =\frac{-\mi\hbar}{V}\int
+\dif^{3}x\:\me^{\mi\bk\cdot \bx} \me^{-\mi\bl\cdot\bx}=-\mi\hbar\updelta
+_{\bk\bl} \:, \label{1.2.53}\\
+\Bigl[  p(\bk,t),q^{\dag}(\bl,t)\Bigr]   &  =\Bigl[p(\bk%
+,t),p(\bl,t)\Bigr]=\Bigl[  p(\bk,t),p^{\dag}(\bl%
+,t)\Bigr]  \nonumber\\
+&  =\Bigl[q(\bk,t),q(\bl,t)\Bigr]=\Bigl[  q(\bk,t),q^{\dag
+}(\bl,t)\Bigr]  =0\label{1.2.54}%
+\end{align}
+以及通过取上式的厄米共轭得到的对易关系. 通过将(\ref{1.2.48})和(\ref{1.2.49})代入哈密顿量的表达式(\ref{1.2.36}),
+我们同样可以将这个算符写成$p$和$q$的形式:
+\begin{equation}
+H=\sum_{\bk}\left[  p^{\dag}(\bk,t)p(\bk,t)+\omega
+_{\bk}^{2}\,q^{\dag}(\bk,t)q(\bk,t)\right]  \text{\ ,
+}\label{1.2.55}%
+\end{equation}
+其中\begin{equation}
+\omega_{\bk}^{2}\equiv c^{2}\bk^{2}+\left(  \frac{mc^{2}}{\hbar
+}\right)  ^{2}\:.\label{1.2.56}%
+\end{equation}
+这样, $p$的时间导数由哈密顿方程给出\begin{equation}
+\dot{p}(\bk,t)=-\frac{\partial H}{\partial q(\bk,t)}%
+=-\omega_{\bk}^{2}\,q^{\dag}(\bk,t)\label{1.2.57}%
+\end{equation}
+(同时也给出了它的伴随方程), 根据方程(\ref{1.2.50}), 这个方程等价于\,Klein-Gordon-Schr\"{o}dinger\,波动方程(\ref{1.2.28}).
+
+我们看到, 正如\,Born, Heisenberg\,和\,Jordan\textsuperscript{\cite{4}}在\,1926\,年使用的模型中那样,  自由场行为类似于无穷多个耦合谐振子. P\marginpar[\flushright{\small[26]\hspace*{5mm}}]{{\small\hspace*{5mm}[26]}}auli\,和\,Weisskopf\,可以构造出满足对易关系(\ref{1.2.53})\yzx (\ref{1.2.54})%
+以及``运动方程''(\ref{1.2.50})和(\ref{1.2.57})的$p$和$q$, 方法是
+引入{\KAI{两类}}分别对应粒子和反粒子的湮没产生算符$a,b,a^{\dag},b^{\dag}$:
+\begin{align}
+q(\bk,t) &  =\mi\sqrt{\frac{\hbar}{2\omega_{\bk}}}\Bigl[
+a(\bk)\exp(-\mi\omega_{\bk}t)-b^{\dag}(\bk)\exp
+(\mi\omega_{\bk}t)\Bigr] \:, \label{1.2.58}\\
+p(\bk,t) &  =\sqrt{\frac{\hbar\omega_{\bk}}{2}}\Bigl[
+b(\bk)\exp(-\mi\omega_{\bk}t)+a^{\dag}(\bk)\exp
+(+\mi\omega_{\bk}t)\Bigr]  \label{1.2.59}%
+\end{align}
+其中\begin{align}
+\Bigl[  a(\bk),a^{\dag}(\bl)\Bigr]  & =\Bigl[  b(\bk%
+),b^{\dag}(\bl)\Bigr] =\delta _{\bk\bl}\:,\label{1.2.60}%
+\\
+\Bigl[a(\bk),a(\bl)\Bigr] &  =\Bigl[b(\bk),b(\bl%
+)\Bigr]=0\:,\label{1.2.61}\\
+\Bigl[a(\bk),b(\bl)\Bigr] &  =\Bigl[  a(\bk),b^{\dag
+}(\bl)\Bigr]  =\Bigl[ a^{\dag}(\bk),b(\bl)\Bigr]
+\nonumber\\
+&  =\Bigl[  a^{\dag}(\bk),b^{\dag}(\bl)\Bigr]  =0\text{\ }%
+.\label{1.2.62}%
+\end{align}
+可以直接验证这些算符满足所希望的关系(\ref{1.2.53}), (\ref{1.2.54}), (\ref{1.2.50})和(\ref{1.2.57}). 场(\ref{1.2.48})可以重写为
+\begin{align}
+\phi(\bx,t) &  =\frac{\mi}{\sqrt{V}}\sum_{\bk}\sqrt{\frac{\hbar
+}{2\omega_{\bk}}}\Big[a(\bk)\exp(\mi\bk\cdot\bx%
+-\mi\omega_{\bk}t)\nonumber\\
+&  \quad-b^{\dag}(-\bk)\exp(-\mi\bk\cdot\bx +\mi\omega_{\bk%
+}t)\Big]\label{1.2.63}%
+\end{align}
+并且哈密顿量(\ref{1.2.55})采取如下的形式
+\[
+H=\sum_{\bk}\frac{1}{2}\hbar\omega_{\bk}\left[  b^{\dag
+}(\bk)b(\bk)+b(\bk)b^{\dag}(\bk)+a^{\dag
+}(\bk)a(\bk)+a(\bk)a^{\dag}(\bk)\right]
+\]
+或者, 利用(\ref{1.2.60})\yzx (\ref{1.2.62})%
+\begin{equation}
+H=\sum_{\bk}\hbar\omega_{\bk}\left[  b^{\dag}(\bk%
+)b(\bk)+a^{\dag}(\bk)a(\bk)\right]  +E_{0}\text{\ ,
+}\label{1.2.64}%
+\end{equation}
+其中$E_{0}$是无限大\,c\,-数
+\begin{equation}
+E_{0}\equiv\sum_{\bk}\hbar\omega_{\bk}\:.\label{1.2.65}%
+\end{equation}
+存在两类不同的算符$a$和$b$, 并且它们在哈密顿量中以精确相同的形式出现, 这些表明这是一个包含{\KAI{两}}种相同质量粒子的理论. 正如\,Pauli\,和\,Weisskopf\,所强调的, 这两个变量可以看作粒子和相应的反粒子, 并且如果它们带荷, 它们会带相反的荷.
+因\marginpar[\flushright{\small[27]\hspace*{5mm}}]{{\small\hspace*{5mm}[27]}}此, 正如我们前面所强调的, 零自旋的玻色子和自旋$1/2$ 的费米子一样可以有能够区分的反粒子, 而这种反粒子不能等效为负能粒子海中的空穴.
+
+现在, 我们可以通过取对易关系在真空态$\Psi_{0}$上的期望值来分辨$a$和$b$是湮没算符还是$a^{\dag}$和%
+$b^{\dag}$是湮没算符. 例如, 如果$a_{\bk}^{\dag}$是湮没算符, 那么它作用在真空态上给出0, 所以(\ref{1.2.60})的真空期望值将给出
+\begin{equation}
+{-}\lvert \lvert a(\bk)\Psi_{0}\rvert\rvert ^{2}=\Bigl( \Psi_{0},\Bigl[a(\bk),a^{\dag}(\bk)\Bigr]
+\Psi_{0}\Bigr)  =+1\label{1.2.66}%
+\end{equation}
+这与左边必须负定相矛盾. 用这种方法我们可以得出结论:
+$a_{\bk}$和$b_{\bk}$才是湮没算符, 因此\begin{equation}
+a(\bk)\Psi_{0}=b(\bk)\Psi_{0}=0\:.\label{1.2.67}%
+\end{equation}
+这与所有对易关系均一致. 因此, 正则体系迫使场(\ref{1.2.58})中$\me^{+\mi\omega t}$的系数是产生算符, %
+一如它在自旋$1/2$的\,Furry-Oppenheimer\,体系中所扮演的角色.
+
+方程(\ref{1.2.64})和(\ref{1.2.67})现在告诉我们$E_{0}$是真空态的能量. 如果我们测量的能量任意都是相对于$E_{0}$的, 那么, 物理的能量算符就是$H-E_{0}$, 并且(\ref{1.2.64})又一次证明它是正定的.
+
+那么作为\,Dirac\,的出发点的负概率问题又该如何处理呢? 正如\,Dirac\,认识到的, 由\,Klein-Gordon-Schr\"{o}dinger\,自由标量方程(\ref{1.2.28})的解构成的唯一的概率密度$\rho$满足一个形如(\ref{1.1.10})的守恒律, 它必须正比于如下的量
+\begin{equation}
+\rho=2\operatorname{Im}\left[  \phi^{\dag}\frac{\partial\phi}{\partial t}\right]  \label{1.2.68}%
+\end{equation}
+因此它不一定是正定的. 类似地, 在``二次量子化''理论中, $\phi$由方程(\ref{1.2.63})给定, $\rho$不是一个正定算符. 由于这里$\phi^{\dag}(x)$并不与$\dot{\phi}(x)$对易, 所以我们可以以不止一种的方式写出(\ref{1.2.68}),
+它们之间相差无限大的\,c\,-数;
+将其写为如下的形式被证明是方便的\begin{equation}
+\rho=\frac{\mi}{\hbar}\left[  \frac{\partial\phi}{\partial t}\,\phi^{\dag}%
+-\frac{\partial\phi^{\dag}}{\partial t}\,\phi\right]  \:.\label{1.2.69}%
+\end{equation}
+这样, 就能轻松地计算出这个算符的空间积分
+\begin{equation}
+N\equiv\int\rho\: \dif^{3}x=\sum_{\bk}\left(  a^{\dag}(\bk%
+)  a(\bk)  -b^{\dag}(\bk)
+b(\bk)  \right)  \label{1.2.70}%
+\end{equation}
+它显然会有两种符号的本征值.
+
+然\marginpar[\flushright{\small[28]\hspace*{5mm}}]{{\small\hspace*{5mm}[28]}}而, 从某种意义上讲, 这个出现在自旋\,0\,量子场论中的问题也出现在自旋$1/2$的量子场论中, Dirac\,场的密度算符$\psi^{\dag}\psi$确实是正定算符, 但是为了构造物理的密度, 我们应该扣除已填满电子态的贡献.
+特别地, 利用平面波分解(\ref{1.2.43}),
+我们可以将总的数算符写为
+\[
+N\equiv\int \dif^{3}x\: \psi^{\dag}\psi=\sideset{}{^{(+)}}\sum_{\bk}a^{\dag}(\bk) a(  \bk)+\sideset{}{^{(+)}}\sum_{\bk} b(  \bk)  b^{\dag}(\bk) \:.
+\]
+$b$的反对易关系使得我们可以将其重写为
+\begin{equation}
+N-N_{0}=\sideset{}{^{(+)}}\sum_{\bk} a_{\bk}^{\dag}a_{\bk}
+-\sideset{}{^{(+)}}\sum_{\bk} b_{\bk}^{\dag}b_{\bk} \:, \label{1.2.71}%
+\end{equation}
+其中$N_{0}$是无限大常数
+\begin{equation}
+N_{0}=\sideset{}{^{(-)}}\sum_{\bk}1\:.\label{1.2.72}%
+\end{equation}
+根据方程(\ref{1.2.46})和方程(\ref{1.2.47}), $N_{0}$是真空中的粒子数, 所以\,Furry\,和Oppenheimer\,推断出物理的数算符应该是$N-N_{0}$, 并且, 它现在既有负本征值又有正本征值, 和自旋\,0\,的情况一样.
+
+对于这个问题, 量子场论给出的解答是: 无论是\,Furry\,和\,Oppenheimer\,的$\psi$还是\,Pauli\,和\,Wei-sskopf\,的$\phi$, 它们都不是用来定义守恒的正概率密度所需要的概率振幅. 作为替代, 张开物理\,Hilbert\,空间的态定义为每个模中包含确定数目的粒子和(或)反粒子的态. 如果$\Phi_{n}$是这种态的正交完备集, 那么测量任意态$\Psi$下的粒子数所得到的是发现系统处在$\Phi_{n}$态的概率, 形如
+\begin{equation}
+P_{n}=\lvert(\Phi_{n},\Psi)\rvert ^{2} \:, \label{1.2.73}%
+\end{equation}
+其中$(\Phi_{n},\Psi)$是通常的\,Hilbert\,空间标量积. 因此, 对任何自旋都不会出现负概率的问题. 波场$\phi,\psi$等根本不是概率密度, 而是在不同简正模下产生或湮没粒子的算符. 如果``二次量子化''这个引起误解的表述被永久地放弃, 那将是一件好事.
+
+特别的, 方程(\ref{1.2.70})和(\ref{1.2.71})的算符$N$和$N-N_{0}$%
+并不解释成总概率, 而是解释成数算符: 再明确些, 就是粒子数与反粒子数之{\KAI{差}}. 对于带荷粒子, 荷的守恒迫使荷算符正比于这些数算符, 所以(\ref{1.2.70}) 和(\ref{1.2.71})中的减号使得我们立即推断出粒子和反粒子具有相反的荷. 在\marginpar[\flushright{\small[29]\hspace*{5mm}}]{{\small\hspace*{5mm}[29]}}场论体系中, 相互作用对哈密顿量的贡献项是场变量的三阶, 四阶或者更高阶项, 而不同过程的速率则通过在含时微扰论中使用这些相互作用算符给出. 以上简论中描述的概念框架将是本书绝大多数工作的基础.
+
+尽管有如此明显的优点, 量子场论并没有立即取代空穴理论; 相反, 在一段时期内这两种观点共存, 并且场论思想和空穴理论思想的各种结合被用来计算物理反应速率. 在这个时期, 对于许多过程的截面, 计算精确到了按$e^2$幂次展开的最低阶, 例如, 1929\,年, %
+\,Klein\,和\,Nishina\,(仁科)给出了$e^{-}+\gamma\to e^{-}+\gamma$;\textsuperscript{\cite{46}} %
+1930\,年, Dirac\,给出了$e^{+}+e^{-}\to 2\gamma$;\textsuperscript{\cite{47}} %
+1932\,年, M{\o}ller\,(穆勒)给出了$e^{-}+e^{-}\to e^{-}+e^{-}$;\textsuperscript{\cite{48}} %
+1934\,年, Bethe\,(贝特)和\,Heitler\,(海特勒)给出了$e^{-}+Z\to e^{-}+\gamma+Z$和$\gamma+Z\to e^{+}+e^{-}+Z$%
+(其中$Z$代表重原子的\,Coulomb\,场);\textsuperscript{\cite{49}} %
+1936\,年\,Bhabha\,(巴巴)给出了$e^{+}+e^{-}\to e^{+}+e^{-}$.\textsuperscript{\cite{50}} (这些过程的计算规则在第8章给出, %
+并且在那里会给出电子\bzx 光子散射过程的详细推导.) 这些最低阶的计算给出了有限的结果, 与实验数据基本吻合.
+
+然而, 对量子场论的不满(无论是否以空穴理论的形式)持续了整个\,20\,世纪\,30\,年代. 其中的一个原因是量子电动力学对宇宙射线簇射中带电粒子穿透能力的解释明显是错误的, 这一现象是\,Oppenheimer\,和\,Franklin Carlson\,%
+(富兰克林\,\textperiodcentered\,卡尔森)\textsuperscript{\cite{50a}}在\,1936\,年注意到的. 另一个不满意的原因是新粒子和新相互作用的连续发现, 而这个现象后来发现也与第一个相关. 我们已经提到的有: 电子, 光子, 正电子, 中微子, 当然, 还有氢原子的核\ezx 质子. %
+贯穿\,20\,世纪\,20\,年代始终, 大家普遍相信重核是由质子和电子构成的, 但是很难理解像电子这样的轻粒子是如何被禁闭在核内的. 这一图景的又一严重困难是\,Ehrenfest\,和\,Oppenheimer\,在\,1931\,年指出的:\textsuperscript{\cite{51}} 对于普通氮元素的核$\mathrm{N}^{14}$, %
+为了使它有原子数\,7\,和原子量\,14, 氮核就必须由\,14\,个质子和\,7\,个电子构成, 所以只能是一个费米子, %
+但是分子光谱表明$\mathrm{N}^{14}$是玻色子,\textsuperscript{\cite{52}} 这两个结果相矛盾. 由于在\,1932\,年发现了中子,\textsuperscript{\cite{53}} %
+并且随后\,Heisenberg\,提议\textsuperscript{\cite{54}}核是由质子和中子而非质子和电子组成, 这个问题(以及其他问题)被解决了. %
+当时便清楚了, 原子核是由一个很强的非电磁的短程力将中子和质子聚在一起而形成的.
+
+在$\beta$-衰变的\,Fermi\,理论成功之后, 几位学者\textsuperscript{\cite{54a}}推测这个理论中的核力可以解释成是交换电子和中微子产生的. %
+就在几年后的\,1935\,年, \marginpar[\flushright{\small[30]\hspace*{5mm}}]{{\small\hspace*{5mm}[30]}}Hideki Yukawa\,(汤川秀树)针对核力提出了一个相当不同的量子场理论.\textsuperscript{\cite{55}} %
+在一个基本的经典计算中, 他发现标量场与核子(质子或中子)的相互作用将产生一个核子\bzx 核子势, 而这个势对核间距$r$的依赖是
+\begin{equation}
+V(r) \propto\frac{1}{r}\,\exp( -\lambda r)\:,
+\label{1.2.74}%
+\end{equation}
+并非电场产生的\,Coulomb\,势$1/r$. 在\,Yukawa\,的标量场方程中, $\lambda$作为一个参量引入, 并且当这个方程被量子化后, Yukawa\,发现它描述的是质量为$\hbar\lambda/c$的粒子. 根据观测到的核内强相互作用的作用范围, Yukawa\,估计出$\hbar\lambda/c$的量级是电子质量的\,200\,倍. 在\,1937\,年, Seth Neddermeyer(赛斯\,\textperiodcentered\,尼德迈尔)和\,Anderson\,以及\,Jabez Curry Street\,(杰贝兹\,\textperiodcentered\,柯里\,\textperiodcentered\,斯特里特)和\,Edward Carl Stevenson\,%
+(爱德华\,\textperiodcentered\,卡尔\,\textperiodcentered\,史蒂文森)在云室中发现了这样的``介子'',\textsuperscript{\cite{56}} %
+并且普遍认为这就是\,Yukawa\,的假想粒子.
+
+介子的发现揭示出宇宙射线簇射中的带电粒子并不全是电子, 因而解决了簇射中困扰\,Oppenheimer\,和\,Carlson\,的问题. 然而, 它同时产生了新的困难. Lothar Nordheim\,(洛塔尔\,\textperiodcentered\,诺德海姆)\textsuperscript{\cite{56a}}在\,1939\,年指出, 在高海拔中使得介子大量产生的(\,Yukawa\,理论的要求)强相互作用也会导致介子在大气层中被大量吸收, 但这与它们在低海拔处大量出现的结果相矛盾. %
+1947\,年, Marcello Conversi\,(马尔塞洛\,\textperiodcentered\,孔韦尔西), %
+Ettore Pancini\,(埃托雷\,\textperiodcentered\,潘西尼)和%
+\,Oreste Piccioni\,(奥雷斯特\,\textperiodcentered\,皮西奥尼)\textsuperscript{\cite{57}}的一个实验表明, 在低海拔处, %
+宇宙射线中占主导地位的介子实际上与核子的相互作用非常弱, 因而不能等同为\,Yukawa\, 粒子. %
+这个谜被一个理论假设\textsuperscript{\cite{58}}解决, 随后又被\,Cesare Lattes\,(凯撒\,\textperiodcentered\,拉特斯), %
+Occhialini\,(奥基亚利尼)和\,Cecil Powel\,(塞西尔\,\textperiodcentered\,鲍威尔)的实验\textsuperscript{\cite{59}}证实\ezx 存在两类介子, %
+它们的质量存在轻微的差异: 重的(现在称为$\pi$介子或$\pi$ 子)参与强相互作用并在核力中扮演\,Yukawa\,所想象的角色; %
+轻的(现在称为$\mu$介子或$\mu$子)仅参与弱作用和电磁作用, 并且在海平面处的宇宙射线中占主导地位, %
+它产生于$\pi$介子的衰变. 在同一年, 即\,1947\,年, %
+宇宙射线中的新粒子(现在所说的$K$介子和超子)被\,George Rochester\,(乔治\,\textperiodcentered\,罗切斯特)和\,Clifford Butler\,(克利福德\,\textperiodcentered\,巴特勒)全部发现.\textsuperscript{\cite{60}} 从\,1947\,年起直到现在, %
+新粒子不断被发现, 种类之多令人眩晕, 但是追溯这段历史会使我们脱离主线. 这些发现清楚地表明任何局限于光子, 电子和正电子的概念框架都太过狭窄, 以至于不能作为一个严肃的基本理论的基础. 然而, 一个更大的障碍来自于一个纯理论问题\ezx 无限大的问题.
+
+
+
+\section{无限大的问题} \label{sec:1.3}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[31]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\hspace*{5mm}[31]}}}
+\setcounter{equation}{0}
+
+量子场论所处理的场$\psi(x)$在时空点$x$消灭或产生粒子. 经典电子论的早期经验提供了一个警示: %
+点电子将会有无限大的电磁自质量; 对于电荷分布在半径为$a$的球面上的电子, %
+这个质量是$e^{2}/6\uppi ac^{2}$, 因此在$a\to0$时奇异. 令人失望的是, 这个问题在量子场论的早期就出现了, %
+并且更加严重, 尽管在这个理论随后的发展中被极大地改善了, 但依旧留存至今.
+
+量子场论中的无限大问题是\,Pauli\,和\,Heisenberg\,在他们\,1929\yzx 1930\,年的文章中第一次注意到的.\textsuperscript{\cite{41}} %
+不久之后, Oppenheimer\,在束缚电子的电磁自能计算中证实了无限大的存在,\textsuperscript{\cite{61}} 对于自由电子, %
+则是\,Ivar Waller(伊瓦尔\,\textperiodcentered\,沃勒)发现电磁自能中的无限大.\textsuperscript{\cite{62}} %
+他们使用的是普通二阶微扰论, 不过这个微扰论中含有一个由电子和光子组成的中间态: %
+例如对于氢原子第$n$能级中的电子, 能量$E_{n}$的位移为
+\begin{equation}
+\Delta E_{n}=\sum_{m,\lambda}\int \dif^{3}k\: \frac{\lvert \langle
+m;\bk,\lambda\lvert H^{\prime}\rvert n\rangle
+\rvert ^{2}}{E_{n}-E_{m}-\lvert\bk\rvert c} \text{\ ,
+}\label{1.3.1}%
+\end{equation}
+其中求和与积分取遍所有的中间电子态$m$, 光子螺旋度$\lambda$和光子动量$\bk$, %
+而$H^{\prime}$是哈密顿量中代表辐射与电子相互作用的项. 这个计算所给出的自能是形式发散的; %
+更进一步, 如果通过扔掉那些光子波数大于$1/a$的中间态来去掉发散, %
+那么自能行为在$a\to0$时类似于$1/a^{2}$.  这类无限大通常被称为紫外发散, %
+这是因为引起这些发散的是那些包含波长非常短的粒子的中间态.
+
+这些处理电子的计算所依照的规则是负能态没有被填满的原始\,Dirac\,理论. %
+几年后, Weisskopf\,在负能态被填满的新空穴理论中复现了电子自质量的计算. %
+在这种情况下, 二阶微扰论中又出现了新的项, 以非空穴理论语言, 产生这一项的过程可以描述为: %
+末态电子先伴随光子和正电子从真空中出现, 而后这个正电子与初始的电子湮没掉了. %
+最初, Weisskopf\,发现一个关于光子波数\marginpar[\flushright{\small[32]\hspace*{5mm}}]{{\small\hspace*{5mm}[32]}}截断$1/a$形式为$1/a^{2}$的依赖关系. 在那时, %
+Carlson\,和\,Furry\,(在Pauli的建议下)实现了相同的计算. 在看到\,Weisskopf\,的结果后, %
+Furry\,意识到, 尽管\,Weisskopf\,引入了他和\,Carlson\,忽视的静电项, %
+但\,Weisskopf\,却在磁性自能的计算中犯了一个新错误. 从\,Furry\,那里了解到这件事后, %
+Weisskopf\,纠正了自己的错误, 然后他发现总质量位移中的$1/a^{2}$项被抵消了! 然而, %
+尽管这个无穷大被抵消了, 另一无穷大却留了下来: 在波数截断$1/a$下, 自质量被发现是\textsuperscript{\cite{63}}
+\begin{equation}
+m_{\ze\zm}=\frac{3\alpha}{2\uppi}m\ln\left(  \frac{\hbar}{mca}\right) \:,\label{1.3.2}%
+\end{equation}
+与经典的$1/a$关系或者早期量子的$1/a^{2}$关系相比, $\ln a$关系对于截断的依赖变弱了, %
+在那时, 这只是稍稍鼓舞了人心, 而在后面重正化理论的发展中, 这一点变得极其重要.
+
+另一类相当不同的无限大是在\,1933\,年发现的, 这显然是\,Dirac\,发现的.\textsuperscript{\cite{64}} %
+他考察了一个静态近均匀外电荷密度$\varepsilon(\bx)$在真空上的效应, %
+这里的真空指的是用于填满空穴理论中负能级的电子. %
+$\varepsilon(\bx)$与负能电子的电荷密度之间的\,Coulomb\,作用会产生``真空极化'', %
+真空极化的感应电荷密度是
+\begin{equation}
+\updelta\varepsilon=A\varepsilon+B\left(  \frac{\hbar}{mc}\right)
+^{2}\bm\nabla^{2}\varepsilon+\cdots\:.\label{1.3.3}%
+\end{equation}
+常数$B$是有限的, 量级为$\alpha$. 另一方面, $A$是对数发散的, %
+量级为$\alpha\ln a$, 其中$1/a$是波数截断.
+
+无限大似乎也出现在一个相关的问题上, 即光与光的散射. Hans Euler\,(汉斯\,\textperiodcentered\,欧拉), %
+Bernard Kockel\,(伯纳德\,\textperiodcentered\,库卡尔)和\,Heisenberg\textsuperscript{\cite{65}}在\,1938\yzx 1939\,年证明了, %
+通过使用\,Dirac\textsuperscript{\cite{66}}和\,Heisenberg\textsuperscript{\cite{67}} 早期所建议的方案, 尽管这些方案有些随意, %
+这些无穷大可以被消除掉. 他们计算了由虚正负电子对产生的非线性电磁效应的有效拉格朗日密度:
+\begin{equation}
+\mathscr{L=}\frac{1}{2}\Big(\bE^{2}-\bB^{2}\Big)+\frac
+{e^{4}\hbar}{360\uppi^{2}m_{e}^{2}c^{7}}\Big[\Big(\bE^{2}-\bB%
+^{2}\Big)^{2}+7\Big(\bE\cdot\bB\Big)^{2}\Big]+\cdots\text{\ ,
+}\label{1.3.4}%
+\end{equation}
+上式在频率$\nu\ll m_{e}c^{2}/h$时成立. 不久之后, Nicholas Kemmer\,(尼古拉斯\,\textperiodcentered\,克默尔)%
+和\,Weisskopf\textsuperscript{\cite{68}} 提出了一个看法: 在这种情况下, 无限大是假的, 不借助任何减除手段就可以导出(\ref{1.3.4}).
+
+在与无限大的斗争中, 一个亮点\marginpar[\flushright{\small[33]\hspace*{5mm}}]{{\small\hspace*{5mm}[33]}}是{\KAI{红外}}发散的成功处理, %
+这些发散来自于积分区域的低能部分而非高能部分. 在\,1937\,年, %
+Felix Bloch\,(费利克斯\,\textperiodcentered\,布洛赫)和\,Arne Nordsieck\textsuperscript{\cite{68a}}%
+(阿恩\,\textperiodcentered\,诺德西克)证明了, 假如引入一个可以有任意多个低能光子产生的过程, %
+这些发散就可以抵消掉. 这些将在第13章以一个现代的形式讨论.
+
+然而, 在\,1939\,年, Sidney Michael Dancoff\,(西德尼\,\textperiodcentered\,迈克尔\,\textperiodcentered\,丹科夫)%
+对电子在一个原子的静\,Coulomb\,场散射做了辐射修正计算\textsuperscript{\cite{69}}, %
+在这个计算中出现了另一类无限大. 这个计算有一个错误(有一项被忽略了), %
+但晚些时候这个错误才被意识到.\textsuperscript{\cite{69a}}
+
+贯穿\,20\,世纪\,30\,年代, 所看到的各种无穷大不仅仅是一些特殊运算中的失败. %
+相反, 它们似乎预示在更基础的层面上理解相对论量子场论上有一道鸿沟, 上节中提到的宇宙射线更是加深了这一观点.
+
+这种令人不安的悲观情绪的一个表现是: 对其他替代方案的持续探索贯穿了\,20\,世纪的\,30\,年代和\,40\,年代. %
+正像\,Julian Schwinger\textsuperscript{\cite{69b}}(朱利安\,\textperiodcentered\,施温格)后来回忆到, %
+``在那时, 对于参与到这个问题中的大多数物理学家而言, %
+当务之急不是分析并仔细地应用已知的电子和电磁场耦合的相对论理论, 而是去改变它.'' %
+因此, Heisenberg\textsuperscript{\cite{70}}在\,1938\,年提出可能存在一个基本长度$L$, %
+它类似于基本作用量$h$和基本速度$c$, 而场论被认为仅在尺度远大于$L$时才是成立的, %
+这使得所有发散积分实际上在$L$或者动量$h/L$处被截断了. %
+几个更加具体的提议\textsuperscript{\cite{70a}}是赋予场论非定域结构. %
+一些理论家开始怀疑态矢和量子场的理论体系应该被一个仅基于可观测量的体系所替代, %
+例如由\,John Archibald Wheeler\textsuperscript{\cite{71}}(约翰\,\textperiodcentered\, 阿奇博尔德\,\textperiodcentered\,惠勒)%
+在\,1937\,年和\,Heisenberg\textsuperscript{\cite{72}}在\,1943\,年引入的$S$-矩阵, 它的矩阵元是各种过程的散射振幅. %
+正如我们将看到的, $S$-矩阵的概念现在已经变成了现代量子场论中一个至关重要的部分, %
+并且对于一些理论家来说, 一个纯$S$-矩阵理论变成一个理想的典范, %
+特别是作为强相互作用问题的一个可能的解决方案.\textsuperscript{\cite{73}} %
+在另一方向上, Wheeler\,和\,Richard Feynman\textsuperscript{\cite{74}}(理查德\,\textperiodcentered\,费曼)%
+在\,1945\,年尝试消除电磁场, 而从一种远距离上的相互作用导出电磁相互作用. %
+他们证明了, 如果不仅仅计入源与检验电荷间的相互作用, 还计入这些电荷与宇宙中其他电荷间的相互作用, %
+就可以从中获得一个纯推迟(或纯超前)势. 而这个时期对量子力学的最激进的修正也许是\,Dirac\textsuperscript{\cite{75}}引入的: %
+引入\marginpar[\flushright{\small[34]\hspace*{5mm}}]{{\small\hspace*{5mm}[34]}}负概率态以抵消态求和中的无穷大. Hilbert\,空间中的``不定度规''这一观点, %
+尽管不是以原先提出时的形式, 但也借此在量子场论中繁荣起来.
+
+在\,20\,世纪\,30\,年代, 一个更加保守的处理无限大的观点也开始流传开来. %
+这些无限大完全可能被吸收进一个重定义中, 即对理论参量的``重正化''. %
+例如, 当时已经知道在所有\,Lorentz\,不变的经典理论中, %
+电子的电磁自能和自动量所表现的形式{\KAI{必须}}是电子质量修正; %
+于是, 这些量中的无限大可以被电子的非电磁``裸''质量中的负无限大抵消掉, %
+从而留下了有限大的可观测``重正化''质量. %
+此外, 方程(\ref{1.3.3})表明真空极化改变了电子电荷, %
+从$e\equiv\int \dif^{3}x\,\varepsilon$变为
+\begin{equation}
+e_{\text{TOTAL}}=\int \dif^{3}x\: (\varepsilon+\delta\varepsilon)
+=(1+A)  e\:.\label{1.3.5}%
+\end{equation}
+如果散射截面这样的可观测量是由$e_{\mathrm{TOTAL}}$而非$e$来表达的, %
+那么真空极化在最低阶就会给出有限的结果. 当时的问题是: %
+量子场论中的所有无限大是否都可以用这种方式进行处理. 在\,1936\,年, %
+Weisskopf\textsuperscript{\cite{76}}认为可以做到这点, %
+并且他在大量例子中证明了已知的无穷大可以通过物理参量的重正化消除掉. %
+然而, 采用了这个计算技巧后就能说明无穷大总是可以以这种方式消除掉, %
+这一点是不可能的, 并且\,Dancoff\,的计算\textsuperscript{\cite{69}}似乎表明这是做不到的.
+
+认为在量子场论中表现为无穷大的任何效应实际上根本不存在, %
+这是对出现无穷大的另一反应. 尤其是在\,1928\,年, Dirac\,理论已经预言了直到$\alpha$的任意阶, %
+氢原子的$2s_{1/2}$-$2p_{1/2}$能级都是完全简并的; %
+所有用量子电动力学计算这两个能级分裂的尝试都遇到了束缚电子的无穷大自能这一问题; %
+因此, 这种分裂的存在一般都没有被认真对待. Bethe\textsuperscript{\cite{80}}后来回忆到, %
+``在所有现存的理论中, 这个位移都出现了无限大, 因而总是被忽视.'' %
+这个看法甚至一直延续到\,20\,世纪\,30\,年代的后期, %
+而当时光谱实验\textsuperscript{\cite{77}}已经开始表明存在一个量级为$1000\,\mathrm{MHz}$的$2s_{1/2}$-$2p_{1/2}$分裂. %
+一个值得注意的例外是\,Edwin Albrecht Uehling\textsuperscript{\cite{78}}%
+(埃德温\,\textperiodcentered\,阿尔布雷克特\,\textperiodcentered\,尤林), %
+他意识到前面提到的真空极化效应将会产生一个$2s_{1/2}$-$2p_{1/2}$分裂; %
+不幸的是, 正如我们将在第14章看到的, %
+这个效应对分裂的贡献远小于$1000\,\mathrm{MHz}$, 并且有一个符号错误.
+
+第二次世界大战后不久, 弥漫在量子场论周围的阴霾开始消散. %
+1947年6月1日至\,4\,日, 纽约谢尔特岛(Shelter Island)上召开了题为%
+``量子力学基础\marginpar[\flushright{\small[35]\hspace*{5mm}}]{{\small\hspace*{5mm}[35]}} (Foundation of Quantum Mechanics)''的会议, %
+这个会议将\,20\,世纪\,30\,年代从事量子场论研究的理论物理学家, %
+在战争中开始科学生涯的年轻一代理论家,
+以及\ezx 至关重要的\ezx 几个实验物理学家聚集了起来. %
+讨论的主导者是\,Hans Kramers(汉斯\,\textperiodcentered\,克拉默斯), %
+Oppenheimer\,和\,Weisskopf. 参与会议中的一个实验物理学家(或更准确地说, 转为实验家的理论家), %
+Willis Lamb\,(威利斯\,\textperiodcentered\,兰姆),
+描述了一个对氢原子中$2s_{1/2}$-$2p_{1/2}$位移的决定性测量.\textsuperscript{\cite{79}} %
+实验炉中的一束氢原子, 它们中大多处在$2s$和$2p$态, %
+这些原子被射向了一个仅对激发态原子敏感的探测器. %
+处在$2p$态的原子可以通过单光子发射(Lyman $\alpha$)快速地衰减到$1s$ 基态, %
+而$2s$态要想衰变到基态只能通过双光子发射, 这些原子衰变得非常慢, %
+所以, 探测器实际上探测到的只是处在亚稳态$2s$态上的原子数目. %
+原子束会通过一个磁场, 这将在任何自然出现的$2s_{1/2}$-$2p_{1/2}$分裂外%
+再增加一个已知的\,Zeeman\,分裂. %
+这束原子同时被曝露在一个频率固定在$\nu\sim10\,\mathrm{GHz}$的微波电磁场中. %
+在一定磁场强度下, 所观测到的探测器信号是瞬熄的, 这表明: %
+微波场产生了从亚稳$2s$态到$2p$态的共振跃迁, %
+然后这些原子再通过快速地发射\,Lyman$\alpha$光子到达基态. %
+在这个磁场强度之下, 总的$2s_{1/2}$-$2p_{1/2}$分裂(Zeeman\,分裂加内禀分裂)必须恰好是$h\nu$, %
+由此我们可以推断出内禀分裂的大小. 最初公布的初始值是$1000\,\mathrm{MHz}$, %
+而这与早期光谱学的测量结果一致.\textsuperscript{\cite{77}} %
+这个发现的影响可以总结为\,1954\,年我在哥本哈根做研究生时那里流行的一句话: %
+``无穷大中包含的信息并不是零!(Just because something is infinite does not mean it is zero!)''
+
+Lamb\,位移的发现引起了谢尔特岛上的理论家的强烈兴趣, %
+他们中的很多人已经开始致力于改进量子电动力学中计算部分的形式体系. %
+Kramers\,描述了他在扩展(extended)电子的经典电动力学中进行质量重正化的工作,\textsuperscript{\cite{79a}} %
+他证明了, 如果将理论重新表述, 使得体系中的质量参量等于实验测量电子质量的值, %
+那么在半径为零的极限下, 自能发散附带的困难并不会显式地出现. %
+Schwinger\,和\,Weisskopf\,(已经听说了关于\,Lamb\,结果的传闻, %
+并在去往谢尔特岛的旅途中讨论了这件事)提出: %
+既然已经知道引入包含正电子的中间态能使能级位移中的发散从$1/a^{2}$降为$\ln a$, %
+那么把中间态考虑在内后, 原子能级移动的{\KAI{差}}最终可能是有限的. %
+(事实上, 在\,1946\,年, 在\,Weisskopf\,听闻\,Lamb\,的实验之前, %
+他就已经将这个问题布置给了一个研究生\,Bruce French\,(布鲁斯\,\textperiodcentered\,弗伦奇).) %
+在会议一结束后, Hans\marginpar[\flushright{\small[36]\hspace*{5mm}}]{{\small\hspace*{5mm}[36]}} Bethe\textsuperscript{\cite{80}}(汉斯\,\textperiodcentered\, 贝特)在去往斯克内克塔迪(Schenectady)%
+的火车上做了一个非相对论计算, 这个计算依旧没有考虑含有正电子的中间态的影响, %
+而是在$m_{e}c^{2}$的量级处对虚光子动量做了一个简单的截断, 以此来消除无限大. %
+他得到了令人振奋的近似值\ezx $1040\,\mathrm{MHz}$. 很快, %
+许多学者\textsuperscript{\cite{81}}给出了用重正化思想来消除无限大且完全相对论性的计算, 与实验精确地一致.
+
+谢尔特岛上另一激动人心的实验结果是\,Isidor I. Rabi\,%
+(伊西多\,\textperiodcentered\,艾萨克\,\textperiodcentered\,拉比)报告的. %
+在他的实验室中, 对氢和氘的超精细结构的测量\textsuperscript{\cite{82}}%
+给出的电子磁矩要比\,Dirac\,值$e\hbar/2mc$大一个约为\,1.0013\,的因子,
+并且随后对钠和镓的旋磁比的测量给出了精密值\textsuperscript{\cite{83}}
+\[
+\mu=\frac{e\hbar}{2mc}\,[1.00118\pm0.00003]  \:.
+\]
+得知这些结果后, Gregory Breit(格雷戈里\,\textperiodcentered\,布雷特)提出,\textsuperscript{\cite{83a}} %
+这些差异源自于对电子磁矩的$\alpha$阶辐射修正. 在谢尔特岛上, %
+Breit\,和\,Schwinger\,都叙述了他们在计算这个修正上的努力. %
+就在这个会议后不久, Schwinger\,成功地完成了对电子反常磁矩的计算\textsuperscript{\cite{84}}\vspace{-.1mm}
+\[
+\mu=\frac{e\hbar}{2mc}\,\biggl[  1+\frac{\alpha}{2\uppi}\biggr]  =\frac{e\hbar}{2mc}\,[1.001162]\vspace{-2mm}
+\]
+与实验结果完美地一致. 这个结果, 以及\,Bethe\,关于\,Lamb\,位移的计算, 至少使物理学家相信了辐射修正的正确性.
+
+这个时期所使用的数学方法展示了五花八门的概念和形式理论, 种类之多令人眼花缭乱. %
+Schwinger\textsuperscript{\cite{85}}发展的方法基于算符方法以及作用量原理, %
+并且在\,1948\,年, 他在谢尔特岛会议的后续会议波克诺庄园会议上做了介绍. %
+另一个更早的\,Lorentz\,不变的算符形式理论是日本的Sin-Itiro Tomonaga\textsuperscript{\cite{86}}(朝永振一郎)和他的合作者发展出来的, %
+但是他们的工作事先没有被西方知晓. %
+在\,20\,世纪\,30\,年代, Tomonaga\,就已经在与\,Yukawa\,介子理论中的无穷大搏斗了. %
+直到\,1947\,年, 他和他的小组仍然在学术交流圈之外; %
+他们是从《新闻周刊》(Newsweek)上的一篇文章知道的\,Lamb\,位移.
+
+另一个明显不同的方法是\,Feynman\,发明的,\textsuperscript{\cite{87}} 他在波克诺会议上做了简短的介绍. 取代引入量子场算符, Feynman\,将$S$-矩阵表示成对$\exp(\mi W)$ 的泛函积分, 其中$W$是一组\,Dirac\,粒子的作用量积分, 而这些\,Dirac\,粒子与{\KAI{经典}}电磁场有相互作用, 积分遍及所有在$t\to\pm\infty$时满足一定初态条件和末态条件的\,Dirac\,粒\marginpar[\flushright{\small[37]\hspace*{5mm}}]{{\small\hspace*{5mm}[37]}}子轨道. 在\,Feynman\,的工作中, 一个具有重大实际意义的结果是一组图形规则, 这个规则可以用来计算$S$-矩阵元, 直至微扰论的任意阶. 不像\,20\,世纪\,20\,年代和\,30\,年代的旧微扰论, 这些\,Feynman\,规则自动地将粒子产生过程和反粒子湮没过程混合在一起, 从而每一步中给出的结果都是\,Lorentz\,不变的. 而在\,Weisskopf\,的早期电子自能计算中\textsuperscript{\cite{63}} 我们就已经看到, 只有在这种赋予粒子和反粒子同等地位的计算中, 无限大的本质才会变得明晰.
+
+最终, 在\,1949\,年的两篇文章中, Freeman Dyson\textsuperscript{\cite{88}}(弗里曼\,\textperiodcentered\,戴森)%
+证明了Schwinger\,和\,Tomona-ga\,的算符体系也会得出\,Feynman\,发现的图形规则. %
+Dyson\,同时对一般\,Feynman\,图中的无限大进行了分析, 并且概述了一个证明: %
+Feynman\,图中出现的无穷大精确地总是那类可以通过重正化消除掉的无穷大. %
+从\,Dyson\,的分析中得出的一个显著结果是决定量子场论是否``可重正''的判据, %
+即是否所有的无限大都可以被吸收进有限多个重新定义的质量和耦合常数中. %
+特别是像\,Pauli\,项(\ref{1.1.32})这样的相互作用, 它会改变电子磁矩的预测值, %
+同时也会破坏量子电动力学的可重正性. 随着\,Dyson\,文章的发表, %
+至少有了一个普遍且系统的形式理论供物理学家轻松地上手使用, %
+并且为量子场论在物理问题中的后继应用提供了一个通用语言.
+
+在谈论无穷大这个故事时, 我不得不谈谈它让人迷惑的一面.  Oppenheimer\textsuperscript{\cite{61}}在\,1930\,年就已经发现, 当取两个原子能级位移之差时, 束缚电子自能中的大多数紫外发散都可以被消除掉, 并且\,Weisskopf\textsuperscript{\cite{63}}在\,1936\,年已经发现 当引入一个包含正电子的中间态时, 自由电子自能中的大多数发散都可以被消除. 即使在\,1934\,年, 人们也会很自然地猜测通过引入正电子中间态{\KAI{并}}减除成对原子态的能量位移, 就可以消除它们相对能量位移中的无穷大.{}$^*$\footnote{$^*${}事实上, 这个猜测本来是错的. 正如将在\,14.3\,节讨论到的, 电子质量的辐射修正对原子能级的影响不仅只是电子静能的位移, 静能位移对于所有原子能级都是一样的,
+它还会引起电子动能的改变, 而这个变化对不同能级是不同的.} 对于$2s_{1/2}$-$2p_{1/2}$能\marginpar[\flushright{\small[38]\hspace*{5mm}}]{{\small\hspace*{5mm}[38]}}级差,
+甚至还有一个量级为$1000\,\mathrm{MHz}$的实验证据.\textsuperscript{\cite{77}} 那么为什么在\,1947\,年之前没有人对这个能级差进行一个数值估计呢?
+
+严格地说, 在\,1939\,年有过一次这样的尝试,\textsuperscript{\cite{88a}} 但它关注的是问题的错误部分\ezx {\KAI{质子}}的荷半径, 它在氢原子能级上仅有一个微弱的效应. 这个计算所给出的结果与早期实验\textsuperscript{\cite{77}}粗略地一致. 而正像\,Lamb\,在\,1939\,年指出的那样,\textsuperscript{\cite{88b}} 这是一个错误.
+
+在\,20\,世纪\,30\,年代, 对于中间态包含正电子的\,Lamb\,位移,  本可以利用旧的非相对论性微扰论对它做完全相对论性的计算. 只需将所有项保留到一个给定阶, 老式的非相对论微扰论性将给出与\,Feynman, Schwinger\,和\,Tomonaga\,的明显相对论性的形式理论相同的结果. 事实上,
+尽管日本的\,Tomonoga\,小组\textsuperscript{\cite{81}}已经使用协变方法解决了这个问题以及其他问题, 在\,Bethe\,的工作之后, 美国对\,Lamb\,位移的第一个精确计算\textsuperscript{\cite{81}}正是由\,French, Weisskopf, Norman Kroll(诺曼\,\textperiodcentered\,克罗尔)和\,Lamb\,以这种方式完成的.
+
+当时缺失的一个要素是用重正化方法处理无穷大的信心. 正如我们所看到的, 重正化到\,20\,世纪\,30\,年代后期才得到广泛讨论. 然而, 在\,Oppenheimer\,的竭力主张下,\textsuperscript{\cite{89}} 在\,30\,年代大家广泛相信量子电动力学在能量超过$100\,\mathrm{MeV}$时不再是严格的, 这类问题的解决方法只能在非常大胆的新思想中找到.
+
+在谢尔特岛上发生的几件事改变了这个预期. 一个是有消息宣传, 上一节中讨论的宇宙射线问题被解决了; Robert Marshak(罗伯特\textperiodcentered 马夏克)提出假设\textsuperscript{\cite{58}}, 存在两种质量相近的``介子''; $\mu$子实际上已经被观测到了, 而$\pi$介子则负责核力. 更重要的是, Lamb\,位移和反常磁矩都有了可靠的实验数据, 这迫使物理学家们去仔细思考辐射修正. 可能同样重要的是, 这个会议将理论家们聚拢在一起, 他们本来各自在以自己方式考虑这个问题, 现在则思考如何用重正化来解决无限大问题. 当革命于\,20\,世纪\,40\,年代后期来临时, 年轻的物理学家们反而扮演了保守的角色, 他们避开了前辈们激进的解决方案, 完成了这场革命.%\vspace{-5mm}
+
+\section*{参考书目}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[39]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[39]}}}
+ \addcontentsline{toc}{section}{参考书目}
+ \markboth{参考书目}{参考书目}      %%前双后单书眉
+
+%\begin{small}
+\begin{OExercises}
+  \item[$\square$] S. Aramaki, `Development of the Renormalization Theory in Quantum Electrodynamics,' {\textit{Historia Scientiarum}} {\bf{36}}, 97 (1989); {\textit{ibid}}. {\bf{37}}, 91 (1989). [Section 1.3.]
+  \item[$\square$] R. T. Beyer\,编辑, {\textit{Foundations of Nuclear Physics}} (Dover Publications, Inc., New York, 1949). [Section 1.2.]
+  \item[$\square$] L. Brown, `Yukawa's Prediction of the Meson,' {\textit{Centauros}} {\bf{25}}, 71 (1981). [Section 1.2.]
+  \item[$\square$] L. M. Brown and L. Hoddeson\,编辑, {\textit{The Birth of Particle Physics}} (Cambridge University Press, Cambridge, 1983). [Sections 1.1, 1.2, 1.3.]
+  \item[$\square$] T. Y. Cao and S. S. Schweber, `The Conceptual Foundations and the Philosophical Aspects of Renormalization Theory,' {\textit{Synth\`{e}se}} {\bf{97}}, 33 (1993). [Section 1.3.]
+  \item[$\square$] P. A. M. Dirac, {\textit{The Development of Quantum Theory}} (Gordon and Breach Science Publishers, New York, 1971). [Section 1.1.]
+  \item[$\square$] E. Fermi, `Quantum Theory of Radiation,' {\textit{Rev. Mod. Phys.}} {\bf{4}}, 87 (1932). [Sections 1.2 and 1.3.]
+  \item[$\square$] G. Gamow, {\textit{Thirty Years that Shook Physics}} (Doubleday and Co., Garden City, New York, 1966). [Section 1.1.]
+  \item[$\square$] M. Jammer, {\textit{The Conceptual Development of Quantum Mechanics}} (McGraw-Hill Book Co., New York, 1966). [Section 1.1.]
+  \item[$\square$] J. Mehra, `The Golden Age of Theoretical Physics: P. A. M. Dirac's Scientific Work from 1924 to 1933,' 收录于 {\textit{Aspects of Quantum Theory}}, A. Salam and E. P. Wigner\,编辑, (Cambridge University Press, Cambridge, 1972). [Section 1.1.]
+\item[$\square$] A. I. Miller, {\textit{Early Quantum Electrodynamics \bzx A Source Book}} (Cambridge University Press, Cambridge, UK, 1994). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] A. Pais, {\textit{Inward Bound}} (Clarendon Press, Oxford, 1986). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] S. S. Schweber, `Feynman and the Visualization of Space-Time Processes,' {\textit{Rev. Mod. Phys.}} {\bf{58}}, 449 (1986). [Section 1.3.]
+\item[$\square$] S. S. Schweber, `Some Chapters for a History of Quantum Field Theory: 1938\bzx1952,' 收录于 {\textit{Relativity, Groups, and Topology II}}, B. S. De Witt and R. Stora\,编辑 (North-Holland, Amsterdam, 1984). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] S. S. Schweber, `A Short\marginpar[\flushright{\small[40]\hspace*{5mm}}]{{\small\hspace*{5mm}[40]}} History of Shelter Island I,' 收录于 {\textit{Shelter Island II}}, R. Jackiw, S. Weinberg, and E. Witten\,编辑 (MIT Press, Cambridge, MA, 1985). [Section 1.3.]
+\item[$\square$] S. S. Schweber, {\textit{QED and the Men Who Made It: Dyson, Feynman, Schwinger, and Tomonaga}} (Princeton University Press, Princeton, 1994). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] J. Schwinger\,编辑, {\textit{Selected Papers in Quantum Electrodynamics}} (Dover Publications Inc., New York, 1958). [Sections 1.2 and 1.3.]
+\item[$\square$] S.-I. Tomonaga, 收录于 {\textit{The Physicist's Conception of Nature}} (Reidel, Dordrecht, 1973). [Sections 1.2 and 1.3.]
+\item[$\square$] S. Weinberg, `The Search for Unity: Notes for a History of Quantum Field Theory,' {\textit{Daedalus}}, Fall 1977. [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] V. F. Weisskopf, `Growing Up with Field Theory: The Development of Quantum Electrodynamics in Half a Century,' 1979 Bernard Gregory Lecture at CERN, published in L. Brown and L. Hoddeson, {\textit{op. cit.}}. [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] G. Wentzel, `Quantum Theory of Fields (Until 1947),' 收录于 {\textit{Theoretical Physics in the Twentieth Century}}, M. Fierz and V. F. Weisskopf\,编辑 (Interscience Publishers Inc., New York, 1960). [Sections 1.2 and 1.3.]
+\item[$\square$] E. Whittaker, {\textit{A History of the Theories of Aether and Electricity}} (Humanities Press, New York, 1973). [Section 1.1.]
+\end{OExercises}
+
+
+
+\begin{thebibliography}{99}
+\bibitem {1} L. de Broglie, {\textit{Comptes Rendus}} {\bf{177}}, 507, 548, 630 (1923); {\textit{Nature}} {\bf{112}}, 540 (1923); Th\`{e}se de doctorat (Masson et Cie, Paris, 1924); {\textit{Annales de Physique}} {\bf{3}}, 22 (1925) [英语的重印版为{\textit{Wave Mechanics}}, G. Ludwig 编辑, (Pergamon Press, New York, 1968)];{\textit{Phil. Mag.}} {\bf{47}}, 446 (1924).
+     \addcontentsline{toc}{section}{参考文献}
+\bibitem {2} W. Elsasser, {\textit{Naturwiss.}} {\bf{13}}, 711 (1925).
+\bibitem {3}C. J. Davisson and L. H. Germer, {\textit{Phys. Rev.}} {\bf{30}}, 705 (1927).
+\bibitem {4}W. Heisenberg, {\textit{A. Phys. }}{\bf{33}}, 879 (1925); M. Born and P. Jordan, {\textit{Z. f. Phys. }}{\bf{34}}, 858 (1925); P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A109}}, 642 (1925); M. Born, W. Heisenberg, and P. Jordan, {\textit{Z. f. Phys. }}{\bf{35}}, 557 (1926); W. Pauli, {\textit{Z. f. Phys. }}{\bf{36}}, 336 (1926). 这些文献被重印于\,{\textit{Sources of Quantum Mechanics}}, B. L. van der Waerden\,编辑 (Dover Publications, Inc., New York, 1968).
+\bibitem {5}E. Schr\"{o}dinger\marginpar[\flushright{\small[41]\hspace*{5mm}}]{{\small\hspace*{5mm}[41]}}, {\textit{Ann. Phys. }}{\bf{79}}, 361, 489; {\bf{80}}, 437; {\bf{81}}, 109 (1926). %
+这些论文的英语重印版在\,{\textit{Wave Mechanics}}\,中, 不过有部分删节, 文献[1]. 另见\,{\textit{Collected Papers on Wave Mechanics}}, J. F. Schearer and W. M. Deans\,译 (Blackie and Son, London, 1928).
+\bibitem {6}例如参看\,P. A. M. Dirac, {\textit{The Development of Quantum Theory}} (Gordon and Breach, New York, 1971). %
+另见\,Dirac\,为\,Schr\"{o}dinger\,所写的讣告, {\textit{Nature}} {\bf{189}}, 355 (1961), %
+以及他的文章 {\textit{Scientific American}} {\bf{208}}, 45 (1963).
+\bibitem {7}O. Klein, {\textit{Z. f. Phys. }}{\bf{37}}, 895 (1926). 另见V. Fock, {\textit{Z. f. Phys. }}{\bf{38}}, 242 (1926); {\textit{ibid,}} {\bf{39}}, 226 (1926).
+\bibitem {8}W. Gordon, {\textit{Z. f. Phys. }}{\bf{40}}, 117 (1926).
+\bibitem {9}计算细节参看\,L. I. Schiff, {\textit{Quantum Mechanics}}, 3rd edn, (McGraw-Hill, Inc. New York, 1968): Section 51.
+\bibitem {10}F. Paschen, {\textit{Ann. Phys.}} {\bf{50}}, 901 (1916). 这些实验实际上是用\,He$^{+}$实现的, %
+因为它的精细结构分裂比氢原子的大\,16\,倍,谱线的精细结构是\,A. A. Michelson\,首次通过干涉方法发现的, {\textit{Phil. Mag.}} {\bf{31}}, 338 (1891); {\textit{ibid}}., {\bf{34}}, 280 (1892).
+\bibitem [10a]{10a}A. Sommerfeld, {\textit{M\"{u}nchner Berichte}} 1915, pp. 425, 429; {\textit{Ann. Phys.}} {\bf{51}}, 1, 125 (1916). 另见W. Wilson, {\textit{Phil. Mag.}} {\bf{29}}, 795 (1915).
+\bibitem {11} G. E. Uhlenbeck and S. Goudsmit, {\textit{Naturwiss.}} {\bf{13}}, 953 (1925); {\textit{Nature}} {\bf{117}}, 264 (1926). 电子自旋由于其他原因由\,A. H. Compton\,更早地提出, {\textit{J. Frank. Inst.}} {\bf{192}}, 145 (1921).
+\bibitem {12}单电子原子\,Zeeman\,分裂的一般公式是\,A. Land\'{e}\,的经验公式, {\textit{Z. f. Phys.}} {\bf{5}}, 231 (1921); {\textit{ibid}}., {\bf{7}}, 398 (1921); {\textit{ibid}}., {\bf{15}}, 189 (1923);  {\textit{ibid}}., {\bf{19}}, 112 (1923). 当时, 这个公式中出现的额外的非轨道角动量被认为是原子``核心''的角动量; A. Sommerfeld, {\textit{Ann. Phys.}} {\bf{63}}, 221 (1920); {\textit{ibid}}., {\bf{70}}, 32 (1923). 稍后不久就意识到了额外的角动量, 像文献[11]中说的那样, %
+    是源于电子自旋.
+\bibitem {13}W. Heisenberg and P. Jordan, {\textit{Z. f. Phys.}} {\bf{37}}, 263 (1926); C. G. Darwin, {\textit{Proc. Roy. Soc.}} {\bf{A116}}, 227 (1927). Darwin\,说当时有几位学者几乎同时做出了这个工作, 而\,Dirac\,只引用了\,Darwin\,的工作.
+\bibitem {14}L. H. Thomas\marginpar[\flushright{\small[42]\hspace*{5mm}}]{{\small\hspace*{5mm}[42]}}, {\textit{Nature}} {\bf{117}}, 514 (1926). 另见\,S. Weinberg, {\textit{Gravitation and Cosmology}}, (Wiley, New York, 1972): Section 5.1.
+\bibitem {15}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A117}}, 610 (1928). %
+    该理论在计算\,Zeeman\,效应、Paschen-Back\,效应以及精细结构中多重谱线间的相对强度中的应用可参看\:Dirac, {\textit{ibid}}., {\bf{A118}}, 351 (1928).
+\bibitem {16}非相对论量子力学的概率解释, 参看 M. Born, {\textit{Z. f. Phys.}} {\bf{37}}, 863 (1926); {\textit{ibid}}., {\bf{38}}, 803 (1926) (有删节的英语重印版见 {\textit{Wave Mechanics}}, 文献[1]); G. Wentzel, {\textit{Z. f. Phys.}} {\bf{40}}, 590 (1926); W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{43}}, 172 (1927). N. Bohr, {\textit{Nature}} {\bf{121}}, 580 (1928); Naturwissenchaften {\bf{17}}, 483 (1929); {\textit{Electrons et Photons - Rapports et Discussion du $V^{e}$ Conseil de Physique Solvay}} (Gauthier-Villars, Paris, 1928).
+\bibitem {17}1969\,年\,3\,月\,28\,日, Dirac\,与\,J. Mehra\,的对话, 被\,Mehra\,引用在 {\textit{Aspects of Quantum Theory}}, A. Salam and E. P. Wigner\,编辑(Cambridge University Press, Cambridge, 1972).
+\bibitem {18}G. Gamow, {\textit{Thirty Years that Shook Physics}}, (Doubleday and Co., Garden City, NY, 1966): p.125.
+\bibitem {19}W. Pauli, {\textit{Z. f. Phys.}} {\bf{37}}, 263 (1926); {\bf{43}}, 601 (1927).
+\bibitem {20}C. G. Darwin, {\textit{Proc. Roy. Soc.}} {\bf{A118}}, 654 (1928); {\textit{ibid}}., {\bf{A120}}, 621 (1928).
+\bibitem {21}W. Gordon, {\textit{Z. f. Phys.}} {\bf{48}}, 11 (1928).
+\bibitem {22}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A126}}, 360 (1930); 另见文献[47].
+\bibitem {23}E. C. Stoner, {\textit{Phil. Mag.}} {\bf{48}}, 719 (1924).
+\bibitem {24}W. Pauli, {\textit{Z. f. Phys.}} {\bf{31}}, 765 (1925).
+\bibitem {25}W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{38}}, 411 (1926); {\textit{ibid.}}, {\bf{39}}, 499 (1926); P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A112}}, 661 (1926); W. Pauli, {\textit{Z. f. Phys.}} {\bf{41}}, 81 (1927); J. C. Slater, {\textit{Phys. Rev.}} {\bf{34}}, 1293 (1929).
+\bibitem {26}E. Fermi, {\textit{Z. f. Phys.}} {\bf{36}}, 902 (1926); {\textit{Rend. Accad. Lincei}} {\bf{3}}, 145 (1926).
+\bibitem {27}P. A. M. Dirac, 文献[25].
+\bibitem [27a]{27a}P. A. M. Dirac, 密歇根大学的第一次\,W. R. Crane\,讲座, 1978\,年\,4\,月\,17\,日, 未发表.
+\bibitem {28}H. Weyl\marginpar[\flushright{\small[43]\hspace*{5mm}}]{{\small\hspace*{5mm}[43]}}, {\textit{The Theory of Groups and Quantum Mechanics,}} H. P. Robertson\,译自德文第二版 (Dover Publications, Inc., New York): Chapter IV, Section 12. 另见\,P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A133}}, 61 (1931).
+\bibitem {29}J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{35}}, 562 (1930); I. Tamm, {\textit{Z. f. Phys.}} {\bf{62}}, 545 (1930).
+\bibitem [29a]{29a}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{133}}, 60 (1931).
+\bibitem {30}C. D. Anderson, {\textit{Science}} {\bf{76}}, 238 (1932); {\textit{Phys. Rev.}} {\bf{43}}, 491 (1933). 后一篇文章重印于\,{\textit{Foundations of Nuclear Physics}}, R. T. Beyer\,编辑(Dover Publications, Inc., New York, 1949).
+\bibitem [30a]{30a}J. Schwinger, 'A Report on Quantum Electrodynamics,' 收录于 {\textit{The Physicist's Conception of Nature}} (Reidel, Dordrecht, 1973): p.415.
+\bibitem {31}W. Pauli, {\textit{Handbuch der Physik}} (Julius Springer, Berlin, 1932-1933); {\textit{Rev. Mod. Phys.}} {\bf{13}}, 203 (1941).
+\bibitem {32}Born, Heisenberg, and Jordan, 文献[4], Section 3.
+\bibitem [32a]{32a}P. Ehrenfest, {\textit{Phys. Z.}} {\bf{7}}, 528 (1906).
+\bibitem {33}Born and Jordan, 文献[4]. 可惜这个论文的相关部分没有包含在文献[4]引用的重选集\,{\textit{Sources of Quantum Mechanics}}\,中.
+\bibitem {34}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A112}}, 661 (1926): Section 5. %
+    一个更容易理解的推导可参看\,L. I. Schiff, {\textit{Quantum Mechanics,}} 3rd edn. (McGraw-Hill Book Company, New York, 1968): Section 44.
+\bibitem [34a]{34a}A. Einstein, {\textit{Phys. Z.}} {\bf{18}}, 121 (1917); 英文重印版在文献[4]\,van der Waerden.
+\bibitem {35}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A114}}, 243 (1927); 重印于\,{\textit{Quantum Electrodynamics}}, J. Schwinger\,编辑 (Dover Publications, Inc., New York, 1958).
+\bibitem {36}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A114}}, 710 (1927).
+\bibitem [36a]{36a}V. F. Weisskopf and E. Wigner, {\textit{Z. f. Phys.}} {\bf{63}}, 54 (1930).
+\bibitem [36b]{36b}E. Fermi, {\textit{Lincei Rend.}} {\bf{9}}, 881 (1929); {\bf{12}}, 431 (1930); {\textit{Rev. Mod. Phys.}} {\bf{4}}, 87 (1932).
+\bibitem {37}P. Jordan and W. Pauli, {\textit{Z. f. Phys.}} {\bf{47}}, 151 (1928).
+\bibitem {38}N. Bohr and\marginpar[\flushright{\small[44]\hspace*{5mm}}]{{\small\hspace*{5mm}[44]}} L. Rosenfeld, {\textit{Kon. dansk. vid. Selsk., Mat.-Fys. Medd.}} {\bf{XII}}, No. 8 (1933) (译文见%
+    \,{\textit{Selected Papers of Leon Rosenfeld,}} R. S. Cohen and J. Stachel\,编辑 (Reidel, Dordrecht, 1979)); {\textit{Phys. Rev.}} {\bf{78}}, 794 (1950).
+\bibitem {39}P. Jordan, {\textit{Z. f. Phys.}} {\bf{44}}, 473 (1927). 另见\,P. Jordan and O. Klein, {\textit{Z. f. Phys.}} {\bf{45}}, 751 (1929); P. Jordan, {\textit{Phys. Zeit.}} {\bf{30}}, 700 (1929).
+\bibitem {40}P. Jordan and E. Wigner, {\textit{Z. f. Phys.}} {\bf{47}}, 631 (1928). 这个文章重印于\,{\textit{Quantum Electrodynamics,}} 文献[35].
+\bibitem [40a]{40a}M. Fierz, {\textit{Helv. Phys. Acta}} {\bf{12}}, (1939); W. Pauli, {\textit{Phys. Rev.}} {\bf{58}}, 716 (1940); W. Pauli and F. J. Belinfante, {\textit{Physica}} {\bf{7}}, 177 (1940).
+\bibitem {41}W. Heisenberg and W. Pauli, {\textit{Z. f. Phys.}} {\bf{56}}, 1 (1929); {\textit{ibid}}., {\bf{59}}, 168 (1930).
+\bibitem {42}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A136}}, 453 (1932); P. A. M. Dirac, V. A. Fock, and B. Podolsky, {\textit{Phys. Zeit. der Sowjetunion}} {\bf{2}}, 468 (1932);P. A. M. Dirac,{\textit{Phys. Zeit. der Sowjetunion}} {\bf{3}}, 64 (1933). 后两篇文献重印于\,{\textit{Quantum Electrodynamics,}} 文献[35], pp. 29 and 312. 另见L. Rosenfeld, {\textit{Z. f. Phys.}} {\bf{76}}, 729 (1932).
+\bibitem [42a]{42a}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} London {\bf{A136}}, 453 (1932).
+\bibitem {43}E. Fermi, {\textit{Z. f. Phys.}} {\bf{88}}, 161 (1934). Fermi\,引用了\,Pauli\,未发表的工作\ezx %
+    在$\beta$-衰变中伴随着电子还发射出一个没有观测到的中性粒子. 为了与当时发现不久的中子(neutron)区分, 这个粒子称为中微子(neutrino).
+\bibitem [43a]{43a}V. Fock, {\textit{C. R. Leningrad}} 1933, p. 267.
+\bibitem {44}W. H. Furry and J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{45}}, 245 (1934). 这篇论文采用了\,P. A. M. Dirac, Proc. Camb. {\textit{Phil. Soc.}} {\bf{30}}, 150 (1934)\,中所发展的密度矩阵体系. 另见\,R. E. Peierls, {\textit{Proc. Roy. Soc.}} {\bf{146}}, 420 (1934); W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{90}}, 209 (1934); L. Rosenfeld, \textit{Z. f. Phys.} {\bf{76}}, 729 (1932).
+\bibitem {45}W. Pauli and V. Weisskopf, {\textit{Helv, Phys. Acta}} {bf{7}}, 709 (1934), 重印成英语, A. I. Miller翻译, {\textit{Early Quantum Electrodynamics}} (Cambridge University Press, Cambridge, 1994). 另见W. Pauli, {\textit{Ann. Inst. Henri Poincar\'{e}}} {\bf{6}}, 137 (1936).
+    \bibitem{46} O. Klein and Y. Nishina, {\textit{Z. f. Phys.}} {\bf{52}}, 853 (1929); Y. Nishina, {\textit{ibid.,}} 869 (1929); 另见\,I. Tamn, {\textit{Z. f. Phys.}} {\bf{62}}, 545 (1930).
+    \bibitem{47} P. A. M. Dirac, {\textit{Proc. Camb. Phil. Soc.}} {\bf{26}}, 361 (1930).
+    \bibitem{48} C. M{\o}ller\marginpar[\flushright{\small[45]\hspace*{5mm}}]{{\small\hspace*{5mm}[45]}}, {\textit{Ann. d. Phys.}} {\bf{14}}, 531, 568 (1932).
+    \bibitem{49} H. Bethe and W. Heitler, {\textit{Proc. Roy. Soc.}} {\bf{A146}}, 83 (1934); 另见, G. Racah, {\textit{Nuovo Cimento}} {\bf{11}}, No. 7 (1934); {\textit{ibid.}}, {\bf{13}}, 69 (1936).
+    \bibitem{50} H. J. Bhabha, {\textit{Proc. Roy. Soc.}} {\bf{A154}}, 195 (1936).
+    \bibitem[50a]{50a} J. F. Carlson and J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{51}}, 220 (1937).
+    \bibitem{51} P. Ehrenfest and J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{37}}, 333 (1931).
+    \bibitem{52} W. Heitler and G. Herzberg, {\textit{Naturwiss.}} {\bf{17}}, 673 (1929); F. Rasetti, {\textit{Z. f. Phys.}} {\bf{61}}, 598 (1930).
+    \bibitem{53} J. Chadwick, {\textit{Proc. Roy. Soc.}} {\bf{A136}}, 692 (1932). 这篇文章重印于\,\textit{The Foundations of Nuclear Physics}, 文献[30].
+    \bibitem{54} W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{77}}, 1 (1932); 另见\,I. Curie-Joliot and F. Joliot, {\textit{Compt. Rend.}} {\bf{194}}, 273 (1932).
+    \bibitem[54a]{54a} 文献参看\,L. M. Brown and H. Rechenberg, {\textit{Hist. Stud. in Phys. and Bio. Science}}, {\bf{25}}, 1 (1994).
+    \bibitem{55} H. Yukawa, {\textit{Porc. Phys.-Math. Soc. (Japan)}} (3) {\bf{17}}, 48 (1935). 这篇文章重印于\,{\textit{The Foundations of Nuclear Physics,}} 文献[30].
+    \bibitem{56} S. H. Neddermeyer and C. D. Anderson, {\textit{Phys. Rev.}} {\bf{51}}, 884 (1937); J. C. Street and E. C. Stevenson, {\textit{Phys. Rev.}} {\bf{52}}, 1003 (1937).
+    \bibitem[56a]{56a} L. Nordheim and N. Webb, {\textit{Phys. Rev.}} {\bf{56}}, 494 (1939).
+    \bibitem{57} M. Conversi, E. Pancini, and O. Piccioni, {\textit{Phys. Rev.}} {\bf{71}}, 209L (1947).
+    \bibitem{58} S. Sakata and T. Inoue, {\textit{Prog. Theor. Phys.}} {\bf{1}}, 143 (1946); R. E. Marshak and H. A. Bethe, {\textit{Phys. Rev.}} {\bf{77}}, 506 (1947).
+    \bibitem{59} C. M. G. Lattes, G. P. S. Occhialini, and C. F. Powell, {\textit{Nature}} {\bf{160}}, 453, 486 (1947).
+    \bibitem{60} G. D. Rochester and C. C. Butler, {\textit{Nature}} {\bf{160}}, 855 (1947).
+    \bibitem{61} J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{35}}, 461 (1930).
+    \bibitem{62} I. Waller, {\textit{Z. f. Phys.}} {\bf{59}}, 168 (1930); {\textit{ibid.,}} {\bf{61}}, 721, 837 (1930); {\textit{ibid.,}} {\bf{62}}, 673 (1930).
+    \bibitem{63} V. F. Weisskopf\marginpar[\flushright{\small[46]\hspace*{5mm}}]{{\small\hspace*{5mm}[46]}}, {\textit{Z. f. Phys.}} {\bf{89}}, 27 (1934), 英译重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45]; {\textit{ibid.}}, {\bf{90}}, 817 (1934). 在这些文献中, %
+        电磁自能的计算只到$\alpha$的最低阶; Weisskopf\,证明了在微扰论所有阶中的发散只是对数发散; {\textit{Phys. Rev.}} {\bf{56}}, 72 (1939). (最后一篇文章重印于\,{\textit{Quantum Electrodynamics,}}  文献[35]).
+    \bibitem{64} P. A. M. Dirac, XVII Conseil Solvay de Physique, p. 203 (1933), 重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45]. 后来的依赖假定更少的计算, 参看\,W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{90}}, 209 (1934); {\textit{Sachs. Akad. Wiss.}} {\bf{86}}, 317 (1934); R. Serber, {\textit{Phys. Rev.}} {\bf{43}}, 49 (1935); E. A. Uehling, {\textit{Phys. Rev.}} {\bf{48}}, 55  (1935); W. Pauli and M. Rose, {\textit{Phys. Rev.}} {\bf{49}}, 462 (1936). 另见\,Furry and Oppenheimer, 文献[44]; Peierls, 文献[44]; Weisskopf, 文献[63].
+    \bibitem{65} H. Euler and B. Kockel, {\textit{Naturwiss.}} {\bf{23}}, 246 (1935); W. Heisenberg and H. Euler, {\textit{Z. f. Phys.}} {\bf{98}}, 714 (1936).
+    \bibitem{66} P. A. M. Dirac, {\textit{Proc. Camb. Phil. Soc.}} {\bf{30}}, 150 (1934).
+    \bibitem{67} W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{90}}, 209 (1934).
+    \bibitem{68} N. Kemmer and V. F. Weisskopf, {\textit{Nature}} {\bf{137}}, 659 (1936).
+    \bibitem[68a]{68a} F. Bloch and A. Nordsieck, {\textit{Phys. Rev.}} {\bf{52}}, 54 (1937). 另见\,W. Pauli and M. Fierz, {\textit{Nuovo Cimento}} {\bf{15}}, 167 (1938), 英译重印于\,{\textit{Early Quantum Electrodynamics,}} %
+        文献[45].
+    \bibitem{69} S. M. Dancoff, {\textit{Phys. Rev.}} {\bf{55}}, 959 (1939).
+    \bibitem[69a]{69a} H. W. Lewis, {\textit{Phys. Rev.}} {\bf{73}}, 173 (1948); S. Epstein, {\textit{Phys. Rev.}} {\bf{73}}, 177 (1948). 另见\,J. Schwinger, 文献[84]; Z. Koba and S. Tomonaga, {\textit{Prog. Theor. Phys.}} {\bf{3}}/3, 290 (1948).
+    \bibitem[69b]{69b} J. Schwinger, 收录于 {\textit{The Birth of Particle Physics}}, L. Brown and L. Hoddeson\,编辑\,(Cambridge University Press, Cambridge, 1983): p. 336.
+    \bibitem{70} W. Heisenberg, {\textit{Ann. d. Phys.}} {\bf{32}}, 20 (1938), 英译重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45].
+    \bibitem[70a]{70a} G. Wentzel, {\textit{Z. f. Phys.}} {\bf{86}}, 479, 635 (1933); {\textit{Z. f. Phys.}} {\bf{87}}, 726 (1034); M. Born and L. Infeld, {\textit{Proc. Roy. Soc.}} {\bf{A150}}, 141 (1935); W. Pauli, {\textit{Ann. Inst. Henri Poincar\'{e}}} {\bf{6}}, 137 (1936).
+    \bibitem{71} J. A. Wheeler, {\textit{Phys. Rev.}} {\bf{52}}, 1107 (1937).
+    \bibitem{72} W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{120}}, 513, 673 (1943); {\textit{Z. Naturforsch.}} {\bf{1}}, 608 (1946). 另见\,C. M{\o}ller, {\textit{Kon. Dansk. Vid. Sels. Mat.-Fys. Medd.}} {\bf{23}}, No. 1 (1945); {\textit{ibid.}} {\bf{23}}, No. 19, (1946).
+    \bibitem{73} 可参看\,G\marginpar[\flushright{\small[47]\hspace*{5mm}}]{{\small\hspace*{5mm}[47]}}. Chew, {\textit{The S-Matrix Theory of Strong Interactions}} (W. A. Benjamin, Inc. New York, 1961).
+    \bibitem{74} J. A. Wheeler and R. P. Feynman, {\textit{Rev. Mod. Phys.}} {\bf{17}}, 157 (1945), {\textit{ibid.}}, {\bf{21}}, 425 (1949). 更深入的参考文献以及对超距作用在宇宙学中的应用的讨论, 参看\,S. Weinberg {\textit{Gravitation and Cosmology}}, (Wiley, 1972): Section 16.3.
+    \bibitem{75} P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A180}}, 1 (1942). 对此的评判参看\,W. Pauli, {\textit{Rev. Mod. Phys.}} {\bf{15}}, 175 (1943). 关于这类经典理论的综述, 以及其他解决无穷大问题的尝试, 参看\,R. E. Peierls in {\textit{Rapports du $8^{m}$e Conseil de Physique Solvay 1948}} (R. Stoops, Brussels, 1950): p. 241.
+    \bibitem{76} V. F. Weisskopf, {\textit{Kon. Dan. Vid. Sel., Mat.-fys. Medd.}} {\bf{XIV}}, No. 6 (1936), especially p. 34 and pp. 5\bzx6. 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35], 英译重印于\,{\textit{Early Quantum Electrodynamics,}} 文献[45]. 另见\,W. Pauli and M. Fierz, 文献[68a]; H. A. Kramers, 文献[79a].
+    \bibitem{77} S. Pasternack, {\textit{Phys. Rev.}} {\bf{54}}, 1113 (1938). 这个建议基于\,W. V. Houston\,的实验, {\textit{Phys. Rev.}} {\bf{51}}, 446 (1937); R. C. Williams, {\textit{Phys. Rev.}} {\bf{54}}, 558 (1938). %
+        与此相反的数据报告, 参看\,J. W. Drinkwater, O. Richardson, and W. E. Williams, {\textit{Proc. Roy. Soc.}} {\bf{174}}, 164 (1940).
+    \bibitem{78} E. A. Uehling, 文献[64].
+    \bibitem{79} W. E. Lamb, Jr and R. C. Retherford, {\textit{Phys. Rev.}} {\bf{72}}, 241 (1947). 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem[79a]{79a} H. A. Kramers, {\textit{Nuovo Cimento}} {\bf{15}}, 108 (1938), 英译重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45]; {\textit{Ned. T. Natwink.}} {\bf{11}}, 134 (1944); {\textit{Rapports du 8$^{m}$e Conseil de Physique Solvay 1948}} (R. Stoops, Brussels, 1950).
+    \bibitem{80} H. A. Bethe, {\textit{Phys. Rev.}} {\bf{72}}, 339 (1947). 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{81} J. B. French and V. F. Weisskopf, {\textit{Phys. Rev.}} {\bf{75}}, 1240 (1949); N. M. Kroll and W. E. Lamb, {\textit{ibid.}}, {\bf{75}}, 388 (1949); J. Schwinger, {\textit{Phys. Rev.}} {\bf{75}}, 898 (1949); R. P. Feynman, {\textit{Rev. Mod. Phys.}} {\bf{20}}, 367 (1948); {\textit{Phys. Rev.}} {\bf{74}}, 939, 1430 (1948); {\bf{76}}, 749, 769 (1949); {\bf{80}}, 440 (1950); H. Fukuda, Y. Miyamoto, and S. Tomonaga, {\textit{Prog. Theor. Phys. Rev. Mod. Phys.}} {\bf{4}}, 47, 121 (1948). Kroll\,和\,Lamb\,的文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{82} J. E. Nafe\marginpar[\flushright{\small[48]\hspace*{5mm}}]{{\small\hspace*{5mm}[48]}}, E. B. Nelson, and I. I. Rabi, {\textit{Phys. Rev.}} {\bf{71}}, 914 (1947); D. E. Nagel, R. S. Julian, and J. R. Zacharias, {\textit{Phys. Rev.}} {\bf{72}}, 973 (1947).
+    \bibitem{83} P. Kusch and H. M. Foley, {\textit{Phys. Rev.}} {\bf{72}}, 1256 (1947).
+    \bibitem[83a]{83a} G. Breit, {\textit{Phys. Rev.}} {\bf{71}}, 984 (1947). 在文献[84]中, %
+    Schwinger\,给出了对\,Breit\,结果的一个修正版本.
+    \bibitem{84} J. Schwinger, {\textit{Phys. Rev.}} {\bf{73}}, 416 (1948). 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{85} J. Schwinger, {\textit{Phys. Rev.}}  {\bf{74}}, 1439 (1948); {\textit{ibid.}}, {\bf{75}}, 651 (1949); {\textit{ibid.}}, {\bf{76}}, 790 (1949); {\textit{ibid.}}, {\bf{82}}, 664, 914 (1951); {\textit{ibid.}}, {\bf{91}}, 713 (1953); {\textit{Proc. Nat. Acad. Sci.}} {\bf{37}}, 452 (1951). 除了前两篇文章外, 其他文章均重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{86} S. Tomonaga, {\textit{Prog. Theor. Phys. Rev. Mod. Phys.}} {\bf{1}}, 27 (1946). Z. Koba, T. Tati, and S. Tomonaga, {\textit{ibid.}}, {\bf{2}}, 101 (1947); S. Kanesawa and S. Tomonaga, {\textit{ibid.}}, {\bf{3}}, 1, 101 (1948); S. Tomonaga, {\textit{Phys. Rev.}} {\bf{74}}, 224 (1948); D. Ito, Z. Koba, and S. Tomonaga, {\textit{Prog. Theor. Phys.}} {\bf{3}}, 276 (1948); D. Ito, Z. Koba, and S. Tomonaga, {\textit{ibid.}}, {\bf{3}}, 290 (1948). 其中第一篇文章和第四篇文章重印于\,{\textit{Quantum Electrodynamics}}, 参考文献[35].
+    \bibitem{87} R. P. Feynman, {\textit{Rev. Mod. Phys.}} {\bf{20}}, 367 (1948); {\textit{Phys. Rev.}} {\bf{74}}, 939, 1430 (1948); {\textit{ibid.,}} {\bf{76}}, 749, 769 (1949); {\textit{ibid.}}, {\bf{80}}, 440 (1950). 除了第二篇和第三篇外, 其他文章均重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{88} F. J. Dyson, {\textit{Phys. Rev.}} {\bf{75}}, 486, 1736 (1949). 重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem[88a]{88a} H. Fr\"{o}hlich, W. Heitler, and B. Kahn, {\textit{Proc. Roy. Soc.}} {\bf{A171}}, 269 (1939); {\textit{Phys. Rev.}} {\bf{56}}, 961 (1939).
+    \bibitem[88b]{88b} W. E. Lamb, Jr, {\textit{Phys. Rev.}} {\bf{56}}, 384 (1939); {\textit{Phys. Rev.}} {\bf{57}}, 458 (1940).
+    \bibitem{89} 引用自\,R. Serber, 收录于 {\textit{The Birth of Particle Physics}}, 文献[69b], p. 270.
+\end{thebibliography}
+%\end{small}

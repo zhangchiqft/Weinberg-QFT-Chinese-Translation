@@ -1,0 +1,1625 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+
+\chapter{非微扰方法} \label{cha:10}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[425]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[425]}}}
+  \markboth{第10章\quad 非微扰方法}{第10章\quad 非微扰方法}
+
+我们现在开始研究物理过程中的高阶贡献, 这些贡献对应包含一个或多个圈的\,Feynman\,图. 在这个研究中, 如果有一个方法可以推导出适用于微扰论所有阶(并且在某些情况下超出微扰论)的结果, 那将是非常有用的. 为此, 本章中, 我们将在\,Heisenberg\,绘景中探讨相互作用场的场方程和对易关系. 联系\,Heisenberg\,绘景与微扰论\,Feynman\,图之间的关键是\,\ref{sec:6.4}\,节中证明的定理: %
+在有对应$o_{a}(x),\,o_{b}(y)$等算符的额外顶点插入的过程$\alpha\to \beta$中, 所有\,Feynman\,图之和由相应的\,Heisenberg\,绘景算符的编时乘积的矩阵元给出:
+\[
+\left(\Psi _{\beta }{}^{\!-},T\Bigl\{-\mi O_{a}(x),\,-\mi O_{b}(y)\cdots \Bigr\}\Psi_{\alpha}{}^{\!+}\right) .
+\]%
+作为一个特殊情况, 当$O_{a}(x),$ $O_{b}(y)$等算符是基本粒子场时, 与这一矩阵元对应的所有\,Feynman\,图中, 在壳的入线对应态$\alpha$, 在壳的出线对应态$\beta$, 离壳的线(包括传播子)对应算符$O_{a}(x),$ $O_{b}(y)$等. 以这种方式得到一些非微扰结果后, 我们就可以着手处理辐射修正的微扰计算了.
+
+
+\section{对称性} \label{sec:10.1}
+\setcounter{equation}{0}
+
+前面引用的定理的一个显然但重要的应用是将对称性原理的应用从$S$-矩阵元扩展至部分\,Feynman\,图, 前者所有外线的\,4\,-动量都在质量壳上, 后者中有一些或者所有外线是离壳的.
+
+例如, 考虑时空平移对称性. 这一对称性意味着存在厄米\,4\,-矢算符$P^{\mu}$, 它有如下性质: 对于场算符和其正则共轭的任意定域函数$O(x)$,\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[426]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[426]}}}
+\begin{equation}
+\Bigl[P_{\mu},O(x)\Bigr] = \mi\frac{\partial}{\partial x^{\mu}}O(x) \:. \label{10.1.1}
+\end{equation}%
+(见方程(\ref{7.3.28})与(\ref{7.3.29}).) 另外, 态$\alpha$和$\beta$通常被选为\,4\,-动量的本征态:
+\begin{equation}
+P^{\mu}\Psi_{\alpha}{}^{\!+}=p_{\alpha}^{\mu}\Psi_{\alpha}{}^{\!+} \:, \qquad
+P^{\mu}\Psi_{\beta }{}^{\!-}=p_{\beta }^{\mu}\Psi_{\beta }{}^{\!-} \:.  \label{10.1.2}
+\end{equation}%
+由此得出, 对于场和(或)场导数的任何一组定域函数$O_{a}(x),$ $O_{b}(x)$等,
+\begin{align}
+&(p_{\beta\mu }-p_{\alpha\mu})\left( \Psi_{\beta }{}^{\!-}\,,\,T\Big\{O_{a}(x_{1}),O_{b}(x_{2}),\cdots \Big\}\Psi_{\alpha}{}^{\!+}\right)   \nonumber \\
+&\phantom{(p_{\beta\mu}}=\left( \Psi_{\beta }{}^{\!-},
+\left[P_{\mu },T\Big\{O_{a}(x_{1}),O_{b}(x_{2}),\cdots \Big\}\right]\Psi_{\alpha}{}^{\!+}\right)\nonumber \\
+&=\mi\left( \frac{\partial }{\partial x_{1}^{\mu }}+\frac{\partial }{\partial
+x_{2}^{\mu }}+\cdots \right) \left( \Psi_{\beta }{}^{\!-},
+T\Big\{O_{a}(x_{1}),O_{b}(x_{2}),\cdots \Big\} \Psi_{\alpha}{}^{\!+}\right) \:. \label{10.1.3}
+\end{align}%
+它有如下的解
+\begin{align}
+&\left( \Psi _{\beta}{}^{\!-},\,T\Big\{O_{a}(x_{1}),O_{b}(x_{2}),\cdots\Big\} \Psi_{\alpha}{}^{\!+}\right)   \nonumber \\
+&=\exp\Big(\mi(p_{\alpha }-p_{\beta })\cdot x\Big) F_{ab\cdots}(x_{1}-x_{2},\cdots)\: ,  \label{10.1.4}
+\end{align}%
+其中$x$是时空坐标的任意一种加权和
+\begin{equation}
+x^{\mu }=c_{1}x_{1}^{\mu }+c_{2}x_{2}^{\mu }+\cdots \:, \qquad
+c_{1}+c_{2}+\cdots =1  \label{10.1.5}
+\end{equation}%
+而$F$只依赖于$x$之间的差. (特别地, 真空期望值仅依赖于坐标差.) 通过分别对$x^{\mu}$和坐标差积分, 我们可以对方程(\ref{10.1.4})做\,Fourier\, 变换, 结果是
+\begin{align}
+&\int \dif^{4}x_{1}\,\dif^{4}x_{2}\cdots \left( \Psi_{\beta}{}^{\!-},\,T\Big\{
+O_{a}(x_{1}),O_{b}(x_{2}),\cdots \Big\} \Psi_{\alpha}{}^{\!+}\right)   \nonumber \\
+&\times \exp(-\mi k_{1}\cdot x_{1}-\mi k_{2}\cdot x_{2}-\cdots) \propto
+\updelta^{4}(p_{\alpha }-p_{\beta }-k_{1}-k_{2}-\cdots )\: .  \label{10.1.6}
+\end{align}%
+我们在\,\ref{sec:6.4}\,节看到, 编时乘积的矩阵元是将通常的坐标空间\,Feynman\,规则应用在所有图之和上而得到的, %
+其中入粒子对应$\alpha$中的粒子, 出粒子对应$\beta$中的粒子, 而外线就终结在$x_{1},x_{2},\cdots$处的顶点上. %
+相应地, Fourier\,变换(\ref{10.1.6})通过对同一个\,Feynman\,图之和施加动量空间\,Feynman\,规则获得的, %
+其中离壳的外线携带\,4\,-动量$k_{1},k_{2},\cdots $进入图. 那么方程(\ref{10.1.6})正是表明了\,Feynman\,图之和保持\,4\,-动量守恒. 这一结果在微扰论中是显然的, 这是因为在微扰论中\,4\,-动量在每个顶点都守恒, 所以不通过微扰论也看到同样的结果是不奇怪的.
+
+通过进一步的努力\marginpar[\flushright{\small[427]\hspace*{5mm}}]{{\small\hspace*{5mm}[427]}}, 我们可以使用\,Heisenberg\,绘景的场以及``入''态和``出''态的\,Lorentz\,变换性质证明: 对给定的一组在壳线和离壳线, 带有这些线的所有图之和与最低阶项满足相同的\,Lorentz\,变换条件.
+
+类似的讨论也适用于内部量子数的守恒, 例如电荷. 我们在\,\ref{sec:7.3}\,节证明过, %
+消灭一个电荷$q_{a}$(或产生一个电荷$-q_{a}$)的场或其他算符$O_{a}(x)$将满足%
+\[
+[Q,O_{a}(x)]=-q_{a}O_{a}(x)\:,
+\]%
+这在\,Heisenberg\,-绘景和相互作用绘景中是类似的. 另外, 如果自由粒子态$\alpha$和$\beta$带有电荷$q_{\alpha}$和$q_{\beta }$, 那么相应的`` 入''态和``出''态也是如此. 于是我们有
+\begin{align*}
+&(q_{\beta }-q_{\alpha })\left( \Psi_{\beta}{}^{\!-},\,T\Big\{O_{a}(x),O_{b}(y),\cdots \Big\} \Psi_{\alpha}{}^{\!+}\right)  \\
+&\quad=\left(\Psi_{\beta}{}^{\!-},\left[ Q,T\Big\{ O_{a}(x),O_{b}(y),\cdots\Big\} \right] \Psi_{\alpha}{}^{\!+}\right)  \\
+&\quad=-(q_{a}+q_{b}+\cdots )\left( \Psi_{\beta}{}^{\!-},T\Big\{O_{a}(x),O_{b}(y),\cdots \Big\} \Psi_{\alpha}{}^{\!+}\right) \:.
+\end{align*}%
+因此除非电荷守恒\begin{equation}
+q_{\beta }=q_{\alpha }-q_{a}-q_{b}-\cdots \text{ ,}  \label{10.1.7}
+\end{equation}%
+否则振幅$\left( \Psi_{\beta}{}^{\!-},T\Big\{
+O_{a}(x),O_{b}(y),\cdots \Big\} \Psi_{\alpha}{}^{\!+}\right) $为零.
+
+一个不太平庸的例子由荷共轭不变性的对称性给出. 正如我们在第5章所看到的, 存在交换电子算符和正电子算符的算符$\mathsf{C}$
+\begin{align*}
+\mathsf{C}\,a(\bp,\sigma,e^{-})\mathsf{C}^{-1} &=\xi ^{\ast }\,a(\bp,\sigma ,e^{+})\:, \\
+\mathsf{C}\,a(\bp,\sigma,e^{+})\mathsf{C}^{-1} &=\xi \,a(\bp,\sigma ,e^{-}) \: ,
+\end{align*}%
+其中$\xi$是相位因子. 对自由电子场$\psi(x)$, 它给出
+\[
+\mathsf{C}\psi (x)\mathsf{C}^{-1}=-\xi ^{\ast }\beta \mathscr{C}\psi (x)^{\ast} \:,
+\]%
+其中$\beta \mathscr{C}$是$4\times 4$矩阵, 它(对于我们采用的$\gamma_{5}$为对角矩阵的\,Dirac\,矩阵表示而言)形如
+\[
+\beta \mathscr{C}=\left[
+\begin{array}{ccccccc}
+0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 1 \\
+0 &\hspace*{2mm}& 0 &\hspace*{2mm}& -1 &\hspace*{2mm}& 0 \\
+0 &\hspace*{2mm}& -1 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 \\
+1 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0 &\hspace*{2mm}& 0%
+\end{array}%
+\right] \:.
+\]
+应用到旋量电动力学中的自由粒子电流, 给出\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[428]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[428]}}}
+\[
+\mathsf{C}(\bar{\psi}\gamma^{\mu }\psi)\mathsf{C}^{-1}
+=-\bar{\psi}\mathscr{C}\gamma^{\mu\mathrm{T}}\mathscr{C}\psi =-\bar{\psi}\gamma ^{\mu }\psi \:.
+\]%
+如果要使$\mathsf{C}$在电动力学中仍然保持守恒, 那么它也必须被定义成与自由光子场反对易
+\[
+\mathsf{C}(a^{\mu })\mathsf{C}^{-1}=-a^{\mu } \:.
+\]%
+在类似电动力学的理论中, 即$\mathsf{C}$与相互作用以及$H_{0}$对易的理论,  它也与\,Heisenberg\,绘景与相互作用绘景之间的相似变换$\Omega (t)$ 对易, 因而它与相互作用场的电流反对易
+\begin{equation}
+\mathsf{C}(\bar{\Psi}\gamma ^{\mu }\Psi )\mathsf{C}^{-1}=-\bar{\Psi}\gamma^{\mu }\Psi   \label{10.1.8}
+\end{equation}%
+也与\,Heisenberg\,绘景中的电磁场反对易
+\begin{equation}
+\mathsf{C}(A^{\mu })\mathsf{C}^{-1}=-A^{\mu} \:.  \label{10.1.9}
+\end{equation}%
+于是由此得出, 任何奇数个电磁流和(或)电磁场的编时乘积的真空期望值为零. 因此具有奇数个(在壳或离壳)光子外线且没有其他外线的所有\,Feynman\,图之和为零.
+
+
+这一结果称为\,\textit{Furry}\,({\KAI{法雷}})定理.\textsuperscript{\cite{1}} 它可以用微扰论的方式证明, 只需注意到由$\ell$个电子圈组成的图, 其中每个电子圈连接$n_{\ell}$ 个光子线, 这个图的所有内光子线的数目$I$与外光子线的数目$E$通过类似方程(\ref{6.3.11})的关系相联系:
+\[
+2I+E=\sum_{\ell }n_{\ell } \:.
+\]%
+因此, 如果$E$为奇数, 那么至少有一个圈要与奇数个光子线相连. 对于所有这样的圈, 如果两个图中圈的电子流箭头方向相反, 那么它们就会抵消. 因此相比平移不变性或\,Lorentz\,不变性, Furry\,定理是对称性原理给出的一个不那么平庸的结果; 它对于单个图是不正确的, 而对于某类图的和是正确的. 图\,10.1\,展示了\,Furry\,定理在历史上最重要的一个应用, 它被用来证明光子在外电磁场上的散射没有外场的第一阶(或任何奇数阶)的贡献.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1001.eps}\\
+  \caption{光子被电磁场散射的最低阶图. 这里直线代表虚电子; 波浪线代表实光子和虚光子; 而双线代表像原子核那样的重粒子, 它们在这里充当电磁场的源. 正如电荷共轭不变性所要求的, 这两个图的贡献抵消.}
+ \label{fig:10.1}
+\end{figure}
+
+\section{极点学} \label{sec:10.2}
+\setcounter{equation}{0}
+\marginpar[\flushright
+{\raisebox{5.5ex}[0pt]{{\small[429]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[429]}}}
+
+在本章所描述的非微扰方法中, 一个最重要的应用就是将\,Feynman\,振幅的极点结构解释成外线所携带动量的函数. %
+一个物理过程的$S$-矩阵经常能够很好地近似成一个单极点的贡献. 另外,
+对该极点结构的理解将在后面帮助我们处理粒子传播子的辐射修正.
+
+考察动量空间振幅
+\begin{align}
+&\int \dif^{4}x_{1}\,\cdots \dif^{4}x_{n}\:\me^{-\mi q_{1}\cdot x_{1}}\cdots
+\me^{-\mi q_{n}\cdot x_{n}}\left\langle T\Big\{ A_{1}(x_{1})\cdots A_{n}(x_{n})\Big\} \right\rangle _{0}  \nonumber \\
+&\phantom{\int \dif^{4}x_{1}}\equiv G(q_{1}\cdots q_{n})  \: .  \label{10.2.1}
+\end{align}%
+这些$A$是\marginpar[\flushright{\small[430]\hspace*{5mm}}]{{\small\hspace*{5mm}[430]}}任意\,Lorentz\,型\,Heisenberg\,绘景中的算符, 而$\langle\cdots\rangle_{0}$表示在真正真空$\Psi_{0}{}^{\!+}=\Psi_{0}{}^{\!-}\equiv\Psi_{0}$ 中的期望值. 就像\,\ref{sec:6.4}\,节中所讨论的, %
+如果$A_{1},\cdots A_{n}$是出现在拉格朗日量中的普通场, 那么(\ref{10.2.1})就是用普通\,Feynman\,规则计算出的各项的和, %
+其中\,Feynman\,图的所有外线对应场$A_{1},\cdots A_{n}$并携带离壳\,4\,-动量$q_{1}\cdots q_{n}$进入图. 然而, %
+我们并不会仅限于这种情况; $A_{i}$还可以是场或场导数的任意定域函数.
+
+取外线的各种子集所携带的总\,4\,-动量的不变平方, 我们感兴趣的是$G$在这些不变平方的特定值处的极点. 更明确些,
+我们考虑$G$是$q^{2}$的函数的情况, 其中
+\begin{equation}
+q\equiv q_{1}+\cdots +q_{r}=-q_{r+1}-\cdots -q_{n},  \label{10.2.2}
+\end{equation}%
+其中$1\leq r\leq n-1$. 我们将证明$G$在$q^{2}=-m^{2}$处有极点, 其中$m$是某个单粒子态的质量, 这个单粒子态与态$A_{1}^{\dag }\cdots A_{r}^{\dag}\Psi_{0}$ 和态$A_{r+1}\cdots A_{n}\Psi_{0}$的矩阵元不为零, 并且该极点的留数是
+\begin{align}
+G &\to \frac{-2\mi\sqrt{\bq^{2}+m^{2}}}{q^{2}+m^{2}-\mi\epsilon }%
+(2\uppi)^{7}\updelta^{4}(q_{1}+\cdots +q_{n})  \nonumber \\
+&\quad\times\sum_{\sigma}M_{0\vert\bq,\sigma }(q_{2}\cdots q_{r})M_{\bq,\sigma\vert0}(q_{r+2}\cdots q_{n}),  \label{10.2.3}
+\end{align}%
+其中$M$的定义是{}$^*$\footnote{$^*${}回忆, 在没有随时间变化的外场时, ``入''单粒子态和``出''单粒子态之间没有区别, 从而$\Psi_{\bp,\sigma}{}^{\!+}=\Psi_{\bp,\sigma}{}^{\!-}=\Psi _{\bp,\sigma }$.}%
+\begin{align}
+&\int \dif^{4}x_{1}\cdots \dif^{4}x_{r}\:\me^{-\mi q_{1}\cdot x_{1}}\cdots
+\me^{-\mi q_{r}\cdot x_{r}}\left( \Psi_{0},T\Big\{ A_{1}(x_{1})\cdots
+A_{r}(x_{r})\Big\} \Psi _{\bp,\sigma }\right)   \nonumber \\
+&\quad=(2\uppi)^{4}\,\updelta^{4}(q_{1}+\cdots +q_{r}-p)M_{0|\bp,\sigma}(q_{2}\cdots q_{r}) \:, \label{10.2.4} \\
+&\int \dif^{4}x_{r+1}\cdots \dif^{4}x_{n}\:\me^{-\mi q_{r+1}\cdot x_{r+1}}\cdots \me^{-\mi q_{n}\cdot x_{n}}\nonumber \\
+&\phantom{\int \dif^{4}x_{r+1}}\times \left( \Psi _{\bp,\sigma },T\Big\{ A_{r+1}(x_{r+1})\cdots
+A_{n}(x_{n})\Big\} \Psi _{0}\right)   \nonumber \\
+&\quad=(2\uppi)^{4}\updelta ^{4}(q_{r+1}+\cdots +q_{n}+p)M_{\bp,\sigma\vert0}(q_{r+2}\cdots q_{n})  \label{10.2.5}
+\end{align}%
+(其中$p^{0}\equiv \sqrt{\bp^{2}+m^{2}}$), 求和是对质量为$m$的粒子的所有自旋(或其他)态求和.
+
+在进行证明之前, 如果我们将(\ref{10.2.3})写成稍微冗长的形式\begin{align}
+&G(q_{1}\cdots q_{n}) \to \sum_{\sigma }\int \dif^{4}k  \nonumber \\
+&\times \left[ (2\uppi )^{4} \,\updelta^{4}(q_{1}+\cdots +q_{r}-k)\,(2\uppi)^{3/2}\,
+\Bigl(2\sqrt{\bk^{2}+m^{2}}\Bigr)^{1/2}\,
+M_{0\vert\bk,\sigma }(q_{2}\cdots q_{r})\right]   \nonumber \\
+&\times \left[ \frac{-\mi}{(2\uppi)^{4}}\,\frac{1}{k^{2}+m^{2}-\mi\epsilon}\right]  \nonumber \\
+&\times \Bigg[ (2\uppi )^{4}\,\updelta ^{4}(k+q_{r+1}+\cdots +q_{n})\,(2\uppi )^{3/2}  \nonumber \\
+&\qquad\qquad\times \Bigl(2\sqrt{\bk^{2}+m^{2}}\Bigr)^{1/2}
+\,M_{\bp,\sigma\vert0}(q_{r+2}\cdots q_{n})\Bigg] \:, \label{10.2.6}
+\end{align}%
+这对我们阐明它的意义将是有帮助的\marginpar[\flushright
+{\raisebox{8ex}[0pt]{{\small[431]\hspace*{5mm}}}}]{{\raisebox{8ex}[0pt]{\small\hspace*{5mm}[431]}}}. 这正是我们对 质量为$m$的粒子内线连接前$r$个外线和后$n{-}r$个外线的\,Feynman\,图所预期的.%
+{}$^*$\footnote{$^*${}参看图10.2. 因子$(2\uppi)^{3/2}\Big[2\sqrt{\bk^{2}+m^{2}}\Big]^{1/2}$正好用来移除%
+$M_{0\vert\bk,\sigma}$和$M_{\bk,\sigma\vert0}$中质量为$m$的外线所附带的运动学因子. 另外, 对这两个矩阵元中系数函数因子乘积中的$\sigma$ 求和给出了图\,\ref{fig:10.2}\,中内线对应的传播子的分子.} 然而, 质量为$m$的粒子并{\KAI{不}}非得对应出现在该理论拉格朗日量中的场. 场在拉格朗日量中出现的是所谓的基本粒子, 而即使这个粒子是基本粒子形成的束缚态, 方程(\ref{10.2.3})和(\ref{10.2.6})也是成立的. 在这种情况下, 极点不是从类似图\,10.2\,这样的单个\,Feynman\, 图中产生, 而是从无限个图的求和中产生的, 图10.3中展示的就是这种求和中的一个图. 这是本章的方法首次引导我们得到了无法从微扰论的每一阶性质中导出的结果.%
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1002.eps}\\
+  \caption{极点结构为(\ref{10.2.6})的\,Feynman\,图. 这里携带动量$k$的线代表相应的场出现在拉格朗日量中的基本粒子.}
+ \label{fig:10.2}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1002.eps}\\
+  \caption{一类\,Feynman\,图中的一个, 这类\,Feynman\,图之和具有极点结构(\ref{10.2.6}), 这里的极点源于复合粒子, 即两个基本粒子的束缚态. 直线表示基本粒子, 它们通过交换波浪线所代表的粒子进行相互作用.}
+ \label{fig:10.3}
+\end{figure}
+
+现在开始证明. 方程(\ref{10.2.1})中的时间$x_{1}^{0}\cdots x_{n}^{0}$有$n!$种可能的排序, 在这$n!$种可能的排序中, 前$r$个$x_{i}^{0}$ 均大于后$n-r$ 个的情况共有$n!/r!(n-r)!$种可能的排序. 将方程(\ref{10.2.1})中这部分积分的贡献分离出来, 我们有
+\begin{align}
+&G(q_{1}\cdots q_{n}) = \int \dif^{4}x_{1}\cdots \dif^{4}x_{n}\:
+\me^{-\mi q_{1}\cdot x_{1}}\cdots \me^{-\mi q_{n}\cdot x_{n}}  \nonumber \\
+&\quad\times \theta\Bigl( \min[x_{1}^{0}\cdots x_{r}^{0}]-\max[x_{r+1}^{0}\cdots x_{n}^{0}]\Bigr)\nonumber \\
+&\quad\times \left(\Psi _{0},\,T\Big\{ A_{1}(x_{1})\cdots A_{r}(x_{r})\Big\}
+\:T\Bigl\{A_{r+1}(x_{r+1})\cdots A_{n}(x_{n})\Bigr\} \Psi _{0}\right) \nonumber \\
+&\qquad\qquad+\text{OT} \: ,  \label{10.2.7}
+\end{align}%
+其中\,``OT''(other term)代表其他时间排序给出的其他各项. 我们可以通过在编时乘积之间插入中间态的完备集来计算这里的矩阵元. 在这些中间态中, 有些有可能是确定种类的质量为$m$的单粒子态$\Psi_{\bp,\sigma}$.
+进一步分离出这些单粒子中间态的贡献, 我们有
+\begin{align}
+&G(q_{1}\cdots q_{n}) = \int \dif^{4}x_{1}\cdots \dif^{4}x_{n}\:
+\me^{-\mi q_{1}\cdot x_{1}}\cdots \me^{-\mi q_{n}\cdot x_{n}} \nonumber \\
+&\theta \Bigl( \min[x_{1}^{0}\cdots x_{r}^{0}]-\max[x_{r+1}^{0}\cdots x_{n}^{0}]\Bigr)
+\sum_{\sigma}\int\dif^{3}p  \nonumber \\
+&\left(\Psi_{0},\,T\Big\{ A_{1}(x_{1})\cdots A_{r}(x_{r})\Big\} \Psi_{\bp,\sigma}\right)\:
+ \left(\Psi_{\bp,\sigma },T\Big\{A_{r+1}(x_{r+1})\cdots A_{n}(x_{n})\Big\}\Psi_{0}\right) \nonumber \\
+&\qquad\qquad+\text{OT} \:,  \label{10.2.8}
+\end{align}%
+现在``OT''代表的其他项不仅来自于其他时间排序\marginpar[\flushright
+{\raisebox{5ex}[0pt]{{\small[432]\hspace*{5mm}}}}]{{\raisebox{5ex}[0pt]{\small\hspace*{5mm}[432]}}}, 还来自于其他的中间态. 方便起见, 平移一下积分变量使得
+\begin{align*}
+& x_{i} =x_{1}+y_{i}\:,  \qquad \quad i=2,3,\cdots r \:, \\
+& x_{i} =x_{r+1}+y_{i}\:, \qquad i=r+2,\cdots n \:,
+\end{align*}%
+然后利用上一节的结果写出\marginpar[\flushright
+{\raisebox{-11ex}[0pt]{{\small[433]\hspace*{5mm}}}}]{{\raisebox{-11ex}[0pt]{\small\hspace*{5mm}[433]}}}
+\begin{align}
+&\left(\Psi_{0},\,T\Big\{ A_{1}(x_{1})\cdots A_{r}(x_{r})\Big\}\Psi_{\bp,\sigma }\right)\nonumber \\
+&\qquad=\me^{\mi p\cdot x_{1}}
+\left( \Psi_{0},\,T\Big\{ A_{1}(0)A_{2}(y_{2})\cdots A_{r}(y_{r})\Big\} \Psi_{\bp,\sigma }\right) \:,
+\label{10.2.9}
+\end{align}%
+\begin{align}
+&\Bigl(\Psi _{\bp,\sigma },\,
+T\Bigl\{ A_{r+1}(x_{r+1})\cdots A_{n}(x_{n})\Bigr\} \Psi _{0}\Bigr)   \nonumber \\
+&\qquad=\me^{-\mi p\cdot x_{r+1}}\left( \Psi _{\bp,\sigma },\,
+T\Big\{A_{r+1}(0)\cdots A_{n}(y_{n})\Big\} \Psi _{0}\right) \: . \label{10.2.10}
+\end{align}%
+另外, $\theta$-函数中的变量会变成
+\begin{align*}
+&\min [x_{1}^{0}\cdots x_{r}^{0}]-\max [x_{r+1}^{0}\cdots x_{n}^{0}] \\
+&\qquad=x_{1}^{0}-x_{r+1}^{0}+\min [0\:y_{2}^{0}\cdots y_{r}^{0}]-\max
+[0\:y_{r+1}^{0}\cdots y_{n}^{0}] \:.
+\end{align*}%
+同时代入阶跃函数的\,Fourier\,表示(\ref{6.2.15})%
+\[
+\theta (\tau )=-\frac{1}{2\uppi \mi}\int_{-\infty }^{\infty }
+\frac{\dif\omega\:\me^{-\mi\omega \tau }}{\omega + \mi\epsilon} \: .
+\]%
+对$x_{1}$和$x_{r+1}$的积分恰好给出$\updelta$-函数
+\begin{align}
+&G(q_{1}\cdots q_{n})
+=\int \dif^{4}y_{2}\cdots \dif^{4}y_{r}\:\dif^{4}y_{r+2}\cdots\dif^{4}y_{n}\nonumber\\
+&\times \me^{-\mi q_{2}\cdot y_{2}}\cdots \me^{-\mi q_{r}\cdot y_{r}}
+\me^{-\mi q_{r+2}\cdot y_{r+2}}\cdots \me^{-\mi q_{n}\cdot y_{n}}  \nonumber \\
+&\times -\frac{1}{2\uppi \mi}\int_{-\infty }^{\infty }\frac{\dif\omega }{\omega+\mi\epsilon}
+\exp \Bigl(-\mi\omega \Bigl[\min [0\:y_{2}^{0}\cdots y_{r}^{0}]
+-\max[0\:y_{r+1}^{0}\cdots y_{n}^{0}]\Bigr] \Bigr)   \nonumber \\
+&\times \sum_{\sigma} \int \dif^{3}p\:
+\Bigl( \Psi _{0},\,T\Bigl\{A_{1}(0)\cdots A_{r}(y_{r})\Bigr\} \Psi_{\bp,\sigma}\Bigr) \nonumber \\
+&\phantom{\times \sum_{\sigma} \int \dif^{3}p \:\Bigl(\Psi _{0},\,}
+\times \left( \Psi_{\bp,\sigma },\,T\Bigl\{ A_{r+1}(0)\cdots A_{n}(y_{n})\Bigr\} \Psi_{0}\right)   \nonumber \\
+&\times (2\uppi)^{4}\updelta ^{3}(\bp-\bq_{1}-\cdots -\bq_{r})\:
+\updelta \left(\sqrt{\bp^{2}+m^{2}}+\omega -q_{1}^{0}-\cdots -q_{r}^{0}\right) \nonumber \\
+&\times (2\uppi)^{4} \updelta^{3}(\bq_{r+1}+\cdots +\bq_{n}+\bp)\:
+\updelta\left( q_{r+1}^{0}+\cdots +q_{n}^{0}+\sqrt{\bp^{2}+m^{2}}+\omega \right)   \nonumber \\
+&\quad+\text{OT} \: .  \label{10.2.11}
+\end{align}
+我们在这里仅对那些由于分母$\omega +\mi\epsilon$为零而产生的极点感兴趣, 所以对于我们现在的目的, 我们可以令因子$\exp(-\mi\omega[\min -\max ])$等于\,1. 对$\bp$和$\omega$的积分现在是平庸的, 并给出了极点\marginpar[\flushright
+{\raisebox{-9ex}[0pt]{{\small[434]\hspace*{5mm}}}}]{{\raisebox{-9ex}[0pt]{\small\hspace*{5mm}[434]}}}
+\begin{align}
+& G(q_{1}\cdots q_{n}) \to \mi(2\uppi)^{7}\,\updelta^{4}(q_{1}+\cdots +q_{n})
+\left[ q^{0}-\sqrt{\bq^{2}+m^{2}}+\mi\epsilon \right]^{-1} \nonumber \\
+&\quad\times \sum_{\sigma} M_{0\vert\bq,\sigma}(q_{2}\cdots q_{r})\,
+M_{\bq,\sigma\vert 0}(q_{r+2}\cdots q_{n})+\cdots   \label{10.2.12}
+\end{align}%
+其中现在有
+\[
+q\equiv q_{1}+\cdots +q_{r}=-q_{r+1}-\cdots -q_{n} \:,
+\]%
+\begin{align}
+&M_{0|\bq,\sigma }(q_{2}\cdots q_{r}) \equiv \int \dif^{4}y_{2}\cdots \dif^{4}y_{r}\:
+\me^{-\mi q_{2}\cdot y_{2}}\cdots \me^{-\mi q_{r}\cdot y_{r}}  \nonumber \\
+&\quad\times \left(\Psi _{0},\,T\Bigl\{ A_{1}(0)A_{2}(y_{2})\cdots A_{r}(y_{r})\Bigr\}
+\Psi_{\bq,\sigma }\right) \:,   \label{10.2.13}
+\end{align}%
+\begin{align}
+&M_{\bq,\sigma\vert0}(q_{r+2}\cdots q_{n}) \equiv \int\dif^{4}y_{r+2}\cdots \dif^{4}y_{n}\:
+\me^{-\mi q_{r+2}\cdot y_{r+2}}\cdots\me^{-\mi q_{n}\cdot y_{n}}  \nonumber \\
+&\quad\times \left(\Psi_{\bq,\sigma },\,T\Bigl\{ A_{r+1}(0)A_{r+2}(y_{r+2})\cdots A_{n}(y_{n})\Bigr\}
+\Psi_{0}\right) \: ,  \label{10.2.14}
+\end{align}%
+方程(\ref{10.2.12})中最后的``$\cdots$''代表的是那些没有这一特殊极点的项. (源于其他单粒子态的``其他项''产生了$q$在其他位置的极点, 而那些源于多粒子态的``其他项''给出了$q$的分支点, 而那些源于其他编时乘积的``其他项''产生了其他变量中的极点与分支割线.) 利用方程(\ref{10.2.9})和(\ref{10.2.10}), 很容易看到这些$M$与方程(\ref{10.2.4})和(\ref{10.2.5})定义的$M$相同的. 另外, 在极点附近, 我们可以有
+\[
+\frac{1}{q^{0}-\sqrt{\bq^{2}+m^{2}}+\mi\epsilon}
+=\frac{-q^{0}-\sqrt{\bq^{2}+m^{2}}+\mi\epsilon}{-(q^{0})^{2}+
+(\sqrt{\bq^{2}+m^{2}}-\mi\epsilon)^{2}}\to
+\frac{-2\sqrt{\bq^{2}+m^{2}}}{q^{2}+m^{2}-\mi\epsilon } \: .
+\]%
+(我们通过正因子$2\sqrt{\bq^{2}+m^{2}}$再次重定义了$\epsilon$, 由于$\epsilon$表示任意正无限小, 这样做是允许的.) 因此方程(\ref{10.2.12}) 与所期望的结果(\ref{10.2.3})相同.
+
+这一结果在核力理论中有一个经典应用. 令$\Phi_{a}(x)$是任意的实场或者场的组合(例如, 正比于夸克\lzx 反夸克双线性型$\bar{q}\gamma_{5}\tau_{a}q$), 且它在同位旋为$a$的单$\pi$介子态与真空之间的矩阵元不为零, 对这个矩阵元归一化使得
+\begin{equation}
+\langle \text{VAC}\vert\Phi_{a}(0)\vert \pi_{b},\bp\rangle
+=(2\uppi)^{-3/2}(2p^{0})^{-1/2}\updelta_{ab} \: .  \label{10.2.15}
+\end{equation}%
+于是$\Phi_{a}$在\,4\,-动量分别为$p,p^{\prime}$的单核子态之间的矩阵元会在$(p-p^{\prime})^{2}\to -m_{\pi }^{2}$处有一极点, 而同位旋不变性与\,Lorentz\,不变性(包含空间反演不变性)会要求这样的矩阵元必须取如下形式{}$^*$\footnote{$^*${}%
+Lorentz\,不变性与同位旋不变性要求这个矩阵取$(\bar{u}^{\prime }\,\Gamma \,\tau _{a}\,u)$的形式, 其中$\Gamma$是一个$4\times 4$矩阵, 它使双线性型$(\bar{\psi}^{\prime }\,\Gamma\,\psi)$按照赝标量变换. 同其他任何$4\times4$矩阵一样, $\Gamma$可以展开成正比于\,Dirac\,矩阵$1,\gamma_{\mu},[\gamma_{\mu},\gamma_{\nu}],\gamma_{5}\gamma_{\mu}$%
+和$\gamma_{5}$的项的和. 系数必须分别是赝标量, 赝矢量, 赝张量, 矢量以及标量. 用两个动量$p$和$p^{\prime}$是不可能构造出赝标量或赝矢量的; 它们仅能构造出一个赝张量, 正比于$\epsilon^{\mu\nu\rho\sigma}p_{\rho}p_{\sigma}^{\prime}$; 两个独立的矢量, 正比于$p_{\mu}$或$p_{\mu }^{\prime}$; 以及一个正比于\,1\, 的标量, 在每种情况中, 比例因子依赖唯一的独立标量变量$(p-p^{\prime })^{2}$. 通过利用$u$和$u^{\prime}$在动量空间的\,Dirac\, 方程, 很容易看到$\Gamma$ 中的张量以及赝矢量矩阵给出的贡献正比于$\gamma_{5}$.}%
+\newpage
+\ \vspace{-5mm}
+\begin{equation}
+\langle N^{\prime },\sigma^{\prime },\bp^{\prime}\vert \Phi_{a}(0)\vert N,\sigma ,\bp\rangle
+\to \mi(2\uppi)^{-3}G_{\pi}\times
+\frac{\Bigl( \bar{u}^{\prime}\,\gamma _{5}\tau_{a}\,u\Bigr)}{(p-p^{\prime})^{2}+m_{\pi}^{2}}\:,
+\label{10.2.16}
+\end{equation}%
+其中$u$和$u^{\prime}$是初态核子和末态核子的旋量系数函数\marginpar[\flushright
+{\raisebox{7ex}[0pt]{{\small[435]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[435]}}}, 这些系数函数中包括同位旋空间中的核子波函数, 而$a=1,2,3$ 的$\tau _{a}$是$2\times 2$ 的\,Pauli\,同位旋矩阵.
+常数$G_{\pi}$被称为$\pi ${\KAI{介子\lzx 核子耦合系数}}. 这个极点实际上不在矩阵元(\ref{10.2.6})的物理区域中, 即$(p-p^{\prime })^{2}\geq 0$的区域, 但可以通过对该矩阵元做解析延拓到达它, 例如, 考察离壳矩阵元
+\[
+\int \dif^{4}x\,\dif^{4}x^{\prime }\:\me^{-\mi p\cdot x}\me^{\mi p^{\prime }\cdot x^{\prime}}
+\langle T\{\Phi_{a}(0)\,\bar{N}(x)\,N^{\prime}(x^{\prime })\}\rangle_{\text{VAC}} \: ,
+\]%
+其中$N$和$N^{\prime}$是场算符或场算符乘积的合适分量, 并且它们在单核子态与真空态之间的矩阵元不为零. 那么%
+本节前面所证明的定理表明, 在初态\,4\,-动量为$p_{1},p_{2}$, 末态\,4\,-动量为$p_{1}^{\prime},p_{2}^{\prime}$的两个核子的散射中, 交换一个$\pi$ 介子会在$(p_{1}-p_{1}^{\prime})^{2}=(p_{2}-p_{2}^{\prime })^{2}\to -m_{\pi}^{2}$处产生一个极点:%
+\begin{align}
+&S_{N_{1}^{\prime }N_{2}^{\prime },N_{1}N_{2}} \to -\mi(2\uppi)^{4}
+\updelta^{4}(p_{1}^{\prime }+p_{2}^{\prime }-p_{1}-p_{2})
+\frac{G_{\pi}^{2}}{(p_{1}-p_{1}^{\prime })^{2}+m_{\pi}^{2}}  \nonumber \\
+&\times (2\uppi)^{-3}\Bigl(\bar{u}_{1}^{\prime }\,\gamma _{5}\tau_{a}\,u_{1}\Bigr)
+\times (2\uppi )^{-3}\Bigl(\bar{u}_{2}^{\prime }\,\gamma _{5}\tau_{a}\,u_{2}\Bigr) \label{10.2.17}
+\end{align}%
+(在这类公式中, 得到右边的相位以及数值因子的最简单方式是利用\,Feynman图; 我们的定理仅是说, 如果拉格朗日量包含一个基本$\pi$介子, 那么上述的极点结构与这个场论中会发现的极点结构相同.) 这个$\pi$介子极点实际上依旧不处在在壳核子散射的物理区域中, 即$(p_{1}-p_{1}^{\prime })^{2}\geq 0$的区域,
+但它可以通过对$S$-矩阵元的解析延拓达到, 例如, 通过考察离壳矩阵元\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[436]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[436]}}}
+\begin{align*}
+&\int \dif^{4}x_{1}\,\dif^{4}x_{2}\,\dif^{4}x_{1}^{\prime }\,\dif^{4}x_{2}^{\prime}\:
+\me^{-\mi p_{1}\cdot x_{1}}\me^{-\mi p_{2}\cdot x_{2}}\me^{\mi p_{1}^{\prime }\cdot x_{1}^{\prime}}
+\me^{\mi p_{2}^{\prime }\cdot x_{2}^{\prime }} \\
+&\times \langle T\{\bar{N}_{1}(x_{1}),\bar{N}_{2}(x_{2}),N_{1}^{\prime}(x_{1}^{\prime }),
+N_{2}^{\prime }(x_{2}^{\prime })\}\rangle_{\text{VAC}}  \: .
+\end{align*}%
+尽管这一极点不在核子\lzx 核子散射的物理区域中, 但$\pi$介子的质量足够小使得极点相当接近物理区域, 并且在某些环境下还可能会主导散射振幅, 例如分波展开中的大$\ell$情形.
+
+如果在坐标空间进行解释, 这种处在$(p_{1}-p_{1}^{\prime })^{2}=(p_{2}-p_{2}^{\prime })^{2}\to -m_{\pi}^{2}$处的极点就意味着力程为$1/m_{\pi}$的力. 例如, 在\,Yukawa\,最初的核力理论\textsuperscript{\cite{2}}中, 交换介子(假定是标量而非赝标量)产生了形如$\exp (-m_{\pi }r)/4\uppi r$的定域势, 它在一阶\,Born\, 近似下给出的非相对论核子散射的$S$-矩阵元正比于\,Fourier\,变换:
+\begin{align*}
+&\int \dif^{3}x_{1}\,\dif^{3}x_{2}\,\dif^{3}x_{1}^{\prime }\,\dif^{3}x_{2}^{\prime }\:
+\me^{-\mi\bx_{1}\cdot \bp_{1}}\me^{-\mi\bx_{2}\cdot \bp_{2}}
+\me^{\mi\bx_{1}^{\prime }\cdot \bp_{1}^{\prime}}
+\me^{\mi\bx_{2}^{\prime}\cdot \bp_{2}^{\prime }} \\
+&\times \frac{\exp\Bigl( -m_{\pi}\lvert\bx_{1}-\bx_{2}\rvert\Bigr)}{4\uppi\lvert \bx_{1}-\bx_{2}\rvert }\updelta ^{3}(\bx_{1}-\bx_{1}^{\prime })\updelta
+^{3}(\bx_{2}-\bx_{2}^{\prime }) \\
+&=-(2\uppi)^{3}\updelta^{3}(\bp_{1}+\bp_{2}-\bp_{1}^{\prime}-\bp_{2}^{\prime})
+\frac{1}{(\bp_{1}-\bp_{1}^{\prime })^{2}+m_{\pi }^{2}} \: .
+\end{align*}%
+因子$1/[(\bp_{1}-\bp_{1}^{\prime })^{2}+m_{\pi}^{2}]$正是(\ref{10.2.17})中传播子$%
+\,1/[(p_{1}-p_{1}^{\prime })^{2}+m_{\pi}^{2}]$的非相对论极限. (在(\ref{10.2.17})中, 能量转移$p_{1}^{0}{-}p_{1}^{\prime 0}$在$\lvert\bp_{1}\rvert\ll m_{N}$且$\lvert\bp_{1}^{\prime}\rvert\ll m_{N}$时等于$[\bp_{1}^{2}-\bp_{1}^{\prime 2}]/2m_{N}$, 它与动量转移的大小$\lvert\bp_{1}-\bp_{1}^{\prime}\rvert$相比是可以忽略的.) 当\,Yukawa\,理论第一次提出时, 大家就普遍认为这种动量相关性源于理论中出现了介子场. 但直到\,20\,世纪\,50\,年代才普遍理解了在$(p_{1}-p_{1}^{\prime })^{2}\to -m_{\pi}^{2}$ 处有极点源于存在$\pi$介子这样一个{\KAI{粒子}}, 而这与它是否是一个基本粒子, 即它本身的场是否出现在拉格朗日量中无关.
+
+
+\section{场重正化和质量重正化} \label{sec:10.3}
+\setcounter{equation}{0}
+
+我们现在将用上节结果的一个特殊情况来阐明一般过程中内线和外线的辐射修正如何进行处理.
+
+我们在这里所考虑的特殊情况\marginpar[\flushright{\small[437]\hspace*{5mm}}]{{\small\hspace*{5mm}[437]}}是单个外线的\,4\,-动量趋近质量壳的情形. (按照上一节的记法, 这对应取$r=1$.) 我们将考虑函数
+\begin{align}
+G_{\ell }(q_{1}q_{2}\cdots ) &=\int \dif^{4}x_{1}\,\dif^{4}x_{2}\cdots\:
+\me^{-\mi q_{1}\cdot x_{1}}\me^{-\mi q_{2}\cdot x_{2}}\cdots   \nonumber \\
+&\times \left( \Psi _{0},\,T\Big\{ \mathcal{O}_{\ell
+}(x_{1}),A_{2}(x_{2}),\cdots \Big\} \Psi _{0}\right) \text{ ,}
+\label{10.3.1}
+\end{align}%
+其中$\mathcal{O}_{\ell }(x)$是\,Heisenberg\,绘景算符, 它的\,Lorentz\,变换性质与某类自由场$\psi_{\ell}$相同, 这里的$\psi_{\ell}$属于齐次\,Lorentz\, 群(或者, 对宇称守恒的理论, 包含空间反演的\,Lorentz\,群)的一个不可约表示, 这个不可约表示由下标$\ell$标记, 而$A_{2},A_{3}$等是任意的\,Heisenberg\, 绘景算符. 假定存在单粒子态$\Psi_{\bq_{1},\sigma}$, 且它与态$\mathcal{O}_{\ell }^{\dag }\Psi _{0}$以及态$A_{2}A_{3}\cdots\Psi_{0}$的矩阵元不为零. 那么根据上一节中证明的定理, $G_{\ell}$在$q_{1}^{2}=-m^{2}$处有一极点, 并有
+\begin{align}
+&G_{\ell }(q_{1}q_{2}\cdots ) \to \frac{-2\mi\sqrt{\bq_{1}^{2}+m^{2}}}{q_{1}^{2}+m^{2}-\mi\epsilon}
+(2\uppi)^{3}\sum_{\sigma}\Big(\Psi_{0},\mathcal{O}_{\ell}(0)\Psi_{\bq_{1},\sigma}\Big) \nonumber \\
+&\quad\times \int \dif^{4}x_{2}\cdots \me^{-\mi q_{2}\cdot x_{2}}\cdots
+\left( \Psi_{\bq_{1},\sigma },T\Big\{ A_{2}(x_{2})\cdots \Big\} \Psi_{0}\right) \:.  \label{10.3.2}
+\end{align}%
+利用\,Lorentz\,不变性, 我们可以写出
+\begin{equation}
+\Bigl( \Psi_{0},\mathcal{O}_{\ell}(0)\Psi_{\bq_{1},\sigma}\Bigr)
+=(2\uppi)^{-3/2}\,N\,u_{\ell}(\bq_{1},\sigma )\: ,  \label{10.3.3}
+\end{equation}%
+其中$u_{\ell}(\bq_{1},\sigma)$是(除因子$(2\uppi )^{-3/2}$以外)自由场$\psi_{\ell}$中的系数函数{}$^*$\footnote{$^*${}例如, 对于通常的归一化自由标量场, $u_{\ell}(\bq_{1},\sigma)=[2\sqrt{\bq_{1}^{2}+m^{2}}]^{-1/2}$.}, 它与$\mathcal{O}_{\ell}$的\,Lorentz\,变换性质相同, 而$N$ 是常数. (为了得到只有单个自由常数$N$的方程(\ref{10.3.3}), 我们只能假定$\mathcal{O}_{\ell}$的变换是不可约的.) 我们同时定义``截腿''(truncated) 矩阵元$M_{\ell}$
+\begin{align}
+&\int \dif^{4}x_{2}\cdots\: \me^{-\mi q_{2}\cdot x_{2}}\cdots\: \Bigl(\Psi_{\bq_{1},\sigma },T\Bigl\{A_{2}(x_{2})\cdots \Bigr\} \Psi_{0}\Bigr) \nonumber \\
+&\quad\equiv N^{-1}(2\uppi)^{-3/2}\sum_{\ell}u_{\ell }^{\ast}(\bq_{1},\sigma )\,
+M_{\ell}(q_{2}\cdots ) \: .  \label{10.3.4}
+\end{align}%
+于是, 当$q_{1}^{2}\to -m^{2}$时, 方程(\ref{10.3.2})变成
+\begin{equation}
+G_{\ell }\to \frac{-2\mi\sqrt{\bq_{1}^{2}+m^{2}}}{q_{1}^{2}+m^{2}-\mi\epsilon}\:
+\sum_{\sigma,\ell^{\prime}} u_{\ell}(\bq_{1},\sigma)
+u_{\ell ^{\prime }}^{\ast}(\bq_{1},\sigma )M_{\ell^{\prime }} \:.  \label{10.3.5}
+\end{equation}%
+根据方程(\ref{6.2.2})与(\ref{6.2.18}), (\ref{10.3.5})中与$M_{\ell}$相乘的量(或者至少是它在$q_{1}^{2}\to -m_{1}^{2}$ 时的极限行为)是自由场的动量空间矩阵传播子%
+$-\mi\Delta_{\ell\ell^{\prime}}(q_{1})$, 这个自由场与$\mathcal{O}_{\ell}$的\,Lorentz\,变换性质相同,
+所以(\ref{10.3.5})使\marginpar[\flushright{\small[438]\hspace*{5mm}}]{{\small\hspace*{5mm}[438]}}我们可以看出$M_{\ell}$ 等于如下所有这样图的和: 携带动量$q_{1},q_{2}\cdots$的外线对应于算符$\mathcal{O}_{\ell},A_{2},\cdots$, 但去掉了对应$\mathcal{O}_{\ell}$的末态传播子. 那么方程(\ref{10.3.4})正是描述如何从\,Feynman\,图之和中计算出发射一个粒子的矩阵元的通用处理: 去掉粒子传播子, 并与通常的外线因子$(2\uppi)^{-3/2}u_{\ell}^{\ast}$收缩. 这与通常\,Feynman\,规则唯一不符的是因子$N$.
+
+上面的定理是\,Lehmann(莱曼), Symanzik(塞曼则克)和\,Zimmerman(齐默尔曼)\textsuperscript{\cite{3}}推出的著名结果, 称为{\KAI{约化公式}}, 我们在这里用一种稍微不同的方法证明了它, 这种方法使得我们可以很容易地将这一结果推广至任意自旋的情况. 这个结果的一个重要特点是它适用于任何种类的算符; $\mathcal{O}_{\ell}$不需要是真地出现在拉格朗日量中的某个场, 并且它所产生的粒子可以是那些相应的场确实出现在拉格朗日量中的粒子的束缚态. 即使$\mathcal{O}_{\ell}$是拉格朗日量中的某个场$\Psi_{\ell}$, 它也提供了一个重要的启示: 如果我们打算用通常的\,Feynman\,规则计算$S$-矩阵元, 那么我们应该首先通过因子$1/N$重新定义场的归一化, 使得(为符号$\Psi$的重复使用表示歉意):%
+\begin{equation}
+\Bigl( \Psi_{0},\Psi_{\ell }(0)\Psi_{\bq,\sigma} \Bigr) =
+(2\uppi)^{-3/2}\,u_{\ell}(\bq,\sigma)  \label{10.3.6}
+\end{equation}%
+像方程(\ref{10.3.6})中那样进行归一化的场被称为{\KAI{重正化场}}.
+
+场重正化常数$N$也出现在另一个地方. 假定方程(\ref{10.3.1})中只有算符$A_{2},A_{3},\cdots$中的一个, 并且将其取为与$\mathcal{O}_{\ell}$相同的场多重态中的一成员的伴. 这样方程(\ref{10.3.2})变成
+\begin{align*}
+&\int \dif^{4}x_{1}\int \dif^{4}x_{2}\:\me^{-\mi q_{1}\cdot x_{1}}\,\me^{-\mi q_{2}\cdot x_{2}} \:
+\Bigl(\Psi _{0},\,T\Bigl\{\mathcal{O}_{\ell}(x_{1})\mathcal{O}_{\ell^{\prime}}^{\dag}(x_{2})\Bigr\}
+\Psi_{0}\Bigr)  \\
+&\xrightarrow[]{q_{1}^{2}\to -m^{2}}
+\frac{-2\mi\sqrt{\bq_{1}^{2}+m^{2}}(2\uppi)^{3}}{q_{1}^{2}+m^{2}-\mi\epsilon} \:%
+\sum_{\sigma}\Bigl(\Psi_{0},\mathcal{O}_{\ell}(0)\Psi_{\bq_{1},\sigma }\Bigr)  \\
+&\qquad\qquad\times \int \dif^{4}x_{2}\:\me^{-\mi q_{2}\cdot x_{2}}\me^{-\mi q_{1}\cdot x_{1}}
+\Bigl(\Psi_{\bq_{1},\sigma},\mathcal{O}_{\ell^{\prime }}^{\dag}(0)\Psi_{0}\Bigr)  \\
+&\quad=\frac{-2\mi\lvert N\rvert^{2}\sqrt{\bq_{1}^{2}+m^{2}}}{q_{1}^{2}+m^{2}-\mi\epsilon}\:
+\sum_{\sigma }u_{\ell}(\bq_{1},\sigma)\,u_{\ell^{\prime}}^{\ast}(\bq_{1},\sigma)\,
+(2\uppi)^{4}\,\updelta^{4}(q_{1}+q_{2}) \:.
+\end{align*}%
+除了因子$\lvert N\rvert^{2}$, 这正是传播子(有两条外线的所有图之和)在它的极点附近的通常行为. 根据方程(\ref{10.3.6}), 这个因子在重正化场$\Psi_{\ell}$的传播子中是不出现的. 因此{\KAI{重正化场就是传播子在极点附近的行为与自由场相同的场, 而重正化质量由极点的位置定义}}.%
+
+为了看到这是如何实际操作的\marginpar[\flushright{\small[439]\hspace*{5mm}}]{{\small\hspace*{5mm}[439]}}, 考虑自作用实标量场$\Phi_{\text{B}}$的理论, 在这里加上下标\,B\,是提醒我们现在这还是一个``裸(bare)"(即,非重正化)场. 拉格朗日量密度像通常那样取为
+\begin{equation}
+\mathscr{L}=-\tfrac{1}{2}\partial_{\mu }\Phi_{\text{B}}\partial^{\mu}\Phi_{\text{B}}
+-\tfrac{1}{2}m_{\text{B}}^{2}\Phi_{\text{B}}^{2}-V_{\text{B}}(\Phi_{\text{B}}) \:.  \label{10.3.7}
+\end{equation}%
+一般而言, 没有理由可以预期场$\Phi_{\text{B}}$会满足条件(\ref{10.3.6}), 也无法预期$q^{2}$的极点会在$-m_{\text{B}}^{2}$处, 所以我们引入重正化场和重正化质量
+\begin{align}
+\Phi  &\equiv Z^{-1/2}\Phi_{\text{B}} \:,  \label{10.3.8} \\
+m^{2} &\equiv m_{\text{B}}^{2}+\updelta m^{2} \: ,  \label{10.3.9}
+\end{align}%
+这里选择$Z$以使$\Phi$满足方程(\ref{10.3.6}), 选择$\updelta m^{2}$以使传播子的极点在$q^{2}=-m^{2}$处. (在这种问题中采用符号$Z$已经成了一种约定; 拉格朗日量中的每个场都有不同的$Z$.) 这样拉格朗日密度(\ref{10.3.7})可以重新写成
+\begin{gather}
+\mathscr{L} = \mathscr{L}_{0}+\mathscr{L}_{1} \: ,  \label{10.3.10} \\
+\mathscr{L}_{0} = -\tfrac{1}{2}\partial_{\mu}\Phi\partial^{\mu}\Phi
+-\tfrac{1}{2}m^{2}\Phi \:, \label{10.3.11} \\
+\mathscr{L}_{1} =-\tfrac{1}{2}(Z-1)[\partial_{\mu }\Phi \partial^{\mu}\Phi + m^{2}\Phi^{2}]
++ \tfrac{1}{2}Z\,\updelta m^{2}\Phi^{2} - V(\Phi) \:, \label{10.3.12}
+\end{gather}%
+其中
+\begin{equation*}
+V(\Phi) \equiv V_{\text{B}}(\sqrt{Z}\Phi) \:.
+\end{equation*}%
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1004.eps}\\
+   \caption{(a)图是单粒子不可约的, 而(b)图不是. 这些图是针对有某种四线性相互作用的理论而画出的, 例如相互作用正比于$\phi^{4}$的标量场$\phi$的理论}
+ \label{fig:10.4}
+\end{figure}
+
+\noindent 重正化标量场的动量空间全传播子一般记做$\Delta^{\prime }(q)$, 在计算对这个传播子的修正时, 单独考察{\KAI{单粒子不可约}}图是方便的: 即那些无法通过切断任何一条内标量线而变成不连通图的连通图(这里不包括由单个标量线构成的图). 图10.4中给出了一个例子. 在略掉两个外线传播子因子$-\mi(2\uppi)^{-4}(q^{2}+m^{2}-\mi\epsilon)^{-1}$后, 习惯上将所有这种图的和写为$\mi(2\uppi)^{4}\Pi^{\ast}(q^{2})$, 其中的星号提醒我们它们是单粒子不可约图. 于是对全传播子的修正由一个求和给出, 求和的每一项是一个, 两个或多%
+个单粒子不可约子图构成的链, 而在链中连接这些子图的是通常的未修正的传播子:%
+\begin{align}
+&\frac{-\mi}{(2\uppi)^{4}}\Delta^{\prime }(q) =
+\frac{-\mi}{(2\uppi)^{4}}\frac{1}{q^{2}+m^{2}-\mi\epsilon}  \nonumber \\
+&+\left[ \frac{-\mi}{(2\uppi)^{4}}\frac{1}{q^{2}+m^{2}-\mi\epsilon} \right] %
+\Bigl[ \mi(2\uppi)^{4} \Pi^{\ast}(q^{2})\Bigr]
+\left[ \frac{-\mi}{(2\uppi)^{4}}\frac{1}{q^{2}+m^{2}-\mi\epsilon }\right]  \nonumber \\
+&+\left[ \frac{-\mi}{(2\uppi)^{4}}\frac{1}{q^{2}+m^{2}-\mi\epsilon }\right] %
+\Big[ \mi(2\uppi )^{4}\Pi^{\ast}(q^{2})\Big] \left[ \frac{-\mi}{(2\uppi)^{4}}%
+\frac{1}{q^{2}+m^{2}-\mi\epsilon }\right]   \nonumber \\
+&\quad\times \Big[ \mi(2\uppi)^{4}\Pi^{\ast }(q^{2})\Big]
+\left[ \frac{-\mi}{(2\uppi)^{4}}\frac{1}{q^{2}+m^{2}-\mi\epsilon }\right] +\cdots   \label{10.3.13}
+\end{align}%
+或者更简洁些\marginpar[\flushright
+{\raisebox{5.5ex}[0pt]{{\small[440]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[440]}}}
+\begin{align}
+&\Delta^{\prime}(q) = [q^{2}+m^{2}- \mi\epsilon ]^{-1}+[q^{2}+m^{2}-\mi\epsilon]^{-1}\Pi^{\ast}(q^{2})[q^{2}+m^{2}-\mi\epsilon ]^{-1}  \nonumber \\
+&+[q^{2}+m^{2}-\mi\epsilon]^{-1}\Pi^{\ast}(q^{2})[q^{2}+m^{2}-\mi\epsilon]^{-1}
+\Pi^{\ast}(q^{2})[q^{2}+m^{2}-\mi\epsilon ]^{-1}+\cdots \:. \label{10.3.14}
+\end{align}%
+对该几何级数求和, 给出
+\begin{equation}
+\Delta^{\prime}(q) = \Bigl[ q^{2}+m^{2}-\Pi^{\ast }(q^{2})-\mi\epsilon \Bigr]^{-1} \: .  \label{10.3.15}
+\end{equation}%
+在计算$\Pi^{\ast}$时, 我们会遇到单独插入顶点所给出的树图, 其中的顶点对应于方程中(\ref{10.3.12})中正比于$\partial_{\mu }\Phi\partial^{\mu }\Phi$ 和$\Phi^{2}$的项, 再加上类似图\,10.4a\,中的圈图产生的项$\Pi_{\text{LOOP}}^{\ast}$:
+\begin{equation}
+\Pi^{\ast}(q^{2}) = -(Z-1)[q^{2}+m^{2}]+Z\,\delta m^{2} + \Pi_{\text{LOOP}}^{\ast}(q^{2})\: . \label{10.3.16}
+\end{equation}%
+$m^{2}$是粒子的真实质量这个条件要求传播子的极点应该在$q^{2}=-m^{2}$处, 从而使
+\begin{equation}
+\Pi^{\ast}(-m^{2})=0 \:.  \label{10.3.17}
+\end{equation}%
+另外, 传播子在$q^{2}=-m^{2}$处的极点应该有等于\,1\,的留数(就像未修正的传播子)这个条件要求\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[441]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[441]}}}
+\begin{equation}
+\left[ \frac{\dif}{\dif q^{2}}\Pi^{\ast}(q^{2})\right]_{q^{2}=-m^{2}} = 0 \:. \label{10.3.18}
+\end{equation}%
+这些条件使得我们能够计算$Z$和$\delta m^{2}$:%
+\begin{gather}
+Z\,\delta m^{2} = -\Pi_{\text{LOOP}}^{\ast}(-m^{2}) \:, \label{10.3.19} \\
+Z= 1+\left[ \frac{\dif}{\dif q^{2}}\Pi_{\text{LOOP}}^{\ast }(q^{2})\right]_{q^{2}=-m^{2}} \:.\label{10.3.20}
+\end{gather}%
+顺带地, 这也表明了$Z\delta m^{2}$与$Z-1$由一系列包含一个或多个耦合常数因子的项给出, 证明了将方程(\ref{10.3.12})中的前两项当作相互作用$\mathscr{L}_{1}$的一部分的处理是正确的.
+
+在实际计算中, 最简单地说就是我们必须从圈图项$\Pi_{\text{LOOP}}^{\ast}(q^{2})$中减除$q^{2}$的一阶多项式, 并选择系数使差满足方程(\ref{10.3.17}) 和(\ref{10.3.18}). 我们将会看到, 这个减除手续顺带消掉了$\Pi_{\text{LOOP}}^{\ast}$中的动量空间积分产生的无限大. 然而, 随着讨论的深入而逐渐清晰的是, {\KAI{质量和场的重正化与无限大的出现没有直接关系, 并且, 即使在所有动量空间积分都收敛的理论中, 重正化也是必要的}}.
+
+条件(\ref{10.3.17})和(\ref{10.3.18})的一个重要结果是, 对于在壳的外线, 引入辐射修正是不必要的. 即,%
+\begin{align}
+&\Bigl[ \Pi^{\ast}(q^{2})[q^{2}+m^{2}-\mi\epsilon]^{-1} +
+\Pi^{\ast}(q^{2})[q^{2}+m^{2}-\mi\epsilon]^{-1}\Pi^{\ast}(q^{2})[q^{2}+m^{2}-\mi\epsilon ]^{-1} \nonumber \\
+&\qquad+\cdots \Bigr]_{q^{2}\to -m^{2}} =0 \: .  \label{10.3.21}
+\end{align}
+
+类似的讨论适用于任意自旋的粒子. 例如, 对``裸''\,Dirac\,场, 拉格朗日量是
+\begin{equation}
+\mathscr{L}=-\bar{\Psi}_{\text{B}}[\xxdd+m_{\text{B}}]\Psi_{\text{B}}
+-V_{\text{B}}(\bar{\Psi}_{\text{B}}\Psi_{\text{B}}) \:. \label{10.3.22}
+\end{equation}%
+我们引入重正化场和重正化质量
+\begin{align}
+\Psi  &\equiv Z_{2}^{-1/2}\Psi _{\text{B}}\text{ ,}  \label{10.3.23} \\
+m &=m_{\text{B}}+\delta m\text{ .}  \label{10.3.24}
+\end{align}%
+($Z_{2}$的下标\,2\,一般是用来区分出这是费米场的重正化常数.) 于是拉格朗日密度可以重写成
+\begin{gather}
+\mathscr{L} = \mathscr{L}_{0} + \mathscr{L}_{1} \:,  \label{10.3.25} \\
+\mathscr{L}_{0} = -\bar{\Psi}[\xxdd+m]\Psi \:, \label{10.3.26} \\
+\mathscr{L}_{1} = -(Z_{2}-1)[\bar{\Psi}[\xxdd+m]\Psi] +
+Z_{2}\delta m\bar{\Psi}\Psi-V_{\text{B}}(Z_{2}\bar{\Psi}\Psi) \: . \label{10.3.27}
+\end{gather}%
+令$\mi(2\uppi)^{4} \Sigma^{\ast}(\xxk)$是所有如下连通图的和\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[442]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[442]}}}: 其中一条费米线携带\,4\,-动量$k$进入, 而另一条费米线携带相同的动量离开,
+不能通过剪断任何一条内费米线变成不连通图, 并且其中的外线传播子因子$-\mi(2\uppi)^{-4}$%
+和$[\mi\xxk+m-\mi\epsilon]^{-1}$被略掉. (通过\,Lorentz\,不变性能够证明可以将$\Sigma^{\ast}$写成\,Lorentz\,标量矩阵%
+$\xxk\equiv k_{\mu}\gamma^{\mu}$的普通函数.) 这样全费米子传播子是
+\begin{align}
+S^{\prime}(k) &= [\mi\xxk + m - \mi\epsilon ]^{-1} + [\mi\xxk+m-\mi\epsilon]^{-1}
+\Sigma^{\ast}(\xxk)[\mi\xxk+m-\mi\epsilon ]^{-1} \nonumber \\
+&\quad+[\mi\xxk+m-\mi\epsilon ]^{-1}\Sigma^{\ast }(\xxk)
+[\mi\xxk+m-\mi\epsilon ]^{-1}\Sigma^{\ast}(\xxk)[\mi\xxk+m-i\epsilon]^{-1}+\cdots   \nonumber \\
+&=[\mi\xxk+m-\Sigma^{\ast}(\xxk) - \mi\epsilon]^{-1} \:. \label{10.3.28}
+\end{align}%
+在计算$\Sigma^{\ast }(\xxk)$时, 我们需要考虑树图以及圈图贡献, 其中树图的贡献来自于方程(\ref{10.3.27})中正比于$\bar{\Psi}\xxdd\Psi$和$\bar{\Psi}\Psi$的项:%
+\begin{equation}
+\Sigma^{\ast }(\xxk)=-(Z_{2}-1)[\mi\xxk+m]+Z_{2}\delta m+
+\Sigma_{\text{LOOP}}^{\ast}(\xxk) \:.  \label{10.3.29}
+\end{equation}%
+于是, 全传播子在$k^{2}=-m^{2}$处有一极点, 并且其留数与未修正的传播子的留数相同的条件是
+\begin{gather}
+\Sigma^{\ast}(\mi m) = 0 \:,  \label{10.3.30} \\
+\left. \frac{\partial \Sigma^{\ast}(\xxk)}{\partial \xxk}\right\rvert_{\xxk=\mi m} =0 \:,  \label{10.3.31}
+\end{gather}%
+因此
+\begin{gather}
+Z_{2}\delta m =-\Sigma _{\text{LOOP}}^{\ast}(\mi m) \:,  \label{10.3.32} \\
+Z_{2} =1 - \left. \mi\frac{\partial \Sigma _{\text{LOOP}}^{\ast}(\xxk)}{\partial\xxk}\right\vert _{\xxk=\mi m} \: .  \label{10.3.33}
+\end{gather}%
+与标量情况相同, $[\mi\xxk+m]^{-1}\Sigma^{\ast}(\xxk)$在极限$\xxk\to \mi m$%
+下为零告诉我们: 外费米线中的辐射修正可以被忽略. 光子传播子的相应结果将在\,\ref{sec:10.5}\,节导出.
+
+\newpage
+
+\section{重正化荷与\,Ward\,恒等式} \label{sec:10.4}
+\setcounter{equation}{0}
+
+利用\,Heisenberg\,绘景算符的对易关系和守恒关系, 我们可以找到拉格朗日密度中的荷(或者其他类似的量)%
+与物理态性质之间的联系. 回忆, 拉格朗日密度在整体规范变\marginpar[\flushright{\small[443]\hspace*{5mm}}]{{\small\hspace*{5mm}[443]}}换$\Psi_{\ell }\to\exp(\mi q_{\ell}\alpha)$%
+(其中$\alpha$为任意的常数相位)下的不变性意味着存在流
+\begin{equation}
+J^{\mu} = -\mi\sum_{\ell} \frac{\partial\mathscr{L}}{\partial (\partial_{\mu}\Psi_{\ell})}
+q_{\ell} \Psi_{\ell} \: ,  \label{10.4.1}
+\end{equation}%
+它满足守恒条件
+\begin{equation}
+\partial_{\mu }J^{\mu }=0  \:.  \label{10.4.2}
+\end{equation}%
+这表明$J^{\mu}$的时间分量的空间积分不依赖时间:%
+\begin{equation}
+\mi\frac{\dif}{\dif t}Q=[Q,H]=0 \:,  \label{10.4.3}
+\end{equation}%
+其中
+\begin{equation}
+Q\equiv \int \dif^{3}x\:J^{0} \:.  \label{10.4.4}
+\end{equation}%
+(这里可能存在一个非常重要的例外, 即如果系统中存在因为无质量标量而产生的长程力, 积分(\ref{10.4.4})可能不存在. 我们在卷\,\textrm{II}\,中考虑破缺对称性时会回到这个问题.) 另外, 既然它是空间积分, $Q$显然是平移不变的
+\begin{equation}
+[\bP,Q]=0  \label{10.4.5}
+\end{equation}%
+并且, 由于$J^{\mu}$是\,4\,-矢, $Q$在齐次\,Lorentz\,变换下不变
+\begin{equation}
+[J^{\mu\nu},Q] = 0  \:.  \label{10.4.6}
+\end{equation}%
+由此可知, $Q$作用在真正真空$\Psi_{0}$上给出的必须是另一个能量和动量均为零的\,Lorentz\,不变的态, 因而(假定没有真空简并)必须正比于$\Psi_{0}$ 本身. 但是比例常数必须为零, 这是因为\,Lorentz\,不变性要求$(\Psi_{0},J_{\mu}\Psi_{0})$为零, 因此有
+\begin{equation}
+Q\Psi _{0}=0\:. \label{10.4.7}
+\end{equation}%
+另外, $Q$作用在任何单粒子态$\Psi_{\bp,\sigma,n}$上给出的必须是另一个能量, 动量以及\,Lorentz\,变换性质均相同的态, 因此(假定单粒子态没有简并)必须正比于同一单粒子态
+\begin{equation}
+Q\, \Psi_{\bp,\sigma,n} = q_{(n)}\,\Psi _{\bp,\sigma,n}\:. \label{10.4.8}
+\end{equation}%
+$Q$的\,Lorentz\,不变性确保了本征值$q_{(n)}$不依赖$\bp$和$\sigma$, 而只依赖于粒子的种类. 这一本征值正是所谓单粒子态的电荷(或者其他任何流$J^{\mu}$的量子数). 为\marginpar[\flushright{\small[444]\hspace*{5mm}}]{{\small\hspace*{5mm}[444]}}了将其与拉格朗日量中的$q_{\ell}$参量关联起来, 我们注意到正则对易关系给出
+\begin{equation}
+\Bigl[ J^{0}(\bx,t) , \,\Psi _{\ell}(\by,t)\Bigr] =
+-q_{\ell} \Psi_{\ell}(\by,t)\updelta^{3}(\bx-\by) \:,  \label{10.4.9}
+\end{equation}%
+或者对$\bx$积分:%
+\begin{equation}
+\Bigl[ Q,\Psi_{\ell}(y) \Bigr] = -q_{\ell}\Psi_{\ell}(y) \:. \label{10.4.10}
+\end{equation}%
+对于包含确定数目的场, 场导数及其伴随场的任意定域函数$F(y)$, 这个结论同样成立:
+\begin{equation}
+\Bigl[ Q,F(y) \Bigr] = -q_{F}F(y)\text{ ,}  \label{10.4.11}
+\end{equation}%
+其中$q_{F}$等于$F(y)$中所有场和场导数的$q_{\ell}$之和减去所有伴随场以及伴随场导数的$q_{\ell}$之和. 取该方程在单粒子态和真空之间的矩阵元, 并利用方程(\ref{10.4.7})和(\ref{10.4.8}), 我们有
+\begin{equation}
+\Bigl( \Psi_{0},F(y)\Psi_{\bp,\sigma,n}\Bigr)\, (q_{F}-q_{(n)})=0 \:. \label{10.4.12}
+\end{equation}%
+因此我们必须有
+\begin{equation}
+q_{(n)}=q_{F}  \label{10.4.13}
+\end{equation}%
+只要\begin{equation}
+\Big( \Psi _{0},F(y)\Psi _{\bp,\sigma ,n}\Big) \neq 0\:.
+\label{10.4.14}
+\end{equation}%
+正如我们在上一节中看到的, 方程(\ref{10.4.14})是确保包含$F$的动量空间\,Green\,函数具有与单粒子态%
+$\Psi_{\bp,\sigma,n}$相对应的极点的条件. 如果单粒子态对应于拉格朗日量中的一个场, 我们可以取$F=\Psi_{\ell}$, 在这种情况下$q_{F}=q_{\ell}$, 但是我们这里的结果适用于普遍的单粒子态, 与它们所对应的场是否出现在拉格朗日量中无关.%
+
+虽然不完全确定, 但这几乎已经在告诉我们, 虽然所有可能的高阶图都会通过带电粒子影响光子的发射与吸收, 但物理电荷就等于拉格朗日量中出现的参量$q_{\ell}$(或是这类参量的和, 类似$q_{F}$.) 这里必须附加的限制是, 拉格朗日量在变换$\Psi_{\ell}\to \exp(\mi q_{\ell}\alpha)\Psi_{\ell}$下不变的这个要求, 无法将$q_{\ell}$的整体标度确定下来. 物理电荷是那些决定物质场对一给定{\KAI{重正化}}%
+电磁场$A^{\mu}$如何响应的量. 即, 重正化电磁场要以线性组合%
+$[\partial_{\mu}{-}\mi q_{\ell}A_{\mu}]\Psi _{\ell}$的形式出现在物质拉格朗日量$\mathscr{L}_{M}$中这个要求固定了$q_{\ell}$的标度, 进而使得流$J^{\mu}$是\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[445]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[445]}}}
+\begin{equation}
+J^{\mu }=\frac{\updelta \mathscr{L}_{M}}{\updelta A_{\mu }}\:.
+\label{10.4.15}
+\end{equation}%
+但是当我们把拉格朗日量写成它的最简形式
+\begin{equation}
+\mathscr{L}=-\tfrac{1}{4}(\partial _{\mu }A_{\text{B}\nu }-\partial _{\nu }A_{%
+\text{B}\mu })(\partial ^{\mu }A_{\text{B}}^{\nu }-\partial ^{\nu }A_{\text{B%
+}}^{\mu })+\mathscr{L}_{M}(\Psi _{\ell },[\partial _{\mu }-\mi q_{\text{B}\ell
+}A_{\text{B}\mu }]\Psi _{\ell }) \:,    \label{10.4.16}
+\end{equation}%
+$A^{\mu}$与$q_{\ell}$并不是该拉格朗日量中的``裸电磁场''$A_{\text{B}\mu}$和``裸电荷''%
+$q_{\text{B}\ell}$. 按照习惯上的形式, 重正化电磁场(定义成在$p^{2}=0$处具有极点且留数为\,1\,的全传播子)写成$A_{\text{B}}^{\mu}$是
+\begin{equation}
+A^{\mu} = Z_{3}^{-1/2}\,A_{\text{B}}^{\mu } \:,    \label{10.4.17}
+\end{equation}%
+所以为了使电荷$q_{\ell}$表征带电粒子对给定重正化电磁场的响应, 我们应当将重正化荷定义为
+\begin{equation}
+q_{\ell} = \sqrt{Z_{3}}\,q_{\text{B}\ell }\:. \label{10.4.18}
+\end{equation}
+
+我们看到任何粒子的物理电荷$q$都正好正比于$q_{\text{B}}$, 即与那些出现在拉格朗日量中的粒子相关的参量, 并且对于所有粒子比例常数都为$\sqrt{Z_{3}}$. 这帮助我们理解了为什么像质子这样的被虚介子以及其他强相互作用粒子云所包裹的粒子与相互作用要弱得多的正电子有相同的电荷.  唯一需要假定的是, 出于某个原因, 就拉格朗日量中的电荷$q_{\text{B}\ell}$而言, 那些构成质子的粒子(两个$u$夸克和一个$d$夸克)合起来与电子有大小相等符号相反的值; 那么高阶修正的效应就只出现在{\KAI{公共}}因子$\sqrt{Z_{3}}$中.
+
+为了使电荷重正化仅来自于光子传播子的辐射修正, 那么其他对带电粒子的传播子和电磁顶点的各种辐射修正之间必存在抵消. 利用带电粒子传播子与顶点之间的著名关系\,\textit{Ward}\,{\KAI{恒等式}}, 我们可以在更深的层次上理解这些抵消的本质.
+
+例如, 考虑电子流$J^{\mu }(x)$, 电荷为$q$的\,Heisenberg\,绘景\,Dirac\,场$\Psi_{n}(y)$%
+以及它的协变伴随场$\bar{\Psi}_{m}(z)$的\,Green\,函数. 我们定义带电粒子的电磁顶点函数$\Gamma^{\mu}$为
+\begin{align}
+&\int \dif^{4}x\,\dif^{4}y\,\dif^{4}z\:\me^{-\mi p\cdot x}\me^{-\mi k\cdot y}\me^{+\mi\ell \cdot z}\:
+\Bigl(\Psi_{0},\,T\Bigl\{ J^{\mu}(x)\,\Psi_{n}(y)\,\bar{\Psi}_{m}(z)\Bigr\}\Psi_{0}\Bigr)   \nonumber \\
+&\quad\equiv -\mi(2\uppi)^{4} q S_{nn^{\prime}}^{\prime}(k) \Gamma_{n^{\prime}m^{\prime }}^{\mu}(k,\ell)
+S_{m^{\prime }m}^{\prime }(\ell)\,\updelta^{4}(p+k-\ell ) \:,  \label{10.4.19}
+\end{align}%
+其中\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[446]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[446]}}}
+\begin{equation}
+{-}\mi(2\uppi)^{4}S_{nm}^{\prime }(k)\,\updelta^{4}(k-\ell )\equiv
+\int\dif^{4}y\,\dif^{4}z\:\Bigl( \Psi_{0},\,T\Bigl\{ \Psi_{n}(y)\bar{\Psi}_{m}(z)\Bigr\}\Psi_{0}\Bigr) \me^{-\mi k\cdot y}\me^{+\mi\ell \cdot z}  \:. \label{10.4.20}
+\end{equation}%
+根据\,\ref{sec:6.4}\,节的定理, 方程(\ref{10.4.20})给出的是有一个入费米线和一个出费米线的所有\,Feynman\,图之和, %
+即全\,Dirac\,传播子. 另外, 方程(\ref{10.4.19})给出的是所有这样的图与一外光子线相连后构成的图之和, %
+所以$\Gamma^{\mu}$是有一个入\,Dirac\,线, 一个出\,Dirac\,线以及一个光子线的``顶点''图之和, %
+但是去掉了全\,Dirac\,外线传播子和裸光子外线传播子. 为了使$S^{\prime}$和$\Gamma^{\mu}$的归一化完全清晰, 我们提过, 在无相互作用极限下, 这些函数取值为
+\[
+S^{\prime}(k) \to [\mi\gamma_{\lambda} k^{\lambda}+m-\mi\epsilon ]^{-1} \:, \qquad
+\Gamma^{\mu}(k,\ell)\to\gamma^{\mu} \: .
+\]%
+对这些极限值情况给出的一圈图修正如图\,10.5\,所示.%
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1005.eps}\\
+  \caption{量子电动力学中电子传播子与顶点函数的一阶修正图, 这里直线是电子; 波浪线是光子.}
+ \label{fig:10.5}
+\end{figure}
+
+利用恒等式
+\begin{align}
+&\frac{\partial}{\partial x^{\mu}}T\Big\{ J^{\mu}(x)\Psi_{n}(y)\bar{\Psi}_{m}(z)\Big\}
+= T\Big\{ \partial_{\mu}J^{\mu}(x)\Psi_{n}(y)\bar{\Psi}_{m}(z)\Big\}   \nonumber \\
+&\qquad+\updelta(x^{0}-y^{0})\,T\Big\{ \Big[J^{0}(x),\Psi_{n}(y)\Big] \bar{\Psi}_{m}(z)\Big\}   \nonumber \\
+&\qquad+\updelta(x^{0}-z^{0})\,T\Big\{ \Psi_{n}(y)\Big[J^{0}(x),\bar{\Psi}_{m}(z)\Big] \Big\}  \:,    \label{10.4.21}
+\end{align}%
+我们可以导出$\Gamma^{\mu}$和$S^{\prime}$之间的关系\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[447]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[447]}}}, 上式中的$\updelta$-函数来自阶跃函数的时间导数. 守恒条件(\ref{10.4.2})告诉我们第一项为零, 而第二项和第三项可以通过对易关系(\ref{10.4.9})计算出来, 得到
+\begin{equation}
+\Big[ J^{0}(\bx,t),\Psi_{n}(\by,t)\Big]=-q\Psi_{n}(\by,t)
+\updelta^{3}(\bx-\by)  \label{10.4.22}
+\end{equation}%
+以及它的共轭
+\begin{equation}
+\Big[ J^{0}(\bx,t),\bar{\Psi}_{n}(\by,t)\Big]=q\bar{\Psi}_{n}(\by,t)
+\updelta^{3}(\bx-\by)\:. \label{10.4.23}
+\end{equation}%
+于是方程(\ref{10.4.21})变成
+\begin{align}
+&\frac{\partial}{\partial x^{\mu}}\,T\Bigl\{ J^{\mu}(x)\Psi_{n}(y)\bar{\Psi}_{m}(z)\Bigr\}
+= -q\,\updelta^{4}(x-y)\,T\Bigl\{\Psi_{n}(y)\bar{\Psi}_{m}(z)\Bigr\}   \nonumber \\
+&\phantom{\frac{\partial}{\partial x^{\mu}}\,T\Bigl\{}+q\,\updelta^{4}(x-z)\,T\Big\{ \Psi _{n}(y)\bar{\Psi}_{m}(z)\Big\} \:.
+\label{10.4.24}
+\end{align}%
+将其代入\,Fourier\,变换(\ref{10.4.19})给出
+\[
+(\ell -k)_{\mu}\,S^{\prime}(k)\,\Gamma^{\mu}(k,\ell)\,S^{\prime}(\ell)
+=\mi\,S^{\prime}(\ell) - \mi \,S^{\prime}(k)
+\]%
+或者另一种形式
+\begin{equation}
+(\ell -k)_{\mu}\Gamma^{\mu}(k,\ell) = \mi\,S^{\prime -1}(k) - \mi\, S^{\prime -1}(\ell)\:.  \label{10.4.25}
+\end{equation}%
+这被称为{\KAI{广义}}\,{\textit{Ward}}\,{\KAI{恒等式}}, 由\,Takahashi\,(高桥)(通过以上方法)首次导出.\textsuperscript{\cite{4}}
+原始的\,Ward\,恒等式, 是\,Ward\textsuperscript{\cite{5}}从微扰论的研究中导出的, 可以通过令$\ell$趋于$k$从方程(\ref{10.4.25})中得出. 在这一极限下, 方程(\ref{10.4.25})给出
+\begin{equation}
+\Gamma^{\mu}(k,k) = -\mi\,\frac{\partial}{\partial k_{\mu}}\,S^{\prime -1}(k) \: .  \label{10.4.26}
+\end{equation}%
+通过方程(\ref{10.3.28})%
+\[
+S^{\prime -1}(k)=\mi\xxk+m-\Sigma ^{\ast }(\xxk) \:,
+\]%
+费米传播子与自能插入$\Sigma^{\ast}(\xxk)$相关联, 所以方程(\ref{10.4.26})可以写成
+\begin{equation}
+\Gamma^{\mu}(k,k) = \gamma^{\mu}+\mi\frac{\partial}{\partial k_{\mu}}\Sigma^{\ast}(\xxk)\: .  \label{10.4.27}
+\end{equation}%
+对于{\KAI{重正化}}\,Dirac\,场\marginpar[\flushright{\small[448]\hspace*{5mm}}]{{\small\hspace*{5mm}[448]}}, 方程(\ref{10.3.31})和(\ref{10.4.27})告诉我们在质壳上
+\begin{equation}
+\bar{u}_{k}^{\prime}\,\Gamma^{\mu }(k,k)\,u_{k} = \bar{u}_{k}^{\prime}\,\gamma^{\mu}\,u_{k} \:,  \label{10.4.28}
+\end{equation}%
+其中$[\mi\gamma_{\mu}k^{\mu}+m]u_{k}=[\mi\gamma_{\mu}k^{\mu}+m]u_{k}^{\prime}=0$. 因此费米场的重正化条件确保了: 当一个在壳费米子与一个没有动量传递的电磁场相互作用时, 对顶点函数$\Gamma_{\mu}$的修正抵消了, 这正是我们开始测量费米子电荷时的情况. 如果我们没有采用重正化费米场, 那么对顶点函数的修正将正好抵消由于对外费米线的辐射修正所引起的修正, 这再一次使得电荷不变.
+
+
+\section{规范不变性}  \label{sec:10.5}
+\setcounter{equation}{0}
+
+对于如下的量
+\begin{align}
+M_{\beta\alpha }^{\mu \mu^{\prime} \cdots}(q,q^{\prime},\cdots )
+&\equiv \int \dif^{4}x \int \dif^{4}x^{\prime }\cdots \me^{-\mi q\cdot x}
+\me^{-\mi q^{\prime}\cdot x^{\prime}} \cdots   \nonumber \\
+&\qquad\times \Bigl(\Psi_{\beta}{}^{\!-}, T\Bigl\{J^{\mu}(x),J^{\mu^{\prime}}(x^{\prime})\cdots\Bigr\} \Psi_{\alpha}{}^{\!+}\Bigr) \:, \label{10.5.1}
+\end{align}%
+我们可以用电荷守恒来证明一个有用的结果. 在旋量电动力学这样的理论中, 电磁相互作用关于场$A^{\mu}$是线性的, 上面的量是在任意跃迁$\alpha\to\beta$ 中发射(和(或)吸收)数个在壳或离壳光子的矩阵元, 其中光子\,4\,-动量为$q,q^{\prime}$等(和(或)$-q,-q^{\prime}$等), 外线光子的系数函数或传播子被省略了. 我们的结果是, 方程(\ref{10.5.1})与任何一个光子\,4\,-动量收缩后为零:%
+\begin{align}
+q_{\mu }M_{\beta \alpha }^{\mu \mu ^{\prime }\cdots }(q,q^{\prime },\cdots )
+&=q_{\mu ^{\prime}}^{\prime }M_{\beta \alpha }^{\mu \mu ^{\prime }\cdots
+}(q,q^{\prime },\cdots )  \nonumber \\
+&\phantom{=q_{\mu ^{\prime}}^{\prime }M}=\cdots =0\:. \label{10.5.2}
+\end{align}%
+由于$M$被定义成关于光子线对称, 证明这些量中的第一个为零就足够了.
+
+为此, 我们注意到, 通过分部积分有
+\begin{align}
+&q_{\mu }M_{\beta \alpha }^{\mu \mu ^{\prime }\cdots }(q,q^{\prime },\cdots )
+=-\mi\int \dif^{4}x\int \dif^{4}x^{\prime }\cdots   \nonumber \\
+&\qquad\times \me^{-\mi q\cdot x}\me^{-\mi q^{\prime}\cdot x^{\prime}}\cdots
+\left( \Psi_{\beta}{}^{\!-},\frac{\partial}{\partial x^{\mu }}T\left\{ J^{\mu }(x),J^{\mu
+^{\prime }}(x^{\prime })\cdots \right\} \Psi_{\alpha}{}^{\!+}\right) \:.
+\label{10.5.3}
+\end{align}%
+电流$J^{\mu}(x)$是守恒的, 但这并不直接就意味着方程(\ref{10.5.3})为零,  这是因为我们还要考虑到出现在编时乘积定义中的$\theta$-函数所要求的$x^{0}$- 相关性. 例如, 只有两个流时\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[449]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[449]}}}
+\[
+T\Big\{ J^{\mu }(x)J^{\nu }(y)\Big\}
+=\theta (x^{0}-y^{0})J^{\mu}(x)J^{\nu}(y)+\theta (y^{0}-x^{0})J^{\nu }(y)J^{\mu }(x),
+\]%
+所以, 考虑到$J^{\mu}(x)$的守恒:%
+\begin{align}
+\frac{\partial}{\partial x^{\mu}}\,T\Bigl\{ J^{\mu}(x)\,J^{\nu}(y)\Bigr\}
+&=\updelta (x^{0}-y^{0})\,J^{0}(x)\,J^{\nu}(y)-\updelta (y^{0}-x^{0})\,J^{\nu}(y)\,J^{0}(x)  \nonumber \\
+&=\updelta (x^{0}-y^{0})\Big[ J^{0}(x),J^{\nu }(y)\Big] \:. \label{10.5.4}
+\end{align}%
+当流的个数多于两个时, 对于除$J^{\mu}(x)$本身以外的每一个流, 我们都得到了(在编时乘积内)类似的等时对易子. 为了计算这个对易子, 我们回忆(上一节所证明的), 对场算符以及伴随场和(或)导数的任意乘积$F$有%
+\[
+\Big[J^{0}(\bx,t),F(\by,t)\Big]=-q_{F}\,F(\bx,t)\updelta^{3}(\bx-\by) \:,
+\]%
+其中$q_{F}$是$F$中场和场导数的$q_{\ell}$之和减去伴随场以及伴随场导数的$q_{\ell}$之和. 对于电流, $q_{J}$是零; $J^{\nu}(y)$本身是电中性算符. 由此得出
+\begin{equation}
+\Big[ J^{0}(\bx,t),J^{\nu}(\by,t)\Big] =0  \label{10.5.5}
+\end{equation}%
+因此方程(\ref{10.5.4})为零, 从而使方程(\ref{10.5.3})给出
+\begin{equation}
+q_{\mu }\,M_{\beta \alpha }^{\mu \mu^{\prime }\cdots}(q,q^{\prime },\cdots)=0 \:,    \label{10.5.6}
+\end{equation}%
+这正是所要证明的.%
+
+这里有一个重要条件. 在推导方程(\ref{10.5.5})时, 我们应该将如下的事实考虑在内, 类似于流算符$J^{\nu}(y)$, 场在同一时空点$y$的乘积只能通过某个处理无限大的正规化方案才能被恰当地定义. 在很多情况下, $J^{0}(\bx,t)$与正规化流$J^{i}(\by,t)$的对易子会有非零的贡献, 这种贡献被称为\textit{Schwinger}{\KAI{项}}.\textsuperscript{\cite{6}} 当流中包含来自带荷标量场$\Phi$的项时, 会有包含$\Phi^{\dag}\Phi$且与正规化无关的\,Schwinger\,项. 然而,
+在多光子振幅中, 所有这些\,Schwinger\,项被额外相互作用的贡献抵消了, 这种额外的相互作用是电磁场的二次型,
+它们要么(如果规范不变)来自于正规化方案, 要么, 对于带荷标量, 直接来自于拉格朗日量中的项. 我们将主要处理带荷旋量场, 并%
+采用一种不产生\,Schwinger\,项的正规化方案(维度正规化), 所以在下文中,
+我们将忽略\marginpar[\flushright{\small[450]\hspace*{5mm}}]{{\small\hspace*{5mm}[450]}}这一问题而继续使用朴素的对易关系(\ref{10.5.5}).
+
+即使除光子以外还有其他粒子不在质壳上, 只要假定所有的{\KAI{带荷}}粒子都取在质壳上, 即一直处在态$\Psi_{\beta}{}^{\!-}$和$\Psi_{\alpha}{}^{\!+}$ 中, 同样的讨论也会给出类似于方程(\ref{10.5.2})的结果. 若非如此, 方程(\ref{10.5.2})的左边将得到非零等时对易子的贡献, 就像我们在上一节推导\,Ward\,恒等式时所遇到的那些一样.
+
+方程(\ref{10.5.2})的一个结果是, 如果我们对任意光子传播子$\Delta_{\mu\nu}(q)$做出如下的改变
+\begin{equation}
+\Delta_{\mu\nu}(q)\to \Delta_{\mu\nu}(q)+\alpha_{\mu}q_{\nu}+q_{\mu}\beta_{\nu} \:,    \label{10.5.7}
+\end{equation}%
+或者我们对光子极化矢量做如下改变
+\begin{equation}
+e_{\rho }(\bk,\lambda )\to e_{\rho }(\bk,\lambda)+ck_{\rho } \:,    \label{10.5.8}
+\end{equation}%
+其中$k^{0}\equiv\lvert\bk\rvert$, 而$\alpha_{\mu}$, $\beta_{\nu}$和$c$完全任意(不非得是常数, 并且对所有的传播子或极化矢量也不必取相同的值), $S$-矩阵元是不受影响的. 这称为(有些不严格)$S$-矩阵的规范不变性.%
+
+为了证明这一结果, 只需给出$S$-矩阵对光子极化矢量以及传播子的显式依赖关系即可
+\begin{align}
+&S_{\beta\alpha} \propto \int\dif^{4}q_{1}\,\dif^{4}q_{2}\cdots
+\Delta_{\mu_{1}\nu_{1}}(q_{1}) \Delta_{\mu_{2}\nu_{2}}(q_{2})\cdots   \nonumber \\
+&\qquad\times e_{\rho_{1}}^{\ast}(\bk_{1}^{\prime}\lambda_{1}^{\prime})
+e_{\rho_{2}}^{\ast}(\bk_{2}^{\prime}\lambda_{2}^{\prime})\cdots
+e_{\sigma_{1}}(\bk_{1}\lambda_{1})e_{\sigma_{2}}(\bk_{2}\lambda_{2})\cdots   \nonumber \\
+&\times M_{ba}^{\mu_{1}\mu_{2}\cdots \nu_{1}\nu_{2}\cdots \rho_{1}\rho_{2}\cdots \sigma_{1}\sigma_{2}\cdots}
+(-q_{1},-q_{2},\cdots,q_{1},q_{2},\cdots ,-k_{1}^{\prime},-k_{2}^{\prime},\cdots,k_{1},k_{2},\cdots )  \label{10.5.9}
+\end{align}
+其中$M^{\rho \sigma \cdots}$是在没有电磁相互作用的情况下计算出的矩阵元(\ref{10.5.1}).%
+{}$^*$\footnote{$^*${}态$a$和$b$与$\alpha$和$\beta$的唯一不同之处是$a,b$中删掉了光子.
+注意, $M$的变量现在全部取为{\KAI{入}}\,4\,-动量, 这是我们要给方程(\ref{10.5.9})中$M$的某些变量插入不同符号的原因.}
+从守恒条件(\ref{10.5.2})就立即得出了方程(\ref{10.5.9})在``规范变换''(\ref{10.5.7})和(\ref{10.5.8})下的不变性. %
+(在\,\ref{sec:9.6}\,节, 我们用路径积分方法证明了这一定理的特殊情况, %
+即规范不变算符的编时乘积的真空期望值不依赖传播子(\ref{9.6.21})中的常数$\alpha$.) 这个结果不像看起来那么基本, 比如它不适用于单个图, 只适用于那些在图中所有可能的位置都插入了流顶点的图的和.%
+
+方程(\ref{10.5.2})对光子传播子的计算有一个特别重要的应用. 全光子传播\vspace{-5mm}\linebreak
+\pagebreak
+
+\noindent
+子, 一般记做$\Delta_{\mu\nu}^{\prime}(q)$,
+取如下的形式\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[451]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[451]}}}
+\begin{equation}
+\Delta_{\mu\nu}^{\prime}(q) = \Delta_{\mu\nu}(q)
++\Delta_{\mu\rho}(q)M^{\rho\sigma}(q)\Delta_{\sigma\nu}(q) \:,    \label{10.5.10}
+\end{equation}%
+其中$M^{\rho\sigma}$正比于有两个流且$\alpha$和$\beta$都是真空态的矩阵元(\ref{10.5.1}), 而$\Delta_{\mu\nu}$是裸光子传播子, 这里在一般的\,Lorentz\, 不变规范下写成
+\begin{equation}
+\Delta_{\mu\nu}(q)\equiv \frac{\eta_{\mu\nu} - \xi(q^{2})q_{\mu}q_{\nu}/q^{2}}{q^{2}-\mi\epsilon }\:. \label{10.5.11}
+\end{equation}%
+由方程(\ref{10.5.2}), 我们在这里有$q^{\mu }M_{\mu \nu }(q)=0$, 这使得
+\begin{equation}
+q^{\mu}\Delta_{\mu\nu}^{\prime}(q)=q^{\mu}\Delta_{\mu\nu}(q)=\frac{q_{\nu}(1-\xi(q^{2}))}{q^{2}-\mi\epsilon }\:. \label{10.5.12}
+\end{equation}%
+另一方面, 正如我们在\,\ref{sec:10.3}\,节中对标量场和旋量场所做的那样, %
+我们可以将全光子传播子表示为有两条光子外线的(不同于$M$)单光子不可约图之和$\Pi ^{\ast }(q)$:%
+\begin{align}
+\Delta^{\prime}(q) &= \Delta(q) + \Delta(q)\Pi^{\ast}(q)\Delta(q)
++\Delta(q)\Pi^{\ast}(q)\Delta(q)\Pi^{\ast}(q)\Delta (q)+\cdots \nonumber \\
+&=[\Delta(q)^{-1}-\Pi^{\ast }(q)]^{-1}  \label{10.5.13}
+\end{align}%
+或者换种形式
+\begin{equation}
+\Delta_{\mu\nu}^{\prime}(q)=\Delta_{\mu\nu}(q)+\Delta_{\mu\rho}(q)\Pi^{\ast\rho\sigma}(q)\Delta_{\sigma\nu}^{\prime}(q)\:.
+\label{10.5.14}
+\end{equation}%
+那么为了满足方程(\ref{10.5.12}), 我们必须有
+\begin{equation}
+q_{\rho}\Pi^{\ast\rho\sigma}(q)=0\:. \label{10.5.15}
+\end{equation}%
+结合\,Lorentz\,不变性, 这告诉我们$\Pi^{\ast}(q)$必须取如下的形式
+\begin{equation}
+\Pi ^{\ast \rho \sigma }(q)=(q^{2}\eta ^{\rho \sigma }-q^{\rho }q^{\sigma
+})\pi (q^{2})\:. \label{10.5.16}
+\end{equation}%
+那么方程(\ref{10.5.13})给出的全传播子的形式为
+\begin{equation}
+\Delta_{\mu\nu}^{\prime }(q) =
+\frac{\eta_{\mu\nu}-\tilde{\xi}(q^{2})q_{\mu }q_{\nu }/q^{2}}{[q^{2}-\mi\epsilon ][1-\pi (q^{2})]} \:,
+\label{10.5.17}
+\end{equation}%
+其中
+\begin{equation}
+\tilde{\xi}(q^{2})=\xi(q^{2})[1-\pi(q^{2})]+\pi(q^{2})\:.  \label{10.5.18}
+\end{equation}%
+
+现在, 因为$\Pi_{\mu\nu}^{\ast}(q)$仅包含了单光子不可约图的贡献, 我们预期它在$q^{2}=0$处不会有任何极点.
+(在破缺规范对称性的情形下, 有一个重要的例外, 我们将在卷\,\textrm{II}\,讨论.) 特别地, $\Pi_{\mu\nu}^{\ast}(q)$中的$q_{\mu}q_{\nu}$
+项中\marginpar[\flushright{\small[452]\hspace*{5mm}}]{{\small\hspace*{5mm}[452]}}在$q^{2}=0$ 处没有极点, 这告诉我们方程(\ref{10.5.16})%
+中的函数$\pi(q^{2})$也没有这样的极点, 因此全传播子(\ref{10.5.17})中的极点仍在$q^{2}=0$处, 这表明{\KAI{辐射修正并不会赋予光子质量}}.
+
+对于重正化电磁场, 辐射修正也不应该改变方程(\ref{10.5.17})中光子极点留数的规范不变部分, 所以
+\begin{equation}
+\pi (0)=0\:. \label{10.5.19}
+\end{equation}%
+这一条件确定了电磁场重正化常数$Z_{3}$. 回忆, 当以重正化场(\ref{10.4.17})的形式表示时,
+电动力学拉格朗日量形如
+\[
+\mathscr{L}=-\tfrac{1}{4}Z_{3}(\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu })
+(\partial^{\mu}A^{\nu }-\partial^{\nu}A^{\mu })+\mathscr{L}_{M}(\Psi_{\ell},[\partial_{\mu}-\mi q_{\ell}A_{\mu}]\Psi_{\ell})\:.
+\]%
+那么单光子不可约振幅中的函数$\pi(q^{2})$就是
+\begin{equation}
+\pi(q^{2})=1-Z_{3}+\pi_{\text{LOOP}}(q^{2}) \:,    \label{10.5.20}
+\end{equation}%
+其中$\pi_{\text{LOOP}}$是圈图的贡献. 由此得出
+\begin{equation}
+Z_{3}=1+\pi_{\text{LOOP}}(0)\:. \label{10.5.21}
+\end{equation}%
+在实际计算中, 我们只计算圈贡献然后扣掉一个常数以使$\pi(0)$为零.
+
+附带地, 方程(\ref{10.5.18})表明, 当$q^{2}\neq 0$时, 光子传播子中的规范项{\KAI{被}}辐射修正改变了. 一个例外是\,Landau\,规范的情况, 这一规范对于所有的$q^{2}$有$\tilde{\xi}=\xi=1$.
+
+\section{电磁形状因子与磁矩}  \label{sec:10.6}
+\setcounter{equation}{0}
+
+假如我们希望计算一个粒子在外电磁场(或是另一粒子的电磁场)上的散射, 其中只计入该电磁场的第一阶贡献, 但是对我们这个粒子的所有其他相互作用(包含电磁相互作用)计入所有阶的贡献. 为此, 我们需要知道如下所有\,Feynman\,图的贡献之和: 有一条在壳入粒子线, 一条在壳出粒子线, 以及一条在壳或离壳的光子线. 根据\,\ref{sec:6.4}\,节的定理, 这个和由电磁流$J^{\mu}(x)$的单粒子矩阵元给定. 我们现在来看看是什么控制着这个矩阵元的一般形式.
+
+根据时空平移不变性, 电磁流的单粒子矩阵元取如下的形式
+\begin{equation}
+\Bigl( \Psi_{\bp^{\prime},\sigma^{\prime}},\,J^{\mu}(x)\Psi_{\bp,\sigma}\Bigr)
+=\exp (\mi(p-p^{\prime })\cdot x)
+\Bigl( \Psi_{\bp^{\prime},\sigma^{\prime}},\,J^{\mu}(0)\Psi_{\bp,\sigma}\Bigr) \:. \label{10.6.1}
+\end{equation}%
+于是流守恒条件$\partial_{\mu}J^{\mu}=0$要求
+\begin{equation}
+(p^{\prime}-p)_{\mu}\,
+\Bigl(\Psi_{\bp^{\prime},\sigma^{\prime}},\,J^{\mu}(0)\Psi_{\bp,\sigma}\Big) =0\:. \label{10.6.2}
+\end{equation}%
+\pagebreak
+
+\noindent
+另外\marginpar[\flushright{\small[453]\hspace*{5mm}}]{{\small\hspace*{5mm}[453]}}, 令$\mu=0$并对所有$\bx$积分给出
+\[
+\Bigl(\Psi_{\bp^{\prime},\sigma^{\prime}},\,Q\Psi_{\bp,\sigma}\Bigr)
+=(2\uppi)^{3} \updelta^{3}(\bp-\bp^{\prime})
+\Bigl(\Psi_{\bp^{\prime},\sigma^{\prime}},\,J^{0}(0)\Psi_{\bp,\sigma}\Bigr) \:.
+\]%
+利用方程(\ref{10.4.8}), 这给出
+\begin{equation}
+\Bigl( \Psi_{\bp,\sigma^{\prime}},\,J^{0}(0)\Psi_{\bp,\sigma}\Bigr)
+=(2\uppi)^{-3}\,q\,\updelta_{\sigma ^{\prime}\sigma}  \:,    \label{10.6.3}
+\end{equation}%
+其中$q$是粒子荷.
+
+在我们的处理中, Lorentz\,不变性也对流矩阵元有约束. 为了研究这些约束, 我们仅考虑最简单的情况:
+自旋$0$和自旋$\frac{1}{2}$. 这里所介绍的分析提供了几个技术的一个例子, 这些技术对像半轻子弱相互作用这样的其他流也是有用的.
+
+\subsection*{自旋 0}
+
+对于自旋$0$, Lorentz\,不变性要求流的单粒子矩阵元取如下的一般形式
+\begin{equation}
+\Bigl( \Psi_{\bp^{\prime}},\,J^{\mu}(0)\Psi_{\bp}\Bigr)
+=q(2\uppi)^{-3}(2p^{\prime 0})^{-1/2}(2p^{0})^{-1/2}\,\mathscr{J}^{\mu}(p^{\prime },p) \:,    \label{10.6.4}
+\end{equation}%
+其中$p^{0}$和$p^{\prime0}$是质壳能量($p^{0}=\sqrt{\bp^{2}+m^{2}}$), 而$\mathscr{J}^{\mu}(p^{\prime},p)$是两个\,4\,-矢$p^{\prime\mu}$ 和$p^{\mu}$的\,4\,-矢函数. (为了以后的方便, 我们从$\mathscr{J}$中提出了一个因子, 粒子的荷$q$.) 显然, 这类\,4\,-矢函数能取的最普遍形式是系数是标量的$p^{\prime\mu}$和$p^{\mu}$的线性组合, 或者等价地, $p^{\prime\mu}+p^{\mu}$和$p^{\prime\mu}-p^{\mu}$的线性组合. 但标量$p^{2}$ 和$p^{\prime 2}$ 的值被固定在$p^{2}=p^{\prime2}=-m^{2}$处, 这使得能够用$p^{\mu}$和$p^{\prime\mu}$构造的标量变量只能是$p\cdot p^{\prime}$ 的函数,
+或者等价的
+\begin{equation}
+k^{2}\equiv (p-p^{\prime})^{2} = -2m^{2}-2p\cdot p^{\prime }\:. \label{10.6.5}
+\end{equation}%
+因此函数$\mathscr{J}^{\mu}(p^{\prime},p)$必须取如下形式
+\begin{equation}
+\mathscr{J}^{\mu}(p^{\prime },p)=
+(p^{\prime }+p)^{\mu}F(k^{2})+\mi(p^{\prime}-p)^{\mu}H(k^{2})\:. \label{10.6.6}
+\end{equation}%
+$J^{\mu}$厄米这一性质意味着$\mathscr{J}^{\mu}(p^{\prime },p)^{\ast }=%
+\mathscr{J}^{\mu}(p,p^{\prime})$, 从而使$F(k^{2})$和$H(k^{2})$都是实的.
+
+现在尽管$(p^{\prime }-p)\cdot (p^{\prime }+p)$为零, 但$(p^{\prime }-p)^{2}=k^{2}$一般不为零,
+所以流守恒条件就是
+\begin{equation}
+H(k^{2})=0\:. \label{10.6.7}
+\end{equation}%
+另外, 令方程(\ref{10.6.4})中$\bp^{\prime}=\bp$且$\mu =0$, 并与方程(\ref{10.6.3})比较, 我们发现
+\begin{equation}
+F(0)=1\:. \label{10.6.8}
+\end{equation}%
+函数$F(k^{2})$称作粒子的{\KAI{电磁形状因子}}.
+
+\subsection*{自旋 $\frac{1}{2}$}
+
+对于自旋$\frac{1}{2}$, Lorentz\,不变性要求流的单粒子矩阵元取如下的一般形式\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[454]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[454]}}}
+\begin{equation}
+\Bigl( \Psi_{\bp^{\prime},\sigma^{\prime}},\,J^{\mu}(0)\Psi_{\bp,\sigma }\Bigr)
+=\mi q\,(2\uppi)^{-3}\,
+\bar{u}(\bp^{\prime},\sigma^{\prime})\Gamma^{\mu}(p^{\prime},p)u(\bp,\sigma) \:,\label{10.6.9}
+\end{equation}%
+其中$\Gamma^{\mu}$是$p^{\nu}$, $p^{\prime\nu}$以及$\gamma^{\nu}$的\,4\,-矢$4\times 4$矩阵函数, 而$u$是通常的\,Dirac\,系数函数. 我们以及提出了因子$\mi q$以使$\Gamma^{\mu}$的归一化与上一节中的归一化相同.
+
+和任何$4\times 4$矩阵一样, 我们可以用$16$个协变矩阵$1$, $\gamma_{\rho }$,
+$[\gamma_{\rho},\gamma_{\sigma}]$, $\gamma_{5}\gamma_{\rho}$和$\gamma_{5}$展开$\Gamma^{\mu}$.
+因此, 最一般的\,4\,-矢$\Gamma^{\mu}$可以写成如下各量的线性组合
+\begin{equation}
+\begin{array}{rl}
+   1\,:& \quad p^{\mu}\,,\,p^{\prime\mu}  \\
+ \gamma_{\rho }\,: & \quad \gamma^{\mu}\,,\,p^{\mu}\xxp\,,\,p^{\prime\mu}\xxp\,,
+ \,p^{\mu}\xxp^{\prime}\,,\,p^{\prime\mu}\xxp^{\prime}  \\
+ \lbrack \gamma_{\rho},\gamma_{\sigma} \rbrack\,  : & \quad [\gamma^{\mu},\,\xxp],
+  \,[\gamma^{\mu},\,\xxp^{\prime}],\,[\xxp\,,\,\xxp^{\prime}]p^{\mu},
+  \,[\xxp\,,\,\xxp^{\prime}]p^{\prime\mu}                    \\
+    \gamma_{5}\gamma_{\rho}\,:& \quad \gamma_{5}\gamma_{\rho}\,
+  \epsilon^{\rho\mu\nu\sigma}\,p_{\nu}p_{\sigma}^{\prime}              \\
+  \gamma_{5}\,:& \quad \text{无}
+\end{array} \nonumber
+\end{equation}
+其中每一项的系数是这个问题中的唯一标量变量(\ref{10.6.5})的函数. 利用$u$和$\bar{u}$满足的\,Dirac\,方程:%
+\[
+\bar{u}(\bp^{\prime},\sigma^{\prime})\,(\mi\xxp^{\prime }+m)=0%
+\:,\qquad (\mi\xxp+m)\,u(\bp,\sigma )=0 \:,
+\]%
+可以极大地简化结果. 结果是, 除了前三条: $p^{\mu}$, $p^{\prime \mu}$和$\gamma^{\mu}$, 其他所有的项都可以被扔掉.{}$^*$\footnote{$^*${}对于$p^{\mu}\xxp$, $p^{\prime\mu}\xxp$, $p^{\mu}\xxp^{\prime}$和$p^{\prime\mu}\xxp^{\prime}$, 它们分别可以被替换成$\mi mp^{\mu}$, $\mi mp^{\prime \mu}$, $\mi mp^{\mu}$和$\mi mp^{\prime \mu}$, 已经出现在我们的列表中, 所以是这些项显然不用考虑. 另外, 我们可以写出
+\[
+\lbrack \gamma^{\mu },\,\xxp\rbrack = 2\gamma^{\mu}\xxp-
+\{\gamma^{\mu},\xxp\} = 2\gamma^{\mu }\xxp - 2p^{\mu} \:,
+\]%
+这可以被替换成$2\mi m\gamma^{\mu}-2p^{\mu}$, 是已经出现在我们列表中的项的线性组合. 对于$[\gamma^{\mu},\,\xxp^{\prime}]$也同样如此. 另外,%
+\[
+\lbrack\,\xxp\,,\,\xxp^{\prime}\rbrack=-2\,\xxp^{\prime}\,\xxp%
++\{\xxp\,,\,\xxp^{\prime }\}=-2\,\xxp^{\prime}\,\xxp%
++2p\cdot p^{\prime } \:,
+\]%
+这可以被替换成$2m^{2}+2p\cdot p^{\prime }=-k^{2}$. 因此$[\,\xxp\,,\,\xxp^{\prime}]p^{\mu}$%
+和$[\,\xxp\,,\,\xxp^{\prime}]p^{\prime \mu}$并不给出新结果. 最后, 为了处理最后一项, 我们可以使用关系
+\begin{equation*}
+\gamma _{5}\gamma _{\rho }\,\epsilon ^{\rho \mu \nu \sigma }=\tfrac{1}{6}%
+\mi\Bigl( \gamma ^{\mu }\gamma ^{\nu }\gamma ^{\sigma }+\gamma ^{\sigma
+}\gamma ^{\mu }\gamma ^{\nu }+\gamma ^{\nu }\gamma ^{\sigma }\gamma ^{\mu
+}-\gamma ^{\nu }\gamma ^{\mu }\gamma ^{\sigma }-\gamma ^{\mu }\gamma
+^{\sigma }\gamma ^{\nu }-\gamma ^{\sigma }\gamma ^{\nu }\gamma ^{\mu
+}\Bigr) \:.
+\end{equation*}%
+与$p_{\nu}$和$p^{\prime}_{\sigma}$收缩, 然后将所有的$\xxp$因子移至右边, 将所有的$\xxp^{\prime}$因子移至左边, 这又一次给出$p^{\mu}$, $p^{\prime\mu}$和$\gamma^{\mu}$的线性组合.} 我们得到结论, 在费米子的质壳上, $\Gamma^{\mu}$可以表示成$\gamma^{\mu}$, $p^{\mu}$ 和$p^{\prime\mu}$ 的线性组合, 我们将其写成
+\begin{align}
+&\bar{u}(\bp^{\prime },\sigma ^{\prime })\Gamma ^{\mu }(p^{\prime
+},p)u(\bp,\sigma ) =\bar{u}(\bp^{\prime },\sigma ^{\prime
+})\Big[\gamma ^{\mu }F(k^{2})  \nonumber \\
+&\qquad\qquad -\frac{\mi}{2m}(p+p^{\prime })^{\mu }G(k^{2})+\frac{(p-p^{\prime })^{\mu }}{%
+2m}H(k^{2})\Big]u(\bp,\sigma )\:. \label{10.6.10}
+\end{align}%
+$J^{\mu}(0)$的厄米性给出\marginpar[\flushright{\small[455]\hspace*{5mm}}]{{\small\hspace*{5mm}[455]}}
+\begin{equation}
+\beta \Gamma^{\mu\dag}(p^{\prime },p)\beta = -\Gamma^{\mu}(p,p^{\prime}) \:,    \label{10.6.11}
+\end{equation}%
+这使得$F(k^{2})$, $G(k^{2})$和$H(k^{2})$都必须是$k^{2}$的{\KAI{实}}函数.%
+
+方程(\ref{10.6.10})中的前两项自动满足守恒条件(\ref{10.6.2}), 这是因为
+\[
+(p^{\prime }-p)_{\mu}\gamma^{\mu}=-\mi\Bigl[(\mi\xxp^{\prime }+m)-(\mi\xxp+m)\Bigr]
+\]%
+以及
+\[
+(p^{\prime }-p)\cdot (p^{\prime }+p)=p^{\prime 2}-p^{2}\:.
+\]%
+另一方面, $(p^{\prime }-p)^{2}$一般不为零, 所以流守恒要求第三项为零
+\begin{equation}
+H(k^{2})=0\:. \label{10.6.12}
+\end{equation}%
+另外, 在方程(\ref{10.6.9})和(\ref{10.6.10})中令$\bp^{\prime}\to\bp$, 我们发现
+\[
+\Bigl(\Psi_{\bp,\sigma^{\prime}},\,J^{\mu}(0)\Psi_{\bp,\sigma }\Bigr) =\mi\,q(2\uppi)^{-3}\bar{u}(\bp,\sigma ^{\prime })
+\Bigl[\gamma^{\mu}F(0)-\frac{\mi}{m}p^{\mu}G(0)\Bigr] u(\bp,\sigma) \:.
+\]%
+利用恒等式$\{\gamma^{\mu},\mi\xxp+m\}=2m\gamma^{\mu }+2\mi p^{\mu}$, 我们又有
+\[
+\bar{u}(\bp,\sigma^{\prime})\gamma^{\mu}u(\bp,\sigma )=
+-\frac{\mi p^{\mu}}{m}\bar{u}(\bp,\sigma^{\prime})u(\bp,\sigma)  \:.
+\]%
+再回忆起
+\[
+\bar{u}(\bp,\sigma^{\prime})u(\bp,\sigma) = \updelta_{\sigma^{\prime }\sigma}m/p^{0}
+\]%
+因而\begin{equation}
+\Bigl(\Psi_{\bp,\sigma^{\prime}},\,J^{\mu }(0)\Psi_{\bp,\sigma}\Bigr)
+=q(2\uppi)^{-3}(p^{\mu }/p^{0})\updelta_{\sigma^{\prime}\sigma}\Bigl[F(0)+G(0)\Bigr] \:. \label{10.6.13}
+\end{equation}%
+与方程(\ref{10.6.3})比较给出了归一化条件
+\begin{equation}
+F(0)+G(0)=1\:. \label{10.6.14}
+\end{equation}
+
+注意, 电磁顶点矩阵$\Gamma^{\mu}$通常写成另外两个矩阵
+\begin{align}
+&\bar{u}(\bp^{\prime},\sigma^{\prime})\Gamma^{\mu}(p^{\prime},p)u(\bp,\sigma) =\bar{u}(\bp^{\prime},\sigma^{\prime})\,\Bigl[\gamma^{\mu}F_{1}(k^{2})  \nonumber \\
+&\qquad\qquad+\tfrac{1}{2}\mi[\gamma^{\mu},\gamma^{\nu}]\,(p^{\prime }-p)_{\nu}\,
+F_{2}(k^{2})\Bigr]u(\bp,\sigma) \:,    \label{10.6.15}
+\end{align}%
+这一形式将是有用的. 正如前面提到的, 利用定义$F(k^{2})$和$G(k^{2})$的那些量, 我们可以将第二项中的矩阵重新写为
+\begin{align}
+&\bar{u}(\bp^{\prime},\sigma^{\prime})\,\tfrac{1}{2}\mi\,
+[\gamma^{\mu},\gamma^{\nu}]\,(p^{\prime}-p)_{\nu }\,u(\bp,\sigma )  \nonumber \\
+&\quad=\bar{u}(\bp^{\prime},\sigma^{\prime})\,
+\Bigl[-\mi\xxp^{\prime}\gamma^{\mu}+\tfrac{1}{2}\mi\{\gamma^{\mu},\xxp^{\prime}\}
+-\mi\gamma^{\mu}\xxp+\tfrac{1}{2}\mi\{\gamma^{\mu},\xxp\}\Bigr]
+\,u(\bp,\sigma)  \nonumber \\
+&\quad=\bar{u}(\bp^{\prime},\sigma ^{\prime })\,
+\Bigl[ \mi(p^{\prime\mu}+p^{\mu})+2m\gamma^{\mu}\Bigr] u(\bp,\sigma)\: . \label{10.6.16}
+\end{align}%
+比较方程(\ref{10.6.15})与(\ref{10.6.10})\marginpar[\flushright{\small[456]\hspace*{5mm}}]{{\small\hspace*{5mm}[456]}}, 我们发现
+\begin{align}
+F(k^{2}) &=F_{1}(k^{2})+2m\,F_{2}(k^{2})  \label{10.6.17} \\
+G(k^{2}) &=-2m\,F_{2}(k^{2})\:. \label{10.6.18}
+\end{align}%
+归一化条件(\ref{10.6.14})现在变成
+\[
+F_{1}(0)=1\:.
+\]%
+
+为了用粒子的形状因子计算出它的磁矩, 我们在小动量的情况下, 即$\lvert\bp\rvert,\lvert\bp^{\prime}\rvert \ll m$, 考察顶点函数的空间部分. 为此, 利用方程(\ref{10.6.16})将方程(\ref{10.6.10})(其中$H=0$)重写成第三种形式:%
+\begin{align}
+\bar{u}(\bp^{\prime},\sigma^{\prime})\Gamma^{\mu}(p^{\prime},p)u(\bp,\sigma) &=\frac{-\mi}{2m}\bar{u}(\bp^{\prime},\sigma^{\prime})
+\Bigl[(p+p^{\prime})^{\mu}\{F(k^{2})+G(k^{2})\}  \nonumber  \\
+&-\frac{1}{2}[\gamma^{\mu},\gamma^{\nu}]\,(p^{\prime }-p)_{\nu}\,
+F(k^{2})\Bigr]\,u(\bp,\sigma) \:. \label{10.6.19}
+\end{align}%
+对于零动量, 方程(\ref{5.4.19})和(\ref{5.4.20})给出的\,Dirac\,矩阵对易子的矩阵元是
+\[
+\bar{u}(0,\sigma^{\prime})[\gamma^{i},\gamma^{j}]u(0,\sigma)
+=4\mi\epsilon_{ijk}\Bigl(J_{k}^{(\frac{1}{2})}\Bigr)_{\sigma^{\prime},\sigma }\:, \qquad
+\bar{u}(0,\sigma^{\prime})[\gamma^{i},\gamma^{0}]u(0,\sigma)=0 \:,
+\]%
+其中$\bJ^{(\frac{1}{2})}=\frac{1}{2}\bm{\sigma}$是自旋$\frac{1}{2}$的角动量矩阵. 因此到小动量的第一阶,
+\begin{equation}
+\bar{u}(\bp^{\prime},\sigma^{\prime}) \Gamma(p^{\prime},p)
+u(\bp,\sigma )\to \frac{-\mi}{2m}(\bp+\bp^{\prime})
+\updelta_{\sigma^{\prime},\sigma }+\frac{1}{m}[(\bp-\bp^{\prime })\times \bJ^{(\frac{1}{2})}]_{\sigma^{\prime},\sigma }\,F(0)\:. \label{10.6.20}
+\end{equation}%
+因此, 在非常弱且与时间无关的外矢势$\bA(\bx)$中, 相互作用哈密顿量$H^{\prime}=-\int\dif^{3}x\:\bJ(\bx)\cdot \bA(\bx)$在小动量单粒子态之间的矩阵元是
+\begin{align}
+(\Psi_{\bp^{\prime},\sigma^{\prime}},H^{\prime}\Psi_{\bp,\sigma})
+&=\frac{-\mi qF(0)}{m(2\uppi)^{3}}\int \dif^{3}x\:
+\me^{\mi(\bp-\bp^{\prime})\cdot \bx}\,\bA(\bx)\cdot
+[(\bp-\bp^{\prime})\times\bJ^{(\frac{1}{2})}]_{\sigma^{\prime},\sigma}  \nonumber \\
+&=-\frac{qF(0)}{m(2\uppi )^{3}}\int \dif^{3}x\:\me^{\mi(\bp-\bp^{\prime})\cdot \bx}
+(\bJ^{(\frac{1}{2})})_{\sigma^{\prime},\sigma}\cdot \bB(\bx) \:,    \label{10.6.21}
+\end{align}%
+其中$\bB=\bm{\nabla} \times \bA$是磁场.
+因此在平缓变化的弱磁场极限下, 相互作用哈密顿量的矩阵元是
+\begin{equation}
+(\Psi_{\bp^{\prime},\sigma^{\prime}},H^{\prime}\Psi_{\bp,\sigma }) =-\frac{qF(0)}{m}(\bJ^{(\frac{1}{2})})_{\sigma^{\prime},\sigma }\cdot \bB\:
+\updelta^{3}(\bp-\bp^{\prime})\:. \label{10.6.22}
+\end{equation}%
+对于具有一般自旋$j$的任意粒子, 它的磁矩$\mu$定义为: 粒子与平缓变化的静态弱磁场的相互作用矩阵元是
+\begin{equation}
+(\Psi_{\bp^{\prime},\sigma^{\prime}},H^{\prime}\Psi_{\bp,\sigma})
+=-\frac{\mu}{j}(\bJ^{(j)})_{\sigma^{\prime},\sigma}\cdot \bB\:
+\updelta^{3}(\bp-\bp^{\prime})\:. \label{10.6.23}
+\end{equation}%
+因此, 对于电荷为$q$\marginpar[\flushright{\small[457]\hspace*{5mm}}]{{\small\hspace*{5mm}[457]}}, 质量为$m$, 自旋为$\frac{1}{2}$的粒子, 方程(\ref{10.6.22})给出的磁矩是:%
+\begin{equation}
+\mu =\frac{qF(0)}{2m}\:. \label{10.6.24}
+\end{equation}%
+作为一个特殊情形, 这包含了著名的\,Dirac\,结果\textsuperscript{\cite{7}} $\mu =q/2m$, 即没有辐射修正的自旋$\frac{1}{2}$粒子的磁矩.
+
+在这里不加证明地讨论一下质子形状因子的测量, 比较电子\lzx 质子散射的实验数据与实验室参照系中的微分截面的Rosenbluth
+(罗森布鲁斯)公式\textsuperscript{\cite{8}}:%
+\begin{align*}
+\frac{\dif\sigma}{\dif\Omega} &= \frac{e^{4}}{4(4\uppi )^{2}E_{0}^{2}}\,\frac{\cos
+^{2}(\theta /2)}{\sin ^{4}(\theta /2)}\left[ 1+\frac{2E_{0}}{m}\sin
+^{2}(\theta /2)\right] ^{-1} \\
+&\quad\times \left\{ \Big( F(k^{2})+G(k^{2})\Big) ^{2}+\frac{k^{2}}{4m^{2}}%
+\Big( 2F^{2}(k^{2})\tan ^{2}(\theta /2)+G^{2}(k^{2})\Big) \right\}  \:,
+\end{align*}%
+我们可以得到$k^{2}>0$的形状因子$F(k^{2})$和$G(k^{2})$, 上式中, $E_{0}$是入射电子的能量(这里取$E_{0}\gg m_{e}$); $\theta$是散射角; 而
+\[
+k^{2}=\frac{4E_{0}^{2}\sin^{2}(\theta/2)}{1+(2E_{0}/m)\sin^{2}(\theta/2)}% \:.
+\]
+
+
+\section[K\"{a}llen-Lehmann表示]{K\"{a}ll\'{e}n-Lehmann表示{}$^*$\footnote{$^*${}本节有些脱离本书的发展主线, %
+可以在第一次阅读时跳过.}} \label{sec:10.7}
+\setcounter{equation}{0}
+
+我们在\,\ref{sec:10.2}\,节看到, 对于(\ref{10.2.1})这样的编时乘积的矩阵元, 单粒子中间态的出现导致它的\,Fourier\,变换中出现了极点. 多粒子中间态则会导致更加复杂的奇异性, 很难进行一般描述. 然而, 在真空期望值只包含两个算符的特殊情况下, 我们有一个方便的表示, 它清楚地展示了这个\,Fourier\,变换的解析结构. 特别地, 这个表示可用于传播子, 即两个算符是基本粒子的场. 结合量子力学中的正定性要求, 这一表示对传播子的渐进行为和重正化常数的大小给出了有趣的限制.
+
+考虑复标量\,Heisenberg\,绘景算符$\Phi(x)$, 它可以是也可以不是基本粒子场.
+乘积$\Phi(x)\Phi^{\dag}(y)$的真空期望值可以表示成\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[458]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[458]}}}
+\begin{equation}
+\langle \Phi(x)\Phi^{\dag }(y) \rangle_{0} =
+\sum_{n}\langle 0\vert \Phi(x) \vert n \rangle \,\langle n \vert \Phi^{\dag}(y)\vert0\rangle \:, \label{10.7.1}
+\end{equation}%
+其中求和取遍态的任意完备集. (这里对$n$的求和包含对连续指标的积分和对离散指标的求和.) 选这些态为动量\,4\,-矢$P^{\mu}$的本征态, 平移不变性告诉我们
+\begin{align}
+&\langle 0\vert \Phi(x) \vert n\rangle =
+\exp(\mi p_{n}\cdot x)\langle 0\vert \Phi(0)\vert n\rangle \:,  \nonumber \\
+&\langle n\vert \Phi^{\dag}(y)\vert 0\rangle =
+\exp(-\mi p_{n}\cdot y)\langle n\vert \Phi^{\dag}(0)\vert 0\rangle.   \label{10.7.2}
+\end{align}%
+因此
+\begin{equation}
+\langle \Phi(x)\Phi^{\dag}(y)\rangle_{0}
+=\sum_{n}\exp(\mi p_{n}\cdot (x-y)) \,\lvert\langle 0\vert \Phi(0)\vert n\rangle\vert^{2}\:. \label{10.7.3}
+\end{equation}%
+将这一结果写成{\KAI{谱函数}}的形式将是方便的. 注意到求和$\sum_{n}\updelta^{4}(p-p_{n})\lvert
+\langle 0\vert \Phi(0)\vert n\rangle\rvert^{2}$是\,4\,-矢$p^{\mu}$的标量函数, 因此只能依赖$p^{2}$和(当$p^{2}\leq0$时)阶跃函数$\theta(p^{0})$. 事实上, 方程(\ref{10.7.3})中的中间态总有$p^{2}\leq 0$和$p^{0}>0$, 所以这个求和取如下的形式
+\begin{equation}
+\sum_{n}\updelta^{4}(p-p_{n})\,\lvert\langle 0\vert \Phi(0)\vert n\rangle \rvert^{2}
+=(2\uppi)^{-3}\,\theta(p^{0})\,\rho(-p^{2})  \label{10.7.4}
+\end{equation}%
+其中在$p^{2}>0$时有$\rho(-p^{2})=0$. (为了以后的方便, 从$\rho$中提取出了因子$(2\uppi)^{-3}$.) 谱函数$\rho(-p^{2})$显然是实的而且是正的. 有了这个定义, 我们可以将(\ref{10.7.3})重新表示成
+\begin{align}
+\langle \Phi (x)\Phi ^{\dag }(y)\rangle_{0} &= (2\uppi)^{-3}\int\dif^{4}p\:\exp[\mi p\cdot (x-y)]\,\theta (p^{0})\,\rho (-p^{2})  \nonumber \\
+&=(2\uppi)^{-3}\int \dif^{4}p\int_{0}^{\infty }\dif\mu^{2}\:\exp[\mi p\cdot(x-y)]\,\theta (p^{0})  \nonumber \\
+&\phantom{=(2\uppi)^{-3}\int }\times \rho (\mu ^{2})\,\updelta (p^{2}+\mu ^{2})\:. \label{10.7.5}
+\end{align}%
+交换对$p^{\mu}$和$\mu^{2}$积分的次序, 这可以表示成
+\begin{equation}
+\langle \Phi (x)\Phi ^{\dag }(y)\rangle _{0}
+=\int_{0}^{\infty}\dif\mu^{2}\:\rho (\mu ^{2})\,\Delta_{+}(x-y;\mu ^{2})\: ,   \label{10.7.6}
+\end{equation}%
+其中$\Delta_{+}$是熟悉的函数
+\begin{equation}
+\Delta_{+}(x-y;\mu^{2}) \equiv (2\uppi)^{-3}\int \dif^{4}p\:
+\exp [\mi p\cdot(x-y)]\,\theta(p^{0})\,\updelta(p^{2}+\mu^{2}) \:.  \label{10.7.7}
+\end{equation}
+
+用相同的方法, 我们可以证明
+\begin{equation}
+\langle \Phi ^{\dag}(y)\Phi(x)\rangle_{0}
+=\int_{0}^{\infty}\dif\mu^{2}\:\bar{\rho}(\mu^{2})\,\Delta_{+}(y-x;\mu^{2})  \label{10.7.8}
+\end{equation}%
+其中\marginpar[\flushright{\small[459]\hspace*{5mm}}]{{\small\hspace*{5mm}[459]}}第二个谱函数$\bar{\rho}(\mu^{2})$定义为
+\begin{equation}
+\sum_{n}\updelta ^{4}(p-p_{n})\,\lvert\langle n\vert\Phi(0)\vert 0 \rangle\rvert^{2}
+=(2\uppi)^{-3}\,\theta(p^{0})\,\bar{\rho}(-p^{2})\:. \label{10.7.9}
+\end{equation}
+
+我们现在使用因果律条件, 即对于类空间隔$x-y$, 对易子$[\Phi(x),\Phi^{\dag}(y)]$必须为零. 这个对易子的真空期望值是\begin{equation}
+\langle[\Phi(x),\Phi^{\dag}(y)]\rangle_{0}=
+\int_{0}^{\infty}\dif\mu^{2}\:\Bigl( \rho(\mu^{2})\,\Delta_{+}(x-y;\mu^{2})
+-\bar{\rho}(\mu^{2})\,\Delta_{+}(y-x;\mu ^{2})\Bigr) \:. \label{10.7.10}
+\end{equation}%
+我们在\,\ref{sec:5.2}\,节中提到过, 对于类空的$x-y$, 函数$\Delta_{+}(x-y)$虽然不为零, 但它会是{\KAI{偶函数}}. %
+为了使(\ref{10.7.10})对于所有类空间隔都为零, 必须有
+\begin{equation}
+\rho (\mu^{2}) = \bar{\rho}(\mu^{2})\:. \label{10.7.11}
+\end{equation}%
+这是$\mathsf{CPT}$定理的特殊情况, 我们在这里没有使用微扰论就证明了它; 对于$p^{2}=-\mu^{2}$的任何态, 如果它有算符$\Phi$的量子数, 那么必有另外一个相应的态, 它有$p^{2}=-\mu^{2}$并且有算符$\Phi^{\dag}$的量子数.
+
+利用方程(\ref{10.7.11}), 编时乘积的真空期望值是
+\begin{equation}
+\Bigl\langle T\Bigl\{\Phi(x)\Phi^{\dag}(y)\Bigr\} \Bigr\rangle_{0}=
+-\mi\int_{0}^{\infty }\dif\mu^{2}\:\rho (\mu ^{2})\,\Delta_{F}(x-y;\mu ^{2}) \:,    \label{10.7.12}
+\end{equation}%
+其中$\Delta_{F}(x-y;\mu ^{2})$是质量为$\mu$的无自旋粒子的\,Feynman\,传播子:%
+\begin{equation}
+{-}\mi\Delta_{F}(x-y;\mu^{2})\equiv \theta (x^{0}-y^{0})\Delta_{+}(x-y;\mu^{2})
+-\theta(y^{0}-x^{0})\Delta_{+}(y-x;\mu^{2}) \:. \label{10.7.13}
+\end{equation}%
+借用\,\ref{sec:10.3}\,节引入的全传播子的记号, 我们引入动量空间函数
+\begin{equation}
+{-}\mi\Delta^{\prime}(p)\equiv \int \dif^{4}x\:\exp [-\mi p\cdot (x-y)]\,
+\Bigl\langle T\Bigl\{\Phi(x)\Phi^{\dag}(y)\Bigr\}\Bigr\rangle_{0}\:.  \label{10.7.14}
+\end{equation}%
+回忆起\begin{equation}
+\int \dif^{4}x\,\exp [-\mi p\cdot (x-y)]\,\Delta_{F}(x-y;\mu^{2})
+=\frac{1}{p^{2}+\mu^{2}-\mi\epsilon }\:. \label{10.7.15}
+\end{equation}%
+这给出了我们的谱表示:\textsuperscript{\cite{9}}%
+\begin{equation}
+\Delta^{\prime}(p)=\int_{0}^{\infty}\rho(\mu^{2})\,
+\frac{\dif\mu^{2}}{p^{2}+\mu^{2}-\mi\epsilon }\:. \label{10.7.16}
+\end{equation}
+
+这一结果\marginpar[\flushright{\small[460]\hspace*{5mm}}]{{\small\hspace*{5mm}[460]}}再加上$\rho(\mu^{2})$的正定性要求可以立即给出这样的结论, 当$\lvert p^{2}\rvert\to\infty$时, $\Delta^{\prime}(p)$不可能比裸传播子$1/(p^{2}+m^{2}-\mi\epsilon)$更快{}$^*$\footnote{$^*${}实际上, 我们甚至不能确定$\Delta^{\prime}(p)$在$\lvert p^{2}\rvert \to \infty$时是否为零, 即使看上去似乎能从谱表示中得到这个结论. 问题源于我们交换了对$p^{\mu}$和对$\mu^{2}$的积分. 可以确定的是, $\Delta^{\prime}(p)$是$-p^{2}$的解析函数,
+且有一穿过正实轴$-p^{2}=\mu^{2}$的大小为$\uppi \rho(\mu^{2})$的间断点, 这将通过下一节的方法证明. 由此得出, $\Delta^{\prime}(p)$由谱函数$\rho(\mu^{2})$的色散关系加上可能的减除给出:%
+\[
+\Delta^{\prime}(p) = P(p^{2}) + (-p^{2}+\mu _{0}^{2})^{n}
+\int_{0}^{\infty}\frac{\rho(\mu^{2})}{(\mu^{2}+\mu_{0}^{2})^{n}}\,
+\frac{\dif\mu^{2}}{p^{2}+\mu^{2}-\mi\epsilon } \:,
+\]%
+其中$n$是正整数, $\mu_{0}^{2}$是任意的正常数, 而$P(p^{2})$是依赖于$\mu_{0}^{2}$的$p^{2}$的$n{-}1$阶多项式, 在$n=0$时不出现.}%
+地趋于零. 不时地有人提议在非微扰拉格朗日量中引入高阶导数项, 这会使传播子在$\lvert p^{2}\rvert\to\infty$时比$1/p^{2}$更快地趋于零, 但是谱表示表明这必将违背量子力学的正定性假设.
+
+利用谱表示与等时对易关系, 我们可以对谱函数导出一个有趣的求和规则. 如果$\Phi(x)$是按照通常方式归一化的(非重正化)正则场算符, 那么
+\begin{equation}
+\left[ \frac{\partial \Phi (\bx,t)}{\partial t}\,,\Phi^{\dag}(\by,t)\right]
+=-\mi\updelta^{3}(\bx-\by)\:. \label{10.7.17}
+\end{equation}%
+我们注意到
+\[
+\left. \frac{\partial}{\partial x^{0}}\Delta_{+}(x-y)\right\vert_{x^{0}=y^{0}}
+=-\mi\updelta^{3}(\bx-\by),
+\]%
+所以谱表示(\ref{10.7.10})与对易关系(\ref{10.7.17})告诉我们
+\begin{equation}
+\int_{0}^{\infty }\rho (\mu^{2})\,\dif\mu^{2}=1\:. \label{10.7.18}
+\end{equation}%
+这表明在$\lvert p^{2}\rvert\to \infty$时, 非重正化场的动量空间传播子(\ref{10.7.16})具有自由场的渐进行为
+\[
+\Delta^{\prime }(p)\to \frac{1}{p^{2}}\:.
+\]%
+这一结果仅在合理的紫外发散正规化方案下才是有意义的; 在微扰论中, 非重正化场会有无限大的矩阵元, 且传播子的定义是有问题的.
+
+现在考虑这样的可能性, 存在一个质量为$m$的单粒子态$\lvert\bk\rangle$, 它与态$\langle 0\rvert\Phi(0)$的矩阵元不为零. Lorentz\,不变性要求这个矩阵元取如下形式\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[461]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[461]}}}
+\begin{equation}
+\langle 0\vert\Phi(0)\vert\bk\rangle =(2\uppi )^{-3/2}\left( 2\sqrt{\bk%
+^{2}+m^{2}}\right) ^{-1/2}N \:,    \label{10.7.19}
+\end{equation}%
+其中$N$是常数. 根据\,\ref{sec:10.3}\,节中的普遍结果, 非重正化场的传播子$\Delta^{\prime}(p)$在$p^{2}\to-m^{2}$处应该有一个留数为%
+$Z\equiv\lvert N\rvert^{2}>0$的极点. 即,%
+\begin{equation}
+\rho (\mu ^{2}) =Z \,\updelta( \mu ^{2} - m ^{2})+ \sigma (\mu ^{2})  \:,    \label{10.7.20}
+\end{equation}
+其中$\sigma(\mu^{2})\geq 0$是多粒子态的贡献. 结合方程(\ref{10.7.18}), 这会给出这样的结果
+\begin{equation}
+1=Z+\int_{0}^{\infty}\sigma(\mu^{2})\,\dif\mu^{2}  \label{10.7.21}
+\end{equation}%
+因此
+\begin{equation}
+Z\leq 1  \label{10.7.22}
+\end{equation}%
+其中等号仅对于自由粒子成立, 这时$\langle 0\rvert\Phi(0)$与多粒子态之间的矩阵元为零.
+
+因为$Z$是正的, 方程(\ref{10.7.21})也可以认为是给场$\Phi$与多粒子态的耦合提供了一个上界:
+\begin{equation}
+\int_{0}^{\infty}\sigma(\mu^{2})\:\dif\mu^{2}\leq 1  \label{10.7.23}
+\end{equation}%
+其中等号在$Z=0$时成立. 极限$Z=0$有一个有趣的解释, 它可以作为粒子是复合粒子而非基本粒子的条件.%
+\textsuperscript{\cite{10}} 在这里, ``复合''粒子可以理解成场不出现在拉格朗日量中的粒子. 考虑这样一个粒子, 例如一个中性无自旋粒子, 并假定它的量子数允许它被由其他场构造出的算符$F(\Psi)$湮没.
+通过在拉格朗日密度中添加形如{}$^*$\footnote{$^*${}在凝聚态物理中, 这被称为``Hubbard-Stratonovich
+(哈伯德-斯特拉托诺维奇)变换''.\textsuperscript{\cite{11}} 在卷\textrm{II}我们关于超导的讨论中, 这被用来引入电子对的场.}%
+$\Delta\mathscr{L}=(\Phi-F(\Psi))^{2}$的项, 我们可以自由地引入该粒子的场$\Phi$, 这是因为%
+对$\Phi$的路径积分可以通过令它等于稳相点$\Phi =F(\Psi)$做掉, 这时$\Delta\mathscr{L}=0$.
+但是假使我们不这样做, 转而写成$\Delta\mathscr{L}=\Delta\mathscr{L}_{0}+\Delta\mathscr{L}_{1}$,
+其中$\Delta\mathscr{L}_{0}\equiv -\frac{1}{2}\partial_{\mu}\Phi\partial^{\mu}\Phi-\frac{1}{2}m^{2}\Phi^{2}$%
+是通常的自由场拉格朗日量, 并将$\Delta\mathscr{L}_{1}=\Delta\mathscr{L}-\Delta\mathscr{L}_{0}$视作相互作用. 相互作用中的项$\frac{1}{2}\partial_{\mu}\Phi\partial^{\mu}\Phi$是不新奇的. 我们在方程(\ref{10.3.12})中见过这样的项, 但在那里乘了因子$(1-Z)$; 唯一的不同是在这里$Z=0$\marginpar[\flushright{\small[462]\hspace*{5mm}}]{{\small\hspace*{5mm}[462]}}. 代替调整$Z$以满足场重正化条件$\Pi^{\ast\prime}(0)=0$, 我们在这里必须视其为加在复合粒子耦合常数上的条件.
+不幸的是, 在量子场论中实现这一步骤是不可能的, 这是因为, 正如我们已经看到的, $Z=0$意味着粒子与它组分的耦合会尽可能的强, 这使得无法采用微扰论. 在非相对论量子力学中, 条件$Z=0$被证实确实是有用的; 例如, 它确定了氘核与中子和质子的耦合.\textsuperscript{\cite{12}}
+
+尽管这里导出的谱表示针对的是无自旋粒子, 但很容易推广到其他场. 事实上,
+在下一章我们将证明, 精确到$e^{2}$阶, 电磁场的$Z$-因子(一般称为$Z_{3}$)为
+\[
+Z_{3}=1-\frac{e^{2}}{12\uppi^{2}}\ln\left(\frac{\Lambda^{2}}{m_{e}^{2}}\right)
+\]%
+(其中$\Lambda \gg m_{e}$是紫外截断), 符合约束(\ref{10.7.22})的要求.
+
+\section[色散关系]{色散关系{}$^*$\footnote{$^*${}本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过. }} \label{sec:10.8}
+\setcounter{equation}{0}
+
+早期理论家曾尝试将微扰量子场论用于强核力和弱核力, 不过失败了, 这在\,20\,世纪\,50\,年代后期引导理论家们尝试利用散射振幅的解析性与幺正性推导不依赖%
+于任何特定场论的非微扰结果. 这开始于色散关系研究的复兴. 在它的原始形式中,\textsuperscript{\cite{13}} 色散关系将折射率的实部写成了对虚部的积分. 这是将折射律作为频率的函数, 然后从这个函数的解析性质中推导出的结果, 这一结果来自如下条件:
+电磁信号在介质中不能比光在真空中传播的更快. 通过将折射率表示为向前光子散射振幅, 色散关系可以重新写为向前散射振幅的实部是对虚部的积分, 再经由幺正性, 就可以用总截面表示. 这一关系让人振奋的一件事情是, 它为传统微扰论提供了一个替代品; 给定$e^{2}$阶的散射振幅, 我们可以计算出到$e^{4}$阶的散射截面以及散射振幅的虚部, 然后利用色散关系计算向前散射振幅的实部到同一阶, 在这个过程中甚至不需要计算一个圈图.
+
+色散关系的现代方法\marginpar[\flushright{\small[463]\hspace*{5mm}}]{{\small\hspace*{5mm}[463]}}始于\,Gell-Mann, Goldberger(戈德伯格)和\,Thirring(瑟林)在\,1954\,年的工作.\textsuperscript{\cite{14}}
+取代考察光在介质中的传播, 他们从微观因果律的条件, 即算符的对易子在类空间隔下为零, 直接导出了散射振幅的解析性.
+这一方法使\,Goldberger\textsuperscript{\cite{15}}在不久之后就导出了$\pi$介子\lzx 核子向前散射振幅的一个非常有用的公式.%
+
+为了看到如何使用微观因果律原理, 在实验室参照系中考虑任意自旋的无质量玻色子在任意靶$\alpha$上的向前散射, 这里靶的质量$m_{\alpha}>0$且$\bp_{\alpha}=0$. (这不仅对光子的散射有重要的应用, 在$m_{\pi}=0$的极限下对$\pi$介子散射也很有用, 我们将在卷\textrm{II}中对此进行讨论.) 通过反复使用方程(\ref{10.3.4})或\,Lehmann-Symanzik-Zimmerman\,定理,\textsuperscript{\cite{3}} 这里的$S$-矩阵元是
+\begin{align}
+S &=\frac{1}{(2\uppi )^{3}\sqrt{4\omega\omega^{\prime}}\lvert N\rvert^{2}}
+\lim\nolimits_{k^{2}\to 0}\lim \nolimits_{k^{\prime 2}\to 0} \nonumber \\
+&\quad\times \int \dif^{4}x\int \dif^{4}y\:\me^{-\mi k^{\prime }\cdot y}\,\me^{\mi k\cdot x}
+(\mi\square_{y})(\mi\square_{x})\,\langle \alpha\vert T\{A^{\dag}(y),\,A(x)\}\vert \alpha \rangle \:. \label{10.8.1}
+\end{align}%
+这里的$k$和$k^{\prime}$是初态和末态玻色子的\,4\,-动量, 其中$\omega=k^{0}$, $\omega^{\prime}=k^{\prime0}$; $A(x)$ 是任意\,Heisenberg\,绘景算符, 它在单玻色子态$\lvert k\rangle$与真空之间有不为零的矩阵元$\langle\text{VAC}\vert A(x)\vert k\rangle =(2\uppi)^{-3/2}(2\omega)^{-1/2}N\me^{\mi k\cdot x}$; $N$是该矩阵元中的常数. 在光子散射中, $A(x)$是电磁场的一个横向分量, 而对于无质量$\pi$介子散射, 它是强子场的一个赝标量函数. 插入微分算符$-\mi\square_{x}$和$-\mi\square_{y}$是为了提供因子$\mi k^{\prime 2}$%
+和$\mi k^{2}$来抵消外线玻色子传播子. 令这些算符作用在$A^{\dag}(y)$和$A(x)$上, 我们有
+\begin{align}
+S &=\frac{-1}{(2\uppi)^{3}\sqrt{4\omega \omega ^{\prime }} \lvert N\rvert^{2}}
+\lim \nolimits_{k^{2}\to 0}\lim \nolimits_{k^{\prime 2}\to 0} \nonumber \\
+&\quad\times \int \dif^{4}x\int \dif^{4}y\:\me^{-\mi k^{\prime }\cdot y}\,\me^{\mi k\cdot x}
+\langle\alpha \vert T\{ J^{\dag }(y),\,J(x)\}\vert \alpha \rangle +\text{ETC} \: , \label{10.8.2}
+\end{align}%
+其中$J(x)\equiv\square_{x}A(x)$, 导数作用在编时乘积中的阶跃函数上产生了等时对易子,  而``ETC''代表等时对易子项(equal time commutator)的\,Fourier\,变换. 对于$A(x)$和$A^{\dag}(y)$(或者它们的导数)这样的算符, 除非$\bx=\by$, 否则对易子在$x^{0}=y^{0}$时为零, 所以``ETC''项是作用在$\updelta^{4}(x-y)$上的微分算符的\,Fourier\,%
+变换, 因而是玻色子\,4\,-动量的多项式函数. 我们在这里关心的\marginpar[\flushright{\small[464]\hspace*{5mm}}]{{\small\hspace*{5mm}[464]}}是$S$-矩阵元的解析性质, 所以这个多项式的细节是无关紧要的.%
+
+利用平移不变性, 方程(\ref{10.8.2})给出的$S$-矩阵元形如$S=-2\uppi\mi\updelta^{4}(k^{\prime }-k)M(\omega)$, 其中
+\begin{equation}
+M(\omega )=\frac{-\mi}{2\omega\lvert N\rvert^{2}}F(\omega) \:, \label{10.8.3}
+\end{equation}%
+\begin{equation}
+F(\omega )\equiv \int \dif^{4}x\:\me^{\mi\omega\, \ell \cdot x}
+\langle \alpha\vert T\{J^{\dag }(0),\,J(x)\}\vert \alpha \rangle +\text{ETC} \:,  \label{10.8.4}
+\end{equation}%
+现在有$k^{\mu }=\omega\ell^{\mu}$, 其中$\ell$是满足$\ell^{\mu}\ell_{\mu}=0$和$\ell^{0}=1$的固定\,4\,-矢.
+
+以对易子的形式, 编时乘积可以重新写成两种不同的形式
+\begin{align}
+T\{J^{\dag}(0),J(x)\} &= \theta(-x^{0})[J^{\dag }(0),J(x)]+J(x)J^{\dag}(0) \nonumber \\
+&=-\theta(x^{0})[J^{\dag }(0),J(x)]+J^{\dag }(0)J(x)\:. \label{10.8.5}
+\end{align}%
+相应地, 我们可以写下
+\begin{equation}
+F(\omega) = F_{A}(\omega) + F_{+}(\omega) = F_{R}(\omega)+F_{-}(\omega) \:,    \label{10.8.6}
+\end{equation}%
+其中
+\begin{equation}
+F_{A}(\omega) \equiv \int \dif^{4}x\:\theta (-x^{0})\,
+\langle \alpha \vert [J^{\dag}(0),J(x)]\vert \alpha \rangle\, \me^{\mi\omega \,\ell \cdot x}+\text{ETC} \:,
+\label{10.8.7}
+\end{equation}%
+\begin{equation}
+F_{R}(\omega )\equiv -\int \dif^{4}x\:\theta (x^{0})\,\langle \alpha \vert[J^{\dag
+}(0),J(x)]\vert\alpha \rangle\, \me^{i\omega \,\ell \cdot x}+\text{ETC}\: ,
+\label{10.8.8}
+\end{equation}%
+\begin{equation}
+F_{+}(\omega )\equiv \int \dif^{4}x\:\langle \alpha \vert J(x)\,J^{\dag }(0)\vert \alpha
+\rangle\, \me^{\mi\omega \,\ell \cdot x} \:,    \label{10.8.9}
+\end{equation}%
+\begin{equation}
+F_{-}(\omega )\equiv \int \dif^{4}x\:\langle \alpha \vert J^{\dag }(0)\,J(x)\vert\alpha
+\rangle \,\me^{\mi\omega \,\ell \cdot x}\:. \label{10.8.10}
+\end{equation}%
+微观因果律告诉我们, 除非$x^{\mu}$在光锥内, 否则(\ref{10.8.7})和(\ref{10.8.8})中的被积函数为零, 而阶跃函数又要求(\ref{10.8.7})中的$x^{\mu}$在向后光锥内, 从而使$x\cdot\ell>0$, 阶跃函数还要求(\ref{10.8.8})中的$x^{\mu}$在向前光锥内, 从而使$x\cdot \ell <0$. 我们由此得到结论, $F_{A}(\omega)$ 在$\operatorname{Im}\omega>0$时是解析的而$F_{R}(\omega)$在%
+$\operatorname{Im}\omega<0$是解析的, 这是因为在这两种情况中因子$\me^{\mi\omega\,\ell\cdot x}$均为$x^{\mu}$的积分提供了一个截断. (回忆``ETC'' 项是多项式, 因此对于所有有限点均解析.) 这样我们可以定义函数
+\begin{equation}
+\mathscr{F}(\omega)\equiv \begin{cases}
+F_{A}(\omega)\qquad \operatorname{Im}\omega >0 \\
+F_{R}(\omega)\qquad \operatorname{Im}\omega <0%
+\end{cases} \:, \label{10.8.11}
+\end{equation}%
+除了在实轴上有分支割线\marginpar[\flushright{\small[465]\hspace*{5mm}}]{{\small\hspace*{5mm}[465]}}, 这个函数在整个复$\omega$平面上是解析的.%
+
+我们现在可以来推导色散关系了. 根据方程(\ref{10.8.6}), $\mathscr{F}(\omega)$穿越任意实$E$上的分支割线给出的间断值是
+\begin{equation}
+\mathscr{F}(E+\mi\epsilon )-\mathscr{F}(E-\mi\epsilon
+)=F_{A}(E)-F_{R}(E)=F_{-}(E)-F_{+}(E)\:. \label{10.8.12}
+\end{equation}%
+如果$\mathscr{F}(\omega)/\omega^{n}$在$\lvert\omega\rvert\to\infty$时在上半平面或下半平面为零, 那么通过除以任意一个$n$阶多项式$P(\omega)$, 我们可以得到一个在$\lvert \omega\rvert \to \infty$时为零的函数, 并且这个函数除了实轴上的分支割线以及$P(\omega)$的零点$\omega_{\nu}$所给出的极点外都是解析的. (如果这里$\mathscr{F}(\omega)$本身在$\lvert\omega\rvert\to\infty$时为零, 我们可以取$P(\omega )=1$.) 根据留数方法, 我们有%
+\begin{equation}
+\frac{\mathscr{F}(\omega )}{P(\omega )}+\sum_{\nu }\frac{\mathscr{F}(\omega
+_{\nu })}{(\omega _{\nu }-\omega )P^{\prime }(\omega _{\nu })}=\frac{1}{2\uppi\mi}
+\oint_{C}\frac{\mathscr{F}(z)\:\dif z}{(z-\omega)\,P(z)} \:,    \label{10.8.13}
+\end{equation}%
+其中$\omega$是实轴以外的任意点, 而$C$是由两部分构成的围道: 一个在实轴以上从$-\infty+\mi\epsilon$跑到$+\infty +\mi\epsilon$然后沿着大半圆回到$-\infty +\mi\epsilon$, 另一个在实轴以下, 从$+\infty-\mi\epsilon$跑到$-\infty-\mi\epsilon$然后沿着大半圆回到$+\infty-\mi\epsilon$. 由于函数$\mathscr{F}(z)/P(z)$在$\lvert z\rvert\to\infty$时为零, 我们可以忽略来自大半圆的贡献. 利用方程(\ref{10.8.12}), 方程(\ref{10.8.13})变成
+\begin{equation}
+\mathscr{F}(\omega) = Q(\omega) + \frac{P(\omega)}{2\uppi\mi}
+\int_{-\infty}^{+\infty}\frac{F_{-}(E)-F_{+}(E)}{(E-\omega )P(E)}\:\dif E \:, \label{10.8.14}
+\end{equation}%
+其中$Q(\omega)$是$(n-1)$阶多项式
+\[
+Q(\omega) \equiv -P(\omega) \sum_{\nu}
+\frac{\mathscr{F}(\omega_{\nu})}{(\omega_{\nu}-\omega)P^{\prime }(\omega _{\nu })}\:.
+\]%
+这种形式的色散关系, 即$P(\omega)$和$Q(\omega)$分别是$n$阶和$n-1$阶多项式, 被称为有$n$个{\KAI{减除}}. 如果我们可以取$P=1$, 那么$Q=0$, 这个色散关系就被称为未减除的.%
+
+如果我们让$\omega$从上方接近实轴, 方程(\ref{10.8.14})给出
+\begin{equation}
+F_{A}(\omega) = Q(\omega) + \frac{P(\omega)}{2\uppi\mi}
+\int_{-\infty}^{+\infty}\frac{F_{-}(E)-F_{+}(E)}{(E-\omega -\mi\epsilon)\,P(E)}\:\dif E\:. \label{10.8.15}
+\end{equation}%
+回忆方程(\ref{10.8.6})和(\ref{3.1.25}), 就有
+\begin{equation}
+F(\omega) = Q(\omega) + \frac{1}{2}F_{-}(\omega) + \frac{1}{2}F_{+}(\omega)+%
+\frac{P(\omega)}{2\uppi\mi}
+\int_{-\infty }^{+\infty}\frac{F_{-}(E)-F_{+}(E)}{(E-\omega)\,P(E)}\:\dif E  \label{10.8.16}
+\end{equation}%
+这里$1/(E-\omega)$现在要解释成主值函数$\mathscr{P}/(E-\omega)$.
+
+这一结果是有用的\marginpar[\flushright{\small[466]\hspace*{5mm}}]{{\small\hspace*{5mm}[466]}}, 因为我们可以用可测截面表示函数$F_{\pm}(E)$. 对方程(\ref{10.8.9})和(\ref{10.8.10})中的多粒子中间态$\beta$的完备集求和%
+(包括对$\beta$中粒子的动量积分)并再次使用平移不变性, 我们有
+\begin{equation}
+F_{+}(E)=(2\uppi)^{4}\sum_{\beta }\lvert \langle \beta \vert J(0)^{\dag
+}\vert \alpha \rangle \rvert^{2}\, \updelta^{4}(-p_{\alpha }+E\ell +p_{\beta }) \:,  \label{10.8.17}
+\end{equation}%
+\begin{equation}
+F_{-}(E)=(2\uppi)^{4}\sum_{\beta}\lvert \langle \beta \vert J(0)\vert \alpha \rangle\rvert^{2}
+\,\updelta^{4}(p_{\alpha }+E\ell -p_{\beta })\:. \label{10.8.18}
+\end{equation}%
+但是, 对于吸收无质量玻色子$B$的过程$B+\alpha \to \beta$, 或者吸收它的反粒子$B^{c}$的过程$B^{c}+\alpha \to \beta$, 它们的矩阵元是
+\begin{equation}
+{-2\mi\uppi} M_{B^{c}+\alpha\to\beta} = \frac{(2\uppi)^{4}}{(2\uppi)^{3/2}%
+\sqrt{2E_{B^{c}}}N}\langle \beta \vert J(0)^{\dag}\vert \alpha \rangle  \:, \label{10.8.19}
+\end{equation}%
+\begin{equation}
+{-2\mi\uppi} M_{B+\alpha \to \beta }=\frac{(2\uppi)^{4}}{(2\uppi)^{3/2}\sqrt{%
+2E_{B}}N}\langle \beta \vert J(0)\vert \alpha \rangle \:. \label{10.8.20}
+\end{equation}%
+与方程(\ref{3.4.15})比较, 我们看到$F_{\pm}(E)$可以用能量${\mp}E$处的总截面表示{}$^*$\footnote{$^*${}在选择定则允许跃迁$\alpha\to\alpha+B$%
+和$\alpha\to\alpha+B^{c}$的某些情况下, 函数$F_{\pm}(E)$也包含正比于$\updelta(E)$的项, 这一项来源于对中间态$\beta$的求和中单粒子态$\alpha$ 的贡献. 对于横向极化光子, 或是极限$m_{\pi}\to0$下的赝标量$\pi$介子, 这种情况不会发生.}:%
+\begin{equation}
+F_{+}(E)=\theta (-E)\frac{2\lvert E\rvert\, \lvert N \rvert
+^{2}}{(2\uppi )^{3}}\sigma _{\alpha +B^{c}}(\lvert E\rvert ) \:,
+\label{10.8.21}
+\end{equation}%
+\begin{equation}
+F_{-}(E)=\theta (E)\frac{2 E\,\lvert N\rvert
+^{2}}{(2\uppi )^{3}}\sigma _{\alpha +B}(E)\:. \label{10.8.22}
+\end{equation}%
+现在, 对于大于零的实$\omega$, 散射振幅(\ref{10.8.3})是
+\begin{align}
+M(\omega ) &= \frac{-\mi Q(\omega)}{2\omega \lvert N\rvert^{2}}-%
+\frac{\mi}{2(2\uppi)^{3}} \sigma_{\alpha+B}(\omega)  \nonumber \\
+&\quad-\frac{P(\omega)}{\omega (2\uppi)^{4}}\int_{0}^{\infty }\left[
+\frac{\sigma_{\alpha+B}(E)}{(E-\omega )P(E)}+\frac{\sigma_{\alpha+B^{c}}(E)}{(E+\omega)P(-E)}\right] \:E\:dE\:. \label{10.8.23}
+\end{align}%
+更加常见的是用实验室参照系中的向前散射振幅$f(\omega)$来表示这个色散关系, 实验室参照系被定义成实验室参照系中的微分截面在向前方向上是$\lvert f(\omega)\rvert^{2}$. 这个振幅用$M(\omega)$表示是$f(\omega)=-4\uppi^{2}\omega\,M(\omega)=2\uppi^{2}\mi F(\omega)/\lvert N\rvert ^{2}$, 所以方程(\ref{10.8.23})现在变成\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[467]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[467]}}}
+\begin{align*}
+f(\omega) &= R(\omega) + \frac{\mi\omega}{4\uppi}\sigma_{\alpha+B}(\omega) \\
+&\quad+\frac{P(\omega)}{4\uppi^{2}}\int_{0}^{\infty}\left[
+\frac{\sigma_{\alpha +B}(E)}{(E-\omega)P(E)}+\frac{\sigma_{\alpha + B^{c}}(E)}{(E+\omega)P(-E)}\right] \:E\:\dif E \:,
+\end{align*}%
+其中$R(\omega)\equiv 2\mi\uppi^{2}Q(\omega)/\lvert N\rvert^{2}$. 光学定理(\ref{3.6.4})告诉我们右边第二项等于$\mi\operatorname{Im}f(\omega)$, 所以这也可以写成更传统的形式
+\begin{align}
+\operatorname{Re}f(\omega) &= R(\omega )  \nonumber \\
+&\quad+ \frac{P(\omega)}{4\uppi^{2}} \int_{0}^{\infty}\left[
+\frac{\sigma_{\alpha+B}(E)}{(E-\omega)P(E)}+\frac{\sigma_{\alpha+B^{c}}(E)}{(E+\omega)P(-E)}\right]
+\: E\:\dif E \:. \label{10.8.24}
+\end{align}%
+特别地, 我们看到, 如果我们将$P(\omega)$选为实的, 那么$R(\omega)$也是实的.%
+
+向前散射振幅同时满足一个重要的对称性条件. 通过将方程(\ref{10.8.7})和(\ref{10.8.8})中的积分变量$x$变成$-x$, 然后再使用平移不变性
+\[
+\langle \alpha\rvert [J^{\dag }(0),J(-x)]\lvert \alpha \rangle
+=\langle \alpha \rvert [J^{\dag}(x),J(0)] \lvert \alpha \rangle
+\]%
+我们看到当$\operatorname{Im}\omega \leq 0$时, 除了$J$与$J^{\dag}$交换了位置, $F_{A}(-\omega)$与$F_{R}(\omega)$是相同的. 即,%
+\[
+F_{A}(-\omega )=F_{R}^{c}(\omega )\quad \text{对于} \quad \operatorname{Im}\omega \leq 0 \:,
+\]%
+其中下标$c$表示该振幅是反粒子$B^{c}$在$\alpha$上的散射. (这个关系不受方程(\ref{10.8.7})和(\ref{10.8.8})中的等时对易子项的影响, 我们把这个证明留给读者.) 以同样的方式, 我们发现
+\[
+F_{R}(-\omega )=F_{A}^{c}(\omega )\text{ \ \  对于 \ \ }\operatorname{Im}%
+\omega \geq 0 \:,
+\]%
+以及, 对实$\omega$%
+\[
+F_{\pm }(-\omega) = F_{\mp}(\omega)\:.
+\]%
+在(\ref{10.8.6})中使用这些关系, 并回忆$f(\omega)$正比于$F(\omega)$, 对实$\omega$,
+我们发现了{\KAI{交叉对称性}}关系,%
+\begin{equation}
+f(-\omega )=f^{c}(\omega )\:. \label{10.8.25}
+\end{equation}
+
+我们可以随意地将$P(\omega)$取为任何阶数足够高的多项式, 但这样一来, $R(\omega)$不仅依赖于$P(\omega)$, 还依赖于$\mathscr{F}(\omega)$在$P(\omega)$ 零点处的值. 如果$P(\omega)$是实的且是$n$阶的, 方程(\ref{10.8.16})中的自由参量只能是实$(n{-}1)$阶多项式$R(\omega)$中的$n$ 个实系数. 因此方程(\ref{10.8.16})中只包含$n$个未知的独立实常数, 即对于给定的$P(\omega)$, 多项式$R(\omega)$中的系数. 除此之外$P(\omega)$ 是任意的, 因此我们希望将$n$ 阶多项式$P(\omega)$取得尽可能的小.%
+
+我们可以尝试取$P(\omega)=1$\marginpar[\flushright{\small[468]\hspace*{5mm}}]{{\small\hspace*{5mm}[468]}}, 但这并不奏效. \ref{sec:3.7}\,节的分析表明向前散射振幅应该以$\omega$或者%
+$\omega\ln^{2}\omega$那样的速率增长. 在这种情况下, 为了使$f(\omega)/P(\omega)$在$\omega\to\infty$时趋于零, 将$P(\omega)$取为二阶多项式是足够的, 这使得$R(\omega)$关于$\omega$是线性的. 方便起见选择$P(E)=E^{2}$, 于是方程(\ref{10.8.24})变成
+\begin{align}
+\operatorname{Re}f(\omega) &= a+b\omega   \nonumber \\
+&\quad +\frac{\omega^{2}}{4\uppi^{2}}\int_{0}^{\infty }\left[
+\frac{\sigma_{\alpha+B}(E)}{(E-\omega )}+\frac{\sigma_{\alpha+B^{c}}(E)}{(E+\omega)}%
+\right] \frac{\dif E}{E},  \label{10.8.26}
+\end{align}%
+其中$a$和$b$是未知的实常数. 交叉对称性条件(\ref{10.8.25})告诉我们, 对反粒子散射振幅$f^{c}(\omega)$, 色散关系中相应的常数是
+\begin{equation}
+a^{c}=a\:,  \qquad  b^{c}=-b\:. \label{10.8.27}
+\end{equation}
+
+例如, 如果我们假定截面$\sigma_{\alpha+B}(E)$和$\sigma_{\alpha+B^{c}}(E)$在$E\to\infty$%
+时的行为是$(\ln E)^{r}$乘以不同的常数, 那么(\ref{10.8.26})给出
+\begin{equation}
+\operatorname{Re}f(\omega )\sim \lbrack \sigma _{\alpha +B}(\omega )-\sigma _{\alpha
++B^{c}}(\omega )]\omega \ln \omega \sim \omega (\ln \omega )^{r+1}
+\label{10.8.28}
+\end{equation}%
+因此散射振幅实部的增长要比虚部快一个因子$\ln\omega $. 这是难以置信的; 我们在\,\ref{sec:3.7}\,节看到, %
+在$\omega\to\infty$时, 散射振幅的实部预期要比虚部小得多, 这也是被实验所证实的. 由此我们得出结论, %
+如果$\sigma_{\alpha+B}(E)$和$\sigma_{\alpha+B^{c}}(E)$在$E\to \infty$时的行为是$(\ln E)^{r}$乘以常数, %
+那么这两个常数必须相同. 由于我们这里关心的是高能极限, 这一结果不依赖$B$是无质量玻色子的假定, 所以在同样意义上, %
+{\KAI{在高能下, 任何粒子在固定靶上的散射截面与它的反粒子在同一靶上的散射截面之比应趋于一.}}
+这一结果是所谓的\,Pomeranchuk\,(波梅兰丘克)定理\textsuperscript{\cite{16}} 稍微推广后的版本. (Pomeranchuk\,仅考虑了$r=0$的情况, %
+而\,\ref{sec:3.7}\,节以及对截面行为的观测都表明$r=2$是更可能的情况.)%
+
+尽管\,Pomeranchuk\,对散射振幅渐进行为的估计类似于\,\ref{sec:3.7}\,节中的讨论, 当今, %
+高能行为通常从\,Regge\,(雷杰)极点理论\textsuperscript{\cite{17}}得到. 在这里进入该理论的细节会使我们偏离主题; 我们只需知道, 对于强子过程, 随着$\omega$ 趋于无穷, $f(\omega)$的渐进行为是对正比于$\omega^{\alpha_{n}(0)}$的项的求和, 其中$\alpha_{n}(t)$是一组``Regge\,轨迹'', 每一个代表在碰撞过程中不同单强子态的一个无线族的交换. 强子\lzx 强子散射中的领头轨迹(实际上是很多轨迹的复合)是``玻密子(Pomeron)'', 对于玻密\vspace{-5mm}\linebreak
+\pagebreak
+
+\noindent
+子, $\alpha(0)$
+接\marginpar[\flushright{\small[469]\hspace*{5mm}}]{{\small\hspace*{5mm}[469]}}近一. 正是这个轨迹给出了在$E\to \infty$时近似等于常数的截面. 根据\,Pomeranchuk\,定理, 玻密子与任何强子的耦合都等于它与该强子反粒子的耦合. 从强子态的频谱中, 我们可以估计出更低阶\,Regge\,轨迹的$\alpha_{n}(0)$.  在质量$m$处发生自旋$j$ 的介子共振有一个必要不充分条件,\textsuperscript{\cite{18}} 即其中一个轨迹$\alpha_{n}(t)$ 等于$j$ 时, $m^{2}$ 要等于$t$的值. 除了玻密子, 在$\pi$介子\lzx 核子散射的领头轨迹上, 我们发现了, 在$m=770\,\mathrm{Mev}$处$j=1$的$\rho$介子, $m=1690\,\mathrm{Mev}$ 处$j=3$ 的$g$ 介子, 以及$m=2350\,\mathrm{Mev}$处$j=5$的介子. 推算$\alpha (t)$在$t=0$的值, 我们可以估计出这个轨迹有$\alpha(0)\approx0.5$. 这个轨迹与$\pi^{+}$ 和$\pi^{-}$的耦合符号相反, 所以, 对于$\pi$介子\lzx 核子散射, 我们预期$f(\omega)-f^{c}(\omega)$ 的行为大体类似于$\sqrt{\omega}$.
+
+对于光子散射, $B$和$B^{c}$没有区别, 所以方程(\ref{10.8.27})会给出$b=0$,
+而方程(\ref{10.8.26})变成
+\begin{equation}
+f(\omega) = a+\frac{\omega^{2}}{2\uppi^{2}}
+\int_{0}^{\infty }\frac{\sigma(E)}{E^{2}-\omega^{2}}\:\dif E\:. \label{10.8.29}
+\end{equation}%
+这本质上是原始的\,Kramers-Kronig\,\textsuperscript{\cite{13}}关系. 我们将在\,\ref{sec:13.5}\,节中看到的, 对于电荷为$e$和质量为$m$的靶, 常数$a$是著名的值$\operatorname{Re}f(0)=-e^{2}/m$.
+
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+
+\begin{KAI}
+
+1. 考虑中性矢量场$v_{\mu}(x)$. 为了使这个场可以被正确地重正化并用以描述一个重正化质量为$m$的粒子, %
+对有两条外矢量场线的单粒子不可约图之和$\Pi_{\mu\nu}^{\ast}(k)$, 我们必须附加什么样的条件? 为了实现这点, %
+我们应如何将拉格朗日量分成自由场项和相互作用项两部分?
+
+2. 推导决定带荷标量场电磁顶点函数的广义\,Ward\,恒等式.
+
+3. 电磁流$J^{\mu}(x)$在两个自旋$\frac{1}{2}$, 宇称相同, 质量分别为$m_{1}$和$m_{2}$且{\KAI{不相同}}的单粒子态之间的矩阵元$\langle\bp_{2}\sigma_{2}\vert J^{\mu}(x)\vert\bp_{1}\sigma_{1}\rangle$的最一般形式是什么? 如果宇称相反, 这个矩阵元的最一般形式又是什么? (自始至终假定宇称守恒.)
+
+4. 对复守恒流$J^{\mu}(x)$, 推导真空期望值$\langle T\{J^{\mu}(x)\,J^{\nu}(y)^{\dag}\}\rangle_{0}$的谱(K\"{a}llen-Lehmann)表示.
+
+5. 对\,Dirac\,场$\psi(x)$\marginpar[\flushright{\small[470]\hspace*{5mm}}]{{\small\hspace*{5mm}[470]}}, 推导真空期望值$\langle T\{\psi_{n}(x)\,\bar{\psi}_{m}(y)\}\rangle_{0}$的谱(K\"{a}llen-Lehmann)表示.
+
+6. 在对散射振幅或截面的渐进行为不做任何假定的前提下, 证明向前光子散射振幅不可能满足未减除的色散关系.
+
+7. 利用色散理论的方法, 推导一个复标量场的谱(K\"{a}llen-Lehmann)表示.
+
+8. 利用色散理论和\,\ref{sec:8.7}\,节的结果, 在电子静止参考系下计算光子\lzx 电子向前散射振幅至$e^{4}$阶.
+ \end{KAI}
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}W. H. Furry, {\textit{Phys. Rev.}} {\bf{51}}, 125 (1937).
+     \addcontentsline{toc}{section}{参考文献}
+\bibitem {2}H. Yukawa, {\textit{Proc. Phys.-Math. Soc. Japan}} {\bf{17}}, 48 (1935).
+\bibitem {3}H. Lehmann, K. Symanzik, and W. Zimmerman, {\textit{Nuovo Cimento}} {\bf{1}}, 205 (1955).
+\bibitem {4}Y. Takahashi, {\textit{Nuovo Cimento}}, Ser. 10, {\bf{6}}, 370 (1957).
+\bibitem {5}J. C. Ward, {\textit{Phys. Rev.}} {\bf{78}}, 182 (1950).
+\bibitem {6}J. Schwinger, {\textit{Phys. Rev. Lett.}} {\bf{3}}, 296 (1959).
+\bibitem {7}P. A. M. Dirac, {\textit{Proc. Roy. Soc. (London)}} {\bf{A117}}, 610 (1928).
+\bibitem {8}M. N. Rosenbluth, {\textit{Phys. Rev.}} {\bf{79}}, 615 (1950).
+\bibitem {9}G. K\"{a}llen, {\textit{Helv. Phys. Acta}} {\bf{25}}, 417 (1952); {\textit{Quantum Electrodynamics}} (Springer-Verlag, Berlin, 1972); H. Lehmann, {\textit{Nuovo Cimento}} {\bf{11}}, 342 (1954).
+\bibitem {10}J. C. Howard and B. Jouvet, {\textit{Nuovo Cimento}} {\bf{18}}, 466 (1960); M. J. Vaughan, R. Aaron, and R. D. Amado, {\textit{Phys. Rev.}} {\bf{1254}}, 1258 (1961); S. Weinberg, in {\textit{Proceedings of the 1962 High-Energy Conference at CERN}} (CERN, Geneva, 1962): p. 683.
+\bibitem {11}R. L. Stratonovich, {\textit{Sov. Phys. Dokl.}} {\bf{2}}, 416 (1957); J. Hubbard, {\textit{Phys. Rev. Lett.}} {\bf{3}}, 77 (1959).
+\bibitem {12}S. Weinberg, {\textit{Phys. Rev.}} {\bf{137}}, B672 (1965).
+\bibitem {13}H. A. Kramers\marginpar[\flushright{\small[471]\hspace*{5mm}}]{{\small\hspace*{5mm}[471]}}, {\textit{Atti Congr. Intern. Fisici, Como}} (Nicolo Zanichellli, Bologna, 1927); 重印于\,H. A. Kramers. {\textit{Collected Scientific Papers}} (North-Holland, Amsterdam, 1956); R. de Kronig, {\textit{Ned. Tyd. Nat. Kunde}} {\bf{9}}, 402 (1942); {\textit{Physica}} {\bf{12}}, 543 (1946); J. S. Toll, The Dispersion Relation for Light and its Application to Problems Involving Electron Pairs (Princeton University Ph. D. Thesis 1952). 历史回顾, 参看\,J. D. Jackson in {\textit{Dispersion Relations}} G. R. Screaton\,编辑\,(Oliver and Boyd, Edinburgh, 1961); M. L. Goldberger in {\textit{Dispersion Relations and Elementary Particles}}, C. De Witt and R. Omnes\,编辑\,(Hermann, Pairs, 1960).
+\bibitem {14}M. Gell-Mann, M. L. Goldberger, and W. Thirring, {\textit{Phys. Rev.}} {\bf{95}}, 1612 (1954). %
+    M. L. Goldberger\,证明了这一结果的非微扰本质, {\textit{Phys. Rev.}} {\bf{97}}, 508 (1955).
+\bibitem {15}M. L. Goldberger, \textit{Phys. Rev.} {\bf{99}}, 979 (1955).
+\bibitem {16}I. Ia. Pomeranchuk, {\textit{J. Expt. Theor. Phys. (USSR.)}} {\bf{34}}, 725 (1958). 英文版: {\textit{Soviet Physics - JETP}} {\bf{34}}(7), 499 (1958). 结果的推广参看\,S. Weinberg, {\textit{Phys. Rev.}} {\bf{124}}, 2049 (1961).
+\bibitem {17} 可参看\,P. D. B. Collins, {\textit{An Introduction to Regge Theory and High Energy Physics}} (Combridge University Press, Cambridge, 1977). 原始文献是\,T. Regge, {\textit{Nuovo Cimento}} {\bf{14}}, 951 (1959): {\bf{18}}, 947 (1960).
+\bibitem {18}自旋随质量平方变化的曲线被称为\,Chew-Frautschi\,图; 参看\,G. F. Chew and S. C. Frautschi, {\textit{Phys. Rev. Lett.}} {\bf{8}}, 41 (1962).
+\end{thebibliography}
