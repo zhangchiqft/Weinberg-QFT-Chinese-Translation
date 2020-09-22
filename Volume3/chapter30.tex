@@ -1,0 +1,336 @@
+
+\chapter{超图}  \label{cha:30}
+
+
+在\,20\,世纪\,40\,年代, Feynman\,图的引入为微扰计算提供了每一步都保持显式的\,Lorentz\,不变性的优势. 对于这个目的, 
+交换任何虚粒子的所有自旋态都必须要由单个传播子描述. 幸运的是, 更进一步, 发展出超图的形式体系, 使得超对称性和\,Lorentz\,不变性在每一步都显然, 
+这是有希望的.\cite{1} 为了实现这点, 有必要用单个超传播子来描述交换给定超场所描述的所有粒子.
+
+
+这里有一个问题: 我们要对其积分的左手征超场$\,\Phi\,$要满足一个微分约束, $\mathscr{D}_{R}\Phi=0$. 这很像电动力学中的那个问题: 
+场强张量要满足一个微分约束, 齐次\,Maxwell\,方程. 在电动力学中, 处理这个问题的方式是用矢势表示场强, 然而对矢势而非场强做路径积分. 
+我们在这里使用一种非常类似的方法, 我们通过用势超场表示左手征超场的方法来附加这个约束, 然后对势超场做路径积分. 
+在这个形式体系中, 我们遇到的问题很像电动力学中规范不变性所产生的那些问题, 并用非常类似的方法来处理这些问题.
+
+超图形式体系所给出的最重要结果是超势的无重整定理.\cite{2} 在\,\ref{sec:27.6}\,节中, 通过使用\,Seiberg\,发展出的一个容易得多的间接技术, 
+我们证明了这个定理, 而这个技术也可以推广以描述非微扰效应. 然而, 看到这些重正化效应的神奇相消如何发生在实际的微扰计算中是非常有趣的.
+
+
+\section{势超场} \label{sec:30.1}
+
+考虑左手征超场$\,\Phi_{n}(x,\theta)\,$及其复共轭的理论, 但简单起见没有规范超场. 所有分量场编时乘积的真空期望值可以从这些超场编时乘积的真空期望值计算出来. 
+我们可以尝试用路径积分
+\begin{align}
+    &\biggl\langle T\Bigl\{\Phi_{n_{1}}(x_{1},\theta_{1}),\Phi_{n_{2}}(x_{2},\theta_{2}),\cdots\Bigr\}\biggr\rangle =
+    \int\Biggl[\prod_{n,x,\theta}\dif \Phi_{n}(x,\theta)\Biggr] \,\exp\Bigl(\mi\,I[\Phi]\Bigr) \nonumber\\
+    &\qquad \quad \times \Phi_{n_{1}}(x_{1},\theta_{1})\,\Phi_{n_{2}}(x_{2},\theta_{2})\cdots  \label{30.1.1}
+\end{align}
+来计算它们, 其中$\,I[\Phi]\,$是作用量
+\begin{equation}
+    I[\Phi] = \frac{1}{2}\int \dif^{4}x\:\Bigl[\sum_{n}\Phi_{n}^{\ast}(x,\theta)\Phi_{n}(x,\theta)\Bigr]_{D}
+    +2\operatorname{Re}\int\dif^{4}x\:\Bigl[f(\Phi)\Bigr]_{\mathscr{F}} \:. \label{30.1.2}
+\end{equation}
+(同方程(\ref{26.4.3})中一样, 在第一项中引入因子$\,1/2\,$是为了使$\,\Phi\,$的分量场是按惯例归一化的.) 
+但我们{\kai{不能}}简单地从方程(\ref{30.1.1})中读出\,Feynman\,规则, 这是因为对超场$\,\Phi_{n}\,$的泛函积分要被约束%
+以满足左手征条件$\,\mathscr{D}_{R}\Phi_{n}=0$.
+
+
+这类似于电动力学中的问题. 正如在\,12.3\,节中所讨论的, 当能量低于电子质量时, 软光子之间的相互作用可以被如下的有效拉格朗日量描述:
+\[
+    I[f] = -\frac{1}{4}\int \dif^{4}x\:\Biggl[f_{\mu\nu}f^{\mu\nu}+c_{1}\Bigl(f_{\mu\nu}f^{\mu\nu}\Bigr)^{2}
+    +c_{2}\Bigl(\epsilon_{\mu\nu\rho\sigma}f^{\mu\nu}f^{\rho\sigma}\Bigr)^{2}\Biggr] \:.
+\]
+但是, 如果不考虑路径积分被齐次\,Maxwell\,方程
+\[
+\partial_{\mu}f_{\nu\rho}+\partial_{\nu}f_{\rho\mu}+\partial_{\rho}f_{\mu\nu} =0 
+\]
+所约束这个事实, 我们无法从这个作用量中读出\,Feynman\,规则. 众所周知, 我们处理这个约束的方式是引入一个\,4\,-矢势$\,A_{\mu}$, 
+满足$\,f_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$, 这使得这个约束自动满足, 然后对$\,A_{\mu}(x)\,$积分而非$\,f_{\mu\nu}(x)$.
+
+以相同的方法, 我们可以采用在\,\ref{sec:26.6}\,节就用来推导超场场方程的那个技巧, 并引入非手征实超场$\,S_{n}(x,\theta)$, 满足
+\begin{equation}
+    \Phi_{n} = \mathscr{D}_{R}^{2}S_{n} \:. \label{30.1.3}
+\end{equation}
+其中
+\begin{equation}
+    \mathscr{D}_{R}^{2} \equiv \sum_{\alpha\beta}\epsilon_{\alpha\beta}\mathscr{D}_{R\alpha}\mathscr{D}_{R\beta}\:,
+    \label{30.1.4}
+\end{equation}
+这使得$\,\Phi_{n}\,$自动满足左手征约束, $\mathscr{D}_{R\alpha}\Phi_{n}=0$. 取代方程(\ref{30.1.1}), 我们有路径积分公式
+\begin{align}
+    &\biggl\langle T\Bigl\{\Phi_{n_{1}}(x_{1},\theta_{1}),\Phi_{n_{2}}(x_{2},\theta_{2}),\cdots\Bigr\}\biggr\rangle =
+    \int\Biggl[\prod_{n,x,\theta}\dif S_{n}(x,\theta)\Biggr] \,\exp\Bigl(\mi\,I[\mathscr{D}_{R}^{2}S]\Bigr) \nonumber\\
+    &\qquad \quad \times \mathscr{D}_{R}^{2}S_{n_{1}}(x_{1},\theta_{1})\,
+    \mathscr{D}_{R}^{2}S_{n_{2}}(x_{2},\theta_{2})\cdots \:. \label{30.1.5}
+\end{align}
+当用$\,S_{n}\,$表示作用量(\ref{30.1.2})后, 我们回忆起超导数的$\,D\,$-项对作用量没有贡献, 
+所以我们可以将方程(\ref{30.1.2})第一项中作用在$\,S_{n}^{\ast}\,$上的算符$\,(\mathscr{D}_{R}^{2})^{\ast}=\mathscr{D}_{L}^{2}\,$移到$\,S_{n}\,$上, 
+这给出
+\begin{equation}
+    I[\mathscr{D}_{R}^{2}S]=\frac{1}{2}\int\dif^{4}x\:
+    \Biggl[\sum_{n}S_{n}^{\ast}\mathscr{D}_{L}^{2}\mathscr{D}_{R}^{2}S_{n}\Biggr]_{D}
+    +2\operatorname{Re}\int\dif^{4}x\Bigl[f(\mathscr{D}_{R}^{2}S)\Bigr]_{\mathscr{F}} \:. \label{30.1.6}
+\end{equation}
+由于$\,\mathscr{D}_{R}\,$作用在$\,\mathscr{D}_{R}^{2}S\,$上给出零, 对于\,$f(\mathscr{D}_{R}^{2}S)\,$的任何一项中的一个$\,\mathscr{D}_{R}^{2}S\,$因子, 我们可以将其中的算符$\,\mathscr{D}_{R}^{2}\,$提出来使之作用在外面. 以这种方法, 我们可以写下
+\begin{equation}
+    f(\mathscr{D}_{R}^{2}S) = \mathscr{D}_{R}^{2}\tilde{f}(S) \:, \label{30.1.7}
+\end{equation}
+其中$\,\tilde{f}(S)\,$是通过将$\,f(\mathscr{D}_{R}^{2}S)\,$中的每一项略掉任何{\kai{一个}}算符$\,\mathscr{D}_{R}^{2}\,$获得的. 例如, 
+当超场只有一种时, 如果$\,f(\Phi)=\sum_{r}c_{r}\Phi^{r}$, 那么
+\[
+    \tilde{f}(S) =\sum_{r}c_{r}S\,(\mathscr{D}_{R}^{2}S)^{r-1} \:.
+\]
+利用方程(\ref{30.1.6}), (\ref{30.1.7})和(\ref{26.3.31}), 我们可以将整个作用量写成$\,D\,$-项的形式
+\begin{equation}
+    I[\mathscr{D}_{R}^{2}S]=\frac{1}{2}\int\dif^{4}x\:
+    \sum_{n}\Bigl[S_{n}^{\ast}\mathscr{D}_{L}^{2}\mathscr{D}_{R}^{2}S_{n}\Bigr]_{D}
+    +2\operatorname{Re}\int\dif^{4}x\Bigl[\tilde{f}(S)\Bigr]_{\mathscr{F}} \:. \label{30.1.8}
+\end{equation}
+方程(\ref{26.6.5})表明这也可以写成一个超空间积分:
+\begin{equation}
+    I[\mathscr{D}_{R}^{2}S]= -\frac{1}{4}\int \dif^{4}x \int\dif^{4}\theta\:
+    \sum_{n}S_{n}^{\ast}\mathscr{D}_{L}^{2}\mathscr{D}_{R}^{2}S_{n}
+    -\operatorname{Re}\int \dif^{4}x \int\dif^{4}\theta\: \tilde{f}(S) \:. \label{30.1.9}
+\end{equation}
+在超图体系的路径积分推导中, 我们将使用这个作用量.
+
+\section{超传播子} \label{sec:30.2}
+
+通常情况下, 可以直接从作用量中场的二次部分直接获得传播子. 如果我们把复标量场$\,\phi_{i}\,$
+(其中$\,i\,$是包含时空坐标以及自旋和种类指标的混合指标)的二次部分写成如下形式
+\begin{equation}
+    I_{\text{quad}}[\phi] = -\sum_{ij}D_{ij}\phi_{i}^{\ast}\phi_{j} \:, \label{30.2.1}
+\end{equation}
+其中$\,D_{ij}\,$是厄米的, 那么就像\,9.4\,节中解释的那样, 传播子就是$\,\Delta=D^{-1}$. 
+当对于某类矢量$\,\xi$, 作用量在(线性化)规范变换
+\begin{equation}
+    \phi_{i} \to \phi_{i} + \xi_{i}  \label{30.2.2}
+\end{equation}
+下不变时, 这就会出现问题. 在这个情况下, 我们有
+\begin{equation}
+    \sum_{i}D_{ij}\xi_{j} = 0 \:, \label{30.2.3}
+\end{equation}
+显然我们对``矩阵''$\,D_{ij}\,$求逆. 在电动力学中, 产生这个问题是因为拉格朗日密度在规范变换$\,A_{\mu}\to A_{\mu}+\partial_{\mu}\Lambda\,$下不变. 我们这里也有这个问题: 由于作用量实际上是$\,\mathscr{D}_{R}^{2}\,S_{n}\,$而非$\,S_{n}\,$自身的泛函, 
+对于任何超场, 在变换
+\begin{equation}
+    S_{n} \to S_{n} +\mathscr{D}_{R}X_{n} \:, \label{30.2.4}
+\end{equation}
+作用量是不变的. 
+
+在带电粒子的电动力学中, 因规范不变性引起的问题一般通过选择规范来解决, 例如通过\,15.5 节描述的\,Faddeev--Popov--de Witt\,方法. 
+但这里在变换(\ref{30.2.2})下不变而引起的问题更像是光子的有效场论在能量低于产生带电粒子时的问题, 这时理论规范不变就是因为作用量
+只包含规范不变的场. 在这种理论中有一个更加简单的做法. 除了$\,D_{ij}\,$本征值为零的本征矢$\,\xi_{i}\,$
+(简单起见取在一个单一的方向上), 我们可以找到一组本征值$\,d_{\nu}\neq 0\,$的正交本征矢$\,u_{\nu i}$:
+\begin{equation}
+    \sum_{j}D_{ij}\,u_{\nu j}= d_{\nu}\,u_{\nu i}\:, \qquad
+    \sum_{i}u_{\nu i}^{\ast}\,u_{\nu^{\prime}i} = \delta_{\nu\nu^{\prime}} \:, \qquad
+    \sum_{i}u_{\nu i}^{\ast}\,\xi_{i}=0 \:. \label{30.2.5}
+\end{equation}
+我们可以引入一组新的积分变量$\,\phi'\,$和$\,\phi_{\nu}''$:
+\begin{equation}
+    \phi_{i}=\phi^{\prime}\,\xi_{i} + \sum_{\nu}\phi_{\nu}^{\prime}\,u_{\nu i} \:. \label{30.2.6}
+\end{equation}
+在量子期望值的\,Feynman\,图计算中所遇到的那类积分就可以写为
+\begin{align}
+    &\int \Biggl[\prod_{i}\dif\phi_{i}\,\dif\phi_{i}^{\ast}\Biggr]\,\exp\{\mi I_{\text{quad}[\phi]}\}
+    \phi_{a}\cdots\,\phi_{b}^{\ast}\cdots = \mathscr{J}\int\dif\phi^{\prime}\,\dif\phi^{\prime\ast} \nonumber \\
+    &\quad\times \int \Biggl[\prod_{\nu}\dif\phi_{\nu}^{\prime}\,\dif\phi_{\nu}^{\prime\ast}\Biggr]
+    \exp\Biggl\{-\mi\sum_{\nu}d_{\nu}\,\lvert \phi_{\nu}^{\prime}\rvert^{2}\Biggr\} \:
+    \Biggl[\phi^{\prime}\,\xi_{a} + \sum_{\nu}\phi_{\nu}^{\prime} u_{\nu a}\Biggr] \cdots \nonumber \\
+    &\quad\qquad \times \Biggl[\phi^{\prime}\,\xi_{b} + \sum_{\nu}\phi_{\nu}^{\prime} u_{\nu b}\Biggr]^{\ast}\cdots \:,
+    \label{30.2.7}
+\end{align}
+其中$\,\mathscr{J}\,$是变换(\ref{30.2.6})的雅克比行列式. 因为$\,\phi'\,$和$\,\phi^{\prime\ast}\,$没有出现在指数变量中, 
+所以对$\,\phi'\,$和$\,\phi^{\prime\ast}\,$的积分显然不是合理定义的. 但如果作用量仅含规范不变量, 那么这不成问题, 
+这是因为这样$\,\phi_{a},\phi_{b}$ 等就会与``流''$\,J_{a},J_{b}\,$等收缩, 其中流满足
+\begin{equation}
+    \sum_{a}\xi_{a}J_{a} = 0\:. \label{30.2.8}
+\end{equation}
+因此我们可以将方程(\ref{30.2.7})写成
+\begin{align}
+     &\int \Biggl[\prod_{i}\dif\phi_{i}\,\dif\phi_{i}^{\ast}\Biggr]\,\exp\{\mi I_{\text{quad}[\phi]}\}
+    \phi_{a}\cdots\,\phi_{b}^{\ast}\cdots = \mathscr{C}\int\Biggl[\prod_{\nu}\dif\phi_{\nu}^{\prime}\,\dif\phi_{\nu}^{\prime\ast}\Biggr] \nonumber \\
+    &\qquad \times \exp\Biggl\{-\mi\sum_{\nu}d_{\nu}\,\lvert \phi_{\nu}^{\prime}\rvert^{2}\Biggr\} \:
+    \Biggl[\sum_{\nu}\phi_{\nu}^{\prime}u_{\nu a}\Biggr]\cdots
+    \Biggl[\sum_{\nu}\phi_{\nu}^{\prime}u_{\nu b}\Biggr]^{\ast}\cdots \nonumber \\
+    &\qquad + \xi\,\text{-项} \:, \label{30.2.9}
+\end{align}
+其中``$\,\xi\,$-项''是指正比一个或多个$\,\xi_{a},\xi_{b}\,$等因子的项, 这些项与满足方程(\ref{30.2.8})的$\,J\,$收缩后为零, 
+而 $\mathscr{C}\,$是无限大常数$\,\mathscr{J}\int\dif \phi'$. 这样, 对$\,\phi_{\nu}'\,$的积分就给出
+\begin{align}
+    &\int \Biggl[\prod_{i}\dif\phi_{i}\,\dif\phi_{i}^{\ast}\Biggr]\,\exp\{\mi I_{\text{quad}[\phi]}\}
+    \phi_{a}\cdots\,\phi_{b}^{\ast}\cdots \approx \sum_{\text{pairings}}\Bigl[-\mi\Delta_{ab}\Bigr] \cdots \nonumber \\
+    &\qquad +\xi\,\text{-项} \:, \label{30.2.10}
+\end{align}
+其中对配对(pairings)求和是指对$\,\phi\,$的指标和$\,\phi^{\ast}\,$的指标进行配对的所有方式求和, 而$\,\Delta_{ab}\,$是传播子
+\begin{equation}
+    \Delta_{ab} = \sum_{\nu}\frac{u_{\nu a}\,u_{\nu b}^{\ast}}{d_{\nu}} \:. \label{30.2.11}
+\end{equation}
+取代计算求和(\ref{30.2.11}), 我们可以使用它的定义性质
+\begin{equation}
+    \sum_{c}D_{ac}\Delta_{cb} = \sum_{\nu}u_{\nu a}\,u_{\nu b}^{\ast} \equiv \Pi_{ab} \:, \label{30.2.12}
+\end{equation}
+其中$\,\Pi\,$是投影到与$\,\xi\,$正交的空间的算符:
+\begin{equation}
+    \Pi^{2}=\Pi \:, \qquad \Pi\,\xi=0 \:. \label{30.2.13}
+\end{equation}
+方程(\ref{30.2.12})的解仅在相差$\,\xi\,$-项意义下是唯一的, 但如果场$\,\phi_{i}\,$仅以规范不变组合的方式出现在作用量中, 
+那么它们就不会造成问题.
+
+例如, 在电动力学中, 我们可以将作用量的动能部分写成
+\[
+I_{\text{quad}}[A] = -\frac{1}{4}\int\dif^{4}x\:f_{\mu\nu}f^{\mu\nu}
+= +\frac{1}{2}\int\dif^{4}x\: A^{\mu}\Bigl(\square \delta_{\mu}^{\nu}-\partial_{\mu}\partial^{\nu}\Bigr) A_{\nu} \:.
+\]
+微分算符$\,-\square\delta_{\mu}^{\nu}+\partial^{\nu}\partial_{\mu}\,$不是可逆的, 因为它有一个本征值为零的本征矢, 形如$\,\xi^{\mu}=\partial^{\mu}\Lambda$. 投影到与这些矢量正交的空间的算符是
+\[
+\Pi\indices{_\mu^\nu}(x,y) = [\delta\indices{_\mu^\nu}-\partial_{\mu}\partial^{\nu}\square^{-1}]\delta^{4}(x-y) \:,
+\]
+其中$\,\square^{-1}\delta^{4}(x-y)\,$是方程$\,\square[\square^{-1}\delta^{4}(x-y)]=\delta^{4}(x-y)\,$的任意解. 
+这个传播子的定义解是
+\[
+\Bigl(-\square\delta_{\mu}^{\lambda} + \partial_{\mu}\partial^{\lambda}\Bigr) \Delta\indices{_\lambda^\nu}(x,y)
+=\Pi\indices{_\mu^\nu}(x,y) \:,
+\]
+它有解
+\[
+\Delta\indices{_\lambda^\nu}(x,y) = \delta_{\mu}^{\nu}\,\Delta_{F}(x-y) + \partial_{\mu}\partial^{\nu}\,\text{-项} \:,
+\]
+其中$\,\Delta_{F}(x-y)\,$是通常的\,Feynman\,传播子(\textcolor{foo}{6.2.16}), 
+满足$\,\square \Delta_F(x-y)=-\delta^{4}(x-y)$. (作用量中的\,1/2\,因子没有出现在这里的传播子的定义方程中是因为$\,A_{\mu}\,$是实场. 而对于方程(\textcolor{foo}{6.2.16})中的 Fourier\,积分分母中的$\,-\mi\epsilon$, 9.2\,节中的路径积分形式理论解释了它的起源.) 
+
+对方程(\ref{30.1.9})第一项的观察表明时实超场传播子的定义方程是
+\begin{equation}
+    -\frac{1}{4}\mathscr{D}_{L}^{2}\,\mathscr{D}_{R}^{2}\,\Delta_{nm}^{S}(x,\theta;x^{\prime},\theta^{\prime})
+    =\mathscr{P}\delta^{4}(x-x^{\prime})\delta^{4}(\theta-\theta^{\prime})\delta_{nm} \:, \label{30.2.14}
+\end{equation}
+其中$\,\mathscr{P}\,$是超空间微分算符, 满足投影算符的条件
+\begin{equation}
+    \mathscr{P}^{2} = \mathscr{P} \:, \qquad \mathscr{P}\mathscr{D}_{R} = 0 \:, \label{30.2.15}
+\end{equation}
+而$\,\delta^{4}(\theta-\theta')\,$是方程(\ref{26.6.8})中引入的费米\,$\delta\,$-函数. 解是
+\begin{equation}
+    \mathscr{P}= \frac{-1}{16\square}\mathscr{D}_{L}^{2}\,\mathscr{D}_{R}^{2}\:. \label{30.2.16}
+\end{equation}
+(显然有$\,\mathscr{P}\mathscr{D}_{R}=0$. 为了验证$\,\mathscr{P}^{2}=\mathscr{P}$, 我们需要使用(\ref{26.6.12}), 
+它表明$\,\mathscr{D}_{R}^{2}\mathscr{D}_{L}^{2}\mathscr{D}_{R}^{2}=-16\square \mathscr{D}_{R}^{2}$.) 
+方程(\ref{30.2.14})的解是
+\begin{align}
+    \Delta_{nm}^{S}(x,\theta;x^{\prime},\theta^{\prime}) &= -\frac{1}{4\square}\delta^{4}(x-x^{\prime})
+    \delta^{4}(\theta-\theta^{\prime})\delta_{nm} \nonumber \\
+    &= \frac{1}{4}\Delta_{F}(x-x^{\prime})\delta^{4}(\theta-\theta^{\prime})\delta_{nm}
+    +\mathscr{D}_{R}\,\text{-项} \:. \label{30.2.17}
+\end{align}
+
+这是由势超场$\,S_{m}^{\ast}(x',\theta')\,$产生而被势超场$\,S_{n}(x,\theta)\,$湮灭的线的传播子, 
+这个传播子就是我们计算作用量(\ref{30.1.9})的超图时所要使用的. 为了与普通传播子相联系, 
+考虑由左手征超场$\,\Phi_{m}^{\ast}(x',\theta')\,$产生而被左手征超场$\,\Phi_{n}(x,\theta)\,$湮灭的线的传播子是有益的. 
+通过用$\,\mathscr{D}_{R}^{2}\,$作用$\,S_{n}(x,\theta)\,$并用
+$\,{{\mathscr{D}'}_{R}^{2}}^{\ast}={\mathscr{D}'}_{L}^{2}\,$作用$\,S_{m}^{\ast}(x',\theta')\,$可以获得这些手征超场, 
+所以左手征超场的传播子是
+\begin{equation}
+    \Delta_{nm}^{\Phi}(x,\theta;x^{\prime},\theta^{\prime}) = \frac{1}{4}\mathscr{D}_{R}^{2}
+    {\mathscr{D}_{L}^{\prime}}^{2}\Delta_{F}(x-x^{\prime})\,\delta^{4}(\theta-\theta^{\prime})\,\delta_{nm} \:.\label{30.2.18}
+\end{equation}
+
+
+例如, 传播子中$\,\theta\,$和$\,\theta'\,$的零阶项是
+\begin{equation}
+    \Bigl[\Delta_{nm}^{\Phi}(x,\theta;x^{\prime},\theta^{\prime})\Bigr]_{\theta=\theta^{\prime}=0}
+    =\frac{1}{4}\biggl(\frac{\partial}{\partial\theta_{R}}\biggr)^{2}
+    \biggl(\frac{\partial}{\partial\theta_{L}^{\prime}}\biggr)^{2}\Delta_{F}(x-x^{\prime})\,
+    \delta^{4}(\theta-\theta^{\prime}) \,\delta_{nm} \:. \label{30.2.19}
+\end{equation}
+为了计算它, 我们回忆起费米$\,\delta\,$-函数的方程(\ref{26.6.8}):
+\[
+    \delta^{4}(\theta-\theta^{\prime})=\frac{1}{4}\Bigl((\theta_{L}-\theta_{L}^{\prime})^{\mathrm{T}}
+    \epsilon(\theta_{L}-\theta_{L}^{\prime})\Bigr)\, \Bigl((\theta_{R}-\theta_{R}^{\prime})^{\mathrm{T}}
+    \epsilon(\theta_{R}-\theta_{R}^{\prime})\Bigr) \:,
+\]
+从此我们发现$\,(\partial/\partial\theta_{R})^{2}(\partial/\partial\theta_{L}')^{2}\delta(\theta-\theta')=4$. 
+方程(\ref{30.2.19})因此给出
+\begin{equation}
+    \Bigl[\Delta_{nm}^{\Phi}(x,\theta;x^{\prime},\theta^{\prime})\Bigr]_{\theta=\theta^{\prime}=0}
+    =\Delta_{F}(x-x^{\prime})\,\delta_{nm} \:, \label{30.2.20}
+\end{equation}
+这正是超场标量分量通常的传播子.
+
+
+\section{用超图进行计算}  \label{sec:30.3}
+
+我们现在来考虑如果用上一节的结果来计算一组经典势超场$\,S_{n}(x,\theta)\,$及其伴随场的量子有效作用量$\,\Gamma(S,S^{\ast})$. 
+沿用\,16.1\,节中所讨论的处理方法, 有效作用量可以定义成所有单粒子不可约连通超图的求和, 其中组成单粒子不可约连通超图的顶点直接与内线和外线相连. 
+对于每条始于或终于一个顶点被$\,x\,$和$\,\theta\,$所标记的$\,n\,$型外线 , 我们分别引入一个\,c\,-数因子$\,S_{n}(x,\theta)\,$或$\,S_{n}^{\ast}(x,\theta)$(但没有传播子). 一个被$\,x,\theta\,$标记且与$\,N\,$条入线或出线相连的顶点, 设这$\,N\,$条线被记为$\,n_{1},n_{2},\cdots,n_{N}$, 
+这个顶点所产生的项就是$\,\mi\,$分别乘以超势$\,\tilde{f}(S)\,$中$\,S_{1}S_{2}\cdots S_{N}\,$项的系数或该系数的复共轭. 
+任何一个从$\,x,\theta\,$标记的顶点出发而进入被$\,x',\theta'\,$标记的顶点会产生一个传播子, 由方程(\ref{30.2.10})和(\ref{30.2.17}) 给出
+\begin{equation}
+-\frac{\mi}{4}\delta^{4}(\theta-\theta^{\prime})\Delta_{F}(x-x^{\prime}) \:. \label{30.3.1}
+\end{equation}
+另外, 方程(\ref{30.1.7})表明, 超导数$\,\mathscr{D}_{R}^{2}\,$作用在除了进入任意顶点的一条内线或外线以外的所有传播子或者外线的$\,S\,$因子上, 
+而超导数$\,\mathscr{D}_{L}^{2}\,$作用在除了进入任意顶点的一条内线或外线以外的所有传播子或者外线的$\,S\,$因子上. 
+对这些因子的乘积要积掉所有$\,x\,$和$\,\theta$; 量子有效作用量就是对所有单粒子不可约图做这样的积分并求和.
+
+通过在超空间中分部积分, 与任何一个传播子(例如, 连接被$\,x,\theta\,$和$\,x',\theta'\,$标记的顶点)伴随的算符$\,\mathscr{D}_{L}^{2}\,$和(或)$\,\mathscr{D}_{R}^{2}$可以被挪到其它传播子或外线因子上. 这使得这个内线贡献的因子正比于$\,\delta^{4}(\theta-\theta')$. 
+对$\,\theta'\,$的积分就消掉了这个$\,\delta\,$函数,  并把其它所有的$\,\theta'\,$换成$\,\theta$. (在数条内线连接同一对顶点的情况下, 我们可以使用费米$\,\delta\,$函数的性质$\,[\delta^{4}(\theta-\theta')]^{2}=0$.) 以这种方法继续下去, 
+我们最终会得到一个\,4\,维$\,\theta\,$积分, 而所有的$\,\mathscr{D}\,$作用在外线因子$\,S_{n}\,$和$\,S_{m}^{\ast}\,$上.
+即, 尽管一般不在空间坐标上定域, 但$\,\Gamma[S,S^{\ast}]\,${\kai{在费米坐标上是定域的}}.
+
+在``规范''变换(\ref{30.2.4})下的不变性控制了这个泛函的结构. 这告诉我们每个外线因子$\,S_{n}\,$或$\,S_{n}^{\ast}$ 上分别要
+作用算符$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}$, 但会有两个例外. 这两个例外是, 外线都为入线或出线的项, 
+其中除了一个外线因子$\,S_{n}\,$或$\,S_{n}^{\ast}\,$外, 其它所有外线因子都要分别用$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$作用
+且没有其它超导数. 这样的项尽管不能表示成对仅由$\,\Phi_{n}\,$和(或)$\,\Phi_{n}^{\ast}\,$构成的函数的\,4\,-维$\,\theta\,$积分, 
+它在变换(\ref{30.2.4})下仍然是不变的. 这是因为, 这种振幅在这个变换下的改变仅来自于外线因子$\,S_{n}\,$或$\,S_{n}^{\ast}\,$中{\kai{不}}被算符$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$所作用的那部分的变化, 如果我们用分部积分将其它$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$算符中的一个挪到这个改变上, 那么这个改变就被消掉了. 正如我们在\,\ref{sec:30.1}\,节看到的, 
+这样的项在$\,\Gamma[S,S^{\ast}]\,$是$\,\Phi_{n}\,$或$\,\Phi_{n}^{\ast}$ 的泛函的$\,\mathscr{F}\,$-项, 因此会对超势或者它的复共轭有一修正. 
+除了这些例外外, $\Gamma[S,S^{\ast}]\,$中的每一项都可以写为对仅是$\,\Phi_{n}\,$和(或)$\,\Phi_{n}^{\ast}\,$的泛函的\,4\,维$\,\theta\,$-积分, 
+因此对有效作用量的$\,D\,$-项部分有一修正.
+
+另外注意到, 如果作用量中的一项中除了一个外线因子$\,S_{n}\,$或$\,S_{n}^{\ast}\,$外都分别被$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$作用, {\kai{且}}被额外的$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$算符作用(例如$\,\mathscr{D}_{R}^{2}\mathscr{D}_{L}^{2}\mathscr{D}_{R}^{2}S_{n}\,$或$\,\mathscr{D}_{L}^{2}\mathscr{D}_{R}^{2}\mathscr{D}_{L}^{2}S_{n}^{\ast}\,$这样的组合), 那么这样的项也可以通过分部积分写成一个额外的$\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$算符作用在先前未微分的外线因子$\,S_{n}\,$或$\,S_{n}^{\ast}\,$上. 这样的项因此可以表示成对仅是$\,\Phi_{n}\,$和(或)$\,\Phi_{n}^{\ast}\,$的泛函的\,4\,维$\,\theta\,$-积分, 因而可以对作用量的$\,D\,$-项部分有其它修正. $\Gamma[S,S^{\ast}]\,$中唯一无法用这种方式写的项是有$\,E\,$条入外线且{\kai{只有}}$\,E-1\,$个算符$\,\mathscr{D}_{R}^{2}\,$作用在$\,S_{n}\,$外线因子上, 或者$\,E^{\ast}\,$条出外线\footnoteB{原书误植为入外线}且{\kai{只有}}$\,E^{\ast}-1\,$个算符$\,\mathscr{D}_{L}^{2}\,$作用在$\,S_{n}^{\ast}\,$外线因子上. 因此通过计数超图对$\,\Gamma[S,S^{\ast}]\,$中相应的项贡献的算符$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$的个数, 我们可以分辨出超图是否对超势或它的共轭有贡献.
+
+我们来计数这些超导数. 考虑如下的连通超图: $V_{n}\,$个有$\,n\,$条线进入的顶点; $V_{n}^{\ast}\,$个有$\,n\,$条线离开的顶点; $I\,$条内线; $E\,$条入外线; 以及$\,E^{\ast}\,$条出外线. 这些数之间有关系
+\begin{equation}
+I+E = \sum_{n}n V_{n} \:, \qquad I + E^{\ast}=\sum_{n}nV_{n}^{\ast} \:. \label{30.3.2}
+\end{equation}
+那么算符$\,\mathscr{D}_{R}^{2}\,$或$\,\mathscr{D}_{L}^{2}\,$的总数就是
+\begin{equation}
+N_{R} = \sum_{n}V_{n}(n-1)=I+E-V = L+V^{\ast}+E-1 \:, \label{30.3.3}
+\end{equation}
+和
+\begin{equation}
+N_{L} = \sum_{n}V_{n}^{\ast}(n-1) = I+E^{\ast}-V^{\ast} = L+V+E^{\ast}-1 \:, \label{30.3.4}
+\end{equation}
+其中$\,V=\sum_{n}V_{n}\,$是线进入的顶点的总数; $V^{\ast}=\sum_{n}V^{\ast}_{n}\,$是线离开的顶点的总数; 而$\,L=I-V-V^{\ast}+1\,$是圈的个数. 我们看到任何有圈的图有$\,N_{R}\geq E\,$和$\,N_{L}\geq E^{\ast}$, 使得算符$\,\mathscr{D}_{R}^{2}\,$的个数足以将所有$\,S_{n}\,$转换成$\,\Phi_{n}=\mathscr{D}_{R}^{2}S_{n}\,$或它的导数, 以及算符$\,\mathscr{D}_{L}^{2}\,$的个数足以将所有$\,S_{n}^{\ast}\,$转换成$\,\Phi_{n}^{\ast}=\mathscr{D}_{L}^{2}S_{n}^{\ast}\,$或它的导数. {\kai{因此, 任何有圈的图产生的贡献总会正比于左手征超场$\,\Phi_{n}\,$及其伴随场的泛函的\,4\,维$\,\theta\,$-积分------换句话说, $D\,$-项.}}
+
+想要获得对$\,\mathscr{F}\,$项或其共轭的贡献的唯一方法是分别只有$\,N_{R}=E-1\,$个$\,\mathscr{D}_{R}^{2}\,$算法或只有$\,N_{L}=E^{\ast}-1\,$个$\,\mathscr{D}_{L}^{2}\,$算符. 根据方程(\ref{30.3.3})和(\ref{30.3.4}), 这样的图将分别有$\,L=0\,$和$\,V^{\ast}=0\,$或$\,L=0\,$和$\,V=0$. 换句话说, 由于我们只考虑单粒子不可约图, 我们只能从只有入线的顶点获得$\,\mathscr{F}\,$-项, 且只能从只有出线的顶点获得$\,\mathscr{F}\,$-项的伴随. 这个贡献正是原始超势中的被积$\,\mathscr{F}\,$-项, 或它的伴随. 因此我们再次看到: {\kai{直到微扰论的任意阶, 都不存在$\,\mathscr{F}\,$项有限或无限的重正化.}}
+
+
+\section*{习题}
+\noindent 1. 利用方程(\ref{30.2.18})计算手征超场的旋量分量和辅助分量的传播子. \\
+
+\noindent 2. 考虑单个手征超场$\,\Phi\,$的超对称理论, 它有拉格朗日密度
+\[
+\mathscr{L}=\frac{1}{2}\Bigl[ \Phi^{\ast}\Phi\Bigr]_{D}+2\operatorname{Re}\Bigl(g[\Phi^{3}]_{\mathscr{F}}\Bigr) \:,
+\]
+其中$\,g\,$是任意复常数. 利用超图形式体系计算量子有效作用量的单圈贡献. 将答案表示成对坐标及单个格拉斯曼坐标$\,\theta\,$的积分.
+\\
+
+\noindent 3. 对于动能项是(\ref{27.3.17})的超对称阿贝尔规范理论, 规范超场$\,V(x,\theta)\,$的超传播子是什么? 
+
+
+
+
+
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+    \bibitem{1} A. Salam and J. Strathdee, {\textit{Phys. Rev.}} {\bf{D11}}, 1521 (1975); {\textit{Nucl. Phys.}} {\bf{B86}}, 142 (1975); 
+    D. M. Capper, {\textit{Nuovo Cimento}} {\bf{25A}}, 259 (1975); R. Delbourgo, {\textit{Nuovo Cimento}} {\bf{25A}}, 646 (1975); D. M. 
+    Capper and G. Leibrandt, {\textit{Nucl. Phys.}} {\bf{B85}}, 492 (1975); F. Krause, M. Scheunert, J. Honerkamp, and M. Schlindwein, 
+    {\textit{Phys. Lett.}} {\bf{53B}}, 60 (1974); K. Fujikawa and W. Lang, {\textit{Nucl. Phys.}} {\bf{B88}}, 61 (1975); J. Honerkamp, 
+    M. Schlindwein, F. Krause, and M. Scheunert, {\textit{Nucl, Phys.}} {\bf{B95}}, 397 (1975); S. Ferrara and O. Piguet, {\textit{Nucl. 
+    Phys.}} {\bf{B93}}, 261 (1975); R. Delbourgo, {\textit{J. Phys.}} {\bf{G1}}, 800 (1975). 这个形式体系被\,W. Siegel\,推广至超引力, {\textit{Phys. Lett.}} {\bf{84B}}, 197 (1979).
+    \bibitem{2} M. T. Grisaru, W. Siegel, and M. Ro\v{c}ek, {\textit{Nucl. Phys.}} {\bf{B159}}, 429 (1979).
+\end{thebibliography}
+

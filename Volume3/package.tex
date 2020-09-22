@@ -1,0 +1,82 @@
+
+%=====================宏包（package）===============================
+
+\usepackage{amsmath}                      % AMSLaTeX宏包，用来排出更加漂亮的公式
+\usepackage{amsfonts}                     % AMS提供的数学符号的字库
+\usepackage{amssymb}                      % 数学符号生成命令
+\usepackage{amsthm}                       % 数学定理环境
+%\usepackage{mathptmx}                         % times 字体
+%\usepackage[lite]{mtpro2}
+%\usepackage{extarrows}                    %长箭头的使用
+\usepackage[c]{esvect}                       % 矢量箭头的重新定义
+%\usepackage{CJK}                          % 中文排版
+%\usepackage{CJKnumb}                      % 将阿拉伯数字转换成中文数字的命令
+\usepackage[scheme = plain, fontset = windows]{ctex}
+\usepackage{wasysym}                      % 支持直立的积分号
+\usepackage{indentfirst}                  % 首行缩进宏包
+\usepackage{fancyhdr}                     % fancyhdr宏包支持自定义页眉和页脚
+\usepackage{lmodern}
+%\usepackage[Symbol]{upgreek}             % 直立希腊字母
+\usepackage{bm}                           % 处理数学公式中的黑斜体
+\usepackage{titlesec}                     % 控制标题的宏包
+\usepackage{titletoc}                     % 控制目录的宏包
+\usepackage{color}                        % 支持彩色
+\usepackage{tikz}                         % 画图 
+\usepackage{float}                        % 支持强制执行浮动体的位置
+\usepackage{enumitem}                     % 罗列环境修改标签格式的宏包
+\usepackage{dsfont}
+%\usepackage{enumerate}
+\usepackage{hypbmsec}                     % 用来控制书签中标题显示内容
+\definecolor{foo}{RGB}{173,34,48}
+\definecolor{blue3}{RGB}{31, 119, 180}
+\usepackage[unicode,
+            hyperfootnotes=true,
+            bookmarks=true,
+            colorlinks,
+            linkcolor=foo,
+            citecolor=blue3]{hyperref}     % 中文书签
+
+\usepackage{graphicx}                     % 支持插图处理
+\usepackage{psfrag}                       % 文本转换tex
+%\usepackage{CJKutf8}
+%\usepackage{epstopdf}                     % eps图片转换成pdf
+%\usepackage[centerlast]{subfigure}        % 支持子图 %centerlast 设置最后一行是否居中
+\usepackage{tabularx}                     % 自动设置表格的列宽
+\usepackage{caption}                     % 浮动体标题的格式控制
+\DeclareCaptionLabelSeparator{twospace}{\ ~}
+\captionsetup{labelsep=twospace}
+%\usepackage{ccmap}                        % PDFLaTeX编译生成的PDF文件进行复制/粘贴不会产生乱码
+\usepackage{amsthm}                       % 支持自定义定理环境的宏包
+\usepackage[top=1.35in, bottom=1.15in, left=1.00in, right=0.9in]{geometry}
+                                          % 支持版面尺寸设置
+\usepackage[sectionbib,rootbib]{chapterbib}
+\usepackage{cite}     %修改参考文献引用样式
+%\usepackage{footmisc}     % 脚注样式
+\usepackage{slashed}      %Dirac 斜横
+\usepackage{mathrsfs}   %支持花写英文
+%\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
+\usepackage{amsbsy}
+\newcommand{\mathscrbf}[1]{\pmb{\mathscr{#1}}}
+
+\usepackage{exscale}
+\usepackage{relsize}
+\usepackage{verbatim}   % 多行注释
+\usepackage{subfig}                    % 支持子图
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{pifont}    %带圈数字
+\usepackage{tensor}
+\usepackage{footmisc}
+\usepackage{manyfoot,perpage}
+\DeclareNewFootnote{B}[alph]
+\usepackage{booktabs}   %调整表格线与上下内容的间隔
+
+%\usepackage{floatrow}
+
+
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings}
+% needed for BB
+\usetikzlibrary{calc}

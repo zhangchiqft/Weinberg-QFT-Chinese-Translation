@@ -1,0 +1,2017 @@
+
+
+\chapter{超对称场论} \label{cha:26}
+
+现在我们知道了最一般超对称代数的结构, 并且, 我们看到了如何解出这一对称性对粒子谱的意义. 为了知道超对称性对粒子相互作用的含义, 我们需要知道如何构建超对称场论.
+
+最初, 场超多重态的构造是通过重复使用\,Jacobi\,恒等式直接完成的, 很像\,25.4\,节和\,25.5\,节中单粒子态的超多重态构造. 26.1\,节给出了这一方法的一个例子, 在那里用来构造只包含标量场和\,Dirac\,场的超多重态. 幸运的是, 还有一个\,Salam\,和\,Strathdee\,发明的更加简单的技术,\cite{1} 在这种技术里, 场超多重态被并入``超场'', 这种场不仅依赖通常的\,4\,维时空坐标还依赖费米坐标. 我们将在\,26.2\,节引入超场并用它来构建超对称场论, 然后在\,26.3---26.8\,节研究它们的一些结果. 本章将只考虑$\,N=1\,$的超对称, 这是超场形式理论的主要用武之地. 在下一章的末尾, 我们将通过给$\,N=1\,$超场理论附加$\,U(N)\,R\,$-对称性来构造有$\,N\,$-扩充超对称性的理论.
+
+
+\section{场超多重态的直接构造} \label{sec:26.1}
+
+为了阐明场多重态的直接构造, 对于我们将要考察的场, 它湮灭掉的粒子属于\,25.5\,节讨论过的任意质量的最简超多重态: 两个无自旋的粒子和一个自旋$\,1/2\,$的粒子. 我们在方程(\ref{25.5.15})中看到, 湮灭掉零自旋单粒子态$\,\lvert 0,0\rangle\,$的是$\,\mathcal{Q}_{a}\,$而不是$\,\mathcal{Q}_{a}^{\ast}$, 所以我们预期从真空(它假设成被所有超对称生成元湮灭)中创造这一粒子的标量场%
+$\,\phi(x)\,$与$\,\mathcal{Q}_{a}\,$对易而不是$\,\mathcal{Q}_{a}^{\ast}$. 即,
+\begin{equation}
+    [\mathcal{Q}_{a},\phi(x)] = 0 \:, \label{26.1.1}
+\end{equation}
+\begin{equation}
+    {-}\mi\sum_{b}e_{ab}[\mathcal{Q}_{b}^{\ast},\phi(x)] \equiv \zeta_{a}(x) \neq 0 \:. \label{26.1.2}
+\end{equation}
+在这里引入$\,2\times2\,$的反对称矩阵$\,e_{ab}\,$(其中$\,e_{1/2,-1/2}\equiv +1$)是因为, 在齐次\,Lorentz\,群下按照$\,(1/2,0)$ 表示变换的是$\,\sum_{b}e_{ab}\mathcal{Q}_{b}^{\ast}$. 由此得出$\,\zeta_{a}(x)\,$这个二分量旋量场也属于齐次\,Lorentz\,群的$\,(1/2,0)\,$表示.\footnote{到目前为止, 我们并没有对这些场湮灭的粒子的质量或相互作用做任何假设, 但能够注意到, 就像\,5.9\,节中解释的那样, 一个$\,(1/2,0)\,$自由场能够产生的无质量粒子只能是螺旋度$\,+1/2\,$的, 这与(\ref{25.5.15})的结果一致, 即被$\,\mathcal{Q}_{a}\,$湮灭掉的无质量零自旋单粒子态$\,\lvert 0,0\rangle\,$伴随着一个螺旋度$\,+1/2\,$的态处在超多重态中.}
+
+从方程(\ref{26.1.1})---(\ref{26.1.2})和反对易关系(\ref{25.2.31})中, 我们发现
+\[
+\{\mathcal{Q}_{b},\zeta_{a}\} = -\mi \sum_{c} e_{ac}[\{\mathcal{Q}_{b},\mathcal{Q}_{c}^{\ast}\},\phi(x)]
+=2\mi(\sigma^{\mu}e)_{ba}\,[P_{\mu},\phi] \:,
+\]
+因而
+\begin{equation}
+    \{\mathcal{Q}_{b},\zeta_{a}(x)\} = -2(\sigma^{\mu}e)_{ba}\partial_{\mu}\phi(x) \:. \label{26.1.3}
+\end{equation}
+另一方面, 方程(\ref{26.1.2})和反对易关系(\ref{25.2.32})给出
+\[
+{-}\mi\sum_{c}e_{ac}\{\mathcal{Q}_{b}^{\ast},\zeta_{c}\} = \{\mathcal{Q}_{b}^{\ast},[\mathcal{Q}_{a}^{\ast},\phi]\}
+=-\{\mathcal{Q}_{a}^{\ast},[\mathcal{Q}_{b}^{\ast},\phi]\} = \mi\sum_{c}e_{bc}\{\mathcal{Q}_{a}^{\ast},\zeta_{c}\} \:,
+\]
+所以$\,\sum_{c}e_{ac}\{\mathcal{Q}_{b}^{\ast},\zeta_{c}\}\,$是反对称的, 因而正比于$\,2\times2\,$反对称矩阵$\,e_{ab}\,$:
+\begin{equation}
+    \mi\{\mathcal{Q}_{b}^{\ast},\zeta_{a}(x)\} = 2\delta_{ab}\,\mathscr{F}(x) \:. \label{26.1.4}
+\end{equation}
+Lorentz\,不变性要求系数$\,\mathscr{F}(x)\,$是个标量场.
+
+我们现在必须更进一步, 计算超对称生成元与$\,\mathscr{F}(x)\,$的对易子. 利用方程(\ref{26.1.4}), (\ref{26.1.2})和\\(\ref{25.2.32}), 我们有
+\[
+\delta_{ab}\,[\mathcal{Q}_{c}^{\ast},\mathscr{F}]=\tfrac{1}{2}\mi[\mathcal{Q}_{c}^{\ast},\{\mathcal{Q}_{b}^{\ast},
+\zeta_{a}\}]
+=\tfrac{1}{2}\mi[\{\mathcal{Q}_{c}^{\ast},\zeta_{a}\},\mathcal{Q}_{b}^{\ast}] = -\delta_{ac}[\mathcal{Q}_{b}^{\ast},\mathscr{F}]\:.
+\]
+取$\,a=b\neq c$, 我们发现这个对易子为零:
+\begin{equation}
+    [\mathcal{Q}_{c}^{\ast},\mathscr{F}(x)]=0 \:. \label{26.1.5}
+\end{equation}
+最后, 利用方程(\ref{26.1.4}), (\ref{25.2.31})和(\ref{26.1.3}), 我们有
+\begin{align*}
+    \delta_{ab}\,[\mathcal{Q}_{c},\mathscr{F}] &= \tfrac{1}{2}\mi [\mathcal{Q}_{c},\{\mathcal{Q}_{b}^{\ast},\zeta_{a}\}]
+    =\tfrac{1}{2}\mi [\{\mathcal{Q}_{c},\mathcal{Q}_{b}^{\ast}\},\zeta_{a}]-\tfrac{1}{2}\mi [\mathcal{Q}_{b}^{\ast},\{\mathcal{Q}_{c},\zeta_{a}\}] \\
+    &= -\sigma_{cb}^{\mu}\,\partial_{\mu}\zeta_{a} + \mi(\sigma^{\mu}e)_{ca}\,[\mathcal{Q}_{b}^{\ast},\partial_{\mu}\phi] \\
+    &= -\sigma_{cb}^{\mu}\,\partial_{\mu}\zeta_{a} + \sum_{d}e_{bd}\,(\sigma^{\mu}e)_{ca}\,\partial_{\mu}\zeta_{d} \:.
+\end{align*}
+与$\,\delta_{ab}\,$收缩, 这变成
+\begin{equation}
+    [\mathcal{Q}_{c},\mathscr{F}(x)] = -\sum_{a}\sigma_{ca}^{\mu}\,\partial_{\mu}\zeta_{a}(x) \:. \label{26.1.6}
+\end{equation}
+方程(\ref{26.1.1})---(\ref{26.1.6})表明场$\,\phi(x)$, $\zeta_{a}(x)\,$和$\,\mathscr{F}(x)\,$构成了超对称代数的一个完整表示. 这些场不是厄米的, 所以它们的复共轭构成了另一个超多重态:
+\begin{align}
+    &[\mathcal{Q}_{a}^{\ast},\phi^{\ast}(x)]=0 \:, \label{26.1.7} \\
+    &{-}\mi\sum_{b}e_{ab}[\mathcal{Q}_{b},\phi^{\ast}(x)]=\zeta_{a}^{\ast}(x) \:, \label{26.1.8} \\
+    &\{\mathcal{Q}_{b}^{\ast},\zeta_{a}^{\ast}(x)\} =2(e\sigma^{\mu})_{ab}\partial_{\mu}\phi^{\ast}(x)\:.\label{26.1.9} \\
+    &{-}\mi\{\mathcal{Q}_{b},\zeta_{a}^{\ast}(x)\} =2\delta_{ab}\mathscr{F}^{\ast}(x)\:, \label{26.1.10} \\
+    &[\mathcal{Q}_{c},\mathscr{F}^{\ast}(x)] = 0 \:, \label{26.1.11} \\
+    &[\mathcal{Q}_{c}^{\ast},\mathscr{F}^{\ast}(x)] = \sum_{a}\sigma_{ac}^{\mu}\,\partial_{\mu}\zeta_{a}^{\ast}(x)\:.\label{26.1.12}
+\end{align}
+
+我们可以将这些对易关系和反对易关系表示成在一个超对称变换下的变换规则, 这个超对称变换使得任何玻色或费米场算符$\,\mathcal{O}(x)\,$偏移一个无限小量
+\begin{equation}
+    \delta \mathcal{O}(x)\equiv \left[\sum_{a}\bigl(\epsilon_{a}^{\ast}\mathcal{Q}_{a}+\epsilon_{a}\mathcal{Q}_{a}^{\ast}\bigr), \mathcal{O}(x)\right] \:, \label{26.1.13}
+\end{equation}
+其中$\,\epsilon_{a}\,$是无限小的费米\,c\,-数旋量. (因为$\,\epsilon_{a}\,$和$\,\epsilon_{a}^{\ast}\,$与$\,\mathcal{Q}_{a}\,$和$\,\mathcal{Q}_{a}^{\ast}\,$反对易, $\,\epsilon_{a}^{\ast}\mathcal{Q}_{a}+\epsilon_{a}\mathcal{Q}_{a}^{\ast}\,$是{\kai{反厄米}}的, 所以方程(\ref{26.1.13})给出$\,(\delta\mathcal{Q})^{\ast}=\delta\mathcal{Q}^{\ast}$.) 对易和反对易规则(\ref{26.1.1})---(\ref{26.1.6})等价于变换规则
+\begin{align}
+    &\delta\phi(x) = -\mi\sum_{ab}\epsilon_{a}\,e_{ab}\,\zeta_{b}(x) \:, \label{26.1.14} \\
+    &\delta\zeta_{a}(x) = -2 \sum_{b}\epsilon_{b}^{\ast}\,(\sigma^{\mu}e)_{ba}\,\partial_{\mu}\phi(x)
+    -2\mi\epsilon_{a}\mathscr{F}(x) \:,  \label{26.1.15} \\
+    &\delta \mathscr{F}(x) = - \sum_{ab} \epsilon_{b}^{\ast}\,\sigma_{ba}^{\mu}\,\partial_{\mu}\zeta_{a}(x) \:. \label{26.1.16}
+\end{align}
+
+通过引入一个无限小的\,Majorana\footnote{在我们将要使用的相位约定下, Majorana\,4\,-分量旋量由\,2\,-分量$\,(1/2,0)\,$旋量$\,u_{a}\,$以
+\[
+\begin{pmatrix}
+u \\ -eu^{\ast}
+\end{pmatrix}
+\]
+的方式构成. 方程(\ref{26.1.17})符合这一定义, 这里$\,u=-\mi\epsilon$. 等价地, Majorana\,旋量可以由\,2\,-分量$\,(0,1/2)\,$旋量$\,v_{a}\,$以
+\[
+\begin{pmatrix}
+ev^{\ast} \\ v
+\end{pmatrix}
+\]
+的方式构成. 方程(\ref{25.2.34})提供了另外一个例子. 本章附录会细致地考察\,Majorana\,旋量的性质.
+}\,4-分量旋量变换参量
+\begin{equation}
+    \alpha \equiv -\mi
+    \begin{pmatrix}
+    \epsilon_{a} \\ \sum_{b}e_{ab}\epsilon_{b}^{\ast}
+    \end{pmatrix}  \:, \label{26.1.17}
+\end{equation}
+这可以写成\,Dirac\,4\,-分量的形式, 使得方程(\ref{26.1.13})变成
+\begin{equation}
+    \mi\,\delta\mathcal{O}(x) \equiv [\bar{\alpha}Q, \mathcal{O}(x)] \:. \label{26.1.18}
+\end{equation}
+
+通过引入一组实玻色场$\,A$, $B$, $F\,$和$\,G$, 以及一个\,4\,-分量\,Majorana\,旋量$\,\psi$, 变换规则(\ref{26.1.14})---(\ref{26.1.16})和它们的复共轭可以写成一个方便的协变形式, 这些实玻色场的定义是
+\begin{equation}
+    \frac{A+\mi B}{\sqrt{2}} \equiv \phi \:, \qquad \quad
+    \frac{F-\mi G}{\sqrt{2}} \equiv \mathscr{F} \:, \label{26.1.19}
+\end{equation}
+$\psi\,$的定义是
+\begin{equation}
+    \psi\equiv \frac{1}{\sqrt{2}}
+    \begin{pmatrix}
+    \zeta_{a} \\ -\sum_{b} e_{ab}\zeta_{b}^{\ast}
+    \end{pmatrix} \:. \label{26.1.20}
+\end{equation}
+我们同时回忆起$\,4\times4\,$Dirac\,矩阵和$\,2\times2\,$矩阵$\,\sigma_{\mu}\,$的关系是:
+\[
+\gamma_{\mu} = \begin{pmatrix}
+0 & -\mi\,e\sigma_{\mu}^{\mathrm{T}}e \\
+\mi\,\sigma_{\mu} & 0
+\end{pmatrix} \:.
+\]
+变换规则现在采取如下的形式
+\begin{align}
+    &\delta A =\bar{\alpha}\,\psi \:, \qquad \delta B =-\mi\,\bar{\alpha}\,\gamma_{5}\,\psi \:, \nonumber \\
+    &\delta \psi =\partial_{\mu}(A+\mi\gamma_{5}B)\gamma^{\mu}\alpha + (F-\mi\gamma_{5}G)\alpha \:, \label{26.1.21} \\
+    &\delta F =\bar{\alpha}\,\gamma^{\mu}\,\partial_{\mu}\psi \:, \qquad
+    \delta G= -\mi\bar{\alpha}\,\gamma_{5}\gamma^{\mu}\,\partial_{\mu}\psi \:. \nonumber
+\end{align}
+一个繁琐但直接的计算表明, 这个变换保持作用量
+\begin{align}
+    I&= \int \dif^{4}x \: \Bigl\{ -\tfrac{1}{2}\partial_{\mu}A\,\partial^{\mu}A - \tfrac{1}{2}\partial_{\mu}B\,\partial^{\mu}B -\tfrac{1}{2}\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi \nonumber \\
+    &\quad \tfrac{1}{2}(F^{2}+G^{2}) + m\,[FA+GB-\tfrac{1}{2}\bar{\psi}\psi]\nonumber \\
+    &\quad g\Bigl[F(A^{2}+B^{2})+2GAB -\bar{\psi}(A+\mi\gamma_{5}B)\psi\Bigr]\Bigr\}  \label{26.1.22}
+\end{align}
+不变. 方程(\ref{26.1.21})和(\ref{26.1.22})与变换规则(\ref{24.2.8})以及\,Wess\,和\,Zumino\,的原始工作中发现的拉格朗%
+日密度(\ref{24.2.9})一致. 在接下来的三节, 我们将会探索检验方程(\ref{26.1.22})的超对称性和导出更一般的超对称理论的一个方便技巧.
+
+当费米场$\,\psi(x)\,$满足自由场\,Dirac\,方程$\,(\gamma^{\mu}\partial_{\mu}+m)\psi=0\,$时, 这些变换规则表明$\,F+mA\,$和$\,G+mB\,$是不变的, 因此与$\,\mathcal{Q}_{a}\,$和$\,\mathcal{Q}_{a}^{\ast}\,$对易, 随之也与$\,P_{\mu}\,$对易. 这并不能证明$\,F=-mA\,$和$\,G=-mB$, 但在不改变对易和反对易规则(\ref{26.1.1})---(\ref{26.1.6})或变换规则(\ref{26.1.21})的前提下, 我们可以通过分别减除掉常数$\,F+mA\,$和$\,B+mG\,$重新定义场$\,F\,$和$\,G$, 使得新的场$\,F\,$和$\,G\,$由$\,F=-mA\,$和$\,G=-mB\,$给定, 因而就有$\,\mathscr{F}=-m\phi^{\ast}$. 在有相互作用时, 这是不成立的, 但即使是在有相互作用的情况下, $\mathscr{F}(x)$, $F(x)\,$和$\,G(x)\,$一般是辅助场, 就像作用量(\ref{26.1.22})的情况, 它们可以被超多重态的其它场表示.
+
+\section{一般超场} \label{sec:26.2}
+
+通过上一节阐述的直接技巧, 构造场超多重态是直接的, 但是为了构造超对称作用量, 我们还需要知道如何将场超多重态乘起来给出其它的超多重态. 使用\,Salam\,和\,Strathdee\,发明的一套形式理论可以省下大量的功夫, 在那个形式理论中, 任何超多重态中的场被整合进单个超场中.
+
+就像\,4\,-动量算符\,$P_{\mu}\,$定义成普通时空坐标$\,x^{\mu}\,$的平移生成元, 4\,个超对称生成元$\,\mathcal{Q}_{a}\,$和$\,\mathcal{Q}_{a}^{\ast}\,$也可以视作\,4\,个费米\,c\,-数超空间坐标的%
+平移生成元, 这些坐标彼此反对易且与费米场反对易, 但与$\,x^{\mu}$ 和所有玻色场对易. 我们的目的是构建\,Lorentz\,不变的拉格朗日密度, 所以采取\,25.2\,描述的\,4\,-分量 Dirac\,形式体系将是方便的. 超对称生成元被合并进一个\,4\,-分量\,Majorana\,旋量$\,Q_{\alpha}$, 相应地, 超空间坐标被合并进另一个\,4\,-分量\,Majorana\,旋量$\,\theta_{\alpha}$. (本章附录会概述\,Majorana\,旋量的各种性质.) 超对称生成元有不为零的反对易子, 所以我们不能简单地将它们取成正比于超坐标平移算符$\,\partial/\partial\theta_{\alpha}$. 相反, Salam\,和\,Strathdee\,发现, 如果我们设超对称生成元$\,Q\,$与任何玻色或费米超场$\,S(x,\theta)\,$的对易子或反对易子是
+\begin{equation}
+[Q,S\} = \mi\mathscr{Q}S\:, \label{26.2.1}
+\end{equation}
+其中$\,\mathscr{Q}\,$是超空间微分算符
+\begin{equation}
+\mathscr{Q}\equiv -\frac{\partial}{\partial \bar{\theta}}
++ \gamma^{\mu}\,\theta\,\frac{\partial}{\partial x^{\mu}} \:, \label{26.2.2}
+\end{equation}
+那么超空间代数就是被满足的. (像往常一样, $\bar{\theta}\equiv \theta^{\dag}\beta$. 所有对费米\,c\,-数变量的导数都应被理解成{\kai{左}}导数, 计算时在对它微分前要将这个变量移至任何表达式的左边.) 对于\,Majorana\,旋量$\,\bar{\theta}=\theta^{\mathrm{T}}\gamma_{5}\epsilon$, 其中$\,4\times4\,$矩阵$\,\epsilon\,$由方程(\ref{26.A.3})给定, 所以方程(\ref{26.2.1})可以写成更加明显的
+\begin{equation}
+\mathscr{Q}_{\alpha}= \sum_{\gamma}(\gamma_{5}\epsilon)_{\alpha\gamma}\,\frac{\partial}{\partial \theta_{\gamma}}
++\sum_{\gamma} \gamma_{\alpha\gamma}^{\mu}\theta_{\gamma}\,\frac{\partial}{\partial x^{\mu}}\:. \label{26.2.3}
+\end{equation}
+同理,
+\begin{equation}
+\overline{\mathscr{Q}}_{\beta} = \sum_{\gamma}\mathscr{Q}_{\gamma}\, (\gamma_{5}\,\epsilon)_{\gamma\beta}
+= \frac{\partial}{\partial \theta_{\beta}}
+- \sum_{\gamma}(\gamma_{5}\,\epsilon\,\gamma^{\mu})_{\beta\gamma}\,\theta_{\gamma}\,\frac{\partial}{\partial x^{\mu}} \:. \label{26.2.4}
+\end{equation}
+直接计算可以给出
+\begin{equation}
+\Bigl\{\mathscr{Q}_{\alpha},\overline{\mathscr{Q}}_{\beta}\Bigr\}
+= (\gamma_{5}\,\epsilon\,\gamma^{\mu}\,\gamma_{5}\,\epsilon)_{\beta\alpha}\,\frac{\partial}{\partial x^{\mu}}
++\gamma_{\alpha\beta}^{\mu}\,\frac{\partial}{\partial x^{\mu}} \:. \label{26.2.5}
+\end{equation}
+但是方程(\textcolor{foo}{5.4.35})表明$\,\gamma_{\mu}^{\mathrm{T}}=-\mathscr{C}\,\gamma_{\mu}\,\mathscr{C}^{-1}$, 其中$\,\mathscr{C}\,$是矩阵$\,\mathscr{C}=-\gamma_{5}\epsilon$, 所以方程(\ref{26.2.5})右边的两项是相等的, 因此
+\begin{equation}
+\Bigl\{\mathscr{Q}_{\alpha},\overline{\mathscr{Q}}_{\beta}\Bigr\}
+=2\gamma_{\alpha\beta}^{\mu}\,\frac{\partial}{\partial x^{\mu}} \:. \label{26.2.6}
+\end{equation}
+方程(\ref{26.2.6})和(\ref{26.2.1})再加上广义\,Jacobi\,恒等式(\ref{25.1.5})表明
+\begin{equation}
+[\{Q_{\alpha},\overline{Q}_{\beta}\},S] = \{\mathscr{Q}_{\alpha},\overline{\mathscr{Q}}_{\beta}\}S
+=2\gamma_{\alpha\beta}^{\mu}\partial_{\mu}S = -2\mi\gamma_{\alpha\beta}^{\mu}[P_{\mu},S]\:, \label{26.2.7}
+\end{equation}
+与反对易关系(\ref{25.2.36})一致.
+
+将对易和反对易关系(\ref{26.2.1})表示成在无限小超对称变换下的变换规则通常会更加方便. 结合方程(\ref{26.1.18}), (\ref{26.2.1}) 和(\ref{26.2.2})表明无限小\,Majorana\,旋量参量为$\,\alpha\,$的超对称变换对超场$\,S(x,\theta)$ 的变换是
+\begin{equation}
+\delta S = (\bar{\alpha}\,\mathscr{Q})\,S = -\left(\bar{\alpha}\,\frac{\partial S}{\partial \bar{\theta}}\right)
++(\bar{\alpha}\,\gamma^{\mu}\,\theta)\,\frac{\partial S}{\partial x^{\mu}} \:. \label{26.2.8}
+\end{equation}
+注意这里的$\,\partial/\partial\bar{\theta}\,$作用在任何表达式的左边. 特别的, 当$\,M\,$是矩阵$\,1$, $\gamma_{5}\gamma_{\mu}\,$和$\,\gamma_{5}\,$的线性组合且使得$\,\bar{\theta}M\theta\,$不为零, 我们有$\bar{\theta}^{\prime}M\theta^{\prime\prime}=\bar{\theta}^{\prime\prime}M\theta^{\prime}$, 所以
+\begin{equation}
+\frac{\partial }{\partial \theta} (\bar{\theta}M\theta) =2M\theta \:. \label{26.2.9}
+\end{equation}
+
+$\theta\,$的分量反对易, 所以对于它们的分量的任意乘积, 如果其中有两个相等, 这个乘积为零. 但是$\,\theta\,$只有\,4\,个分量, 所以对于$\,\theta\,$的任何函数, 它的幂级数展开至于四次项. 更进一步, 本章附录将会证明, 两个$\,\theta\,$的乘积正比于$\,(\bar{\theta}\theta)$, $(\bar{\theta}\gamma_{\mu}\gamma_{5}\theta)\,$和$\,(\bar{\theta}\gamma_{5}\theta)\,$的线性组合; 三个$\,\theta\,$的乘积正比于$\,(\bar{\theta}\gamma_{5}\theta)\theta$; 四个$\,\theta\,$的乘积正比于$\,(\bar{\theta}\gamma_{5}\theta)^{2}$. 因此$\,x^{\mu}\,$和$\,\theta\,$的最一般函数可以表示成
+\begin{align}
+S(x,\theta) &= C(x) -\mi\Bigl(\bar{\theta}\,\gamma_{5}\,\omega(x)\Bigr) - \frac{\mi}{2}\Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)M(x)
+- \frac{1}{2}\Bigl(\bar{\theta}\,\theta\Bigr)N(x) \nonumber \\
+&\quad + \frac{\mi}{2}\Bigl(\bar{\theta}\,\gamma_{5}\,\gamma_{\mu}\,\theta\Bigr) V^{\mu}(x)
+-\mi \Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)\biggl(\bar{\theta}
+\biggl[\lambda(x)+\frac{1}{2}\slashed{\partial}\omega(x)\biggr]\biggr) \nonumber \\
+&\quad -\frac{1}{4} \Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)^{2}
+\biggl(D(x)+\frac{1}{2}\square C(x)\biggr) \:. \label{26.2.10}
+\end{align}
+(为了后面的方便, 我们分别从$\,\lambda(x)\,$和$\,D(x)\,$中分别分离出了$\,\tfrac{1}{2}\slashed{\partial}\omega\,$%
+和$\,\tfrac{1}{2}\square C(x)$.) 如果$\,S(x,\theta)\,$是标量, 那么$\,C(x)$, $M(x)$, $N(x)\,$和$\,D(x)\,$是标量(或赝标量)场; $\omega(x)\,$和$\,\lambda(x)\,$是\,4\,-分量旋量场; $V^{\mu}(x)\,$是矢量场. 另外, 通过使用本章附录给出的\,Majorana\,场双线性积的实性质, 我们可以看到, 如果 $S(x,\theta)\,$是实的, 那么$\,C(x)$, $M(x)$, $N(x)$, $V^{\mu}(x)\,$和$\,D(x)\,$都是实的, 而$\,\omega(x)\,$和$\,\lambda(x)\,$是满足相位约定$\,s^{\ast}=-\beta\epsilon\gamma_{5}s\,$的\,Majorana\,旋量.
+
+现在我们必须解出方程(\ref{26.2.10})中的分量场的超对称变换性质. 对展开(\ref{26.2.10})应用(\ref{26.2.8}) 和(\ref{26.2.9}), 这给出
+\begin{align*}
+\delta S &= (\bar{\alpha}\gamma^{\mu}\theta)\,\frac{\partial C}{\partial x^{\mu}}  \\
+&\quad +\mi\,(\bar{\alpha}\gamma_{5}\omega) - \mi\,(\bar{\alpha}\gamma^{\mu}\theta)\,\biggl(\bar{\theta}\gamma_{5}\frac{\partial \omega}{\partial x^{\mu}}\biggr)\\
+&\quad +\mi\,(\bar{\alpha}\gamma_{5}\theta)\,M - \frac{\mi}{2}\,(\bar{\alpha}\gamma^{\mu}\theta)
+\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr) \frac{\partial M}{\partial x^{\mu}} \\
+&\quad +(\bar{\alpha}\theta)\,N - \frac{1}{2}\,(\bar{\alpha}\gamma^{\mu}\theta)\,\Bigl(\bar{\theta}\theta\Bigr)
+\frac{\partial N}{\partial x^{\mu}} \\
+&\quad -\mi\,(\bar{\alpha}\gamma_{5}\gamma_{\nu}\theta)\,V^{\nu} + \frac{\mi}{2}\,
+(\bar{\alpha}\gamma^{\mu}\theta)\,\Bigl(\bar{\theta}\gamma_{5}\gamma_{\nu}\theta\Bigr)
+\,\frac{\partial V^{\nu}}{\partial x^{\mu}} \\
+&\quad +2\mi\,(\bar{\alpha}\gamma_{5}\theta)\,\Bigl(\bar{\theta}[\lambda
++\tfrac{1}{2}\,\slashed{\partial}\omega]\Bigr) + \mi\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\,
+\bigl(\bar{\alpha}[\lambda+\tfrac{1}{2}\,\slashed{\partial}\omega]\bigr)  \\
+&\quad -\mi\,(\bar{\alpha}\gamma^{\mu}\theta)\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\,
+\Bigl(\bar{\theta}\partial_{\mu}[\lambda+\tfrac{1}{2}\,\slashed{\partial}\omega]\Bigr)
++\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\,(\bar{\alpha}\gamma_{5}\theta)\,[D+\tfrac{1}{2}\square C]\:.
+\end{align*}
+我们需要将每一项变成方程(\ref{26.2.10})的标准形式. 对于这个目的, 我们注意到: 方程(\ref{26.A.9})给出
+\[
+(\bar{\alpha}\gamma^{\mu}\theta)(\bar{\theta}\gamma_{5}\partial_{\mu}\omega)
+=-\tfrac{1}{4}(\bar{\theta}\theta)(\bar{\alpha}\,\slashed{\partial}\gamma_{5}\omega)
+-\tfrac{1}{4}(\bar{\theta}\gamma_{5}\gamma^{\nu}\theta)(\bar{\alpha}\,\slashed{\partial}\gamma_{\nu}\omega)
+-\tfrac{1}{4}(\bar{\theta}\gamma_{5}\theta)(\bar{\alpha}\,\slashed{\partial}\omega)\:;
+\]
+方程(\ref{26.A.16})给出
+\[
+(\bar{\alpha}\gamma^{\mu}\theta)(\bar{\theta}\theta)=
+-(\bar{\alpha}\gamma^{\mu}\gamma_{5}\theta)(\bar{\theta}\gamma_{5}\theta) \:;
+\]
+方程(\ref{26.A.17})给出
+\[
+(\bar{\alpha}\gamma^{\mu}\theta)(\bar{\theta}\gamma_{5}\gamma_{\nu}\theta)
+=-(\bar{\alpha}\gamma^{\mu}\gamma_{\nu}\theta)(\bar{\theta}\gamma_{5}\theta) \:;
+\]
+方程(\ref{26.A.9})给出
+\begin{align*}
+(\bar{\alpha}\gamma_{5}\theta)(\bar{\theta}[\lambda+\tfrac{1}{2}\slashed{\partial}\omega])
+&= -\tfrac{1}{4} (\bar{\theta}\theta)(\bar{\alpha}\gamma_{5}[\lambda+\tfrac{1}{2}\slashed{\partial}\omega])
++\tfrac{1}{4} (\bar{\theta}\gamma_{5}\gamma^{\mu}\theta)(\bar{\alpha}\gamma_{\mu}
+[\lambda+\tfrac{1}{2}\slashed{\partial}\omega]) \\
+&\quad -\tfrac{1}{4}(\bar{\theta}\gamma_{5}\theta)(\bar{\alpha}[\lambda+\tfrac{1}{2}\slashed{\partial}\omega]) \:;
+\end{align*}
+方程(\ref{26.A.19})给出
+\[
+(\bar{\alpha}\gamma^{\mu}\theta)(\bar{\theta}\gamma_{5}\theta)
+(\bar{\theta}\partial_{\mu}[\lambda+\tfrac{1}{2}\slashed{\partial}\omega])
+=-\tfrac{1}{4}(\bar{\alpha}\slashed{\partial}\gamma_{5}[\lambda+\tfrac{1}{2}\slashed{\partial}\omega])
+(\bar{\theta}\gamma_{5}\theta)^{2} \:.
+\]
+利用这些关系并按照$\,\theta\,$因子数目递增的顺序重排这些项, 我们有
+\begin{align*}
+\delta S &= \mi\,(\bar{\alpha}\gamma_{5}\omega)+
+(\bar{\alpha}[\slashed{\partial}C+\mi\gamma_{5}M+N-\mi\gamma_{5}\slashed{V}]\theta) \\
+&\quad -\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\theta\Bigr)\,(\bar{\alpha}\gamma_{5}[\lambda+\slashed{\partial}\omega])
++\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\,(\bar{\alpha}[\lambda+\slashed{\partial}\omega]) \\
+&\quad +\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\gamma_{5}\gamma^{\mu}\theta\Bigr)\,(\bar{\alpha}\gamma_{\mu}\lambda)
++\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\gamma_{5}\gamma^{\nu}\theta\Bigr)\,(\bar{\alpha}\partial_{\nu}\omega) \\
+&\quad +\tfrac{1}{2}\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\,
+\bigl(\bar{\alpha}[-\mi\slashed{\partial}M-\gamma_{5}\slashed{\partial}N-\mi\slashed{\partial}\slashed{V}
++\gamma_{5}(D+\tfrac{1}{2}\square C)]\theta\bigr) \\
+&\quad -\tfrac{1}{4}\mi\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}
+\bigl(\bar{\alpha}\gamma_{5}[\slashed{\partial}\lambda+\tfrac{1}{2}\square\omega]\bigr) \:,
+\end{align*}
+或者, 利用对称性(\ref{26.A.7})
+\begin{align*}
+\delta S &= \mi\,(\bar{\alpha}\gamma_{5}\omega)+
+\Bigl(\bar{\theta}[-\slashed{\partial}C+\mi\gamma_{5}M+N-\mi\gamma_{5}\slashed{V}]\alpha\Bigr)  \\
+&\quad -\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\theta\Bigr)\,(\bar{\alpha}\gamma_{5}[\lambda+\slashed{\partial}\omega])
++\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\,(\bar{\alpha}[\lambda+\slashed{\partial}\omega]) \\
+&\quad +\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\gamma_{5}\gamma^{\mu}\theta\Bigr)\,(\bar{\alpha}\gamma_{\mu}\lambda)
++\tfrac{1}{2}\mi\,\Bigl(\bar{\theta}\gamma_{5}\gamma^{\nu}\theta\Bigr)\,(\bar{\alpha}\partial_{\nu}\omega) \\
+&\quad +\tfrac{1}{2}\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\,
+\Bigl(\bar{\theta}[\mi\slashed{\partial}M-\gamma_{5}\slashed{\partial}N-\mi\partial_{\mu}\slashed{V}\gamma^{\mu}
++\gamma_{5}(D+\tfrac{1}{2}\square C)]\alpha\Bigr) \\
+&\quad -\tfrac{1}{4}\mi\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}\,
+\bigl(\bar{\alpha}\gamma_{5}[\slashed{\partial}\lambda+\tfrac{1}{2}\square\omega]\bigr) \:.
+\end{align*}
+如果我们比较上式与展开(\ref{26.2.10})中$\,\theta\,$的零阶, 一阶和二阶项, 我们发现变换规则:
+\begin{align}
+\delta C &= \mi\,\Bigl(\bar{\alpha}\gamma_{5}\omega\Bigr) \:, \label{26.2.11} \\
+\delta \omega &= \Bigl(-\mi\gamma_{5}\slashed{\partial}C-M+\mi\gamma_{5}N+\slashed{V}\Bigr)\,\alpha\;, \label{26.2.12} \\
+\delta M &= -\Bigl(\bar{\alpha}[\lambda + \slashed{\partial}\omega]\Bigr) \:,\label{26.2.13} \\
+\delta N &= \mi\,\Bigl(\bar{\alpha}\gamma_{5}[\lambda+\slashed{\partial}\omega]\Bigr) \:, \label{26.2.14} \\
+\delta V_{\mu} &= \Bigl(\bar{\alpha}\gamma_{\mu}\lambda\Bigr) + (\bar{\alpha}\partial_{\mu} \omega) \:. \label{26.2.15}
+\end{align}
+$\theta\,$的三阶项和四阶项给出
+\begin{align*}
+\delta[\lambda+\tfrac{1}{2}\slashed{\partial}\omega] &=
+\tfrac{1}{2}\Bigl[-\slashed{\partial}M-\mi\gamma_{5}\slashed{\partial}N+\partial_{\mu}\slashed{V}\gamma^{\mu}
++\mi\gamma_{5}\Bigl(D+\tfrac{1}{2}\square C\Bigr)\Bigr]\alpha \\
+\delta[D+\tfrac{1}{2}\square C] &= \mi\Bigl(\bar{\alpha}\gamma_{5}[\slashed{\partial}\lambda
++\tfrac{1}{2}\square \omega]\Bigr) \:.
+\end{align*}
+结合后两个变换规则与$\,C\,$和$\,\omega\,$的变换规则(\ref{26.2.11})和(\ref{26.2.12}), 这给出$\,\lambda\,$和$\,D\,$更加简单的变换规则:
+\begin{align}
+\delta \lambda &= \biggl(\tfrac{1}{2}
+\Bigl[\partial_{\mu}\slashed{V},\gamma^{\mu}\Bigr]+\mi\gamma_{5}D\biggr)\alpha\:, \label{26.2.16} \\
+\delta D &= \mi\Bigl(\bar{\alpha}\,\gamma_{5}\,\slashed{\partial}\lambda\Bigr) \:. \label{26.2.17}
+\end{align}
+在展开(\ref{26.2.10})中从$\,\lambda\,$和$\,D\,$中分离出$\,\frac{1}{2}\slashed{\partial}\omega\,$和%
+$\,\tfrac{1}{2}\square C\,$正是为了实现这个简化.
+
+
+超场形式体系的关键就是简化了用超多重态制造其它超多重态这个任务. 给定两个都满足变换规则(\ref{26.2.8})的超场$\,S_{1}\,$和$\,S_{2}$, 它们的乘积$\,S\equiv S_{1}S_{2}\,$满足
+\begin{align}
+\delta S &\equiv [(\bar{\alpha}Q),S_{1}S_{2}] = (\delta S_{1})S_{2} + S_{1}(\delta S_{2}) \nonumber\\
+&=\Bigl((\bar{\alpha}\mathscr{Q})S_{1}\Bigr)S_{2} + S_{1}\Bigl((\bar{\alpha}\mathscr{Q})\Bigr) S_{2}
+=(\bar{\alpha}\mathscr{Q})S \:, \label{26.2.18}
+\end{align}
+因此也是个超场. 利用方程(\ref{26.A.7}), (\ref{26.A.16}), (\ref{26.A.18})和(\ref{26.A.19})直接进行计算就给出了它的分量场
+\begin{align}
+&C=C_{1}C_{2}  \:, \label{26.2.19} \\
+&\omega = C_{1}\omega_{2} + C_{2}\omega_{1} \:, \label{26.2.20}  \\
+&M = C_{1}M_{2} + C_{2}M_{1} + \tfrac{1}{2}\mi\Bigl(\overline{\omega_{1}}\,\gamma_{5}\,\omega_{2}\Bigr)\:,\label{26.2.21} \\
+&N= C_{1}N_{2}+ C_{2}N_{1} - \tfrac{1}{2}\Bigl(\overline{\omega_{1}}\,\omega_{2}\Bigr) \:,\label{26.2.22} \\
+&V^{\mu} = C_{1}V_{2}^{\mu}+ C_{2}V_{1}^{\mu} - \tfrac{1}{2}\mi\Bigl(\overline{\omega_{1}}\,\gamma_{5}\gamma^{\mu}\,\omega_{2}\Bigr) \:, \label{26.2.23} \\
+&\lambda = C_{1}\lambda_{2}+C_{2}\lambda_{1} - \tfrac{1}{2}\gamma^{\mu}\omega_{1}\partial_{\mu}C_{2}
+-\tfrac{1}{2}\gamma^{\mu}\omega_{2}\partial_{\mu}C_{1} +\tfrac{1}{2}\mi\,\slashed{V}_{1}\gamma_{5}\,\omega_{2}
++ \tfrac{1}{2}\mi\,\slashed{V}_{2}\gamma_{5}\,\omega_{1} \nonumber \\
+&\phantom{\lambda=} + \tfrac{1}{2}(N_{1}-\mi\gamma_{5}M_{1})\omega_{2}
++\tfrac{1}{2}(N_{2}-\mi\gamma_{5}M_{2})\omega_{1} \:, \label{26.2.24} \\
+&D= -\partial_{\mu}C_{1}\,\partial^{\mu}C_{2} + C_{1}D_{2} + C_{2}D_{1} + M_{1}M_{2} +N_{1}N_{2} \nonumber\\
+&\phantom{D=}-\Bigl(\overline{\omega_{1}}[\lambda_{2}+\tfrac{1}{2}\slashed{\partial}\omega_{2}]\Bigr)
+-\Bigl(\overline{\omega_{2}}[\lambda_{1}+\tfrac{1}{2}\slashed{\partial}\omega_{1}]\Bigr)
+-V_{1\mu}V_{2}^{\mu} \:. \label{26.2.25}
+\end{align}
+超场的线性组合平庸地是超场, 在同等意义下, 超场的时空导数和复共轭也是超场. 但是给超场乘以$\,\theta\,$的某个函数或者做相对于$\,\theta\,$的微分一般不会给出超场. (例如, $\theta\,$自身显然不是超场, 这是因为$\,\theta\,$是费米\,c\,-数因而与$\,\bar{\alpha}Q\,$对易, 而$\,\mathscr{Q}\theta\neq0$.) 然而, 有一种方式可以组合超场对$\,\theta\,$的导数和它与因子$\,\theta\,$的乘积, 使得确实产生另一个超场.
+
+考察超空间微分算符$\,\mathscr{D}_{\alpha}$, 它定义成
+\begin{equation}
+\mathscr{D}\equiv -\frac{\partial}{\partial \bar{\theta}}
+- \gamma^{\mu}\,\theta\,\frac{\partial}{\partial x^{\mu}} \:, \label{26.2.26}
+\end{equation}
+或者更加清楚些
+\begin{equation}
+\mathscr{D}_{\alpha} = \sum_{\gamma} (\gamma_{5}\epsilon)_{\alpha\gamma}\,\frac{\partial}{\partial \theta_{\gamma}}
+-\sum_{\gamma} \gamma_{\alpha\gamma}^{\mu}\theta_{\gamma}\,\frac{\partial}{\partial x^{\mu}}\:. \label{26.2.27}
+\end{equation}
+$\mathscr{D}\,$和$\,\mathscr{Q}\,$的定义的唯一差异是包含时空导数那一项的符号变了. 这个符号变化的结果是, 在$\,\mathscr{D}_{\beta}\,$和 $\mathscr{Q}_{\alpha}\,$的反对易子中, 取代像方程(\ref{26.2.6})中那样获得相同的两项, 我们现在得到的项有相反的符号, 这使得它们抵消:
+\begin{equation}
+\{\mathscr{D}_{\beta},\mathscr{Q}_{\alpha}\} = 0 \:. \label{26.2.28}
+\end{equation}
+由于$\,\alpha\,$是费米的, 可以得出$\,(\alpha\mathscr{Q})\,$与$\,\mathscr{D}_{\beta}\,$对易, 所以, 如果$\,S(x,\theta)\,$是超场, 那么
+\begin{equation}
+\delta \mathscr{D}_{\beta}S \equiv -\mi[\bar{\alpha}Q,\mathscr{D}_{\beta}S]
+=-\mi\mathscr{D}_{\beta}[(\bar{\alpha}Q),S] =\mathscr{D}_{\beta}(\bar{\alpha}\mathscr{Q})S
+=(\bar{\alpha}\mathscr{Q})\mathscr{D}_{\beta}S \:, \label{26.2.29}
+\end{equation}
+这使得$\,\mathscr{D}_{\beta}S\,$也是个超场. {\kai{因此, 超场$\,S\,$和它们的超导数$\,\mathscr{D}_{\beta}S$, $\mathscr{D}_{\beta}\mathscr{D}_{\gamma}S\,$等的任意多项式函数也是超场.}}
+
+虽然不是必须的, 但在这里提一下, 在用超场构建超场是可以纳入它们的时空导数. 这是因为这些时空导数可以通过二阶超导数获得. 由于$\,\mathscr{D}_{\beta}\,$和$\,\mathscr{Q}_{\beta}\,$的唯一差异是包含$\,\partial_{\mu}\,$那一项的符号, 除了一个符号变化外, $\mathscr{D}\,$的反对易子与$\,\mathscr{Q}\,$的反对易子相同:
+\begin{equation}
+\Bigl\{\mathscr{D}_{\alpha},\overline{\mathscr{D}}_{\beta}\Bigr\}
+=-2\gamma_{\alpha\beta}^{\mu}\,\frac{\partial}{\partial x^{\mu}} \:. \label{26.2.30}
+\end{equation}
+
+现在, 我们来考察如何用超场构建超对称作用量. 首先不存在超对称拉格朗日密度这种东西, 这是因为, 反对易关系(\ref{26.2.6})表明, 如果$\,\delta\mathscr{L}=0$, 那么$\,\mathscr{L}\,$必须是个常数. 即使拉格朗日密度不是超对称的, 如果$\,\delta\mathscr{L}(x)\,$是导数项, 它就不会贡献$\,\delta\int\mathscr{L}\,\dif^{4}x$, 那么作用量将仍然是超对称的. 一般而言, 拉格朗日密度可以写成一些项的和, 其中每一项是用基本超场和它们的超导数构建的超场的某个分量. 观察各个分量的变换规则(\ref{26.2.11})---(\ref{26.2.17})表明, 如果在一般超场上没有特殊条件, 这种超场在变分下是个导数的唯一分量是$\,D\,$-分量. 另外, 为了是任何超场的$\,D\,$-分量是个标量, 超场本身也必须是个标量. 因此, 除非在构建拉格朗日密度的各个超场上有特殊条件, 否则超对称作用量只能是对标量超场$\,\Lambda\,$的\,$D$\,-项的积分:
+\begin{equation}
+I =\int \dif^{4}x \: [\Lambda]_{D} \:.\label{26.2.31}
+\end{equation}
+然而, 事实上, 如果在构建作用量的超场上没有特殊条件, 那么这类作用量没有一个在物理上是令人满意的. 对于一般超场$\,S(x,\theta)$, 唯一一种既是$\,S\,$和$\,S^{\ast}\,$的双线性, 对分量场的导数又不超过二阶的超对称动能作用量$\,I_{0}\,$是如下的形式
+\begin{equation}
+I_{0} \propto \int \dif^{4} x\: \Bigl[S^{\ast}\,S\Bigr]_{D} \:. \label{26.2.32}
+\end{equation}
+我们从方程(\ref{26.2.25})中看到$\,S^{\ast}\,S\,$有$\,D\,$-分量
+\begin{align}
+\Bigl[S^{\ast}\,S\Bigr]_{D} &= -\partial_{\mu}C^{\ast}\,\partial^{\mu}C
+-\tfrac{1}{2}\Bigl(\bar{\omega}\,\gamma^{\mu}\partial_{\mu}\omega\Bigr)
++\tfrac{1}{2}\Bigl((\partial_{\mu}\bar{\omega})\gamma^{\mu}\omega\Bigr) \nonumber \\
+&\quad +C^{\ast}D+D^{\ast}C - \Bigl(\bar{\omega}\,\lambda\Bigr) + \Bigl(\bar{\lambda}\,\omega\Bigr) \nonumber \\
+&\quad +M^{\ast}M + N^{\ast}N - V_{\mu}^{\ast}V^{\mu} \:. \label{26.2.33}
+\end{align}
+$C\,$和$\,\omega\,$的二次项和期望中的一样看起来是自旋零和$\,1/2\,$的无质量场的动能拉格朗日量; 最后三项是无害的; 但是包含$\,D\,$和$\,\lambda\,$的项在路径积分中有灾难性的结果, 它们会约束$\,C\,$和$\,\omega\,$为零. 幸运的是, 就像我们将在下一节看到的, 存在一些受约束的超场, 使得我们{\kai{可以}}用它们构造出物理上合理的作用量. 引入这些受约束的超场同时也打开在作用量中构建超对称项的方法, 它们可以不是超场函数的$\,D\,$-分量.
+
+如果宇称是守恒的, 那么超场的分量场的空间反演性质将通过超对称关联起来. 为了解出这个关系, 我们对对易(反对易)关系(\ref{26.2.1})作用宇称算符$\,\mathsf{P}\,$并使用超对称生成元的变换性质(\ref{25.3.16}), 这给出
+\begin{equation}
+\mi\beta \Bigl [ Q, \mathsf{P}^{-1}S(x,\theta)\mathsf{P}\Bigr\}
+=\mathscr{Q}\,\mathsf{P}^{-1}S(x,\theta)\mathsf{P} \:. \label{26.2.34}
+\end{equation}
+对于标量超场, 方程(\ref{26.2.34})的解是如下形式
+\begin{equation}
+\mathsf{P}^{-1}S(x,\theta)\mathsf{P} = \eta\, S(\Lambda_{P\,}x,-\mi\beta\theta) \:, \label{26.2.35}
+\end{equation}
+其中$\,\eta\,$是某个相位(超场的内禀宇称), $\Lambda_{P\,}x\equiv(-\mathbf{x},+x^{0})$. (为了验证方程(\ref{26.2.35})满足(\ref{26.2.34}), 注意到方程(\ref{26.2.35})给出的方程(\ref{26.2.34})的左边是
+\[
+\mi\eta\beta\,\biggl(-\frac{\partial}{\partial\overline{(-\mi\beta\theta)}}
++\gamma^{\mu}(-\mi\beta\theta)\frac{\partial}{\partial(\Lambda_{P\,}x)^{\mu}} \biggr)\,S(\Lambda_{P\,}x,\theta)
+=\eta\,\mathscr{Q}\,S(\Lambda_{P}\,x,-\mi\beta\theta) \:,
+\]
+与方程(\ref{26.2.35})给出的方程(\ref{26.2.34})的右边一致.) 在方程(\ref{26.2.35})中使用展开(\ref{26.2.10})就给出了分量场的空间反演性质:
+\begin{align}
+& \mathsf{P}^{-1} C(x)\mathsf{P} = \eta\,C(\Lambda_{P\,}x) \:, \nonumber  \\
+& \mathsf{P}^{-1} \omega(x)\mathsf{P} = -\mi\eta\,\beta\,\omega(\Lambda_{P\,}x) \:,  \nonumber  \\
+& \mathsf{P}^{-1} M(x)\mathsf{P} = -\eta\,M(\Lambda_{P\,}x) \:, \nonumber  \\
+& \mathsf{P}^{-1} N(x)\mathsf{P} = \eta\,N (\Lambda_{P\,}x) \:, \label{26.2.36} \\
+& \mathsf{P}^{-1} V^{\mu}(x)\mathsf{P} =
+ -\eta\,(\Lambda_{P})\indices{^\mu_\nu}V^{\nu}(\Lambda_{P\,}x) \:, \nonumber  \\
+& \mathsf{P}^{-1} \lambda(x)\mathsf{P} = \mi\eta\,\beta\,\lambda(\Lambda_{P\,}x) \:, \nonumber  \\
+& \mathsf{P}^{-1} D(x)\mathsf{P} = \eta\, D(\Lambda_{P\,}x) \:. \nonumber
+\end{align}
+
+\subsection*{* * *}
+
+
+一般实超场$\,S\,$包含四个无自旋实场$\,C$, $M$, $N\,$和$\,D$, 加上一个实\,4\,-矢场$\,V_{\mu}$, 总共有八个独立的玻色场分量. 相较而言, 存在两个\,4\,-分量\,Majorana\,旋量场$\,\omega\,$和$\,\lambda$, 独立场分量的总个数也是八个. 一般而言, 独立玻色场分量的个数和独立费米场分量的个数相等不仅对于本节研究的不约束一般超场是成立的, 对于通过对一般超场附加超对称约束获得的所有超场也是成立的, 下一节讨论的手征超场和其它受约束超场就是这样的例子.
+
+为了在一般情况下看到这点, 假定我们有由$\,N_{B}\,$个线性独立实玻色场算符$\,b_{n}(x)\,$和$\,N_{F}\,$个线性独立费米场算符$\,f_{k}(x)\,$%
+提供的超对称代数的表示. 我们将假定这些场仅满足不平庸的场方程, 这使得$\,b_{n}\,$或$\,f_{k}\,$的系数非零的线性组合不可能满足齐次线性场方程. 考察一个实超对称生成元$\,Q(u)$, 定义为
+\begin{equation}
+Q(u) \equiv \Bigl(\bar{u}\,Q\Bigr) = \Bigl(\bar{Q}\,u\Bigr) \:, \label{26.2.37}
+\end{equation}
+其中$\,u\,$是某个普通的数值\,Majorana\,旋量({\kai{不是}}反对易\,c\,-数). (对于扩充超对称, 取代$\,Q_{\alpha}$, 我们将使用$\,Q_{r\alpha}\,$中的任何一个, 例如$\,Q_{1\,\alpha}$.) 为了使$\,b_{n}\,$和$\,f_{k}\,$构成这个超对称代数的一个表示, 我们必须有
+\begin{align}
+[Q(u),b_{n}] &= \mi\sum_{k}q_{nk}(\partial)\,f_{k} \:, \label{26.2.38} \\
+\{Q(u),f_{k}\} &= \sum_{n} p_{kn}(\partial)\,b_{n} \:, \label{26.2.39}
+\end{align}
+其中$\,q(\partial)\,$和$\,p(\partial)\,$是一些矩阵微分算符. 取方程(\ref{26.2.38})和$\,Q(u)\,$的对易子以及方程(\ref{26.2.39})和 $Q(u)$ 的反对易子, 这给出
+\begin{align}
+[Q^{2}(u),b_{n}] &= \mi\sum_{m}\Bigl(q(\partial)\,p(\partial)\Bigr)_{nm}\,b_{m} \:, \label{26.2.40} \\
+[Q^{2}(u),f_{k}] &= \mi\sum_{\ell} \Bigl(p(\partial)\,q(\partial)\Bigr)_{k\ell}\,f_{\ell} \:. \label{26.2.41}
+\end{align}
+反对易关系(\ref{25.2.36})或(\ref{25.2.38})给出$\,Q(u)\,$的平方是$\,Q^{2}(u)=-\mi P_{\mu}\Bigl(\bar{u}\gamma^{\mu}u\Bigr)$. 这样方阵$\,p(\partial)q(\partial)\,$和 $q(\partial)p(\partial)\,$必须非奇异, 原因是, 如果存在非零系数$\,c_{n}(\partial)\,$或$\,d_{k}(\partial)\,$使得%
+$\,\sum_{n}c_{n}(\partial)(q(\partial)p(\partial))_{nm}=0$ 或者%
+$\,\sum_{k}d_{k}(\partial)(p(\partial)q(\partial))_{k\ell}=0$, 那么$\,b_{n}\,$或$\,f_{k}\,$将满足齐次线性场方程
+\[
+\Bigl(\bar{u}\gamma^{\mu}u\Bigr)\partial_{\mu}\sum_{n}c_{n}(\partial)b_{n} = 0 \qquad \text{或} \qquad
+\Bigl(\bar{u}\gamma^{\mu}u\Bigr)\partial_{\mu}\sum_{k}d_{k}(\partial)f_{k} = 0 \:,
+\]
+而我们前面假定了这些场不满足这样的场方程, 二者矛盾. 为了使$\,qp\,$不奇异, 我们必须有$\,N_{F}\geq N_{B}$, 而为了使$\,pq\,$不奇异, 我们必须有$\,N_{B}\geq N_{F}$, 所以我们可以得出$\,N_{B}=N_{F}$. 另外, 方程$\,q\,$和$\,p\,$必须都是不奇异的, 所以方程(\ref{26.2.38})的复共轭告诉我们$\,f^{\ast}=q^{\ast-1}qf$, 这使得独立费米场的个数是$\,N_{F}\,$而不是$\,2N_{F}$, 因而等于独立玻色场的个数$\,N_{B}$, 这正是所要证明的.
+
+
+\section{手征超场和线性超场} \label{sec:26.3}
+
+我们在上一节发现, 一般超场中出现了$\,D\,$和$\,\lambda\,$这一点阻止了我们在满足物理要求的拉格朗日密度中使用这种超场. 那么假定我们考察这样的超场, 它满足
+\begin{equation}
+\lambda = D= 0 \:. \label{26.3.1}
+\end{equation}
+这些条件是否受到超对称变换的保护? 根据方程(\ref{26.2.17})和(\ref{26.2.16}), 如果$\,\lambda=0$, 那么$\,D=0\,$的条件不变的, 但是要想$\,\lambda=0\,$的条件在超对称变换下不变则需要我们附加$\,\partial_{\mu}V_{\nu}-\partial_{\nu}V_{\mu}=0\,$的条件, 这要求$\,V_{\mu}\,$是纯规范:
+\begin{equation}
+V_{\mu}(x) = \partial_{\mu}Z(x) \:. \label{26.3.2}
+\end{equation}
+方程(\ref{26.2.15})表明, 有了$\,\lambda=0$, 这个条件是被超对称变换保护的. 因此我们得到了一个退化的超场, 它满足约束(\ref{26.3.1})和(\ref{26.3.2}), 它的分量场有如下的变换性质
+\begin{align}
+\delta C &= \mi\,\Bigl(\bar{\alpha}\,\gamma_{5}\,\omega\Bigr) \:, \label{26.3.3} \\
+\delta \omega &= \Bigl(-\mi\gamma_{5}\,\slashed{\partial}C- M + \mi\gamma_{5}N+\slashed{\partial}Z\Bigr)\,\alpha\:,
+\label{26.3.4}  \\
+\delta M &= -\Bigl(\bar{\alpha}\,\slashed{\partial}\omega\Bigr) \:, \label{26.3.5} \\
+\delta N &= \mi\,\Bigl(\bar{\alpha}\gamma_{5}\,\slashed{\partial}\omega\Bigr) \:, \label{26.3.6} \\
+\delta Z &= \Bigl(\bar{\alpha}\,\omega\Bigr) \:, \label{26.3.7}
+\end{align}
+与方程(\ref{26.1.21})比较, 我们看到这与\,26.1\,节通过直接方法构建的超多重态是相同的, 它们之间的对应是
+\begin{equation}
+C=A\:,\qquad \omega=-\mi\gamma_{5}\psi \:, \qquad M=G \:, \qquad N=-F\:, \qquad Z=B \:. \label{26.3.8}
+\end{equation}
+满足条件(\ref{26.3.1})和(\ref{26.3.2})的超场被称作是{\kai{手征}}的.\footnote{一些学者习惯用``手征''这个词来%
+描述这种超场的一个特殊情况, 在这里则被称作左手征或右手征, 我们会在后面进行介绍. 我们在这里使用``手征''这个词第一眼看上去好像有些奇怪, 因为这里并没有\,Dirac\,旋量的对应物. 任何\,Dirac\,旋量是左手征\,Dirac\,旋量和右手征\,Dirac\,旋量的和, 也就是说它们分别正比于$\,1+\gamma_{5}\,$和$\,1-\gamma_{5}$, 所以对于\,Dirac\,旋量的这种和, 我们不需要特殊的项. 相反, 只有满足方程(\ref{26.3.1})和(\ref{26.3.2})的超场才能表示为左手征超场和右手征超场的和.}
+
+为了将手征超场$\,X(x,\theta)\,$与上一节的一般超场$\,S(x,\theta)\,$区分开来, 取代$\,C$, $M$, $N$, $Z\,$和$\,\omega$, 我们用$\,A$, $B$, $F$, $G\,$和$\,\psi\,$表示它的分量. 通过在方程(\ref{26.2.10})中使用方程(\ref{26.3.1}), (\ref{26.3.2})和(\ref{26.3.8}), 我们发现一般手征超场的形式是
+\begin{align}
+    X(x,\theta) &= A(x) - \Bigl(\bar{\theta}\,\psi(x)\Bigr) + \frac{1}{2}\Bigl(\bar{\theta}\,\theta\Bigr)F(x)
+    -\frac{\mi}{2}\Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)G(x) \nonumber \\
+    &\quad +\frac{\mi}{2}\Bigl(\bar{\theta}\,\gamma_{5}\,\gamma_{\mu}\,\theta\Bigr)\partial^{\mu}B(x)
+    +\frac{1}{2}\Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)
+    \Bigl(\bar{\theta}\gamma_{5}\,\slashed{\partial}\psi(x)\Bigr) \nonumber \\
+    &\quad -\frac{1}{8}\Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)^{2}\square A(x)\:. \label{26.3.9}
+\end{align}
+(我们本也可以取$\,C=-B$, $\omega=\psi$, $M=-F$, $N=-G\,$和$\,Z=A$. 我们做(\ref{26.3.8})这种对应是因为, 正如我们这里所看到的, 对于标量超场, 它们与$\,A\,$和$\,F\,$是标量而$\,B\,$和$\,G\,$是赝标量这个常见的约定是一致的.)
+
+手征超场(\ref{26.3.9})可以进一步分解成
+\begin{equation}
+    X(x,\theta) = \frac{1}{\sqrt{2}}\Bigl[\Phi(x,\theta)+\tilde{\Phi}(x,\theta)\Bigr]\:, \label{26.3.10}
+\end{equation}
+其中
+\begin{align}
+    \Phi(x,\theta) &=\phi(x) - \sqrt{2}\Bigl(\bar{\theta}\psi_{L}(x)\Bigr)
+    +\mathscr{F}(x)\biggl(\bar{\theta}\biggl(\frac{1+\gamma_{5}}{2}\biggr)\theta\biggr)
+    +\frac{1}{2}\Bigl(\bar{\theta}\gamma_{5}\gamma_{\mu}\theta\Bigr)\partial^{\mu}\phi(x) \nonumber \\
+    &\quad -\frac{1}{\sqrt{2}}\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)
+    \Bigl(\bar{\theta}\,\slashed{\partial}\psi_{L}(x)\Bigr)
+    -\frac{1}{8}\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}\square\phi(x) \:, \label{26.3.11} \\
+    \tilde{\Phi}(x,\theta) &=\tilde{\phi}(x) - \sqrt{2}\Bigl(\bar{\theta}\psi_{R}(x)\Bigr)
+    +\tilde{\mathscr{F}}(x)\biggl(\bar{\theta}\biggl(\frac{1-\gamma_{5}}{2}\biggr)\theta\biggr)
+    -\frac{1}{2}\Bigl(\bar{\theta}\gamma_{5}\gamma_{\mu}\theta\Bigr)\partial^{\mu}\tilde{\phi}(x) \nonumber \\
+    &\quad +\frac{1}{\sqrt{2}}\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)
+    \Bigl(\bar{\theta}\,\slashed{\partial}\psi_{R}(x)\Bigr)
+    -\frac{1}{8}\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}\square\tilde{\phi}(x) \:, \label{26.3.12}
+\end{align}
+它们的分量场定义成
+\begin{equation}
+    \phi \equiv \frac{A+\mi B}{\sqrt{2}} \:, \qquad
+    \psi_{L} \equiv \biggl(\frac{1+\gamma_{5}}{2}\biggr) \psi \:, \qquad
+    \mathscr{F} \equiv \frac{F-\mi G}{\sqrt{2}} \:, \label{26.3.13}
+\end{equation}
+\begin{equation}
+    \tilde{\phi} \equiv \frac{A-\mi B}{\sqrt{2}} \:, \qquad
+    \psi_{R} \equiv \biggl(\frac{1-\gamma_{5}}{2}\biggr) \psi \:, \qquad
+    \tilde{\mathscr{F}} \equiv \frac{F+\mi G}{\sqrt{2}} \:, \label{26.3.14}
+\end{equation}
+无论是$\,\Phi\,$还在$\,\tilde{\Phi}$, 它们的分量场都构成了超对称代数的完整表示:
+\begin{align}
+    & \delta \psi_{L} = \sqrt{2}\partial_{\mu}\phi\,\gamma^{\mu}\,\alpha_{R}
+    +\sqrt{2}\mathscr{F}\,\alpha_{L}\:, \label{26.3.15}  \\
+    & \delta \mathscr{F} = \sqrt{2}\Bigl(\overline{\alpha_{L}}\,\slashed{\partial}\psi_{L}\Bigr)\:,\label{26.3.16} \\
+    & \delta \phi = \sqrt{2}\Bigl(\overline{\alpha_{R}}\psi_{L}\Bigr)\:, \label{26.3.17}
+\end{align}
+\begin{align}
+    &\delta \psi_{R} =\sqrt{2}\partial_{\mu}\tilde{\phi}\gamma^{\mu}\,\alpha_{L}
+    +\sqrt{2}\tilde{\mathscr{F}}\,\alpha_{R} \:, \label{26.3.18} \\
+    & \delta \tilde{\mathscr{F}} = \sqrt{2}\Bigl(\overline{\alpha_{R}}\slashed{\partial}\psi_{R}\Bigr)\:,\label{26.3.19}\\
+    & \delta \tilde{\phi} =\sqrt{2} \Bigl(\overline{\alpha_{L}}\psi_{R}\Bigr) \:, \label{26.3.20}
+\end{align}
+其中, 像往常一样,
+\[
+\alpha_{L}=\biggl(\frac{1+\gamma_{5}}{2}\biggr)\alpha \:, \qquad \quad
+\alpha_{R}=\biggl(\frac{1-\gamma_{5}}{2}\biggr)\alpha \:,
+\]
+对$\,\theta\,$类似. 形如(\ref{26.3.11})和(\ref{26.3.12})的超场分别被称为是{\kai{左手征}}和{\kai{右手征}}的. 在手征超场$\,X(x,\theta)$ 是{\kai{实}}场的特殊情况下, 它的左手征和右手征部分$\,\Phi\,$和$\,\tilde{\Phi}$互为复共轭, 这使得$\,\tilde{\phi}=\phi^{\ast}$, $\,\tilde{\mathscr{F}}=\mathscr{F}^{\ast}$, 以及$\,\psi\,$是\,Majorana\,场. 然而, 如果我们不要求$\,X(x,\theta)\,$是实的, 那么$\,\Phi\,$和$\,\tilde{\Phi}\,$之间一般没有关系; 它们中的一个甚至有可能为零.
+
+超场$\,\Phi\,$的分量中含有两个复的玻色分量$\,\phi\,$和$\,\mathscr{F}$, 或者说\,4\,个独立的实玻色分量, 以及一个 Majorana 费米场$\,\psi$, 它有\,4\,个独立的费米分量. 这是上一节末尾推导的一般结果的又一例子, 即任何构成超对称代数表示的一组场必有相同数目的独立玻色分量和独立费米分量.
+
+我们可以用方程(\ref{26.A.5}), (\ref{26.A.17})和(\ref{26.A.18})重写方程(\ref{26.3.11})和(\ref{26.3.12})以阐明这些超场对%
+$\,\theta_{L}\,$和$\,\theta_{R}\,$的依赖方式:
+\begin{align}
+    \Phi(x,\theta) &= \phi(x_{+}) - \sqrt{2}\Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\psi_{L}(x_{+})\Bigr)
+    + \mathscr{F}(x_{+})\Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\theta_{L}\Bigr) \:, \label{26.3.21} \\
+    \tilde{\Phi}(x,\theta) &= \tilde{\phi}(x_{-}) + \sqrt{2}\Bigl(\theta_{R}^{\mathrm{T}}\,\epsilon\,\psi_{R}(x_{-})\Bigr)
+    - \tilde{\mathscr{F}}(x_{-})\Bigl(\theta_{R}^{\mathrm{T}}\,\epsilon\,\theta_{R}\Bigr) \:, \label{26.3.22}
+\end{align}
+其中
+\begin{equation}
+    x_{\pm}^{\mu} \equiv x^{\mu} \pm \tfrac{1}{2}\Bigl(\bar{\theta}\gamma_{5}\gamma^{\mu}\theta\Bigr)
+    =x^{\mu} \pm \Bigl(\theta_{R}^{\mathrm{T}}\epsilon\gamma^{\mu}\theta_{L}\Bigr)\:. \label{26.3.23}
+\end{equation}
+$\phi(x_{+})\,$和$\,\tilde{\phi}(x_{-})\,$对$\,x^{\mu}-x_{\pm}^{\pm}\,$的幂级数展开至于四次项, $\psi_{L,R}(x_{\pm})\,$的展开则止于线性项, 而$\,\mathscr{F}(x_{+})\,$和\\$\,\tilde{\mathscr{F}}(x_{-})\,$的展开至于零阶项, 这是因为所有高阶项在方程(\ref{26.3.21})和(\ref{26.3.22})中的贡献都会包含三个或%
+多个$\,\theta_{L}\,$或$\,\theta_{R}\,$因子, 因此为零. 由于相同的原因, 很容易看到, 任何只依赖于$\,\theta_{L}\,$和$\,x_{+}^{\mu}\,$但不额外依赖于$\,\theta_{R}\,$的超场必须取(\ref{26.3.21})的形式, 任何只依赖于$\,\theta_{R}\,$和$\,x_{-}^{\mu}\,$但不额外依赖于$\,\theta_{L}\,$的超场必须取(\ref{26.3.22})的形式.
+
+我们已经看到, 一个超场是左手征还是右手征完全由这个超场允许依赖的量决定. 由此理解得出, {\kai{左手征超场(右手征超场)的任何函数, 而不是它们的复共轭或时空导数, 将是左(右)手征超场.}} 这也可以通过一个更加形式的方法证明. 因为$\,\Phi(x,\theta)\,$仅是通过$\,x_{+}\,$依赖于$\,\theta_{R}$, 而$\,\tilde{\Phi}(x,\theta)\,$仅是通过$\,x_{-}\,$依赖于$\,\theta_{L}$, 它们满足条件
+\begin{equation}
+    \mathscr{D}_{R\alpha}\Phi = \mathscr{D}_{L\alpha}\tilde{\Phi} = 0 \:, \label{26.3.24}
+\end{equation}
+其中$\,\mathscr{D}_{R}\,$和$\,\mathscr{D}_{L}\,$分别是超导数(\ref{26.2.26})的左手征部分和右手征部分:
+\begin{align}
+    \mathscr{D}_{R\alpha}& \equiv \biggl[\biggl(\frac{1-\gamma_{5}}{2}\biggr)\mathscr{D}\biggr]_{\alpha}
+    = -\sum_{\beta}\epsilon_{\alpha\beta}\frac{\partial}{\partial \theta_{R\beta}}
+    -(\gamma^{\mu}\theta_{L})_{\alpha} \frac{\partial}{\partial x^{\mu}} \:, \label{26.3.25} \\
+     \mathscr{D}_{L\alpha}& \equiv \biggl[\biggl(\frac{1+\gamma_{5}}{2}\biggr)\mathscr{D}\biggr]_{\alpha}
+    = +\sum_{\beta}\epsilon_{\alpha\beta}\frac{\partial}{\partial \theta_{L\beta}}
+    -(\gamma^{\mu}\theta_{R})_{\alpha} \frac{\partial}{\partial x^{\mu}} \:, \label{26.3.26}
+\end{align}
+它们满足
+\[
+\mathscr{D}_{R\alpha}x_{+}^{\mu} = \mathscr{D}_{L\alpha}x_{-}^{\mu}=0 \:.
+\]
+反之, 如果超场$\,\Phi\,$满足$\,\mathscr{D}_{R}\Phi=0$, 那么它是左手征的, 如果它满足$\,\mathscr{D}_{L}\Phi=0$, 那么它是右手征的. 对于一组超场$\,\Phi_{n}$, 如果它们都满足$\,\mathscr{D}_{R}\Phi_{n}=0\,$或$\,\mathscr{D}_{L}\Phi_{n}=0$, 它们的任意函数$\,f(\Phi)\,$也将满足$\,\mathscr{D}_{R}f(\Phi)=0\,$或$\,\mathscr{D}_{L}f(\Phi)=0$, 因此也分别是左手征和右手征的. 但是, 左手征超场{\kai{和}}右手征超场的函数在一般情况下根本不是手征的.
+
+左手征超场的表示(\ref{26.3.21})使得解出它们的乘积性质变得很容易. 例如, 如果$\,\Phi_{1}\,$和$\,\Phi_{2}\,$是两个左手征超场, 那么它们的乘积$\,\Phi=\Phi_{1}\Phi_{2}\,$是左手征超场, 分量是
+\begin{align}
+    \phi &= \phi_{1}\phi_{2} \:, \label{26.3.27} \\
+    \psi_{L} &= \phi_{1}\psi_{2L} + \phi_{2}\psi_{1L} \:, \label{26.3.28} \\
+    \mathscr{F} &= \phi_{1}\mathscr{F}_{2}+\phi_{2}\mathscr{F}_{1} - \Bigl(\psi_{1L}^{\mathrm{T}}\,\epsilon\,\psi_{2L}\Bigr) \:. \label{26.3.29}
+\end{align}
+
+理论中出现了手征超场打开了构造超对称作用量的另一种可能性. 对变换规则(\ref{26.3.16})的观察表明, 左手征超场$\,\Phi\,$的$\,\mathscr{F}\,$-项在超对称变换下的变化是一个导数项, 这使得对任何左手征超场的$\,\mathscr{F}\,$-项的积分是超对称的. 因此我们可以将超对称作用量构建为
+\begin{equation}
+    I = \int \dif^{4}x\: \Bigl[f \Bigr]_{\mathscr{F}} + \int \dif^{4}x\: \Bigl[f\Bigr]^{\ast}_{\mathscr{F}}
+    +\frac{1}{2} \int \dif^{4}x\: \Bigl[K\Bigr]_{D} \:, \label{26.3.30}
+\end{equation}
+其中$\,f\,$和$\,K\,$分别是左手征超场和一般实超场且是用基本超场构建的.
+
+$f\,$和$\,K\,$能够依赖于什么? 如果函数$\,f\,$只依赖于左手征基本超场$\,\Phi_{n}\,$而不依赖与它们的右手征复共轭, 那么$\,f\,$将是左手征的. 另一方面, 手征超场的超导数不是手征的, 所以我们不能随意地在$\,f\,$中引入$\,\Phi_{n}\,$的超导数. 正确的是, 对于不是左手征的超场$\,S\,$(例如包含左手征超场的复共轭的超场), 一对右超导数作用在上面会给出左手征超场, 原因是独立的右超导数只有两个且互相反对易:
+\[
+\mathscr{D}_{R\alpha}(\mathscr{D}_{R\beta}\mathscr{D}_{R\gamma}S) = 0 \: .
+\]
+然而, 对于任何以这种方式构建的函数$\,f$, 它的$\,\mathscr{F}\,$-项对作用量的贡献与其它某个复合超场的$\,D\,$项对作用量的贡献相同. 由于$\,\mathscr{D}\,$反对易, 通过用两个$\,\mathscr{D}_{R}\,$作用在一般超场$\,S\,$上的得到最一般左手征超场可以表示成%
+$\,(\mathscr{D}_{R}^{\mathrm{T}}\epsilon\mathscr{D}_{R})S$. 如果超势中的一个左手征超场是这种形式, 由于每个$\,\mathscr{D}_{R}\,$湮灭超势中所有其它超场, 我们可以将整个超势写成$\,f=(\mathscr{D}_{R}^{\mathrm{T}}\epsilon\mathscr{D}_{R})h$, 其中$\,h\,$是另外一个超场. 现在
+\[
+\Bigl(\mathscr{D}_{R}^{\mathrm{T}}\,\epsilon\,\mathscr{D}_{R}\Bigr)\,
+\Bigl(\theta_{R}^{\mathrm{T}}\,\epsilon\,\theta_{R}\Bigr) =-4 \:,
+\]
+所以, 除了对作用量没有贡献的时空导数外, $(\mathscr{D}_{R}^{\mathrm{T}}\epsilon\mathscr{D}_{R})h\,$是%
+$\,-(\theta_{R}^{\mathrm{T}}\epsilon\theta_{R})/4\,$在$\,h\,$中的系数. 但是, 再一次地, 除时空导数外, $[f]_{\mathscr{F}}\,$ 是$\,(\theta_{L}^{\mathrm{T}}\epsilon\theta_{L})\,$在$\,f\,$中的系数, 所以$\,[(\mathscr{D}_{R}^{\mathrm{T}}\epsilon\mathscr{D}_{R})h]_{\mathscr{F}}\,$等于%
+$\,-(\theta_{L}^{\mathrm{T}}\epsilon\theta_{L})(\theta_{R}^{\mathrm{T}}\epsilon%
+\theta_{R})/4$\\$=-(\bar{\theta}\gamma_{5}\theta)^{2}/4\,$在$\,h\,$中的系数, 因此
+\begin{equation}
+    \int \dif^{4}x\: [(\mathscr{D}_{R}^{\mathrm{T}}\,\epsilon\,\mathscr{D}_{R})h]_{\mathscr{F}}
+    =2\int \dif^{4}x\: [h]_{D} \:. \label{26.3.31}
+\end{equation}
+因此, 对于那些依赖于形式为$\,\mathscr{D}_{R\beta}\mathscr{D}_{R\gamma}S\,$的左手征超场的项, 我们不需要把这些项的贡献计入$\,f\,$------任何这样的项将会被纳入所有可能的$\,D\,$-项中. 当$\,f\,$被表示成仅是基本手征超场而非它们的超导数或时空导数的函数时, 它被称为{\kai{超势}}.
+
+与之相反, 实标量函数$\,K\,$一般既是左手征手征超场$\,\Phi_{n}\,$和它们的复共轭$\,\Phi_{n}^{\ast}\,$的函数, 也是它们的超导数和时空导数的函数, 它被称为\,\emph{K\"{a}hler}\,{\kai{势}}. (任何右手征超场都是某个左手征超场的复共轭, 所以这里假定$\,K\,$只依赖于左手征超场和它们的复共轭是不失一般性的.) 然而, 以这种方式获得的$\,K\,$并不都给出不同的作用量. 例如, 手征超场没有$\,D\,$-项, 所以如果两个$\,K\,$只相差一个手征超场, 那么它们对作用量的贡献是相同的.
+
+通过在超空间中部分积分, 我们也可以在不改变作用量的情况下改变$\,K\,$的形式. 对于任意超场的超导数$\,\mathscr{D}_{\alpha}S$, 因为
+\begin{equation}
+    \int \dif^{4}x\: [\mathscr{D}_{\alpha}S]_{D} = 0 \:, \label{26.3.32}
+\end{equation}
+所以它的$\,D\,$-项对作用量无贡献. 为了看到这点, 回忆起
+\[
+\mathscr{D}_{\alpha}S = \sum_{\beta}\Bigl(\gamma_{5}\epsilon\Bigr)_{\alpha\beta}
+ \frac{\partial S}{\partial \theta_{\beta}} - (\gamma^{\mu}\theta)_{\alpha}\frac{\partial S}{\partial x^{\mu}}\:.
+\]
+由于$\,S\,$最多是$\,\theta\,$的四次多项式, $\mathscr{D}_{\alpha}S\,$中的第一项最多是$\,\theta\,$的三次多项式, 因此它的$\,D\,$-项只要非零就必是一个导数, 而第二项也是一个时空导数, 所以它的$\,D\,$-项也是时空导数, 因此$\,\mathscr{D}_{\alpha}S\,$中的第一项和第二项对方程(\ref{26.3.32})中的积分都没有贡献. 另外, 超导数的作用满足分配率, 所以从方程(\ref{26.3.32})可以得出, 我们可以在超空间做分部积分: 对于任何两个玻色超场$\,S_{1}\,$和$\,S_{2}$,
+\begin{equation}
+    \int \dif^{4}x\: [S_{1}\mathscr{D}_{\alpha}S_{2}]_{D}
+    =-\int \dif^{4}x\: [S_{2}\mathscr{D}_{\alpha}S_{1}]_{D} \:. \label{26.3.33}
+\end{equation}
+在\,26.4\,节和\,26.8\,节, 我们将会细致考察$\,f\,$和$\,K\,$只依赖基本超场但不依赖它们的超导数或普通导数的情况.
+
+我们在上一节看到, 在宇称守恒的理论中, 空间反演算符在一般标量超场上的效应是对它的变换做变换%
+$\,x^{\mu}\to(\Lambda_{P})\indices{^\mu_\nu}x^{\nu}\,$和$\,\theta\to-\mi\beta\theta$, 然后再乘上可能的相位$\,\eta$. 在这些变换下, 方程(\ref{26.3.21}) 和(\ref{26.3.22})中的变量$\,x^{\mu}_{\pm}\,$的变化是
+\begin{equation}
+    x_{\pm}^{\mu}\to (\Lambda_{P\,}x)^{\mu} \pm \tfrac{1}{2}\Bigl(\bar{\theta}\beta\gamma_{5}\gamma^{\mu}\beta\theta\Bigr)=
+    (\Lambda_{P\,}x_{\mp})^{\mu} \:, \label{26.3.34}
+\end{equation}
+以及$\,\theta_{L}\to -\mi\beta\theta_{R}\,$和$\,\theta_{R}\to-\mi\beta\theta_{L}$. 因此空间反演将左手征超场变到右手征超场, 并将右手征超场变到左手征超场. 分量场中包含相同粒子的产生湮灭算符且这些粒子也被左手征超场$\,\Phi\,$产生湮灭的唯一右手征超场是%
+$\,\tilde{\Phi}\propto\Phi^{\ast}$, 所以$\,\mathsf{P}^{-1}\Phi\mathsf{P}\,$必须正比于$\,\Phi^{\ast}$. 通过对$\,\Phi\,$的相位做合适的选择, 我么可以重新整理这一变换规则使其变成
+\begin{equation}
+    \mathsf{P}^{-1}\Phi(x,\theta)\mathsf{P} = \Phi^{\ast}(\Lambda_{P\,}x,-\mi\beta\theta)\:. \label{26.3.35}
+\end{equation}
+以分量场的形式, 这个变换是
+\begin{align}
+    \mathsf{P}^{-1}\phi(x)\mathsf{P} &= \phi^{\ast}(\Lambda_{P\,}x) \:, \nonumber  \\
+    \mathsf{P}^{-1}\psi_{L}(x)\mathsf{P}
+    &= -\mi\epsilon\gamma_{5}\beta\psi_{L}^{\ast}(\Lambda_{P\,}x)\:,\label{26.3.36} \\
+    \mathsf{P}^{-1}\mathscr{F}(x)\mathsf{P} &= \mathscr{F}^{\ast}(\Lambda_{P\,}x) \:. \nonumber
+\end{align}
+
+还有另一种可能的对称性类型, 称为\,\textit{R}\,-{\kai{对称性}}, 它在\,26.5\,节将要讨论的一些超对称自发破缺模型中十分重要, 也会在\,27.6\,节被用来证明不可重整定理. 正如在\,25.2\,节中所提及的, 在简单\,$N=1$\,超对称理论中, $R\,$-对称性就是在$\,U(1)\,$变换下的不变性, 在这个变换下, 生成元的左手分量(在\,25.2\,节记做$\,\mathcal{Q}_{a}\,$)携带不为零的量子数, 例如$\,-1$, 而它们的共轭, 超对称生成元的右手分量携带相反的量子数$\,+1$. 对方程(\ref{26.2.2})的观察表明, $\theta\,$超空间坐标在$\,R\,$-变换下的性质是不平庸的: $\theta_{L}\,$携带$\,R\,$量子数$\,+1$, 而正比于$\,\theta_{L}^{\ast}\,$的$\,\theta_{R}\,$携带$\,R\,$量子数$\,-1$. 另外, 整个超场可以被赋予一个$\,R\,$-量子数. 如果我们给左手征超场$\,\Phi\,$赋予$\,R\,$量子数$\,R_{\Phi}$, 那么它的标量分量$\,\phi\,$会有相同的$\,R\,$量子数, 左手征旋量分量$\,\psi_{L}\,$有$\,R_{\psi}=R_{\Phi}-1$, 辅助场$\,\mathscr{F}\,$有$\,R_{\mathscr{F}}=R_{\Phi}-2$. 特别地, 为了使超势项$\,\int\dif^{4}x\,[f]_{\mathscr{F}}\,$是 $R\,$守恒的, 超势本身必须有$\,R_{f}=+2$, 所以如果$\,f\,$依赖单个左手征超场$\,\Phi$, 那么它必须正比于$\,\Phi^{2/R_{\Phi}}$. 将其写成另一种形式, 如果$\,f(\Phi)\,$是正比于$\,\Phi^{2}\,$的纯质量项, 那么我们必须选$\,R_{\Phi}=+1$, 而如果$\,f(\Phi)$ 是正比于$\,\Phi^{3}\,$的纯相互作用项, 那么我们必须选$\,R_{\Phi}=2/3$. 另一方面, 对方程(\ref{26.2.10})的观察表明, 超场的$\,D\,$-项和超场的$\,R\,$值相同, 所以为了使作用量中的$\,\int\dif^{4}x\,[K]_{D}\,$项\footnoteB{此处原书误植为$\,\int\dif^{4}x\,[g]_{D}$.\qquad ------译者注}是$\,R\,$守恒的, 唯一需要的是$\,K\,$有$\,R=0$, 而无论我们给$\,\Phi\,$赋予什么样的$\,R\,$值, 只要$\,K\,$中的每一项拥有个数相同的$\,\Phi\,$因子和$\,\Phi^{\ast}\,$因子, $K\,$就满足要求. 当然, 为什么作用量{\kai{应该}}遵循$\,R\,$-对称性, 亦或$\,R\,$-对称性为什么没有自发破缺, 这些现象并没有普遍的原因.
+
+
+\subsection*{* * *}
+
+还存在其它约束超场使其产生其他类型的场超多重态的方式. 其中较常见的是{\kai{线性}}超场. 为了掌握这类超场的定义条件, 我们注意到, 如果$\,S\,$是一般超场, 那么我们可以构建手征超场
+\begin{equation}
+    S^{\prime}\equiv \frac{1}{4}\Bigl(\bar{\mathscr{D}}\mathscr{D}\Bigr)\,S \:. \label{26.3.37}
+\end{equation}
+这是手征超场是因为它可以写成左手征超场$\,\frac{1}{4}(\bar{\mathscr{D}}_{L}\mathscr{D}_{L})S\,$和左手征超场%
+$\,\frac{1}{4}(\bar{\mathscr{D}}_{R}\mathscr{D}_{R})S\,$的和. 用$\,S\,$的分量, 它的分量可以写成
+\begin{align}
+    C^{\prime} &= N \:, \label{26.3.38} \\
+    \omega^{\prime} &= \lambda + \slashed{\partial}\omega \:, \label{26.3.39} \\
+    M^{\prime} &= -\partial_{\mu}V^{\mu} \:, \label{26.3.40}  \\
+    N^{\prime} &= D +\square C \:, \label{26.3.41} \\
+    V_{\mu}^{\prime} &= -\partial_{\mu}M \:, \label{26.3.42} \\
+    \lambda^{\prime} &= D^{\prime} = 0 \:. \label{26.3.43}
+\end{align}
+如果以这种方式定义的超场$\,S^{\prime}\,$为零
+\begin{equation}
+    \Bigl(\bar{\mathscr{D}}\mathscr{D}\Bigr)\,S=0 \:, \label{26.3.44}
+\end{equation}
+或者用它的分量表示
+\begin{equation}
+    N=M=\partial_{\mu}V^{\mu} =0 \:, \qquad \lambda = -\slashed{\partial}\omega \:, \qquad
+    D=-\square C \:, \label{26.3.45}
+\end{equation}
+那么多重态$\,S\,$就被称作是线性的. 这种构造留下了四个独立的玻色场------$\,C\,$和使得条件$\,\partial_{\mu}V^{\mu}=0\,$得以满足的$\,V^{\mu}\,$的三个分量, 以及四个独立的费米场------\,Majorana\,4\,-旋量$\,\omega\,$的四个分量. 我们将会在\,26.6\,节看到, 那里定义的流超场的$\,V_{\mu}\,$-项是与对称变换相联系的守恒流, 这个超场是线性超场.
+
+\section{手征超场的可重整理论} \label{sec:26.4}
+
+我们现在将给出标量超场的一般可重整理论的细节. 这会为超对称的应用提供一些启发, 并且我们获得的理论将是第\,28\,章讨论的超对称标准模型的一部分.
+
+正如在\,12.2\,节中所讨论的, 可重整理论的拉格朗日密度只能包含量纲(以动量或能量为单位, 且有$\,\hbar=c=1$)小于或等于\,4\,的算符. 方程(\ref{26.2.6})表明$\,\mathscr{Q}_{\alpha}\,$和随之的$\,\partial/\partial\theta_{\alpha}\,$拥有量纲$\,1/2$, 所以$\,\mathscr{D}_{\alpha}\,$有量纲$\,+1/2$, 而$\,\theta_{\alpha}\,$有量纲$\,-1/2$. 超场$\,S\,$的$\,\mathscr{F}\,$-项和$\,D\,$-项分别是两个$\,\theta\,$因子和四个$\,\theta\,$因子的系数, 所以如果超场的量纲是$\,d(S)$, 那么它的$\,\mathscr{F}\,$-项和$\,D\,$-项分别有量纲$\,d(\mathscr{F}^{S})=d(S)+1\,$和 $d(D^{S})=d(S)+2$. 因此在可重整理论中, 方程(\ref{26.3.30})中的函数$\,f\,$和$\,K\,$分别由量纲最多为\,3\,和\,2\,的算符构成.
+
+基本标量超场$\,\Phi_{n}\,$的量纲是基本标量场的量纲, 或者说$\,+1$, 所以, 为了使函数$\,f\,$中每一项的量纲小于等于\,3, 它能包含的$\,\Phi_{n}\,$因子个数和(或)导数$\,\partial/\partial x^{\mu}\,$的个数和(或)成对旋量超导数$\,\mathscr{D}_{\alpha}\,$的个数不超过\,3. 我们在上一节讨论过, $f\,$中任何包含超导数的左手征项都可以被$\,K\,$中的项替换, 所以可以忽略$\,f\,$中的超导数. 方程(\ref{26.2.30})表明时空导数可以表示成超导数, 所以它们也可以被忽略掉. (在任何情况下, Lorentz\,不变性可以排除掉只有一个时空导数的项, 而在可重整理论中, 有两个导数的项只能包含一个$\,\Phi_{n}\,$因子, 这些导数必须要作用在这个因子上, 所以这样的项对作用量无贡献.) 我们得出: $f(\Phi)\,$最多是$\,\Phi_{n}\,$的三次多项式并且不含时空导数和超导数.
+
+同样的量纲分析表明, 可重整理论中的$\,K\,$最多是$\,\Phi_{n}\,$和$\,\Phi_{n}^{\ast}\,$的四次函数并且没有导数. 然而, $K(\Phi,\Phi^{\ast})\,$中任何只含$\,\Phi_{n}\,$或$\,\Phi_{n}^{\ast}\,$的项将是手征超场, 而手征超场从定义上就没有$\,D\,$-项, 所以 $K(\Phi,\Phi^{\ast})$ 中对$\,[K(\Phi,\Phi^{\ast})]_{D}\,$有贡献的项只能是那些%
+{\kai{既}}包含$\,\Phi_{n}\,${\kai{又}}包含$\,\Phi_{n}^{\ast}\,$的项. 因此$\,K(\Phi,\Phi^{\ast})\,$必须是如下的形式
+\begin{equation}
+    K(\Phi,\Phi^{\ast}) = \sum_{mn}g_{nm}\,\Phi_{n}^{\ast}\Phi_{m} \:, \label{26.4.1}
+\end{equation}
+它的常系数$\,g_{nm}\,$构成厄米矩阵.
+
+我们现在必须要分别计算$\,f(\Phi)\,$的$\,\mathscr{F}\,$-分量和$\,K(\Phi,\Phi^{\ast})\,$的$\,D\,$-分量. 为了计算$\,K(\Phi,\Phi^{\ast})\,$的$\,D\,$-分量, 我们注意到$\,\Phi_{n}^{\ast}\Phi_{m}\,$中$\,\theta\,$的四阶项是
+\begin{align*}
+\Bigl[\Phi_{n}^{\ast}\Phi_{m}\Bigr]_{\theta^{4}} &= -\frac{1}{8}\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}
+\Bigl[\phi_{n}^{\ast}\square\phi_{m}+\Bigl(\square\phi_{m}^{\ast}\Bigr)\phi_{n}\Bigr] \\
+&\quad + \Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\Bigl[\Bigl(\overline{\psi_{n}}\,\theta\Bigr)
+\Bigl(\bar{\theta}\gamma^{\mu}\partial_{\mu}\psi_{m}\Bigr)+
+\Bigl((\partial_{\mu}\overline{\psi_{n}})\gamma^{\mu}\theta\Bigr)\Bigl(\bar{\theta}\,\psi_{m}\Bigr)\Bigr] \\
+& \quad + \frac{1}{4}\mathscr{F}_{n}^{\ast}\mathscr{F}_{m}\,\Bigl(\bar{\theta}(1-\gamma_{5})\theta\Bigr)
+\Bigl(\bar{\theta}(1+\gamma_{5})\theta\Bigr) \\
+&\quad -\frac{1}{4}\partial^{\mu}\phi_{n}^{\ast}\partial^{\nu}\phi_{m}\,
+\Bigl(\bar{\theta}\gamma_{5}\gamma_{\mu}\theta\Bigr)\Bigl(\bar{\theta}\gamma_{5}\gamma_{\nu}\theta\Bigr) \:.
+\end{align*}
+(\ref{26.A.18})和(\ref{26.A.19})可以让我们把这一表达式对$\,\theta\,$的依赖关系转换成一个总因子%
+$\,(\bar{\theta}\gamma_{5}\theta)^{2}$:
+\begin{align*}
+   \Bigl[\Phi_{n}^{\ast}\Phi_{m}\Bigr]_{\theta^{4}} &= -\frac{1}{4}\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}
+   \biggl[ \frac{1}{2}\phi_{n}^{\ast}\square\phi_{m}+ \frac{1}{2} \Bigl(\square\phi_{m}^{\ast}\Bigr)\phi_{n}
+   -\Bigl(\overline{\psi_{n}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{m}\Bigr) \\
+   &\quad +\Bigl((\partial_{\mu}\overline{\psi_{n}})\,\gamma^{\mu}\,\psi_{m}\Bigr)
+   +2\mathscr{F}_{n}^{\ast}\mathscr{F}_{m} - \partial^{\mu}\phi_{n}^{\ast}\partial_{\mu}\phi_{m}\biggr] \:.
+\end{align*}
+一个超场的$\,D\,$-项是$\,-\frac{1}{4}(\bar{\theta}\gamma_{5}\theta)^{2}\,$的系数减去$\,\frac{1}{2}\square\,$作用%
+在与$\,\theta\,$独立的项上, 后者对于$\,\Phi_{n}^{\ast}\Phi_{m}\,$就是 $\phi_{n}^{\ast}\phi_{m}$, 所以
+\begin{align}
+    \frac{1}{2}\Bigl[K(\Phi,\Phi^{\ast})\Bigr]_{D} &= \sum_{nm}g_{nm}\,\biggl[ -\partial_{\mu}\phi_{n}^{\ast}\partial^{\mu}\phi_{m}+ \mathscr{F}_{n}^{\ast}\mathscr{F}_{m} \nonumber \\
+    &\quad -\frac{1}{2}\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{mL}\Bigr)
+    +\frac{1}{2}\Bigl((\partial_{\mu}\overline{\psi_{nL}})\,\gamma^{\mu}\,\psi_{mL}\Bigr)
+    \biggr] \:. \label{26.4.2}
+\end{align}
+如果我们将$\,\Phi_{n}\,$写成新超场$\,\Phi_{m}^{\prime}\,$的线性组合$\,\sum_{m}N_{nm}\Phi_{m}^{\prime}$, 那么表示成新的超场, $K(\Phi,\Phi^{\ast})\,$与原来的在形式上的差别只是$\,g_{nm}\,$被换成了%
+$\,g_{nm}^{\prime}=(N^{\dag}gN)_{nm}$. 为了使标量场和旋量场的动能项在符号上和量子对易关系以及反对易关系一致, 正如\,12.5\,节所证明的, 厄米矩阵$\,g_{nm}\,$必须是正定的, 这意味着我们可以选择$\,N\,$使得$\,g_{nm}^{\prime}=\delta_{nm}$. 扔掉撇号, (\ref{26.4.2})现在是
+\begin{align}
+    \frac{1}{2}\Bigl[K(\Phi,\Phi^{\ast})\Bigr]_{D} &= \sum_{n}\,\biggl[ -\partial_{\mu}\phi_{n}^{\ast}\partial^{\mu}\phi_{n}+ \mathscr{F}_{n}^{\ast}\mathscr{F}_{n} \nonumber \\
+    &\quad -\frac{1}{2}\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nL}\Bigr)
+    +\frac{1}{2}\Bigl((\partial_{\mu}\overline{\psi_{nL}})\,\gamma^{\mu}\,\psi_{nL}\Bigr)
+    \biggr] \:. \label{26.4.3}
+\end{align}
+我们仍然可以用一个幺正变换重新定义超场而不改变方程(\ref{26.4.3})的形式, 我们不久之后就需要使用这个自由度.
+
+
+方程(\ref{26.4.3})中包含$\,\phi_{n}\,$和$\,\psi_{nL}\,$的项是传统归一化复标量场和\,Majorana\,旋量场的正确拉格朗日量. 在我们可以考虑质量项后, 我们会将费米子项写成更加熟悉的形式.
+
+在计算$\,f(\Phi)\,$的$\,\mathscr{F}\,$-项时, 最方便的做法是使用超场表示(\ref{26.3.21}), 然后挑出$\,\theta_{L}\,$的二阶项:
+\begin{align*}
+    \Bigl[f\Bigl(\Phi(x,\theta)\Bigr)\Bigr]_{\theta_{L}^{2}} &=
+    \sum_{nm}\Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\psi_{nL}(x)\Bigr)\,
+    \Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\psi_{mL}(x)\Bigr)\,
+    \frac{\partial^{2}f\Bigl(\phi(x)\Bigr)}{\partial\phi_{n}(x)\,\partial\phi_{m}(x)} \\
+    &\quad +\sum_{n}\mathscr{F}_{n}(x)\,\frac{\partial f\Bigl(\phi(x)\Bigr)}{\partial \phi_{n}(x)}\,
+    \Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\theta_{L}\Bigr) \:.
+\end{align*}
+(我们已经这里的$\,x_{+}\,$替换成了$\,x$, 这是因为当乘以一个有两个$\,\theta_{L}\,$因子的式子后, 方程(\ref{26.3.21})中的$\,(\theta_{R}^{\mathrm{T}}\epsilon\gamma^{\mu}\theta_{L})\,$项为零.) 通过使用方程(\ref{26.A.11}), 右边第一项对$\,\theta\,$的依赖关系可以写成标准形式\footnote{注意, $\bar{\psi}_{nL}\,$是$\,\bar{\psi}_{n}\,$的左手分量, 不是$,\overline{\psi_{nL}}$.}
+\begin{align*}
+    \Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\psi_{nL}\Bigr)\Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\psi_{mL}\Bigr)
+&=\biggl(\psi_{nL}^{\mathrm{T}}\,\epsilon\,\biggl(\frac{1+\gamma_{5}}{2}\biggr)\theta\biggr)\,
+  \biggl(\theta^{\mathrm{T}}\,\epsilon\,\biggl(\frac{1+\gamma_{5}}{2}\biggr)\psi_{mL}\biggr) \\
+&=-\frac{1}{2}\Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr)\,\Bigl(\theta_{L}^{\mathrm{T}}\,\epsilon\,\theta_{L}\Bigr)\:.
+\end{align*}
+任何左手征超场的$\,\mathscr{F}\,$-项是$\,\mathscr{F}\,$-项是$\,(\theta_{L}^{\mathrm{T}}\epsilon\theta_{L})\,$的系数, 所以这里有
+\begin{equation}
+    \Bigl[f(\Phi)\Bigr]_{\mathscr{F}} = -\frac{1}{2}\sum_{nm}
+    \frac{\partial^{2}f(\phi_{n})}{\partial\phi_{n}\,\partial\phi_{m}}\Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr)
+    +\sum_{n}\mathscr{F}_{n}\,\frac{\partial f(\phi)}{\partial \phi_{n}} \:. \label{26.4.4}
+\end{equation}
+完整的拉格朗日密度是(\ref{26.4.3}), (\ref{26.4.4})和(\ref{26.4.4})的复共轭这三项的和:
+\begin{align}
+    \mathscr{L} &= \sum_{n}\biggl[-\partial_{\mu}\phi_{n}^{\ast}\partial^{\mu}\phi_{n}
+    +\mathscr{F}_{n}^{\ast}\mathscr{F}_{n} \nonumber \\
+    &\quad -\frac{1}{2}\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nL}\Bigr)
+    +\frac{1}{2}\Bigl((\partial_{\mu}\overline{\psi_{nL}})\,\gamma^{\mu}\,\psi_{nL}\Bigr)  \Biggr]\nonumber \\
+    &\quad -\frac{1}{2}\sum_{nm}\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}
+    \,\Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr)-\frac{1}{2}\sum_{nm}
+    \Biggl(\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}\Biggr)^{\ast}
+    \,\Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr)^{\ast}  \nonumber \\
+    &\quad+\sum_{n}\mathscr{F}_{n}\,\frac{\partial f(\phi)}{\partial \phi_{n}}
+    +\sum_{n}\mathscr{F}_{n}^{\ast}\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr)^{\ast}\:.\label{26.4.5}
+\end{align}
+
+辅助场$\,\mathscr{F}_{n}\,$在作用量中是二次型的形式并且二次项的系数是常数, 所以通过令$\,\mathscr{F}_{n}\,$等于%
+拉格朗日密度(\ref{26.4.5})相对$\,\mathscr{F}_{n}\,$和$\,\mathscr{F}_{n}^{\ast}\,$是驻定的值:
+\begin{equation}
+    \mathscr{F}_{n} = -\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr)^{\ast} \:, \label{26.4.6}
+\end{equation}
+我们就可以消掉它们. 将上式代入方程(\ref{26.4.5})给出
+\begin{align}
+    \mathscr{L}&= \sum_{n}\biggl[-\partial_{\mu}\phi_{n}^{\ast}\partial^{\mu}\phi_{n}
+    -\frac{1}{2}\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nL}\Bigr)
+    +\frac{1}{2}\Bigl((\partial_{\mu}\overline{\psi_{nL}})\,\gamma^{\mu}\,\psi_{nL}\Bigr)\biggr]\nonumber \\
+    &\quad -\frac{1}{2}\sum_{nm}\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}\,
+    \Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr) - \frac{1}{2} \biggl(\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}\biggr)^{\ast}
+    \,\Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr)^{\ast}  \nonumber \\
+    &\quad -\sum_{n}\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr)^{\ast}
+    \frac{\partial f(\phi)}{\partial \phi_{n}} \:. \label{26.4.7}
+\end{align}
+因此标量场的势是$\,V(\phi)=\sum_{n}\lvert \partial f(\phi)/\partial\phi_{n}\rvert^{2}$.
+
+当辅助场以这种方式被消除后, 在剩下的场$\,\psi_{nL}\,$和$\,\phi_{n}\,$的超对称变换(\ref{26.3.15})和(\ref{26.3.17})下
+\[
+\delta\psi_{nL} = \sqrt{2}\partial_{\mu}\phi_{n}\gamma^{\mu}\alpha_{R}
+-\sqrt{2}\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr)^{\ast}\alpha_{L} \:,\qquad
+\delta\phi_{n}=\sqrt{2}\Bigl(\overline{\alpha_{R}}\psi_{nL}\Bigr) \:,
+\]
+作用量不再是不变的. 原因是: 表达式(\ref{26.4.6})不在服从(\ref{26.3.16})给出的$\,\mathscr{F}_{n}\,$的变换规则%
+$\,\delta\mathscr{F}_{n}=\sqrt{2}(\overline{\alpha_{L}}\,\slashed{\partial}\psi_{nL})$, 而是
+\[
+\delta \biggl(-\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr)^{\ast}
+=-\sum_{m} \Biggl(\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}\Biggr)^{\ast}\delta \phi_{m}^{\ast}
+=-\sqrt{2}\sum_{m}\Biggl(\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}\Biggr)^{\ast}
+\Bigl(\overline{\alpha_{L}}\psi_{mR}\Bigr) \:.
+\]
+由于相同的原因, 在消掉辅助场后, $\phi_{n}\,$和$\,\psi_{nL}\,$的超对称变换的对易子不再由超对称反对易关系给定, 事实上, 它们并没有形成封闭的\,Lie\,超代数. 但这并不与存在满足超对称反对易关系的量子力学算符$\,Q_{\alpha}\,$相矛盾. 这些算符生成了超对称变换, 也就是说, $-\mi(\bar{\alpha}Q)\,$与任何\,Heisenberg\,绘景量子场$\,\phi_{n}\,$或$\,\psi_{nL}\,$的对易子等于这个场%
+在无限小参量为$\,\alpha\,$的超对称变换下的变化. 当$\,\mathscr{F}_{n}\,$由方程 (\ref{26.4.6}) 给定后, $-\mi(\bar{\alpha}Q)\,$与$\,\mathscr{F}_{n}\,$的对易子{\kai{由}}%
+$\,\delta\mathscr{F}_{n}=\sqrt{2}(\overline{\alpha_{L}}\,\slashed{\partial}\psi_{nL})\,$给定, 这是因为, 在\,Heisenberg\,绘景下, 量子场$\,\psi_{nL}\,$满足从拉格朗日量(\ref{26.4.7})导出的场方程:
+\[
+\slashed{\partial}\psi_{nL} = -\sum_{m}
+\Biggl(\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}\Biggr)^{\ast}\psi_{mR} \:.
+\]
+同样的, 当把场方程考虑在内后, 量子场$\,\phi_{n}\,$和$\,\psi_{nL}\,$的超对称变换确实构成封闭的\,Lie\,超代数. 这样的代数通常被称作是{\kai{在壳的}}.
+
+标量场$\,\phi_{n}\,$的零阶期望值$\,\phi_{n0}\,$必须处在方程(\ref{26.4.7})最后一项的极大值点处. 由于这一项不是负的就是零, 时空独立的场值$\,\phi_{n0}\,$使得最大值为零, 这使得
+\begin{equation}
+\frac{\partial f(\phi)}\partial \phi_{n}\rvert_{\phi=\phi_{0}} =0 \:, \label{26.4.8}
+\end{equation}
+当然前提是假定这个方程存在解. 方程(\ref{26.4.8})不仅使得方程(\ref{26.4.7})的最后一项取最大值------它也是超对称性不破缺的条件. 真空在超对称变换下不变这个要求使得任何场在超对称变换下的变分的真空期望值应该为零. 玻色场的变分是费米场, 它的真空期望值显然总是为零, 当方程 (\ref{26.3.15})表明$\,\delta\psi_{nL}\,$的真空期望值正比于%
+辅助场$\,\mathscr{F}_{n}\,$的真空期望值, 如果超对称性不破缺, 它因此必须为零. 根据方程(\ref{26.4.6}), 在零阶微扰论中, 这个条件要求方程(\ref{26.4.8})必须被满足. 在\,27.6\,节我们会看到, 如果方程(\ref{26.4.8})是被满足的, 那么超对称性直到微扰论的所有阶都是不破缺的.
+
+对于一个左手征标量场$\,\Phi$, 代数基本定理告诉我们多项式$\,\partial f(\phi)/\partial\phi\,$总是在复平面上的某处至少有一个解. 当超场的个数不止一个时, 这是不一定的. 如果我们{\kai{假定}}方程(\ref{26.4.8})存在一个解$\,\phi_{n0}$, 通过令
+\begin{equation}
+\phi_{n}=\phi_{n0}+\varphi_{n} \:, \label{26.4.9}
+\end{equation}
+并对$\,\varphi_{n}\,$做幂级数展开, 我们可以计算出这个理论的物理自由度. 通过观察$\,\phi\,$和$\,\psi\,$的二阶项, 我们可以计算出这个理论中的粒子质量:
+\begin{align}
+\mathscr{L}_{0} &= \sum_{n}\Biggl[
+-\partial_{\mu}\varphi_{n}^{\ast}\partial^{\mu}\varphi_{n}-\frac{1}{2}
+\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nL}\Bigr)
++\frac{1}{2}\Bigl(\partial_{\mu}(\overline{\psi_{nL}})\,\gamma^{\mu}\,\psi_{nL}\Bigr)\Biggr] \nonumber \\
+&\quad -\frac{1}{2}\sum_{nm}\mathscr{M}_{nm}\Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr)
+-\frac{1}{2}\sum_{nm}\mathscr{M}_{nm}^{\ast}\Bigl(\bar{\psi}_{nL}\,\psi_{mL}\Bigr)^{\ast} \nonumber \\
+&\quad -\sum_{nm}\Bigl(\mathscr{M}^{\dag}\mathscr{M}\Bigr)_{mn}\varphi_{m}^{\ast}\varphi_{n}\:,
+\label{26.4.10}
+\end{align}
+其中$\,\mathscr{M}\,$是对称复矩阵
+\begin{equation}
+\mathscr{M}_{mn} \equiv \Biggl(\frac{\partial^{2}f(\phi)}{\partial \phi_{n}\partial \phi_{m}}\Biggr)_{\phi=\phi_{0}} \:. \label{26.4.11}
+\end{equation}
+现在, 如果我们通过一个幺正变换重新定义这些场
+\begin{equation}
+\varphi_{n}=\sum_{m}\mathscr{U}_{nm}\varphi_{m}^{\prime} \:, \qquad
+\psi_{nL}=\sum_{m}\mathscr{U}_{nm}\psi_{mL}^{\prime} \:, \label{26.4.12}
+\end{equation}
+自由场拉格朗日量(\ref{26.4.10})的形式不会因此改变, 但是要把$\,\mathscr{M}\,$换成$\,\mathscr{M}^{\prime}$,
+其中
+\begin{equation}
+\mathscr{M}^{\prime}= \mathscr{U}^{\mathrm{T}}\mathscr{M}\mathscr{U} \:. \label{26.4.13}
+\end{equation}
+根据矩阵代数的一个定理, 对于任何复对称矩阵$\,\mathscr{M}$, 总能找到一个幺正矩阵$\,\mathscr{U}\,$使得%
+方程(\ref{26.4.13}) 定义的矩阵$\,\mathscr{M}^{\prime}\,$是对角矩阵且矩阵元为正实数$\,m_{n}$. (为了将来的使用, 我们注意到 $\mathscr{M}^{\prime\dag}\mathscr{M}^{\prime}=\mathscr{U}^{\dag}\mathscr{M}^{\dag}\mathscr{M}%
+\mathscr{U}$, 所以$\,m_{n}^{2}\,$就是正定厄米矩阵$\,\mathscr{M}^{\dag}\mathscr{M}\,$的本征值.) 以这种方式重新定义场并扔掉撇号, 拉格朗日量的二次部分现在是
+\begin{align}
+\mathscr{L}_{0} &= \sum_{n}\Biggl[
+-\partial_{\mu}\varphi_{n}^{\ast}\partial^{\mu}\varphi_{n}-\frac{1}{2}
+\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nL}\Bigr)
++\frac{1}{2}\Bigl(\partial_{\mu}(\overline{\psi_{nL}})\,\gamma^{\mu}\,\psi_{nL}\Bigr)\Biggr] \nonumber \\
+&\quad -\frac{1}{2}\sum_{n}m_{n}\Bigl(\bar{\psi}_{nL}\,\psi_{nL}\Bigr)
+-\frac{1}{2}\sum_{n}m_{n}^{\ast}\Bigl(\bar{\psi}_{nL}\,\psi_{nL}\Bigr)^{\ast} \nonumber \\
+&\quad -\sum_{n}m_{n}^{2}\varphi_{n}^{\ast}\varphi_{n}\:.
+\label{26.4.14}
+\end{align}
+为了将费米子质量项变成更加熟悉的形式, 我们引入作为{\,\textit{Majorana}\,}场定义的场$\,\psi_{n}(x)$, 它的左手分量是$\,\psi_{nL}(x)$. 那么利用\,Majorana\,双线性型的对称性质(\ref{26.A.7}):
+\begin{align*}
+&-\frac{1}{2}\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nL}\Bigr)
++\frac{1}{2}\Bigl(\partial_{\mu}(\overline{\psi_{nL}})\,\gamma^{\mu}\,\psi_{nL}\Bigr) \\
+&\qquad =-\frac{1}{2}\biggl(\overline{\psi_{n}}\gamma^{\mu}\biggl(\frac{1+\gamma_{5}}{2}\biggr)
+\partial_{\mu}\psi_{n}\biggr)
++\frac{1}{2}\biggl(\partial_{\mu}(\overline{\psi_{n}})\gamma^{\mu}\biggl(\frac{1+\gamma_{5}}{2}\biggr)
+\psi_{n}\biggr) \\
+&\qquad =-\frac{1}{2}\biggl(\overline{\psi_{n}}\gamma^{\mu}\biggl(\frac{1+\gamma_{5}}{2}\biggr)
+\partial_{\mu}\psi_{n}\biggr)
+-\frac{1}{2}\biggl(\overline{\psi_{n}}\gamma^{\mu}\biggl(\frac{1-\gamma_{5}}{2}\biggr)
+\partial_{\mu}\psi_{n}\biggr) \\
+&\qquad =-\frac{1}{2}\Bigl(\overline{\psi_{n}}\gamma^{\mu}\partial_{\mu}\psi_{n}\Bigr) \:,
+\end{align*}
+而实性质(\ref{26.A.21})给出
+\[
+\Bigl(\bar{\psi}_{nL}\,\psi_{nL}\Bigr) + \Bigl(\bar{\psi}_{nL}\,\psi_{nL}\Bigr)^{\ast}
+=2\operatorname{Re}\biggl(\overline{\psi_{n}}\,\biggl(\frac{1+\gamma_{5}}{2}\biggr)\,\psi_{n}\biggr)
+=\Bigl(\overline{\psi_{n}}\,\psi_{n}\Bigr) \:.
+\]
+这样, 完整的二次拉格朗日量就是
+\begin{align}
+\mathscr{L}_{0}&=\sum_{n}\Biggl[ -\partial_{\mu}\varphi_{n}^{\ast}\partial^{\mu}\varphi_{n}
+-\sum_{n}m_{n}^{2}\,\varphi_{n}^{\ast}\varphi_{n} \nonumber \\
+&\quad -\frac{1}{2}\Bigl(\overline{\psi_{n}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{n}\Bigr)
+-\frac{m_{n}}{2}\Bigl(\overline{\psi_{n}}\,\psi_{n}\Bigr) \Biggr]\:. \label{26.4.15}
+\end{align}
+费米子项前面有因子$\,1/2\,$是因为它们是\,Majorana\,费米场, 而标量项前面没有因子$\,1/2\,$是因为它们是复标量. 我们看到无自旋粒子和自旋\,1/2\,粒子有相等的质量$\,m_{n}$, 这正是该理论的未破缺超对称性所要求的.
+
+拉格朗日密度中的相互作用部分$\,\mathscr{L}^{\prime}\,$由方程(\ref{26.4.7})中比
+$\,\varphi_{n}\,$和$\,\psi_{n}\,$的二阶项还要高阶的项给定. 由于超势$\,f(\phi_{0}+\varphi)\,$被假定是三次多项式且在$\,\varphi_{n}=0\,$处驻定, 而$\,\varphi\,$的定义又使得二阶项是 $\tfrac{1}{2}\sum_{n}m_{n}\varphi_{n}^{2}$, 我们可以将超势(除了一个不重要的常数项以外的部分)写成
+\begin{equation}
+    f(\phi_{0}+\varphi) = \frac{1}{2}\sum_{n}m_{n}\,\varphi_{n}^{2}
+    +\frac{1}{6}\sum_{nm\ell}f_{nm\ell}\,\varphi_{n}\,\varphi_{m}\,\varphi_{\ell} \:. \label{26.4.16}
+\end{equation}
+在方程(\ref{26.4.7})中使用上式就给出了相互作用
+\begin{align}
+    \mathscr{L}^{\prime} &= -\frac{1}{2}\sum_{nm\ell} f_{nm\ell}\,\varphi_{n}\,
+    \biggl(\overline{\psi_{m}}\,\biggl(\frac{1+\gamma_{5}}{2}\biggr)\,\psi_{\ell}\biggr)\nonumber \\
+    &\quad -\frac{1}{2}\sum_{nm\ell} f^{\ast}_{nm\ell}\,\varphi^{\ast}_{n}\,
+    \biggl(\overline{\psi_{m}}\,\biggl(\frac{1-\gamma_{5}}{2}\biggr)\,\psi_{\ell}\biggr)\nonumber \\
+    &\quad -\frac{1}{2}\sum_{nm\ell}m_{n}\,f_{nm\ell}\varphi_{n}^{\ast}\varphi_{m}\varphi_{\ell}
+    -\frac{1}{2}\sum_{nm\ell}m_{n}\,f_{nm\ell}^{\ast}\varphi_{n}\varphi_{m}^{\ast}\varphi_{\ell}^{\ast} \nonumber\\
+    &\quad-\frac{1}{4}\sum_{nm\ell m^{\prime}\ell^{\prime}} f_{nm\ell}f^{\ast}_{nm^{\prime}\ell^{\prime}}
+    \varphi_{m}\varphi_{\ell}\varphi_{m^{\prime}}^{\ast}\varphi_{\ell^{\prime}}^{\ast} \:. \label{26.4.17}
+\end{align}
+我们看到, 知道了质量$\,m_{n}\,$以及标量和费米子的\,``Yukawa''\,耦合$\,f_{nml}\,$就足以%
+定出无自旋场的所有三次项和四次自对偶耦合.
+
+作为一个例子, 考察只有一个左手征超场的情况. 为了与前面的结果进行对比, 我们将方程(\ref{26.4.16})中的单个系数$\,f\,$写成
+\begin{equation}
+    f\equiv 2\sqrt{2}\,\me^{\mi\alpha}\,\lambda \:, \label{26.4.18}
+\end{equation}
+其中$\,\lambda\,$是实的而$\,\alpha\,$是某个实相位. 我们同时还会引入一对无自旋实场$\,A(x)\,$和$\,B(x)$, 方法是将这里的单个复标量写成
+\begin{equation}
+    \varphi \equiv \me^{-\mi\alpha}\biggl(\frac{A+\mi B}{\sqrt{2}}\biggr) \:. \label{26.4.19}
+\end{equation}
+这样, 方程(\ref{26.4.15})和(\ref{26.4.17})就给出了整个拉格朗日密度
+\begin{align}
+    \mathscr{L}&= -\tfrac{1}{2}\partial_{\mu}A\partial^{\mu}A -\tfrac{1}{2}\partial_{\mu}B\partial^{\mu}B
+    -\tfrac{1}{2}m^{2}\,(A^{2}+B^{2}) \nonumber \\
+    &\quad -\tfrac{1}{2}\Bigl(\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi\Bigr)
+    -\tfrac{1}{2}\,\Bigl(\bar{\psi}\psi\Bigr) \nonumber \\
+    &\quad -\lambda\,A\,\Bigl(\bar{\psi}\psi\Bigr) -\mi\lambda\,B\,\Bigl(\bar{\psi}\gamma_{5}\psi\Bigr)\nonumber \\
+    &\quad -m\,\lambda\,A\,(A^{2}+B^{2})-\tfrac{1}{2}\lambda^{2}\,(A^{2}+B^{2})^{2} \:. \label{25.4.20}
+\end{align}
+它与\,Wess\,和\,Zumino\,最初发现的拉格朗日密度(\ref{24.2.9})是相同的.\cite{2} 在这个简单情况中值得注意的是, 即使我们不假定宇称守恒再进行推导, 拉格朗日量现在在如下的空间反演变换下是不变的:
+\begin{equation}
+    A(x)\to A(\Lambda_{P\,}x)\:,\qquad B(x)\to -B(\Lambda_{P\,}x)\:,\qquad
+    \psi(x)\to \mi\beta\psi(\Lambda_{P\,}x) \:. \label{26.4.21}
+\end{equation}
+宇称守恒作为``偶然''对称性出现是各种可重整规范理论熟悉的特征(参看\,12.5\,节和\,18.7\,节), 但是它不是涉及无自旋场的理论的特征, 所以这是超对称性在单个标量超场的可重整理论中的特殊结果.
+
+\section{树级近似下的自发超对称性破缺} \label{sec:26.5}
+
+我们在上一节看到, 在手征超场的可重整理论中, 如果方程(\ref{26.4.8})有解, 即, 如果存在场值$\,\phi_{0}$ 使得超势是驻定的:
+\begin{equation}
+    \frac{\partial f(\phi)}{\partial\phi_{n}}\bigg\rvert_{\phi=\phi_{0}}=0\:,\label{26.5.1}
+\end{equation}
+那么超对称性(至少在树级近似下)是不破缺的. 这里独立变量的个数和方程的个数相等, 所以我们一般会期待方程(\ref{26.5.1})有解. 为了使超对称性在这些理论中自发破缺, 我们有必要给超势的形式附加一些限制.
+
+为了看到该如何选择超势进而使得超对称性可以自发破缺, 我们将会考察\,O'Raifeartaigh\,给出的一类模型的推广.\cite{3} 假定超势是一组左手征超场$\,Y_{i}\,$的线性组合, 且它的系数由第二组左手征超场$\,X_{n}\,$的函数$\,f_{i}(X)\,$给定:
+\begin{equation}
+    f(X,Y) = \sum_{i} Y_{i}f_{i}(x) \:. \label{26.5.2}
+\end{equation}
+超对称性不被这些超场的标量分量值$\,x_{n}\,$和$\,y_{i}\,$破缺的条件是
+\begin{align}
+    0&=\frac{\partial f(x,y)}{\partial y_{i}} = f_{i}(x) \:, \label{26.5.3} \\
+    0&=\frac{\partial f(x,y)}{\partial x_{n}} = \sum_{i}y_{i}\frac{\partial f_{i}(x)}{\partial x_{n}}\:.\label{26.5.4}
+\end{align}
+方程(\ref{26.5.4})总可以通过取$\,y_{i}=0\,$被解掉, 并且它对解方程(\ref{26.5.3})没有影响. 另一方面, 如果超场$\,X_{n}\,$的个数小于超场$\,Y_{i}\,$的个数, 那么方程(\ref{26.5.3})在$\,x_{n}\,$上附加的条件要多于变量, 所以如果没有精细调节, 找到解是不可能的, 这时超对称是破缺的.
+
+初始假定(\ref{26.5.2})本身看上去似乎代表了精细调节的一个基本形式, 但是这一形式可以通过假定合适的$\,R\,$-对称性附加到超势上. 就像在\,26.3\,节讨论的, 在有$\,N=1\,$超对称性的理论中, $\,R\,$-对称性是使得$\,\theta\,$超空间坐标有不平庸变换性质的$\,U(1)\,$对称性. 如果我们假定一个$\,R\,$-对称性使得$\,\theta_{L}\,$携带量子数$\,+1$, 那么任何超势的$\,\mathscr{F}\,$-项的量子数等于这个超势本身的量子数减\,2, 所以$\,R\,$不变性要求超势本身有$\,R=2$. 因此, 在超场$\,Y_{i}\,$和$\,X_{n}\,$分别有$\,R\,$量子数$\,+2\,$和$\,0\,$时, 我们可以通过要求$\,R\,$不变性来附加结构(\ref{26.5.2}).
+
+在这类模型中, 标量场有势
+\begin{equation}
+    V(x,y) = \sum_{i} \lvert f_{i}(x)\rvert^{2} +
+    \sum_{n} \Biggl\lvert \sum_{i}y_{i}\frac{\partial f_{i}(x)}{\partial x_{n}}\Biggr\rvert^{2}\:. \label{26.5.5}
+\end{equation}
+通过选择$\,x_{n}\,$使得第一项最小, 我们总可以到达这个势的最小值; 无论这要求$\,x_{n}\,$取什么值, 第二项总可以通过取$\,y_{i}=0\,$到达最小值. 无论超对称性是否自发破缺, 这些模型有一个独特的特征: 在场的空间中总有一个方向使得势的极小值点是平坦的. 无论$\,x_{n}\,$使得方程(\ref{26.5.5})第一项最小的值$\,x_{n0}\,$是什么, 第二项不仅对于$\,y_{i}=0\,$是零, 而且对于任何矢量$\,y_{i}$, 只要它所处的方向与矢量 $(v^{n})_{i}=(\partial f/\partial x_{n})_{x=x_{0}}\,$均垂直, 那么第二项也是零. 如果存在$\,N_{X}\,$个超场$\,X_{n}\,$和$\,N_{Y}\,$个超场$\,Y_{i}\,$且 $N_{Y}>N_{X}$, 那么$\,v^{n}\,$无法展开$\,y\,$的空间, 这样只有有$\,N_{Y}-N_{X}\,$个平坦反向. 对于任何沿着这些平坦方向的非零$\,y_{i}=y_{0i}$, 拉格朗日密度的$\,R\,$-对称性是自发破缺的, 与这个整体对称性破缺相联系的\,Goldstone\,玻色场$\,\phi\,$对应于与$\,y_{i}\,$中的$\,y_{0i}\,$正比的项.
+
+这类模型中最简单的一个例子是只有一个$\,X\,$超场和两个$\,Y\,$超场的情况. 可重整性要求系数函数$\,f_{i}(X)\,$是$\,X\,$的二次函数, 通过取合适的$\,Y_{i}\,$的线性组合并对$\,X\,$做偏移和重标度, 我们可以选择这些函数使得
+\begin{equation}
+    f_{1}(X) = X-a\:, \qquad \quad f_{2}(X) =X^{2} \:, \label{26.5.6}
+\end{equation}
+其中$\,a\,$是任意常数. 除非超势被精细调节使得$\,a=0$, 否则两个方程(\ref{26.5.1})显然不可能同时有解. 势(\ref{26.5.5})在这里是
+\begin{equation}
+    V(x,y) = \lvert x\rvert^{4} + \lvert x-a\rvert^{2} + \lvert y_{1}+2xy_{2}\rvert^{2} \:. \label{26.5.7}
+\end{equation}
+前两项的和有唯一的整体最小值点$\,x_{0}$. 这里的平坦方向是使得$\,y_{1}+2x_{0}y_{2}=0\,$的方向. 当$\,a=0\,$时, 我们有$\,x_{0}=0$, 势能的最小值就是沿着$\,y_{1}=0\,$而$\,y_{2}\,$任意的那条线.
+
+无论自发破缺的原因是什么, 这个现象总需要存在一个无质量的自旋\,1/2\,粒子, {\kai{戈德斯通微子}}(\textit{goldstino}), 它是与普通整体对称性自发破缺相联系的\,Goldstone\,玻色子的类似物. (在超引力理论中有一个例外, 我们会在\,31.3\,节讨论, 那里的超对称性是定域对称性, 戈德斯通微子是作为有质量自旋\,3/2\,粒子的$\,\pm1/2\,$螺旋度态出现的, 即引力微子的$\,\pm1/2\,$螺旋度态.) 在手征超场的可重整理论中, 标量场的树级近似期望值$\,\phi_{n0}\,$必须处在方程(\ref{26.4.7})中势能%
+$\,\sum_{n}\lvert\partial f(\phi)/\partial\phi_{n}\rvert^{2}\,$的极小值处, 所以
+\begin{equation}
+    \sum_{m}\mathscr{M}_{nm}
+    \Biggl(\frac{\partial f(\phi)}{\partial\phi_{m}}\bigg\rvert_{\phi=\phi_{0}}\Biggr)^{\ast}=0\:,\label{26.5.8}
+\end{equation}
+其中
+\begin{equation}
+    \mathscr{M}_{nm}\equiv \frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial \phi_{m}}\Bigg\rvert_{\phi=\phi_{0}}\:.
+    \label{26.5.9}
+\end{equation}
+如果方程(\ref{26.5.1})没有被满足, 那么方程(\ref{26.5.8})告诉我们矩阵$\,\mathscr{M}_{nm}\,$%
+至少有一个本征值为零的本征矢, 所以, 根据方程(\ref{26.4.10}), 至少存在一组由$\,\psi_{n}\,$描述的自旋$\,1/2\,$粒子的线性组合使得它的质量为零. 例如, 对于方程(\ref{26.5.2})和(\ref{26.5.6})定义的模型, 矩阵$\,\mathscr{M}\,$不为零的分量是
+\begin{equation}
+    \mathscr{M}_{xy_{1}}=\mathscr{M}_{y_{1}x}=1\:, \qquad
+    \mathscr{M}_{xy_{2}}=\mathscr{M}_{y_{2}x}=2x_{0} \:, \label{26.5.10}
+\end{equation}
+所以这个矩阵有本征值$\,\pm2x_{0}\,$和$\,0$, 其中最后一个本征值对应戈德斯通微子模. 在第\,29\,章, 我们将在不使用微扰论的情况下证明超对称性自发破缺要求存在戈德斯通微子, 并在那里探索它们的性质.
+
+
+
+\section{超空间积分, 场方程和流超场} \label{sec:26.6}
+
+我们用来构建拉格朗日密度的``$\,\mathscr{F}\,$-项''和``$\,D\,$-项可以表示为在超空间坐标$\,\theta_{\alpha}\,$%
+上的积分. 最初由\,Berezin\,\cite{4}给出的费米参量积分规则已经在\,9.5\,节推导过了. 简言之, 由于任何费米参量的平方为零, $N\,$ 个费米参量$\,\xi_{n}\,$的任何函数可以表示成
+\begin{equation}
+f(\xi) = \biggl(\prod_{n=1}^{N}\xi_{n}\biggr)c + \xi\,\text{因子较少的项}  \:, \label{26.6.1}
+\end{equation}
+而它对$\,\xi\,$的积分就定义成
+\begin{equation}
+    \int \dif^{N}\xi \: f(\xi) \equiv c \:. \label{26.6.2}
+\end{equation}
+系数$\,c\,$本身可以依赖其它未积分的\,c\,-数变量, 这些变量与我们要进行积分的$\,\xi\,$反对易, 在这种情况下, 固定$\,c\,$的定义就十分重要, 做法和方程(\ref{26.6.1})一样, 在积分之前把所有$\,\xi\,$移至$\,c\,$的左边. 在这个定义下, 对费米变量的积分是线性算符. 由于将变量$\,\xi_{n}\,$偏移一个常数$\,a_{n}\,$的%
+$\,\xi_{n}\to\xi_{n}+a_{n}\,$对乘积的影响只是那些$\,\xi\,$因子较少的项, 它不影响积分的值
+\begin{equation}
+    \int \dif^{N}\xi \: f(\xi+a) =\int \dif^{N}\xi \: f(\xi) \:, \label{26.6.3}
+\end{equation}
+在这种意义下它类似于对实变量的积分. 另外, 作为方程(\ref{26.6.2})的特殊情况, 如果$\,N\,$个费米参量的多项式的阶数$\,<N$, 那么对它的积分为零. 在变量代换对积分的影响上, 对费米参量的积分和对玻色参量的积分非常不同: 对于玻色参量$\,x_{n}$, 我们有$\,\dif^{N}x^{\prime}=\operatorname{Det}(\partial x^{\prime}/\partial x)\,\dif^{N}x$, 而对于费米参量
+\begin{equation}
+    \dif^{N}\xi^{\prime} = [\operatorname{Det}(\partial \xi^{\prime}/\partial \xi)]^{-1}\dif^{N}\xi\:.\label{26.6.4}
+\end{equation}
+特别地, $\dif\xi\,$的量纲与$\,\xi\,$的量纲{\kai{相反}}.
+
+根据方程(\ref{26.2.10}), 一般超场$\,S(x,\theta)\,$(可能是基本的也可能是复合的)的$\,D\,$-项在相差一%
+个导数的意义下等于$\,-(\bar{\theta}\gamma_{5}\theta)^{2}/4=-(\theta^{\mathrm{T}}\epsilon\theta)^{2}/4\,$的系数. 四个$\,\theta\,$中的任何一个都可能是$\,\theta_{1}$, 而每种可能性给出相等的贡献, 所以我们可以假定$\,\theta_{1}\,$是最左边的, 这样就挑出了一个因子$\,4$. 这样$\,\theta_{2}\,$必须是下一个最左边的. 剩下两个$\,\theta\,$中任何一个都可能是$\,\theta_{3}$, 每种可能性给出相同的贡献, 所以我们可以假定$,\theta_{3},$是左边第三个并挑出了因子$\,2$, 这样$\,\theta_{4}\,$必须在最右边. 即,
+\[
+-\tfrac{1}{4}(\bar{\theta}\gamma_{5}\theta)^{2} = -\tfrac{1}{4}\times 4\times 2 \times \theta_{1}\theta_{2}\theta_{3}\theta_{4} \:,
+\]
+所以$\,\theta\,$的这个函数的系数是$\,-1/2\,$乘以对$\,\dif^{4}\theta\,$的积分. 因为这在相差一个导数的意义下是$\,D\,$-项, 我们就有
+\begin{equation}
+    \int \dif^{4}x\:[S]_{D} = -\frac{1}{2}\int \dif^{4}x\int \dif^{4}\theta \: S(x,\theta) \:.\label{26.6.5}
+\end{equation}
+以同样的方式, 利用方程(\ref{26.3.11}), 我们发现对一般左手征超场$\,\Phi\,$(和前面一样, 可以是基本的也可以是复合的)的$\,\mathscr{F}\,$-项的时空积分可以表示为
+\begin{equation}
+    \int \dif^{4}x\: [\Phi]_{\mathscr{F}}
+    = \frac{1}{2}\int \dif^{4}x\int \dif^{2}\theta_{L}\:\Phi(x,\theta)\:. \label{26.6.6}
+\end{equation}
+
+既然我们现在要对$\,\theta\,$积分, 引入$\,\delta\,$函数是方便的, 它像往常一样被如下的条件定义: 对于任意函数$\,f(\theta)$,
+\begin{equation}
+    \int \dif^{4}\theta^{\prime}\:\delta^{4}(\theta^{\prime}-\theta)\,f(\theta^{\prime})=f(\theta)\:.\label{26.6.7}
+\end{equation}
+根据方程(\textcolor{foo}{9.5.40}),
+\begin{align}
+    &\delta^{4}(\theta^{\prime}-\theta)=(\theta_{1}^{\prime}-\theta_{1})(\theta_{2}^{\prime}-\theta_{2})
+    (\theta_{3}^{\prime}-\theta_{3})(\theta_{4}^{\prime}-\theta_{4}) \nonumber \\
+    &\quad = \frac{1}{4}\Bigl[\Bigl(\theta_{L}-\theta_{L}^{\prime}\Bigr)^{\mathrm{T}}\,\epsilon\,
+    \Bigl(\theta_{L}-\theta_{L}^{\prime}\Bigr)\Bigr]\:\Bigl[\Bigl(\theta_{R}-\theta_{R}^{\prime}\Bigr)^{\mathrm{T}}
+    \,\epsilon\,\Bigl(\theta_{R}-\theta_{R}^{\prime}\Bigr)\Bigr]  \label{26.6.8}
+\end{align}
+是满足这个条件的.
+
+将作用量表示成超空间上的积分使得推导超场形式的场方程变得容易. 例如, 考察一组左手征超场$\,\Phi_{n}\,$的作用量%
+(左手征超场$\,\Phi_{n}\,$的一般可重整理论是它的一个特殊情况):
+\begin{equation}
+    I=\frac{1}{2}\int \dif^{4}x\: \Bigl[K(\Phi,\Phi^{\ast})\Bigr]_{D}
+    +2\operatorname{Re}\int\dif^{4}x\:[f(\Phi)]_{\mathscr{F}} \:, \label{26.6.9}
+\end{equation}
+其中$\,K\,$是$\,\Phi_{n}\,$和$\,\Phi_{n}^{\ast}\,$的不带导数的任意函数, $f\,$是$\,\Phi_{n}\,$的任意函数同时也不含导数. (写下这种形式的作用量并它表示成分量场的动机将在\,26.8\,节进行阐述.) 仅通过要求作用量对$\,\Phi\,$的任意变分均是驻定, 我们无法导出正确的场方程, 这是因为$\,\Phi_{n}\,$是被左手征超场的要求$\,\mathscr{D}_{R}\Phi_{n}=0\,$约束的. 为了确保任意变分不会破坏这个条件, 我们要用到一个小技巧, 这个技巧在第\,30\,章推导超空间 Feynman\,规则时也将是有用的. 我们将$\,\Phi_{n}\,$写成{\kai{势超场}}$\,S_{n}(x,\theta)$
+\begin{equation}
+    \Phi_{n} = \mathscr{D}_{R}^{2}\,S_{n} \:, \label{26.6.10}
+\end{equation}
+(利用方程(\ref{26.A.21}))由此可以得出
+\begin{equation}
+    \Phi^{\ast}_{n} = -\mathscr{D}_{L}^{2}\,S_{n}^{\ast} \:, \label{26.6.11}
+\end{equation}
+其中$\,\mathscr{D}_{R}^{2}\,$和$\,\mathscr{D}_{L}^{2}\,$分别是%
+$\,(\mathscr{D}_{R}^{\mathrm{T}}\epsilon\mathscr{D}_{R})=-(\bar{\mathscr{D}}_{R}\mathscr{D}_{R})\,$和%
+$\,(\mathscr{D}_{L}^{\mathrm{T}}\epsilon\mathscr{D}_{L})=(\bar{\mathscr{D}}_{L}\mathscr{D}_{L})\,$的简写. 为了看到总能找到满足方程(\ref{26.6.10})的解(不一定定域), 注意到, 对于任何左手征超场$\,\Phi_{n}$,
+\begin{equation}
+   \mathscr{D}_{R}^{2}\mathscr{D}_{L}^{2}\Phi_{n} = -16\square \Phi_{n} \:, \label{26.6.12}
+\end{equation}
+这使得
+\begin{equation}
+    {-}16\square S_{n} =\mathscr{D}_{L}^{2}\Phi_{n} \:. \label{26.2.13}
+\end{equation}
+的解满足方程(\ref{26.6.10}).
+
+对于任何$\,S$, $\mathscr{D}_{R}^{2}S\,$是左手征的, 所以作用量相对$\,S_{n}\,$的任意变分必须是驻定的. 利用方程 (\ref{26.6.5}), 写成$\,S_{n}\,$和$\,S_{n}^{\ast}$, 作用量可以表示成
+\begin{equation}
+    I=-\frac{1}{4}\int\dif^{4}x\int\dif^{4}\theta\:K(-\mathscr{D}_{L}^{2}S^{\ast},\mathscr{D}_{R}^{2}S)
+    + 2\operatorname{Re}\int \dif^{4}x\:\Bigl[f(\mathscr{D}_{R}^{2}S)\Bigr]_{\mathscr{F}} \:. \label{26.6.14}
+\end{equation}
+第一项在$\,S_{n}\,$(而不是$\,S_{n}^{\ast}$)的无限小变化$\,\delta S_{n}\,$下的变分可以通过超空间中的分部积分简单地计算出来:
+\begin{align*}
+    &{-}\delta\frac{1}{4}\int\dif^{4}x\int\dif^{4}\theta\:K(-\mathscr{D}_{L}^{2}S^{\ast},\mathscr{D}_{R}^{2}S) \\
+    &\qquad = -\sum_{n}\int \dif^{4}\theta\:\delta S_{n}\,\mathscr{D}_{R}^{2}\,
+    \frac{\delta K(-\mathscr{D}_{L}^{2}S^{\ast},\mathscr{D}_{R}^{2}S)}{\delta \mathscr{D}_{R}^{2}S_{n}} \:.
+\end{align*}
+对于超势项中的积分在$\,S_{n}\,$的无限小变化$\,\delta S_{n}\,$下的变分, 方程(\ref{26.3.31})和(\ref{26.6.5})使得我们可以将其表示成
+\begin{align*}
+    \delta \int \dif^{4}x\:\Bigl[f(\mathscr{D}_{R}^{2}S)\Bigr]_{\mathscr{F}}
+    &= \sum_{n}\int \dif^{4}x\:\Biggl[\frac{\partial f(\Phi)}{\partial \Phi_{n}}\bigg\rvert_{\Phi=\mathscr{D}_{R}^{2}S}\mathscr{D}_{R}^{2}\delta S_{n}\Biggr]_{\mathscr{F}} \\
+    &=\sum_{n}\int \dif^{4}x\:\Biggl[\mathscr{D}_{R}^{2} \Biggl(\frac{\partial f(\Phi)}{\partial \Phi_{n}}\bigg\rvert_{\Phi=\mathscr{D}_{R}^{2}S}\delta S_{n}\Biggr)\Biggr]_{\mathscr{F}} \\
+    &= 2\sum_{n}\int \dif^{4}x\:\Biggl[\frac{\partial f(\Phi)}{\partial \Phi_{n}}\bigg\rvert_{\Phi=\mathscr{D}_{R}^{2}S}\delta S_{n}\Biggr]_{D} \\
+    &= -\sum_{n}\int \dif^{4}x\int\dif^{4}\theta\:\frac{\partial f(\Phi)}{\partial \Phi_{n}}\bigg\rvert_{\Phi=\mathscr{D}_{R}^{2}S}\delta S_{n} \:.
+\end{align*}
+这样, 方程(\ref{26.6.14})对$\,S_{n}\,$的任意变分是驻定的这一条件就是
+\[
+\mathscr{D}_{R}^{2}\,\frac{\delta K(-\mathscr{D}_{L}^{2}S^{\ast},\mathscr{D}_{R}^{2}S)}{\delta \mathscr{D}_{R}^{2}S_{n}}
+=-4 \,\frac{\partial f(\Phi)}{\partial \Phi_{n}}\bigg\rvert_{\Phi=\mathscr{D}_{R}^{2}S} \:,
+\]
+或者表示成手征超场
+\begin{equation}
+    \mathscr{D}_{R}^{2}\,\frac{\delta K(\Phi,\Phi^{\ast})}{\delta \Phi_{n}}
+    =-4 \,\frac{\partial f(\Phi)}{\partial \Phi_{n}} \:. \label{26.6.15}
+\end{equation}
+复共轭给出
+\begin{equation}
+    \mathscr{D}_{L}^{2}\,\frac{\delta K(\Phi,\Phi^{\ast})}{\delta \Phi_{n}^{\ast}}
+    =4 \,\biggl(\frac{\partial f(\Phi)}{\partial \Phi_{n}} \biggr)^{\ast} \:. \label{26.6.16}
+\end{equation}
+可以很容易地验证这些方程的分量给出$\,\Phi_{n}^{\ast}\,$和$\,\Phi_{n}\,$分量的场方程. 例如, 回忆起$\,\mathscr{D}_{R}^{2}(\theta_{R}^{\mathrm{T}}\epsilon\theta_{R})=-4$, $\mathscr{D}_{R}^{2}\Phi_{n}^{\ast}\,$中与$\,\theta\,$无关的部分是$\,4\mathscr{F}_{n}^{\ast}$, 而$\,\partial f(\Phi)/\partial\Phi_{n}\,$中与$\,\theta\,$无关的部分是$\,\partial f(\phi)/\partial \phi_{n}$, 所以对于$\,K=\sum_{n}\Phi_{n}^{\ast}\Phi_{n}$, 方程(\ref{26.6.15})中与$\,\theta\,$无关的部分给出关系%
+$\,\mathscr{F}_{n}^{\ast}=-\partial f(\phi)/\partial\phi_{n}$, 这与方程(\ref{26.4.6})一致.
+
+作为如何使用这一形式体系的一个例子, 我们来考察守恒流所属的那个超场. 假定作用量中的超势和\,K\"{a}hler\,势在如下的整体变换下不变
+\begin{equation}
+    \delta \Phi_{n} =\mi\epsilon\sum_{m}\mathscr{T}_{nm}\Phi_{m} \:, \qquad \quad
+    \delta \Phi_{n}^{\ast} =-\mi\epsilon\sum_{m}\mathscr{T}_{mn}\Phi_{m}^{\ast} \:, \label{26.6.17}
+\end{equation}
+其中$\,\epsilon\,$是实的无限小参量, $\mathscr{T}_{nm}\,$是厄米矩阵, 它可能是相似变换矩阵的部分\,Lie\,代数. 由于超势只依赖$\,\Phi_{n}$, 它自动在如下的扩充变换下不变
+\begin{equation}
+    \delta \Phi_{n} =\mi\epsilon\Lambda\sum_{m}\mathscr{T}_{nm}\Phi_{m} \:, \qquad \quad
+    \delta \Phi_{n}^{\ast} =-\mi\epsilon\Lambda^{\ast}\sum_{m}\mathscr{T}_{mn}\Phi_{m}^{\ast} \:, \label{26.6.18}
+\end{equation}
+其中$\,\Lambda(x,\theta)\,$是超场, 为了使$\,\delta\Phi_{n}\,$是左手征的, 它必须也取成左手征的. 另一方面, 因为$\,\Lambda\neq\Lambda^{\ast}$, 诸如\,K\"{a}hler\,势这样的其它项在这些变换下一般不是不变的. 因此, 对于一般的场, 作用量的变换必须取如下的形式
+\begin{equation}
+    \delta I =\mi\epsilon \int \dif^{4}x\int \dif^{4}\theta\:[\Lambda-\Lambda^{\ast}]\mathscr{J}\:,\label{26.6.19}
+\end{equation}
+其中$\,\mathscr{J}(x,\theta)\,$是某个实超场, 称为{\kai{流超场}}. 但是, 如果场方程是成立的, 那么作用量在超场的{\kai{任何}}变分下都是驻定的, 所以积分(\ref{26.6.19})对于任何左手征超场$\,\Lambda(x,\theta)\,$都必须为零. 任何这样的$\,\Lambda\,$都可以写成$\,\Lambda=\mathscr{D}_{R}^{2}S$, 所以这意味着流超场必须满足
+\begin{equation}
+    \mathscr{D}_{R}^{2}\mathscr{J} = \mathscr{D}_{L}^{2}\mathscr{J} =0 \:. \label{26.6.20}
+\end{equation}
+即, $\mathscr{J}\,$是{\kai{线性}}超场. 正如我们在\,26.3\,节看到的, 这意味着它的分量满足
+\begin{equation}
+    N^{\mathscr{J}}=M^{\mathscr{J}}=\partial^{\mu}V_{\mu}^{\mathscr{J}}=0 \:, \qquad
+    \lambda^{\mathscr{J}} = -\slashed{\partial}\omega^{\mathscr{J}} \:, \qquad
+    D^{\mathscr{J}} = -\square C^{\mathscr{J}} \:. \label{26.6.21}
+\end{equation}
+这使得我们可以将$\,V\,$-分量$\,V_{\mu}^{\mathscr{J}}\,$等同为与这个对称性相联系的守恒流.
+
+对于特殊的作用量(\ref{26.6.9}), 流超场采取如下的形式
+\begin{equation}
+    \mathscr{J}=\sum_{nm}\frac{\partial K(\Phi,\Phi^{\ast})}{\partial \Phi_{n}}\mathscr{T}_{nm}\Phi_{m}
+    =\sum_{nm}\frac{\partial K(\Phi,\Phi^{\ast})}{\partial \Phi_{n}^{\ast}}\mathscr{T}_{mn}\Phi_{m}^{\ast}\:.\label{26.6.22}
+\end{equation}
+这两个式子相等就是在变换(\ref{26.6.17})下的对称性的结果. 那么, 利用场方程(\ref{26.6.15})
+\begin{equation}
+     \mathscr{D}_{R}^{2}\mathscr{J}=
+     \sum_{nm}\biggl[\mathscr{D}_{R}^{2}\frac{\partial K(\Phi,\Phi^{\ast})}{\partial \Phi_{n}}\biggr]\,\mathscr{T}_{nm}\Phi_{m}
+    =-4\sum_{nm}\frac{\partial f(\Phi)}{\partial\Phi_{n}}\mathscr{T}_{nm}\Phi_{m}\:.\label{26.6.23}
+\end{equation}
+由于假定超势在变换(\ref{26.6.17})下不变, 这为零. 以同样的方式, 利用$\,\mathscr{J}\,$的第二个表达式以及场方程(\ref{26.6.16}), 我们发现$\,\mathscr{D}_{L}^{2}\mathscr{J}=0$, 因此证实了守恒条件(\ref{26.6.20})
+
+\section{超流}  \label{sec:26.7}
+
+同任何其它整体连续对称性一样, 超对称性会导致一个守恒流.\cite{5} 超对称流的守恒和对易性质是一些算符方程, 即使在超对称自发破缺的情况下, 这些算符方程也是成立的, 因此在第\,29\,章我们在非微扰的意义下考察超对称自发破缺的理论时是有用的. 另外, 超对称流与称为{\kai{超流}}的超场的分量相关,\cite{6} 这一点在第\,31\,章我们处理超引力时具有基础的重要性.
+
+就像我们在\,7.3\,节看到的, 拉格朗日密度在无限小变换$\chi^{\ell}\to\chi^{\ell}+\epsilon\mathscr{F}^{\ell}\,$下%
+(其中$\,\chi^{\ell}\,$是一般的正则或辅助玻色场或费米场, $\mathscr{F}^{\ell}\,$是正则场和辅助场的函数.)有一个普通的整体对称性会导致一个守恒流
+\[
+J^{\mu}(x) \propto \sum_{\ell}\frac{\partial \mathscr{L}(x)}{\partial(\partial\chi^{\ell}(x)/\partial x^{\mu})}
+\mathscr{F}^{\ell}(x)\:,
+\]
+它对于满足场方程的场是守恒的并生成了对称性, 也就是说正则对易关系给出
+\[
+\biggl[\int\dif^{3}x\,J^{0}(x)\:,\chi^{\ell}(x)\biggr] \propto \mathscr{F}^{\ell}(y) \:.
+\]
+由于两个原因, 超对称流的处理要稍微复杂一些. 一个原因是, 超对称性是作用量的对称性而不是拉格朗日密度或者拉格朗日量的对称性. 取而代之, 拉格朗日密度在无限小超对称变换下的变分是时空导数, 我们可以将其写成如下形式
+\begin{equation}
+    \delta \mathscr{L} = \sum_{\ell} \Bigl(\bar{\alpha}\,\partial_{\mu}K^{\mu}\Bigr) \:, \label{26.7.1}
+\end{equation}
+其中$\,K^{\mu}\,$是\,Majorana\,旋量的\,4\,-矢. 结果是, 超对称流不是通常的\,Noether\,流. Noether\,流是
+\begin{equation}
+    \sum_{\ell}\frac{\partial_{R}\mathscr{L}}{\partial(\partial_{\mu}\chi^{\ell})}\delta \chi^{\ell}
+    \equiv -\Bigl(\bar{\alpha}\,N^{\mu}\Bigr)  \label{26.7.2}
+\end{equation}
+定义的\,Majorana\,旋量的\,4\,-矢\,$N^{\mu}$, 它的散度由\,Euler-Lagrange\,方程给出
+\begin{align}
+    \Bigl(\bar{\alpha}\,\partial_{\mu} N^{\mu}\Bigr) &= -\sum_{\ell}\frac{\partial_{R}\mathscr{L}}{\partial\chi^{\ell}}
+    \delta\chi^{\ell}-\sum_{\ell}\frac{\partial_{R}\mathscr{L}}{\partial(\partial_{\mu}\chi^{\ell})}
+    \partial_{\mu}\delta \chi^{\ell} \nonumber \\
+    &= -\delta \mathscr{L} \:. \label{26.7.3}
+\end{align}
+(这里的$\,\partial_{R}\,$是右导数, 它定义成在微分之前将要微分的费米变量移至右边的.) 相反, 我们必须要将超对称流定义成
+\begin{equation}
+    S^{\mu} \equiv N^{\mu}+K^{\mu} \:, \label{26.7.4}
+\end{equation}
+方程(\ref{26.7.1})和(\ref{26.7.3})告诉我们它{\kai{是}}守恒的:
+\begin{equation}
+    \partial_{\mu}S^{\mu} = 0 \:. \label{26.7.5}
+\end{equation}
+
+第二个复杂性是, 正则场$\,\chi^{\ell}\,$在超对称变换下的变化$\,\delta\chi^{\ell}\,$不仅是正则场的函数, 还是它们的正则共轭的函数. 例如, 方程(\ref{26.3.15})表明手征标量超场的$\,\psi\,$-分量的变化包含$\,\phi\,$-分量%
+的时间导数. 结果是, Noether\,荷$\,\int\dif^{3}x\,N^{0}\,$与一般正则场的对易子并不给出那个场的超对称变换. 幸运的是, 这一复杂性被第一个复杂性抵消了: 当$\,\int\dif^{3}x\,K^{0}\,$和$\,\int\dif^{3}x\,N^{0}\,$与场的对易子被考虑在内时, 算符 $\int\dif^{3}x\,S^{0}\,$确实生成了超对称变换,\footnote{对于以这种方式构建的流, 这是一般结果. 例如, 考察依赖一组正则变量$\,q^{n}\,$和它们时间导数$\,\dot{q}^{n}\,$的拉格朗日量$\,L\,$(不是拉格朗日密度), 其中没有任何一类约束. 在量子场论中, 指标$\,n\,$包含空间坐标以及离散自旋指标和种类指标, 且有$\,L=\int\dif^{3}x\,\mathscr{L}$. 我们这里假定了拉格朗日密度在某个无限小变换$\,\delta\,$下在相差一个时空导数的意义下不变, 这意味着$\,\delta L\,$是某个泛函$\,F\,$的时间导数. 即,
+\[
+\sum_{n}\frac{\partial L}{\partial q^{n}}\delta q^{n} +
+\sum_{n}\frac{\partial L}{\partial\dot{q}^{n}}\delta\dot{q}^{n}=\frac{\dif}{\dif t}F\:.
+\]
+利用正则运动方程, 这可以写成守恒律$\,\dot{Q}=0$, 其中守恒荷是
+\[
+Q=-\sum_{n}\frac{\partial L}{\partial\dot{q}^{n}}\delta q^{n} + F \:.
+\]
+在我们这里的情况中, $Q=\int\dif^{3}x\,[N^{0}+K^{0}]$. 我们假定通常的未约束对易关系
+\[
+\biggl[\frac{\partial L}{\partial\dot{q}^{n}}, q^{m}\biggr]=-\mi\,\delta_{n}^{m}\:,\qquad
+\Bigl[q^{n},q^{m}\Bigr]=0 \:,
+\]
+并找到对易子
+\[
+\Bigl[Q,q^{m}\Bigr]=\mi\,\delta q^{m}-\sum_{nl}\frac{\partial L}{\partial\dot{q}^{l}}
+\frac{\partial\delta q^{l}}{\partial \dot{q}^{n}}\,\Bigl[\dot{q}^{n},q^{m}\Bigr]
++\sum_{n}\frac{\partial F}{\partial \dot{q}^{n}}\,\Bigl[\dot{q}^{n},q^{m}\Bigr] \:.
+\]
+为了计算第二项和第三项, 我们注意到二阶时间导数$\,\ddot{q}^{n}\,$以线性的方式出现在不变性条件中, 所以它们的系数必须互相匹配: 即使没使用运动方程, 我们也有
+\[
+\sum_{l}\frac{\partial L}{\partial\dot{q}^{l}}
+\frac{\partial\delta q^{l}}{\partial \dot{q}^{n}}=\frac{\partial F}{\partial \dot{q}^{n}} \:.
+\]
+对易子中的第二项和第三项因此抵消了, 留给我们想要的结果
+\[
+\Bigl[Q,q^{m}\Bigr]=\mi\,\delta q^{m} \:.
+\]
+取时间导数也给出
+\[
+\Bigl[Q,\dot{q}^{m}\Bigr]=\mi\,\delta\dot{q}^{m} \:.
+\]
+这个结果已经被扩展到有约束的理论中了.\cite{7}
+} 也就是说
+\begin{equation}
+    \bigg[\int\dif^{3}x\,\Bigl(\bar{\alpha}\,S^{0}\Bigr)\:,\chi^{\ell}\biggr]=\mi\,\delta\chi^{\ell} \:,\label{26.7.6}
+\end{equation}
+与方程(\ref{26.2.1})和(\ref{26.2.8})一致.
+
+例如, 我们可以在左手征超场$\,\Phi_{n}\,$的一般可重整理论中导出超对称流的显式公式, 这个公式可以用来检验它确实生成了超对称变换, 即方程(\ref{26.7.6}). 这个理论的拉格朗日量(\ref{26.4.7})可以写成如下形式
+\begin{align}
+    \mathscr{L}&=\sum_{n}\Biggl[-\partial_{\mu}\phi_{n}^{\ast}\partial^{\mu}\phi_{n}
+    -\frac{1}{2}\Bigl(\overline{\psi_{nL}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nL}\Bigr)
+    -\frac{1}{2}\Bigl(\overline{\psi_{nR}}\,\gamma^{\mu}\partial_{\mu}\,\psi_{nR}\Bigr)\Biggr] \nonumber \\
+    &\quad + \text{非导数项}\:.     \label{26.7.7}
+\end{align}
+利用变换规则(\ref{26.3.15}), (\ref{26.3.17}), (\ref{26.3.18})和(\ref{26.3.20})(其中$\,\tilde{\phi}=\phi^{\ast}\,$), 方程(\ref{26.7.2})定义的\,Noether\,\\流是
+\begin{align}
+    N^{\mu} &= \frac{1}{\sqrt{2}}\sum_{n}\Bigl[ 2\,(\partial^{\mu}\phi_{n}^{\ast})\,\psi_{nL}
+    +2\,(\partial^{\mu}\phi_{n})\,\psi_{nR} + (\slashed{\partial}\phi_{n})\,\gamma^{\mu}\psi_{nR}
+    +(\slashed{\partial}\phi_{n}^{\ast})\,\gamma^{\mu}\psi_{nL} \nonumber \\
+    &\quad -\mathscr{F}_{n}\,\gamma^{\mu}\psi_{nR}-\mathscr{F}_{n}^{\ast}\,\gamma^{\mu}\psi_{nL}\Bigr]\:.\label{26.7.8}
+\end{align}
+我们可以直接计算拉格朗日密度的变化, 另一种更简单的方法是, 注意到$\,D\,$-项和$\,\mathscr{F}\,$-项在超对称变换下分别由方程(\ref{26.2.17})和(\ref{26.3.16})给出. 无论以哪种方法, 我们发现方程(\ref{26.7.1})中的流$\,K^{\mu}\,$是
+\begin{align}
+    K^{\mu} &= \frac{1}{\sqrt{2}}\sum_{n}\gamma^{\mu}\Biggl[-(\slashed{\partial}\phi_{n})\psi_{nR}
+    -(\slashed{\partial}\phi_{n}^{\ast})\psi_{nL}+\mathscr{F}_{n}^{\ast}\psi_{nL}
+    +\mathscr{F}_{n}\psi_{nR} \nonumber \\
+    &\quad+2\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr) \,\psi_{nL}
+    +2\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr)^{\ast} \,\psi_{nR}\Biggr] \:.\label{26.7.9}
+\end{align}
+将(\ref{26.7.8})和(\ref{26.7.9})加起来就给出了这类理论的超对称流
+\begin{equation}
+    S^{\mu} = \sqrt{2}\sum_{n}\Biggl[(\slashed{\partial}\phi_{n})\gamma^{\mu}\psi_{nR}
+    +(\slashed{\partial}\phi_{n}^{\ast})\gamma^{\mu}\psi_{nL}
+    +\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr) \,\gamma^{\mu}\psi_{nL}
+    +\biggl(\frac{\partial f(\phi)}{\partial \phi_{n}}\biggr)^{\ast} \,\gamma^{\mu}\psi_{nR}\Biggr]\:.\label{26.7.10}
+\end{equation}
+这样一来, 用正则对易关系和反对易关系证实$\,\int\dif^{3}x\,S^{0}\,$满足对易关系(\ref{26.7.6})就是直接的.
+
+对称流有另外一种定义, 即按照物质作用量对定域对称变换的响应来定义, 当相应的对称性被``规范化''后, 这个定义特别有用, 而当我们在第\,31\,章转向超引力理论时, 超对称就会变成这样的情况. 在没有超引力场的情况下, 作用量在定域超对称变换下不是不变的. 如果我们做这样一个带有时空相关参量$\,\alpha(x)\,$的变换, 为了使得作用量的变化在$\,\alpha(x)\,$是常数时为零, 它必须(即使场方程没有被满足)采取如下的形式
+\begin{equation}
+    \delta I = -\int \dif^{4}x\:\Big((\partial_{\mu}\bar{\alpha}(x))\,S^{\mu}(x)\Bigr) \:, \label{26.7.11}
+\end{equation}
+其中$\,S^{\mu}(x)\,$是\,Majorana\,旋量算符系数的\,4\,-矢. 由于在我们将整体超对称变换推广至定域变换后, 一般情况下, 对于场$\,\chi\,$在定域对称变换的变化$\,\delta\chi$, 我们可以让它以任意的方式依赖于$\,\alpha(x)\,$的导数, 所以这并不唯一地定义$\,S^{\mu}(x)$. 然而, 有一种定义定域对称变换的方式保证了方程(\ref{26.7.11})中的系数$\,S^{\mu}(x)\,$与方程(\ref{26.7.4})定义的流相同, 而正如我们看到的, 后者生成了对称变换, 即方程(\ref{26.7.6}). 方法是指定{\kai{正则场或辅助场$\,\chi^{\ell}\,$的超对称变换中不出现$\,\alpha(x)\,$的导数.}} 例如, 对于左手征超场的分量, 变换规则(\ref{26.3.15})---(\ref{26.3.17})的定域版本是
+\begin{align}
+    &\delta\psi_{L}(x) = \sqrt{2}\partial_{\mu}\phi(x)\,\gamma^{\mu}\,\alpha_{R}(x)\,\phi(x)
+    +\sqrt{2}\mathscr{F}(x)\,\alpha_{L}(x) \:, \label{26.7.12}  \\
+    &\delta \mathscr{F}(x) =\sqrt{2}\Bigl(\overline{\alpha_{L}}(x)\,\slashed{\partial}\psi_{L}(x)\Bigr)\:,
+    \label{26.7.13} \\
+    &\delta \phi(x) = \sqrt{2}\Bigl(\overline{\alpha_{R}}(x)\,\psi_{L}(x)\Bigr)\:. \label{26.7.14}
+\end{align}
+方程(\ref{26.3.21})表明超场可以表示成它在$\,x_{+}^{\mu}\,$没有导数的分量场, 所以这个超场的变换规则可以表示成
+\begin{equation}
+    \delta \Phi(x,\theta) = \Bigl(\bar{\alpha}(x_{+})\,\mathscr{Q}\Bigr) \Phi(x,\theta) \:, \label{26.7.15}
+\end{equation}
+其中$\,\mathscr{Q}\,$是算符(\ref{26.2.2}).
+
+当定域对称变换以这种方式定义后, 它们诱导出的作用量的变化由两项组成. 首先, 尽管正则场在超对称变换下的变分不包含$\,\alpha(x)\,$的导数, 但是正则场导数的变分确实包含$\,\alpha(x)\,$的导数. 除了要将$\,\bar{\alpha}\,$换成$\,\partial_{\mu}\bar{\alpha}\,$, 它产生的拉格朗日密度的变化与方程(\ref{26.7.2})相同:
+\[
+    \delta_{1}I = -\int \dif^{4}x\:\Bigl([\partial_{\mu}\bar{\alpha}(x)]\,N^{\mu}(x)\Bigr)\:.
+\]
+作用量变化中的第二项源于如下的事实: 即使在不含$\,\alpha(x)\,$导数的那部分超对称变换下, 拉格朗日密度也不是不变的. 根据方程(\ref{26.7.1}), 它产生的作用量的变化是
+\[
+\delta_{2}I = \int \dif^{4}x\:\Bigl(\bar{\alpha}(x)\,\partial_{\mu}K^{\mu}(x)\Bigr)
+=-\int\dif^{4}x\:\Bigl((\partial_{\mu}\bar{\alpha}(x))\,K^{\mu}(x)\Bigr) \:.
+\]
+将$\,\delta_{1}I\,$和$\,\delta_{2}I\,$加起来就给出作用量形式为(\ref{26.7.11})的总变化, 其中$\,S^{\mu}(x)\,$由方程(\ref{26.7.4})给出, 这正是所要证明的.
+
+即使在这样指定分量场的变换性质后, 超对称流$\,S^{\mu}(x)\,$也没有被方程(\ref{26.7.11})唯一地指定, 这是因为我们总可以引入修正流
+\begin{equation}
+    S^{\mu}_{\text{new}}= S^{\mu}+\partial_{\nu}A^{\mu\nu} \:, \label{26.7.16}
+\end{equation}
+其中$\,A^{\mu\nu}=-A^{\nu\mu}\,$是\,Majorana\,旋量的任意反对称张量. 无论场方程是否被满足, $\partial_{\nu}A^{\mu\nu}\,$这一项总是守恒的, 并且它的时间分量是空间导数, 所以$\,\int\dif^{3}x\,S^{0}_{\text{new}}=\int\dif^{3}x\,S^{0}$, 这使得方程(\ref{26.7.6})保持不变.
+
+事实上$\,A^{\mu\nu}\,$有一个特殊的选择使得$\,\gamma_{\mu}S^{\mu}_{\text{new}}\,$有这样的方便特征: 它衡量了理论对标度不变性的破坏程度. 通过使用从拉格朗日密度(\ref{26.4.7})导出的\,Dirac\,方程:
+\begin{equation}
+    \slashed{\partial}\psi_{mL}=-\sum_{n}\Biggl(\frac{\partial^{2}f(\phi)}{\partial \phi_{m}\partial\phi_{n}}\Biggr)^{\ast} \psi_{nR} \:, \qquad
+    \slashed{\partial}\psi_{mR}=-\sum_{n}\Biggl(\frac{\partial^{2}f(\phi)}{\partial \phi_{m}\partial\phi_{n}}\Biggr) \psi_{nL} \:, \label{26.7.17}
+\end{equation}
+直接计算给出
+\begin{align*}
+    \gamma_{\mu}S^{\mu} &= -2\sqrt{2}\sum_{n}\Biggl\{
+    \slashed{\partial}\Bigl(\phi_{n}\psi_{nR}+\phi_{n}^{\ast}\psi_{nL}\Bigr) \\
+    &\quad + \Biggl(\sum_{m}\phi_{m}\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}
+    -2\frac{\partial f(\phi)}{\partial\phi_{n}}\Biggr) \psi_{nL} \\
+    &\quad + \Biggl(\sum_{m}\phi_{m}\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}
+    -2\frac{\partial f(\phi)}{\partial\phi_{n}}\Biggr)^{\ast} \psi_{nR} \Biggr\}
+\end{align*}
+通过引入方程(\ref{26.7.16})那样一般类型的修正超对称流, 我们可以消除掉第一项:
+\begin{equation}
+    S^{\mu}_{\text{new}} = S^{\mu} + \frac{\sqrt{2}}{3}[\gamma^{\mu},\gamma^{\nu}]
+    \sum_{n}\partial_{\nu}\Bigl(\phi_{n}\psi_{nR}+\phi_{n}^{\ast}\psi_{nL}\Bigr) \:, \label{26.7.18}
+\end{equation}
+使得
+\begin{align}
+    \gamma_{\mu}S^{\mu}_{\text{new}} &= -2\sqrt{2} \sum_{n} \Biggl\{\Biggl(
+    \sum_{m}\phi_{m}\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}
+    -2\frac{\partial f(\phi)}{\partial\phi_{n}}\Biggr)\,\psi_{nL} \nonumber \\
+    &\quad+\Biggl(\sum_{m}\phi_{m}\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}
+    -2\frac{\partial f(\phi)}{\partial\phi_{n}}\Biggr)^{\ast}\,\psi_{nR}\Biggr\} \:. \label{26.7.19}
+\end{align}
+对于标度不变的拉格朗日密度, 即$\,f(\Phi)\,$是$\,\Phi_{n}\,$的三阶齐次多项式的拉格朗日密度, 右边为零.
+
+我们现在转向超对称流的超对称变换性质. 可以直接验证方程(\ref{26.7.18})和(\ref{26.7.10})给出的流与一个非手征实超场$\,\Theta_{\mu}\,$%
+的$\,\omega\,$-分量$\,\omega_{\mu}^{\Theta}\,$有如下的关系\footnote{这里我们引入一个将在第\,31\,章广泛使用%
+的符号约定; 延续方程(\ref{26.2.10}), 任意超场$\,S(x,\theta)\,$的分量$\,C^{S}$, $\omega^{S}$, $M^{S}$, $N^{S}$, $V_{\nu}^{S}$, $\lambda^{S}\,$和$\,D^{S}\,$通过如下展开定义:
+\begin{align*}
+S(x,\theta) &= C^{S}(x) -\mi\Bigl(\bar{\theta}\,\gamma_{5}\,\omega^{S}(x)\Bigr)
+-\frac{\mi}{2}\Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)M^{S}(x)
+-\frac{1}{2}\Bigl(\bar{\theta}\,\theta\Bigr)N^{S}(x) \\
+&\quad +\frac{\mi}{2}\Bigl(\bar{\theta}\,\gamma_{5}\,\gamma^{\nu}\,\theta\Bigr)V_{\nu}^{S}(x)
+-\mi\Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)\Biggl(\bar{\theta}\Bigl[
+\lambda^{S}(x)+\frac{1}{2}\,\slashed{\partial}\omega^{S}(x)\Bigr]\Biggr) \\
+&\quad -\frac{1}{4}\Bigl(\bar{\theta}\,\gamma_{5}\,\theta\Bigr)^{2}\Biggl[
+D^{S}(x)+\frac{1}{2}\square C^{S}(x)\Biggr] \:.
+\end{align*}}
+\begin{equation}
+    S^{\mu}_{\text{new}} = -2\omega^{\Theta\,\mu} +2\gamma^{\mu}\gamma^{\nu}\omega^{\Theta}_{\nu}\:, \label{26.7.20}
+\end{equation}
+其中
+\begin{equation}
+    \Theta_{\mu} = \frac{\mi}{12}\sum_{n}
+    \Biggl[4\Phi_{n}^{\ast}\partial_{\mu}\Phi_{n} - 4\Phi_{n}\partial_{\mu}\Phi_{n}^{\ast}
+    +\Bigl((\bar{\mathscr{D}}\Phi_{n}^{\ast})\gamma_{\mu}(\mathscr{D}\Phi_{n})\Bigr)\Biggr] \:. \label{26.7.21}
+\end{equation}
+超场$\,\Theta^{\mu}\,$被称为{\kai{超流}}.
+
+超流服从的守恒律包含了超对称流的守恒以及其它很多守恒律. 为了推导它, 我们可以使用反对易关系(\ref{26.2.30})写下\footnote{要注意, $\bar{\mathscr{D}}_{L}\,$和$\,\bar{\mathscr{D}}_{R}\,$是协变伴随$\,\bar{\mathscr{D}}\,$的左手分量和右手分量, 而不是$\,\mathscr{D}_{L}\,$和$\,\mathscr{D}_{R}\,$的协变伴随$\,\overline{\mathscr{D}_{L}}\,$和%
+$\,\overline{\mathscr{D}_{R}}$.}
+\[
+[\mathscr{D}_{R},(\bar{\mathscr{D}}_{L}\mathscr{D}_{L})] = -4\,\slashed{\partial}\mathscr{D}_{L}\:.
+\]
+加上手征条件$\,\mathscr{D}_{R}\Phi_{n}=\mathscr{D}_{L}\Phi_{n}^{\ast}=0$, 这给出
+\[
+\gamma^{\mu}\mathscr{D}_{L}\sum_{n}\Bigl[\Phi_{n}^{\ast}\partial_{\mu}\Phi_{n}
+-\Phi_{n}\partial_{\mu}\Phi_{n}^{\ast}\Bigr] = -\tfrac{1}{4}\sum_{n}\Phi_{n}^{\ast}
+\mathscr{D}_{R}\Bigl(\bar{\mathscr{D}}_{L}\mathscr{D}_{L}\Bigr)\Phi_{n}
+-\sum_{n}(\slashed{\partial}\Phi_{n}^{\ast})\,\mathscr{D}_{L}\Phi_{n}
+\]
+和
+\[
+\gamma^{\mu}\mathscr{D}_{L}\sum_{n}\Bigl((\bar{\mathscr{D}}\Phi_{n}^{\ast})\gamma_{\mu}(\mathscr{D}\Phi_{n})\Bigr)
+=4\sum_{n}(\slashed{\partial}\Phi_{n}^{\ast})\mathscr{D}\Phi_{n}
++2\sum_{n}\mathscr{D}\Phi_{n}^{\ast}\Bigl(\bar{\mathscr{D}}_{L}\mathscr{D}_{L}\Bigr)\Phi_{n} \:,
+\]
+使得超场(\ref{26.7.21})满足
+\begin{equation}
+    \gamma_{\mu}\mathscr{D}_{L}\Theta^{\mu} = \tfrac{1}{6}\,\mi\sum_{n}(\mathscr{D}_{R}\Phi_{n}^{\ast})
+    \Bigl(\bar{\mathscr{D}}_{L}\mathscr{D}_{L}\Bigr)\Phi_{n}
+    -\tfrac{1}{12}\,\mi\sum_{n}\Phi_{n}^{\ast}\mathscr{D}_{R}\Bigl(\bar{\mathscr{D}}_{L}\mathscr{D}_{L}\Bigr)\Phi_{n}\:.
+    \label{26.7.22}
+\end{equation}
+我们在\,26.6\,节看到, 拉格朗日密度(\ref{26.4.7})的场方程可以表示成如下形式
+\begin{equation}
+    \Bigl(\bar{\mathscr{D}}_{L}\mathscr{D}_{L}\Bigr)\Phi_{n} = -4\biggl(\frac{\partial f(\Phi)}{\partial\Phi_{n}}\biggr)^{\ast} \:. \label{26.7.23}
+\end{equation}
+在方程(\ref{26.7.22})中使用上式最后给出
+\begin{align}
+    \gamma^{\mu}\mathscr{D}_{L}\Theta_{\mu} &= -\frac{2}{3}\mi\sum_{n}(\mathscr{D}_{R}\Phi_{n}^{\ast})\,
+    \biggl(\frac{\partial f}{\partial\Phi_{n}}\biggr)^{\ast} + \frac{1}{3}\mi\sum_{n}\Phi_{n}^{\ast}
+    \mathscr{D}_{R}\biggl(\frac{\partial f}{\partial\Phi_{n}}\biggr)^{\ast} \nonumber \\
+    &= \frac{1}{3}\,\mi\,\mathscr{D}_{R}\Biggl[\sum_{n}\Phi_{n}\frac{\partial f(\Phi)}{\partial\Phi_{n}}
+    -3\,f(\Phi)\Biggr]^{\ast} \:. \label{26.7.24}
+\end{align}
+方程(\ref{26.7.24})的厄米共轭是
+\begin{equation}
+    \gamma^{\mu}\mathscr{D}_{R}\Theta_{\mu}=-\frac{1}{3}\,\mi\,\mathscr{D}_{L}
+    \Biggl[\sum_{n}\Phi_{n}\frac{\partial f(\Phi)}{\partial\Phi_{n}}-3\,f(\Phi)\Biggr] \:. \label{26.7.25}
+\end{equation}
+这样, 它与方程(\ref{26.7.24})给出守恒流
+\begin{equation}
+    \gamma^{\mu}\mathscr{D}\Theta_{\mu} = \mathscr{D}X \:, \label{26.7.26}
+\end{equation}
+其中$\,X\,$是一个实手征超场, 它在这类理论中(在相差一个额外的常数的意义下)给定为
+\begin{equation}
+    X=\frac{2}{3}\operatorname{Im}\Biggl[\sum_{n}\Phi_{n}\frac{\partial f(\Phi)}{\partial\Phi_{n}}-3\,f(\Phi)\Biggr]\:.
+    \label{26.7.27}
+\end{equation}
+
+尽管这里仅对手征超场的可重整理论做了推导, 我们可以预期守恒律(\ref{26.7.27})在更一般的情况下也会成立, 当然, 由于它还包含其它守恒律, $X\,$不一定由方程(\ref{26.7.27})给出. (31.4\,节将会给出$\,X\,$的一个推广公式.) 为了推导这些关系, 我们必须用方程(\ref{26.2.10})将$\,\Theta_{\mu}\,$表示成$\,C_{\mu}^{\Theta}$, $\omega_{\mu}^{\Theta}\,$等分量, 并用方程(\ref{26.3.9})将手征超场$\,X\,$表示成$\,A^{X}$, $\psi^{X}\,$等分量. 在方程(\ref{26.A.9}), (\ref{26.A.16}) (\ref{26.A.17})和 Dirac\,矩阵恒等式的帮助下
+\begin{equation}
+    [\gamma^{\rho},\gamma^{\sigma}] = -\tfrac{1}{2}\mi\,\epsilon^{\rho\sigma\mu\nu}\,\gamma_{5}\,
+    [\gamma_{\mu},\gamma_{\nu}] \:, \label{26.7.28}
+\end{equation}
+\begin{equation}
+    \gamma^{\mu}\gamma^{\rho}\gamma^{\sigma}=\eta^{\mu\rho}\gamma^{\nu}-\eta^{\mu\nu}\gamma^{\rho}
+    +\eta^{\nu\rho}\gamma^{\mu} + \mi\,\gamma_{5}\,\epsilon^{\mu\nu\rho\sigma}\gamma_{\sigma}\:, \label{26.7.29}
+\end{equation}
+我们可以将方程(\ref{26.7.26})两边展到如下各项上
+\begin{align*}
+    &1\:,\:\: \theta\:,\:\: \gamma_{5}\theta\:,\:\: \gamma^{\nu}\theta\:,\:\:\gamma_{5}\gamma^{\nu}\theta\:,\:\:
+    \gamma_{5}[\gamma^{\mu},\gamma^{\nu}]\theta \:, \\
+    &\Bigl(\bar{\theta}\theta\Bigr)\:,\:\:\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\:,\:\:
+    \Bigl(\bar{\theta}\gamma_{5}\gamma_{\nu}\theta\Bigr)\:, \\
+    &\theta\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\:,\:\:
+    \gamma_{5}\theta\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\:,\:\:
+    \gamma^{\nu}\theta\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\:,  \\
+    &\gamma^{\nu}\gamma_{5}\theta\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\:,\:\:
+    [\gamma^{\rho},\gamma^{\sigma}]\theta\,\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)\:,\:\:
+    \Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}\:.
+\end{align*}
+分别比对$\,1$, $\theta$, $\gamma_{5}\theta$, $\gamma^{\nu}\theta$, $\gamma_{5}\gamma^{\nu}\theta$, $\gamma_{5}[\gamma^{\mu},\gamma^{\nu}]\theta\,$的系数, 这给出结果\footnote{注意, $V_{\mu\nu}^{\Theta}\,$是$\,\Theta_{\mu}\,$的$\,V_{\nu}\,$-分量, 不是$\,\Theta_{\nu}\,$的$\,V_{\mu}\,$-分量.}
+\begin{align}
+    \psi^{X} &= -\mi\gamma_{5}\gamma^{\mu}\omega_{\mu}^{\Theta} \:, \label{26.7.30} \\
+    F^{X} &= \partial^{\mu}C_{\mu}^{\Theta} \:, \label{26.7.31} \\
+    G^{X} &= (V^{\Theta})\indices{^\mu_\mu} \:, \label{26.7.32} \\
+    \partial_{\mu}A^{X} &= -N_{\mu}^{\Theta} \:, \label{26.7.33} \\
+    \partial_{\mu}B^{X} &= M_{\mu}^{\Theta} \:, \label{26.7.34}  \\
+    0 &= V^{\Theta}_{\mu\nu}-V^{\Theta}_{\nu\mu}+
+    \epsilon_{\mu\nu\rho\sigma}\partial^{\sigma}C^{\Theta\,\rho}\:.\label{26.7.35}
+\end{align}
+比对$\,(\bar{\theta}\theta)\,$或$\,(\bar{\theta}\gamma_{5}\theta)\,$的系数给出同一个结果:
+\begin{equation}
+    0=\gamma^{\mu}\,\lambda_{\mu}^{\Theta} \:, \label{26.7.36}
+\end{equation}
+比对$\,(\bar{\theta}\gamma_{5}\gamma^{\nu}\theta)\,$的系数给出结果
+\begin{equation}
+    {-}\mi\,\gamma_{5}\,[\gamma^{\nu},\slashed{\partial}]\,\psi^{X}
+    =2\gamma^{\mu}\gamma^{\nu}\lambda_{\mu}^{\Theta}+
+    \gamma^{\mu} \,[\gamma^{\nu},\slashed{\partial}]\,\omega_{\mu}^{\Theta} \:. \label{26.7.37}
+\end{equation}
+我们从方程(\ref{26.7.30}), (\ref{26.7.36})和(\ref{26.7.37})获得了超对称流(\ref{26.7.20})的守恒:
+\begin{equation}
+    0=\partial_{\mu}S^{\mu}_{\text{new}} = -2\partial^{\mu}\omega_{\mu}^{\Theta}
+    +2\,\slashed{\partial}\gamma^{\mu}\omega_{\mu}^{\Theta} \:, \label{26.7.38}
+\end{equation}
+以及$\,\lambda_{\mu}^{\Theta}\,$和$\,\omega_{\mu}^{\Theta}\,$之间的关系:
+\begin{equation}
+    \lambda_{\nu}^{\Theta} = -\,\slashed{\partial}\omega_{\nu}^{\Theta}
+    +\partial_{\nu}\gamma^{\mu}\omega_{\mu}^{\Theta} \:. \label{26.7.39}
+\end{equation}
+比对$\,\theta(\bar{\theta}\gamma_{5}\theta)\,$和$\,\gamma_{5}\theta(\bar{\theta}\gamma_{5}\theta)\,$的系数%
+所给出的关系可以分别通过对方程(\ref{26.7.34})和(\ref{26.7.33})取散度获得. 比对$\,\gamma^{\rho}\theta(\bar{\theta}\gamma_{5}\theta)\,$的系数给出
+\begin{equation}
+    \partial_{\rho}G^{X} = \partial^{\mu}V_{\mu\rho}^{\Theta}+\partial^{\mu}V_{\rho\mu}^{\Theta}
+    -\partial_{\rho}V^{\Theta}{}\indices{^\lambda_\lambda} \:, \label{26.7.40}
+\end{equation}
+结合方程(\ref{26.7.32}), 这给出守恒律
+\begin{equation}
+    \partial_{\mu}T^{\mu\nu} = 0 \:, \label{26.7.41}
+\end{equation}
+其中$\,T^{\mu\nu}\,$是对称张量
+\begin{equation}
+    T_{\mu\nu}\equiv -\tfrac{1}{2}V_{\mu\nu}^{\Theta} - \tfrac{1}{2}V_{\nu\mu}^{\Theta}
+    +\eta_{\mu\nu}V^{\Theta}{}\indices{^\lambda_\lambda} \:. \label{26.7.42}
+\end{equation}
+比对$\,\gamma^{\rho}\gamma_{5}\theta(\bar{\theta}\gamma_{5}\theta)\,$的系数给出
+\begin{equation}
+    \partial_{\mu}F^{X} = 2D_{\mu}^{\Theta} + \square C_{\mu}^{\Theta}
+    +\epsilon_{\rho\nu\sigma\mu}\partial^{\nu}V^{\Theta\,\rho\sigma} \:, \label{26.7.43}
+\end{equation}
+结合方程(\ref{26.7.31})和(\ref{26.7.35}), 这给出了$\,D_{\mu}^{\Theta}\,$和$\,C_{\mu}^{\Theta}\,$之间的一个关系:
+\begin{equation}
+    D_{\mu}^{\Theta} = -\square C_{\mu}^{\Theta} + \partial_{\mu}\partial^{\nu}C_{\nu}^{\Theta} \:. \label{26.7.44}
+\end{equation}
+比对$\,[\gamma^{\rho},\gamma^{\sigma}]\theta(\bar{\theta}\gamma_{5}\theta)\,$和%
+$\,(\bar{\theta}\gamma_{5}\theta)^{2}\,$给出的结果可以分别从方程(\ref{26.7.34})以及%
+方程(\ref{26.7.38})和(\ref{26.7.39}) 得出.
+
+守恒的对称张量$\,T^{\mu\nu}\,$可以被视为该系统的能动量张量. 为了验证这点, 我们用方程(\ref{26.1.18})和\\(\ref{26.2.12})将$\,\omega_{\mu}^{\Theta}(x)\,$在无限小参量为$\,\alpha\,$的%
+超对称变换下的变化写成
+\begin{align*}
+    \delta\omega_{\mu}^{\Theta} &= -\mi\Bigl[(\bar{Q}\alpha),\omega_{\mu}^{\Theta}\Bigr]
+    = +\mi\Bigl[\omega_{\mu}^{\Theta},(\bar{Q}\alpha)\Bigr] \\
+    &= \Bigl(-\mi\gamma_{5}\,\slashed{\partial}C_{\mu}^{\Theta}-M_{\mu}^{\Theta}
+    +\mi\gamma_{5}N_{\mu}^{\Theta} +\gamma^{\nu}\,V_{\mu\nu}^{\Theta}\Bigr)\alpha \:.
+\end{align*}
+方程(\ref{26.7.33})---(\ref{26.7.35})使得我们可以将其变成如下形式
+\[
+\mi\Bigl\{\omega_{\mu}^{\Theta},\bar{Q}\Bigr\} = \tfrac{1}{2}\gamma^{\nu}(V_{\mu\nu}^{\Theta}+V_{\nu\mu}^{\Theta})
+-\partial_{\mu}(B^{X}+\gamma_{5}A^{X}) - \mi\gamma_{5}\,\slashed{\partial}C_{\mu}^{\Theta}
++\tfrac{1}{2}\epsilon_{\mu\nu\kappa\sigma}\gamma^{\nu}\partial^{\kappa}C^{\Theta\,\sigma}\:.
+\]
+以流(\ref{26.7.20})和(\ref{26.7.42})的形式, 这是
+\begin{align}
+    \mi\,\{S_{\text{new}}^{\mu},\bar{Q}\} &= 2\gamma_{\nu}T^{\mu\nu}
+    +2(\partial^{\mu}-\gamma^{\mu}\,\slashed{\partial})(B^{X}+\gamma_{5}A^{X})
+    -\epsilon^{\mu\nu\kappa\sigma}\gamma_{\nu}\partial_{\kappa}C_{\sigma}^{\Theta} \nonumber \\
+    &\quad + 2\mi\gamma_{5}\Bigl(\slashed{\partial}C^{\Theta\,\mu}
+    -\gamma^{\mu}\gamma^{\lambda}\,\slashed{\partial}C_{\lambda}^{\Theta}
+    -\tfrac{1}{2}\gamma^{\mu}[\slashed{\partial},\gamma^{\sigma}]C_{\sigma}^{\Theta}\Bigr)\:. \label{26.7.45}
+\end{align}
+当$\,\mu=0\,$时, 右边除了第一项以外的所有项都是空间导数, 所以它们在我们对空间做积分后为零, 留下
+\begin{equation}
+    \mi \,\biggl\{\int\dif^{3}x\,S^{0}_{\text{new}}\:,\bar{Q}\biggr\}
+    =2\gamma_{\nu}\int\dif^{3}x\:T^{0\nu} \:. \label{26.7.46}
+\end{equation}
+我们已经定义了超对称流$\,S^{\mu}_{\text{new}}\,$以给出$\,\int\dif^{3}x\,S_{\text{new}}^{0}=Q$, 所以基本反对易关系(\ref{25.2.36})告诉我们
+\begin{equation}
+    \int \dif^{3}x\: T^{0\nu} = P^{\nu} \:, \label{26.7.47}
+\end{equation}
+加上守恒条件(\ref{26.7.41}), 这使得我们可以将$\,T^{\mu\nu}\,$等同为能动量张量.
+
+需要注意的是我们以这种方式构建的能动量张量是{\kai{哪一个}}. 无论是直接从方程(\ref{26.7.21})出发, 还是通过考察流(\ref{26.7.18})的超对称变换, 对于手征超场的可重整理论, 我们可以计算出能动量张量$\,T^{\mu\nu}\,$是
+\begin{align}
+    T^{\mu\nu} &= \sum_{n}\Bigl[\partial^{\mu}\phi_{n}^{\ast}\partial^{\nu}\phi_{n}
+    +\partial^{\nu}\phi_{n}^{\ast}\partial^{\mu}\phi_{n}\Bigr]
+    -\eta^{\mu\nu}\sum_{n}\Biggl[\partial^{\lambda}\phi_{n}^{\ast}\partial_{\lambda}\phi_{n}
+    +\biggl\lvert\frac{\partial f(\phi)}{\partial\phi_{n}}\biggr\rvert^{2}\Biggr] \nonumber \\
+    &\quad + \tfrac{1}{3}(\eta^{\mu\nu}\square-\partial^{\mu}\partial^{\nu})\sum_{n}\lvert\phi_{n}\rvert^{2}
+    +\cdots \:, \label{26.7.48}
+\end{align}
+其中省略号代表那些包含费米子的项, 我们在这里不考虑它们. 最后一项通过超对称变换与方程(\ref{26.7.18})的修正项相关, 对于没有超势的无质量自由场理论, 在这种情况下$\,\square\phi_{n}=0$, 我们看到它的效果是使得能动量张量无迹. 一个简单的计算表明, 更一般地, 对于$\,f(\phi)\,$是$\,\phi_{n}\,$的三阶齐次多项式的标度不变理论, $T^{\mu\nu}\,$也是无迹的.
+
+
+超对称性也在标度不变性的破坏和\,$R$\,守恒之间附加了一个有趣的关系. 方程 (\ref{26.7.30}) --- (\ref{26.7.32})表明$\,\gamma_{\mu}S^{\mu}_{\text{new}}=6\gamma_{\mu}\omega^{\Theta\,\mu}$, $\partial^{\mu}C_{\mu}^{\Theta}\,$和$\,T\indices{^\lambda_\lambda}=2V^{\Theta}{}\indices{^\mu_\mu}\,$%
+(它衡量了标度不变性的破坏)正比于手征超场$\,X\,$的分量, 所以, 如果其中一个作为算符方程(即, 不只是某个特殊的场构形)为零, 那么它们全部为零. 在这一情况下, 我们可以证明$\,C^{\Theta\,\rho}\,$正比于$\,R\,$量子数的流. 为了看到这点, 注意到方程(\ref{26.2.11})给出
+\[
+\delta C_{\sigma}^{\Theta} = \mi\,\Bigl[C_{\sigma}^{\Theta}\,,(\bar{\alpha}\,Q)\Bigr]
+=\mi\,\Bigl(\bar{\alpha}\,\gamma_{5}\,\omega_{\sigma}^{\Theta}\Bigr) \:,
+\]
+这使得一般有
+\begin{equation}
+    \Bigl[C_{\sigma}^{\Theta}\,, Q\Bigr] =\gamma_{5}\omega_{\sigma}^{\Theta} \:. \label{26.7.49}
+\end{equation}
+我们已经看到, 如果$\,C_{\sigma}^{\Theta}\,$守恒, 那么$\,\gamma_{\mu}S^{\mu}=0$, 这使得方程(\ref{26.7.20})给出$\,S_{\sigma}=-2\omega_{\sigma}^{\Theta}$. 这样, 在方程(\ref{26.7.49})中令$\,\sigma=0\,$并对$\,\mathbf{x}\,$积分就给出
+\begin{equation}
+    \bigg[\int\dif^{3}x\,C^{\Theta\,0}\:, Q\biggr] = -\tfrac{1}{2}\gamma_{5}Q \:. \label{26.7.50}
+\end{equation}
+因此我们可以引入流
+\begin{equation}
+    \mathscr{R}^{\mu} \equiv 2\,C^{\Theta\,\mu} \:, \label{26.7.51}
+\end{equation}
+这个流{\kai{如果}}守恒, 那么它是量子数$\,\mathscr{R}\equiv\int\dif^{3}x\,\mathscr{R}^{0}\,$的流, 而$\,Q_{L}\,$和$\,Q_{R}\,$在这个量子数上分别湮灭值$\,+1\,$和$\,-1$. 由于$\,Q_{L}\,$和标量超场$\,\Phi\,$的对易子包含$\,\partial\Phi/\partial\theta_{L}\,$项, 这意味着$\,\theta_{L}\,$携带$\,\mathscr{R}\,$值$\,+1$, 与通常的定义一致. 如果一个理论中的超场$\,X\,$为零, 或者等价地, $T\indices{^\mu_\mu}$, $\gamma_{\mu}S^{\mu}\,$和$\,\partial_{\mu}\mathscr{R}^{\mu}\,$全部为零, 那么这个理论就在一组扩展的超对称变换下不变, 即\,25.2\,节末尾描述的超共形代数生成的变换.
+
+在标度不变的理论中, 各种超场携带的$\,\mathscr{R}\,$量子数值被拉格朗日量的结构决定. 例如, 在手征标量超场的标度不变理论中, 超势必须是超场的三阶齐次多项式. 超势的$\,\mathscr{F}\,$-项正比于$\,\theta_{L}^{2}\,$的系数, 它有$\,\mathscr{R}\,$量子数$\,+2$, 所以超势$\,\mathscr{F}\,$-项的$\,\mathscr{R}\,$量子数是超势本身的$\,\mathscr{R}\,$量子数减二. 这样, $\mathscr{R}\,$不变性就要求我们赋予标量超场$\,\mathscr{R}\,$量子数$\,+2/3$, 这使得超场的$\,\mathscr{R}\,$量子数是$\,+2$, 而它的$\,\mathscr{F}\,$-项的$\,\mathscr{R}\,$量子数是零. 即, 标量分量$\,\phi_{n}\,$有$\,\mathscr{R}=2/3\,$而旋量分量$\,\psi_{nL}\,$(正比于$\,\theta_{L}\,$在超场中的系数)%
+有$\,\mathscr{R}=-1/3$. 这可以通过从这类理论的超流(\ref{26.7.21})的\,$C$\,-项计算出流$\,\mathscr{R}^{\mu}\,$证实:
+\begin{equation}
+    \mathscr{R}_{\mu} = \tfrac{2}{3}\,\mi\,[\phi^{\ast}\partial_{\mu}\phi-\phi\partial_{\mu}\phi^{\ast}]
+    -\tfrac{1}{6}\,\mi\,\Bigl(\bar{\psi}\gamma_{\mu}\gamma_{5}\psi\Bigr)\:. \label{26.7.52}
+\end{equation}
+(因为$\,\psi\,$是\,Majorana\,旋量, 第二项包含一个额外的因子$\,1/2$.)
+
+量子修正会引入对$\,\mathscr{R}\,$不变性的破坏(通过\,Adler-Bell-Jackiw\,反常)和标度不变性的破坏%
+(通过耦合常数的重整化群跑动), 但即使这些对称性被这些修正破坏了, 超对称性仍然会在这些对称性之间附加一个关系.\cite{7a} 我们会在\,29.3\,节看到这样的一个例子.
+
+\subsection*{* * *}
+
+守恒条件(\ref{26.7.26})并不唯一地决定超流$\,\Theta^{\mu}\,$或相应的手征超场$\,X$. 特别地, 我们可以给$\,\Theta^{\mu}\,$加上一项
+\begin{equation}
+    \Delta\Theta^{\mu} = \partial^{\mu}Y \:, \label{26.7.53}
+\end{equation}
+其中$\,Y\,$是任意的的手征超场. 那么方程(\ref{26.7.26})的左边就会有如下的变化
+\[
+    \gamma_{\mu}\mathscr{D}\Delta\Theta^{\mu}=\slashed{\partial}\mathscr{D}Y \:.
+\]
+对于左手征超场$\,Y_{L}$, 手征条件$\,\mathscr{D}_{R}Y_{L}=0\,$和反对易关系(\ref{26.2.30})给出
+\begin{align*}
+    \slashed{\partial}\mathscr{D}_{\alpha}Y &= -\tfrac{1}{2}
+    \Bigl[\{\mathscr{D}_{L},\bar{\mathscr{D}}_{R}\}\mathscr{D}_{R}\Bigr]_{\alpha}\,Y_{L} \nonumber \\
+    &=-\tfrac{1}{2}\Biggl[\mathscr{D}_{L\alpha}\Bigl(\bar{\mathscr{D}}_{R}\mathscr{D}_{R}\Bigr)Y_{L}
+    +\sum_{\beta}\bar{\mathscr{D}}_{L\beta}\mathscr{D}_{R\alpha}\mathscr{D}_{L\beta}Y_{L}\Biggr] \:.
+\end{align*}
+上面展开右边第二项的$\,\bar{\mathscr{D}}_{L\beta}\,$中的矩阵$\,\epsilon\gamma_{5}\,$可以移至最后一个算符%
+$\,\mathscr{D}_{L\beta}$, 这使得守恒条件和反对易关系给出
+\[
+\sum_{\beta}\bar{\mathscr{D}}_{L\beta}\mathscr{D}_{R\alpha}\mathscr{D}_{L\beta}Y_{L}
+=-\sum_{\beta}\mathscr{D}_{L\beta}\mathscr{D}_{R\alpha}\bar{\mathscr{D}}_{L\beta}Y_{L}
+=2(\slashed{\partial}\mathscr{D})_{\alpha}Y_{L} \:,
+\]
+以及随之的
+\[
+\slashed{\partial}\mathscr{D}Y_{L}=-\tfrac{1}{2}\Bigl[\mathscr{D}\Bigl(\bar{\mathscr{D}}\mathscr{D}\Bigr)Y_{L}
++2\slashed{\partial}\mathscr{D}Y_{L}\Bigr]
+= -\tfrac{1}{4}\mathscr{D}\Bigl(\bar{\mathscr{D}}\mathscr{D}\Bigr)Y_{L} \:.
+\]
+对于任何右手征超场可以用相同的方法推出相同的结果, 因此它对于左手征超场和右手征超场的任意和$\,Y\,$也是成立的
+\begin{equation}
+    \gamma_{\mu}\mathscr{D}\Delta\Theta^{\mu} = \slashed{\partial}\mathscr{D}Y
+    =-\tfrac{1}{4}\mathscr{D}\Bigl(\bar{\mathscr{D}}\mathscr{D}\Bigr) Y \:. \label{26.7.54}
+\end{equation}
+这与守恒条件(\ref{26.7.26})是同一形式, 而相应的手征超场$\,X\,$多出了如下的手征超场
+\begin{equation}
+    \Delta X = -\tfrac{1}{4}\bigl(\bar{\mathscr{D}}\mathscr{D}\bigr)Y \:. \label{26.7.55}
+\end{equation}
+很容易验证给$\,\Theta^{\mu}\,$加上$\,\Delta\Theta^{\mu}\,$对$\,T^{\mu0}\,$和$\,S^{0}_{\text{new}}\,$的改变%
+仅是空间导数, 因此并不会改变能动量\,4\,-矢$\,P^{\mu}$ 和超荷$\,Q$.
+
+我们在\,26.6\,节看到, 任何手征超场$\,X\,$都可以表示成$\,X=(\bar{\mathscr{D}}\mathscr{D})S\,$的形式, 因此, 通过给$\,\Theta^{\mu}\,$加上形如(\ref{26.7.55})且其中$\,Y=4S\,$的一项, $X\,$可以被消掉. 但一般而言, $S\,$和以这种方式构建的新$\,\Theta^{\mu}$ 将不是定域的. 从我们在第\,22\,章对三角反常的经验而言, 这一情况并不陌生------我们在里那里看到, 尽管总能构造出加在拉格朗日密度上的项使得反常被抵消, 但这些项一般不是定域的, 因此必须从拉格朗日密度中排除出去. 存在可以表示成$\,(\bar{\mathscr{D}}\mathscr{D})S\,$且$\,S\,$定域的手征超场, 因此, 如果它出现连带的手征超场$\,X\,$中, 它可以通过给$\,\Theta^{\mu}\,$加上形如(\ref{26.7.53})的定域项被抵消掉. 例如, 因为方程(\ref{26.6.15})和(\ref{26.6.16})表明$\,(\bar{\mathscr{D}}\mathscr{D})%
+\operatorname{Re}(k^{ast}\Phi)=4\operatorname{Re}(k\partial f(\Phi)/\partial\Phi)$, 这样的项包括像 $\operatorname{Re}(k\partial f(\Phi)/\partial\Phi)$ 这样的项, 其中$\,k\,$是任意的复常数. 但是一般而言, 这种方法对$\,X\,$造成的变化是相当有限的.
+
+
+
+\section[一般\,K\"{a}hler\,势]{一般\,K\"{a}hler\,势\footnote{本节有些脱离本书的发展主线, 可以在第一次阅读时跳过.}} \label{sec:26.8}
+
+
+在几种情况下我们必须要考察有一般形式(\ref{26.3.30})的不可重整拉格朗日密度
+\begin{equation}
+\mathscr{L} = 2\operatorname{Re}\Bigl[f(\Phi)\Bigr]_{\mathscr{F}}
++\tfrac{1}{2}\Bigl[K(\Phi ,\Phi^{\ast})\Bigr]_{D} \:,  \label{26.8.1}
+\end{equation}%
+其中超势$\,f\,$是左手征超场$\,\Phi_{n}\,$的函数但不是它们导数的函数, 而\,K\"{a}hler\,势$\,K\,$是$\,\Phi_{n}\,$和$\,\Phi_{n}^{\ast}\,$的函数但不是它们导数的函数.
+
+在对称性排除掉任何可重整相互作用或者可重整相互作用碰巧都很小的有效场论中, 这样的情况会出现. 对于导数个数, 费米场个数和任何小耦合常数个数的某个组合, 利用值最小的拉格朗日量通常可以从树图算出低能的散射振幅. 在\,19.5\,节, 我们检验过这种没有可重整耦合的有效场论, 它包含核子和软\,$\pi$\,子. 21.4\,节讨论的动力学破缺的规范场论提供了可重整耦合都很小的那类理论的例子. 在对称性不允许有超势或者超势由于某个原因非常小的超对称理论中, 这一情况也会出现. 当我们在\,29.5\,节考察阿贝尔规范超场和规范中性手征标量超场的$\,N=2\,$扩充超对称理论时, 我们会遇到这样的例子. 我们将会那里证明, 通过使用形如(\ref{26.8.1})的拉格朗日密度, 其中$\,f=0\,$且$\,K\,$仅是$\,\Phi_{n}\,$和$\,\Phi_{n}^{\ast}\,$的函数而不是它们导数的函数, 树图生成了这类理论中的低能散射振幅. 在有效场论中, 如果一些标量场与潜在理论的基本能标处在同一量级, 即使所有其它场的值和所有能量得要小的多, 这是引入对$\,\Phi_{n}\,$和$\,\Phi_{n}^{\ast}\,$依赖方式任意但不依赖它们导数的\,K\"{a}hler\,势是特别重要的. 例如, 非常有趣的, 它会与引力传递超对称破缺的理论相关联, 这将在\,31.6\,节进行讨论.
+
+我们来考察如何将拉格朗日密度(\ref{26.8.1})表示成分量场. 在推导方程(\ref{26.4.4})时, 我们没有使用$\,f(\Phi)\,$是{\kai{三次}}多项式的假定, 所以它依旧给出任意超势给拉格朗日量贡献的$\,\mathscr{F}\,$-项. 为了推导$\,D\,$-项, 我们注意到\,K\"{a}hler\,势中$\,\theta\,$的四阶项是
+\begin{align}
+K(\Phi,\Phi^{\ast})_{\theta^{4}} &= -\frac{1}{8} \Bigl( \bar{\theta}\gamma_{5}\theta\Bigr)^{2}
+\sum_{n}\biggl[\frac{\partial K(\phi,\phi^{\ast})}{\partial \phi_{n}}\square\phi_{n}
++\frac{\partial K(\phi,\phi^{\ast})}{\partial \phi_{n}^{\ast}}\square\phi_{n}^{\ast}\biggr]
+\nonumber \\
+&\quad +\sum_{nm}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}^{\ast}}
+\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr) \Biggl[\Bigl(\bar{\theta}\psi_{mR}\Bigr)\,
+\Bigl(\bar{\theta}\,\slashed{\partial}\psi_{nL}\Bigr)   \nonumber \\
+&\quad\qquad -\Bigl(\bar{\theta}\psi_{nL}\Bigr)\,
+\Bigl(\bar{\theta}\,\slashed{\partial}\psi_{mR}\Bigr)\Biggr]  \nonumber \\
+&\quad +2\operatorname{Re}\sum_{nml}
+\frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+\Bigl(\theta_{L}^{\mathrm{T}}\epsilon\psi_{nL}\Bigr) \Bigl(\theta_{L}^{\mathrm{T}}\epsilon\psi_{mL}\Bigr)
+\Bigl(\theta_{L}^{\mathrm{T}}\epsilon\theta_{L}\Bigr)^{\ast} \mathscr{F}_{l}^{\ast}  \nonumber \\
+&\quad +2\operatorname{Re}\sum_{nml}
+\frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+\,\Bigl(\bar{\theta}\psi_{mL}\Bigr)\Bigl(\bar{\theta}\psi_{lR}\Bigr)
+\Bigl(\bar{\theta}\gamma_{5}\gamma_{\mu}\theta\Bigr) \partial^{\mu}\phi_{n}  \nonumber \\
+&\quad+\sum_{nmlk}
+\frac{\partial^{4}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{k}^{\ast}\partial\phi_{l}^{\ast}}
+\,\Bigl(\bar{\theta}\psi_{nL}\Bigr)\,\Bigl(\bar{\theta}\psi_{mL}\Bigr)\,
+\Bigl(\bar{\theta}\psi _{lR}\Bigr)\, \Bigl(\bar{\theta}\psi_{kR}\Bigr)  \nonumber \\
+&\quad-\frac{1}{4}\sum_{nm}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}^{\ast}}
+\mathscr{F}_{n}\mathscr{F}_{m}^{\ast}\,\Bigl(\bar{\theta}(1+\gamma_{5})\theta\Bigr)
+\Bigl(\bar{\theta}(1-\gamma_{5})\theta\Bigr)   \nonumber \\
+&\quad+\frac{1}{4}\Bigl(\bar{\theta}\gamma_{5}\gamma^{\mu}\theta\Bigr)
+\Bigl(\bar{\theta}\gamma_{5}\gamma^{\nu}\theta\Bigr) \sum_{mn}\Biggl[
+-\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}^{\ast}}
+\partial_{\mu}\phi_{n}\partial_{\nu}\phi_{m}^{\ast}  \nonumber \\
+&\quad+\frac{1}{2}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}}
+\partial_{\mu}\phi_{n}\partial_{\nu}\phi_{m}
++\frac{1}{2}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}^{\ast}\partial\phi_{m}^{\ast}}
+\partial_{\mu}\phi_{n}^{\ast}\partial_{\nu}\phi_{m}^{\ast}\Biggr]\:.  \label{26.8.2}
+\end{align}%
+我们可以再次使用方程(\ref{26.A.18}), (\ref{26.A.19})和方程(\ref{26.A.9})将这一展开中对$\,\theta\,$的依赖写成一个总因子%
+$\,(\bar{\theta}\gamma_{5}\theta)^{2}$, 并发现
+\begin{align}
+K(\Phi,\Phi^{\ast})_{\theta^{4}} &=\frac{1}{4}\Bigl(\bar{\theta}\gamma_{5}\theta\Bigr)^{2}
+\Biggl\{-\frac{1}{2}\sum_{n}\frac{\partial K(\phi,\phi^{\ast})}{\partial\phi_{n}}\square\phi_{n}
+-\frac{1}{2}\sum_{n}\frac{\partial K(\phi,\phi^{\ast})}{\partial \phi_{n}^{\ast}}\square\phi_{n}^{\ast}\nonumber \\
+&\quad+\sum_{nm}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial \phi_{n}\partial \phi_{m}^{\ast}}
+\Bigl[ \Bigl(\overline{\psi_{m}}\,\slashed{\partial}\psi_{nL}\Bigr)
++\Bigl(\overline{\psi_{n}}\,\slashed{\partial}\psi_{mR}\Bigr)
+-2\mathscr{F}_{n}\mathscr{F}_{m}^{\ast}\Bigr]   \nonumber \\
+&\quad +2\operatorname{Re} \sum_{nml}
+\frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+\Bigl(\overline{\psi_{n}}\psi_{mL}\Bigr)\mathscr{F}_{l}^{\ast}  \nonumber \\
+&\quad-2\operatorname{Re}\sum_{nml}
+\frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+\Bigl(\overline{\psi_{m}}\gamma^{\mu}\psi_{lR}\Bigr)\partial_{\mu}\phi_{n}  \nonumber \\
+&\quad-\frac{1}{2}\sum_{nmlk}
+\frac{\partial^{4}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{k}^{\ast}\partial\phi_{l}^{\ast}}
+\Bigl(\overline{\psi_{n}}\psi_{mL}\Bigr) \,\Bigl(\overline{\psi_{k}}\psi_{lR}\Bigr)   \nonumber \\
+&\quad+\sum_{nm}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}^{\ast}}
+\partial_{\mu}\phi_{n}\partial^{\mu}\phi_{m}^{\ast}
+-\frac{1}{2}\sum_{nm}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}}
+\partial_{\mu}\phi_{n}\partial^{\mu}\phi_{m}  \nonumber \\
+&\quad-\frac{1}{2}\sum_{nm}\frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}^{\ast}\partial\phi_{m}^{\ast}}
+\partial_{\mu}\phi_{n}^{\ast}\partial^{\mu}\phi_{m}^{\ast}\Biggr\} \:.  \label{26.8.3}
+\end{align}
+为了使费米子动能项的实性质是显然的, 我们可以使用方程(\ref{26.A.21})写下
+\[
+\Bigl(\overline{\psi_{n}}\,\slashed{\partial}\psi_{mR}\Bigr) =\Bigl(\overline{\psi_{n}}\,\slashed{\partial}\psi_{mL}\Bigr)^{\ast}\:.
+\]
+$K(\Phi,\Phi^{\ast})\,$的$\,D\,$-项是$\,-(\bar{\theta}\gamma_{5}\theta)^{2}/4\,$的系数减去%
+达朗贝尔算符作用在$\,K(\Phi,\Phi^{\ast})\,$中$\,\theta\,$无关项上的结果的一半, 这一项就是$\,K(\phi,\phi^{\ast})$, 所以
+\begin{align}
+    \frac{1}{2}\Bigl[K(\Phi,\Phi^{\ast})\Bigr]_{D} &= \operatorname{Re}\sum_{nm}\mathscr{G}_{nm}
+    \Biggl[-\frac{1}{2}\Bigl(\overline{\psi_{m}}\,\slashed{\partial}(1+\gamma_{5})\psi_{n}\Bigr) \nonumber \\
+    &\quad \phantom{\operatorname{Re}\sum_{nm}\mathscr{G}_{nm}\Biggl[-\frac{1}{2}}
+    +\mathscr{F}_{n}\mathscr{F}_{m}^{\ast}-\partial_{\mu}\phi_{n}\partial^{\mu}\phi_{m}^{\ast}\Biggr] \nonumber \\
+    &\quad -\operatorname{Re}\sum_{nml} \frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+    \Bigl(\overline{\psi_{n}}\psi_{mL}\Bigr)\mathscr{F}_{l}^{\ast} \nonumber \\
+    &\quad +\operatorname{Re} \sum_{nml}
+    \frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+    \Bigl(\overline{\psi_{m}}\gamma^{\mu}\psi_{lR}\Bigr)\partial_{\mu}\phi_{n} \nonumber \\
+    &\quad +\frac{1}{4} \sum_{nmlk} \frac{\partial^{4}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}
+    \partial\phi_{l}^{\ast}\partial\phi_{k}^{\ast}}\Bigl(\overline{\psi_{n}}\psi_{mL}\Bigr)
+    \Bigl(\overline{\psi_{k}}\psi_{lR}\Bigr) \:, \label{26.8.4}
+\end{align}
+其中$\,\mathscr{G}(\phi,\phi^{\ast})$\,是\emph{\,K\"{a}hler}\,{\kai{度规}}
+\begin{equation}
+\mathscr{G}_{nm}(\phi,\phi^{\ast})\equiv \frac{\partial^{2}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}^{\ast}} \:. \label{26.8.5}
+\end{equation}
+注意到方程(\ref{26.4.2})中的常矩阵$\,g_{nm}\,$在这里被换成了\,K\"{a}hler\,度规%
+$\,\mathscr{G}_{nm}(\phi,\phi^{\ast})$. 因为\,K\"{a}hler\,度规与场相关, 所以我们一般无法通过重新定义场使得它等于一个单位矩阵, 所以总的拉格朗日量必须是如下的形式
+\begin{align}
+\mathscr{L} &= \operatorname{Re}\sum_{nm}\mathscr{G}_{nm}\Biggl[-\frac{1}{2}
+\Bigl(\overline{\psi_{m}}\,\slashed{\partial}(1+\gamma_{5})\psi_{n}\Bigr)+\mathscr{F}_{n}\mathscr{F}_{m}^{\ast}
+-\partial_{\mu}\phi_{n}\partial^{\mu}\phi_{m}^{\ast} \Biggr] \nonumber \\
+&\quad -\operatorname{Re}\sum_{nml}
+\frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+\Bigl(\overline{\psi_{n}}\psi_{mL}\Bigr)\mathscr{F}_{l}^{\ast} \nonumber \\
+&\quad +\operatorname{Re}\sum_{nml}
+\frac{\partial^{3}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}\partial\phi_{l}^{\ast}}
+\Bigl(\overline{\psi_{m}}\gamma^{\mu}\psi_{lR}\Bigr)\partial_{\mu}\phi_{n} \nonumber \\
+&\quad +\frac{1}{4} \sum_{nml}\frac{\partial^{4}K(\phi,\phi^{\ast})}{\partial\phi_{n}\partial\phi_{m}
+    \partial\phi_{l}^{\ast}\partial\phi_{k}^{\ast}}\Bigl(\overline{\psi_{n}}\psi_{mL}\Bigr)
+    \Bigl(\overline{\psi_{k}}\psi_{lR}\Bigr) \nonumber \\
+&\quad -\operatorname{Re}\sum_{nm}\frac{\partial^{2}f(\phi)}{\partial\phi_{n}\partial\phi_{m}}
+\Bigl(\overline{\psi_{n}}\psi_{mL}\Bigr)
++2\operatorname{Re}\sum_{n}\mathscr{F}_{n}\frac{\partial f(\phi)}{\partial \phi_{n}}\:. \label{26.8.6}
+\end{align}
+双线性型$\,(\overline{\psi_{m}}\,\slashed{\partial}\gamma_{5}\psi_{n})\,$是全导数, 因此如果$\,\mathscr{G}_{nm}\,$是常数, 它可以被扔掉, 但对于一般的\,K\"{a}hler\,势则必须保留. 在\,27.4\,节的末尾, 这一结果会被推广以纳入规范超场.
+
+
+\subsection*{* * *}
+
+
+就像在\,19.6\,节讨论的那样, 整体对称群$\,G\,$到子群$\,H\,$的自发破缺蕴含了一组无质量\,Goldstone\,实玻色子, 其玻色场为$\,\pi_{k}$, 对于这组玻色子, 拉格朗日量中导数最小的项取如下的形式
+\begin{equation}
+\mathscr{L}_{G/H}=-\sum_{k\ell}G_{k\ell}(\pi)\partial_{\mu}\pi_{k}\partial^{\mu}\pi_{\ell} \:, \label{26.8.7}
+\end{equation}
+其中$\,G_{k\ell}(\pi)\,$是陪集空间$\,G/H\,$的度规.
+(拉格朗日密度属于这种一般形式的理论被称为{\kai{非线性$\,\sigma\,$-模型}}.) 通过将复标量场$\,\phi_{n}\,$写成它们的实部和虚部, 拉格朗日密度(\ref{26.8.6})中的$\,-\sum_{nm}\mathscr{G}_{nm}(\phi,\phi^{\ast})$\\$\partial_{\mu}%
+\phi_{n}\partial^{\mu}\phi_{m}^{\ast}$可以被写成(\ref{26.8.7})的形式, 但反过来一般不成立: 像\,Goldstone\,玻色场$\,\pi_{k}\,$这样的一组实坐标可以被解释成场$\,\phi_{n}\,$这样的一组复坐标的实部和虚部, 并且这些坐标的度规定域地由方程 (\ref{26.8.5})给定, 这个条件定义了所谓的\,\emph{K\"{a}hler}\,{\kai{流形}}.\footnote{K\"{a}hler\,流形在这个背景下的重要意义%
+是\,Zumino\,的一个早期文章指出的.\cite{8} 注意, 度规在整个流形上表示成(\ref{26.8.5})的形式时不需要只来自{\kai{一个}}K\"{a}hler\,势$\,K(\phi,\phi^{\ast})$;
+唯一需要的是这个流形可以被有限多个互相重合的补片(patch)覆盖, 在每个补片上这是成立的且\,K\"{a}hler\,势不相同.
+K\"{a}hler\,流形最简单的例子是复平面, 它的\,K\"{a}hler\,势是$\,\lvert z\rvert^{2}$. 就陪集空间$\,G/H\,$是\,K\"{a}hler\,流形的例子, Zumino\,给出了$\,G=GL(p,\mathds{C})\times GL(p+q,\mathds{C})\,$而$\,H=GL(p,\mathds{C})\,$的情况, 其中$\,p\,$和$\,q\,$是任意的正整数, $GL(N,\mathds{C})\,$是非奇异\,$N\times N\,$复矩阵的群. 这里陪集空间$\,G/H\,$的复坐标$\,\phi_{n}\,$可以被取成$\,p\times(p+q)\,$复矩阵$\,A\,$的分量, 它在$\,G\,$和$\,H\,$下分别进行变换$\,A\to BAC\,$和$\,A\to BA$, 其中$\,B\,$和$\,C\,$分别是维度为$\,p\,$和$\,p+q\,$的非奇异复方阵. 这一情况下的\,K\"{a}hler\,势就是$\,K\propto \ln\operatorname{Det}AA^{\dag}$.} 在通常的$\,G/H\,${\kai{不}}是\,K\"{a}hler\,流形的情况下, 不应该认为$\,G\,$在自发破缺到$\,H\,$的同时无法保持超对称性不破缺. 在这些情况中发生的是出现了额外的无质量玻色子, 它们和\,Goldstone\,玻色子合在一起确实形成了\,K\"{a}hler\,流形.
+
+这是因为超势$\,f(\phi)\,$依赖于$\,\phi\,$但不依赖$\,\phi^{\ast}$, 所以, 如果整个拉格朗日量在整体对称群$\,G\,$下不变, 那么超势自动在$\,G\,$的复化群$\,G_{\mathds{C}}\,$不变: 如果$\,G\,$由变换$\,\exp(\mi\sum_{A}\theta_{A}t_{A})\,$构成, 其中$\,t_{A}\,$是生成元而$\,\theta_{A}\,$是任意实参量, 那么$\,G_{\mathds{C}}\,$有生成元相同但参量为任意复数$\,z_{A}\,$的变换$\,\exp(\mi\sum_{A}z_{A}t_{A})\,$构成. (例如, 如果$\,G\,$是$\,U(n)$, 那么$\,G_{\mathds{C}}\,$就是$\,GL(n,\mathds{C})$, 即所有非奇异复矩阵的群, 如果$\,G\,$是$\,SU(n)$, 那么$\,G_{\mathds{C}}\,$ 是$\,SL(n,\mathds{C})$, 即所有行列式为\,1\,的复矩阵的群.) 同理, 如果$\,f(\phi)\,$的某个驻点$\,\phi^{(0)}\,$在$\,G\,$的某个子群$\,H\,$下保持不变, 那么它在$\,G_{\mathds{C}}\,$的子群$\,H_{\mathds{C}}$------$\,H\,$的复化群------下保持不变. 无论$\,G/H\,$是不是 K\"{a}hler 流形, 复化陪集空间$\,G_{\mathds{C}}/H_{\mathds{C}}\,$总是\,K\"{a}hler\,流形.  能得出这点的原因是, $G_{\mathds{C}}/H_{\mathds{C}}\,$是$\,\phi_{n}\,$的平坦复空间的复子流形, 前者是\,K\"{a}hler\,流形, 而有一个定理保证了\,K\"{a}hler\,流形的复子流形也是\,K\"{a}hler 流形.\cite{9} 如果$\,G_{\mathds{C}}/H_{\mathds{C}}\,$被$\,\phi_{n}(z)=[\exp(\mi\sum_{A}z_{A}t_{A})\phi^{(0)}]_{n}\,$的值%
+参数化, 那么通过将它嵌入到$\,\phi_{n}\,$的平坦复空间中就能获得度规, 通常通过线元$\,\sum_{n}\dif\phi_{n}\dif\phi_{n}^{\ast}$获得.
+
+$G_{\mathds{C}}\,$确实不是整个拉格朗日量的对称性, 但是$\,G_{\mathds{C}}\,$破缺到$\,H_{\mathds{C}}\,$带出的\,Goldstone\,玻色子却是严格无质量的. 这是被\,27.6\,节的不可重整定理, 或者更简单地, 25.4\,节的结果所保证的, 即无质量零自旋粒子必须与通过超对称变换相联系的粒子成对出现, 因此对于任何与超对称对易的整体对称群$\,G$, 它们在这个群下有相同的变换.
+
+
+
+%+++++++++++++++++++++++附录A++++++
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{附 录\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{hei}\large}{\thesubsection}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+\newcounter{app26}[chapter]
+\setcounter{app26}{1}
+\renewcommand\thesection{}
+\renewcommand\theequation{\arabic{chapter}.\Alph{app26}.\arabic{equation}}
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{附录 {}\quad\ #1}{}}
+
+\section{Majorana\,旋量}
+
+这个附录总结了一些处理超场时需要的\,Majorana\,旋量的代数性质.
+
+考察像$\,Q\,$或$\,\theta\,$这样的\,4\,分量费米\,Majorana\,旋量$\,s$, 它可以表示成
+\begin{equation}
+s=\begin{pmatrix}
+e\,\varsigma^{\ast} \\ \varsigma
+\end{pmatrix} \:, \label{26.A.1}
+\end{equation}
+其中$\,\varsigma\,$是某个\,2\,分量旋量而$\,e\,$是$\,2\times2\,$矩阵
+\[
+e\equiv \begin{pmatrix}
+0 & 1 \\ -1 & 0
+\end{pmatrix} = \mi\sigma_{2} \:.
+\]
+这样的旋量与它的复共轭的关系是
+\begin{align}
+    s^{\ast} = \begin{pmatrix}
+    0 & e \\ -e & 0
+    \end{pmatrix} s = -\beta\,\gamma_{5}\,\epsilon\,s \:, \label{26.A.2}
+\end{align}
+其中$\,\epsilon\,$是$\,4\times 4\,$矩阵
+\begin{equation}
+    \epsilon \equiv \begin{pmatrix}
+    e & 0 \\ 0 & e
+    \end{pmatrix}  \label{26.A.3}
+\end{equation}
+而$\,\gamma_{5}\,$和$\,\beta\,$同往常一样是$\,4\times4\,$矩阵
+\[
+\gamma_{5}=\begin{pmatrix}
+1 & 0 \\ 0 & -1
+\end{pmatrix} \:, \qquad \quad
+\beta = \begin{pmatrix}
+0 & 1\\ 1& 0
+\end{pmatrix} \:,
+\]
+其中$\,1\,$和$\,0\,$在这里被理解成$\,2\times2\,$子矩阵. 取方程(\ref{26.A.2})的转置然后从右边乘上$\,\beta\,$就给出了等价公式
+\begin{equation}
+\bar{s} \equiv s^{\dag}\beta = s^{\mathrm{T}}\,\epsilon\,\gamma_{5}\:. \label{26.A.4}
+\end{equation}
+
+
+旋量分量的反对易系限制了能够从\,Majorana\,旋量中构造出的协变量的种类. 为了看到这点, 首先考察双线性协变量的对称性质将是方便的, 而它们自身也是有趣的. 对于一对\,Majorana\,旋量$\,s_{1}\,$和$\,s_{2}\,$以及任意$\,4\times4\,$数值矩阵$\,M$, 方程(\ref{26.A.4})给出
+\begin{align*}
+\overline{s_{1}}\,M\,s_{2} &= \sum_{\alpha\beta}s_{1\alpha}\,s_{2\beta}\,(\epsilon\,\gamma_{5}\,M)_{\alpha\beta}
+=-\sum_{\alpha\beta}s_{2\alpha}\,s_{1\beta}\,(\epsilon\,\gamma_{5}\,M)_{\beta\alpha} \\
+&=+\sum_{\alpha\beta}s_{2\alpha}\,s_{1\beta}\,(M^{\mathrm{T}}\,\epsilon\,\gamma_{5})_{\alpha\beta}
+=\overline{s_{2}}\,(\epsilon\gamma_{5})^{-1}\,M^{\mathrm{T}}\,\epsilon\gamma_{5}\,s_{1}\:,
+\end{align*}
+其中第二个等号后面的负号是因为这些旋量的费米性. 我们在\,5.4\,节发现, 从\,Dirac\,矩阵构造出来的\,16\,个协变矩阵满足
+\begin{equation}
+M^{\mathrm{T}}= \begin{cases}
++\mathscr{C}M\mathscr{C}^{-1} &\qquad M=1,\:\:\gamma_{5}\gamma_{\mu},\:\:\gamma_{5} \\
+-\mathscr{C}M\mathscr{C}^{-1} &\qquad M=\gamma_{\mu},\:\:[\gamma_{\mu},\gamma_{\nu}]
+\end{cases} \:, \label{26.A.5}
+\end{equation}
+其中$\,\mathscr{C}\,$是矩阵
+\begin{equation}
+\mathscr{C}=\gamma_{2}\beta=-\epsilon\gamma_{5}=
+\begin{pmatrix}
+-e & 0 \\ 0 & e
+\end{pmatrix} \:. \label{26.A.6}
+\end{equation}
+从它得出
+\begin{equation}
+(\overline{s_{1}}\,Ms_{2})= \begin{cases}
++(\overline{s_{2}}\,Ms_{1}) &\qquad M=1,\:\:\gamma_{5}\gamma_{\mu},\:\:\gamma_{5} \\
+-(\overline{s_{2}}\,Ms_{1}) &\qquad M=\gamma_{\mu},\:\:[\gamma_{\mu},\gamma_{\nu}]
+\end{cases} \:. \label{26.A.7}
+\end{equation}
+特别地, 令$\,s_{1}=s_{2}=s$, 我们发现
+\begin{equation}
+\bar{s}\,\gamma_{\mu}\,s=\bar{s}\,[\gamma_{\mu},\gamma_{\nu}]\,s =0 \:, \label{26.A.8}
+\end{equation}
+所以从单个\,Majorana\,旋量$\,s\,$构造出来的双线性协变量只有$\,\bar{s}\,s$, $\bar{s}\,s\gamma_{5}\gamma_{\mu}\,s\,$和$\,\bar{s}\,\gamma_{5}\,s$.
+
+在考察最一般超场的形式时, 我们需要两个或多个\,Majorana\,旋量乘积的表达式. 对于两个旋量, 我们回忆起任何$\,4\times4\,$矩阵都可以表示成\,16\,个协变矩阵$\,1$, $\gamma_{\mu}$, $[\gamma_{\mu},\gamma_{\nu}]$, $\gamma_{5}\gamma_{\mu}$, $\gamma_{5}\,$的和. Lorentz\,不变性告诉我们, 对于矩阵$\,s_{\alpha}\,\bar{s}_{\beta}$, 这个表达式必须采取如下的形式
+\begin{align*}
+s\,\bar{s} &= k_{S}\,(\bar{s}\,s) + k_{V}\,\gamma_{\mu}\,(\bar{s}\,\gamma^{\mu}\,s)
++k_{T}\,[\gamma_{\mu},\gamma_{\nu}]\,(\bar{s}\,[\gamma^{\mu},\gamma^{\nu}]\,s) \\
+&\quad +k_{A}\,\gamma_{5}\gamma_{\mu}\,(\bar{s}\,\gamma_{5}\gamma^{\mu}\,s)
++k_{P}\,\gamma_{5}\,(\bar{s}\,\gamma_{5}\,s) \:,
+\end{align*}
+其中这些$\,k\,$是需要决定的常数. 方程(\ref{26.A.8})表明我们可以取$\,k_{V}=k_{T}=0$. 通过从右边乘上$\,1$, $\gamma_{5}\gamma^{\mu}\,$和$\,\gamma_{5}\,$然后在取迹, 我们可以计算出剩下的系数, 这个方法给出$\,k_{S}=-1/4$, $k_{A}=+1/4$\, 和$\,k_{P}=-1/4$. 以这种方法, 我们发现
+\begin{equation}
+s\,\bar{s} = -\tfrac{1}{4}(\bar{s}\,s) + \tfrac{1}{4}\gamma_{5}\gamma_{\mu}\,(\bar{s}\,\gamma_{5}\gamma^{\mu}\,s)
+-\tfrac{1}{4}\gamma_{5}\,(\bar{s}\,\gamma_{5}\,s) \:. \label{26.A.9}
+\end{equation}
+通过给右边乘上$\,-\epsilon\gamma_{5}\,$并使用方程(\ref{26.A.4}), 我们可以将其变成如下形式
+\begin{equation}
+s_{\alpha}\,s_{\beta}= \tfrac{1}{4}(\epsilon\gamma_{5})_{\alpha\beta}\,(\bar{s}\,s)
++\tfrac{1}{4}(\gamma_{\mu}\epsilon)_{\alpha\beta}\,(\bar{s}\,\gamma_{5}\gamma^{\mu}\,s)
++\tfrac{1}{4}\epsilon_{\alpha\beta}\,(\bar{s}\,\gamma_{5}\,s) \:, \label{26.A.10}
+\end{equation}
+或者, 等价地,
+\begin{equation}
+s_{\alpha}\,s_{\beta}= \tfrac{1}{4}(\epsilon\gamma_{5})_{\alpha\beta}\,(s^{\mathrm{T}}\,\epsilon\,\gamma_{5}\,s)
++\tfrac{1}{4}(\gamma_{\mu}\epsilon)_{\alpha\beta}\,(s^{\mathrm{T}}\,\epsilon\,\gamma^{\mu}\,s)
++\tfrac{1}{4}\epsilon_{\alpha\beta}\,(s^{\mathrm{T}}\,\epsilon\,s)\:. \label{26.A.11}
+\end{equation}
+
+现在, 考察\,Majorana\,旋量$\,s\,$的\,3\,个分量的乘积$\,s_{\alpha}s_{\beta}s_{\gamma}$. 我们可以把$\,s\,$分成左手部分和右手部分
+\begin{equation}
+s=s_{L}+s_{R}\:, \qquad s_{L} = \tfrac{1}{2}(1+\gamma_{5})s\:, \qquad
+s_{R}=\tfrac{1}{2}(1-\gamma_{5})s\:. \label{26.A.12}
+\end{equation}
+$s_{L}\,$和$\,s_{R}\,$都只有两个独立分量, 又因为任何费米\,c\,-数的平方为零, 所以对于所有$\,\alpha$, $\beta\,$和$\,\gamma$, 我们有$\,s_{L\alpha}s_{L\beta}s_{L\gamma}=0\,$和$\,s_{R\alpha}s_{R\beta}s_{R\gamma}=0$, 因此
+\[
+s_{\alpha}s_{\beta}s_{\gamma} = s_{L\alpha}s_{L\beta}s_{L\gamma}+s_{L\alpha}s_{R\beta}s_{L\gamma}
++s_{R\alpha}s_{L\beta}s_{L\gamma} + L\leftrightarrow R\:,
+\]
+其中``$ \,L{\leftrightarrow }R\,$''表示对前面的项交换$\,L\,$和$\,R\,$指标后的和. 为了计算这个表达式, 我们给方程(\ref{26.A.11}) 乘上合适的因子$\,(1+\gamma_{5})/2$, 并发现
+\[
+s_{L\alpha}\,s_{L\beta}= \tfrac{1}{4}[\epsilon(1+\gamma_{5})]_{\alpha\beta}\,(s_{L}^{\mathrm{T}}\epsilon s_{L})\:.
+\]
+如果我们现在给它乘上$\,s_{R\gamma}$, 由于$\,(s_{R}^{\mathrm{T}}\epsilon s_{R})\,s_{R\gamma}=0$, 我们可以扔掉双线性型$\,(s_{L}^{\mathrm{T}}\epsilon s_{L})\,$中旋量上的指标$\,L$:
+\[
+s_{L\alpha}\,s_{L\beta}\,s_{R\gamma}=\tfrac{1}{4}[\epsilon(1+\gamma_{5})]_{\alpha\beta}
+\,(s^{\mathrm{T}}\,\epsilon\, s)\,s_{R\gamma} \:.
+\]
+相同的讨论也给出
+\[
+s_{R\alpha}\,s_{L\beta}\,s_{L\gamma}=\tfrac{1}{4}[\epsilon(1-\gamma_{5})]_{\alpha\beta}
+\,(s^{\mathrm{T}}\,\epsilon\, s)\,s_{L\gamma} \:.
+\]
+对这个两个表达式求和, 再将结果中的$\,\gamma\,$换成$\,\alpha\,$或$\,\beta$, 把所有这些加起来最后给出
+\begin{align}
+    s_{\alpha}s_{\beta}s_{\gamma} &= \tfrac{1}{4}\Bigl(s^{\mathrm{T}}\epsilon s\Bigr)
+    \Bigl[ \epsilon_{\alpha\beta}\,s_{\gamma}- (\epsilon\gamma_{5})_{\alpha\beta}\,(\gamma_{5}s)_{\gamma}
+    -\epsilon_{\alpha\gamma}\,s_{\beta} \nonumber \\
+    &\quad +(\epsilon\gamma_{5})_{\alpha\gamma}\,(\gamma_{5}s)_{\beta} +\epsilon_{\beta\gamma}\,s_{\alpha}
+    -(\epsilon\gamma_{5})_{\beta\gamma}\,(\gamma_{5}s)_{\alpha}\Bigr]\:. \label{26.A.13}
+\end{align}
+
+
+为了计算\,4\,个\,Majorana\,旋量分量的乘积, 我们注意到$\,(s^{\mathrm{T}}\epsilon s)\,$只包含两个$\,s_{L}\,$的项或两个$\,s_{R}\,$的项, 所以
+\[
+(s^{\mathrm{T}}\epsilon s)s_{\gamma}s_{\delta} = (s^{\mathrm{T}}\epsilon s)
+[s_{R\gamma}s_{R\delta}+s_{L\gamma}s_{L\delta}] \:.
+\]
+利用方程(\ref{26.A.11})计算方括号中的和, 并注意到
+\[
+(s^{\mathrm{T}}\epsilon s)(s^{\mathrm{T}}\epsilon\gamma_{5} s)
+=(s_{L}^{\mathrm{T}}\epsilon s_{L})(s_{R}^{\mathrm{T}}\epsilon s_{R})
+-(s_{R}^{\mathrm{T}}\epsilon s_{R})(s_{L}^{\mathrm{T}}\epsilon s_{L})=0 \:,
+\]
+我们发现
+\begin{equation}
+    (s^{\mathrm{T}}\epsilon s)s_{\gamma}s_{\delta}
+    = \tfrac{1}{4}\,\epsilon_{\gamma\delta}(s^{\mathrm{T}}\epsilon s)^{2} \:. \label{26.A.14}
+\end{equation}
+因此给方程(\ref{26.A.13})乘上$\,s_{\delta}\,$就给出结果
+\begin{align}
+    s_{\alpha}s_{\beta}s_{\gamma}s_{\delta} &= \tfrac{1}{16}\Bigl(s^{\mathrm{T}}\epsilon s\Bigr)^{2}
+    \Bigl[\epsilon_{\alpha\beta}\,\epsilon_{\gamma\delta}-
+    (\epsilon\gamma_{5})_{\alpha\beta}\,(\epsilon\gamma_{5})_{\gamma\delta}-
+    \epsilon_{\alpha\gamma}\,\epsilon_{\beta\delta} \nonumber \\
+    &\quad +(\epsilon\gamma_{5})_{\alpha\gamma}\,(\epsilon\gamma_{5})_{\beta\delta}
+    + \epsilon_{\beta\gamma}\,\epsilon_{\alpha\delta}-
+    (\epsilon\gamma_{5})_{\beta\gamma}\,(\epsilon\gamma_{5})_{\alpha\delta}\Bigr]\:. \label{26.A.15}
+\end{align}
+五个\,$s\,$分量的任意乘积都为零, 所以这样就列完了\,Majorana\,旋量分量的乘积公式.
+
+我们可以用这些公式推导一些在处理超场时有用的加法关系. 通过用$\,(\epsilon\gamma_{5})_{\beta\gamma}\,$和$\,(\epsilon\gamma_{\mu})_{\beta\gamma}\,$收%
+缩方程(\ref{26.A.13}), 我们发现
+\begin{equation}
+    s_{\alpha}\,\Bigl(\bar{s}\,s\Bigr) =-(\gamma_{5}\,s)_{\alpha}\Bigl(\bar{s}\,\gamma_{5}\,s\Bigr)\label{26.A.16}
+\end{equation}
+和
+\begin{equation}
+    s_{\alpha}\,\Bigl(\bar{s}\,\gamma_{5}\gamma_{\mu}\,s\Bigr)= -(\gamma_{\mu}\,s)_{\alpha}
+    \Bigl(\bar{s}\,\gamma_{5}\,s\Bigr) \:. \label{26.A.17}
+\end{equation}
+我们可以从方程(\ref{26.A.16})和(\ref{26.A.17})导出``Fierz''恒等式
+\begin{equation}
+    \Bigl(\bar{s}\,s\Bigr)^{2}=-\Bigl(\bar{s}\,\gamma_{5}\,s\Bigr)^{2}\:, \qquad
+    \Bigl(\bar{s}\,\gamma_{5}\gamma_{\mu}\,s\Bigr)\Bigl(\bar{s}\,\gamma_{5}\gamma_{\nu}\,s\Bigr)
+    =-\eta_{\mu\nu}\Bigl(\bar{s}\,\gamma_{5}\,s\Bigr)^{2} \:. \label{26.A.18}
+\end{equation}
+另外, 方程(\ref{26.A.14})可以写成协变形式
+\begin{equation}
+    (\bar{s}\,\gamma_{5}\,s)^{2}\,s\,\bar{s} = -\tfrac{1}{4}\gamma_{5}\,(\bar{s}\,\gamma_{5}\,s)^{2}\:.\label{26.A.19}
+\end{equation}
+
+标明\,Majorana\,旋量双线性积的实性质也将是有用的. 对于任何一对满足相位约定(\ref{26.A.1})的\\\,Majorana\,旋量$\,s_{1}\,$和$\,s_{2}$, 方程(\ref{26.A.2})和(\ref{26.A.4})给出
+\[
+(\overline{s_{1}}\,M\,s_{2})^{\ast} = -(s_{1}^{\dag}\epsilon\gamma_{5}\,M^{\ast}\,s_{2}^{\ast})
+=(\overline{s_{1}}\,\beta\,\epsilon\,\gamma_{5}\,M^{\ast}\,\beta\,\epsilon\,\gamma_{5}\,s_{2})\:.
+\]
+(中间表达式的负号来自于我们撤销了$\,s_{1}\,$和$\,s_{2}\,$的交换, 这会在我们取复共轭时发生.) 但是方程 (\textcolor{foo}{5.4.40})和(\ref{26.A.6})给出$\,\beta\epsilon\gamma_{5}\gamma_{\mu}^{\ast}\beta%
+\epsilon\gamma_{5}=\gamma_{\mu}$, 所以
+\begin{equation}
+    \beta\,\epsilon\,\gamma_{5}\,M^{\ast}\,\beta\,\epsilon\,\gamma_{5}=
+    \begin{cases}
+    +M &\qquad M=1,\:\:\gamma_{\mu},\:\:[\gamma_{\mu},\gamma_{\nu}] \\
+    -M &\qquad M=\gamma_{\mu}\gamma_{5},\:\:\gamma_{5}
+    \end{cases} \:, \label{26.A.20}
+\end{equation}
+因此
+\begin{equation}
+(\overline{s_{1}}\,M\,s_{2})^{\ast}= \begin{cases}
++(\overline{s_{1}}\,M\,s_{2}) &\qquad M=1,\:\:\gamma_{\mu},\:\:[\gamma_{\mu},\gamma_{\nu}]  \\
+-(\overline{s_{1}}\,M\,s_{2}) &\qquad M=\gamma_{\mu}\gamma_{5},\:\:\gamma_{5}
+\end{cases} \:. \label{26.A.21}
+\end{equation}
+
+最后我们提一下, 任何旋量$\,u\,$都可以写成一对\,Majorana\,旋量$\,s_{\pm}$
+\begin{equation}
+u=s_{+}+\mi\,s_{-} \:, \label{26.A.22}
+\end{equation}
+其中
+\begin{equation}
+s_{+} \equiv \frac{1}{2}\Bigl(u-\beta\epsilon\gamma_{5}u^{\ast}\Bigr) \:, \qquad \quad
+s_{-} \equiv \frac{1}{2\mi}\Bigl(u+\beta\epsilon\gamma_{5}u^{\ast}\Bigr) \:.\label{26.A.23}
+\end{equation}
+为了验证$\,s_{\pm}\,$是满足方程(\ref{26.A.2})的\,Majorana\,旋量, 只需回忆起$\,\beta\epsilon\gamma_{5}\,$是实的, 以及$\,(\beta\epsilon\gamma_{5})^{2}=1$.
+
+
+
+\section*{习题}
+\noindent 1. 在$\,N=2\,$超对称的情况下, 利用\,26.1\,节的直接技巧, 找到只有一个\,Majorana\,旋量场和两个复标量场的有质量场超多重态的超对称变换规则. \\
+
+\noindent 2. 计算时间反演超场
+\[
+\mathsf{T}^{-1}S(x,\theta)\mathsf{T}
+\]
+的分量场, 将它们写成超场$\,S(x,\theta)\,$的分量场的形式. 对于左手征超场的时间反演, 我们得到了哪类超场? 对于线性超场又是什么?
+\\
+
+\noindent 3. 考察单个左手征超场$\,\Phi\,$的$\,N=1\,$超对称理论. 在超场的符号约定下, 列出所有包含$\,\Phi$\,和(或)$\,\Phi^{\ast}\,$且量纲为\,5\,的可以加到拉格朗日密度上的项. \\
+
+\noindent 4. 考察三个左手征超场$\,\Phi_{1}$, $\Phi_{2}\,$和$\,\Phi_{3}\,$的理论, 它有通常的动能项, 以及超势
+\[
+f(\Phi_{1},\Phi_{2},\Phi_{3})=\Phi_{1}\Phi_{3}^{2}+\Phi_{2}\Bigl(\Phi_{3}^{2}+a\Bigr) \:,
+\]
+其中$\,a\,$是一个非零实常数. 证明这是一个超对称自发破缺的理论. 找到势能的最小值. 将戈德斯通微子的场表示成$\,\Phi_{1}$, $\Phi_{2}\,$和$\,\Phi_{3}\,$的费米分量. \\
+
+\noindent 5. 对于作用量(\ref{26.6.9}), 找到流超场的所有分量, 将它们写成左手征超场$\,\Phi\,$的分量, 超势\,$f\,$的导数以及\,K\"{a}hler\,势$\,K\,$的形式. \\
+
+\noindent 6. 验证方程(\ref{26.7.18})和(\ref{26.7.10})给出的超对称流与超场(\ref{26.7.21})的$\,\omega\,$-分量%
+通过方程(\ref{26.7.20})相关联.
+
+
+
+
+
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+    \bibitem{1} A. Salam and J. Strathdee, {\textit{Nucl. Phys.}} {\bf{B76}}, 477 (1974). 这篇文章重印于{\textit{Supersymmetry}}, S. Ferrar\,编辑(North Holland/World Scientific, Amsterdam/Singapore, 1987).
+    \bibitem{2} J. Wess and B. Zumino, {\textit{Nucl. Phys.}} {\bf{B70}}, 13 (1974). 这篇文章重印于{\textit{Supersymmetry}}, 参考文献[1].
+    \bibitem{3} L. O'Raifeartaigh, {\textit{Nucl. Phys.}} {\bf{B96}}, 331 (1975). 这篇文章重印于{\textit{Supersymmetry}}, 参考文献[1].
+    \bibitem{4} F. A. Berezin, {\textit{The Method of Second Quantization}} (Academic Press, New York, 1966).
+    \bibitem{5} J. Iliopoulos and B. Zumino, {\textit{Nucl. Phys.}} {\bf{B76}}, 310 (1974); S. Ferrara and B.Zumino, {\textit{Nucl. Phys.}} {\bf{B87}}, 207 (1975). 这些文章重印于{\textit{Supersymmetry}}, 参考文献[1].
+    \bibitem{6} 这一节沿用的是\,S. Ferrara\,和\,B. Zumino\,的方法, 参考文献[5].
+    \bibitem{7} X. Gr\`{a}cia and J. Pons, {\textit{J. Phys.}} {\bf{A25}}, 6357 (1992). 在此感谢\,J. Gomis\,建议我使用比对$\,\ddot{q}^{n}\,$系数的方程.
+    \bibitem[7a]{7a} M. Grisaru, in {\textit{Recent Developments in Gravitation - Garg\`{e}se 1978}}, M. L\'{e}vy and S. Deser\,编辑(Plenum Press, New York, 1979): 577.
+    \bibitem{8} B. Zumino, {\textit{Phys. Lett.}} {\bf{87B}}, 203 (1979). 这篇文章重印于{\textit{Supersymmetry}}, 参考文献[1].
+    \bibitem{9} P. Griffiths and J. Harris, {\textit{Principles of Algebraic Geometry}} (Wiley, New York, 1978): 109. 在此感谢\,D. Freed\,告诉我这个一般定理的应用.
+\end{thebibliography}

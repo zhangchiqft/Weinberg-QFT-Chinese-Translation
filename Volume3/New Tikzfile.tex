@@ -1,0 +1,217 @@
+\documentclass{article}
+\usepackage{tikz,amsmath,amssymb,bm,color}
+\usepackage[margin=0cm,nohead]{geometry}
+\usepackage[active,tightpage]{preview}
+%\usepackage{xcolor}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{calc}
+%\usetikzlibrary{decorations.markings}
+% needed for BB
+
+
+\PreviewEnvironment{tikzpicture}
+
+\begin{document}
+
+% \begin{tikzpicture}
+
+% \draw[thick] (-4,1) -- (1.5,1);
+% \draw[thick] (-4,-0.5) -- (1.5,-0.5);
+
+% \draw (0.5,1.1) -- (0.7,1) -- (0.5,0.9);
+% \draw (-1.3,1.1) -- (-1.1,1) -- (-1.3,0.9);
+% \draw (-3.1,1.1) -- (-2.9,1) -- (-3.1,0.9);
+
+% \draw (0.7,-0.4) -- (0.5,-0.5) -- (0.7,-0.6);
+% \draw (-1.1,-0.4) -- (-1.3,-0.5) -- (-1.1,-0.6);
+% \draw (-2.9,-0.4) -- (-3.1,-0.5) -- (-2.9,-0.6);
+
+% \draw[thick,decorate, decoration=snake] (-2.2,1) -- (-2.2,-0.5);
+% \draw[thick,decorate, decoration=snake] (-0.2,1) -- (-0.2,-0.5);
+
+% \node at (-3.1,-0.8) {$s_L$};
+% \node at (-3.1, 1.3) {$d_L$};
+% \end{tikzpicture}
+
+% \begin{tikzpicture}[scale=1.7]
+%     \draw [<-,thick] (0,0) to [out=80,in=180] (1,1);
+%     \draw [<-,thick] (0.95,1) to [out=0,in=100] (2,0);
+%     \draw [thick] (0.005,0.05) to [in=-100, out=-95] (0.85,-1);
+%     \draw[->, thick] (1.15,-1) to [in=-85,out=-80] (1.995,0.05);
+%     \draw[->,thick] (0.85,-1) to (0.9,-0.3);
+%     \draw[thick] (0.9,-0.302) to [in=-120,out=85](1,0.3);
+%     \draw[->, thick] (1,0.3) to [in=95,out=-60](1.1,-0.302);
+%     \draw [thick] (1.1,-0.3) to (1.15,-1);
+%     \filldraw(1,0.3) circle (1.3 pt) node[right=4pt,above] {$P$};
+%     \filldraw (0.5,0) circle (1 pt) node[below] {$-u_{0}$};
+%     \filldraw (1.5,0) circle (1 pt) node[below] {$+u_{0}$};
+% \end{tikzpicture}
+
+\begin{tikzpicture} 
+    \draw[->,thick] (-1,1) -- (0,1);
+    \draw[thick] (-0.1,1) -- (1,1);
+    \draw[->,thick] (1,1)-- (1,0);
+    \draw[thick] (1,0.1) -- (1,-1); 
+    \draw[->, thick] (1,-1) -- (0,-1);
+    \draw[thick] (0.1,-1) -- (-1,-1 ); 
+    \draw[->,thick] (-1,-1) -- (-1,0);
+    \draw[thick] (-1,-0.1) -- (-1,1);
+    \draw[->,thick] (-1,1) -- (-1.5,1.5);   \draw[thick] (-1.4,1.4)-- (-1.9,1.9);
+    \draw[->,thick] (1,1) -- (1.5,1.5);     \draw[thick] (1.4,1.4) -- (1.9,1.9);
+    \draw[->,thick] (1,-1) -- (1.5,-1.5);     \draw[thick] (1.4,-1.4) -- (1.9,-1.9);
+    \draw[->,thick] (-1,-1) -- (-1.5,-1.5);     \draw[thick] (-1.4,-1.4) -- (-1.9,-1.9);
+    \node at (-2.1,2.1) {\large $p_{1}$}; \node at (2.1,2.1) {\large $p_{2}$};
+    \node at (2.1,-2.1) {\large $p_{3}$}; \node at (-2.1,-2.1) {\large $p_{4}$};
+    \node at (-1.3,0) {\large $\ell$};
+\end{tikzpicture}   
+
+
+\begin{tikzpicture}
+    \node (v2) at (-3,2.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=1.5mm]  {};
+    \node (v1) at (-1,4) [circle,draw=black,fill=black,inner sep=0pt,minimum size=1.5mm] {};
+    \node (v6) at (1,2.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=1.5mm] {};
+    \node (v3) at (-3,-0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=1.5mm] {};
+    \node (v4) at (-1.5,-2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=1.5mm] {};
+    \node (v5) at (1,-0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=1.5mm]  {};
+    \draw[dashed]   (v1) -- (v2);
+    \draw[dashed]  (v2)-- (v3);
+    \draw[dashed]  (v3) -- (v4);
+    \draw[dashed]  (v5) -- (v4);
+    \draw[dashed]  (v6) -- (v5);
+    \draw[dashed]  (v1) -- (v6);
+    \node at (-3.4,2.6) {\large $x_{2}$};
+    \node at (-1,4.3) {\large $x_{3}$};
+    \node at (1.6,-0.6) {\large $x_{n-1}$};
+    \node at (-1.4,-2.3) {\large $x_{n}$};
+    \node at (-3.4,-0.6) {\large $x_{1}$};
+    \draw[->,thick] (-2,1)--(-4,1);
+    \draw[->,thick] (-1,1)--(-2.7,3.7);
+    \draw[->,thick] (-1,1)--(0.7,3.7);
+    \draw[->,thick] (-1,1)--(2,1);
+    \draw[->,thick] (-1,1)--(0.3,-1.7);
+    \draw[->,thick] (-1,1)--(-2.7,-1.7);
+    \filldraw[draw=black,fill=cyan,thick] (-1,1) ellipse (1 and 1);
+    \node at (-4.3,1) {\large $p_{1}$};
+    \node at (-2.9,3.8) {\large $p_{2}$};
+    \node at (-2.9,-1.9) {\large $p_{n}$};
+    \node at (0.5,-1.9) {\large $p_{n-1}$};
+    \node at (1.4,3.1) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.7mm] {};
+    \node at (1.5,2.8) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.7mm] {};
+    \node at (1.6,2.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.7mm] {};
+    \end{tikzpicture}
+
+
+    \begin{tikzpicture}[thick]
+    \begin{scope}
+        \node (v1) at (-3,0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=left:$1$]] {};
+        \node (v4) at (-1,4) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=above:$4$] {};
+        \node (v5) at (1,-0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$5$]  {};
+        \node (v3) at (1,2)[circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$3$]  {};
+        \node (v6) at (-1,-2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=below:$6$] {};
+        \draw  (v1) -- (v5) -- (v3);
+        %\draw[densely dashed] (v1)--(v3);
+        \draw  (v4) edge (v1);
+        \draw  (v4) edge (v3);
+        \draw  (v4) edge (v5);
+        \draw  (v1) edge (v6);
+        \draw  (v5) edge (v6);
+        %\draw  (v3) edge (v6);
+    \end{scope}
+        \node at (2,1) {\Large $=$};
+        \begin{scope}[shift={(6,0)}]
+            \node (v1) at (-3,0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=left:$1$]] {};
+            \node (v4) at (-1,4) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=above:$4$] {};
+            \node (v5) at (1,-0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$5$]  {};
+            \node (v3) at (1,2)[circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$3$]  {};
+            \node (v6) at (-1,-2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=below:$6$] {};
+            \draw  (v1) -- (v5) -- (v3);
+            \draw[densely dashed] (v1)--(v3);
+            \draw  (v4) edge (v1);
+            \draw  (v4) edge (v3);
+            \draw  (v4) edge (v5);
+            \draw  (v1) edge (v6);
+            \draw  (v5) edge (v6);
+            %\draw  (v3) edge (v6);
+        \end{scope}
+        \node at (8,1) {\Large $=$};
+        \begin{scope}[shift={(12,0)}]
+            \node (v1) at (-3,0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=left:$1$]] {};
+            \node (v4) at (-1,4) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=above:$4$] {};
+            \node (v5) at (1,-0.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$5$]  {};
+            \node (v3) at (1,2)[circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$3$]  {};
+            \node (v6) at (-1,-2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=below:$6$] {};
+            \draw  (v1) -- (v5) -- (v3);
+            \draw[densely dashed] (v1)--(v3);
+            \draw  (v4) edge (v1);
+            \draw  (v4) edge (v3);
+            \draw  (v4) edge (v5);
+            \draw  (v1) edge (v6);
+            \draw  (v5) edge (v6);
+            \draw[densely dashed]   (v3) edge (v6);
+            \draw[densely dashed]   (v4) edge (v6);
+        \end{scope}
+        \end{tikzpicture}
+
+
+\begin{tikzpicture}[thick]
+ \draw [densely dashed] (3,1.5)--(3,4.5); 
+ \draw [densely dashed] (-1.5,0)--(1.5,0);
+ \draw [densely dashed] (3,-1.5)--(3,-4.5);
+ \draw [densely dashed] (4.5,0)--(7.5,0);
+ \draw[very thick] (0,3)--(2.7,3);
+ \draw[very thick] (0,3)-- (-0.5,5.5);
+ \draw[very thick] (0,3)-- (-2.5,3.5);
+ \draw[very thick] (3.3,3)--(6,3);
+ \draw[very thick] (6,3) -- (6,0.3);
+ \draw[very thick] (6,3) -- (6.5,5.5);
+ \draw[very thick] (6,3) -- (8.5,3.5);
+ \draw[very thick] (6,-0.3) -- (6,-3);
+ \draw[very thick] (6,-3) -- (3.3,-3);
+ \draw[very thick] (6,-3) -- (8.5,-3.5);
+ \draw[very thick] (6,-3) -- (6.5,-5.5);
+ \draw[very thick] (2.7,-3)--(0,-3);
+ \draw[very thick] (0,-3)--(0,-0.3);
+ \draw[very thick] (0,-3)--(-2.5,-3.5);
+ \draw[very thick] (0,-3)--(-0.5,-5.5);
+ \draw[very thick] (0,0.3)--(0,3);
+ \draw  (0,3) ellipse (1 and 1) [fill=white];
+ \draw  (6,3) ellipse (1 and 1) [fill=white];
+ \draw  (0,-3) ellipse (1 and 1) [fill=white];
+ \draw  (6,-3) ellipse (1 and 1) [fill=white];
+ \node at (-1.5,3.9) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (-1.3,4.3) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (-0.9,4.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (7.5,3.9) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (7.3,4.3) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (6.9,4.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (7.5,-3.9) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (7.3,-4.3) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (6.9,-4.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (-1.5,-3.9) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (-1.3,-4.3) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (-0.9,-4.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.8mm] {};
+ \node at (0,3) {\Large Tree};
+ \node at (6,3) {\Large Tree};
+ \node at (0,-3) {\Large Tree};
+ \node at (6,-3) {\Large Tree};
+\end{tikzpicture}
+
+    
+    %     \node (v1p) at (3,2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=left:$1$]] {};
+    %     \node (v4p) at (5,5.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=above:$4$] {};
+    %     \node (v5p) at (7,1) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$5$]  {};
+    %     \node (v3p) at (7,3.5)[circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$3$]  {};
+    %    % \node (v6) at (-1,-2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=below:$6$] {};
+
+    %     \draw (v1p)-- (v5p) -- (v3p);
+    %     \draw[densely dashed] (v1p)--(v3p);
+    %     \draw (v4p) -- (v1p);  \draw (v4p) -- (v5p);  \draw (v4p) -- (v3p);
+
+    %     \node (v1pp) at (3,-1) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=left:$1$]] {};
+    %   % \node (v4p) at (5,5.5) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=above:$4$] {};
+    %     \node (v5pp) at (7,-2) [circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$5$]  {};
+    %     \node (v3pp) at (7,0.5)[circle,draw=black,fill=black,inner sep=0pt,minimum size=0.2mm,label=right:$3$]  {};
+    %     \draw (v1pp)-- (v5pp) -- (v3pp) -- (v1pp);
+\end{document}

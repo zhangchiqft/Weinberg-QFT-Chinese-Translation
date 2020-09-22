@@ -1,0 +1,750 @@
+
+\chapter{高维中的超对称代数} \label{cha:32}
+
+自\,Kaluza\cite{1}和\,Klein\cite{2}的开创性工作起, 理论家们时不时地尝试在高于四维的时空中建立更加基本的物理理论. 这个方法在在\,10\,维时空中采取最简单形式的弦理论\cite{3}中复兴了. 稍近一些, 有人提出弦论的各个版本可能被统一进一个理论中, 即$\,M$\,{\kai{理论}}, 这个理论的一个极限可以用\,11\,维时空中的超引力近似描述.\cite{4} 在本章, 我们将对高维中不同类型的超对称代数进行编录, 并用它们来分类粒子的超多重态. 
+
+\section{一般超对称代数}  \label{sec:32.1}
+
+我们对高维中的一般超对称代数的分析将沿用\,\ref{25.2}\,节中所讨论的\,Haag, Lopuszanski\,和\,Sohnius 对四维时空超对称代数采用的逻辑. 第\,\ref{cha:24}\,章末尾\,Coleman--Mandula\,定义的证明表明, 当时空维数$\,d>2\,$时, 可能的玻色超对称生成元与四维中的相同: 在粒子的一个$\,S$-矩阵理论中, 只有动量\,$d$-矢$\,P^{\mu}$, Lorentz\,生成元$\,J^{\mu\nu}=-J^{\nu\mu}\,$(其中$\,\mu\,$和$\,\nu\,$这里的取值范围是$\,1,2,\cdots,d{-}1,0$), 以及各种\,Lorentz\,标量``荷''. (在一些理论中存在点粒子以外的在拓扑上稳定的扩展物体, 例如闭弦、膜等, 我们会在\,\ref{sec:32.3}节回到这点.) 费米对称性生成元彼此之间的反对易子是玻色对称性生成元, 因而必须是$\,P^{\mu}$, $J^{\mu\nu}\,$和各种守恒标量的线性组合. 这给费米生成元的\,Lorentz\,变换性质以及它们所属的超代数附加了几个限制.
+
+我们首先将证明一般费米对称性生成元将按照\,Lorentz\,群的基础旋量表示进行变换, 而不是更高的旋量表示, 例如那些通过给旋量加上矢量指标获得的, 我们会在本章附录简单回顾基础旋量表示. 正如我们在\,\ref{sec:25.2}\,节看到的, Haag, Lopuszanski\,和\,Sohnius\,对$\,d=4\,$给出的证明使用了$\,SO(4)$ 与$\,SU(2)\times SU(2)\,$同构, 而这在高维中没有类似物. 这里我们将使用\,Nahm\,的一个讨论,\cite{6} 这个讨论实际上更加简单并且适用于任何维度.
+
+由于任何费米对称性生成元的\,Lorentz\,变换是另一个费米对称性生成元, 费米对称性生成元构成了齐次\,Lorentz\,群$\,O(d{-}1,1)\,$的一个表示(或者, 更严格地说, 是其覆盖群$\,Spin(d{-}1,1)\,$的一个表示). 假定费米对称对称性生成元的个数至多是有限多个, 它们必须按照齐次\,Lorentz\,群的有限维表示进行变换. 通过设$\,x^{d}=\mi x^{0}$, 所有这些表示可以从相应的正交群$\,O(d)\,$(实际上是$\,Spin(d)$)的有限维{\kai{幺正}}表示获得. 所以我们先来考虑费米生成元在$\,O(d)\,$下的变换. 当$\,d\,$为偶或奇时, 我们可以找到$\,d/2\,$或$\,(d{-}1)/2\,$个\,Lorentz\,生成元$\,J_{d1},J_{23},J_{45},\cdots$, 它们必须对易, 并且根据湮灭费米生成元$\,Q\,$的值$\,\sigma_{d1},\sigma_{23},\cdots\,$对$\,Q\,$做了分类:
+\begin{equation}
+    [J_{d1},Q]=-\sigma_{d1}Q \:, \qquad [J_{23},Q]= -\sigma_{23}Q \:, \qquad [J_{45},Q] = -\sigma_{45}Q\:,\cdots\:. \label{32.1.1}
+\end{equation}
+由于$\,O(d)\,$的有限维表示都是幺正的, 这些$\,\sigma\,$都是实的.
+
+我们先集中在其中一个量子数上, $\sigma_{d1}\equiv w$, 对任何费米或玻色算符$\,O$, 如果
+\begin{equation}
+    [J_{d1},O]=-w\,O \:, \label{32.1.2}
+\end{equation}
+或者表示成\,Minkowski\,分量$\,J_{01}=\mi J_{d1}$, 
+\begin{equation}
+    [J_{01},O] = -\mi w\, O \:, \label{32.1.3}
+\end{equation}
+我们称它的{\kai{权}}为$\,w$. 集中于这个特定的量子数是因为它对一个算符及其厄米共轭有相同的值这个特殊性质. 这是因为, $J_{01}\,$在\,Hilbert\,空间(尽管不是场变量或对称性生成元的空间)上必须被厄米算符表示, 这使得(回忆起$\,w\,$是实的)方程(\ref{32.1.3})的厄米共轭是
+\begin{equation}
+    {-}[J_{01},O^{\ast}]=+\mi wO^{\ast} \:, \label{32.1.4}
+\end{equation}
+所以$\,O^{\ast}\,$的权和$\,O\,$相同.
+
+现在考虑任意费米对称性生成元$\,Q\,$与其厄米共轭的反对易子$\,\{Q,Q^{\ast}\}$. 根据\,Coleman--Mandula 定理, 它至多是$\,P_{\mu}$, $J_{\mu\nu}\,$和标量的线性组合. 为了计算$\,P_{\mu}\,$各分量的权, 我们回忆起对易关系(\textcolor{foo}{2.4.13})
+\[
+\mi[P_{\mu},J_{\rho\sigma}] = \eta_{\eta\rho}P_{\sigma} - \eta_{\mu\sigma}P_{\rho} \:,
+\]
+这表明$\,P_{0}\pm P_{1}\,$的权$\,w=\pm 1$, 而其他分类$\,P_{2},P_{3},\cdots,P_{d-1}\,$的权均为零. 以同样的方法, $J_{\mu\nu}\,$彼此之间的对易关系(\textcolor{foo}{2.4.12})表明$\,i=2,3,\cdots,d{-}1\,$的$,J_{0i}\pm J_{1i}\,$的权$\,w=\pm 1$, 而$\,i\,$和$\,j\,$均在$\,2\,$和$\,d{-}1\,$之间的$\,J_{ij}\,$的权为零, $J_{10}\,$的权为零, 所有标量的权显然为零. 我们由此得出所有玻色对称性生成元的权是$\,\pm 1\,$或\,0\,以及反对易子$\,\{Q,Q^{\ast}\}\,$必须是权取这些值的算符的线性组合. 如果$\,Q\,$的权为$\,w$, 那么$\,\{Q,Q^{\ast}\}\,$的权就是$\,2w$, 并且对任何非零的$\,Q$, 它显然不为零, 所以每个费米生成元的权只能是 $\pm 1/2$. (权为零被自旋统计关系排除了------费米算符只能用奇数个权为半整数的算符构造.) 回到欧几里得体系, 由于在$\,O(d)\,$的表示下所有生成元$\,Q\,$与特定$\,O(d)\,$生成元$\,J_{01}\,$的对易子由$\,w=\pm 1/2\,$的方程(\ref{32.1.2})给出, 又因为\,01\,平面并没有什么特殊之处, $O(d)\,$对称性要求这对所有$\,O(d)\,$生成元$\,J_{ij}\,$都成立, 这使得方程(\ref{32.1.1})中的所有$\,\sigma\,$都是$\,\pm 1/2$. 在齐次\,Lorentz\,群的不可约表示中, 所有$\,\sigma\,$等于$\,\pm 1/2\,$的不可约表示只能是基础旋量表示, 所以$\,Q\,$必属于这些表示的直和.
+
+我们也可以使用这个方法来证明所有费米生成元$\,Q\,$与$\,d$-动量$\,P_{\mu}\,$都对易. 对于这个目的, 注意到, 如果$\,Q\,$的权是$\,\pm 1/2$, 那么权为$\,\pm 1\,$的动量算符$\,P_{0}\pm P_{1}\,$与$\,Q\,$的双重对易子的权是$\,\pm 5/2$, 如果$\,Q\,$的权是$\,\mp 1/2$, 那么双重对易子的权则是$\,\pm 3/2$, 又因为我们已经知道不出只能在权为\,$\pm 3/2\,$或 $\pm 5/2\,$的费米对称性生成元, 这些双重对易子必须全部为零:
+\[
+[P_{0} \pm P_{1}, [P_{0},\pm P_{1},Q]] =0 \:.
+\]
+由此可以得出
+\[
+[P_{0} \pm P_{1}, [P_{0},\pm P_{1},{Q,Q^{\ast}}]] = -2\{Q_{\pm},Q_{\pm}^{\ast}\} \:.
+\]
+其中
+\[
+Q_{\pm} \equiv [P_{0}\pm P_{1},Q] \:.
+\]
+现在, $\{Q,Q^{\ast}\}\,$至多是$\,J$, $P\,$和标量对称性生成元的线性组合. $P_{0}\pm P_{1}\,$与$\,P\,$和标量对称性生成元的对易子为零, 而$\,P_{0}\pm P_{1}\,$与$\,J\,$的对易子是$\,P\,$的线性组合, 这与其他$\,P_{0}\pm P_{1}\,$对易, 所以双重对易子$\,[P_{0} \pm P_{1}, [P_{0},\pm P_{1},{Q,Q^{\ast}}]]\,$必须为零, 因此$\,\{Q_{\pm},Q_{pm}^{\ast}\}=0$, 这给出$\,Q_{\pm}=0$. 这样$\,Q\,$所给出的\,Lorentz\,群表示的{\kai{所有}}成员与$\,P_{0}\,$和$\,P_{1}\,$对易, Lorentz\,不变性则表明所有$\,Q\,$与所有$\,P\,$对易, 这正是所要证明的.
+
+由于\,Lorentz\,生成元$J_{\mu\nu}\,$与动量算符不对易, 有一个重要的推论: 它们不能出现在反对易关系的右边, 我们暂且将$\,Q\,$记做$\,Q_{n}$, 其中$\,n\,$标记$\,Q\,$之中不同(不一定不等价)的不可约表示, 现在{\kai{引入}}它们的共轭$\,Q^{\ast}$, 以及用来标记表示成员的指标. 这样, 一般反对易关系形如
+\begin{equation}
+    \{Q_{n},Q_{m}\} = \Gamma_{nm}^{\mu}P_{\mu} +Z_{nm} \:, \label{32.1.5}
+\end{equation}
+其中$\,\Gamma_{nm}^{\mu}\,$是\,c-数系数, $Z_{nm}\,$是守恒的标量对称性生成元, 它们与$\,P_{\mu}\,$和$\,J_{\mu\nu}\,$对易. 我们现在希望证明$\,Z_{nm}\,$是超对称代数的{\kai{中心荷}}------即, 与$\,Q\,$对易, 与自身对易, 与$\,P_{\mu}$、$J_{\mu\nu}\,$以及所有其他对称性生成元对易.
+
+为了对$\,d\geq 4\,$时证明这点, 注意到, 对于一个给定的非零$\,Z_{nm}$, 由于它是一个标量, 方程(\ref{32.1.1}) 中的所有$\,\sigma\,$对$\,Q_{n}\,$和$\,Q_{m}\,$必须取相反值. 考虑另一个费米子对称性生成元$\,Q_{\ell}$, 使得对这个生成元, 方程(\ref{32.1.2})的$\,\sigma\,$与$\,Q_{n}\,$或$\,Q_{m}\,$的$\,\sigma\,$不全相同. (当$\,d\geq 4$\,时, 在构成$\,O(d)\,$不可约旋量表示的每组$\,Q$ 中总存在这样一个$\,Q$.) 我们使用超\,Jacobi\,恒等式
+\begin{equation}
+    [Q_{\ell},\{Q_{m},Q_{n}\}] + [Q_{m},\{Q_{n},Q_{\ell}\}] + [Q_{n},\{Q_{\ell},Q_{m}] =0 \:. \label{32.1.6}
+\end{equation}
+反对易子$\,\{Q_{n},Q_{\ell}\}\,$和$\,\{Q_{\ell},Q_{m}\}\,$是一些$\,\sigma\,$非零的算符, 所以它们只能是$\,P\,$而非$\,Z\,$的线性组合, 因而必须与所有$\,Q\,$对易. 这样就只剩下
+\begin{equation}
+     0=[Q_{\ell},\{Q_{m},Q_{n}\}] = [Q_{\ell},Z_{mn}] \:. \label{32.1.7}
+\end{equation}
+因此, 在构成\,$\,O(d)\,$不可约旋量表示的每组$\,Q\,$中, 至少存在一个$\,Q\,$与给定的$\,Z_{nm}\,$对易. 但$\,Z_{nm}\,$是 Lorentz\,标量, 所以它必须与所有$\,Q\,$对易. 由此立刻可以从方程(\ref{32.1.5})得出它们彼此对易.
+
+费米生成元必须要构成由{\kai{所有}}标量玻色对称性生成元构成的代数$\,\mathscr{A}\,$的一个表示(可能是平庸的). 借此, 通过使用与\,\ref{sec:25.2}\,节中精确相同的讨论, 我们可以得出中心荷$\,Z_{nm}\,$构成$\,\mathscr{A}\,$的一个不变阿贝尔子代数. Coleman--Mandula\,定理告诉我们$\,\mathscr{A}\,$必须是半单紧\,Lie\,代数与$\,U(1)\,$生成元的直和, 根据定义, 前者不包含不变的阿贝尔子代数, 所以$\,Z_{nm}\,$必须是$\,U(1)\,$生成元, 这样不仅彼此对易, 它们与所有其他玻色对称性生成元都对易. 
+
+为了获得反对易关系(\ref{32.1.5})更细致的信息, 我们必须进一步明确\,Lorentz\,变换以及费米对称性生成元的实性质. 这些对偶数维和奇数维时空差别很大.
+
+
+\subsection{奇数维}
+
+本章附录证明了, 当时空维数$\,d\,$是奇数时, Lorentz\,代数的基础旋量表示只有一个, 由方程(\ref{32.A.2})用\,Dirac\,矩阵表示的矩阵$\,\mathscr{J}_{\mu\nu}\,$给出, 所以我们必须将费米生成元记为$\,Q_{\alpha r}$, 其中$\,\alpha\,$是$\,2^{(d-1)/2}$-值的\,Dirac\,指标, 而$\,r=1,2,\cdots,N\,$则用来标记$\,N$-扩充超对称性中的不同旋量. 在这个符号约定下, $Q\,$的\,Lorentz\,变换性质给出
+\begin{equation}
+    [J_{\mu\nu},Q_{\alpha r}] = -\sum_{\beta}(\mathscr{J}_{\mu\nu})_{\alpha\beta}\,Q_{\beta r} \:, \label{32.1.8}
+\end{equation}
+使得这些生成元的反对易子有变换规则
+\[
+[J_{\mu\nu},\{Q_{\alpha r},Q_{\beta s}\}] = -\sum_{\bar{\alpha}}(\mathscr{J}_{\mu\nu})_{\alpha\bar{\alpha}}
+\{Q_{\bar{\alpha}r},Q_{\beta s}\} -\sum_{\bar{\beta}}(\mathscr{J}_{\mu\nu})_{\beta\bar{\beta}}
+\{Q_{\alpha r},Q_{\bar{\beta} s}\}
+\]
+回忆动量算符$\,P_{\lambda}\,$的\,Lorentz\,变换规则(\textcolor{foo}{2.4.13}), 我们看到方程(\ref{32.1.5})中的矩阵$\,\Gamma_{rs}^{\lambda}\,$和算符$\,Z_{rs}\,$(其中隐去了\,Dirac\,指标)必须满足条件
+\begin{equation}
+    \mathscr{J}_{\mu\nu} (\Gamma_{\lambda})_{rs} + (\Gamma_{\lambda})_{rs} \mathscr{J}_{\mu\nu}^{\mathrm{T}}
+    =-\mi\,(\Gamma_{\mu})_{rs}\eta_{\nu\lambda} +\mi\,(\Gamma_{\nu})_{rs}\eta_{\mu\lambda} \:, \label{32.1.9}
+\end{equation}
+\begin{equation}
+    \mathscr{J}_{\mu\nu}Z_{rs} +Z_{rs}\mathscr{J}_{\mu\nu}^{\mathrm{T}} = 0\:. \label{32.1.10}
+\end{equation}
+但方程(\ref{32.A.8})给出$\,\mathscr{J}_{\mu\nu}^{\mathrm{T}}=-\mathscr{C}^{-1}\mathscr{J}_{\mu\nu}\mathscr{C}$, 所以方程(\ref{32.1.9})和(\ref{32.1.10})可以表示成要求$\,(\Gamma_{\mu})_{rs}\mathscr{C}^{-1}$ 和$\,\mathscr{J}_{\mu\nu}\,$的对易关系与$\,\gamma_{\mu}\,$和$\,\mathscr{J}_{\mu\nu}\,$的对易关系相同, 以及$\,Z_{rs}\mathscr{C}^{-1}\,$与$\,\mathscr{J}_{\mu\nu}\,$对易. 对奇数的$\,d$, 这些矩阵在相差一个常数因子的意义下是唯一的, 所以我们可以得出
+\begin{equation}
+    \Gamma_{\alpha r\:\beta s}^{\lambda}=\mi\,g_{rs}\,(\gamma^{\lambda}\mathscr{C})_{\alpha\beta} \label{32.1.11}
+\end{equation}
+和
+\begin{equation}
+    Z_{\alpha r\:\beta s} =\mathscr{C}_{\alpha \beta}\,z_{rs} \:, \label{32.1.12}
+\end{equation}
+其中在方程(\ref{32.1.11})中插入因子$\,\mi\,$是为了后面的方便. 隐去\,Dirac\,指标后, 反对易关系(\ref{32.1.5})现在写成
+\begin{equation}
+    \{Q_{r},Q_{s}^{\mathrm{T}}\} = \mi\,g_{rs}\gamma^{\lambda}\,\mathscr{C}\,P_{\lambda}+z_{rs}\mathscr{C} \:. \label{32.1.13}
+\end{equation}
+
+$\Gamma_{\alpha r\:\beta s}$和$\,Z_{\alpha r\:\beta s}\,$在$\,\alpha,r\,$和$\,\beta,s\,$的交换下不变, 而方程(\ref{32.A.30})和(\ref{32.A.31})(在$\,d=2n{+}1\,$时)表明: 当$\,d=1\:(\operatorname{mod}8)$\,时, $\gamma^{\lambda}\mathscr{C}\,$和$\,\mathscr{C}\,$都是对称的; 当$\,d=3\:(\operatorname{mod}8)$\,时, $\gamma^{\lambda}\mathscr{C}\,$是对称的, 而$\,\mathscr{C}\,$是反对称的; 当$\,d=5\:(\operatorname{mod}8)$\,时, $\gamma^{\lambda}\mathscr{C}\,$和$\,\mathscr{C}\,$都是反对称的; $\,d=7\:(\operatorname{mod}8)$\,时, $\gamma^{\lambda}\mathscr{C}\,$是反对称的, 而$\,\mathscr{C}\,$是对称的. 由此可以得出: 当$\,d=1\:(\operatorname{mod}8)$\,时, $g_{rs}\,$和$\,z_{rs}\,$是对称的; 当$\,d=3\:(\operatorname{mod}8)$\,时, $g_{rs}\,$是对称的, 而$\,z_{rs}\,$是反对称的; 当$\,d=5\:(\operatorname{mod}8)$\,时, $g_{rs}\,$和$\,z_{rs}\,$都是反对称的; 当$\,d=7\:(\operatorname{mod}8)$\,时, $g_{rs}\,$是反对称的, 而$\,z_{rs}\,$是对称的.
+
+(\ref{32.A.37})给出了矩阵$\,\mathscr{J}_{\mu\nu}\,$的复共轭. 通过取(\ref{32.1.8})的厄米共轭, 我们看到$\,\sum_{\beta}(\mathscr{C}\beta)_{\alpha\beta}Q_{\beta r}^{\ast}$ 的\,Lorentz\,变换性质与$\,Q_{\alpha s}\,$相同, 因此它必须是它们的线性组合
+\begin{equation}
+    \sum_{\beta}(\mathscr{C}\beta)_{\alpha\beta}Q_{\beta r}^{\ast} = \sum_{s}\mathscr{S}_{rs}Q_{\alpha s} \:.\label{32.1.14}
+\end{equation}
+取这个方程的厄米伴随并使用$\,d=2n+1\,$的方程(\ref{32.A.28})和(\ref{32.A.29}), 这给出
+\begin{equation}
+    \mathscr{S}^{\ast}\mathscr{S}= (-1)^{a}\cdot 1\:,\qquad a=(d-1)(d-3)/8 \:. \label{32.1.15}
+\end{equation}
+当$\,d=1\:(\operatorname{mod}8)\,$以及$\,d=3\:(\operatorname{mod}8)\,$时, Lorentz\,代数的旋量表示是实的, 这样我们就可以选到费米生成元的一组基使得$\,\mathscr{S}=1$. 与之相反, 当$\,d=5\:(\operatorname{mod}8)\,$以及$\,d=7\:(\operatorname{mod}8)\,$时, Lorentz\,代数的旋量表示是赝实的, 那么显然不可能找到$\,\mathscr{S}\propto 1\,$的一组基. 通过取方程(\ref{32.1.15})的行列式, 我们看到在这个情况下$\,\operatorname{Det}(-1)>0$, 所以在$\,d=5\:(\operatorname{mod}8)\,$以及$\,d=7\:(\operatorname{mod}8)\,$时, 费米生成元的个数必然是偶数. 在这个情况下, 我们可以选择一组基使得$\,\mathscr{S}=\Omega$, 其中$\,\Omega\,$是反对称分块实矩阵
+\begin{equation}
+    \Omega = \begin{pmatrix}
+     e & 0 & 0 & \cdots \\
+     0 & e & 0 & \cdots \\
+     0 & 0 & e & \cdots \\
+     \vdots & \vdots & \vdots & \ddots
+    \end{pmatrix} \:, \qquad
+     e= \begin{pmatrix}
+     0 & 1 \\ -1 & 0
+     \end{pmatrix} \:. \label{32.1.16}
+\end{equation}
+通过使用方程(\ref{32.1.14})将反对易关系(\ref{32.1.13})重写成
+\[
+\{Q_{r},Q_{s}^{\dag}\} = \mi (g\mathscr{S}^{\mathrm{T}})_{rs}\gamma_{\lambda} \mathscr{C}[(\mathscr{C}\beta)^{\mathrm{T}}]^{-1} P^{\lambda} + (z\mathscr{S}^{\mathrm{T}})_{rs}
+\mathscr{C}[(\mathscr{C}\beta)^{\mathrm{T}}]^{-1} \:,
+\]
+我们可以推断出$\,g_{rs}\,$和$\,z_{rs}\,$的实性和正性. 方程(\ref{32.A.12}), (\ref{32.A.16})\,和\,(\ref{32.A.30})在$\,d=2n{+1}$\,时表明$\,\beta^{\mathrm{T}}=-\beta\,$以及$\,\mathscr{C}\mathscr{C}^{\mathrm{T}-1}=(-1)^{(d-1)(d+1)/8}\cdot 1$, 所以
+\begin{equation}
+    \{Q_{r},Q_{s}^{\dag}\} = -(-1)^{(d-1)(d+1)/8}\,\Bigl[\mi (g\mathscr{S}^{\mathrm{T}})_{rs}\gamma_{\lambda}\beta P^{\lambda} + (z\mathscr{S}^{\mathrm{T}})_{rs} \beta )\Bigr] \:. \label{32.1.17}
+\end{equation}
+回忆起$\,\gamma_{0}=\mi\beta$, 我们注意到算符矩阵$\,-\mi\gamma_{\lambda}\beta\,P^{\lambda}\,$是正的, 且除了真空态以外是正定的. 
+通过考虑一个动量足够大以至于方程(\ref{32.1.17})中的中心荷可以被忽略的态, 我们得出矩阵$\,(-1)^{(d-1)(d+1)/8}g\mathscr{S}^{\mathrm{T}}$ 是正的且是厄米的. 然后考虑任意动量, 我们发现算符$\,(z\mathscr{S}^{\mathrm{T}})_{rs}\,$的阵列也是厄米的. (当中心荷不为零时, 质量上有类似于方程(\ref{25.5.22})的一个下界, 在这里我们不展示这个下界.) 从$\,g\mathscr{S}^{\mathrm{T}}\,$的厄米性, 我们有
+\begin{equation}
+    g^{\dag} = [\mathscr{S}^{\mathrm{T}\dag}]^{-1} g\mathscr{S}^{\mathrm{T}} =(-1)^{a}\mathscr{S}g\mathscr{S}^{\mathrm{T}} \:. \label{32.1.18}
+\end{equation}
+我们现在能够通过对基的一个合适选择将反对易关系变成传统的正则形式.
+
+当$\,d=1\:(\operatorname{mod} 8)\,$时, 我们有对称的$\,g\,$和$\,z\,$以及$\,(-1)^{a}=+1$, 所以, 如果我们选择的基中$\,\mathscr{S}=1$, 那么$\,g\,$是实的且各个$\,z_{rs}\,$是厄米算符. 通过给旧的$\,\mathscr{Q}\,$乘上任何实矩阵$\,\mathscr{A}$, 我们可以在不改变$\,\mathscr{S}=1\,$的情况下引入新的$\,Q$, 而$\,g\,$变成了$\,\mathscr{A}g\mathscr{A}^{\mathrm{T}}$. 由于$\,g\,$在$\,d=1\:(\operatorname{mod} 8)\,$时是正矩阵, 通过一个著名定理,\cite{6a}， 我们可以选择$\,\mathscr{A}\,$使得$\,g=1$.
+
+当$\,d=3\:(\operatorname{mod} 8)\,$时, 我们有对称的$\,g\,$和反对称的$\,z\,$以及$\,(-1)^{a}=+1$, 所以, 如果我们选择的基中$\,\mathscr{S}=1$, 那么$\,g\,$是实的且各个$\,z_{rs}\,$是反厄米算符. 和$\,d=1\:(\operatorname{mod} 8)\,$的情况相同, 我们可以调整这个基使得$\,g=1$.
+
+当$\,d=5\:(\operatorname{mod} 8)\,$时, 我们有反对称的$\,g$, 所以, 在$\,\mathscr{S}=\Omega\,$的选择下, 方程(\ref{32.1.18})变成$\,g^{\ast}=-\Omega g\Omega$, 其中$\,\Omega\,$是标准反对称矩阵(\ref{32.1.16}). 这里, 通过给旧的$\,Q\,$乘上任何满足$\,\mathscr{B}^{\ast}=-\Omega\mathscr{B}\Omega\,$的矩阵$\,\mathscr{B}$, 我们可以引入新的$\,Q\,$而保持$\,\mathscr{S}=\Omega$, 这个操作对$\,g\,$的效应是将其变成$\,\mathscr{B}g\mathscr{B}^{\mathrm{T}}$. 由于$\,(-1)^{a}=1$, $g\Omega\,$是正的, 因此以这样的方式我们令$\,g=-\Omega$. 另外, $z\,$是反对称的且$\,z\Omega\,$是厄米的, 所以$\,z^{\ast}=-\Omega\,z\,\Omega$.
+
+当$\,d=7\:(\operatorname{mod} 8)\,$时, 我们依旧有反对称的$\,g$, 但现在$\,(-1)^{a}=+1$, 所以通过使用$\,d=5\:(\operatorname{mod} 8)$ 时的方法, 我们可以选到一组$\,g=+\Omega\,$的基. 另外, $z\,$现在是反对称的而$\,z\Omega\,$依旧是厄米的, 所以现在$\,z^{\ast}=+\Omega\,z\,\Omega$.
+
+\subsection{偶数维}
+
+这章的附录表明, 当时空维数$\,d\,$是偶数时, Lorentz\,代数有两个不定价的基础旋量表示, 由方程(\ref{32.A.22}), (\ref{32.A.2})和(\ref{32.A.17})用\,Dirac\,矩阵表示的矩阵$\,\mathscr{J}_{\mu\nu}^{\pm}\,$给出. 因此我们必须将费米生成元记为$\,Q_{\alpha r}^{\pm},$ 其中$\,\alpha\,$是$\,2^{d/2}\,$值\,Dirac\,指标, $r\,$则是在扩充超对称性的情况下标记属于\,Lorentz\,代数等价表示中不同的$\,Q$, 并有
+\begin{equation}
+    \sum_{\beta}(\gamma_{d+1})_{\alpha\beta}\,Q_{\beta r}^{\pm} = \pm Q_{\alpha r}^{\pm} \:, \label{32.1.19}
+\end{equation}
+其中$\,\gamma_{d+1}\equiv \mi^{d/2-1}\gamma_{1}\cdots \gamma_{d-1}\gamma_{0}$. 在这个符号约定下, $Q\,$的\,Lorentz\,变换性质给出
+\begin{equation}
+    [J_{\mu\nu},Q_{\alpha r}^{\pm}] = -\sum_{\beta}(\mathscr{J_{\mu\nu}}^{\pm})_{\alpha \beta}\,Q_{\beta r}^{\pm} \:,
+    \label{32.1.20}
+\end{equation}
+其中$\,\mathscr{J}_{\mu\nu}^{+}\,$是矩阵(\ref{32.A.22}). 将方程(\ref{32.1.19})和关系$\,\mathscr{C}^{-1}\gamma_{d+1}\mathscr{C}=(-1)^{d/2}\gamma_{d+1}$, 给出奇数$\,d\,$的反对易关系(\ref{32.1.13})的那个讨论现在给出
+\begin{align}
+    \{Q_{r}^{\pm}, Q_{s}^{\mp(-1)^{d/2}\,\mathrm{T}} \} &= \mi\,g_{rs}^{\pm} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,\gamma_{\lambda} \,\mathscr{C}\,P_{\lambda} \:, \label{32.1.21} \\
+    \{Q_{r}^{\pm}, Q_{s}^{\pm(-1)^{d/2}\,\mathrm{T}} \} &= z_{rs}^{\pm} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,\gamma_{\lambda} \,\mathscr{C} \:, \label{32.1.22}
+\end{align}
+方程(\ref{32.A.30})和(\ref{32.A.31})表明$\,\mathscr{C}\gamma^{\lambda}\,$在$\,d=0\:(\operatorname{mod}8)$和$\,d=2\:(\operatorname{mod}8)\,$时是对称的, 在$\,d=4\:(\operatorname{mod}8)$ 和$\,d=6\:(\operatorname{mod}8)\,$时是反对称的, 
+而$\,\mathscr{C}\,$在$\,d=0\:(\operatorname{mod}8)$和$\,d=6\:(\operatorname{mod}8)\,$时是对称的, 在$\,d=2\:(\operatorname{mod}8)$和$\,d=4\:(\operatorname{mod}8)\,$时是反对称的. 因此方程(\ref{32.1.21})要求有如下的对称性
+\begin{equation}
+    g_{rs}^{\pm} = \begin{cases}
+    g_{sr}^{\mp(-1)^{d/2}}  &\qquad d=0,2\:(\operatorname{mod}8) \\
+    -g_{sr}^{\mp(-1)^{d/2}}  &\qquad d=4,6\:(\operatorname{mod}8)
+    \end{cases} \:, \label{32.1.23}
+\end{equation}
+而方程(\ref{32.1.22})则要求
+\begin{equation}
+    z_{rs}^{\pm} = \begin{cases}
+    z_{sr}^{\pm(-1)^{d/2}}  &\qquad d=0,6\:(\operatorname{mod}8) \\
+    -z_{sr}^{\pm(-1)^{d/2}}  &\qquad d=2,4\:(\operatorname{mod}8)
+    \end{cases} \:. \label{32.1.24}
+\end{equation}
+特别地, $z^{\pm}\,$在$\,d=0\:(\operatorname{mod}8)$时是对称的, $g^{\pm}\,$在$\,d=2\:(\operatorname{mod}8)\,$是对称的, $z^{\pm}\,$在$\,d=4\:(\operatorname{mod}8)$时是反对称的, $g^{\pm}\,$在$\,d=6\:(\operatorname{mod}8)\,$是对称的.
+
+取方程(\ref{32.1.20})的厄米共轭并使用方程(\ref{32.A.25})表明$\,\mathscr{C}\beta Q_{r}^{\pm\ast}\,$与算符$\,Q_{s}^{\mp(-1)^{d/2}}\,$的\,Lorentz\,变换性质相同, 因此前者是后者的线性组合:
+\begin{equation}
+    \mathscr{C}\beta\,Q_{r}^{\pm\ast} = \sum_{s}\mathscr{S}_{rs}^{\pm} \,Q_{s}^{\mp(-1)^{d/2}} \:. \label{32.1.25}
+\end{equation}
+取这个方程的厄米共轭并使用$\,d=2n\,$的方程(\ref{32.A.28})和(\ref{32.A.29}), 这给出
+\begin{equation}
+    \mathscr{S}^{\pm\ast}\mathscr{S}^{\mp(-)^{d/2}}=(-1)^{a}\cdot 1 \:,\qquad a=d(d-2)/8 \:. \label{32.1.26}
+\end{equation}
+当$\,d=0\:(\operatorname{mod}8)\,$和$\,d=4\:(\operatorname{mod}8)\,$时, 方程(\ref{32.1.25})将一个不可约表示与另一个不可约表示关联起来, 并且我们可以选择基使得对$\,d=0\:(\operatorname{mod}8)\,$有$\,\mathscr{S}^{\pm}=1$, 对$\,d=4\:(\operatorname{mod}8)\,$有$\,\mathscr{S}^{\pm}=\pm 1$. 当$\,d=2\:(\operatorname{mod}8)\,$时, 方程(\ref{32.1.25})给出的是实表示自身之间的关系, 我们可以选择一组基使得$\,\mathscr{S}^{\pm}=1$. 当$\,d=6\:(\operatorname{mod}8)\,$时, 方程(\ref{32.1.25})给出的是赝实表示自身之间的关系; 方程(\ref{32.1.26})表明$\,Q^{+}\,$和$\,Q^{-}$ 的个数必然是偶数个(二者不必相等!), 我们可以选择$\,\mathscr{S}^{\pm}=\Omega^{\pm}\,$的基, 其中$\,\Omega^{\pm}\,$是形如(\ref{32.1.16})的标准反对称实矩阵.
+
+通过使用方程(\ref{32.1.25})将反对易关系(\ref{32.1.21})和(\ref{32.1.22})写成
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\pm\dag}\} = \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,\gamma_{\lambda}\beta\,P^{\lambda}
+    \mathscr{C}[(\mathscr{C}\beta)^{\mathrm{T}}]^{-1} \Bigl(g^{\pm}\mathscr{S}^{\mp\mathrm{T}}\Bigr)_{rs} \:, \label{32.1.27}
+\end{equation}
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\mp\dag}\} = \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,
+    \mathscr{C}[(\mathscr{C}\beta)^{\mathrm{T}}]^{-1} \Bigl(z^{\pm}\mathscr{S}^{\mp\mathrm{T}}\Bigr)_{rs} \:, \label{32.1.28}
+\end{equation}
+我们可以推断出$\,g_{rs}^{\pm}\,$的实性和正性以及$\,z_{rs}^{\pm}\,$的实性. 再次使用关系$\,\mathscr{C}\mathscr{C}^{\mathrm{T}-1}=(-1)^{d(d+2)/8}$, $\beta^{\mathrm{T}}=-\beta\,$和$\,\gamma_{0}=\mi\beta$, 我们得出$\,(-1)^{d(d+2)/8}g^{\pm}\mathscr{S}^{\pm\mathrm{T}}\,$是厄米的且是实的, 而$\,(z^{+}\mathscr{S}^{-\mathrm{T}})^{\dag}=z^{-}\mathscr{S}^{+\mathrm{T}}$. 当$\,d=0\:(\operatorname{mod}8)\,$时, 我们可以采用$\,\mathscr{S}^{\pm}=1$, $g^{\pm}=1\,$和$\,z^{+\dag}=z^{-}\,$的一组基; 当$\,d=2\:(\operatorname{mod}8)\,$时, 我们可以采用$\,\mathscr{S}^{\pm}=1$, $g^{\pm}=-1\,$和$\,z^{+\dag}=z^{-}\,$的一组基; 当$\,d=4\:(\operatorname{mod}8)\,$时, 我们可以采用$\,\mathscr{S}^{\pm}=\pm 1$, $g^{\pm}=\mp 1\,$和$\,z^{+\dag}=-z^{-}\,$的一组基; 当$\,d=6\:(\operatorname{mod}8)\,$时, 我们可以采用$\,\mathscr{S}^{\pm}=\Omega^{\pm}$, $g^{\pm}=\Omega^{\pm}\,$和$\,(z^{+}\Omega^{-})^{\dag}=z^{-}\Omega^{+}\,$的一组基.
+
+总结一下, 在合适的基下, 反对易关系, 实性以及对称性条件如下:\cite{6b} 
+
+\noindent $d=0\:(\operatorname{mod}8)$
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\mp\mathrm{T}}\} = \mi\,\delta_{rs} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\gamma^{\lambda}\,
+    \mathscr{C}\,P_{\lambda}\:, \label{32.1.29}
+\end{equation}
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\pm\mathrm{T}}\} = z_{rs}^{\pm} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,
+    \mathscr{C}\:, \label{32.1.30}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta\,Q_{r}^{\pm\ast} = Q_{r}^{\mp} \:, \qquad z_{rs}^{\pm}=z_{sr}^{\pm}=(z_{rs}^{\mp})^{\ast} \:. \label{32.1.31}
+\end{equation}
+$d=1\:(\operatorname{mod}8)$
+\begin{equation}
+     \{Q_{r},Q_{s}^{\mathrm{T}}\} = \mi\,\delta_{rs}\gamma^{\lambda}\, \mathscr{C}\,P_{\lambda}+z_{rs}\mathscr{C}\:, \label{32.1.32}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta Q_{r}^{\ast} = Q_{r} \:, \qquad z_{rs}=z_{sr}=z_{rs}^{\ast} \:. \label{32.1.33}
+\end{equation}
+$d=2\:(\operatorname{mod}8)$
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\pm\mathrm{T}}\} = -\mi\,\delta_{rs} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\gamma^{\lambda}\,
+    \mathscr{C}\,P_{\lambda}\:, \label{32.1.34}
+\end{equation}
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\mp\mathrm{T}}\} = z_{rs}^{\pm} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,
+    \mathscr{C}\:, \label{32.1.35}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta\,Q_{r}^{\pm\ast} = Q_{r}^{\pm} \:, \qquad z_{rs}^{\pm}=-z_{sr}^{\pm\ast}=-z_{rs}^{\mp} \:. \label{32.1.36}
+\end{equation}
+$d=3\:(\operatorname{mod}8)$
+\begin{equation}
+     \{Q_{r},Q_{s}^{\mathrm{T}}\} = \mi\,\delta_{rs}\gamma^{\lambda}\, \mathscr{C}\,P_{\lambda}+z_{rs}\mathscr{C}\:, \label{32.1.37}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta Q_{r}^{\ast} = Q_{r} \:, \qquad z_{rs}=-z_{sr}=-z_{rs}^{\ast} \:. \label{32.1.38}
+\end{equation}
+$d=4\:(\operatorname{mod}8)$
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\mp\mathrm{T}}\} = \mp\mi\,\delta_{rs} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\gamma^{\lambda}\,
+    \mathscr{C}\,P_{\lambda}\:, \label{32.1.39}
+\end{equation}
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\pm\mathrm{T}}\} = z_{rs}^{\pm} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,
+    \mathscr{C}\:, \label{32.1.40}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta\,Q_{r}^{\pm\ast} =\pm Q_{r}^{\mp} \:, \qquad z_{rs}^{\pm}=z_{rs}^{\mp\ast}=-z_{sr}^{\pm} \:. \label{32.1.41}
+\end{equation}
+$d=5\:(\operatorname{mod}8)$
+\begin{equation}
+     \{Q_{r},Q_{s}^{\mathrm{T}}\} = -\mi\,\Omega_{rs}\gamma^{\lambda}\, \mathscr{C}\,P_{\lambda}+z_{rs}\mathscr{C}\:, \label{32.1.42}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta Q_{r}^{\ast} = \sum_{s}\Omega_{rs}Q_{s} \:, \qquad z_{rs}=-z_{sr}\:,\qquad
+    z^{\ast} = -\Omega z\Omega  \label{32.1.43}
+\end{equation}
+$d=6\:(\operatorname{mod}8)$
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\pm\mathrm{T}}\} = \mi\,\Omega_{rs}^{\pm} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\gamma^{\lambda}\,
+    \mathscr{C}\,P_{\lambda}\:, \label{32.1.44}
+\end{equation}
+\begin{equation}
+    \{Q_{r}^{\pm},Q_{s}^{\mp\mathrm{T}}\} = z_{rs}^{\pm} \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr)\,
+    \mathscr{C}\:, \label{32.1.45}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta\,Q_{r}^{\pm\ast} =\sum_{s}\Omega_{rs}^{\pm} Q_{s}^{\pm} \:, \qquad z_{rs}^{\pm\ast}=\Omega^{\pm}z_{rs}^{\pm}\Omega^{\mp}=z_{sr}^{\mp} \:. \label{32.1.46}
+\end{equation}
+$d=7\:(\operatorname{mod}8)$
+\begin{equation}
+     \{Q_{r},Q_{s}^{\mathrm{T}}\} = \mi\,\Omega_{rs}\gamma^{\lambda}\, \mathscr{C}\,P_{\lambda}+z_{rs}\mathscr{C}\:, \label{32.1.47}
+\end{equation}
+\begin{equation}
+    \mathscr{C}\beta Q_{r}^{\ast} = \sum_{s}\Omega_{rs}Q_{s} \:, \qquad z_{rs}=z_{sr}\:,\qquad
+    z^{\ast} = +\Omega z\Omega  \label{32.1.48}
+\end{equation}
+
+对这些反对易关系的观察指出, 当没有中心荷时, 它们在费米生成元的线性变换下不变, 对于奇数的$\,d$, 线性变换形如$\,Q_{r}\to\sum_{s}V_{rs}Q_{s}$, 对于偶数的$\,d\,$则是$\,Q_{r}^{\pm}\to\sum_{s}V_{rs}^{\pm}Q_{s}^{\pm}$. 为了保留关系(\ref{32.1.29})---(\ref{32.1.48}), $V\,$必须要满足条件:
+
+\noindent $d=0\,$且$\,d=4\:(\operatorname{mod}8)$
+\begin{equation}
+    V^{\pm}V^{\mp\mathrm{T}} = 1 \:, \qquad V^{\pm\ast} = V^{\mp} \:. \label{32.1.49}
+\end{equation}
+$d=1\,$且$\,d=3\:(\operatorname{mod}8)$
+\begin{equation}
+    VV^{\mathrm{T}}=1 \:, \qquad V^{\ast} = V \:. \label{32.1.50}
+\end{equation}
+$d=2\:(\operatorname{mod}8)$
+\begin{equation}
+    V^{\pm}V^{\pm\mathrm{T}} = 1 \:, \qquad V^{\pm} = V^{\pm\ast} \:. \label{32.1.51}
+\end{equation}
+$d=5\:(\operatorname{mod}8)$
+\begin{equation}
+    V\Omega V^{\mathrm{T}}=\Omega \:, \qquad V^{\ast} =-\Omega V \Omega \:. \label{32.1.52}
+\end{equation}
+$d=6\:(\operatorname{mod}8)$
+\begin{equation}
+    V^{\pm}V^{\pm\mathrm{T}} = 1 \:, \qquad V^{\pm\ast} =-\Omega^{\pm} V^{\pm}\Omega^{\pm} \:. \label{32.1.53}
+\end{equation}
+$d=7\:(\operatorname{mod}8)$
+\begin{equation}
+    V\Omega V^{\mathrm{T}}=\Omega \:, \qquad V^{\ast} =-\Omega V \Omega \:. \label{32.1.54}
+\end{equation}
+这些矩阵构成群:\\
+$d=0\,\text{且}\,d=4\:(\operatorname{mod}8)\qquad \qquad \qquad U(N)\:.$ \\
+$d=1\,\text{且}\,d=3\:(\operatorname{mod}8)\qquad \qquad \qquad O(N)\:.$ \\
+$d=2\:(\operatorname{mod}8)\qquad \qquad \qquad O(N_{+})\times O(N_{-})\:.$ \\
+$d=5\,\text{且}\,d=7\:(\operatorname{mod}8)\qquad \qquad \qquad USp(N)\quad {N\,\text{为偶}}\:.$ \\
+$d=6\:(\operatorname{mod}8)\qquad \qquad \qquad USp(N_{+})\times USp(N_{-})\quad {N_{\pm}\,\text{为偶}}\:.$ \\
+这里的$\,N\,$对于奇数的$\,d\,$是$\,Q\,$之中基本旋量表示的个数, 对于$\,d=0\:(\operatorname{mod}8)\,$和$\,d=4\:(\operatorname{mod}8)\,$则是$\,Q\,$之中每个手性的基础旋量表示的个数. 当$\,d=2\:(\operatorname{mod}8)\,$以及$\,d=6\:(\operatorname{mod}8)\,$时, $Q\,$之中每个手性的基础旋量表示个数无需相等, 所以这里记做$\,N_{+}\,$和$\,N_{-}$
+
+\section{无质量多重态} \label{sec:32.2}
+
+我们现在将考虑如何用上节构造的超对称代数在维数$\,d\geq 4\,$的时空中构造无质量粒子态的超多重态. 动量算符$\,P^{\mu}\,$与所有费米对称性生成元相对易, 所以我们可以在\,Hilbert\,空间中的单粒子子空间中进行处理, 在这个子空间中$\,P^{\mu}\,$有确定的类光本征矢$\,p^{\mu}$, 可以将其取在$\,p^{1}=p^{0}\,$的方向上, 而$\,p^{\mu}\,$的其它所有空间分量均为零. 就像在\,2.5\,节中对四维时空的讨论, 可以根据这些所提供的有限维小群表示对其分类, 其中小群是齐次\,Lorentz\,群中保持$\,p^{\mu}\,$不变的子群. 小群包含沿着$\,\mathbf{p}\,$垂直方向上的增速(boost)和在$\,\mathbf{p}\,$所处平面的旋转以及二者的组合, 例如四维时空中的变换(\textcolor{foo}{2.5.6}), 但它们构成一个不变的阿贝尔子群, 因此在有限维表示中被表示成单位算符. 忽略这样的子群, $d\,$维中的约化子群是$\,O(d{-}2)$, 由与$\,\mathbf{p}\,$垂直的平面中的旋转构成. 因此我们将根据粒子提供的$\,O(d{-2})\,$表示以及上一节末尾所描述的自同构群对它们进行分类.
+
+这些表示要比我们在四维时空中处理过的那些复杂得多, 在四维中, 约化小群是$\,O(2)$, 而表示是一维的, 由螺旋度这个数字表征. 然而, 用``自旋''标记约化小群$\,O(d{-}2)\,$的表示将是有用的, 它被定义成任何生成元$\,J_{ij}\,$在这个表示中的本征值能取到的{\kai{最大}}绝对值.
+
+大家普遍详细自洽的量子场论中不会包含自旋大于\,2\,的无质量粒子. 已知\cite{7}自旋$\,j>1/2\,$的{\kai{软}}无质量粒子智只能与携带自旋$\,j\,$的守恒流相互作用. 当$\,j=1\,$时, 它们是普通守恒标量的流, 例如电荷; 当$\,j=3/2\,$时, 它们是一个或数个与超对称性相对应的流; 当$\,j=2\,$时, 这个流只能是能动量张量; 但当$\,j>5/2\,$时, 不存在可以与软无质量粒子相互作用的流. 通过采用无质量粒子的类型只有一种, 或者任何无质量粒子自旋不能大于\,2\,这个限制, 我们可以对超对称能够发生的维数有一个很强的限制.
+
+我们暂且回到\,\ref{sec:32.1}\,节中所用到的算符分类, 即根据$\,O(d)\,$生成元$\,J_{d1}\,$湮灭的值定义的权. (回忆起$\,J_{01}=\mi J_{d1}$.) 费米超对称性生成元的权是$\,1/2\,$或$\,-1/2$, 所以这些生成元与其厄米共轭的反对易子的权分别只能是$\,+1\,$或$\,-1$, 因此必须分别正比于算符$\,P^{0}+P^{1}\,$或$\,P^{0}-P^{1}$. 但在我们进行处理的\,Hilbert\,子空间中算符$\,P^{0}-P^{1}\,$为零, 所以在这个子空间中, 所有权为$\,-1/2\,$的费米超对称性生成元为零. 因此在对单粒子态分类时, 可用的超对称性生成元只有一半, 即$\,2^{n-1}\,$个权$\,\sigma_{d1}=+1/2\,$的生成元.
+
+我们可以进一步将剩下的生成元分成两类, 即除了$\,\sigma_{d1}=+1/2$, $\sigma_{23}=1/2\,$或$\,\sigma_{23}=-1/2$. 由于算符$\,P^{0}+P^{1}\,$有$\,\sigma_{23}=0$, 每类费米超对称性生成元彼此对易, 但每类生成元不一定与它们的共轭或者另一类生成元对易.
+
+现在考虑小群$\,O(d{-}2)\,$的一个自旋$\,j\,$表示, 并考虑$\,J_{23}\,$的本征值$\,\lambda>0\,$且被所有$\,\sigma_{23}=-1/2\,$的超对称性生成元湮灭的本征态$\,\lvert\lambda\rangle$. (任何对$\,J_{23}\,$的本征值取最大值$\,j\,$的态都将是这个类似的, 但一般会有其它这样的态.) 我们可以用$\,k\,$个$\,\sigma_{23}=+1/2\,$且$\,\sigma_{d1}=+1/2\,$的费米生成元作用在$\,\lvert\lambda\rangle\,$上, 这样就会构成$\,J_{23}=\lambda-k/2\,$的态. (因为用$\,k\,$个这种费米生成元的共轭作用这个态会回到$\,\lvert\lambda\rangle$, 这就证明了这些态中没有一个为零.) 如果所有类型的费米超对称生成元共有$\,\mathscr{N}\,$个, 那么$\,\sigma_{23}=+1/2\,$且$\,\sigma_{d1}=+1/2\,$的只有$\,\mathscr{N}/4\,$个, 又因为这些算符都对易, 以这种方式构成的$\,J_{23}=\lambda-k/2\,$的态, 其总数将是二项式系数
+\begin{equation}
+\binom{\mathscr{N}/4}{k} \:, \label{32.2.1}
+\end{equation}
+当从$\,k=0\,$求和到最大值$\,k=\mathscr{N}/4\,$, 这给出$\,2^{\mathscr{N}/4}\,$个分量. 以这种方法能够得到的$\,J_{23}\,$的最小本征值是$\,\lambda-\mathscr{N}/8$, 这样的态是通过用$\,k=\mathscr{N}/4\,$个超对称性生成元作用在$\,\lvert\lambda\rangle\,$上得到的. 取$\,\lambda=j$, 我们看到为了避免$\,J_{23}\,$的本征值大于$\,+2\,$或小于$\,-2$, 我们必须有$\,j\leq 2\,$和$\,j-\mathscr{N}/8\geq -2$, 这要求费米生成元的总数$\,\mathscr{N}\,$不超过\,32.
+
+更进一步, 对$\,\mathscr{N}=32\,$个超对称性生成元, 通过用$\,\sigma_{23}=+1/2\,$和$\,\sigma_{d1}=+1/2\,$的超对称性生成元的乘积作用态$\,\lvert 2\rangle\,$至多只能构成一个超多重态. 对小群中任何生成元的本征值, 这些态以步长$\,1/2\,$在$\,-2\,$到$\,+2\,$之间取值. 仅在$\,\mathscr{N}<32\,$时, 才能有``物质''超多重态, 即不包含引力子的超多重态.
+
+$2n\,$或$\,2n+1\,$中的单个基础旋量表示有$\,2^{n}\,$个分量, 所以为了使费米生成元的个数不超过$\,32$, 我们必须有$\,n\leq 5$. 因此时空维数不能超过$\,d=11$, 且在这个情况下必有$\,N=1$. 因为\,11\,维中的超引力理论可能是所谓$\,M\,${\kai{理论}}这样一个基础理论的``低能''极限,\cite{4} 而$\,M\,$理论又被认为在其它极限下会给出各种弦理论, 所以它是我们特别感兴趣的一个理论. 我们现在细致地解出\,$d=11\,$维中$\,N=1\,$超对称性的自旋分量, 这将作为如何用启发式计数实现这点的一个例子.
+
+在$\,d=11\,$时, 通过给$\,J_{23}\,$的本征值为$\,2\,$的本征态$\,\lvert 2\rangle\,$作用$\,k=0,1,\cdots,8\,$个$\,\sigma_{23}=+1/2\,$且 $\sigma_{2n-1\,2n}=+1/2\,$的超对称性生成元, 我们可以构造出无质量多重态中的所有态. 根据方程(\ref{32.2.1}), 我们会得到$\,J_{23}=\pm 2\,$的态各一个, $J_{23}=\pm 3/2\,$的态各\,8\,个, $J_{23}=\pm 1\,$的态各\,28\,个, $J_{23}=\pm 1/2\,$的态各\,56\,个, 以及\,70\,个$\,J_{23}=0\,$的态.
+
+在$\,d=11\,$时, 小群$\,O(9)\,$的自旋\,2\,引力表示是有$\,9\times 10/2-1=44\,$个独立分量的对称无迹张量: 有\,1\,个$\,J_{23}=\pm 2\,$的$\,2{\pm} \mi 3,2{\pm} \mi 3\,$分量; 7\,个$\,J_{23}=\pm 1\,$的$\,2{\pm} \mi 3, k\,$分量; 28\,个$\,J_{23}=0\,$的$\,k,\ell\,$分量. (这里的$\,k\,$和$\,\ell\,$在$\,4,5,\cdots,10\,$这\,7\,个值中取值. 因为在这个表示下$\,2{+}\mi 3,2{-}\mi 3$\,这个分量会通过无迹条件与$\,k,\ell\,$分量相关, 所以我们在这里不计入这个分量.) 
+
+还有一个自旋$\,3/2\,$的引力微子表示. 它由带有一个额外\,9-矢指标$\,i\,$的旋量$\,\psi_{i}\,$构成, 服从将自旋\,1/2\,分量排除在外的不可约条件$\,\sum_{i}\gamma_{i}\psi_{i}=0$, 因此有$\,9\times 16-16=128\,$个独立分量.
+
+通过从用超对称性生成元作用在$\,\lvert 2\rangle\,$上给出的态中减去引力子和引力微子中$\,J_{23}\,$取相应值的分量, 我们看到我们还需要一个或多个态, 使得$\,J_{23}=\pm 1\,$的分量总数是$\,28-7=21\,$而$\,J_{23}=0\,$的分量总数是$\,70-28=42$. 在正交群的表示中, 只有反对称张量对$\,J_{ij}\,$没有$\,\pm 1\,$和$\,0\,$以外的本征值. 在\,9\,维, 一个秩为$\,p\,$的反对称张量$\,T_{i_{1}\cdots i_{p}}\,$有
+\begin{align*}
+& \binom{7}{p} \,{\text{个}}\,J_{23}=0\,{\text{的分量}}\,T_{k_{1}\cdots k_{p}}\:, \\
+& \binom{7}{p-1} \,{\text{个}}\,J_{23}=\pm 1\,{\text{的分量}}\,T_{2{\pm}\mi 3\,k_{2}\cdots k_{p}} \:,\\
+& \binom{7}{p-2}\,{\text{个}}\,J_{23}=0\,{\text{的分量}}\,T_{2{+}\mi 3\,2{-}\mi 3\,k_{3}\cdots k_{p}} \:,\\
+\end{align*}
+其中$\,k_{1},\cdots ,k_{p}\,$在$\,4,5,\cdots,10\,$这\,7\,个值中取值. 对于$\,O(9)$, 独立的反对称张量只有秩$\,p=0,1,2,3$ 和$\,4\,$的那些. 秩为\,4\,的反对称张量有\,35\,个$\,J_{23}=\pm 1\,$的分量, 这超出需要的个数, 所以它必须被排除. 对于$\,p=0$, $p=1\,$和$\,p=2\,$的张量的任何组合, 如果它们给出所需的\,21\,个$\,J_{23}=\pm 1\,$的分量, 那么它们同时将给出过多$\,J_{23}=0\,$的分量. (21\,个\,1-形式和\,0\,个\,2-形式将给出\,147\,个$\,J_{23}=0\,$的分量, 14\,个\,1-形式和\,1\,个\,2-形式将给出\,120\,个, 7\,个\,1-形式和\,2\,个\,2-形式将给出\,53\,个, 0\,个\,1-形式和\,3\,个\,2-形式将给出\,66\,个), 所以我们至少要引入一个\,3-形式. 秩$\,p=3\,$的反对称张量恰好有\,21\,$\,J_{23}=\pm 1\,$的分量以及\,42\,个$\,J_{23}=\pm 0\,$的分量, 这正是所需要的. 我们由此得出: {\kai{在$\,d=11\,$时, 唯一的$\,N=1\,$无质量超多重态包含一个引力子, 一个引力微子, 以及一个在小群下按照秩为\,3\,的反对称张量变换的粒子.}}
+
+$d=10\,$的可能性则要丰富的多. 这时有两种方法可以给出$\,\mathscr{N}=32\,$个生成元: 费米生成元可以两个手征性相同的\,16-分量\,Weyl\,旋量构成, 这时有自同构群$\,O(2)$, 或者两个手征相反的\,Weyl\,旋量构成, 这时没有自同构群. 在$\,d=10\,$时, 还有可能只有一个拥有\,$\mathscr{N}=16\,$个分量的\,Weyl\,费米生成元. 这三种可能性在现代超弦理论中扮演了一个重要角色------它们代表了三类超弦的无质量频谱: 两个手征性各\,16\,个生成元的\,IIA\,型; 手征性相同共\,32\,个生成元的\,IIB\,型; 以及只有一种手征性共\,16\,个生成元的杂化超弦.
+
+$d=10\,$的\,IIA\,型及其相反的手征性就像$\,d=11\,$的情况, 除了\,$d=11\,$时的小群$\,O(9)\,$的不可约表示要破缺成$\,d=10\,$时的小群$\,O(8)\,$的各个不可约表示. 因此$\,O(9)\,$引力子超多重态要分解成一个有$\,8\times 9/2-1=35\,$个分量的$\,O(8)\,$引力子, 一个有\,8\,个分量的$\,O(8)\,$矢量, 以及一个只有一个分量的标量; $O(9)\,$引力微子多重态要分成两个手征性各\,$(16\times 8-16)/2=56$\,个分量的$\,O(8)\,$引力微子和两个手征性各\,$8$\,个分量的$\,O(8)\,$旋量; $O(9)$ 3-形式要分解成一个有\,56\,个分量的$\,O(8)$ 3-形式和一个有\,28\,个分量的$\,O(8)$ 2-形式.
+
+在\,$d=10\,$的\,IIB\,型中, $N_{+}=2\,$且$\,N_{-}=0$, 我们必须根据小群$\,O(8)\,$的表示以及标记自同构群$\,O(2)\,$表示的量子数$\,q\,$来对态分类, 超对称性生成元在这个自同构群下按照一个\,2-矢量变换. 由于引力子只有一个, 它必有$\,q=0$. 用一个超对称性生成元作用这些态给出{\kai{两}}个$\,q=\pm 1\,$的引力微子, 各有\,56\,个分量; 再用另一个超对称性生成元作用就给出了\,2\,个$\,q=\pm 2\,$的\,2-形式, 各\,28\,个分量; 再用另一个超对称性生成元作用就给出了\,2\,个$\,q=\pm 3\,$的\,Weyl\,旋量, 各\,8\,个分量; 再用另一个超对称性生成元作用就给出了\,2\,个$\,q=\pm 4\,$的标量, 以及$\,q=0\,$且有\,35\,个分量的自对偶\,4-形式.
+
+在$\,d=10\,$且只有一个\,Weyl\,费米生成元的杂化情况下, 独立分量的个数$\,\mathscr{N}=16$. 在这个情况下, 有一个引力子超多重态, 它有一个在$\,O(8)\,$在按照对称无迹张量变换的引力子, 其有\,35\,个独立分量; 一个有\,56\,个独立分量的引力微子; 一个有\,28\,个独立分量的$\,O(8)$ 2-形式; 一个有\,8\,个独立分量的\,Weyl\,旋量; 以及一个标量. (引力子超多重态是通过用超对称性生成元作用在一个$\,\lvert 2\rangle\,$态, {\kai{六}}个$\,\lvert 1\rangle\,$态以及一个$\,\lvert  0\rangle\,$态上构造出来的, 这总共给出$\,8\times 2^{4}=128=35+56+28+8+1\,$个分量.) 这里我们还可能有规范超多重态, 即多重态中的粒子对任何$\,J_{ij}\,$的本征值都处在$\,-1\,$和$\,1\,$之间. 这些超多重态是通过用超对称性生成元作用在$\,\lvert 1\rangle\,$态上形成的, 它包含一个属于$\,O(8)\,$矢量表示的规范粒子, 有\,8\,个分量, 以及一个按照$\,O(8)\,$的基础\,Weyl\,旋量那样变换的粒子, 也有\,8\,个分量.
+
+\section{$p\,$-膜} \label{sec:32.3}
+
+
+在一些理论中, 除了粒子还存在稳定的扩张物体, 要么无限扩展, 要么通过``缠绕''在拓扑不平庸的时空上稳定下来. 在高维中对这类超对称和超引力的研究打开了如下显著的可能性: 在低维时空中构造弦论和超对称场论以及证明这些理论的等价性,\cite{4,8} 这超出了本书的范畴. 对于这些扩张物体, 我们在这里关心的特征是它们可以携带\,Coleman--Mandula\,定理不允许的玻色守恒量. 这些新的守恒量可能伴随通常的动量算符和普通守恒量出现在超对称反对易关系的右边.\cite{9}
+
+在迄今为止研究的情况中, 新的玻色守恒量都是{\kai{形式}}------反对称张量. 例如, 在$\,d\,$维时空, 一个空间维度为$\,p\,$的物体(称为$\,p$-膜)就可以通过将$\,d\,$个时空坐标$\,x^{\mu}(\sigma,t)\,$(一般处在覆盖这个物体的重叠补片(patches))指定为时刻$\,t\,$以及用来描述这个物体各个位置的$\,p\,$个坐标$\,\sigma^{r}\,$的函数. 如果在给定时刻的流形$\,x^{\mu}=x^{\mu}(\sigma,t)\,$是拓扑不平庸的, 也就是说它不能连续形变到一个点, 那么它会有不为零的拓扑不变积分\footnote{为了看到这个积分是拓扑不变的, 注意到函数$\,x^{\mu}(\sigma,t)\,$的一个无限小变化$\,\delta x^{\mu}(\sigma,t)\,$会导致$\,I^{\mu_{1}\mu_{2}\cdots \mu_{p}}\,$产生变化
+\begin{align*}
+    \delta I^{\mu_{1}\mu_{2}\cdots \mu_{p}}&=\sum_{n=1}^{p}\sum_{r_{1}=1}^{p}\sum_{r_{2}=1}^{p}\cdots\sum_{r_{p}=1}^{p}
+    \int \dif \sigma_{1}\,\dif\sigma_{2}\cdots \dif\sigma_{p}\:\frac{\partial}{\partial\sigma^{r_{n}}}\Biggl[
+    \epsilon^{r_{1}r_{2}\cdots r_{p}}  \\    
+    &\quad \times \frac{\partial x^{\mu_{1}}}{\partial\sigma^{r_{1}}} \frac{\partial x^{\mu_{2}}}{\partial\sigma^{r_{2}}}
+    \cdots \frac{\partial x^{\mu_{n-1}}}{\partial\sigma^{r_{n-1}}}\delta x^{\mu_{n}} 
+    \frac{\partial x^{\mu_{n+1}}}{\partial\sigma^{r_{n+1}}}\cdots \frac{\partial x^{\mu_{p}}}{\partial\sigma^{r_{p}}}
+    \Biggr] \:,
+\end{align*}
+当这个积分取在紧流形上时, 它为零. 假定$\,\delta x^{\mu}(\sigma,t)\,$被限制成在$\,\sigma^{r}\to \infty\,$时迅速归零, 那么如果对所有$\,\sigma\,$积分, 这个积分也为零.
+}
+\begin{align}
+    I^{\mu_{1}\mu_{2}\cdots\mu_{p}} &= \int \dif\sigma^{1}\,\dif\sigma^{2}\cdots \dif\sigma^{p}\:
+    \sum_{r_{1}=1}^{p} \sum_{r_{2}=1}^{p} \cdots \sum_{r_{p}=1}^{p} \epsilon^{r_{1}r_{2}\cdots r_{p}} \nonumber \\
+    &\quad \times \frac{\partial x^{\mu_{1}}(\sigma,t)}{\partial\sigma^{r_{1}}}
+    \frac{\partial x^{\mu_{2}}(\sigma,t)}{\partial\sigma^{r_{2}}} \cdots
+    \frac{\partial x^{\mu_{p}}(\sigma,t)}{\partial\sigma^{r_{p}}} \:. \label{32.3.1}
+\end{align}
+特别地, 这种积分在函数$\,x^{\mu}(\sigma,t)\,$的微小变化下不变表明它们在时空变化下不变, 因此可能伴随$\,P^{\mu}$ 以及中心荷出现在超对称性生成元反对易关系的右边.\cite{10} 计算这种张量在超对称性生成元反对易关系右边的系数类似于我们在\,\ref{sec:27.9}\,节讨论过的在四维$\,N=2\,$超对称理论中对标量中心荷$\,Z_{rs}\,$的 Olive-Witten\,计算. 在本节, 我们并不打算计算这些系数或是调查其它可能出现在反对易关系中的非拓扑$\,p$-形式, 而只是考虑引入这些与动量算符对易的守恒反对称张量对超对称代数的影响.
+
+
+十分重要的一点是: 这个可能性并不影响超对称代数总属于\,Lorentz\,群的基础旋量表示这个关键结果. 这是因为, 欧几里得坐标中的一个全反对称张量至多有一个等于\,1\,的时空指标以及一个等于$\,d\,$的时空指标, 因此方程(\ref{32.1.2})定义的权对它只能是$\,\pm 1\,$或零. 同之前一样, 这意味着超对称性生成元的权只能是$\,\pm 1/2$; 而这只有当超对称性生成元属于$\,O(d{-}1,1)\,$的基础旋量表示时才是可能的. 另外, 因为超对称性生成元反对易子中的新项与动量对易, \ref{sec:32.1}\,节中的讨论再次表明超对称性生成元与动量对易.
+
+Lorentz\,不变性告诉我们对$\,p$-形式``荷''的非零值, 反对易关系(\ref{32.1.13})和(\ref{32.1.21})---(\ref{32.1.22})只能取如下的形式(与\,\ref{sec:32.1}\,节所用的符号约定相同): \\
+$d\,${\hei{为奇}}
+\begin{equation}
+    \{Q_{r},Q_{s}^{\mathrm{T}}\} = g_{rs}\gamma^{\lambda}\mathscr{C}P_{\lambda}
+    +\sum_{p}z_{rs}^{\mu_{1}\mu_{2}\cdots\mu_{p}}\,\gamma_{\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}}\,\mathscr{C}\:. \label{32.3.2}
+\end{equation}
+$d\,${\hei{为偶}}
+\begin{align}
+    &\{Q_{r}^{\pm}, Q_{s}^{\mp(-1)^{d/2}\,\mathrm{T}}\} = \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr) \nonumber \\
+    &\quad \times \Biggl[g_{rs}^{\pm}\gamma^{\lambda}\mathscr{C}P_{\lambda}+\sum_{\text{odd}\,p}
+    z_{rs}^{\mu_{1}\mu_{2}\cdots\mu_{p}\,\pm}\,\gamma_{\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}}\,\mathscr{C}
+    \Biggr]\:, \label{32.3.3} \\
+    &\{Q_{r}^{\pm}, Q_{s}^{\pm(-1)^{d/2}\,\mathrm{T}}\} = \biggl(\frac{1\pm\gamma_{d+1}}{2}\biggr) \nonumber \\
+    &\quad \times \sum_{\text{even}\,p}
+    z_{rs}^{\mu_{1}\mu_{2}\cdots\mu_{p}\,\pm}\,\gamma_{\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}}\,\mathscr{C}\:. \label{32.3.4}
+\end{align}
+(回忆, $\mathscr{C}\,$因为$\,\mathscr{J}_{\mu\nu}^{\mathrm{T}}=-\mathscr{C}^{-1}\mathscr{J}_{\mu\nu}\mathscr{C}\,$出现在反对易关系中; 在$\,d\,$为偶时, $Q_{r}^{\pm}\,$是满足$\,\gamma_{d+1}Q_{r}^{\pm}=\pm Q_{r}^{\pm}\,$的超对称性生成元; 且$\,\mathscr{C}^{-1}\gamma_{d+1}\mathscr{C}=(-1)^{d/2}\gamma_{d+1}$.) 对偶数的$\,d$, 我们有
+\[
+\epsilon^{\mu_{1}\mu_{2}\cdots\mu_{d}}\,\gamma_{\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}}
+\propto \gamma_{d+1}\gamma_{\mu_{p+1}}\gamma_{\mu_{p+2}}\cdots \gamma_{\mu_{d}} \:,
+\]
+而对奇数的$\,d$
+\[
+\epsilon^{\mu_{1}\mu_{2}\cdots\mu_{d}}\,\gamma_{\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}}
+\propto \gamma_{\mu_{p+1}}\gamma_{\mu_{p+2}}\cdots \gamma_{\mu_{d}} \:.
+\]
+因此对任何$\,d$, $p\,$膜和$\,d{-}p\,$膜在方程(\ref{32.3.1})---(\ref{32.3.3})中的贡献相同, 这使得对偶数的$\,d$, 我们可以限制$\,p\,$只在$\,0\,$到$\,d/2\,$之间取值, 而对奇数的$\,d$, 则是$\,0\,$到$\,(d{-}1)/2$.
+
+方程(\ref{32.3.2})---(\ref{32.3.4})中$\,p$-膜中心荷$\,z_{rs}^{p}\,$上的对称条件反应了反对易子的对称性. 方程(\ref{32.A.15}) 和(\ref{32.A.30})对$\,d=2n$\,和$\,d=2n+1\,$均给出
+\begin{equation}
+    \gamma_{\mu}^{\mathrm{T}} = (-1)^{n}\mathscr{C}^{-1}\gamma_{\mu}\mathscr{C} \:, \qquad
+    \mathscr{C}^{\mathrm{T}} = (-1)^{n(n+1)/2}\mathscr{C} \:. \label{32.3.5}
+\end{equation}
+它们赋予了反对易乘积$\,\gamma_{[\mu_{1}}\gamma_{\mu_{2}}\cdots\gamma_{\mu_{p}]}\,$以对称性
+\begin{align}
+    \gamma_{[\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}]}\mathscr{C} &= (-1)^{pn}(-1)^{n(n+1)/2}
+    \Bigl[\gamma_{[\mu_{p}}\gamma_{\mu_{p-1}}\cdots \gamma_{\mu_{1}]}\mathscr{C}\Bigr] ^{\mathrm{T}} \nonumber \\
+    &= (-1)^{pn}(-1)^{n(n+1)/2} (-1)^{p(p-1)/2}
+    \Bigl[\gamma_{[\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}]}\mathscr{C}\Bigr] ^{\mathrm{T}}\:. \label{32.3.6}
+\end{align}
+由此可以立即得出, 对奇数的\,$d$,
+\begin{equation}
+    z_{rs}^{\mu_{1}\mu_{2}\cdots\mu_{p}} = (-1)^{pn}(-1)^{n(n+1)/2} (-1)^{p(p-1)/2}
+    z_{sr}^{\mu_{1}\mu_{2}\cdots\mu_{p}} \:, \label{32.3.7}
+\end{equation}
+而对偶数的$\,d$,
+\begin{equation}
+    z_{rs}^{\mu_{1}\mu_{2}\cdots\mu_{p}\,\pm} = (-1)^{pn}(-1)^{n(n+1)/2} (-1)^{p(p-1)/2}
+    z_{sr}^{\mu_{1}\mu_{2}\cdots\mu_{p}\,(-1)^{n}(-1)^{p}\mp} \:. \label{32.3.8}
+\end{equation}
+
+例如, 考虑\,$d=11\,$维时空中$\,N=1\,$超对称性这个重要情况, 它是弦论的$\,M\,$理论推广的一个版本. 方程(\ref{32.3.8})表明, 除非
+\begin{equation}
+    -(-1)^{p}(-1)^{p(p-1)/2} = +1 \:, \label{32.3.9}
+\end{equation}
+否则单个$\,p$-形式中心荷$\,z_{\mu_{1}\mu_{2}\cdots\mu_{p}}\,$为零, 上式仅在$\,p\,$等于$\,1,2,5\,$时成立. $p=1\,$的值就由动量算符本身实现, 它来自于粒子以及扩展物体. 其它的可能性, $p=2\,$和$\,p=5$, 分别来自于有$\,2$-膜和$\,5$-膜的理论. 注意到, 不可能存在其它独立的张量中心荷, 例如来自于\,1-膜的\,1-形式, 这是因为$\,P^{\mu}$、$2$-形式以及$\,5$-形式中独立分量的总数是
+\[
+11 + \binom{11}{2} + \binom{11}{5} =528 \:,
+\]
+而两个\,32-分量的基础旋量的反对易子中的独立分量总数是$\,32\times 33/2=528$.
+
+正如\,0-形式电荷是\,1-形式规范场$\,A_{\mu}(x)\,$的源, 一个$\,p$-形式守恒量$\,z_{\mu_{1}\mu_{2}\cdots\mu_{p}}\,$可以充当\,8.8\,节中所讨论的那类$\,p{+}1$-形式规范场$\,A_{\mu_{1}\mu_{2}\cdots \mu_{p+1}}\,$的源. 事实上, 这样的规范场确实出现在超引力理论中. 例如, 正如上一节所强调的, $d=11\,$维时空中的$\,N=1\,$超引力理论包含一个在小群$\,O(9)\,$下按照秩为\,3\,的反对称张量变换的无质量粒子, 因此描述它的必然是一个\,3-形式规范场$\,A_{\mu\nu\rho}(x)$. 对超引力理论解的研究表明确实存在为$\,A_{\mu\nu\rho}(x)\,$提供源的\,2-膜\cite{12}. 另外, 正如在\,8.8\,节中注意到的, 这个规范理论等价于一个$\,(d-p-2=6)$-形式规范场的理论, 而它的源可以由\,5-形式$\,z^{\mu_{1}\cdots\mu_{5}}\,$提供, 并且确实存在一个为这个\,6-形式规范场提供源的\,5-膜解.\cite{13} 11维中的$\,N=1\,$超对称代数确实有来自于这些\,2-膜和\,5-膜的贡献.\cite{11}
+
+
+%+++++++++++++++++++++++附录++++++
+\titleformat{\chapter}{\centering\CJKfamily{zhhei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{zhhei}\Large}{附 录}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{zhhei}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small} \newcounter{app32}[chapter]
+\setcounter{app32}{1}
+\renewcommand\thesection{\Alph{app32}}
+\renewcommand\theequation{\arabic{chapter}.\Alph{app32}.\arabic{equation}}
+\fancyhf{} \fancyhead[CE]{\leftmark} \fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt} \pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}} \renewcommand{\sectionmark}[1]{\markright{附录 \quad\ #1}{}}
+
+
+\section{高维中的旋量}
+
+这个附录将描述任意$\,d\,$维时空中的\,Lorentz\,群$\,O(d{-}1,1)\,$的\,Lie\,代数的基础旋量表示. 它们可以从相应的\,Clifford\,代数获得, 这些代数由有限多个矩阵$\,\gamma_{\mu}\,$的不可约集构成, 并满足反对易关系
+\begin{equation}
+    \{\gamma_{\mu},\gamma_{\nu}\} = 2\eta_{\mu\nu} \:, \label{32.A.1}
+\end{equation}
+其中$\,\eta_{\mu\nu}\,$是对角的, 除了$\,\eta^{00}=-1\,$以外的对角元都是\,$+1$, 其中$\,x^{0}\,$是时间分量. 从这些我们可以构造矩阵
+\begin{equation}
+    \mathscr{J}_{\mu\nu}\equiv \frac{1}{4\mi}[\gamma_{\mu},\gamma_{\nu}] = -\mathscr{J}_{\nu\mu} \:, \label{32.A.2}
+\end{equation}
+它们满足\,Lorentz\,群生成元的对易关系(\textcolor{foo}{2.4.12})
+\begin{equation}
+    \mi\,[\mathscr{J}_{\mu\nu},\mathscr{J}_{\rho\sigma}] = \eta_{\nu\rho}\mathscr{J}_{\mu\sigma}
+    -\eta_{\mu\rho}\mathscr{J}_{\nu\sigma} -\eta_{\sigma\mu}\mathscr{J}_{\rho\nu}
+    +\eta_{\sigma\nu}\mathscr{J}_{\rho\mu} \:. \label{32.A.3}
+\end{equation}
+我们将会看到, 尽管方程(\ref{32.A.2})总给出了\,Lorentz\,代数的一个表示, 但这个表示不总是不可约表示.
+
+ 我们现在必须区分偶数维和奇数维的情况.
+
+\subsection{偶数维:\,$d=2n$}
+
+为了给$\,d=2n\,$维中的$\,\gamma\,$矩阵构成一个方便的具体表示, 我们引入$\,n\,$个矩阵 
+\begin{equation}
+    a_{u} \equiv \frac{1}{2}\Bigl(\gamma_{2u-1}+\mi\gamma_{2u}\Bigr) \qquad u=1,2,\cdots,n, \label{32.A.4}
+\end{equation}
+并将$\,\gamma_{1},\cdots,\gamma_{2n}\,$取为厄米的, 像往常一样有
+\begin{equation}
+    \gamma_{2n} \equiv -\mi\gamma_{0} \:. \label{32.A.5}
+\end{equation}
+它们有反对易关系
+\begin{equation}
+    \{a_{u},a_{v}^{\dag}\} =\delta_{uv} \:, \qquad \{a_{u},a_{v}\}=\{a_{u}^{\dag},a_{v}^{\dag}\} =0 \:. \label{32.A.6}
+\end{equation}
+我们在$\,\gamma\,$的表示空间中引入态矢$\,\lvert 0\rangle$, 它被定义成满足
+\begin{equation}
+    a_{u}^{\dag}\lvert0\rangle =0 \:, \label{32.A.7}
+\end{equation}
+并定义基矢
+\begin{equation}
+    \lvert s_{1}\,s_{2}\,\cdots s_{n}\rangle = a_{1}^{s_{1}}\,a_{2}^{s_{2}}\cdots a_{n}^{s_{n}}\lvert 0\rangle \:. \label{32.A.8}
+\end{equation}
+因为$\,a_{u}^{2}=0$, 如果$\,s_{u}=0$, 那么算符$\,a_{u}\,$将提高$\,s_{u}\,$的值至$\,+1$, 如果$\,s_{u}=+1$, 那么它将湮灭这个态矢(并产生一个符号因子$\,(-1)^{S}$, 其中$\,S\equiv \sum_{v<u}s_{v}$), 所以所有的$\,s_{u}\,$只能取$\,0\,$和$\,+1$, 态矢张开的空间因此是$\,2^{n}\,$维的. 在这个基下, 矩阵$\,a_{u}\,$取如下的形式
+\begin{equation}
+    a_{u} = \begin{pmatrix}
+    -1 & 0 \\ 0 & 1
+    \end{pmatrix} \otimes \cdots \otimes
+     \begin{pmatrix}
+    -1 & 0 \\ 0 & 1
+    \end{pmatrix} \otimes
+     \begin{pmatrix}
+    0 & 1 \\ 0 & 0
+    \end{pmatrix} \otimes 1 \cdots \otimes 1 \:, \label{32.A.9}
+\end{equation}
+其中最后一个$\,2\times 2\,$矩阵处在第$\,u\,$个位置上. 取厄米共轭和反厄米共轭就给出了$\,\gamma\,$矩阵
+\begin{align}
+     \gamma_{2u-1} &= \begin{pmatrix}
+    -1 & 0 \\ 0 & 1
+    \end{pmatrix} \otimes \cdots \otimes
+     \begin{pmatrix}
+    -1 & 0 \\ 0 & 1
+    \end{pmatrix} \otimes
+     \begin{pmatrix}
+    0 & 1 \\ 1 & 0
+    \end{pmatrix} \otimes 1 \cdots \otimes 1 \:, \label{32.A.10} \\
+     \gamma_{2u} &= \begin{pmatrix}
+    -1 & 0 \\ 0 & 1
+    \end{pmatrix} \otimes \cdots \otimes
+     \begin{pmatrix}
+    -1 & 0 \\ 0 & 1
+    \end{pmatrix} \otimes
+     \begin{pmatrix}
+    0 & -\mi \\ \mi & 0
+    \end{pmatrix} \otimes 1 \cdots \otimes 1 \:. \label{32.A.11}
+\end{align}
+(注意, 这给出的表示与我们在\,5.4\,节中为四维中的$\,\gamma\,$矩阵引入的表示以及本书中所使用的四维 $\gamma\,$矩阵表示并不形同.)
+
+
+方程(\ref{32.A.10})---(\ref{32.A.11})赋予了欧几里得$\,\gamma\,$简单的实性质和对称性
+\begin{equation}
+    \gamma_{i}^{\ast} = \gamma_{i}^{\mathrm{T}} = \begin{cases}
+    \phantom{-}\gamma_{i} &  \qquad \text{当}\,i\,\text{是奇数时} \\
+    -\gamma_{i} & \qquad \text{当}\,i\,\text{是偶数时}
+    \end{cases}  \:, \label{32.A.12}
+\end{equation}
+其中$\,i=1,2,\cdots,2n$. 这可以表示成一个类似的关系
+\begin{equation}
+    \mathscr{C}^{-1}\gamma_{i}\mathscr{C} = (-1)^{n}\,\gamma_{i}^{\mathrm{T}}
+    =(-1)^{n}\,\gamma_{i}^{\ast} \:, \label{32.A.13}
+\end{equation}
+其中$\,\mathscr{C}\,$是矩阵
+\begin{equation}
+    \mathscr{C} \equiv \gamma_{2}\gamma_{4}\cdots\gamma_{2n} \:. \label{32.A.14}
+\end{equation}
+将方程(\ref{32.A.5})中的因子$\,-\mi\,$考虑在内, 我们可以将其写成闵可夫斯基分量的形式
+\begin{equation}
+    \gamma_{\mu}^{\ast} = -\beta\gamma_{\mu}^{\mathrm{T}}\beta = -(-1)^{n}(\mathscr{C}\beta)^{-1}\gamma_{\mu}(\mathscr{C\beta})\:, \label{32.A.15}
+\end{equation}
+其中
+\begin{equation}
+    \beta \equiv \gamma_{2n} = -\mi\gamma_{0} \:. \label{32.A.16}
+\end{equation}
+
+在任意偶数维中, 类比四维中的$\,\gamma_{5}$, 我们可以定义矩阵$\,\gamma_{2n+1}$. 我们取
+\begin{equation}
+    \gamma_{2n+1}\equiv \mi^{n}\gamma_{1}\gamma_{2}\cdots \gamma_{2n} \:. \label{32.A.17}
+\end{equation}
+这里对相位的选取使得
+\begin{equation}
+    \gamma_{2n+1}^{2}=1 \:. \label{32.A.18}
+\end{equation}
+从反对易关系(\ref{32.A.1}), 可以理解得出$\,\gamma_{2n+1}\,$与其它\,$\gamma\,$矩阵反对易
+\begin{equation}
+    \{\gamma_{2n+1},\gamma_{\mu}\}=0 \qquad \text{对于}\:\mu=1,\,2,\,\cdots,\,2n-1,\,0 \:. \label{32.A.19}
+\end{equation}
+可以直接验证$\,\gamma_{2n+1}\,$是实的以及对称的
+\begin{equation}
+    \gamma_{2n+1}^{\dag} = \gamma_{2n+1}^{\ast} = \gamma_{2n+1}^{\mathrm{T}} =\gamma_{2n+1} \:. \label{32.A.20}
+\end{equation}
+我们从方程(\ref{32.A.19})中看到$\,\gamma_{2n+1}\,$与$\,O(2n{-}1,1)\,$代数的生成元(\ref{32.A.2})对易:
+\begin{equation}
+    [\gamma_{2n+1},\mathscr{J}_{\mu\nu}] = 0 \:, \label{32.A.21}
+\end{equation}
+这使得$\,\mathscr{J}_{\mu\nu}\,$不可能构成$\,O(2n{-}1,1)\,$代数的{\kai{不可约}}表示. 取而代之, 通过投影到$\,\gamma_{2n+1}=\pm 1\,$的子空间:
+\begin{equation}
+    \mathscr{J}_{\mu\nu}^{\pm} \equiv \mathscr{J}_{\mu\nu}\,\biggl(\frac{1\pm \gamma_{2n+1}}{2}\biggr)\:, \label{32.A.22}
+\end{equation}
+我们可以定义一对``Weyl''不可约表示. 从方程(\ref{32.A.15})和关系$\,(\mathscr{C}\beta)^{-1}\gamma_{2n+1}\mathscr{C}\beta=-(-1)^{n}\gamma_{2n+1}$, 我们看到\,Weyl Lorentz\,生成元的复共轭和转置是
+\begin{equation}
+    (\mathscr{J}_{\mu\nu}^{\pm})^{\ast} = -(\mathscr{C}\beta)^{-1}\,\mathscr{J}_{\mu\nu}^{\mp(-1)^{n}}\,(\mathscr{C}\beta) \:,\label{32.A.23}
+\end{equation}
+\begin{equation}
+    (\mathscr{J}_{\mu\nu}^{\pm})^{\mathrm{T}} = -\mathscr{C}^{-1}\,\mathscr{J}_{\mu\nu}^{\pm(-1)^{n}}\,\mathscr{C}\:. \label{32.A.24}
+\end{equation}
+因此, 对于偶数的$\,n$, Weyl\,不可约表示等价于彼此的复共轭, 而对于奇数的$\,n$, 每个则等价于它自身的复共轭.\footnote{如果\,Lorentz\,代数的一个表示由矩阵$\,\mathscr{L}_{\mu\nu}\,$(例如$\,\mathscr{J}_{\mu\nu}$, $\mathscr{J}_{\mu\nu}^{+}\,$或$\,\mathscr{J}_{\mu\nu}^{-}$)给出, 而另一个表示由矩阵$\,\mathscr{L}'_{\mu\nu}\,$给出, 且$\,\mathscr{L}'_{\mu\nu}=-\mathscr{L}_{\mu\nu}^{\ast}$, 那么我们则称前者是后者的复共轭. 这里引入负号是因为在表示单位元附近\,Lorentz\,群元的矩阵形如$\,1+\frac{1}{2}\mi\,\omega^{\mu\nu}\mathscr{L}_{\mu\nu}$, 其中$\,\omega^{\mu\nu}\,$是实的无限小量.} 对于奇数的\,$n$, 我们仍然需要推导\,Weyl\,表示是{\kai{实的}}还是{\kai{赝实的}}, 如果是实的, 这将意味着存在矩阵$\,\mathscr{S}\,$使得
+\begin{equation}
+    -(\mathscr{S}\mathscr{J}_{\mu\nu}^{\pm}\mathscr{S}^{-1})^{\ast} =
+    \mathscr{S}\mathscr{J}_{\mu\nu}^{\pm}\mathscr{S}^{-1} \:, \label{32.A.25}
+\end{equation}
+如果是赝实的, 则不存在这样的$\,\mathscr{S}$. 利用方程(\ref{32.A.23}), 条件(\ref{32.A.25})可以写成要求$\,\mathscr{S}^{-1}\mathscr{S}^{\ast}(\mathscr{C}\beta)^{-1}$ 与所有$\,\mathscr{J}_{\mu\nu}^{\pm}\,$都对易. 由于矩阵$\,\mathscr{J}_{\mu\nu}^{\pm}\,$构成了一个不可约集, 这将要求$\,\mathscr{S}^{-1}\mathscr{S}^{\ast}(\mathscr{C}\beta)^{-1}\,$正比于单位矩阵
+\begin{equation}
+    \mathscr{C} \beta = \alpha \mathscr{S}^{-1}\mathscr{S}^{\ast} \:, \label{32.A.26}
+\end{equation}
+其中$\,\alpha\,$是某个常数. 为了使之是可能的, 我们必须有
+\begin{equation}
+    \mathscr{C} \beta \,(\mathscr{C} \beta )^{\ast} = \lvert\alpha\rvert^{2}\cdot 1 \:. \label{32.A.27}
+\end{equation}
+但$\,\mathscr{C}\beta=\gamma_{2}\gamma_{4}\cdots\gamma_{2n-2}$, 又因为所有$\,i\,$为偶数的$\,\gamma_{i}\,$都是虚的, 我们有
+\begin{equation}
+    \mathscr{C} \beta \,(\mathscr{C} \beta )^{\ast} = (-1)^{n-1}(\gamma_{2}\gamma_{4}\cdots\gamma_{2n-2})^{2}
+    (-1)^{a}\cdot 1 \:, \label{32.A.28}
+\end{equation}
+其中
+\begin{equation}
+    a= (n-1) + (n-2) + \cdots + 1  = n(n-1)/2 \:. \label{32.A.29}
+\end{equation}
+因此\,Weyl\,表示仅在$\,n=1\:(\operatorname{mod}4)\,$是实的且在$\,n=3\:(\operatorname{mod}4)\,$必须是赝实的.
+
+为了在\,\ref{sec:32.1}\,节使用, 我们又注意到
+\begin{equation}
+    \mathscr{C}^{\ast} = (-1)^{n}\mathscr{C} \:, \qquad \mathscr{C}^{\mathrm{T}}=(-1)^{n(n+1)/2}\mathscr{C} \:,\qquad
+    \mathscr{C}^{-1} = (-1)^{n(n-1)/2}\mathscr{C} \:, \label{32.A.30}
+\end{equation}
+因此方程(\ref{32.A.13})给出
+\begin{equation}
+    (\mathscr{C}\gamma_{\mu})^{\mathrm{T}} = (-1)^{n(n-1)/2}\mathscr{C}\gamma_{\mu} \:. \label{32.A.31}
+\end{equation}
+
+$\gamma_{\mu}$构成一个矢量, 也就是说
+\begin{equation}
+    [\mathscr{J}_{\mu\nu},\gamma_{\rho}] = -\mi\gamma_{\mu}\eta_{\nu\rho} + \mi \gamma_{\nu}\eta_{\mu\rho} \:, \label{32.A.32}
+\end{equation}
+并且它们有正常的宇称, 即
+\begin{equation}
+    \beta\,\gamma_{0}\,\beta = +\gamma_{0} \:, \qquad
+    \beta\,\gamma_{i}\,\beta =-\gamma_{i} \quad \text{对于}\: i =1,\,\cdots,\,2n-1 \:. \label{32.A.33}
+\end{equation}
+反对易关系(\ref{32.A.1})阻止我们用$\,\gamma\,$的对称积来构造新的张量, 但它允许我们构造秩至多为$\,2n\,$的反对称张量
+\begin{equation}
+    \gamma_{[\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}]}\:, \label{32.A.34}
+\end{equation}
+其中方括号代表反对称化, 且$\,p\geq 2n$. 每个秩的独立时空分量个数是二项式系数$\,\binom{2n}{p}$, 所以这类矩阵的总数是
+\begin{equation}
+    \sum_{p=0}^{2n} \binom{2n}{p} = 2^{2n} \:. \label{32.A.35}
+\end{equation}
+这些矩阵没有一个为零(可以通过计算它们的平方看到)并且它们的\,Lorentz\,和(或)宇称变换性质均不同, 因此是线性独立的, 所以任何$\,2^{n}\times 2^{n}\,$的矩阵可以表示成$\,2^{2n}\,$个反对称张量(\ref{32.A.34})的线性组合.
+
+
+\subsection{奇数维:\,$d=2n+1$}
+
+现在我们来考虑时空维数$\,d=2n+1\,$是奇数的情况. 我们可以轻松地找到$\,2n{+}1\,$个满足反对易关系(\ref{32.A.1})$\,n\times n$ Dirac\,矩阵: 对于$\,\mu=1,2,\cdots,2n{-}1,0$的$\,\gamma_{\mu}$, 我们就可以使用$\,d=2n\,$时的那些$\,\gamma_{\mu}$, 然后加入方程(\ref{32.A.17})定义的矩阵$\,\gamma_{2n+1}$. 根据方程(\ref{32.A.18})和(\ref{32.A.19}), 这些$\,\gamma\,$矩阵满足反对易关系(\ref{32.A.1}), 其中$\,\mu\,$和$\,\nu\,$在$\,1,2,\cdots,2n{-}1,0,2n{+}1\,$中取值, 并且依旧有$\,\gamma_{0}=\mi\gamma_{2n}$.
+
+不像偶数维的情况, 这里我们找不到任何与所有\,Lorentz\,生成元都对易的非平庸矩阵, 这是因为方程(\ref{32.A.17})和(\ref{32.A.18})表明$\,2n{+1}\,$个$\,\gamma\,$矩阵的乘积是平庸的:
+\begin{equation}
+    \gamma_{1}\gamma_{2}\cdots\gamma_{2n}\gamma_{2n+1} = \mi^{-n}\cdot 1 \:. \label{32.A.36}
+\end{equation}
+因此, $\mu\,$和$\,\nu\,$在$\,1,2,\cdots,2n{-}1,0,2n{+}1\,$中取值的\,Lorentz\,生成元(\ref{32.A.2})自身就构成了\,Lorentz\,群的一个不可约表示. 为了检验它们的实性质, 注意到$\,\gamma_{2n+1}\,$是满足\,$(\mathscr{C}\beta)^{-1}\gamma_{2n+1}\mathscr{C}\beta=-(-1)^{n}\gamma_{2n+1}$ 的实对称矩阵, 所以方程(\ref{32.A.15})在$\,\mu=2n+1\,$以及$\,\mu=1,2,\cdots,2n-1,0\,$时都成立. Lorentz\,生成元因此满足
+\begin{equation}
+    \mathscr{J}_{\mu\nu}^{\ast} = -(\mathscr{C}\beta)^{-1}\,\mathscr{J}_{\mu\nu}\,\mathscr{C}\beta \:,\label{32.A.37}
+\end{equation}
+\begin{equation}
+    \mathscr{J}_{\mu\nu}^{\mathrm{T}} = -\mathscr{C}^{-1}\,\mathscr{J}_{\mu\nu}\,\mathscr{C}\:, \label{32.A.38}
+\end{equation}
+所以奇数维中的基础旋量表示不是实的就是赝实的. 与$\,d=2n\,$时精确相同的讨论告诉我们$\,d=2n+1\,$时的旋量表示再次根据方程(\ref{32.A.28})中的符号$\,(-1)^{a}\,$是正还是负而分别是实的还是赝实的, 因此根据方程(\ref{32.A.29}), 它们在$\,n=0\:(\operatorname{mod}4)\,$以及$\,n=1\:(\operatorname{mod}4)\,$是实的而在$\,n=2\:(\operatorname{mod}4)\,$以及$\,n=3\:(\operatorname{mod}4)\,$是赝实的.
+
+我们现在可以再次构造出反对称张量(\ref{32.A.34}), 现在的秩$\,p\,$至多是$\,2n+1$, 但是因为它们满足关系
+\begin{equation}
+    \epsilon^{\mu_{1}\mu_{2}\cdots\mu_{2n+1}} \gamma_{[\mu_{1}}\gamma_{\mu_{2}}\cdots \gamma_{\mu_{p}]}
+    \propto \gamma^{[\mu_{p+1}}\gamma^{\mu_{p+2}}\cdots \gamma^{\mu_{2n+1}]} \:, \label{32.A.39}
+\end{equation}
+其中$\, \epsilon^{\mu_{1}\mu_{2}\cdots\mu_{2n+1}} \,$像往常一样全反对称, 所以只有一半是独立的. (当$\,d=2n\,$时, 因为方程(\ref{32.A.39}) 两边宇称相反, 所以这样的关系不可能存在, 而对于$\,d=2n+1$, 因为其中的$\, \epsilon^{\mu_{1}\mu_{2}\cdots\mu_{2n+1}} \,$宇称为偶, 所以这样的讨论不再成立.) 形如(\ref{32.A.34})的独立矩阵的总数是
+\begin{equation}
+    \sum_{p=0}^{n} \binom{2n+1}{p} = 2^{2n} \:, \label{32.A.40}
+\end{equation}
+所以任何$\,2n\times 2n\,$矩阵可以写成$\,n{+1}\,$个$\,0\leq p\leq n+1\,$的独立反对称张量(\ref{32.A.34})的线性组合.
+
+最后, 我们注意到无论$\,d=2n\,$还是$\,d=2n+1$, $O(d{-}1,1)$的Dirac\,和\,Lorentz\,代数可以通过令
+\begin{equation}
+    \gamma_{2n} \equiv -\mi\gamma_{0} \:, \qquad \mathscr{J}_{i\,2n} \equiv -\mi\mathscr{J}_{i0}  \label{32.A.41}
+\end{equation}
+和相应的$\,O(d)\,$代数相关联, 这使得
+\begin{equation}
+    \{\delta_{i},\delta_{j}\} =2\delta_{ij} \:, \label{32.A.42}
+\end{equation}
+和
+\begin{equation}
+    \mathscr{J}_{ij} = \frac{1}{4\mi}[\gamma_{i},\gamma_{j}] = -\mathscr{J}_{ji} \:, \label{32.A.43}
+\end{equation}
+其中$\,i\,$和$\,j\,$在$\,1\,$到$\,d\,$之间取值. 从方程(\ref{32.A.42})可以得出, 当$\,i\neq j\,$时, $\mathscr{J}_{ij}^{2}=1/4$, 所以每个$\,\mathscr{J}_{ij}\,$的本征值被限制到$\,\pm 1/2$. 更确切一些, 在基础旋量表示中, Cartan\,子代数的生成元表示成
+\begin{equation}
+    \mathscr{J}_{2u{-}1\,2u} =\frac{1}{2}[a_{u},a_{u}^{\ast}] = aa_{u}^{\ast} -\frac{1}{2} \:, \label{32.A.44}
+\end{equation}
+使得基矢(\ref{32.A.8})是本征矢, 且
+\begin{equation}
+     \mathscr{J}_{2u{-}1\,2u}\,\lvert s_{1}\,s_{2}\,\cdots s_{n} \rangle =
+     \biggl(s_{u}-\frac{1}{2}\biggr)\,\lvert s_{1}\,s_{2}\,\cdots s_{n} \rangle \:. \label{32.A.45}
+\end{equation}
+维数$\,d=2n$\, 与$\,d=2n+1\,$之间的差异是: 当$\,d=2n\,$时, 我们有两个基础旋量表示, 而$\,\gamma_{2n+1}\,$的本征值$(-2\sigma_{1})(-2\sigma_{2})\cdots(-2\sigma_{n})\,$被限制成$\,+1\,$或$\,-1$, 而$\,d=2n{+}1\,$是, 基础旋量表示只有一个, $\sigma_{\mu}\,$上没有这样的限制.
+
+在\,\ref{sec:32.1}\,节中, 正是$\,\mathscr{J}_{ij}\,$被限制成了$\,\pm 1/2\,$指出了基础旋量表示是费米对称性生成元唯一能够构成的\,Lorentz\,代数表示. 诚然, 从这个条件我们可以推断出$\,O(d)\,$生成元可以被形如(\ref{32.A.8})的一组基表示, 其中$\,s_{u}=\sigma_{u}+1/2$, 然后反向进行这个附录的推导, 利用方程(\ref{32.A.4})---(\ref{32.A.7})(以及$\,d\,$为奇时的(\ref{32.A.17}))将\,Lorentz\,生成元表示成一组满足反对易关系(\ref{32.A.1})的$\,\gamma_{\mu}$.
+
+
+
+
+\section*{习题}
+\noindent 1. 假定所有中心荷为零, 对六维时空中所有允许超对称性中的无质量粒子多重态进行分类. \\
+
+\noindent 2. 假定粒子的自旋最多可达$\,j=3$, 但不能更高. 将自旋\,2\,无质量粒子确实存在这个事实考虑在内, 能够允许超对称性存在的最大时空维数是多少? 在每个允许的时空维数中, 超对称生成元的最大数目是多少? \\
+
+\noindent 3. 考虑十维时空中的\,IIA\,型和\,IIB\,型超对称性, 假定在扩充超对称线性反对易关系中只有标量出现了. 找到粒子质量的一个下界, 并表示成中心荷. 描述粒子质量处在这个下界上的``BPS''有质量粒子多重态. \\
+
+\noindent 4. 对九维时空中的$\,N=1\,$超对称性, 列出所有可能的独立标量和(或)张量中心荷.
+
+
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+    \bibitem{1} T. Kaluza, {\textit{Sitz. Preuss. Akad. Wiss}}. {\bf{K1}}, 966 (1921).
+    \bibitem{2} O. Klein, {\textit{Z. Phys.}} {\bf{37}}, 895 (1926); {\textit{Nature}} {\bf{118}}, 516 (1926).
+    \bibitem{3} J. H. Schwarz, {\textit{Nucl. Phys.}} {\bf{B46}}, 61 (1972); R. C. Brower and K. A. Friedman, {\textit{Phys. Rev.}} {\bf{D7}}, 535 (1972).
+    \bibitem{4} E. Cremmer, B. Julia\,和\,J. Scherk\,建立了\,11\,维时空中的超引力理论, {\textit{Phys. Lett.}} {\bf{76B}}, 409 (1978). 十维时空中的弱耦合\,IIA\,型弦论有一个\,11\,维起源的想法来自于\,M. J. Duff, P. S. Howe, T. Inami, and K. Stelle, {\textit{Phys. Lett.}} {\bf{B191}}, 70 (1987). P. K. Townsend\,证明了强耦合十维\,IIA\,型弦论的情况, {\textit{Phys. Lett.}} {\bf{B350}}, 184 (1995). E. Witten指出这些理论以及所有其它十维弦论之间的联系, {\textit{Nucl. Phys.}} {\bf{B445}}, 85 (1995).
+    \bibitem{5} R. Haag, J. Lopuszanski, and M. Sohnius, {\textit{Nucl. Phys.}} {\bf{B88}}, 257 (1975).
+    \bibitem{6} W. Nahm, {\textit{Nucl. Phys.}} {\bf{B135}}, 149 (1978).
+    \bibitem[6a]{6a} 例如, 可参看, H. W. Turnbull and A. C. Aitkens, {\textit{An Introduction to the Theory of Canonical Matrices}} (Dover Publications, New York, 1961).
+    \bibitem[6b]{6b} J. Strathdee\,给出了一个有用的总结, {\textit{Int. J. Mod. Phys.}} {\bf{A2}}, 273 (1987).
+    \bibitem{7} 关于四维时空中的这些讨论, 参看\,S. Weinberg, {\textit{Phys. Rev.}} {\bf{135}}, B1049 (1964); {\textit{Phys. Rev.}} {\bf{138}}, B988 (1965); R. P. Feynman, 未发表; M. T. Grisaru and H. N. Pendleton, {\textit{Phys. Lett.}} {\bf{67B}}, 323 (1977). 更高维时空中的讨论是类似的.
+    \bibitem{8} 例如, 可参看, J. Hughes, J. Liu, and J. Polchinski, {\textit{Phys. Lett.}} {\bf{B180}}, 370 (1986); E. Bergshoeff, E. Sezgin, P. K. Townsend, {\textit{Phys. Lett.}} {\bf{B189}}, 75 (1987); A. Ach\'{u}carro, J. M. Evans, P. K. Townsend, and D. L. Wiltshire, {\textit{Phys. Lett.}} {\bf{B198}}, 441 (1987); P. K. Townsend, {\textit{Phys. Lett.}} {\bf{B202}}, 53 (1988); P. K. Townsend, 收录于\,\textit{Particles, Strings, and Cosmology: Proceedings of Workshop on Current Problems in Particle Theory 19 at Johns Hopkins University, March 1995} (World Scientific, Singapore, 1996); J. Maldacena, {\textit{Adv. Theor. Math. Phys.}} {\bf{2}}, 231 (1998). 关于综述, 参看\,M. J. Duff, R. R. Khuri, and J.-X. Lu, {\textit{Phys. Rep.}} {\bf{259}}, 213 (1995); A. Giveon and D. Kutasov, 1998 preprint hep-th/9802067, 将发表于\,{\textit{Rev. Mod. Phys}}.
+    \bibitem{9} J. W. van Holten and A. Van Proeyen, {\textit{J. Phys. A: Math. Gen.}} {\bf{15}}, 3763 (1982).
+    \bibitem{10} J. A. de Azc\'{a}rraga, J. P. Gauntlett, J. M. Izquierdo, and P. K. Townsend, {\textit{Phys. Rev. Lett.}} {\bf{63}}, 2443 (1989).
+    \bibitem{11} D. Sorokin and P. K. Townsend, {\textit{Phys. Lett.}} {\bf{B412}}, 265 (1997); J. P. Gauntlett, J. Gomis, and P. K. Townsend, {\textit{J. High Energy Phys.}} {\bf{9801}}, 003 (1998).
+    \bibitem{12} 这些\,2-膜的协变场方程是\,E. Bergshoeff, E. Sezgin, P. K. Townsend\,给出的, 参考文献[8]和\,{\textit{Ann. Phys. (NY)}} {\bf{185}}, 330 (1988). M. J. Duff\,和\,K. Stelle\,证明了这些\,2-膜是超引力场方程的解并为\,3-形式规范场提供了源, {\textit{Phys. Lett.}} {\bf{B253}}, 113 (1991).
+    \bibitem{13} R. Gueven\,证明了这些\,5-膜是超引力场方程的解并为\,6-形式规范场提供了源, {\textit{Phys. Lett.}} {\bf{B276}}, 49 (1992). M. Aganagic, J. Park, C. Popescu, and J. Schwarz\,给出了这些\,5-膜的协变场方程, {\textit{Nucl. Phys.}} {\bf{B496}}, 191 (1997); P. S. Howe and E. Sezgin, {\textit{Phys. Lett.}} {\bf{B394}}, 62 (1997); P. Pasti, D. Sorokin, and M. Tonin, {\textit{Phys. Lett.}} {\bf{B398}}, 41 (1997); P. S. Howe, E. Sezgin, and P. C. West, {\textit{Phys. Lett.}} {\bf{B399}}, 49 (1997); I. Bandos, K. Lechner, A. Nurmagambetov, P. Pasti, D. Sorokin, and M. Tonin, {\textit{Phys. Rev. Lett.}} {\bf{78}}, 4332 (1997).
+\end{thebibliography}

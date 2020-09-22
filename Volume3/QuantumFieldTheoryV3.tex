@@ -1,0 +1,217 @@
+
+% Authors:   张驰       天津大学理学院物理系2011级本科
+%           李文都  lwdallen@126.com  天津大学理学院物理系理论物理13级博士
+
+\documentclass[11pt,a4paper,UTF8]{book}%文档类型为书籍类
+\usepackage{fontspec}
+    \setmainfont{Alegreya}
+    \newfontfamily\AlegreyaSC{Alegreya SC}
+    \renewcommand{\textsc}[1]{{\AlegreyaSC#1}}
+
+
+
+\input{package} %调入package
+
+\input{setup}   %调入全局设置
+
+\graphicspath{{figures/}}  % 定义所有的 .eps 文件在 figures 子目录下
+
+
+%======================= 文档开始============================%
+
+
+\begin{document}
+	%\hypersetup{CJKbookmarks=true}
+% \begin{CJK*}{GBK}{song}%开始CJK
+% \CJKindent
+
+
+
+%!!!!!!!!!!!!!!!!!!标题页!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
+
+\title{\Huge\bfseries The Quantum Theory of Fields \\ \Large \bfseries Volume III Supersymmetry}
+
+\author{Steven Weinberg(著)\\University of Texas at Austin \\
+\\  张驰(译)\thanks{此版仅为译稿, 未经校对, 如有任何翻译录入错误, 请联系zhangchi\_110@163.com} }
+\date{}
+
+
+
+\maketitle
+%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
+\setcounter{tocdepth}{1}
+\clearpage{\pagestyle{empty}\cleardoublepage} \setcounter{page}{1}
+\pagenumbering{roman}
+
+\renewcommand{\contentsname}{目\qquad 录}
+%\pdfbookmark[0]{目~~录}{mulu}
+\titlecontents{chapter} [6em]{\sihao\song}
+                             {\contentslabel{3em}} {}{\titlerule*[1em]{$\cdot$}\contentspage}%目录中章的显示格式
+\titlecontents{section} [6em]{\xiaosihao\song}
+                             {\contentslabel{3em}}{} {\titlerule*[1em]{$\cdot$}\contentspage}
+
+\tableofcontents
+
+\setcounter{tocdepth}{2}
+
+
+
+\newpage\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+
+
+
+
+
+
+% %======================= 自定义页眉与页脚的格式============================%
+% \fancyhf{}
+% \fancyhead[CE]{\leftmark}
+% \fancyhead[CO]{\rightmark}
+% \fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+% \renewcommand{\headrulewidth}{0.8pt}
+% \pagestyle{fancy}
+% \renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+% %==========================================================================%
+
+
+%===============================数学环境的设置======================%
+
+\renewcommand{\proof}{\kai{证明:}}%
+\newtheoremstyle{mystyle}{3pt}{3pt}{\kai}{0cm}{\hei}{}{1em}{}  \theoremstyle{mystyle}
+\theoremstyle{mystyle}
+\newtheorem{assumption}{假设}
+
+
+
+
+%======================= 自定义页眉与页脚的格式============================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%==========================================================================%
+
+%=======================定义各种中文标题===================================%
+\renewcommand{\chaptername}{第~\arabic{chapter} 章}
+%\renewcommand{\thesubsection}{\chinese{\value{subsection}}、}
+\renewcommand\figurename{图}
+\renewcommand\tablename{\hei 表}
+%\renewcommand{\captionlabeldelim}{\ }%去掉图标签后面的冒号
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@更改计数器值及各计数器的从属关系设置@@@@@@@@@@@@@@@@%
+
+%\setcounter{page}{155}%更改page的计数器值
+\setcounter{chapter}{23}%更改chapter的计数器值
+\numberwithin{equation}{section}%公式计数器从属于节计数器
+\numberwithin{figure}{chapter}%图计数器从属于节计数器
+\numberwithin{table}{chapter}%表计数器从属于章计数器
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+\phantomsection
+\markboth{记~号}{记~号}
+%\pdfbookmark[0]{记号}{记号}
+\addcontentsline{toc}{chapter}{记~~号}
+\include{Notation}
+
+
+\newpage\clearpage{\pagestyle{empty}\cleardoublepage}
+\setcounter{page}{1}%单独从 1 开始编页码
+\pagenumbering{arabic}
+
+
+%第二十四章 历史介绍
+\include{chapter24}
+
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{zhhei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{zhhei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{zhkai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+%第二十五章 超对称代数
+\include{chapter25}
+
+%第二十六章 超对称场论
+\include{chapter26}
+
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{zhhei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{zhhei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{zhkai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+%第二十七章 超对称规范理论
+\include{chapter27}
+
+%第二十八章 标准模型的超对称版本
+\include{chapter28}
+
+%第二十九章 超出微扰论
+\include{chapter29}
+
+%第三十章 超图
+\include{chapter30}
+
+%第三十一章 超引力
+\include{chapter31}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{zhhei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{zhhei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{zhkai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+%第三十二章 高维时空中的超对称代数
+\include{chapter32}
+
+%\end{CJK*}%结束CJK
+\end{document} %文档结束

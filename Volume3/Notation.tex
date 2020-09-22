@@ -1,0 +1,99 @@
+
+\chapter*{符号约定}
+
+对于超对称方面的书籍, 在选择符号约定上有一个大问题: 是选择旋量的2分量表示还是4分量表示. 超对称的标准教科书选用的是2分量Weyl表示. 而在本书中, 除了在最开始构建超对称代数和超对称多重态时, 我将使用4分量Dirac表示, 这样做的原因是, 这会使得那些在粒子物理唯像学和模型构建上进行工作的物理学家更容易接受本书. 看到超对称专家独立团体的成长是一件很遗憾的事, 超对称专家们彼此之间可以很好地交流, 但是却由于符号与粒子理论家的大团体割裂开了.
+
+将4分量的表示转换成2分量表示没有什么太大困难. 贯穿本书始终, 在我们所用的Dirac矩阵表示中, $\gamma_{5}$是对角矩阵, 主对角元是$+1$, $+1$, $-1$和$-1$, 任何4分量Majorana旋量$\psi_{\alpha}$(例如超对称生成元$Q_{\alpha}$, 超空间坐标$\theta_{\alpha}$, 或者超导数$\mathscr{D}_{\alpha}$)都可以写成两分量旋量$\chi_{a}$
+\begin{equation*}
+\psi =\left(
+\begin{array}{c}
+e\chi^{\ast} \\ \chi
+\end{array}\right) \:,
+\end{equation*}
+其中$e$是$2\times 2$反对称矩阵, 并有$e_{12}=+1$. 在其它教科书中, 两分量旋量$\chi_{a}$通常记做$\psi_{a}^{\ast}=\bar{\psi}_{\dot{a}}$, 而$(e\chi^{\ast})_{a}$则记做$\psi_{a}$. 在第26章的附录中, 我们将给出4分量Majorana旋量有用性质的总结.
+\\
+\\
+下面是本书所用的其它符号约定:
+
+拉丁指标$i,j,k$等一般取遍三维空间坐标指标, 通常取做$1,2,3.$ 在有特殊说明的情况下, 它们取遍值1,2,3,4, 其中$x^{4}=\mi t$.
+\\
+
+希腊指标$\mu,\nu$等, 从希腊字母表的中间开始, 一般取遍四维时空坐标指标$1,2,3,0$, 其中$x^{0}$是时间坐标. 当需要在一般坐标系的时空指标和定域惯系的时空指标之间做出区分时, 我们会用$\mu,\nu$等来标记前者, 而用$a,b$等来标记后者.
+\\
+
+希腊指标$\alpha,\beta$等, 从希腊字母表的开头开始, (除了第24章)一般取遍4分量旋量的所有分量. 为了避免混淆, 我在这里采用与卷II不同的符号约定, 用大写字母$A,B$等来标记对称性代数的生成元. 2分量旋量的分量用指标$a,b$等进行标记. 特别地, 4分量超对称生成元记做$Q_{\alpha}$, 而2分量生成元($Q_{\alpha}$的后两个分量)记做$\,\mathcal{Q}_{a}$.
+\\
+
+重复指标一般表示求和, 除非另有说明.
+\\
+
+时空度规$\eta_{\mu\nu}$是对角的, 其元素为$\eta_{11}=\eta_{22}=\eta
+_{33}=1,\:\eta_{00}=-1$.
+\\
+
+达朗贝尔算符定义为$\square\equiv\eta^{_{\mu\nu}}\partial^{2}/\partial
+x^{\mu}\partial x^{\nu}=\mathbf{\nabla}^{2}-\partial^{2}/\partial
+t^{2} $, 其中$\mathbf{\nabla}^{2}$是拉普拉斯算符$\partial^{2}/\partial
+x^{i}\partial x^{i}$.
+\\
+
+列维-奇维塔张量$\epsilon^{\mu\nu\rho\sigma}$定义为全反对称量, 并有%
+$\epsilon^{0123}=+1$.
+\\
+
+Dirac矩阵$\gamma_{\mu}$的定义使得$\gamma_{\mu}\gamma_{\nu}+\gamma_{\nu}\gamma_{\mu}=2\eta_{\mu\nu}$. 另外, $\gamma_{5}=\mi\gamma_{0}\gamma_{1}\gamma_{2}\gamma_{3}$, 且$\beta=\mi\gamma^{0}=\gamma_{4}$. 当需要显式矩阵时, 它们由分块矩阵给出
+\begin{equation*}
+\gamma^{0} =-\mi\left[
+\begin{array}{cc}
+\bm{0} & \bm{1} \\ \bm{1} & \bm{0}
+\end{array}\right] \:, \qquad\qquad
+\bm{\gamma} =-\mi\left[
+\begin{array}{cc}
+\bm{0} & \bm{\sigma} \\ -\bm{\sigma} & \bm{0}
+\end{array}\right] \:,
+\end{equation*}
+其中$\bm{1}$是$2\times 2$单位矩阵, $\bm{0}$是$2\times 2$零矩阵, $\bm{\sigma}$的3个分量是通常的Pauli矩阵
+\begin{equation*}
+\sigma^{1} = \left(
+\begin{array}{cc}
+0 & 1 \\ 1 & 0
+\end{array}\right) \:, \qquad
+\sigma_{2} = \left(
+\begin{array}{cc}
+0 & -\mi \\ \mi & 0
+\end{array}\right) \:, \qquad
+\sigma_{3} = \left(
+\begin{array}{cc}
+1 & 0 \\ 0 & -1
+\end{array}\right) \:.
+\end{equation*}
+我们还会经常使用$4\times 4$分块矩阵
+\begin{equation*}
+\gamma_{5} =\left[
+\begin{array}{cc}
+\bm{1} & \bm{0} \\ \bm{0} & -\bm{1}
+\end{array}\right] \:, \qquad\qquad
+\epsilon =-\mi\left[
+\begin{array}{cc}
+e & \bm{0} \\ \bm{0} & e
+\end{array}\right] \:,
+\end{equation*}
+其中的$e$依旧是反对称$2\times 2$矩阵$\mi\sigma_{2}$. 例如, 我们对4分量Majorana旋量$s$的相位约定可以表示成$s^{\ast}=-\beta\,\gamma_{5}\,\epsilon\,s$.
+\\
+
+阶跃函数$\theta(s)$: 当$s>0$时为$1,\:s<0$时为$0$.
+\\
+
+矩阵或矢量$A$的复共轭、转置、厄米伴随分别记为$A^{\ast
+}$、$A^{T}$以及$A^{\dag}=A^{\ast T}$. 算符$O$的厄米%
+共轭记为$O^{\dag}$. 有时会用剑号$\dag$来标记矩阵的转置是通过算符的厄米伴随或数的复共轭构建的, 这时会用星号$\ast$来表示算符的厄米伴随或一个数的复共轭. 在方程末%
+尾的+H.c.或c.c.表示前面几项的厄米共轭或复共轭. 4分量旋量$u$上加横线定义%
+为$\bar{u}=u^{\dag}\beta$.
+\\
+
+使用的单位制通常取$\hbar$和$c$为1. 自始至终$-e$是电子的有理化电荷, 使得精细结构常数%
+是$\alpha=e^{2}/4\uppi\simeq1/137$. 温度处在能量单位制下, 而Boltzmann常数取成1.
+\\
+
+引用数据末尾括号中的数字给出了引用数据末尾数字的不确定度, 在没有额外指明的情况下, 实验数据取自`Review of Particle Properties,' The Particle Data Group,
+{\textit{European Physics Journal C}} {\bf{3}}, 1 (1998).
