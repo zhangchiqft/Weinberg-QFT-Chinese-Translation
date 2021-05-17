@@ -1,0 +1,177 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Friday, September 30, 2016 12:52:55}
+%TCIDATA{LastRevised=Sunday, October 02, 2016 16:33:00}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\begin{equation}
+V(\phi )=V_{0}(\phi )+V_{1}(\phi )\text{ ,}  \label{19.3.1}
+\end{equation}%
+其中$V_{0}(\phi )$满足不变性条件\footnote{我们将一般的对称性生成元记做$t_{\alpha
+},t_{\beta }$等, 与独立的破缺对称性生成元不同, 对于这些生成元, 下标$\alpha $%
+取值$a,b$等.}%
+\begin{equation}
+\sum_{n,m}\frac{\partial V_{0}(\phi )}{\partial \phi _{n}}(t_{\alpha
+})_{nm}\phi _{m}=0  \label{19.3.2}
+\end{equation}%
+\begin{equation}
+\left. \frac{\partial V(\phi )}{\partial \phi _{n}}\right\vert _{\phi =\phi
+_{0}+\phi _{1}}=0\text{ .}  \label{19.3.3}
+\end{equation}%
+\begin{equation}
+\sum_{m}\left. \frac{\partial ^{2}V_{0}(\phi )}{\partial \phi _{n}\partial
+\phi _{m}}\right\vert _{\phi =\phi _{0}}\phi _{1m}+\left. \frac{\partial
+V_{1}(\phi )}{\partial \phi _{n}}\right\vert _{\phi =\phi _{0}}=0\text{ .}
+\label{19.3.4}
+\end{equation}%
+\begin{equation}
+\sum_{nl}\left. \frac{\partial ^{2}V_{0}(\phi )}{\partial \phi _{n}\partial
+\phi _{m}}\right\vert _{\phi =\phi _{0}}(t_{\alpha })_{nl}\phi _{0l}=0\text{
+.}  \label{19.3.5}
+\end{equation}%
+\begin{equation}
+\sum_{n}(t_{\alpha }\phi _{0})_{n}\left. \frac{\partial V_{1}(\phi )}{%
+\partial \phi _{n}}\right\vert _{\phi =\phi _{0}}=0\text{ .}  \label{19.3.6}
+\end{equation}%
+\begin{equation}
+\frac{\partial L(\theta )}{\partial \theta ^{\alpha }}L^{-1}(\theta )=%
+\mathrm{i}N_{\alpha \beta }(\theta )t_{\beta }\text{ ,}  \label{19.3.7}
+\end{equation}%
+\begin{equation}
+\frac{\partial V_{1}(L(\theta )\phi _{\ast })}{\partial \theta _{\alpha }}%
+=\sum_{n}\left. \frac{\partial V_{1}(\phi )}{\partial \phi _{n}}\right\vert
+_{\phi =L(\theta _{\ast })\phi _{\ast }}(t_{\beta }L(\theta _{\ast })\phi
+_{\ast })_{n}\text{ .}  \label{19.3.8}
+\end{equation}%
+\begin{equation}
+0=\sum_{n}\left. \frac{\partial V_{1}(\phi )}{\partial \phi _{n}}\right\vert
+_{\phi =L(\theta _{\ast })\phi _{\ast }}(t_{\beta }L(\theta _{\ast })\phi
+_{\ast })_{n}\text{ .}  \label{19.3.9}
+\end{equation}
+
+根据16.1节的一般结果, 
+赝Goldstone玻色子直到一阶的质量矩阵$M_{ab}$给定为\begin{equation}
+M_{ab}^{2}=\sum_{mn}Z_{an}Z_{bm}\left. \frac{\partial ^{2}V(\phi )}{\partial
+\phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi _{0}+\phi _{1}}\text{ ,}
+\label{19.3.10}
+\end{equation}%
+其中$Z_{an}$是方程(\ref{19.2.39})所定义的场场重整化常数. 既然质量矩阵(\ref{19.3.10})%
+在零阶为零, 一阶项给出\begin{equation}
+M_{ab}^{2}=\sum_{mn}Z_{an}Z_{bm}\left[ \sum_{\ell }\left. \frac{\partial
+^{3}V_{0}(\phi )}{\partial \phi _{\ell }\partial \phi _{m}\partial \phi _{n}}%
+\right\vert _{\phi =\phi _{0}}\phi _{1\ell }+\left. \frac{\partial
+^{2}V_{1}(\phi )}{\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi
+=\phi _{0}}\right] \text{ ,}  \label{19.3.11}
+\end{equation}%
+其中$Z_{an}$在这里由(\ref{19.2.40})%
+的零阶近似给出:%
+\begin{equation}
+Z_{an}=\sum_{b}F_{ab}^{-1}(\mathrm{i}t_{b}\phi _{0})_{n}\text{ .}
+\label{19.3.12}
+\end{equation}%
+为了计算质量矩阵(\ref%
+{19.3.11}), 我们取方程(\ref{19.2.55})中的$t$为破缺对称性生成元$t_{a}$中的一个, 令$\phi =\phi _{0}$, 
+并与$(t_{b}\phi _{0})_{m}\phi _{1\ell }$:%
+\begin{eqnarray*}
+0 &=&\sum_{nm\ell }\left. \frac{\partial ^{3}V_{0}(\phi )}{\partial \phi
+_{\ell }\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi
+_{0}}\phi _{1\ell }(t_{a}\phi _{0})_{n}(t_{b}\phi _{0})_{m} \\
+&&+\sum_{nm}\left. \frac{\partial ^{2}V_{0}(\phi )}{\partial \phi
+_{n}\partial \phi _{m}}\right\vert _{\phi =\phi _{0}}(t_{a}\phi
+_{1})_{n}(t_{b}\phi _{0})_{m}+\sum_{n\ell }\left. \frac{\partial
+^{2}V_{0}(\phi )}{\partial \phi _{n}\partial \phi _{\ell }}\right\vert
+_{\phi =\phi _{0}}(t_{a}t_{b}\phi _{0})_{n}\phi _{1\ell }\text{ .}
+\end{eqnarray*}%
+根据方程(\ref{19.2.6}), 右边的第二项为零, 而第三项可以利用方程(\ref{19.3.4})进行重写, 这给了我们\begin{equation}
+\sum_{nm\ell }\left. \frac{\partial ^{3}V_{0}(\phi )}{\partial \phi _{\ell
+}\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi _{0}}\phi
+_{1\ell }(t_{a}\phi _{0})_{n}(t_{b}\phi _{0})_{m}=\left. \frac{\partial
+V_{1}(\phi )}{\partial \phi _{n}}\right\vert _{\phi =\phi
+_{0}}(t_{a}t_{b}\phi _{0})_{n}\text{ .}  \label{19.3.13}
+\end{equation}%
+这样, 在方程(\ref{19.3.11})使用上式就给出了赝Goldstone玻色子的质量矩阵公式, 
+以$V_{1}$的形式, 这个公式是\begin{eqnarray}
+M_{cd}^{2} &=&-\sum_{ab}F_{ca}^{-1}F_{db}^{-1}[(t_{a}\phi
+_{0})_{n}(t_{b}\phi _{0})_{m}\left. \frac{\partial ^{2}V_{1}(\phi )}{%
+\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi _{0}} 
+\nonumber \\
+&&+(t_{a}t_{b}\phi _{0})_{n}\left. \frac{\partial V_{1}(\phi )}{\partial
+\phi _{n}}\right\vert _{\phi =\phi _{0}}]\text{ .}  \label{19.3.14}
+\end{eqnarray}
+
+为了使它是一个合理的质量矩阵, 它最好是正定的. 为了看到这一点, 将这一结果重写成对群参量$\theta _{\alpha }$的导数形式将是方便的. 对方%
+程(\ref{19.3.8})做相对$\theta _{\beta }$的微分, 令$\theta =\theta _{\ast }$, 并使用%
+方程(\ref{19.3.9})和$\phi _{0}=L(\theta _{\ast })\phi
+_{\ast }$, 这给出\begin{equation}
+M_{ab}^{2}=\sum_{cd\alpha \beta }N_{a\alpha }^{-1}(\theta _{\ast })N_{b\beta
+}^{-1}(\theta _{\ast })F_{ac}^{-1}F_{bd}^{-1}\left. \frac{\partial
+^{2}V_{1}(L(\theta )\phi _{\ast })}{\partial \theta _{\alpha }\partial
+\theta _{\beta }}\right\vert _{\theta =\theta _{\ast }}\text{ .}
+\label{19.3.15}
+\end{equation}%
+由于$\theta _{\ast }$是函数$V_{1}(L(\theta
+)\phi _{\ast })$的{\kai{最小值点}}, 右边的矩阵是正定的.
+
+假定哈密顿量中的对称性破缺微扰$H_{1}$是算符$\Phi _{n}$的线性组合\begin{equation}
+H_{1}=\sum_{n}u_{n}\Phi _{n}  \label{19.3.16}
+\end{equation}%
+(算符$\Phi _{n}$不必须是基本标量场), 这构成了生成元为$t_{\alpha }$的对称群的一个表示, 也就是说\begin{equation}
+\lbrack T_{\alpha },\Phi _{n}]=-(t_{\alpha })_{mn}\Phi _{m}\text{ ,}
+\label{19.3.17}
+\end{equation}%
+其中$T_{\alpha }$是该对称群的量子力学生成元. 根据16.3节的结果, 势的对称性破缺部分是\begin{equation}
+V_{1}(\phi )=\langle H_{1}\rangle _{\langle \Phi \rangle =\phi
+}=\sum_{n}u_{n}\phi _{n}\text{ ,}  \label{19.3.18}
+\end{equation}%
+\[
+0=\sum_{n}u_{n}(t_{\alpha }\phi _{0})_{n}\text{ ,}
+\]%
+或者, 使用方程(\ref{19.3.17})%
+\begin{equation}
+0=\langle \lbrack T_{\alpha },H_{1}]\rangle _{0}\text{ ,}  \label{19.3.19}
+\end{equation}%
+\[
+M_{cd}^{2}=-\sum_{ab}F_{ca}^{-1}F_{db}^{-1}\sum_{n}u_{n}(t_{a}t_{b}\phi
+_{0})_{n}\text{ ,}
+\]%
+\begin{equation}
+M_{cd}^{2}=-\sum_{ab}F_{ca}^{-1}F_{db}^{-1}\langle \lbrack
+T_{a},[T_{b},H_{1}]]\rangle _{0}\text{ .}  \label{19.3.20}
+\end{equation}
+
+\end{document}

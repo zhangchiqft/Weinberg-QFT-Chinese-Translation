@@ -1,0 +1,190 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Saturday, July 09, 2016 20:53:29}
+%TCIDATA{LastRevised=Monday, July 11, 2016 11:13:46}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+我们的麻烦还没有完. 
+即便我们通过积掉截面或者远离质量壳的方法避免了红外发散, 
+相应地, 能量为$E$的被积截面以及不在壳振幅将会包含第二类质量奇异性, 这会导致因子$%
+\ln (E/m)$, 进而使得量纲分析给出的单纯的幂次率行为无效. 原因可以追溯到重整化耦合的如下性质: 当所有质量为零时, 按照惯例以振幅%
+定义的重整化耦合会红外发散. 例如, 考察一个实标量场的理论, 其拉格朗日密度是
+
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\partial _{\lambda }\phi \partial ^{\lambda }\phi -%
+\frac{1}{2}m^{2}\phi ^{2}-\frac{1}{24}g\phi ^{4}\text{ .}  \label{18.1.2}
+\end{equation}%
+到一圈阶, 对于初态4-动量为$p_{1},p_{2}$而末态4-动量为$p_{1}^{\prime },p_{2}^{\prime }$的散射过%
+程, 不变弹性散射振幅由方程(\ref{12.2.4})给出\begin{eqnarray}
+A &=&g-\frac{g^{2}}{32\uppi^{2}}\int_{0}^{1}\dif x\{\ln \left( \frac{\Lambda
+^{2}}{m^{2}-sx(1-x)}\right)  \nonumber \\
+&&+\ln \left( \frac{\Lambda ^{2}}{m^{2}-tx(1-x)}\right) +\ln \left( \frac{%
+\Lambda ^{2}}{m^{2}-ux(1-x)}\right) -3\}+O(g^{3})\text{ ,}  \label{18.1.3}
+\end{eqnarray}%
+其中$s,t$以及$u$是Mandelstam变量\[
+s=-(p_{1}+p_{2})^{2}\text{ , \ \ \ }t=-(p_{1}-p_{1}^{\prime })^{2}\text{ , \
+\ \ }u=-(p_{1}-p_{2}^{\prime })^{2} 
+\]%
+而$\Lambda $是紫外截断. 只要我们让$s,t$和$u$远离正实轴, 特别地, 如果它们全都趋于$-\infty $(这违反了质量壳条件$s+t+u=4m^{2}$.), 那么它%
+就没有零质量奇异性. 
+当然, 这些振幅同时依赖于截断$\Lambda $和$m$, 所以即使没有零质量奇异性, 在$s,t$和$u$趋于$-\infty $的极%
+限下, 我们也没有发现$%
+A\rightarrow $常数这一根据想当然的标度讨论得到的结果. 与截断的相关性可以通过重整化隐藏起来; 我们将裸耦合$g$%
+替换成重整化耦合$g_{R}$, 
+它的定义是$A$在某些约定重整化点的值. 例如, 
+我们可以取\begin{eqnarray}
+g_{R} &\equiv &A(s=t=u=0)  \nonumber \\
+&=&g-\frac{3g^{2}}{32\uppi^{2}}\left\{ \ln \frac{\Lambda ^{2}}{m^{2}}%
+-1\right\} +O(g^{3})\text{ .}  \label{18.1.4}
+\end{eqnarray}%
+这样, (\ref{18.1.3})就变成\begin{eqnarray}
+A &=&g_{R}+\frac{g_{R}^{2}}{32\uppi^{2}}\int_{0}^{1}\dif x\{\ln \left( 1-%
+\frac{sx(1-x)}{m^{2}}\right)  \nonumber \\
+&&+\ln \left( 1-\frac{tx(1-x)}{m^{2}}\right) +\ln \left( 1-\frac{ux(1-x)}{%
+m^{2}}\right) \}+O(g_{R}^{3})\text{ .}  \label{18.1.5}
+\end{eqnarray}%
+(我们可以毫无顾忌地将第二项中的$g^{2}$替换成$g_{R}^{2}$, 这是因为二者的差是$g^{3}$阶.) 这一振幅没有紫外发散, 但它现在%
+在$m=0$处有一奇异性, 即使$s,t$和$u$全部为负, 这一奇异性也依旧存在. 因此, 当$s,t$和$u$全部趋于$-\infty $%
+时, 我们发现\begin{equation}
+A\rightarrow g_{R}+\frac{g_{R}^{2}}{32\uppi^{2}}\left\{ \ln \left( \frac{-s}{%
+m^{2}}\right) +\ln \left( \frac{-t}{m^{2}}\right) +\ln \left( \frac{-u}{m^{2}%
+}\right) -6\right\} \text{ ,}  \label{18.1.6}
+\end{equation}%
+这一渐进行为与基于单纯的标度讨论预期得到的结果并不一致. (%
+使用任何其它\textquotedblleft 自然的\textquotedblright 重整化耦合定义会出现几乎相同的结果; 例如, 我们可以%
+将$g_{R}$定义为$A$在在壳对称点$s=t=u=4m^{2}/3$的值, 除了$-6$%
+要被换成其它某个数值因子外, (\ref{18.1.6})中的其它渐进行为都会复现出来.) 很显然, 当$A$以$g_{R}$%
+的形式表示时所出现的零质量极限完全是因为公式(\ref{18.1.4})中的$\ln m^{2}$%
+项, 即用裸耦合$g$表示重整化耦合$g_{R}$时出现的$\ln
+m^{2}$项.
+
+当我们计算算符的矩阵元(例如不在壳的Feynman%
+振幅)而非截面的积分时, 我们还会遇到其它的零质量奇异性. 这是因为同耦合常数一样, 
+这些算符也必须进行重整化. 例如, 假定在拉格朗日量为(\ref{18.1.2})的标量场论中, 我们希望计算算符\[
+\mathcal{O}(p)\equiv \int \dif^{4}x\,\me^{-\mi p\cdot x}\phi ^{2}(x)
+\]%
+的矩阵元$\langle \beta |\mathcal{O}(p)|\alpha
+\rangle $. 以Feynman图的形式, 这对应于在跃迁$\alpha \rightarrow \beta $的图中, 在两条$\phi $-内线汇%
+集的地方插入一顶角, 
+而流经顶角的总4-动量为$p$. (参看图\ref{fig:18.1}.) 紫外发散源于这些图中的一类, 在这类图中, 图被分成了两部分, 新顶角%
+是其中一个子图的一部分, 而该子图通过两条$\phi $线与图的其它部分相连. (参看图\ref{fig:18.2}.) 由于相互作用$\phi ^{2}$的量纲%
+为$+2$, 若这一顶角通过$n>2$%
+条外线与图的剩余部分相连, 那么顶角所在的子图就有量纲$4-2-n<0$, 因此通过量纲分析可知, 
+如果用来连接两个子图的$\phi $线数目多于两条, 那么含有顶角的子图就是收敛的. 这个子图的发散部分仅是一个对数发散的常数, 所以给$\phi ^{2}$乘以合适的发%
+散常数$Z_{\phi ^{2}}$可以使得$\phi
+^{2}$的矩阵元是有限的\footnote{在这一讨论中我们假定, 那些与图的剩余部分仅通过两条$\phi $线相连并含有顶角的子图, 凡是它们引起的发%
+散均以同样的方式消除.}. 到$g^{2}$阶, 相关的子图由图\ref{fig:18.3}中的图给出, 
+因此会给$\mathcal{O}(p)$的矩阵元贡献发散因子\begin{equation}
+F(p)=1+\frac{1}{2}\left[ -\mi(2\uppi)^{4}g\right] \left[ \frac{-\mi}{(2\uppi%
+)^{4}}\right] ^{2}\int \frac{\dif^{4}k}{[k^{2}+m^{2}-i\epsilon
+][(p-k)^{2}-m^{2}-\mi\epsilon ]}\text{ .}  \label{18.1.8}
+\end{equation}%
+组合分母, 旋转$k^{0}$积分围道, 并附加紫外截断$%
+\Lambda $, 当$\Lambda \rightarrow \infty $时, 这给出结果\begin{equation}
+F(p)=1-\frac{g}{32\uppi^{2}}\int_{0}^{1}\dif x\left[ \ln \left( \frac{%
+\Lambda ^{2}}{m^{2}+p^{2}x(1-x)}\right) -1\right] +O(g^{2})\text{ .}
+\label{18.1.9}
+\end{equation}%
+(只要我们保持$p^{2}$为正)%
+这一结果零质量奇异性, 但它理所应当地与截断相关. 通过定义重整化$\phi ^{2}$算符\begin{equation}
+(\phi ^{2})_{R}=N^{(\phi ^{2})}\phi ^{2}\text{ ,}  \label{18.1.10}
+\end{equation}%
+这一紫外发散可以被消除掉, 其中的$N^{(\phi ^{2})}$会使得$N^{(\phi ^{2})}F(p)$在某个明确的重整化点有明确的%
+有限值. 例如, 我们可以定义重整化$\phi ^{2}$算符使得\begin{equation}
+N^{(\phi ^{2})}F(0)=1\text{ ,}  \label{18.1.11}
+\end{equation}%
+在这一情况下, 
+\begin{equation}
+N^{(\phi ^{2})}=1+\frac{g}{32\uppi^{2}}\left( \ln \frac{\Lambda ^{2}}{m^{2}}%
+-1\right) +O(g^{2})\text{ .}  \label{18.1.12}
+\end{equation}%
+这样, 重整化算符$(\phi ^{2})_{R}$%
+的矩阵元就会包含因子\begin{equation}
+F_{R}(p)\equiv N^{(\phi ^{2})}F(p)=1+\frac{g}{32\uppi^{2}}\int_{0}^{1}\dif %
+x\ln \left( 1+\frac{p^{2}x(1-x)}{m^{2}}\right) +O(g^{2})\text{ .}
+\label{18.1.13}
+\end{equation}%
+这对于所有的$p^{2}>0$和$m^{2}>0$%
+都是有限的, 但它现在包含$m\rightarrow 0$的红外发散, 
+相对于$p^{2}\rightarrow +\infty $时的渐进行为, 这一红外发散对应于其中的大对数. 
+当然, 为了消除高阶计算中的截断, 我们将不得不同时引入重整化耦合常数和重整化$\phi ^{2}$%
+算符, 并且我们会遇到这两者引起的大对数.
+
+不仅仅是$\phi ^{2}(x)$, 任何类型的算符都需要类似的重整化因子. 特别地, 
+取理论中的一个基本场$\psi $的矩阵元, 它所引入的紫外发散就源于对相对应传播子的辐射修正. 正如我们在第12%
+章中看到的, 这些无限大可以通过引入重整化场$\psi _{R}$消除掉:%
+\begin{equation}
+\psi _{R}=N^{(\psi )}\psi \text{ ,}  \label{18.1.14}
+\end{equation}%
+其中的$N^{(\psi )}$会使得$\psi _{R}$%
+在单粒子态和真空之间的矩阵元与没有相互作用时按传统归一化的场的矩阵元是相同的. 它与重整化理论中通常的$Z$因子的关系是\begin{equation}
+Z^{(\psi )}=|N^{(\psi )}|^{-2}\text{ .}  \label{18.1.15}
+\end{equation}
+
+例如, 我们来回忆一下早先我们对旋量量子电动力学中光子场重整化的结果.\footnote{在上面作为例子的标量场论中, 相互作用为$\phi ^{4}$, 对%
+于这样的理论, $N^{(\phi )}$的最低阶项源于两圈图, 
+所以用这一理论例证$N$%
+因子的计算将是不方便的.} 在这一情况中, 重整化电磁场$A_{R}^{\mu }$一般写成裸场$A_{B}^{\mu }$的形式\[
+A_{R}^{\mu }=Z_{3}^{-1/2}A_{B}^{\mu }
+\]%
+其中$Z_{3}$由方程(11.2.21)给定\begin{equation}
+Z_{3}=1-\frac{e^{2}}{12\uppi^{2}}\ln \left( \frac{\Lambda ^{2}}{m^{2}}%
+\right) +O(e^{4})\text{ .}  \label{18.1.16}
+\end{equation}%
+它有一个零质量奇点, 
+而这将会影响到重整化光子场矩阵元的渐进行为. 特别地, 方程(11.2.22)%
+给出了重整化电磁场的自能函数\begin{equation}
+\pi (q^{2})=\frac{e_{R}^{2}}{2\uppi^{2}}\int_{0}^{1}\dif x\:x(1-x)\ln \left[
+1+\frac{q^{2}x(1-x)}{m^{2}}\right] +O(e_{R}^{4})\text{ .}  \label{18.1.17}
+\end{equation}%
+它在$m=0$处有奇点, 所以在它的渐进行为中就会有大对数: 对于$q^{2}\rightarrow
++\infty $%
+\begin{equation}
+\pi (q^{2})\longrightarrow \frac{e_{R}^{2}}{2\uppi^{2}}\left[ \frac{1}{6}\ln 
+\frac{q^{2}}{m^{2}}-\frac{5}{18}\right] +O(e_{R}^{4})\text{ .}
+\label{18.1.18}
+\end{equation}
+
+电动力学有如下的特征, 出现在电磁场重整化中的常数$Z_{3}$同时出现在电荷重整化中:%
+\begin{equation}
+e_{R}=Z_{3}^{-1/2}e_{\mathrm{BARE}}\text{ ,}  \label{18.1.19}
+\end{equation}%
+但这并非普遍情况. 重整化群技巧首先是在量子电动力学中得以使用的, 但对于这里讨论的标量场论而言, 由于场和耦合的重整化的是分开的, 所以这给%
+出了这些方法一个更加典型的例证.
+
+\end{document}

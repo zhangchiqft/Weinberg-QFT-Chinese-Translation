@@ -1,0 +1,1339 @@
+\chapter{算符积展开}
+
+当由一个算符引入又由另一算符引出的动量趋于无穷大, 而其它所有外线的4-动量保持不变时, 我们通常会发现自身需要知道振幅在这个时候的行为是什么样的.
+例如, 我们会在20.6节看到, 对于电子在强子初态$H$上散射而末态为任意强子的过程, 根据幺正性, 它的总截面给定为对如下振幅分量的(系数已知)线性组合
+\[
+\int \dif^{4}x\,\me^{-\mi k\cdot x}\,\langle H|J^{\mu}(x)J^{\nu}(0)| H \rangle \text{ ,}
+\]
+其中$k$是电子传给强子的4-动量, 而$J^{\mu}(x)$是电磁流. 在深度非弹电子散射的情况下, 由一个算符引入又由另一算符引出的动量$k$可以趋于无穷大. 类似的, 在研究各种算符的高动量极限时, 以及推导20.5节中相应的谱函数求和规则时, 我们会遇到类似Fouier变换的高动量极限, 所不同的只是强子态$|H\rangle$被替换成了真空态.
+
+如果像$J^{\mu}(x)J^{\nu}(0)$这样的算符积对$x^{\mu}$是解析的, 那么当Fourier变量$k$趋于无穷大时, 它的Fourier变换会指数衰减. 在该Fourier变换的高动量极限下, 领头项来自于时空变量在趋于另一个时空变量时算符积中的奇点. Wilson在1969年开始了对这类算符积的研究,\cite{1} 他最初的目的是想构建出传统量子场论的替代品. 正如之前所发生的(例如色散关系与Feynman图形规则), 绕过量子场论的努力给出了有价值的一般性结果, 不过这些结果最好被理解成量子场论的一般性质.
+
+我们将在20.1节论述算符积展开. 在1970年, Zimmerman在微扰论中给出了这个展开的标准证明.\cite{2} 在20.1节, 基于场论的路径积分公式 ,我们会给出一个不太严格但是更加简单并且非微扰的证明. 在20.2节, 利用流经Feynman图的大动量流, 我们会呈现出看待算符积展开的另一视角, 这将带给我们微扰性的证明.
+
+算符积展开的几个性质使得我们可以很方便地从量子色动力学这样的理论中得到一些重要的结果. 其中的一个性质是, 对于描述展开中的奇异性的函数, 它与动量之间关系由重整化群方程控制, 这使得在渐进自由理论中, 我们可以用微扰论计算出这些函数在大动量处的形式, 我们会在20.3节对这些进行讨论. 另一个性质是, 这些函数不会被可能的自发对称性破缺影响, 它们能够反映出底层理论的所有对称性, 这一点会在20.4节进行讨论. 在20.5节和20.6节, 我们会考察应用.
+
+\section{展开: 描述与推导}
+
+
+Wilson\cite{1}假设两个算符的乘积$A(x)B(y)$在$x\to y$时的奇异行为可以写成对其它定域算符的求和
+\begin{equation}
+A(x)B(y)\to \sum_{C}F^{AB}_{C}(x-y)\,C(y)\text{ ,} \label{20.1.1}
+\end{equation}
+其中$F_{C}^{AB}(x-y)$是有奇点的c-数函数. 量纲分析表明, 当$x\to y$时, $F_{C}^{AB}(x-y)$的行为是$(x-y)$的幂函数, 幂次为$d_{C}-d_{A}-d_{B}$, 其中$d_{O}$是算符按照质量或动量计算的量纲. 当我们给算符$O$加入更多的导数或场时, $d_{O}$会增加, 所以随着算符$C$变得越来越复杂, 函数$F_{C}^{AB}(x-y)$的奇异性会降低. 算符积展开的显著特征是它是{\kai{算符}}关系; 即, 我们对任意的矩阵元$\langle\beta|A(x)B(y)|\alpha\rangle$使用它时, 我们会对所有的$|\alpha\rangle$和$|\beta\rangle$态得到相同的函数$F_{C}^{AB}(x-y)$.
+
+这个展开之所以在考察乘积$A(x)B(y)$在$x\to y$时的行为非常有用, 正是因为方程(\ref{20.1.1})的奇异性会随着算符$C(y)$复杂性的增加而减小. 前面简单的幂次级数讨论会被重整化效应修正; 展开(\ref{20.1.1})必须写成在某个标度$\mu$处正规化的算符, 这样$\mu$就会伴随$x-y$出现在系数函数$F^{AB}_{C}(x-y)$之中. 我们会在20.3节看到, 在渐进自由的理论中, 除去$\ln(x-y)^{2}$的一个幂函数外, $F^{AB}_{C}(x-y)$的行为确实是量纲分析所表明的$x-y$的幂函数, 而其幂次正是$d_{C}-d_{A}-d_{B}$. 即使是在更一般的理论中, 不同算符$C(y)$所连带的奇异性也非常可能会随着算符复杂性的增加而减小.
+
+动量空间中的相应陈述是, 当$k\to \infty$时,
+\begin{equation}
+\int \dif^{4}x\, \me^{-\mi k\cdot x}A(x)\,B(0)\rightarrow
+\sum_{C}V_{C}^{AB}(k)\,C(0)  \label{20.1.2}
+\end{equation}%
+相应地有
+\begin{equation}
+\int \dif^{4}x\,\me^{-\mi k\cdot x}\,T\{A(x)B(0)\}\rightarrow \sum_{C}U_{C}^{AB}(k)\,C(0)
+\label{20.1.3}
+\end{equation}%
+其中$V_{C}^{AB}(k)$和$U_{C}^{AB}(k)$是$k^{\mu}$的函数, 当$k$很大时, 随着级数中的项越变越复杂, 它们会快速衰减.
+
+我们现在来推导Wilson展开的一个推广版本, 在这个版本中, 任意多个算符携带的动量一起趋于无穷大. 对于这个目的, 我们来考察定域算符$A_{1}(x_{1}),A_{2}(x_{2})\cdots$和定域算符$B_{1}(y_{1}),B_{2}(y_{2})\cdots$\\的Green函数, 其中$A$算符的变量在点$x$附近而$B$算符的变量固定不动:
+\begin{align}
+&\langle T\{A_{1}(x_{1}),A_{2}(x_{2}),\cdots
+B_{1}(y_{1}),B_{2}(y_{2}),\cdots \}\rangle _{0}  \nonumber \\
+&\qquad=\int \left[ \prod_{\ell ,z}\dif\phi _{\ell }(z)\right]
+a_{1}(x_{1})a_{2}(x_{2})\cdots b_{1}(y_{1})b_{2}(y_{2})\cdots \exp (\mi I[\phi
+])\text{ ,}  \label{20.1.4}
+\end{align}%
+其中小写字母$a$和$b$表示将$A$和$B$中的场算符替换成了c-数场$\phi$. 现在围绕点$x$做一个半径为$R$的球$B(R)$, $R$远大于$x_{1},x_{2}\cdots$之间的距离, 但远小于$x$与$y_{1},y_{2}\cdots$之间的距离. 既然作用量是定域的, 它可以写成
+\begin{equation}
+I=\int_{z\in B(R)}\dif^{4}z\,\mathscr{L}(z)+\int_{z\notin B(R)}\dif^{4}z\,\mathscr{L}(z)\text{ .}
+\label{20.1.5}
+\end{equation}
+那么方程(\ref{20.1.4})就可以变成如下形式
+\begin{align}
+&\quad\langle T\{A_{1}(x_{1}),A_{2}(x_{2}),\cdots
+B_{1}(y_{1}),B_{2}(y_{2}),\cdots \}\rangle _{0}  \nonumber \\
+&=\int \left[ \prod_{z\notin B(R),\ell }\dif\phi _{\ell }(z)\right]
+b_{1}(y_{1})b_{2}(y_{2})\cdots \exp \left( \mi\int_{z\notin
+B(R)}\dif^{4}z\,\mathscr{L}(z)\right)   \nonumber \\
+&\quad\times \int \left[ \prod_{z\in B(R),\ell }\dif\phi _{\ell }(z)\right]
+a_{1}(x_{1})a_{2}(x_{2})\cdots \exp \left( \mi\int_{z\in
+B(R)}\dif^{4}z\,\mathscr{L}(z)\right) \text{ ,}  \label{20.1.6}
+\end{align}%
+我们要对这个积分附加边界条件: 球内的场要在表面处于球外的场光滑相连, 这会约束对球内场的路径积分. 除了这个边界条件以外, 对球内场的路径积分完全不被球外场的行为影响, 所以对球内场的路径积分可以用球面上的场和它的导数进行表示, 而它们反过来可以表示成从球外外推到中心点$x$的场和它们的导数. 如果我们将这一积分表示成外推到点$x$的c-数场和它们导数的乘积\footnote{为了使级数中的系数是有限的, 这些乘积必须要乘上合适的无限大因子以重整化. 这会在下一节所呈现的推导中变得非常显然.}$o(x)$的级数, 那么系数只能是坐标差的函数$U^{A_{1},A_{2},\cdots}_{O}(x_{1}-x,x_{2}-x,\cdots)$. 既然$y_{1},y_{2}\cdots$都在球$B(R)$的外部, 在$R\to 0$的极限下, 将球内的这部分从作用量中去除出去并不会对球外的场有影响, 所以在这一极限下, 当$x_{1},x_{2}\cdots$全部趋于$x$时, 方程(\ref{20.1.6})变成
+\begin{align}
+&\langle T\{A_{1}(x_{1}),A_{2}(x_{2}),\cdots B_{1}(y_{1}),B_{2}(y_{2}),\cdots
+\}\rangle _{0} \rightarrow \int \left[ \prod_{\ell ,z}\dif\phi _{\ell }(z)%
+\right]   \nonumber \\
+&\qquad\times b_{1}(y_{1})b_{2}(y_{2})\cdots \exp \left( \mi\int \dif^{4}z\,\mathscr{L}(z)\right)
+\nonumber \\
+&\qquad\times \sum_{O}U_{O}^{A_{1},A_{2},\cdots }(x_{1}-x,x_{2}-x,\cdots )\,O(x)
+\nonumber \\
+&=\sum_{O}U_{O}^{A_{1},A_{2},\cdots }(x_{1}-x,x_{2}-x,\cdots )\,\langle
+T\{O(x),B_{1}(y_{1}),B_{2}(y_{2}),\cdots \}\rangle _{0} \text{ ,} \label{20.1.7}
+\end{align}%
+其中$O(x)$是对应$o(x)$的量子力学Heisenberg绘景算符. 特别地, 通过对变量$y$做Fourier变换并乘上合适的系数函数, 对于任意的态$|\alpha\rangle$和$\langle\beta|$, 这给出
+\begin{equation}
+\langle \beta |T\{A_{1}(x_{1}),A_{2}(x_{2}),\cdots \}|\alpha \rangle
+\rightarrow \sum_{O}U_{O}^{A_{1},A_{2},\cdots }(x_{1}-x,x_{2}-x,\cdots
+)\langle \beta |O(x)|\alpha \rangle  \text{ .} \label{20.1.8}
+\end{equation}%
+由于这对任意态都是成立的, 它是推广版本中的算符关系:
+\begin{equation}
+T\{A_{1}(x_{1}),A_{2}(x_{2}),\cdots \}\rightarrow
+\sum_{O}U_{O}^{A_{1},A_{2},\cdots }(x_{1}-x,x_{2}-x,\cdots )\,O(x)\text{ .}
+\label{20.1.9}
+\end{equation}
+
+\section[动量流]{动量流\footnote{本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过.}}
+
+我们现在来考察算符积展开最简单的例子: 在质量为$m$而相互作用为$-\frac{1}{24}g\phi^{4}$的单个标量场$\phi$的理论中, 对于它的$n+2$点Feynman振幅, 让4-动量$k$从一条线流入又从另一条线流出, 但保持其它所有外线的动量不变, 考察这个振幅在$k$很大时的渐进行为. 在这一情况下, 这会带给我们对算符积展开中前几项的微扰论证明, 所用的方法是从流经Feynman图的大动量流导出这一展开, 而我们这里的真实目的其实是从这一方法中得到启发. 本章的附录将会讨论这些结果到一般情况的推广.
+
+我们把$n$粒子散射振幅的所有连通图之和定义为$\Gamma(k;p_{1}\cdots p_{n})$, 其中它的外线携带入动量$k$和$p-k$以及出动量$p_{1}\cdots p_{n}$, 并且$p\equiv p_{1}+p_{2}+\cdots p_{n}$. (为了之后方便处理, 我们进一步指定$\Gamma(k;p_{1}\cdots p_{n})$包含动量为$k$和$p-k$的外线的传播子, 但对于那些固定的动量$p_{1}\cdots p_{n}$, $\Gamma$并不包含这些外线的传播子.) 我们希望证明, 在微扰论的任意阶, 当$k\to \infty$时,
+\begin{equation}
+\Gamma(k;p_{1}\cdots p_{n})\to U_{\phi^{2}}(k)F_{\phi^{2}}(p_{1}\cdots p_{n})+O(k^{-5})\text{ ,}\label{20.2.1}
+\end{equation}
+其中$U_{\phi^{2}}(k)$是$k^{-4}$阶\footnote{贯穿本章始终, 当我们称一个振幅是$k^{A}$阶的, 应该将其理解成: 取$k^{\rho}=\kappa n^{\rho}$, 其中$n^{\rho}$是任意确定的4-矢, 若振幅是$k^{A}$阶的, 则当$\kappa\to\infty$时, 振幅会趋于$\kappa^{A}$乘以$\ln\kappa$的幂函数之和.}项的和, 它独立于$p_{1}\cdots p_{n}$和$n$, 而$F_{\phi^{2}}(p_{1}\cdots p_{n})$是在$n$条$\phi$线中插入单个$\phi^{2}$顶角后的振幅, 为了使它有限, 它还要乘上合适的重整化常数$Z_{\phi^{2}}$. 因为$F_{\phi^{2}}(p_{1}\cdots p_{n})$是重整化算符$(\phi^{2})_{R}\equiv Z_{\phi^{2}}\phi^{2}(0)$的矩阵元, 方程(\ref{20.2.1})对应于如下陈述: 在$k\to\infty$时, 算符积展开的领头项是\footnote{编时乘积的下标$C$在这里是指我们只引入了连通图. 由于在这一节我们只考察两个$\phi$场的算符积展开, 我们扔掉了$V_{\phi^{2}}$的下标$\phi^{2}$. 对于携带动量$k$和$p-k$的那些线, 由于我们在对它们的传播子做辐射修正的同时暗中引入了抵消项, 所以这些场本身是重整化的.}
+\begin{equation}
+\int\dif^{4}x\,\me^{-\mi k\cdot x}\,T\{\phi_{R}(x)\phi_{R}(0)\}_{C}\to U_{\phi^{2}}(k)(\phi^{2}(0))_{R}\text{ .}\label{20.2.2}
+\end{equation}
+
+在研究Feynman振幅的渐进行为时, 我们必须要把如下的事实考虑在内: 在动量空间的部分积分区域中, 可能会只有一部分内线动量与趋于无穷大的外线动量同阶, 但其它内线却不这样. 我们设这些拥有$k$阶动量的线处在子图$\mathscr{S}$, 并按照12.1节的规则计算出子图$\mathscr{S}$的量纲$D_{\mathscr{S}}$, 那么这部分积分区域给$\Gamma(k;p_{1}\cdots p_{n})$的贡献的渐进行为是$k^{D_{\mathscr{S}}}$阶的.
+如果$\mathscr{S}$与图的其余部分用$m$条外线相连, 并且$\mathscr{S}$有两条动量分别为$k$和$p-k$的外线, 那么从方程(\textcolor{red}{12.1.8}), 我们有$\mathscr{D_{S}}=4-2-m-4=-2-m$. ($-4$来自于动量为$k$和$p-k$的那两条线的传播子, 即我们在$\Gamma(k;p_{1}\cdots p_{n})$中引入的两个传播子.)
+{\kai{因此, 无论主导$\Gamma$的渐进行为是大动量$k$流经整个图的那部分积分区域, 还是只流经某些子图的那部分积分区域, 给出最主要贡献的是外线最少的那一个.}}\cite{3}
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=6.0in]{201}
+ \caption{积分方程(\ref{20.2.3})的图形表示. $\Gamma$标记的阴影圆盘代表所有外线如图所示的连通Feynman图之和, 而由$I$标记的阴影圆盘, 即中间有竖线的那一个, 它代表的是: 无法通过剪断一对内线使左边的外线和右边的外线相分离的所有连通图之和.}
+ \label{fig:20.1}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=6.0in]{202}
+ \caption{在相互作用为$\Phi^{4}$的标量场中, 核$I(k,k',p)$的树图和一圈图.}
+ \label{fig:20.2}
+\end{figure}
+
+当$n=0$时, 这总是整个图; 即, 积分的主要部分来自于每条线均携带$k$阶动量的那部分积分区域, 它给出$k^{-2}$阶的渐进行为. 在这一情况下, 算符积展开中对矩阵元有贡献的算符只有单位算符, $C=1$. 由于我们目前只研究连通图, 这一项在$n>0$时被排除了.
+
+当$n=2$时, 除了整个图给出主要贡献外, {\kai{还有}}一个子图也给出主要贡献: 动量为$k$和$p-k$的两条外线通过两条内线构成的桥与另外两条外线相连的图,\footnote{由于这个理论在$\phi\to -\phi$的对称性, 有奇数个外线的图或子图都被排除了, 进而$m=1$的可能性被排除了. 又因为$\Gamma$的定义来自于连通图, 所以$m=0$的可能性被排除了.} 这给出阶为$k^{-4}$的渐进行为. 当$n\geq 4$时, 主要贡献{\kai{仅}}来自于这样的子图:  动量为$k$和$p-k$的两条外线通过两条内线构成的桥与另外$n-2$条外线相连的图, 这再次给出阶为$k^{-4}$的渐进行为.
+
+一般的图会包含数个这样的二粒子桥, 这使得对$n=2$和$n\geq4$的情况进行分析变得复杂. 我们先来考察$n=2$的情况. 我们将所有对$\Gamma(k;p_{1},p_{2})$有贡献的二粒子不可约图定义为$I(k,k^{\prime},p)$(其中$p_{1}=k^{\prime}$, $p_{2}=p-k^{\prime}$), 所谓二粒子不可约是指无法通过剪断一对内线的方法使得带有入动量$k$和$p-k$的两条外线与动量为$k^{\prime}$和%
+$p-k^{\prime}$的外线分离. 那么, $\Gamma(k;k^{\prime},p-k^{\prime})-I(k,k^{\prime},p)$就是那些可以以这种方式变成不连通图的那些图之和, 因而可以写成(参看图\ref{fig:20.1})
+\begin{equation}
+\Gamma(k;k^{\prime},p-k^{\prime})-I(k,k^{\prime},p)
+=\int\dif^{4}k^{\prime\prime}\, I(k,k^{\prime\prime},p)\Gamma(k^{\prime\prime};k^{\prime},p-k^{\prime})\text{ .}\label{20.2.3}
+\end{equation}
+(同$\Gamma(k;k^{\prime},p-k^{\prime})$一样, 核$I(k,k^{\prime},p)$包含动量为$k$和$p-k$的外线的传播子, 但为了避免重复计数, 它不包含动量为$k^{\prime}$和$p-k^{\prime}$的外线的传播子.) $I(k,k^{\prime},p)$到$g^{2}$阶的Feynman图如图\ref{fig:20.2}所示.
+
+
+为了计算方程(\ref{20.2.3})右边的行为, 我们先来考察核$I(k,k^{\prime},p)$在$k^{\prime}$和$p$保持不动而$k\to \infty$时的渐进行为. 主导这个渐进行为的是所有内线均携带$k$阶动量的那部分动量空间, 这会给出$k^{-4}$阶的贡献, 而在其它区域, 由携带$k$阶动量的内线构成的子图至少有五条外线, 这给出的贡献要比$k^{-4}$衰减得更快. 由此得出, 做$I(k,k',p)$相对$k'$或$p$的微分将会让核的渐进行为降低一个$k^{-1}$因子. 因此, 保持$k'$和$p$不动但让$k\to \infty$, 我们就有
+\begin{equation}
+I(k,k^{\prime},p)\to I_{\infty}(k)\text{ ,} \label{20.2.4}
+\end{equation}
+其中$I_{\infty}(k)$仅是$k$的函数并且阶为$k^{-4}$.
+
+不幸的是, 我们无法简单地将方程(\ref{20.2.3})中的$I(k,k',p)$替换成这一渐进极限, 这是因为无论$k$变得多大, 当$k'$为$k$阶时, 它会积分一个很大的贡献. 为了解决这一困难, 我们使用一个基于数学归纳法的技巧. 在最低阶, $\Gamma(k;k',p-k')$由一个顶点与两个裸传播子相连的图给出
+\[
+\Gamma(k;k^{\prime},p-k^{\prime})=\frac{\mi g}{(2\uppi)^{4}(k^{2}+m^{2})((p-k)^{2}+m^{2})}\qquad (\text{最低阶})
+\]
+对于这一阶, 很容易证明它的渐进行为的形式就是方程(\ref{20.2.1}). 因此, 我们假定对于$n=2$成立的方程(\ref{20.2.1}), 直到$g$的某个给定阶$N$它都是成立的------即, 直到这一阶, $k\to\infty$时的渐进行为采取如下的形式
+\begin{equation}
+\Gamma(k;k^{\prime},p-k)\to U_{\phi^{2}}(k)F_{\phi^{2}}(k^{\prime},p-k^{\prime})+O(k^{-5})\text{ ,} \label{20.2.5}
+\end{equation}
+然后我们将试图证明它在下一阶也是成立的. 为了估计$k'$为$k$阶时它对方程(\ref{20.2.3})中积分的贡献, 我们将方程(\ref{20.2.3})重写为
+\begin{align}
+&\Gamma(k;k^{\prime},p-k)=I(k,k',p) \nonumber \\
+&\qquad +\int \dif^{4}k^{\prime\prime}\,I(k,k^{\prime\prime},p)
+\Big[\Gamma(k^{\prime\prime};k^{\prime},p-k^{\prime})
+-U_{\phi^{2}}(k^{\prime\prime})F_{\phi^{2}}(k^{\prime},p-k^{\prime})\Big] \nonumber \\
+&\qquad + F_{\phi^{2}}(k^{\prime},p-k^{\prime})\int \dif^{4}k^{\prime\prime}\, I(k,k^{\prime\prime},p)
+U_{\phi^{2}}(k^{\prime\prime})\text{ .} \label{20.2.6}
+\end{align}
+既然$I(k,k',p)$起码是领头阶的, 我们可以在方程(\ref{20.2.6})的右边使用方程(\ref{20.2.5}). 因此对于右边的第二项, $k^{\prime\prime}$为$k$阶的那部分积分区域所给出的贡献会像$k^{-4+4-5}$那样为零, 因此与$k^{\prime\prime}$保持有限的那部分相比就是可以忽略的, 而这部分会给出收敛积分
+\[
+I_{\infty}(k)\int\dif^{4}k^{\prime\prime}\,\Big[\Gamma(k^{\prime\prime};k^{\prime},p-k^{\prime})
+-U_{\phi^{2}}(k^{\prime\prime})F_{\phi^{2}}(k^{\prime},p-k^{\prime})\Big] \text{ .}
+\]
+更进一步, 既然给出$\int\dif^{4}k^{\prime\prime}\,I(k,k^{\prime\prime},p)U_{\phi^{2}}(k^{\prime\prime})$%
+主要贡献的是$I(k,k^{\prime\prime},p)$的图中每个内线均携带$k$阶动量的那部分积分区域, 这个积分对$p$的微分会使得它的渐进行为降低一个$k^{-1}$阶的因子, 所以就渐进行为而言, 这一积分中的$I(k,k',p)$可以替换成$I(k,k')\equiv I(k,k',0)$. 因此在$k\to\infty$时, 方程(\ref{20.2.6})变成
+\begin{align}
+&\Gamma(k;k^{\prime},p-k^{\prime})\to F_{\phi^{2}}(k^{\prime},p-k^{\prime})\int\dif^{4}k^{\prime\prime}\,
+I(k,k^{\prime\prime})U_{\phi^{2}}(k^{\prime\prime}) \nonumber \\
+&+I_{\infty}(k)\bigg\{ 1+ \int\dif^{4}k^{\prime\prime}\,
+\Big[\Gamma(k^{\prime\prime};k^{\prime},p-k^{\prime})
+-U_{\phi^{2}}(k^{\prime\prime})F_{\phi^{2}}(k^{\prime},p-k^{\prime})\Big]
+\bigg\} \text{ .}\label{20.2.7}
+\end{align}
+因此我们可以用低阶微扰论中的那些函数来定义$U_{\phi^{2}}(k)$和$F_{\phi^{2}}(k',p-k')$, 具体形式为
+\begin{align}
+&U_{\phi^{2}}(k)=CI_{\infty}(k)+\int\dif^{4}k^{\prime}\,I(k,k^{\prime})U_{\phi^{2}}(k^{\prime})\text{ ,} \label{20.2.8}\\
+&F_{\phi^{2}}(k^{\prime},p-k^{\prime})=C^{-1}\nonumber \\
+&\times\bigg\{1+ \int\dif^{4}k^{\prime\prime}\,\Big[\Gamma(k^{\prime\prime};k^{\prime},p-k^{\prime})
+-U_{\phi^{2}}(k^{\prime\prime})F_{\phi^{2}}(k^{\prime},p-k^{\prime})\Big]\bigg\}
+\text{ ,}\label{20.2.9}
+\end{align}
+其中$C$是我们可以随便选择的常数. 有了这些定义, 我们就可以从方程(\ref{20.2.7})中得到方程(\ref{20.2.5}).
+
+选择常数$C$使得$F_{\phi^{2}}(k',p-k')$在某个重整化点$k'=k(\mu)$且$p=p(\mu)$的值为1, 这将方便之后的讨论, 而其中的$k(\mu)$和$p(\mu)$是$\mu$阶标准4-动量. 这样,
+\begin{equation}
+C=1+\int \dif^{4}k^{\prime \prime }\,\Gamma (k^{\prime \prime };k(\mu ),p(\mu
+)-k(\mu ))-\int \dif^{4}k^{\prime \prime }\,U_{\phi ^{2}}(k^{\prime \prime })%
+\text{ .}  \label{20.2.10}
+\end{equation}%
+利用方程(\ref{20.2.5}), 我们看到方程(\ref{20.2.10})中两个积分的发散互相抵消了.
+
+方程(\ref{20.2.9})现在可以重写成
+\begin{equation}
+F_{\phi ^{2}}(k^{\prime },p-k^{\prime })=Z_{\phi ^{2}}\left\{ 1+\int
+\dif^{4}k^{\prime \prime }\,\Gamma (k^{\prime \prime };k^{\prime },p-k^{\prime
+})\right\} \text{ ,}  \label{20.2.11}
+\end{equation}%
+其中\begin{equation}
+Z_{\phi ^{2}}=\left[ 1+\int \dif^{4}k^{\prime \prime }\,\Gamma (k^{\prime \prime
+};k(\mu ),p(\mu )-k(\mu ))\right] ^{-1}\text{ .}  \label{20.2.12}
+\end{equation}%
+我们可以认为$Z_{\phi^{2}}$是复合算符$\phi^{2}$的重整化常数, 它的定义使得算符$Z_{\phi^{2}}\phi^{2}$的二粒子矩阵元$F_{\phi^{2}}(k,p-k)$是有限值, 并且在$k=k(\mu)$且$p=p(\mu)$时为1.
+
+通过方程(\ref{20.2.8})和(\ref{20.2.11})来计算$U_{\phi^{2}}(k)$和$F_{\phi^{2}}(k,p-k)$并不是特别方便. 与此相反, 计算$\Gamma(k;k',p-k')$, 然后与方程(\ref{20.2.5})比较进而读出$U_{\phi^{2}}(k)$和$F_{\phi^{2}}(k,p-k)$, 这样反而更简单一些. 给函数(\textcolor{red}{12.2.26})乘以动量为$k$以及$p-k$的线的传播子, 我们看到, 到一圈阶
+\begin{align}
+&\Gamma (k;k^{\prime },p-k^{\prime }) = \left[ \frac{-\mi}{(2\uppi
+)^{4}(k^{2}+m^{2})}\right] \left[ \frac{-\mi}{(2\uppi )^{4}((p-k)^{2}+m^{2})}%
+\right] \Big[ -\mi(2\uppi )^{4}g\Big]   \nonumber \\
+&\times \Bigg\{1-\frac{g}{32\uppi ^{2}}\int_{0}^{1}\dif x\,\bigg\{\ln \left( \frac{%
+m^{2}+4x(1-x)\mu ^{2}/3}{m^{2}-sx(1-x)}\right)   \nonumber \\
+&+\ln \left( \frac{m^{2}+4x(1-x)\mu ^{2}/3}{m^{2}-tx(1-x)}\right) +\ln
+\left( \frac{m^{2}+4x(1-x)\mu ^{2}/3}{m^{2}-ux(1-x)}\right) +\cdots \bigg\}\Bigg\}%
+\text{ ,}  \label{20.2.13}
+\end{align}%
+其中$s$, $t$和$u$是Mandelstam变量\[
+s=-p^{2}\text{ ,}\qquad t=-(k-k^{\prime })^{2}\text{ ,}\qquad u=-(p-k-k^{\prime })^{2}%
+\text{ ,}
+\]
+$\mu$是重整化标度, $g$是相应的重整化耦合, 由$s=t=u=-4\mu^{2}/3$处的Feynman振幅定义. 它的渐进行为是
+\begin{align}
+&\Gamma (k;k^{\prime },p-k^{\prime }) \rightarrow \frac{\mi g}{(2\uppi
+)^{4}(k^{2})^{2}}  \nonumber \\
+&\times \Bigg\{1-\frac{g}{32\uppi^{2}}\int_{0}^{1}\dif x\,\bigg\{\ln \left( \frac{%
+m^{2}+4x(1-x)\mu ^{2}/3}{m^{2}+p^{2}x(1-x)}\right)   \nonumber \\
+&+2\ln \left( \frac{m^{2}+4x(1-x)\mu ^{2}/3}{m^{2}+k^{2}x(1-x)}\right)
++\cdots \bigg\}\Bigg\}\text{ .}  \label{20.2.14}
+\end{align}%
+到$g^{2}$阶, 如果我们取
+\begin{align}
+&U_{\phi ^{2}}(k) =\frac{\mi g}{(2\uppi )^{4}(k^{2})^{2}}  \nonumber \\
+&\times \bigg\{1-\frac{g}{16\uppi^{2}}\int_{0}^{1}\dif x\,\ln \left( \frac{%
+m^{2}+4x(1-x)\mu ^{2}/3}{m^{2}+k^{2}x(1-x)}\right) +\cdots \bigg\}\text{ ,}
+\label{20.2.15}
+\end{align}%
+以及\begin{equation}
+F_{\phi ^{2}}(k,p-k)=1-\frac{g}{32\uppi ^{2}}\int_{0}^{1}\dif x\,\ln \left( \frac{%
+m^{2}+4x(1-x)\mu ^{2}/3}{m^{2}+p^{2}x(1-x)}\right) +\cdots \text{ ,}
+\label{20.2.16}
+\end{equation}%
+那么它与方程(\ref{20.2.5})就是一致的. 在这里, 我们已经对算符$\phi^{2}$的重整化点$k(\mu)$和$p(\mu)$做了选择, 使得它与耦合常数$g$的重整化点的关系为$p(\mu)^{2}=4\mu^{2}/3$, 这使得在$p^{2}=4\mu^{2}/3$时, $F_{\phi^{2}}(k,p-k)=1$.
+
+现在来考察动量不变的外线数目$n$远大于2的情况. 为了与我们之前的讨论一致, 在$k\to\infty$的极限下, 给出$\Gamma(k;p_{1}\cdots p_{n})$主要贡献的图是那些可以通过剪断一对内线使得携带动量$k$与$p-k$%
+的那两条外线与这$n$条外线不相连的图:
+\begin{equation}
+\Gamma (k;p_{1}\cdots p_{n})\rightarrow \int \dif^{4}k^{\prime }\:I(k,k^{\prime
+},p)\,\Gamma (k^{\prime };p_{1}\cdots p_{n})\text{ .}  \label{20.2.17}
+\end{equation}%
+像之前一样, 由于$k'$为$k$阶时会对这一积分有个很大的贡献,  我们对右边的核$I(k,k',p)$无法简单地使用它在$k\to\infty$时的渐进极限. 处理这一困难的方法是将方程(\ref{20.2.17})重写成如下形式
+\begin{align}
+\Gamma (k;p_{1}\cdots p_{n}) &\rightarrow \int \dif^{4}k^{\prime
+}\,I(k,k^{\prime },p)\,\Big[ \Gamma (k^{\prime };p_{1}\cdots p_{n})-U_{\phi
+^{2}}(k^{\prime })F_{\phi ^{2}}(p_{1}\cdots p_{n})\Big]   \nonumber \\
+&\quad +F_{\phi ^{2}}(p_{1}\cdots p_{n})\int \dif^{4}k^{\prime }\,I(k^{\prime
+},k,p)\,U_{\phi ^{2}}(k^{\prime })\text{ ,}  \label{20.2.18}
+\end{align}%
+其中, 通过数学归纳法, 我们假定直到某个给定阶$N$, 在加上$1/k^{5}$阶的修正项后,
+\begin{equation}
+\Gamma (k;p_{1}\cdots p_{n})\rightarrow U_{\phi ^{2}}(k)F_{\phi
+^{2}}(p_{1}\cdots p_{n})\text{ .}  \label{20.2.19}
+\end{equation}%
+我们现在可以使用极限(\ref{20.2.4})和方程(\ref{20.2.8})将方程(\ref{20.2.18})重写为
+\begin{align*}
+\Gamma (k;p_{1}\cdots p_{n}) &\rightarrow I_{\infty }(k)\int \dif^{4}k^{\prime
+}\Big[ \Gamma (k^{\prime };p_{s}\cdots p_{n})-U_{\phi ^{2}}(k^{\prime
+})F_{\phi ^{2}}(p_{1}\cdots p_{n})\Big]  \\
+&\quad+F_{\phi ^{2}}(p_{1}\cdots p_{n})\Big[ U_{\phi ^{2}}(k)-CI_{\infty }(k)%
+\Big] \text{ .}
+\end{align*}%
+假定我们取
+\[
+CF_{\phi ^{2}}(p_{1}\cdots p_{n})=\int \dif^{4}k^{\prime }\,\Big[ \Gamma
+(k^{\prime };p_{s}\cdots p_{n})-U_{\phi ^{2}}(k^{\prime })F_{\phi
+^{2}}(p_{1}\cdots p_{n})\Big]
+\]%
+或者使用方程(\ref{20.2.10})和(\ref{20.2.12}),
+\begin{equation}
+F_{\phi ^{2}}(p_{1}\cdots p_{n})=Z_{\phi ^{2}}\int \dif^{4}k^{\prime }\:\Gamma
+(k^{\prime };p_{1}\cdots p_{n})\text{ ,}  \label{20.2.20}
+\end{equation}
+那么直到$N+1$阶, 这都与方程(\ref{20.2.19})一致. (\ref{20.2.20})仅指出了$F_{\phi^{2}}(p_{1}\cdots p_{n})$是重整化算符$Z_{\phi^{2}}\phi^{2}$的矩阵元, 这使得方程(\ref{20.2.1})对应于算符积公式(\ref{20.2.2}). 尤其要注意的是, 无论$n$或者动量$p_{1}\cdots p_{n}$取什么值, $U_{\phi^{2}}(k)$都是相同的系数函数, 我们会在后面证明它.
+
+严格来讲, 算符$(\phi^{2})_{R}$并不是两个$\phi$乘积展开中的领头项. 展开中还存在单位算符, 它的量纲比$(\phi^{2})_{R}$要低, 但由于(正如下标$C$所表明的)我们排除了非连通图, 它从方程(\ref{20.2.2})中排除了. 正如之前所提及的, 当$k\to\infty$时, 对于$n=0$(且$p^{\mu}=0$)的$\Gamma(k)$, 它的图由所有内线均携带$k$阶动量的那部分积分区域主导, 而$U_{1}(k)$是这一区域的贡献.
+
+量纲更高的算符和更一般的理论将在本章的附录进行考察.
+
+
+\section{系数函数的重整化群方程}
+
+正如之前所提及的, 使得算符积展开如此有用的一个性质是: 系数函数的动量相关性完全由重整化群方程控制.
+这是因为它们源于Feynman图之和的极限值(例如20.2节的$I_{\infty}(k)$), 在这种情况下所有相关的动量一起趋于无穷大, 这使得可以在令质量为零的同时却不引起奇点. 然而, 算符积系数函数并不服从简单的标度率, 其原因是重整化效应: 系数函数要乘上标度相关的重整化常数, 并依赖于标度相关的重整化耦合.
+
+考察Green函数$\Gamma_{\ell,\ell^{\prime}}(k,k',p)$的算符积展开, 其中, 入粒子线的集合记做$\ell$, 它们的动量(合起来记做$k$, 和为$p$)一起趋于无穷大, 剩余外线的集合记做$\ell^{\prime}$, 它们的动量(合起来记做$k'$, 和为$p$)保持不变:
+\begin{equation}
+\Gamma _{\ell \ell ^{\prime }}(k,k^{\prime },p)\rightarrow \sum_{\mathcal{O}%
+}U_{\mathcal{O}}^{\ell }(k)F_{\mathcal{O},\ell ^{\prime }}(k^{\prime },p)%
+\text{ .}  \label{20.3.1}
+\end{equation}%
+函数$F_{\mathcal{O},\ell^{\prime}}(k',p)$是重整化算符
+$\mathcal{O}_{R}=\sum_{\mathcal{O}^{\prime}}Z_{\mathcal{O},\mathcal{O}^{\prime}}\mathcal{O}^{\prime}$,
+所以它在场乘积中对应线$\ell$的系数$U_{\mathcal{O}}^{\ell}(k)$正比于$Z_{\mathcal{O},\mathcal{O}^{\prime}}^{-1}$%
+以及$Z_{\ell^{\prime},\ell}$, 即集合$\ell$中所有场算符(或复合算符)的重整化因子的直接乘积. 因此,
+\begin{equation}
+\mu \frac{\dif}{\dif\mu }U_{\mathcal{O}}^{\ell }=\sum_{\ell ^{\prime }}\gamma
+_{\ell \ell ^{\prime }}U_{\mathcal{O}}^{\ell ^{\prime }}-\sum_{\mathcal{O}%
+^{\prime }}U_{\mathcal{O}^{\prime }}^{\ell }\gamma _{\mathcal{O}^{\prime },%
+\mathcal{O}}+\beta (g)\frac{\partial }{\partial g}U_{\mathcal{O}}^{\ell }%
+\text{ ,}  \label{20.3.2}
+\end{equation}%
+其中
+\begin{equation}
+\mu \frac{\partial }{\partial \mu }Z_{\ell \ell ^{\prime }}=\sum_{\ell
+^{\prime \prime }}\gamma _{\ell \ell ^{\prime \prime }}Z_{\ell ^{\prime
+\prime }\ell ^{\prime }}\text{ ,}\qquad\quad\mu \frac{\partial }{\partial \mu }Z_{%
+\mathcal{OO}^{\prime }}=\sum_{\mathcal{O}^{\prime \prime }}\gamma _{\mathcal{%
+OO}^{\prime \prime }}Z_{\mathcal{O}^{\prime \prime }\mathcal{O}^{\prime }}%
+\text{ ,}  \label{20.3.3}
+\end{equation}%
+简单起见, 我们假定只有一个可重整耦合$g_{\mu}$, 它由某个重整化点的某个Feynman振幅定义, 该重整化点的动量为$\mu$阶, 且有$\mu\,\dif g_{\mu}/\dif\mu=\beta(g_{\mu})$. 为了能够用量纲分析进行处理. 我们给所有算符乘上相应的$\mu$的幂函数, 使得所有算符是无量纲的. 这同时使得$Z$矩阵和$\gamma$矩阵的分量%
+也是无量纲的, 并使得它们的值在零耦合极限给定为
+\begin{equation}
+\gamma _{\ell \ell ^{\prime }}\rightarrow \delta _{\ell \ell ^{\prime
+}}N(\ell )\text{ ,}\qquad\qquad\gamma _{\mathcal{OO}^{\prime }}\rightarrow \delta _{%
+\mathcal{OO}^{\prime }}N(\mathcal{O})\text{ ,}  \label{20.3.4}
+\end{equation}%
+其中$N(\mathcal{O})$是算符$\mathcal{O}$的量纲, $N(\ell)$是场集合$\ell$的总量纲(即$s+1$的和, 其中对于标量场和无质量规范场, $s=0$; 对于Dirac场, $s=1/2$; 等等.) 另外, 量纲分析告诉我们, 对于$n^{\mu}$固定的$k^{\mu}=\kappa n^{\mu}$, 除了定义Fourier变换的积分所产生的因子$\kappa^{4-4n(\ell)}$外, 振幅只能通过比值$\kappa/\mu$依赖于$\kappa$. 这样, 方程(\ref{20.3.2})解的形式为
+\begin{align}
+U_{\mathcal{O}}^{\ell }(\kappa n) &=\kappa ^{4-4n(\ell )}\sum_{\ell
+^{\prime }.\mathcal{O}^{\prime }}\left[ M\left\{ \exp \Big( \int^{\kappa }%
+\frac{\dif\mu }{\mu }\gamma (g_{\mu })\Big) \right\} \right] _{\ell ,\ell
+^{\prime }}\mathscr{U}_{\mathcal{O}^{\prime }}^{\ell ^{\prime }}(g_{\kappa },n)
+\nonumber \\
+&\quad\times \left[ M\left\{ \exp \Big( \int^{\kappa }\frac{\dif\mu }{\mu }\gamma
+(g_{\mu })\Big) \right\} \right] _{\mathcal{O}^{\prime },\mathcal{O}}^{-1}%
+\text{ ,}  \label{20.3.5}
+\end{align}%
+其中$M$代表``$\mu$-编序''乘积, 即, 对指数展开中的每一项进行重排使得因子按照$\mu$减小的顺序从左向右排列.
+
+若$g_{\mu}$在$\mu\to\infty$时趋于不动点$g_{\ast}$, 这会给出特别简单的结果. 这时大$\mu$对%
+$M\{\exp(\int^{\kappa}\gamma(g_{\mu})\dif\mu/\mu)\}$\\的贡献是矩阵$\kappa^{\gamma(g_{\ast})}$, 它会因为$\mu$-编序出现在{\kai{左边}}. 因此, 方程(\ref{20.3.5})变成
+\begin{equation}
+U_{\mathcal{O}}^{\ell }(\kappa n)=\kappa ^{4-4n(\ell )}\sum_{\ell ^{\prime },%
+\mathcal{O}^{\prime }}\left[ \kappa ^{\gamma (g_{\ast })}\right] _{\ell
+,\ell ^{\prime }}\mathscr{C}_{\ell ^{\prime },\mathcal{O}^{\prime }}\left[ \kappa
+^{-\gamma (g_{\ast })}\right] _{\mathcal{O}^{\prime },\mathcal{O}}\text{ ,}
+\label{20.3.6}
+\end{equation}%
+其中, 取决于$g_{\kappa}$趋于$g_{\ast}$的速率, $\mathscr{C}$要么是常数要么是$\ln\kappa$的幂函数的和.
+
+像量子色动力学这样的渐进自由理论是物理上特别感兴趣的特殊情况. 在这种理论中, 不动点处在$g_{\ast}=0$处, 并且, 根据方程(\ref{20.3.4}), 在这一不动点附近, $\gamma$矩阵趋于
+\begin{equation}
+\gamma (g)_{\ell \ell ^{\prime }}\rightarrow N(\ell )\delta _{\ell \ell
+^{\prime }}+g^{2}\,c_{\ell \ell ^{\prime }}\text{ ,}\qquad\quad\gamma (g)_{\mathcal{OO}%
+^{\prime }}\rightarrow N(\mathcal{O})\delta _{\mathcal{OO}^{\prime
+}}+g^{2}\,c_{\mathcal{OO}^{\prime }}\text{ .}  \label{20.3.7}
+\end{equation}%
+另外, 如果我们将耦合的重整化群方程写成如下的形式
+\begin{equation}
+\mu \frac{\dif}{\dif\mu }g_{\mu }^{2}=-\frac{b}{8\uppi ^{2}}g_{\mu }^{4}\text{ ,}
+\label{20.3.8}
+\end{equation}%
+那么\[
+\int^{\kappa }\frac{\dif\mu }{\mu }g_{\mu }^{2}\rightarrow -\frac{8\uppi ^{2}}{b}%
+\ln g_{\kappa }^{2}+\text{常数 .}
+\]%
+在方程(\ref{20.3.5})中使用该式就给出了渐进行为
+\begin{equation}
+U_{\mathcal{O}}^{\ell }(\kappa n)\rightarrow \kappa ^{4-4n(\ell )+N(\ell )-N(%
+\mathcal{O})}\sum_{\ell ^{\prime },\mathcal{O}^{\prime }}\Bigg[ \Big(g_{\kappa
+}^{2}\Big)^{-8\uppi ^{2}c/b}\Bigg] _{\ell ,\ell ^{\prime }}\mathscr{C}_{\mathcal{O}^{\prime
+}}^{\ell ^{\prime }}\Bigg[ \Big(g_{\kappa }^{2}\Big)^{8\uppi ^{2}c/b}\Bigg] _{%
+\mathcal{O}^{\prime },\mathcal{O}}\text{ ,}  \label{20.3.9}
+\end{equation}%
+其中$\mathscr{C}_{\mathcal{O}^{\prime}}^{\ell ^{\prime }}$是常数矩阵, 它等于$\mathscr{U}_{\mathcal{O}^{\prime
+}}^{\ell ^{\prime }}(0,n)$乘上一些常数因子, 这些常数因子来自于方程(\ref{20.3.5})中$g_{\mu}$不是很小的那部分积分, 这使得无法我们利用微扰论计算它们. 当$\kappa\to\infty$时, 耦合常数的行为是%
+$g_{\kappa}^{2}\to8\uppi^{2}/b\ln\kappa$, 所以方程(\ref{20.3.9})也可以重写成
+\begin{equation}
+U_{\mathcal{O}}^{\ell }(\kappa n)\rightarrow \kappa ^{4-4n(\ell )+N(\ell )-N(%
+\mathcal{O})}\sum_{\ell ^{\prime },\mathcal{O}^{\prime }}\Bigg[ \Big( \ln
+\kappa \Big) ^{8\uppi ^{2}c/b}\Bigg] _{\ell ,\ell ^{\prime }}\mathscr{B}_{\mathcal{O}%
+^{\prime }}^{\ell ^{\prime }}\Bigg[ \Big( \ln \kappa \Big) ^{-8\uppi
+^{2}c/b}\Bigg] _{\mathcal{O}^{\prime },\mathcal{O}}\text{ ,}
+\label{20.3.10}
+\end{equation}
+其中$\mathscr{B}_{\mathcal{O}^{\prime}}^{\ell ^{\prime }}$是另一常数矩阵.方程(\ref{20.3.9})和(\ref{20.3.10})%
+成立的条件是$g^{2}_{\kappa}/8\uppi^{2}\ll1$, 但是$\ln\kappa$也不必大到使得$c$矩阵只有一个本征矢对%
+渐进行为有贡献. 在20.6节, 方程(\ref{20.3.10})将被用来研究深度非弹散射.
+
+\section{系数函数的对称性}
+
+算符积展开有这样的性质, 即使底层理论的部分对称性或者全部对称性自发破缺了, 系数函数也能将全部对称性呈现出来, 这使得算符积展开的用处被极大地拓广了.\cite{4} 为了证明这点, 我们考察重整化算符$\mathcal{O}_{i}(x)$乘积的展开, 其中$\mathcal{O}_{i}(x)$在守恒流为$J^{\mu}(x)$的对称性下线性变换, 也就是说
+\begin{equation}
+\lbrack J^{0}(\mathbf{x},t),\mathcal{O}_{i}(\mathbf{y},t)]=-\delta ^{3}(%
+\mathbf{x}-\mathbf{y})\sum_{j}t_{ij}\mathcal{O}_{j}(\mathbf{y},t)\text{ ,}
+\label{20.4.1}
+\end{equation}%
+其中$t_{ij}$是常数矩阵. 我们可以将算符积展开写成如下的陈述, 随着$x_{1},\cdots,x_{n}$共同趋于$x$%
+(即$x_{1}-x,\cdots ,x_{n}-x$均有固定的比值),
+\begin{equation}
+\langle \beta |T\{\mathcal{O}_{i_{1}}(x_{1})\cdots \mathcal{O}%
+_{i_{n}}(x_{n})\}|\alpha \rangle \rightarrow \sum_{i}U_{i}^{i_{1}\cdots
+i_{n}}(x_{1}-x,\cdots ,x_{n}-x)\langle \beta |\mathcal{O}_{i}(x)|\alpha
+\rangle \text{ .}  \label{20.4.2}
+\end{equation}%
+现在假定流为$J^{\mu}$的对称性自发破缺了, 相应的Goldstone玻色子$\pi$会满足
+\begin{equation}
+\langle \text{VAC}|J^{\mu }(0)|\pi \rangle =\frac{F\,p_{\pi }^{\mu }}{(2\uppi
+)^{3/2}\sqrt{2p_{\pi }^{0}}}\text{ .}  \label{20.4.3}
+\end{equation}%
+那么, 正如我们在19.2节看到的, 若态中有额外的低能Goldstone玻色子, 那么算符积在这种态之间的矩阵元是
+\begin{align}
+&\langle \beta |T\{\mathcal{O}_{i_{1}}(x_{1})\cdots \mathcal{O}%
+_{i_{n}}(x_{n})\}|\pi \alpha \rangle  = \frac{1}{(2\uppi )^{3/2}\sqrt{2p_{\pi
+}^{0}}F}  \nonumber \\
+&\qquad\times \int \dif^{4}x\,\frac{\partial }{\partial x^{\mu }}\langle \beta |T\{%
+\mathcal{O}_{i_{1}}(x_{1})\cdots \mathcal{O}_{i_{n}}(x_{n})\,J^{\mu
+}(x)\}|\alpha \rangle \text{ ,}  \label{20.4.4}
+\end{align}%
+方程(\ref{20.4.4})采取它现在的形式是因为只有Goldston极点项在积分中存留了下来.
+使用方程(\ref{20.4.1})以及流守恒, 这可以变成如下形式
+\begin{align}
+&\langle \beta |T\{\mathcal{O}_{i_{1}}(x_{1})\cdots \mathcal{O}%
+_{i_{n}}(x_{n})\}|\pi \alpha \rangle  = -\frac{1}{(2\uppi )^{3/2}\sqrt{%
+2p_{\pi }^{0}}F}  \nonumber \\
+&\qquad \times \sum_{r=1}^{n}\sum_{j_{r}}t_{i_{r}j_{r}}\langle \beta |T\{\mathcal{O%
+}_{i_{1}}(x_{1})\cdots \mathcal{O}_{j_{r}}(x_{r})\cdots \mathcal{O}%
+_{i_{n}}(x_{n})\}|\alpha \rangle \text{ ,}  \label{20.4.5}
+\end{align}%
+现在对这一公式的两边同时使用算符积展开. 在$x_{1},\cdots,x_{n}$共同趋于$x$的极限下, 我们发现
+\begin{align}
+&\sum_{i}U_{i}^{i_{1}\cdots i_{n}}(x_{1}-x,\cdots ,x_{n}-x)\langle \beta |%
+\mathcal{O}_{i}(x)|\pi \alpha \rangle  = -\frac{1}{(2\uppi )^{3/2}\sqrt{%
+2p_{\pi }^{0}}F}  \nonumber \\
+&\qquad\times\sum_{r=1}^{n}\sum_{j_{r}}\sum_{i}t_{i_{r}j_{r}}U_{i}^{i_{1}\cdots
+j_{r}\cdots i_{n}}(x_{1}-x,\cdots ,x_{n}-x)\langle \beta |\mathcal{O}%
+_{i}(x)|\alpha \rangle \text{ .}  \label{20.4.6}
+\end{align}%
+但作为方程(\ref{20.4.5})的特殊情况, 我们有
+\begin{equation}
+\langle \beta |\mathcal{O}_{i}(x)|\pi \alpha \rangle =-\frac{1}{(2\uppi )^{3/2}%
+\sqrt{2p_{\pi }^{0}}F}\sum_{j}t_{ij}\langle \beta |\mathcal{O}_{j}(x)|\alpha
+\rangle \text{ .}  \label{20.4.7}
+\end{equation}%
+既然对于任意的$\langle\beta|$和$|\alpha\rangle$所有这些都是成立的, 方程(\ref{20.4.6})两边$\langle \beta |\mathcal{O}_{j}(x)|\alpha\rangle$的系数必须相等, 所以
+\begin{equation}
+0=-\sum_{i}t_{ij}U_{i}^{i_{1}\cdots i_{n}}(x_{1}-x,\cdots
+,x_{n}-x)+\sum_{r=1}^{n}\sum_{j_{r}}t_{i_{r}j_{r}}U_{i}^{i_{1}\cdots
+j_{r}\cdots i_{n}}(x_{1}-x,\cdots ,x_{n}-x)  \label{20.4.8}
+\end{equation}
+这可以重述为如下的条件: $U_{i}^{i_{1}\cdots i_{n}}(x_{1}-x,\cdots,x_{n}-x)$在$t$生成的对称变化下不变, 并且这一对称变换在下指标上的作用逆步于它在上指标上的作用, 即要将$t$替换成$-t^{\mathrm{T}}$. 如果$J^{\mu}$生成的对称性未破缺, 这正是我们所期待的关系.
+
+
+\section{谱函数求和规则}
+
+谱函数求和规则是对各种流的谱函数的约束.\cite{5} 在这里, 我们从一组流$J^{\mu}_{a}$出发, 它们除了是Lorentz4-矢外在其它方面上任意的, 在这之后, 我们考察更特殊的例子. 为了定义它们的谱函数, 利用Lorentz不变性, 类比方程(\ref{19.2.19})和(\ref{19.2.20}), 我们可以写出
+\begin{align}
+&\sum_{N}\delta ^{4}(p-p_{N})\langle \text{VAC}|J_{\alpha }^{\mu
+}(0)|N\rangle \langle \text{VAC}|J_{\beta }^{\nu }(0)|N\rangle ^{\ast }
+=(2\uppi )^{-3}\theta (p^{0})  \nonumber \\
+&\times \left[ \Big( \eta ^{\mu \nu }-p^{\mu }p^{\nu }/p^{2}\Big) \rho
+_{\alpha \beta }^{(1)}(-p^{2})+p^{\mu }p^{\nu }\rho _{\alpha \beta
+}^{(0)}(-p^{2})\right] \text{ .}  \label{20.5.1}
+\end{align}%
+做Fourier变换并利用态$|N\rangle$的完备性, 这可以写成
+\begin{align}
+&\langle J_{\alpha }^{\mu }(x)J_{\beta }^{\nu }(0)\rangle _{\text{VAC}}
+= \int \dif \mu ^{2}  \nonumber \\
+&\quad\times \left[ \eta ^{\mu \nu }\rho _{\alpha \beta }^{(1)}(\mu ^{2})-\left(
+\rho _{\alpha \beta }^{(0)}(\mu ^{2})+\rho _{\alpha \beta }^{(1)}(\mu
+^{2})/\mu ^{2}\right) \partial ^{\mu }\partial ^{\nu }\right] \Delta
+_{+}(x;\mu ^{2})\text{ ,}  \label{20.5.2}
+\end{align}%
+其中$\Delta_{+}(x;\mu^{2})$是方程(\textcolor{red}{5.2.7})中定义的函数:
+\begin{equation}
+\Delta _{+}(x;\mu ^{2})=\frac{1}{(2\uppi)^{3}}\int \dif^{4}p\,\theta (p^{0})\,\delta
+(p^{2}+\mu ^{2})\me^{\mi p\cdot x}\text{ .}  \label{20.5.3}
+\end{equation}%
+假定这些流已经被选成是厄米算符, 那么从方程(\ref{20.5.1})可以立即得出$\rho^{(1)}_{\alpha\beta}(\mu^{2})$和%
+$\rho^{(0)}_{\alpha\beta}(\mu^{2})$是正定厄米矩阵. 另外, 取$x^{\mu}$是类空的(这样$\Delta_{+}(x)$就是偶函数), 并在方程(\ref{20.5.2})中使用平移不变形和因果律, 由此我们可以看到$\rho^{(1)}_{\alpha\beta}(\mu^{2})$和%
+$\rho^{(0)}_{\alpha\beta}(\mu^{2})$同时也是对称的.
+
+现在, 在$x^{2}>0$的前提下让$x\to 0$, 函数$\Delta_{+}(x;\mu^{2})$趋于
+\begin{equation}
+\Delta _{+}(x;\mu ^{2})\rightarrow \frac{1}{4\uppi ^{2}x^{2}}+\frac{\mu ^{2}}{%
+8\uppi^{2}}\left[ \ln \left( \frac{\gamma \mu \sqrt{x^{2}}}{2}\right) -\frac{1%
+}{2}\right] +O(x^{2})\text{ .}  \label{20.5.4}
+\end{equation}%
+其中$\gamma$是Euler常数. 因此, 对于$J^{\mu}_{\alpha}(x)J^{\nu}_{\beta}(0)$的展开, 这个展开的真空期望值中的前几项是
+\begin{align}
+&\langle J_{\alpha }^{\mu }(x)J_{\beta }^{\nu }(0)\rangle _{\text{VAC}}
+\rightarrow -\frac{1}{2\uppi ^{2}}\left[ \frac{\eta ^{\mu \nu }}{(x^{2})^{2}}%
+-\frac{4x^{\mu }x^{\nu }}{(x^{2})^{3}}\right] \int \dif\mu ^{2}\,\Big( \rho
+_{\alpha \beta }^{(0)}(\mu ^{2})+\rho _{\alpha \beta }^{(1)}(\mu ^{2})/\mu
+^{2}\Big)   \nonumber \\
+&-\frac{\eta ^{\mu \nu }}{4\uppi ^{2}x^{2}}\int \dif \mu ^{2}\,\rho _{\alpha \beta
+}^{(0)}(\mu ^{2})\mu ^{2}+\frac{x^{\mu }x^{\nu }}{2\uppi ^{2}(x^{2})^{2}}\int
+\dif\mu ^{2}\,\left( \rho _{\alpha \beta }^{(0)}(\mu ^{2})\mu ^{2}+\rho _{\alpha
+\beta }^{(1)}(\mu ^{2})\right)   \nonumber \\
+&+O(\ln x^{2})\text{ .}  \label{20.5.5}
+\end{align}%
+因此, 如果两点函数的某个线性组合$\sum_{\alpha\beta}c_{\alpha\beta}\langle J^{\mu}_{\alpha}(x)J^{\nu}_{\beta}(0)\rangle_{\text{VAC}}$在$x\to0$处的奇异性被证明弱于$1/x^{4}$, 我们就有
+\begin{equation}
+\sum_{\alpha \beta }c_{\alpha \beta }\int \dif\mu ^{2}\,\Big( \rho _{\alpha
+\beta }^{(0)}(\mu ^{2})+\rho _{\alpha \beta }^{(1)}(\mu ^{2})/\mu
+^{2}\Big) =0\text{ ,}  \label{20.5.6}
+\end{equation}%
+如果它的奇异性同时还弱于$1/x^{2}$, 那么
+\begin{equation}
+\sum_{\alpha \beta }c_{\alpha \beta }\int \dif \mu ^{2}\,\rho _{\alpha \beta
+}^{(1)}(\mu ^{2})=0  \label{20.5.7}
+\end{equation}%
+以及\begin{equation}
+\sum_{\alpha \beta }c_{\alpha \beta }\int \dif\mu ^{2}\,\rho _{\alpha \beta
+}^{(0)}(\mu ^{2})\mu ^{2}=0\text{ .}  \label{20.5.8}
+\end{equation}
+方程(\ref{20.5.6}), (\ref{20.5.7})和(\ref{20.5.8})已知分别是第一类, 第二类和第三类谱函数求和规则.
+
+现在, 我们来看一下这在我们最感兴趣的情况中是如何运作的, 即$J^{\mu}_{\alpha}(x)$是类似量子色动力学的理论中的守恒流. 流守恒告诉我们, (\ref{20.5.1})与$p_{\mu}$守恒后为零, 所以$\rho^{(0)}_{\alpha\beta}(-p^{2})$必须正比于$\delta(-p^{2})$, 进而它对于任意的$c_{\alpha\beta}$均满足第三类谱函数求和规则(\ref{20.5.8}). 既然$\rho^{(0)}_{\alpha\beta}(-p^{2})\propto\delta(-p^2)$, 对(20.5.1)中的态求和有贡献只有那些构成单个无质量零自旋粒子$B_{a}$的态$|B_{a}\rangle$, 而这实际上就是Goldstone玻色子.
+对于这样的单粒子态, Lorentz不变性给出
+\begin{equation}
+\langle \text{VAC}|J_{\alpha }^{\mu }(0)|B_{a}\rangle =\frac{\mi F_{\alpha
+a}\,p_{B}^{\mu }}{(2\uppi )^{3/2}\sqrt{2p_{B}^{0}}}\text{ .}  \label{20.5.9}
+\end{equation}%
+利用关系$\delta(p^{0}-|\mathbf{p}|)/2p^{0}=\theta(p^{0})\delta(-p^{2})$, 我们看到
+\begin{equation}
+\rho _{\alpha \beta }^{(0)}(-p^{2})=\delta (-p^{2})\sum_{a}F_{\alpha
+a}F_{\beta a}^{\ast }\text{ .}  \label{20.5.10}
+\end{equation}%
+与此相反, $\rho^{(1)}_{\alpha\beta}(-p^{2})$仅在$-p^{2}>0$时非零.
+
+为了更确切一些, 考察可重整的渐进自由规范理论, 设该理论有$N$个无质量(或近无质量)的自旋$1/2$费米子, 且这些费米子属于规范群的同一表示. 量子色动力学符合这一描述, 如果我们忽视$u$夸克, $d$夸克和$d$夸克的质量, 这就是$N=3$的情况, 如果只有$u$夸克和$d$夸克被取成无质量, 这就是$N=2$的情况. 正如我们在第19章所看到的, 轻费米子的左手部分和右手部分别按照表示$(N,1)$和$(1,N)$的变换构成了该理论的整体$SU(N)\times SU(N)$对称性,\footnote{还存在矢量$U(1)$对称性, 所谓矢量是指该对称变换以相同的方式作用在轻费米场的左手部分和右手部分. 这正是轻夸克数守恒律的来源, 我们不会在这里考察它. 而拉格朗日量的轴向$U(1)$对称性, 即以不同的方式作用在左手部分和右手部分上的对称变换, 它被23.5节讨论的一个量子效应破缺了.} 其中``N''和``1''分别指代$SU(N)$的定义表示和恒等表示.
+左手$SU(N)$对称性和右手$SU$对称性的流分别是
+\begin{equation}
+J_{La}^{\mu }(x)=-\mi\bar{\psi}(x)\gamma ^{\mu }(1+\gamma _{5})\lambda
+_{a}\psi (x)\text{ ,}\qquad J_{Ra}^{\mu }(x)=-\mi\bar{\psi}(x)\gamma ^{\mu
+}(1-\gamma _{5})\lambda _{a}\psi (x)\text{ ,}  \label{20.5.11}
+\end{equation}%
+其中$\lambda_{a}$构成无迹厄米矩阵的一组完备基, 它们作用在用来区分这$N$个夸克的``味''指标上, 方程(\ref{19.7.2})给出的就是$N=3$的情况. 这些流的量纲(按质量幂次计)是$+3$, 所以, 在两个流乘积的展开(\ref{20.3.6})中, 对于量纲为$d(\mathcal{O})$的算符$\mathcal{O}$, 随着它们变量的间距$x$趋于零, 算符$\mathcal{O}$的系数预期(在去掉对数后)会有一个阶为$x^{-6+d(\mathcal{O})}$的奇点. 因此, 如果流乘积的某个线性组合的展开中包含单位算符, 那么对应的谱函数线性组合会趋于$x^{-6}$, 因而一般既不会满足第一类谱函数求和规则也不会满足第二类谱函数求和规则; 在这个展开的真空期望值中, 如果量纲最低的算符是有一个导数或者没有导数的费米双线性型, 那么相应的谱函数线性组合会趋于$x^{-3}$或$x^{-2}$, 因此它们一般会满足第一类谱函数求和规则但一般不会满足第二类谱函数求和规则; 在相同的真空期望值中, 如果量纲最低的算符是有两个或多个导数的费米双线性型或是费米四线性型, 那么相应的谱函数线性组合的奇异性会低于$x^{-2}$, 因而既满足第一类谱函数求和规则又满足第二类谱函数求和规则.
+
+为了分辨出出现在流乘积展开中的是哪个算符, 我们需要对乘积中包含的$SU(N)\times SU(N)$表示进行分类, 并识别出这些算符是否有不为零的真空期望值, 我们必须要问这样的问题: 它们中的哪一些是在$SU(N)\times SU(N)$的未破缺子群下不变的. 为了回答这些问题, 我们注意到, 在$SU(N)\times SU(N)$下, 流$J^{\mu}_{La}(x)$和%
+$J^{\mu}_{Ra}(x)$分别按照该群的$(A,1)$表示和$(1,A)$表示进行变换, 其中$A$和$1$分别是$SU(N)$的伴随表示和恒等表示.
+
+另外, 我们假定$SU(N)\times SU(N)$中未自发破缺的子群是矢量$SU(N)_{V}$子群, 它的流是%
+$J^{\mu}_{La}(x)+J^{\mu}_{Ra}(x)$, 这正是量子色动力学中的情况也是(正如我们在19.9节看到的)%
+一大类其它理论中的情况. 我们同时假定宇称守恒没有自发破缺. 这些未破缺的对称性会给出
+\begin{equation}
+\rho _{La,Lb}^{(1)}(\mu ^{2})=\rho _{Ra,Rb}^{(1)}(\mu ^{2})=\delta _{ab}
+\left[ \rho _{V}^{(1)}(\mu ^{2})+\rho _{A}^{(1)}(\mu ^{2})\right]
+\label{20.5.12}
+\end{equation}%
+以及
+\begin{equation}
+\rho _{La,Rb}^{(1)}(\mu ^{2})=\rho _{Ra,Lb}^{(1)}(\mu ^{2})=\delta _{ab}
+\left[ \rho _{V}^{(1)}(\mu ^{2})-\rho _{A}^{(1)}(\mu ^{2})\right] \text{ ,}
+\label{20.5.13}
+\end{equation}%
+其中$\delta_{ab}\rho_{V}^{(1)}(\mu^{2})$和$\delta_{ab}\rho_{A}^{(1)}(\mu^{2})$是(\ref{20.5.2})定义的谱函数, 它们对应的流分别是
+\begin{equation}
+J_{Va}^{\mu }=-\mi\bar{\psi}\gamma ^{\mu }\lambda _{a}\psi \text{ ,}\qquad\qquad%
+J_{Aa}^{\mu }=-\mi\bar{\psi}\gamma ^{\mu }\gamma _{5}\lambda _{a}\psi \text{ ,}
+\label{20.5.14}
+\end{equation}%
+其生成元分别为$\lambda_{a}$和$\lambda_{a}\gamma_{5}$. 另外,
+\begin{equation}
+F_{La\,b}=-F_{Ra\,b}=\delta _{ab}F\text{ ,}  \label{20.5.15}
+\end{equation}%
+这里方程(\ref{20.5.9})变成
+\begin{equation}
+\langle \text{VAC}|J_{A\alpha }^{\mu }(0)|B_{b}\rangle =\frac{\mi F\delta
+_{ab}\,p_{B}^{\mu }}{(2\uppi )^{3/2}\sqrt{2p_{B}^{0}}}  \label{20.5.16}
+\end{equation}%
+这使得(\ref{20.5.10})变成
+\begin{equation}
+\rho _{La,Lb}^{(0)}(\mu ^{2})=\rho _{Ra,Rb}^{(0)}(\mu ^{2})=-\rho
+_{La,Rb}^{(0)}(\mu ^{2})=-\rho _{Ra,Lb}^{(0)}(\mu ^{2})=F^{2}\delta (\mu
+^{2})\delta _{ab}\text{ .}  \label{20.5.17}
+\end{equation}%
+分别对手征类的流乘积和非手征类的流乘积进行考察将是方便的. \\
+{\textbf{手征类}}: 乘积$J^{\mu}_{La}(x)J^{\nu}_{Lb}(0)$和$J^{\mu}_{Ra}(x)J^{\nu}_{Rb}(0)$分别按照$SU(N)\times SU(N)$的$(A\times A,1)$表示和$(1,A\times A)$表示进行变换, 其中$A$和$1$分别是伴随表示和恒等表示. 对于任何群, $A\times A$包含单位表示, 所以这些乘积的展开中会有单位算符, 并且会有相同的正比于$\delta_{ab}$的系数. 因此, 仅算符积中的无迹部分会满足谱函数求和规则. 然而, 正如我们所看到的, 这些谱函数没有无迹部分, 所以手征类的谱函数不可能满足任何求和规则. \\
+{\textbf{非手征类}}: 乘积$J^{\mu}_{La}(x)J^{\nu}_{Rb}(0)$和$J^{\mu}_{Ra}(x)J^{\nu}_{Lb}(0)$均按照$SU(N)\times SU(N)$的$(A,A)$表示进行变换. 单位算符(以及$F_{\alpha\mu\nu}F_{\alpha}^{\mu\nu}$这样的算符)显然是$SU(N)\times SU(N)$单态, 因而它们无法出现在这些乘积的展开中. 而像$\bar{\psi}\psi$这样的无导数的费米子双线性型, 它们按照$SU(N)\times SU(N)$的$(\bar{N},N)$表示和$(N,\bar{N})$表示进行变换, 所以它们无法出现在非手征类流乘积的展开中. 唯一的规范不变, Lorentz不变并且只有一个导数的费米子双线性型将会包含规范协变的导数算符$\gamma^{\mu}D_{\mu}$,并且这一算符作用在%
+$\psi$上, 而场方程告诉我们它为零.
+因此, 这些谱函数既满足第一类谱函数求和规则又满足第二类谱函数求和规则, 而这些求和规则在这里变成
+\begin{equation}
+\int \dif\mu ^{2}\left[ \rho _{V}^{(1)}(\mu ^{2})-\rho _{A}^{(1)}(\mu ^{2})%
+\right] /\mu ^{2}=F^{2}  \label{20.5.18}
+\end{equation}%
+和
+\begin{equation}
+\int \dif\mu ^{2}\left[ \rho _{V}^{(1)}(\mu ^{2})-\rho _{A}^{(1)}(\mu ^{2})%
+\right] =0\text{ .}  \label{20.5.19}
+\end{equation}%
+
+在谱函数求和规则的原始工作中,\cite{5} 假定了$SU(2)\times SU(2)$谱函数在某些$\mu$值处有尖锐的峰, 对于$\rho_{V}^{1}(\mu^{2})$, 这个$\mu$值设为$m_{\rho}=770\,\mathrm{MeV}$, 而对于$\rho_{A}^{1}(\mu^{2})$, 这个$\mu$值被取为某个未知质量$m_{A}$. 即,
+\[
+\rho _{V}^{(1)}(\mu ^{2})\simeq g_{\rho }^{2}\delta (\mu ^{2}-m_{\rho }^{2})%
+\text{ ,}\qquad\qquad\rho _{A}^{(1)}(\mu ^{2})\simeq g_{A}^{2}\delta (\mu
+^{2}-m_{A}^{2})\text{ .}
+\]%
+那么方程(\ref{20.5.18})和(\ref{20.5.19})就变成\footnote{像方程(\ref{19.7.2})中那样, 取$SU(2)$生成元$\lambda_{a}$为Pauli矩阵, 我们有$F=F_{\pi}=184\,\mathrm{MeV}$.}
+\[
+\frac{g_{\rho }^{2}}{m_{\rho }^{2}}-\frac{g_{A}^{2}}{m_{A}^{2}}=F_{\pi }^{2}
+\]%
+和
+\[
+g_{\rho }^{2}=g_{A}^{2}\text{ .}
+\]%
+消掉未知的$g_{A}$, 这给出公式
+\[
+g_{\rho }^{2}=F_{\pi }^{2}\left( \frac{1}{m_{\rho }^{2}}-\frac{1}{m_{A}^{2}}%
+\right) ^{-1}\text{ .}
+\]
+最初, 在1967年, 这一结果再加上公式\cite{6}$g_{\rho}^{2}=2F^{2}_{\pi}m^{2}_{\rho}$(它的证明是不清楚的, 但是与$\rho\to e^{+}+e^{-}$衰变速率的实验测量值非常一致)被用来导出如下的结果
+\[
+m_{A}=\sqrt{2}m_{\rho}
+\]
+很多年以来, 质量$\sqrt{2}m_{\rho}$附近可能的与轴矢量流耦合的$a_{1}$共振的位置依旧是不清楚的, 而为了与轴矢量流耦合, $a_{1}$要有正确的量子数(即, $T=1$且$\mathsf{C}(a_{1}^{0})=+1$的$1^{+}$), 而在一个非常合理的估计下, 有这些量子数的共振处在质量$1230\,\mathrm{MeV}=1.6m_{\rho}$处.
+现在更倾向于把比值$m_{A}/m_{\rho}$取为输入量, 要么使用特定模型\cite{7}所建议的值$\sqrt{2}$, 要么使用实验值$1.6$, 然后依此来预测$g_{\rho}$.
+
+自1967年起, 不仅是$g_{\rho}$, 借用电磁流是量子色动力学中$SU(3)$流的线性组合这个性质, 也对$SU(3)\times SU(3)$流的整个矢量谱函数$\rho^{(1)}_{V}(\mu^{2})$进行了计算, 计算的结果与``$e^{+}+e^{-}\to\gamma\to$强子''截面的测量值在很大的能量范围内精确一致.
+既然与轻子耦合的强子流与流(\ref{20.5.14})的带荷分量相同, 那么原则上, $SU(3)\times SU(3)$流的轴矢量谱函数$\rho_{A}^{(1)}(\mu^{2})$可以在``$\bar{\nu}+e\to$强子''的过程中进行测量.
+然而, 虽然已经在实验上对反中微子-电子散射进行了研究, 但是这些反应速率太低阻碍我们使用对撞束, 这使得电子靶实质上是静止的. 为了达到强子特征能量, 在质心系下是$3\,\mathrm{GeV}$, 那么在实验室参考系下, 中微子的能量就得达到$(3\,\mathrm{GeV})^{2}/2m_{e}\simeq10\,\mathrm{TeV}$. 很多年来, 即使存在过这种能量的强中微子束, 但是我们从未获得过.
+幸运的是, 在``$\tau\to\nu+$强子''的过程中研究谱函数变得可能, 但是强子能量被$m_{\tau}=1.7\,\mathrm{GeV}$严格限制了. 同样可能的是用有限手征拉格朗日量计算$\mu^{2}$值比较小的谱函数, 以及用量子色动力学计算$\mu^{2}$值很大的%
+$\rho_{V}^{(1)}-\rho_{A}^{(1)}$, 这个时候这个差很小. Donoghue和Golowich\cite{8}在1993年仔细分析了所有输入量, 他们证明了谱函数积分的主导部分确实是$\rho$和$a_{1}$共振, 并且给出了与第一类谱函数求和规则和第二类谱函数求和规则相容的的结果.
+
+\section{深度非弹散射}
+
+考察如下的过程: 4-动量为$k$的电子与4-动量为$p$的核子$N$相撞, 然后产生4-动量为$k'$的电子以及强子态$H$, 这个强子态一般无法观测而我们要对其求和. 为了计算自旋平均的单举截面, 我们需要知道如下的量
+\begin{equation}
+(m_{N}/p_{N}^{0})W^{\mu \nu }(q,p)\equiv \frac{1}{2}\sum_{\sigma
+_{N}}\sum_{H}\delta ^{4}(p_{H}-p-q)\langle H|J^{\mu }(0)|N\rangle \langle
+H|J^{\nu }(0)|N\rangle ^{\ast }\text{ ,}  \label{20.6.1}
+\end{equation}%
+其中$J^{\mu}$是电磁流(这里除了因子$e$)而$q=k-k'$是从电子传到强子的动量. Lorentz不变性告诉我们$W^{\mu\nu}(q,p)$必须是$p^{\mu}p^{\nu}$, $p^{\mu}q^{\nu}$, $q^{\mu}p^{\nu}$, $q^{\mu}q^{\nu}$以及$\eta^{\mu\nu}$的线性组合, 而其系数只能依赖于$q$和$p$的两个独立标量函数: $q^{2}$和$\nu\equiv -q\cdot p/m_{N}$. 流守恒则要求$q_{\mu}W^{\mu\nu}=q_{\nu}W^{\mu\nu}=0$, 所以$W$必须采取如下形式\footnote{我们也可用这个形式理论计算其它轻子的深度非弹散射过程, 例如$\nu_{\mu}+p\to\mu^{-}+H$, 但是在这些过程中宇称是不守恒的, 所以在$W^{\mu\nu}(p,q)$中有一个正比于$\epsilon^{\mu\nu\rho\sigma}p_{\rho}q_{\sigma}$的额外项. 简单起见, 我们在这里只研究电子的深度非弹散射.}
+\begin{align}
+W^{\mu \nu }(q,p) &=-\left( \frac{q^{\mu }q^{\nu }}{q^{2}}-\eta ^{\mu \nu
+}\right) W_{1}(\nu ,q^{2})  \nonumber \\
+&\quad+\frac{1}{m_{N}^{2}}\left( p^{\mu }-\frac{p\cdot q}{q^{2}}q^{\mu }\right)
+\left( p^{\nu }-\frac{p\cdot q}{q^{2}}q^{\nu }\right) W_{2}(\nu ,q^{2})\text{
+.}  \label{20.6.2}
+\end{align}%
+另外, 方程(\ref{20.6.1})表明$W^{\mu\nu\ast}=W^{\nu\mu}$, 所以$W_{1}$和$W_{2}$是实的, 再加上$W^{\mu\nu}$是正定矩阵, 所以$W_{1}$和$W_{2}$都是正的. 在核子静系中, 微分散射截面是
+\begin{equation}
+\frac{\dif^{2}\sigma }{\dif\Omega \dif\nu }=\left( \frac{\dif\sigma }{\dif\Omega }\right) _{%
+\text{MOTT}}\Big( W_{2}+2W_{1}\tan ^{2}(\theta /2)\Big) \text{ ,}
+\label{20.6.3}
+\end{equation}%
+其中$\dif\Omega=\sin\theta\,\dif\theta\,\dif\phi$是电子散射方向的立体角, 而$(\dif\sigma/\dif\Omega)_{\text{MOTT}}$是被一无自旋点粒子弹性散射的微分截面
+\begin{equation}
+\left( \frac{\dif\sigma }{\dif\Omega }\right) _{\text{MOTT}}=\frac{e^{4}}{%
+4E_{e}^{2}}\frac{\cos ^{2}(\theta /2)}{\sin ^{4}(\theta /2)}\text{ ,}
+\label{20.6.4}
+\end{equation}%
+其中$E_{e}=-k\cdot p/m_{N}$是入射电子在核子静系中的能量.
+
+可以预期的是, 当$-p^{2}_{H}=-q^{2}+2m_{N}\nu+m_{N}^{2}$保持不变时, 若核子跃迁到的粒子或共振态所拥有的质量恰好在$-p_{H}^{2}$附近, 那么由于微分截面正比于这个跃迁的形状因子, 它应该会随着$q^{2}\to\infty$快速衰减. 让人有些意想不到的是, 在1966年斯坦福直线加速器中心开始运行的两年后, 由Friedman, Kendall和Taylor\cite{9}领头的SLAC-MIT合作组发现, 对于固定的$\omega\equiv2m_{N}\nu/q^{2}>1$, $\nu W_{2}(q^{2},\nu)$对于$q^{2}$粗略是一常数. (更确切一些, 对于质子, 当$E_{e}=10$, $13.5$, $16\,\mathrm{GeV}$而$\theta=6^{\circ}$和$10^{\circ}$时, $W_{2}(q^{2},\nu)$所拟合的曲线是$\nu W_{2}(q^{2},\nu)\simeq0.35-0.004\omega$. 由于$\tan^{2}(10^{\circ}/2)=7.6\times10^{-3}$, 所以这些实验对$W_{1}$不敏感.) 注意到在这一极限下, $-p_{H}^{2}\to(\omega-1)q^{2}\to\infty$, 这就是为什么称这一散射为深度非弹散射的原因.
+
+与此同时, Bjorken\cite{10}用流代数方法论证了$W_{2}(q^{2},\nu)$和$W_{1}(q^{2},\mu)$满足标度率: 当$q^{2}$和$\nu$共同趋于无穷时,
+\begin{equation}
+\nu\, W_{2}(\nu ,q^{2})\rightarrow F_{2}(\omega )\text{ ,}\qquad\qquad W_{1}(\nu
+,q^{2})\rightarrow F_{1}(\omega )\text{ ,}  \label{20.6.5}
+\end{equation}%
+其中依旧有$\omega\equiv2m_{N}\nu/q^{2}$. 之后不久, Feynman就给出了一个更加直观的解释.\cite{11} 他认为对于高度相对论性核子上的深度非弹散射, 设核子动量为$\mathbf{p}$, 那么核子的行为就像它是由各种``部分子''构成一样, 用$i$来标记部分子的种类, 设第$i$种部分子的动量处在$x\mathbf{p}$与$(x+\dif x)\mathbf{p}$之间的概率为$\mathscr{F}_{i}(x)\dif x$. 那么, 对于每个$i$
+\begin{equation}
+\int \dif x\,\mathscr{F}_{i}(x)=1\text{ .}  \label{20.6.6}
+\end{equation}%
+核子总动量为$\mathbf{p}$的条件给出额外的求和规则
+\begin{equation}
+\int_{0}^{1}\sum_{i}\mathscr{F}_{i}(x)\,x\,\dif x=1\text{ .}  \label{20.6.7}
+\end{equation}%
+对于电子(忽略$m_{e}$)在4-动量为$xp$的部分子上的散射, 我们有$x^{2}m_{N}^{2}=-(q+xp)^{2}=-q^{2}-2\nu m_{N}x+x^{2}m_{N}^{2}$, 所以$\nu=q^{2}/2m_{N}x$. 因此, 这一模型中的非弹截面是\footnote{这也可以从公式(\textcolor{red}{8.7.7})和(\textcolor{red}{8.7.28})推导出来, 即在一般Lorentz参考系下, 在自旋为1/2, 动量为$p$且质量为$m$粒子上的Campton散射.  由于这个原因要注意推导这个公式所用的规范, 初态和末态实极化矢量$e_{\mu}$和$e_{\mu}^{\prime}$满足$e^{2}=e'^{2}=1$, $e\cdot p=e'\cdot p=e\cdot k=e'\cdot k'=0$, 极化矢量求和给出
+\[
+\sum_{e,e'}\big(e\cdot e^{\prime} \big)^{2}=2+\frac{m^{4}(k\cdot k')^{2}}{(k\cdot p)^{2}(k'\cdot p)^{2}}
++\frac{2m^{2}(k\cdot k')}{(k\cdot p)(k'\cdot p)} \text{ .}
+\]
+}
+\begin{equation}
+\frac{\dif^{2}\sigma }{\dif\Omega \dif\nu }=\left( \frac{\dif\sigma }{\dif\Omega }\right) _{%
+\text{MOTT}}\sum_{i}Q_{i}^{2}\int_{0}^{1}\dif x\left( 1+\frac{q^{2}}{%
+2m_{N}^{2}x^{2}}\tan ^{2}\Big( \frac{\theta }{2}\Big) \right) \delta
+\left( \nu -\frac{q^{2}}{2m_{N}x}\right)   \label{20.6.8}
+\end{equation}%
+其中$Q_{i}$是第$i$种部分子所带的电荷, 单位为$e$. (这里的$\tan^{2}(\theta/2)$项是为了符合``Dirac''部分子, 这样的部分子拥有磁矩$eQ_{i}/2m_{N}x$.) 与方程(\ref{20.6.3})比较, 这给出
+\begin{equation}
+W_{2}(\nu ,q^{2})=\sum_{i}Q_{i}^{2}\int_{0}^{1}\dif x\,\mathscr{F}_{i}(x)\delta \left( \nu -%
+\frac{q^{2}}{2m_{N}x}\right) =\frac{1}{\nu \omega }\sum_{i}Q_{i}^{2}F_{i}%
+\left( \frac{1}{\omega }\right) \text{ ,}  \label{20.6.9}
+\end{equation}%
+\begin{equation}
+W_{1}(\nu ,q^{2})=\frac{1}{2}\sum_{i}Q_{i}^{2}\int_{0}^{1}\dif x\,\mathscr{F}_{i}(x)\frac{%
+q^{2}}{2m_{N}^{2}x^{2}}\delta \left( \nu -\frac{q^{2}}{2m_{N}x}\right) =%
+\frac{\omega \nu }{2m_{N}}W_{2}(\nu ,q^{2})\text{ .}  \label{20.6.10}
+\end{equation}
+这与Bjorken标度率(\ref{20.6.5})一致, 其中
+\begin{equation}
+F_{2}(\omega )=\frac{1}{\omega }\sum_{i}Q_{i}^{2}\mathscr{F}_{i}\left( \frac{1}{\omega
+}\right)   \label{20.6.11}
+\end{equation}%
+以及
+\begin{equation}
+F_{1}(\omega )=(\omega /2m_{N})F_{2}(\omega )\text{ .}  \label{20.6.12}
+\end{equation}%
+Callan和Gross最早导出了方程(\ref{20.6.12}).\cite{12} 这个结果与实验的误差率为10-15\%.
+
+若假定质子由两个$u$夸克, 一个$d$夸克以及任意多个中性部分子构成, 而中子由一个$u$夸克, 两个$d$夸克以及任意多个中性部分子构成, 那么方程(\ref{20.6.11})和(\ref{20.6.6})就给出了$W_{2}$的求和规则
+\begin{equation}
+\int_{1}^{\infty }F_{2}(\omega )\frac{\dif\omega }{\omega }=\sum_{i}Q_{i}^{2}=%
+\left\{
+\begin{array}{cc}
+1 & \quad p \\
+2/3 &\quad n%
+\end{array}%
+\right. \text{ .}  \label{20.6.13}
+\end{equation}%
+这个积分在$\omega$很大时会得到很大的贡献, 而这时$F_{2}$很难测量. 如果我们同时假定3个夸克均分了核子的总动量(中性部分子不参与动量分配), 那么取代方程(\ref{20.6.7}), 对于每个夸克, 我们会有更强的关系$\int\mathscr{F}_{i}(x)x\,\dif x=1/3$, 而这与方程(\ref{20.6.11})给出
+\[
+\int_{1}^{\infty }F_{2}(\omega )\frac{\dif \omega }{\omega ^{2}}=\tfrac{1}{3}%
+\sum_{i}Q_{i}^{2}=\left\{
+\begin{array}{cc}
+1/3 & \quad p \\
+2/9 & \quad n%
+\end{array}%
+\right. \text{ .}
+\]%
+这个积分很容易测量, 而测量结果与求和规则完全不一致, 这表明中性部分子携带了大部分的核子动量.
+
+在前面的现象中, 没有一个依赖于特定的场论. 正是算符积展开最终提供了一种方式使得我们可以将底层理论应用于深度非弹散射. 特别地, 算符积展开使得如下的事实变得显然: 我们需要用渐进自由场论来解释标度假定(\ref{20.6.5})(并计算对标度的修正). 而这个渐进自由理论最终由量子色动力学给出.
+
+为了对深度非弹散射使用算符积展开, 首先对方程(\ref{20.6.1})做Fourier变换. 利用平移不变性和强子态$|H\rangle$的完备性, 这给出
+\begin{equation}
+(m_{N}/p_{N}^{0})W^{\mu \nu }(q,p)\equiv \frac{1}{2(2\uppi )^{4}}\sum_{\sigma
+_{N}}\int \dif^{4}z\,\me^{-\mi q\cdot z}\langle N|J^{\nu }(z)J^{\mu }(0)|N\rangle
+\text{ .}  \label{20.6.14}
+\end{equation}%
+因此, $W^{\mu\nu}(q,p)$在$q\to\infty$时的渐进行为与算符积在$z\to 0$处的奇点相关.
+
+对算符积展开中的系数函数进行Feynman图计算并不是指直接计算方程(\ref{20.6.14})中的矩阵元展开式, 即$W^{\mu\nu}$中的矩阵元展开式, 而是计算两点Green函数的矩阵元
+\begin{equation}
+(m_{N}/p_{N}^{0})T^{\mu \nu }(q,p)\equiv \frac{1}{2(2\uppi )^{4}}\sum_{\sigma
+_{N}}\int \dif^{4}z\,\me^{-\mi q\cdot z}\langle N|T\{J^{\nu }(z),J^{\mu
+}(0)\}|N\rangle \text{ .}  \label{20.6.15}
+\end{equation}%
+我们可以用$T^{\mu\nu}$的结构函数表示上式, 结构函数的定义类似于方程(\ref{20.6.2}):
+\begin{align}
+T^{\mu \nu }(q,p) &=-\left( \frac{q^{\mu }q^{\nu }}{q^{2}}-\eta ^{\mu \nu
+}\right) T_{1}(\nu ,q^{2})  \nonumber \\
+&\quad +\frac{1}{m_{N}^{2}}\left( p^{\mu }-\frac{p\cdot q}{q^{2}}q^{\mu }\right)
+\left( p^{\nu }-\frac{p\cdot q}{q^{2}}q^{\nu }\right) T_{2}(\nu ,q^{2})\text{
+.}  \label{20.6.16}
+\end{align}%
+对于固定的$q^{2}$, $T_{r}(\nu,q^{2})$和$W_{r}(\nu,q^{2})$(其中$r=1,2$)之间的关系由色散关系\footnote{当$q^{2}=0$时, 可以像推导向前光子散射的色散关系(\textcolor{red}{10.8.16})那样将这些精确地推导出来. 而对于固定的$q^{2}\neq0$, 这个推导要困难一些.}给出\cite{13}:
+\begin{align}
+T_{r}(\nu ,q^{2}) &=\frac{1}{2}W_{r}(-\nu ,q^{2})+\frac{1}{2}W_{r}(\nu
+,q^{2})  \nonumber \\
+&\quad +\frac{1}{2\uppi \mi}\int_{-\infty }^{\infty }\dif\nu ^{\prime }\,\frac{W_{r}(-\nu
+^{\prime },q^{2})-W_{r}(\nu ^{\prime },q^{2})}{\nu ^{\prime }-\nu }\text{ ,}
+\label{20.6.17}
+\end{align}%
+其中被积函数中的分母要理解成主值函数. 除非$\nu>q^{2}/2m_{N}$, 否则函数$W_{r}(\nu,q^{2})$为零, 所以色散关系可以写成
+\begin{align}
+T_{r}(\nu ,q^{2}) &=\frac{1}{2}W_{r}(-\nu ,q^{2})+\frac{1}{2}W_{r}(\nu
+,q^{2})  \nonumber \\
+&\quad -\frac{1}{2\uppi \mi}\int_{q^{2}/2m_{N}}^{\infty }\dif\nu ^{\prime }\,W_{r}(\nu
+^{\prime },q^{2})\left( \frac{1}{\nu ^{\prime }+\nu }+\frac{1}{\nu ^{\prime
+}-\nu }\right) \text{ .}  \label{20.6.18}
+\end{align}%
+
+对于那些对$T_{r}$的算符积展开有贡献的算符, 我们可以根据它们所属的Lorentz群不可约表示对其进行分类. 对于$p^{2}=-m_{N}^{2}$固定的单个4-矢$p^{\mu}$, 它的唯一Lorentz协变函数正比于对称张量$p^{\mu_{1}}\cdots p^{\mu_{s}}$, 所以, 对自旋平均的核子期望值有贡献的算符只有对称无迹张量$\mathcal{O}_{si}^{\mu_{1}\cdots\mu_{s}}$, 其中下标$i$用来区分拥有这一张量结构的不同算符. (我们同时还在部分子模型中用$i$标记算符的部分子种类, 这样做的原因会在下文中给出.) 这些算符拥有如下形式的矩阵元
+\begin{equation}
+\frac{1}{2}\sum_{\sigma _{N}}\langle N|\mathcal{O}_{si}^{\mu _{1}\cdots \mu
+_{s}}|N\rangle =(m_{N}/p_{N}^{0})\Big[ p^{\mu _{1}}\cdots p^{\mu _{s}}-%
+\text{迹}\Big] \langle \mathcal{O}_{si}\rangle \text{ ,}
+\label{20.6.19}
+\end{equation}%
+其中$\langle\mathcal{O}_{si}\rangle$是常系数. 这样的算符对$T^{\mu\nu}$的贡献正比于4-动量$p$的$s$因子, 因此它对$T_{1}(\nu,q^{2})$和$T_{2}(\nu,q^{2})$\\的贡献分别正比于$\nu^{s}$和$\nu^{s-2}$. (包含$p^{2}$的项会被因子$m^{2}_{N}/q^{2}$或$m_{N}^{2}/p\cdot q$压低, 所以我们扔掉了这样的项.) 如果我们忽略对数修正, 那么在渐进自由理论中, 系数对$q^{2}$的依赖形式分别是$(q^{2})^{(-4+6-d(s,i)-s)/2}$和%
+$(q^{2})^{(-4+6-d(s,i)-s+2)/2}$, 其中$d(s,i)$是算符$\mathcal{O}_{si}$的量纲.\footnote{指数中的$-4$来自于方程(\ref{20.6.14})中对$z$的积分, $+6$是两个电子流算符的量纲. $-s/2$和$-(s-2)/2$分别用来补偿$\nu^{s}$和$\nu^{s-2}$中$q^{\mu}$的幂函数.} 利用$\nu\propto q^{2}\omega$, 我们看到算符$\mathcal{O}_{si}$对结构函数贡献的渐进形式是
+\begin{equation}
+T_{1,si}\propto \nu ^{s}(q^{2})^{(2-d(s,i)-s)/2}\propto \omega
+^{s}(q^{2})^{(2-\tau (s,i))/2}  \label{20.6.20}
+\end{equation}%
+和
+\begin{equation}
+\nu \,T_{2,si}\propto \nu ^{s-1}(q^{2})^{(4-d(s,i)-s)/2}\propto \omega
+^{s-1}(q^{2})^{(2-\tau (s,i))/2}\text{ ,}  \label{20.6.21}
+\end{equation}%
+其中$\tau(s,i)$是算符$\mathcal{O}_{si}$的``扭度''(twist), 定义为\cite{14}
+\begin{equation}
+\tau (s,i)\equiv d(s,i)-s\text{ .}  \label{20.6.22}
+\end{equation}%
+我们看到对于固定的$\omega$, 当$q^{2}\to\infty$时, 扭度最小的算符贡献了$T_{1}$和$\nu T_{2}$中的主导项. 另外, 方程(\ref{20.6.18})表明$T_{r}(\nu,q^{2})$中不存在$\nu$的奇次项, 所以只有那些$s$为偶数的算符才在这里有贡献.
+
+在$s$阶的对称无迹张量中, 量纲最小的是算符
+\begin{equation}
+\left( \mathcal{O}_{sf}\right) _{\mu _{1}\cdots \mu _{s}}\equiv (\mi^{s-2}/s!)%
+\bar{\psi}_{f}\gamma _{\{\mu _{1}}D_{\mu _{2}}^{\leftrightarrow }\cdots
+D_{\mu _{s}\}}^{\leftrightarrow }\psi _{f}  \label{20.6.23}
+\end{equation}%
+和
+\begin{equation}
+\left( \mathcal{O}_{s0}\right) _{\mu _{1}\cdots \mu _{s}}\equiv (\mi^{s-2}/2s!)F_{\alpha
+\,\nu \{\mu _{1}}D_{\mu _{3}}^{\leftrightarrow }\cdots D_{\mu
+_{s}}^{\leftrightarrow }F_{\alpha \,\mu _{2}\}}^{\nu }\text{ ,}
+\label{20.6.24}
+\end{equation}
+其中$f$代表夸克味; $D_{\mu}$是规范协变导数; 而花括号代表对括号内的时空指标进行置换求和再减掉迹. (符号$\leftrightarrow$是指向右作用的导数减掉向左作用的导数再除以2. 我们取导数的差是因为它们的和在4-动量相等的态之间的矩阵元为零.) 这些算符的量纲为$3+(s-1)=4+(s-2)=2+s$, 所以它们的扭度为$\tau=2$. 因此在$q^{2}\to\infty$时会有无限多个算符有贡献, 这些算符对$T_{1}$和$\nu\,T_{2}$的贡献与$\omega$相关但只与$q^{2}$对数相关. 因此, 渐进自由保证了Bjorken标度律, 所相差的只是一个对数修正. 只保留扭度为2的算符, 我们看到(正如我们的符号约定所预言的), 对于每个$s$, 只有一个算符与每个部分子种类相对应, 这里$i$取遍夸克种类$f$(夸克和反夸克合在一起)而$i=0$对应胶子.
+
+现在我们来考察对数修正. 在渐进自由的理论中, 系数函数的渐进行为由方程(\ref{20.3.9})控制. 正如我们在10.4节所讨论的, 当我们忽略电磁辐射修正后, 由于电磁流是守恒的, 它们不需要重整化因子. 因此方程(\ref{20.3.9})中的矩阵$c_{\ell\ell^{\prime}}$为零. 而矩阵$c_{\mathcal{O},\mathcal{O}^{\prime}}$也没有元素可以连接Lorentz变换类型不同的算符, 这使得在我们所使用的符号约定中, $c_{si,s'i'}=\delta_{ss'}c_{ii'}(s)$. 因此, 方程(\ref{20.3.9})采取如下的形式
+\begin{equation}
+T_{1}(\nu ,q^{2})\rightarrow \sum_{sij}\omega ^{s}\mathscr{A}_{si}\left[ \left(
+g_{q}^{2}/g_{\ell }^{2}\right) ^{8\uppi ^{2}c(s)/b}\right] _{ij}\langle
+\mathcal{O}_{sj}\rangle \text{ ,}  \label{20.6.25}
+\end{equation}%
+\begin{equation}
+\nu \, T_{2}(\nu ,q^{2})\rightarrow \sum_{sij}\omega ^{s-1}\mathscr{B}_{si}\left[ \left(
+g_{q}^{2}/g_{\ell }^{2}\right) ^{8\uppi ^{2}c(s)/b}\right] _{ij}\langle
+\mathcal{O}_{sj}\rangle \text{ ,}  \label{20.6.26}
+\end{equation}%
+其中$\mathscr{A}$和$\mathscr{B}$是常数, 它们源于算符$\mathcal{O}_{si}$在两个流乘积的算符积展开中的系数函数, $\ell^{2}$是$q^{2}$的某个特定值, 我们用它来定义系数函数, $b$是一圈重整化群方程(\ref{20.3.8})中对应强耦合常数$g_{q}$的常数, 而$\langle\mathcal{O}_{si}\rangle$是矩阵元(\ref{20.6.19})中的常系数.
+
+在算符积展开中, 系数与问题中所研究的特定过程无关并且不受夸克陷俘的影响, 所以, 通过考察一个虚拟的简单过程,
+例如电子在$f$味自由夸克上的散射, 我们就能计算出系数$\mathscr{A}_{si}$和$\mathscr{B}_{si}$. 重整化算符$\mathcal{O}_{si}$的一种非常方便的定义方式是, 使得算符(\ref{20.6.23})和(\ref{20.6.24})的单夸克矩阵元由树级近似给出:
+\begin{align}
+\langle f^{\prime },\sigma ^{\prime }|\mathcal{O}_{sf}|f^{\prime \prime },\sigma
+^{\prime \prime }\rangle  &=\frac{(-1)^{s}\mi}{s!}\left( \bar{u}^{\prime
+}\gamma ^{\{\mu _{1}}u\right) p^{\mu _{2}}\cdots p^{\mu _{s}\}}\delta
+_{ff^{\prime }}\delta _{ff^{\prime \prime }}\text{ ,}  \label{20.6.27} \\
+\langle f^{\prime },\sigma ^{\prime }|\mathcal{O}_{s0}|f^{\prime \prime },\sigma
+^{\prime \prime }\rangle  &=0\text{ .}  \label{20.6.28}
+\end{align}%
+对方程(\ref{20.6.27})做$\sigma^{\prime}=\sigma^{\prime\prime}$的平均并与方程(\ref{20.6.19})比较, 这给出
+\[
+\langle \mathcal{O}_{sf}\rangle _{f^{\prime }}\frac{m_{f}}{p^{0}}\,p^{\mu _{1}}p^{\mu
+_{2}}\cdots p^{\mu _{s}}=\delta _{ff^{\prime }}\frac{(-1)^{s}\,\mi}{2s!}%
+\operatorname{Tr}\left\{ \left( \frac{-\mi\slashed{p}+m_{f}}{2p^{0}}\right) \gamma ^{\{\mu _{1}}p^{\mu
+_{2}}\cdots p^{\mu _{s}\}}\right\} \text{ ,}
+\]%
+这使得(对于偶数的$s$)
+\begin{equation}
+\langle \mathcal{O}_{sf}\rangle _{f^{\prime }}=\delta _{ff^{\prime }}/m_{f}
+\label{20.6.29}
+\end{equation}%
+以及
+\begin{equation}
+\langle \mathcal{O}_{s0}\rangle _{f^{\prime }}=0\text{ .}  \label{20.6.30}
+\end{equation}%
+在算符$\mathcal{O}_{si}$的这一定义下, 当重整化动量标度$\ell^{2}$足够大, 使得我们可以使用树级计算算符积展开函数时, 我们可以从电子-夸克散射的树级截面中推出这些函数. 回溯方程(\ref{20.6.9})和(\ref{20.6.10})的部分子模型推导, 我们看到对于电子在$f$味夸克上的散射, 在树级近似下, $W_{r}$给定为\footnote{在方程(\ref{20.6.31})中插入因子$(m_{N}/m_{f})$是因为$\nu$的定义是$-q\cdot p/m_{N}$而不是$-q\cdot p/m_{f}$, 与此同时出现在方程(\ref{20.6.2})中的是$W_{2}/m_{N}^{2}$而不是$W_{2}/m_{f}^{2}$. 这样, 方程(\ref{20.6.32})就可以从方程(\ref{20.6.10})中推出. $\omega$也可以写与质量无关的形式, 例如$\omega=-2q
+\cdot p/q^{2}$.}
+\begin{align}
+\nu \,W_{2,f} &=(m_{N}/m_{f})Q_{f}^{2}\delta (\omega -1)\text{ ,}
+\label{20.6.31} \\
+W_{1,f} &=Q_{f}^{2}\delta (\omega -1)/2m_{f}\text{ .}  \label{20.6.32}
+\end{align}%
+将这些结果代入色散关系(\ref{20.6.18}), 对于$\omega\neq1$, 这给出
+\begin{align}
+T_{1,f} &=\frac{Q_{f}^{2}}{2\uppi \mi m_{f}}\frac{m_{N}}{m_{f}}\frac{1}{\omega
+^{2}-1}\text{ ,}  \label{20.6.33} \\
+\nu \,T_{2,f} &=\frac{2Q_{f}^{2}}{2\uppi \mi}\frac{\omega ^{2}}{\omega ^{2}-1}%
+\text{ ,}  \label{20.6.34}
+\end{align}%
+这些结果也可以通过计算电子-夸克散射的Feynman图直接获得. 利用方程(\ref{20.6.29})和(\ref{20.6.30}), 在重整化点$q^{2}=\ell^{2}$比较方程(\ref{20.6.33})和(\ref{20.6.34})与方程(\ref{20.6.25})和(\ref{20.6.26})%
+中$\omega^{s}$的系数, 我们发现
+\begin{equation}
+\mathscr{A}_{si}=\frac{\mi Q_{i}^{2}}{2\uppi }\text{ ,}\qquad\qquad\mathscr{B}_{si}=\frac{\mi m_{N}Q_{i}^{2}}{\uppi
+}\text{ ,}  \label{20.6.35}
+\end{equation}
+其中胶子电荷$Q_{0}$显然要取为零. 重申一次, 尽管我们是从电子-夸克散射中导出这些值的, 但是$\mathscr{A}_{si}$和$\mathscr{B}_{si}$是两个电流乘积的算符积展开中的因子, 所以它们不依赖我们在计算该算符积期望值时所取的态. 因此, 我们可以在方程(\ref{20.6.25})和(\ref{20.6.26})中使用方程(\ref{20.6.35}), 由此发现
+\begin{equation}
+T_{1}(\nu ,q^{2})\rightarrow \frac{\mi}{2\uppi }\sum_{sij}\omega ^{s}Q_{i}^{2}%
+\left[ \left( g_{q}^{2}/g_{\ell }^{2}\right) ^{8\uppi ^{2}c(s)/b}\right]
+_{ij}\langle \mathcal{O}_{sj}\rangle \text{ ,}  \label{20.6.36}
+\end{equation}%
+\begin{equation}
+\nu \,T_{2}(\nu ,q^{2})\rightarrow \frac{\mi m_{N}}{\uppi }\sum_{sij}\omega
+^{s-1}Q_{i}^{2}\left[ \left(g_{q}^{2}/g_{\ell }^{2}\right)^{8\uppi ^{2}c(s)/b}\right]
+_{ij}\langle \mathcal{O}_{sj}\rangle \text{ .}  \label{20.6.37}
+\end{equation}%
+
+现在, 我们回到最终的结构函数$W_{r}(\nu,q^{2})$. 我们注意到, $T_{r}(\nu,q^{2})$中$\omega^{s}=(2m_{N}\nu/q^{2})^{s}$的系数由方程(\ref{20.6.18})给出
+\[
+\frac{-2}{2\uppi \mi}\left( \frac{q^{2}}{2m_{N}}\right)
+^{s}\int_{q^{2}/2m_{N}}^{\infty }\dif\nu ^{\prime }\,\nu ^{\prime -1-s}W_{r}(\nu
+^{\prime },q^{2})=\frac{\mi}{\uppi }\int_{1}^{\infty }\dif\omega\, \omega
+^{-1-s}W_{r}\left( \frac{\omega q^{2}}{2m_{N}},q^{2}\right) \text{ .}
+\]%
+与方程(\ref{20.6.36})和(\ref{20.6.37})进行比较, 我们发现
+\begin{equation}
+\int_{1}^{\infty }\dif\omega \,\omega ^{-1-s}W_{1}\left( \frac{\omega q^{2}}{%
+2m_{N}},q^{2}\right) \rightarrow \frac{1}{2}\sum_{ij}Q_{i}^{2}\left[ \left(
+g_{q}^{2}/g_{\ell }^{2}\right) ^{8\uppi ^{2}c(s)/b}\right] _{ij}\langle
+\mathcal{O}_{sj}\rangle \text{ ,}  \label{20.6.38}
+\end{equation}%
+\begin{equation}
+\int_{1}^{\infty }\dif\omega \,\omega ^{-s}\nu \,W_{2}\left( \frac{\omega q^{2}}{%
+2m_{N}},q^{2}\right) \rightarrow m_{N}\sum_{ij}Q_{i}^{2}\left[ \left(
+g_{q}^{2}/g_{\ell }^{2}\right) ^{8\uppi ^{2}c(s)/b}\right] _{ij}\langle
+\mathcal{O}_{sj}\rangle \text{ .}  \label{20.6.39}
+\end{equation}
+类似部分子模型, 满足这些方程的$W_{r}$显然可以表示成方程(\ref{20.6.9})和(\ref{20.6.10})的形式
+\begin{align}
+W_{1}\left( \frac{\omega q^{2}}{2m_{N}},q^{2}\right)  &\rightarrow
+\sum_{i}Q_{i}^{2}\mathscr{F}_{i}(1/\omega ,q^{2})\text{ ,}  \label{20.6.40} \\
+\nu \,W_{2}\left( \frac{\omega q^{2}}{2m_{N}},q^{2}\right)  &\rightarrow %
+\frac{2m_{N}}{\omega }\sum_{i}Q_{i}^{2}\mathscr{F}_{i}(1/\omega ,q^{2})\text{ ,}
+\label{20.6.41}
+\end{align}%
+其中的$\mathscr{F}_{i}$是部分子分布函数, 现在定义它的动量方程是
+\begin{equation}
+\int_{0}^{1}\dif x \,x^{s-1}\mathscr{F}_{i}(x,q^{2})=\frac{1}{2}\sum_{j}\left[ \left(
+g_{q}^{2}/g_{\ell }^{2}\right) ^{8\uppi ^{2}c(s)/b}\right] _{ij}\langle
+\mathcal{O}_{sj}\rangle \text{ .}  \label{20.6.42}
+\end{equation}%
+特别地, 我们看到渐进自由不仅给出了Bjorken标度率的修正版, 并且给出了$W_{1}$和$W_{2}$之间的Callan-Gross关系(\ref{20.6.12}).
+
+Altarelli和Parisi\cite{15}给出了动量方程(\ref{20.6.12})另一个非常优美的表述, 这个表述被广泛地应用于深度非弹散射的研究中. 注意到, 加上重整化群方程(\ref{20.3.8}), 方程(\ref{20.3.8})可以给出微分方程
+\begin{equation}
+q^{2}\frac{\dif}{\dif q^{2}}\int_{0}^{1}\dif x \,x^{s-1}\mathscr{F}_{i}(x,q^{2})=-g_{q}^{2}%
+\sum_{j}c_{ij}(s)\int_{0}^{1}\dif x\, x^{s-1}F_{j}(x,q^{2})\text{ .}
+\label{20.6.43}
+\end{equation}%
+加上重整化点$\ell^{2}$的初始条件
+\begin{equation}
+\int_{0}^{1}\dif x \,x^{s-1}\mathscr{F}_{i}(x,\ell ^{2})=\tfrac{1}{2}\langle \mathcal{O}%
+_{si}\rangle \text{ ,}  \label{20.6.44}
+\end{equation}%
+这些方程有唯一解, 所以它们可以代替动量方程. 现在, 方程(\ref{20.6.43})的解满足$\mathscr{F}_{i}$的微分方程:
+\begin{equation}
+q^{2}\frac{\dif}{\dif q^{2}}\mathscr{F}_{i}(x,q^{2})=\frac{g_{q}^{2}}{4\uppi ^{2}}%
+\sum_{j}\int_{x}^{1}\frac{\dif y}{y}P_{ij}\left( \frac{x}{y}\right)
+\mathscr{F}_{j}(y,q^{2})\text{ ,}  \label{20.6.45}
+\end{equation}%
+其中矩阵函数$P_{ij}(z)$服从条件
+\begin{equation}
+\int_{0}^{1}z^{s-1}P_{ij}(z)\,\dif z=-4\uppi ^{2}c_{ij}(s)\text{ .}  \label{20.6.46}
+\end{equation}%
+(因子$4\uppi^{2}$是习惯上的约定.)
+
+Georgi和Politzer\cite{16}以及Gross和Wilczek\cite{17}在量子色动力学中计算出了矩阵$c_{ij}(s)$. 他们假定有$N$味质量非常小的夸克, 这些夸克质量小到可以视为无质量, 而剩下的夸克质量非常重使得它们可以被积掉, 这使得除了重夸克对强耦合常数的效应外, 他们可以忽视掉重夸克的其它效应. 在算符(\ref{20.6.23})和(\ref{20.6.24})所给出的基下, 它们的结果是
+\begin{align}
+c_{00}(s) &=\frac{1}{2\uppi ^{2}}\left\{ C_{1}\left[ \frac{1}{12}-\frac{1}{%
+s(s-1)}-\frac{1}{(s+1)(s+2)}+\sum_{t=2}^{s}\frac{1}{t}\right] +\frac{N}{3}%
+C_{2}\right\} \text{ ,}  \label{20.6.47} \\
+c_{f0}(s) &=\frac{1}{\uppi ^{2}}C_{2}\left[ \frac{1}{s+2}+\frac{2}{s(s+1)(s+2)%
+}\right] \text{ ,}  \label{20.6.48} \\
+c_{0f}(s) &=\frac{1}{8\uppi ^{2}}C_{3}\left[ \frac{1}{s+1}+\frac{2}{s(s-1)}%
+\right] \text{ ,}  \label{20.6.49} \\
+c_{ff^{\prime }}(s) &=\frac{1}{8\uppi ^{2}}C_{3}\left[ 1-\frac{2}{s(s+1)}%
++4\sum_{t=2}^{s}\frac{1}{t}\right] \delta _{ff^{\prime }}\text{ ,}
+\label{20.6.50}
+\end{align}%
+其中$0$和$f$分别代表算符(\ref{20.6.24})和(\ref{20.6.23}); 常数$C_{1}$和$C_{2}$由方程(\ref{17.5.33})和(\ref{17.5.34})定义(其中在方程(\ref{17.5.34})的迹中只有一个夸克味); $N$是夸克味的数目; $C_{3}$的定义(使用17.4节符号约定)是
+\begin{equation}
+t_{\alpha }t_{\alpha }=C_{3}\,g^{2}\,1\text{ .}  \label{20.6.51}
+\end{equation}%
+在现实情况中, 规范群是$SU(3)$, 而夸克处在它的定义表示$\bf{3}$中, 所以这些数是
+\begin{equation}
+C_{1}=3\text{ ,}\qquad C_{2}=\tfrac{1}{2}\text{ ,}\qquad C_{3}=\tfrac{4}{3}\text{ .}
+\label{20.6.52}
+\end{equation}%
+
+以Altarelli-Parisi函数的形式, 这些非常复杂的结果会变得简单一些. 可以直接证明, 如果
+\begin{align}
+P_{ff^{\prime }} &=\delta _{ff^{\prime }}\left[ \frac{4}{3}\left( \frac{%
+1+x^{2}}{(1-x)_{+}}\right) +2\delta (1-x)\right] \text{ ,}  \label{20.6.53}
+\\
+P_{f0} &=x^{2}-x+\frac{1}{2}\text{ ,}  \label{20.6.54} \\
+P_{0f} &=\frac{4}{3}\left[ \frac{2}{x}-2+x\right] \text{ ,}  \label{20.6.55}
+\\
+P_{00} &=6\left[ \frac{1-x}{x}+x(1-x)+\frac{x}{(1-x)_{+}}+\frac{11}{12}%
+\delta (1-x)\right] -\frac{N}{3}\delta (1-x)\text{ ,}  \label{20.6.56}
+\end{align}%
+方程(\ref{20.6.46})就是成立的, 要注意的是这些函数处在对$x$的积分中, 积分上限是$x=1$, 而$1/(1-x)_{+}$的定义是
+\begin{equation}
+\frac{f(x)}{(1-x)_{+}}\equiv \frac{f(x)-f(1)}{1-x}\text{ .}  \label{20.6.57}
+\end{equation}%
+
+对于每个$s$, 矩阵$c(s)$显然有一个$(N-1)$重简并的本征值, 这个本征值等于$\delta_{ff'}$在方程(\ref{20.6.50})中的系数:
+\begin{equation}
+c(s,\text{伴随})=\frac{1}{8\uppi ^{2}}C_{3}\left[ 1-\frac{2}{s(s+1)%
+}+4\sum_{t=2}^{s}\frac{1}{t}\right] \text{ ,}  \label{20.6.58}
+\end{equation}%
+而本征算符由算符(\ref{20.6.23})的线性组合给出, 这些线性组合相互独立且系数$a_{f}$满足$\sum_{f}a_{f}=0$, 它们属于$SU(N)$群的伴随表示, 这里的$SU(N)$群正是有$N$个夸克味的量子色动力学的未破缺整体对称群. 另外, 对于每个$s$, 还有两个本征算符, 它们属于$SU(N)$的单态表示, 由算符(\ref{20.6.24})和对$f$求和的算符(\ref{20.6.23})的线性组合给出. 通过对角化如下的$2\times2$矩阵
+\begin{equation}
+c(s)_{\text{singlet}}=\left[
+\begin{array}{cc}
+c_{00}(s) & c_{0f}(s)N \\
+c_{f0}(s) & c(s,\text{伴随})%
+\end{array}%
+\right] \text{ ,}  \label{20.6.59}
+\end{equation}%
+我们可以找到这些本征算符以及相应的本征值.
+当$s=2$时, 这个矩阵采取如下的形式
+\begin{equation}
+c(2)_{\text{singlet}}=\left[
+\begin{array}{cc}
+NC_{2}/6\uppi ^{2} & NC_{3}/6\uppi ^{2} \\
+C_{2}/3\uppi ^{2} & C_{3}/3\uppi ^{2}%
+\end{array}%
+\right] \text{ .}  \label{20.6.60}
+\end{equation}
+它有一个零本征值, 相应地, 这时$\mathcal{O}_{20}^{\mu\nu}$和$\sum_{f}\mathcal{O}_{2f}^{\mu\nu}$的线性组合等于能动量张量, 而这个能动量张量同$J^{\mu}$一样是未重整化的. 矩阵(\ref{20.6.60})的其它本征值由它的迹给出, 即$NC_{2}/6\uppi^{2}+C_{3}/3\uppi^{2}$. 现在, 若给定$s$, 对于任意的$s'<s$, $c_{ij}(s)$的最小本征值至少要和$c_{ij}(s')$的最小本征值一样大, 若非如此, 对于充分大的$q^{2}$, 积分(\ref{20.6.42})最终会随着$s$的增长而增长, 这与该积分是$s$的严格单调减函数这一事实相矛盾. 由于最小本征值在$s=2$时为零, 我们可以得出, 当$s>2$时, 所有其它本征值都是正的. 事实上, 由于$s>2$时没有未重整化算符, 这些本征值是正定的. 因此, 仅在$g_{q}^{2}\to0$的极限下, 严格的Bjorken标度率才是成立的, 这时只有能动量张量有贡献. 严格Bjorken标度律被破坏的预言在实验上被证实了, 具体来讲, 是通过对深度非弹电子-核子散射以及$\mu$子-核子散射的详细研究而被证实的.
+
+\section[重整化子]{重整化子\footnote{本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过.}}
+
+在量子场论早期, 理论家们就抱有如下的疑问: 物理矩阵元的微扰展开是否收敛, 如果不收敛, 我们又该如何处理? 在当代初期, Dyson\cite{18}发现$n$阶图的数目一般是按照$n!$的速率增长的, 这表明微扰展开的收敛半径为零.
+
+对于这种$n$阶项的增长率为$n!$的级数, 我们有一种非常著名的技术来提升它的收敛性, 这种技术被称作Borel变换\cite{19}, 这个方法要么使得级数收敛, 如果没有使得级数收敛, 至少可以改善级数的行为, 使得在耦合常数的一个很大范围内, 我们可以将其用作渐进展开. 对于给定级数
+\begin{equation}
+F(g)=\sum_{n}f_{n}g^{n}  \label{20.7.1}
+\end{equation}%
+我们考察与之相关的级数
+\begin{equation}
+B(z)\equiv \sum_{n}f_{n}z^{n}/n!\text{ .}  \label{20.7.2}
+\end{equation}%
+如果$f_{n}$的增长速率没有$n!$快, 那么$B(z)$一般会有一个有限大的收敛半径. 问题是, 我们能否从重求和级数(\ref{20.7.2})中复现处原始级数(\ref{20.7.1})? 利用熟悉的公式
+\[
+\int_{0}^{\infty }\exp (-z/g)z^{n}\,\dif z=n!\,g^{n+1}
+\]%
+我们看到, 至少在形式上有
+\begin{equation}
+gF(g)=\int_{0}^{\infty }\exp (-z/g)B(z)\,\dif z\text{ .}  \label{20.7.3}
+\end{equation}%
+
+无论$B(z)$的奇点处在复平面的何处, 它总会限制级数(\ref{20.7.2})的收敛半径, 但是只要这些奇点不在正实轴上, 这就不是一个无法解决的问题. 为了用方程(\ref{20.7.3})计算$F(g)$, 我们仅需要当$z$为小于$g$或$g$阶的正实值时的$B(z)$, 如果$B(z)$在复平面上的奇点与原点的距离远大于$g$, 我们就可以通过幂级数(\ref{20.7.1})直接获得这些$B(z)$.  即使有若干极点$z_{1},z_{2},\cdots$的模长小于$g$或者为$g$阶, 我们也可通过$(z-z_{1})(z-z_{2})\cdots B(z)$的幂级数计算出$z$为$g$阶时的$B(z)$, 但前提是我们要知道这些极点的位置.
+
+如果$B(z)$的奇点处在正实轴上, 这些奇点就会破坏方程(\ref{20.7.3}), 与上面相比, 这种情况要糟糕的多. 这时, 我们可以稍微对积分围道做些变形以避开奇点, 但这样就会有两种选择: 我们是让围道从上方绕开奇点还是从下方绕开奇点?
+
+这一节将会证明: Borel变换$B(z)$的一些奇点与场方程的解相关, 这些奇点被称为{\kai{瞬子}}, 而另一些奇点与算符积展开中的项相关, 这些奇点则被称为{\kai{重整化子}}(\textit{renormalons}). 在量子色动力学中, 使用Borel变换对微扰展开进行求和的障碍正是重整化子.
+
+Lipatov\cite{20}在1976年证明了Borel变换$B(z)$的一些奇点与场方程经典解的存在性相关. 考察由欧几里得路径积分定义的函数$F(g)$:
+\begin{equation}
+F(g)\equiv \int [\dif\phi ]\exp (I[\phi ,g])\text{ .}  \label{20.7.4}
+\end{equation}%
+(第23章的附录A讨论了欧几里得路径积分的使用方法.) 幂级数(\ref{20.7.1})中的系数给定为
+\begin{align}
+f_{n} &=\frac{1}{2\uppi \mi}\int [\dif\phi ]\oint \dif g \:g^{-n-1}\exp (I[\phi ,g])
+\nonumber \\
+&=\frac{1}{2\uppi \mi}\int [\dif\phi ]\oint \dif g\,\exp \Big( I[\phi ,g]-(n+1)\ln
+g\Big) \text{ ,}  \label{20.7.5}
+\end{align}%
+其中$\oint$是指复$g$平面上围绕$g=0$的逆时针围道积分. 当$n$很大时, 可以合理地认为这个积分的主导贡献由方程(\ref{20.7.5})最后一行对$\phi$和$g$的稳相点给出, 记这些点为$\phi_{n}$和$g_{n}$, 它们满足:
+\begin{equation}
+\left. \frac{\delta I[\phi ,g_{n}]}{\delta \phi (x)}\right\vert _{\phi =\phi
+_{n}}=0\text{ ,}  \label{20.7.6}
+\end{equation}%
+\begin{equation}
+\left. \frac{\partial I[\phi ,g_{n}]}{\partial g}\right\vert _{g=g_{n}}=%
+\frac{n+1}{g_{n}}\text{ .}  \label{20.7.7}
+\end{equation}%
+例如, 假定$I[\phi,g]$是无质量标量场的作用量
+\begin{equation}
+I[\phi ,g]=-\frac{1}{2}\int \partial _{i}\phi \partial _{i}\phi \,\dif^{4}x-\frac{%
+g}{24}\int \phi ^{4}\,\dif^{4}x\text{ ,}  \label{20.7.8}
+\end{equation}%
+其中求和取遍欧几里得坐标方向1,2,3,4. 那么, 场方程(\ref{20.7.6})是
+\begin{equation}
+\square \phi _{n}=\tfrac{1}{6}g_{n}\phi _{n}^{3}\text{ .}  \label{20.7.9}
+\end{equation}%
+稍后我们会看到$g_{n}$是负的, 所以解有
+\begin{equation}
+\phi _{n}(x)=(-g_{n})^{-1/2}\chi (x)  \label{20.7.10}
+\end{equation}%
+其中$\chi(x)$与$g$无关, 它是方程
+\begin{equation}
+\square \chi =-\tfrac{1}{6}\chi ^{3}\text{ .}  \label{20.7.11}
+\end{equation}%
+的解. 条件(\ref{20.7.7})告诉我们
+\[
+-\frac{1}{24}\int \dif^{4}x\,\phi _{n}^{4}=\frac{n+1}{g_{n}}
+\]%
+以重标度场(\ref{20.7.10})的形式, 这可以写成
+\begin{equation}
+g_{n}=-\frac{1}{24(n+1)}\int d^{4}x\:\chi ^{4}\text{ .}  \label{20.7.12}
+\end{equation}%
+在这一稳相点, 作用量(\ref{20.7.8})变成
+\begin{align}
+I[\phi _{n},g_{n}] &= -\frac{1}{2}\int \partial _{i}\phi _{n}\partial
+_{i}\phi _{n}\,\dif^{4}x-\frac{g_{n}}{24}\int \phi _{n}^{4}\,\dif^{4}x=\frac{g_{n}}{24}%
+\int \phi _{n}^{4}\,\dif^{4}x  \nonumber \\
+&=-n-1\text{ .}  \label{20.7.13}
+\end{align}%
+那么, 当$n\to\infty$时, 方程(\ref{20.7.5})在这一稳相点给出值\footnote{这里的符号``$\approx$''应该理解成``在相差常数因子和$n$的幂函数%
+意义下渐进相等''. 这些因子来自$(n+1)!$的Stirling公式中的因子$\sqrt{12\uppi n}$, $(n+1)!$与$n!$的比值, 以及对$g$和$\phi(x)$在稳相点附近涨落的积分. 既然我们不打算计算最后一个积分所给出的因子, 所以也就没有必要保留前两个因子.}
+\begin{align}
+f_{n} &\approx g_{n}^{-n-1}\exp \Big( I[\phi _{n},g_{n}]\Big)
+=(n+1)^{n+1}\left( -\frac{\me}{24}\int \chi ^{4}\,\dif^{4}x\right) ^{-n-1}
+\nonumber \\
+&\approx n!\left( -\frac{1}{24}\int \chi ^{4}\,\dif^{4}x\right) ^{-n}\text{ .}
+\label{20.7.14}
+\end{align}%
+因此, $B(z)$中的领头奇点是$z=z_{1}$处的极点, 其中
+\begin{equation}
+z_{1}=-\frac{1}{24}\int \chi ^{4}\,\dif^{4}x\text{ .}  \label{20.7.15}
+\end{equation}%
+由于这个极点是负的, 所以它不会妨碍我们计算方程(\ref{20.7.3})中的积分. 为了计算出极点位置(\ref{20.7.15}), 我们注意到, 场方程(\ref{20.7.11})有解
+\begin{equation}
+\chi =\frac{4\sqrt{3}a}{r^{2}+a^{2}}\text{ ,}  \label{20.7.16}
+\end{equation}%
+其中$r=(x_{i}x_{i})^{1/2}$, 而$a$是任意的参量. 场方程的这个解是``瞬子解''的基本例子, 我们会在23.5节进行讨论. (称它们为瞬子是因为, 它们并非集中在世界线附近而是集中在某个时空点附近------在这个例子中就是原点.) 幸运的是, 极点位置并不依赖于$a$:
+\begin{equation}
+z_{1}=-96\uppi ^{2}a^{4}\int_{0}^{\infty }\frac{r^{2}\,\dif r^{2}}{(r^{2}+a^{2})^{4}}%
+=-16\uppi ^{2}\text{ .}  \label{20.7.17}
+\end{equation}%
+从这个式子中可以我们看到, 如果$g\ll 16\uppi^{2}$, 我们就可以在方程(\ref{20.7.3})中使用$B(z)$的微扰展开. 如果$g/16\uppi^{2}$的量级为1或者大于1, 我们仍然可以通过$(z+16\uppi^{2})B(z)$的微扰展开计算出$B(z)$.
+
+我们会在23.5节看到, 在量子色动力学这样的非阿贝尔规范理论中存在瞬子解, 它们同时会给予$B(z)$相对无害的奇点, 这些奇点处在负实轴上. 而量子色动力学中真实问题中, 奇点属于另一类, 这些奇点被称为重整化子.\cite{21}
+最初发现这些奇点是因为发现\cite{22}如下的现象: 一个$2n$阶图, 例如图\ref{fig:20.3}中的图, 它所给出的贡献可能像$n!$那样增长, 因此, 根据方程(\ref{20.7.2}), 它会赋予$B(z)$额外的奇点.
+在这一特殊情况下, 这个奇点被称为{\kai{红外}}重整化子, 之所以称其为红外重整化子, 是因为给出这个奇点的那部分虚动量远小于用来定义量子色动力学跑动耦合$g_{\mu}$的动量.
+幸运的是, 有可能通过算符积展开来确定这个红外重整化子, 这样就无需考察单个Feynman图.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=5.0in]{203}
+ \caption{像$N!$那样增长的$N$-圈Feynman图的一个例子. 实线是费米子; 波浪线是规范玻色子.}
+ \label{fig:20.3}
+\end{figure}
+
+我们来看一个简单但重要的例子, 在量子色动力学中, 考察插入两个4-矢流$J^{\mu}_{\alpha}$和$J^{\nu}_{\beta}$的所有真空图之和, 其中这两个流携带动量$q$流入并流出整个图. ($\Pi^{\mu\nu}(q)$给出了电弱真空极化的强子贡献, 而它的虚部给出了$e^{+}$-$e^{-}$湮灭到强子以及电子-反中微子湮灭到强子的截面.) 正如我们在20.5节看到的, 在它所得到的贡献中, 行为趋于$q^{2}$($x^{-6}$的Fourier变换)的来自于算符1, 行为趋于$q^{-2}$的来自于算符%
+$F_{\alpha}^{\mu\nu}F_{\alpha\mu\nu}$, 行为趋于$q^{-4}$的来自于4费米子算符, 以此类推. (例如, 算符$F_{\alpha}^{\mu\nu}F_{\alpha\mu\nu}$的贡献来自于图\ref{fig:20.3}那样的图, 其中流经泡沫图链的动量远小于$q$.) 量纲分析则告诉我们, 还要给那些与动量相关的因子乘上正比于$\Lambda^{0},\Lambda^{4},\Lambda^{6}\cdots$的真空矩阵元. 但是, 如果我们用来计算Feynman图的跑动耦合定义在标度$\mu$, 而当标度$\mu\gg\Lambda$时, 耦合常数会很小, 这时, 根据方程(\ref{18.7.7})
+\begin{equation}
+\Lambda ^{2}=\mu ^{2}\exp \left( \frac{12\uppi }{(33-2n_{f})\alpha _{s}(\mu )}%
+\right) \text{ ,}  \label{20.7.18}
+\end{equation}%
+其中$n_{f}$是质量远小于$\nu$的夸克味数目. 而在算符积展开中, 量纲$d>0$的算符所给出的贡献与耦合常数的相关性是
+\begin{equation}
+\Lambda ^{d}\propto \exp \left( \frac{6\uppi d}{(33-2n_{f})\alpha _{s}(\mu )}%
+\right) \text{ .}  \label{20.7.19}
+\end{equation}%
+在量子色动力学中, 微扰论给出的是$\alpha_{s}\equiv g^{2}/4\uppi$的幂级数而不是$g$的幂级数, 所以我们应该将方程(\ref{20.7.1})和(\ref{20.7.3})写成$\alpha_{s}$的形式:
+\begin{equation}
+F(\alpha _{s})=\sum_{n}f_{n}\alpha _{s}^{n}\text{ ,}  \label{20.7.20}
+\end{equation}%
+\begin{equation}
+\alpha _{s}F(\alpha _{s})=\int_{0}^{\infty }\exp (-z/\alpha _{s})B(z)\,\dif z\text{
+.}  \label{20.7.21}
+\end{equation}%
+在$\Pi^{\mu\nu}$中出现了与耦合常数的相关性为(\ref{20.7.19})的项, 这表明$B(z)$必在如下的位置有奇点(不一定是极点):
+\begin{equation}
+z_{1}=\frac{6\uppi d}{(33-2n_{f})}\text{ .}  \label{20.7.22}
+\end{equation}
+这些奇点处在正实轴上, 这使得积分(\ref{20.7.21})有歧义. 因此我们无法用Borel变换处理量子色动力学中的低能效应.
+
+虚动量很小的图妨碍了微扰论的使用, 但这显然不是什么新鲜事. 正如我们在20.2节看到的, 算符积展开的全部要点就在于将每条线都携带大动量的那部分Feynman图分离出来, 在渐进自由的理论中, 这部分Feynman图可以通过微扰论进行计算, 而对于剩下的图, 流经Feynman图的动量很小, 这部分图在渐进自由理论中无法通过微扰论计算.
+
+%+++++++++++++++++++++++附录A++++++
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{附 录\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{hei}\large}{\thesubsection}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+\newcounter{bpp}[chapter]
+\setcounter{bpp}{1}
+\renewcommand\thesection{}
+\renewcommand\theequation{\arabic{chapter}.\Alph{bpp}.\arabic{equation}}
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{附录 \thesection\quad\ #1}{}}
+
+\section{动量流: 一般情况}
+
+在这个附录中, 我们将在一般的可重整理论中考察振幅的渐进行为, 更确切一些, 是振幅的两条或多条外线的动量变得很大时的渐进行为, 在考察范围内的算符由任意多个场因子和场导数构成, 但它的量纲至多为$N$. 为了处理这样的问题, 我们还得引入比20.1节和20.2节更复杂的符号约定. 我们用字母$\ell$, $\ell^{\prime}$来标记进入或离开的特定种类外线$i$的集合, 这些外线可能属于整个Feynman图, 也可能只是部分Feynman图的外线. 字母$k$, $k'$则用来标记该线4-动量$k_{i}$的集合, 它们要满足条件: 它们的和为某个固定的值$p$. 振幅$\Gamma_{\ell\ell^{\prime}}$是入线为集合$\ell$而出线为集合$\ell^{\prime}$的所有图之和, 其中入线携带动量$k$, 出线携带动量$k'$, 并且集合$\ell$的裸传播子也要计算进来, 但无需考虑集合$\ell'$的传播子.
+
+援引12.1节的幂次计数定理\cite{3}, 我们可以证明, 若$k$阶动量仅流经某个子图, 并假定该子图有外线$\ell$和$\ell^{\prime\prime}$, 那么这部分积分区域给$\Gamma_{\ell\ell^{\prime}}$的贡献是$k^{d(\ell,\ell^{\prime\prime})}$阶的, 其中, $d(\ell,\ell^{\prime\prime})$是这一子图的量纲(按照质量或动量的幂次计数):
+\begin{equation}
+d(\ell,\ell^{\prime\prime}) = 4 - \sum_{i\in \ell,\ell^{\prime\prime}}(1+s_{i})-\sum_{i\in\ell}(2-2s_{i})\text{ .}
+\label{20.A.1}
+\end{equation}
+(方程(\ref{20.A.1})中的最后一项来自于集合$\ell$中的外线传播子.) 将方程(\ref{20.A.1})改写成如下的形式将是方便的:
+\begin{equation}
+d(\ell ,\ell ^{\prime })=4-4n(\ell )-N(\ell ^{\prime })+N(\ell )\text{ ,}
+\label{20.A.2}
+\end{equation}%
+其中$n(\ell)$是集合$\ell$中线的数目, 而$N(\ell)$是这些线所代表的场的总量纲:
+\begin{equation}
+n(\ell )\equiv \sum_{i\in \ell }1\text{ ,}\qquad\qquad N(\ell )\equiv \sum_{i\in \ell
+}(s_{i}+1)\text{ .}  \label{20.A.3}
+\end{equation}%
+这里的$s_{i}$是$i$类线的自旋, 按照12.3节所用的方法进行计数: $i$类场的量纲是$1+s_{i}$, 而这种场的裸传播子会趋于$k^{-2+2s_{i}}$. (对于标量场和规范玻色子, $s_{i}=0$; 若是自旋1/2粒子, 则$s_{i}=1/2$.)
+
+将这些子图对应的渐进行为考虑在内后, 我们希望证明, 当$k\to\infty$(所有分量一起趋于无穷, 即在任意方向上都趋于无穷), 而$k'$和$p$保持不变, 在微扰论的每一阶, $\Gamma_{\ell\ell'}(k,k',p)$的渐进行为有如下的形式
+\begin{equation}
+\Gamma _{\ell \ell ^{\prime }}(k,k^{\prime },p)\rightarrow \sum_{\mathcal{O}%
+}^{(N)}U_{\mathcal{O}}^{\ell }(k)F_{\mathcal{O},\ell ^{\prime }}(k^{\prime
+},p)+o\left( k^{4-4n(\ell )+N(\ell )-N}\right) \text{ ,}  \label{20.A.4}
+\end{equation}%
+其中要求和的算符$\mathcal{O}$要满足量纲$N(\mathcal{O})\leq N$; 函数$U_{\mathcal{O}}^{\ell}(k)$的阶为$k^{4+N(\ell)-4n(\ell)-N(\mathcal{O})}$; 而$o(k^{A})$则代表比$k^{A}$更快趋于零(至少要快一个因子$1/k$)的项.
+
+为了分离出量纲$\leq N$的算符的贡献, 我们定义``$N$-不可约''振幅$I_{\ell\ell'}^{N}(k,k',p)$, 组成$I_{\ell\ell'}^{N}(k,k',p)$的图属于$\Gamma _{\ell \ell ^{\prime }}(k,k^{\prime },p)$, 但是对于$I^{N}$中的图, 我们无法通过剪断任意一组$N(\ell^{\prime\prime})\leq N$的内线$\ell^{\prime\prime}$使得集合$\ell$中的线与集合$\ell'$中的线相分离. 反过来讲, 组成$\Gamma-I^{N}$的图就{\kai{可以}}用这种方式分割, 它可以写成
+\begin{equation}
+\Gamma _{\ell \ell ^{\prime }}(k,k^{\prime },p)-I_{\ell \ell ^{\prime
+}}^{N}(k,k^{\prime },p)=\sum_{\ell ^{\prime \prime }}^{(N)}\int \dif k^{\prime
+\prime }\,I_{\ell \ell ^{\prime \prime }}^{N}(k,k^{\prime \prime },p)\,\Gamma
+_{\ell ^{\prime \prime }\ell ^{\prime }}(k^{\prime \prime },k^{\prime },p)%
+\text{ ,}  \label{20.A.5}
+\end{equation}%
+其中$\sum_{\ell^{\prime\prime}}^{(N)}$是指对$N(\ell^{\prime\prime})\leq N$的粒子线集合进行求和, 而$\int\dif k^{\prime\prime}$是对集合$\ell^{\prime\prime}$中的4-动量分量积分, 但这些动量还要服从和为$p$的约束.
+
+核$I_{\ell\ell^{\prime\prime}}^{N}(k,k^{\prime\prime},p)$的渐进行为远比%
+$\Gamma_{\ell\ell^{\prime\prime}}(k,k^{\prime\prime},p)$的渐进行为简单得多. 当$k^{\prime\prime}$和$p$保持不变而$k\to\infty$时, 主导核的渐进行为是每条内线均携带$k$阶动量的那部分积分区域, 它给出的渐进行为是$k^{d(\ell,\ell^{\prime\prime})}$, 这是因为, 如果只有一个子区域携带这样大的动量, 那么这个子区域必须通过线族$\ell^{\prime\prime\prime}$与图的其余部分桥接, 而$\ell^{\prime\prime\prime}$显然有%
+$N(\ell^{\prime\prime\prime})>N\geq N(\ell^{\prime\prime})$, 在$k\to\infty$时, 它至少要小一个因子%
+$k^{N(\ell^{\prime\prime})-N-1}$. 因此, $I^{N}_{\ell\ell^{\prime\prime}}$对$k^{\prime\prime}$或$p$%
+的任意分量的微分会使得它的渐进行为降低至$k^{d(\ell,\ell^{\prime\prime})-1}$. 但是, 仅当$d\leq N-N(\ell^{\prime\prime})+1$时, 微分$d$次才会将渐进行为降低至$k^{d(\ell,\ell^{\prime\prime})}$, 对于更高阶的导数, 由于导数全部作用携带$k^{\prime\prime}$阶或$p$阶动量的线上, 上面所说的通过总量纲大于$N$的线族$\ell^{\prime\prime\prime}$连接的图会给出更大的贡献. 因此, 为了将带有场导数的算符给出的贡献也计算在内, 我们可以将$I^{N}$的行为写成
+\begin{equation}
+I_{\ell \ell ^{\prime \prime }}^{N}(k,k^{\prime \prime },p)=\sum_{\nu
+:d_{\nu }+N(\ell ^{\prime \prime })\leq N}I_{\ell \ell ^{\prime \prime }\nu
+}^{N}(k)P_{\ell ^{\prime \prime }\nu }(k^{\prime \prime },p)+o\left(
+k^{d(\ell ,\ell ^{\prime \prime })-N+N(\ell ^{\prime \prime })}\right) \text{
+,}  \label{20.A.6}
+\end{equation}%
+其中$P_{\ell^{\prime\prime}\nu}(k^{\prime\prime},p)$是阶为$d_{\nu}$的齐次多项式的完备集, %
+它的变量是$n(\ell^{\prime\prime})$个动量$k^{\prime\prime}$和$p$, 而$I^{N}_{\ell\ell^{\prime\prime}\nu}(k)$%
+仅是$k$的函数, 它在$k\to\infty$时阶为$k^{d(\ell,\ell^{\prime\prime}-d)}$.
+
+我们现在还不能在方程(\ref{20.A.5})中使用方程(\ref{20.A.6}), 这是因为$k^{\prime\prime}$为$k$阶的这部分积分区域对$k^{\prime\prime}$的积分有一个很重要的贡献. 为了处理这个困难, 我们使用数学归纳法: 假定直到微扰论的某个给定阶, 方程(\ref{20.A.4})都是成立的, 然后在方程(\ref{20.A.5})的右边使用它, 由此我们就可以得到$\Gamma$到微扰论下一阶的渐进行为. 我们将方程(\ref{20.A.5})改写成如下形式
+\begin{align}
+&\Gamma _{\ell \ell ^{\prime }}(k,k^{\prime },p) =I_{\ell \ell ^{\prime
+}}^{N}(k,k^{\prime },p)  \nonumber \\
+&+\sum_{\ell ^{\prime \prime }}^{(N)}\int \dif k^{\prime \prime }\, I_{\ell \ell
+^{\prime \prime }}^{N}(k,k^{\prime \prime },p)\left[ \Gamma _{\ell ^{\prime
+\prime }\ell ^{\prime }}(k^{\prime \prime },k^{\prime },p)-\sum_{\mathcal{O}%
+}^{(N)}U_{\mathcal{O}}^{\ell ^{\prime \prime }}(k^{\prime \prime })F_{%
+\mathcal{O},\ell ^{\prime }}(k^{\prime },p)\right]   \nonumber \\
+&+\sum_{\mathcal{O}}^{(N)}F_{\mathcal{O},\ell ^{\prime }}(k^{\prime
+},p)\sum_{\ell ^{\prime \prime }:N(\ell ^{\prime \prime })\leq N}\int
+\dif k^{\prime \prime }\,I_{\ell \ell ^{\prime \prime }}^{N}(k,k^{\prime \prime
+},p)U_{\mathcal{O}}^{\ell ^{\prime \prime }}(k^{\prime \prime })\text{ .}
+\label{20.A.7}
+\end{align}%
+根据方程(\ref{20.A.4}), 当$k^{\prime\prime}\to\infty$时, 方程(\ref{20.A.7})右边第二项中的方括号项会比%
+$(k^{\prime\prime})^{4-4n(\ell^{\prime\prime})+N(\ell^{\prime\prime})-N}$\\为零, 所以, 在乘上阶为$\nu\leq N-N(\ell^{\prime\prime})$的多项式$P_{\ell^{\prime\prime}\nu}(k^{\prime\prime})$后, 这个因子会比%
+$(k^{\prime\prime})^{4-4n(\ell^{\prime\prime})}$更快地趋于零, 因此对$k^{\prime\prime}$的$4(n(\ell^{\prime\prime})-1)$个独立分量进行积分会给出有限值.%
+\footnote{对于方程(\ref{20.A.7})右边第二项中的积分, 幂次计数告诉我们, 在所有$k^{\prime\prime}$一起趋于无穷的积分区域内, 这个积分是收敛的, 尽管如此, 却遗漏了这样的可能性: 当$n(\ell^{\prime\prime})\geq 3$时, 子积分可能发散. 由于这个原因, 除了20.2节所讨论的特殊情况外, 这个附录中所给出的讨论并不能作为算符积展开的一个证明, 在20.2节, 我们考察的是只有两个外线动量趋于无穷的特殊情况, 并且我们在幂级数中寻找的项对应的是场的二次型构成的算符.} 如此一来, 我们就可以在这一项中使用方程(\ref{20.A.6}), 得到
+\begin{align}
+\Gamma _{\ell \ell ^{\prime }}(k,k^{\prime },p) &\rightarrow \sum_{\nu
+:d_{\nu }+N(\ell ^{\prime })\leq N}I_{\ell \ell ^{\prime }\nu
+}^{N}(k)P_{\ell ^{\prime }\nu }(k^{\prime },p)  \nonumber \\
+&\quad+\sum_{\ell ^{\prime \prime }}^{(N)}\sum_{\nu :d_{\nu }+N(\ell ^{\prime
+\prime })\leq N}I_{\ell \ell ^{\prime \prime }\nu }^{N}(k)\int \dif k^{\prime
+\prime }\,P_{\ell ^{\prime \prime }\nu }(k^{\prime \prime },p)  \nonumber \\
+&\qquad\times \left[ \Gamma _{\ell ^{\prime \prime }\ell ^{\prime }}(k^{\prime
+\prime },k^{\prime },p)-\sum_{\mathcal{O}}^{(N)}U_{\mathcal{O}}^{\ell
+^{\prime \prime }}(k^{\prime \prime })F_{\mathcal{O},\ell ^{\prime
+}}(k^{\prime },p)\right]   \nonumber \\
+&\quad+\sum_{\mathcal{O}}^{(N)}F_{\mathcal{O},\ell ^{\prime }}(k^{\prime
+},p)\sum_{\ell ^{\prime \prime }}^{(N)}\int \dif k^{\prime \prime }\,I_{\ell \ell
+^{\prime \prime }}^{N}(k,k^{\prime \prime },p)U_{\mathcal{O}}^{\ell ^{\prime
+\prime }}(k^{\prime \prime })\text{ ,}  \label{20.A.8}
+\end{align}%
+修正项要比写出来的项小一个$1/k$因子. (当然, 仅当$N(\ell')\leq N$时, 方程(\ref{20.A.8})右边的第一项才会出现.)
+
+现在, 对于满足$d_{\nu}+N(\ell)\leq N$的每个$\ell$值和$\nu$值, 存在算符$\mathcal{O}$, 它有$\ell$中的线所对应的场因子构成并有$d_{\nu}$个导数, 这使得在微扰论的零阶, 若算符$\mathcal{O}$携带入动量$p$, 而外线$\ell$携带动量$k$, 那么顶角函数就是多项式$P_{\ell\nu}(k,p)$. 这样, 对于重整化算符%
+$\mathcal{O}_{R}=\sum_{\mathcal{O}'}Z_{\mathcal{O},\mathcal{O}'}\mathcal{O}'$, 完整的顶角函数是
+\begin{equation}
+F_{\mathcal{O},\ell }(k,p)=\sum_{\mathcal{O}^{\prime }}Z_{\mathcal{O},%
+\mathcal{O}^{\prime }}\left\{ \delta _{\ell _{\mathcal{O}^{\prime }},\ell
+}P_{\ell \nu _{\mathcal{O}^{\prime }}}(k,p)+\int \dif k^{\prime }\,P_{\ell _{%
+\mathcal{O}^{\prime }}\nu _{\mathcal{O}^{\prime }}}(k^{\prime },p)\Gamma
+_{\ell _{\mathcal{O}^{\prime }}\ell }(k^{\prime },k,p)\right\} \text{ ,}
+\label{20.A.9}
+\end{equation}%
+其中$\ell_{\mathcal{O}}$和$\nu_{\mathcal{O}}$分别标记算符$\mathcal{O}$中的场类型以及时空导数. 由此我们可以看到, 如果
+\begin{align}
+U_{\mathcal{O}}^{\ell }(k) &=\sum_{\mathcal{O}^{\prime }}^{(N)}I_{\ell
+\mathcal{O}^{\prime }}^{N}(k)\left[ Z_{\mathcal{O}^{\prime },\mathcal{O}%
+}^{-1}-\int \dif k^{\prime \prime }\,U_{\mathcal{O}}^{\ell _{\mathcal{O}^{\prime
+}}}(k^{\prime \prime })P_{\mathcal{O}^{\prime }}(k^{\prime \prime })\right]
+\nonumber \\
+&\quad+\sum_{\ell ^{\prime \prime }}^{(N)}\int \dif k^{\prime \prime }\,I_{\ell \ell
+^{\prime \prime }}^{N}(k,k^{\prime \prime })U_{\mathcal{O}^{\prime \prime
+}}^{\ell }(k^{\prime \prime })\text{ ,}  \label{20.A.10}
+\end{align}%
+那么方程(\ref{20.A.4})就是满足的, 在方程(\ref{20.A.10})中我们使用了简写
+\begin{equation}
+I_{\ell \mathcal{O}}(k)\equiv I_{\ell \,\ell _{\mathcal{O}}\,\nu _{\mathcal{O}%
+}}(k)\text{ ,}\qquad \qquad P_{\mathcal{O}}(k)\equiv P_{\ell _{\mathcal{O}}\,\nu _{\mathcal{%
+O}}}(k)\text{ .}  \label{20.A.11}
+\end{equation}%
+(我们忽略掉了$\Gamma_{\ell_{\mathcal{O}^{\prime\prime}}\ell^{\prime}}$对$p$的依赖性, 原因与20.2节中的理由相同: 无论$k^{\prime\prime}$的量级是否与$k$相同, $p$与$k$相比总是可以被忽略的.) 我们定义重整化常数$Z_{\mathcal{O}',\mathcal{O}}$, 使得在重整化点$k(\mu)$, $p(\mu)$处, 函数$F_{\mathcal{O},\ell}(k(\mu),p(\mu))$的值与没有相互作用时的值相同, 即为$\delta_{\ell\ell_{\mathcal{O}}}P_{\mathcal{O}}(k(\mu),p(\mu))$:
+\begin{align}
+&\delta _{\ell \ell _{\mathcal{O}}}P_{\mathcal{O}}(k(\mu ),p(\mu )) =F_{%
+\mathcal{O},\ell }(k(\mu ),p(\mu ))=\sum_{\mathcal{O}^{\prime }}Z_{\mathcal{O%
+},\mathcal{O}^{\prime }}  \nonumber \\
+&\times \left\{ \delta _{\ell _{\mathcal{O}^{\prime }},\ell }P_{\ell \nu _{%
+\mathcal{O}^{\prime }}}(k(\mu ),p(\mu ))+\int \dif k^{\prime }\,P_{\ell _{\mathcal{%
+O}^{\prime }}\nu _{\mathcal{O}^{\prime }}}(k^{\prime },p(\mu ))\Gamma _{\ell
+_{\mathcal{O}^{\prime }}\ell }(k^{\prime },k(\mu ),p(\mu ))\right\} \text{ .}
+\label{20.A.12}
+\end{align}
+当$\Gamma=0$时, 它有唯一解$Z=1$(唯一性是因为, 对于给定的线族,我们假定这个多项式是线性独立的), 所以, 通过延拓, 对于某个有限范围内的耦合常数, 方程(\ref{20.A.12})会有唯一解. 这样一来, 对于一般算符积展开(\ref{20.A.4})中的系数函数$U_{\mathcal{O}}^{\ell}(k)$, 方程(\ref{20.A.10})给出了一个递归定义.
+
+
+\section*{习题}
+\noindent 1. 考察费米场$\psi$与标量场$\phi$有相互作用的理论, 相互作用的形式为$\bar{\psi}\psi$以及$\phi^{4}$. 针对$\bar{\psi}(x)\psi(0)$的算符积展开, 列举出系数函数(通过微扰论判断)奇异且在$x\to 0$时不为零的算符. 并描述你如何将这些系数函数计算至一圈阶.
+
+\noindent 2. 考察有$N$个无质量夸克的量子色动力学, 并将标量夸克双线性型和赝标量夸克双线性的谱函数定义成
+\begin{align*}
+&\sum_{N}\langle\text{VAC}|\bar{\psi}(0)\lambda_{\alpha}\psi(0)|\text{VAC}\rangle 
+\langle\text{VAC}|\bar{\psi}(0)\lambda_{\beta}\psi(0)|\text{VAC}\rangle^{\ast} \\
+&\qquad\qquad\qquad \qquad\quad=(2\uppi)^{-3}\theta(p^{0})\rho^{S}_{\alpha\beta}(-p^{2}) \text{ ,} \\
+&\sum_{N}\langle\text{VAC}|\bar{\psi}(0)\gamma_{5}\lambda_{\alpha}\psi(0)|\text{VAC}\rangle
+\langle\text{VAC}|\bar{\psi}(0)\gamma_{5}\lambda_{\beta}\psi(0)|\text{VAC}\rangle^{\ast} \\
+&\qquad\qquad\qquad \qquad\quad=(2\uppi)^{-3}\theta(p^{0})\rho^{P}_{\alpha\beta}(-p^{2}) \text{ ,} 
+\end{align*}
+其中$\lambda_{\alpha}$是无迹$N\times N$厄米矩阵的完备集, 它的归一化满足$\operatorname{Tr}(\lambda_{\alpha}\lambda_{\beta})=2\delta_{\alpha\beta}$. $\rho^{S}_{\alpha\beta}(\mu^{2})$和$\rho^{A}_{\alpha\beta}(\mu^{2})$的线性组合所满足的谱函数求和规则是什么?
+
+\noindent 3. 从Compton散射公式(\textcolor{red}{8.7.7})和(\textcolor{red}{8.7.38})中推导出部分子模型中的(\ref{20.6.8}).
+
+\noindent 4. 列举出量子色动力学中所有扭度为4的规范不变且无迹的对称张量.
+
+\noindent 5. 在相互作用为$-g\phi^{4}/24$(其中$g>0$)的无质量标量场论中, 你预期函数(\ref{20.7.3})的重整化子奇点会落在复平面的何处?
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+	\bibitem{1} K. Wilson, {\textit{Phys. Rev.}} {\bf{179}}, 1499 (1969).
+    \bibitem{2} W. Zimmerman, in {\textit{Lectures on Elementary Particles and Quantum Field Theory --- 1970 Brandeis University Summer Institute in Theoretical Physics}}, S. Deser, H. Pendleton, and M. Grisaru编辑, (MIT Press, Cambridge, 1970).
+    \bibitem{3} S. Weinberg, {\textit{Phys. Rev.}} {\bf{118}}, 838 (1960).
+    \bibitem{4} C. Bernard, A. Duncan, J. LoSecco, and S. Weinberg, {\textit{Phys. Rev.}} {\bf{D12}}, 792 (1975).
+    \bibitem{5} S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{18}}, 507 (1967). 对于一般情况, 参考文献4.
+    \bibitem{6} K. Kawarabayashi and M. Suzuki, {\textit{Phys. Rev. Lett.}} {\bf{16}}, 225 (1966); Riazuddin and Fayyazuddin, {\textit{Phys. Rev.}} {\bf{147}}, 1071 (1966).
+    \bibitem{7} M. Ademollo, G. Veneziano, and S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{22}}, 83 (1969).
+    \bibitem{8} J. F. Donoghue and E. Golowich, {\textit{Phys. Rev.}} {\bf{D49}}, 1513 (1994).
+    \bibitem{9} 在1968年维也纳的``罗切斯特''会议上报告了这个结果, 发表于E. D. Bloom {\textit{et al., Phys. Rev. Lett.}} {\bf{23}}, 930 (1969); M. Breidenbach {\textit{et al., Phys. Rev. Lett.}} {\bf{23}}, 935 (1969).
+    \bibitem{10} J. D. Bjorken, {\textit{Phys. Rev.}} {\bf{179}}, 1547 (1969).
+    \bibitem{11} R. P. Feynman, {\textit{Phys. Rev. Lett.}} {\bf{23}}, 1415 (1969); {\textit{Photon-Hadron Interactions}} (Benjamin, New York, 1972).
+    \bibitem{12} C. G. Callan and D. J. Gross, {\textit{Phys. Rev. Lett.}} {\bf{22}}, 156 (1949). 读者要注意的是, Callan和Gross在那里所用的符号$\omega$是我们这里所用的$2/\omega$.
+    \bibitem{13} N. Christ, B. Hasslacher, and A. H. Mueller, {\textit{Phys. Rev.,}} {\bf{D6}}, 3543 (1972).
+    \bibitem{14} D. Gross and S. Treiman, {\textit{Phys. Rev.}} {\bf{D4}}, 1059 (1971).
+    \bibitem{15} G. Altarelli and G. Parisi, {\textit{Nucl. Phys.}} {\bf{B126}}, 298 (1972).
+    \bibitem{16} H. Georgi and H. D. Politzer, {\textit{Phys. Rev.}} {\bf{D9}}, 416 (1974).
+    \bibitem{17} D. J. Gross and F. Wilczek, {\textit{Phys. Rev.}} {\bf{D9}}, 980 (1974).
+    \bibitem{18} F. J. Dyson, {\textit{Phys. Rev.}} {\bf{85}}, 631 (1952).
+    \bibitem{19} 参看 G. N. Hardy, {\textit{Divergent Series}} (Oxford University Press, Oxford, 1949).
+    \bibitem{20} L. N. Lipatov, Leningrad Nuclear Physics Institute report, 1976 (未发表); {\textit{Proceedings of the XVIII International Conference on High Energy Physics at Tbilisi,}} 1976.
+    \bibitem{21} G. 't Hooft, in {\textit{The Whys of Subnuclear Physics - Proceedings of th 1977 Erice Summer School}}, A. Zichichi编辑 (Plenum, New York, 1978). 关于重整化子和高阶微扰论的论文集, 可参看{\textit{Large Order Behavior of Perturbation Theory}}, J. C. Le Guillou和J. Zinn-Justin编辑 (North-Holland, Amsterdam, 1990). 关于红外重整化子的进一步工作, 参看A. H. Mueller, {\textit{Phys. Lett. B}} {\bf{308}}, 335 (1993); {\textit{Nucl. Phys.}} {\bf{B250}}, 327 (1995); A. Duncan and S. Pernice, {\textit{Phys. Rev. D}} {\bf{51}}, 1956 (1995), 以及那里引用的文章.
+    \bibitem{22} B. Lautrup, {\textit{Phys. Lett.}} {\bf{76B}}, 109 (1977).
+\end{thebibliography}

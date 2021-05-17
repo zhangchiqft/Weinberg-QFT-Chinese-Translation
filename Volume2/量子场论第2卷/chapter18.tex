@@ -1,0 +1,1761 @@
+\chapter{重整化群方法}
+
+重整化群方法最初是由Gell-Mann和Low\cite{1}引入的, 他们的目的是用其处理微扰论在高能量子电动力学中的失效问题. %
+对振幅的$n$-圈贡献, 若它所涉及的动量是$q$阶的, 例如真空极化$\Pi_{\mu\nu}(q)$, %
+那么在该振幅中除了含有因子$\alpha^{n}$外, %
+还含有多达$n$个的因子$\ln(q^{2}/m_{e}^2)$, %
+所以, 即使精细结构常数$\alpha$很小, 当$\alpha\vert\ln(q^{2}/m_{e}^{2})\vert$很大的时候, 微扰论就会失效. %
+即使在非阿贝尔规范理论这样的无质量理论中, 我们也必须要指定定义重整化耦合常数的重整化点, 并且在这一情况下, %
+我们会遇到对数$\ln(E/\mu)$, 这使得即使耦合常数很小, 但如果$E\gg\mu$或$E\ll\mu$, 微扰论也会失效.
+
+幸运的是, 在这种情况下通常能够使用微扰论的一个修正版本. 这一修正版本的主要思想在于, 引入定义在滑动重整化标度$\mu$处的%
+耦合常数$g_{\mu}$, 其中的滑动重整化标度$\mu$是指不以任何固定的方式与粒子质量相关的标度. %
+然后将$\mu$选成与问题中过程的特征能量$E$同一阶, 这样因子$\ln(E/\mu)$就表现不出任何问题了. 那么只要$g_{\mu}$保持着比较小的值, %
+我们就可以做微扰论. 特别地, 给定定义在标度$\mu$处的耦合常数, 我们可以利用微扰论计算能量$\mu+\dif\mu$处的物理振幅, %
+然后使用这些振幅计算定义在重整化标度$\mu+\dif\mu$处的耦合常数. 通过对相应的微分方程进行积分, 我们可以将我们感兴趣标度处的耦合常数与通常定义的耦合常数关联起来. %
+(``重整化群''这个名字起源是, 最初它被认为是, 在重整化耦合常数的重定义下, 描述理论的表现形式如何改变的方程, 但实际上它和群论毫无关系.) %
+关于极高能或(无质量理论中的)极低能时的渐进行为, 即便耦合常数在感兴趣的标度处过大以至于不允许使用微扰论, %
+重整化群方法也可提供一个定性的指导.
+
+尽管重整化群方法最初出现于重整化耦合常数定义方案中的变化与重整化群之间的联系, 但它更广泛的意义也随之而来. %
+当我们将裸耦合和裸场替换成以矩阵元定义的重整化耦合和重整化场时, 若这些矩阵元是在某个特征能量标度$\mu$处赋值的, %
+那么对虚动量的积分实际上就在$\mu$阶的能量标度和动量标度处被截断了. %
+因此, 当我们改变$\mu$时, 我们实际上改变的是计算中所需考虑的自由度范围. %
+重整化群最初给予我们的指导是, 为了避免大对数应该将$\mu$取成与研究过程的特征能量$E$的同阶量, %
+但这一指导只不过是一个更广阔原理的一个特殊情况: 为了在给定能量处做计算, 我们应该先去掉更高能处的自由度.
+
+还有多种其它方法可以实现这点. 比如我们在12.4节中所看到的, 在Wilson\cite{2}所开辟的重整化群方法中, 为了保持物理量不变, %
+在引入一个明显且{\kai{有限}}的截断的同时, 理论的参量要发生变化. 这一方法要求, 凡是理论的对称性所允许的相互作用类型都要纳入在内, %
+这导致了要引入无限多个相互作用类型, 因此在处理像量子电动力学这样实际上可重整的理论时, 这一方法并不是特别方便.(尽管如此, 但现在对%
+量子电动力学的看法有些许不同, 正如在12.3节中所讨论的, 现在的量子电动力学被视为仅是某个不可重整理论的非常好的近似, 而这个理论中的%
+高维相互作用被某个非常大的质量的负幂次抑制了.) 若附加截断的手法是在一个有限大的时空晶格上对规范理论量子化, 那么Wilson方法的优点是, %
+在计算的同时会保持显然的规范不变性(规范群的体积等于整体对称群的体积乘以格点的总数), 但它的缺点是, 无法保持显然的Lorentz不变性和%
+旋转不变性. 在任何情况下, 无论采用何种方法, 就在消去高能自由度这点上, 大多数重整化群体系是一致的.
+
+\section{大对数来自何处?}
+
+我们先来考察在高能处大对数能够以何种方式出现. 考察一个物理振幅, 或者截面, 或者其它的速率参量, 将其记为$\Gamma(E,x,g,m)$, 其中$E$是总的%
+能量标度, $x$是各种角度以及各种能量比值, $g$是各种耦合常数, 而$m$是各种质量. 如果$\Gamma$的量纲是$D$(例如, 截面就会有$D=-2$), 那么%
+量纲分析告诉我们
+\begin{equation}
+\Gamma(E,x,g,m)=E^{D}\Gamma\left(1,x,g,\frac{m}{E}\right)\text{ .} \label{18.1.1}
+\end{equation}
+在极限$E\rightarrow \infty$下, 我们本预期这样的振幅会有一个简单的幂次行为
+\[
+	\Gamma(E,x,g,m)\longrightarrow E^{D}\Gamma(1,x,g,0) \text{ .}
+\]
+但事实并非如此. 实际上, 在微扰论计算中会发现, 因子$E^{D}$会伴随着$\ln(E/m)$的幂函数, 这破坏了简单的幂次率行为.
+
+显然, 仅当{\kai{固定能量}}$E$处的振幅$\Gamma$在$m\rightarrow0$时出现奇异, $\ln(E/m)$的幂次才能在$E\rightarrow\infty$时进入$m$固定的振幅. %
+这种质量奇异性有两类, 一类可以通过计算正确的振幅或速率常数得以消除, 而另一类则要求在我们的重整化方案中做出一些改变. %
+
+第一类零质量奇异性的起源是, 传播子在相对应粒子质量壳上的极点的效应. 例如, 假定一个Feynman图有一个总动量为$p^{\mu}$的入线, %
+这条线通过一个顶角与质量为$m_{1},m_{2},\cdots,m_{n}$的内线相连. 根据第10章的讨论, 相对应的Feynman图在负的实$p^{2}$轴上有一个截断, %
+这个截断从$p^{2}=-(m_{1}+\cdots+m_{n})^{2}$延伸至$-\infty$. 如果外线是一个稳定粒子, 且它的质量$M<m_{1}+\cdots+m_{n}$, 那么, %
+由于$p^{2}=-M^{2}$不在截断上, 所以它并不会给出奇异性. 然而, 当$M,$ $m_{1},\cdots,m_{n}$全部趋于零时, $-p^{2}$在质量壳上的值%
+以及截断顶部的分支点会汇聚到$p^{2}=0$这一点, 这产生了奇异性.
+
+这表明我们可以通过远离质量壳的方法来避免$m=0$处的红外发散, 例如, 让所有外线的$p^{2}$连同所有能量变量趋于%
+$+\infty$. 然后, 采用色散关系或者其它解析延拓技巧, 我们就可以利用Feynman振幅行为在这一极限下的结果给出$S$-矩阵元%
+的一切. 通常情况下, 我们感兴趣的不是在壳$S$-矩阵元而是流的矩阵元, 这里的流会携带与任何质量不相关的动量$q$, %
+所以延拓通常是不必须的. 这样的一个例子是10.5节中定义的真空极化函数$\pi(q^{2})$, 除了当$q^{2}<0$时, %
+它是没有第一类零质量奇异性的.
+
+如果我们尝试计算的截面在极限$m\rightarrow0$下变得不可测, 那么零质量奇异性一般都会出现, 这一特性给出了消除了零质量奇异性的另一方法. %
+例如, 在量子电动力学中, 对于任何包含有限个电子和光子的过程而言, 即使我们对无限个软光子求和, %
+由于当$m_{e}\rightarrow 0$时, 无法区分一个电子和电子, 正电子和光子组成的总电荷为$-e$的喷注, 其中的喷注(jet)是指所有粒子以相同速度沿同一方向%
+运动的粒子体系, 这使得截面在极限$m_{e}\rightarrow 0$下也会红外发散. 我们在第13章看到, 通过仅考察合适的被积截面, 即在$m_{e}\rightarrow0$下
+{\kai{可}}测的截面, 我们就可以解决这样的红外发散. 例如, 取代计算特定的Compton散射过程的截面, 我们可以计算总电荷为$-e$的喷注与总电荷为零的喷注%
+散射到另外两个这样的喷注和软光子的散射截面. 这种内含反应速率或者截面在所有质量为零时也是有限的, 它们被称作是``红外安全''的.
+
+我们的麻烦还没有完. 即便我们通过积掉截面或者远离质量壳的方法避免了红外发散,
+相应地, 能量为$E$的被积截面以及不在壳振幅将会包含第二类质量奇异性, 这会导致因子$%
+\ln (E/m)$, 进而使得量纲分析给出的单纯的幂次率行为无效. 原因可以追溯到重整化耦合的如下性质: 当所有质量为零时, 按照惯例以振幅%
+定义的重整化耦合会红外发散. 例如, 考察一个实标量场的理论, 其拉格朗日密度是
+
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\partial _{\lambda }\phi \partial ^{\lambda }\phi -%
+\frac{1}{2}m^{2}\phi ^{2}-\frac{1}{24}g\phi ^{4}\text{ .}  \label{18.1.2}
+\end{equation}%
+到一圈阶, 对于初态4-动量为$p_{1},p_{2}$而末态4-动量为$p_{1}^{\prime },p_{2}^{\prime }$的散射过%
+程, 不变弹性散射振幅由方程(\textcolor{red}{12.2.24})给出\begin{align}
+A &=g-\frac{g^{2}}{32\uppi^{2}}\int_{0}^{1}\dif x\bigg\{\ln \left( \frac{\Lambda
+^{2}}{m^{2}-sx(1-x)}\right)   \nonumber \\
+&\quad+\ln \left( \frac{\Lambda ^{2}}{m^{2}-tx(1-x)}\right) +\ln \left( \frac{%
+\Lambda ^{2}}{m^{2}-ux(1-x)}\right) -3\bigg\}+O(g^{3})\text{ ,}  \label{18.1.3}
+\end{align}%
+其中$s,t$以及$u$是Mandelstam变量\[
+s=-(p_{1}+p_{2})^{2}\text{ , \ \ \ }t=-(p_{1}-p_{1}^{\prime })^{2}\text{ , \
+\ \ }u=-(p_{1}-p_{2}^{\prime })^{2}
+\]%
+而$\Lambda $是紫外截断. 只要我们让$s,t$和$u$远离正实轴, 特别地, 如果它们全都趋于$-\infty $(这违反了质量壳条件$s+t+u=4m^{2}$), 那么它%
+就没有零质量奇异性.
+当然, 这些振幅同时依赖于截断$\Lambda $和$m$, 所以即使没有零质量奇异性, 在$s,t$和$u$趋于$-\infty $的极%
+限下, 我们也没有发现$%
+A\rightarrow $常数这一根据单纯的标度讨论得到的结果. 与截断的相关性可以通过重整化隐藏起来; 我们将裸耦合$g$%
+替换成重整化耦合$g_{R}$,
+它的定义是$A$在某些约定重整化点的值. 例如,
+我们可以取\begin{align}
+g_{R} &\equiv A(s=t=u=0)  \nonumber \\
+&=g-\frac{3g^{2}}{32\uppi^{2}}\left\{ \ln \frac{\Lambda ^{2}}{m^{2}}%
+-1\right\} +O(g^{3})\text{ .}  \label{18.1.4}
+\end{align}%
+这样, (\ref{18.1.3})就变成\begin{align}
+A &=g_{R}+\frac{g_{R}^{2}}{32\uppi^{2}}\int_{0}^{1}\dif x\bigg\{\ln \left( 1-%
+\frac{sx(1-x)}{m^{2}}\right)   \nonumber \\
+&\quad+\ln \left( 1-\frac{tx(1-x)}{m^{2}}\right) +\ln \left( 1-\frac{ux(1-x)}{%
+m^{2}}\right) \bigg\}+O(g_{R}^{3})\text{ .}  \label{18.1.5}
+\end{align}%
+(我们可以毫无顾忌地将第二项中的$g^{2}$替换成$g_{R}^{2}$, 这是因为二者的差是$g^{3}$阶.) 这一振幅没有紫外发散, 但它现在%
+在$m=0$处有一奇异性, 即使$s,t$和$u$全部为负, 这一奇异性也依旧存在. 因此, 当$s,t$和$u$全部趋于$-\infty $%
+时, 我们发现\begin{equation}
+A\rightarrow g_{R}+\frac{g_{R}^{2}}{32\uppi^{2}}\left\{ \ln \left( \frac{-s}{%
+m^{2}}\right) +\ln \left( \frac{-t}{m^{2}}\right) +\ln \left( \frac{-u}{m^{2}%
+}\right) -6\right\} \text{ ,}  \label{18.1.6}
+\end{equation}%
+这一渐进行为与基于单纯的标度讨论预期得到的结果并不一致. (%
+使用任何其它\textquotedblleft 自然的\textquotedblright 重整化耦合定义会出现几乎相同的结果; 例如, 我们可以%
+将$g_{R}$定义为$A$在在壳对称点$s=t=u=4m^{2}/3$的值, 除了$-6$%
+要被换成其它某个数值因子外, (\ref{18.1.6})中的其它渐进行为都会复现出来.) 很显然, 当$A$以$g_{R}$%
+的形式表示时所出现的零质量极限完全是因为公式(\ref{18.1.4})中的$\ln m^{2}$%
+项, 即用裸耦合$g$表示重整化耦合$g_{R}$时出现的$\ln
+m^{2}$项.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2.5in]{181}
+ \caption{基本标量场$\phi(x)$的理论中, 算符$\int\dif^{4}x\:\exp(-\mi p \cdot x)\:\phi^{2}(x)$的矩阵元的动量空间Feynman图. 阴影圆盘代表外线与上图相同的所有图的和. 除了那对相交在$\phi^{2}$顶点的外线外, 其它外线代表所要计算矩阵元的初态和末态中的粒子.}
+ \label{fig:18.1}
+\end{figure}
+
+当我们计算算符的矩阵元(例如不在壳的Feynman%
+振幅)而非截面的积分时, 我们还会遇到其它的零质量奇异性. 这是因为同耦合常数一样,
+这些算符也必须进行重整化. 例如, 假定在拉格朗日量为(\ref{18.1.2})的标量场论中, 我们希望计算算符
+\begin{equation}
+\mathcal{O}(p)\equiv \int \dif^{4}x\,\me^{-\mi p\cdot x}\phi ^{2}(x) \label{18.1.7}
+\end{equation}%
+的矩阵元$\langle \beta |\mathcal{O}(p)|\alpha
+\rangle $. 以Feynman图的形式, 这对应于在跃迁$\alpha \rightarrow \beta $的图中, 在两条$\phi $-内线汇%
+集的地方插入一顶角,
+而流经顶角的总4-动量为$p$. (参看图\ref{fig:18.1}.) 紫外发散源于这些图中的一类, 在这类图中, 图被分成了两部分, 新顶角%
+是其中一个子图的一部分, 而该子图通过两条$\phi $线与图的其它部分相连. (参看图\ref{fig:18.2}.) 由于相互作用$\phi ^{2}$的量纲%
+为$+2$, 若这一顶角通过$n>2$%
+条外线与图的剩余部分相连, 那么顶角所在的子图就有量纲$4-2-n<0$, 因此通过量纲分析可知,
+如果用来连接两个子图的$\phi $线数目多于两条, 那么含有顶角的子图就是收敛的. 这个子图的发散部分仅是一个对数发散的常数, 所以给$\phi ^{2}$乘以合适的发%
+散常数$Z_{\phi ^{2}}$可以使得$\phi
+^{2}$的矩阵元是有限的.\footnote{在这一讨论中我们假定, 对于那些与图的剩余部分仅通过两条$\phi $线相连并含有顶角的子图, 只要发%
+散是由它们引起的, 那么这些发散就以同样的方式消除.} 到$g^{2}$阶, 相关的子图由图\ref{fig:18.3}中的图给出,
+因此会给$\mathcal{O}(p)$的矩阵元贡献发散因子\begin{equation}
+F(p)=1+\frac{1}{2}\Big[ -\mi(2\uppi)^{4}g\Big] \left[ \frac{-\mi}{(2\uppi%
+)^{4}}\right] ^{2}\int \frac{\dif^{4}k}{[k^{2}+m^{2}-i\epsilon
+]\,[(p-k)^{2}-m^{2}-\mi\epsilon ]}\text{ .}  \label{18.1.8}
+\end{equation}%
+组合分母, 旋转$k^{0}$积分围道, 并附加紫外截断$%
+\Lambda $, 当$\Lambda \rightarrow \infty $时, 这给出结果\begin{equation}
+F(p)=1-\frac{g}{32\uppi^{2}}\int_{0}^{1}\dif x\left[ \ln \left( \frac{%
+\Lambda ^{2}}{m^{2}+p^{2}x(1-x)}\right) -1\right] +O(g^{2})\text{ .}
+\label{18.1.9}
+\end{equation}%
+(只要我们保持$p^{2}$为正)%
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=4.0in]{182}
+ \caption{上面的Feynman图所代表的算符$\int\dif^{4}x\:\exp(-\mi p \cdot x)\:\phi^{2}(x)$的矩阵元会呈现出紫外发散. 它的记号与图\ref{fig:18.1}中的记号相同}
+ \label{fig:18.2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=4.0in]{183}
+ \caption{图\ref{fig:18.2}中直到一圈发散的图.}
+ \label{fig:18.3}
+\end{figure}
+这一结果没有零质量奇异性, 但它理所应当地与截断相关. 通过定义重整化$\phi ^{2}$算符\begin{equation}
+(\phi ^{2})_{R}=N^{(\phi ^{2})}\phi ^{2}\text{ ,}  \label{18.1.10}
+\end{equation}%
+这一紫外发散可以被消除掉, 其中的$N^{(\phi ^{2})}$会使得$N^{(\phi ^{2})}F(p)$在某个明确的重整化点有明确的%
+有限值. 例如, 我们可以定义重整化$\phi ^{2}$算符使得\begin{equation}
+N^{(\phi ^{2})}F(0)=1\text{ ,}  \label{18.1.11}
+\end{equation}%
+在这一情况下,
+\begin{equation}
+N^{(\phi ^{2})}=1+\frac{g}{32\uppi^{2}}\left( \ln \frac{\Lambda ^{2}}{m^{2}}%
+-1\right) +O(g^{2})\text{ .}  \label{18.1.12}
+\end{equation}%
+这样, 重整化算符$(\phi ^{2})_{R}$%
+的矩阵元就会包含因子\begin{equation}
+F_{R}(p)\equiv N^{(\phi ^{2})}F(p)=1+\frac{g}{32\uppi^{2}}\int_{0}^{1}\dif %
+x\ln \left( 1+\frac{p^{2}x(1-x)}{m^{2}}\right) +O(g^{2})\text{ .}
+\label{18.1.13}
+\end{equation}%
+这对于所有的$p^{2}>0$和$m^{2}>0$%
+都是有限的, 但它现在包含$m\rightarrow 0$的红外发散,
+相对于$p^{2}\rightarrow +\infty $时的渐进行为, 这一红外发散对应于其中的大对数.
+当然, 为了消除高阶计算中的截断, 我们将不得不同时引入重整化耦合常数和重整化$\phi ^{2}$%
+算符, 并且我们会遇到这两者引起的大对数.
+
+不仅仅是$\phi ^{2}(x)$, 任何类型的算符都需要类似的重整化因子. 特别地,
+取理论中的一个基本场$\psi $的矩阵元, 它所引入的紫外发散就源于对相对应传播子的辐射修正. 正如我们在第12%
+章中看到的, 这些无限大可以通过引入重整化场$\psi _{R}$消除掉:%
+\begin{equation}
+\psi _{R}=N^{(\psi )}\psi \text{ ,}  \label{18.1.14}
+\end{equation}%
+其中的$N^{(\psi )}$会使得$\psi _{R}$%
+在单粒子态和真空之间的矩阵元, 与没有相互作用时, 按传统归一化的场的矩阵元是相同的. 它与重整化理论中通常的$Z$因子的关系是\begin{equation}
+Z^{(\psi )}=|N^{(\psi )}|^{-2}\text{ .}  \label{18.1.15}
+\end{equation}
+
+例如, 我们来回忆一下早先我们对旋量量子电动力学中光子场重整化的结果.\footnote{在上面作为例子的标量场论中, 相互作用为$\phi ^{4}$, 对%
+于这样的理论, $N^{(\phi )}$的最低阶项源于两圈图,
+所以用这一理论例证$N$%
+因子的计算将是不方便的.} 在这一情况中, 重整化电磁场$A_{R}^{\mu }$一般写成裸场$A_{B}^{\mu }$的形式\[
+A_{R}^{\mu }=Z_{3}^{-1/2}A_{B}^{\mu }
+\]%
+其中$Z_{3}$由方程(\textcolor{red}{11.2.21})给定\begin{equation}
+Z_{3}=1-\frac{e^{2}}{12\uppi^{2}}\ln \left( \frac{\Lambda ^{2}}{m^{2}}%
+\right) +O(e^{4})\text{ .}  \label{18.1.16}
+\end{equation}%
+它有一个零质量奇点,
+而这将会影响到重整化光子场矩阵元的渐进行为. 特别地, 方程(11.2.22)%
+给出了重整化电磁场的自能函数\begin{equation}
+\pi (q^{2})=\frac{e_{R}^{2}}{2\uppi^{2}}\int_{0}^{1}\dif x\:x(1-x)\ln \left[
+1+\frac{q^{2}x(1-x)}{m^{2}}\right] +O(e_{R}^{4})\text{ .}  \label{18.1.17}
+\end{equation}%
+它在$m=0$处有奇点, 所以在它的渐进行为中就会有大对数: 对于$q^{2}\rightarrow
++\infty $%
+\begin{equation}
+\pi (q^{2})\longrightarrow \frac{e_{R}^{2}}{2\uppi^{2}}\left[ \frac{1}{6}\ln
+\frac{q^{2}}{m^{2}}-\frac{5}{18}\right] +O(e_{R}^{4})\text{ .}
+\label{18.1.18}
+\end{equation}
+
+电动力学有如下的特征, 出现在电磁场重整化中的常数$Z_{3}$同时出现在电荷重整化中:%
+\begin{equation}
+e_{R}=Z_{3}^{-1/2}e_{\mathrm{BARE}}\text{ ,}  \label{18.1.19}
+\end{equation}%
+但这并非普遍情况. 重整化群技巧首先是在量子电动力学中得以使用的, 但对于这里讨论的标量场论而言, 由于场和耦合的重整化的是分开的, 所以这给%
+出了这些方法一个更加典型的例证.
+
+
+\section{滑动标度}
+
+在上一节我们看到, 合适的被积截面或者不在壳Feynman振幅在高能处会出现大对数, 而这些大对数可以追溯到用来定义重整化耦合常数和重整化算符的方%
+案. 重整化群方法的核心思想就是改变这一方案.
+
+假定我们发现了某种定义一类新的重整化耦合常数$g(\mu )$的方法, 使得它依赖于滑动能量标度$\mu $, 但是(至少当$\mu \gg m$%
+时)与理论的质量标度无关. 这样, 合适的被积截面或者其它的红外安全速率参量就可以表示成$g_{\mu }$和$\mu $而不是$%
+g_{R}$的函数. 通过量纲分析, 这样的函数可以写成\begin{equation}
+\Gamma ( E,x,g_{\mu },m,\mu )=E^{D}\,\Gamma \left( 1,x,g_{\mu },\frac{m}{%
+E},\frac{\mu }{E}\right) \text{ .}  \label{18.2.1}
+\end{equation}%
+(我们的记号与18.1节是相同的; 特别地, $x$代表$\Gamma $%
+所依赖的所有无量纲的角, 能量比值等.) 既然$\mu $是完全任意的重整化标度, 我们可以令$\mu =E$,
+在这一情况下, 方程(\ref%
+{18.2.1})变成\begin{equation}
+\Gamma (E,x,g_{\mu },m,\mu )=E^{D}\,\Gamma \left( 1,x,g_{E},\frac{m}{E}%
+,1\right) \text{ .}  \label{18.2.2}
+\end{equation}%
+现在, 由于$g_{E}$在$m\ll E$时不依赖于$m$, 这里没有零质量奇点, 因而也没有大对数, 并且只要$g_{E}$本身保持足够小, 我们就能%
+以$g_{E}$的形式用微扰论计算$\Gamma $. 特别地, 在微扰论的任意有限阶, $\Gamma $有如下的渐进行为, 对于$%
+E\gg m$,%
+\begin{equation}
+\Gamma (E,x,g_{\mu },m,\mu )\longrightarrow E^{D}\,\Gamma (1,x,g_{E},0,1)\text{
+.}  \label{18.2.3}
+\end{equation}%
+(非微扰修正将在18.4节进行考察.)
+
+尚需计算的是$g_{E}$, 我们举一个例子进行说明,
+在拉格朗日量为(\ref{18.1.2})%
+的标量场论中, 我们可以将$g_{\mu }$定义成散射振幅在重整化点$s=t=u=-\mu ^{2}$的值:%
+\begin{align}
+g_{\mu } &\equiv A(s=t=u=-\mu ^{2})  \nonumber \\
+&=g-\frac{3g^{2}}{32\uppi^{2}}\int_{0}^{1}\dif x\left\{ \ln \left( \frac{%
+\Lambda ^{2}}{m^{2}+\mu ^{2}x(1-x)}-1\right) \right\} +O(g^{3})\text{ ,}
+\label{18.2.4}
+\end{align}%
+或者, 将其写成传统的重整化耦合(\ref{18.2.5})的形式,%
+\begin{equation}
+g_{\mu }=g_{R}+\frac{3g_{R}^{2}}{32\uppi^{2}}\int_{0}^{1}\dif x\,\ln \left( 1+%
+\frac{\mu ^{2}x(1-x)}{m^{2}}\right) +O(g_{R}^{3})\text{ .}  \label{18.2.5}
+\end{equation}%
+然而, 仅当修正项远小于$g_{R}$时, 这一公式才是可靠的; 即, 仅当$|g_{R}\ln (\mu /m)|\ll 1
+$时, 这一公式才是可靠的. 如果是$\mu \simeq E$的情况,
+我们不需要使用重整化群方法; 普通的微扰论就已经足够好了.
+
+
+当$\mu $很大时, 取代直接使用(\ref{18.2.5})这样的公式,
+我们必须以阶段的方式进行: 只要$\mu /m$不是远大于1, 我们就可以用$g_{R}$%
+计算$g_{\mu }$; 这样, 只要$\mu ^{\prime
+}/\mu $不远大于1, 我们就可以用$g_{\mu }$计算$g_{\mu ^{\prime }}$; 以此类推, 直到$g_{E}$. 取代用%
+离散的步骤到达$g_{E}$, 我们也可以连续地到达$%
+g_{E}$. 量纲分析告诉我们, $%
+g_{\mu ^{\prime }}$和$g_{\mu }$之间的关系采取形式\begin{equation}
+g_{\mu ^{\prime }}=G(g_{\mu },\mu ^{\prime }/\mu ,m/\mu )\text{ .}
+\label{18.2.6}
+\end{equation}%
+对$\mu ^{\prime }$微分然后取$\mu
+^{\prime }=\mu $, 这给出微分方程\begin{equation}
+\mu \frac{\dif}{\dif\mu }g_{\mu }=\beta \left( g_{\mu },\frac{m}{\mu }%
+\right) \text{ ,}  \label{18.2.7}
+\end{equation}%
+其中\begin{equation}
+\beta \left( g_{\mu },\frac{m}{\mu }\right) \equiv \left[ \frac{\partial }{%
+\partial z}G(g_{\mu },z,m/\mu )\right] _{z=1}\text{ .}  \label{18.2.8}
+\end{equation}%
+这里没有零质量奇点,
+所以当$\mu \gg m$时, 这一微分方程就变成\begin{equation}
+\mu \frac{\dif}{\dif\mu }g_{\mu }=\beta (g_{\mu },0)\equiv \beta (g_{\mu })%
+\text{ ,}  \label{18.2.9}
+\end{equation}%
+这通常被称作\textit{Callan-Symanzik}%
+{\kai{方程}}.\cite{1} 我们将通过对微分方程(\ref{18.2.9})积分来计算$g_{E}$, 其中的初始值$g_{M}$处在标度$\mu =M$, 对该%
+标度的选择要比较小心, 一方面要足够大, 使得当$\mu \geq M$时, 相比于$\mu $我们可以忽略掉$m$, 一方面要足够小, 使得我们在%
+用微扰论计算$g_{M}$时, 大对数$\ln (E/m)$不会妨碍我们用$g_{R}$去计算$g_{M}$. 只要$\beta (g)$%
+在$g_{M}$和$g_{E}$之间不为零,
+那么这个解就可以形式地写成\begin{equation}
+\ln (E/M)=\int_{g_{M}}^{g_{E}}\dif g/\beta (g)\text{ .}  \label{18.2.10}
+\end{equation}
+
+上一段的结果不依赖微扰论, 但是我们通常需要用微扰论计算$G$和$%
+\beta $. 例如, 假定我们在相互作用为$g\phi ^{4}/24$的标量场论中计算$g_{\mu ^{\prime }}$, 通%
+过将$g$表示成$g_{\mu }$而非$g_{R}$%
+进行重整化. 沿用导出方程(\ref{18.2.5})的步骤, 这给出\[
+g_{\mu ^{\prime }}=g_{\mu }-\frac{3g_{\mu }^{2}}{32\uppi^{2}}\int_{0}^{1}\dif %
+x\,\ln \left( \frac{m^{2}+\mu ^{2}x(1-x)}{m^{2}+\mu ^{\prime 2}x(1-x)}\right)
++O(g_{\mu }^{3})\text{ .}
+\]%
+那么方程(\ref{18.2.8})给出\begin{equation}
+\beta \left( g_{\mu },\frac{m}{\mu }\right) =+\frac{3g_{\mu }^{2}}{16\uppi%
+^{2}}\int_{0}^{1}\dif x\,\frac{\mu ^{2}x(1-x)}{m^{2}+\mu ^{ 2}x(1-x)}%
++O(g_{\mu }^{3})\text{ .}  \label{18.2.11}
+\end{equation}%
+当$\mu \gg m$时, 这变成\begin{equation}
+\beta (g_{\mu })=\frac{3g_{\mu }^{2}}{16\uppi^{2}}+O(g_{\mu }^{3})\text{ .}
+\label{18.2.12}
+\end{equation}%
+到下一阶, $\mu \gg m$的$\beta $-函数是\cite{3}\[
+\beta (g_{\mu })=g_{\mu }\left[ 3\left( \frac{g_{\mu }}{16\uppi^{2}}\right) -%
+\frac{17}{3}\left( \frac{g_{\mu }}{16\uppi^{2}}\right) ^{2}+\cdots \right]
+\text{ .}
+\]
+
+如果我们只满足单圈近似, $\beta (g)$的计算有更加简单的方法. 为了避免矩阵元在$\mu $阶能量处有很大的辐射修正, 我们必须将裸耦合$g$写成%
+有限的重整化耦合$g_{\mu }$,
+就像\begin{equation}
+g=g_{\mu }+B(g_{\mu })\ln \frac{\Lambda }{\mu }+\cdots \text{ .}
+\label{18.2.13}
+\end{equation}%
+例如, 从方程(\ref{18.1.3})中, 我们可以立刻读出$g$中$\ln
+\Lambda $项的系数\begin{equation}
+B(g)=-\frac{3}{2}\Big[ -\mi(2\uppi)^{4}g^{2}\Big] \left[ \frac{-\mi}{(2%
+\uppi)^{4}}\right] ^{2}2\uppi^{2}\mi=\frac{3g^{2}}{16\uppi^{2}}\text{ .}
+\label{18.2.14}
+\end{equation}%
+非重整化耦合显然独立于$\mu $, 所以到最低阶\[
+\mu \frac{\dif}{\dif\mu }g_{\mu }-B(g_{\mu })=0
+\]%
+因此在最低阶\begin{equation}
+\beta (g)=B(g)\text{ .}  \label{18.2.15}
+\end{equation}%
+这里的$B(g)$由方程(\ref{18.2.14})给定, 这与我们之前$\beta (g)$在$\phi ^{4}$标量场论中的结果(%
+\ref{18.2.14})一致.
+
+简单的紫外截断会妨碍规范不变性, 所以用维数正规化来处理紫外发散通常是方便的. 对于时空维数$d<4$, 我们发现$\ln (\Lambda /\mu )$会被替换%
+成收敛积分\[
+\int_{\mu }^{\infty }k^{d-4}\frac{\dif k}{k}=\frac{\mu ^{d-4}}{4-d}\underset{%
+d\rightarrow 4}{\longrightarrow }\left[ \frac{1}{4-d}-\ln \mu \right] \text{
+.}
+\]%
+因此, 不像之前通过将非重整化耦合写成(\ref%
+{18.2.13})那样来消除截断相关性, 我们转而写成\begin{equation}
+g=g_{\mu }+B(g_{\mu })\left[ \frac{1}{4-d}-\ln \mu \right] \text{ ,}
+\label{18.2.16}
+\end{equation}%
+其中的函数$B(g_{\mu })$与上面相同. 因此, 为了计算$\beta
+(g_{\mu })$, 我们需要做的就是将重整化耦合中奇异因子$1/(4-d)$的系数挑出来.
+这一讨论将在18.6节扩展至所有阶.
+
+在拉格朗日量为(\ref{18.1.2})%
+的标量场论中, 只要$g_{\mu }$%
+足够小, 方程(\ref{18.2.9})和(\ref%
+{18.2.12})可以很好地近似为\begin{equation}
+g_{\mu }=-\frac{16\uppi^{2}}{3\ln (\mu /M)}\text{ ,}  \label{18.2.17}
+\end{equation}%
+其中$M$是一个积分常数.
+这一表达式例证了重整化群运算的一个普遍特征, 即像$g_{R}$这样的无量纲耦合会被$M$这样量纲为质量的参量替代. 若$\mu $的值足够大, 使%
+得我们可以使用基于$\mu
+\gg m$的近似, 并且又足够小, 使得$\left\vert g_{R}\ln (\mu /M)\right\vert \ll 1$,
+通过比较解(\ref{18.2.17})与此时耦合的行为, 我们可以将$M$与$g_{R}$关联起来, 在$%
+\mu $满足上述条件时, (\ref{18.2.5})%
+给出\begin{equation}
+g_{\mu }\simeq g_{R}+\frac{3g_{R}^{2}}{16\uppi^{2}}\ln \left( \frac{\mu }{M}%
+\right) \text{ .}  \label{18.2.18}
+\end{equation}%
+以这种方式, 我们发现\begin{equation}
+M\simeq m\exp \left( \frac{16\uppi^{2}}{3g_{R}}\right) \text{ ,}
+\label{18.2.19}
+\end{equation}%
+这使得方程(\ref{18.2.17})可以变成更加常见的形式\begin{equation}
+g_{\mu }=g_{R}\left[ 1-\frac{3g_{R}}{16\uppi^{2}}\ln \frac{\mu }{m}\right]
+^{-1}\text{ .}  \label{18.2.20}
+\end{equation}
+再重申一次, 即使$\left\vert
+g_{R}\ln (\mu /m)\right\vert $量级为1, 只要$%
+g_{\mu }$是小量, 上式就是成立的, 所以它代表的是对微扰结果(\ref{18.2.18})的重要提升. 当然, 当$\left\vert g_{R}\ln
+(\mu /m)\right\vert $充分接近于临界值$16\uppi^{2}/3$时, $g_{\mu }$是小量这个条件就会被破坏. 但%
+是, 方程(\ref{18.2.20})至少做出了如下的明确预测: 在临界值(\ref{18.2.19}){\kai{之下}}的某个能量$E$处, $g_{E}$变得足%
+够大使得微扰论无法使用.
+
+如果我们计算的不是被积截面而是算符的不在壳矩阵元, 我们还需要把出现在重整化算符定义中的$N$因子考虑在内, 它会使得重整化算符的矩阵元是有%
+限的. 在上一节我们看到, 如果这些$N$因子以传统的方式定义(即, 当算符携带的4-动量为零或者算符是处在质量壳上的场时, 发散子图所产生的修正因子被抵%
+消了), 那么$N$因子的公式就会像方程(\ref{18.1.12})或(\ref%
+{18.1.16})中那样包含零质量奇点, 而这又会在$E\gg m$处产生大对数. 解决方法是在滑动标度$\mu $处定义重整化常数$N_{\mu }^{(\mathcal{O})}$,
+使得在重整化算符\begin{equation}
+\mathcal{O}_{\mu }=N_{\mu }^{(\mathcal{O})}\,\mathcal{O}  \label{18.2.21}
+\end{equation}%
+的矩阵元中, 包含算符$%
+\mathcal{O}$的发散子图所产生的修正因子在$\mu $阶4-动量所表征的重整化点处被抵消了. 如果$M_{R}$是按传统方式重整化的%
+算符的矩阵, 而$M$是算符按照方程(\ref{18.2.21})重整化后的矩阵元, 那么对于任意的$\mu $%
+\begin{equation}
+M_{R}=\left[ \prod_{\mathcal{O}}\left( N^{(\mathcal{O})}\Big/N_{\mu }^{(\mathcal{%
+O})}\right) \right] M(E,x,g_{\mu },m,\mu )\text{ .}  \label{18.2.22}
+\end{equation}%
+我们可以再次使用量纲分析(假定$M$的量纲为$%
+D$)并令$\mu =E$, 将其写成\begin{equation}
+M_{R}=E^{D}\left[ \prod_{\mathcal{O}}\left( N^{(\mathcal{O})}\Big/N_{E}^{(%
+\mathcal{O})}\right) \right] M\left(1,x,g_{E},\frac{m}{E},1\right)\text{ .}
+\label{18.2.23}
+\end{equation}%
+因此, 为了发现不在壳振幅$M_{R}$的高能行为, 我们需要知道当重整化标度$\mu $变化时, $N_{\mu }$是如何变化的.
+
+对于任意两个重整化标度$\mu $和$\mu ^{\prime }$, 重整化算符$N_{\mu }^{(\mathcal{O})}\mathcal{O}$和$N_{\mu
+^{\prime }}^{(\mathcal{O})}\mathcal{O}$的矩阵元都是有限的, 所以比值$%
+N_{\mu ^{\prime }}^{(\mathcal{O})}/N_{\mu }^{(\mathcal{O})}$必须是截断无关的. 基于量%
+纲分析, 这一比值必须采取如下的形式\begin{equation}
+N_{\mu ^{\prime }}^{(\mathcal{O})}\Big/N_{\mu }^{(\mathcal{O})}=G^{(\mathcal{O}%
+)}(g_{\mu },\mu ^{\prime }/\mu ,m/\mu )\text{ .}  \label{18.2.24}
+\end{equation}%
+相对$\mu ^{\prime }$微分并令$\mu
+^{\prime }=\mu $, 这给出\begin{equation}
+\mu \frac{\dif}{\dif\mu }N_{\mu }^{(\mathcal{O})}=\gamma ^{(\mathcal{O}%
+)}(g_{\mu },m/\mu )N_{\mu }^{(\mathcal{O})}\text{ ,}  \label{18.2.25}
+\end{equation}%
+其中\begin{equation}
+\gamma ^{(\mathcal{O})}(g_{\mu },m/\mu )\equiv \left[ \frac{\partial }{%
+\partial z}G^{(\mathcal{O})}(g_{\mu },z,m/\mu )\right] _{z=1}\text{ .}
+\label{18.2.26}
+\end{equation}%
+这一方程的解是\begin{equation}
+N_{E}^{(\mathcal{O})}\propto \exp \left[ \int^{E}\gamma ^{(\mathcal{O}%
+)}\left( g_{\mu },\frac{m}{\mu }\right) \frac{\dif\mu }{\mu }\right] \text{ .%
+}  \label{18.2.27}
+\end{equation}%
+由于引入了滑动标度, $%
+N_{\mu }^{(\mathcal{O})}$和$N_{\mu ^{\prime }}^{(\mathcal{O})}$中不再有零质量奇点, $G^{(%
+\mathcal{O})}$和$\gamma ^{(\mathcal{O})}$也因此不再含有零质量奇点,
+所以这一结果是相当有用的. 因此, 只要$g_{\mu }$%
+是一小量, 就不会有大对数妨碍用微扰论计算$\gamma ^{(\mathcal{O})}$. 另外, 当$\mu \gg m$%
+时, $\gamma ^{(\mathcal{O})}(g_{\mu },m/\mu )$有一光滑极限\begin{equation}
+\gamma ^{(\mathcal{O})}(g_{\mu })\equiv \gamma ^{(\mathcal{O})}(g_{\mu },0)%
+\text{ .}  \label{18.2.28}
+\end{equation}
+
+作为一个例子, 考察标量场论中的算符$\mathcal{O}=\phi ^{2}$,
+其中的相互作用是$g\phi
+^{4}/24$. 这时的重整化不会使得修正因子(\ref{18.1.9})在$%
+p^{2}=0$处被抵消掉, 而是在滑动标度$p^{2}=\mu ^{2}$处抵消它, 方法是引入新的重整化$\phi ^{2}$算符$N_{\mu }^{(\phi ^{2})}\phi ^{2}$%
+, 其中\begin{align*}
+N_{\mu }^{(\phi ^{2})} \equiv F^{(\phi ^{2})}(\mu ^{2})^{-1}&=1+\frac{g}{32%
+\uppi^{2}}\int_{0}^{1}\dif x\,\left[ \ln \left[ \frac{\Lambda ^{2}}{m^{2}+\mu
+^{2}x(1-x)}\right] -1\right]  \\
+&\quad+O(g^{2})\text{ .}
+\end{align*}%
+那么, 对于这一算符, 函数(%
+\ref{18.2.24})就是\begin{align*}
+G^{(\phi ^{2})}\left( g_{\mu },\frac{\mu ^{\prime }}{\mu },\frac{m}{\mu }%
+\right)  \equiv \frac{N_{\mu ^{\prime }}^{(\phi ^{2})}}{N_{\mu }^{(\phi
+^{2})}}&=1+\frac{g_{\mu }}{32\uppi^{2}}\int_{0}^{1}\dif x\,\ln \left[ \frac{%
+m^{2}+\mu ^{2}x(1-x)}{m^{2}+\mu ^{\prime 2}x(1-x)}\right]  \\
+&\quad+O(g_{\mu }^{2})\text{ .}
+\end{align*}%
+(由于$g_{\mu }$和$g$的差或者$%
+g_{\mu }$和$g_{\mu ^{\prime }}$的差仅影响$g_{\mu }^{2}$阶的项或者更高阶的项, 所以在这里我们可以用$g_{\mu }$替代$g$或$g_{\mu
+^{\prime }}$.) 那么, 从方程(\ref{18.2.26})%
+中我们就有\begin{equation*}
+\gamma ^{(\phi ^{2})}\left( g_{\mu },\frac{m}{\mu }\right) =-\frac{g_{\mu }}{%
+16\uppi^{2}}\int_{0}^{1}\frac{\mu ^{2}x(1-x)}{m^{2}+\mu ^{2}x(1-x)}\,\dif %
+x+O(g_{\mu }^{2})
+\end{equation*}%
+或者, 当$\mu \gg m$时,%
+\begin{equation}
+\gamma ^{(\phi ^{2})}(g_{\mu })=-\frac{g_{\mu }}{16\uppi^{2}}+O(g_{\mu }^{2})%
+\text{ .}  \label{18.2.29}
+\end{equation}
+
+另一个比较好的例子是量子电动力学中与电磁场重整化相联系的$N$因子. 回忆, 通过用重整化电磁场来计算光子传播子, 我们可以使其对于所有的动量%
+都是有限的, 这一方法可以等效为给非重整化场的传播子乘以$Z_{3}^{-1}$:%
+\begin{equation}
+\tilde{\Delta}_{\rho \sigma }(q)=Z_{3}^{-1}\Delta _{\rho \sigma }(q)\text{ .}
+\label{18.2.30}
+\end{equation}%
+方程(\textcolor{red}{10.5.17})表明这一重整化传播子可以写成\begin{equation}
+\tilde{\Delta}_{\rho \sigma }(q)=\frac{\eta _{\rho \sigma }}{[q^{2}-\mi%
+\epsilon ][1-\pi (q^{2})]}+q_{\rho }q_{\sigma }\text{项 .}
+\label{18.2.31}
+\end{equation}%
+假定我们转而定义重整化场$N_{\mu }^{(A)}A^{\rho }$, 它的传播子中有一项正比于$%
+\eta _{\rho \sigma }/[q^{2}-\mi\epsilon ]$, 并且比例系数在滑动标度$q^{2}=\mu ^{2}$%
+处等于1. 由于这个原因,
+显然我们必须要取\begin{equation}
+N_{\mu }^{(A)}=Z_{3}^{-1/2}[1-\pi (\mu ^{2})]^{1/2}\text{ .}  \label{18.2.32}
+\end{equation}%
+利用方程(11.2.22), 函数(\ref{18.2.24})%
+就是\begin{align}
+&G^{(A)}(g_{\mu },\mu ^{\prime }/\mu ,m/\mu ) = \left[ \frac{1-\pi (\mu
+^{\prime 2})}{1-\pi (\mu ^{2})}\right] ^{1/2}  \notag \\
+&=1-\frac{e_{\mu }^{2}}{4\uppi^{2}}\int_{0}^{1}\dif x\:x(1-x)\ln \left[ \frac{%
+m^{2}+\mu ^{\prime 2}x(1-x)}{m^{2}+\mu ^{2}x(1-x)}\right]   \notag \\
+&\qquad+O(e_{\mu }^{4})\text{ ,}  \label{18.2.33}
+\end{align}%
+因此, 方程(\ref{18.2.26})给出\begin{equation}
+\gamma ^{(A)}(e_{\mu },m/\mu )=-\frac{e_{\mu }^{2}}{2\uppi^{2}}\int_{0}^{1}%
+\dif x\,\frac{x^{2}(1-x)^{2}\mu ^{2}}{m^{2}+\mu ^{2}x(1-x)}+O(e_{\mu }^{4})%
+\text{ .}  \label{18.2.34}
+\end{equation}%
+正如所承诺的, 它在$\mu \gg m$%
+时的极限是光滑的\begin{equation}
+\gamma ^{(A)}(e_{\mu })\equiv \gamma ^{(A)}(e_{\mu },0)=-\frac{e_{\mu }^{2}}{%
+12\uppi^{2}}+O(e_{\mu }^{4})\text{ .}  \label{18.2.35}
+\end{equation}
+
+正如之前提到过的, 由于出现在重整化电磁场中的重整化常数$Z_{3}^{-1/2}
+$与定义电子的重整化电荷的常数互为倒数: $%
+e_{R}=Z_{3}$. 那么, 滑动标度$\mu $%
+处的重整化电荷的自然定义就是\begin{equation}
+e_{\mu }=N_{\mu }^{(A)-1}e=Z_{3}^{-1/2}N_{\mu }^{(A)-1}e_{R}\text{ ,}
+\label{18.2.36}
+\end{equation}%
+这使得$e_{\mu }$与在标度$\mu $%
+处重整化的场$N_{\mu }^{(A)}A^{\rho }$%
+相乘后与$\mu $无关, 从方程(\ref{18.2.25})中, 我们看到, 对于给出$e_{\mu }$对$\mu $的相关性的函数$\beta (e)$, 根据方程%
+(\ref{18.2.9}), 它在$\mu \gg m$时的值为\begin{equation}
+\beta (e)=-e\gamma ^{(A)}(e)=\frac{e^{3}}{12\uppi^{2}}+O(e^{5})\text{ .}
+\label{18.2.37}
+\end{equation}%
+更早的计算\cite{3a}给出了真空极化函数$\pi (q^{2})$的第四阶项. 借此, Gell-Mann和Low给出了$\beta (e)$中$e$的下一阶%
+项.%
+\begin{equation}
+\beta (e)=\frac{e^{3}}{12\uppi^{2}}+\frac{e^{5}}{64\uppi^{2}}+O(e^{7})\text{
+.}  \label{18.2.38}
+\end{equation}%
+换句话说, 活动标度$\mu $%
+处的电荷满足重整化群方程\begin{equation}
+\mu \frac{\dif}{\dif\mu }e_{\mu }=\frac{e_{\mu }^{3}}{12\uppi^{2}}+\frac{%
+e_{\mu }^{5}}{64\uppi^{2}}+O(e_{\mu }^{7})\text{ .}  \label{18.2.39}
+\end{equation}%
+这表明, 对于比较小的$%
+e_{\mu }$, $e_{\mu }$随着$\mu $的增大而{%
+\kai{增大}}.
+
+我们还需要初始条件.
+这由电荷著名的传统重整化值$e_{R}=Z_{3}^{1/2}e$提供,
+对于这个值$\alpha \equiv e_{R}^{2}/4\uppi%
+=1/137.036\cdots $. 方程(\ref{18.2.32})和(\ref{18.2.36})%
+给出\begin{align}
+e_{R}/e_{\mu } &=Z_{3}^{1/2}N_{\mu }^{(A)}=\sqrt{1-\pi (\mu ^{2})}  \notag
+\\
+&=1-\frac{e_{R}^{2}}{4\uppi^{2}}\int_{0}^{1}\dif x\:x(1-x)\ln \left[ 1+\frac{%
+\mu ^{2}x(1-x)}{m_{e}^{2}}\right] +O(e_{R}^{4})\text{ .}  \label{18.2.40}
+\end{align}%
+我们需要匹配这一公式与方程(\ref{18.2.39})的解, 在匹配时, $\mu $的值要足够大以使得方程(\ref{18.2.39})中%
+的近似$\mu \gg m_{e}$是合理的,
+但又足够小使得方程(\ref{18.2.40})%
+中的对数与$4\uppi^{2}/e_{R}^{2}$相比依然是个小量, 进而使得微扰论是成立的. (%
+例如, 我们可以取$\mu $的量级为$100\,$MeV.) 对于这样的$%
+\mu $值, 方程(\ref{18.2.40})给出\begin{equation}
+e_{\mu }\simeq e_{R}+\frac{e_{R}^{3}}{12\uppi^{2}}\left[ \ln \frac{\mu }{%
+m_{e}}-\frac{5}{6}\right] \text{ .}  \label{18.2.41}
+\end{equation}%
+另一方面, 当$e_{\mu }$比较小的时候, 方程(\ref{18.2.39})(仅保留右边第一项)的解是\begin{equation}
+e_{\mu }=\left[ \text{常数}-\frac{\ln \mu }{6\uppi^{2}}\right]
+^{-1/2}\text{ .}  \label{18.2.42}
+\end{equation}%
+比较方程(\ref{18.2.41})和(\ref{18.2.42}),
+这给出解\begin{equation}
+e_{\mu }=e_{R}\left[ 1-\frac{e_{R}^{2}}{6\uppi^{2}}\left( \ln \left( \frac{%
+\mu }{m_{e}}\right) -\frac{5}{6}\right) \right] ^{-1/2}\text{ .} \label{18.2.43}
+\end{equation}%
+不像方程(\ref{18.2.41}), 不管$%
+(e_{R}^{2}/6\uppi^{2})\ln (\mu /m_{e})$是不是小量, 只要$e_{\mu }^{2}/6\uppi^{2}$是小量, 方程(\ref%
+{18.2.43})就是适用的.
+
+例如, 我们在11.3节就已经看到, 通过对$\mu $子磁矩的二阶(Schwinger)项(\textcolor{red}{11.3.16})乘以$%
+k^{2}\approx m_{\mu }^{2}$处的真空极化函数$\pi _{e}(k^{2})$, 我们就可以获得对$\mu $子磁矩的领%
+头4阶修正, 根据方程(\ref%
+{18.2.40}), 这与将Schwinger项中的$\alpha
+$替换成$e_{m_{\mu }}^{2}/4\uppi$的结果(%
+到这一阶)是相同的.
+
+另一个例子: 在高能电子-正电子对撞实验中,
+诸如CERN上的LEP或者SLAC上的SLC\footnoteB{CERN是欧洲核子研究组织(European Organization for Nuclear Research)的缩写, LEP是大型正负电子对撞机(Large Electron-Positron Collider)的缩写, 在2000年末的时候, LEP被关停并拆解, 以给在建的新的大型强子对撞机(LHC)腾出轨道空间, SLAC是斯坦福直线加速器中心(Stanford Linear Accelerator Center)的缩写, 而SLC是斯坦福直线对撞机(Stanford Linear Collider)的缩写.    \qquad   ------译者注}, 它们所研究的物理过程所处的能量量级大约是$Z^{0}$粒子的质量, 或者说$91\,$GeV. 方程(\ref{18.2.43})表明,
+在能量达到这个量级时, 计算纯量子电动力学中的辐射修正所用的精细结构常数不是$%
+\alpha =1/137.036$, 而是\begin{equation}
+\frac{e^{2}(91\,\mathrm{GeV})}{4\uppi}=\frac{\alpha }{1-2(11.25)\alpha /3\uppi}%
+=\frac{1}{134.6}\text{ .}  \label{18.2.44}
+\end{equation}%
+在这一结果所针对的理论中, 质量小于$m_{Z}$的带电粒子只有电子. 而在真实情况中, 这种粒子有很多, 相应地, $m_{Z}$处的精细结构常数\cite{4}是$%
+(128.87\pm 0.12)^{-1}$.
+
+\subsection*{* * *}
+
+计算理论的耦合参数所在的滑动标度可以不是外线动量而是外{\kai{场}}的值. 在重整化群方法的一个早期应用中, Coleman和E. Weinbergz\cite{4a}考察了%
+时空无关的外标量场$%
+\phi $的有效势$V(\phi )$. 在这一简单情况中, 场只与自身作用, 它们的圈结果由方程(\ref{16.2.15})给出. 在重%
+整化质量$m_{R}$为零的情况下考察有效势是特别有趣的, 这时, 到一圈阶我们可以令最后一项中的$\mu ^{2}(\phi )$等于$g_{R}\phi ^{2}/2$,
+这使得方程(\ref{16.2.15})在这里变成(其中的$g$是重定义耦合, 与之前稍有不同):%
+\begin{equation}
+V(\phi )=\lambda _{R}+\frac{g}{24}\phi ^{4}+\frac{g^{2}\phi ^{4}\ln \phi ^{2}%
+}{256\uppi^{2}}\text{ .}  \label{18.2.45}
+\end{equation}%
+第一眼看上去, 当$g>0$时,
+对于比较小的$\phi $, 有效势好像要小于$\lambda _{R}$, 这使得$\phi =0$这一点是局域极大点而非极小点, 但对于这样小的$\phi $, 第三%
+项要远大于第二项, 微扰论显然是靠不住的.
+另外, 为了使势对于比较大的场有下界, 我们能够论证$g$必将是正的,
+但是方程(\ref{18.2.45})表明, 无论$g$多小, 总存在足够大的场使得微扰论不在成立. 因而方程(\ref{18.2.45})也%
+就无法告诉我们势是否在场比较大时有下界.
+
+通过使用定义在场强的滑动标度$\mu $处的耦合常数, 我们可以做的更好. 假定我们通过条件\begin{equation}
+V(\mu )=\lambda _{R}+\frac{g_{\mu }}{24}\mu ^{4}  \label{18.2.46}
+\end{equation}%
+来定义耦合$g_{\mu }$. 如果我们在开头就用$g_{\mu }$作为耦合参量, 那么, 取代方程(\ref{18.2.45}), 我们将获得%
+\begin{equation}
+V(\phi )=\lambda _{R}+\frac{g_{\mu }}{24}\phi ^{4}+\frac{g_{\mu }^{2}\phi
+^{4}}{256\uppi^{2}}\ln \left( \frac{\phi ^{2}}{\mu ^{2}}\right) \text{ ,}
+\label{18.2.47}
+\end{equation}%
+它显然满足方程(\ref{18.2.46}).%
+\footnote{通过在方程(\ref{18.2.45})中使用方程(\ref{18.2.46})进而将$g$%
+表示成$g_{\mu }$, 我们也可以得到$V(\phi )$, 但这一结果与方程(\ref{18.2.47})不同. 它们的差是$g$的高阶项, 但是如%
+果计算$V(\phi )$所在的$\phi $与$%
+\mu $相差很大, 这时大对数就能够补偿耦合的幂次方, 这一差异就会变得显著. 如果我们从一开始就用$g_{\mu }$作为耦合参量, 并取$\mu $为$\phi $阶%
+的, 那么这样的大对数就不会产生, 并且只要$%
+g_{\mu }$依旧是个小量, 近似方程(\ref{18.2.47})就是有效的. }
+从有效势独立于$\mu $这一条件可以获得$g_{\mu }$的重整化群方程,\footnote{为了消除所有的截断相关性, $\phi $应该写成重整化%
+场$\phi _{\mu }=N_{\mu }^{\phi }\phi $的形式,
+它给$V(\phi _{\mu })$赋予的$\mu $相关性源于重整化常数$%
+N_{\mu }^{\phi }$的$\mu $相关性. 这一点在这里被忽略了, 这是因为在相互作用$\propto
+\phi ^{4}$的标量场论中, 对$N_{\mu
+}^{\phi }$的$\mu $相关性有贡献的最低阶图有两个圈,
+这使得到我们现在计算的这一阶, 我们可以取$N_{\mu }^{\phi }=1$.}%
+\begin{equation}
+\mu \frac{\dif g_{\mu }}{\dif\mu }=\frac{3g_{\mu }^{2}}{16\uppi^{2}}\text{ .}
+\label{18.2.48}
+\end{equation}%
+(包含$g_{\mu }^{2}$的导数的项被扔掉了, 这是因为它们是$g_{\mu }$的高阶项, 因此只要$g_{\mu }$足够小, 它们就%
+可以被忽略.) 与重整化群方程(\ref{18.2.9})和(\ref{18.2.13})相比, 上式所采取的形式与它们一样, 尽管$\mu $在那%
+里是重整化动量, 这并非巧合, 我们将在下一节看到, 重整化群方程中的前两项与我们定义滑动标度的方式总是无关的. 这一方程的解由方程(\ref{18.2.17})给出, 一%
+般而言所不同的是积分常数$M$. 因此, 通过令方程(\ref{18.2.17})中的$\mu =\phi $, 我们现在有\begin{align}
+V(\phi ) &=\lambda _{R}-\frac{32\uppi^{2}\phi ^{4}}{3\ln (\phi ^{2}/M^{2})}%
+\text{ ,}  \label{18.2.49} \\
+g_{\phi } &=-\frac{32\uppi^{2}}{3\ln (\phi ^{2}/M^{2})}\text{ .}
+\label{18.2.50}
+\end{align}
+
+使用这一结果要小心,
+因为它仅在耦合常数$%
+g_{\phi }$比较小的情况下才是有效的. 这里的问题不仅是方程(\ref{18.2.49})在$\phi $%
+接近于$M$时失去了它的有效性; 我们对重整化群方程的积分也不能穿过$\phi =M$处的奇点, 所以$%
+g_{\phi }$在奇点一边的信息无法告诉我们它在奇点另一边的行为.
+
+如果$g_{\phi }$对于某个$\phi _{0}$%
+有很小的{\kai{正}}值, 那么我们从方程(\ref{18.2.50})中可以知道$M>\left\vert \phi _{0}\right\vert $, 所%
+以对于$\left\vert \phi \right\vert <\left\vert \phi
+_{0}\right\vert $, $g_{\phi }$会保持一个比较小的值并且方程(\ref{18.2.49})%
+是有效的. 这表明$%
+\phi =0$这一点是$V(\phi )$的局域{\kai{极小点}}, 与方程(\ref{18.2.45})%
+所给予我们的预期相反. 这意味着对于在对称变换$\phi \rightarrow -\phi $下不变的真空, 除开可能的量子力学势垒穿透效应,
+这一真空是稳定的. 另一方面, 我们知道当$%
+\left\vert \phi \right\vert $与$M$相比足够大时, 方程(\ref{18.2.49})会失效.
+即使这一耦合对于某些$\left\vert \phi \right\vert >M$会变得比较小, 但它仍然太大以至于对所有的$\left\vert \phi \right\vert
+>M$都无法使用微扰论, 对于这样的$\phi $, 势可能由重整化标度$M^{\prime }>\phi $的方程(\ref{18.2.49})给出, 这会产生%
+第二个奇点. 因此在这一情况下, 我们无法看到在$\left\vert \phi \right\vert \rightarrow \infty $时$%
+V(\phi )\rightarrow -\infty $.
+
+类似地, 如果$g_{\phi }$对于某个$\phi _{0}$有很小的{\kai{负}}值,
+那么我们就可以得知$%
+M<\left\vert \phi _{0}\right\vert $, 所以对于$\left\vert
+\phi \right\vert >\left\vert \phi _{0}\right\vert $, $g_{\phi }$会保持一个比较小的值并且方程(\ref{18.2.49})是有效的. 在这一情况下, 当$%
+\left\vert \phi \right\vert <M$时, 对于势的行为我们无法得出任何结论, 但这时我们{\kai{可以}}用方程(\ref{18.2.49})看%
+到$\left\vert \phi \right\vert \rightarrow \infty $时$V(\phi
+)\rightarrow -\infty $, 这排除了任何稳定真空的可能性. 由于我们在这里考察的是极限$\left\vert \phi \right\vert \rightarrow \infty $,
+因此, 假定$m\ll \left\vert \phi _{0}\right\vert $,
+那么这一结论对于质量$m>0$的标量场同样是成立的. 这正是我们为什么必须要假定(在任何远大于该标量质量的标度处重整化的)$\phi ^{4}$耦%
+合为正的原因.
+
+\section{各种渐进行为}
+
+即使在跑动耦合$g_{\mu }$不够小以至于无法使用微扰论的情况下, 对于量子场论中所遇到的可能的渐进行为类型,
+重整化群方法提供了非常有用的洞察. 我们将区分$g_{\mu }$在$\mu \rightarrow \infty $时的4种不同行为方式, 这4%
+中不同的行为分别对应于函数$\beta (g)$的4种不同形状, 这是理论中只有一个耦合常数的情况.
+在下一节, 我们将考察有多个相互独立耦合的理论.
+
+我们先来回忆一下从上一节所考察的两个例子中所获得的$\beta (g)$. 其中的一个是相互作用为$g\phi ^{4}/24$的标量场论, 对%
+于比较小的$g$, $\beta $-函数是\begin{equation}
+\beta (g)=\frac{3g^{2}}{16\uppi^{2}}-\frac{18}{3}\frac{g^{3}}{(16\uppi%
+^{2})^{2}}+O(g^{4})\text{ .}  \label{18.3.1}
+\end{equation}%
+另一个是量子电动力学. 取代在这里将$\beta $-函数写成(\ref{18.2.38})的形式, 为了突出这一理论与标量场论之间的相似性,
+定义\begin{equation}
+g\equiv e^{2}\text{ ,}  \label{18.3.2}
+\end{equation}%
+并将$\beta (g_{\mu })$理解成$\mu \dif g_{\mu
+}/d\mu $, 这使得对于比较小的$g$%
+\begin{align}
+\beta (g) &=2e\left[ \frac{e^{3}}{12\uppi^{2}}+\frac{e^{5}}{64\uppi^{2}}%
++O(e^{7})\right]   \nonumber \\
+&=\frac{g^{2}}{6\uppi^{2}}+\frac{g^{3}}{32\uppi^{2}}+O(g^{4})\text{ .}
+\label{18.3.3}
+\end{align}
+注意到, 在这两种情况中, 物理允许的耦合都落在$g\geq 0$的范围内, 在这个范围内, 对于比较小的$g$, 我们有$\beta (g)\geq 0$. 在电%
+动力学中, 这是因为拉格朗日量为实会要求$e$%
+是实的. 而在标量场论中, 正如我们在上一节末尾所看到的, 为了有稳定的真空我们必须要有$g>0$. 然而, 我们可以考察相互作用哈密顿量为$-g\phi ^{4}/24$的标量场论,
+其中的$g$是一正数. 这或许不是物理的, 但只要我们只专注于微扰论,
+那么稳定性稳定就不会困扰我们. 方程(\ref{18.2.9})%
+表明, 如果我们重定义$%
+g\rightarrow -g$, 那么$\beta $-函数的变化就是$\beta (g)\rightarrow -\beta (-g)$, 所以%
+之前针对于相互作用$%
+g\phi ^{4}/24$的结果$\beta (g)=3g^{2}/16\uppi^{2}+O(g^{3})$, 它%
+现在对于相互作用哈密顿密度$-g\phi ^{4}/24$就会给出\begin{equation}
+\beta (g)=-3g^{2}/16\uppi^{2}+O(g^{3})\text{ .}  \label{18.3.4}
+\end{equation}%
+它与物理的相关性更大, 我们将在18.7节看到,
+对于旋量场不太多非阿贝尔规范场论, 对于某些小的正耦合常数会有$\beta \leq 0$. 在下文中, 我们对$g$的定义总使得$g\geq 0$%
+, 但对于$g$比较小的$\beta (g)$,
+我们既会考虑它为正的情况也会考虑它为负的情况.
+
+现在我们将所有的可能性一一列举出来. (参看图\ref{fig:18.4}.)
+
+\noindent (a) {\textbf{有限能量处的奇点}}
+
+假定对于小的正$g$, 我们有$\beta (g)>0$(例如方程(\ref{18.3.1})和(%
+\ref{18.3.3})的情况), 并且随着$g$%
+的增大, $\beta (g)$保持正值并且以足够快的速度持续上升, 这使得积分$%
+\int^{\infty }\dif g/\beta (g)$收敛:\begin{equation}
+\int^{\infty }\frac{\dif g}{\beta (g)}<\infty \text{ .}  \label{18.3.5}
+\end{equation}%
+$g_{\mu }$将会稳定地远离$g_{\mu }=0
+$, 并且方程(\ref{18.2.10})表明$g_{E}$%
+必须在$E$的{\kai{有限}}值处变成无限大:%
+\begin{equation}
+E_{\infty }=\mu \,\exp \left( \int_{g_{\mu }}^{\infty }\frac{\dif g}{\beta (g)}%
+\right) \text{ ,}  \label{18.3.6}
+\end{equation}%
+其中$\mu $是满足$\mu \gg m$%
+的任意重整化标度. 我们在上一节看到过这种想象的一个例子; 在标量场论中, 如果我们认为$%
+\beta $-函数的最低阶公式$%
+\beta (g)=3g^{2}/16\uppi^{2}$是对所有$g$都成立的精确值, 那么跑动耦合就会在能量(\ref%
+{18.2.19})处变成无限大.类似地, 在旋量量子电动力学中, 如果我们认为最低阶公式$\beta (g)=g^{2}/6\uppi^{2}$(其中%
+$g\equiv e^{2}$)是对所有$g$都成立的精确值, 那么在$g_{E}$和$%
+e_{E}$都变成无限大的那一点, 能量(\ref{18.3.6})是\begin{equation}
+E_{\infty }=\mu \,\exp (6\uppi^{2}/g_{\mu })\text{ .}  \label{18.3.7}
+\end{equation}%
+利用方程(\ref{18.2.43}), 我们可以将其表示成传统的重整化电荷:%
+\begin{equation}
+E_{\infty }\simeq m_{e}\exp \left( \frac{6\uppi^{2}}{e_{R}^{2}}+\frac{5}{6}%
++O(e_{R}^{2})\right) =e^{646.6}m_{e}\text{ .}  \label{18.3.8}
+\end{equation}%
+当然, 在到达这一能量之前, 近似$\beta (g)=g^{2}/6\uppi^{2}$就会失效, 所以我们能够断言的只是: $e_{E}$在$E_{\infty }$之%
+下的某个能量$E$处会变得非常大以至于微扰论失效.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=4.5in]{184}
+ \caption{$\beta(g)$函数四种可能形式的图形表示. 对于$\beta(g)$的这些形式, 跑动耦合$g_{\mu}$将会: (a)在$\mu$的有限值处趋于无限大; (b)随着$\mu$的增长而持续增长; (c)在$\mu\rightarrow\infty$时趋于一个有限的极限值$g_{\ast}$; (d)在$\mu\rightarrow\infty$时趋于零.}
+ \label{fig:18.4}
+\end{figure}
+
+\noindent(b) \textbf{持续增长}
+
+现在, 假定在某个理论中$\beta (g)$在$g\rightarrow \infty $时保持正定, 但又增长(或减小)得非常缓慢以至于$\int^{\infty }\dif %
+g/\beta (g)$是发散的. 那么耦合常数$g_{E}$就会随着$E\rightarrow
+\infty $持续增长, 但仅当$E=\infty $%
+时才会变成无限大. 更进一步, $g_{E}$渐进行为中的领头项在$E\rightarrow \infty $时独立于传统的重整化耦合. 例如, 如果$\beta (g)$在$g$%
+很大时的行为类似于$%
+bg^{k}$, 并且$b<0$而$k<1$, 那么方程(\ref{18.2.9})的解是\begin{equation}
+g_{E}=\left[ 1+(1-k)b\,g_{\mu }^{k-1}\ln \frac{E}{\mu }\right]
+^{1/(1-k)}g_{\mu }.  \label{18.3.9}
+\end{equation}%
+如果$g_{\mu }$对于某些$\mu $(例如$m$阶的$\mu $)是小量, 那么仅当能量与这一$\mu $相比是一指数级大数时,
+我们才能看到$g_{E}$的增长. 然而, 在极高的高能极限下, 耦合的增长遵循\begin{equation}
+g_{E}\rightarrow \lbrack (1-k)b\ln E]^{1/(1-k)}\text{ ,}  \label{18.3.10}
+\end{equation}%
+这是一个独立于$g_{\mu }$的极限行为!
+
+\noindent(c) \textbf{有限耦合处的不动点}
+
+接下来, 假定$\beta (g)$对于$%
+0<g<g_{\ast }$保持正定, 但在$g=g_{\ast }$%
+这一点跌落为零, 并且对于$g_{\ast }$之后的值是负的. 那么方程(\ref{18.2.9})表明,
+随着$\mu $的增长, 若$g_{\mu }<g_{\ast }$%
+, $g_{\mu }$会增长, 若$g_{\mu }>g_{\ast }$, $g_{\mu }
+$会降低, 但无论是那一种情况, $g_{\mu }$都会在$\mu \rightarrow \infty $时趋于$g_{\ast }$. 如果$\beta (g)$是$g_{\ast }$%
+这一点是单零点, 那么在这一点的邻域内我们有\begin{equation}
+\beta (g)\rightarrow a(g_{\ast }-g)\text{ \ \  对于 \ \ }%
+g\rightarrow g_{\ast }  \label{18.3.11}
+\end{equation}%
+其中$a>0$. 那么方程(\ref{18.2.9})的解是\begin{equation}
+g_{\ast }-g\propto \mu ^{-a}\text{ .}  \label{18.3.12}
+\end{equation}%
+(前面描述的(b)型行为可以视为不动点$g_{\ast }$在无限远处的特殊情况.) 另外, 我们可以预期任意算符$\mathcal{O}$的$\gamma (g)$在$g_{\ast }$附%
+近的行为是光滑的:%
+\begin{equation}
+\gamma (g)=\gamma (g_{\ast })+c(g_{\ast }-g)+O\left( \left( g_{\ast
+}-g\right) ^{2}\right) \text{ .}  \label{18.3.13}
+\end{equation}%
+(我们在这里扔掉了$\gamma $%
+和$c$上的指标$\mathcal{O}$.) 因此,
+在这一算符(可能还有其它算符)的矩阵元中,
+我们遇到因子(参看方程(\ref{18.2.27}))%
+\begin{equation}
+N_{E}^{-1}\propto \exp \left[ -\int^{E}\gamma (g_{\mu })\frac{\dif\mu }{\mu }%
+\right] \propto E^{-\gamma (g_{\ast })}[1+O(E^{-a})]\text{ .}
+\label{18.3.14}
+\end{equation}%
+因子$E^{-\gamma (g_{\ast })}$的乘积可以与方程(\ref{18.2.23})中的因子$E^{D}$聚集在一起, 有了%
+这一结果, 整个矩阵元就会趋于\begin{equation}
+M_{R}\propto E^{D_{\ast }}\text{ ,}  \label{18.3.15}
+\end{equation}%
+其中的量纲$D_{\ast }$相当于给出现在该矩阵元中的每一算符的实际量纲加上了一个\textquotedblleft 反常量纲\textquotedblright $-\gamma (g_{\ast })$.
+
+\noindent(d) \textbf{渐进自由}
+
+在迄今为止所讨论的例子中, $\beta (g)$对于小的正$g$都是正的, 这使得$g_{\mu }$%
+会随着$\mu $的增长远离$g=0$.
+假定在某个其它理论中, $\beta (g)$对于小的正$g$是负的. 那么\begin{equation}
+\beta (g)\rightarrow -b\,g^{n}\text{ ,}  \label{18.3.16}
+\end{equation}%
+其中$b>0$. 这里的$n$是对$\beta (g)$%
+有贡献的最低阶图的阶数, 因而$n$总是大于1%
+的. (在这里用作例子的理论中, $n=2$.) 这时, 方程(\ref%
+{18.2.9})的解是\begin{equation}
+g_{E}=g_{\mu }\left[ 1+b(n-1)g_{\mu }^{n-1}\ln \frac{E}{\mu }\right]
+^{-1/(n-1)}\text{ .}  \label{18.3.17}
+\end{equation}%
+当$E\rightarrow \infty $时, 它有一个独立于$g_{\mu }$的极限\begin{equation}
+g_{E}\rightarrow \lbrack b(n-1)\ln E]^{-1/(n-1)}\text{ .}  \label{18.3.18}
+\end{equation}%
+既然这在$E\rightarrow \infty $时给出一个为零的$g_{E}$, 只需假定当$g$和$\beta (g)$有相反的符号时, 对于某个有%
+限的$E$, $g_{E}$处在$g=0$附近的区域内. 我们在这一极限下就可以相信微扰论. 不同算符$\mathcal{O}$的方程量纲$\gamma ^{(\mathcal{O})}$预期会%
+有弱耦合行为(扔掉指标$\mathcal{O}$)%
+\begin{equation}
+\gamma (g)\rightarrow c\,g^{m}\text{ ,}  \label{18.3.19}
+\end{equation}%
+其中$m$是对这一算符的重整化有贡献的最低阶图的阶数, 而$c$是既可以为正又可以为负的实数. 那么由这一算符的重整化给矩阵元引入的因子, 它在高能处%
+的渐进行为是\begin{align}
+N_{E}^{-1} &\propto \exp \Bigg[ -\int^{E}\gamma (g_{\mu })\frac{\dif\mu }{%
+\mu }\Bigg]   \nonumber \\
+&\rightarrow \exp \Bigg[ -c\int^{E}[b(n-1)\ln \mu ]^{-m/(n-1)}\frac{\dif\mu
+}{\mu }\Bigg]   \nonumber \\
+&\propto \exp \left[ -\frac{c[b(n-1)]^{-m/(n-1)}}{(1-m/(n-1))}(\ln
+E)^{1-m/(n-1)}\right]   \label{18.3.20}
+\end{align}%
+有一个例外$m=n-1$, 这时,%
+\begin{equation}
+N_{E}^{-1}\propto (\ln E)^{-c/b(n-1)}\text{ .}  \label{18.3.21}
+\end{equation}%
+在渐进自由的情况中,
+我们看到: 若有效量纲决定的是出现在矩阵元渐进行为中的能量幂次, 那么对它就没有修正, 但是这一渐进行为反而被$\ln E$的幂函数修正了.
+
+我们可以用相互作用哈密顿量密度为$-g\phi ^{4}/24$%
+的标量场论作为展现渐进自由的一个玩具模型, 其中的$g$是一个正数. 这时, 方程(\ref{18.3.4})所给出的方程(\ref{18.3.16})的参量%
+是:%
+\begin{equation}
+b=3/16\uppi^{2}\text{ , \ \ \ \ \ }n=2\text{ ,}  \label{18.3.22}
+\end{equation}%
+所以, 方程(\ref{18.3.17})在$E\rightarrow
+\infty $时给出\begin{equation}
+g_{E}\rightarrow \left[ \frac{3\ln E}{16\uppi^{2}}\right] ^{-1}\text{ .}
+\label{18.3.23}
+\end{equation}%
+另外, 算符$\phi ^{2}$在这一理论中的反常量纲由方程(\ref{18.2.29})给出\begin{equation}
+\gamma (g)=-\frac{g}{16\uppi^{2}}+O(g^{2})\text{ .}  \label{18.3.24}
+\end{equation}%
+因此, 方程(\ref{18.3.19})%
+这时会有\begin{equation}
+c=-1/16\uppi^{2}\text{ , \ \ \ \ \ }m=1\text{ .}  \label{18.3.25}
+\end{equation}%
+根据方程(\ref{18.3.21}), 矩阵元中的每个$\phi ^{2}$算符会贡献因子\begin{equation}
+N_{E}^{-1}\propto (\ln E)^{1/3}\text{ .}  \label{18.3.26}
+\end{equation}%
+标量场$\phi $自身在这一理论中有$\gamma (g)\propto g^{2}$, 因而$%
+m=2$, 根据方程(\ref{18.3.20}), 矩阵元中的每个$\phi $算符会贡献因子\begin{equation}
+N_{E}^{-1}\propto 1+O\left( \frac{1}{\ln E}\right) \text{ .}  \label{18.3.27}
+\end{equation}%
+在18.7节研究量子色动力学时, 我们会看到另一个关于渐进自由的更见物理的例子.
+\\
+
+在所有$g_{E}$可以扩展至无限大能量处的例子中, $g_{E}$在这一极限下表现出与重整化耦合$g_{R}$%
+相独立的行为. 然而, 这并不必然意味着这一理论不包含自由的无量纲参量. 在所有这些情形中, 为了描述$g_{E}$%
+在$E\rightarrow \infty $时是如何趋于它的极限的, 我们需要指定一个量纲为能量的自由参量$\lambda $. 对于情况(b), 方程(\ref{18.3.10})可以写%
+成\[
+g_{E}\rightarrow \lbrack (1-k)b\ln (E/\lambda )]^{1/(1-k)}\text{ .}
+\]%
+对于情况(c), 方程(\ref{18.3.12})可以写成\[
+g_{E}\rightarrow g_{\ast }\left[ 1-\left( \frac{\lambda }{E}\right) ^{b}%
+\right] \text{ .}
+\]%
+最后, 对于情况(d), 方程(\ref%
+{18.3.18})可以写成\[
+g_{E}\rightarrow \left[ b(n-1)\ln (E/\lambda )\right] ^{-1/(n-1)}\text{ .}
+\]%
+一般而言, 这样的理论确实拥有自由的无量纲参量: $\lambda $与质量$m$的比值. 像$e_{R}$这样的耦合常数, 它在与$m$相联系的%
+标度处重整化, 因此可以表示为$m/\lambda $的函数.
+仅当一个理论中的所有质量都为零时, 我们才能说这一理论不包含自由的无量纲参量.
+
+在这里所描述的四种渐进行为中, (a)类和(b)类显然给出了不物理的行为, 即跑动耦合$g_{E}$在有限能量处(情况(a))或在$E\rightarrow \infty $时(情况(b))变成了%
+无穷大. 这本身并不意味着灾难: 我们必须要注意耦合是如何定义的. 例如, 如果$g_{\mu }$随着$\mu
+\rightarrow \infty $从$\mu =m$处的有限值$%
+g_{m}$光滑地衰落到零, 我们可以定义一个新耦合$\tilde{g}_{\mu }\equiv g_{\mu }/[1-g_{\mu }/g_{2m}]$, 这%
+样$\tilde{g}_{\mu }$就会在$\mu =2m$处变成无限大, 但是这仅是对该耦合参量进行特殊选择的人工产品. 然而, 无论是在$\phi ^{4}$标量场%
+论中还是在量子电动力学中, 传统的重整化耦合$g_{\mu }$在那里都是以$%
+\mu $阶能量处的矩阵元值定义的. 特别地, $g_{\mu }$在$\phi
+^{4}$标量场论中被定义成标量-标量散射在$s=t=u=\mu ^{2}$%
+处的不变Feynman振幅$A$, 而$A$在那里被认为是解析的. 另外,
+在旋量量子电动力学中, $g_{\mu }=e_{\mu }^{2}$给定为\begin{equation}
+e_{\mu }^{2}/e_{R}^{2}=Z_{3}\Big/N_{\mu }^{(A)2}=\Big[ 1-\pi (\mu ^{2})\Big]
+^{-1}\text{ .}  \label{18.3.28}
+\end{equation}%
+因此, $e_{\mu }^{2}$在某一点$\mu
+_{\infty }$处的无限大会在重整化光子传播子中产生一个极点或者其它奇点, 传播子中奇点处在$%
+p^{2}$的一个正值处, 即$p^{2}=\mu
+_{\infty }^{2}$处, 在这里传播子被认为是解析的. 因此,
+随着$g_{\mu }$定义在这里, (a)%
+中描述的渐进行为也就被物理地排除了.
+
+那么我们的各种量子场论的行为到底是什么样的? 数年前, Landau\cite{4b}认为: 在量子电动力学中,
+每一阶微扰论都会遇到且幂次逐渐上升的因子$\ln (E/M)$在加起来后在$E
+$的有限值处会给出奇点(所谓的\textquotedblleft Landau鬼\textquotedblright ). 用现代观点来看, 可以说Landau发现了上%
+面的可能性(a), 但是他没有给出任何反对情况(b)%
+和(c)的讨论.
+
+然而, 现今普遍接受的观点是, 不是渐进自由的相互作用量子场论,
+例如量子电动力学或者相互作用为$\phi ^{4}$的标量场论, 这样的理论在数学上是不自洽的. 在量子电动力学中, 存在一些反对情况(c)的证据,
+即反对存在有限的不动点$e_{\ast }$的证据. 如果第20章将要讨论的算符积展开的定性性质被非微扰效应改变了, 或者第22章将要讨论的三%
+角反常有了非微扰重整化, 那么这样的不动点才是可能的.\cite{4c} 但是, 即使情况(c)真的在量子电动力学中被排除了, 在无限大耦合处有不动点的情况(b)仍然是可能%
+的.
+
+相互作用非渐进自由的量子场论不自洽的大部分证据来源于对一个特殊标量场论的研究, 即4维中相互作用为$\phi ^{4}$的标量场在有限时空晶格上量子化的%
+理论. 有一些严格的定理\cite{4d}表明, 除非该理论是渐进自由的, 否则, 在晶格间距趋于零的极限下, 这一理论(该理论的参量对晶格间距的依赖性是任意的)的极限不可能是有相互作用的连续理论,
+显然这与微扰论中所发现的截然相反. 这一讨论同时看起来也不是决定性的. 如果有一个非渐进自由的自洽连续标量场论, 那么通过积掉一个时空晶格%
+以外的所有点上的标量场, 我们确实有可能构建一个晶格理论. %
+{\kai{但这个理论不会是那些定理中所考察的理论.}} 它将拥有对称性允许的所有相互作用------不仅仅是正比于$\phi ^{4}$%
+的项, 也会有正比于$\phi ^{6}$%
+, $\phi ^{3}\square \phi $等的项, 而这些项的系数会与截断(晶格间距的倒数)相关, 它们之间的相关性将由12.4%
+节讨论的Wilson重整化群方程给出, 关于这种理论的连续极限还没有人证明过任何事情.
+
+如果在零晶格间距极限下真的不存在有相互作用的连续标量场论, 那么当我们试图解Wilson重整化群方程时必会遇到一些障碍, 在%
+非常小的晶格间距处对于弱的重整化耦合则必然是这样. 这样的理论除非在非常小的间距处被检验过, 否则它会像相互作用标量场论那样出现. 在这一近似连续场论中, 可以推测重%
+整化耦合常数在有限能量处会有奇点, 就像情况(a)一样, 这使得它在小间距处也崩溃掉了. (%
+但对于强耦合, Wilson重整化群方程与Gell-Mann--Low重整化群方程在形式上没有直接联系, 所以裸耦合在有限晶格间距处有一个奇点并不一定%
+暗示了重整化耦合在有限重整化标度处存在奇点.)
+
+这类理论有时被称为是{\kai{平庸的}}, 这样称呼它有时是因为, 对于在晶格上量子化的理论,
+在对它的裸耦合附加几个假定条件后, 它的连续极限表现为自由场论, 有时是因为, 使得(a)类连续理论在所有能量处都符合物理要求的唯一方法是将重整%
+化群方程(\ref{18.2.9})的解取为$g_{\mu }=0$. 即使一个场论在这两种意义下都是平庸的, 也没有任何理由排除它是物理现象%
+的实际理论的某个部分. 对于晶格间距很小的一个理论, 如果真实世界中在间距变得这样小时存在必须要考虑在内的其它场, 那么解该理论的重整化群%
+方程存在障碍就是不重要的. 类似地, 一个给定的理论即使在某个很大的能量$E_{\infty }$处有不物理的奇点, 如果这个理论在问题中只是一%
+个更大理论的低能近似, 一个只在能量远低于$E_{\infty }$时才成立的近似, 那么上述问题就不是一个物理问题. 特别地,
+远在我们接近能量(\ref{18.3.8}%
+)之前, 即量子电动力学的行为预期会变得奇异的能量值处, 那怕是引力也必须要考虑在内, 但没有人知道如何计算这种能量下的强引力效应.
+
+尽管这些论述让人安心, 但为了避免非物理的奇点, 存在这样的可能性: 我们所有分立的量子场论, 例如旋量量子电动力学, 到最后都必须要被整合进一个渐进自由的理论中. 幸运的是, 对于耦合常数的{\kai{某个}}有限范围, 一个理论是否渐进自由可以被微扰计算确定: 如果$\beta(g)$在$g\rightarrow 0_{+}$是负的, 那么对于所有在零和$\beta(g)$的第一个零点之间的重整化耦合常数$g_{\mu}$, 该理论是渐进自由的.
+
+\subsection{* * *}
+
+在这里有一件值得注意的事: 尽管$\beta (g)$的详尽形式依赖于规范并精确依赖于跑动耦合的定义方式, 但是$\beta (g)$幂%
+级数的前两项却与它们无关. 假定我们有两种跑动耦合常数的定义方式$g_{\mu }$和$\tilde{g}_{\mu }$, 它们有可能采用的重整化标度$\mu$的不同定义, 也有可能采用了不同规范. 既然$g_{\mu }$和$\tilde{g}_{\mu }$都是无量%
+纲的且与截断无关, 那么当$\mu \gg m$时, $\tilde{g}_{\mu }$只可能依赖于$g_{\mu }$:%
+\[
+\tilde{g}_{\mu }=\tilde{g}(g_{\mu })\text{ .}
+\]%
+那么我们就有\[
+\tilde{\beta}(\tilde{g}_{\mu })\equiv \mu \frac{\dif}{\dif\mu }\tilde{g}%
+_{\mu }=\frac{\dif\tilde{g}(g_{\mu })}{\dif g_{\mu }}\beta (g_{\mu })
+\]%
+因此\begin{equation}
+\tilde{\beta}(\tilde{g})=\frac{\dif\tilde{g}(g)}{\dif g}\beta (g)\text{ .}
+\label{18.3.29}
+\end{equation}%
+只要我们坚持非重整化耦合的定义是相同的, 那么所有的重整化耦合在最低阶是相等的, 所以, 将$\tilde{g}$表示成$g$%
+的幂级数, 它可以写成\[
+\tilde{g}(g)=g+a\,g^{2}+O(g^{3})
+\]%
+或者, 等价的\[
+g=\tilde{g}-a\,\tilde{g}^{2}+O(\tilde{g}^{3})\text{ .}
+\]%
+导数是\[
+\frac{\dif\tilde{g}}{\dif g}=1+2\,a\,g+O(g^{2})=1+2\,a\,\tilde{g}+O(\tilde{g}^{2})%
+\text{ .}
+\]%
+另外, 对于我们在这里已经考虑过的耦合(包括$g=e^{2}$), $\beta (g)$的幂级数应该采取形式\[
+\beta (g)=b\,g^{2}+b^{\prime }\,g^{3}+O(g^{4})
+\]%
+或者, 以$\tilde{g}$的形式\[
+\beta (\tilde{g})=b\tilde{g}^{2}+(b^{\prime }-2ab)\tilde{g}^{3}+O(\tilde{g}%
+^{4})\text{ .}
+\]%
+那么, 从方程(\ref{18.3.29})中我们就有\begin{align}
+\tilde{\beta}(\tilde{g}) &=\Big[ 1+2a\tilde{g}+O(\tilde{g}^{2})\Big]\, %
+\Big[ b\tilde{g}^{2}+(b^{\prime }-2ab)\tilde{g}^{3}+O(\tilde{g}^{4})\Big]
+\nonumber \\
+&=b\tilde{g}^{2}+b^{\prime }\tilde{g}^{3}+O(\tilde{g}^{4})\text{ .}
+\label{18.3.30}
+\end{align}
+我们看到, 在$\tilde{\beta}$的$\tilde{g}$%
+幂级数展开中和$\beta $的$g$%
+幂级数展开中, 前两项的系数是相同的. 然而,
+对于高阶项却绝不是这种情况. 事实上, 我们总可以选择函数$\tilde{g}(g)$%
+使得$\tilde{\beta}(\tilde{g})$中所有比$%
+\tilde{g}$的三阶项更高的高阶项全部为零, 所以, 通过观察$\beta (g)$微扰展开中的前两项, 我们就可以描述$\tilde{g}_{E}$在$E\rightarrow \infty $时的%
+渐进行为. 但是它的意义并不大, 这是因为为了确定$g$如何依赖于$%
+\tilde{g}$, 我们需要计算至所有阶, 并且如果没有这些信息, 我们就不能用$%
+\tilde{g}$的渐进行为讨论$g$的渐进行为, 或是物理量的渐进行为.
+
+给出方程(\ref{18.3.30})的讨论同时表明, {\kai{在耦合很小时}}, 晶格间距远大于粒子质量的Wilson重整化群方程与重整化标度%
+远大于粒子质量的Gell-Mann---Low重整化群方程是相同的, 其中前者是关于裸耦合的方程, 而裸耦合是晶格间距的函数, 后者是关于重整化%
+耦合的方程, 而重整化耦合是重整化标度的函数. 因此, 如果一个连续理论是渐进自由的,
+那么在过渡到在晶格上量子化的该理论的连续极限中不存在障碍.
+
+\section{多耦合与质量效应}
+
+直到现在, 我们所考察的理论中只有一个无量纲参数$g$. 很容易将这一形式体系拓广使其包含多个这样的耦合$%
+g^{\ell }$: 对于每个$g^{\ell }$, 我们都有一个重整化群方程, 这一方程在$\mu \gg m$时的形式为\begin{equation}
+\mu \frac{\dif}{\dif\mu }g^{\ell }(\mu )=\beta ^{\ell }(g(\mu ))\text{ ,}
+\label{18.4.1}
+\end{equation}%
+其中的每个$\beta ^{\ell }$一般会依赖所有的$g$. 现在,
+在$\mu \rightarrow \infty $时$g^{\ell }(\mu )$的渐进行为有更多的可能性; 在一给定理论的$g$-%
+空间中, 有些轨道会在$%
+\mu $的有限值或无限值处趋于无穷, 有些轨道会趋于不动点, 还有些轨道会趋于被称为\textquotedblleft
+极限环(limit cycles)\textquotedblright 的闭合曲线. 为了领略其中的一些性质, 我们来考察$g^{\ell }(\mu )$在不动点附近%
+的行为.
+
+如果\begin{equation}
+\beta ^{\ell }(g_{\ast })=0\text{ ,}  \label{18.4.2}
+\end{equation}%
+那么方程(\ref{18.4.1})有不动点解$g^{\ell }(\mu )=g_{\ast }^{\ell }$. 在这一点的邻域, 方程(\ref{18.4.1})变%
+成\begin{equation}
+\mu \frac{\dif}{\dif\mu }\left[ g^{\ell }(\mu )-g_{\ast }^{\ell }\right]
+=\sum_{k}M^{\ell }{}_{\!k}\left[ g^{k}(\mu )-g_{\ast }^{k}\right] \text{ ,}
+\label{18.4.3}
+\end{equation}%
+其中$M$是矩阵\begin{equation}
+M^{\ell }{}_{\!k}\equiv \left[ \frac{\partial \beta ^{\ell }(g)}{\partial g^{k}%
+}\right] _{g=g_{\ast }}\text{ .}  \label{18.4.4}
+\end{equation}%
+方程的解可以用该矩阵的本征矢量展开\begin{equation}
+g^{\ell }(\mu )=g_{\ast }^{\ell }+\sum_{m}c_{m}\,V_{m}{}^{\!\ell }\,\mu ^{\lambda
+_{m}}\text{ ,}  \label{18.4.5}
+\end{equation}%
+其中$V_{m}$是$M$本征值为$\lambda
+_{m}$的本征矢量(按任何方便的方式归一化):%
+\begin{equation}
+\sum_{k}M^{\ell }{}_{\!k}\,V_{m}{}^{\!k}=\lambda _{m}\,V_{m}{}^{\!\ell }\text{ ,}
+\label{18.4.6}
+\end{equation}%
+$c_{m}$则是一组展开系数.%
+\footnote{我们在这里假定$V_{m}$%
+构成完备基. 虽然不总是这种情况, 但这是一种普遍情况; 对于有限维矩阵$M$, 如果久期方程$\operatorname{Det}(M-\lambda 1)=0$的所有根都不%
+相同, 那么$M$的本征矢构成完备基. 如果本征矢没有构成完备基, 那么这个矩阵可以视为本征矢构成完备基的矩阵的某些本征值变成简并的极限情况.} (本节%
+不使用求和约定.)
+
+方程(\ref{18.4.5})表明, 当且仅当所有$\lambda _{m}>0$的本征矢的$c_{m}=0$时, 耦合常数才会在$\mu \rightarrow \infty $时趋于不动%
+点. (简单起见, 我们在这里假定所有本征值均不为零.) 因此, 若$M$的负本征值个数为$N_{-}$, 那么与不动点相连的轨道一般会处在一个$N_{-}$维%
+的面上; 与这个面在$g_{\ast }$%
+点相切的是本征值为负的本征矢. 不在这个面上的轨道可以靠近不动点, 但最终将远离它, 而这些轨道主要朝向正本征值最大的本征矢的方向上. 当然, 如果%
+所有的本征值是负的,
+那么在不动点附加就会有一个小区域, 使得在这个区域内的所有轨道都收敛到这个点上.
+
+在考察趋于不动点的轨道的渐进行为时, 由于本征值$\lambda _{m}$是非常重要的, 注意到这些本征值实质上独立于耦合的定义是非常有用%
+的.  假使我们引入一组新耦合$\tilde{g}^{\ell }$, 定义为$g$%
+的函数. 它们满足重整化群方程\[
+\mu \frac{\dif}{\dif\mu }\tilde{g}^{\ell }(\mu )=\sum_{m}\left. \frac{%
+\partial \tilde{g}^{\ell }(g)}{\partial g^{m}}\right\vert _{g=g(\mu
+)}\beta ^{m}(g(\mu ))\equiv \tilde{\beta}^{\ell }(\tilde{g}(\mu ))\text{ ,}
+\]%
+所以\begin{equation}
+\tilde{\beta}^{\ell }(\tilde{g})=\sum_{m}\frac{\partial \tilde{g}^{\ell }(g)%
+}{\partial \,g^{m}}\beta ^{m}(g)\text{ .}  \label{18.4.7}
+\end{equation}%
+(即, $\beta $像耦合常数空间中的矢量那样进行变换.) 对其微分, 我们有\[
+\sum_{m}\frac{\partial \tilde{g}^{\ell }(g)}{\partial \tilde{g}^{m}}\frac{\partial
+\tilde{g}^{m}}{\partial g^{k}}=\sum_{m}\frac{\partial ^{2}\tilde{g}%
+^{\ell }}{\partial g^{m}\partial g^{k}}\beta ^{m}(g)+\sum_{m}\frac{%
+\partial \tilde{g}^{\ell }}{\partial g^{m}}\frac{\partial \beta ^{m}(g)}{%
+\partial \,g^{k}}\text{ .}
+\]%
+在不动点$g_{\ast }$, 右边第一项为零, 所以这给出矩阵方程\begin{equation}
+\tilde{M}\,S=S\,M\text{ ,}  \label{18.4.8}
+\end{equation}%
+其中\begin{align}
+\tilde{M}^{\ell }{}_{\!k} &\equiv \left[ \frac{\partial \tilde{\beta}^{\ell }%
+}{\partial \tilde{g}^{k}}\right] _{\tilde{g}=\tilde{g}(g_{\ast })}\text{ ,}
+\label{18.4.9} \\
+S^{\ell }{}_{\!k} &\equiv \Bigg[ \frac{\partial \tilde{g}^{\ell }}{\partial
+g^{k}}\Bigg] _{g=g_{\ast }}\text{ .}  \label{18.4.10}
+\end{align}%
+只要变换$g\rightarrow \tilde{g}$是非奇异的, 方程(\ref{18.4.8})就是一个相似变换, 因此$M$和$\tilde{M}$就会有相同的本征%
+值$\lambda _{m}$.%
+
+和可重整理论一样, 重整化群形式理论也可以扩展至不可重整理论. 正如在12.3节中所解释的那样, 就像可重整理论那样, 不可重整理论中的无限大可以通%
+过对耦合常数和质量合适的重整化被消除掉; 唯一的不同是, 在不可重整理论中, 拉格朗日量必须要包含该理论对称性所允许的所有可能的相互作用. 如%
+果$g_{B}^{\ell }$是拉格朗日量中与量纲为$D_{\ell }$的算符(%
+即, 场与场的时空导数的乘积, 且它的量纲按质量或能量的幂次计是$D_{\ell }$)相乘的未重整耦合常数, 那么$g_{B}^{\ell }$的量%
+纲则是$\Delta _{\ell }=4-D_{\ell }$. 这样,
+我们可以用一组{\kai{无量纲}}的耦合$g^{\ell }(\mu )$和一个截断$\Lambda $重新表示这个裸耦合, 它们之间关%
+系的一般形式为\begin{equation}
+g_{B}^{\ell }\equiv \mu ^{\Delta _{\ell }}\left[ g^{\ell }(\mu
+)+\sum_{k,m}b^{\ell }{}_{\!km}g^{k}(\mu )g^{m}(\mu )\ln \left( \frac{\Lambda }{%
+\mu }\right) +O(g(\mu )^{3})\right] \text{ ,}  \label{18.4.11}
+\end{equation}%
+其中$b^{\ell }{}_{\!km}$是无量纲的数值系数, 在高阶项中有类似的系数, 对它们的选择要抵消掉物理量的截断相关性. (在某些理论中, 领头项可能%
+是耦合的三线性项甚至还要更高; 这时所需要的修正是显然的.) 从$%
+g_{B}$与截断无关这个要求中, 我们可以获得重整化群方程, 其中\begin{equation}
+\beta ^{\ell }(g)=-\Delta _{\ell }g^{\ell }-\sum_{k,m}b^{\ell
+}{}_{\!km}g^{k}g^{m}+O(g^{3})\text{ .}  \label{18.4.12}
+\end{equation}%
+不可重整的相互作用是那些$D_{\ell }>4$或$\Delta _{\ell }<0$的相互作用, 所以只有所有的$g^{\ell }$都保持足够小,
+我们可以预期对于不可重整耦合将有正的$%
+\beta ^{\ell }$, 因此它们会随着$%
+\mu $增长, 但是当耦合变得足够大以至于微扰论无效时, 没有人知道这时会发生什么.%
+
+然而, 正如我们将要在下一节所解释的那样,
+即使是有无限多个独立参量的理论, 在矩阵(%
+\ref{18.4.6})的负本征值个数$N_{\_}$%
+{\kai{有限}}的地方, 它通常会有不动点$g_{\ast }$, 就好像它在零耦合处. (特别地,
+通常的情况是$N_{-}=1$.) 当$%
+N_{-}\neq 0$时, 不动点处在一个$N_{-}$维的曲面上, 这一曲面由$\mu \rightarrow \infty $时与这%
+一不动点相连的轨道组成. 若一个不可重整理论的耦合参量处在这样的临界曲面上, 尽管不一定是渐进自由的, 但由于重整化耦合对于比较大的$\mu $值保%
+持有限, 它被称作渐进{\kai{安全}}的.\cite{5} 在这种理论中, 渐进安全的条件将起到联系可重整性原理的作用, 即, 除了有%
+限个自由参量外, 所有参量都被消除掉了, 而那有限个参量即是临界面的坐标.
+
+在可重整理论中, 通过调整{\kai{有限}}个裸耦合的截断相关性, 我们可以使得所有的物理量独立于截断. 这些裸耦合可以表示成相同数目个与$\mu $相关的重整%
+化耦合, 而裸耦合与$\mu $%
+无关这个条件会给出仅与这些重整化耦合相关的重整化群方程.
+从一个广泛的观点来看, 假定我们既允许可重整耦合又允许不可重整耦合, 那么对于所有可重整理论和不可重整理论所构成的无限维空间而言, 一个可%
+重整理论就对应于其中一个有限维的{\kai{不变曲面}}; 即, 该曲面上任意一点$g$的$\beta ^{\ell }(g)$%
+与该曲面相切于这一点.
+
+迄今为止, 我们在这一节默认假定$\mu \gg m$, 这使得我们可以忽略$\beta ^{\ell }$对$%
+m/\mu $的依赖性. 然而, 这不是必须的; 只要我们愿意, 我们就可以把质量当成另一个耦合参量进行处理.\cite{6} 即, 像之前%
+一样, 所有的重整化耦合都可以用$\mu $阶不在壳动量处的Green函数定义, 只不过这时Green函数中的裸质量取零值. Dirac场$\psi
+$或标量场$\phi $的无量纲参量可以定义为\begin{align}
+m_{\psi }(\mu ) &\equiv N^{(\bar{\psi}\psi )}(\Lambda /\mu )^{-1}\,m_{\psi ,%
+\mathrm{BARE}}(\Lambda )/\mu \text{ ,}  \label{18.4.13} \\
+m_{\phi }^{2}(\mu ) &\equiv N^{(\phi ^{2})}(\Lambda /\mu )^{-1}\,m_{\phi ,%
+\mathrm{BARE}}^{2}(\Lambda )/\mu ^{2}\text{ ,}  \label{18.4.14}
+\end{align}%
+其中$N^{(\mathcal{O})}(\Lambda /\mu )$是无量纲参量, 当其被乘进相应算符$\mathcal{O}$的矩阵元中%
+时, 它会抵消掉这些算符矩阵元中的无限大, 并且在计算它时裸质量也取零(参看18.1节.)
+这些新的重整化耦合和重整化质量没有直接的物理含义, 但是真实的物理质量以及所有的物理矩阵元都可以表示成它们. 这些矩阵元所采取的形式为,
+在裸质量为零的矩阵元中插入了任意个重整化质量算符$N^{(\phi ^{2})}\phi ^{2}$和$N^{(\bar{%
+\psi}\psi )}\bar{\psi}\psi $, 然后乘以相应的重整化质量参量, 最后求和.
+
+在这一重整化方案中,
+各种耦合的$\beta $-函数显然与质量无关, 并且质量参量的$\beta $-函数正比于这些参量, 其中的系数则依赖于所有耦合;
+利用方程(\ref{18.2.25}), 我们有
+\begin{align}
+\mu \frac{\dif}{\dif\mu }m_{\psi }(\mu ) &=[-1-\gamma _{\bar{\psi}\psi
+}(g_{\mu })]\,m_{\psi }(\mu )\text{ ,}  \label{18.4.15} \\
+\mu \frac{\dif}{\dif\mu }m_{\phi }^{2}(\mu ) &=[-2-\gamma _{\phi
+^{2}}(g_{\mu })]\,m_{\phi }^{2}(\mu )\text{ .}  \label{18.4.16}
+\end{align}%
+例如, 我们在18.2节注意到, 在拉格朗日量为(\ref%
+{18.1.2})的标量场论中, 质量算符$\phi ^{2}$在$m=0$时有反常量纲(\ref{18.2.29}), 所以这里有\begin{equation}
+\mu \frac{\dif}{\dif\mu }m_{\phi }^{2}(\mu )=\left[ -2+\frac{g_{\mu }}{16%
+\uppi^{2}}+O(g_{\mu }^{2})\right]\, m_{\phi }^{2}(\mu )\text{ .}
+\label{18.4.17}
+\end{equation}
+另外, 方程(\textcolor{red}{11.4.3})表明, 对电子传播子的高阶修正相当于将电子质量替换成$m_{e}-\Sigma ^{\ast }(p,m_{e})$, 所以对%
+于算符$\bar{\psi}_{e}\psi _{e}$在4-动量为$p^{\mu }$的单电子态之间的矩阵元而言, 这个修正的效果就是给它们%
+乘以因子\[
+F(p)=1-\left( \frac{\partial \Sigma ^{\ast }(p,m_{e})}{\partial m_{e}}%
+\right) _{m_{e}=0}\text{ .}
+\]%
+因此, 算符$\bar{\psi}_{e}\psi _{e}$的重整化常数$N^{\bar{\psi}\psi }$就等于$F^{-1}(p)$, 且它所在的$p$点满%
+足$p^{2}$等于某个重整化标度, 例如$+\mu ^{2}$. 根据方程(\textcolor{red}{11.4.8}), 到一圈阶, 这是\begin{align}
+N^{(\bar{\psi}\psi )} &=1+\left( \frac{\partial \Sigma _{1\text{ loop}%
+}^{\ast }(p,m_{e})}{\partial m_{e}}\right) _{m_{e}=0\text{, }p^{2}=\mu ^{2}}
+\nonumber \\
+&=1-\frac{4\uppi^{2}}{(2\uppi)^{4}}\int_{0}^{1}\dif x\ln \left[ 1+\left(
+\frac{\Lambda ^{2}}{\mu ^{2}}\right) (1-x)\right]   \nonumber \\
+&\rightarrow 1-\frac{e^{2}}{4\uppi^{2}}\left[ \ln \left( \frac{\Lambda ^{2}%
+}{\mu ^{2}}\right) -1\right] \text{ ,}  \label{18.4.18}
+\end{align}%
+其中$\Lambda $是紫外截断,\footnote{%
+这里记号与方程(\textcolor{red}{11.4.8})的记号不同, 在那里紫外截断记成了$\mu $.} 并且我们取了$\Lambda \gg \mu $的极限. 因此%
+, 方程(\ref{18.2.25})所给出的算符$\bar{\psi}_{e}\psi _{e}$的反常量纲是\begin{equation}
+\gamma ^{(\bar{\psi}\psi )}=\mu \frac{\dif}{\dif\mu }\ln N^{(\bar{\psi}\psi
+)}=\frac{e_{\mu }^{2}}{2\uppi ^{2}}+O(e_{\mu }^{4})\text{ ,}  \label{18.4.19}
+\end{equation}%
+所以, 方程(\ref{18.4.15})在这里变成\begin{equation}
+\mu \frac{\dif}{\dif\mu }m_{e}(\mu )=\left[ -1-\frac{e_{\mu }^{2}}{2\uppi^{2}%
+}+O(e_{\mu }^{4})\right] m_{e}(\mu )\text{ .}  \label{18.4.20}
+\end{equation}%
+对于一般的规范理论有相同的公式, 只不过这时$e^{2}$要换成所考察问题中特定种类费米子的$\sum_{\alpha }(t_{\alpha })^{2}$.
+
+与理论的其它重整化参量相比, $m(\mu )$与它们的重要差别显然是裸质量的量纲为正, 所以, 只要耦合保持一个很小的值, $m(\mu )$在量级上总是%
+减少的. 如果$m(\mu )$确实在$%
+\mu \rightarrow \infty $时为零, 那么我们之前假定质量在$\mu
+\rightarrow \infty $时可以忽略掉就是合理的. 然而, 唯一已知的是, 在渐进自由理论中才是这种情况, 在这种理论中所有耦合%
+在$\mu \rightarrow \infty $时会保持一个很小的值; 在所有其它情况中, 这一假定只是有根据的推测.
+
+
+
+\section[临界现象]{临界现象\footnote{本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过.}}
+
+对于某些情况, 我们感兴趣的可能是能量或波数非常低的极限而不是非常高的极限. 我们可以重复18.2节的讨论来研究这一极限, 不过这里我们必须检查$\mu
+\rightarrow 0$的情况而不是$\mu
+\rightarrow \infty $的情况. 如果这一理论中没有质量, 例如在手征变换$\psi \rightarrow \gamma
+_{5}\psi $下有对称性的量子电动力学, 这个手征变换的对称性会禁止电子的质量, 那么这时这一极限显然是最简单的. 在这一特殊情况下,
+对于足够小的耦合, 唯一的可重整耦合$eA^{\mu }\bar{\psi}%
+\gamma _{\mu }\psi $以及所有的不可重整耦合都有$\beta ^{\ell }>0$, 所以, 至少在原点附近的一个有%
+限区域内, 所有的轨道在$\mu \rightarrow 0$时趋于点$g^{\ell }=0$.
+
+即使对于质量不为零的理论, 若理论中的质量非常小并且我们将这些质量计入理论的耦合参量中, 就像上一节所描述的那样, 那么同样可以对这一理论%
+进行相同的讨论. 方程(%
+\ref{18.4.12})中的系数$\Delta $对于质量参量是正的, 所以这一情况下的轨道无法达到$g=0$这一点, 但是,
+如果质量非常小, 它们可能会闭合.
+
+当然, 即便我们可以认为某些自由度质量为零或者非常小, 例如电子场, 但是在真实世界中存在着许多质量不小的自由度. 重整化群的正确运用针对的不%
+是包含所有重自由度的真实理论, 而是``有效理论'', 在这种理论中, 明显出现的仅是无质量或者近无质量的自由度, 以及将重粒子内线的效应包含在内的相互作用. (在第19%
+章, 我们会对有效场论进行进一步讨论.)
+
+
+在临界现象的研究中,
+例如对二阶相变(一种光滑的相变, 没有潜热)点或其附近的长程关联的研究,
+这时低波数极限是尤其有趣的. 因为我们感兴趣的是$\mu \rightarrow 0$的极限,
+矩阵(\ref{18.4.4})的本征矢中重要的是那些本征值$%
+\lambda <0$的本征矢, 它们被称为{\kai{相关的}}. 而本征值$\lambda =0$和$%
+\lambda >0$的本征矢分别被称作{\kai{临界的}}和{\kai{不相关的}}.
+
+假定存在一个非平庸的固定点$g_{\ast }$, 且它的本征值中只有一个为负,
+记为$\lambda _{0}$, 该本征值可能近似对应于一个质量算符. 这样, 与这一固定点相连的轨道集$g^{\ell
+}(\mu )$在$\mu \rightarrow 0$时会构成余维数为1的临界面; 即, 由耦合上的一个条件所定义的曲面, 该条件是:
+当$g\rightarrow g_{\ast }$时, 切线$g^{\ell }-g_{\ast
+}^{\ell }$在本征值为负的本征矢方向上没有分量.
+当耦合在任一标度上的物理值趋于这一曲面时, 就会有相变. 由于临界面的余维数为1, 通过调整耦合所依赖的任何一个参量, 例如压强或温度, 我们就可以%
+达到相变. 有一大类物质确实拥有这样的相变, 正如上一节已经讨论过的, 这一事实表明对于只有一个本征值为负的矩阵(\ref{18.4.4}), 遇到%
+不动点是非常普遍的.
+
+确切些, 当温度$T$趋于它的临界值$T_{c}$时, 我们期望方程(\ref{18.4.5})中增长项的系数$c_{0}$正比于$T-T_{c}$, 这%
+是因为没有什么原因使它奇异或使它趋于零的速度更快. 因此, 对于$\mu \rightarrow
+0$以及随之的$T\rightarrow T_{c}$, 耦合趋于
+\begin{equation}
+g^{\ell }(\mu )\rightarrow (T-T_{c})V_{0}{}^{\ell }\mu ^{\lambda _{0}}\text{
+,}  \label{18.5.1}
+\end{equation}%
+其中$\lambda _{0}$是$g_{\ast }$处唯一为负的本征值, 而$V_{0}{}^{\ell }$是相应的本征矢.\footnote{对耦%
+合的其它贡献将趋于$%
+(T-T_{0})^{0}\mu ^{\lambda _{1}}$, 其中$\lambda _{1}>0$. 因此, 若假定$T-T_{0}$趋于零的%
+速度没有$\mu ^{\lambda _{1}-\lambda _{0}}$那么快, 方程(\ref{18.5.1})在这里就是成立的.} 对波数而%
+非能量应用我们的重整化群讨论, 在一个小的特征波数标度$\kappa $处, $N$-点函数(有效作用量对场$\phi $的$N$阶导数, 其中$%
+\phi $的量纲是$[$波数$]^{D_{\phi }}$)%
+采取形式\footnote{函数$F_{N}$也依赖于无量纲角和波数比值. 注意到, 由于$\delta
+^{d}(\sum \kappa )\Gamma $必须是无量纲的, 所以$\Gamma _{N}$有一个\textquotedblleft 天然\textquotedblright 的量纲%
+$d-ND_{\phi }$.}%
+\begin{equation}
+\Gamma _{N}(\kappa )\rightarrow \kappa ^{d-N(D_{\phi }+\gamma _{\phi
+}(g_{\ast }))}F_{N}((T-T_{c})\kappa ^{\lambda _{0}})\text{ ,}  \label{18.5.2}
+\end{equation}%
+其中$\gamma _{\phi }(g)$是场$\phi $的反常量纲, 而$d$是时空维数, 或者是经典统计力学中的空间维数. 将其改%
+写成如下的等价形式将是方便的\begin{equation}
+\Gamma _{N}(\kappa )\rightarrow (T-T_{c})^{-[d-N(D_{\phi }+\gamma _{\phi
+}(g_{\ast }))]/\lambda _{0}}G_{N}(\kappa (T-T_{0})^{1/\lambda _{0}})\text{ .}
+\label{18.5.3}
+\end{equation}%
+这说明了一件事: 当$T$在$T_{c}$附近时, 随着$T$的增长, 关联长度$\xi $的增长方式为\begin{equation}
+\xi \propto (T-T_{c})^{-\nu }\text{ ,}  \label{18.5.4}
+\end{equation}%
+其中$\nu $习惯上定义成正``临界指数'', 由方程(\ref{18.5.3})给定,%
+\begin{equation}
+\nu =-1/\lambda _{0}\text{ .}  \label{18.5.5}
+\end{equation}%
+另外, 由于零场有效作用量$\Gamma _{0}$(或者统计力学中的自由能)对应没有外线的图, 它必须与$%
+\kappa $无关. 由此得出, 在$%
+T\rightarrow T_{c}$时, 方程(\ref{18.5.3})在这里变成:%
+\begin{equation}
+\Gamma _{0}-F_{0}\propto (T-T_{c})^{\nu d}\text{ ,}  \label{18.5.6}
+\end{equation}%
+其中常数$F_{0}$是积掉重自由度给出的有效作用量或自由能. 因此, 在$T\rightarrow T_{c}$时, 自由能中对温度不解析的那部分也由$\nu
+$控制.
+
+在1972年, Wilson和Fisher\cite{7}用$d-4$的幂级数展开证明了单个标量场的理论满足上面的描述, 并且他们还进行了临界指数的近似计%
+算, 例如$\nu $的计算. 考察只有一个\textquotedblleft 轻\textquotedblright
+自由度的理论, 即单个标量场$\phi $的理论, 例如铁磁体中的磁化强度,
+并且该理论含有$\phi \rightarrow
+-\phi $下的对称性, 这排除了$\phi $的奇次相互作用.
+除了\textquotedblleft 质量\textquotedblright 项$-g_{2}\phi ^{2}/2$外, 有效场论的拉%
+格朗日密度还会有相互作用$-g_{4}\phi ^{4}/4!$, $-g_{6}\phi ^{6}/6!$等.
+场$\phi $的量纲按波数的幂次计是$(d-2)/2$(这使得$\int \dif%
+^{d}x\, (\bm{\nabla} \phi )^{2}$是无量纲的), 所以耦合$g_{2}$, $g_{4}$等的量纲在$d$维中是$+2$, $4-d$, $6-2d$, 等等.
+对于三维中零耦合处的不动点, 存在两个相关耦合, $g_{2}$和$g_{4}$, 但是非平庸不动点处的相互作用改变了这一结论.
+我们在仅$g_{2}$和$g_{4}$非零的耦合常数空间中检查这一曲面, 并要求$g_{4}$%
+取一个很小的值.\footnote{在$%
+3\leq d\leq 4$时, 它们是唯一的可重整耦合, 所以, 对于这样的$d$, 这是一个不变曲面. 注意到, 我们并没有将$(\bm{\nabla} \phi )^{2}$的系数纳入%
+到耦合中, 这是因为, 按照7.7节所描述的观点看, 这是一个冗余耦合.}
+方程(\ref{18.2.12})对于$d=4$给出$\beta
+(g_{4})=3g_{4}^{2}/16\uppi^{2}+O(g_{4}^{3})$, 而方程(\ref%
+{18.4.12})告诉我们, 对于$d=4-\epsilon $%
+维, 我们还必须增加一项$-\epsilon g_{4}$, 所以\begin{equation}
+\mu \frac{\dif}{\dif\mu }g_{4}(\mu )=-\epsilon\, g_{4}(\mu )+\frac{%
+3g_{4}^{2}(\mu )}{16\uppi^{2}}+O(g_{4}^{3}(\mu ))\text{ .}  \label{18.5.7}
+\end{equation}%
+另外, 方程(\ref{18.4.17})给出\begin{equation}
+\mu \frac{\dif}{\dif\mu }g_{2}(\mu )=\left[ -2+\frac{g_{4}(\mu )}{16\uppi^{2}%
+}+O(g_{4}^{2}(\mu ))\right] g_{2}(\mu )\text{ .}  \label{18.5.8}
+\end{equation}%
+因此, 对于较小的$\epsilon $存在不动点\begin{equation}
+g_{4\ast }=\frac{16\uppi^{2}\epsilon }{3}\text{ , \ \ \ \ \ }g_{2\ast }=0%
+\text{ .}  \label{18.5.9}
+\end{equation}%
+矩阵(\ref{18.4.4})处在这一不动点时是对角的, 它的本征值是\begin{equation}
+\lambda _{4}=M^{4}{}_{\!4}=-\epsilon +\frac{3g_{4\ast }}{8\uppi^{2}}%
++O(g_{4\ast }^{2})=+\epsilon +O(\epsilon ^{2})\text{ ,}  \label{18.5.10}
+\end{equation}%
+\begin{equation}
+\lambda _{2}=M^{2}{}_{\!2}=-2+\frac{g_{4\ast }}{16\uppi^{2}}+O(g_{4\ast
+}^{2})=-2+\frac{\epsilon }{3}+O(\epsilon ^{2})\text{ .}  \label{18.5.11}
+\end{equation}%
+从方程(\ref{18.5.10})中我们看到, 耦合$g_{4}$实际上是不相关的, 这使得这里只有一个相关耦合, 标志着二阶相变的出现. 从%
+方程(\ref{18.5.11})中我们看到反常指数(\ref{18.5.5})是\begin{equation}
+\nu =-\frac{1}{\lambda _{2}}=\frac{1}{2}+\frac{\epsilon }{12}+O(\epsilon
+^{2})\text{ .}  \label{18.5.12}
+\end{equation}%
+对于物理值$\epsilon =1$, 前两项给出$\nu \simeq 0.58$. 三圈计算\cite{8a}给出了到$\epsilon ^{3}$阶的%
+临界指数\begin{equation}
+\nu =\frac{1}{2}+\frac{\epsilon }{12}+\frac{7\epsilon ^{2}}{162}%
+-0.01904\epsilon ^{3}\text{ ,}  \label{18.5.13}
+\end{equation}%
+这一结果对于$\epsilon =1$给出$\nu =0.61$.
+
+在这里所呈现的计算中, 对于所研究的系统,
+我们只假定了它有二阶相变, 且在此附近唯一的长波长自由度是一个标量场, 除此之外,
+我们并没有假定任何事情. 有很多其它系统也满足这个描述, 例如在铁磁材料和反铁磁材料中自发出现的磁化强度(这里由$\phi $表示),
+以及二元流体中气体和液体之间的二阶相变. 因此, 我们会期望所有这些系统有相同的$\nu
+$值. 这被实验证实了, 实验给出的值\cite{8}是$\nu =0.63\pm 0.04$,
+与三圈结果(\ref{18.5.13})符合得相当好, 即便是单圈结果(\ref{18.5.12}), 也基本吻合.
+尽管有些不可思议, 但是1的幂级数展开竟有如此威力是十分幸运的.
+
+更一般地, 若系统在它们的二阶相变附近由一组相同的长波长自由度描述,
+则称它们属于同一个{\kai{普适类}}(\textit{universality class}). 对于给定普适类中的所有系统, 所有的临界面%
+都是相同的.
+
+\section{最小减除}
+
+在11.2节, 我们看到维度正规化为量子电动力学中的辐射修正计算提供了特别方便的方法, 这主要是因为它保护了与规范不变性相联系的守恒律. 由于相%
+同的原因,\quad 维度正规化也为一般规范理论中重整化群的滑动标度提供了另一种非常方便的定义.\cite{9}
+
+在使用维度正规化的计算中, 当时空维度$d$趋于它的物理值时, 紫外发散就会作为物理振幅中的极点出现. (例子可参看(11.2.13).) 为了抵消这%
+些极点, 裸耦合常数$%
+g_{B}^{\ell }(d)$(包括质量)自身也必须有这样的极点, 而在$d\rightarrow 4$时物理振幅是正则的这一条件确定%
+了极点的留数. 这些裸耦合一般会有不为零的量纲$\Delta _{\ell }(d)$, $\Delta _{\ell }(d)$依赖于时空维度$d$, 所以考%
+察无量纲量$g_{B}^{\ell }(d)\mu ^{-\Delta
+_{\ell }(d)}$是比较方便的, 这里的$\mu $是量纲为能量或质量的滑动标度. 这一重新标度的裸耦合可以表示为正比于$1/(d-4)$%
+的$\nu $次方的项的和, 其中$\nu $是正定的, 物理振幅在$d\rightarrow 4$时的极点被抵消这一要求则确定了系数$b_{\nu }$, 还有一些残%
+余项, 它们在$d=4$时关于$d$解析.
+这一残余项被认定为无量纲重整化耦合常数$g^{\ell }(\mu ,d)$, 所以
+\begin{equation}
+g_{B}^{\ell }(d)\mu ^{-\Delta _{\ell }(d)}=g^{\ell }(\mu ,d)+\sum_{\nu
+=1}^{\infty }(d-4)^{-\nu }b_{\nu }^{\ell }(g(\mu ,d))\text{ .}
+\label{18.6.1}
+\end{equation}%
+只要物理振幅在$d=4$处的奇点被抵消了, 我们就可以让裸耦合以任意的方式依赖于$d$; 通过要求$g^{\ell }(\mu ,d)$不仅在$d=4$时对$d$解%
+析, 并且对于所有的$d$都解析, 我们可以移除这一不确定性.
+
+为了计算$g^{\ell }(\mu ,d)$所满足的重整化群方程, 首先做方程(\ref{18.6.1})对$\mu $的导数:%
+\begin{equation}
+-\Delta _{\ell }(d)\left[ g^{\ell }+\sum_{\nu =1}^{\infty }(d-4)^{-\nu
+}b_{\nu }^{\ell }(g)\right] =\beta ^{\ell }(g,d)+\sum_{\nu =1}^{\infty
+}\sum_{m}b_{\nu m}^{\ell }(g)\beta ^{m}(g,d)(d-4)^{-\nu }  \label{18.6.2}
+\end{equation}%
+其中\begin{equation}
+b_{\nu m}^{\ell }(g)\equiv \frac{\partial }{\partial g^{m}}b_{\nu }^{\ell
+}(g)  \label{18.6.3}
+\end{equation}%
+并且, 像之前一样,
+\begin{equation}
+\mu \frac{\mathrm{d}}{\mathrm{d}\mu }g^{\ell }(\mu ,d)=\beta ^{\ell }(g(\mu
+,d),d)\text{ .}  \label{18.6.4}
+\end{equation}%
+注意到$\beta ^{\ell }$是所有$g^{m}(\mu
+,d)$以及$d$的函数, 但由于重新标度的质量也被纳入到无量纲的耦合参量中, 这样除了$\mu $以外就没有别的带有量纲的参量, 所以$\beta ^{\ell }$不能%
+仅靠自身依赖于$\mu $.
+
+我们已经看到, 量纲$\Delta
+_{\ell }(d)$总是$d$的线性函数,
+所以我们现在将其写成\begin{equation}
+\Delta _{\ell }(d)=\Delta _{\ell }+\rho _{\ell }(d-4)\text{ .}
+\label{18.6.5}
+\end{equation}%
+我们将方程(\ref{18.6.2})的左边重写成\[
+-\rho _{\ell }g^{\ell }(d-4)-\left[ \Delta _{\ell }g^{\ell }+b_{1}^{\ell
+}(g)\rho ^{\ell }\right] -\sum_{\nu =1}^{\infty }(d-4)^{-\nu }\left[ \rho
+_{\ell }b_{\nu +1}^{\ell }(g)+\Delta _{\ell }b_{\nu }^{\ell }(g)\right]
+\text{ .}
+\]%
+这时, 解析部分中$d$的最高幂次是一阶的, 所以对于方程(\ref{18.6.2})的右边也必须同样如此, 因此$%
+\beta (g,d)$关于$d$必必须是线性的:%
+\begin{equation}
+\beta ^{\ell }(g,d)=\beta ^{\ell }(g)+(d-4)\alpha ^{\ell }(g)\text{ .}
+\label{18.6.6}
+\end{equation}%
+那么, 方程(\ref{18.6.2})两边零阶项和一阶项相等就给出\begin{equation}
+\alpha ^{\ell }(g)=-\rho _{\ell }\,g^{\ell }  \label{18.6.7}
+\end{equation}%
+以及更加重要的\begin{equation}
+\beta ^{\ell }(g)=-\Delta _{\ell }g^{\ell }-b_{1}^{\ell }(g)\rho _{\ell
+}+\sum_{\nu =1}^{\infty }\sum_{m}b_{1m}^{\ell }(g)\rho _{m}g^{m}\text{ .}
+\label{18.6.8}
+\end{equation}%
+值得注意的是$\beta $函数只依赖裸耦合中单极点的系数. 事实上, 这些系数也决定了所有高阶极点的系数; 将方程(%
+\ref{18.6.2})两边的极点项等同起来就给出了递推关系\begin{equation}
+\rho _{\ell }b_{\nu +1}^{\ell }(g)-\sum_{m}\rho _{m}g^{m}b_{\nu +1m}^{\ell
+}(g)=-\Delta _{\ell }b_{\nu }^{\ell }(g)-\sum_{m}b_{\nu m}^{\ell }(g)\beta
+^{m}(g)\text{ .}  \label{18.6.9}
+\end{equation}
+
+例如, 为了使$\int \mathrm{d}^{d}x\:F_{\mu \nu
+}F^{\mu \nu }$是无量纲的, 任意规范场$A^{\mu }$必须有量纲(%
+按质量幂次计)$(d-2)/2$, 而既然$g_{B}A^{\mu }$必须要有与$\partial
+/\partial x^{\mu }$相同的量纲, 那么$g_{B}$必须要有量纲$(4-d)/2$, 这使得对于规范耦合有$\Delta =0$和$%
+\rho =-1/2$. 那么, 对于仅有一个耦合常数的规范理论, 方程(\ref{18.6.8})给出:%
+\begin{equation}
+\beta (g)=\tfrac{1}{2}[b_{1}(g)-gb_{1}^{\prime }(g)]\text{ .}  \label{18.6.10}
+\end{equation}%
+特别地, 方程(\textcolor{red}{11.2.20})表明, 在量子电动力学中, 到一圈阶, 裸电荷在$d\rightarrow 4$处有极点, 确切些\begin{equation}
+e_{B}=Z_{3}^{-1/2}e\rightarrow e-\frac{e^{3}}{12\uppi^{2}}\frac{1}{d-4}\text{
+.}  \label{18.6.11}
+\end{equation}%
+那么, 在方程(\ref{18.6.10})中令$%
+b_{1}(e)=-e^{3}/12\uppi^{2}$就会给出\begin{equation}
+\beta (e)=\frac{e^{3}}{12\uppi^{2}}\text{ ,}  \label{18.6.12}
+\end{equation}%
+这与之前的结果(\ref{18.2.37})%
+一致.
+
+这一节所引入的耦合常数$g^{\ell }(\mu )$被称作是通过{\kai{最小剪除}}定义的.
+这与另一个更加方便的方案稍有不同. 单极点$(d-4)^{-1}$一般来自于函数$%
+(4\uppi)^{d/2-2}\Gamma (2-d/2)$(就像方程(\textcolor{red}{11.2.13})%
+中那样), 它对于$d\rightarrow 4$有极限\begin{equation}
+(4\uppi)^{2-d/2}\Gamma \left( 2-\frac{d}{2}\right) \rightarrow \frac{1}{2-d/2%
+}-\gamma +\ln 4\uppi\text{ ,}  \label{18.6.13}
+\end{equation}%
+其中$\gamma $是欧拉常数, $\gamma
+=0.5772157$.\footnoteB{欧拉常数的定义是:
+ \begin{equation*}
+ \gamma=\lim_{n\rightarrow\infty}\left(\sum_{k=1}^{n}\frac{1}{k}-\ln n\right).
+ \end{equation*}
+ 到现在为止还无法证明它是有理数还是无理数.  \qquad------译者注} 因此, 在方程(\ref{18.6.1})中的所有地方做如下的替换将是方便的:%
+\begin{equation}
+\frac{1}{d-4}\rightarrow \frac{1}{d-4}+\frac{\gamma }{2}-\frac{1}{2}\ln 4%
+\uppi\text{ .}  \label{18.6.14}
+\end{equation}%
+有了这一处理, 就称这一耦合常数是通过{\kai{修正最小减除}}定义的.
+
+通过最小减除所定义的耦合的显著特征之一是, 既然在任何计算中连一个紫外截断的因子都没有出现过, 圈图在$d=4$处所拥有的极点仅对应于对数%
+紫外发散, 而非线性发散, 二次发散等. 因此,
+要使留数函数$b_{1}^{\ell }(g)$能够包含阶为$g^{a}g^{b}g^{c}\cdots $的项, $g_{B}^{\ell }$在$d=4$处的量纲%
+要等于耦合$g_{B}^{a}$, $g_{B}^{b}$, $g_{B}^{c}$%
+等的总量纲:%
+\begin{equation}
+\Delta _{\ell }=\Delta _{a}+\Delta _{b}+\Delta _{c}+\cdots \text{ ,}
+\label{18.6.15}
+\end{equation}%
+并且, 从(\ref{18.6.8})可以得出这对于$\beta ^{\ell }(g)$同样成立.
+特别地, 在没有超重整耦合的理论中(像含有无质量旋量且不含标量的规范理论, 例如电子质量为零的量子电动力学), 所有耦合都有$%
+\Delta _{\ell }\leq 0$, 所以{\kai{出现任何不可重整相互作用都不会影响可重整耦合($\Delta_{\ell}=0$)的重整化%
+群方程.}}\cite{5} 另外, 在这样的理论中, 不可重整耦合的$\beta $-函数是不可重整耦合的有限阶多项式, 而每个多项式中%
+的每个系数都由可重整耦合的一个无穷幂级数给定. 例如, 在光子和无质量电子的理论中(假定了$\psi \rightarrow \gamma _{5}\psi $以%
+及$\mathsf{P}$下的不变性), 不存在量纲为$+5$的不可重整相互作用, 但有几个量纲为$+6$的相互作用(四费米子相互作用以及%
+纯光子相互作用$F_{\mu \nu }\square
+F^{\mu \nu }$), 这些相互作用有量纲为$-2$的耦合常数$f_{i}$.
+$f_{i}$的$\beta $-函数形式为$%
+\sum_{j}b_{ij}(e)f_{j}$, 而其中的系数$%
+b_{ij}(e)$由$e$的幂级数给定.
+
+\section{量子色动力学}
+
+量子色动力学是强相互作用的现代理论. 它是基于规范群$SU(3)$的非阿贝尔规范理论. 除了规范场外, 量子色动力学还包含自旋$\frac{1}{2}$粒子的场, 这些粒子被称作夸克. 有六种或者说六``味''夸克, $u$夸克, $c$夸克和$t$夸克的电荷为$2e/3$, 而$d$夸克, $s$夸克和$b$夸克的电荷为$-e/3$. 每一味夸克都拥有三种``颜色'', 而这些色构成了$SU(3)$规范群的定义表示$\bf{3}$.\footnote{在量子色动力学的最终形式确定下来之前, 就有数位学者推测出每一味夸克或许有三种,\cite{10} 这一方面是为了解释像$\pi^{0}\rightarrow\gamma+\gamma$这样的衰变速率, 一方面是为了引入额外的自由度, 使得可以解释重子中费米型夸克的波函数在自旋, 坐标和味空间中为什么能够是对称的.} 像质子和中子这样的重子可以近似的看成三个夸克的色中性束缚态, 它们关于夸克的色全反对称, 而像$\rho$介子这样的介子, 它的行为可以近似为夸克和反夸克的色中性束缚态.\cite{11}
+
+若夸克质量与感兴趣的能量区域相比可以忽略, 那么在这一近似下, 方程(\ref{17.5.44})的逆方程表明, 一般规范理论中的裸耦合会在时空维%
+度$d\rightarrow 4$时有一个极点,
+而其留数给定为\[
+g_{B}\rightarrow \left[ \frac{g^{3}}{4\uppi^{2}}\left( \frac{11}{12}C_{1}-%
+\frac{1}{3}C_{2}\right) +O(g^{5})\right] \frac{1}{d-4}\text{ ,}
+\]%
+其中$C_{1}$和$C_{2}$由方程(\ref{17.5.33})%
+和(\ref{17.5.34})定义. 而按照上一节的记法,%
+\begin{equation}
+b_{1}(g)=\frac{g^{3}}{4\uppi^{2}}\left( \frac{11}{12}C_{1}-\frac{1}{3}%
+C_{2}\right) +O(g^{5})\text{ .}  \label{18.7.1}
+\end{equation}%
+在方程(\ref{18.6.10})中使用这一结果给出\begin{equation}
+\beta (g)=-\frac{g^{3}}{4\uppi^{2}}\left( \frac{11}{12}C_{1}-\frac{1}{3}%
+C_{2}\right) +O(g^{5})\text{ .}  \label{18.7.2}
+\end{equation}%
+对于$SU(3)$理论, 若它有$n_{f}$%
+个无质量夸克, 且这些夸克处在$SU(3)$的定义表示$\bf{3}$下, 那么方程(\ref{17.5.35})\\就会给出\begin{equation}
+C_{1}=3\text{ , \ \ \ \ \ \ \ \ }C_{2}=n_{f}/2\text{ .}  \label{18.7.3}
+\end{equation}%
+由于我们在这里将夸克取成了无质量的粒子, 这一理论可能仅适用于有效场论, 而有效场论是通过积掉所有比特征能量$E$重的夸克获得的, 这使得$n_{f}$就是%
+质量远小于$E$的夸克味的数目. 在这一理解下,
+方程(\ref{18.7.2})和(\ref{18.7.3})给出\begin{equation}
+\beta (g)=-\frac{g^{3}}{4\uppi^{2}}\left( \frac{11}{4}-\frac{1}{6}%
+n_{f}\right) +O(g^{5})\text{ .}  \label{18.7.4}
+\end{equation}%
+我们看到, 只要质量小于感兴趣的能量标度的夸克不超过16味, 那么这一理论就是渐进自由的. 由于实际中任何质量的夸克只有六味,
+基于规范群$SU(3)$的强相互作用理论就是渐进自由的.
+
+这种非阿贝尔规范理论中的渐进自由是由Gross, Wilczek\cite{12}和Politzer\cite{13}在1973年发现的, 这使得理论物理%
+学家相信这一理论就是正确的强相互作用理论. 它们的计算立即就解释了1968年在SLAC上一个著名且令人迷惑的实验结果,\cite{14} 深度非弹%
+性的电子-核子散射, 这表明强相互作用在高能处反而表现的更弱.%
+\footnote{%
+Zee\cite{15}, 可能还有一些理论家, 在此之前就知道若有一个理论它的$\beta$-函数对于小的正定耦合为负, 那么这一实验结果就可以在这一理论下被理解, 但{\kai{除了}}非阿贝尔规范理论以外, 在其它所有可重整理论中对$\beta (g)$的计算均给出$\beta
+(g)>0$. 另一方面, 't Hooft在1972年就发展出了在Yang-Mills理论中计算$\beta $-函数的技巧,
+并且同年在马赛关于规范理论的一个会议上,\cite{16}
+他宣称$\beta (g)<0$, 但他在等待他的文章被发表并解出它的隐含意义, 在此期间, 他忙于其它事, 所以他的结果并没有引起太多的注意.} (这一实%
+验将在20.6节进行进一步讨论.) 然而, 在Yang-Mills理论中发现渐进自由的历史意义不仅在于它解释了旧有的实验结果;
+至少是在高能情况下,
+它还第一次展示了对强相互作用做可信赖微扰计算的前景.%
+
+不久之后就发现渐进自由还有另一个重要的作用. 起初, 在发现渐进自由之后, 广泛假定在强相互作用的真实Yang-Mills理论中规范玻色子%
+非常重, 这用来解释为什么在此之前一直没有发现这些强相互作用玻色子. 跟随弱相互作用和电磁相互作用的先例(将在第21章进行讨论), 大家认为规范玻%
+色子的质量应该来自于色$SU(3)$规范群的自发破缺, 由该群非平庸表示下标量场的真空期望值引发. 但这些强相互作用的标量将会给$%
+\beta (g)$贡献正项, 这会毁掉渐进自由. 更糟的是, 若一个理论含有强相互作用的标量场, 包含弱相互作用的辐射修正将会对各种对称性造%
+成极大的破坏, 比如荷共轭不变性和味守恒,
+但是, 正如我们将看到的, 如果没有标量, 它们就不会被破坏.\cite{17} 由此认为应该扔掉强相互作用标量, 并接受这样做所带来的结果, $SU(3)$规%
+范玻色子, 即胶子, 没有质量.\cite{18} 强耦合常数在高能或短程处衰减暗示着在低能或长程时增加, 由此可以认为这或许解释了为什么无%
+质量胶子和夸克为什么没有被观测到. 根据这一假设, 只有像重子和介子这样的色中性粒子才能独立出现.\cite{19}
+不幸的是, 这依旧是个假设而不是定理, 但是,
+二十年之后, 对于它是正确这一点似乎已没有疑问.%
+
+即使夸克无法实现为自由粒子, 它们在某种程度上可以视为在高能碰撞过程中产生的喷注. 例如, 在电子-正电子湮灭的很多事件中,
+末态由两个狭窄的平行强子喷注组成, 它们所成的分布为$1+\sin ^{2}\theta $,
+其中$\theta $是(质心系下)对撞轻子动量与喷注方向所呈的角度, 这正是电子-正电子湮灭到夸克-反夸克末态的树图所预期的.\cite{20} 可利用13.4%
+节中对红外发散的一般分析理解\cite{21}这些. 在极高能下, 假定物理过程``红外安全''
+的, 即当所有质量趋于零时不会红外发散, 那么我们将预期物理过程的速率有最低阶微扰论给出. 在我们对所有的强子末态求和后,
+电子-正电子湮灭到强子的总速率是红外安全的. (这里我们忽视了高阶电磁效应.) 因此我们可以使用微扰论, 而微扰论会立即告诉我们这一速率与$e^{+}+e^{-}\rightarrow \mu
+^{+}+\mu ^{-}$的速率比值$R$是$%
+R=3\sum_{q}Q_{q}^{2}$, 其中的求和取遍所有的夸克味, 而$Q_{q}$%
+是这些夸克以$e$为单位的电荷量, 因子3是色的数目. (例如, 在$m_{b}\approx 4.5\mathrm{GeV}$%
+到$m_{t}\approx 180\mathrm{GeV}$这个宽广的能量范围内, $R\simeq
+3(2(2/3)^{2}+3(-1/3)^{2})=11/3$.) 另一方面, 电子-正电子湮灭成确定的夸克和胶子态不是红外安全的, 因此它的%
+速率完全无法用微扰论计算; 事实上, 它是零. 在这个极端之间是电子-正电子湮灭到数量确定的喷注的速率, 每个喷注携带确定的总动量以及电荷, 在喷注%
+之外还有一些未观测到的强子, 它们带有有限的总能量. 正如13.4节所讨论的, 这一速率时红外安全的. 因此在高能时, 将喷注(在微扰论的树阶)等同为出射的%
+夸克, 反夸克和胶子, 就可以用微扰论的树阶近似进行计算. 我们甚至可以计算3-喷注事件的速率, 在产生这一事件的树图中, 胶子从出射的夸克或反夸克中%
+发射, 并用这一结果与实验结果相比较进而测量$\alpha _{s}(\mu )$的值.\cite{22} 但是对于喷注内的动量分布, 由于这种微分速%
+率不是红外安全的, 我们无法用微扰论进行预测. 类似结果适用于深度非弹轻子-强子碰撞中喷注的产生, 这将在20.6节进行讨论, 但是在初态中出现强子使%
+得分析更加复杂.%
+
+沿用12.5节中的论证, 当没有标量场时, 最一般的可重整量子色动力学拉格朗日量可以变成如下的形式\begin{equation}
+\mathscr{L}=-\tfrac{1}{4}F_{\alpha }^{\mu \nu }F_{\alpha \mu \nu }-\sum_{n}%
+\overline{\psi }_{n}[\slashed{\partial}-\mathrm{i}g\slashed{A}_{\alpha
+}t_{\alpha }+m_{n}]\psi _{n}\text{ ,}  \label{18.7.5}
+\end{equation}%
+其中$A_{\alpha }^{\mu }$是色规范矢势; $F_{\alpha }^{\mu \nu }$是色规范协变场强张量; $g$是强耦合%
+常数; $t_{\alpha }$是色$SU(3)$在3表示下的一组完备生成元, $t_{\alpha }$的归一化使得$%
+\operatorname{Tr}(t_{\alpha }t_{\beta })=\frac{1}{2}\delta _{\alpha \beta }$; 而下标$n$标记的是夸克味,
+夸克色指标隐去不写.
+正如在12.5节针对电动力学所发现的, 这一拉格朗日量有一个重要的偶然对称性: 它有空间宇称守恒\footnote{尽管在1973%
+年还不知道, 但是非微扰效应可以破坏量子色动力学中的宇称, 我们将在23.6节看到这一点. 已经提出了几种避免宇称破坏的方法, 但是还不清楚那一个是正确%
+的.}, 荷共轭宇称守恒,
+以及每一味的夸克数(%
+夸克的数目减去相应的反夸克的数目), 其中包括历史长久的\textquotedblleft 奇异\textquotedblright 量子数, 即对%
+``$s$''夸克的计数. 因此量子色动力学立即解释了这样的奇怪事实: 强相互作用表%
+现出的对称性中有几个不是全部相互作用的对称性. 同时, 正如前面所提及的, 这一讨论也解释清楚了为什么在这一理论中弱相互作用没有造成对宇称,
+荷共轭, 奇异数等的大范围破坏. 既然夸克和胶子之间所有可重整的相互作用都保留这些对称性, 当能量$E$远小于携带弱作用的粒子的质量$m_{W}$时, \  弄够破坏%
+这些对称性的只有有效场论中的不可重整相互作用, 例如$\bar{\psi}\psi \bar{\psi}%
+\psi $相互作用, 而正如12.3节所讨论的, 这些相互作用将会被$m_{W}$以及弱相互作用耦合常数的负幂次方压低.%
+
+当然, 在某个远大于表征量子色动力学的标度$\Lambda $的能量标度$\Lambda ^{\prime }
+$处, 夸克和胶子完全有可能呈现出某种新的{\kai{强}}相互作用. 例如, 像22.5节将要讨论的那样,
+夸克可能是更加基本的费米子的束缚态, 与其相互作用的规范场的渐进自由耦合在$\Lambda
+^{\prime }$阶能量处变得很强,
+使这些费米子陷入到夸克中. 在这种情况下,
+夸克的有效拉格朗日密度在能量$E\ll \Lambda ^{\prime }$将会包含不可重整的相互作用, 例如$\bar{\psi}\psi \bar{\psi}\psi $,
+这样的相互作用仅被$%
+E/\Lambda ^{\prime }$的次方压低. 这些相互作用不仅会在对宇称或夸克味守恒在普通能量处的小破坏中体现出来, 当能量接近于$\Lambda ^{\prime }$时, 它们%
+还会破坏\cite{23}量子色动力学的定量预测.
+
+现在我们来考察量子色动力学耦合常数更加细致的行为. 在最低阶, 重整化群方程由(\ref%
+{18.7.4})给定为\begin{equation}
+\mu \frac{\mathrm{d}}{\mathrm{d}\mu }g(\mu )=-\frac{g^{3}(\mu )}{4\uppi^{2}}%
+\left( \frac{11}{4}-\frac{1}{6}n_{f}\right) \text{ .}  \label{18.7.6}
+\end{equation}%
+它的解是\begin{equation}
+\alpha _{s}(\mu )\equiv \frac{g^{2}(\mu )}{4\uppi}=\frac{12\uppi}{%
+(33-2n_{f})\ln (\mu ^{2}/\Lambda ^{2})}\text{ ,}  \label{18.7.7}
+\end{equation}%
+其中$\Lambda $是积分常数. 这一公式呈现出了无质量粒子(或者, 对于夸克这样的近无质量粒子)理论的特征: 在这样的理论中, 拉格朗日量中%
+的某个无量纲耦合会被替换成一个自由的有量纲参量. 方程(\ref{18.7.7})%
+中不包含自由的无量纲参量, 但它却包含一个带有质量量纲的自由参量, 积分常数$\Lambda $.
+
+这些计算已经做到了三圈阶. 到这一阶的重整化群方程是\cite{24}%
+\begin{equation}
+\mu \frac{\mathrm{d}}{\mathrm{d}\mu }g(\mu )=-\beta _{0}\frac{g^{3}(\mu )}{16%
+\uppi^{2}}-\beta _{1}\frac{g^{5}(\mu )}{128\uppi^{4}}-\beta _{2}\frac{%
+g^{7}(\mu )}{8192\uppi^{6}}\text{ ,}  \label{18.7.8}
+\end{equation}%
+其中$\beta _{n}$是数值系数:%
+\begin{align}
+\beta _{0} &=11-\frac{2}{3}n_{f}\text{ ,}  \label{18.7.9} \\
+\beta _{1} &=51-\frac{19}{3}n_{f}\text{ ,}  \label{18.7.10} \\
+\beta _{2} &=2857-\frac{5033}{9}n_{f}-\frac{325}{27}n_{f}^{2}\text{ .}
+\label{18.7.11}
+\end{align}%
+解是\begin{align}
+\alpha _{s}(\mu ) &\equiv \frac{g^{2}(\mu )}{4\uppi}  \nonumber \\
+&=\frac{4\uppi}{\beta _{0}\ln (\mu ^{2}/\Lambda ^{2})}\Bigg[1-\frac{2\beta _{1}}{%
+\beta _{0}^{2}}\frac{\ln [\ln (\mu ^{2}/\Lambda ^{2})]}{\ln (\mu
+^{2}/\Lambda ^{2})}  \nonumber \\
+&+\frac{4\beta _{1}^{2}}{\beta _{0}^{4}\ln ^{2}(\mu ^{2}/\Lambda ^{2})}%
+\Bigg( \Big( \ln [\ln (\mu ^{2}/\Lambda ^{2})]-\tfrac{1}{2}\Big) ^{2}+%
+\frac{8\beta _{2}\beta _{0}}{\beta _{1}^{2}}-\frac{5}{4}\Bigg) \Bigg]\text{ .}
+\label{18.7.12}
+\end{align}
+
+前面结果中的$n_{f}$是质量小于所感兴趣能量的夸克味的数目. 在两个连续夸克质量之间的能量范围内, $n_{f}$和$\Lambda $%
+是相同的, 但对于每一个这样的能量范围, 我们有不同的$n_{f}$值和$\Lambda $%
+值, 我们要对其选择使得$g(\mu )$在每个夸克质量处连续. 特别地, 关于电子的深度非弹散射实验, 它一般所涉及的能量在前4个夸克味($u,d,s$和$c$)%
+之上, 所以这里我们必须取$n_{f}=4$. 另一方面, 在电子-正电子对撞机上的实验, 例如在PEP, PETRA, TRISTRAN和LEP%
+\footnoteB{PEP是指正电子-电子计划(Positron-Electron Project), 位于SLAC国家实验室; PETRA是正负电子串列环形加速器(Positron-Electron Tandem Ring Accelerator), 位于德国汉堡的DESY; TRISTRAN位于日本的KEK. ------译者注.}上的实验, 它们所处的能量在第五个($b$)夸克质量之上, 所以在这些实验中我们必须取$n_{f}=5$. 但是, 通过在$b$夸克质量处%
+匹配重整化群方程的解, 我们可以用$n_{f}=4$的结果表示$n_{f}=5$的结果. 以这种方式, 我们会发现\cite{25}(%
+在计算$\beta _{2}$时使用修正最小减除方案)外推至$%
+m_{Z}=91.2\,\mathrm{GeV}$的强耦合是$\alpha
+_{s}(m_{Z})\equiv g_{s}^{2}(m_{Z})/4\uppi=0.118\pm 0.006$，对于$m_{b}\ll \mu \ll m_{t}$能量$\mu $, 所对应%
+的$\Lambda \approx 250\,\mathrm{MeV}$, 其中$n_{f}=5$. 对于$e^{+}$-$e^{-}$湮灭在$Z$共振上的强子产生, 一个更新的%
+研究\cite{26}给出了直接测量值$\alpha _{s}(m_{Z})=0.1200\pm 0.0025$, 它还有理论上的不确定度$\pm
+0.0078$, 对应$\Lambda =253_{-96}^{+130}\,\mathrm{MeV}$.
+
+
+\section[改良微扰论]{改良微扰论\footnote{本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过.}}
+
+Gell-Mann和Low的开拓性文章\cite{1}%
+在很大程度上指向了\textquotedblleft 改良\textquotedblright 微扰论的问题------即, 使用重整化群的思想, 用微扰论%
+在某一给定阶的结果来研究它的下一阶. 为了阐明这一点, 我们先回到Gell-Mann和Low所研究的特殊情况: 量子电动力学中的真空极化.
+
+回忆, 按照方程(\ref{18.2.36}), 将滑动标度$\mu $处的重整化电荷$e_{\mu }$表示成裸电荷$%
+e_{B}$后, 它的形式为\begin{equation}
+e_{\mu }=N_{\mu }^{(A)-1}e_{B}\text{ ,}  \label{18.8.1}
+\end{equation}%
+其中$N_{\mu }^{(A)}$是一常数, 当其乘进未重整的电磁场中, 它会给出在标度$%
+\mu $处重整化的场. (参看方程(\ref{18.2.21}).) 因此我们可以定义重整化(因而也是截断无关的)全光子传播子$\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })$,
+以裸场的全传播子$\Delta
+_{B\rho \sigma }^{\prime }(q,e_{B})$的形式, 这一传播子可以表示成\begin{equation}
+\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })=N_{\mu }^{(A)2}\Delta
+_{B\rho \sigma }^{\prime }(q,\mu ,e_{\mu })  \label{18.8.2}
+\end{equation}%
+在这种方式下, 函数$e_{\mu
+}^{2}\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })$由于等于$e_{B}^{2}\Delta _{B\rho \sigma }^{\prime }(q,e_{B})$而%
+与$\mu $无关, 又因为$e_{\mu }$和$%
+\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })$都是重整化量, 所以它也与截断无关. (在这里我们不%
+明确地写出截断相关性.) 但是Lorentz不变性和量纲分析告诉我们, 这一函数必须采取如下的形式:%
+\begin{equation}
+e_{\mu }^{2}\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })=\frac{\eta
+_{\rho \sigma }d(q^{2}/\mu ^{2},e_{\mu })}{q^{2}}+q_{\rho }q_{\sigma }\text{%
+项 .}  \label{18.8.3}
+\end{equation}%
+既然方程(\ref{18.8.3})与$\mu $无关, 我们在这里可以令$\mu =%
+\sqrt{q^{2}}\equiv q$, 这使得\begin{equation}
+d(q^{2}/\mu ^{2},e_{\mu })=d(1,e_{q})\text{ .}  \label{18.8.4}
+\end{equation}
+
+现在我们来看看, 关于$%
+d(q^{2}/\mu ^{2},e_{\mu })$的微扰级数结构, 这告诉了我们什么. $e$%
+的$\beta $-函数有展开:%
+\begin{equation}
+\beta (e)=b_{1}e^{3}+b_{2}e^{5}+b_{3}e^{7}+\cdots \text{ .}  \label{18.8.5}
+\end{equation}%
+那么$e_{\mu }$的重整化群方程就有级数解\begin{align}
+e_{q}^{2} &=e_{\mu }^{2}-b_{1}e_{\mu }^{4}\ln \frac{q^{2}}{\mu ^{2}}%
+-b_{2}e_{\mu }^{6}\ln \frac{q^{2}}{\mu ^{2}}  \nonumber \\
+&\quad-\left( \frac{b_{1}b_{2}}{2}\ln ^{2}\frac{q^{2}}{\mu ^{2}}+b_{3}\ln \frac{%
+q^{2}}{\mu ^{2}}\right) e_{\mu }^{8}+\cdots \text{ .}  \label{18.8.6}
+\end{align}%
+如果我们也对$d$做展开:%
+\begin{equation}
+d(1,e)=e^{2}+d_{1}e^{4}+d_{2}e^{6}+d_{3}e^{8}+\cdots   \label{18.8.7}
+\end{equation}%
+那么\begin{align}
+&d(q^{2}/\mu ^{2},e_{\mu }) =d(1,e_{q})=e_{\mu }^{2}-\left( b_{1}\ln \frac{%
+q^{2}}{\mu ^{2}}-d_{1}\right) e_{\mu }^{4}-\left( b_{2}\ln \frac{q^{2}}{\mu
+^{2}}-d_{2}\right) e_{\mu }^{6}  \nonumber \\
+&-\left( \frac{1}{2}b_{1}b_{2}\ln ^{2}\frac{q^{2}}{\mu ^{2}}%
++(b_{3}-b_{1}d_{2})\ln \frac{q^{2}}{\mu ^{2}}-d_{3}\right) e_{\mu
+}^{8}+\cdots \text{ .}  \label{18.8.8}
+\end{align}%
+注意到, 在$d(q^{2}/\mu ^{2},e_{\mu })$的每一阶中, $\ln (q^{2}/\mu ^{2})$的领头项幂次分别是$0,1,1,2,3,\cdots $. 另%
+外, 如果我们计算$d(q^{2}/\mu
+^{2},e_{\mu })$至$e_{\mu }^{6}$阶并以此决定$b_{1}$和$b_{2}$, 我们可以立即写出$e_{\mu }^{8}$阶中领头%
+对数的系数$-\frac{1}{2}b_{1}b_{2}$. 如果不使用重整化群方方法, 这里面的那一个都没有那么容易推断出来.
+
+\section*{习题}
+\noindent 1. 考察含有一个标量场的$SU(N)$规范理论, 且该标量场处在$SU(N)$的定义表示下. 将标量圈的贡献包含在内, 计算到规范耦合常数的$\beta$-函数至一圈阶. (建议: 使用背景场规范, 取常数背景场.)
+
+\noindent 2. 假定一个有正定耦合常数g的理论的$\beta$-函数$\beta(g)$在$g=g_{\ast}$处有一个单零点, 即在$g_{\ast}$附近, $\beta(g)\rightarrow a(g_{\ast}-g)$, 其中$a>0$. 对因子$N_{E}^{\mathcal{O}-1}$中$\propto E^{\gamma^{\mathcal{O}}(g_{\ast})}$领头项的修正而言, 它的渐进行为是什么? 其中$N_{E}^{\mathcal{O}-1}$是将算符$\mathcal{O}$包含在真空期望值中后所附带的因子.
+
+\noindent 3. 若在一个理论中有$\beta(g)=bg^{2}+b^{\prime}g^{3}+b^{\prime\prime}g^{4}+\cdots$, 证明: 通过对耦合常数的重定义, 我们完全可以把系数$b^{\prime\prime}$变成我们想要的任何值.
+
+\noindent 4. 若反应所处的能量为$100\,\mathrm{GeV}$, 将质量低于$100\,\mathrm{GeV}$的所有已知的带电夸克和轻子考虑在内, 计算用于研究反应的有效电荷.
+
+\noindent 5. 计算量子电动力学中的电子传播子在4-动量很大时的渐进行为. (你可以使用其它地方计算出的$Z_{2}$的单圈值, 例如11.4节中算出的$Z_{2}$值.)
+
+\noindent 6. 对于标量场$\phi_{n}(x)$的$O(N)$-不变理论, 其中$n=1,\cdots,N$, $\phi_{n}(x)$属于$O(N)$的矢量表示, 且理论有相互作用$\frac{1}{4}g(\sum_{n}\phi_{n}^{2})^{2}$, 计算$\epsilon=4-d$展开中到一阶的反常指数$\nu$.
+
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+	\bibitem{1} M. Gell-Mann and F. E. Low, {\textit{phys. Rev.}} {\bf{95}}, 1300 (1954). %
+		更早的时候, E. C. G. Stueckelberg和A. Peterman也略微讨论了选择重整化耦合常数定义的自由度, %
+		{\textit{Helv. Phys. Acta}} {\bf{26}}, 499 (1953) (他们同时引入了``重整化群''这个灾难般的词汇), %
+		但并没有说明它与计算极高能物理过程或极低能物理过程之间的相关性. 在Gell-man和Low的工作之后, %
+		N. N. Bogoliubov和D. V. Shirkov进一步发展了重整化群方法, {\textit{Introduction to the Theory of Quantized fields}} %
+		(Interscience, New York, 1959): Chapter {\rm{VIII}}, 以及那里引用的文献. 粒子物理中对重整化群方法的二次热潮是由如下几人引起的, %
+		C. G. Callan, {\textit{Phys. Rev.}} {\bf{D2}}, 1541 (1970); K. Symanzik, {\textit{Commun Math. Phys.}} {\bf{18}}, 227 (1970); %
+		C. G. Callan, S. Coleman, and R. Jackiw, {\textit{Ann. of Phys.}} (New York), {\bf{59}}, 42 (1970).
+	\bibitem{2} K. G. Wilson, {\textit{Phys. Rev.}} {\bf{B4}}, 3174, 3184 (1971); {\textit{Rev. Mod. Phys.}}
+{\bf{47}}, 773 (1975).
+    \bibitem{3} J. C. Collins, {\textit{Phys. Rev.}} {\bf{D10}}, 1213 (1974).
+    \bibitem[3a]{3a} R. Jost and J. M. Luttinger, {\textit{Helv. Phys. Acts}} {\bf{23}}, 201 (1950).
+    \bibitem{4}这个数值引用于1994年的Particle Data Group. G. Altarelli汇总了更新的计算, CERN preprint CERN-TH-95/203, 发表在{\textit{Proceedings of the Workshop on Physics at DA$\Phi$NE, April 1995}}. 较新的$\alpha^{-1}(m_{Z})$值分布在128.89与129.08之间.
+    \bibitem[4a]{4a} S. Coleman and E. Weinberg, {\textit{Phys. Rev.}} {\bf{D7}}, 1888 (1973).
+    \bibitem[4b]{4b} L. D. Landau, in {\textit{Niels Bohr and the Development of Physics}} (Pergamon Press, New York, 1955): p.52; 以及那里引用的更早的工作.
+    \bibitem[4c]{4c} S. L. Adler, C. G. Callan, D. J. Gross, and R. Jackiw, {\textit{Phys. Rev.}} {\bf{D6}}, 2982 (1972); M. Baker and K. Johnson, {\textit{Physica}} {\bf{96A}}, 120 (1979).
+    \bibitem[4d]{4d} 关于这一点的讨论与参考, 可参看J. Glimm and A. Jaffe, {\textit{Quantum Physics - A Fundamental Integral Point of View,}} Second Edition (Springer-Verlag, New York, 1987): Section 21.6; R. Fernandez, J. Fr\"{o}hlich, and A. D. Sokal, {\textit{Random Walks, Critical Phenomena, and Triviality in Quantum Field Theory}} (Springer-Verlag, Berlin, 1992): Chapter 15.
+    \bibitem{5} S. Weinberg, in {\textit{General Relativity}}, S. W. Hawking and W. Israel编辑. (Cambridge University Press, Cambridge, 1979): p. 790.
+    \bibitem{6} S. Weinberg, {\textit{Phys. Rev.}} {\bf{D8}}, 3497 (1973).
+    \bibitem{7} 原始计算是K. G. Wilson和M. E. Fisher给出的, {\textit{Phys. Rev. Lett.}} {\bf{28}}, 240 (1972); K. G. Wilson, {\textit{Phys. Rev. Lett.}} {\bf{28}}, 548 (1972). 关于综述可参看, K. G. Wilson and J. Kogut, {\textit{Phys. Rep.}} {\bf{12C}}, No. 2 (1974); M. E. Fisher, {\textit{Rev. Mod. Phys.}} {\bf{46}}, 597 (1974); E. Br\'{e}zin, J. C. Le Guillou, and J. Zinn-Justin, in {\textit{Phase Transitions and Critical Phenomena,}} C. Domb and M. S. Green编辑(Academic Press, London, 1975).
+    \bibitem{8} 参看P. M. Chaikin and T. C. Lubensky, {\textit{Principles of Condensed Matter Physics}} (Cambridge University Press, Cambridge, 1955): p. 231.
+    \bibitem[8a]{8a} E. Br\'{e}zin, J. C. Le Guillou, J. Zinn-Justin, and B. G. Nickel, {\textit{Phys. Lett}}. {\bf{44A}}, 227 (1973); K. G. Wilson and J. Kogut, 参看文献7, Section 8.
+    \bibitem{9} G. 't Hooft, {\textit{Nucl. Phys.}} {\bf{B461}}, 455 (1973); {\textit{Nucl. Phys.}} {\bf{B82}}, 444 (1973). 这里所给出的推导相对't Hooft的推导做了些许的简化.
+    \bibitem{10} O. W. Greenberg, {\textit{Phys. Rev. Lett.}}, {\bf{13}}, 598 (1964); M. Y. Han and Y. Nambu, {\textit{Phys. Rev.}} {\bf{139}}, B1006 (1965); W. A. Bardeen, H. Fritzsch, and M. Gell-Mann, in {\textit{Scale and Conformal Invariance in Hadron Physics,}} R. Gatto编辑(Wiley, New York, 1973).
+    \bibitem{11} M. Gell-Mann, {\textit{Phys. Lett.}} {\bf{8}}, 214 (1964); G. Zweig, CERN preprint TH401 (1964).
+    \bibitem{12} D. J. Gross and F. Wilczek, {\textit{Phys. Rev. Lett.}}, {\bf{30}}, 1343 (1973).
+    \bibitem{13} H. D. Politzer, {\textit{Phys. Rev. Lett.}} {\bf{30}}, 1346 (1973).
+    \bibitem{14} E. D. Bloom {\textit{et. al.}}, {\textit{Phys. Rev. Lett.}} {\bf{23}}, 930 (1969); M. Breidenbach {\textit{et. al.}}, {\textit{Phys. Rev. Lett.}} {\bf{23}}, 933 (1969); J. L. Friedman and H. W. Kendall, {\textit{Annual Reviews of Nuclear Science}} {\bf{22}}, 203 (1972).
+    \bibitem{15} A. Zee, 未发表.
+    \bibitem{16} G. 't Hooft, 未发表.
+    \bibitem{17} S. Weinberg, {\textit{Phys. Rev.}} {\bf{D8}}, 605 (1973).
+    \bibitem{18} D. J. Gross and F. Wilczek, {\textit{Phys. Rev.}} {\bf{D8}}, 3633 (1973); S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{31}}, 494 (1973).
+    \bibitem{19}在渐进自由被发现之前, H. Fritzsch, M. Gell-Mann, 和H. Leuttwyler提出过类似的想法, {\textit{Phys. Lett.}} {\bf{47B}}, 365 (1973).
+    \bibitem{20} G. Hanson {\textit{et al.}}, {\textit{Phys. Rev. Lett.}} {\bf{35}}, 1609 (1975). R. F. Schwitters, in {\textit{Proceedings of the International Conference on Lepton and Photon Interactions at High Energy at Stanford, 1975,}} W. T. Kirk编辑 (Stanford Linear Accelerator Center, Stanford, 1975): p.5; G. Hanson Stanford Linear Accelerator Center Report SLAC-PUB-1814 (1976), 未发表.
+    \bibitem{21} G. Sterman and S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{39}}, 1436 (1977).
+    \bibitem{22} J. Ellis, M. K. Gaillard, and G. G. Ross, {\textit{Nucl. Phys.}} {\bf{B111}}, 253 (1976).
+    \bibitem{23} E. Eichten, K. Lane, and M. Peskin, {\textit{Phys. Rev. Lett.}} {\bf{50}}, 811 (1983).
+    \bibitem{24} 关于综述, 参看I. Hinchliffe, in `Review of Particle Properties,' {\textit{Phys. Rev.}} {\bf{D50}}, 1177 (1994): Section 25.
+    \bibitem{25} G. Altarelli, in {\textit{Proceedings of the Rencontres de Hanoi}}, CERN preprint CERN-PRE/94-71 (1994).
+    \bibitem{26} K. Abe {\textit{et al}}. (SLD collaboration), {\textit{Phys. Rev.}} {\bf{D51}}, 962 (1995). M. Shifman汇总了$Z^{0}$衰变到强子的早期数据, Minnesota preprint hep-th/9501222 (1995), 这份数据给出$\alpha_{s}(m_{Z})=0.125\pm0.005$, 对应的$\Lambda\approx500\,\mathrm{MeV}$.
+\end{thebibliography}

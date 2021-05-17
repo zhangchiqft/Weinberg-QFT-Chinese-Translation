@@ -1,0 +1,370 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Saturday, July 30, 2016 16:53:38}
+%TCIDATA{LastRevised=Saturday, August 20, 2016 16:56:37}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+即使在跑动耦合$g_{\mu }$不够小以至于无法使用微扰论的情况下, 对于量子场论中所遇到的可能的渐进行为类型, 
+重整化群方法提供了非常有用的洞察. 我们将区分$g_{\mu }$在$\mu \rightarrow \infty $时的4种不同行为方式, 这4%
+中不同的行为分别对应于函数$\beta (g)$的4种不同形状, 这是理论中只有一个耦合常数的情况. 
+在下一节, 我们将考察有多个相互独立耦合的理论.
+
+我们先来回忆一下从上一节所考察的两个例子中所获得的$\beta (g)$. 其中的一个是相互作用为$g\phi ^{4}/24$的标量场论, 对%
+于比较小的$g$, $\beta $-函数是\begin{equation}
+\beta (g)=\frac{3g^{2}}{16\uppi^{2}}-\frac{18}{3}\frac{g^{3}}{(16\uppi%
+^{2})^{2}}+O(g^{4})\text{ .}  \label{18.3.1}
+\end{equation}%
+另一个是量子电动力学. 取代在这里将$\beta $-函数写成(\ref{18.2.38})的形式, 为了突出这一理论与标量场论之间的相似性, 
+通过定义\begin{equation}
+g\equiv e^{2}\text{ ,}  \label{18.3.2}
+\end{equation}%
+并将$\beta (g_{\mu })$理解成$\mu \dif g_{\mu
+}/d\mu $, 这使得对于比较小的$g$%
+\begin{eqnarray}
+\beta (g) &=&2e\left[ \frac{e^{3}}{12\uppi^{2}}+\frac{e^{5}}{64\uppi^{2}}%
++O(e^{7})\right]  \nonumber \\
+&=&\frac{g^{2}}{6\uppi^{2}}+\frac{g^{3}}{32\uppi^{2}}+O(g^{4})\text{ .}
+\label{18.3.3}
+\end{eqnarray}%
+注意到, 在这两种情况中, 物理允许的耦合都落在$g\geq 0$的范围内, 在这个范围内, 对于比较小的$g$, 我们有$\beta (g)\geq 0$. 在电%
+动力学中, 这是因为拉格朗日量为实会要求$e$%
+是实的. 而在标量场论中, 正如我们在上一节末尾所看到的, 为了有稳定的真空我们必须要有$g>0$. 然而, 我们可以考察相互作用哈密顿量为$-g\phi ^{4}/24$的标量场论, 
+其中的$g$是一正数. 这或许不是物理的, 但只要我们只专注于微扰论, 
+那么稳定性稳定就不会困扰我们. 方程(\ref{18.2.9})%
+表明, 如果我们重定义$%
+g\rightarrow -g$, 那么$\beta $-函数的变化就是$\beta (g)\rightarrow -\beta (-g)$, 所以%
+之前针对于相互作用$%
+g\phi ^{4}/24$的结果$\beta (g)=3g^{2}/16\uppi^{2}+O(g^{3})$%
+现在对于相互作用哈密顿密度$-g\phi ^{4}/24$就会给出\begin{equation}
+\beta (g)=-3g^{2}/16\uppi^{2}+O(g^{3})\text{ .}  \label{18.3.4}
+\end{equation}%
+它与物理的相关性更大, 我们将在18.7节看到, 
+对于旋量场不太多非阿贝尔规范场论, 对于某些小的正耦合常数会有$\beta \leq 0$. 在下文中, 我们对$g$的定义总使得$g\geq 0$%
+, 但对于$g$比较小的$\beta (g)$, 
+我们既会考虑它为正的情况也会考虑它为负的情况.
+
+现在我们将所有的可能性一一列举出来. (参看图\ref{fig:18.4}.)
+
+(a)有限能量处的奇点
+
+假定对于小的正$g$, 我们有$\beta (g)>0$(例如方程(\ref{18.3.1})和(%
+\ref{18.3.3})的情况), 并且随着$g$%
+的增大, $\beta (g)$保持正值并且以足够快的速度持续上升, 这使得积分$%
+\int^{\infty }\dif g/\beta (g)$收敛\begin{equation}
+\int^{\infty }\frac{\dif g}{\beta (g)}<\infty \text{ .}  \label{18.3.5}
+\end{equation}%
+$g_{\mu }$将会稳定地远离$g_{\mu
+}=0 $, 并且方程(\ref{18.2.10})表明$g_{E}$%
+必须在$E$的{\kai{有限}}值处变成无限大:%
+\begin{equation}
+E_{\infty }=\mu \exp \left( \int_{g_{\mu }}^{\infty }\frac{\dif g}{\beta (g)}%
+\right) \text{ ,}  \label{18.3.6}
+\end{equation}%
+其中$\mu $是任意满足$\mu \gg m$%
+的重整化标度. 我们在上一节看到过这种想象的一个例子; 在标量场论中, 如果我们认为$%
+\beta $-函数的最低阶公式$%
+\beta (g)=3g^{2}/16\uppi^{2}$是对所有$g$都成立的精确值, 那么跑动耦合就会在能量(\ref%
+{18.2.19})处变成无限大.类似地, 在旋量量子电动力学中, 如果我们认为最低阶公式$\beta (g)=g^{2}/6\uppi^{2}$(其中%
+$g\equiv e^{2}$)是对所有$g$都成立的精确值, 那么在$g_{E}$和$%
+e_{E}$都变成无限大的那一点, 能量(\ref{18.3.6})是\begin{equation}
+E_{\infty }=\mu \exp (6\uppi^{2}/g_{\mu })\text{ .}  \label{18.3.7}
+\end{equation}%
+利用方程(\ref{18.2.43}), 我们可以将其表示成传统的重整化电荷:%
+\begin{equation}
+E_{\infty }\simeq m_{e}\exp \left( \frac{6\uppi^{2}}{e_{R}^{2}}+\frac{5}{6}%
++O(e_{R}^{2})\right) =e^{646.6}m_{e}\text{ .}  \label{18.3.8}
+\end{equation}%
+当然, 在到达这一能量之前, 近似$\beta (g)=g^{2}/6\uppi^{2}$就会失效, 所以我们能够断言的只是$e_{E}$在$E_{\infty }$之%
+下的某个能量$E$处会变得非常大以至于微扰论失效.
+
+(b) \textbf{持续增长}
+
+现在假定在某个理论中$\beta (g)$在$g\rightarrow \infty $时保持正定, 但增长(或减小)得非常缓慢以至于$\int^{\infty }\dif %
+g/\beta (g)$是发散的. 那么耦合常数$g_{E}$就会随着$E\rightarrow
+\infty $持续增长, 但仅当$E=\infty $%
+时才会变成无限大. 更进一步, $g_{E}$渐进行为中的领头项在$E\rightarrow \infty $时独立于传统的重整化耦合. 例如, 如果$\beta (g)$在$g$%
+很大时的行为类似于$%
+bg^{k}$, 并且$b<0$而$k<1$, 那么方程(\ref{18.2.9})的解是\begin{equation}
+g_{E}=\left[ 1+(1-k)bg_{\mu }^{k-1}\ln \frac{E}{\mu }\right]
+^{1/(1-k)}g_{\mu }.  \label{18.3.9}
+\end{equation}%
+如果$g_{\mu }$对于某些$\mu $(例如$m$阶的$\mu $)是小量, 那么仅当能量与这一$\mu $相比是一指数级大数时, 
+我们才能看到$g_{E}$的增长. 然而, 在极高的高能极限下, 耦合的增长遵循\begin{equation}
+g_{E}\rightarrow \lbrack (1-k)b\ln E]^{1/(1-k)}\text{ ,}  \label{18.3.10}
+\end{equation}%
+这是一个独立于$g_{\mu }$的极限行为!
+
+(c)\textbf{有限耦合处的不动点}
+
+接下来, 假定$\beta (g)$对于$%
+0<g<g_{\ast }$保持正定, 但在$g=g_{\ast }$%
+这一点跌落为零, 并且对于$g_{\ast }$之后的值是负的. 那么方程(\ref{18.2.9})表明, 
+随着$\mu $的增长, 若$g_{\mu }<g_{\ast }$%
+, $g_{\mu }$会增长, 若$g_{\mu }>g_{\ast }$, $g_{\mu
+} $会降低, 但这两种情况中, $g_{\mu }$都会在$\mu \rightarrow \infty $时趋于$g_{\ast }$. 如果$\beta (g)$是$g_{\ast }$%
+这一点是单零点, 那么在这一点的邻域内我们有\begin{equation}
+\beta (g)\rightarrow a(g_{\ast }-g)\text{ \ \  对于 \ \ }%
+g\rightarrow g_{\ast }  \label{18.3.11}
+\end{equation}%
+其中$a>0$. 那么方程(\ref{18.2.9})的解是\begin{equation}
+g_{\ast }-g\propto \mu ^{-a}\text{ .}  \label{18.3.12}
+\end{equation}%
+(前面描述的(b)型行为可以视为不同点$g_{\ast }$在无限远处的特殊情况.) 另外, 我们可以预期任意算符$\mathcal{O}$的$\gamma (g)$在$g_{\ast }$附%
+近的行为是光滑的:%
+\begin{equation}
+\gamma (g)=\gamma (g_{\ast })+c(g_{\ast }-g)+O\left( \left( g_{\ast
+}-g\right) ^{2}\right) \text{ .}  \label{18.3.13}
+\end{equation}%
+(我们在这里扔掉了$\gamma $%
+和$c$上的指标$\mathcal{O}$.) 因此, 
+在这一算符(可能还有其它算符)的矩阵元中, 
+我们遇到因子(参看方程(\ref{18.2.27}))%
+\begin{equation}
+N_{E}^{-1}\propto \exp \left[ -\int^{E}\gamma (g_{\mu })\frac{\dif\mu }{\mu }%
+\right] \propto E^{-\gamma (g_{\ast })}[1+O(E^{-a})]\text{ .}
+\label{18.3.14}
+\end{equation}%
+因子$E^{-\gamma (g_{\ast })}$的乘以可以与方程(\ref{18.2.23})中的因子$E^{D}$聚集在一起, 有了%
+这一结果, 整个矩阵元就会趋于\begin{equation}
+M_{R}\propto E^{D_{\ast }}\text{ ,}  \label{18.3.15}
+\end{equation}%
+其中的量纲$D_{\ast }$相当于给出现在该矩阵元中的每一算符的实际量纲加上了一个\textquotedblleft 反常量纲\textquotedblright $-\gamma (g_{\ast })$.
+
+(d) \textbf{渐进自由}
+
+在迄今为止所讨论的例子中, $\beta (g)$对于小的正$g$都是正的, 这使得$g_{\mu }$%
+会随着$\mu $的增长远离$g=0$. 
+假定在某个其它理论中, $\beta (g)$对于小的正$g$是负的. 那么\begin{equation}
+\beta (g)\rightarrow -bg^{n}\text{ ,}  \label{18.3.16}
+\end{equation}%
+其中$b>0$. 这里的$n$是对$\beta (g)$%
+有贡献的最低阶图的阶数, 因而$n$总是大于1%
+的. (在这里用作例子的理论中, $n=2$.) 这时, 方程(\ref%
+{18.2.9})的解是\begin{equation}
+g_{E}=g_{\mu }\left[ 1+b(n-1)g_{\mu }^{n-1}\ln \frac{E}{\mu }\right]
+^{-1/(n-1)}\text{ .}  \label{18.3.17}
+\end{equation}%
+当$E\rightarrow \infty $时, 它有一个独立于$g_{\mu }$的极限\begin{equation}
+g_{E}\rightarrow \lbrack b(n-1)\ln E]^{-1/(n-1)}\text{ .}  \label{18.3.18}
+\end{equation}%
+既然这在$E\rightarrow \infty $时给出一个为零的$g_{E}$, 只需假定当$g$和$\beta (g)$有相反的符号时, 对于某个有%
+限的$E$, $g_{E}$处在$g=0$附近的区域内. 我们在这一极限下就可以相信微扰论. 不同算符$\mathcal{O}$的方程量纲$\gamma ^{(\mathcal{O})}$预期会%
+有弱耦合行为(扔掉指标$\mathcal{O}$)%
+\begin{equation}
+\gamma (g)\rightarrow cg^{m}\text{ ,}  \label{18.3.19}
+\end{equation}%
+其中$m$是对这一算符的重整化有贡献的最低阶图的阶数, 而$c$是既可以为正又可以为负的实数. 那么由这一算符的重整化给矩阵元引入的因子, 它在高能处%
+的渐进行为是\begin{eqnarray}
+N_{E}^{-1} &\propto &\exp \left[ -\int^{E}\gamma (g_{\mu })\frac{\dif\mu }{%
+\mu }\right]  \nonumber \\
+&\rightarrow &\exp \left[ -c\int^{E}[b(n-1)\ln \mu ]^{-m/(n-1)}\frac{\dif\mu 
+}{\mu }\right]  \nonumber \\
+&\propto &\exp \left[ -\frac{c[b(n-1)]^{-m/(n-1)}}{(1-m/(n-1))}(\ln
+E)^{1-m/(n-1)}\right]  \label{18.3.20}
+\end{eqnarray}%
+有一个例外$m=n-1$, 这时,%
+\begin{equation}
+N_{E}^{-1}\propto (\ln E)^{-c/b(n-1)}\text{ .}  \label{18.3.21}
+\end{equation}%
+在渐进自由的情况中, 
+我们看到: 若有效量纲决定的是出现在矩阵元渐进行为中的能量幂次, 那么对它就没有修正, 但是这一渐进行为反而被$\ln E$的幂函数修正了.
+
+我们可以用相互作用哈密顿量密度为$-g\phi ^{4}/24$%
+的标量场论作为展现渐进自由的一个玩具模型, 其中的$g$是一个正数. 这时, 方程(\ref{18.3.4})所给出的方程(\ref{18.3.16})的参量%
+是:%
+\begin{equation}
+b=3/16\uppi^{2}\text{ , \ \ \ \ \ }n=2\text{ ,}  \label{18.3.22}
+\end{equation}%
+所以, 方程(\ref{18.3.17})在$E\rightarrow
+\infty $时给出\begin{equation}
+g_{E}\rightarrow \left[ \frac{3\ln E}{16\uppi^{2}}\right] ^{-1}\text{ .}
+\label{18.3.23}
+\end{equation}%
+另外, 算符$\phi ^{2}$在这一理论中的反常量纲由方程(\ref{18.2.29})给出\begin{equation}
+\gamma (g)=-\frac{g}{16\uppi^{2}}+O(g^{2})\text{ .}  \label{18.3.24}
+\end{equation}%
+因此, 这时的方程(\ref{18.3.19})%
+会有\begin{equation}
+c=-1/16\uppi^{2}\text{ , \ \ \ \ \ }m=1\text{ .}  \label{18.3.25}
+\end{equation}%
+根据方程(\ref{18.3.21}), 矩阵元中的每个$\phi ^{2}$算符会贡献因子\begin{equation}
+N_{E}^{-1}\propto (\ln E)^{1/3}\text{ .}  \label{18.3.26}
+\end{equation}%
+标量场$\phi $自身在这一理论中有$\gamma (g)\propto g^{2}$, 因而$%
+m=2$, 根据方程(\ref{18.3.20}), 矩阵元中的每个$\phi $算符会贡献因子\begin{equation}
+N_{E}^{-1}\propto 1+O\left( \frac{1}{\ln E}\right) \text{ .}  \label{18.3.27}
+\end{equation}%
+在18.7节研究量子色动力学时, 我们会看到另一个关于渐进自由的更见物理的例子.
+
+在所有$g_{E}$可以扩展至无限大能量处的例子中, $g_{E}$在这一极限下表现出与重整化耦合$g_{R}$%
+相独立的行为. 然而, 这并不必然地意味着这一理论不包含自由的无量纲参量. 在所有这些情形中, 为了描述$g_{E}$%
+在$E\rightarrow \infty $时是如何趋于它的极限的, 我们需要指定一个量纲为能量的自由参量$\lambda $. 对于情况(b), 方程(\ref{18.3.10})可以写%
+成\[
+g_{E}\rightarrow \lbrack (1-k)b\ln (E/\lambda )]^{1/(1-k)}\text{ .} 
+\]%
+对于情况(c), 方程(\ref{18.3.12})可以写成\[
+g_{E}\rightarrow g_{\ast }\left[ 1-\left( \frac{\lambda }{E}\right) ^{b}%
+\right] \text{ .} 
+\]%
+最后, 对于情况(d), 方程(\ref%
+{18.3.18})可以写成\[
+g_{E}\rightarrow \left[ b(n-1)\ln (E/\lambda )\right] ^{-1/(n-1)}\text{ .} 
+\]%
+一般而言, 这样的理论确实拥有自由的无量纲参量: $\lambda $与质量$m$的比值. 像$e_{R}$这样的耦合常数, 它在与$m$相联系的%
+标度处重整化, 因此可以表示为$m/\lambda $的函数. 
+仅当一个理论中的所有质量都为零时, 我们才能说这一理论不包含自由的无量纲参量.
+
+在这里所描述的四种渐进行为中, (a)类和(b)类显然给出了不物理的行为, 即跑动耦合$g_{E}$在有限能量处(情况(a))或在$E\rightarrow \infty $时(情况(b))变成了%
+无穷大. 这本身并不意味着灾难: 我们必须要注意耦合是如何定义的. 例如, 如果$g_{\mu }$随着$\mu
+\rightarrow \infty $从$\mu =m$处的有限值$%
+g_{m}$光滑地衰落到零, 我们可以定义一个新耦合$\tilde{g}_{\mu }\equiv g_{\mu }/[1-g_{\mu }/g_{2m}]$, 这%
+样$\tilde{g}_{\mu }$就会在$\mu =2m$处变成无限大, 但是这仅是对该耦合参量进行特殊选择的人工产品. 然而, 无论是在$\phi ^{4}$标量场%
+论中还是在量子电动力学中, 传统的重整化耦合$g_{\mu }$在那里都是以$%
+\mu $阶能量处的矩阵元值定义的. 特别地, $g_{\mu }$在$\phi
+^{4}$标量场论中被定义成标量-标量散射在$s=t=u=\mu ^{2}$%
+处的不变Feynman振幅$A$, 并且认为$A$是解析的. 另外, 
+在旋量量子电动力学中, $g_{\mu }=e_{\mu }^{2}$给定为\begin{equation}
+e_{\mu }^{2}/e_{R}^{2}=Z_{3}/N_{\mu }^{(A)2}=\left[ 1-\pi (\mu ^{2})\right]
+^{-1}\text{ .}  \label{18.3.28}
+\end{equation}%
+因此, $e_{\mu }^{2}$在某一点$\mu
+_{\infty }$处无限大会在重整化光子传播子中产生一个极点或者其它奇点, 传播子中奇点处在$%
+p^{2}$的一个正值处, 即$p^{2}=\mu
+_{\infty }^{2}$处, 在这里传播子被认为是解析的. 因此, 
+随着$g_{\mu }$定义在这里, (a)%
+中描述的渐进行为也就被物理地排除了.
+
+那么我们的各种量子场论的行为到底是什么样的? 数年前, Landau\cite{4b}认为, 在量子电动力学中, 
+每一阶微扰论都会遇到且幂次逐渐上升的因子$\ln (E/M)$在加起来后在$%
+E $的有限值处会给出奇点(所谓的\textquotedblleft Landau鬼\textquotedblright ). 用现代观点来%
+看, 可以说Landau发现了上面的可能性(a), 但是他没有给出任何反对情况(b)%
+和(c)的讨论.
+
+然而, 现今普遍接受的观点是, 不是渐进自由的相互作用量子场论, 
+例如量子电动力学或者相互作用为$\phi ^{4}$的标量场论, 这样的理论在数学上是不自洽的. 在量子电动力学中, 存在一些反对情况(c)的证据, 
+即反对存在有限的不动点$e_{\ast }$的证据. 如果非微扰效应改变了算符积展开的定性性质, 这将是第20章的主题, 或者对第22章将要讨论的三%
+角反常有非微扰重整化, 那么这样的不动点才是可能的. 但是, 即使情况(c)真的在量子电动力学中被排除了, 存在无限大耦合处的不动点的情况(b)仍然是可能%
+的.
+
+相互作用非渐进自由的量子场论不自洽的大部分证据来源于对一个特殊标量场论的研究, 即4维中相互作用为$\phi ^{4}$的标量场在有限时空晶格上量子化的%
+理论. 有一些严格的定理表明, 除非该理论是渐进自由的, 否则, 在晶格间距趋于零的极限下, 这一理论(该理论的参量对晶格间距的依赖性是任意的)的极限%
+没有连续的相互作用, 
+显然这与微扰论中所发现的截然相反. 这一讨论同时看起来也不是决定性的. 如果有一个非渐进自由的自洽连续标量场论, 那么通过积掉一个时空晶格%
+以外的所有点上的标量场, 我们确实有可能构建一个晶格理论. {%
+\kai{但这个理论不会是那些定理中所考察的理论.}}. 它将拥有对称性允许的所有相互作用------不仅仅是%
+正比于$\phi ^{4}$的项, 也会有正比于$\phi ^{6}$, $\phi ^{3}\square \phi $等的项, 而这些项的系数会%
+与截断(晶格间距的倒数)相关, 它们之间的相关性将由12.4节讨论的Wilson%
+重整化群方程给出, 关于这种理论的连续极限还没有人证明过任何事情.
+
+如果在零晶格间距极限下真的不存在有相互作用的连续标量场论, 那么当我们试图解Wilson重整化群方程时必会遇到一些障碍, 对于弱的重整化耦合它在%
+非常小的晶格间距必然是这样. 这样的理论除非在非常小的间距处被检验过, 否则它会相互作用标量场论那样出现. 在这一近似连续场论中, 可以推测重%
+整化耦合常数在有限能量处会有奇点, 就像情况(a)一样, 这使得它它短间距处也崩溃掉了. (%
+但对于强耦合, Wilson重整化群方程与Gell-Mann--Low重整化群方程在形式上没有直接联系, 所以裸耦合在有限晶格间距处有一个奇点并不一定%
+暗示了重整化耦合在有限重整化标度处存在奇点.)
+
+这类理论有时被称为是{\kai{平庸的}}, 这样称呼它有时是因为, 对于在晶格上量子化的理论, 在对它的裸耦合附加几个假定条件后, 它的连续%
+极限表现为自由场论, 
+有时是因为, 使得(a)类连续理论在所有能量处都符合物理要求的唯一方法是将重整化群方程(\ref{18.2.9})的解取为$g_{\mu }=0$. 
+即使一个场论在这两种意义下都是平庸的, 
+也没有任何理由排除它是物理现象的实际理论的某个部分. 对于晶格间距很小的一个理论, 如果真实世界中在间距变得这样小时存在必须要考虑在内的其它场, 那么解该理%
+论的重整化群方程存在障碍就是不重要的. 
+类似地, 一个给定的理论即使在某个很大的能量$E_{\infty }$处有不物理的奇点, 如果这个理论在问题中只是一个更大理论的低能近似, 一个%
+只在能量远低于$E_{\infty }$是才成立的近似, 那么上述问题就不是一个物理问题. 特别地, 远在我们接近能量(\ref{18.3.8})之前, 
+即预期量子电动力学变得奇异的能量值处, 
+那怕是引力也必须要考虑在内, 但没有人知道如何计算在这种能量下的强引力效应.
+
+\subsection{* * *}
+
+在这里有一件值得注意的事: 尽管$\beta (g)$的详尽形式依赖于规范并精确依赖于跑动耦合的定义方式, 但是$\beta (g)$幂级%
+数的前两项却与它们无关. 假定我们有两种跑动耦合常数的定义方式$g_{\mu }$和$\tilde{g}_{\mu }$, 既然$%
+g_{\mu }$和$\tilde{g}_{\mu }$都是无量纲的且与截断无关, 那么当$\mu \gg m$时, $\tilde{g}_{\mu }$只可能%
+依赖于$g_{\mu }$:%
+\[
+\tilde{g}_{\mu }=\tilde{g}(g_{\mu })\text{ .}
+\]%
+那么我们就有\[
+\tilde{\beta}(\tilde{g}_{\mu })\equiv \mu \frac{\dif}{\dif\mu }\tilde{g}%
+_{\mu }=\frac{\dif\tilde{g}(g_{\mu })}{\dif g_{\mu }}\beta (g_{\mu })
+\]%
+因此\begin{equation}
+\tilde{\beta}(\tilde{g})=\frac{\dif\tilde{g}(g)}{\dif g}\beta (g)\text{ .}
+\label{18.3.29}
+\end{equation}%
+只要我们坚持非重整化耦合的定义是相同的, 那么所有的重整化耦合在最低阶是相等的, 所以, 将$\tilde{g}$表示成$g$%
+的幂级数, 它可以写成\[
+\tilde{g}(g)=g+ag^{2}+O(g^{3})
+\]%
+或者, 等价的\[
+g=\tilde{g}-a\tilde{g}^{2}+O(\tilde{g}^{3})\text{ .}
+\]%
+导数是\[
+\frac{\dif\tilde{g}}{\dif g}=1+2ag+O(g^{2})=1+2a\tilde{g}+O(\tilde{g}^{2})%
+\text{ .}
+\]%
+另外, 对于我们在这里已经考虑过的耦合(包括$g=e^{2}$), $\beta (g)$的幂级数应该采取形式\[
+\beta (g)=bg^{2}+b^{\prime }g^{3}+O(g^{4})
+\]%
+或者, 以$\tilde{g}$的形式\[
+\beta (\tilde{g})=b\tilde{g}^{2}+(b^{\prime }-2ab)\tilde{g}^{3}+O(\tilde{g}%
+^{4})\text{ .}
+\]%
+那么, 从方程(\ref{18.3.29})中我们就有\begin{eqnarray}
+\tilde{\beta}(\tilde{g}) &=&\left[ 1+2a\tilde{g}^{2}+O(\tilde{g}^{2})\right] %
+\left[ b\tilde{g}^{2}+(b^{\prime }-2ab)\tilde{g}^{3}+O(\tilde{g}^{4})\right] 
+\nonumber \\
+&=&b\tilde{g}^{2}+b^{\prime }\tilde{g}^{3}+O(\tilde{g}^{4})\text{ .}
+\label{18.3.30}
+\end{eqnarray}%
+我们看到, 在$\tilde{\beta}$的$\tilde{g}$%
+幂级数展开中和$\beta $的$g$%
+幂级数展开中, 前两项的系数是相同的. 然而, 
+对于高阶项却绝不是这种情况. 事实上, 我们总可以选择函数$\tilde{g}(g)$%
+使得$\tilde{\beta}(\tilde{g})$中所有比$%
+\tilde{g}$的三阶项更高的高阶项全部为零, 所以, 通过观察$\beta (g)$微扰展开中的前两项, 我们就可以描述$\tilde{g}_{E}$在$E\rightarrow \infty $时的%
+渐进行为. 但是它的意义并不大, 这是因为为了确定$g$是如何依赖于$%
+\tilde{g}$, 我们需要计算至所有阶, 并且如果没有这些信息, 我们就不能用$%
+\tilde{g}$的渐进行为讨论$g$的渐进行为, 或是物理量的渐进行为.
+
+给出方程(\ref{18.3.30})的讨论同时表明, {\kai{在耦合很小时}}, 晶格间距远大于粒子质量的Wilson重整化群方程与重整化标度%
+远大于粒子质量的Gell-Mann---Low重整化群方程是相同的, 其中前者是关于裸耦合的方程, 而裸耦合是晶格间距的函数, 后者是关于重整化%
+耦合的方程, 而重整化耦合是重整化标度的函数. 因此, 如果一个连续理论是渐进自由的, 
+那么在过渡到在晶格上量子化的该理论的连续极限中不存在障碍.
+
+\end{document}

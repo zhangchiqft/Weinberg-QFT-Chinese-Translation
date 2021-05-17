@@ -1,0 +1,997 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+
+\chapter{红外效应} \label{cha:13}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[534]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[534]}}}
+  \markboth{第13章\quad 红~\,外~\,效~\,应}{第13章\quad 红~\,外~\,效~\,应}
+
+在辐射修正的研究中, ``软光子'', 即那些能量和动量远小于所研究的过程中的典型质量和能量的光子, 产生的修正扮演了一个特殊角色. 一方面是因为这些修正通常非常大, 所以必须对它们在微扰论的所有阶求和; 另一方面, 这些修正非常简单以至于求和是不困难的. 无限大波长光子的贡献以发散积分的形式出现, 但是正如我们将看到的, 这些``红外发散''全部抵消了.\textsuperscript{\cite{1}}
+
+在本章大部分内容中, 我们将处理与任意类型和任意自旋带电粒子相互作用的光子, 这些带电粒子中包括原子核这样既有强相互作用又有电磁相互作用的粒子. 而将这里所做的计算用到其他无质量粒子上, 例如量子色动力学的胶子, 是没有困难的. 在\,\ref{sec:13.4}\,节, %
+我们将明确地考察非常普遍的无质量粒子的理论, 并在普遍的基础上证明红外发散的抵消.
+
+在这些一般性的讨论之后, 我们将回到光子, 并讨论两个有实际意义的专题: 软光子在有非电磁相互作用且自旋任意的带电粒子上的散射, 以及将原子核这样的带电重粒子作为外电磁场源的处理.
+
+
+
+\section{软光子振幅} \label{sec:13.1}
+\setcounter{equation}{0}
+
+在本节, 对于包含任意多个任意种类的高能带电粒子的过程$\alpha\to\beta$, 我们导出在这个过程发射任意多个低能光子的振幅的通用公式.
+
+我们从只发射一个软光子的振幅出发. 如果我们将具有出动量$q$和极化指标$\mu$的软光子线连到过程$\alpha\to\beta$的某个连通\,Feynman\,图的出带电粒子线上, 如图13.1(a)所示, %
+那么我们就要\marginpar[\flushright{\small[535]\hspace*{5mm}}]{{\small\hspace*{5mm}[535]}}给$\alpha\to\beta$的$S$-矩阵元乘上一个额外的带电粒子传播子, 该传播子携带着带电粒子在发射光子之前所拥有的动量$p+q$,\vspace{-5mm}\linebreak
+
+\newpage
+
+\noindent 再乘上新的带电粒子\lzx 光子顶点给出的贡献. 对于零自旋, 质量为$m$而电荷为$+e$的带电粒子, 这些因子是
+\[
+\Bigl[ \mi(2\uppi )^{4}e(2p^{\mu }+q^{\mu })\Bigr]\left[ \frac{-\mi}{(2\uppi )^{4}}%
+\frac{1}{(p+q)^{2}+m^{2}-\mi\epsilon }\right] \:,
+\]%
+它在$q\to 0$的极限下变为
+\begin{equation}
+\frac{e\,p^{\mu }}{p\cdot q-\mi\epsilon }\:.  \label{13.1.1}
+\end{equation}
+(我们可以随意地重新定义正无限小$\epsilon$的标度,
+要小心的只是要保留它的符号.) 这一结果实际上对于任意自旋的带电粒子都成立. %
+例如, 对于一个自旋$\frac{1}{2}$且电荷为$+e$的粒子, 我们必须%
+将出带电粒子的系数函数$\bar{u}(\bp,\sigma)$替换成
+\[
+\bar{u}(\bp,\sigma )\Bigl[ -(2\uppi )^{4}e\gamma ^{\mu }\Bigr] \left[
+\frac{-\mi}{(2\uppi )^{4}}\frac{-\mi(\xxp+\xxq)+m}{(p+q)^{2}+m^{2}-\mi\epsilon }\right]\:.
+\]%
+在$q\to 0$的极限下, 传播子的分子由对并旋量的求和给出:%
+\[
+-\mi\xxp+m=2p^{0}\sum_{\sigma ^{\prime }}u(\bp,\sigma ^{\prime })%
+\,\bar{u}(\bp,\sigma ^{\prime })\:,
+\]%
+所以我们有了对$\gamma ^{\mu }$%
+的等动量矩阵元的求和, 由\[
+\bar{u}(\bp,\sigma)\gamma ^{\mu }u(\bp,\sigma
+^{\prime })=-\mi\updelta _{\sigma ,\sigma ^{\prime }}\,p^{\mu }/p^{0}
+\]%
+给出, 而这个效果仍旧是在过程$\alpha \to \beta$的矩阵元上乘以因子(\ref{13.1.1}). 更普遍地, 对任意自旋, %
+在$q\to0$的极限下, 新的带电粒子内线的\,4\,-动量$p+q$会趋于质量壳, 所以传播子的分子就趋于对并旋量系数函数的求和, %
+它将新的顶点矩阵转化成一个正比于$p ^{\mu }$以及以螺旋度为指标的单位矩阵的因子, 这就又一次导出了因子(\ref{13.1.1}).
+更进一步, 我们在第10章已经看到, 高阶修正既不影响传播子中质壳极点的留数, %
+也不影响电流在同一粒子的等动量态之间的矩阵元, %
+所以(\ref{13.1.1})给出了从出射带电粒子线上发射一个软光子所附带的正确因子, 这一结果适用于微扰论的所有阶.%
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1301.eps}\\
+  \caption{在任意过程$\alpha \to \beta$中发射软光子的主导图. 直线是态$\alpha$和$\beta$中的带电粒子(包含可能的硬光子); 波浪线是软光子.}
+ \label{fig:13.1}
+\end{figure}
+
+同样的推理也可套用在过程$\alpha \to  \beta$的入射带电粒子线上发射光子的情况中, 所不同的是, %
+在带电粒子发射一个\,4\,-动量为$q$的光子后, 带电粒子线的\,4\,-动量变成$p-q$, 所以取代(\ref{13.1.1}), 我们有因子\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[536]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[536]}}}
+\begin{equation}
+\frac{e\,p^{\mu }}{-p\cdot q-\mi\epsilon }.  \label{13.1.2}
+\end{equation}%
+当然, 光子也可以从过程$\alpha\to\beta$中的内线发射出来, 但在这一情况下, %
+没有因子在$q\to 0$时趋于$(p\cdot q)^{-1}$. 因此, 在过程$\alpha\to\beta$中发射\,4\,-动量为$q$且极化指标为$\mu$的单个软光子的振幅$M_{\beta \alpha}^{\mu }(q)$(不带有能动量守恒$\updelta$-函数的$S$-矩阵), %
+在$q\to0$的极限下, 由$\alpha\to\beta$的矩阵元$M_{\beta \alpha }$乘以像(\ref{13.1.1})和(\ref{13.1.2})这样的项之和给出, 每一个这样的项对应每一个出射或入射带电粒子:
+\begin{equation}
+M_{\beta \alpha }^{\mu }(q)\to  M_{\beta \alpha }\sum_{n}\frac{\eta
+_{n}e_{n}\,p_{n}^{\mu }}{p_{n}\cdot q-\mi\eta _{n}\epsilon }\:, \label{13.1.3}
+\end{equation}%
+其中$p_{n}$和$+e_{n}$是初态和末态中第$n$个粒子的\,4\,-动量和电荷, 而$\eta _{n}$是符号因子, %
+对于末态$\beta$中的粒子取$+1$, 对于初态$\alpha$中的粒子取$-1$.
+
+在进一步考察发射多个软光子之前\marginpar[\flushright{\small[537]\hspace*{5mm}}]{{\small\hspace*{5mm}[537]}}, 值得讨论一下公式(\ref{13.1.3})的一个重要特征.\textsuperscript{\cite{2}} %
+为了计算发射一个具有确定螺旋度的光子的振幅, 我们必须用相应的光子极化矢量$e_{\mu }(\bq,\pm )$来收缩该式. 但是, %
+我们在\,\ref{sec:5.9}\,节已经看到, $e_{\mu }(\bq,\pm)$并不是一个\,4\,-矢量; 在\,Lorentz\,变换$\Lambda_{\phantom{\mu}\nu }^{\mu}$下, 极化矢量变成$\Lambda _{\phantom{\mu}\nu }^{\mu}e^{\nu}(\bq,\pm )$再加上一个正比于$q^{\mu}$的项. 为了不让后一项破坏\,Lorentz\,不变性, 必须使$M_{\beta \alpha }^{\mu }(q)$与$q_{\mu }$ 收缩后为零. 而在$q\to 0$时, %
+(\ref{13.1.3})给出
+\begin{equation}
+q_{\mu }M_{\beta \alpha }^{\mu }(q)\to  M_{\beta \alpha }\sum_{n}\eta_{n}e_{n}\:.  \label{13.1.4}
+\end{equation}%
+右边$M_{\beta \alpha }$的系数正是末态总电荷减去初态总电荷, 所以使它为零的条件正是电荷守恒条件. 因此, %
+在没有任何独立的关于规范不变的假定下, 我们看到{\KAI{对自旋\,1\,的无质量粒子}}, \textit{Lorentz}\,{\KAI{不变性要求, 任何支配这些粒子的相互作用的耦合常数, 例如电荷, 在低能下都必须守恒.}}
+
+附带说一下, 在过程$\alpha \to  \beta$中发射一个\,4\,-动量为$q$并携带张量指标$\mu\:,\nu$
+的软{\KAI{引力子}}的振幅由类似(\ref{13.1.3})的公式\textsuperscript{\cite{3}} 给出:%
+\begin{equation}
+M_{\beta \alpha }^{\mu \nu }(q)\to  M_{\beta \alpha }\sum_{n}\frac{%
+\eta _{n}f_{n}\,p_{n}^{\mu }\,p_{n}^{\nu }}{p_{n}\cdot q-\mi\eta _{n}\epsilon }%
+\:,  \label{13.1.5}
+\end{equation}%
+其中$f_{n}$是软引力子与第$n$种粒子的耦合常数. Lorentz\,不变性要求它与$q_{\mu }$收缩后为零. 但是
+\begin{equation}
+q_{\mu }M_{\beta \alpha }^{\mu \nu }(q)\to M_{\beta \alpha}\sum_{n}\eta _{n}f_{n}\,p_{n}^{\nu }\:,  \label{13.1.6}
+\end{equation}%
+所以求和$\sum f_{n}p_{n}^{\nu }$是守恒的. 然而, 在\,4\,-动量的所有线性组合中, %
+能够守恒且不禁止任何非平庸散射过程的只有总\,4\,-动量, 所以为了使(\ref{13.1.6})为零, $f_{n}$必须都相等. %
+(所有$f_{n}$的共同取值可以认为是$\sqrt{8\uppi G_{N}}$, 其中$G_{N}$是牛顿引力常数.) %
+因此\,Lorentz\,不变性要求自旋\,2\,的低能无质量粒子与所有形式的能量和动量都有相同的耦合. %
+在证明\,Einstein\,等效原理是将\,Lorentz\,不变性应用到自旋\,2\,无质量粒子上的必然结果时, 这起了很大作用. 同样, %
+在过程$\alpha \to  \beta$中发射\,4-动量为$q$且自旋$j\geq 3$的无质量软粒子的振幅形如
+\[
+M_{\beta \alpha }^{\mu \nu \rho \cdots }(q)\to  M_{\beta \alpha
+}\sum_{n}\frac{\eta _{n}g_{n}\,p_{n}^{\mu }\,p_{n}^{\nu }\,p_{n}^{\rho }\cdots }{%
+p_{n}\cdot q-\mi\eta _{n}\epsilon }\:.
+\]%
+这时\,Lorentz\,不变性要\marginpar[\flushright{\small[538]\hspace*{5mm}}]{{\small\hspace*{5mm}[538]}}求$\sum g_{n}p_{n}^{\nu }p_{n}^{\rho}\cdots$必须守恒.
+但是这种既守恒又不禁止非平庸散射过程的量是不存在的, 所以$g_{n}$必须全部为零. 自旋$j\geq 3$的无质量粒子或许存在, 但是它们的耦合在低能极限下无法存留下来, 特别地, 它们无法传递平方反比力.%
+
+现在, 我们来考察发射两个软光子. 如果一个图中的两个光子是从过程$\alpha \to  \beta$的两个不同外线上发射的, 那%
+么该图对矩阵元的贡献就是$\alpha\to\beta$的矩阵乘以像(\ref{13.1.1})或(\ref{13.1.2})那样的因子. 或许会有些惊奇的是, %
+即使这两个光子是从{\KAI{同一}}外线上发射的, 上述结论依然成立. %
+例如, 如果光子\,1\,是继光子\,2\,之后从电荷为$+e$且能动量\,4\,-矢为$p$的外线上发射的, 那么我们就会得到因子
+\[
+\left[ \frac{\eta\, e\,p^{\mu _{1}}}{p\cdot q_{1}-\mi\eta \epsilon }\right] \left[
+\frac{\eta\, e\,p^{\mu _{2}}}{p\cdot (q_{2}+q_{1})-\mi\eta \epsilon }\right]\: ,
+\]%
+但是, 如果光子$2$是在光子$1$之后发射的, 这个因子就变成
+\[
+\left[ \frac{\eta \,e\,p^{\mu _{2}}}{p\cdot q_{2}-\mi\eta \epsilon }\right] \left[
+\frac{\eta\, e\,p^{\mu _{1}}}{p\cdot (q_{1}+q_{2})-\mi\eta \epsilon }\right]\:
+.
+\]%
+(参看图13.2. $\eta$仍旧是由带电粒子线是离开还是进入来决定是$+1$还是$-1$.) 这两个因子之和为
+\[
+\left[ \frac{\eta \,e\,p^{\mu _{1}}}{p\cdot q_{1}-\mi\eta \epsilon }\right] \left[
+\frac{\eta \,e\,p^{\mu _{2}}}{p\cdot q_{2}-\mi\eta \epsilon }\right]\:,
+\]%
+这正是发射单个光子所遇到的因子的乘积.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1302.eps}\\
+ \caption{从同一出带电粒子线上发射两个软光子的图. 直线是硬粒子; 波浪线是软光子.}
+ \label{fig:13.2}
+\end{figure}
+
+更普遍地, 从单个外线上发射任意多个光子时, 我们会遇到如下形式的求和{}$^*$\footnote{$^*${}这个恒等式可以用数学归纳法进行证明. 我们已经看到该等式对于两个光子是成立的. 假定它对于$N-1$个光子也是成立的. 这样, 对于$N$个光子, 我们可以将置换的求和写成, 先选择第一个要发射的光子, 再对剩余光子的置换求和, 然后对选择这个光子的方式求和:
+\begin{align*}
+&[p\cdot q_{1}-\mi\eta \epsilon ]^{-1}[p\cdot (q_{1}+q_{2})-\mi\eta \epsilon
+]^{-1}\cdots \left[ p\cdot (q_{1}+q_{2}+\cdots +q_{N})-\mi\eta \epsilon \right]
+^{-1}+\text{置换} \\
+&=\sum_{r=1}^{N}\left[ p\cdot \left( \sum_{s=1}^{N}q_{s}\right) -\mi\eta
+\epsilon \right] ^{-1}\prod_{s\neq r}[p\cdot q_{s}-\mi\eta \epsilon ]^{-1} \\
+&=\sum_{r=1}^{N}\left[ p\cdot \left( \sum_{s=1}^{N}q_{s}\right) -\mi\eta
+\epsilon \right] ^{-1}[p\cdot q_{r}-\mi\eta \epsilon ]\prod_{s=1}^{N}[p\cdot
+q_{s}-\mi\eta \epsilon ]^{-1}=\prod_{s=1}^{N}[p\cdot q_{s}-\mi\eta \epsilon
+]^{-1}
+\end{align*}%
+这正是所要证明的.}%
+\newpage
+\ \vspace{-5mm}
+\begin{align}
+&[p\cdot q_{1}-\mi\eta \epsilon ]^{-1}[p\cdot (q_{1}+q_{2})-\mi\eta \epsilon
+]^{-1}[p\cdot (q_{1}+q_{2}+q_{3})-\mi\eta \epsilon ]^{-1}\cdots   \nonumber \\
+&\qquad\quad+\text{置换}  \nonumber \\
+&=[p\cdot q_{1}-\mi\eta \epsilon ]^{-1}[p\cdot q_{2}-\mi\eta \epsilon
+]^{-1}[p\cdot q_{3}-\mi\eta \epsilon ]^{-1}\cdots\:. \label{13.1.7}
+\end{align}%
+由此可知\marginpar[\flushright
+{\raisebox{6.3ex}[0pt]{{\small[539]\hspace*{5mm}}}}]{{\raisebox{6.3ex}[0pt]{\small\hspace*{5mm}[539]}}}, 在过程$\alpha \to \beta$中发射$N$个极化指标和\,4\,- 动量分别为$\mu_{1},\cdots,\mu_{N}$%
+和$q_{1},\cdots ,q_{N}$的极软光子的振幅$M_{\beta \alpha }^{\mu _{1}\cdots \mu
+_{N}}(q_{1}\cdots q_{N})$, 在$q\to 0$的极限下, 由$\alpha \to\beta$的矩阵元对每个光子乘以类似(\ref{13.1.3})中的因子之积给出:%
+\begin{equation}
+M_{\beta \alpha }^{\mu _{1}\cdots \mu _{N}}(q_{1}\cdots q_{N})\to
+M_{\beta \alpha }\prod_{r=1}^{N}\left( \sum_{n}\frac{\eta
+_{n}\,e_{n}\,p_{n}^{\mu _{r}}}{p_{n}\cdot q_{r}-\mi\eta _{n}\epsilon }\right)
+\:.  \label{13.1.8}
+\end{equation}
+
+\section[虚~\,软~\,光~\,子]{虚软光子} \label{sec:13.2}
+\setcounter{equation}{0}
+
+我们现在要用上一节的结果计算在过程$\alpha\to\beta$的两个带电粒子线之间交换虚软光子对所有阶辐射修正的影响, %
+如图13.3所示. 对于``软''光子, 我们是指携带的动量远小于$\Lambda$的光子, %
+这里$\Lambda$是某个适当的分界点, 它被选得足够低以确保上一节所做的近似有效. 我们将看到这些软光子引入了红外发散,
+所以, 作为权宜之计, 我们不得不对光子动量引入下\marginpar[\flushright{\small[540]\hspace*{5mm}}]{{\small\hspace*{5mm}[540]}}界$\lambda$. 分辨出软光子动量上的两个限制之间的差异非常重要. %
+上界$\Lambda$仅用来定义软光子的``软''指什么; 软光子辐射修正的$\Lambda$-相关性被振幅其余部分的$\Lambda$-相关性抵消了, 而计算后者时仅需计入动量{\KAI{大于}} $\Lambda$的虚光子. 另一方面, 下界截断最终必须通过取$\lambda\to0$消除掉; %
+正如我们将看到的, 这一极限下的红外发散将被发射实软光子的效应抵消.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1303.eps}\\
+  \caption{虚软光子对反应$\alpha\to\beta$的$S$-矩阵的辐射修正的典型主导图. %
+   直线是态$\alpha$和$\beta$中的粒子(包括硬光子); 波浪线是软光子.}
+ \label{fig:13.3}
+\end{figure}
+
+对每一个虚软光子, 我们都必须补充一个传播子因子
+\begin{equation}
+\frac{-\mi}{(2\uppi )^{4}}\frac{\eta_{\mu\mu^{\prime }}}{q^{2}-\mi\epsilon}\:,  \label{13.2.1}
+\end{equation}%
+然后给振幅(\ref{13.1.8})乘上这些传播子的乘积, 收缩掉光子极化指标, 并积掉光子\,4\,-动量. 另外, %
+对$N$个虚软光子, 我们必须除以因子$2^{N}N!$, 这是因为对虚光子线所有可以连接的两个端点进行的求和引入了对$N!$%
+个光子线置换的重复求和以及对这些线的两端交换的重复求和. 那么, 包括$N$个软光子的辐射修正的效果就是在不包含这种辐射修正的矩阵元$M_{\beta \alpha }$ 上乘以因子\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[541]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[541]}}}
+\begin{equation}
+\frac{1}{N!2^{N}}\left[ \frac{1}{(2\uppi )^{4}}\sum_{nm}e_{n}e_{m}\eta_{n}\eta _{m}\,J_{nm}\right] ^{N}\:, \label{13.2.2}
+\end{equation}%
+其中
+\begin{equation}
+J_{nm}\equiv -\mi(p_{n}\cdot p_{m})\int_{\lambda \leq \left\vert \bq%
+\right\vert \leq \Lambda }\frac{\dif^{4}q}{[q^{2}-\mi \epsilon ][p_{n}\cdot
+q-\mi \eta _{n}\epsilon ][-p_{m}\cdot q-\mi \eta _{m}\epsilon ]}\:.
+\label{13.2.3}
+\end{equation}%
+要注意的是, 我们改变了(\ref{13.2.3})分母中$p_{m}\cdot q$的符号, 这是因为如果我们定义$q$为线$n$发出的动量, %
+那么线$m$射出的动量就是$-q$.
+
+对$N$求和, 我们得到的结论是, 当一个过程包含任意多个动量$\left\vert \bq\right\vert \geq \lambda$的软光子引起的辐射修正时, 它的矩阵元是
+\begin{equation}
+M_{\beta \alpha }^{\lambda }=M_{\beta \alpha }^{\Lambda }\exp \left[ \frac{1%
+}{2(2\uppi )^{4}}\sum_{nm}e_{n}e_{m}\eta _{n}\eta _{m}\,J_{nm}\right],
+\label{13.2.4}
+\end{equation}%
+其中$M_{\beta \alpha}^{\Lambda }$是仅包含动量大于$\Lambda$的虚光子的振幅.%
+
+(\ref{13.2.3})中对$q^{0}$的积分可以通过留数方法积出来. 被积函数除了4个极点外对$q^{0}$是解析的, 这四个极点是%
+\begin{align*}
+q^{0} &=\lvert\bq\rvert -\mi\epsilon &&q^{0}=-\lvert \bq\rvert +\mi\epsilon \:, \\
+q^{0} &=\bv_{n}\cdot \bq-\mi\eta_{n}\epsilon &&q^{0}=\bv_{m}\cdot \bq+\mi\eta _{m}\epsilon\:,
+\end{align*}%
+其中$\bv_{n}\equiv \bp_{n}/p_{n}^{0}$, 对$\bv_{m}$同样如此. 如果粒子$n$是出射的而粒子$m$%
+是入射的, 就有$\eta _{n}=+1$和$\eta_{m}=-1$, 那么通过在上半平面闭合$q^{0}$的围道, %
+我们就避开了$q^{0}=\bv_{n}\cdot \bq-\mi\eta_{n}\epsilon$和$q^{0}=\bv_{m}\cdot \bq+\mi\eta
+_{m}\epsilon$处的极点的贡献. 类似地, 如果$n$是入射的而$m$是出射的, 我们可以在下半平面闭合围道来避开这两个极点. %
+在这两种情况中, $q^{0}=\pm(\lvert\bq\rvert-\mi\epsilon)$处的极点中只有一个有贡献, 我们得到了纯实的积分
+\begin{align}
+J_{nm} &=-\uppi (p_{n}\cdot p_{m})\int_{\lambda \leq \left\vert \bq%
+\right\vert \leq \Lambda }\frac{\dif^{3}q}{\left\vert \bq\right\vert ^{3}(E_{n}-%
+\hat{\bq}\cdot \bp_{n})(E_{m}-\hat{\bq}\cdot \bp%
+_{m})}  \nonumber \\
+&\qquad\quad \text{(对}\:\eta_{n} =-\eta _{m}=\pm 1\,) \: . \label{13.2.5}
+\end{align}%
+另一方面, 如果粒子$n$和$m$都是出射的或都是入射的, 那么$\bv_{n}\cdot \bq-\mi\eta
+_{n}\epsilon$和$\bv_{m}\cdot \bq+\mi\eta _{m}\epsilon$处的极点对称地处在实$q^{0}$-轴的两侧, 无论以何种方式闭合围道, 我们都无法避开来自其中一个极点的贡献:\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[542]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[542]}}}
+\begin{align}
+J_{nm} &=-\uppi (p_{n}\cdot p_{m})\int_{\lambda \leq \left\vert \bq%
+\right\vert \leq \Lambda }\frac{\dif^{3}q}{\left\vert \bq\right\vert ^{3}(E_{n}-%
+\hat{\bq}\cdot \bp_{n})(E_{m}-\hat{\bq}\cdot \bp%
+_{m})}  \nonumber \\
+&\quad-\frac{4\mi\uppi ^{3}}{\beta _{nm}}\ln \left( \frac{\Lambda }{\lambda }\right)
+\qquad\text{(对\:}\eta _{n} = \eta _{m}=\pm 1)\: ,
+\label{13.2.6}
+\end{align}%
+其中$\beta _{nm}$是粒子$n$和$m$在其中一个粒子的静止系中的相对速度:%
+\begin{equation}
+\beta _{nm}\equiv \sqrt{1-\frac{m_{n}^{2}m_{m}^{2}}{(p_{n}\cdot p_{m})^{2}}}\:.  \label{13.2.7}
+\end{equation}%
+方程(\ref{13.2.6})中的虚项导致了方程(\ref{13.2.4})中的相因子红外发散\textsuperscript{\cite{4}}, %
+这个相因子在我们取矩阵元的绝对值以计算反应$\alpha \to  \beta$的速率时会消失. (这个无限大的相因子是非相对论\,Coulomb\,散射中一个著名特征对应的相对论版, 即\,Schr\"{o}dinger\,波函数的出射波部分对径向坐标$r$的依赖关系形如$\exp (\mi pr-\mi\nu \ln r)/r$而不是$\exp (\mi pr)/r$, 其中$\nu$ 是电荷乘积除以相对速度.\textsuperscript{\cite{5}}) 影响反应速率的{\KAI{是}} $J_{nm}$的实部, 它对于所有的$\eta _{n}$和$\eta _{m}$取值为%
+\begin{equation}
+\operatorname{Re}J_{mn}=-\uppi (p_{n}\cdot p_{m})\int_{\lambda \leq \left\vert \bq\right\vert \leq \Lambda }\frac{\dif^{3}q}{\lvert \bq\rvert^{3}(E_{n}-\hat{\bq}\cdot \bp_{n})(E_{m}-\hat{\bq}\cdot\bp_{m})}\:.  \label{13.2.8}
+\end{equation}%
+一个初级的计算给出
+\begin{equation}
+\operatorname{Re}J_{mn}=\frac{2\uppi^{2}}{\beta_{nm}}\ln \biggl(\frac{1+\beta_{nm}}{1-\beta_{nm}}\biggr)
+ \ln \biggl( \frac{\Lambda }{\lambda }\biggr)\:. \label{13.2.9}
+\end{equation}%
+在方程(\ref{13.2.4})的绝对值平方中应用此式就给出了虚软光子对过程的速率$\Gamma _{\beta \alpha }$的影响%
+\begin{equation}
+\Gamma _{\beta \alpha }^{\lambda }=\left( \frac{\lambda }{\Lambda }\right)
+^{A(\alpha \to  \beta )}\Gamma _{\beta \alpha }^{\Lambda }\:,
+\label{13.2.10}
+\end{equation}%
+其中$\Gamma _{\beta \alpha }^{\lambda }$和$\Gamma _{\beta\alpha }^{\Lambda }$分别是过程$\alpha
+\to  \beta$仅包含动量大于$\lambda$或$\Lambda$的软光子辐射修正时的速率, $A$是指数
+\begin{equation}
+A(\alpha \to  \beta )=-\frac{1}{8\uppi ^{2}}\sum_{nm}\frac{%
+e_{n}e_{m}\eta _{n}\eta _{m}}{\beta _{nm}}\ln \left( \frac{1+\beta _{nm}}{%
+1-\beta _{nm}}\right) \:.  \label{13.2.11}
+\end{equation}%
+要注意的是, 由于方程(\ref{13.2.10})中的两个速率只分别依赖于$\lambda$和$\Lambda $, %
+上述结论成立仅因为修正因子$(\lambda /\Lambda )^{A}$变成了$\lambda$和$\Lambda$的同一函数的比值.
+
+指数$A$总是正的\marginpar[\flushright{\small[543]\hspace*{5mm}}]{{\small\hspace*{5mm}[543]}}. 例如, 在单个带电粒子被一个中性粒子或外势散射时, %
+当$n$和$m$都是初态带电粒子或末态带电粒子时(在这一情况下, $\eta _{n}\eta
+_{m}=+1$而$\beta _{nm}=0$), 或者$n$是初态或末态带电粒子而$m$是另一态中的粒子时(在这一情况下, %
+$\eta _{n}\eta _{m}=-1$而$\beta _{nm}=\beta$, 其中$1>\beta >0$), 我们都必须在方程(\ref{13.2.11})中把项加起来. 这给出%
+\[
+A=-\frac{e^{2}}{8\uppi ^{2}}\left[ 4-\frac{2}{\beta }\ln \left(\frac{1+\beta}{1-\beta }\right) \right]\:,
+\]%
+它对于所有的$1>\beta >0$都是正的. 因为$A$是正的, 所以对于任意给定的带电粒子过程$\alpha\to\beta$, 虚软光子所引入的红外发散效应在对所有阶求和后就变成使得反应速率在极限$\lambda \to 0$下为{\KAI{零}}.
+
+\subsection*{* * *}
+
+在我们继续考察实软光子发射是如何抵消这些红外发散之前, 我们应该暂停一下, 关注上面计算中的一个技术, 就我所知, %
+这个技术总被文献忽略. 在计算这些辐射修正时, 既包含了虚光子被{\KAI{同一}}带电粒子外线吸收并发射的图, 也包含了虚光子被不同的线吸收和发射的那些图. 然而, 我们在第10章就已经知道, 在计算$S$-矩阵时, 我们没有假设计入了在外线中插入自能子图所产生的辐射修正. 这似乎表明我们应该扔掉方程(\ref{13.2.11})中$n=m$的项, 但如果这样做的话, 我们在下一节会发现红外发散的抵消将是不完整的.
+
+这一问题的解决可以通过下述观察得到: 虚软光子不仅直接产生红外发散, 而且通过它们对带电粒子场的重正化常数$Z_{n}$的影响产生红外发散. (在只含有一个自旋$\frac{1}{2}$的带电荷场的理论中, 例如量子电动力学, %
+重正化常数$Z_{n}$就是通常被称作$Z_{2}$的那个常数.) 正是正比于$Z_{n}-1$的抵消项抵消了外线中辐射修正的影响. 具体一些, $n$类带电粒子的重正化场是因子$Z_{n}^{-1/2}$乘以非重正化场, 所以当我们用重正化场(对应于略掉了外线中的辐射修正)计算$S$-矩阵时, 我们引入了一个额外的因子$\prod_{n}Z_{n}^{-1/2}$, 该乘积取遍初态和末态中的所有带电粒子. (当然, 对中性粒子也存在因子$Z_{n}^{-1/2}$, 但它们不是红外发散的.) 以一种稍微不同的记法,
+这个因子是\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[544]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[544]}}}
+\[
+\prod_{f}Z_{f}^{-E_{f}/2}\:,
+\]%
+其中$Z_{f}$是$f$类场的场重正化常数, $E_{f}$是$f$类外线的数目, 而乘积现在取遍{\KAI{所有的}}带电场种类.
+然而, 这些场重正化常数也出现在图的内部; 用重正化场表示包含$N_{if}$个$f$类带电粒子场的$i$类相互作用时会引入一个红外发散因子
+\[
+\prod_{f}(Z_{f})^{N_{if}/2}\:.
+\]%
+(例如, 方程(\ref{11.1.9})中的抵消项$-\mi e(Z_{2}-1)A_{\mu}\bar{\psi}\gamma^{\mu }\psi$与普通的电磁相互作用$%
+-\mi eA_{\mu }\bar{\psi}\gamma ^{\mu }\psi$合起来得出了总的相互作用$%
+-\mi Z_{2}eA_{\mu }\bar{\psi}\gamma ^{\mu }\psi$. $Z_{2}$因子中的红外发散正是方程(\ref{11.3.23})括号中的第%
+二项以及方程(\ref{11.4.14})中的最后一项出现红外发散的原因.) 在重正化场的传播子中也存在红外发散; %
+当用非重正化场传播子表示$f$类重正化带电场的传播子时, 会引入因子$Z_{f}^{-1}$. 将这些放到一起, 对每一个$f$类的带电场, 由相互作用以及外线和内线的辐射修正的抵消项引入的因子$Z_{f}$的总数是
+\[
+\tfrac{1}{2}\sum_{i}V_{i}N_{if}-I_{f}-\tfrac{1}{2}E_{f}\:,
+\]%
+其中$I_{f}$和$E_{f}$是$f$类内线和外线的数目, $V_{i}$是$i$类相互作用顶点的数目. %
+在\,\ref{sec:6.3}\,节我们已经注意到这个量对于每个$f$为零. 因此, 抵消外线上的辐射修正的抵消项自身被产生自内线和%
+顶点的$Z_{f}$因子抵消了. 因此方程(\ref{13.2.11})现在这种包括$n=m$的项的样子是正确的.
+
+
+\section{实软光子; 发散的抵消}  \label{sec:13.3}
+\setcounter{equation}{0}
+
+要解决上一节所遇到的红外发散问题, 需要注意到如下的事实: 因为能量非常低的光子总可以逃避探测,
+测量包含数目确定的光子和带电粒子的反应$\alpha\to\beta$的速率$\Gamma _{\beta \alpha }$是不大可能的. %
+对\marginpar[\flushright{\small[545]\hspace*{5mm}}]{{\small\hspace*{5mm}[545]}}这种过程可以测量的速率是$\Gamma_{\beta \alpha }(E,E_{T})$, 即不可观测的光子能量都小于某个小量$E$, %
+并且无论不可观测光子的数目是多少, 它们的总能量小于某个很小的总能量$E_{T}$. (显然, $E<E_{T}$. %
+在没有软光子探测器的实验中, 我们可以通过测量$\alpha$和$\beta$中``硬''粒子的能量%
+给软光子的能量施加一个限制$E_{T}$, 在这一情况下我们就令$E=E_{T}$.) 我们现在来计算这一速率.
+
+在过程$\alpha \to  \beta$中发射$N$个实软光子的$S$-矩阵是通过用合适的系数函数
+\[
+\frac{\epsilon _{\mu }^{\ast}(\bq,h)}{(2\uppi)^{3/2}\sqrt{2\lvert\bq\rvert }}
+\]%
+与振幅(\ref{13.1.8})上这$N$个光子的极化指标$\mu _{1},\mu_{2},\cdots$一一收缩得到的, 其中$%
+\,\bq$是光子动量, $h=\pm 1$是它的螺旋度, 而$\epsilon^{\mu }$是相应的光子极化``矢量''.{}$^*$\footnote{$^*${}是为了避免与电荷的$e_{n}$发生混淆, 我们用$\epsilon^{\mu}$而不是$e^{\mu}$来表示光子极化矢量.} %
+这给出光子发射矩阵元(省略掉$\updelta$-函数的$S$-矩阵元)%
+\begin{align}
+&M_{\beta \alpha }^{\lambda }(\bq_{1},h_{1},\bq%
+_{2},h_{2},\cdots ) = M_{\beta \alpha }^{\lambda }  \nonumber \\
+&\times \prod_{r=1}^{N}(2\uppi )^{-3/2}(2|\bq_{r}|)^{-1/2}\sum_{n}%
+\frac{\eta _{n}e_{n}[p_{n}\cdot \epsilon ^{\ast }(\bq_{r},h_{r})]}{%
+p_{n}\cdot q_{r}}\:.  \label{13.3.1}
+\end{align}%
+(上标$\lambda$是提醒我们这些振幅是在虚光子动量上有红外截断$\lambda$的前提下计算的. 最后我们会取$\lambda\to0$. %
+根据\,\ref{sec:13.1}\,节讨论的因式分解, 虚光子的出现并不会影响结果(\ref{13.3.1}).) 对该矩阵元取平方, 对螺旋度求和,
+并乘以$\prod_{r}\dif^{3}q_{r}$, 就给出了发射$N$个软光子到动量空间体积$\prod_{r}\dif^{3}q_{r}$中的微分速率. %
+从方程(\ref{8.5.7})中我们回忆起, 当$q^{2}=0$时, 螺旋度求和后的形式为
+\begin{equation}
+\sum_{h=\pm 1}\epsilon _{\mu }(\bq,h)\epsilon _{\nu }^{\ast }(\bq,h)=\eta _{\mu \nu }+q_{\mu }c_{\nu }+q_{\nu }c_{\mu }\:,  \label{13.3.2}
+\end{equation}%
+其中$\bc\equiv -\bq/2|\bq|^{2}$且$c^{0}\equiv 1/2|\bq|$. %
+电荷守恒条件$\sum_{n}\eta _{n}e_{n}=0$允许我们扔掉方程(\ref{13.3.2})中含有$q_{\mu }$或$q_{\nu }$的项, 这给出微分速率{}$^*$\footnote{$^*${} 在$N=1$时, $\lvert\bq\rvert\dif\Gamma_{\beta \alpha}(\bq)/\Gamma_{\beta \alpha}$的结果对应一个不连续变化的流密度\,4\,-矢$J^{\mu}(x)=\sum_{n}^{\phantom{n}(t)}\delta ^{3}(\bx-\bv_{n}t)p_{n}^{\mu }e_{n}/E_{n}$只考虑经典效应发射的能量分布, 其中求和在$t<0$ 时取遍初态中的粒子, 而在$t>0$时取遍末态中的粒子.}\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[546]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[546]}}}
+\begin{equation}
+\dif\Gamma _{\beta \alpha }^{\lambda }(\bq_{1},\cdots ,\bq%
+_{N})=\Gamma _{\beta \alpha }^{\lambda }\prod_{r=1}^{N}\frac{\dif^{3}q_{r}}{%
+(2\uppi )^{3}(2|\bq_{r}|)}\sum_{nm}\frac{\eta _{n}\eta
+_{m}e_{n}e_{m}(p_{n}\cdot p_{m})}{(p_{n}\cdot q_{r})(p_{m}\cdot q_{r})}\:
+.  \label{13.3.3}
+\end{equation}
+
+为了计算发射$N$个具有确定能量$\omega _{r}\equiv |\bq_{r}|$的软光子的微分速率, 我们必须要把方程(\ref{13.3.3})中光子动量$\bq_{r}$ 的方向积掉. 这些积分与我们在积分(\ref{13.2.8})中遇到的一样,%
+\begin{equation}
+-\uppi (p_{n}\cdot p_{m})\int \frac{\dif^{2}\hat{\bq}}{(E_{n}-\hat{\bq}\cdot \bp_{n})(E_{m}-\hat{\bq}\cdot \bp_{m})}=\frac{%
+2\uppi ^{2}}{\beta _{nm}}\ln \left( \frac{1+\beta _{nm}}{1-\beta _{nm}}\right)\:.  \label{13.3.4}
+\end{equation}%
+因此, 方程(\ref{13.3.3})对光子方向的积分给出了发射能量为$\omega _{1},\cdots, \omega _{N}$的光子的微分速率:%
+\begin{equation}
+\dif\Gamma _{\beta \alpha }^{\lambda }(\omega _{1}\cdots \omega _{N})=\Gamma
+_{\beta \alpha }^{\lambda }A(\alpha \to  \beta )^{N}\frac{\dif\omega _{1}%
+}{\omega _{1}}\cdots \frac{\dif\omega _{N}}{\omega _{N}}\:,
+\label{13.3.5}
+\end{equation}%
+其中$A(\alpha\to\beta )$是上一节中曾遇到的同一常数:%
+\[
+A(\alpha \to  \beta )=-\frac{1}{8\uppi ^{2}}\sum_{nm}\frac{%
+e_{n}e_{m}\eta _{n}\eta _{m}}{\beta _{nm}}\ln \left( \frac{1+\beta _{nm}}{%
+1-\beta _{nm}}\right)\:.
+\]
+
+我们从方程(\ref{13.3.5})中看到, 不对发射光子能量进行约束的积分将导致另一个红外发散. 然而, 幺正性要求, %
+如果我们对虚光子动量施加红外截断(正如上标$\lambda$所表明的), 那么我们也必须对实光子使用同一截断.
+对于任意一个未观测光子能量不大于$E$而任意多个未观测光子能量之和不大于$E_{T}$的反应$\alpha \to
+\beta$, 为了计算这个反应的速率$\Gamma_{\beta \alpha }^{\lambda }(E,E_{T})$(其中$E$和$E_{T}$选得足够小使得用来导出方程(\ref{13.3.1})的近似是合理的), 我们必须在$E\geq \omega _{r}\geq \lambda$和$%
+\sum_{r}\omega _{r}\leq E_{T}$这个限制内做方程(\ref{13.3.5})对所有光子能量的积分, 然后, %
+由于该积分会包含仅相差置换$N$个软光子的构形, 所以要除以$N!$, 最后对所有可能的$N$求和. 这给出
+\begin{equation}
+\Gamma _{\beta \alpha }^{\lambda }(E,E_{T})=\Gamma _{\beta \alpha }^{\lambda
+}\sum_{N=0}^{\infty }\frac{A(\alpha \to  \beta )^{N}}{N!}\int_{E\geq
+\omega _{r}\geq \lambda ,\sum_{r}\omega _{r}\leq E_{T}}\prod_{r=1}^{N}\frac{%
+\dif\omega _{r}}{\omega _{r}}\:.  \label{13.3.6}
+\end{equation}%
+如果不是有约束$\sum_{r}\omega _{r}\leq E_{T}$, 该积分可以因式分解成$N$个对单个$\omega _{r}$积分的乘积. %
+这个约束可以通过在被积函数中引入一个阶跃函数\marginpar[\flushright
+{\raisebox{-6.5ex}[0pt]{{\small[547]\hspace*{5mm}}}}]{{\raisebox{-6.5ex}[0pt]{\small\hspace*{5mm}[547]}}}
+\begin{equation}
+\theta (E_{T}-\sum_{r}\omega _{r})=\frac{1}{\uppi }\int_{-\infty }^{\infty }\dif u\:%
+\frac{\sin E_{T}u}{u}\exp \left( \mi u\sum_{r}\omega _{r}\right) \label{13.3.7}
+\end{equation}%
+作为因子来实现. 这样方程(\ref{13.3.6})就变成
+\begin{equation}
+\Gamma_{\beta \alpha}^{\lambda }(E,E_{T})=\frac{1}{\uppi }\int_{-\infty
+}^{\infty }\dif u\:\frac{\sin E_{T}u}{u}\exp \left( A(\alpha \to  \beta
+)\int_{\lambda }^{E}\frac{\dif\omega }{\omega }\me^{\mi\omega u}\right) \Gamma_{\beta\alpha}^{\lambda}\:.  \label{13.3.8}
+\end{equation}%
+在极限$\lambda \ll E$下, 指数中的积分可以通过写成对$(\me^{\mi\omega u}-1)/\omega$与$1/\omega$的积分之和积出来, %
+其中, 对$(\me^{\mi\omega u}-1)/\omega$的积分, 我们可以令$\lambda =0$, 而对$1/\omega$的积分是平庸的. %
+重新标度变量$u$和$\omega $, 对$\lambda \ll E$, 这给出:%
+\begin{equation}
+\Gamma _{\beta \alpha }^{\lambda }(E,E_{T})\to  \mathscr{F}\Bigl(
+E/E_{T};A(\alpha \to  \beta )\Bigr) \left( \frac{E}{\lambda }\right)
+^{A(\alpha \to  \beta )}\Gamma _{\beta \alpha }^{\lambda }\:, \label{13.3.9}
+\end{equation}%
+其中
+\begin{align}
+\mathscr{F}(x;A) &\equiv \frac{1}{\uppi }\int_{-\infty }^{\infty }\dif u\:\frac{%
+\sin u}{u}\exp \left( A\int_{0}^{x}\frac{\dif\omega }{\omega }(\me^{\mi\omega u}-1)\right)   \nonumber \\
+&=1-\frac{A^{2}\theta (x-\frac{1}{2})}{2}\int_{1-x}^{x}\frac{\dif\omega }{\omega}\ln \left( \frac{x}{1-\omega }\right) +\cdots \:.  \label{13.3.10}
+\end{align}%
+当$E$和$E_{T}$为同一阶且$A\ll 1$时, 方程(\ref{13.3.9})中的因子$\mathscr{F}(E/E_{T};A)$接近于\,1;
+例如,%
+\[
+\mathscr{F}\left( 1;A\right) \simeq 1-\tfrac{1}{12}\uppi ^{2}A^{2}+\cdots\:.
+\]%
+
+由于$A(\alpha\to\beta)>0$, 方程(\ref{13.3.9})中的因子$(E/\lambda )^{A(\alpha \to
+\beta )}$在$\lambda \to0$的极限下变成无限大. 然而, %
+方程(\ref{13.2.10})表明速率$\Gamma_{\beta \alpha}^{\lambda}$在这一极限下为零:%
+\[
+\Gamma _{\beta \alpha }^{\lambda }=\left( \frac{\lambda }{\Lambda }\right)
+^{A(\alpha \to  \beta )}\Gamma _{\beta \alpha }^{\Lambda }\:.
+\]%
+在方程(\ref{13.3.9})中应用该式表明, 红外截断$\lambda$在$\lambda \ll E$的极限下消失了:%
+\begin{equation}
+\Gamma _{\beta \alpha }^{\lambda }(E,E_{T})\to  \mathscr{F}\Bigl(
+E/E_{T};A(\alpha \to  \beta )\Bigr) \left( \frac{E}{\Lambda }\right)
+^{A(\alpha \to  \beta )}\Gamma _{\beta \alpha }^{\Lambda }\:. \label{13.3.11}
+\end{equation}
+
+我们要提醒读者, 能量$\Lambda$仅是``软''光子和``硬''光子之间一个方便的分界点, 其中软光子在方程(\ref{13.3.11})中被显式地计入了而硬光子的影响隐含在$\Gamma_{\beta\alpha }^{\Lambda}$中. 由于$\Gamma _{\beta \alpha
+}^{\Lambda }\propto \Lambda ^{A}$, 方程(\ref{13.3.11})的右边不依赖$\Lambda $. 然而, 在耦合常数较小的理论中, 例如量子电动力学, 相比碰撞中的典型能量$W$\marginpar[\flushright{\small[548]\hspace*{5mm}}]{{\small\hspace*{5mm}[548]}}, 将$\Lambda$取得充分小使得这里所做的近似适用于能量小于$\Lambda$的光子,
+但又足够大使得$A(\alpha\to \beta )\ln (W/\Lambda )\ll 1$, 通常是一个很好的策略. 这样, 当$E\ll \Lambda$时的主要辐射修%
+正由方程(\ref{13.3.11})中的因子$(E/\Lambda )^{A}$给出后, 在最低阶微扰论下计算$\Gamma _{\beta \alpha }^{\Lambda }$会是一个很好的近似.
+
+\subsection*{* * *}
+
+软引力子会有相同的红外发散消除.\textsuperscript{\cite{3}} 在软引力子能量小于$E$时, %
+可以证明任意反应$\alpha\to\beta$的速率会正比于$E^{B}$, 其中
+\begin{equation}
+B=\frac{G}{2\uppi }\sum_{nm}\eta _{n}\eta _{m}m_{n}m_{m}\frac{1+\beta _{nm}^{2}%
+}{\beta _{nm}\sqrt{1-\beta _{nm}^{2}}}\ln \left( \frac{1+\beta _{nm}}{1-\beta _{nm}}\right)\:.\vspace{2mm}  \label{13.3.12}
+\end{equation}
+
+
+\section{一般的红外发散} \label{sec:13.4}
+\setcounter{equation}{0}
+
+迄今为止, 我们在本章中所考虑的由软光子引起的红外发散, 只是在不同物理理论中会遇到的各种红外发散的一个例子. %
+另一个例子是由无质量带电粒子的量子电动力学给出的. 在这种理论中, 即使消除了软光子引起的红外发散, %
+我们仍在方程(\ref{13.3.11})的指数$A$中发现了对数发散. 根据方程(\ref{13.2.11})和(\ref{13.2.7}), %
+对于所有带电粒子都是电子的过程, 在$m_{e}\to 0$的极限下, 指数趋于
+\[
+A\to  -\frac{1}{4\uppi ^{2}}\sum_{n}e_{n}^{2}-\frac{1}{4\uppi ^{2}}%
+\sum_{n\neq m}e_{n}e_{m}\eta _{n}\eta _{m}\ln \left(\frac{2\lvert
+p_{n}\cdot p_{m}\rvert }{m_{e}^{2}}\right) \to  -\frac{\ln m_{e}}{2\uppi ^{2}}\sum_{n}e_{n}^{2}\:.
+\]%
+(我们在最后一步中使用了电荷守恒条件$\sum_{n}e_{n}\eta _{n}=0$.) %
+这个公式中的红外发散源于以{\KAI{平行}}于初末态中某个``硬''电子动量方向发射的软光子, 但是, 即使光子像电子那样并不是软的, %
+这也同样也会发生, 这是因为如果$\bp_{n}$平行于$\bq$, %
+那么传播子分母$(p_{n}\pm q)^{2}$在$p_{n}^{2}=q^{2}=0$时为零. 稍微再明确一点, %
+对$p_{n}^{2}=q^{2}=0$, 这一因子{}$^*$\footnote{$^*${}这个因子是不平方的, 因为发散仅发生两个项的干涉之间, 其中一项是$S$-矩阵元中的项, 而另一项是从其他某个$m\neq n$的带电粒子线上发射光子的项. 对$m=n$, 积分(\ref{13.2.8})正比于$m_{n}^{2}$.}对光子方向的积分取如下形式
+\newpage
+\ \vspace{-5mm}
+\[
+\int \dif^{2}\hat{q}\:(p\pm q)^{-2}=\mp \frac{\uppi }{\sqrt{\bp^{2}\bq%
+^{2}}}\int_{0}^{\uppi }\frac{\sin \theta \,\dif\theta }{1-\cos \theta }\:,
+\]%
+其中$\theta$是光子动量与带电粒子动量之间的夹角\marginpar[\flushright
+{\raisebox{5ex}[0pt]{{\small[549]\hspace*{5mm}}}}]{{\raisebox{5ex}[0pt]{\small\hspace*{5mm}[549]}}}. 这个积分在$\theta =0$处对数发散.%
+
+当然, 在真实世界中不存在无质量的带电粒子, 但是在标量积$\lvert p_{n}\cdot p_{m}\rvert$的典型值$E^{2}$远大于%
+$m_{e}^{2}$的反应中, 让人感兴趣的是确定大$\ln(m_{e}/E)$因子出现的地方. 在这一情况下, %
+主要的辐射修正通常由$A$中的$-\ln(m_{e}/E)\sum_{n}e_{n}^{2}/2\uppi^{2}$项给出. 更重要的是, %
+量子色动力学中存在无质量粒子\ezx 胶子, 胶子携带类似于电荷的守恒量子数, 称为色荷, 这使得从初末态中的硬胶子或其他带色硬粒子发射的平行硬胶子会产生红外发散.
+
+一般而言, 这些红外发散无法通过对适当的末态组合求和消除掉. 然而, 李政道和\,Nauenberg\,(诺恩堡)\textsuperscript{\cite{6}}业已指出, 如果我们不仅对适当的末态进行求和, 并且假定{\KAI{初}}态也呈某种概率分布, 那么这个红外发散就可以被抵消掉.
+下面给出的是他们的讨论的修正版, 它会使得我们立刻清楚为什么在有质量带电粒子的电动力学仅对末态求和就足够了.
+
+出于这个目的, 回到``旧式''微扰论比较方便, 在这里, $S$-矩阵由方程(\ref{3.2.7})和方程(\ref{3.5.3})给出
+\begin{equation}
+S_{ba}=\updelta (b-a)-2\mi\uppi \updelta (E_{a}-E_{b})T_{ba}\:,  \label{13.4.1}
+\end{equation}%
+其中\begin{equation}
+T_{ba}=V_{ba}+\sum_{\nu =1}^{\infty }\int \dif c_{1}\cdots \dif c_{\nu }\:\frac{%
+V_{bc_{1}}V_{c_{1}c_{2}}\cdots V_{c_{\nu }a}}{(E_{a}-E_{c_{1}}+\mi\epsilon
+)\cdots (E_{a}-E_{c_{\nu }}+\mi\epsilon )}\:.  \label{13.4.2}
+\end{equation}%
+(对$c_{1}\cdots c_{\nu }$的积分应该理解成对这些态中的自旋和粒子种类进行求和, 以及对这些粒子的\,3\,-动量进行积分.) %
+红外发散产生于(且仅产生于)该表达式中一个或多个能量分母为零时.
+
+然而\marginpar[\flushright{\small[550]\hspace*{5mm}}]{{\small\hspace*{5mm}[550]}}, 不是所有为零的能量分母都产生红外发散. 一般的中间态$c$可能有$E_{c}=E_{a}$, 但通常这只是积分区域内部的一个点, 并且该区域上的积分凭借在分母中加入$\mi\epsilon$的处理而变得收敛. 为了使中间态$c$产生红外发散, %
+必须在积分区域的{\KAI{端点}}使能量$E_{c}=E_{a}$. 例如, %
+如果方程(\ref{13.4.2})中的第一个中间态$c_{1}$由初态$a$中的粒子构成, %
+而这一态中的所有无质量粒子同时都被替换成由任意多个近平行的无质量粒子构成且总动量相等的{\KAI{喷注}}(\textit{jets}), %
+那么这种情况就会发生. 在这种情况下, 使$E_{c_{1}}=E_{a}$的端点是动量空间中每一喷注内的所有无质量粒子都平行的那一点. %
+更一般地, 在态$a$中, 我们可以将任意多个无质量粒子替换成近平行的无质量粒子的喷注, 再加上任意多个额外的无质量软粒子. %
+所有这样态的集合称为$D(a)$(更精确些, 我们需要引入一个小角度$\Theta$和一个小能量$\Lambda$%
+以定义什么是``近平行''和``软''. 我们不会在阐明集合$D(a)$对$\Theta$和$\Lambda$的依赖关系上花时间了.) %
+$D(a)$中的态是``危险''的, 就是说, 能量分母$E_{a}-E_{c_{1}}$在端点处%
+为零会引入一个红外发散; $E_{c_{1}}=E_{a}$时的端点是每一个喷注中的所有无质量粒子都平行并且所有无质量软粒子的能量为零的点.
+
+更进一步, 如果$c_{1},\cdots ,c_{n}$中的每一个都在集合$D(a)$中, 那么$D(a)$中的中间态$%
+c_{n+1}$在同等意义下也是危险的. 另一方面, 如果某个态$c_{m}${\KAI{不}}在$D(a)$中, %
+那么后面$k>m$的态$c_{k}$即使属于集合$D(a)$也不是危险的, 这是因为, %
+硬粒子或喷注的\,3\,-动量与态$a$中的那些粒子的动量相等的构形空间将只是积分区域中的普通点. 以精确相同的方式, %
+我们可以定义集合$D(b)$, 在这个集合中, 态$b$中的一个或多个无质量粒子被近平行无质量粒子的喷注代替,
+而每个喷注的动量与被它代替的粒子的总动量相等, 并且添加上任意数量的无质量软粒子. 如果中间态$c_{m}$属于集合$D(b)$, %
+并且其后$k>m$的态$c_{k}$都属于$D(b)$, 那么它就是危险的.
+
+为了分离出这些危险态的影响, 我们将方程(\ref{13.4.2})重写成以下形式
+\begin{equation}
+T_{ba}=V_{ba}+\sum_{{\nu =1}}^{\infty }\left( V\left[ \frac{\mathscr{P}_{a}+%
+\mathscr{P}_{b}+\mathscr{P}_{\notin a,b}}{E_{a}-H_{0}+\mi\epsilon }V\right]^{\nu}\right)_{ba}\:,  \label{13.4.3}
+\end{equation}%
+其中$\mathscr{P}_{a}$, $\mathscr{P}_{b}$和$\mathscr{P}_{\notin a,b}$分别是投影到$D(a)$, $D(b)$和所有其他态上的投影算符. (我们在这里假定了态$b$ 和态$a$中的粒子动量不会非常接近, 从而使$D(a)$和$D(b)$不会重叠.) 现在, %
+在$\Lambda\to0$且$\Theta \to 0$时, 危险中间态占据的相空间非常小, 这使得它们在没有引起红外发散的所有地方都可以%
+被忽略. 因此, 幂级数(%
+\ref{13.4.3})变为
+\begin{align}
+T_{ba} &=\sum_{r=0}^{\infty }\sum_{s=0}^{\infty }\sum_{\nu =0}^{\infty }\biggl(
+\left[ V\frac{\mathscr{P}_{b}}{E_{a}-H_{0}+\mi\epsilon }\right] ^{r}V\left[
+\frac{\mathscr{P}_{\notin a,b}}{E_{a}-H_{0}+\mi\epsilon }V\right] ^{\nu }
+\nonumber \\
+&\qquad\qquad\quad\times \left[ \frac{\mathscr{P}_{a}}{E_{a}-H_{0}+\mi\epsilon }V\right]
+^{s}\biggr)_{ba}\:.  \label{13.4.4}
+\end{align}%
+如果把最左边和最右边之间的\marginpar[\flushright
+{\raisebox{7ex}[0pt]{{\small[551]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[551]}}}投影算符$\mathscr{P}_{\notin
+a,b}$都换成$\mathscr{P}_{a}+\mathscr{P}_{b}+\mathscr{P}%
+_{\notin a,b}$, 并且把左边和右边的$\mathscr{P}_{b}$和$\mathscr{P}_{a}$换成$%
+\mathscr{P}_{b}+\mathscr{P}_{a}$, 这将是精确的, 但正如上面所提到的, 当$\Lambda$和$\Theta$充分小的时候, %
+这对最终结果的影响可以忽略掉.
+
+方程(\ref{13.4.4})可以写成更紧凑的形式:
+\begin{equation}
+T_{ba}=\Bigl( \Omega_{b}^{-\dag}\,T_{S}\,\Omega_{a}^{+}\Bigr)_{ba}\:, \label{13.4.5}
+\end{equation}%
+其中, 为了将来的应用, 对于一般的态$\alpha$和$\beta $, %
+我们定义$\Omega_{\alpha }^{+}$和$\Omega_{\beta }^{-}$为:
+\begin{equation}
+( \Omega_{\alpha}^{+})_{ca}\equiv \sum_{r=0}^{\infty }\left(
+\left[ \frac{\mathscr{P}_{\alpha }}{E_{a}-H_{0}+\mi\epsilon }V\right]
+^{r}\right) _{ca}\:,  \label{13.4.6}
+\end{equation}%
+\begin{equation}
+( \Omega _{\beta}^{-})_{db}\equiv \sum_{r=0}^{\infty }\left(
+\left[ \frac{\mathscr{P}_{\beta }}{E_{b}-H_{0}-\mi\epsilon }V\right]
+^{r}\right) _{db}\:,  \label{13.4.7}
+\end{equation}%
+$T_{S}$是``安全''算符{}$^*$\footnote{$^*${}在$(\Omega_{b}^{-})_{db}$中, 我们用到了$T_{ba}$是在$E_{b}=E_{a}$下算出来的这一事实, 而在$(T_{S})_{dc}$ 中, 我们用到了除非$E_{c}$非常接近$E_{a}$, 否则投影算符$\mathscr{P}_{a}$%
+会使得$(\Omega _{a}^{+})_{ca}$为零这一事实. 另外, 方程(\ref{13.4.5})中的因子$\Omega _{b}^{-\dag }$和$\Omega _{a}^{+}$使得$\mathscr{P}_{\notin c,d}=\mathscr{P}_{\notin a,b}$.}%
+\begin{equation}
+(T_{S})_{dc}\equiv \sum_{\nu =0}^{\infty }\left( V\left[ \frac{\mathscr{P}%
+_{\notin c,d}}{E_{c}-H_{0}+\mi\epsilon }V\right] ^{\nu }\right)_{dc}\:. \label{13.4.8}
+\end{equation}%
+现在, 所有红外发散都被隔离在$\Omega _{b}^{-}$和$\Omega _{a}^{+}$这两个算符中.
+
+为了消除这些红外发散, 现在只需注意到, 要不是因为有投影到危险态上的投影算符, 那么根据方程(\ref{3.1.16}), %
+算符$\Omega _{b}^{-}$和$\Omega _{a}^{+}$分别本是将自由粒子态转化到``出''态和``入''态的幺正算符. 因此, %
+对于$D(\beta )$和$D(\alpha )$中使得对某些给定末态$\beta$和某些给定初态$\alpha$是危险态的子空间,
+如果这些算符被限制在的这些子空间上, 那么它们就是幺正的. 即, 对于一般的$\alpha$和$\beta $%
+\begin{align}
+\Omega _{\beta }^{-}\mathscr{P}_{\beta }\Omega _{\beta }^{-\dag } &=%
+\mathscr{P}_{\beta }\:,  \label{13.4.9} \\
+\Omega _{\alpha }^{+}\mathscr{P}_{\alpha }\Omega _{\alpha }^{+\dag } &=%
+\mathscr{P}_{\alpha }\:.  \label{13.4.10}
+\end{align}%
+{\KAI{因此\marginpar[\flushright{\small[552]\hspace*{5mm}}]{{\small\hspace*{5mm}[552]}}, 如果要进行求和的那部分态的子空间对任意给定末态和初态$\beta$和$\alpha$是危险, %
+那么跃迁速率就没有红外发散}}:%
+\begin{align}
+&\sum_{a\in D(\alpha )}\sum_{b\in D(\beta )}|T_{ba}|^{2} = \operatorname{Tr}\left\{ \Omega
+_{\beta }^{-}\mathscr{P}_{\beta }\Omega _{\beta }^{-\dag }T_{S}\Omega
+_{\alpha }^{+}\mathscr{P}_{\alpha }\Omega _{\alpha }^{+\dag }T_{S}^{\dag
+}\right\}   \nonumber \\
+&=\operatorname{Tr}\left\{ \mathscr{P}_{\beta }T_{S}\mathscr{P}_{\alpha }T_{S}^{\dag
+}\right\} =\sum_{a\in D(\alpha )}\sum_{b\in D(\beta )}\left\vert
+(T_{S})_{ba}\right\vert ^{2}\:.  \label{13.4.11}
+\end{align}
+
+为了弄清楚这确实解决了红外发散的一般问题, 有必要说明一下, 只有类似方程(\ref{13.4.11})中那样的求和在实验上才是可测的. %
+既然实验上不可能将出射带电(或带色)无质量粒子与动量近平行且总能量相同\textsuperscript{\cite{7}}的无质量粒子喷注区分开, 为了获得可测的跃迁速率, 我们貌似还必须对危险末态连同极软量子求和, 而所有这些态具有相同的总电荷(或色荷). 对初态的求和则更有问题. %
+我们可以假定真实的无质量粒子总是作为喷注伴随着全体软量子产生, 这里的全体软量子在某些动量空间体积内是相同的. %
+然而, 据我所知, 还没有人能够给出一个完整范例说明实验上可测的量只能是不受红外发散影响的跃迁速率之和.
+
+(有质量带电粒子的)量子电动力学中不会出现这样的问题, 正如我们已看到的, 为了消除量子电动力学中的红外发散, 只需要对末态求和. %
+这一差异的原因可以追溯到电动力学中的如下性质: 在电动力学中, 态$a,b,c\cdots$是带电粒子数以及硬光子数确定的态(用希腊字母标记)与只包含能量小于某个小量$\Lambda$的软光子的态的直积. 那么, 对于在带电粒子与硬光子间的反应$\alpha \to  \beta$%
+中产生了软光子的某个集合$f$的情况, 方程(\ref{13.4.5})简化为
+\begin{equation}
+T_{\beta f,\alpha }=\Bigl(\Omega^{-}(\beta)^{\dag}\Omega^{+}(\alpha)\Bigl)_{f0}(T_{S})_{\beta \alpha }\:,  \label{13.4.12}
+\end{equation}%
+其中$0$代表软光子真空, 而$\Omega^{\pm}$按照前面那样计算, %
+不过现在计算所用的\,Hilbert\,空间是在仅由软光子构成的约化\,Hilbert\,空间, %
+并且这些光子的相互作用取作所有带电粒子都处在由变量$\beta$和$\alpha$所标记的固定态的相互作用哈密顿量. %
+就像前面一样, 这些算符在软光子的``危险''\,Hilbert\,空间$\mathscr{D}$中是幺正的, 所以,%
+{}$^*$\footnote{$^*${}我们现在之所以没有像方程(\ref{13.3.11})中那样遇到任何$(E/\Lambda )^{A}$这样的因子, 是因为我们这里把要%
+求和的实软光子态中的最大能量$E$取成了计算$\Omega ^{\pm }$时要求和的``危险''软光子态的最大能量$\Lambda$.}
+无需对初态求和, 我们就有\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[553]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[553]}}}
+\begin{align}
+\sum_{f\in \mathscr{D}}\lvert T_{\beta f,\alpha 0}\rvert^{2} &=
+\lvert (T_{S})_{\beta \alpha}\rvert^{2}\,
+\Bigl( \Omega^{+}(\alpha)^{\dag}\Omega^{-}(\beta)\Omega^{-}(\beta)^{\dag}\Omega^{+}(\alpha)\Bigr)_{00} \nonumber \\
+&=|(T_{S})_{\beta \alpha }|^{2}\Bigl(\Omega ^{+}(\alpha)^{\dag}\Omega^{+}(\alpha)\Bigr)_{00}
+=|(T_{S})_{\beta \alpha }|^{2}\:.  \label{13.4.13}
+\end{align}
+
+\section[软光子散射]{软光子散射{}$^{**}$\footnote{$^{**}${}本节或多或少的在本书的发展主线之外, 可以在第一次阅读时略过.}} \label{sec:13.5}
+\setcounter{equation}{0}
+
+在本章对软光子相互作用的处理中, 迄今为止我们所考虑的反应都是这样的反应: %
+在一个无论如何都要发生的反应$\alpha\to\beta$中, 光子被发射或吸收. %
+另一方面, 如果反应$\alpha\to \beta$本身是平庸的, 但软光子参与其中并扮演了重要的角色使之变成了一个有趣的反应,
+我们对于这样的反应也有希望做一些很有用的一般性论述. 我们将考虑这类反应最简单同时也是最重要的例子, 软光子在任意种类和任意自旋的有质量粒子上散射, 这里的$\alpha$和$\beta$就是单粒子态. 这里的复杂性来自: 软光子散射振幅中的领头项并不来源于极点项, 而是来源于通过流守恒条件与极点项相关的非极点项.
+
+光子散射的$S$-矩阵元可以写成如下形式\begin{align}
+S(q,\lambda ;p,\sigma  \to  q^{\prime },\lambda ^{\prime
+};p^{\prime },\sigma ^{\prime })&=\mi(2\uppi )^{4}\updelta ^{4}(q+p-q^{\prime
+}-p^{\prime })  \nonumber \\
+&\quad\times \frac{\epsilon _{\nu }^{\ast }(\bq^{\prime },\lambda
+^{\prime })\,\epsilon _{\mu }(\bq,\lambda )\,M_{\sigma ^{\prime },\sigma
+}^{\nu \mu }(q;\bp^{\prime },\bp)}{(2\uppi )^{6}\sqrt{%
+4q^{0}q^{\prime 0}}}\:,  \label{13.5.1}
+\end{align}%
+其中$q$和$q^{\prime }$是初态光子和末态光子的\,4\,-动量, $p$和$p^{\prime }$是初态靶和末态靶的\,4\,-动量, %
+$\lambda$和$\lambda^{\prime}$是初末态光子的螺旋度, $\epsilon _{\nu }(\bq^{\prime },\lambda ^{\prime })$%
+和$\epsilon _{\mu }(\bq,\lambda )$是相应的光子极化矢量, %
+$\sigma$和$\sigma ^{\prime }$是初态靶和末态靶的自旋$z$-分量. 根据\,\ref{sec:6.4}\,节中的定理, %
+振幅$M^{\nu\mu}$可以表示成
+\begin{equation}
+(2\uppi )^{-3}M_{\sigma ^{\prime },\sigma }^{\nu \mu }(q;\bp^{\prime },%
+\bp)=\int \dif^{4}x\:\me^{\mi q\cdot x}\Bigl( \Psi _{\bp^{\prime
+},\sigma ^{\prime }},T\{J^{\nu }(0),J^{\mu }(x)\}\Psi _{\bp,\sigma
+}\Bigr) +\cdots   \label{13.5.2}
+\end{equation}%
+其中$J^{\mu }(x)$是电磁流\marginpar[\flushright{\small[554]\hspace*{5mm}}]{{\small\hspace*{5mm}[554]}}, 而省略号代表可能的``海鸥''项(seagull terms), %
+例如带电标量场理论中表示两个光子不通过各自的流而是在单个顶点上相互作用的项. %
+我们现在重复一下在第10章给出并在\,\ref{sec:13.1}\,节使用过的标准极点学讨论. %
+在方程(\ref{13.5.2})中的两个流算符之间插入中间态的完备集, 对$x$积分并分离出单粒子中间态, 这给出
+\begin{align}
+M^{\nu \mu }(q;\bp^{\prime },\bp)
+&=\frac{G^{\nu }(\bp^{\prime },\bp+\bq)G^{\mu }(%
+\bp+\bq,\bp)}{E(\bp+\bq)-E(\bp%
+)-q^{0}-\mi\epsilon }  \nonumber \\
+&\quad+\frac{G^{\mu }(\bp^{\prime },\bp^{\prime }-\bq%
+)G^{\nu }(\bp^{\prime }-\bq,\bp)}{E(\bp^{\prime }-\bq)-E(\bp^{\prime })+q^{0}-\mi\epsilon }+N^{\nu \mu }(q;\bp%
+^{\prime },\bp)\:,  \label{13.5.3}
+\end{align}%
+其中$G^{\mu }$是流的单粒子矩阵元\begin{equation}
+(2\uppi )^{-3}G_{\sigma ^{\prime },\sigma }^{\mu }(\bp^{\prime },%
+\bp)\equiv \Bigl( \Psi _{\bp^{\prime },\sigma ^{\prime
+}},J^{\mu }(0)\Psi _{\bp,\sigma }\Bigr)   \label{13.5.4}
+\end{equation}%
+而$N^{\nu \mu }$表示除了单粒子态本身以外的态的贡献, 再加上任意的双光子直接相互作用的项. (方程(%
+\ref{13.5.3})理解成矩阵乘法, 其中自旋指标没有显式地写出来.) 关于$N^{\nu\mu}$, %
+除了它在$q^{\mu}\to0$时不具有前两项中那样的奇异项, 因而可以展成$q^{\mu }$的幂级数之外, 我们知道的很少.
+
+我们现在应用流守恒(或规范不变)条件:%
+\begin{gather}
+q_{\mu }\,M^{\nu \mu }(q;\bp^{\prime },\bp) = 0\:,
+\label{13.5.5} \\
+\bq\cdot \bG(\bp+\bq,\bp) = [E(\bp%
++\bq)-E(\bp)]G^{0}(\bp+\bq,\bp)\:,
+\label{13.5.6} \\
+\bq\cdot \bG(\bp^{\prime },\bp^{\prime }-\bq) = [E(\bp^{\prime })-E(\bp^{\prime }-\bq)]G^{0}(%
+\bp^{\prime },\bp^{\prime }-\bq)\:.
+\label{13.5.7}
+\end{gather}%
+应用于方程(\ref{13.5.3}), 这些条件给出了我们需要的$N^{\nu \mu }$上的条件:%
+\begin{equation}
+q_{\mu }N^{\nu \mu }(q;\bp^{\prime },\bp)=-G^{\nu }(\bp%
+^{\prime },\bp+\bq)\,G^{0}(\bp+\bq,\bp%
+)+G^{0}(\bp^{\prime },\bp^{\prime }-\bq)\,G^{\nu }(%
+\bp^{\prime }-\bq,\bp)\:.  \label{13.5.8}
+\end{equation}%
+我们还注意到$M^{\nu \mu }$满足``交叉''对称性条件\begin{equation}
+M^{\nu \mu }(q;\bp^{\prime },\bp)=M^{\mu \nu }(p^{\prime }-p-q;%
+\bp^{\prime },\bp)\:,  \label{13.5.9}
+\end{equation}%
+并且, 由于方程(\ref{13.5.3})中的极点项显然满足这一条件, 所以$N^{\nu \mu }$也满足这一条件:%
+\begin{equation}
+N^{\nu \mu }(q;\bp^{\prime },\bp)=N^{\mu \nu }(p^{\prime }-p-q;%
+\bp^{\prime },\bp)\:, \label{13.5.10}
+\end{equation}%
+我们将用这些条件确定$N^{\nu \mu }$的动量幂级数展开中的第一项.
+
+首先, 我们需要对单粒子流矩阵元$G^{\mu }(\bp^{\prime },\bp)$相对动量$\bp^{\prime }$%
+和$\bp$的幂级数展开做一些说明. 空间反演不变性(在它适用的范围内)告诉我们, %
+\marginpar[\flushright{\small[555]\hspace*{5mm}}]{{\small\hspace*{5mm}[555]}}$G^{0}$和$G^{i}$ (其中$i=1,2,3$)的展开中分别只包含动量的偶数阶项和奇数阶项.
+根据方程(\ref{10.6.3}), $G_{\sigma^{\prime},\sigma}^{0}$中动量的零阶项是%
+$e\updelta_{\sigma^{\prime},\sigma }$, 其中$e$是粒子电荷. 这样, 流守恒条件就告诉我们, 到动量的第二阶,%
+\[
+(\bp^{\prime }-\bp)\cdot \bG_{\sigma ^{\prime },\sigma
+}(\bp^{\prime },\bp)=\left( \frac{\bp^{\prime 2}}{2m}-%
+\frac{\bp^{2}}{2m}\right) e\updelta _{\sigma ^{\prime },\sigma }\:.%
+\]%
+因此, $\bG$中动量的一阶项是$e(\bp^{\prime }+\bp)\updelta_{\sigma^{\prime},\sigma}/2m$加上可能的与%
+$\bp^{\prime}-\bp$正交的一阶项, 而旋转不变性告诉我们后者必须正比于%
+$(\bp^{\prime }-\bp)\times\bJ_{\sigma ^{\prime },\sigma }$, %
+其中$\bJ$是我们熟悉的带电粒子的自旋矩阵. 综合这些结果, 我们有展开
+\begin{equation}
+G^{0}(\bp^{\prime },\bp)=e1+\text{二次}\:,\label{13.5.11}
+\end{equation}%
+\begin{equation}
+\bG(\bp^{\prime },\bp)=\frac{e1}{2m}(\bp^{\prime}+\bp)
++\frac{\mi\mu }{j}\bJ\times (\bp^{\prime }-\bp)+\text{三次} \:,  \label{13.5.12}
+\end{equation}%
+其中``1''是单位自旋矩阵, 而``二次''和``三次''指的是小动量$\bp$%
+和$\bp^{\prime }$的幂级数展开中可以忽略项的阶数. 由于流是厄米的, %
+方程(\ref{13.5.12})中的系数$\mu /j$是实的. 当系数以这种形式表示时(其中$j$是带电粒子的自旋), $\mu$就是粒子的磁矩.
+
+现在我们回到$N^{\nu \mu }$, 考察方程(\ref{13.5.8})关于小动量$q^{\mu }$, $\bp$和$\bp^{\prime }$%
+的幂级数展开. 在方程(\ref{13.5.8})中取$\nu =0$表明$q_{\mu }N^{0\mu }$至少是这些小量的二次项. %
+不存在与$q^{\mu }$正交的常矢量, 所以$N^{0\mu }$至少是小动量的一阶项. 这样, %
+交叉对称性条件(\ref{13.5.10})就告诉我们, $N^{i0}$也至少是小动量的一阶项. 然后, %
+在方程(\ref{13.5.8})中取$\nu =i$并应用方程(\ref{13.5.12})就告诉我们
+\[
+q_{k}N^{ik}=-\frac{e^{2}q^{i}}{m}+\text{二次}
+\]%
+从而
+\begin{equation}
+N^{ik}=-\frac{e^{2}}{m}\updelta _{ik}+\text{线性} \:. \label{13.5.13}
+\end{equation}%
+由于$G^{i}$至少是小动量的一阶项, 那么方程(\ref{13.5.3})中$M^{ik}$的极点项也将是这样, %
+于是在零阶仅给我们留下了{\KAI{非极点}}项$N^{ik}$%
+\begin{equation}
+M^{ik}(0;0,0)=N^{ik}(0;0,0)=-\frac{e^{2}}{m}\updelta _{ik}\:. \label{13.5.14}
+\end{equation}
+
+由此我们可以算出软光子散射截面\marginpar[\flushright{\small[556]\hspace*{5mm}}]{{\small\hspace*{5mm}[556]}}. 但这里并不需要进行这个计算; 既然我们已经知道了, 光子散射振幅在零动量极限下仅依赖于靶粒子的质量和电荷, 并且关于电荷是二阶的, 我们可以立即使用光子在任意给定自旋靶粒子上的散射截面的二阶计算结果, %
+例如量子电动力学中微分光子散射截面的结果(\ref{8.7.42}):%
+\begin{equation}
+\frac{\dif\sigma }{\dif\Omega }=\frac{e^{4}}{32\uppi^{2}m^{2}}(1+\cos^{2}\theta)\:.  \label{13.5.15}
+\end{equation}%
+我们现在看到这是一个通用公式, 在低能极限下, 对质量为$m$, 电荷为$e$且种类和自旋任意的靶粒子, %
+即使这些粒子是复合粒子且有比较强的相互作用, 例如原子核, 这一公式依然适用. %
+Gell-Mann, Goldberger\,和\,Low(洛)\textsuperscript{\cite{8}}已经证明了, 在软光子散射振幅中, 可以将这些结果推广以给出用靶粒子质量、 电荷和磁矩表示的次领头阶项.
+
+\section[外~\,场~\,近~\,似]{外场近似{}$^*$\footnote{$^*${}本节或多或少的在本书发展的主线之外, 可以在第一次阅读时略过.}} \label{sec:13.6}
+\setcounter{equation}{0}
+
+重的带电粒子, 像原子核, 在作用上近似地像一个经典外场的源, 这在直觉上是显然的. 本节,
+我们将看到如何证明这一近似是合理的, 并得到其局限性的一些概念.
+
+考察这样的\,Feynman\,图或\,Feynman\,图的一部分, 其中带电重粒子从初态到末态穿过图并发射$N$个\,4\,-动量为%
+$q_{1},q_{2},\cdots q_{N}$, 极化指标为$\mu _{1},\mu _{2},\cdots \mu _{N}$的离壳光子. %
+对所有这样的图或子图(不包括那$N$个光子传播子)求和给出振幅
+\begin{align}
+&\int \dif^{4}x_{1}\,\dif^{4}x_{2}\cdots \dif^{4}x_{N}\:\me^{-\mi q_{1}\cdot
+x_{1}}\me^{-\mi q_{2}\cdot x_{2}}\cdots \me^{-\mi q_{N}\cdot x_{N}}  \nonumber \\
+&\qquad\times \langle \bp^{\prime },\sigma ^{\prime }|T\Big\{ J^{\mu
+_{1}}(x_{1}),J^{\mu _{2}}(x_{2}),\cdots J^{\mu _{N}}(x_{N})\Big\}
+|\bp,\sigma \rangle   \nonumber \\
+&\equiv \mathscr{G}_{\sigma ^{\prime },\sigma }^{\mu _{1}\mu _{2}\cdots \mu
+_{N}}(q_{1},q_{2},\cdots q_{N};p)  \label{13.6.1}
+\end{align}%
+矩阵元中包含了重粒子可以参与的所有相互作用, 包括强核力. 该振幅在$q_{1},q_{2},\cdots q_{N}\to  0$时有一个高阶极点, 这个极点来自流乘积矩阵元中中间态仅由初态和末态中的重粒子构成的那些项. 当$q_{1},q_{2},\cdots q_{N}$的所有分量与(可能是复合粒子的)重粒子动力学相关的所有能量和动量相比很小时,
+这一高阶\vspace{-5mm}\linebreak
+
+\newpage
+
+\noindent 极点将主导(\ref{13.6.1})\marginpar[\flushright{\small[557]\hspace*{5mm}}]{{\small\hspace*{5mm}[557]}}.
+在这一情况下, \ref{sec:10.2}\,节的方法给出{}$^*$\footnote{$^*${}在微扰论中, 分母来自于传播子的分母:%
+\[
+(p^{\prime }+q_{1}+\cdots q_{r})^{2}+m^{2}-\mi\epsilon \to  2p^{\prime
+}\cdot (q_{1}+\cdots q_{r})-\mi\epsilon \to  2p\cdot (q_{1}+\cdots q_{r})-\mi\epsilon\:,
+\]%
+而传播子的分子提供了因子$\sum u u^{\dag}$, 它与光子发射顶点矩阵一起给出了矩阵元(\ref{13.6.3}). %
+矩阵$\mathscr{G}^{\mu}$与上一节中的矩阵$G^{\mu}$相差因子$2p^{0}$.}
+\begin{align}
+&\mathscr{G}_{\sigma ^{\prime },\sigma }^{\mu _{1}\mu _{2}\cdots \mu_{N}}(q_{1},q_{2},\cdots q_{N};p) \to  \frac{(-\mi)^{N-1}}{2p^{0}(2\uppi )^{3}}(2\uppi )^{4}  \nonumber \\
+&\quad\times \updelta ^{4}(p^{\prime }+q_{1}+q_{2}+\cdots +q_{N}-p)\sum_{\sigma
+_{1},\sigma _{2},\cdots \sigma _{N-1}}  \nonumber \\
+&\quad\times \frac{\mathscr{G}_{\sigma^{\prime},\sigma_{1}}^{\mu _{1}}(p)\,%
+\mathscr{G}_{\sigma_{1},\sigma _{2}}^{\mu _{2}}(p)\cdots \mathscr{G}%
+_{\sigma _{N-1},\sigma }^{\mu _{N}}(p)}{[2p\cdot q_{1}-\mi\epsilon ][2p\cdot
+(q_{1}+q_{2})-\mi\epsilon ]\cdots \lbrack 2p\cdot (q_{1}+\cdots
++q_{N-1})-\mi\epsilon ]}  \nonumber \\
+&\qquad+\text{置换} \:,  \label{13.6.2}
+\end{align}%
+其中
+\begin{equation}
+\frac{\mathscr{G}_{\sigma ^{\prime },\sigma }^{\mu }(p)}{2p^{0}(2\uppi )^{3}}%
+\equiv \langle \bp,\sigma ^{\prime }|J^{\mu }(0)|\bp,\sigma
+\rangle   \label{13.6.3}
+\end{equation}%
+而``$+$\:置换''表示我们要对$N$个光子的所有置换求和. 应用于原子系统, 重要的是%
+要注意到(\ref{13.6.1})适用于既有强相互作用又有电磁相互作用的任意自旋的粒子, 比如原子核.
+
+我们还注意到, 对任意自旋但电荷为$Ze$的粒子, 电流在\,4\,-动量相等的态之间的矩阵元是{}$^{**}$\footnote{$^{**}${}证明该式最简单的方法是:
+首先注意到, 在粒子静止的\,Lorentz\,系中, 旋转不变性要求流矩阵元的空间分量为零而时间分量正比于$\updelta _{\sigma ^{\prime },\sigma }$, 且除此之外不再依赖$\sigma$或$\sigma ^{\prime}$. 比例常数由方程(\ref{10.6.3})给出, %
+然后做一个\,Lorentz\,变换就给出了方程(\ref{13.6.4}).}%
+\begin{equation}
+\langle p,\sigma ^{\prime }|J^{\mu }(0)|p,\sigma \rangle =\frac{Z\,e\,p^{\mu
+}\updelta _{\sigma ^{\prime }\sigma }}{p^{0}(2\uppi )^{3}}\:,
+\label{13.6.4}
+\end{equation}%
+从而使\begin{equation}
+\mathscr{G}_{\sigma ^{\prime }\sigma }^{\mu }(p)=2Z\,e\,p^{\mu }\updelta _{\sigma
+^{\prime }\sigma }\:.  \label{13.6.5}
+\end{equation}%
+方程(\ref{13.6.5})关键之处在于指出这些矩阵都是对易的, 所以它们的乘积可以从对置换的求和中分解出来:
+\begin{eqnarray}
+&&\mathscr{G}_{\sigma ^{\prime },\sigma }^{\mu _{1}\mu _{2}\cdots \mu
+_{N}}(q_{1},q_{2},\cdots q_{N};p) \to    \nonumber \\
+&&\frac{(-\mi)^{N-1}(Ze)^{N}p^{\mu _{1}}p^{\mu _{2}}\cdots p^{\mu _{N}}}{%
+p^{0}(2\uppi )^{3}}(2\uppi )^{4}\updelta ^{4}(p^{\prime }+q_{1}+q_{2}+\cdots
++q_{N}-p)\updelta _{\sigma ^{\prime },\sigma }  \nonumber \cr
+&&\times \Biggl[ \frac{1}{[p\cdot q_{1}-\mi\epsilon ][p\cdot
+(q_{1}+q_{2})-\mi\epsilon ]\cdots \lbrack p\cdot (q_{1}+\cdots
++q_{N-1})-\mi\epsilon ]}  \nonumber \\
+&&\qquad+\text{置换}\Biggr]\:.  \label{13.6.6}
+\end{eqnarray}%
+到$q$的领头阶, 这里的$\updelta$-函数可以写成\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[558]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[558]}}}
+\begin{equation}
+\updelta ^{4}(p^{\prime }+q_{1}+\cdots +q_{N}-p)=p^{0}\updelta ^{3}(\bp%
+^{\prime }+\bq_{1}+\cdots +\bq_{N}-\bp)\updelta (p\cdot
+(q_{1}+\cdots +q_{N}))\:.  \label{13.6.7}
+\end{equation}%
+幸运地是, 这里可以证明对置换求和后的结果比单个项要简单得多. 对$p\cdot (q_{1}+\cdots +q_{N})=0$, 我们有
+\begin{align}
+&\Biggl[ \frac{1}{[p\cdot q_{1}-\mi\epsilon ][p\cdot (q_{1}+q_{2})-\mi\epsilon
+]\cdots \lbrack p\cdot (q_{1}+\cdots +q_{N-1})-\mi\epsilon ]}  \nonumber \\
+&+\text{置换}\Biggr]=(2\mi\uppi )^{N-1}\updelta (p\cdot q_{1})\updelta
+(p\cdot q_{2})\cdots \updelta (p\cdot q_{N-1})\:.  \label{13.6.8}
+\end{align}%
+例如, 对$N=2$, 这给出:%
+\[
+\frac{1}{[p\cdot q_{1}-\mi\epsilon ]}+\frac{1}{[p\cdot q_{2}-\mi\epsilon ]}=%
+\frac{1}{[p\cdot q_{1}-\mi\epsilon ]}+\frac{1}{[-p\cdot q_{1}-\mi\epsilon ]}%
+=2\mi\uppi \updelta (p\cdot q_{1})\:.
+\]%
+得到普遍结果(\ref{13.6.8})的最简单方法是做如下恒等式的\,Fourier\,变换
+\[
+\theta (\tau _{1}-\tau _{2})\theta (\tau _{2}-\tau _{3})\cdots \theta (\tau
+_{N-1}-\tau _{N})+\text{置换}=1\:.
+\]%
+将方程(\ref{13.6.8})代入方程(\ref{13.6.6})就给出了振幅的最终结果(\ref{13.6.1}):%
+\begin{align}
+&\mathscr{G}_{\sigma ^{\prime },\sigma }^{\mu _{1}\mu _{2}\cdots \mu
+_{N}}(q_{1},q_{2},\cdots q_{N};p) \to  (Ze)^{N}(2\uppi )^{N}\updelta
+_{\sigma ^{\prime },\sigma }p^{\mu _{1}}p^{\mu _{2}}\cdots p^{\mu _{N}} \nonumber \\
+&\times \updelta ^{3}(\bp^{\prime }+\bq_{1}+\bq%
+_{2}+\cdots +\bq_{N}-\bp)\updelta (p\cdot q_{1})\updelta (p\cdot
+q_{2})\cdots \updelta (p\cdot q_{N})\:.  \label{13.6.9}
+\end{align}%
+这一结果既适用于相对论性粒子也适用于缓慢运动的重粒子, %
+也可用来推导带电粒子散射的``Weizs\"{a}cker-Williams (魏伯乐\lzx 威廉姆斯)''近似.\textsuperscript{\cite{9}} %
+在带电重粒子是非相对论性粒子的特殊情况下, 即$\lvert\bp\rvert\ll p^{0}$, 方程(\ref{13.6.9})进一步化简成
+\begin{align}
+&\mathscr{G}_{\sigma ^{\prime },\sigma }^{\mu _{1}\mu _{2}\cdots \mu
+_{N}}(q_{1},q_{2},\cdots q_{N};p) \to  (Ze)^{N}(2\uppi )^{N}n^{\mu
+_{1}}n^{\mu _{2}}\cdots n^{\mu _{N}}  \nonumber \\
+&\times \updelta ^{3}(\bp^{\prime }+\bq_{1}+\bq%
+_{2}+\cdots +\bq_{N}-\bp)\updelta (q_{1}^{0})\updelta
+(q_{2}^{0})\cdots \updelta (q_{N}^{0})\updelta _{\sigma ^{\prime },\sigma }\:,  \label{13.6.10}
+\end{align}%
+其中$n$是单位类时矢量\marginpar[\flushright{\small[559]\hspace*{5mm}}]{{\small\hspace*{5mm}[559]}}
+\[
+n^{0}=1\:, \qquad \bn=0\:.
+\]
+
+现在, 对于电荷为$Ze$的单个非相对论重粒子, 设它的动量空间归一化波函数是$\chi_{\sigma }(\bp)$, %
+假定这个粒子既出现在初态又出现在末态. 对方程(\ref{13.6.10})中的$\updelta$-函数使用\,Fourier\,表示, %
+$\mathscr{G}$在这一态下的矩阵元是
+\begin{align}
+&\int \dif^{3}p\,\dif^{3}p^{\prime }\:\chi _{\sigma ^{\prime }}^{\ast }(\bp%
+^{\prime })\,\chi _{\sigma }(\bp)\,\mathscr{G}_{\sigma ^{\prime },\sigma
+}^{\mu _{1}\mu _{2}\cdots \mu _{N}}(q_{1},q_{2},\cdots q_{N};p) \to
+  \nonumber \\
+&\int \dif^{3}X\:\sum_{\sigma }|\psi _{\sigma }(\bX)|^{2}\prod_{r=1}^{N}2%
+\uppi Z\,e\:n^{\mu _{r}}\,\updelta (q_{r}^{0})\me^{-\mi\bq_{r}\cdot \bX}
+\label{13.6.11}
+\end{align}%
+其中$\psi (\bX)$是坐标空间波函数:%
+\begin{equation}
+\psi _{\sigma }(\bX)\equiv (2\uppi )^{-3/2}\int \dif^{3}p\:\chi _{\sigma }(%
+\bp)\me^{\mi\bp\cdot \bX}\:.  \label{13.6.12}
+\end{equation}
+由于方程(\ref{13.6.11})中的因式分解, 在该态中引入一个带电重粒子的效果等效于在动量空间\,Feynman\,%
+图中加入任意多个新型顶点, 在这种新顶点中, 像电子这种电荷为$-e$的轻\,Dirac\,粒子与一外场相互作用, %
+而每个这样的顶点对整个振幅贡献因子{}$^*$\footnote{$^*${}这里的第一个因子是通常的因子$\mi$, 在\,Feynman\,规则中,
+这个因子伴随着带电重粒子相互作用拉格朗日量中的常数.} (现在包含了光子传播子和电子\lzx 光子顶点)%
+\begin{equation}
+\mi\int \dif^{4}q\:\left[ \frac{-\mi}{(2\uppi )^{4}}\frac{1}{q^{2}-\mi\epsilon }\right] %
+\Bigl[ 2\uppi Z\,e\:n_{\mu }\updelta (q^{0})\me^{-\mi\bq\cdot \bX}\Bigr] %
+\Bigl[ (2\uppi )^{4}\,e\,\gamma ^{\mu }\,\updelta ^{4}(k-k^{\prime }-q)\Bigr]
+\label{13.6.13}
+\end{equation}%
+其中$k$和$k^{\prime }$是初态和末态电子的$4$-动量. 于是完整的散射振幅必须是在权函数$\sum_{\sigma }|\psi
+_{\sigma }(\bX)|^{2}$下对重粒子位置$\bX$的平均. 因子(\ref{13.6.13})与通过在相互作用拉格朗日量中增加新项%
+\begin{equation}
+\mathscr{L}_{\text{ext}}(x)=\mathscr{A}_{\mu }(x)\,J_{e}^{\mu }(x) \label{13.6.14}
+\end{equation}%
+所得到的相同, 其中$J_{e}^{\mu }\equiv -\mi e\bar{\Psi}\gamma^{\mu}\Psi$是电子的电流, 而$\mathscr{A}^{\mu }$是外矢势
+\begin{equation}
+\mathscr{A}^{\mu }(x)=\frac{1}{(2\uppi )^{4}}\int \dif^{4}q\:\me^{\mi q\cdot x}\left[
+\frac{2\uppi \,Z\,e\:n^{\mu }\updelta (q^{0})\me^{-\mi\bq\cdot \bX}}{q^{2}-\mi\epsilon }\right] \:.  \label{13.6.15}
+\end{equation}%
+当然\marginpar[\flushright{\small[560]\hspace*{5mm}}]{{\small\hspace*{5mm}[560]}}, 这正是通常的\,Coulomb\,势:%
+\begin{equation}
+\mathscr{A}^{0}(x)=\frac{Ze}{4\uppi |\bx-\bX|}\qquad\hAAA(x)=0\:.  \label{13.6.16}
+\end{equation}%
+如果存在多个带电重粒子(就像分子中那样), 我们必须将$\mathscr{A}^{\mu }(x)$表示为像(\ref{13.6.16})这样的项的和, 其中每一项都有自己的电荷$Ze$以及位置$\bX$.
+
+采用外场近似时, 记住要求和的是哪些图是有用的. 考虑单个(相对论性或非相对论性)电子与单个带电重粒子, 例如质子或氘核, %
+的相互作用. 如果我们忽略所有其他相互作用,
+那么, 对于与外场相互作用所引起的电子散射, 它的\,Feynman\,图就\marginpar[\flushright{\raisebox{14ex}[0pt]{{\small[561]\hspace*{5mm}}}}]{{\raisebox{14ex}[0pt]{\small\hspace*{5mm}[561]}}}是那些在电子线上插入任意多个电子\lzx 外场顶点(\ref{13.6.14})的\,Feynman\,图. (参看图13.4.) 但就像方程(\ref{13.6.2})中对置换的求和所表明的, 外场近似下的这些图来自于低层理论中与电子线相连的光子在所有可能的阶被连到带电重粒子线上的那些图. (参看图13.5) 除非电子和带电重粒子是非相对论性的, 否则图13.5中的``非交叉梯形''图(用\,L\,标记){\KAI{不}}会在这个求和中占主导地位. %
+\begin{figure}[h!]
+\centering
+\includegraphics{1304.eps}\\
+  \caption{电子被外电磁场散射的图. 这里的直线代表电子, 端点为叉的波浪线代表电子与外场的相互作用}
+  \label{fig:13.4}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics{1305.eps}\\
+  \caption{一个电子被一个重带电靶粒子散射的图, 这个图在靶质量很大的极限下会产生与图13.4相同的结果. 这里单线是电子, 双线是重的靶粒子; 波浪线是虚光子. 被``L''标记的图被称作非交叉梯形图; 当电子和靶粒子都是非相对论粒子时, 这些图在求和中占主导地位.}
+  \label{fig:13.5}
+\end{figure}
+(一些来自旧式微扰论中的项也对这些图有贡献, 这些项的中间态含有与初末态相同的粒子, 当电子和带电重粒子均为非相对论性时, %
+这会使能量分母很小,
+而图13.5中的其他所有图所对应的中间态, 要么有额外的光子, 要么有额外的电子\lzx 正电子对, 要么有重的粒子\lzx 反粒子对. 它们被大能量分母压低了.) 非交叉梯形图的求和可以通过解一个积分方程求出, 这一积分方程称为\,\emph{Bethe-Salpeter}{\KAI{(贝特\lzx 萨尔皮特)方程}},\textsuperscript{\cite{10}} 然而, 除非两个粒子都是非相对论性的, 否则没有什么合适的理由只挑出图的这个子集, 在两个粒子均为非相对论性的情况下, Bethe-Salpeter\,方程就退化成了%
+普通的非相对论\,Schr\"{o}dinger\,方程, 再加上与自旋\lzx 轨道耦合相关的相对论性修正, 这个修正可以作为微扰处理. %
+我们必须承认, 束缚态中的相对论效应和辐射修正的理论仍不令人满意.
+
+在推导外场(\ref{13.6.16})时, 我们仅将带电重粒子与电磁场的相互作用计算至光子动量的领头阶. 重粒子的磁偶极矩、
+电偶极矩等会产生关于光子动量的高阶修正. 当然, 在图13.4中那些图以外, 还会有\,Feynman\,图产生辐射修正, %
+例如光子从电子线发射并被吸收或者在光子线中插入电子圈的那些图.
+我\marginpar[\flushright{\small[562]\hspace*{5mm}}]{{\small\hspace*{5mm}[562]}}们在下一章将看到, 在束缚态中, %
+图13.4中的图必须计入所有阶, 而所有其他的光子动量或$e$的高阶修正可以视为这些图的微扰.
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+\markright{习\qquad 题}    %单眉
+
+
+\begin{KAI}
+
+1. 在质心系下考虑能量为$1\,\mathrm{GeV}$且散射角为$90^{\circ}$的过程$e^{+}+e^{-}\to\pi^{+}+\pi^{-}$. %
+假设通过对末态$\pi$介子能量的测量, 我们确定出有不超过$E_{T}\ll 1\,\mathrm{GeV}$的能量被软光子带走了. %
+反应速率对$E_{T}$的依赖关系是什么?
+
+2. 考虑一个由标量场$\phi$描述的无质量无自旋粒子, 它的相互作用拉格朗日密度的形式是$\phi(x)J(x)$, %
+其中$J(x)$只包含有质量粒子的场. 推导在过程$\alpha\to\beta$中发射任意多个软标量粒子的速率公式, %
+这里这些软标量粒子的总能量小于某个小量$E_{T}$. 计入能量小于某个小量$\Lambda$的软标量粒子引起的辐射修\nolinebreak
+正.
+
+3. 对低能光子在任意靶上的散射, 推导方程(\ref{13.5.14})的下一项贡献的公\nolinebreak
+式.
+
+4. 假定一个质量$m$很小的自旋\,1\,粒子由一个矢量场$V^{\mu}(x)$描述, %
+它只与一个重得多的由\,Dirac\,场$\psi(x)$描述的费米子耦合, %
+相互作用拉格朗日密度的形式是$gV^{\mu}\bar{\psi}\gamma_{\mu}\psi$. 假定这个重费米子正常地衰变到与$V^{\mu}$没有相互作用的其他粒子, 并释放出远大于$m$ 的能量$W$. 考虑这样一个散射过程, %
+但其中有一个额外的伴随其他衰变产生的$V^{\mu}$粒子, 这个矢量粒子的能量小于一个上限能量$E$, %
+而能量范围是$W\gg E\gg m$. 这个过程的衰变率与$E$和$m$的关系是什么? 计算中忽略辐射修正.
+
+5. 证明方程(\ref{13.6.8})在$p\cdot(q_{1}+\cdots+q_{N})=0$时是成立的.
+
+ \end{KAI}
+%\newpage  
+\markboth{第13章\quad 红~\,外~\,效~\,应}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}F. Bloch and A. Nordsieck, {\textit{Phys. Rev.}} {\bf{37}}, 54 (1937); D. R. Yennie, S. C. Frautschi, and H. Suura, {\textit{Ann. Phys. (NY)}} {\bf{13}}, 379 (1961). 另见 K. T. Mahantappa, Ph.D. Thesis at Harvard University (1961), 未发表.
+     \addcontentsline{toc}{section}{参考文献}
+  \markboth{第13章\quad 红~\,外~\,效~\,应}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\bibitem {2}S. Weinberg\marginpar[\flushright{\small[563]\hspace*{5mm}}]{{\small\hspace*{5mm}[563]}}, {\textit{Phys. Lett.}} {\bf{9}}, 357 (1964); {\textit{Phys. Rev.}} {\bf{135}}, B1049 (1964).
+\bibitem {3}S. Weinberg, {\textit{Phys. Rev.}} {\bf{140}}, B515 (1965).
+\bibitem {4}在非相对论Coulomb散射的微扰展开中会遇到这个相因子, R. H. Dalitz, {\textit{Proc. Roy. Soc. London}} {\bf{206}}, 509 (1951).
+\bibitem {5}可参看\,L. I. Schiff, {\textit{Quantum Mechanics}} (McGraw-Hill, New York, 1949): Section 20.
+\bibitem {6}T. D. Lee and M. Nauenberg, {\textit{Phys. Rev.}} {\bf{133}}, B1549 (1964). 另见T. Kinoshita, {\textit{J. Math. Phys.}} {\bf{3}}, 650 (1962); G. Sterman and S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{39}}, 1416 (1977).
+\bibitem {7}G. Sterman and S. Weinberg, 文献[6].
+\bibitem {8}F. E. Low, {\textit{Phys. Rev.}} {\bf{96}}, 1428 (1954); M. Gell-Mann and M. L. Goldberger, {\textit{Phys. Rev.}} {\bf{96}}, 1433 (1954). 另见S. Weinberg, {\textit{Lectures on Elementary Particles and Quantum Field Theory \yzx  1970 Brandeis Summer Institute in Theoretical Physics}}, S. Deser, M. Grisaru, and H. Pendleton\,编辑 (MIT Press, Cambridge, MA, 1970).
+\bibitem {9}E. J. Williams, {\textit{Kgl. Dan. Vid. Sel. Mat.-fys. Medd.}} {\bf{XIII}}, No. 4 (1935).
+\bibitem {10}H. A. Bethe and E. E. Salpeter, {\textit{Phys. Rev.}} {\bf{82}}, 309 (1951); {\bf{84}}, 1232 (1951).
+\end{thebibliography}

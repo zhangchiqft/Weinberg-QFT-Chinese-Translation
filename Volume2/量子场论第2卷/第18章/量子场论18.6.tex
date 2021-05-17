@@ -1,0 +1,173 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Thursday, September 08, 2016 10:15:25}
+%TCIDATA{LastRevised=Saturday, September 10, 2016 16:21:24}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+在11.2节, 我们看到维度正规化为量子电动力学中的辐射修正计算提供了特别方便的方法, 这主要是因为它保护了与规范不变性相联系的守恒律. 由于相%
+同的原因,\quad 维度正规化也为一般规范理论中重整化群的滑动标度提供了另一种非常方便的定义．\cite{9}
+
+在使用维度正规化的计算中, 当时空维度$d$趋于它的物理值时, 紫外发散就会作为物理振幅中的极点出现. (例子可参看(11.2.13).) 为了抵消这%
+些极点, 裸耦合常数$%
+g_{B}^{\ell }(d)$(包括质量)自身也必须有这样的极点, 而物理振幅在$d\rightarrow 4$时是正则的这一条件确定%
+了极点的留数. 这些裸耦合一般会有不为零的量纲$\Delta _{\ell }(d)$, $\Delta _{\ell }(d)$依赖于时空维度$d$, 所以考%
+察无量纲量$g_{B}^{\ell }(d)\mu ^{-\Delta
+_{\ell }(d)}$是比较方便的, 这里的$\mu $是量纲为能量或质量的滑动标度. 这一重新标度的裸耦合可以表示为正比于$1/(d-4)$%
+的$\nu $次方的项的和, 其中$\nu $是正定的, 物理振幅在$d\rightarrow 4$时的极点被抵消这一要求则确定了系数$b_{\nu }$, 还有一些残%
+余项在$d=4$时关于$d$解析.
+这一残余项被认定为无量纲重整化耦合常数$g^{\ell }(\mu ,d)$, 所以
+
+\begin{equation}
+g_{B}^{\ell }(d)\mu ^{-\Delta _{\ell }(d)}=g^{\ell }(\mu ,d)+\sum_{\nu
+=1}^{\infty }(d-4)^{-\nu }b_{\nu }^{\ell }(g(\mu ,d))\text{ .}
+\label{18.6.1}
+\end{equation}%
+只要物理振幅在$d=4$处的奇点被抵消了, 我们可以让裸耦合以任意的方式依赖于$d$; 通过要求$g^{\ell }(\mu ,d)$不仅在$d=4$时对$d$解%
+析, 并且对于所有的$d$都是解析的, 我们可以移除这一不确定性.
+
+为了计算$g^{\ell }(\mu ,d)$所满足的重整化群方程, 首先做方程(\ref{18.6.1})对$\mu $的导数:%
+\begin{equation}
+-\Delta ^{\ell }(d)\left[ g^{\ell }+\sum_{\nu =1}^{\infty }(d-4)^{-\nu
+}b_{\nu }^{\ell }(g)\right] =\beta ^{\ell }(g,d)+\sum_{\nu =1}^{\infty
+}\sum_{m}b_{\nu m}^{\ell }(g)\beta ^{m}(g,d)(d-4)^{-\nu }  \label{18.6.2}
+\end{equation}%
+其中\begin{equation}
+b_{\nu m}^{\ell }(g)\equiv \frac{\partial }{\partial g^{m}}b_{\nu }^{\ell
+}(g)  \label{18.6.3}
+\end{equation}%
+并且, 像之前一样,
+\begin{equation}
+\mu \frac{\mathrm{d}}{\mathrm{d}\mu }g^{\ell }(\mu ,d)=\beta ^{\ell }(g(\mu
+,d),d)\text{ .}  \label{18.6.4}
+\end{equation}%
+注意到$\beta ^{\ell }$是所有$g^{m}(\mu
+,d)$以及$d$的函数, 但由于重新标度的质量也被纳入到无量纲的耦合参量中, 这样除了$\mu $以外没有别的带有量纲的参量, 所以$\beta ^{\ell }$不能%
+依赖于$\mu $.
+
+我们已经看到, 量纲$\Delta
+_{\ell }(d)$总是$d$的线性函数,
+所以我们现在将其写成\begin{equation}
+\Delta _{\ell }(d)=\Delta _{\ell }+\rho _{\ell }(d-4)\text{ .}
+\label{18.6.5}
+\end{equation}%
+我们将方程(\ref{18.6.2})的左边重写成\[
+-\rho _{\ell }g^{\ell }(d-4)-\left[ \Delta _{\ell }g^{\ell }+b_{1}^{\ell
+}(g)\rho ^{\ell }\right] -\sum_{\nu =1}^{\infty }(d-4)^{-\nu }\left[ \rho
+_{\ell }b_{\nu +1}^{\ell }(g)+\Delta _{\ell }b_{\nu }^{\ell }(g)\right]
+\text{ .}
+\]%
+这时, 解析部分中$d$的最高幂次是一阶的, 所以对于方程(\ref{18.6.2})的右边也必须同样如此, 因此$%
+\beta (g,d)$关于$d$必必须是线性的:%
+\begin{equation}
+\beta ^{\ell }(g,d)=\beta ^{\ell }(g)+(d-4)\alpha ^{\ell }(g)\text{ .}
+\label{18.6.6}
+\end{equation}%
+那么, 方程(\ref{18.6.2})两边零阶项和一阶项相等就给出\begin{equation}
+\alpha ^{\ell }(g)=-\rho _{\ell }g^{\ell }  \label{18.6.7}
+\end{equation}%
+以及更加重要的\begin{equation}
+\beta ^{\ell }(g)=-\Delta _{\ell }g^{\ell }-b_{1}^{\ell }(g)\rho _{\ell
+}+\sum_{\nu =1}^{\infty }\sum_{m}b_{1m}^{\ell }(g)\rho _{m}g^{m}\text{ .}
+\label{18.6.8}
+\end{equation}%
+值得注意的是$\beta $函数只依赖裸耦合中单极点的系数. 事实上, 这些系数也决定了所有高阶极点的系数; 将方程(%
+\ref{18.6.2})两边的极点项等同起来给出递推关系\begin{equation}
+\rho _{\ell }b_{\nu +1}^{\ell }(g)-\sum_{m}\rho _{m}g^{m}b_{\nu +1m}^{\ell
+}(g)=-\Delta _{\ell }b_{\nu }^{\ell }(g)-\sum_{m}b_{\nu m}^{\ell }(g)\beta
+^{m}(g)\text{ .}  \label{18.6.9}
+\end{equation}
+
+例如, 为了使$\int \mathrm{d}^{d}xF_{\mu \nu
+}F^{\mu \nu }$是无量纲的, 任意规范场$A^{\mu }$必须有量纲(%
+按质量幂次计)$(d-2)/2$, 而既然$g_{B}A^{\mu }$必须要有于$\partial
+/\partial x^{\mu }$相同的量纲, $g_{B}$必须要有量纲$(4-d)/2$, 这使得对于规范耦合有$\Delta =0$和$%
+\rho =-1/2$. 那么, 对于仅有一个耦合常数的规范理论, 方程(\ref{18.6.8})给出:%
+\begin{equation}
+\beta (g)=\frac{1}{2}[b_{1}(g)-gb_{1}^{\prime }(g)]\text{ .}  \label{18.6.10}
+\end{equation}%
+特别地, 方程(11.2.20)表明, 在量子电动力学中, 到一圈阶, 裸电荷$d\rightarrow 4$处有极点, 并且\begin{equation}
+e_{B}=Z_{3}^{-1/2}e\rightarrow e-\frac{e^{3}}{12\uppi^{2}}\frac{1}{d-4}\text{
+.}  \label{18.6.11}
+\end{equation}%
+那么, 在方程(\ref{18.6.10})中令$%
+b_{1}(e)=-e^{3}/12\uppi^{2}$就会给出\begin{equation}
+\beta (e)=\frac{e^{3}}{12\uppi^{2}}\text{ ,}  \label{18.6.12}
+\end{equation}%
+这与之前的结果(\ref{18.2.37})%
+一致.
+
+这一节所引入的耦合常数$g^{\ell }(\mu )$被称作是通过{\kai{最小剪除}}定义的.
+这与另一个更加方便的方案稍有不同. 单极点$(d-4)^{-1}$一般来自于函数$%
+(4\uppi)^{d/2-2}\Gamma (2-d/2)$(就像方程(11.2.13)%
+中那样), 它对于$d\rightarrow 4$有极限\begin{equation}
+(4\uppi)^{2-d/2}\Gamma \left( 2-\frac{d}{2}\right) \rightarrow \frac{1}{2-d/2%
+}-\gamma +\ln 4\uppi\text{ ,}  \label{18.6.13}
+\end{equation}%
+其中$\gamma $是欧拉常数, $\gamma
+=0.5772157$. 因此, 在方程(\ref{18.6.1})中的所有地方做如下的替换将是方便的:%
+\begin{equation}
+\frac{1}{d-4}\rightarrow \frac{1}{d-4}+\frac{\gamma }{2}-\frac{1}{2}\ln 4%
+\uppi\text{ .}  \label{18.6.14}
+\end{equation}%
+有了这一处理, 耦合常数就被称作是通过{%
+\kai{修正最小减除}}定义的.
+
+通过最小减除所定义的耦合的显著特征之一是, 既然在任何计算中连一个紫外截断的因子都没有出现过, 圈图在$d=4$处所拥有的极点仅对应于对数%
+紫外发散, 而非线性发散, 二次发散等. 因此,
+要使留数函数$b_{1}^{\ell }(g)$能够包含阶为$g^{a}g^{b}g^{c}\cdots $的项, $g_{B}^{\ell }$在$d=4$处的量纲%
+要等于耦合$g_{B}^{a}$, $g_{B}^{b}$, $g_{B}^{c}$%
+等的总量纲:%
+\begin{equation}
+\Delta _{\ell }=\Delta _{a}+\Delta _{b}+\Delta _{c}+\cdots \text{ ,}
+\label{18.6.15}
+\end{equation}%
+并且, 从(\ref{18.6.18})可以得出这对于$\beta ^{\ell }(g)$同样成立.
+特别地, 在没有超重整耦合的理论中(像含有无质量旋量且不含标量的规范理论, 例如电子质量为零的量子电动力学), 所有耦合都有$%
+\Delta _{\ell }\leq 0$, 所以{\kai{任何不可重整的相互作用的出现都不会影响可重整耦合($\Delta_{\ell}=0$)的重整化%
+群方程.}}\cite{5} 另外, 在这样的理论中, 不可重整耦合的$\beta $-函数是不可重整耦合的有限阶多项式, 而每个多项式中%
+的每个系数都有可重整耦合的一个无穷幂级数给定. 例如, 在光子和无质量电子的理论中(假定了$\psi \rightarrow \gamma _{5}\psi $以%
+及$\mathsf{P}$下的不变性), 不存在量纲为$+5$的不可重整相互作用, 但有几个量纲为$+6$的相互作用(四费米子相互作用以及%
+纯光子相互作用$F_{\mu \nu }\square
+F^{\mu \nu }$), 这些相互作用有量纲为$-2$的耦合常数$f_{i}$.
+$f_{i}$的$\beta $-函数形式为$%
+\sum_{j}b_{ij}(e)f_{j}$, 而其中的系数$%
+b_{ij}(e)$由$e$的幂级数给定.
+
+\end{document}

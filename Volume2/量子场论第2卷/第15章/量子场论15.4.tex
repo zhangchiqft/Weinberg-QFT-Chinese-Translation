@@ -1,0 +1,236 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, March 20, 2016 13:35:49}
+%TCIDATA{LastRevised=Tuesday, March 22, 2016 19:06:19}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+我们通过简单地令对易子等于$i$乘以相对应的Poisson括号就将这个理论量子化. 问题是约束中的一个. 用7.6节所描述的Dirac术语来说, 存在一%
+个初级约束\begin{equation}
+\Pi _{\alpha 0}\equiv \frac{\partial \mathscr{L}}{\partial (\partial
+_{0}A_{\alpha }{}^{0})}=0  \label{15.4.2}
+\end{equation}%
+以及$A_{\alpha }{}^{0}$的场方程所提供的次级约束:%
+\begin{eqnarray}
+-\partial _{\mu }\frac{\partial \mathscr{L}}{\partial (\partial _{\mu
+}A_{\alpha 0})}+\frac{\partial \mathscr{L}}{\partial A_{\alpha 0}}
+&=&\partial _{\mu }F_{\alpha }{}^{\mu 0}+F_{\gamma }{}^{\mu 0}C_{\gamma
+\alpha \beta }A_{\beta \mu }+J_{\alpha }{}^{0}  \nonumber \\
+&=&\partial _{k}\Pi _{\alpha }{}^{k}+\Pi _{\gamma }{}^{k}C_{\gamma \alpha
+\beta }A_{\beta k}+J_{\alpha }{}^{0}\text{ ,}  \label{15.4.3}
+\end{eqnarray}%
+其中$\Pi _{\alpha }{}^{k}\equiv \partial \mathscr{L}/\partial
+(\partial _{0}A_{\alpha k})=F_{\alpha }{}^{k0}$是共轭于$A_{\alpha k}$的\textquotedblleft 动量%
+\textquotedblright , 其中$k$在$1,2,3$之间取值. $\Pi _{\alpha 0}$与$\partial _{k}\Pi _{\alpha
+}{}^{k}+\Pi _{\gamma }{}^{k}C_{\gamma \alpha \beta }A_{\beta k}+J_{\alpha
+}{}^{0}$的Poisson括号为零(这是因为后一个量是独立于$A_{\alpha }{}^{0}$的), 所以它们是第一类约束, 这些约%
+束不能用Dirac括号替换Poisson%
+括号进行处理.
+
+正如电动力学的情况, 
+我们通过选择规范来处理这些约束. 电动力学采用的Coulomb规范在这里将会导致一个令人不快的复杂性,\footnote{除了纯代数上的困难外, Coulomb%
+规范(同其他许多规范一样)还有一个称为Gribov(%
+格里波夫)多值性的问题:\cite{9} 即便附加$\mathbf{A}_{\alpha }$%
+在无限远处为零的条件, 对于Coulomb规范条件$\nabla
+\cdot $ $\mathbf{A}_{\alpha }=0$的每个解, 存在另一个与其相差有限规范变换的解. Gribov多值性不会在这里影响%
+我们, 因为我们是在轴向规范下进行量子化的, 在轴向规范下, 这个问题是不存在的, 并且我们仅用其它规范, 例如Lorentz规范, 来生成微扰%
+展开.} 所以我们转而在所谓的{\kai{轴向}}规范下进行处理, 基于条件\begin{equation}
+A_{\alpha 3}=0\text{ .}  \label{15.4.4}
+\end{equation}%
+这样, 规范场的正则变量就是$A_{\alpha i}$, $i$现在在$1$%
+和$2$之间取值, 再加上它们的正则共轭\begin{equation}
+\Pi _{\alpha i}\equiv \frac{\partial \mathscr{L}}{\partial (\partial
+_{0}A_{\alpha i})}=-F_{\alpha }{}^{0i}=\partial _{0}A_{\alpha i}-\partial
+_{i}A_{\alpha 0}+C_{\alpha \beta \gamma }A_{\beta 0}A_{\gamma i}\text{ .}
+\label{15.4.5}
+\end{equation}%
+场$A_{\alpha 0}$不是独立的正则变量, 而是通过约束(%
+\ref{15.4.3})以其它变量定义的. 为了看到这一点, 注意到\textquotedblleft 电\textquotedblright 场场强%
+$F_{\alpha }{}^{\mu 0}$是\begin{equation}
+F_{\alpha }{}^{i0}=\Pi _{\alpha i}\text{ , \ \ \ \ \ \ \ \ }F_{\alpha
+}{}^{30}=\partial _{3}A_{\alpha }{}^{0}\text{ ,}  \label{15.4.6}
+\end{equation}%
+所以约束(\ref{15.4.3})变成\begin{equation}
+-(\partial _{3})^{2}A_{\alpha }{}^{0}=\partial _{i}\Pi _{\alpha i}+\Pi
+_{\gamma i}C_{\gamma \alpha \beta }A_{\beta i}+J_{\alpha }{}^{0}\text{ ,}
+\label{15.4.7}
+\end{equation}%
+这个方程(在合理的边界条件下)可以很容易地解出, 并以$\Pi _{\gamma i}$, $A_{\beta i}$%
+和$J_{\alpha }{}^{0}$的泛函给出$%
+A_{\alpha }{}^{0}$. (我们使用了求和约定, 指标$i,j$等对1和2求和.) 应该注意的是, 物质场$\psi _{\ell }$的正则共轭是%
+\begin{equation}
+\pi _{\ell }=\frac{\partial \mathscr{L}}{\partial (\partial _{0}\psi _{\ell
+})}=\frac{\partial \mathscr{L}_{M}}{\partial (D_{0}\psi _{\ell })}\text{ ,}
+\label{15.4.8}
+\end{equation}%
+所以物质流的时间分量可以{\kai{仅}}用物质场的正则变量表示\begin{equation}
+J_{\alpha }{}^{0}=-i\frac{\partial \mathscr{L}_{M}}{\partial (D_{0}\psi
+_{\ell })}(t_{\alpha })_{\ell }^{\phantom{\ell}m}\psi _{m}=-i\pi _{\ell
+}(t_{\alpha })_{\ell }^{\phantom{\ell}m}\psi _{m}\text{ .}  \label{15.4.9}
+\end{equation}%
+因此方程(\ref{15.4.7})将给定时刻的$A_{\alpha }{}^{0}$定义为同一时刻的正则变量$\Pi
+_{\gamma i}$, $A_{\beta i}$, $\pi _{\ell }$和$\psi _{m}$的泛函.
+
+既然我们已经找出了这一规范下的正则变量, 我们现在可以开始构建哈密顿量了. 哈密顿密度是\begin{eqnarray}
+\mathscr{H} &=&\Pi _{\alpha i}\partial _{0}A_{\alpha i}+\pi _{\ell }\partial
+_{0}\psi _{\ell }-\mathscr{L}  \nonumber \\
+&=&\Pi _{\alpha i}(F_{\alpha 0i}+\partial _{i}A_{\alpha 0}-C_{\alpha \beta
+\gamma }A_{\beta 0}A_{\gamma i})+\pi _{\ell }\partial _{0}\psi _{\ell } 
+\nonumber \\
+&&-\frac{1}{2}F_{\alpha 0i}F_{\alpha 0i}+\frac{1}{2}F_{\alpha ij}F_{\alpha
+ij}+\frac{1}{2}F_{\alpha i3}F_{\alpha i3}  \nonumber \\
+&&-\frac{1}{2}F_{\alpha 03}F_{\alpha 03}-\mathscr{L}_{M}\text{ .}
+\label{15.4.10}
+\end{eqnarray}%
+利用方程(\ref{15.4.4})和(\ref{15.4.6}), 
+这变成\begin{eqnarray}
+\mathscr{H} &=&\mathscr{H}_{M}+\Pi _{\alpha i}(\partial _{i}A_{\alpha
+0}-C_{\alpha \beta \gamma }A_{\beta 0}A_{\gamma i})+\frac{1}{2}\Pi _{\alpha
+i}\Pi _{\alpha i}  \nonumber \\
+&&+\frac{1}{4}F_{\alpha ij}F_{\alpha ij}+\frac{1}{2}\partial _{3}A_{\alpha
+i}\partial _{3}A_{\alpha i}-\frac{1}{2}\partial _{3}A_{\alpha 0}\partial
+_{3}A_{\alpha 0}\text{ ,}  \label{15.4.11}
+\end{eqnarray}%
+其中$\mathscr{H}_{M}$是物质哈密顿密度:%
+\begin{equation}
+\mathscr{H}_{M}\equiv \pi _{\ell }\partial _{0}\psi _{\ell }-\mathscr{L}_{M}%
+\text{ .}  \label{15.4.12}
+\end{equation}
+
+沿用9.2节所导出的一般规则, 我们现在可以用这一哈密顿密度计算作为路径积分的矩阵元, 该路径积分是对$A_{\alpha
+i}$, $\Pi _{\alpha i}$, $\psi _{\ell }$和$\pi _{\ell }$的路径积分, 含有权重因子$%
+\exp (iI)$, 其中\[
+I=\int d^{4}x\left[ \Pi _{\alpha i}\partial _{0}A_{\alpha i}+\pi _{\ell
+}\partial _{0}\psi _{\ell }-\mathscr{H}+\epsilon \text{项}\right] 
+\text{ ,} 
+\]%
+在$I$中, \textquotedblleft $\epsilon $项\textquotedblright 
+仅用来给出传播子分母中正确的无限小虚项. (参看9.2节.) 我们注意到方程(\ref{15.4.7})和(\ref{15.4.9})给出%
+的$A_{\alpha }{}^{0}$是正则变量的泛函, 而该泛函关于$\Pi
+_{\alpha i}$和$\pi _{\ell }$是{\kai{线性}}的. 那么, 对方程(\ref{15.4.11})的观察就表明了, (假定$\mathscr{L}_{M}$至%
+多是$D_{\mu }\psi $的平方)对完整作用量(\ref{15.4.13})的积分至多是$\Pi _{\alpha i}$和$\pi _{\ell }$的%
+二次型. 因此, 通过高斯积分的通常规则, 我们可以算出对这些正则\textquotedblleft 动量\textquotedblright 的路径%
+积分. 这一步骤的麻烦是方程(\ref{15.4.14})中$\Pi _{\alpha i}$的二阶项系数是$A_{\alpha i}$的%
+函数, 所以高斯积分将会产生一个可怕的场相关行列式因子. 另外, 
+此时的整个体系看起来没有丝毫的可能是Lorentz不变的.
+
+我们不在这条道路上继续前行, 取而代之, 我们将使用一个类似于9.6%
+节中在电动力学的路径积分公式中使用过的技巧. 注意到, 如果我们暂且认为$A_{\alpha 0}$是独立变量, 那么作用量(\ref%
+{15.4.13})显然是$A_{\alpha 0}$的二次型, 其中二阶项$A_{\alpha 0}(x)A_{\beta
+0}(y)$的系数等于场无关核$(\partial _{3})^{2}\delta ^{4}(x-y)$. 正如我们在第九章的附录中所看到的, 这种对$A_{\alpha 0}(x)$%
+的高斯积分, 除去一个常数因子外, 等于被积函数在指数变量稳定\textquotedblleft 点\textquotedblright 的值. 但%
+是, 这里的作用量变分导数是\[
+\frac{\delta I}{\delta A_{\alpha 0}}=-\frac{\partial \mathscr{H}}{\partial
+A_{\alpha 0}}=J_{\alpha }{}^{0}+\partial _{i}\Pi _{\alpha i}+C_{\beta \alpha
+\gamma }\Pi _{\beta i}A_{\gamma i}-\partial _{3}^{2}A_{\alpha 0}\text{ ,} 
+\]%
+所以作用量的\textquotedblleft 稳定\textquotedblright 点是约束方程(%
+\ref{15.4.7})的解. 因此, 取代用$%
+A_{\alpha 0}$作为方程(`\ref{15.4.7})的解, 我们同样可以就把它当做独立的积分变量进行处理.
+
+在现在视$A_{\alpha 0}$为独立变量的情形下, 哈密顿量$\int d^{3}x\mathscr{H}$显然是$\Pi _{\alpha i}$%
+的二次型, 其中二阶项$%
+\Pi _{\alpha i}(x)\Pi _{\beta j}(y)$的系数由场无关核$\frac{1}{2}\delta ^{4}(x-y)\delta _{ij}$给%
+出. 假定这对于物质场$%
+\pi _{\ell }$同样是成立的, 通过令$\pi _{\ell }$和$\Pi _{\alpha i}$等于对应方程(\ref{15.4.1})的作用%
+量的稳定\textquotedblleft 点\textquotedblright
+, 我们可以计算出对$\pi
+_{\ell }$和$\Pi _{\alpha i}$的路径积分至相差一个常数因子, $%
+\pi _{\ell }$和$\Pi _{\alpha i}$的稳定\textquotedblleft 点\textquotedblright 是:%
+\begin{eqnarray*}
+0 &=&\frac{\delta I}{\delta \pi _{\ell }}=\partial _{0}\psi _{\ell }-\frac{%
+\partial \mathscr{H}_{M}}{\partial \pi _{\ell }}\text{ ,} \\
+0 &=&\frac{\delta I}{\delta \Pi _{\alpha i}}=\partial _{0}A_{\alpha i}-\Pi
+_{\alpha i}-\partial _{i}A_{\alpha 0}+C_{\alpha \beta \gamma }A_{\beta
+0}A_{\gamma i}=F_{\alpha 0i}-\Pi _{\alpha i}\text{ .}
+\end{eqnarray*}%
+将其代回方程(\ref{15.4.13})给出\begin{eqnarray}
+I &=&\int d^{4}x[\mathscr{H}_{M}+\frac{1}{2}F_{\alpha 0i}F_{\alpha 0i} 
+\nonumber \\
+&&-\frac{1}{4}F_{\alpha ij}F_{\alpha ij}-\frac{1}{2}\partial _{3}A_{\alpha
+i}\partial _{3}A_{\alpha i}+\frac{1}{2}(\partial _{3}A_{\alpha 0})^{2}] 
+\nonumber \\
+&=&\int d^{4}x\mathscr{L}\text{ ,}  \label{15.4.14}
+\end{eqnarray}%
+其中$\mathscr{L}$是我们所出发的拉格朗日量(\ref{15.3.1})! 换句话说, 
+\begin{equation}
+\prod_{x,\alpha }\delta \left( A_{\alpha 3}(x)\right) \text{ .}
+\label{15.4.15}
+\end{equation}%
+只要$\mathscr{O}_{A},\mathscr{O}_{B}\cdots $是规范不变的, 我们就有\begin{eqnarray}
+\langle T\{\mathscr{O}_{A}\mathscr{O}_{B}\cdots \}\rangle _{\text{VACUUM}}
+&\propto &\int \left[ \prod_{\ell ,x}d\psi _{\ell }(x)\right] \left[
+\prod_{\alpha ,\mu ,x}dA_{\alpha \mu }(x)\right]   \nonumber \\
+&&\times \mathscr{O}_{A}\mathscr{O}_{B}\exp \{iI+\epsilon \text{项}%
+\}\prod_{x,\alpha }\delta (A_{\alpha 3}(x))\text{ ,}  \label{15.4.16}
+\end{eqnarray}%
+其中$I$是方程(\ref{15.4.14})给出的Lorentz不变且规范不变的作用量.
+
+\subsection{* * *}
+
+为了将来的参考, 我们注意到, 方程(\ref{15.4.16})中对规范场积分的体积元$%
+\prod_{\alpha ,\mu ,x}dA_{\alpha \mu }(x)$是规范不变的, 也就是说\begin{equation}
+\prod_{\alpha ,\mu ,x}dA_{\Lambda }{}_{\alpha\mu}(x)=\prod_{\alpha ,\mu
+,x}dA_{\alpha \mu }(x)\text{ ,}  \label{15.4.17}
+\end{equation}%
+其中$A_{\Lambda }{}_{\alpha\mu}$是用规范变换作用$A_{\alpha \mu }(x)$后的结果, 规范变换的参量是$%
+\Lambda _{\alpha }(x)$. 证明对于单位元附近的变换, 即无限小的变换参量$\lambda _{\alpha }(x)$, 
+这是成立的就足够了. 
+在这一情况下\[
+A_{\lambda }{}_{\alpha}{}^{\mu}=A_{\alpha }{}^{\mu }+\partial _{\mu }\lambda
+_{\alpha }+C_{\alpha \beta \gamma }A_{\beta }{}^{\mu }\lambda _{\gamma }%
+\text{ ,}
+\]%
+所以体积元之间的关系为\[
+\prod_{\alpha ,\mu ,x}dA_{\lambda }{}_{\alpha\mu}(x)=\det (\mathscr{N}%
+)\prod_{\alpha ,\mu ,x}dA_{\alpha \mu }(x)\text{ ,}
+\]%
+其中$\mathscr{N}$是\textquotedblleft 矩阵\textquotedblright :%
+\[
+\mathscr{N}_{\alpha \mu x,\beta \nu y}=\frac{\delta A_{\lambda }%
+{}_{\alpha\mu}}{\delta A_{\beta \nu }(y)}=\delta ^{4}(x-y)\delta _{\mu
+}^{\nu }\left[ \delta _{\alpha \beta }+C_{\alpha \beta \gamma }\lambda
+_{\gamma }(x)\right] \text{ .}
+\]%
+因为迹$C_{\alpha \alpha \gamma }$为零, 所以到$\lambda _{\gamma }$的一阶, $\mathscr{N}$%
+的行列式为1.
+
+在本章, 我们将假定对物质场积分的体积元$%
+\prod_{n,x}d\psi _{n}(x)$也是规范不变的. 这里有一个很重要的微妙, 在第22章我们将回到这个问题上, 但是, 
+正如那里所证明的, 这一假定对于我们目前的强作用和电弱作用的非阿贝尔规范理论是适用的.
+
+\end{document}

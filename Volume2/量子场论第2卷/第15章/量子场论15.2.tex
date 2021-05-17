@@ -1,0 +1,258 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Friday, March 11, 2016 16:17:50}
+%TCIDATA{LastRevised=Friday, March 18, 2016 16:31:32}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{规范理论拉格朗日量与单Lie群}
+
+规范场张量$F^{\alpha }{}_{\mu \nu }$, 物质场$\psi $以及它们的规范协变导数, 它们的变换规则不包含变换参%
+量$\epsilon ^{\alpha }(x)$的导数, 所以如果只用这些元素构建拉格朗日量, 并且如果它在$\epsilon ^{\alpha }$为常数的%
+整体变换下不变, 那么它在$\epsilon ^{\alpha }(x)$为一般的位置相关函数的规范变换就是不变的. 因此, 
+我们假定拉格朗日量满足这些条件: 即,%
+\begin{equation}
+\mathscr{L}=\mathscr{L}(\psi ,D_{\mu }\psi ,D_{\nu }D_{\mu }\psi ,\cdots
+,F^{\alpha }{}_{\mu \nu },D_{\rho }F^{\alpha }{}_{\mu \nu })  \label{15.2.1}
+\end{equation}%
+以及不变性条件\begin{eqnarray}
+&&\frac{\partial \mathscr{L}}{\partial \psi _{\ell }}i(t_{\alpha })_{\ell }^{%
+\phantom{\ell}m}\psi _{m}+\frac{\partial \mathscr{L}}{\partial (D_{\mu }\psi
+_{\ell })}i(t_{\alpha })_{\ell }^{\phantom{\ell}m}(D_{\mu }\psi )_{m} 
+\nonumber \\
+&&+\frac{\partial \mathscr{L}}{\partial (D_{\nu }D_{\mu }\psi )_{\ell }}%
+i(t_{\alpha })_{\ell }^{\phantom{\ell}m}(D_{\nu }D_{\mu }\psi )_{m}+\cdots +%
+\frac{\partial \mathscr{L}}{F^{\beta }{}_{\mu \nu }}C^{\beta }{}_{\gamma
+\alpha }F^{\gamma }{}_{\mu \nu }  \nonumber \\
++\frac{\partial \mathscr{L}}{\partial D_{\rho }F^{\beta }{}_{\mu \nu }}%
+C^{\beta }{}_{\gamma \alpha }D_{\rho }F^{\gamma }{}_{\mu \nu }+\cdots &=&0%
+\text{ .}  \label{15.2.2}
+\end{eqnarray}%
+另一方面, 除了出现在$%
+F^{\alpha }{}_{\mu \nu }$以及规范协变导数$D_{\mu }$中的规范场, 拉格朗日量可以不依赖于规范场本身. 特别地, 
+质量项$-\frac{1}{2}m^{2}{}_{\alpha \beta }A_{\alpha \mu
+}A_{\beta }{}^{\mu }$被排除了.
+
+我们现在将要集中考察拉格朗日量中只依赖于$F^{\alpha }{}_{\mu \nu }$的项. 如同电动力学中一样, 对于任何自旋为一的无质%
+量粒子, 拉格朗日量必须要包含一个自由粒子项, 这一项是$\partial _{\mu }A^{\alpha
+}{}_{\nu }-\partial _{\nu }A^{\alpha }{}_{\mu }$的二次项, 而规范不变性则表明这一自由粒子项应%
+该作为场强张量$F^{\alpha }{}_{\mu
+\nu }$的二次项的一部分出现. Lorentz不变性与流守恒表明它的形式为\[
+\]%
+其中$g_{\alpha \beta }$是常数矩阵. 
+如果我们不假定宇称(%
+或者$\mathsf{CP}$或\textsf{T})守恒, 那么我们也可在拉格朗日量引入如下的项$\theta $%
+\[
+\]%
+其中$\theta ^{\alpha \beta }$是另一个常数矩阵. 这一项实际上是全导数项, 因而并不影响场方程或Feynman规则. 然而, 这样的项会有%
+非微扰的量子力学效应, 我们会在23.6节讨论它.
+
+在继续考察矩阵$g_{\alpha \beta }$%
+的性质之前, 值得关注如下的事实, 在不引入相互作用的前提下, 不可能引入规范场$A^{\alpha }{}_{\mu
+} $的动能项, 方程(\ref{15.2.3})中的这一项源于方程(\ref%
+{15.1.13})所定义的场强$F^{\alpha
+}{}_{\mu \nu }$的二次部分. 这是非阿贝尔规范理论类似广义相对论的又一方面, 在广义相对论中, 
+引力场拉格朗日量的动能部分被包含在Einstein-Hilbert拉格朗日密度------$\sqrt{%
+g}R/8\pi G$之中, 这一项也包含引力场的自能. 两种情况下的原因是相似的: 
+引力场与自身相作用是因为它与任何携带能量和动量的物质相作用, 而规范场与自身相作用是因为它与任何按照规范群的非平庸表示(在伴随表示的情况下)变换的物质相%
+作用. 这与电动力学的情况相反, 在电动力学中, 光子不携带它所相互作用的量子数------电荷, 因而对于电磁场有可能引入不需要相互作用的动能项$-\frac{1}{4}F_{\mu \nu
+}F^{\mu \nu }$.
+
+数值矩阵$g_{\alpha \beta }$可以取成对称的, 并且为了给出实的拉格朗日量必须取成实的. 为了使这一项满足规范不变性要求(\ref{15.2.2}), 对于所有的$%
+\delta $, 我们必须有:%
+\[
+g_{\alpha \beta }F^{\alpha }{}_{\mu \nu }=0\text{ .} 
+\]%
+为了在不对$F$之间附加任何的泛函关系的情况下使其成立, 矩阵$g_{\alpha
+\beta }$必须满足条件:%
+\begin{equation}
+g_{\alpha \beta }=-g_{\gamma \beta }\text{ .}  \label{15.2.4}
+\end{equation}%
+在矩阵$g_{\gamma \beta }$上还有一个更重要的条件. 如同电动力学中一样, 正则量子化规则与量子标量积的正定性要求, 拉格朗日量(\ref{15.2.3})中的矩%
+阵$g_{\alpha \beta }$必须是正定的.
+(即, 对于所有实的$u$, $g_{\alpha
+\beta }u^{\alpha }u^{\beta }$必须是正的, 
+而仅当对于所有的$\alpha $%
+有$u^{\alpha }=0$时, $g_{\alpha \beta }u^{\alpha }u^{\beta }$%
+才为零.) 这类似于在实场$\phi $的动能拉格朗日量$-\frac{1}{2}Z\partial _{\mu }\phi \partial ^{\mu }\phi -\frac{1}{2}%
+m^{2}\phi ^{2}$中要求, 常数$Z$必须是正定的.
+
+矩阵$g_{\alpha \beta }$上的这些要求有着深远的含义. 它们构成了如下三个相互等价的条件中的一个:
+
+a: 存在满足不变性条件(%
+\ref{15.2.4})的实对称正定矩阵$g_{\alpha \beta }$.
+
+b: 该Lie代数存在一组基(%
+即, 一组生成元$\tilde{t}_{\alpha }=%
+\mathscr{S}_{\alpha \beta }t_{\beta }$, 其中$\mathscr{S}$是实的非奇异矩阵), 使得结构常数$\tilde{C}^{\alpha }{}_{\beta\gamma}$不%
+仅关于下指标$\beta $和$\gamma $%
+是反对称的, 并且对所有三个指标$\alpha ,\beta $和$\gamma $%
+也是反对称的. (在这一基下, 不在上下指标$\alpha
+,\beta $等之间作区分将是方便的, 并将$\tilde{C}^{\alpha
+}{}_{\beta\gamma}$写成$\tilde{C}_{\alpha \beta \gamma }$.)
+
+c: 该Lie代数是$U(1)$子代数与交换紧致单代数的直和.\footnote{一些定义: Lie代数$%
+\mathscr{G}$的子代数$\mathscr{H}$是线性空间, 该线性空间由$%
+\mathscr{G}$的生成元$t_{\alpha }$的特定实线性组合$t_{i}=\mathscr{S}_{i\alpha
+}t_{\alpha }$张开, 使得$\mathscr{H}$本身是Lie代数, 也就是说, $t_{i}$%
+彼此之间的对易子的形式是$[t_{i},t_{j}]=ic^{k}{}_{ij}t_{k}$. 如果整个代数$\mathscr{G}$的任何元%
+素与子代数$\mathscr{H}$的任何元素的对易子处在子代数$\mathscr{H}$内, 则称子代数$\mathscr{H}$是{\kai{不变}}的. {\kai{单}}Lie代%
+数是没有不变子代数的Lie代数. $\mathscr{G}$的$U(1)$子代数是仅有一个生成元的代数, 并且该生成元与整个代数$\mathscr{G}$的所有%
+生成元都对易. {\kai{半单}}Lie代数是不含有不变阿贝尔子代数的代数, 其中不变阿贝尔子代数是指生成元彼此对易的不变子代数. 半单Lie代数%
+是单Lie代数(但不是$U(1)$)的直和. 如果矩阵$\func{Tr}\{t^{\text{A}%
+}{}_{\alpha}\,t^{\text{A}}{}_{\beta}\}=-C^{\gamma}{}_{\alpha\delta}C^{%
+\delta}{}_{\beta\gamma}$是正定的, 则称单Lie代数或半单Lie代数是紧致的. 简单性与紧致性的含义与重要性将在下面进一步讨论. 
+称Lie代数$\mathscr{G}$是子群$\mathscr{H}%
+_{n}$的直和是指, 有可能找到Lie代数$\mathscr{G}$的一个基, 其生成元为$t_{na}$, 使得结构常数采取形式\[
+C^{\ell c}{}_{na}{}_{mb}=\delta _{\ell m}\delta _{mn}C^{(n)c}{}_{ab}\text{ ,}
+\]%
+其中$C^{(n)c}{}_{ab}$是子代数$\mathscr{H}%
+_{n}$的结构常数.}
+
+本章附录A给出了条件a, b%
+和c相互等价的证明.\cite{7}
+
+在继续讨论这一结果的物理含义之前, 就完备性条件再说几点将是有用的. 我们不会在这里使用这个条件, 但是紧Lie代数构成了紧Lie%
+群的生成元: 即群的不变体积有限的群. 例如, 
+旋转群是紧致的; Lorentz群则不是. 作为一个不紧的单Lie代数的例子, 考察对易关系\[
+\lbrack t_{1},t_{2}]=-it_{3}\text{ , \ \ \ \ \ \ \ \ }[t_{2},t_{3}]=it_{1}%
+\text{ , \ \ \ \ \ \ \ \ }[t_{3},t_{1}]=it_{2}\text{ .} 
+\]%
+这里的结构常数是实的, 但不是全反对称的; 
+它的非零分量是\[
+C^{3}{}_{12}=-C^{3}{}_{21}=-1\text{ , \ \ \ \ \ }C^{1}{}_{23}=-C^{1}{}_{32}=1%
+\text{ , \ \ \ \ \ }C^{2}{}_{31}=-C^{2}{}_{13}=1\text{ .} 
+\]%
+方程(\ref{15.A.10})所给出的度规在这里是对角的, 其中元素为:%
+\[
+g_{11}=g_{22}=-g_{33}=-2\text{ .} 
+\]%
+这不是正定矩阵, 所以Lie%
+代数不是紧致的. 事实上它是非紧群$O(2,1)$的Lie代数, 该群是两维空间一维时间中的Lorentz群.
+
+两组相差一个{\kai{实}}非奇异线性变换的生成元被视为张开了同一个Lie%
+代数, 并且生成了同一个群. 这对于生成元的复线性变换是不成立的. 特别地, 通过在合适的基下改变生成元的相位, 任何单Lie代数可以变成紧致的形式. 例如, 
+对于上例的Lie代数, 只需定义新的生成元$t_{1}^{\prime
+}=it_{1}$, $t_{2}^{\prime }=it_{2}$, $t_{3}^{\prime }=t_{3}$, 对于这些生成元, 对易关%
+系是\[
+\lbrack t_{1}^{\prime },t_{2}^{\prime }]=it_{3}^{\prime }\text{ , \ \ \ \ \
+\ \ \ }[t_{2}^{\prime },t_{3}^{\prime }]=it_{1}^{\prime }\text{ , \ \ \ \ \
+\ \ \ }[t_{3}^{\prime },t_{1}^{\prime }]=it_{2}^{\prime }\text{ .} 
+\]%
+结构常数现在就变成了实的并且是全反对称的: $C^{a}{}_{bc}=\epsilon _{abc}$. 这时$%
+g_{ab}=2\delta _{ab}$, 并且代数是紧致的. 当然, 我们辨认出这是熟悉的三维旋转的紧致群$O(3)$的代数. 为了看到, 对于任何的单Lie%
+代数这总是可能的, 注意到方程(\ref{15.A.10})定义的矩阵$g_{\alpha b}$是实的, 对称且非奇异的, 使得可以通过一个实正交变换%
+将其变成非零元在主对角线上的对角形式. 
+然后, 只需要给这一基下对应$g_{ab}$的负对角元的所有生成元乘以因子$i$即可.
+
+我们不加证明地注意到, 紧Lie群的有限维表示都是幺正的, 相应地, 紧Lie代数的有限维表示都是厄密的. 更进一步, 很容易看到, 通过独立的%
+有限维厄密矩阵$t_{\alpha }$而拥有任意的非平庸表示的唯一Lie代数是$U(1)$与紧致单Lie代数的直和. 为了证明这一点, 我们可%
+以简单地定义\[
+g_{\alpha \beta }\equiv \func{Tr}\{t_{\alpha }t_{\beta }\}\text{ .} 
+\]%
+这个矩阵显然是正定的, 这是因为$g_{\alpha \beta }u^{\alpha
+}u^{\beta }=\func{Tr}\{(u^{\alpha }t_{\alpha })^{2}\}$对于任意实的$u^{\alpha }$都是正的%
+, 而仅当$u^{\alpha }t_{\alpha }=0$时才为零, 除非所有的$u^{\alpha }$都为零, 否则这是不可能的, 这是因为$t^{\alpha }$假定%
+是独立的. 进一步的, 该$%
+g_{\alpha \beta }$满足不变性条件(%
+\ref{15.2.4}), 这一点可以通过给对易关系(\ref{15.1.2})乘以$%
+t_{\delta }$再取迹看到; 这给出\[
+iC^{\gamma }{}_{\alpha \beta }\func{Tr}\{t_{\gamma }t_{\delta }\}=\func{Tr}%
+\{[t_{\alpha },t_{\beta }]t_{\delta }\}=\func{Tr}\{t_{\delta }t_{\alpha
+}t_{\beta }-t_{\beta }t_{\alpha }t_{\delta }\}\text{ ,} 
+\]%
+这显然关于$\beta $和$\delta $是反对称的. 证实了a后, 我们可以通过之上的定义推出条件c, 这使得Lie%
+代数必须是紧致简单子代数与$U(1)$子代数的直和.
+
+现在我们回到规范理论的物理. 在本节, 从构建拉格朗日量中的规范场动能性的必要性, 
+我们已经推断出存在正定实对称矩阵$g_{\alpha \beta }$, 
+它满足不变性条件(\ref{15.2.4}%
+), 并且在本章的附录A中我们已经证明了这个结果等价于Lie代数上的一个条件, 即它是紧致简单子代数与$U(1)$子代数的直和. 对于我们的%
+目的, 关于这一结果重要的是, 单Lie代数都是某些类型有限且维数有限的代数. 例如, 很容易看到不存在生成元少于3个的单Lie代数, 这是%
+因为在一维或二维中, 
+无法存在有3个指标的全反对称结构常数. 有了三个生成元, 通过取$%
+C^{3}{}_{12}$, $C^{2}{}_{31}$以及$C^{1}{}_{23}$非零, 
+可以避免不变子代数. 
+在结构常数是实的且全反对称的基下, 显然仅有一种可能性:%
+\[
+C_{\alpha \beta \gamma }=c\epsilon _{\alpha \beta \gamma }\text{ .}
+\]%
+这里的$c$是一任意的非零常数, 可以通过生成元的标度, $t_{\alpha }\rightarrow t_{\alpha }/c$, 
+消掉它, 所以Lie代数是\[
+\lbrack t_{\alpha },t_{\beta }]=i\epsilon _{\alpha \beta \gamma }t_{\gamma }%
+\text{ .}
+\]%
+这可以视为三维旋转群$O(3)$的Lie代数, 以及二维中的幺正幺模群$SU(2)$的Lie%
+代数, 并且在杨振宁和Mills的原始非阿贝尔理论中用它作为基. 以同样的方式继续下去, 当生成元个数为4, 5, 6或7时, 单Lie%
+代数是不存在的, 生成元个数为8时有一个单Lie%
+代数, 依次类推. 数学家(%
+尤其是Killing(基灵)和E. Cartan(埃利\textperiodcentered 嘉当))已经能够编录所有的单Lie代数. 
+单Lie代数的紧致形式构成了几个\textquotedblleft 典型\textquotedblright Lie群代数的无限类------幺正幺模群, 幺正%
+正交群以及幺正辛群------再加上五个例外Lie群. 
+本章的附录B给出了这个目录.
+
+在附录A中同样证明了, 
+在等价条件a, b或c下, 度规采取形式\begin{equation}
+g_{ma,nb}=g_{m}^{-2}\delta _{mn}\delta _{ab}  \label{15.2.5}
+\end{equation}%
+其中$g_{m}$是实的, 而$m$和$n$%
+用来标记简单子代数或$U(1)$子代数, 而$a$和$b$用来标记这些不变子代数的各个生成元. 我们可以通过重新调节规范场消掉常数$g_{m}^{-2}$%
+\begin{equation}
+A_{ma}^{\mu }\rightarrow \tilde{A}_{ma}^{\mu }\equiv g_{m}^{-1}A_{ma}^{\mu }%
+\text{ ,}  \label{15.2.6}
+\end{equation}%
+但另一方面, 为了保持$%
+D_{\mu }\psi $和$F_{\alpha}{}^{\mu\nu}$的公式(\ref%
+{15.1.10})和(\ref{15.1.13})不变, 我们必须重新定义矩阵$t_{\alpha }$以及结构常数\begin{eqnarray}
+t_{ma} &\rightarrow &\tilde{t}_{ma}=g_{m}t_{ma}\text{ ,}  \label{15.2.7} \\
+C_{cab}^{(m)} &\rightarrow &\tilde{C}_{cab}^{(m)}=g_{m}C_{cab}^{(m)}\text{ .}
+\label{15.2.8}
+\end{eqnarray}%
+即, 我们{\kai{总}}可以定义规范场的标度(现在扔掉波浪符)使得方程(\ref%
+{15.2.5})中的$g_{m}$为1:%
+\begin{equation}
+g_{ab}=\delta _{ab}\text{ ,}  \label{15.2.9}
+\end{equation}%
+但另一方面, 对于每个简单子代数或$U(1)$子代数, 变换矩阵$t_{\alpha }$和结构常数$C_{\alpha \beta \gamma }$就要包%
+含一个未知的乘子$g_{m}$. 
+这些因子是规范理论的{\kai{耦合常数}}. 或者, 在每个简单子代数或$U(1)$%
+子代数中采取虽然任意但固定的归一化, 这有时更加方便一些, 在这种情况下, 就像因子$%
+g_{m}^{-2}$出现在方程(\ref{15.2.5})中, 
+耦合常数将出现在规范场拉格朗日量(\ref{15.2.3})%
+中.
+
+\end{document}

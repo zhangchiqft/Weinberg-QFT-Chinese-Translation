@@ -1,0 +1,174 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Saturday, March 26, 2016 01:13:26}
+%TCIDATA{LastRevised=Tuesday, March 29, 2016 19:42:57}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{鬼}
+
+我们现在来考察方程(\ref%
+{15.5.21})中的因子$\mathscr{F}$对非阿贝尔规范场论Feynman规则的影响. 为了能将这一效应处理成Feynman规则%
+的修正, 回顾我们在9.5节所证明的一个事实, 即, 
+任何矩阵$\mathscr{F}_{\alpha x,\beta y}$的行列式可以表示为一个路径积分\begin{equation}
+\det \mathscr{F}\propto \int \left[ \prod_{\alpha ,x}d\omega _{\alpha
+}^{\ast }(x)\right] \left[ \prod_{\alpha ,x}d\omega _{\alpha }(x)\right]
+\exp (iI_{GH})\text{ ,}  \label{15.6.1}
+\end{equation}%
+其中\begin{equation}
+I_{GH}\equiv \int d^{4}xd^{4}y\omega _{\alpha }^{\ast }(x)\omega _{\beta }(y)%
+\mathscr{F}_{\alpha x,\beta y}\text{ .}  \label{15.6.2}
+\end{equation}%
+这里的$\omega _{\alpha }^{\ast }$和$\omega _{\alpha
+} $是一组独立的反对易经典变量, 并且比例常数是场无关的. (为了再次给出因此$\det \mathscr{F}$, 我们必须将场变量$\omega _{\alpha }$和$%
+\omega _{\alpha }^{\ast }$选成费米场变量; 如果我们将这些场变量选成玻色的, 那么路径积分(\ref{15.6.1})就会正%
+比于$(\det \mathscr{F})^{-1}$.) 场$\omega _{\alpha }^{\ast
+}$和$\omega _{\alpha }$不非得通过复共轭相关联, 甚至我们会在15.7节看到, 由于某些原因, 我们需要假定$%
+\omega _{\alpha }^{\ast }$和$\omega _{\alpha }$是独立的{\kai{实}}变量. 因子$\det \mathscr{F}$%
+的全部效应等同于把$%
+I_{GH}$纳入到全部的有效作用量中, 并对\textquotedblleft 场\textquotedblright $\omega $和$\omega ^{\ast }$积分. 
+即, 对于任意的规范固定函数$f_{\alpha }(x)$,%
+\begin{eqnarray}
+\langle T\{\mathscr{O}_{A}\cdots \}\rangle _{V} &\propto &\int \left[
+\prod_{n,x}d\psi _{n}(x)\right] \left[ \prod_{\alpha ,\mu ,x}dA_{\alpha \mu
+}(x)\right]  \nonumber \\
+&&\times \left[ \prod_{\alpha ,x}d\omega _{\alpha }(x)d\omega _{\alpha
+}^{\ast }(x)\right] \exp \left( iI_{\text{MOD}}[\psi ,A,\omega ,\omega
+^{\ast }]\right) \mathscr{O}_{A}\cdots \text{ ,}  \label{15.6.3}
+\end{eqnarray}%
+其中$I_{\text{MOD}}$是修正作用量\begin{equation}
+I_{\text{MOD}}=\int d^{4}x\left[ \mathscr{L}-\frac{1}{2\xi }f_{\alpha
+}f_{\alpha }\right] +I_{GH}\text{ .}  \label{15.6.4}
+\end{equation}
+
+场$\omega _{\alpha }$和$\omega _{\alpha }^{\ast }$(至少在协变规范下)是Lorentz%
+标量, 但它们满足费米统计. 这里并没有真的违反自旋统计关系, 这是因为在初态或末态中不存在描述这些场的粒子. 由于这个原因, $%
+\omega _{\alpha }$和$\omega _{\alpha }^{\ast }$称为\textquotedblleft 鬼\textquotedblright 粒子和%
+\textquotedblleft 反鬼\textquotedblright 粒子的场. 对方程(\ref{15.6.2})的观察表明, 这个作用量反应%
+了称为\textquotedblleft 鬼数\textquotedblright 
+的守恒量, $\omega _{\alpha }$的鬼数等于1, $\omega _{\alpha }^{\ast }$的鬼数等于-1, 而对于所以其它%
+的场则是零.
+
+当\textquotedblleft 矩阵\textquotedblright $\mathscr{F}$%
+可以表示成\begin{equation}
+\mathscr{F}=\mathscr{F}_{0}+\mathscr{F}_{1}\text{ ,}  \label{15.6.5}
+\end{equation}%
+其中$\mathscr{F}_{0}$与场无关且是耦合常数的零阶项, 
+而$\mathscr{F}_{1}$与场相关且正比于一个或多个耦合常数, 这时鬼场的Feynman规则最简单. 在这一情况下, 鬼场传播子就是%
+\begin{equation}
+\Delta _{\alpha \beta }(x,y)=-(\mathscr{F}_{0}^{-1})_{\alpha x,\beta y}
+\label{15.6.6}
+\end{equation}%
+而鬼场顶点直接从相互作用项中读出\begin{equation}
+I_{GH}^{\prime }=\int d^{4}xd^{4}y\omega _{\alpha }^{\ast }(x)\omega _{\beta
+}(y)(\mathscr{F}_{1})_{\alpha x,\beta y}\text{ .}  \label{15.6.7}
+\end{equation}
+
+例如, 在上一节所讨论的广义$\xi $-规范中, 我们有\begin{equation}
+f_{\alpha }=\partial _{\mu }A_{\alpha }{}^{\mu }\text{ ,}  \label{15.6.8}
+\end{equation}%
+并且, 对于无限小的规范参量$\lambda _{\alpha }$, 方程(\ref{15.1.9})%
+给出:%
+\[
+A_{\alpha \lambda }{}^{\mu }=A_{\alpha }{}^{\mu }+\partial _{\mu }\lambda
+_{\alpha }+C_{\alpha \gamma \beta }A_{\gamma }{}^{\mu } 
+\]%
+使得\begin{eqnarray}
+\mathscr{F}_{\alpha x,\beta y} &=&\left. \frac{\delta \partial _{\mu
+}A_{\alpha \lambda }{}^{\mu }(x)}{\delta \lambda _{\beta }(y)}\right\vert
+_{\lambda =0}  \nonumber \\
+&=&\square \delta ^{4}(x-y)+C_{\alpha \gamma \beta }\frac{\partial }{%
+\partial x^{\mu }}\left[ A_{\gamma }{}^{\mu }(x)\delta ^{4}(x-y)\right] 
+\text{ .}  \label{15.6.9}
+\end{eqnarray}%
+这就是(\ref{15.6.5})的形式, 其中\begin{eqnarray}
+(\mathscr{F}_{0})_{\alpha x,\beta y} &=&\square \delta ^{4}(x-y)\delta
+_{\alpha \beta }\text{ ,}  \label{15.6.10} \\
+(\mathscr{F}_{1})_{\alpha x,\beta y} &=&-C_{\alpha \beta \gamma }\frac{%
+\partial }{\partial x^{\mu }}\left[ A_{\mu }^{\gamma }(x)\delta ^{4}(x-y)%
+\right] \text{ .}  \label{15.6.11}
+\end{eqnarray}%
+从方程(\ref{15.6.6})和(\ref{15.6.10})中, 
+我们看到鬼场传播子是\begin{equation}
+\Delta _{\alpha \beta }(x,y)=\delta _{\alpha \beta }(2\pi )^{-4}\int
+d^{4}p(p^{2}-i\epsilon )^{-1}e^{ip\cdot (x-y)}\text{ ,}  \label{15.6.12}
+\end{equation}%
+所以, 在这一规范下, 鬼场的行为就像零质量的无自旋费米子, 它按照规范群的伴随表示进行变换. 利用方程(\ref%
+{15.6.7})和(\ref{15.6.11})并分部积分, 
+我们发现这一作用量中的鬼场相互作用项变成\begin{equation}
+I_{GH}^{\prime }=\int d^{4}xC_{\alpha \beta \gamma }\frac{\partial \omega
+_{\alpha }^{\ast }}{\partial x^{\mu }}A_{\gamma }^{\mu }\omega _{\beta }%
+\text{ .}  \label{15.6.13}
+\end{equation}%
+这一相互作用所对应的顶点与一个出鬼线, 
+一个入鬼线以及一个矢量玻色子线相连. 如果这些线分别携带(入)%
+动量$p,q,k$以及规范指标$%
+\alpha ,\beta ,\gamma $, 并且规范场携带矢量指标$\mu $, 那么这种顶点对积分的贡献由动量空间Feynman规则给%
+定为\begin{equation}
+i(2\pi )^{4}\delta ^{4}(p+q+k)\times ip_{\mu }C_{\alpha \beta \gamma }\text{
+.}  \label{15.6.14}
+\end{equation}%
+鬼粒子绕圈传播, 圈上的每一顶点与单个矢量玻色子线传播, 就像平常对费米场变量所做的那样, 对于每一个圈都要补充一个额外的负号.
+
+鬼圈额外的负号表明每个鬼场$\omega _{\alpha }$连同它相应的反鬼场$\omega _{\alpha }^{\ast }$%
+代表的是某种负自由度. 这些负自由度是必要的, 这是因为我们在使用协变规范场传播子时, 我们确实对物理自由度重复计数了; 物理的自由度是$A_{\alpha }^{\mu }(x)$%
+的全部分量, {\kai{减去}}描述规范变换所需要的参量$\Lambda _{\alpha }(x)$.
+
+总结一下, 在广义$\xi $-规范下, 修正作用量(\ref{15.6.4})%
+可以写成\begin{equation}
+I_{\text{MOD}}=\int d^{4}x\mathscr{L}_{\text{MOD}}\text{ ,}  \label{15.6.15}
+\end{equation}%
+其中的修正拉格朗日密度是:%
+\begin{eqnarray*}
+\mathscr{L}_{\text{MOD}} &=&\mathscr{L}_{\text{M}}-\frac{1}{4}F_{\alpha
+}^{\mu \nu }F_{\alpha \mu \nu }-\frac{1}{2\xi }(\partial _{\mu }A_{\alpha
+}^{\mu })(\partial _{\nu }A_{\alpha }^{\nu }) \\
+&&-\partial _{\mu }\omega _{\alpha }^{\ast }\partial ^{\mu }\omega _{\alpha
+}+C_{\alpha \beta \gamma }(\partial _{\mu }\omega _{\alpha }^{\ast
+})A_{\gamma }^{\mu }\omega _{\beta }\text{ .}
+\end{eqnarray*}%
+重点是(如果物质拉格朗日量是可重整的)这个拉格朗日量是{\kai{可重整的}}, 在基础的意义上, 就是说它的项所包含的场与导数的乘积, 
+其总量纲(按质量幂次计)小于等于4. (方程(\ref{15.6.16})%
+中的动能项$-\partial _{\mu }\omega _{\alpha
+}^{\ast }\partial ^{\mu }\omega _{\alpha }$确定了场$%
+\omega $和$\omega ^{\ast }$的量纲, 它们是质量的一次, 和普通的标量场以及规范场相同.) 然而, 这里的可重整性并不止于幂次级%
+数; 同样必要的是, 存在一个抵消项吸收了每个发散. 在下一节, 我们将考察一个著名的对称性, 在17.2节, 我们将用这个对称性证明非阿%
+贝尔场论在这一意义下确实是可重整的, 并且, 这个对称性甚至可以取代我们一直关注的Faddeev-Popov-De Witt方法.
+
+\end{document}

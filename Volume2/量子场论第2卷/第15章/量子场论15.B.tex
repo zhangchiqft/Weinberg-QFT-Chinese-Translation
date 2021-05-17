@@ -1,0 +1,270 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Saturday, April 30, 2016 19:26:41}
+%TCIDATA{LastRevised=Thursday, May 05, 2016 19:21:36}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{Cartan目录}
+
+我们在这里不加证明的呈现出单Lie代数的全部目录, 它的最终形式是由E. Cartan给出的.\cite{26} 这里所要呈现的是它们的\textquotedblleft 紧致\textquotedblright 形式------%
+即, 生成元可以被有限维厄米矩阵忠实表示. Lie%
+代数的标记中含有下标$n\geq 1$, 这用来标记它们的\textquotedblleft 秩\textquotedblright (rank)------相%
+互独立且交换的生成元的线性组合的个数.
+
+A$_{n}$: 这是特殊幺正群$SU(n+1)$%
+的代数, 特殊幺正群$SU(n+1)$%
+是$n+1$维中所有幺正($U^{\dag
+}=U^{-1}$)幺模($\det U=1$)矩阵构成的群. 任何这样的矩阵, 
+只要它无限接近于单位元, 它可以表示成\[
+U=1+\mi H\text{ ,} 
+\]%
+其中无限小的$H$满足条件\[
+H^{\dag }=H\text{ , \ \ \ \ \ }TrH=0\text{ ,} 
+\]%
+所以$A_{n}$是$n+1$维中所有无迹厄米矩阵的Lie代数. 任何一组相互交换的厄米矩阵可以同时对角化, 在$n+1$维中, 相互独立%
+的\kai{无迹}对角矩阵的最大数目是$n$, 所以$n$是$A_{n}$的秩. $n+1$维中的任何厄米矩阵有$(n+1)^{2}$个独立的实%
+参数(其中沿着主对角的是$n+1$个实数, 而在主对角上方有$n(n+1)/2$个复数, 
+这些复数等于主对角下方复数的共轭), 无迹条件会消掉一个实参数, 所以$A_{n}$的维数是\[
+d(A_{n})=(n+1)^{2}-1=n(n+2)\text{ .} 
+\]%
+所有$A_{n}$都是单纯的.
+
+B$_{n}$: 这是幺正正交群$O(2n+1)$%
+的代数, 该群由$2n+1$维中所有幺正($\mathcal{O}^{\dag }=\mathcal{O}^{-1}$)%
+且正交($\mathcal{O}^{\mathrm{T}}=\mathcal{O}^{-1}$)的矩阵构成, 由于矩阵是幺正且正交的, 所以它%
+还是实的. (有时为了体现幺正的限制会称这个群为$UO(2n+1)$.) 任何这样的矩阵$\mathcal{O}$, 若它无限接近于单位元, 它可以表%
+示为\[
+\mathcal{O}=1+\mi A\text{ ,} 
+\]%
+其中$A$是无限小矩阵并满足条件\[
+A^{\ast }=-A=A^{\mathrm{T}}\text{ .} 
+\]%
+(如果我们将自身限制于子群$SO(2n+1)$, $\mathcal{O}$要服从进一步的条件$\det \mathcal{O}=1$, 
+既然任何接近于单位元的正交矩阵$\mathcal{O}$都会有$\det \mathcal{O}=1$, 所以这并不会造成任何区别.) 任何%
+一组$(2n+1)$-维中的反对称虚矩阵可以(通过普通的正交矩阵)变成如下超矩阵的形式\[
+\left[ 
+\begin{array}{ccccc}
+a_{1}\sigma _{2} &  &  &  & 0 \\ 
+& a_{2}\sigma _{2} &  &  &  \\ 
+&  & \ddots &  &  \\ 
+&  &  & a_{n}\sigma _{2} &  \\ 
+0 &  &  &  & 0%
+\end{array}%
+\right] 
+\]%
+其中$\sigma _{2}$是通常的$2\times 2$%
+矩阵\[
+\sigma _{2}=\left[ 
+\begin{array}{cc}
+0 & -\mi \\ 
+\mi & 0%
+\end{array}%
+\right] 
+\]%
+而$a_{1},\cdots ,a_{n}$是实数. 因此$%
+B_{n} $的秩显然等于$n$. 反对称虚矩阵完全由实对角上方的虚数指定, 所以它的维数是\[
+d(B_{n})=\frac{(2n+1)(2n)}{2}=n(2n+1)\text{ .} 
+\]%
+所有$B_{n}$都是单纯的.
+
+$O(N)$还有另一种定义方法, 而这个定义将会帮助我们理解下一大类单Lie代数的动机. 除了将$O(N)$定义成满足正交条件$\mathcal{O}^{\mathrm{T}}\mathcal{O}=1$的所有$N$%
+维实矩阵构成的群, 它也可以定义为满足条件\[
+\mathscr{M}^{\mathrm{T}}\mathscr{P}\mathscr{M}=\mathscr{P} 
+\]%
+的所有$N$维实矩阵$\mathscr{M}$%
+的群, 其中$\mathscr{P}$是正定对称实矩阵. 这是因为任何这样的$\mathscr{P}$总可以表示为$\mathscr{P}=\mathscr{R}^{\mathrm{T}}\mathscr{R}$, 
+其中$\mathscr{R}$是某个非奇异的实矩阵, 所以存在相似变换, 使得满足上述条件的$\mathscr{M}$变成实正交矩阵$\mathscr{R}^{-1}\mathscr{M}\mathscr{R}$, 所以%
+我们可以令$\mathscr{P}$为各种各不相同的实对称正定矩阵却不改变群.
+
+$C_{n}$: 这是幺正辛群$USp(2n)$的代数, 幺正辛群由所有保持{\kai{反对称非奇异}}矩阵$\mathscr{A}$不%
+变的幺正矩阵$\mathscr{M}$构成:%
+\[
+\mathscr{M}^{\mathrm{T}}\mathscr{A}\mathscr{M}=\mathscr{A}\text{ ,} 
+\]%
+\[
+\mathscr{A}^{\mathrm{T}}=-\mathscr{A}\text{ , \ \ \ \ \ }\det \mathscr{A}%
+\neq 0\text{ .} 
+\]%
+(注意, 在$d$维中, $\det \mathscr{A}=\det %
+\mathscr{A}^{\mathrm{T}}=(-)^{d}\det \mathscr{A}$, 所以, 如果$d$是奇数, $\det \mathscr{A}$必须%
+为零, 因而除非$d$为偶数, 否则不存在$USp(d)$.) 任何这样的反对称非奇异(可能为复)矩阵$\mathscr{A}$可以写成如下的标准形式%
+\[
+\mathscr{A}=\mathscr{R}^{\mathrm{T}}\mathscr{A}_{0}\mathscr{R}\text{ ,} 
+\]%
+其中$\mathscr{R}$是幺正矩阵, 
+而$\mathscr{A}_{0}$是超矩阵:%
+\[
+\mathscr{A}_{0}=\left[ 
+\begin{array}{cc}
+0 & 1 \\ 
+-1 & 0%
+\end{array}%
+\right] \text{ .} 
+\]%
+(或者, 我们可以取$\mathscr{A}_{0}$%
+为分块对角超矩阵, 其中主对角线上是$\sigma _{1}$.) $%
+USp(2n)$可以描述成满足\[
+\mathscr{S}^{\mathrm{T}}\mathscr{A}_{0}\mathscr{S}=\mathscr{A}_{0} 
+\]%
+的幺正矩阵$\mathscr{S}$所构成的群, 这是因为任何这样的$\mathscr{S}$可以变换至幺正矩阵$\mathscr{M}=\mathscr{R}^{-1}\mathscr{S}\mathscr{R}$%
+, 而$\mathscr{M}$满足之前的条件$\mathscr{M}^{\mathrm{T}}\mathscr{A}\mathscr{M}$. 任何%
+这样的矩阵$\mathscr{S}$, 若它无限接近于单位元, 它可以写成\[
+\mathscr{S}=1+\mi\mathscr{H}\text{ ,} 
+\]%
+其中$\mathscr{H}$是无限小矩阵, 并满足条件\[
+\mathscr{H}^{\dag }=\mathscr{H}\text{ , \ \ \ \ \ }\mathscr{H}^{\mathrm{T}}%
+\mathscr{A}_{0}+\mathscr{A}_{0}\mathscr{H}=0\text{ .} 
+\]%
+满足这些条件的最一般$2n$维矩阵可以写成超矩阵\[
+\mathscr{H}=\left[ 
+\begin{array}{cc}
+\mathscr{A} & \mathscr{B} \\ 
+\mathscr{B}^{\ast } & -\mathscr{A}^{\ast }%
+\end{array}%
+\right] \text{ ,} 
+\]%
+其中$n$维复子矩阵$\mathscr{A}$,$%
+\mathscr{B}$满足\[
+\mathscr{A}^{\dag }=\mathscr{A}\text{ , \ \ \ \ \ }\mathscr{B}^{\mathrm{T}}=%
+\mathscr{B}\text{ .} 
+\]%
+最大的一组相互对易的生成元有$\mathscr{A}$为对角而$\mathscr{B}$为零, 因而为如下的形式\[
+\mathscr{H}=\left[ 
+\begin{array}{cccccc}
+a_{1} &  &  &  &  & 0 \\ 
+& \ddots &  &  &  &  \\ 
+&  & a_{n} &  &  &  \\ 
+&  &  & -a_{1} &  &  \\ 
+&  &  &  & \ddots &  \\ 
+0 &  &  &  &  & -a_{n}%
+\end{array}%
+\right] 
+\]%
+其中$a_{1},\cdots ,a_{n}$为实数. 因此, $C_{n}$的秩显然为$n$. $C_{n}$的维数是, 厄米矩阵$\mathscr{A}$%
+中相互独立的实参数数目$n^{2}$, 加上对称复矩阵$\mathscr{B}$中相互独立的实参数数目$2n(n+1)/2$%
+\[
+d(C_{n})=n^{2}+2\times n(n+2)/2=n(2n+1)\text{ .} 
+\]%
+所有$C_{n}$代数都是单纯的.
+
+$D_{n}$: 这是幺正正交群$O(2n)$%
+的代数, $O(2n)$由$2n$维中所有幺正正交矩阵构成. 对$%
+B_{n}$的讨论可以挪至$D_{n}$, 
+所不同的是任何一组相互对易的生成元可以变成如下形式\[
+\left[ 
+\begin{array}{cccc}
+a_{1}\sigma _{2} &  &  & 0 \\ 
+& a_{2}\sigma _{2} &  &  \\ 
+&  & \ddots &  \\ 
+0 &  &  & a_{n}\sigma _{2}%
+\end{array}%
+\right] 
+\]%
+所以秩仍然是$n$. 另外, 
+维数在这里是\[
+d(D_{n})=\frac{(2n)(2n-1)}{2}=n(2n-1)\text{ .} 
+\]%
+除了$D_{1}$和$D_{2}$之外, 所有的$D_{n}$都是单纯的, $D_{1}$是只有一个生成元的阿贝尔代数, 而$D_{2}$是直和$%
+B_{1}+B_{1}$.
+
+例外Lie群: 除了之上的典型Lie代数外, 还存在5种特殊情况, $G_{2}(d=14)$; $F_{4}(d=52)$; $E_{6}(d=78)$%
+; $E_{7}(d=133)$; $E_{8}(d=248)$.
+
+不是所有的典型Lie代数是真正不同的. 存在如下4个同构\[
+A_{1}=B_{1}=C_{1}\text{ , \ \ \ \ \ }C_{2}=B_{2}\text{ , \ \ \ \ \ }%
+A_{3}=D_{3}\text{ .} 
+\]%
+它们对应Lie群中代数之间的同构. 然而, 像$B_{1}=A_{1}$, $%
+B_{2}=C_{2}$和$D_{3}=A_{3}$这样的同构并不意味着$SO(3)$与$SU(2)$同构, 或者$SO(5)$与$USp(4)$同构, 或%
+者$SO(6)$与$SU(4)$同构. 取而代之, $SU(2)$, $USp(4)$和$SU(4)$是$SO(3)$, $SU(2)$和$%
+SO(6)$的单连通{\kai{覆盖群}}. (即第二章讨论的覆盖群.) 然而, Lie代数的同构使得$SO(3)$%
+, $SU(2)$和$SO(6)$双值基本表示的构造变得非常容易; 
+它们分别就是$SU(2)$, $USp(4)$和$%
+SU(4)$的定义表示. 另外$SO(4)$%
+同构于$SO(3)\times SO(3)$, 所以它的双值旋量表示就是$SU(2)\times
+SU(2)$的定义表示. 当$d\geq 7$时, $%
+SO(d)$的双值旋量表示必须通过其它方法构建. 
+最简单是技巧是使用5.4%
+节讨论过的Clifford代数.
+
+2. 假定我们在非阿贝尔规范理论中使用广义Coulomb规范, 取规范固定函数为$f_{\alpha }=\nabla \cdot \mathbf{A}_{\alpha }$. 推%
+导鬼场拉格朗日量. 鬼场传播子是什么? (取$%
+B[f]=\exp (-\mi\int \dif^{4}xf_{\alpha }f_{\alpha }/2\xi )$.)
+
+3. 假定在电动力学中我们使用规范固定函数$%
+f=\partial _{\mu }A^{\mu }+cA_{\mu }A^{\mu }$, 其中$c$是任意常数. 推导鬼场拉格朗日量. (取$B[f]=\exp (-\mi\int \dif%
+^{4}xf^{2}/2\xi )$.) 鬼场传播子是什么?
+
+4. 证明单Lie单数的生成元个数不可能是4.
+
+5. 证明, 如果$\psi (x)$属于某个规范群的一个表示, 
+该规范群的生成元为$%
+t_{\alpha }$, 并且$\psi (x)$沿着路径$%
+x^{\mu }=x^{\mu }(t)$依照微分方程\[
+\frac{\dif\psi (\tau )}{\dif\tau }=\mi t_{\alpha }\psi (\tau )A_{\alpha \mu
+}(x(\tau ))\frac{\dif x^{\mu }(t)}{\dif\tau }
+\]%
+进行变化, (其中$\psi _{\ell }(x)$和$A_{\alpha \mu }(x)$是经典c-数场) 那么对于围绕点$X^{\mu }$的任%
+何{\kai{小}}的闭环路$\mathscr{P}$, $\psi 
+$沿该环路的变化正比于\[
+t_{\alpha }\psi (X)F_{\alpha \mu \nu }(X)\doint\nolimits_{\mathscr{P}}x^{\mu
+}(\tau )\frac{dx^{\nu }(\tau )}{d\tau }d\tau \text{ .}
+\]%
+找到比例常数. 用这一结果证明, 如果$F_{\alpha \mu \nu }$%
+处处为零, 那么, 至少在一有限区域内, 可以通过一个规范变换使得$%
+A_{\alpha \mu }(x)$在该区域为零. (%
+提示: 沿用电动力学中的类似讨论, 或者沿用广义相对论的讨论, 例如参考文献6.)
+
+6. 对一般的非阿贝尔规范理论应用路径积分方法, 选择规范固定泛函$f_{\alpha }=n_{\mu }A_{\alpha }^{\mu }$, 其中$n_{\mu }$%
+是任意常数, 计算规范场$A_{\alpha \mu }(x)$的传播子. (取$%
+B[f]=\exp (-\mi\int \dif^{4}xf_{\alpha }f_{\alpha }/2\xi )$.) 鬼场拉格朗日量是什么? 
+鬼场传播子是什么? 鬼场相互作用顶点是什么?
+
+7. 假定我们采用BRST不变性而非规范不变性作为基本的物理原理. 拉格朗日量是从场和场导数的乘积的和中构建的, 即从$A_{\alpha \mu }$, $\omega _{\alpha }$, $%
+\omega _{\alpha }^{\ast },$ $h_{\alpha }$和/或它们的导数构建的, 要求场与场导数乘积的量纲(%
+质量)$^{d}$满足$d\leq 4$, 并且拉格朗日量在Lorentz变换, 鬼数相位变换($\omega _{\alpha }\rightarrow \me%
+^{i\theta }\omega _{\alpha }$, $\omega _{\alpha }^{\ast }\rightarrow \me%
+^{-i\theta }\omega _{\alpha }^{\ast }$), 整体规范变换($\epsilon _{\alpha }$为常数)以%
+及BRST变换下不变(可以相差一个全导数), 推导满足上述要求的最一般的拉格朗日量.
+
+8. 证明反括号满足对称性条件(\ref{15.9.15})和Jacobi恒等式(\ref{15.9.21}).
+
+9. 证明, 如果泛函$O$满足条件$(O,S)=\mi\Delta S$并且作用量$S
+$满足量子主方程, 那么量子均值$\langle O\rangle $独立于规范固定泛函$\Psi $.
+
+\end{document}

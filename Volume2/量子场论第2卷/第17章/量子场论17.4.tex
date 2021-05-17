@@ -1,0 +1,325 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, June 21, 2016 19:27:26}
+%TCIDATA{LastRevised=Saturday, June 25, 2016 15:33:31}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{背景场规范}
+
+接下来, 我们转向一个显然保护一类规范对称性的计算方法, 这个计算方法也因此证实是极其方便, 在一圈计算中尤其如此. 我们视有效作用量$\Gamma \lbrack A,\psi ,\omega
+,\omega ^{\ast }]$为经典外规范场$%
+A_{\alpha \mu }(x)$, 经典外物质场$\psi
+_{\ell }(x)$, 经典外鬼场$\omega _{\alpha }(x)$%
+和经典外反鬼场$\omega _{\alpha
+}^{\ast }(x)$的泛函\footnote{我们现在回到规范固定泛函$%
+B[f] $的特殊选择------高斯型(%
+\ref{15.7.4}), 并且我们会积掉辅助场$h_{\alpha }$, 使得修正拉格朗日量中的规范固定项就是$-f_{\alpha }f_{\alpha }/2\xi $.}. 
+尽管鬼场和反鬼场无法出现在初态或末态中, 为了处理有外鬼线或外反鬼线的那部分图, 在考察背景规范场和背景物质场的同时, 
+我们也会考察背景鬼场和背景反鬼场.
+
+正如16.1节中所描述的, $%
+\Gamma \lbrack A,\psi ,\omega ,\omega ^{\ast }]$是真空-%
+真空振幅的连通单粒子不可约图的和, 在计算这些振幅的理论中, 
+我们要积掉的量子场$%
+A^{\prime },\psi ^{\prime },\omega ^{\prime }$和$\omega ^{\prime \ast
+} $被替换成了偏移场$%
+A+A^{\prime },\psi +\psi ^{\prime },\omega +\omega ^{\prime }$和$%
+\omega ^{\ast }+\omega ^{\prime \ast }$, 路径积分的积分变量是加撇的场, 而不加撇的场保持不变. 我们几乎可以按%
+照我们所喜欢的任何方式自由选择规范固定函数$f_{\alpha }(x)$; 取代我们之前的选择$f_{\alpha }=\partial _{\mu
+}A_{\alpha }^{\prime \mu }$(或$\partial _{\mu }[A_{\alpha }^{\prime
+\mu }+A_{\alpha }^{\mu }]$), 我们现在取
+
+\begin{equation}
+f_{\alpha }=\partial _{\mu }A_{\alpha }^{\prime \mu }+C_{\alpha \beta \gamma
+}A_{\beta \mu }A_{\gamma }^{\prime \mu }\text{ .}  \label{17.4.1}
+\end{equation}%
+这一选择的原因是, 它使得规范固定项$f_{\alpha
+}f_{\alpha }$在一个形式变换下不变, 在这个形式变换中, 背景场$A_{\alpha }^{\mu }$按照规范场变换, 而量子场$%
+A_{\alpha }^{\prime \mu }$就像属于规范群伴随表示的普通物质场那样进行齐次变换\begin{eqnarray}
+\delta A_{\alpha }^{\mu } &=&\partial ^{\mu }\epsilon _{\alpha }-C_{\alpha
+\beta \gamma }\epsilon _{\beta }A_{\gamma }^{\mu }\text{ ,}  \label{17.4.2}
+\\
+\delta A_{\alpha }^{\prime \mu } &=&-C_{\alpha \beta \gamma }\epsilon
+_{\beta }A_{\gamma }^{\prime \mu }\text{ .}  \label{17.4.3}
+\end{eqnarray}%
+其中, 对于伴随表示下的任何场$\phi _{\alpha }$%
+\begin{equation}
+\bar{D}_{\mu }\phi _{\alpha }\equiv \partial _{\mu }\phi _{\alpha
+}+C_{\alpha \beta \gamma }A_{\beta \mu }\phi _{\gamma }\text{ .}
+\label{17.4.5}
+\end{equation}%
+我们看到在变换(\ref{17.4.2})%
+和(\ref{17.4.3})下, 函数(\ref{17.4.1})就像$A_{\alpha }^{\prime }$那样变换:%
+\begin{equation}
+\delta f_{\alpha }=-C_{\alpha \beta \gamma }\epsilon _{\beta }f_{\gamma }%
+\text{ ,}  \label{17.4.6}
+\end{equation}%
+所以, 修正拉格朗日量中的$f_{\alpha }f_{\alpha }$项是不变的\begin{equation}
+\delta (f_{\alpha }f_{\alpha })=-2C_{\alpha \beta \gamma }f_{\alpha
+}\epsilon _{\beta }f_{\gamma }=0\text{ .}  \label{17.4.7}
+\end{equation}%
+另外, 原始拉格朗日密度$\mathscr{L}$仅通过和$A+A^{\prime }$依赖于$A$和$A^{\prime }$, 它在(\ref{17.4.2})%
+和(\ref{17.4.3})的组合变换下经历一个普通的规范变换\begin{equation}
+\delta (A_{\alpha }^{\mu }+A_{\alpha }^{\prime \mu })=\partial ^{\mu
+}\epsilon _{\alpha }-C_{\alpha \beta \gamma }\epsilon _{\beta }(A_{\gamma
+}^{\mu }+A_{\gamma }^{\prime \mu })\text{ .}  \label{17.4.8}
+\end{equation}%
+如果我们对背景物质场和量子物质场的变换是\begin{eqnarray}
+\delta \psi &=&\mi t_{\alpha }\epsilon _{\alpha }\psi \text{ ,}
+\label{17.4.9} \\
+\delta \psi ^{\prime } &=&\mi t_{\alpha }\epsilon _{\alpha }\psi ^{\prime }%
+\text{ ,}  \label{17.4.10}
+\end{eqnarray}%
+那么也有\begin{equation}
+\delta (\psi +\psi ^{\prime })=\mi t_{\alpha }\epsilon _{\alpha }(\psi +\psi
+^{\prime })\text{ .}  \label{17.4.11}
+\end{equation}%
+原始拉格朗日密度$\mathscr{L}$%
+在原始规范变换(\ref{17.4.8})%
+和(\ref{17.4.11})下不变, 并且仅依赖于$A+A^{\prime }$和$\psi +\psi ^{\prime }$, 
+所以它在新的形式变换(\ref{17.4.2}), (\ref{17.4.3}), (\ref{17.4.9}), (\ref{17.4.10})%
+下也是不变的.
+
+将$\mathscr{L}$以背景协变导数$\bar{D}_{\mu }$的形式写出会使得这一不变性更加明晰, 而这将是有帮助的. 
+一般而言, 我们有\begin{eqnarray}
+\mathscr{L} &=&-\frac{1}{4}\left( \partial _{\mu }[A_{\alpha \nu }+A_{\alpha
+\nu }^{\prime }]-\partial _{\nu }[A_{\alpha \mu }+A_{\alpha \mu }^{\prime
+}]+C_{\alpha \beta \gamma }[A_{\beta \mu }+A_{\beta \mu }^{\prime
+}][A_{\gamma \nu }+A_{\gamma \nu }^{\prime }]\right) ^{2}  \nonumber \\
+&&+\mathscr{L}_{M}\left( \psi +\psi ^{\prime },\partial _{\mu }(\psi +\psi
+^{\prime })-\mi t_{\alpha }(A_{\alpha \mu }+A_{\alpha \mu }^{\prime })(\psi
++\psi ^{\prime })\right)  \nonumber \\
+&=&-\frac{1}{4}\left( F_{\alpha \mu \nu }+\bar{D}_{\mu }A_{\alpha \nu
+}^{\prime }-\bar{D}_{\nu }A_{\alpha \mu }^{\prime }+C_{\alpha \beta \gamma
+}A_{\beta \mu }^{\prime }A_{\gamma \nu }^{\prime }\right) ^{2}  \nonumber \\
+&&+\mathscr{L}_{M}\left( \psi +\psi ^{\prime },\bar{D}_{\mu }(\psi +\psi
+^{\prime })-\mi t_{\alpha }A_{\alpha \mu }^{\prime }(\psi +\psi ^{\prime
+})\right) \text{ ,}  \label{17.4.12}
+\end{eqnarray}%
+其中, 同方程(\ref{17.4.5})一样,%
+\begin{eqnarray}
+\bar{D}_{\mu }A_{\alpha \nu }^{\prime } &\equiv &\partial _{\mu }A_{\alpha
+\nu }^{\prime }+C_{\alpha \beta \gamma }A_{\beta \mu }A_{\gamma \nu
+}^{\prime }\text{ ,}  \label{17.4.13} \\
+\bar{D}_{\mu }\psi &\equiv &\partial _{\mu }\psi -\mi t_{\alpha }A_{\alpha
+\mu }\psi \text{ ,}  \label{17.4.14}
+\end{eqnarray}%
+而$F_{\alpha \mu \nu }$是背景场强\begin{equation}
+F_{\alpha \mu \nu }\equiv \partial _{\mu }A_{\alpha \nu }-\partial _{\nu
+}A_{\alpha \mu }+C_{\alpha \beta \gamma }A_{\beta \mu }A_{\gamma \nu }\text{
+.}  \label{17.4.15}
+\end{equation}%
+($\mathscr{L}$第一项中的平方用来暗示写出的指标要进行收缩.) 因为$\mathscr{L}$%
+仅通过场强$F_{\alpha \mu \nu }$以及\textquotedblleft 物质\textquotedblright 场$A_{\alpha \mu
+}^{\prime },\psi ^{\prime }$和$\psi $的背景协变导数$\bar{D}_{\mu }$牵扯到$A_{\alpha
+\mu }$, 所以它在新变换(\ref{17.4.2}%
+), (\ref{17.4.3}), (\ref{17.4.9}), (\ref{17.4.10})下显然是不变的.
+
+这个新变换应该小心地与真实的规范变换区分开. 真实的规范变换在仅用来描述背景场的$A$和$\psi $上没有效应, 
+并诱导出了$A+A^{\prime }$和$\psi +\psi
+^{\prime }$上的普通规范变换, 
+所以\begin{eqnarray}
+\delta _{\mathrm{TURE}}A_{\alpha }^{\mu } &=&0\text{ ,}  \label{17.4.16} \\
+\delta _{\mathrm{TURE}}A_{\alpha }^{\prime \mu } &=&\partial ^{\mu }\epsilon
+_{\alpha }-C_{\alpha \beta \gamma }\epsilon _{\beta }(A_{\gamma }^{\mu
+}+A_{\gamma }^{\prime \mu })  \nonumber \\
+&=&\bar{D}^{\mu }\epsilon _{\alpha }-C_{\alpha \beta \gamma }\epsilon
+_{\beta }A_{\gamma }^{\prime \mu }  \label{17.4.17}
+\end{eqnarray}%
+以及\begin{eqnarray}
+\delta _{\mathrm{TURE}}\text{ }\psi &=&0\text{ ,}  \label{17.4.18} \\
+\delta _{\mathrm{TURE}}\text{ }\psi ^{\prime } &=&\mi t_{\alpha }\epsilon
+_{\alpha }(\psi +\psi ^{\prime })\text{ .}  \label{17.4.19}
+\end{eqnarray}%
+当然, 这与形式变换(\ref%
+{17.4.2}), (\ref{17.4.3}), (\ref{17.4.9}), (\ref{17.4.10})在$%
+A+A^{\prime }$和$\psi +\psi ^{\prime }$上的效应是相同的, 因而也保持原始拉格朗日量$\mathscr{L}$不%
+变. 然而, 对于$f_{\alpha }$的新选择(\ref{17.4.1}), $f_{\alpha }f_{\alpha }$项是{%
+\kai{不}}依赖于$A+A^{\prime }$的, 并且在(\ref{17.4.16})和(\ref{17.4.17})下也{\kai{不}}%
+是不变的. 取而代之,%
+\begin{equation}
+\delta _{\mathrm{TURE}}\text{ }f_{\alpha }=\bar{D}_{\mu }(\bar{D}^{\mu
+}\epsilon _{\alpha }-C_{\alpha \beta \gamma }\epsilon _{\beta }A_{\gamma
+}^{\prime \mu })\text{ ,}  \label{17.4.20}
+\end{equation}%
+其中$\bar{D}_{\mu }$由(\ref{17.4.5})给定.
+
+最后, 我们来考察这一新规范下的鬼场拉格朗日量. 一般而言, 将$\delta
+_{\mathrm{TRUE}}$ $f_{\alpha }$中的$\epsilon _{\alpha }$替换成鬼场$\omega _{\alpha }+\omega _{\alpha }^{\prime
+}$就给出了鬼场作用量中的量(\ref{15.7.3}):%
+\begin{equation}
+\Delta _{\alpha }=\bar{D}_{\mu }\left[ \bar{D}^{\mu }(\omega _{\alpha
+}+\omega _{\alpha }^{\prime })-C_{\alpha \beta \gamma }(\omega _{\beta
+}+\omega _{\beta }^{\prime })A_{\gamma }^{\prime \mu }\right] \text{ .}
+\label{17.4.21}
+\end{equation}%
+因此, 方程(\ref{15.6.2})中的鬼场拉格朗日量是\begin{equation}
+\mathscr{L}_{\mathrm{GH}}=(\omega _{\alpha }^{\ast }+\omega _{\alpha
+}^{\prime \ast })\bar{D}_{\mu }\left[ \bar{D}^{\mu }(\omega _{\alpha
+}+\omega _{\alpha }^{\prime })-C_{\alpha \beta \gamma }(\omega _{\beta
+}+\omega _{\beta }^{\prime })A_{\gamma }^{\prime \mu }\right]
+\label{17.4.22}
+\end{equation}%
+或者, 进行分部积分,%
+\begin{equation}
+\mathscr{L}_{\mathrm{GH}}=-\left( \bar{D}_{\mu }(\omega _{\alpha }^{\ast
+}+\omega _{\alpha }^{\prime \ast })\right) \left[ \bar{D}^{\mu }(\omega
+_{\alpha }+\omega _{\alpha }^{\prime })-C_{\alpha \beta \gamma }(\omega
+_{\beta }+\omega _{\beta }^{\prime })A_{\gamma }^{\prime \mu }\right] \text{
+.}  \label{17.4.23}
+\end{equation}%
+为了使其在联合变换(\ref%
+{17.4.2})和(\ref{17.4.3})下不变, 现在给$\omega $和$\omega ^{\prime }$补充变换:%
+\begin{eqnarray}
+\delta \omega _{\alpha } &=&-C_{\alpha \beta \gamma }\epsilon _{\beta
+}\omega _{\gamma }\text{ ,}  \label{17.4.24} \\
+\delta \omega _{\alpha }^{\prime } &=&-C_{\alpha \beta \gamma }\epsilon
+_{\beta }\omega _{\gamma }^{\prime }\text{ ,}  \label{17.4.25}
+\end{eqnarray}%
+以及\begin{eqnarray}
+\delta \omega _{\alpha }^{\ast } &=&-C_{\alpha \beta \gamma }\epsilon
+_{\beta }\omega _{\gamma }^{\ast }\text{ ,}  \label{17.4.26} \\
+\delta \omega _{\alpha }^{\prime \ast } &=&-C_{\alpha \beta \gamma }\epsilon
+_{\beta }\omega _{\gamma }^{\prime \ast }\text{ .}  \label{17.4.27}
+\end{eqnarray}
+
+我们看到形式变换(\ref{17.4.2}%
+), (\ref{17.4.3}), (\ref{17.4.9}), (\ref{17.4.10})的组合变换保持修正作用量(\ref%
+{15.6.4})中的完整拉格朗日量不变:%
+\begin{equation}
+\mathscr{L}_{\mathrm{MOD}}=\mathscr{L}-\frac{1}{2\xi }f_{\alpha }f_{\alpha }+%
+\mathscr{L}_{\mathrm{GH}}\text{ .}  \label{17.4.28}
+\end{equation}%
+我们对$A^{\prime }$, $\psi ^{\prime }$, $\omega ^{\prime }$%
+和$\omega ^{\prime \ast }$积分的积分测度是假定在简单矩阵变换(), (), ()和()下不变的, 所以有效作用量$\Gamma \lbrack
+A,\psi ,\omega ,\omega ^{\ast }]$在剩余的变换(), (), ()和()下是不变的. 
+换句话说, 它与原始作用量$I[A,\psi ,\omega ,\omega ^{\ast }]$在相同的意义下是规范不变的.
+
+这一形式变换给有效作用量中能出现的无限大设置了强有力的限制. $\Gamma $中的紫外发散出现在量纲$[$质量$]^{d}$满足$d\leq 4$的项的系数中, 但%
+这里, 这些项在背景规范变换(\ref{17.4.2}), (\ref{17.4.9}), (\ref{17.4.24})%
+和(\ref{17.4.26})下是不变的. 例如, 在基于单纯规范群的规范理论中, 且自旋$%
+1/2$费米子属于该群的某个不可约表示, 唯一这样的项形式如下\begin{eqnarray}
+\Gamma _{\infty } &=&\int \dif^{4}x:\mathscr{L}_{\infty }\text{ ,}
+\label{17.4.29} \\
+\mathscr{L}_{\infty } &=&-\frac{1}{4}L_{A}F_{\alpha \mu \nu }F_{\alpha
+}^{\mu \nu }-L_{\psi }\bar{\psi}\gamma ^{\mu }\bar{D}_{\mu }\psi   \nonumber
+\\
+&&-mL_{m}\bar{\psi}\psi -L_{\omega }(\bar{D}_{\mu }\omega _{\alpha }^{\ast
+})(\bar{D}^{\mu }\omega _{\alpha })\text{ ,}  \label{17.4.30}
+\end{eqnarray}%
+其中, 这里的$F_{\alpha \mu \nu }$, $\bar{D}%
+_{\mu }\psi $, $\bar{D}_{\mu }\omega _{\alpha }$和$\bar{D}_{\mu
+}\omega _{\alpha }^{\ast }$完全是用背景场构建的:%
+\begin{eqnarray}
+F_{\alpha \mu \nu } &\equiv &\partial _{\mu }A_{\alpha \nu }-\partial _{\nu
+}A_{\alpha \mu }+C_{\alpha \beta \gamma }A_{\beta \mu }A_{\gamma \nu }\text{
+,}  \label{17.4.31} \\
+\bar{D}_{\mu }\psi  &\equiv &\partial _{\mu }\psi -\mi t_{\alpha }A_{\alpha
+\mu }\psi \text{ ,}  \label{17.4.32} \\
+\bar{D}_{\mu }\omega _{\alpha } &\equiv &\partial _{\mu }\omega _{\alpha
+}+C_{\alpha \beta \gamma }A_{\beta \mu }\omega _{\gamma }\text{ ,}
+\label{17.4.33} \\
+\bar{D}_{\mu }\omega _{\alpha }^{\ast } &\equiv &\partial _{\mu }\omega
+_{\alpha }^{\ast }+C_{\alpha \beta \gamma }A_{\beta \mu }\omega _{\gamma
+}^{\ast }\text{ .}  \label{17.4.34}
+\end{eqnarray}%
+通过量纲分析, 我们预期常数$L_{A}$, $L_{\psi }$, $L_{m}$和$L_{\omega }$%
+是对数发散的.
+
+为了处理这些无限大, 
+我们注意到拉格朗日量(\ref{17.4.12})包含一个纯经典部分\begin{equation}
+\mathscr{L}_{\mathrm{CLASS}}=-\frac{1}{4}F_{\alpha \mu \nu }F_{\alpha }^{\mu
+\nu }-\bar{\psi}(\gamma ^{\mu }\bar{D}_{\mu }+m)\psi -(\bar{D}_{\mu }\omega
+_{\alpha }^{\ast })(\bar{D}^{\mu }\omega _{\alpha })\text{ ,}
+\label{17.4.35}
+\end{equation}%
+这一项是通过扔掉$\mathscr{L}%
+_{\mathrm{MOD}}$中所有涉及量子场$A^{\prime },\psi ^{\prime },\omega ^{\prime },\omega ^{\prime \ast }
+$的项获得的. 我们定义重整化场\begin{eqnarray}
+A_{\alpha \mu }^{R} &\equiv &\sqrt{1+L_{A}}A_{\alpha \mu }\text{ ,}
+\label{17.4.36} \\
+\psi _{\ell }^{R} &\equiv &\sqrt{1+L_{\psi }}\psi _{\ell }\text{ ,}
+\label{17.4.37} \\
+\omega _{\alpha }^{R} &\equiv &\sqrt{1+L_{\omega }}\omega _{\alpha }\text{ ,}
+\label{17.4.38} \\
+\omega _{\alpha }^{\ast R} &\equiv &\sqrt{1+L_{\omega }}\omega _{\alpha
+}^{\ast }\text{ ,}  \label{17.4.39}
+\end{eqnarray}%
+这使得(\ref{17.4.30})与(\ref{17.4.35})的和采取如下的形式\begin{eqnarray}
+\mathscr{L}_{\mathrm{CLASS}}+\mathscr{L}_{\infty } &=&-\frac{1}{4}F_{\alpha
+\mu \nu }^{R}F_{\alpha }^{R\mu \nu }-\bar{\psi}\gamma ^{\mu }D_{\mu
+}^{R}\psi ^{R}  \nonumber \\
+&&-m^{R}\bar{\psi}^{R}\psi ^{R}-(D_{\mu }^{R}\omega _{\alpha }^{\ast
+R})(D^{\mu R}\omega _{\alpha }^{R})\text{ ,}  \label{17.4.40}
+\end{eqnarray}%
+其中, $m^{R}$是重整化质量\begin{equation}
+m^{R}\equiv m(1+L_{m})/(1+L_{\psi })\text{ ,}  \label{17.4.41}
+\end{equation}%
+以及\begin{eqnarray}
+F_{\alpha \mu \nu }^{R} &\equiv &\partial _{\mu }A_{\alpha \nu
+}^{R}-\partial _{\nu }A_{\alpha \mu }^{R}+C_{\alpha \beta \gamma
+}^{R}A_{\beta \mu }^{R}A_{\gamma \nu }^{R}\text{ ,}  \label{17.4.42} \\
+D_{\mu }^{R}\psi ^{R} &\equiv &\partial _{\mu }\psi ^{R}-\mi t_{\alpha
+}^{R}A_{\alpha \mu }^{R}\psi ^{R}\text{ ,}  \label{17.4.43} \\
+D_{\mu }^{R}\omega _{\alpha }^{R} &\equiv &\partial _{\mu }\omega _{\alpha
+}^{R}+C_{\alpha \beta \gamma }^{R}A_{\beta \mu }^{R}\omega _{\gamma }^{R}%
+\text{ ,}  \label{17.4.44} \\
+D_{\mu }^{R}\omega _{\alpha }^{\ast R} &\equiv &\partial _{\mu }\omega
+_{\alpha }^{\ast R}+C_{\alpha \beta \gamma }^{R}A_{\beta \mu }^{R}\omega
+_{\gamma }^{\ast R}\text{ .}  \label{17.4.45}
+\end{eqnarray}%
+这里的重整化结构常数和群生成元则是\begin{eqnarray}
+C_{\alpha \beta \gamma }^{R} &\equiv &(1+L_{A})^{-1/2}C_{\alpha \beta \gamma
+}\text{ ,}  \label{17.4.46} \\
+t_{\alpha }^{R} &\equiv &(1+L_{A})^{-1/2}t_{\alpha }\text{ .}
+\label{17.4.47}
+\end{eqnarray}%
+由于我们假定了这里的Lie代数是单纯的, 所以, 除却一个公共因子, 即非重整化耦合常数$g$, 结构常数$C_{\alpha \beta \gamma }$和群生%
+成元$t_{\alpha }$完全由群的结构所决定. 因此, 方程(\ref%
+{17.4.46})和(\ref{17.4.47})告诉我们, 对于$C^{R}$和$t^{R}$中的耦合常数$g^{R}$, 它的重整化是%
+\begin{equation}
+g^{R}=g(1+L_{A})^{-1/2}\text{ .}  \label{17.4.48}
+\end{equation}
+
+这一结果体现出了背景场规范的特殊优点. 
+在一般的规范下, 对于规范场和规范耦合常数, 我们会遇到相互独立的重整化因子, 并且为了把它们整理出来, 
+我们将不得不计算两个不同的振幅(例如, 真空极化和3-规范场顶角函数). 在背景场规范下, 
+通过要求有效作用量中的无限大项以场强的原始形式(\ref{17.4.31})将其包含在内, 背景场规范不变性将这两个重整化绑在了一起, 进而使%
+得我们可以通过仅研究一个规范场振幅就能计算出荷重整化因子.
+
+\end{document}

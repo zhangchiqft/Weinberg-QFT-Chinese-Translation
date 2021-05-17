@@ -1,0 +1,189 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Saturday, June 18, 2016 10:46:49}
+%TCIDATA{LastRevised=Wednesday, June 22, 2016 10:40:32}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{重整化: 一般规范理论}
+
+在上一节, 对于非阿贝尔规范理论的可重整性证明依赖于对作用量中量纲不超过4的可能项的\textquotedblleft 暴力\textquotedblright 
+分析. 但我们在第12章看到, 附加在作用量中项的量纲上的限制至多是一个很好的近似. 用来描述强相互作用, 弱相互作用以及电磁相互作用的成功可重整%
+量子场论几乎肯定是有效场论, 这些理论带有量纲$d>4$的项; 这些项一般不会被观测到, 它们会被某些非常大的质量的$4-d$次方所抑制, 
+这些质量或许是$10^{16}$-$10^{18}$%
+\textrm{GeV}阶的. 引力也可以被一个有效场论描述, 
+在这个理论中, 拉格朗日密度不仅包含Einstein-Hilbert%
+项$-\sqrt{g}R/16\pi G$, 也包含由4个或者更多个引力场导数所构建的所有标量. 
+我们需要证明这类规范理论, 也就是在幂次计数意义下不可重整的规范理论, 在现代意义下却是可重整的, 即规范对称性会控制紫外发散使得总存在可%
+用的抵消项以抵消每个无限大.\cite{3}
+
+由于这个原因, 我们回到15.9节所引入的作用量$%
+S[\chi ,\chi ^{\ddag }]$, 将作用量取成独立场$\chi ^{n}$(包括规范场和物质场$\phi ^{r}$, 鬼场$\omega ^{A}$%
+以及非最小化场$\omega ^{A\ast }$%
+和$h^{A}$)和反场$\chi _{n}^{\ddag }$的函数. 在类似量子引力或Yang-Mills理论的理论中, 这些理论基于结构常数为$%
+f^{C}{}_{AB}$的闭规范代数, 作用量被约束在如下的形式 
+\begin{equation}
+S=I[\phi ]+\omega ^{A}f_{A}^{r}[\phi ]\phi _{r}^{\ddag }+\frac{1}{2}\omega
+_{A}\omega _{B}f^{C}{}_{AB}[\phi ]\omega _{C}^{\ddag }-h^{A}\omega
+_{A}^{\ast \ddag }\text{ ,}  \label{17.3.1}
+\end{equation}%
+其中$I[\phi ]$在无限小规范变换$\phi ^{r}\rightarrow \phi ^{r}+\epsilon ^{A}f_{A}^{r}[\phi
+] $下不变. (同15.9节一样, 指标$r,A$等包含时空坐标, 
+在对这些指标的求和中要对时空坐标积分.)
+
+在这里, 我们不会将自己限制在这一形式的作用量下, 但是我们会假定理论会被附加定域对称性, 而这些对称性是通过要求作用量在它的反场相关性上%
+必须服从某些\textquotedblleft 结构约束\textquotedblright 得到的, 方程(\ref{17.3.1})就提供了这样%
+的一个例子. 结构约束假定是线性的, 也就是说, 如果结构约束对于$S+%
+\mathscr{S}_{1}$和$S+\mathscr{S}_{2}$都是满足的, 那么对于任意常数$%
+\alpha _{1}$和$\alpha _{2}$, $S+\alpha _{1}\mathscr{S}_{1}+\alpha _{2}%
+\mathscr{S}_{2}$也满足结构约束. 
+我们同时附加量子主方程(\ref{15.9.35})%
+\begin{equation}
+(S,S)-2\mi\hbar \Delta S=0\text{ ,}  \label{17.3.2}
+\end{equation}%
+其中$\Delta S$通过方程(\ref{15.9.34})%
+定义, 而按照上一节脚注所描述的含义, 因子$%
+\hbar $现在作为\textquotedblleft 圈计数\textquotedblright 参量显式地写出.
+
+将作用量取成$\hbar $的幂级数\begin{equation}
+S=S_{R}+\hbar S_{1}+\hbar ^{2}S_{2}+\cdots \text{ ,}  \label{17.3.3}
+\end{equation}%
+其中$S_{R}$是与$S$结构大体相同的作用量, 但它的所有耦合参量被替换成了有限的重整化值, 
+而$S_{N}$是一组无限大抵消项. 假定作用量$S$对于$\hbar $的所有阶均满足量子主方程(\ref{17.3.2}), 这样$S_{R}$%
+就会满足经典主方程\begin{equation}
+(S_{R},S_{R})=0\text{ ,}  \label{17.3.4}
+\end{equation}%
+而抵消项满足\begin{equation}
+(S_{R},S_{N})=-\frac{1}{2}\sum_{M=1}^{N-1}(S_{M},S_{N-M})+\mi\Delta S_{N-1}%
+\text{ .}  \label{17.3.5}
+\end{equation}
+
+抵消项$S_{N}$本身还不足以抵消掉圈图中的紫外发散. 作为传统场重整化的推广, 我们还得引入一组重整化场和重整化反场, 它们通过一个任意的反正则变%
+换以原始场和原始反场的形式定义. 无限小的反正则变换可以通过方程(\ref{15.9.26})以无限小生成泛函$\delta F$的形式定%
+义, 所以连续的反正则变换$G(t)\rightarrow G(t+\delta t)=G(t)+(F(t)\delta t,G(t))$(%
+其中$G(t)$是场和反场的任意泛函, $F(t)$是生成泛函)会给出有限大的正则变换$G\rightarrow \tilde{G}\equiv G(1)$, 并有%
+\begin{equation}
+\frac{\dif}{\dif t}G(t)=(F(t),G(t))\text{ , \ \ \ \ \ \ \ \ }G(0)=G\text{ .}
+\label{17.3.6}
+\end{equation}%
+如果$F(t)$给定为幂级数\begin{equation}
+F(t)=\hbar F_{1}+\frac{1}{2}\hbar ^{2}tF_{2}+\cdots \text{ ,}  \label{17.3.7}
+\end{equation}%
+那么方程(\ref{17.3.3}), (\ref{17.3.6})和(\ref%
+{17.3.7})就产生了变换后的作用量\begin{equation}
+\tilde{S}=S_{R}+\hbar \left[ S_{1}+(F_{1},S_{R})\right] +\hbar ^{2}\left[
+S_{2}+(F_{1},S_{1})+(F_{2},S_{R})+\frac{1}{2}(F_{1},(F_{1},S_{R}))\right]
++\cdots \text{ .}  \label{17.3.8}
+\end{equation}%
+现在, 问题就在于我们是否可以用我们所拥有的自由度取选择$F_{N}$%
+和$S_{N}$, 进而使得圈图中产生的所有无限大都被抵消掉.
+
+如上文所述, 方程(\ref{17.3.3})%
+中的第一项$S_{R}$自动是有限的. 假定对于$M<N$, 无限大通过$S_{M}$和$F_{M}$被抵消掉了, 那么确实有可能消除量子有效作用%
+量中$M<N$的$\hbar ^{M}$阶项$\Gamma _{M}$%
+中的所有无限大. 正如我们在上一节所看到的, Zinn-Justin方程告诉我们, 
+量子有效作用量中$\hbar ^{N}$%
+阶项的无限大部分$\Gamma
+_{N,\infty }$满足条件\begin{equation}
+(S_{R},\Gamma _{N,\infty })=0\text{ .}  \label{17.3.9}
+\end{equation}%
+场变量$\chi ^{n}$和反场变量$%
+\chi _{n}^{\ddag }$通过反正则变换与变量$\chi ^{n}$和$K_{n}$相关, 而反正则变换保护了所有的反括号, 所以, 方程(%
+\ref{17.3.9})中的反括号可以$\chi
+^{n}$和$\chi _{n}^{\ddag }$的形式而非$%
+\chi ^{n}$和$K_{n}$进行计算.
+
+抵消项$S_{N}$所满足的条件(\ref{17.3.5})与$\Gamma _{N,\infty }$所满足的条件(\ref{17.3.9})并不相同. 
+然而, 给定任意满足方程(\ref{17.3.5})的$S_{N}^{0}$, 我们可以找到一类另外的解\[
+S_{N}=S_{N}^{0}+S_{N}^{\prime }, 
+\]%
+其中$S_{N}^{\prime }$是任意的, 除了$S_{R}+S_{N}^{\prime }$要像$S_{R}+S_{N}^{0}$那%
+样满足与$S_{R}$相同的对称性条件, 并且, 为了不使方程(\ref{17.3.5})无效\begin{equation}
+\left( S_{R},S_{N}^{\prime }\right) =0\text{ .}  \label{17.3.11}
+\end{equation}%
+因此, 量子有效作用量中的第$N$阶项的无限大部分可以写成\begin{equation}
+\Gamma _{N,\infty }=S_{N,\infty }^{\prime }+(F_{N,\infty
+},S_{R})+X_{N,\infty }\text{ ,}  \label{17.3.12}
+\end{equation}%
+其中$X_{N}$由来自圈图的项, 来自$S_{N}^{0}$中的项, 以及$\Gamma $中包含$M<N$的$S_{M}$和$F_{M}$%
+的各种项组成. 例如, 对于$N=2$, 方程(\ref{17.3.8})给出\begin{eqnarray*}
+X_{2} &=&S_{2}^{0}+2(F_{1},S_{1})+(F_{1},(F_{1},S_{R}))+\text{仅包含}S_{R}\text{的两圈项} \\
+&&+\text{包含}S_{R},S_{1}\text{和}F_{1}\text{的一圈项 .}
+\end{eqnarray*}%
+对于我们的目的, 关于$%
+X_{N}$我们唯一需要知道的是它确实不包含$%
+S_{N}^{\prime }$或$F_{N}$, 并且它在$S_{R}$%
+的任何线性可实现整体变换下不变.
+
+现在, 因为$(S_{R},S_{R})=0$, 操作$%
+F\mapsto (S_{R},F)$是幂零的; 对于所有的$F$,%
+\begin{equation}
+\left( S_{R},\left( S_{R},F\right) \right) =0\text{ .}  \label{17.3.13}
+\end{equation}%
+因此, 从方程(\ref{17.3.9})和(\ref%
+{17.3.11})---(\ref{17.3.13})可以得出\begin{equation}
+\left( S_{R},X_{N,\infty }\right) =0\text{ .}  \label{17.3.14}
+\end{equation}%
+通过选择$F_{N,\infty }$使其等于$Y$, $X_{N,\infty }$中任何形式为$%
+(S_{R},Y)$的项在方程(\ref{17.3.12})都可以被抵消掉. 因此, $%
+X_{N,\infty }$中需要被抵消项$%
+S_{N,\infty }^{\prime }$抵消掉的可能的剩余无限大项的空间, 由那些满足$(S_{R},X)=0$的泛函$X$组成, 并且如果两%
+个泛函相差的项形式为$(S,X)$, 则认为这两个泛函是等价的. 换句话说, $%
+\Gamma _{N}$中需要被抵消项$%
+S_{N}^{\prime }$抵消掉的无限大属于映射$X\mapsto (S_{R},X)$的{\kai{上同调}}.
+
+在量子引力与半单规范对称性的Yang-Mills场论耦合的情况下, 结构约束(%
+\ref{17.3.1})会实现这一理论的对称性. 在这一情况下会有一个定理, 构成\footnote{%
+严格地讲, 如果要求$S$中的耦合系数不采取某些会使得$S$会在更大的定域对称群下不变的值, 这才是有效的. 例如, 这排除了$S=0$的情况.}映%
+射$X\mapsto (S_{R},X)$(在鬼数为零的定域泛函空间上, 而非鬼数为零的时空相关函数)的上同调的泛函$%
+A[\phi ]$在结构常数为$f^{C}$ $_{AB}$%
+的规范变换$\phi ^{r}\rightarrow \phi
+^{r}+\epsilon ^{A}f_{A}^{r}[\phi ]$下不变. 任何这类的$N$阶无限大都可以被相同形式的$S_{R}^{\prime }$%
+抵消掉, 所以, 尽管这些理论在传统的幂次计数意义下是不可重整的, 但是, 若可重整是指, 通过对原始裸作用量$%
+I[\phi ]$中的参量进行选择, 
+并对场和反场做一个合适的重整化, 使得所有无限大都可以被消除掉, 那么在这一意义下, 这些理论完全是可重整的.
+
+在其它理论中, 映射$X\mapsto
+(S_{R},X)$的上同调会包含额外的项. 这并不会一定要求削弱结构约束, 这是因为上同调中的额外项可能不对应真实的紫外发散. 例如, 在含%
+有$U(1)$因子的规范理论中, 上同调中所包含的项中会有一项对应于$U(1)
+$规范对称性的作用量在该理论各种场上的重定义, 如果这一项是无限大的, 那么它将会要求我们削弱结构约束, 让方程(\ref{17.3.1})中的变%
+换函数$f_{A}^{r}[\phi ]$保持任意. 
+但是软光子定理告诉我们不同场的$U(1)$耦合的比值(就像量子电动力学中各种轻子电荷的比值)不会被辐射修正影响,(参看10.4节) 这一定理会禁止这一无限%
+大. 如果上同调中的额外项确实包含紫外发散, 那么, 为了让每一可能的紫外发散都存在一个抵消项, 附加在$S$上的结构约束就必须要被削弱. 现在还不清楚%
+这是否总是可能的; 如果不是, 某些理论可能会由于它们不可移除的紫外发散而不得不被丢弃掉.
+
+\end{document}

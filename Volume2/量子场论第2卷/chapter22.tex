@@ -1,0 +1,1704 @@
+\chapter{反常}
+
+在对称性对量子场论的应用中, 那些在经典理论中没有对应的部分存在着一些微妙. 即使在可重整理论中, 量子场论中的无穷大要求在实际计算使用某种正规化子或截断. 正规化子有可能会破坏理论的对称性, 并且即使在计算的末尾移除了正规化子, 依旧可能留下对称性遭到破坏的痕迹. 这一问题最初是在尝试理解中性$\pi$介子的衰变速率时浮现出来的, 具体形式是一个反常, 这个反常破坏了强相互作用的{\kai{整体}}对称性. 反常也能破坏{\kai{规范}}对称性, 但在这一情况下, 理论会变得不相容, 这使得反常相消的条件要作为约束附加在物理规范理论上. 在下一章, 当我们在场构型拓扑不平庸的情况下研究反常的非微扰效应时, 反常的重要性会变得更加显然.
+
+\section{$\pi^{0}$衰变问题}
+
+在20世纪60年代中期, $\pi$介子被视为与强相互作用的$SU(2)\otimes SU(2)$对称性自发破缺相联系的Goldstone玻色子, 这个图景取得了数个成功, 而在本书的第19章我们对其进行了概述. 然而, 这个图景也有几个显然的失败之处.
+其中最需要处理的是中性$\pi$介子的主要衰变模式的速率, 即$\pi^{0}\to2\gamma$的速率. 也正是对这一问题的解答引领了对称性破缺反常的发现.
+
+在积掉所有重粒子以及俘获粒子后, 我们预期$\pi^{0}\to 2\gamma$的有效作用量拥有规范不变性和Lorentz不变性, 并且所含导数不超过两个, 这样的项只有一个:
+\begin{equation}
+\mathscr{L}_{\pi\gamma\gamma}=g\pi^{0}\epsilon^{\mu\nu\rho\lambda}F_{\mu\nu}F_{\rho\lambda}\text{ ,} \label{22.1.1}
+\end{equation}
+其中$g$是量纲为$[\text{质量}]^{-1}$的未知常数. 那么, 我们就可以用3.4节的方法算出$\pi^{0}\to2\gamma$的速率
+\begin{equation}
+\Gamma(\pi^{0}\to 2\gamma)=\frac{m^{3}_{\pi}g^{2}}{\uppi} \text{ .}\label{22.1.2}
+\end{equation}
+我们可以想当然地期待$g$的量级是
+\begin{equation}
+g\approx\frac{e^{2}}{8\uppi^{2}F_{\pi}} \text{ ,} \label{22.1.3}
+\end{equation}
+其中$F_{\pi}\simeq190\,\mathrm{MeV}$用来标记强相互作用的特征标度. 插入因子$1/8\uppi^{2}$是因为给出$\pi^{0}\to2\gamma$的图至少要包含一个圈. 例如, 在1949年, 利用$\pi$介子和核子相互作用拉格朗日量为$\mi G_{\pi N}\cvec{\pi}\cdot\bar{N}2\cvec{t}\gamma_{5}N$的旧QCD理论, Steinberger\cite{1}计算出了只有一个质子圈的三角图对$g$的贡献
+\begin{equation}
+g_{\triangle} = \frac{e^{2}G_{\pi N}}{32\uppi^{2}m_{N}} \text{ .} \label{22.1.4}
+\end{equation}
+由于Goldberger--Treiman关系(参看19.4节)给出了$G_{\pi N}=2m_{N}g_{A}/F_{\pi}$, 所以它在数值上与方程(\ref{22.1.3})相差得并不大.
+
+这个对$\pi^{0}\to2\gamma$振幅的估计遗漏了$SU(2)\otimes SU(2)$对称性附加的特殊约束. 电磁相互作用破坏了大部分$SU(2)\otimes SU(2)$对称性, 但至少在形式上它对该群的电中性生成元生成的$U(1)\times U(1)$子群没有影响. 当这一子群的无穷小赝标量群元作用在夸克上时, 它有如下的效应:
+\begin{equation}
+\delta u=\mi\epsilon\gamma_{5}u\text{ ,}\qquad\qquad \delta d=-\mi\epsilon\gamma_{5}d\text{ ,} \label{22.1.5}
+\end{equation}
+这使得电流是不变的:
+\begin{equation}
+\delta\bigg[\frac{2}{3}\bar{u}\gamma^{\mu}u-\frac{1}{3}\bar{d}\gamma^{\mu}d\bigg]=0\text{ .} \label{22.1.6}
+\end{equation}
+(在量子色动力学出现之前, Sutherland\cite{2}和Veltman\cite{3}就给出了这个讨论, 不过在他们的讨论中$u$夸克和$d$夸克换成了质子和中子.) 因为$\pi^{0}$是与对称性相联系的Goldstone玻色子, 像(\ref{22.1.1})这样的非导数相互作用, 它的来源只能是夸克质量所造成的对称性破缺, 因此必须正比于$m_{\pi}^{2}\propto m_{u}+m_{d}$. 出于这种考虑, 我们预期常数$g$会被一个额外的因子$m^{2}_{\pi}/m_{N}^{2}$压低:
+\begin{equation}
+g\approx\frac{e^{2}}{8\uppi^{2} F_{\pi}}\bigg(\frac{m_{\pi}^{2}}{m_{N}^{2}}\bigg) \text{ .} \label{22.1.7}
+\end{equation}
+(取代$m_{N}$, 我们也可以用19.3节讨论的手征对称性破缺标度$2\uppi F_{\pi}=1200\,\mathrm{MeV}$, 但这对结果的影响很小.) 也会有手征不变有效$\pi^{0}\gamma\gamma$相互作用会包含$\pi^{0}$场的导数. Lorentz不变性要求它们至少要包含两个额外的导数. 利用齐次Maxwell方程$\partial_{\mu}F_{\nu\lambda}-\partial_{\nu}F_{\mu\lambda}=-\partial_{\lambda}F_{\mu\nu}$%
+并分部积分, 我们看到只有两个额外导数的独立手征不变耦合只有一个, 这个耦合通过在方程(\ref{22.1.1})中的$\pi^{0}$场上作用一个达朗贝尔算符得到. 在$\pi$介子质量壳上, 这等同于给相互作用(\ref{22.1.1})乘以额外的因子$m_{\pi}^{2}$, 因此给出了相同的估计(\ref{22.1.7}). 有时会称手征对称性禁止了$\pi^{0}\to 2\gamma$的衰变, 但更精确的表述是:  手征对称性使得这一过程的速率在$m_{\pi}\to0$时趋于$m_{\pi}^{7}$而不是$m_{\pi}^{3}$.
+
+困难在于, 观测到的$\pi^{2}\to 2\gamma$速率远大于从方程(\ref{22.1.7})出发所预期的, 实际上, 它反而更接近于从想当然的结果(\ref{22.1.3})推断出来的值. 更确切一些, 从方程(\ref{22.1.7})和方程(\ref{22.1.2}), 我们预期衰变速率是
+\begin{equation}
+\Gamma(\pi^{0}\to 2\gamma)\approx \frac{m_{\pi}^{7}\alpha^{2}}{4\uppi^{3}F_{\pi}^{2}m_{N}^{4}}=1.9\times 10^{13}\,\textrm{s}^{-1}\text{ ,} \label{22.1.8}
+\end{equation}
+用方程(\ref{22.1.3})取代方程(\ref{22.1.7})给出的则是
+\begin{equation}
+\Gamma(\pi^{0}\to 2\gamma)\approx \frac{m_{\pi}^{3}\alpha^{2}}{4\uppi^{3}F_{\pi}^{2}}=4.4\times 10^{16}\,\textrm{s}^{-1}\text{ ,} \label{22.1.9}
+\end{equation}
+观测到的速率是$\Gamma(\pi^{0}\to2\gamma)=(1.19\pm0.08)\times 10^{16}\,\mathrm{s}^{-1}$, 它与未经加工的粗略估计(\ref{22.1.9})符合的非常好, 但是比``改良''后的结果(\ref{22.1.8})要高三个数量级! 我们不得不得出这样的结论: 这里发生了某种反常, 它破坏了手征对称性, 使得我们无法引入$g$中的额外因子$m^{2}_{\pi}/m_{N}^{2}$. 在试图去理解其它一些过程的速率时, 例如$\eta^{0}\to\gamma+\gamma$的速率, 也出现了类似的问题.
+
+在1969年, Bell和Jackiw\cite{4}找到了这一反常的根源: 为了推导中性轴矢量流守恒对于单圈Feynman图的结果, 我们需要引入正规化子, 而这个正规化子破坏了手征对称性.  Adler在研究量子电动力学中的轴矢量Ward恒等式时独立地发现了手征反常, 他证实了Bell和Jackiw的结果并推广至高阶.\cite{5} 随后, 在1979年, Fujikawa\cite{6}意识到, 在场论的路径积分形式体系中, 手征对称性破缺反常只出现在定义费米场路径积分所需的测度. 我们会在下一节看到, 这一方法使得计算这一反常产生的$\pi^{0}\to2\gamma$振幅至微扰论的任意阶变得非常简单. 在此之后, 我们转向在更一般理论中如何直接计算反常的问题, 并讨论它的各种应用.
+
+
+\section{测度的变换: 阿贝尔反常}
+
+我们现在转向与$\pi^{0}$衰变相关的那类反常的计算. 为此, 我们采用Fujikawa对反常的解释\cite{6}: 无法对费米场变量积分定义合适的不变测度就意味着反常的出现. Fujikawa对这一问题的分析基于欧几里得空间中的路径积分, 以及将费米变量的积分展成规范不变Dirac算符的本征函数, 在4维欧几里得空间中, 它是厄米的. 在这里, 我们先给出一个不太严格的推导, 这个推导基于我们更加熟悉的闵可夫斯基路基积分, 它使得我们进行很少的处理后就能获得正确的结果. 我们会在本节的末尾简略地讨论欧几里得方法, 并用它推导著名的指标定理.
+
+我们从计算测度变换中的反常出发, 对于一列无质量自旋为1/2的复费米场$\psi_{n}(x)$, 假定它们与一组规范场$A_{\alpha}^{\mu}(x)$之间相互作用不是手征的(例如, 在计算$\pi^{0}\to2\gamma$的速率时, $u$夸克和$d$夸克与电磁矢势$A^{\mu}(x)$的相互作用), 在这列$\psi_{n}(x)$的任意定域矩阵变换$\psi(x)\to U(x)\psi(x)$下, 测度会有相应的变换, 从中会出现反常. 它们是费米变量, 所以测度在变换后要乘的不是变换矩阵的行列式, 而是行列式的逆:
+\begin{equation}
+[\dif\psi][\dif\bar{\psi}]\to (\operatorname{Det}\mathscr{U}\operatorname{Det}\bar{\mathscr{U}})^{-1}[\dif\psi][\dif\bar{\psi}]\text{ ,}\label{22.2.1}
+\end{equation}
+其中
+\begin{align}
+\mathscr{U}_{xn,ym}&\equiv U(x)_{nm}\delta^{4}(x-y)\text{ ,} \label{22.2.2} \\
+\bar{\mathscr{U}}_{xn,ym}& \equiv [\gamma_{4}U(x)^{\dag}\gamma_{4}]_{nm}\delta^{4}(x-y) \label{22.2.3}
+\end{align}
+$\gamma_{4}\equiv \mi\gamma^{0}$是用来定义$\bar{\psi}=\psi^{\dag}\gamma_{4}$的矩阵. 指标$n$,$m$跑遍味指标和Dirac自旋指标.
+
+在当前的讨论中, 读者可能会好奇, 我们为什么会因为在方程(\ref{22.2.3})中引入了因子$\gamma_{4}$而担忧, 它们只不过表明了幺正变换不应该影响行列式. 答案是, 为了使得计算是有意义的, 我们发现在计算传播子和行列式时必须要对费米子模式和做正规化, 并且我们会发现因子$\gamma_{4}$确实会影响正规化行列式. 因此, 是否引入因子$\gamma_{4}$取决于我们使用的正规化方法是否使得这些掩人耳目的操作是否有意义. 我们引入因子$\gamma_{4}$是因为我们希望Lorentz不变性在正规化过程中会保留下来, 而这里所感兴趣的情况中, 像标量那样变换的是$\gamma_{4}U(x)^{\dag}\gamma_{4}$而非$U(x)^{\dag}$.
+
+首先, 我们来考察$U(x)$是非手征幺正变换的情况
+\begin{equation}
+U(x)=\exp [\mi\alpha(x)t]\text{ ,} \label{22.2.4}
+\end{equation}
+其中$t$是通常的厄米矩阵(不包含$\gamma_{5}$, 但不一定无迹)而$\alpha(x)$是$x$的任意实函数. 在这一情况下, $\mathscr{U}$是赝幺正的:
+\begin{equation}
+\bar{\mathscr{U}}\mathscr{U} =1 \text{ ,} \label{22.2.5}
+\end{equation}
+所以测度在这类变换下不变. 特别地, 在规范群自身下的对称性, 即$t$是非手征生成元$t_{\alpha}$中的一个, 这个对称性没有被任何反常损坏.
+
+接下来, 考察定域手征变换, 其中
+\begin{equation}
+U(x)=\exp [\mi\gamma_{5}\alpha(x)t]\text{ ,} \label{22.2.6}
+\end{equation}
+$t$依旧是通常的厄米矩阵, 而$\alpha(x)$依旧是$x$的任意实函数. 在这一情况下, $\mathscr{U}$是赝厄米的:
+\begin{equation}
+\bar{\mathscr{U}} =\mathscr{U} \text{ ,} \label{22.2.7}
+\end{equation}
+测度在这个手征变换下并非不变的; 相反, 我们有
+\begin{equation}
+[\dif\psi][\dif\bar{\psi}]\to (\operatorname{Det}\mathscr{U})^{-2}[\dif\psi][\dif\bar{\psi}]\text{ ,}\label{22.2.1}
+\end{equation}
+
+我们现在专注于{\kai{无限小}}定域手征变换的情况. 取方程(\ref{22.2.6})中的$\alpha(x)$为无穷小量, 这时我们有
+\begin{equation}
+[\mathscr{U}-1]_{nx,my}=\mi\alpha(x)[\gamma_{5}\,t]_{nm}\delta^{4}(x-y) \text{ .} \label{22.2.9}
+\end{equation}
+利用恒等式$\operatorname{Det}M=\exp\operatorname{Tr}\ln M$以及极限公式: $x\to0$时, $\ln(1+x)\to x$. 现在, 测度的变换性质是
+\begin{equation}
+[\dif\psi][\dif\bar{\psi}]\to \exp\bigg\{\mi\int\dif^{4}x\,\alpha(x)\mathscr{A}(x)\bigg\}[\dif\psi][\dif\bar{\psi}]\text{ ,}\label{22.2.10}
+\end{equation}
+其中$\mathscr{A}(x)$是反常函数:
+\begin{equation}
+\mathscr{A}(x)=-2\operatorname{Tr}\{\gamma_{5}\,t\}\,\delta^{4}(x-x)\text{ ,} \label{22.2.11}
+\end{equation}
+这里的``$\operatorname{Tr}$''是指对Dirac指标和种类指标求迹. 测度$[\dif\psi][\dif \bar{\psi}]$会伴随权重因子$\exp\{\mi\int\dif^{4}x\:\mathscr{L}(x)\}$出现在路径积分中, 所以测定变换规则(\ref{22.2.10})中的因子$\exp\{\mi\int\dif^{4}x\:\alpha(x)\mathscr{A}(x)\}$就等同于拉格朗日密度在这%
+一变换下并非不变, 而是有$\mathscr{L}(x)\to\mathscr{L}(x)+\alpha(x)\mathscr{A}(x)$. 因此, 当我们使用一个费米子自由度已经积掉的有效作用量时, 为了将反常考虑在内, 我们必须要引入一个非不变项使得
+\begin{equation}
+\mathscr{L}_{\text{eff}}(x)\to\mathscr{L}_{\text{eff}}(x)+\alpha(x)\mathscr{A}(x)\text{ .} \label{22.2.12}
+\end{equation}
+现在, 剩下的问题就是计算反常函数$\mathscr{A}(x)$.
+
+乍看起来, 我们似乎无法从这一反常中得到任何有限的结果. $\delta$-函数是无限的, 但是迹却为零. 为了做的更好些, 我们必须要引入正规化子使得$\delta^{4}(x-x)$有意义. 在$\delta$-函数的变量趋于零之前, 通过在$\delta$-函数上面作用一个微分算符$f(-\slashed{D}_{x}^{2}/M^{2})$, 我们可以以规范不变的方式实现这点:
+\begin{equation}
+\mathscr{A}(x)=-2 \Big[\operatorname{Tr}\Big\{\gamma_{5}t\,f(-\slashed{D}_{x}^{2}/M^{2})\Big\}\,\delta^{4}(x-y)\Big]_{y\to x}\text{ .} \label{22.2.13}
+\end{equation}
+这里的$D_{x}$是存在规范场$A_{\alpha}^{\mu}(x)$时的Dirac微分算符:
+\begin{equation}
+(D_{x})_{\mu}\equiv \frac{\partial}{\partial x^{\mu}}-\mi t_{\alpha}A_{\alpha\mu}(x) \text{ .} \label{22.2.14}
+\end{equation}
+另外, $M$是某个很大的质量, 最终会取成无穷, 而$f(s)$是光滑函数, 仅服从如下的条件,\footnote{例如, 我们可以取$f(s)=\me^{-s^{2}}$, 最初Fujikawa就是这么做的, 或者取$f(s)=1/(1+s)$.} 随着$s$从0到$\infty$, $f(s)$从1掉落至0:
+\begin{align}
+&f(0)=1\text{ ,} \qquad\qquad f(\infty)=0 \text{ ,} \label{22.2.15} \\
+&s f'(s)=0   \text{ ,}\qquad\text{对于}s=0\text{和}s=\infty\text{ .} \label{22.2.16}
+\end{align}
+注意到, 由于我们希望保护规范不变性, 所以我们不能把正规化子函数取成$\slashed{\partial}$的函数, 同时, 由于我们需要这个正规化子不仅正规化行列式, 也要正规化费米传播子$\slashed{D}^{-1}$, 所以我们也不能把它取成$D^{\mu}D_{\mu}$的函数.
+
+为了计算(\ref{22.2.13}), 我们使用$\delta$-函数的Fourier表示, 将反常函数写成
+\begin{align*}
+\mathscr{A}(x)&=-2\int\frac{\dif^{4}k}{(2\uppi)^{4}}\,\Bigl[\operatorname{Tr}\Bigl\{\gamma_{5}\,t\,
+f(-\slashed{D}^{2}_{x}/M^{2})\Bigr\}\,\me^{\mi k\cdot(x-y)}\Bigr]_{y=x} \\
+&=-2\int\frac{\dif^{4}k}{(2\uppi)^{4}}\,\operatorname{Tr}\Bigl\{\gamma_{5}\,t\,
+f\Bigl(-[\mi\slashed{k}+\slashed{D}_{x}]^{2}/M^{2}\Bigr)\Bigr\} \text{ .}
+\end{align*}
+(相对$x$的导数作用在第二个表达式最右边时为零, 但是当它作用在$A_{\alpha\mu}(x)$上时不为零.) 对动量$k^{\mu}$放缩一个因子$M$, 这是
+\begin{equation}
+\mathscr{A}(x)=-2M^{4}\int\frac{\dif^{4}k}{(2\uppi)^{4}}\,\operatorname{Tr}
+\Big\{\gamma_{5}\,t\,f\Bigl(-[\mi\slashed{k}+\slashed{D}_{x}/M]^{2}\Bigr)\Big\}\text{ .} \label{22.2.17}
+\end{equation}
+截断函数的变量可以写成
+\begin{equation}
+-\left[\mi\slashed{k}+\frac{\slashed{D}_{x}}{M}\right]^{2}
+=k^{2}-\frac{\mi k\cdot D_{x}}{M}-\biggl(\frac{\slashed{D}_{x}}{M}\biggr)^{2}
+\text{ .} \label{22.2.18}
+\end{equation}
+在$M\to\infty$的极限下, 在$f(-[\mi\slashed{k}+\slashed{D}_{x}/M]^{2})$的展开中, 只有那些$1/M$因子不超过4个的项以及那些至少包含4个Dirac-$\gamma$矩阵的项才会对方程(\ref{22.2.17})有贡献, 若非如此, 对Dirac指标的迹就会为零. 这样就只剩下了$\slashed{D}_{x}^{2}$的二阶项:
+\begin{equation}
+\mathscr{A}(x)=-\int\frac{\dif^{4}k}{(2\uppi)^{4}}\,f^{\prime\prime}(k^{2})\,\operatorname{Tr}
+\Big\{\gamma_{5}\,t\,\slashed{D}_{x}^{4}\Big\}\text{ ,} \label{22.2.19}
+\end{equation}
+现在, 它独立于正规化子质量$M$.
+
+为了计算对$k$的积分, 就像在计算Feynman图中那样, 我们对$k^{0}$的围道做同一类旋转, 这使得$k^{0}$要换成$\mi k^{4}$, 而$k^{4}$要从$-\infty$取到$+\infty$. (实际上, 只有从开始阶段就用欧几里得路径积分进行处理, 我们才能证明这一步的合理性.) 那么, 这个积分实际上是
+\begin{equation}
+\int\dif^{4}k\,f^{\prime\prime}(k^{2})=\mi\int_{0}^{\infty}2\uppi^{2}\kappa^{3}\,\dif\kappa\,
+f^{\prime\prime}(\kappa^{2})\text{ .} \label{22.2.20}
+\end{equation}
+先用方程(\ref{22.2.16})再用方程(\ref{22.2.15}), 重复做分部积分, 这是
+\begin{equation}
+\int\dif^{4}k\,f^{\prime\prime}(k^{2})=\mi\uppi^{2}\int_{0}^{\infty}\dif s\, s\,
+f^{\prime\prime}(s)=-\mi\uppi^{2}\int_{0}^{\infty}\dif s\,f'(s)=\mi\uppi^{2}\text{ .} \label{22.2.21}
+\end{equation}
+为了计算这个迹, 我们写下
+\begin{align}
+\slashed{D}_{x}^{2}&=\tfrac{1}{4}\,\{(D_{x})^{\mu},(D_{x})^{\nu}\}\,\{\gamma_{\mu},\gamma_{\nu}\}
++\tfrac{1}{4}\,[(D_{x})^{\mu},(D_{x})^{\nu}]\,[\gamma_{\mu},\gamma_{\nu}] \nonumber \\
+&=D_{x}^{2}-\tfrac{1}{4}\mi t_{\alpha}\,F_{\alpha}^{\mu\nu}\,[\gamma_{\mu},\gamma_{\nu}] \text{ .} \label{22.2.22}
+\end{align}
+$\slashed{D}_{x}^{4}$中对Dirac指标的迹有贡献的项只有包含4个Dirac矩阵乘积的那一项, 它给出
+\begin{equation}
+\operatorname{tr}_{\mathrm{D}}\,\{\gamma_{5}\,[\gamma_{\mu},\gamma_{\nu}]\,[\gamma_{\rho},\gamma_{\sigma}]\}
+=16\,\mi\,\epsilon_{\mu\nu\rho\sigma} \text{ ,} \label{22.2.23}
+\end{equation}
+其中``$\operatorname{tr}_{\mathrm{D}}$''是指仅对Dirac指标求迹, $\epsilon_{\mu\nu\rho\sigma}$同往常一样是$\epsilon^{0123}=+1$的全反对称张量. 在方程(\ref{22.2.19})中使用方程(\ref{22.2.21})---(\ref{22.2.23}), 那么这给出反常函数
+\begin{equation}
+\mathscr{A}(x)=-\frac{1}{16\uppi^{2}}\,\epsilon_{\mu\nu\rho\sigma}\,F^{\mu\nu}_{\alpha}(x)F^{\rho\sigma}_{\beta}(x)
+\operatorname{tr}\{t_{\alpha}\,t_{\beta}\,t\} \text{ ,} \label{22.2.24}
+\end{equation}
+这里的``$\operatorname{tr}$''是指只对费米子的种类指标求迹. 在$t$是单位矩阵的特殊情况下, (\ref{22.2.24})被称为\emph{Chern-Pontryagin}{\kai{密度}}({\kai{陈-庞特里亚金密度}}).
+
+这一结果可以表示与反常对称性对应的流. 简单起见, 如果我们假定, 在$\alpha$为无限小常数的对称变换$\psi(x)\to\psi(x)+\mi t\gamma_{5}\alpha\psi(x)$下, 拉格朗日量不变, 那么, 就像7.3节中讨论的那样, 当我们把这个变换的参量变成时空{\kai{相关}}参量$\alpha(x)$时, 作用量的变化就可以写成$\delta I=\int\dif^{4}x\,J^{\mu}_{5}(x)\partial_{\mu}\alpha(x)$, 其中$J^{\mu}_{5}(x)$是流, 当场算符满足动力学方程, 即要求作用量相对场的任意变分都为零所给出的方程, 这个流是守恒的. 当我们取变量变分为$\delta\psi(x)=\mi t\alpha(x)\psi(x)$, 费米场路径积分的变化是
+\begin{equation}
+\delta\int[\dif\psi][\dif\bar{\psi}]\,\me^{\mi I}=\mi\int\dif^{4}x\int[\dif\psi][\dif\bar{\psi}][\mathscr{A}(x)\alpha(x)+J^{\mu}_{5}(x)\partial_{\mu}\alpha(x)]
+\me^{\mi I} \text{ ,} \label{22.2.25}
+\end{equation}
+但这只是一个变量代换, 所以对于任意的$\alpha(x)$, 它不会影响路径积分. 因此, 对于任意的规范场
+\begin{equation}
+\langle\partial_{\mu}J^{\mu}_{5}\rangle_{A}=\mathscr{A}
+=-\frac{1}{16\uppi^{2}}\,\epsilon_{\mu\nu\rho\sigma}\,F^{\mu\nu}_{\alpha}(x)F^{\rho\sigma}_{\beta}(x)
+\operatorname{tr}\{t_{\alpha}\,t_{\beta}\,t\} \text{ ,} \label{22.2.26}
+\end{equation}
+其中对于任何算符$\mathcal{O}$, $\langle\mathcal{O}\rangle_{A}$是$\mathcal{O}$在固定背景场$A^{\mu}(x)$中的量子平均:
+\begin{equation}
+\langle\mathcal{O}\rangle_{A}\equiv\frac{\int[\dif\psi][\dif\bar{\psi}]\,\me^{\mi I}\,\mathcal{O}}{\int[\dif\psi][\dif\bar{\psi}]\,\me^{\mi I}}\text{ .}\label{22.2.27}
+\end{equation}
+
+顺便一提, 方程(\ref{22.2.26})不可能重写为守恒条件. 考察如下的特殊情况: $\operatorname{tr}\{t_{\alpha}\,t_{\beta}\,t\}$正比于$\delta_{\alpha\beta}$, 即
+\begin{equation}
+\operatorname{tr}\{t_{\alpha}\,t_{\beta}\,t\}=N\delta_{\alpha\beta}\text{ .} \label{22.2.28}
+\end{equation}
+定义流:
+\begin{align}
+G^{\mu}&\equiv2\epsilon^{\mu\nu\lambda\rho}\left[A_{\gamma\nu}\partial_{\lambda}A_{\gamma\rho}+
+\frac{1}{3}C_{\alpha\beta\gamma}A_{\alpha\nu}A_{\beta\lambda}A_{\gamma\rho}\right]\nonumber\\
+&=\epsilon^{\mu\nu\lambda\rho}\left[A_{\gamma\nu}F_{\gamma\lambda\rho}-
+\frac{1}{3}C_{\alpha\beta\gamma}A_{\alpha\nu}A_{\beta\lambda}A_{\gamma\rho}\right]\text{ ,}\label{22.2.29}
+\end{align}
+它被称为\emph{Chern-Simons}{\kai{类}}({\kai{陈-西蒙斯类}}),
+它满足恒等式
+\begin{equation}
+\partial_{\mu}G^{\mu}=\frac{1}{2}\epsilon^{\mu\nu\lambda\rho}\,F_{\gamma\mu\nu}F_{\gamma\lambda\rho}\text{ .}\label{22.2.30}
+\end{equation}
+方程(\ref{22.2.30})使得我们可以将方程(\ref{22.2.26})重写成条件
+\begin{equation}
+\partial_{\mu}K^{\mu}=0\text{ ,} \label{22.2.31}
+\end{equation}
+其中
+\begin{equation}
+K^{\mu}\equiv \Bigl\langle J_{5}^{\mu}\Bigl\rangle_{A} \,+\,\frac{N}{8\uppi^{2}}G^{\mu}\text{ .}\label{22.2.32}
+\end{equation}
+然而, 我们不能仿照我们上一节的做法, 用流$K^{\mu}$的守恒论证过程$\pi^{0}\to 2\gamma$被抑制了, 这是因为, 在这样的论证中, 我们不仅要假定与轴矢量流守恒对应的手征对称性, 还要假定电磁规范不变性, 而我们从方程(\ref{22.2.29})看到: 流$K^{\mu}$虽然是守恒的, 但是它不是规范不变的.
+
+我们对反常函数(\ref{22.2.24})的推导表明, 如果我们在方程(\ref{22.2.13})用微分算符$f(-\slashed{\partial}_{x}^{2}/M^{2})$计算反常函数, 而不是%
+$f(-\slashed{D}_{x}^{2}/M^{2})$, 那么我们的反常函数就为零. 事实上, 在这个正规化处理下, 轴矢量流是$K^{\mu}$, 而不是$J^{\mu}_{5}$. 正如之前所提及的, 这一处理的问题在于正规化子算符不再是规范不变的, 这导致了$K^{\mu}$中出现了非规范不变项. 对于费米子传播子以及行列式, 不存在既规范不变又手征不变的正规化处理.
+
+现在, 我们可以回到最早给出的反常的那个问题, 并用我们的结果计算过程$\pi^{0}\to2\gamma$的真实速率. 对于我们这里所感兴趣的对称性, 它由轻夸克场的电中性手征变换生成:
+\begin{equation}
+\delta u=\mi\alpha\gamma_{5}u\text{ ,} \qquad\qquad \delta d=-\mi\alpha\gamma_{5}d\text{ .}\label{22.2.33}
+\end{equation}
+在纯量子色动力学中, 由于$u$夸克和$d$夸克属于色规范群的同一表示, 对于对称性(\ref{22.2.33})的反常, 这使得它们对反常中胶子-胶子项的贡献抵消了, 所以这个对称性是无反常的. 另一方面, 当存在电磁场$A^{\mu}(x)$时,这一对称性有如下的反常
+\[
+\mathscr{A}(x)=-\frac{1}{16\uppi^{2}}\,\epsilon_{\mu\nu\rho\sigma}\,F^{\mu\nu}(x)F^{\rho\sigma}(x)
+\operatorname{tr}\Bigl\{q^{2}\,\tau_{3}\Bigr\}\text{ ,}
+\]
+其中$q$是夸克电荷矩阵, $\tau_{3}$是$2\times 2$对角矩阵, 它对于$u$有元素$+1$, 对于$d$则是$-1$. 如果我们假定有$N_{c}$个电荷为$2e/3$的$u$夸克, 以及$N_{c}$个电荷为$-e/3$的$d$夸克, 那么迹就是
+\[
+\operatorname{tr}\Bigl\{q^{2}\,\tau_{3}\Bigr\}=N_{c}\biggl(\frac{2e}{3}\biggr)^{2}(+1)+
+N_{c}\biggl(\frac{-e}{3}\biggr)^{2}(-1)=\frac{N_{c}e^{2}}{3} \text{ ,}
+\]
+所以这里的反常函数是
+\begin{equation}
+\mathscr{A}(x)=-\frac{N_{c}e^{2}}{48\uppi^{2}}\,\epsilon_{\mu\nu\rho\sigma}\,F^{\mu\nu}(x)F^{\rho\sigma}(x)
+\text{ .}\label{22.2.34}
+\end{equation}
+这样, 我们就必须在有效拉格朗日量中引入一项, 使得它在手征变换(\ref{22.2.33})下拥有变换(\ref{22.2.12}), 即
+\begin{equation}
+\delta\mathscr{L}_{\text{eff}}(x)=\alpha\mathscr{A}(x)
+=-\frac{N_{c}e^{2}}{48\uppi^{2}}\,\epsilon_{\mu\nu\rho\sigma}\,F^{\mu\nu}(x)F^{\rho\sigma}(x)\alpha
+\text{ .}\label{22.2.35}
+\end{equation}
+在变换(\ref{22.2.33})下, $\pi$介子场的变换是
+\begin{equation}
+\delta\pi^{0}=\alpha F_{\pi} \text{ ,}\label{22.2.36}
+\end{equation}
+其中$F_{\pi}=184\,\mathrm{MeV}$是第19章引入的$\pi$介子衰变振幅. (我们对对称性生成元的定义是$\gamma_{5}\tau_{3}=2\gamma_{5}t_{3}$, 这固定了该常数的归一化约定.) 由此得出, 我们在拉格朗日量中必须要引入的项是
+\begin{equation}
+\frac{\pi^{0}(x)\mathscr{A}(x)}{F_{\pi}}
+=-\frac{N_{c}e^{2}}{48\uppi^{2}F_{\pi}}\,\epsilon_{\mu\nu\rho\sigma}\,F^{\mu\nu}(x)F^{\rho\sigma}(x)\,\pi^{0}(x)
+\text{ .}\label{22.2.37}
+\end{equation}
+$\pi^{2}\to2\gamma$衰变的有效作用量, 它的一般公式是(\ref{22.1.1}), 比较这两个式子, 我们发现方程(\ref{22.1.1})中的$g$必须有如下的值\cite{5}
+\begin{equation}
+g=\frac{N_{c}e^{2}}{48\uppi^{2}F_{\pi}} \text{ .}\label{22.2.38}
+\end{equation}
+(这表明我们上一节的粗略估计仅比这个结果大$6/N_{c}$倍. 因此, $\pi$介子衰变速率预期是
+\begin{equation}
+\Gamma(\pi^{0}\to2\gamma)=\frac{N_{c}\alpha^{2}m_{\pi}^{3}}{144\uppi^{3}F_{\pi}^{2}}
+=\biggl(\frac{N_{c}}{3}\biggr)^{2}\times 1.11\times 10^{16}\,\mathrm{s}^{-1}\text{ .} \label{22.2.39}
+\end{equation}
+观测到的速率是$\Gamma(\pi^{0}\to2\gamma)=(1.19\pm0.08)\times10^{16}\,\mathrm{s}^{-1}$, 仅当$N_{c}=3$时, 理论结果(\ref{22.2.39})才与其符合的非常好. 这一计算的成功是夸克色有三个的首批坚实证据中的一个.
+
+引人注目的是, 正如我们在上一节所看到的, 在发现$\pi^{0}$不久之后, Steinberger从单质子圈图中计算了$g$, 获得结果$g=e^{2}G/32\uppi^{2}m_{N}$, 其中$G$是赝标量$\pi$介子-核子耦合常数. 如果我们用$g_{A}=1$的Goldberger-Treiman关系令$G=2m_{N}/2F_{\pi}$, 这一结果就与$N_{c}=3$的方程(\ref{22.2.38})精确一致. 正确结果要比Steinberger的结果大一个因子$g_{A}^{2}=1.56$. Steinberger距离正确结果如此之近的原因是, 这个结果由三角反常决定, 而三角反常正比于$\operatorname{tr}\{q^{2}\tau_{3}\}$. 对于单个质子, 这个迹的值是$e^{2}$, 这与前面发现的三个夸克色所给出的夸克值相同.
+
+\subsection*{* * *}
+
+正如之间所提及的, 通过使用欧几里得时空下的路径积分, 我们可以给出这个反常一个更加严格的推导. (在第23章的附录会简要讨论欧几里得路径积分的使用方法.) 我们引入欧几里得4-坐标$x_{4}=\mi x^{0}=-\mi x_{0}$, 以及相应的, $\partial_{4}=-\mi\partial_{0}$, $\gamma_{4}\equiv\mi\gamma^{0}$和$A_{4\alpha}=\mi A_{\alpha}^{0}$. 那么, 时空体积元就表示成$\dif^{4}x=-\mi(\dif^{4}x)_{E}$, 其中$(\dif^{4}x)_{E}$是欧几里得体积元$(\dif^{4}x)_{E}=\dif x_{1}\dif x_{2}\dif x_{3}\dif x_{4}$. 在欧几里得时空中, 场$\psi(x)$和$\bar{\psi}(x)$必须视为完全独立的, 定域手征变换定义成$\delta\psi(x)=\mi\alpha(x)t\gamma_{5}\psi(x),\:\delta\bar{\psi}(x)=-\mi\alpha(x)%
+\bar{\psi}(x)t\gamma_{5}$. 这样, 测度的变换还是由方程(\ref{22.2.10})给出, 而反常函数$\mathscr{A}(x)$还是由方程(\ref{22.2.11})给出. 像之前一样, 引入正规化子函数, 这再次给出$\mathscr{A}(x)$的公式(\ref{22.2.13}). 欧几里得方法的一个巨大优点在于, 由于$x_{4}$和$A_{4\alpha}$是实的, 方程(\ref{22.2.13})中的Dirac算符$\mi\slashed{D}$就是厄米的:
+\begin{equation}
+\mi\slashed{D}=\Big[\mi\partial_{i}+t_{\alpha}A_{i\alpha}\Big]\gamma_{i}\text{ ,} \label{22.2.40}
+\end{equation}
+其中$i,j$等在这里要对$1,2,3,4$求和. 因此, 它有正交旋量本征函数$\varphi_{\kappa}(x)$:
+\begin{equation}
+\mi\slashed{D}\varphi_{\kappa} =\lambda_{\kappa}\varphi_{\kappa}\text{ ,} \label{22.2.41}
+\end{equation}
+\begin{equation}
+\int(\dif^{4}x)_{E}\,\varphi^{\dag}_{\kappa}(x)\varphi_{\kappa^{\prime}}(x)=\delta_{\kappa\kappa^{\prime}}\text{ ,}\label{22.2.42}
+\end{equation}
+其中$\lambda_{\kappa}$是实本征值. 贯穿本节始终, 我们还假定$t$与$\mi\slashed{D}$对易, 这样我们就可以选择$\varphi_{\kappa}$使得$t\varphi_{\kappa}=t_{\kappa}\varphi_{\kappa}$. 这些本征函数满足完备关系
+\begin{equation}
+\sum_{\kappa}\varphi_{\kappa}(x)\varphi_{\kappa}^{\dag}(y)=\delta^{4}(x-y)1\text{ ,} \label{22.2.43}
+\end{equation}
+其中``1''是$4\times 4$矩阵. 因此, 反常函数现在可以表示成一个显然收敛的和的极限
+\begin{align}
+\mathscr{A}(x)&=-2\lim\nolimits_{M\to\infty}\operatorname{Tr}\Big\{\gamma_{5}\,t\,
+f(-\slashed{D}^{2}/M^{2})\sum_{\kappa}\varphi_{\kappa}(x)\varphi^{\dag}_{\kappa}(x)\Big\} \nonumber \\
+&=-2\lim\nolimits_{M\to\infty}\sum_{\kappa}t_{\kappa}\,f(\lambda_{\kappa}^{2}/M^{2})
+\Bigl(\varphi^{\dag}_{\kappa}(x)\gamma_{5}\varphi_{\kappa}(x)\Bigr)\text{ .}\label{22.2.44}
+\end{align}
+
+利用我们推导反常函数公式(\ref{22.2.24})的方法, 我们可以在这里证明
+\begin{equation}
+\mathscr{A}(x)=\frac{1}{16\uppi^{2}}\,\epsilon^{E}_{ijkl}\,F_{ij\alpha}\,F_{kl\beta}\,
+\operatorname{tr}\{t_{\alpha}t_{\beta}t\} \text{ ,} \label{22.2.45}
+\end{equation}
+其中$\epsilon_{ijkl}^{E}$是$\epsilon_{1234}^{E}=+1$的全反对称张量. (方程(\ref{22.2.24})和(\ref{22.2.45})之间的符号差异的来源是, 与方程(\ref{22.2.24})相比, 方程(\ref{22.2.45})要少两个$\mi$因子: 一个$\mi$因子来自于方程(\ref{22.2.23}), 原因是
+\[
+\operatorname{tr}_{\mathrm{D}}\{\gamma_{5}[\gamma_{i},\gamma_{j}][\gamma_{k},\gamma_{l}]\}=16\,\epsilon_{ijkl}^{E}\:,
+\]
+而另一是因为方程(\ref{22.2.20})中的$\dif^{4}k$被换成了$(\dif^{4}k)_{E}$.)
+\[
+\operatorname{tr}_{\mathrm{D}}\{\gamma_{5}[\gamma_{i},\gamma_{j}][\gamma_{k},\gamma_{l}]\}=16\,\epsilon^{E}_{ijkl}
+\text{ ,}
+\]
+
+现在, 对于$\mi\slashed{D}$和$t$的任意给定本征函数$\varphi_{\kappa}(x)$, 只要它的本征值$\lambda_{\kappa}\neq0$, 就存在另一个归一化本征函数$\varphi_{\kappa^{-}}$, 它的本征值是$\lambda_{\kappa^{-}}=-\lambda_{\kappa}$和$t_{\kappa}$, 这个本征函数由$\varphi_{\kappa^{-}}(x)=\gamma_{5}\varphi_{\kappa}(x)$给出. (回忆, 在本书所使用的符号约定中, $\gamma_{5}$是厄米矩阵$\gamma_{5}=\mi\gamma_{1}\gamma_{2}\gamma_{3}\gamma_{0}=\gamma{1}\gamma{2}\gamma{3}\gamma{4}$.) 因为$\varphi_{\kappa}(x)$和$\varphi_{\kappa^{-}}(x)$是同一算符的两个本征值不同的本征矢, 它们互相正交, 所以$\int\dif^{4}x\:\Bigl(\varphi_{\kappa}^{\dag}(x)\gamma_{5}\varphi_{\kappa}(x)\Bigr)=0$. 这使得剩下的是对$\lambda_{\kappa}=0$的本征函数求和. 这些本征函数一般不会两两配对; 相反, 由于$\gamma_{5}$与$\mi\slashed{D}$反对易, 它们可以选成$\mi\slashed{D}${\kai{和}}$\gamma_{5}$的同步正交函数$\varphi_{u}$和$\varphi_{v}$, 使得对于$\mi\slashed{D}$, 它们的本征值为零, 对于$\gamma_{5}$,它们的本征值分别是$+1$和$-1$.
+\begin{equation}
+\begin{split}
+\mi\slashed{D}\varphi_{u}&=0\text{ ,} \qquad\qquad \gamma_{5}\varphi_{u}=\varphi_{u}\text{ ,} \\
+\mi\slashed{D}\varphi_{v}&=0\text{ ,}\qquad\qquad \gamma_{5}\varphi_{v}=-\varphi_{v}\text{ .}
+\end{split} \label{22.2.46}
+\end{equation}
+利用$f(0)=1$的性质, 方程(\ref{22.2.44})变成
+\begin{equation}
+\mathscr{A}(x)=-2\left[\sum_{u}t_{u}\Bigl(\varphi^{\dag}_{u}(x)\varphi_{u}(x)\Bigr)
+-\sum_{v}t_{v}\Bigl(\varphi^{\dag}_{v}(x)\varphi_{v}(x)\Bigr)\right] \text{ .} \label{22.2.47}
+\end{equation}
+现在, 既然$\varphi_{u}$和$\varphi_{v}$是像方程(\ref{22.2.42})中那样归一化的, 方程(\ref{22.2.47})的积分给出
+\begin{equation}
+\int(\dif^{4}x)_{E}\,\mathscr{A}(x)=-2\Big[\sum_{u}t_{u}
+-\sum_{v}t_{v}\Big] \text{ ,} \label{22.2.48}
+\end{equation}
+其中对$u$和$v$的求和分别跑遍算符$\mi\slashed{D}$的左手模和右手模. 特别地, 对于$t$是单位矩阵的特殊情况, 通过方程(\ref{22.2.45}), 它关联了规范场的一个泛函与Dirac算符手征性确定的零模的个数, 这个关系表示成:
+\begin{equation}
+-\frac{1}{32\uppi^{2}}\int(\dif^{4}x)_{E}\,\epsilon^{E}_{ijkl}\,F_{\alpha ij}\,F_{\beta kl}\,
+\operatorname{tr}\Big[t_{\alpha}t_{\beta}\Big]=n_{+}-n_{-}\text{ ,} \label{22.2.49}
+\end{equation}
+其中, 这里的$n_{\pm}$是$\slashed{D}$的零模个数, 它对于$\gamma_{5}$有本征值$\pm1$. 这是著名的\emph{Atiyah-Singer}{\kai{指标定理}}({\kai{阿蒂亚-辛格指标定理}}).\cite{6a} 此外, 它表明了, 随着规范场的变化, 方程(\ref{22.2.49})左边的积分不能光滑地变化, 它的变化只能是一个整数, 所以这个积分只能依赖于规范场的拓扑. 它与拓扑的关系将在23.5节进行讨论.
+
+\section{反常的直接计算: 一般情况}
+
+我们在22.2节看到, 在量子色动力学这样的规范理论中，如何用漂亮的Fujikawa方法计算手征对称性的反常, 在这种规范理论中, 规范相互作用是非手征的并且费米子也不守恒. 这一方法也可用来处理更一般的问题, 但是在那种情况, 它就没有那么直接了.\cite{7} 在本节, 我们将通过直接计算来处理反常, 这也是处理反常的最初方法. 这将会为反常提供另一个有用的视角, 随之, 这使得我们在讨论一般理论中的反常是不会有太多额外的麻烦.
+
+为了处理这个一般情况, 我们将把{\kai{所有}}左手费米场(包括反费米子, 在这里作区分是有意义的)写进单个列矢量$\chi$中. 例如$\psi$是包含所有夸克场和轻子场(与之对照的就是反夸克和反费米子)的列矢量, 那么
+\begin{equation}
+\chi \equiv \left[
+\begin{array}{c}
+\frac{1}{2}(1+\gamma _{5})\psi  \\
+\frac{1}{2}[\beta \mathscr{C}(1-\gamma _{5})\psi ]^{\ast }%
+\end{array}%
+\right] =\left[
+\begin{array}{c}
+\frac{1}{2}(1+\gamma _{5})\psi  \\
+\frac{1}{2}(1+\gamma _{5})\beta \mathscr{C}\psi ^{\ast }%
+\end{array}%
+\right] \text{ ,}  \label{22.3.1}
+\end{equation}%
+其中$\mathscr{C}$是5.4节定义的矩阵
+\[
+\mathscr{C}\gamma _{\mu }^{\text{T}}\mathscr{C}^{-1}=-\gamma _{\mu }\text{ ,}
+\]%
+引入这个矩阵是为了让$\chi$的所有分量均在Lorentz群的同一个$(1/2,0)$表示下. 在费米子数(例如, 重子数或重子数减去轻子数)守恒的无限小规范变换下:
+\begin{equation}
+\delta \psi =\mi\theta _{\alpha }\Big[ \tfrac{1}{2}(1+\gamma _{5})t_{\alpha
+}^{L}+\tfrac{1}{2}(1-\gamma _{5})t_{\alpha }^{R}\Big] \psi   \label{22.3.2}
+\end{equation}%
+这个列矢量的变换是
+\begin{equation}
+\delta \chi =\mi\epsilon _{\alpha }T_{\alpha }\chi \text{ ,}  \label{22.3.3}
+\end{equation}%
+其中\begin{equation}
+T_{\alpha }=\left[
+\begin{array}{cc}
+t_{\alpha }^{L} & 0 \\
+0 & -t_{\alpha }^{R\ast }%
+\end{array}%
+\right] =\left[
+\begin{array}{cc}
+t_{\alpha }^{L} & 0 \\
+0 & -(t_{\alpha }^{R})^{\text{T}}%
+\end{array}%
+\right] \text{ .}  \label{22.3.4}
+\end{equation}%
+在这里, 我们不会将自身限制在那些费米子数守恒的理论中, 所以现在的$T_{\alpha}$将是规范群的任意厄米表示, 不一定是分块对角形式(\ref{22.3.4}). 目前, 我们只考察无质量费米子, 随后会回到费米子质量所产生的影响.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=5.0in]{221}
+ \caption{这两个三角图给出了流$j^{\mu}_{\alpha}(x)$中的反常. 实线是费米子; 波浪线代表的是与流耦合的虚拟规范场.}
+ \label{fig:22.1}
+\end{figure}
+
+我们在这里所考察的是单圈三点函数:
+\begin{equation}
+\Gamma _{\alpha \beta \gamma }^{\mu \nu \rho }(x,y,z)\equiv \langle
+T\{j_{\alpha }^{\mu }(x),j_{\beta }^{\nu }(y),j_{\gamma }^{\rho
+}(x)\}\rangle _{\text{VAC}}\text{ ,}  \label{22.3.5}
+\end{equation}%
+其中$j_{\alpha}^{\mu}$是费米子流, 写成自由场则是:
+\begin{equation}
+j_{\alpha }^{\mu }=-\mi\bar{\chi}T_{\alpha }\gamma ^{\mu }\chi \text{ .}
+\label{22.3.6}
+\end{equation}%
+图\ref{fig:22.1}的两个Feynman图给出
+\begin{align}
+\Gamma _{\alpha \beta \gamma }^{\mu \nu \rho }(x,y,z) &=-\mi\operatorname{Tr}\left[
+S(x-y)T_{\beta }\gamma ^{\nu }P_{L}S(y-z)T_{\gamma }\gamma ^{\rho
+}P_{L}S(z-x)T_{\alpha }\gamma ^{\mu }P_{L}\right]   \nonumber \\
+&\quad-\mi\operatorname{Tr}\left[ S(x-z)T_{\gamma }\gamma ^{\rho }P_{L}S(z-y)T_{\beta }\gamma
+^{\nu }P_{L}S(y-x)T_{\alpha }\gamma ^{\mu }P_{L}\right] \text{ ,}
+\label{22.3.7}
+\end{align}%
+其中$P_{L}$是左手费米场上的投影算符
+\begin{equation}
+P_{L}=\left( \frac{1+\gamma _{5}}{2}\right)   \label{22.3.8}
+\end{equation}%
+而$S(x)$是无质量费米场的传播子:
+\begin{equation}
+S(x)=\frac{-\mi}{(2\uppi) ^{4}}\int \dif^{4}p\,\left( \frac{-\mi\slashed{p}}{p^{2}-\mi\epsilon }%
+\right) \me^{\mi p\cdot x}\text{ .}  \label{22.3.9}
+\end{equation}%
+(关于Feynman规则这一用法的进一步注解, 参看本节末尾.) 收集所有的因子, 方程(\ref{22.3.7})现在写做
+\begin{align}
+&\Gamma _{\alpha \beta \gamma }^{\mu \nu \rho }(x,y,z) =\frac{\mi}{(2\uppi
+)^{12}}\int \dif^{4}k_{1}\,\dif^{4}k_{2}\,\me^{-\mi(k_{1}+k_{2})\cdot x}\,\me^{\mi k_{1}\cdot
+y}\,e^{\mi k_{2}\cdot z}\int \dif^{4}p  \nonumber \\
+&\times \Bigg\{\operatorname{tr}\left[ \frac{\slashed{p}-\slashed{k}_{1}+\slashed{a}}{%
+(p-k_{1}+a)^{2}-\mi\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{a}}{%
+(p+a)^{2}-\mi\epsilon }\gamma ^{\rho }\frac{\slashed{p}+\slashed{k}_{2}+%
+\slashed{a}}{(p+k_{2}+a)^{2}-\mi\epsilon }\gamma ^{\mu }\frac{1+\gamma _{5}}{2}%
+\right]   \nonumber \\
+&\quad\times \operatorname{tr}\big[ T_{\beta }\,T_{\gamma }\,T_{\alpha }\big]   \nonumber \\
+&+\operatorname{tr}\bigg[ \frac{\slashed{p}-\slashed{k}_{2}+\slashed{b}}{%
+(p-k_{2}+b)^{2}-\mi\epsilon }\gamma ^{\rho }\frac{\slashed{p}+\slashed{b}}{%
+(p+b)^{2}-\mi\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{k}_{1}+%
+\slashed{b}}{(p+k_{1}+b)^{2}-\mi\epsilon }\gamma ^{\mu }\frac{1+\gamma _{5}}{2}%
+\bigg]   \nonumber \\
+&\quad\times \operatorname{tr}\big[T_{\gamma }\,T_{\beta }\,T_{\alpha }\big]\Bigg\}\text{ ,}  \label{22.3.10}
+\end{align}
+其中, 取决于变量, $\operatorname{tr}$分别指对Dirac指标或群指标求迹. 我们引入两个任意的4-矢常数$a$和$b$是因为, 尽管表达式(\ref{22.3.10})是收敛的, 也随之独立于内线所携带的动量,  但是在计算$\partial_{\mu}\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}$时要处理一个发散积分, 而这个积分却会依赖标记内线的动量. 我们将会看到, 选择$a^{\mu}$和$b^{\mu}$的自由度对应于将反常从一个流移向另一个流的自由度, 但这并不会使得我们能够同时消掉这些流上的反常.
+
+为了取出方程(\ref{22.3.10})中的发散, 我们使用恒等式
+\[
+\slashed{k}_{1}+\slashed{k}_{2}=(\slashed{p}+\slashed{k}_{2}+\slashed{a})-(%
+\slashed{p}-\slashed{k}_{1}+\slashed{a})=(\slashed{p}+\slashed{k}_{1}+%
+\slashed{b})-(\slashed{p}-\slashed{k}_{2}+\slashed{b})
+\]%
+并发现
+\begin{align}
+&\frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma }^{\mu \nu
+\rho }(x,y,z) =\frac{1}{(2\uppi )^{12}}\int
+\dif^{4}k_{1}\,\dif^{4}k_{2}\,\me^{-\mi(k_{1}+k_{2})\cdot x}\,\me^{\mi k_{1}\cdot
+y}\,\me^{\mi k_{2}\cdot z}\int \dif^{4}p  \nonumber \\
+&\times \Bigg\{\operatorname{tr}\big[ T_{\beta }\,T_{\gamma }\,T_{\alpha }\big]\, \operatorname{tr}\left[ \frac{%
+\slashed{p}-\slashed{k}_{1}+\slashed{a}}{(p-k_{1}+a)^{2}-\mi\epsilon }\gamma
+^{\nu }\frac{\slashed{p}+\slashed{a}}{(p+a)^{2}-\mi\epsilon }\gamma ^{\rho }%
+\frac{1+\gamma _{5}}{2}\right]   \nonumber \\
+&-\operatorname{tr}\big[ T_{\beta }\,T_{\gamma }\,T_{\alpha }\big]\, \operatorname{tr}\left[ \frac{%
+\slashed{p}+\slashed{a}}{(p+a)^{2}-\mi\epsilon }\gamma ^{\rho }\frac{%
+\slashed{p}+\slashed{k}_{2}+\slashed{a}}{(p+k_{2}+a)^{2}-\mi\epsilon }\gamma
+^{\nu }\frac{1+\gamma _{5}}{2}\right]   \nonumber \\
+&+\operatorname{tr}\big[T_{\gamma }\,T_{\beta }\,T_{\alpha }\big]\,\operatorname{tr}\bigg[ \frac{\slashed{p}-\slashed{k}%
+_{2}+\slashed{b}}{(p-k_{2}+b)^{2}-\mi\epsilon }\gamma ^{\rho }\frac{\slashed{p}%
++\slashed{b}}{(p+b)^{2}-\mi\epsilon }\gamma ^{\nu }\frac{1+\gamma _{5}}{2}%
+\bigg]   \nonumber \\
+&-\operatorname{tr}\big[T_{\gamma }\,T_{\beta }\,T_{\alpha }\big]\,\operatorname{tr}\bigg[ \frac{\slashed{p}+\slashed{b}}{%
+(p+b)^{2}-\mi\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{k}_{1}+%
+\slashed{b}}{(p+k_{1}+b)^{2}-\mi\epsilon }\gamma ^{\rho }\frac{1+\gamma _{5}}{2%
+}\bigg] \Bigg\}  \label{22.3.11}
+\end{align}%
+现在, 将三点函数分成群指标的对称项和反对称项将会方便之后的处理, 方法是借助如下的公式
+\[
+\operatorname{tr}\big[ T_{\beta }\,T_{\gamma }\,T_{\alpha }\big] =D_{\alpha \beta \gamma }+%
+\tfrac{1}{2}\mi N\,C_{\alpha \beta \gamma }
+\]%
+以及\[
+\operatorname{tr}\big[T_{\gamma }\,T_{\beta }\,T_{\alpha }\big]=D_{\alpha \beta \gamma }-\tfrac{1}{2}%
+\mi N\,C_{\alpha \beta \gamma }\text{ ,}
+\]%
+其中$D_{\alpha\beta\gamma}$是全反对称量
+\begin{equation}
+D_{\alpha \beta \gamma }=\tfrac{1}{2}\operatorname{tr}[\{T_{\alpha },T_{\beta }\}\,T_{\gamma }]
+\label{22.3.12}
+\end{equation}%
+而结构常数$C_{\alpha\beta\gamma}$的系数由下式定义
+\[
+\operatorname{tr}[T_{\alpha }T_{\beta }]=N\,\delta _{\alpha \beta }\text{ .}
+\]
+
+关于群指标反对称的那些项一般不为零, 但是它们不代表对称性的破坏. 就像在10.4节推导Ward恒等式那样, 对于矩阵元(\ref{22.3.5})中的发散做一形式计算, 编时乘积中暗含了$\delta$-函数, 在这个计算中, 我们会遇到它的时间导数的贡献, 它等于
+\begin{align}
+\left[\frac{\partial}{\partial x^{\mu}}\Gamma^{\mu\nu\rho}_{\alpha\beta\gamma}(x,y,z)\right]_{\text{formal}}
+&=-\mi C_{\alpha\beta\delta}\delta^{4}(x-y)\langle j^{\nu}_{\delta}(y)j^{\rho}_{\gamma}(z)\rangle_{\text{VAC}} \nonumber \\
+&\quad -\mi C_{\alpha\gamma\delta}\delta^{4}(x-z)\langle j^{\nu}_{\beta}(y)j^{\rho}_{\delta}(z)\rangle_{\text{VAC}} \text{ .} \label{22.3.13}
+\end{align}
+不难看到, 方程(\ref{22.3.11})中的反对称项恰恰再生了方程(\ref{22.3.13}). 反常包含在方程(\ref{22.3.11})的对称部分中:
+\begin{align}
+&\left[ \frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma
+}^{\mu \nu \rho }(x,y,z)\right] _{\text{anom}} =\frac{1}{(2\uppi )^{12}}%
+D_{\alpha \beta \gamma }\int \dif^{4}k_{1}\,\dif^{4}k_{2}\,\me^{-\mi(k_{1}+k_{2})\cdot
+x}\,\me^{\mi k_{1}\cdot y}\,\me^{\mi k_{2}\cdot z}  \nonumber \\
+&\times \int \dif^{4}p\,\Bigg\{\operatorname{tr}\left[ \frac{\slashed{p}-\slashed{k}_{1}+\slashed{a}%
+}{(p-k_{1}+a)^{2}-\mi\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{a}}{%
+(p+a)^{2}-\mi\epsilon }\gamma ^{\rho }\frac{1+\gamma _{5}}{2}\right]
+\nonumber \\
+&\qquad\qquad-\operatorname{tr}\left[ \frac{\slashed{p}+\slashed{a}}{(p+a)^{2}-\mi\epsilon }\gamma
+^{\rho }\frac{\slashed{p}+\slashed{k}_{2}+\slashed{a}}{(p+k_{2}+a)^{2}-i%
+\epsilon }\gamma ^{\nu }\frac{1+\gamma _{5}}{2}\right]   \nonumber \\
+&\qquad\qquad+\operatorname{tr}\bigg[ \frac{\slashed{p}-\slashed{k}_{2}+\slashed{b}}{%
+(p-k_{2}+b)^{2}-\mi\epsilon }\gamma ^{\rho }\frac{\slashed{p}+\slashed{b}}{%
+(p+b)^{2}-\mi\epsilon }\gamma ^{\nu }\frac{1+\gamma _{5}}{2}\bigg]   \nonumber
+\\
+&\qquad\qquad-\operatorname{tr}\bigg[ \frac{\slashed{p}+\slashed{b}}{(p+b)^{2}-\mi\epsilon }\gamma ^{\nu
+}\frac{\slashed{p}+\slashed{k}_{1}+\slashed{b}}{(p+k_{1}+b)^{2}-\mi\epsilon }%
+\gamma ^{\rho }\frac{1+\gamma _{5}}{2}\bigg] \Bigg\}\text{ .}  \label{22.3.14}
+\end{align}%
+将第一个迹和第四个迹合在一起, 第二个迹和第三个迹合在一起, 它可以变成如下的形式
+\begin{align}
+&\left[ \frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma
+}^{\mu \nu \rho }(x,y,z)\right] _{\text{anom}} =\frac{1}{(2\uppi )^{12}}%
+D_{\alpha \beta \gamma }\int \dif^{4}k_{1}\,\dif^{4}k_{2}\,\me^{-\mi(k_{1}+k_{2})\cdot
+x}\,\me^{\mi k_{1}\cdot y}\,\me^{\mi k_{2}\cdot z}  \nonumber \\
+&\qquad\times \Bigg\{\operatorname{tr}\left[ \gamma ^{\kappa }\gamma ^{\nu }\gamma ^{\lambda }\gamma
+^{\rho }\frac{1+\gamma _{5}}{2}\right] I_{\kappa \lambda
+}(a-b-k_{1},b,b+k_{1})  \nonumber \\
+&\qquad\quad+\operatorname{tr}\left[ \gamma ^{\kappa }\gamma ^{\rho }\gamma ^{\lambda }\gamma ^{\nu }%
+\frac{1+\gamma _{5}}{2}\right] I_{\kappa \lambda }(b-a-k_{2},a,a+k_{2})\Bigg\}%
+\text{ ,}  \label{22.3.15}
+\end{align}%
+其中\begin{align}
+I_{\kappa \lambda }(k,c,d) &\equiv \int \dif^{4}p\,\Big[ f_{\kappa \lambda
+}(p+k,c,d)-f_{\kappa \lambda }(p,c,d)\Big]   \label{22.3.16} \\
+f_{\kappa \lambda }(p,c,d) &\equiv \frac{(p+c)_{\kappa }(p+d)_{\lambda }}{%
+[(p+c)^{2}-\mi\epsilon ][(p+d)^{2}-\mi\epsilon ]}\text{ .}  \label{22.3.17}
+\end{align}%
+为了计算这些积分, 考察函数$f_{\kappa\lambda}(p+k,c,d)$关于$k$的幂级数展开:
+\[
+f_{\kappa \lambda }(p+k,c,d)=\sum_{n=0}^{\infty }\frac{1}{n!}k^{\mu
+_{1}}\cdots k^{\mu _{n}}\frac{\partial ^{n}f_{\kappa \lambda }(p,c,d)}{%
+\partial p^{\mu _{1}}\cdots \partial p^{\mu _{n}}}\text{ .}
+\]
+在方程(\ref{22.3.16})中, 零阶项$f(p,c,d)$抵消了. 除此之外的其它所有项是对$p$的导数的积分, 因此, 在Wick旋转后,  它可以写成对一个很大3-球面的面积分, 记3-球面的半径为$P$. 对$f$的$n$阶导数而言, 它会给出行为为$P^{-2-(n-1)}$的函数的面积分, 而半径为$P$的3-球面, 它的面积会趋于$P^{3}$, 所以, 在$P\to\infty$时, 唯一有贡献的项是那些$n=1$和$n=2$的项:
+\begin{equation}
+I_{\kappa \lambda }(k,c,d)=k^{\mu }\int \dif^{4}p\,\frac{\partial f_{\kappa
+\lambda }(p,c,d)}{\partial p^{\mu }}+\tfrac{1}{2}k^{\mu }k^{\nu }\int \dif^{4}p\,%
+\frac{\partial ^{2}f_{\kappa \lambda }(p,c,d)}{\partial p^{\mu }\partial
+p^{\nu }}\text{ .}  \label{22.3.18}
+\end{equation}%
+那么, 直接计算给出
+\begin{equation}
+I_{\kappa \lambda }(k,c,d)=\tfrac{1}{6}\mi\uppi^{2}\Big[ 2k_{\lambda }c_{\kappa
+}+2k_{\kappa }d_{\lambda }-k_{\lambda }d_{\kappa }-k_{\kappa }c_{\lambda
+}-\eta _{\kappa \lambda }\,k\cdot (k+c+d)\Big] \text{ .}  \label{22.3.19}
+\end{equation}%
+
+我们现在必须对方程(\ref{22.3.15})迹中的项分别进行考察, 它们分别来自投影矩阵$\frac{1}{2}(1+\gamma_{5})$中的$1$和$\gamma_{5}$. 来自$1$的项包含$\operatorname{tr}[\gamma^{\kappa}\gamma^{\nu}\gamma^{\lambda}\gamma^{\rho}]$, 它分别关于$\kappa$和$\lambda$以及$\nu$和$\rho$是对称的, 所以这里的积分以如下的组合出现
+\begin{align*}
+&I_{\kappa \lambda }(a-b-k_{1},b,b+k_{1})+I_{\lambda \kappa
+}(a-b-k_{1},b,b+k_{1}) \\
+&+I_{\kappa \lambda }(b-a-k_{2},a,a+k_{2})+I_{\lambda \kappa
+}(b-a-k_{2},a,a+k_{2})
+\end{align*}%
+利用方程(\ref{22.3.19}), 不难看到, 当且仅当我们选择未定常数矢量使得
+\begin{equation}
+a=-b\text{ ,}  \label{22.3.20}
+\end{equation}%
+这个积分才为零. 更进一步,由于在$(\partial/\partial y^{\nu})\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}(x,y,z)$中, $a$和$b$会被换成$a'=k_{2}+a$和$b'=-k_{2}+b$, 而在$(\partial/\partial z^{\rho})\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}(x,y,z)$中, $a$和$b$会被换成$a^{\prime\prime}=k_{1}+a$和$b^{\prime\prime}=-k_{1}+b$, 那么, 取$a=-b$的同时也确保了$a'=-b'$和$a^{\prime\prime}=-b^{\prime\prime}$, 所以这个选择避免了所有三个流的非手征反常.
+
+剩下的项是迹中含$\gamma_{5}$的项. 它是全返对称的
+\begin{equation}
+\operatorname{tr}\left[ \gamma ^{\kappa }\gamma ^{\nu }\gamma ^{\lambda }\gamma ^{\rho
+}\gamma _{5}\right] =-4\mi\,\epsilon ^{\kappa \nu \lambda \rho }\text{ ,}
+\label{22.3.21}
+\end{equation}%
+其中$\epsilon ^{\kappa \nu \lambda \rho }$是$\epsilon^{0123}=1$的全反对称张量. 在方程(\ref{22.3.15})使用上式以及$a=-b$, 这给出
+\begin{align}
+\left[ \frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma
+}^{\mu \nu \rho }(x,y,z)\right] _{\text{anom}} &=\frac{2}{(2\uppi )^{12}}%
+D_{\alpha \beta \gamma }\int \dif^{4}k_{1}\,\dif^{4}k_{2}\,\me^{-\mi(k_{1}+k_{2})\cdot x}
+\nonumber \\
+&\quad\times \me^{\mi k_{1}\cdot y}\,\me^{\mi k_{2}\cdot z}\,\uppi^{2}\epsilon ^{\mu \nu
+\lambda \rho }a_{\kappa}\,(k_{1}+k_{2})_{\lambda }\text{ .}  \label{22.3.22}
+\end{align}
+
+我们可以通过取$a\propto k_{1}+k_{2}$来消掉流$J^{\mu}_{\alpha}(x)$中的反常(\ref{22.3.22}). 尽管这一步是可行的, 但是它并不会同时消掉所有反常; 反常将会出现在$(\partial/\partial y^{\nu})\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}(x,y,z)$或$(\partial/\partial z^{\rho})\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}(x,y,z)$中. 这一问题的对称性表明, 当且仅当$(k_{2}+a)-(-k_{2}+b)\propto k_{1}$时, 换句话说$a+k_{2}\propto k_{1}$时, $(\partial/\partial y^{\nu})\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}(x,y,z)$中的反常才会消失, 而要使$(\partial/\partial z^{\rho})\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}(x,y,z)$不出现反常, 则要$(-k_{1}+a)-(k_{1}+b)\propto k_{2}$, 即$a-k_{1}\propto k_{2}$. 选择$a^{\mu}$使得它满足其中的两个条件是可能的, 但对于不平行的$k_{1}$和$k_{2}$, 显然不可能同时满足三个条件------$a\propto k_{1}+k_{2}$, $a+k_{2}\propto k_{1}$和$a-k_{1}\propto k_{2}$. (例如, 前两个条件会给出$a=-k_{1}-k_{2}$, 这与第三个条件矛盾.) 我们由此得出这样的结论: 尽管我们在决定那个流上出现反常有一定的自由, {\kai{但是$D_{\alpha\beta\gamma}$不为零则确定地表明$J^{\mu}_{\alpha}(x)$, $J^{\nu}_{\beta}(y)$和$J^{\rho}_{\gamma}(z)$中至少有一个流存在反常.}} 这是这些计算的主要结果之一, 在下一节, 由它出发进行拓展, 会给出对规范场所含物质的约束.
+
+我们已然看到, 反常的计算依赖于我们对偏移矢量$a^{\mu}$的选择. 不幸的是, 没有一个选择始终是令人满意的, 所以我们必须针对手中问题的具体特征选择$a^{\mu}$.
+
+在一类很重要的问题中, $J^{\mu}_{\alpha}(x)$是整体对称性的流, 而$J^{\nu}_{\beta}(y)$和$J^{\rho}_{\gamma}(z)$是规范对称性的流, 即, 与规范场耦合的流. (我们在上一节处理过这样的问题.) 在这样的情况中, 我们{\kai{必须}}要选择$a^{\mu}$使得反常仅在$J^{\mu}_{\alpha}(x)$中, 而$J^{\nu}_{\beta}(y)$和$J^{\rho}_{\gamma}(z)$不能出现反常. 正如我们之前所发现的, 这相当于要求$a+k_{2}\propto k_{1}$以及$a-k_{1}\propto k_{2}$, 这给出唯一的结果
+\begin{equation}
+a=k_{1}-k_{2} \text{ .} \label{22.3.23}
+\end{equation}
+对$a^{\mu}$取这个值, 反常(\ref{22.3.22})是
+\begin{align}
+\left[ \frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma
+}^{\mu \nu \rho }(x,y,z)\right] _{\text{anom}} &=\frac{1}{(2\uppi )^{12}}%
+D_{\alpha \beta \gamma }\int \dif^{4}k_{1}\,\dif^{4}k_{2}\,\me^{-\mi(k_{1}+k_{2})\cdot x}\,
+\me^{\mi k_{1}\cdot y}\,\me^{\mi k_{2}\cdot z}
+\nonumber \\
+&\quad\times \,4\uppi^{2}\epsilon ^{\mu \nu
+\lambda \rho }k_{1\kappa}k_{2\lambda}\text{ .}  \nonumber \\
+&=-\frac{1}{4\uppi^{2}}D_{\alpha\beta\gamma}\epsilon^{\kappa\nu\lambda\rho}
+\frac{\partial\delta^{4}(x-y)}{\partial y^{\kappa}}\frac{\partial\delta^{4}(z-x)}{\partial z^{\lambda}}\text{ .}\label{22.3.24}
+\end{align}
+
+顺带地, 我们注意到类似这样的结果只能出现在包含无质量粒子的理论中.\cite{7a} 若非如此, $\Gamma_{\alpha\beta\gamma}^{\mu\nu\rho}(x,y,z)$的Fourier变换预期就会有围绕零动量的幂级数展开. 在这样的展开中, 能够赋予流形式(\ref{22.3.24})为的散度只有一种可能性, 即那些关于动量一阶的赝张量
+\begin{align*}
+\Big[\Gamma^{\mu\nu\rho}_{\alpha\beta\gamma}(k_{1},k_{2})\Big]_{\text{anom}}&\equiv \int \dif^{4}y\,\dif^{4}z\,
+\me^{-\mi k_{1}\cdot y} \,\me^{-\mi k_{2}\cdot z}\,\Big[\Gamma^{\mu\nu\rho}_{\alpha\beta\gamma}(0,y,z)\Big]_{\text{anom}} \\
+&=\epsilon^{\mu\nu\rho\sigma}\Big[A_{\alpha\beta\gamma}k_{1\sigma}+B_{\alpha\beta\gamma}k_{2\sigma}\Big]\text{ ,}
+\end{align*}
+其中$A_{\alpha\beta\gamma}$和$B_{\alpha\beta\gamma}$是常数. 根据方程(\ref{22.3.24}),
+\[
+(k_{1}+k_{2})_{\mu }\left[ \Gamma _{\alpha \beta \gamma }^{\mu \nu \rho
+}(k_{1},k_{2})\right] _{\text{anom}}=\frac{\mi}{4\uppi ^{2}}D_{\alpha \beta
+\gamma }\epsilon ^{\kappa \nu \lambda \rho }k_{1\kappa }k_{2\lambda }
+\]%
+所以
+\[
+A_{\alpha \beta \gamma }-B_{\alpha \beta \gamma }=\frac{\mi}{4\uppi ^{2}}%
+D_{\alpha \beta \gamma }\text{ .}
+\]%
+但是这些流之间的振幅的对称性要求
+\[
+A_{\alpha \beta \gamma }k_{1\sigma }+B_{\alpha \beta \gamma }k_{2\sigma
+}=-A_{\alpha \gamma \beta }k_{2\sigma }-B_{\alpha \gamma \beta }k_{1\sigma
+}=-A_{\gamma \alpha \beta }(-k_{1\sigma }-k_{2\sigma })-B_{\gamma \alpha
+\beta }k_{2\sigma }
+\]%
+所以, $k_{1\sigma}$和$k_{2\sigma}$的系数相等给出
+\[
+A_{\alpha \beta \gamma }=-B_{\alpha \gamma \beta }=A_{\gamma \alpha \beta }%
+\text{ ,}\qquad B_{\alpha \beta \gamma }=-A_{\alpha \gamma \beta }=A_{\gamma
+\alpha \beta }-B_{\gamma \alpha \beta }\text{ .}
+\]%
+取这些方程的差给出
+\[
+A_{\alpha \beta \gamma }-B_{\alpha \beta \gamma }=A_{\alpha \gamma \beta
+}-B_{\alpha \gamma \beta }=B_{\gamma \alpha \beta }\text{ .}
+\]
+既然这是正比于$D_{\alpha\beta\gamma}$的, 它必须是全反对称的, 所以$B_{\alpha\beta\gamma}$以及随之的$A_{\alpha\beta\gamma}$也是全反对称的. 但这样一来, 三点函数对称性的条件就变成$A=-B=B-A$, 这给出$A_{\alpha\beta\gamma}=B_{\alpha\beta\gamma}=0$, 与条件(\ref{22.3.24})矛盾. 通过相同的推理可以得出: 给相互作用加上一个定域项, 使得这个定域项对流$J^{\mu}$的散度的贡献抵消了方程(\ref{22.3.24})的贡献, 这种消除反常的方法是行不通的.
+
+
+现在回到方程(\ref{22.3.24}), 我们现在可以将这个结果表示成流$J^{\mu}_{\alpha}$在规范场中的真空期望值, 其中规范场与流$J_{\beta}^{\nu}$和$J^{\rho}_{\gamma}$相耦合. 当存在规范场时, 三角图对流的贡献是
+\begin{equation}
+\langle J^{\mu}_{\alpha}(x) \rangle_{\triangle}=-\tfrac{1}{2}\int\dif^{4}y\,\dif^{4}z\,
+\Gamma^{\mu\nu\rho}_{\alpha\beta\gamma}(x,y,z)\,A^{\beta}_{\nu}(y)\,A^{\gamma}_{\rho}(z)\text{ .} \label{22.3.25}
+\end{equation}
+利用方程(\ref{22.3.24}), 它有反常散度
+\begin{equation}
+[\langle \partial_{\mu}J^{\mu}_{\alpha}(x)\rangle_{\triangle}]_{\text{anom}}=-\frac{1}{8\uppi^{2}}
+D_{\alpha\beta\gamma}\,\epsilon^{\kappa\nu\lambda\rho}\,\partial_{\kappa}A^{\beta}_{\nu}(x)\,
+\partial_{\lambda}A^{\gamma}_{\rho}(x) \text{ .} \label{22.3.26}
+\end{equation}
+存在其它也会给出反常的图, 如图\ref{fig:22.2}. 规范不变性要求图\ref{fig:22.2}的图加起来应该给出规范不变的结果
+\begin{equation}
+[\langle \partial_{\mu}J^{\mu}_{\alpha}(x)\rangle]_{\text{anom}}=-\frac{1}{32\uppi^{2}}
+D_{\alpha\beta\gamma}\,\epsilon^{\kappa\nu\lambda\rho}\,F^{\beta}_{\kappa\nu}(x)\,
+F^{\gamma}_{\lambda\rho}(x) \text{ .} \label{22.3.27}
+\end{equation}
+
+作为一个验证, 我们来考察费米子数守恒的理论, 它的生成元$T_{\alpha}$有形式(\ref{22.3.4}). 反常(\ref{22.3.26})中的常数$D_{\alpha\beta\gamma}$就是
+\begin{equation}
+D_{\alpha\beta\gamma}=\tfrac{1}{2}\operatorname{tr}[\{t^{L}_{\alpha},t^{L}_{\beta}\}t^{L}_\gamma]
+ -\tfrac{1}{2}\operatorname{tr}[\{t^{R}_{\alpha},t^{R}_{\beta}\}t^{R}_{\gamma}]\text{ .} \label{22.3.28}
+\end{equation}
+更具体些, 我们在22.2节计算了轴矢量流$J_{5}^{\mu}$的散度而言, 它有$t^{L}=-t^{R}=t$, 由于与规范场相互作用的是矢量流$J^{\nu}_{\beta}$和$J^{\rho}_{\gamma}$(在22.2节记成了$J^{\nu}_{\alpha}$和%
+$J^{\rho}_{\beta}$), 所以有$t_{\beta}^{L}=t^{R}_{\beta}\equiv t_{\beta}$以及$t_{\gamma}^{L}=t^{R}_{\gamma}\equiv t_{\gamma}$. 因此, 在这一情况下$D_{\alpha\beta\gamma}$要换成%
+$\operatorname{tr}[\{t,t_{\beta}\}t_{\gamma}]=\operatorname{tr}[\{t_{\beta},t_{\gamma}\}t]$, 方程(\ref{22.3.27})则变成
+\begin{equation}
+[\langle \partial_{\mu}J^{\mu}_{5}(x)\rangle]_{\text{anom}}=-\frac{1}{32\uppi^{2}}
+\operatorname{tr}[\{t_{\beta},t_{\gamma}\}t]\,\epsilon^{\kappa\nu\lambda\rho}\,F^{\beta}_{\kappa\nu}(x)\,
+F^{\gamma}_{\lambda\rho}(x) \text{ ,} \label{22.3.29}
+\end{equation}
+这与方程(\ref{22.3.27})一致.
+
+当流$J^{\mu}_{\alpha}(x)$, $J^{\nu}_{\beta}(y)$或$J^{\rho}_{\gamma}(z)$中没有任何一个与规范场耦合时, 对偏移矢量$a^{\mu}$的选择就取决与是否方便. 当其中的一些流但非全部的流对应的是自发破缺的对称性, 我们要保证未破缺的对称性是显然的, 即选择$a^{\mu}$使得与未破缺对称性对应的流中没有反常. (这在22.7节将是非常重要的.) 例如, 在量子色动力学以及类似理论中, 整体对称性, 例如手征$SU(3)\times SU(3)$, 它们的生成元$T_{\alpha}$采取形式(\ref{22.3.4}), 所有的流要么是矢量要么是轴矢量, 若是矢量, 则有$t_{\alpha}^{R}=t_{\alpha}^{L}$, 对应于未破缺对称性, 若是轴矢量, 则有$t_{\alpha}^{R}=-t_{\alpha}^{L}$, 对应于破缺对称性. 我们从方程(\ref{22.3.28})中看到, 在这种情况下, 有反常的三角图只有那些有一个轴矢量流和两个矢量流的图, 以及那些三个流均是矢量流的图. 在一个轴矢量流和两个矢量流的情况中, 我们选择$a^{\mu}$, 使得不会存在对矢量流守恒有干扰的反常.
+因此, 如果$J^{\mu}_{\alpha}(x)$是轴矢量流, 而$J^{\nu}_{\beta}(y)$和$J^{\rho}_{\gamma}(z)$是两个矢量流, 那么, 就像方程(\ref{22.3.23})中那样, 我们必须取$a^{\mu}=k_{1}^{\mu}-k_{2}^{mu}$, 这使得反常由方程(\ref{22.3.24})给出. 另一方面, 对于三个轴矢量流, 没有什么理由要求其中的任何一个是无反常的. 取而代之, $a^{\mu}$的值使得三个流之间的对称性得以反映, 这样的选择要自然一些. 以Lorentz不变性为指导, 假定我们取试探解$a=\alpha k_{1}+\beta k_{2}$, 其中$\alpha$和$\beta$是常数. 那么, 对称性会要求{\kai{每个}}内线的动量是$p$加上从该线末端流出的动量$\alpha$倍再加上从该线始端流入的动量的$\beta$倍. 即, 如果我们要求$a=\alpha k_{1}+\beta k_{2}$, 那么对称性同时会要求$a-k_{1}=-\alpha(k_{1}+k_{2})+\beta k_{1}$和$a+k_{2}=\alpha k_{2}-\beta(k_{1}+k_{2})$. 对于不平行的$k_{1}$和$k_{2}$, 当且仅当$\alpha=-\beta=1/3$时, 这三个关系才会满足, 这使得
+\begin{equation}
+a=\tfrac{1}{3}(k_{1}-k_{2})\text{ .} \label{22.3.30}
+\end{equation}
+在方程(\ref{22.3.22})中使用上式并与方程(\ref{22.3.23})比较, 我们看到, 与一个轴矢量流和二个矢量流的Feynman振幅相比, 在三个轴矢量流的Feynman振幅中, 轴矢量流中的反常是前者的三分之一.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=5.5in]{222}
+ \caption{这些单圈图给出了虚线所标记的流中的反常. 实线是费米子; 波浪线是与它们相互作用的规范场.}
+ \label{fig:22.2}
+\end{figure}
+
+流的散度会包含其它反常, 它们来自于图\ref{fig:22.2}中的图. 既然三角图都不能给出守恒流, 规范不变性在这里是没有指导意义的. 针对强相互作用的$SU(3)\times SU(3)$对称性, Bardeen\cite{8}计算了总反常, 他对动量偏移的选择使得矢量流守恒, 而那些流均为轴矢量的图在这些流之间对称. 尽管这个$SU(3)\times SU(3)$对称性(它作用在夸克味上而不是夸克色上)在量子色动力学中不是规范的, 但是可以方便地将这一反常表示成规范不变性的失效, 具体来说, 反常是规范不变性在虚拟弱耦合规范场的泛函$\Gamma[V,A]$中失效了, 其中的虚拟弱耦合规范场是: 矢量场的八重态$V_{a}^{\mu}(x)$和轴矢量场的八重态$A_{a}^{\mu}(x)$. 我们引入无限小规范变换的算符\footnote{这里的算符$\mathscr{Y}_{a}$和$\mathscr{X}_{a}$在参考文献[8]中记成了$X_{a}$和%
+$Y_{a}$. 我们在这里改变符号约定是为了与第19章的符号约定一致, 在那里破缺对称性的生成元统一地记为$X_{a}$.}
+\begin{equation}
+\mi\mathscr{Y}_{a}(x)=-\frac{\partial}{\partial x^{\mu}}\frac{\delta}{\delta V_{a\mu}(x)}
+-f_{abc}V_{b\mu}(x)\frac{\delta}{\delta V_{c\mu}(x)}
+-f_{abc}A_{b\mu}(x)\frac{\delta}{\delta A_{c\mu}(x)} \label{22.3.31}
+\end{equation}
+和
+\begin{equation}
+\mi\mathscr{X}_{a}(x)=-\frac{\partial}{\partial x^{\mu}}\frac{\delta}{\delta A_{a\mu}(x)}
+-f_{abc}V_{b\mu}(x)\frac{\delta}{\delta A_{c\mu}(x)}
+-f_{abc}A_{b\mu}(x)\frac{\delta}{\delta V_{c\mu}(x)} \text{ ,}\label{22.3.32}
+\end{equation}
+其中$f_{abc}$是$SU(3)$结构常数. 正如之前所提及的, 对内线动量标记的选择要使得矢量流不反常:
+\begin{equation}
+\mathscr{Y}_{a}\,\Gamma[V,A]=0\text{ ,} \label{22.3.33}
+\end{equation}
+但是这样一来, 反常就会出现在轴矢量流中
+\begin{align}
+\mathscr{X}_{a}\,\Gamma[V,A] &= \frac{\mi}{32\uppi^{2}}\epsilon^{\mu\nu\rho\sigma}\operatorname{Tr}\Bigg\{
+\lambda_{a}\Big[V_{\mu\nu}V_{\rho\sigma}+\tfrac{1}{3}A_{\mu\nu}A_{\rho\sigma}
+-\tfrac{32}{3}A_{\mu}A_{\nu}A_{\rho}A_{\sigma} \nonumber \\
+&\quad+\tfrac{8}{3}\mi (A_{\mu}A_{\nu}V_{\rho\sigma}+A_{\mu}V_{\rho\sigma}A_{\nu}+V_{\rho\sigma}A_{\mu}A_{\nu})
+\Big]\Bigg\} \text{ ,} \label{22.3.34}
+\end{align}
+其中$\lambda_{a}$是由方程(\ref{19.7.2})给出的$SU(3)$矩阵, 并有
+\begin{equation}
+V_{\mu}\equiv \tfrac{1}{2}\lambda_{a}V_{\mu a}\text{ ,} \qquad
+A_{\mu}\equiv\tfrac{1}{2}\lambda_{a}A_{\mu a}\text{ ,}  \label{22.3.35}
+\end{equation}
+\begin{equation}
+V_{\mu\nu}=\partial_{\mu}V_{\nu}-\partial_{\nu}V_{\mu}-\mi[V_{\mu},V_{\nu}]-\mi[A_{\mu},A_{\nu}]
+\text{ ,}\label{22.3.36}
+\end{equation}
+\begin{equation}
+A_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}-\mi[V_{\mu},A_{\nu}]-\mi[A_{\mu},V_{\nu}]
+\text{ .}\label{22.3.37}
+\end{equation}
+我们已经解释过方程(\ref{22.3.34})右边第二项中的因子1/3的来源, 它是$a^{\mu}$在$AVV$图和$AAA$图中的不同选择所造成的结果. 在22.6节, 我们将会描述相容性条件, 这使得我们可以从二次项中计算出方程(\ref{22.3.34})中的三次项和四次项.
+
+如果反常涉及的对称性{\kai{都是}}自发破缺的, 那么在选择$a^{\mu}$时就没有什么理由在不同流之间做出区分, 相反, 标记费米子内线的一种更自然方式是使得它关于附着的规范玻色子线对称. 正如我们所看到的, 这意味着我们要用$a=\frac{1}{3}(k_{1}-k_{2})$计算三角图. 这给出的三角反常是(\ref{22.3.26})给出的值的三分之一. 当正方形图和五边形图也计算在内时, 这个结果变成\cite{8a}
+\begin{align}
+[\langle D_{\mu}J^{\mu}_{\alpha}\rangle]_{\text{anom}}&= -\frac{1}{24\uppi^{2}}\,\epsilon^{\kappa\nu\lambda\rho}
+\operatorname{Tr}\Bigg\{ T_{\alpha} \Big[\partial_{\kappa}A_{\nu}\,\partial_{\lambda}A_{\rho}
+-\tfrac{1}{2}\mi\partial_{\kappa}A_{\nu}\,A_{\lambda}A_{\rho} \nonumber \\
+&\quad + \tfrac{1}{2}\mi A_{\kappa}\,\partial_{\nu}A_{\lambda}\,A_{\rho}
+-\tfrac{1}{2}\mi A_{\kappa}A_{\nu}\partial_{\lambda}A_{\rho}\Big]\Bigg\} \text{ ,} \label{22.3.38}
+\end{align}
+其中$A^{\mu}\equiv A^{\mu}_{\alpha}T_{\alpha}$. 我们已经看到, 在这样的情况下$A_{\mu}$的二次项有方程(\ref{22.3.26})中相应项的1/3给出, 所以我们不会在这里推导这个结果, 在22.6节, 我们会用相容性条件从二次项推导方程(\ref{22.3.38})中的剩余项.
+
+现在我们必须要考察这些结果的可能修正. Adler和Bardeen给出反常直至微扰论所有阶的细致推导;\cite{9} 而在下文中, 我们将只给出他们分析的要点.
+
+我们可以在微扰论的任意阶重复给出方程(\ref{22.3.22})的讨论, 并证明给出反常的动量空间积分一般可以重新表示成表面项. 其结果就是我们在方程(\ref{22.3.18})中所看到的那样, 对于流的散度, 对反常有贡献的那些图是那些量纲(按动量幂次计)为零或者更大的动量空间积分, 这里的积分变量是费米元中流转的动量. 圈中的费米子如果与虚规范玻色子相互作用, 那么这将会降低对费米圈动量积分的量纲以至于消除了反常, 所以反常不会从这样的辐射修正中得到贡献. (对虚规范玻色子动量以及费米圈动量的积分确实会有非负的量纲, 但是, 如果不干扰问题中的手征的对称性, 规范玻色子传播子可以被正规化, 与此同时费米子传播子却不能正规化.) 连在费米圈上的规范玻色子如果与其它规范玻色子或费米圈相互作用, 那么这将会影响反常, 但是它们仅仅用来重整化$\epsilon^{\kappa\nu\lambda\rho}F_{\kappa\nu}^{\beta}(x)F^{\gamma}_{\lambda\rho}(x)$%
+这样的算符. 通过相同的讨论, 如果费米子质量遵循问题中的对称性(如果这是能实现的), 由于抽取质量因子会降低动量空间积分的量纲, 所以这不会改变反常.
+
+上一段所描述的最后一个特征给出了这样一个问题: 如果我们对理论含有的费米子一无所知, 无论是重费米子, 轻费米子还是无质量费米子, 在这样的情况下我们是否还能计算出反常? 答案是肯定的, 我们可以; 我们现在将证明: {\kai{对于给定的对称性, 如果某个费米子在这个对称性允许有质量, 那么它不会对这个对称性的反常有贡献.}}
+在我们这里所考察的一般理论中, 拉格朗日密度中的质量项会采取如下的形式
+\begin{equation}
+\mathscr{L}_{\text{mass}}=-\sum_{nn'\sigma\sigma'}\chi_{\sigma n}\epsilon_{\sigma\sigma'}M_{nn'}\chi_{\sigma'n'}
++\text{H.c. ,} \label{22.3.39}
+\end{equation}
+其中$\sigma$是Lorentz群$(\frac{1}{2},0)$表示的2分量旋量指标, $\epsilon_{\sigma\sigma'}$是为了保持Lorentz不变性所需要的反对称矩阵, 它有$\epsilon_{\frac{1}{2},-\frac{1}{2}}=+1$, 而$M$是对称质量矩阵.\footnote{在费米子数守恒的理论中, $\chi$采取(\ref{22.3.1})的形式, $M$和通常的质量矩阵$m$之间的关系是
+\[
+M=\frac{1}{2}\left(
+\begin{array}{cc}
+0 & m \\
+m^{\mathrm{T}} &0
+\end{array}
+\right) \:.
+\]
+当所有反演相位都为1时, 宇称, 电荷共轭以及时间反演不变性将会进一步分别使得$m$是厄米矩阵, 对称矩阵和实矩阵.}
+现在, 为了使$\mathscr{L}_{\text{mass}}$遵循规范不变性, 质量矩阵必须满足
+\begin{equation}
+-T_{\alpha}^{\mathrm{T}}\,M=M\,T_{\alpha}\text{ ,} \label{22.3.40}
+\end{equation}
+指标$n$可以换成指标$r$和$s$, 其中$r$标记规范群的不同不可约表示, 而指标$s$标记每个不可约表示中的分量, 这使得
+\begin{equation}
+(T_{\alpha})_{rs,r's'}=\delta_{rr'}(T_{\alpha}^{(r)})_{s,s'}\text{ ,} \label{22.3.41}
+\end{equation}
+我们将$M$写成
+\begin{equation}
+M_{rs,r's'}=(M^{(r,r')})_{ss'}\text{ .} \label{22.3.42}
+\end{equation}
+那么方程(\ref{22.3.40})就变成
+\begin{equation}
+-T_{\alpha}^{(r)\mathrm{T}}\,M^{(r,r')}=M^{(r,r')}\,T_{\alpha}^{(r')}\text{ .}\label{22.3.43}
+\end{equation}
+(这并没有对$r$和$r'$求和.) Schur引理告诉我们, 只要一对不可约表示的矩阵通过这样的方程彼此相关, 那么关联它们的矩阵要么是零要么是非奇异的. (参看5.5节.) 因此, 要么(i) $M^{(r,r')}=0$, 要么(ii) $-T_{\alpha}^{(r)\mathrm{T}}$和$T_{\alpha}^{(r')}$通过一个相似变换彼此相关, 对$T_{\beta}$和$T_{\gamma}$有类似的事情发生. 在后一种情况, 分属不同不可约表示$r$和$r'$的费米子对反常常数(\ref{22.3.12})之间的关系是
+\begin{equation}
+D^{(r)}_{\alpha\beta\gamma}=-D^{(r')}_{\alpha\beta\gamma}\text{ ,} \label{22.3.44}
+\end{equation}
+所以反常要么为零(对于$r=r'$)要么在两个表示之间抵消(对于$r\neq r'$). 因此, 对于一组给定的对称性, 可能会出现的带有对称性允许质量的费米子不会影响这些对称性中的反常.
+
+\subsection*{* * *}
+
+在用Feynman规则计算三点函数(\ref{22.3.7})时有一个很微妙的地方, 我们现在转向对它的讨论. 在使用传统的费米传播子(\ref{22.3.9})时, 我们实际上加倍了费米场的数目; 除了方程(\ref{22.3.1})给出的左手费米子外, 传播子(\ref{22.3.9})还包含了与规范场没有相互作用的右手模式(与费米子数守恒理论的场$(1-\gamma_{5})\psi$无关). 将这些无相互作用的右手场和有相互作用的左手场写进单个旋量$\Psi$中, 费米子拉格朗日密度是$-\bar{\Psi}\slashed{D}\Psi$, 其中的$\slashed{D}$现在是
+\begin{equation}
+\slashed{D}=\slashed{\partial}-\mi \slashed{A}_{\alpha}T_{\alpha}\bigg(\frac{1+\gamma_{5}}{2}\bigg)\text{ .} \label{22.3.45}
+\end{equation}
+对于与真实规范场或者虚拟规范场相互作用的自旋$\frac{1}{2}$场而言, 它的单圈真空泛函就是$\operatorname{Det}{\slashed{D}}$. 规范不变性在这个行列式中失效可以归因于: 算符(\ref{22.3.45})是如下两项的和
+\begin{equation}
+\slashed{D}=\slashed{\partial}\left(\frac{1-\gamma_{5}}{2}\right)+\slashed{D}\left(\frac{1+\gamma_{5}}{2}\right)\:,
+\label{22.3.46}
+\end{equation}
+但是只有第二项是规范不变的.
+
+在任意维度的空间中, 有另外一种看待坐标以及规范反对称性反常的方式, 它为一大类反常的计算提供了框架. 算符(\ref{22.3.45})拥有定义良好的行列式, 在这里取代处理这个算符, 我们只处理方程(\ref{22.3.46})中的第二项
+\begin{equation}
+\slashed{D}_{L}\equiv \slashed{D}\bigg(\frac{1+\gamma_{5}}{2}\bigg)\text{ .} \label{22.3.47}
+\end{equation}
+它是完全规范不变的, 但是由于这个算符并没有一个手性的费米场映射到同一手性费米场的空间, 而是映射到另一个手性费米场的空间, 所以它没有定义良好的行列式. 通过写出$\operatorname{Det}\slashed{D}_{L}$在规范场空间中的微分方程, 我们可以尝试定义规范不变的真空泛函, 但在模掉规范变换时会遇到障碍. 由于必要的可积性条件失效了, 存在定域障碍, 这对应与我们讨论的反常. 即便这些定域障碍可以避免, 在这一情况下, 规范场构形的无限维空间在模掉规范变换后不是单连通的, 拓扑障碍会妨碍在这个空间上定义单值泛函. 对于规范群$SU(2)$(它没有定域反常), 在$SU(2)$二重态有奇数个无质量左手费米子的情况下, Witten\cite{10b}发现了这样的整体反常.
+
+
+\section{无反常的规范理论}
+
+对于一般的流$J_{\alpha}^{\mu}$, 我们计算了反常在流守恒上的效应. 当这个流自身与规范场耦合时, 规范不变性要求不能出现反常. 我们在上一节看到, 反常正比于方程(\ref{22.3.12})定义的对称常数因子$D_{\alpha\beta\gamma}$, 所以对于规范流我们有\cite{11}
+\begin{equation}
+D_{\alpha\beta\gamma} \equiv \tfrac{1}{2} \operatorname{tr}\,[\{T_{\alpha},T_{\beta}\}\,T_{\gamma}] =0 \, ,\label{22.4.1}
+\end{equation}
+其中$T_{\alpha}$是规范代数在所有左手费米子和反费米子的集合上的表示, 而``tr''依旧代表对这些费米子和反费米子的种类求和. 对于任意的规范群, 如果费米场构成了合适的可约或不可约表示, 这个条件就是满足的. 另外, 存在一些规范群, {\kai{无论}}费米子处在该群的那个表示下, 方程(\ref{22.4.1})都是满足的.\cite{12}(对于这样的群, 反常在微扰论的任意阶都不会出现,  我们将在22.6节用Batalin-Vilkovisky形式理论给出一个纯代数证明.)
+
+
+如果左手费米子(和反费米子)场构建的规范代数表示等价于它的复共轭, 也就是说
+\[
+(\mi T_{\alpha})^{\ast} = S\,(\mi T_{\alpha})\, S^{-1}
+\]
+或者等价的(既然我们总是取$T_{\alpha}$是厄米的)
+\begin{equation}
+T_{\alpha}^{\text{T}}= -S\,T_{\alpha}\,S^{-1} \:,\label{22.4.2}
+\end{equation}
+那么条件(\ref{22.4.1})显然是满足的. (将方程(\ref{22.4.2})代入代入方程(\ref{22.3.12})给出$D_{\alpha\beta\gamma}=-D_{\alpha\beta\gamma}$.) 这样的表示要么是{\kai{实的}}, 要么是{\kai{赝实的}}, 在前一种情况中, 我们有可能通过相似变换$T_{\alpha}^{\prime}=R\,T_{\alpha}\,R^{-1}$将这个表示转化至$T_{\alpha}^{\prime}$是纯虚的且反对%
+称的表示, 而在后一种情况中这是不可能的. (例如, $SU(2)$的三维不可约表示是实的, 而它的二维表示是赝实的.) 对于只有实表示或者赝实表示的规范代数, 即$SO(2n+1)$(包括$SU(2)\equiv SO(3)$), $n\geq2$的$SO(4n)$, $n\geq3$的$USp(2n)$, $G_{2}$, $F_{4}$, $E_{7}$和$E_{8}$, 再加上这些代数的直和, 反常对于这些规范代数是不存在的.
+另外还有几个代数, 尽管它们的一些表示既不是实的也不是赝实的, 但是它们也只有$D_{\alpha\beta\gamma}$为零的表示.\cite{12} 它们是$SO(4n+2)$(不包括$SO(2)\equiv U(1)$和$SO(6)\equiv SU(4)$)和$E_{6}$, 它们彼此之间的直和, 以及它们与上面所说的代数直和. 因此, 只对于包含$SU(n)$($n\geq3$)以及$U(1)$因子的规范代数, 反常才可能出现. 碰巧的是, 当代物理最重要的规范代数中就有这些代数. 标准模型基于规范群$SU(3)\times SU(2)\times U(1)$, 所以我们必须依靠夸克和轻子之间的抵消去掉理论的反常.
+
+\begin{table}[!h]
+\centering
+\caption{ 标准模型的第一代左手费米子场和反费米子场.}
+\label{tab:22.1}
+\begin{tabular}{cccc}
+\hline
+\hline
+\specialrule{0em}{3pt}{3pt}
+费米子 &\quad $SU(3)$ \quad & \quad$SU(2)$\quad & \quad $U(1)[y/g']$\\
+\specialrule{0em}{3pt}{3pt}
+\hline
+\specialrule{0em}{3pt}{3pt}
+$\biggl(
+\begin{array}{c}
+u\\
+d
+\end{array}
+\biggr)_{L}$& 3 &  2 & $-1/6$  \\
+\specialrule{0em}{3pt}{3pt}
+$u_{R}^{\ast}$ & $\bar{3}$ & 1 & $+2/3$\\
+\specialrule{0em}{3pt}{3pt}
+$d_{R}^{\ast}$ & $\bar{3}$ & 1 &$-1/3$ \\
+\specialrule{0em}{3pt}{3pt}
+$\biggl(
+\begin{array}{c}
+\nu_{e}\\
+e
+\end{array}
+\biggr)_{L} $ & $1$ & $2$ & $1/2$\\
+\specialrule{0em}{3pt}{3pt}
+$e_{R}^{\ast}$ & $1$ & $1$ & $-1$ \\
+\specialrule{0em}{3pt}{3pt}
+\hline
+\hline
+\end{tabular}%
+\end{table}
+
+对于标准模型第一代左手旋量场, 根据它们所构建的色$SU(3)$规范群表示, 电弱$SU(2)$规范群表示, 以及$U(1)$量子数$y/g'=t_{3}/g-q/e$的值, 表\ref{tab:22.1}给出了它们的分类.
+
+现在, 我们可以检验, 当$T_{\alpha}$, $T_{\beta}$和$T_{\gamma}$取遍$SU(3)\times SU(2)\times U(1)$的所有生成元时, $D_{\alpha\beta\gamma}$是否为零. 我们只需考察那些使得$T_{\alpha}$, $T_{\beta}$和$T_{\gamma}$的乘积在$SU(3)\times SU(2)\times U(1)$为中性的生成元组合, 所有其它的组合显然为零. 我们可以用$SU(3)$生成元, $SU(2)$生成元和$U(1)$生成元给出不变量, 对其中个数的限制是, $SU(3)$生成元只能是零个, 两个或三个(因为$8\times 8$和$8\times 8\times 8 $中均有单态), 对$SU(2)$生成元的个数限制与$SU(3)$相同, 而$U(1)$生成元可以有任意多个, 所以我们只需检查如下情况:\\
+{\boldmath{$SU(3)$-$SU(3)$-$SU(3)$}}: 由于左手费米子构成了$SU(3)$的$3+3+\bar{3}+\bar{3}+1+1+1$的表示, 这是实表示, 所以这里的$D_{\alpha\beta\gamma}$为零. \\
+{\boldmath{$SU(3)$-$SU(3)$-$U(1)$}}: 这里的反常正比于
+\[
+\sum_{3,\bar{3}} y/g' =-\frac{1}{6}-\frac{1}{6} +\frac{2}{3}-\frac{1}{3}=0 \, .
+\]
+{\boldmath{$SU(2)$-$SU(2)$-$SU(2)$}}: 由于$SU(2)$只有实表示和赝实表示, 所以这里没有反常.\\
+{\boldmath{$SU(2)$-$SU(2)$-$U(1)$}}: 这里的反常正比于
+\[
+\sum_{\text{doublets}} y/g' =3\left(-\frac{1}{6}\right) + \frac{1}{2} = 0 \, .
+\]
+{\boldmath{$U(1)$-$U(1)$-$U(1)$}}: 这里的反常正比于
+\[
+\sum(y/g')^{3} = 6\left(-\frac{1}{6}\right)^{3}+3\left(\frac{2}{3}\right)^{3} +3\left(-\frac{1}{3}\right)^{3}
++2\left(\frac{1}{2}\right)^{3}+(-1)^{3} =0 \, .
+\]
+
+我们看到, 对于标准模型的规范对称性, 所有反常抵消了.\cite{13a} 这个结果可以干净地理解成$SU(3)\times SU(2)\times U(1)$可以嵌入在$SO(10)$中的结果.\cite{14}. $SO(10)$的所有表示都是无反常的, 所以对于$SU(3)\times SU(2)\times U(1)$的任何可约表示, 只要它构成了$SO(10)$的一个完整表示, 它就会继承这一性质. 碰巧的是, 每一代夸克, 轻子, 反夸克, 以及反轻子的左手场, 再加上一个额外的$(SU(3)\times SU(2)\times U(1))$-单态, 就构成了$SO(10)$的一个完整的16维表示(基础旋量表示), 所以对于左手费米子的这个集合, $SU(3)\times SU(2)\times U(1)$反常是不存在的. 单态无论如何都不会对这个反常有贡献, 所以在标准模型的规范对称性中没有反常.
+
+还有一个反常需要计算. 所有种类的费米子以相同的方式与引力相互作用. 在有外引力场的情况下, 针对流$\bar{\chi}T\gamma^{\mu}\chi$的真空期望值, 计算费米子圈图会给出反常\cite{15}$\partial_{\mu}(\bar{\chi}T\gamma^{\mu}\chi)$, 它正比于
+\[
+\operatorname{tr}\{T\}\,\epsilon^{\mu\nu\rho\sigma}\,R_{\mu\nu\kappa\lambda}R_{\rho\sigma}{}^{\kappa\lambda}\: .
+\]
+特别地, 为了避免引力破坏(\ref{22.3.3})这样的规范对称性, 生成元必须满足
+\begin{equation}
+\operatorname{tr}\{T_{\alpha}\} = 0 \: . \label{22.4.3}
+\end{equation}
+类似于纯规范反常, 当规范生成元满足方程(\ref{22.4.2})时, 这为零, 所以那些构成规范群实表示或赝实表示的费米子不会对这个反常有贡献, 因此计算这个反常时只需要将那些质量源于规范对称性破缺的费米子考虑在内即可. 另外, 对于规范代数的任意{\kai{单纯}}子代数, 例如$SU(2)$或$SU(3)$, 这个条件对于这些子代数的生成元是自动满足的. ($\operatorname{tr}\{T_{\alpha}\}$仅是与所有$T_{\beta}$都对易的数, 所以如果它不为零, 那么这个代数不是单纯的.) 因此, 我们只需检验方程(\ref{22.4.3})对于规范代数的$U(1)$生成元是不是满足的. 在标准模型中, 对于所有左手费米子, 弱超荷$y$的值之和是
+\[
+\sum y/g'= 6\left(-\frac{1}{6}\right)+3\left(\frac{2}{3}\right)+3\left(-\frac{1}{3}\right)
++2\left(\frac{1}{2}\right) + (-1) =0 \: ,
+\]
+所以标准模型的流中没有引力反常.
+
+反常为零的要求也可用作公式化真实理论时的指导. 例如, 对于各种$SU(3)\times SU(2)$多重态, 它们的弱超荷$y$的值最初是从实验中获得的, 但是我们可能会好奇: 为什么这些弱超荷(以及每个多重态中相应的电荷)取这些观测值. 为了回答这个问题, 假定我们对多重态$(u_{L},d_{L})$, $u_{R}^{\ast}$, $d_{R}^{\ast}$, $(\nu_{L},e_{L})$和$e_{R}^{\ast}$分别赋予值$a$, $b$, $c$, $d$和$e$. 反常相消的条件会告诉我们:\\
+{\boldmath{$SU(3)$-$SU(3)$-$U(1)$}}:
+\[
+\sum_{3,\bar{3}} y=2a+b+c=0 \: ;
+\]
+{\boldmath{$SU(2)$-$SU(2)$-$U(1)$}}:
+\[
+\sum_{\text{doublets}} y = 3a +d =0\: ;
+\]
+{\boldmath{$U(1)$-$U(1)$-$U(1)$}}:
+\[
+\sum y^{3}=6a^{3}+3b^{3}+3 c^{3}+2 d^{3}+e^{3} =0 \: ;
+\]
+{\hei{引力}}-{\hei{引力}}-{$\bm{U(1)}$}:
+\[
+\sum y=6a+3b+3c+2d+2 =0 \: .
+\]
+除了交换$u_{R}$和$d_{R}$的可能性外, 这些方程只有两个解, 我们可以称其为$U(1)$和$U(1)^{\prime}$:
+\begin{align*}
+&U(1) \: : \qquad b/a=-4\:,\quad c/a=2\:,\quad d/a=-3\:,\quad e/a=6\: , \\
+&U(1)' \: : \qquad b=-c\:,\quad a=c=d=e=0 \:.
+\end{align*}
+更进一步, 这两个解是互不兼容的; 我们不能假定$U(1)$和$U(1)^{\prime}${\kai{都}}是定域对称性, 否则我们就会遇到正比于$(-4)+(+2)\neq 0$的$U(1)'-U(1)'-U(1)$反常和正比于$(-4)^{2}-(+2)^{2}\neq 0$的$U(1)'-U(1)-U(1)$反常. $U(1)$生成元就是标准电弱模型中的弱超荷(总的常数因子$a$被吸收进$g'$的定义中), 而$U(1)'$对称性与自然界中观测到的都不相似. 这个简短的计算为标准模型中$y$的取值或者等价地电荷的取值提供了一个合理的解释, 它还表明, 要使所有规范反常在一代夸克和轻子中抵消, 规范玻色子与弱超荷以外的任何$U(1)$量子数相耦合是不可能的.
+
+另一方面, 尽管可以合理地猜测标准模型的$SU(3)\times SU(2)\times U(1)$规范玻色子只与已知的夸克和轻子耦合(这既解释了为什么没有发现其它费米子又保护了标准模型中漂亮的反常相消), 但是, 存在$U(1)'$规范玻色子, 它会与其它未探测到的$(SU(3)\times SU(2)\times U(1))$-中性费米子以及已知夸克和轻子相耦合, 这样的可能性依旧是存在的. 我们假定多重态$(u_{L},d_{L})$, $u_{R}^{\ast}$, $d_{R}^{\ast}$, $(\nu_{L},e_{L})$以及$e_{R}^{\ast}$的$U(1)'$量子数$y'$分别为$a'$, $b'$, $c'$, $d'$和$e'$. 既然我们对可能的$(SU(3)\times SU(2)\times U(1))$-中性费米子一无所知, $U(1)'$-$U(1)'$-$U(1)'$反常与引力-引力-$U(1)'$反常相互抵消的要求并不能帮助我们约束$a'$, $b'$, $c'$, $d'$或$e'$. 反常相消的其它条件告诉我们:\\
+{\boldmath{$SU(3)$-$SU(3)$-$U(1)'$}}:
+\[
+\sum_{3,\bar{3}} y'=2a'+b'+c'=0 \: ;
+\]
+{\boldmath{$SU(2)$-$SU(2)$-$U(1)'$}}:
+\[
+\sum_{\text{doublets}} y'=3a'+d' =0 \: ;
+\]
+{\boldmath{$U(1)$-$U(1)$-$U(1)'$}}:
+\[
+\sum y^{2}y'=6a'+3(-4)^{2}b'+3(2)^{2}c' +2 (-3)^{2}d' +(6)^{2}e'=0 \: ;
+\]
+{\boldmath{$U(1)$-$U(1)'$-$U(1)'$}}:
+\[
+\sum y y^{\prime 2}=6a^{\prime 2}+3(-4)b^{\prime 2} +3(2)c^{\prime 2}+2(-3)d^{\prime 2}+(6)e^{\prime 2} =0 \: .
+\]
+通解中, $y'$是$y$与量子数$B-L$($B$和$L$分别是守恒重子数和轻子数)的线性组合, 对于多重态$(u_{L},d_{L})$, $u_{R}^{\ast}$, $d_{R}^{\ast}$, $(\nu_{L},e_{L})$以及$e_{R}^{\ast}$, $B-L$分别取值$1/3$, $-1/3$, $-1/3$, $-1$和$+1$. 如果$B-L$是定域对称性, 且它的耦合在量级上比$e$小不了多少, 那么由于普通物体会有$B-L$的宏观值, 所以所以它必须自发破缺. 为了避免与中性流的观测结果相矛盾, 对称性破缺的特征标度$F$必须要大于电弱相互作用的特征标度, 但是不一定在量级上会大太多. 因此一个比$Z^{0}$稍重且与$B-L$耦合的中性矢量玻色子最有希望添加到标准模型中.
+
+上面所有的讨论针对的是标准模型的一个代. 对于所有的三个代, 存在更多的无反常对称性. 其中的一类对称性没有被反常破缺也没有(至少我们知道的)被其它的因素破缺, 这类对称性构成了不同味之间轻子数的差异. 在23.5节, 我们会对反常所产生的重子数不守恒过程和轻子数不守恒过程进行分类, 在这个分类中, 它与$B-L$起到了重要作用.
+
+
+
+\section[无质量束缚态]{无质量束缚态\footnote{本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过.}}
+
+
+有时会推测夸克和轻子是更加基本粒子的束缚态. 如果这些假想粒子拥有渐进自由的规范相互作用, 就像量子色动力学中那样, 那么我们预期它们被陷俘了, 这解释了为什么探测不到它们. 然而, 这一途径有一个问题. 夸克和轻子的内部结构还没有观测到过, 所以这些规范相互作用的特征能量标度$\Lambda^{\prime}$(类似于量子色动力学的$\Lambda\approx 200\,\mathrm{MeV}$)必须非常高. 例如, 正如12.3节论述过的, 要使$\mu$子磁矩的理论与实验相一致则会表明$\Lambda^{\prime}>3\,\mathrm{TeV}$. 但是, 除了Goldstone玻色子以外, 我们一般会预期这种理论中的束缚态会有$\Lambda^{\prime}$阶或者$2\uppi\Lambda^{\prime}$阶的质量, 就像在量子色动力学中, 质子质量是$2\uppi\Lambda_{\textrm{QCD}}$阶. 这一预期显然与我们观测到的事实有一个尖锐的矛盾, 观测到的夸克和轻子质量要远小于$\Lambda^{\prime}$. 以另外一种方式表述这个问题: 如果轻子和夸克是束缚态, 为什么它们(经由反常磁矩等方式测量)的尺寸要远小于它们的Comptom波长?
+
+回答这一问题的一种方法是: 不像量子色动力学, 我们假定这一理论有未破缺的手征对称性, 那么除了来自其它相互作用的小修正外, 这会使得夸克和轻子依旧是无质量的. 一般而言, 手征对称性是指: 对于一组螺度给定的无质量基本场(包括螺度相反的场的复共轭), 若它们构成复表示, 手征对称性就是这些基本场的对称性. 用这些基本场的乘积作用在真空上, 我们能够构建出其它螺度确定的态, 而这些态也构成了这些对称性的复表示. 若其中的一些态是真实的复合粒子, 它们必须是无质量的, 如果它们是有质量的, 有质量粒子态的所有螺度分量必须构成任意对称性的同一表示且与旋转对易, 所以螺度分量给定的粒子与螺度分量相反的反粒子一起构成了实表示. 当然, 分辨出以这种方式构建且与真实的复合无质量粒子对应的那些态并不容易, 但如果它们真的构成了真实的无质量复合粒子, 当我们改变理论的一些参量时, 为了使属于对称群的某个复表示的一些螺度给定的无质量粒子变得有质量, 从复表示到实表示, 它们的对称性质必须不连续地变化, 所以它们的无质量性是天然的.
+
+尽管这一推导表明, 存在一些理论, 无质量复合粒子或者质量很轻的复合粒子会很自然地出现在这些理论中, 但是这并不会给出在实际情况中它会何时发生的迹象. 除了如何将夸克和轻子理解为可能的复合粒子的问题外, 这是另一个有趣的问题. t' Hooft\cite{16}给出了解决这一问题的有力方法, 这个方法基于对反常的考察. 简言之, 如果底层理论拥有整体手征对称性(没有被规范反常破缺, 也没有自发破缺), 且这个对称性由自旋$\frac{1}{2}$的左手基本费米子(和反费米子)$\chi$上对称性生成元为$T_{\alpha},\:T_{\beta}$等的变换构成,
+并且如果这些整体对称性的反常常数$\operatorname{tr}[\{T_{\alpha},T_{\beta}\}T_{\gamma}]$非零, 那么束缚态的频谱必须包含自旋$\frac{1}{2}$的无质量粒子, 在它们的左手态上, 相同的对称性油诱导出生成元为$\mathscr{T}_{\alpha},\:\mathscr{T}_{\beta}\cdots$的变换, 以及相同的反常常数
+\begin{equation}
+\operatorname{tr}[\{\mathscr{T}_{\alpha},\mathscr{T}_{\beta}\}\,\mathscr{T}_{\gamma}]
+=\operatorname{tr}[\{T_{\alpha},T_{\beta}\}\,T_{\gamma}] \: . \label{22.5.1}
+\end{equation}
+
+下面给出't Hooft的论证. 假想一些相互作用很弱的规范玻色子, 它们与底层理论的整体对称性生成元$T_{\alpha},\:T_{\beta},\cdots$相耦合. 同时假定, 尽管系数$D_{\alpha\beta\gamma}\equiv\operatorname{tr}[\{T_{\alpha},T_{\beta}\}T_{\gamma}]$中的一些不为零, 但是这个反常被其它``旁观者''无质量费米子引起的反常抵消了, 那些将复合粒子的组成部分困住的强力不会影响这些旁观者费米子. 当物理过程所处的能量远低于陷俘相互作用的特征能量标度$\Lambda^{\prime}$时, 描述这个过程的有效拉格朗日量中不会出现陷俘的费米子. 如果生成元为$T_{\alpha},\:T_{\beta},\cdots$的对称性不是自发破缺的, 那么就不会出现Goldstone玻色子, 所以这个有效拉格朗日量中的粒子只能是弱耦合的规范玻色子, 旁观者费米子, 再加上陷俘费米子和相互作用很强的规范玻色子的任意束缚态. 有效场论的相容性要求它必须是无反常的, 但是假定的旁观者费米子拥有反常常数$-D_{\alpha\beta\gamma}$, 所以为了提供了大小相等符号相反的反常常数, 无质量束缚态必须存在, 它们也随之就是原始俘获费米子的束缚态.\footnote{仍需证明的是: 这些粒子必须拥有自旋$\frac{1}{2}$. 我们在这里假定了Goldstone玻色子不存在, 以及其它无自旋粒子不会自然地是无质量的. 理论的基本规范玻色子假定在反常对称变换下不变, 所以它们对反常没贡献. 另一个讨论会排除掉自旋$j\geq1$的复合粒子.\cite{16a} 反常流可以构建成基本自旋$\frac{1}{2}$场的Lorentz4-矢函数, 为了对反常有贡献, 这些流在任何自旋$j=1$的无质量复合粒子之间的矩阵元必须不为零, 这将会破坏Lorentz不变性. 对于自旋$j\geq\frac{3}{2}$的复合粒子, 由于在这个理论中同样可能构建出守恒的能动量张量, 它在这些无质量复合粒子之间的矩阵元也必须不为零, 所以对于$j\geq\frac{3}{2}$, Lorentz不变性同样被破坏了, 所以这种可能性也被排除了.} 注意到无论生成元为$T_{\alpha},\,T_{\beta},\cdots$的规范相互作用有多弱, 这个讨论都是成立的, 所以无论这些规范玻色子或陷俘费米子是不是真实的, 我们依旧会得到结论: {\kai{无质量自旋$\frac{1}{2}$态重新产生了构成该态的自旋$\frac{1}{2}$陷俘基本费米子的反常}}.
+
+作为一个简单的例子, 假定底层理论包含$n$``味''无质量费米子, 每个费米子既有左手部分又有右手部分, 并且它们处在渐进自由$SU(N)$规范群的定义表示$N$中. 我们要求$N$是奇的, 这使得非陷俘的$SU(N)$-中性费米束缚态能够出现. 就像量子色动力学中那样, 这一理论自动有整体$SU_{L}(n)\times SU_{R}(n)\times U_{V}(1)$对称性, 它的左手无质量费米子和右手无质量费米子分别处在它的$(n,1)$表示和$(1,n)$表示中, 对于$U_{V}(1)$量子数有相等的值, 这个值可以取为1. 在底层理论中, 对于$SU(n)_{L}$-$SU(n)_{L}$-$U(1)_{Y}$流三重态和$SU(n)_{R}$-$SU(n)_{R}$-$U(1)_{Y}$流三重态存在不为零的反常常数, 它的值是
+\[
+D_{aL,bL,0}=D_{aR,bR,0}=N\delta_{ab} \: ,
+\]
+其中$a,\,b,\cdots$标记$SU(n)$的生成元$\lambda_{a}$, 它的归一化使得在$n$-分量定义表示中$\operatorname{tr}\{\lambda_{a}\lambda_{b}\}=\frac{1}{2}\delta_{ab}$. 当$n>2$时, $SU(n)_{L}$-$SU(n)_{L}$-$SU(n)_{L}$流和$SU(n)_{L}$-$SU(n)_{R}$-$SU(n)_{R}$流也有不为零的反常常数, 它等于
+\[
+D_{aL,bL,cL}=D_{aR,bR,cR}=N\operatorname{tr}[\{\lambda_{a},\lambda_{b}\}\,\lambda_{c}] \: .
+\]
+
+我们在这里假定$SU_{L}(n)\times SU_{R}(n)\times U(1)$是不自发破缺的. 由于陷俘, 物理频谱中的唯一束缚态所在的对称性表示由$m_{L}$和$m_{R}$个基本费米子以及它们的反粒子构成, 其中$m_{L}$是螺度$+\frac{1}{2}$粒子的个数, $m_{R}$是螺度$-\frac{1}{2}$粒子的个数, 反粒子的个数分别是$\bar{m}_{L}$和$\bar{m}_{R}$, 并有
+\begin{equation}
+m_{L}+m_{R}-\bar{m}_{L}-\bar{m}_{R}=k N \: ,\label{22.5.2}
+\end{equation}
+其中$k$是可正可负的奇数. 结果是, 在唯一能够遇到的$SU_{L}(n)\times SU_{R}(n)$的不可约表示$(r,s)$中, $r$处在$m_{L}$个$SU(n)$定义表示与$\bar{m}_L$个相应复共轭表示的直乘中, $s$处在$m_{R}$个$SU(n)$定义表示与$\bar{m}_L$个相应复共轭表示的直乘中, $U(1)_{V}$量子数是$kN$, 而$k$, $m_{L}$, $m_{R}$, $\bar{m}_{L}$和$\bar{m}_{R}$服从方程(\ref{22.5.2}). 对于$U(1)_{V}$量子数为$kN$的$SU(n)_{L}\times SU(n)_{R}$不可约表示$(r,s)$, 记其在螺度$+\frac{1}{2}$束缚态中出现的次数为$p(r,s,k)$. 那么方程(\ref{22.5.1})就变成
+\begin{align}
+\sum_{r,s,k}p(r,s,k)d_{s} \operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}\,\mathscr{T}_{c}]
+&=N\operatorname{tr}[\{\lambda_{a},\lambda_{b}\}\,\lambda_{c}] \: , \label{22.5.3} \\
+\sum_{r,s,k}p(r,s,k)d_{s}k \operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}]
+&=\operatorname{tr}[\{\lambda_{a},\lambda_{b}\}] \: , \label{22.5.4}
+\end{align}
+其中$\operatorname{tr}^{r}$指在$SU(n)$不可约表示$r$中求迹, 而$d_{s}$是$SU(N)$表示$s$的维数. $p(r,s,k)$的其它约束只剩一个: 它必须是正数.
+
+
+对于$SU(n)_{L}\times SU(n)_{R}\times U(1)_{V}$的任意表示$(r,s,k)$的复共轭$(\bar{r},\bar{s},-k)$, 它的迹$\operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}\mathscr{T}_{c}]$\\和
+$k\operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}]$与表示$(r,s,k)$的相反, 所以方程(\ref{22.5.3})和(\ref{22.5.4})仅约束了
+\[
+\ell(r,s,k) \equiv p(r,s,k) - p(\bar{r},\bar{s},-k) \: .
+\]
+回顾我们现在所使用的符号约定, 这些迹是在所有螺度$+\frac{1}{2}$的无质量束缚态上求迹, 其中包括螺度$-\frac{1}{2}$的无质量束缚态的反粒子, 而后者按照复共轭表示进行变换. $SU(n)_{L}\times SU(n)_{R}\times U(1)_{V}$的任意表示的复共轭, 它的迹$\operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}\mathscr{T}_{c}]$和
+$k\operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}]$与原先的表示相反. 因此, 我们可以只对(\ref{22.5.3})和(\ref{22.5.4})中那些$U(1)_{V}$量子数$kN>0$的表示求和
+\begin{align}
+\sum_{r,s,k>0}\ell(r,s,k)d_{s} \operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}\,\mathscr{T}_{c}]
+&=N\operatorname{tr}[\{\lambda_{a},\lambda_{b}\}\,\lambda_{c}] \: , \label{22.5.5} \\
+\sum_{r,s,k>0}\ell(r,s,k)d_{s}k \operatorname{tr}^{(r)}[\{\mathscr{T}_{a},\mathscr{T}_{b}\}]
+&=\operatorname{tr}[\{\lambda_{a},\lambda_{b}\}] \: , \label{22.5.6}
+\end{align}
+其中$\ell(r,s,k)$等于, $SU(n)_{L}\times SU(n)_{R}$的$U(1)_{V}$量子数$kN>0$的$(r,s)$表示在螺度$+\frac{1}{2}$束缚态中出现的次数, {\kai{减去}}同一表示在螺度$-\frac{1}{2}$束缚态中出现的次数. (如果宇称没破缺, 那么表示$(r,s,k)$在螺度$-\frac{1}{2}$束缚态中出现的次数与表示$(s,r,k)$在螺度$+\frac{1}{2}$束缚态中出现的次数相同, 所以在这一情况下有$\ell(r,s,k)=-\ell(s,r,k)$.)
+
+首先考察$n=2$味的情况. 这时没有办法将三个矢量流对称地耦合在一起以给出$SU(2)$不变量, 所以(\ref{22.5.5})两边自动为零, 只留下了条件(\ref{22.5.6}). $SU(2)$的两分量定义表示被包含在奇数多个这些两分量表示的乘积中, 所以在$SU(2)_{L}\times SU(2)_{R}\times U(1)_{V}$的表示中, 对于$r$是定义表示, $s$是平庸表示以及$k=1$的表示, 我们取$\ell=1$, 除了这个表示, 只要$r$是非平庸表示, 我们总能找到(\ref{22.5.6})的一个$\ell(r,s,k)=0$的解. 不幸的是, 这个解远不是唯一的------有无限多种方法可以重新产生该底层理论的反常.
+
+对于一般的$n$和$N$, 通常能够找到方程(\ref{22.5.5})和(\ref{22.5.6})的多个解, 但有一些情况是找不到解的. 在这样的理论, 我们必然有如下的结论: $SU(n)_{L}\times SU(n)_{R}\times U(1)_{V}$对称性{\kai{必须}}部分或完全地自发破缺. 对于量子色动力学, 这有一个特别有意义的应用, 所以我们现在指定到一个$SU(3)$规范群的情况.
+
+更具体一些, 我们将集中与$k=1$且$\bar{m}_{L}=\bar{m}_{R}=0$的表示, 这个表示可以仅通过三个基本费米子和零个反费米子构成. 它们是:\footnote{所有$SU(N)$矢量和张量在这里理解成是逆变的.}
+\\
+\\
+{\bf{(a)}} $r$是对称三阶$SU(n)$张量; $s$是平庸表示.\\
+{\bf{(b)}} $r$是反对称三阶$SU(n)$张量; $s$是平庸表示.\\
+{\bf{(c)}} $r$是混合对称的三阶$SU(n)$张量; $s$是平庸表示.\\
+{\bf{(d)}} $r$是对称二阶$SU(n)$张量; $s$是$SU(n)$矢量.\\
+{\bf{(e)}} $r$是反对称二阶$SU(n)$张量; $s$是$SU(n)$矢量.\\
+{\bf{(f)}} $r$是$SU(n)$矢量; $s$是对称二阶$SU(n)$张量.\\
+{\bf{(g)}} $r$是$SU(n)$矢量; $s$是反对称二阶$SU(n)$张量.\\
+{\bf{(h)}} $r$是平庸表示; $s$是对称三阶$SU(n)$张量.\\
+{\bf{(i)}} $r$是平庸表示; $s$是反对称三阶$SU(n)$张量.\\
+{\bf{(j)}} $r$是平庸表示; $s$是混合对称的三阶$SU(n)$张量.\\
+当$n>2$时, 方程(\ref{22.5.5})和(\ref{22.5.6})在这里写成\footnote{在参考文献[16]中, 't Hooft假设了宇称没有自发破缺, 所以对于这一情况, 在他所给出的公式中, $\ell_{a}=-\ell_{h}$, $\ell_{b}=-\ell_{i}$, $\ell_{c}=-\ell_{j}$, $\ell_{d}=-\ell_{f}$, 以及$\ell_{e}=-\ell_{g}$. 正如我们在这里所看到的, 主要结论并不依赖宇称守恒.}
+\begin{align}
+&\tfrac{1}{2}(n+3)(n+6)\ell_{a}+\tfrac{1}{2}(n-3)(n-6)\ell_{b} +(n^{2}-9)\ell_{c} +n(n+4)\ell_{d} \nonumber \\
+&+n(n-4)\ell_{e} +\tfrac{1}{2}n^{2}(n+1)\ell_{f} +\tfrac{1}{2}n^{2}(n-1)\ell_{g}=3 \label{22.5.7}
+\end{align}
+和
+\begin{align}
+&\tfrac{1}{2}(n+2)(n+3)\ell_{a}+\tfrac{1}{2}(n-2)(n-3)\ell_{b} +(n^{2}-3)\ell_{c} +n(n+2)\ell_{d} \nonumber \\
+&+n(n-2)\ell_{e} +\tfrac{1}{2}n(n+1)\ell_{f} +\tfrac{1}{2}n(n-1)\ell_{g}=1 \: . \label{22.5.8}
+\end{align}
+满足方程(\ref{22.5.7})没有什么问题, 但注意到, 如果$n$是3的倍数, 那么对于$\ell$的所有值, 方程(\ref{22.5.8})左边的每一项都是3的倍数, 这使得这一条件不可能被满足. 我们由此推断出: {\kai{对于有三味无质量夸克的量子色动力学, 它的$SU(3)_{L}\times SU(3)_{R}\times U(1)_{V}$必须是自发破缺的.}} 这一结果不仅仅限制在表示({\bf{a}})---({\bf{j}})中, 对于$SU(3)_{L}\times SU(3)_{R}\times U(1)_{V}$的任意表示, 只要它可以从夸克和反夸克的色中性组合中构成, 这个结论依旧是成立的.
+
+\subsection*{* * *}
+
+除了一些特殊情况外, 例如$n=3$基本费米子$SU(3)$-三重态的$SU(3)$规范群, 't Hooft反常匹配条件的约束性并不是很强; 一般而言, 当手征对称性没有破缺时, 它允许一大类无质量束缚态的存在. 't Hooft同时提出了{\kai{退耦条件}}(\emph{decoupling condition}), 这个条件要求, 当一个或多个费米子味变得非常重时, 不应该存在使得包含重基本费米子的复合粒子无法获得质量的未破缺手征对称性. 例如, 在一个$SU(3)$色规范群的情况下, 如果我们赋予其中一种夸克很大的质量, 那么那些含有一个有质量夸克的3费米子束缚态将会构成$SU(n-1)\times SU(n-1)$群的表示$(r',s')$, 这些表示分别是
+\\
+{\bf{(v)}} $r'$是对称二阶$SU(n-1)$张量; $s'$是平庸表示.\\
+{\bf{(w)}} $r'$是反对称二阶$SU(n-1)$张量; $s'$是平庸表示.\\
+{\bf{(x)}} $r'$和$s'$是$SU(n)$矢量.\\
+{\bf{(y)}} $r'$是平庸表示; $s'$是对称二阶$SU(n-1)$张量.\\
+{\bf{(z)}} $r'$是平庸表示; $s'$是反对称二阶$SU(n-1)$张量.\\
+为了使三费米子质量态获得很大的质量, 必要条件是$\ell'(r',s')=0$, 其中$\ell'(r',s')$是不可约表示$(r',s')$在螺度$+\frac{1}{2}$束缚态中出现的次数减去在螺度$-\frac{1}{2}$束缚条中出现的%
+次数. 通过检查$SU(n)\times SU(n)$的三费米子表示列表({\bf{a}})---({\bf{j}}), 我们来看一下它能够给出的$SU(n-1)\times SU(n-1)$表示, 这样我们就发现't Hooft退耦条件要求\footnote{'t Hooft研究的是宇称守恒的情况, 在那种情况下, 第四个方程和第五个方程等同于第一个和第二个, 第三个方程不会出现.}
+\begin{align}
+0&=\ell^{\prime}_{v}=\ell_{a}+\ell_{c}+\ell_{d} \: , \nonumber \\
+0&=\ell^{\prime}_{w}=\ell_{b}+\ell_{c}+\ell_{e}\: ,\nonumber \\
+0&=\ell^{\prime}_{x}=\ell_{f}+\ell_{g}+\ell_{d}+ \ell_{e} \: , \label{22.5.9}  \\
+0&=\ell^{\prime}_{y}=\ell_{f}+\ell_{h}+\ell_{j}\: ,\nonumber\\
+0&=\ell^{\prime}_{z}=\ell_{g}+\ell_{i}+\ell_{j}\: . \nonumber
+\end{align}
+不幸的是, 尽管$\ell$在所有的解中都不是与$n$无关的整数, 但是在大多数情况下依旧会存在无穷多个解.
+
+退耦条件看上去是相当可信的, 但是, 随着一个或多个费米子质量增加, 我们通常会遇到相变, 这使得质量谱会与费米子质量较小时的质量谱不同, 基于这个原因, 't Hooft质疑这个条件的使用是否合理.\cite{17} 存在另外一个更强的条件, 这个条件被称为{\kai{质量滞留条件}}, 它要求当一个或多个基本费米子味获得{\kai{任意}}质量时, 不应该存在妨碍包含这些有质量基本粒子的复合粒子获得质量的未破缺手征对称性.\cite{17} 如果质量滞留条件是成立的, 那么这个条件将会给出相同的没有可能被相变破坏的结果, 例如方程(\ref{22.5.9}), 这也是't Hooft所希望的.
+
+很容易构造出质量滞留条件被破坏的非真实理论, 例如{\kai{非手征}}对称性自发破缺的理论, 这会给出无质量的Goldstone玻色子, 而这些玻色子可能会成为有质量费米子的组成部分.\cite{17} (随着费米子质量的增长, 这些模型也会出现相比, 这就破坏了't Hooft从退耦条件中得出的结论.) 但是我们在19.9节讨论过的Vafa和Witten的工作则表明, 在一大类更加真实的类QCD理论理论中, 非手征对称性不能自发破缺, 所以这不应该视为质量滞留条件的严重反对意见.
+
+
+\section{相容性条件}
+
+对于任何对称性, 反常中出现的数值系数依赖于理论所包含的物质. 但另一方面, 由于反常的{\kai{形式}}由Wess和Zumino在1971年给出的相容性条件控制, 所以它在很大程度上与理论的细节无关.\cite{18}
+
+即便我们感兴趣的是整体对称性流中的反常, 但为了导出相容性条件, 假想每个对称性流都与规范场耦合将会方便之后的讨论, 若对称性是非阿贝尔的, 我们还要假设所有对称性流彼此耦合, 并且它们的耦合方式要使得这些对称性变成拉格朗日密度的{\kai{定域}}对称性. 通过令相应的规范耦合常数变成无穷小, 我们总可以回到整体对称性的情况. 先不论反常, 在背景场$A_{\alpha\mu}(x)$中的有效作用量$\Gamma[A]$, 它的形式要在规范场的无限小变换$A_{\beta\mu}(y)\to A_{\beta\mu}(y)+\mi\int\dif^{4}x\:\epsilon_{\alpha}(x)\mathscr{T}_{\alpha}(x)A_{\beta\mu}(y)$下不变, 其中, 为了重新产生变换(\ref{15.1.9}), 我们必须取
+\begin{equation}
+-\mi\mathscr{T}_{\alpha}(x) =-\frac{\partial}{\partial x^{\mu}}\frac{\delta}{\delta A_{\alpha\mu}(x)}
+-C_{\alpha\beta\gamma}A_{\beta\mu}(x)\frac{\delta}{\delta A_{\gamma\mu}(x)}\text{ .}\label{22.6.1}
+\end{equation}
+将反常考虑在内, $\mathscr{T}_{\alpha}(x)$就不再湮灭$\Gamma[A]$, 但有
+\begin{equation}
+\mathscr{T}_{\alpha}(x)\Gamma[A]=G_{\alpha}[x;A]\text{ ,}\label{22.6.2}
+\end{equation}
+其中$G_{\alpha}[x;A]$代表反常的效应. 方程(\ref{22.6.2})也可以写成流期望值的协变散度的公式:
+\begin{equation}
+D_{\mu}\langle J^{\mu}_{\alpha}(x)\rangle =-\mi G_{\alpha}[x;A]\text{ ,}\label{22.6.3}
+\end{equation}
+其中
+\begin{equation}
+\langle J_{\alpha}^{\mu}(x)\rangle \equiv \frac{\delta}{\delta A_{\alpha\mu}(x)}\Gamma[A] \label{22.6.4}
+\end{equation}
+而$D_{\mu}$是规范协变导数(\ref{15.1.10}), 这里取$(t_{\beta})_{\gamma\alpha}=-\mi C_{\alpha\beta\gamma}$的伴随表示.
+
+Wess-Zumino相容性条件可以从如下的对易关系得出\footnote{在方程(\ref{22.6.1})中插入因子$-\mi$是为了给对易关系中的%
+结构常数$C_{\alpha\beta\gamma}$提供传统的$\mi$因子. 一个提醒: 在我们所使用的Lie代数的基中, 结构常数是全反对称的, 因而我们不对上规范指标和下规范指标做区分.}
+\begin{equation}
+[\mathscr{T}_{\alpha}(x),\mathscr{T}_{\beta}(y)]=\mi C_{\alpha\beta\gamma}\delta^{4}(x-y)\mathscr{T}_{\gamma}(x)\text{ .}\label{22.6.5}
+\end{equation}
+从方程(\ref{22.6.2})和(\ref{22.6.5}), 我们导出了一般相容性条件
+\begin{equation}
+\mathscr{T}_{\alpha}(x)G_{\beta}[y;A]-\mathscr{T}_{\beta}(y)G_{\alpha}[x;A]=\mi C_{\alpha\beta\gamma}\delta^{4}(x-y)G_{\gamma}[y;A]\text{ .} \label{22.6.6}
+\end{equation}
+
+Wess和Zumino最初在推导这些相容性条件时针对的是强相互作用的$SU(3)\times SU(3)$对称性, 这是物理上且历史上都很重要的特殊情况. 这时, 作用在规范场上的生成元$\mathscr{T}_{\alpha}(x)$由方程(\ref{22.3.31})定义的偶宇称生成元$\mathscr{Y}_{a}(x)$和%
+方程(\ref{22.3.32})定义的奇宇称生成元$\mathscr{X}_{a}(x)$构成.\footnote{另一个提醒: 正如我们在22.3节提醒的, 这里所使用的$\mathscr{X}_{a}$和$\mathscr{Y}_{a}$在参考文献[8]中是$Y_{a}$和$X_{a}$.} 它们满足对易关系
+\[
+[\mathscr{Y}_{a}(x),\mathscr{Y}_{b}(y)]=\mi\delta^{4}(x-y)f_{abc}\mathscr{Y}_{c}(x)\text{ ,}
+\]
+\[
+[\mathscr{Y}_{a}(x),\mathscr{X}_{b}(y)]=\mi\delta^{4}(x-y)f_{abc}\mathscr{X}_{c}(x)\text{ ,}
+\]
+\[
+[\mathscr{X}_{a}(x),\mathscr{X}_{b}(y)]=\mi\delta^{4}(x-y)f_{abc}\mathscr{Y}_{c}(x)\text{ ,}
+\]
+其中$f_{abc}$是$SU(3)$的结构常数. 既然$\mathscr{Y}_{a}$生成的$SU(3)$子群不是自发破缺的, 在处理对费米子动量的积分时, 保留在$\mathscr{Y}_{a}$生成的规范变换下的不变性将会方便我们的讨论, 这使得
+\[
+\mathscr{Y}_{a}(x)\,\Gamma=0\text{ ,}
+\]
+这留下了不为零的反常
+\[
+\mathscr{X}_{a}(x)\,\Gamma=G_{a}(x)\text{ .}
+\]
+那么不平庸的相容性条件就是
+\[
+\mathscr{Y}_{a}(x)G_{b}(y)=\mi\delta^{4}(x-y)f_{abc}G_{c}(x)
+\]
+和
+\[
+\mathscr{X}_{a}(x)G_{b}(y)-\mathscr{X}_{b}(x)G_{a}(y)=0\text{ .}
+\]
+第一个条件仅仅说明$G_{a}(x)$在普通的$SU(3)$变换下像八重态那样变换. 第二个条件给$G_{a}(x)$附加了另一个很强的约束. 读者可以检验$G_{a}(x)$的Bardeen公式(\ref{22.3.34})是满足这一条件的. 我们在这里不会对此进行展开, 取而代之, 我们用它来例证, 对于一般的规范理论, 若所有流的都处理成对称的, 那么就会是这样的情况. 在22.3节, 我们引用了这一情况下的反常公式(\ref{22.3.38}), 但是并没有导出比规范场的二阶项还要高的高阶项. 在这里, 我们将会证明相容性条件(\ref{22.6.6})指定了这些项.
+
+为了这个目的以及将来进一步的推广, 将这组Wess-Zumino相容性条件从新表述, 写成15.7节中那样在BRST变换下不变的条件将会方便我们的讨论. 我们引入鬼场$\omega_{\alpha}$, 并定义一般规范的理论的幂零BRST算符
+\begin{align}
+sA_{\alpha\mu}&=\partial_{\mu}\omega_{\alpha}+C_{\alpha\beta\gamma}A_{\beta\mu}\omega_{\gamma}\text{ ,}\label{22.6.7}\\
+s\omega_{\alpha}&=-\tfrac{1}{2}C_{\alpha\beta\gamma}\omega_{\beta}\omega_{\gamma}\text{ ,} \label{22.6.8}
+\end{align}
+$s$在这里要满足分配律$s(AB)=(sA)B\pm A(sB)$, 其中当$A$是$\omega_{\alpha}$这样的费米量时取负号, 其它情况取正号. 取代反常函数$G_{\alpha}[x;A]$, 我们将处理如下的泛函
+\begin{equation}
+G[\omega,A]=\int\omega_{\alpha}(x)\,G_{\alpha}[x;A]\,\dif^{4}x \text{ .} \label{22.6.9}
+\end{equation}
+那么(记住$\omega_{\alpha}$是费米的)
+\begin{align*}
+sG[\omega,A] &=-\tfrac{1}{2}C_{\alpha\beta\gamma}\int\dif^{4}x\,\omega_{\beta}(x)\,\omega_{\gamma}(x)\,G_{\alpha}[x;A] \\
+&\quad -\int \dif^{4}x\,\omega_{\alpha}(x)\int\dif^{4}y\,
+\biggl[\frac{\partial\omega_{\beta}(y)}{\partial y^{\mu}}+C_{\beta\gamma\delta}A_{\gamma\mu}(y)\omega_{\delta}(y)\biggr]\,
+\frac{\delta G_{\alpha}[x;A]}{\delta A_{\beta\mu}(y)} \\
+&= \int\dif^{4}x\,\int\dif^{4}y\,\omega_{\alpha}(x)\,\omega_{\beta}(y)\,
+\Bigl[-\tfrac{1}{2}C_{\alpha\beta\gamma}\delta^{4}(x-y)G_{\gamma}[x;A] \\
+&\quad +\mi\mathscr{T}_{\beta}(y)G_{\alpha}[x;A]\Bigr]\text{ .}
+\end{align*}
+由于鬼场彼此之间是反对易的, 这可以写成
+\begin{align*}
+sG[\omega,A]&=-\tfrac{1}{2}\mi\int\dif^{4}x\,\int\dif^{4}y\,\omega_{\alpha}(x)\,\omega_{\beta}(y)\\
+&\quad\times\Bigl[\mi C_{\alpha\beta\gamma}\delta^{4}(x-y)G_{\gamma}[x;A]
++\mathscr{T}_{\beta}(y)G_{\alpha}[x;A]-\mathscr{T}_{\alpha}(x)G_{\beta}[y;A]\Bigr]\text{ .}
+\end{align*}
+我们看到, 当其仅当对于所有鬼场$\omega_{\alpha}(x)$, $G[\omega,A]$都是BRST不变的
+\begin{equation}
+sG[\omega,A]=0 \text{ ,}\label{22.6.10}
+\end{equation}
+相容性条件(\ref{22.6.6})才是成立的.
+
+现在考察反常$G[\omega,A]$可以写成BRST算符$s$作用在定域泛函$F[A]$上的可能性:
+\begin{equation}
+G[\omega,A]=s F[A] \text{ .}\label{22.6.11}
+\end{equation}
+(注意, 由于算符$s$增加了一个鬼场因子, 而反常泛函$G$关于鬼场是线性的, 所以泛函$F$必须与鬼场无关.) BRST算符$s$满足$s^{2}=0$, 所以这样的反常将会满足相容性条件$sG=0$. 如果$F[A]$是规范场的{\kai{定域}}泛函,\footnote{所谓定域泛函是指定域函数的积分, 即, 给定点的场和场导数的函数.} 那么它可以从作用量中剪除掉, 因而抵消了反常. 对于反常中的任意项, 如果它能写成BRST算符$s$作用在定域泛函上, 这依旧是成立的; 这样的项自身就满足相容性条件, 因而可以通过给作用量加上定域项抵消掉. 所以, 我们感兴趣的反常是那些鬼数为1且满足相容性条件(\ref{22.6.10})的定域泛函$G[\omega,A]$模掉$s$作用在鬼数为零的定域泛函. 按照幂零算符的通常术语, 这种算符的等价类构成了所谓的$s$算符在鬼数为1处的{\kai{上同调}}.
+
+我们也可以用定域密度自身表示这一反常. 我们可以将这个反常(或者反常中的任意一项)写成$G=\int\dif^{4}x\,\mathscr{G}(x)$, 其中$\mathscr{G}(x)$是时空点$x$处的规范场, 鬼场以及它们导数的幂级数. 那么, $sG=0$的条件就等价与如下的陈述,
+\begin{equation}
+s\mathscr{G}(x)=\partial_{\mu}\mathscr{J}^{\mu}(x)\label{22.6.12}
+\end{equation}
+其中$\mathscr{J}^{\mu}(x)$是场和场导数的某个函数. 同理, $\mathscr{G}$中那些可以通过给作用量加定域项而抵消掉的项, 其形式是$s\mathscr{F}$加上可能的导数. 因此我们这里感兴趣的反常是, 鬼数为1且满足相容性条件(\ref{22.6.12})的定域函数, 模掉可以表述成$s$作用在鬼场为零的定域泛函的项, 再模掉可能的导数. 这是在模掉导数后的定域函数空间中的上同调, 称为$s$在鬼数为1处的上同调, 记为$H^{1}(s\vert\dif)$.
+
+应用代数方法可以解出BRST算符$s$的上同调, 由此可以推出一般规范理论中反常的形式.\cite{19} 这一方法决定不了一些依赖于理论所含物质的常系数, 这些常系数需要用22.2节或22.3节的方法计算出来. 既然我们已经计算出了一般规范理论中关于规范场二阶的反常项, 以及它们的常系数, 在这里我们将用相容性条件(\ref{22.6.12})决定出反常中关于场的高阶项.
+
+
+我们在22.3节看到, 当所有流都处理对称时, 规范场的二阶项是表达式(\ref{22.3.26})的三分之一. 这是量纲(以质量为单位)为4的算符, 而Wess-Zumino相容性条件(\ref{22.6.6})仅把量纲相同的算符关联起来, 所以为了满足这个条件, 我们应该加上拥有相同量纲的规范场的更高阶项. 因此, 我们找到了相容性条件的如下形式(不一定唯一)的解
+\begin{align}
+G_{\alpha}&=\mi[\langle \partial_{\mu}J^{\mu}_{\alpha}\rangle]_{\text{anom}}=-\frac{\mi}{24\uppi^{2}}\,
+\epsilon^{\kappa\nu\lambda\rho} \operatorname{Tr}\biggl \{ T_{\alpha}\Bigl[ \partial_{\kappa}A_{\nu}\,\partial_{\lambda}A_{\rho}
++\mi c_{1}\partial_{\kappa}A_{\nu}\,A_{\lambda}A_{\rho} \nonumber \\
+&\quad +\mi c_{2}A_{\kappa}\,\partial_{\nu}A_{\lambda}\,A_{\rho}+\mi c_{3}A_{\kappa}A_{\nu}\partial_{\lambda}A_{\rho}
+-c_{4}A_{\kappa}A_{\nu}A_{\lambda}A_{\rho}\Bigr] \biggr\} \text{ ,} \label{22.6.13}
+\end{align}
+其中$A_{\mu}\equiv A_{\alpha\mu}T_{\alpha}$, $c_{i}$是待定常数.
+
+为了节省精力, 用微分形式的语言重写这个解将会方便我们的讨论. (参看8.8节.) 我们引入一组c-数参量$\dif x^{\mu}$, 它们与自身反对易并与所有费米场反对易, 例如鬼场$\omega_{\alpha}$. 这样, $\dif x^{\mu}$就与BRST算符$s$也反对易. 由于$\dif x^{\kappa}\dif x^{\nu}\dif x^{\lambda}\dif x^{\rho}$是全反对称的, 它可以写成
+\begin{equation}
+\dif x^{\kappa}\dif x^{\nu}\dif x^{\lambda}\dif x^{\rho} = \epsilon^{\kappa\nu\lambda\rho} \dif^{4}x \text{ ,}
+\qquad
+\dif^{4}x=\dif x^{0}\dif x^{1}\dif x^{2} \dif x^{3} \text{ .} \label{22.6.14}
+\end{equation}
+我们同时引入外导数
+\[
+\dif \equiv \dif x^{\mu} \frac{\partial}{\partial x^{\mu}}
+\]
+既然导数对易是幂零的, 且导数与$s$反对易, 就有:
+\begin{equation}
+\dif^{2} =0 \text{ ,}
+\qquad\qquad
+\dif s+ s\dif=0\text{ .} \label{22.6.15}
+\end{equation}
+最后, 我们引入反对易量
+\begin{equation}
+A\equiv \mi A_{\mu}\dif x^{\mu}=\mi A_{\alpha\mu}T_{\alpha}\dif x^{\mu}\text{ ,} \qquad\qquad
+\omega\equiv \mi\omega_{\alpha}T_{\alpha} \text{ .} \label{22.6.16}
+\end{equation}
+有了这些符号约定, 方程(\ref{22.6.13})可以写成
+\begin{align}
+G[\omega,A]&=\frac{1}{24\uppi^{2}}\int \operatorname{Tr}\,\biggl\{ \omega\Bigl[ (\dif A)^{2} +c_{1}(\dif A)A^{2}\nonumber \\
+&\quad +c_{2}A(\dif A)A+c_{3}A^{2}(dA)+c_{4}A^{4}\Bigr] \biggr\} \text{ .}\label{22.6.17}
+\end{align}
+
+为了实现相容性条件(\ref{22.6.10}), 我们注意到BRST变换规则(\ref{22.6.7})和(\ref{22.6.8})可以写成
+\begin{align}
+sA&=-\dif \omega+\{A,\omega\}\text{ ,} \label{22.6.18}\\
+s\omega&=\omega^{2} \text{ .} \label{22.6.19}
+\end{align}
+现在, 方程(\ref{22.6.17})中最后一项的BRST变换是
+\begin{align*}
+s\operatorname{Tr}\Bigl[\omega A^{4}\Bigr]&= \operatorname{Tr} \Bigl[ \omega^{2}A^{4}-\omega\{A,\omega\}A^{3}
++\omega A\{A,\omega\}A^{2} \\
+&\quad -\omega A^{2}\{A,\omega\}A +\omega A^{3}\{A,\omega\}\Bigr] +\omega\dif\omega A^{3} \text{项}\\
+&=\operatorname{Tr}\Bigl[\omega^{2}A^{4}\Bigr]+\omega\dif\omega A^{3}\text{项 .}
+\end{align*}
+对于$sG$, 没有其它正比于$\operatorname{Tr}[\omega^{2}A^{4}]$的贡献, 所以仅当$c_{4}=0$时, 相容性条件(\ref{22.6.10})才会满足. 加上$c_{4}=0$, 一个直接的计算给出
+\begin{align*}
+sG&= \frac{1}{24\uppi^{2}}\int \operatorname{Tr}\,\Biggl\{ -(\dif A)^{2}\omega^{2}+\omega\,\dif\omega\,A\,\dif A
+-\dif\omega\,\omega\,\dif A\,A \\
+&\quad -A\omega\,\dif A\,\dif\omega -\omega A\,\dif\omega\,\dif A \\
+&\quad +c_{1}\Bigl[\omega\,\dif A\,\dif\omega\,A -\omega\,\dif A\,A\,\dif\omega \Bigr] \\
+&\quad +c_{2}\Bigl[\omega\,\dif\omega\,\dif A\,A-\omega A\,\dif A\,\dif\omega\Bigr] \\
+&\quad +c_{3}\Bigl[\omega\,\dif\omega\,A\,\dif A -\omega A\,\dif \omega\,\dif A\Bigr] \\
+&\quad -c_{1}\Bigl[-\omega A\,\dif\omega\,A^{2}+\omega\,\dif\omega\,A^{3}+\omega\,\dif A\,A^{2}\omega\Bigr] \\
+&\quad -c_{2}\Bigl[\omega A^{2}\,\dif \omega\, A-\omega A\,\dif\omega\,A^{2}+\omega A\,\dif A\,\dif\omega\Big]\\
+&\quad -c_{3}\Bigl[-\omega A^{3}\,\dif\omega+\omega A^{2}\,\dif\omega\,A+\omega A^{2}\,\dif A\,\omega\Bigr]\Bigg\}
+\text{ .}
+\end{align*}
+我们不需要假定被积函数为零, 但要求它是某个定域函数的导数, 这使得它的积分为零. 对于那些包含两个导数的项和包含一个导数的项, 由于这两类项之间不可能发生抵消, 所以它们必须分别满足这一条件. 不难看到, 如果我们取$c_{1}=-c_{2}=+c_{3}\equiv c$, 那么仅包含一个导数的被积函数就可以写成$\dif\mathscr{F}$的形式. 如果$c=-1/2$, 那么剩下的项是全导数, 从而证明了之前引用结果(\ref{22.3.38})的合理性. 这个结果通常更紧凑地表示成
+\begin{align}
+G[\omega,A] &=\frac{1}{24\uppi^{2}}\int\operatorname{Tr}\,\Biggl\{\omega\,\dif\biggl[A\,\dif A-\frac{1}{2}A^{3}\biggr]\Biggr\} \nonumber \\
+&=\frac{1}{24\uppi^{2}}\int\operatorname{Tr}\,\Biggl\{\omega\,\dif\biggl[AF+\frac{1}{2}A^{3}\biggr]\Biggr\}\text{ ,} \label{22.6.20}
+\end{align}
+其中$F$是矩阵值场强2-形式
+\begin{equation}
+F\equiv \tfrac{1}{2}\mi t_{\alpha}F_{\alpha \mu\nu}\,\dif x^{\mu}\dif x^{\nu}=\dif A- A^{2} \text{ .} \label{22.6.21}
+\end{equation}
+反常不一定是(\ref{22.6.13})的形式, 所以方程(\ref{22.6.20})不是$G[\omega,A]$的唯一结果. 下一节引用的结果表明, 对于$G$的任意子群$H$, 只要$H$的所有生成元有$\operatorname{Tr}\{t_{i}\{t_{j},t_{k}\}\}=0$, 当$t_{i}$是$H$的生成元时, 就有可能通过给作用量加上定域项抵消掉反常$G_{i}$.
+
+就如何构建相容性条件的解, 有一个漂亮的代数工具, 称为{\emph{Stora-Zumino}}{\kai{下降方程}}.\cite{18a} 在任意偶数维时空描述这个方法同在四维时空中一样容易, 所以我们取时空维数为$2n$. 在开始阶段, 为了使$(2n+2)$-形式$\operatorname{Tr}F^{n+1}$有意义, 我们必须假想给时空的$2n$个坐标加上两个变量. 注意到
+\begin{equation}
+\dif F= -\dif(A^{2})=-(\dif A)A+A(\dif A)=[A,F]\text{ ,} \label{22.6.22}
+\end{equation}
+这使得$\operatorname{Tr}F^{n+1}$是闭形式:
+\begin{equation}
+\dif \operatorname{Tr}F^{n+1}=(n+1)\operatorname{Tr}\{(\dif F)F^{n}\}
+=\operatorname{Tr}\{[A,F^{n+1}]\}=0\text{ .} \label{22.6.23}
+\end{equation}
+只要扩展时空是单连通的, Poincar\'{e}定理就会告诉我们$\operatorname{Tr}\{F^{n+1}\}$是恰当的, 也就是说, 存在$(2n+1)$-形式$\Omega_{2n+1}$(称为{\emph{Chern-Simons}}{\kai{形式}}), 使得
+\begin{equation}
+\operatorname{Tr}\{F^{n+1}\}=\dif \Omega_{2n+1} \text{ .} \label{22.6.24}
+\end{equation}
+更进一步, $\operatorname{Tr}\{F^{n+1}\}$显然是规范不变的, 并且它只依赖于规范场, 所以它是BRST-不变的:
+\begin{equation}
+s\operatorname{Tr}\{F^{n+1}\} =0\text{ .} \label{22.6.25}
+\end{equation}
+``微分''$\dif x^{\mu}$理解成与鬼场$\omega_{\alpha}$这样的费米场反对易, 所以算符$\dif$与方程(\ref{22.6.7})和(\ref{22.6.8})定义的算符$s$反对易:
+\[
+s\dif+\dif s=0 \text{ .}
+\]
+由于$s$是幂零的, 由此得出$s\Omega_{2n+1}$也是闭形式:
+\[
+\dif(s\Omega_{2n+1})=-s\operatorname{Tr}\{F^{n+1}\}=0 \text{ .}
+\]
+再次使用Poincar\'{e}定理, 这意味着必存在$2n$-形式$\Omega_{2n}^{1}$, 它关于鬼场$\omega_{\alpha}$是一阶的, 它有
+\begin{equation}
+s\Omega_{2n+1}=\dif\Omega_{2n}^{1} \text{ .} \label{22.6.26}
+\end{equation}
+更近一步, 由于$\dif(s\Omega_{2n}^{1})=-s^{2}\Omega_{2n+1}=0$, 所以还存在$(2n-1)$-形式, 它关于鬼场是二阶的, 它有
+\begin{equation}
+s\Omega_{2n}^{1}=\dif\Omega_{2n-1}^{2} \text{ .}\label{22.6.27}
+\end{equation}
+那么由此得出, 即使$\Omega_{2n}^{1}$自身不是BRST-不变的, 但是它对$2n$维时空的积分是BRST-不变的:
+\begin{equation}
+s\int_{\text{spacetime}}\Omega_{2n}^{1} =0 \text{ .} \label{22.6.28}
+\end{equation}
+因此, 通过对两个一阶微分方程$\dif\Omega_{2n+1}=\operatorname{Tr}\{F^{n+1}\}$和$\dif\Omega_{2n}^{1}=s\Omega_{2n+1}$积分, 我们就找到了反常泛函$G[\omega,A]$的一个候选者$\int\Omega_{2n}^{1}$. 这些方程的一般解(不唯一)是
+\begin{align}
+\Omega_{2n+1} &= (n+1)\int_{0}^{1} \dif t\, \operatorname{Tr}\Bigl\{A\,F_{t}^{n}\Bigr\}\text{ ,}\label{22.6.29} \\
+\Omega_{2n}^{1} &=-(n+1)\sum_{r=0}^{n-1}\int^{1}_{0}\dif t\,(1-t)\operatorname{Tr}\Bigl\{\omega\,
+\dif(F_{t}^{r}\,A\,F_{t}^{n-1-r})\Bigr\}\text{ ,} \label{22.6.30}
+\end{align}
+其中$F_{t}\equiv tF+(t-t^{2})A^{2}$. 对积分(\ref{22.6.30})的计算表明, 在四维时空的情况下, 方程(\ref{22.6.20})给出的$G[\omega,A]$的结果正比于$\int\Omega_{4}^{1}$.
+
+我们可以继续这个下降过程, 并推导出其它有用的结果. 特别地, 从方程(\ref{22.6.27})以及$s$的幂零性可以得出$\dif(s\Omega_{2n-1}^{2})=0$, 所以Poincar\'{e}定理告诉我们$s\Omega_{2n-1}^{2}$是$\dif \Omega_{2n-2}^{3}$的形式, 所以$\omega_{2n-1}^{2}$对{\kai{空间}}的$2n-1$个坐标积分是BRST-不变的:
+\begin{equation}
+s\int_{\text{space}}\Omega_{2n-1}^{2} =0 \text{ .} \label{22.6.31}
+\end{equation}
+这种关于鬼场二阶的BRST-不变泛函是所谓的{\emph{Schwinger}}{\kai{项}}\cite{18c}的候选者.\cite{18b} 这里我们关心的那类Schwinger项, 其来源是两个对称流时间分量的等时对易关系中的反常项$S_{\alpha\beta}(\mathbf{x},\mathbf{y})$:
+\begin{equation}
+\Big[J^{0}_{\alpha}(\mathbf{x},t), J^{0}_{\beta}(\mathbf{y},t)\Big]
+=\mi C_{\alpha\beta\gamma}J^{0}_{\gamma}(\mathbf{x},t)\delta^{2n-1}(\mathbf{x}-\mathbf{y})
++S_{\alpha\beta}(\mathbf{x},\mathbf{y},t)\, . \label{22.6.32}
+\end{equation}
+(这一段中的所有算符取在同一时刻$t$, 在后面的讨论中会隐去这个变量.) 我们从对易子的反对称性中得到$S_{\alpha\beta}(\mathbf{x},\mathbf{y})=-S_{\beta\alpha}(\mathbf{y},\mathbf{x})$, 所以, 所有与$S_{\alpha\beta}(\mathbf{x},\mathbf{y})$相关的信息包含在如下的泛函中
+\begin{equation}
+S[\omega] \equiv \int \dif^{2n-1}x\,\dif^{2n-1}y\,\omega_{\alpha}(\mathbf{x})\,\omega_{\beta}(\mathbf{y})\,
+S_{\alpha\beta}(\mathbf{x},\mathbf{y}) \, .\label{22.6.33}
+\end{equation}
+注意到$S_{\alpha\beta}(\mathbf{x},\mathbf{y})$一般依赖于各种物质场和规范场, 所以$S[\omega]$一般会依赖这些场和鬼场$\omega_{\alpha}(x)$.  取方程(\ref{22.6.32})与第三个流$J^{0}_{\gamma}(\mathbf{z})$的对易子, 用$\omega_{\alpha}(\mathbf{x})\omega_{\beta}(\mathbf{y})\omega_{\gamma}(\mathbf{z})$收缩它, 对$\mathbf{x}$, $\mathbf{y}$和$\mathbf{z}$积分, 再使用Jacobi恒等式, 我们发现
+\begin{align*}
+0&=\int \dif^{2n-1}x\,\dif^{2n-1}y\,\dif^{2n-1}z\,\omega_{\alpha}(\mathbf{x})\,\omega_{\beta}(\mathbf{y})\,
+\omega_{\gamma}(\mathbf{z}) \\
+&\quad \times\Bigl[\mi C_{\alpha\beta\gamma}\,S_{\gamma\delta}(\mathbf{z},\mathbf{x})\delta^{2n-1}(\mathbf{x}-\mathbf{y})
++[J^{0}_{\gamma}(\mathbf{z}),S_{\alpha\beta}(\mathbf{x},\mathbf{y})]\Bigr]\, .
+\end{align*}
+$S_{\alpha\beta}(\mathbf{x},\mathbf{y})$这样的规范场和物质场的泛函,  BRST算符$s$在上面的作用与规范参量为$\omega_{\alpha}$的规范相互作用相同, 所以
+\[
+s\,S_{\alpha\beta}(\mathbf{x},\mathbf{y})=\mi\biggl[
+\int \dif^{2n-1}z\,\omega_{\gamma}(\mathbf{z})\,J_{\gamma}^{0}(\mathbf{z}),S_{\alpha\beta}(\mathbf{x},\mathbf{y})
+\biggr]
+ \, .
+\]
+回顾方程(\ref{22.6.8}), 我们发现泛函(\ref{22.6.33})是BRST-不变的
+\begin{equation}
+s\,S[\omega]=0\, . \label{22.6.34}
+\end{equation}
+另外, 通过给流中加项, 我们对$S[\omega]$的改变只能是形式为$sT[\omega]$的项, 所以{\kai{不能}}通过给流加项移除的可能Schwinger项的集合由BRST算符$s$在鬼数2处的上同调给出------即, 其本身不是$sT[\omega]$的形式, 却关于鬼场二阶且BRST-不变的泛函$S$的集合. 方程(\ref{22.6.31})表明$\int\Omega_{2n-1}^{2}$的这种泛函的一个候选者.
+
+
+
+
+\subsection*{* * *}
+
+
+迄今为止, 本节对反常的分析只适用于一圈阶中的反常. 诚然, 在一个理论中, 如果与量子规范场耦合的流中有单圈反常, 那么这个理论就是不相容的, 因而也就不要需要研究它的高阶. 但反之并不成立; 对于有量子规范场的理论, 即使它在一圈阶无反常, 我们仍然需要证明它在高阶也是无反常的. 另外, 对于整体对称性中的反常, 例如量子色动力学中的手征对称性反常, 有这种反常的理论不存在不相容, 对于这样的理论, 我们需要知道高阶修正是否会影响反常.
+
+既然BRST变换非线性地作用在场上, 即使没有反常, 我们也没有肯定的把握预期超出单圈近似的量子有效作用量$\Gamma[\omega,A]$是BRST-不变的. 正如我们在17.1节看到的, 超过这个近似, 我们不仅需要考察规范场和鬼场的泛函, 还要把它们的反常考虑进来. (即使是在一圈阶, 引入反场有时也是重要的, 这是由于另一个原因: 对于仅是场的泛函, 如果它满足Wess-Zumino相容性条件, 并且不能表示BRST算符作用在场的定域泛函上, 对于这样的泛函, 如果它{\kai{能}}表示成作用量与某个场和反场的定域泛函的反括号, 那么它就不能作为候选反常, 这是因为在这一情况下, 通过从作用量减掉该项, 这个反常可以被抵消掉. 这对应于在场的作用量中有一个变化, 与此同时, 作用量服从的规范对称性也有了一个变化.)
+
+在给作用量引入反场之后, 对反常的研究同时表现出有一个上同调公式.\cite{20,21} 对这一问题的分析基于Batalin和Vilkovisky所称的主方程的Zinn-Justin版本(\ref{17.1.10}). 当反常不存在时, $(\Gamma,\Gamma)=0$, 这使得在一圈阶有$(S,\Gamma_{1})=0$, 其中$S$是零阶作用量而$\Gamma_{1}$是对量子有效作用量的单圈修正. 在有反常时, 我们则有
+\begin{equation}
+(S,\Gamma_{1})=G_{1} \, ,\label{22.6.35}
+\end{equation}
+其中$G_{1}$是场和反场的某个泛函, 既然$S$和$\Gamma_{1}$的鬼数都为零, $G_{1}$的鬼数必须为1. 作用量假定满足经典主方程$(S,S)=0$, 所以方程(\ref{22.6.35})中的反括号算符是幂零的, 因而$(S,G_{1})=0$. 但是, 如果对于某个鬼数为零的定域泛函$F_{1}$有$G_{1}=(S,F_{1})$, 那么通过从作用量中减掉$F_{1}$项(这视为$\hbar$节的量子修正), 即从$\Gamma_{1}$中减掉该项, 我们就可以抵消掉一圈阶的反常. (当然, $G_{1}=(S,\Gamma_{1})$, 但有无质量粒子时, $\Gamma_{1}$不是定域泛函.) 因此, 候选反常是那些鬼数为1且封闭的定域泛函$G_{1}$, 换句话说, 它们满足$(S,G_{1})=0$, 但它们不是恰当的, 即, 它们无法表示成$G_{1}=(S,F_{1})$, 其中$F_{1}$是鬼数为1的定域泛函. 换句话说, 候选反常对应于反括号算符$X\mapsto(S,X)$在场和反场的定域函数空间上鬼数为1的上同调.
+
+这很像我们在本节早些时候发现的结果, 只不过这里将BRST算符$s$换成了反括号$(S,\cdots)$. 如果我们令方程(\ref{22.6.35})中的反场为零, 并回忆起$(\delta\Gamma_{1}/\delta \chi^{n})_{\chi^{\ddag}=0}=s\chi^{n}$, 我们发现条件(\ref{22.6.35})实际上给出了条件$s\Gamma_{1}=0$, 而正如我们所看到的, 这等价于要求$\Gamma_{1}$满足Wess-Zumino相容性条件. 但是这里有一种观念, 基于方程(\ref{22.6.35})的分析可以扩展到高阶.
+
+为了看到这点, 假定已经发现反括号算符$X\mapsto(S,X)$在定域函数空间上鬼数为1的上同调为零, 并向上面所说的重新定义了作用量使得$G_{1}=(S,\Gamma_{1})=0$. 在两圈阶破坏主方程$(\Gamma,\Gamma)=0$的反常由函数$G_{2}$表示, 它有
+\[
+\Bigl(\Gamma_{1},\Gamma_{1}\Bigr)+2\Bigl(S,\Gamma_{2}\Bigr)=G_{2} \, .
+\]
+但既然$(S,\Gamma_{1})=0$且$(S,S)=0$, 任何这样的$G_{2}$将会满足$(S,G_{2})=0$. 基于上同调为零的假定, 这意味着它可以表示成$G_{2}=(S,F_{2})$, 其中$F_{2}$是鬼数为2的定域泛函, 所以在这一阶, 反常可以通过从作用量中减掉$F_{2}$抵消掉.
+
+这一讨论可以扩展至任意阶. 假定我们抵消掉了主方程中直至$N-1$阶的反常, 这使得对于所有的$M<N$,
+\[
+0=G_{M}=\sum_{L=0}^{M}\Bigl(\Gamma_{L},\Gamma_{M-L}\Bigr)=2\Bigl(S,\Gamma_{M}\Bigr)+\sum_{L=1}^{M-1}
+\Bigl(\Gamma_{L},\Gamma_{M-L}\Bigr)\, .
+\]
+同理, 反括号中的第$N$阶项就有
+\[
+G_{N}=2\Bigl(S,\Gamma_{N}\Bigr)+\sum_{M=1}^{N-1}\Bigl(\Gamma_{M},\Gamma_{N-M}\Bigr)\, ,
+\]
+所以, 使用Jacobi恒等式(\ref{15.9.21})(其中对于三个玻色算符, 所有符号均为$-$号)以及上面$(S,\Gamma_{M})$的公式, 我们发现:
+\[
+\Bigl(S,G_{N}\Bigr)=-2\sum_{M=1}^{N-1}\Bigl(\Bigl(S,\Gamma_{M}\Bigr),\Gamma_{N-M}\Bigr)
+=\sum_{M=1}^{N-1}\sum_{L=1}^{M-1}\Bigl(\Bigl(\Gamma_{L},\Gamma_{M-L}\Bigr),\Gamma_{N-M}\Bigr)\, .
+\]
+这可以写成更对称的形式
+\[
+\Bigl(S,G_{N}\Bigr)=-\sum_{M_{1}=1}^{N-2}\sum_{M_{2}=1}^{N-2}\sum_{M_{3}=1}^{N-2}\delta_{N,M_{1}+M_{2}+M_{3}}
+\Bigl(\Gamma_{M_{1}},\Bigl(\Gamma_{M_{2}},\Gamma_{M_{3}}\Bigr)\Bigr)\, .
+\]
+既然$M_{1}$, $M_{2}$和$M_{3}$的范围是相同的, 我们可以将求和中的二重反括号写成对这些指标的$3!$个置换求和, 而根据Jacobi恒等式(\ref{15.9.21}), 这为零, 从而给出结论$(S,G_{N})=0$. 如果上同调像假定的那样为零, 那么这暗示了存在定域泛函$F_{N}$使得$G_{N}=(S,F_{N})$, 所以, 通过从作用量中减掉$F_{N}$, $N$阶中的反常就抵消掉了, 这正是所要证明的.
+
+通过纯代数方法, Barnich, Brandt和Henneaux\cite{22}成功证明了, 对于(四维时空中)基于半单Lie代数的Yang-Mills理论, 反括号算符$X\mapsto(S,X)$(在定域函数空间上鬼数为1)的上同调完全由形式为(\ref{22.6.20})的项的线性组合构成, 其中的每一项对应规范的每个单子群, 系数待定.\footnote{对于方程(\ref{22.6.20})中的迹, 由于这个迹对于单Lie代数的所有表示除了一个常系数外都是相同的,\cite{19a} 所以没有必要为了计算这个迹指定规范代数的表示, 并且这个系数完全不能通过这个上同调定理决定.} 这表明, 无需参照理论所包含的物质, 在一圈阶, 这时反常$G_{1}$自动满足$(S,G_{1})=0$, 半单规范群的反常必须是形式为(\ref{22.6.20})的项的线性组合, 留待决定只有对应不同单Lie群的常系数, 而通过将理论所含的物质也考虑在内再加以细致的计算, 这些系数就能定下来. 更进一步, 我们在22.4节看到, 存在这样的规范群, 无论费米子场的选单是什么, 方程(\ref{22.6.20})中的迹都自动为零. (它们是没有$n\geq3$的$SU(n)$因子的半单规范群.) 在这种情况下, 参考文献[22]表明反括号算符$X\mapsto(S,X)$在鬼数为1处的上同调是零. 正如我们已经证明过的, 这意味着: 在这样的理论中, 微扰论的任意阶都没有反常.
+
+反常与反括号算符的上同调相关有另一重含义.\cite{23} 在推导Slavnov-Taylor恒等式(\ref{16.4.6})时, 我们假定测度$\prod_{n,x}\dif\chi^{n}(x)$在所研究问题的对称变换下不变. 在15.9节, Zinn-Justin方程是针对对称变换$\chi^{n}\to\chi^{n}+\theta\delta S/\delta\chi_{n}^{\ddag}$从Slavnov-Taylor恒等式中推导出来的, 所以, 除非$\prod_{n,x}\dif\chi^{n}(x)$在这一变换下不变, 换句话说, 除非$\Delta S=0$, 其中$\Delta$是算符(\ref{15.9.34}), 否则15.9节给出的Zinn-Justin方程的推导就会失效. 当$\Delta S\neq 0$时, 通过给$S$增加定域泛函以抵消掉测度变换的效应, 仍然有可能保存Zinn-Justin方程, 不过增加定域泛函破坏了经典主方程$(S,S)=0$. 这一抵消发生的条件不是别的, 正是量子主方程(\ref{15.9.35}). 为了构建满足这一方程的作用量$S$, 我们从满足经典主方程$(S_{0},S_{0})=0$的经典作用量$S_{0}$出发, 然后增加量子修正. 在算符$X\mapsto(S_{0},X)$(在定域函数空间上鬼数为1)的上同调为零的情况下, 上面用来证明反常在所有阶都不出现的证明可以用来证明: 通过给$S_{0}$增加定域泛函, 可以使得量子主方程在所有阶都是满足的.
+
+\section{反常与Goldstone玻色子}
+
+在Wess和Zumino\cite{18}1971年那篇引入相容性条件的文章中, 他们同时注意到反常有可能对Goldstone玻色子的相互作用有重要影响. 为了理解他们的观点, 使用't Hooft在1979年发展的``反常匹配''讨论将是有帮助的, 而这一方法已在22.5节使用过.
+
+考察破缺的整体对称群$G$, 并假定它在某个陷俘无质量费米子的底层理论中线性实现, 例如有三个无质量夸克的量子色动力学中的整体手征$SU(3)\times SU(3)$对称性. 在这一底层理论中引入虚拟规范场, 使得除去可能的反常后, 整体对称性$G$变成定域的. 一般而言, 由于这个对称性在真实世界中完全是整体的, 这个定域对称性{\kai{将}}会被反常破坏, 而整体对称性也没有什么理由允许到无反常定域对称性的扩展. 只要以这种方式引入的规范耦合足够小, 并且这些旁观者费米子只参与这些非常弱的规范相互作用, 那么这些修正就不会对理论的动力学有实质上的改变.
+
+接下来, 考察描述低能物理的有效场论, 在这个理论中, 陷俘费米子是不可观测的. 理论中的唯一自由度将是无质量粒子: 虚拟规范子, 旁观者费米子, 以及一组场为$\xi_{a}$的Goldstone玻色场, 其中每个场对应于一个独立的破缺对称性. 既然底层理论已经变成规范不变且无反常, 对于有效场论也必须同样如此. 但是在底层理论中, 旁观者费米子产生的反常被陷俘费米子引起的反常抵消掉了, 所以为了让Goldstone玻色子引起的反常抵消掉它们, {\emph{Goldstone}\kai{玻色子的规范有效场论对于每个虚拟定域对称性必须有一个反常, 这个反常要等于底层理论中陷俘费米子产生的反常.}} 即, 取代方程(\ref{22.6.2}), 虚拟规范场和Goldstone玻色子的有效作用量$\Gamma[\xi,A]$要满足条件
+\begin{equation}
+\mathscr{T}_{\beta}(x)\Gamma[\xi,A]=G_{\beta}[x;A] \, ,\label{22.7.1}
+\end{equation}
+其中$G_{\beta}[x;A]$是底层理论中的反常函数, 这个反常函数中没有Goldstone玻色子, 而$\mathscr{T}_{\beta}$是规范群$G$的生成元, 现在它作用在规范场和Goldstone玻色场上. ($\mathscr{T}_{\beta}$的指标$\beta$取遍$i$和$a$, $i$用来标记未破缺对称性子群$H$的一组独立完备生成元$\mathscr{Y}_{i}$, $a$标记一组独立的破缺对称性生成元$\mathscr{X}_{a}$; 对于每个$\mathscr{X}_{a}$存在一个Goldstone玻色场$\xi_{a}$.)
+
+当然, 方程(\ref{22.7.1})也可用来研究Goldstone玻色子与真实弱耦合规范场之间的相互作用. 例如, 当底层理论中包含与夸克耦合的电弱规范玻色子时, 我们可以将我们称之为``虚拟''规范场中的一些规范场等同为电弱规范场. 在这种情况下, 为了抵消掉陷俘费米子圈在真实弱耦合鬼场的规范对称性中产生的反常, 一些``旁观者''费米子也必须是真实的, 例如轻子抵消掉了夸克产生的电弱反常.
+
+
+现在转向方程(\ref{22.7.1})的应用. 为了计算这一环境下的规范对称性生成元$\mathscr{T}_{\beta}(x)$, 注意到, 在一般的群变换$g=\exp(-\mi\int\zeta_{\beta}(x)\mathscr{T}_{\beta}(x)\,\dif^{4}x)$下, Goldstone玻色场$\xi_{a}(x)$变换到方程(\ref{19.6.18})给出的场$\xi_{a}^{\prime}(x)$, 而规范场$A_{\beta}^{\mu}(x)$变换到规范变换后的场$A^{\prime}{}^{\mu}_{\beta}$, 这使得
+\begin{equation}
+\mathscr{T}_{\beta}(x)=\mathscr{T}_{\beta}^{A}(x)+\mathscr{T}_{\beta}^{\xi}(x)\, .\label{22.7.2}
+\end{equation}
+这里$\mathscr{T}_{\beta}^{A}(x)$作用在规范场上并由方程(\ref{22.6.1})给定:
+\begin{equation}
+-\mi\mathscr{T}_{\beta}^{A}(x)=\frac{\partial}{\partial x^{\mu}}\frac{\delta}{\delta A_{\beta\mu}(x)}
+-C_{\beta\gamma\alpha}A_{\gamma\mu}(x)\frac{\delta}{\delta A_{\alpha\mu}(x)} \, ,\label{22.7.3}
+\end{equation}
+其中$C_{\alpha\beta\gamma}$是规范群$G$的全反对称结构常数, 而$\mathscr{T}_{\beta}^{\xi}(x)$作用在Goldstone玻色场上并由方程(\ref{19.6.17})的无限小极限给定, 它(对于指数参数化$\gamma(\xi)=\exp(\mi\xi_{a}X_{a})$)写成:\footnote{方程(\ref{22.7.4})右边第一项出现负号以及%
+方程(\ref{22.7.3})左边出现因子$-\mi$是因为$\exp[-\mi\int\Lambda_{\beta}(x)\mathscr{T}_{\beta}(x)$引出了%
+规范参量为$\Lambda_{\beta}$的规范变换(\ref{15.1.17}), 要求$\mathscr{T}_{\beta}(x)$满足对易关系(\ref{22.6.5})就可以看到这些.}
+\begin{equation}
+T_{\beta}\exp(\mi\xi_{a}(x)X_{a})=-\mathscr{T}_{\beta}^{\xi}(x)\exp(\mi\xi_{a}(x)X_{a})+\exp(\mi\xi_{a}(x)X_{a})\,
+\theta_{\beta i}(x)Y_{i} \, .\label{22.7.4}
+\end{equation}
+这里的$T_{\beta}$是$G$的生成元在任意表示下的表示矩阵; 它们分成了集合$X_{a}$和$Y_{i}$, 分别表示破缺对称性生成元和未破缺对称性生成元. 另外, $\theta_{\beta i}(x)$是与$\xi$相关的函数, 它的形式对我们的讨论没有多少影响.
+
+关于反常函数$G_{\beta}[x;A]$, 我们只假定相容性条件(\ref{22.6.6})
+\begin{equation}
+\mathscr{T}_{\alpha}(x)G_{\beta}[y;A]-\mathscr{T}_{\beta}(y)G_{\alpha}[x;A]
+=\mi C_{\alpha\beta\gamma}\delta^{4}(x-y)G_{\gamma}[y;A] \label{22.7.5}
+\end{equation}
+以及未破缺对称性中无反常
+\begin{equation}
+G_{i}[x;A]=0 \, .\label{22.7.6}
+\end{equation}
+正如上一节提及的, 只要迹$\operatorname{Tr}[T_{i}\{T_{j},T_{k}\}]$对于未破缺对称性子群的生成元为零(就像$SU(3)\times SU(3)$的非手征生成元), 总可能给作用量中增加一定域泛函使得方程(\ref{22.7.6})是满足的.
+
+在假定(\ref{22.7.5})和(\ref{22.7.6})后, 总可能找到反常Slavnov-Taylor恒等式(\ref{22.7.1})的解:
+\begin{equation}
+\Gamma[\xi,A]=-\mi\int^{1}_{0}\dif t\int\xi_{b}(y)\, G_{b}[y;A_{-t \xi}]\,\dif^{4}y \, ,\label{22.7.7}
+\end{equation}
+其中$[A_{-t\xi}(x)]_{\mu}$是在$A_{\mu}\equiv T_{\beta}A_{\mu\beta}$作用规范变换(\ref{15.1.17})后的结果, 其中规范变换的参量是$\Lambda_{a}=-t\xi_{a}$和$\Lambda_{i}=0$:
+\begin{align}
+[A_{-t\xi}(x)]_{\mu}&=\exp(-\mi t X_{a}\xi_{a}(x))A_{\mu}(x)\exp(\mi t X_{a}\xi_{a}(x)) \nonumber \\
+&\quad -\mi\Bigl[\partial_{\mu}\exp(-\mi t X_{a}\xi_{a}(x))\Bigr]\exp(\mi t X_{a}\xi_{a}(x))\, .\label{22.7.8}
+\end{align}
+与未破缺对称性有反常的情况相比, 方程(\ref{22.7.7})和(\ref{22.7.8})定义了规范场和Goldstone玻色场的一个{\kai{定域}}泛函(尽管有些复杂). 方程(\ref{22.7.1})的任何其它解与这个解只相差一个无反常的泛函.
+
+
+下面给出作用量(\ref{22.7.7})满足方程(\ref{22.7.1})的证明概要. 取代用定域生成元$\mathscr{T}_{\beta}(x)$进行处理, 引入一个任意函数$\eta_{\beta}(x)$, 并定义 
+\begin{equation}
+\mathscr{T}[\eta]=\int\dif^{4}x\,\eta_{\beta}(x)\mathscr{T}_{\beta}(x)\, ,\label{22.7.9}
+\end{equation}
+这样处理将会更加方便. 为了计算$\mathscr{T}[\eta]\xi_{b}(x)$, 我们引入矩阵
+\begin{equation}
+\eta_{-t\xi}(x)\equiv \exp\Bigl(-\mi X_{a}\xi_{a}(x)t\Bigr) \Bigl[\eta(x)+\mathscr{T}[\eta]\Bigr]
+\exp\Bigl(\mi X_{a}\xi_{a}(x)t\Bigr)\equiv [\eta_{-t \xi}(x)]_{\beta}\,T_{\beta}\, , \label{22.7.10}
+\end{equation}
+其中$\eta(x)\equiv \eta_{\beta}(x)T_{\beta}$. 这样,
+\[
+\frac{\partial}{\partial t}\eta_{-t\xi}(x)\equiv -\mi\Bigl[X_{a}\xi_{a}(x),\eta_{-t\xi}(x) \Bigr]
++\mi\Bigl(\mathscr{T}[\eta]\xi_{a}(x)\Bigr)X_{a}\, ,
+\]
+这使得
+\begin{equation}
+\mathscr{T}[\eta]\xi_{b}(x)=-\mi \frac{\partial}{\partial t}[\eta_{-t\xi}(x)]_{b}
++\mi C_{a\gamma b}\,\xi_{a}(x)\,[\eta_{-t \xi}(x)]_{\gamma} \, . \label{22.7.11}
+\end{equation}
+为了计算$\mathscr{T}[\eta]G_{b}[y;A]$, 我们用$\mathscr{T}[\eta]$作用规范场, 然后经过一个直接的计算会发现
+\begin{equation}
+\mathscr{T}[\eta][A_{-t\xi}(x)]_{\mu} =\Bigl( \mathscr{T}^{A}[\eta_{-t\xi}]A_{\mu}(x)\Bigr)_{A\to A_{-t\xi}}\, ,
+\label{22.7.12}
+\end{equation}
+所以, 使用相容性条件(\ref{22.7.5}),
+\begin{align}
+\mathscr{T}\lbrack \eta ]G_{b}[y;A_{-t\xi }] &=\int \dif^{4}x\,[\eta_{-t\xi
+}(x)]_{\gamma }\Bigl( \mathscr{T}_{\gamma }^{A}(x)G_{b}[y;A]\Bigr)
+_{A\rightarrow A_{-t\xi }}  \nonumber \\
+&=\int \dif^{4}x\,[\eta _{-t\xi }(x)]_{a}\Bigl( \mathscr{T}_{b}^{A}(y)G_{a}[x;A]%
+\Bigr) _{A\rightarrow A_{-t\xi }}  \nonumber \\
+&\quad+\mi C_{\gamma ba}[\eta _{-t\xi }(y)]_{\gamma }G_{a}[y;A_{-t\xi }]\text{ .}
+\label{22.7.13}
+\end{align}
+方程(\ref{22.7.11})和(\ref{22.7.13})中的结构常数项抵消了, 产生了
+\begin{align}
+\mathscr{T}[\eta]\Gamma[\xi,A]&=\int^{1}_{0}\dif t\int\dif^{4}y\,\Biggl\{
+-\biggl[\frac{\partial}{\partial t}[\eta_{-t\xi}(y)]_{b}\biggr] \,G_{b}[y;A_{-t\xi}] \nonumber \\
+&\quad -\mi[\eta_{-t\xi}(y)]_{a}\Bigl(\mathscr{T}[\xi]\,G_{a}[y;A]\Bigr)_{A\to A_{-t\xi}}
+\Biggr\} \, .\label{22.7.14}
+\end{align}
+再进行一个直接的计算将表明
+\begin{equation}
+\frac{\partial}{\partial t}[A_{-t\xi}(x)]_{\mu}=\mi\Bigl(\mathscr{T}^{A}(\xi)A_{\mu}(x)\Bigr)_{A\to A_{-t\xi}} \, ,
+\label{22.7.15}
+\end{equation}
+所以方程(\ref{22.7.14})中的项加起来是一个$t$-导数
+\begin{align}
+\mathscr{T}[\eta]\Gamma[\xi,A]&=-\int^{1}_{0}\dif t\int\dif^{4}y\, \frac{\partial}{\partial t}\Biggl\{
+[\eta_{-t\xi}(y)]_{b} \,G_{b}[y;A_{-t\xi}]\Biggr\} \nonumber \\
+&=\int\dif^{4}y \,\Biggl[[\eta_{-t\xi}(y)]_{b} \,G_{b}[y;A_{-t\xi}]\Biggr]^{t=1}_{t=0} \, .\label{22.7.16}
+\end{align}
+当$t=1$时, 我们有
+\[
+\eta_{-\xi}(x)=\exp\Bigl(-\mi X_{a}\xi_{a}(x)\Bigr)\Bigl[\eta(x)+\mathscr{T}[\eta]\Bigr]
+\exp\Bigl(\mi X_{a}\xi_{a}(x)\Bigr) \, .
+\]
+从方程(\ref{22.7.4}), 我们看出这是未破缺对称性子群$H$的生成元的线性组合, 所以任何破缺对称性生成元$X_{b}$的系数$[\eta_{-\xi}(y)]_{b}$为零. 另外, 方程(\ref{22.7.10})和(\ref{22.7.8})立即表明, 当$t=0$时, $\eta_{-t\xi}(y)=\eta(y)$且$[A_{-t\xi}(y)]_{\mu}=A_{\mu}(y)$, 所以方程(\ref{22.7.16})给出
+\begin{equation}
+\mathscr{T}[\eta]\Gamma[\xi,A]=\int\dif^{4}y\,[\eta_{0}(y)]_{b}\,G_{b}[y;A_{0}]
+=\int\dif^{4}y\,\eta_{b}(y)\,G_{b}[y;A] \, ,\label{22.7.17}
+\end{equation}
+加上方程(\ref{22.7.6}), 这等价于希望的结果(\ref{22.7.1}), 这也正是所要证明的.
+
+方程(\ref{22.7.1})的解(\ref{22.7.7})不是唯一解, 但若要求在$\xi=0$时为零, 它却{\kai{是}}唯一的. 为了看到这点, 注意到
+\begin{equation}
+\exp\biggl[-\mi\int\eta_{\beta}(x)\, \mathscr{T}_{\beta}(x)\,\dif^{4}x\biggr]\Gamma[\xi,A]=\Gamma[\xi',A']\, ,\label{22.7.18}
+\end{equation}
+其中加撇号是为了标明变换参量为$\eta_{\beta}$的规范变换. 将这里的指数表示成 
+\[
+\exp(z) =1 +\int^{1}_{0}\dif t\, \exp(zt)\,z 
+\]
+将会方便我们的讨论, 这样方程(\ref{22.7.1})和(\ref{22.7.18})就给出
+\begin{align}
+& \Gamma[\xi,A] -\mi\int^{1}_{0}\dif t\,
+\exp\biggl[-\mi t \int \eta_{\beta}(x)\mathscr{T}_{\beta}^{A}(x)\,\dif^{4}x\biggr]
+\int \eta_{b}(y)G_{b}[y;A]\,\dif^{4}y \nonumber \\
+&\quad =\Gamma[\xi',A'] \text{ .} \label{22.7.19}
+\end{align}
+特别地, 如果我们取$\eta_{a}=-\xi_{a}$和$\eta_{i}=0$, 那么$\xi^{\prime}_{a}=0$, 在这一情况下, 根据假定, (\ref{22.7.19})的右边为零, 因此给出公式:
+\begin{equation}
+\Gamma[\xi,A]=-\mi\int^{1}_{0}\dif t \,
+\exp\biggl[\mi t\int\xi_{a}(x)\mathscr{T}_{a}^{A}(x)\,\dif^{4}x\biggr]
+\int\xi_{b}(y)G_{b}[y;A]\,\dif^{4}y\, . \label{22.7.20}
+\end{equation}
+方程(\ref{22.7.20})中的泛函算符$\exp[\mi t\int \xi_{a}(x)\mathscr{T}_{a}^{A}(x)\,\dif^{4}x]$仅仅产生了规范参量为$\Lambda_{\beta}(x)=-t\xi_{a}(x)$的规范%
+变换(\ref{15.1.17}), 这使得方程(\ref{22.7.20})可以写成方程(\ref{22.7.7})那样.
+
+方程(\ref{22.7.7})可以用来研究赝标量Goldstone玻色子八重态的电弱相互作用, 然而, 当没有实际的规范场时, 它对于Goldstone玻色子本身的相互作用有一个重要含义. 在这一情况下, $A=0$, 方程(\ref{22.7.8})变成``纯规范''场
+\begin{align}
+[A_{-t\xi}(x)]_{\mu}&=-\mi\Bigl[\partial_{\mu}\exp(-\mi tX_{a}(x)\xi_{a}(x))\Bigr]
+\exp(\mi tX_{a}(x)\xi_{a}(x)) \nonumber \\
+& =-\mi\Bigl[\partial_{\mu}V\Bigl(t\xi(x)\Bigr)\Bigr]\,V^{-1}\Bigl(t\xi(x)\Bigr) \, , \label{22.7.21}
+\end{align}
+其中
+\begin{equation}
+V\Bigl(t\xi(x)\Bigr)\equiv \exp\Bigl(-\mi tX_{a}(x)\xi_{a}(x)\Bigr)\, .\label{22.7.22}
+\end{equation}
+加上$A_{\alpha}^{\mu}(x)=0$, 方程(\ref{22.7.1})给出
+\begin{equation}
+\mathscr{T}_{\beta}(x)\Gamma[\xi,0]=0\, ,\label{22.7.23}
+\end{equation}
+所以在方程(\ref{22.7.7})中使用方程(\ref{22.7.21})给出的结果是Goldstone玻色场$\xi_{a}(x)$的$G$-不变定域泛函, 然而, 正如我们将会看到的, 一般而言, 尽管积分是$G$-不变的, 但是被积函数不是$\xi_{a}(x)$和它导数的$G$-不变函数.
+
+最简单的粒子是对称群完全破缺的情况. 这时条件(\ref{22.7.6})为空, 而我们可以使用反常的对称形式(\ref{22.3.38}): 
+\begin{align}
+G_{a}[x;A]&=\frac{\mi}{24\uppi^{2}}\,\epsilon^{\kappa\nu\lambda\rho}\,\operatorname{Tr}\,\Biggl\{
+T_{a}\Bigl[ \partial_{\kappa}A_{\nu}(x)\,\partial_{\lambda}A_{\rho}(x)
+-\tfrac{1}{2}\mi\partial_{\kappa}A_{\nu}(x)\,A_{\lambda}(x)A_{\rho}(x) \nonumber \\
+&\quad +\tfrac{1}{2}\mi A_{\kappa}(x)\,\partial_{\nu}A_{\lambda}(x)\,A_{\rho}(x)
+-\tfrac{1}{2}\mi A_{\kappa}(x)A_{\nu}(x)\partial_{\lambda}A_{\rho}(x)
+\Bigr]\Biggr\}\, , \label{22.7.24}
+\end{align}
+其中, 现在的$T_{a}$是群生成元的特定表示, 它由该理论的左手费米子(包含反费米子, 在这里区分是重要的)构成. 在这一情况下, 当我们在方程(\ref{22.7.24})中使用方程(\ref{22.7.21})时, 在与$\epsilon^{\kappa\nu\lambda\rho}$收缩后, 方程(\ref{22.7.24})的迹中幸存下来的项将全部正比于
+\[
+\operatorname{Tr}\,\Bigl\{T_{a}(\partial_{\kappa}V)V^{-1}(\partial_{\nu}V)V^{-1}(\partial_{\lambda}V)V^{-1}
+(\partial_{\rho}V)V^{-1}
+\Bigr\} \, ,
+\]
+系数分别是$-1$, $+\frac{1}{2}$, $-\frac{1}{2}$和$+\frac{1}{2}$, 所以方程(\ref{22.7.7})在这里变成
+\begin{align}
+\Gamma[\xi,0]&= -\frac{1}{48\uppi^{2}}\epsilon^{\kappa\nu\lambda\rho}\int\dif^{4}y\,\xi_{a}(y)\int^{1}_{0}\dif t\,
+\operatorname{Tr}\,\Biggl\{T_{a}\,\Bigl[\partial_{\kappa}V\Bigl(t\xi(y)\Bigr)\Bigr] \nonumber \\
+&\quad \times V^{-1}\Bigl(t\xi(y)\Bigr)\Bigl[\partial_{\nu}V\Bigl(t\xi(y)\Bigr)\Bigr] V^{-1}\Bigl(t\xi(y)\Bigr)
+\Bigl[\partial_{\lambda}V\Bigl(t\xi(y)\Bigr)\Bigr] \nonumber \\
+&\quad \times V^{-1}\Bigl(t\xi(y)\Bigr)\Bigl[\partial_{\rho}V\Bigl(t\xi(y)\Bigr)\Bigr] V^{-1}\Bigl(t\xi(y)\Bigr)
+\Biggr\} \, .\label{22.7.25}
+\end{align}
+正如所承诺的, 被积函数不是场和场导数的不变函数. 例如, 对于比较小的Goldstone玻色场, 方程(\ref{22.7.25})变成
+\begin{align}
+\Gamma[\xi,0]&= -\frac{1}{240\uppi^{2}}\epsilon^{\kappa\nu\lambda\rho}\,\operatorname{Tr}\,
+\{T_{a}T_{b}T_{c}T_{d}T_{e}\}\int\dif^{4}y\: \xi_{a}\,\partial_{\kappa}\xi_{b}\,\partial_{\nu}\xi_{c}\,
+\partial_{\lambda}\xi_{d}\,\partial_{\rho}\xi_{e} \nonumber \\
+&\quad + O(\xi^{6}) \, .\label{22.7.26}
+\end{align}
+而对于Goldstone玻色场协变导数的任意函数, 它关于场的最低阶项就是Goldstone玻色场偏导数的乘积, 因而不可能有形式为(\ref{22.7.26})的最低阶项.
+
+考察一个在实际中非常重要的例子, $u$夸克, $d$夸克和$s$夸克无质量的量子色动力学, 它的$SU(3)\times SU(3)$手征对称性自发破缺到Gell-Mann和Ne'eman的对角$SU(3)$子群. 为了使用本节的结果, 我们{\kai{必须}}重新标记费米圈积分中的内动量使得对角$SU(3)$子群的矢量流是无反常的, 在这一情况下, 反常取Bardeen形式(\ref{22.3.34}):
+\begin{align}
+G_{a}[V,A]&= \frac{\mi n}{16\uppi^{2}}\epsilon^{\mu\nu\rho\sigma} \,\operatorname{Tr}\,\Biggl\{ t_{a}
+\Bigl[V_{\mu\nu}V_{\rho\sigma}+\tfrac{1}{3}A_{\mu\nu}A_{\rho\sigma} -\tfrac{32}{3}A_{\mu}A_{\nu}A_{\rho}A_{\sigma}\nonumber \\
+&\quad +\tfrac{8}{3}\mi(A_{\mu}A_{\nu}V_{\rho\sigma}+A_{\mu}V_{\rho\sigma}A_{\nu}+V_{\rho\sigma}A_{\mu}A_{\nu})\Bigr]
+\Biggr\} \, ,\label{22.7.27}
+\end{align}
+其中$V_{\mu}$, $A_{\mu}$, $V_{\mu\nu}$和$A_{\mu\nu}$由方程(\ref{22.3.35})---(\ref{22.3.37})定义; 这里的$t_{a}$是Gell-Mann矩阵$\lambda_{a}$的一半, 由方程(\ref{19.7.2})给定; $n$是每个味中夸克种类(``色'')的个数. (我们现在用小写的$t$表示群生成元的表示矩阵, 是因为在这个迹中我们只对左手夸克求和, 左手反夸克不在其内.) 对于(\ref{22.7.21})的纯规范场, 场强$V_{\mu}$和$A_{\mu\nu}$为零, 这使得, 在方程(\ref{22.7.7})中使用方程(\ref{22.7.27})给出反常有效Goldstone玻色子作用量
+\begin{equation}
+\Gamma[\xi,0]=-\frac{2n}{3\uppi^{2}}\epsilon^{\mu\nu\rho\sigma}\int^{1}_{0}\dif t\int \dif^{4}x\,
+\operatorname{Tr}\,\Bigl\{\xi_{a}t_{a}[A_{-t\xi}]_{\mu}[A_{-t\xi}]_{\nu}[A_{-t\xi}]_{\rho}
+[A_{-t\xi}]_{\sigma}\Bigr\} \, , \label{22.7.28}
+\end{equation}
+其中$A$在这里是轴矢量而不是矢量规范场. 为找到$[A_{-t\xi}]_{\mu}$, 我们使用方程(\ref{22.7.21}), 它在这里写成
+\begin{equation}
+[V_{-t\xi}(x)]_{\mu}+\gamma_{5}[A_{-t\xi}(x)]_{\mu}=
+-\mi \Bigl[\partial_{\mu}\exp\Bigl(-\mi t\gamma_{5}t_{a}\xi_{a}(x)\Bigr)\Bigr]
+\exp\Bigl(\mi t\gamma_{5}t_{a}\xi_{a}(x)\Bigr) \, . \label{22.7.29}
+\end{equation}
+先后乘以$(1+\gamma_{5})/2$和$(1-\gamma_{5})/2$然后取其差, 这给出轴矢量项
+\begin{align}
+[A_{-t\xi}(x)]_{\mu}&= -\tfrac{1}{2}\mi\Bigl[\partial_{\mu}\exp\Bigl(-\mi t\xi_{a}t_{a}\Bigr)\Bigr]
+\exp\Bigl(\mi t\xi_{a}t_{a}\Bigr) \nonumber \\
+&\quad + \tfrac{1}{2}\mi \Bigl[\partial_{\mu}\exp\Bigl(\mi t\xi_{a}t_{a}\Bigr)\Bigr]
+\exp\Bigl(-\mi t\xi_{a}t_{a}\Bigr) \nonumber \\
+&=\tfrac{1}{2}\mi \exp\Bigl(\mi t\xi_{a}t_{a}\Bigr)U^{-1}\Bigl(t\xi(x)\Bigr)
+\Bigl[\partial_{\mu}U\Bigl(t\xi(x)\Bigr)\Bigr] \exp\Bigl(-\mi t\xi_{a}t_{a}\Bigr) \, , \label{22.7.30}
+\end{align}
+其中
+\begin{equation}
+U\Bigl(t\xi\Bigr)\equiv \exp\Bigl(2\mi t_{a}\xi_{a}t\Bigr) \, . \label{22.7.31}
+\end{equation}
+在方程(\ref{22.7.28})中使用该项, 这给出了有效反常作用量
+\begin{align}
+\Gamma[\xi,0]& = -\frac{n}{24\uppi^{2}}\epsilon^{\mu\nu\rho\sigma}\,\int^{1}_{0}\dif t \int \dif^{4}x\,
+\operatorname{Tr}\,
+\Biggl\{
+\xi_{a} t_{a} U^{-1}\Bigl(t\xi(x)\Bigr)\Bigl[\partial_{\mu}U\Bigl(t\xi(x)\Bigr)\Bigr] \nonumber \\
+&\quad \times U^{-1} \Bigl(t\xi(x)\Bigr)\Bigl[\partial_{\nu}U\Bigl(t\xi(x)\Bigr)\Bigr]
+U^{-1} \Bigl(t\xi(x)\Bigr)\Bigl[\partial_{\rho}U\Bigl(t\xi(x)\Bigr)\Bigr]
+U^{-1} \Bigl(t\xi(x)\Bigr) \nonumber \\
+&\quad \times \Bigl[\partial_{\sigma}U\Bigl(t\xi(x)\Bigr)\Bigr]
+\Biggr\}  \, .\label{22.7.32}
+\end{align}
+正如Witten注意到的,\cite{25} 这可以表示成传统的5维形式. 我们取$t$为第5个坐标, 并定义$\xi_{a}(x,t)\equiv t\xi_{a}(x)$. 那么方程(\ref{22.7.32})变成
+\begin{align}
+\Gamma[\xi,0]& = -\frac{\mi n}{240\uppi^{2}}\epsilon^{ijklm}\, \int \dif^{5}z\,
+\operatorname{Tr}\,
+\Biggl\{
+ U^{-1}\Bigl(\xi(z)\Bigr)\Bigl[\partial_{i}U\Bigl(\xi(z)\Bigr)\Bigr] \nonumber \\
+&\quad \times U^{-1} \Bigl(\xi(z)\Bigr)\Bigl[\partial_{j}U\Bigl(\xi(z)\Bigr)\Bigr]
+U^{-1} \Bigl(\xi(z)\Bigr)\Bigl[\partial_{k}U\Bigl(\xi(z)\Bigr)\Bigr]
+U^{-1} \Bigl(\xi(z)\Bigr) \nonumber \\
+&\quad \times \Bigl[\partial_{l}U\Bigl(\xi(z)\Bigr)\Bigr]
+U^{-1} \Bigl(\xi(z)\Bigr)\Bigl[\partial_{m}U\Bigl(\xi(z)\Bigr)\Bigr]
+\Biggr\}  \, ,\label{22.7.33}
+\end{align}
+其中$i$, $j$等取遍值$1$, $2$, $3$, $0$和$5$, 当$i=1,2,3,0$时, $z^{i}=x^{i}$, 而$z^{5}=t$, 并且积分区域是$0\leq z^{5}\leq 1$. (方程(\ref{22.7.33})中出现了额外的因子$1/5$, 是因为考虑到了五个指标$i,j,k,l$和$m$均可以取值$5$这个事实.) 既然当$z^{5}=0$时, 无论$z^{i}$的其它分量$z^{\mu}$取何值, $\xi_{a}(z)$取固定值0, 我们可以将$z^{i}$的这些值视为一个点, 并将方程(\ref{22.7.33})中的积分区域视为一个五维球体, 它的四维边界$z^{5}=1$则取成普通的时空. 因此, 方程(\ref{22.7.33})就是方程(\ref{19.8.1})和(\ref{19.8.3})给出的``Wess-Zumino-Witten''作用量的一个特殊情况, 它也正比于一个整数$n$; 唯一的不同之处在于这里的$n$现在等同为色的数目. 我们在19.8节看到, 积分(\ref{19.8.3})只依赖于$\xi_{a}(z)$在5维球体的时空边界上的取值, 所以在导出方程(\ref{22.7.33})时, 我们证明了, 不仅仅是$\xi_{a}(x,t)=t\xi(x)$, 对于$\xi_{a}(x)$到5维球体内部的任意延拓, 方程(\ref{19.8.2})都是适用的.
+\subsection*{* * *}
+
+更普遍地, 考察任意规范群$G$自发破缺到子群$H$的情况, 其中$H$自身是无反常的------即, $D$-符号对于$H$的任意3个生成元为零. 朱创新, 贺培铭和Zumino\cite{26}证明了, 我们可以给这个作用量加一个定域泛函$B[A]$, 使得即使将破缺对称性的规范场也考虑在内, 子群$H$的流是无反常的. 这个泛函是 
+\begin{align}
+B[A] &=\frac{1}{48\uppi^{2}}\epsilon_{\mu\nu\rho\sigma} \, \int \dif^{4}x\,
+\operatorname{Tr}\,\biggl\{
+[A_{h}^{\mu},A^{\nu}](F^{\rho\sigma}+F_{h}^{\rho\sigma}) +A^{\mu} A_{h}^{\nu}A_{h}^{\rho}A_{h}^{\sigma} \nonumber\\ &\quad -A^{\mu}_{h} A^{\nu}A^{\rho}A^{\sigma} +\frac{1}{2}A^{\mu}_{h}A^{\nu}A^{\rho}_{h}A^{\sigma}
+\biggr\} \, , \label{22.7.34}
+\end{align}
+其中, 同往常一样, $A^{\mu}\equiv T_{\alpha}A_{\alpha}^{\mu}$且$F^{\mu\nu}\equiv T_{\alpha}F_{\alpha}^{\mu\nu}$, 而$A^{\mu}_{h}\equiv T_{i}A_{i}^{\mu}$和$F^{\mu\nu}_{h}\equiv T_{i}F_{i}^{\mu\nu}$是$A^{\mu}$和$F^{\mu\nu}$在未破缺对称性子群$H$的代数中的项. 那么总反常就是
+\begin{equation}
+G_{\beta}'[x;A]=G_{\beta}[x;A]+\mathscr{T}_{\beta}(x)B[A] \label{22.7.35}
+\end{equation}
+(其中$G_{\beta}[x;A]$是对称化反常(\ref{22.3.38}))并满足希望的条件
+\begin{equation}
+G_{i}'[x;A]=0 \, . \label{22.7.36}
+\end{equation}
+在方程(\ref{22.7.7})中使用方程(\ref{22.7.35})而不是$G_{\beta}$, 就给出了Goldstone玻色子和规范场的有效作用量的反常部分. 以这个方法, 朱创新等人\cite{26}发现了反常有效作用量
+\begin{equation}
+\Gamma'[\xi,A]=\Gamma[\xi,A]-B[A_{-\xi}]+B[A] \, ,\label{22.7.37}
+\end{equation}
+其中$\Gamma[\xi,A]$是之前导出的有效作用量(\ref{22.7.7}), 而令方程(\ref{22.7.8})中的$t=1$就获得了$A_{-\xi}(x)$. 特别地, 当规范场为零时, $A_{-\xi}$是纯规范场
+\begin{align*}
+[A_{-\xi}(x)]_{\mu}&=-\mi \Bigl[\partial_{\mu}V\Bigl(\xi(x)\Bigr)\Bigr]V^{-1}\Bigl(\xi(x)\Bigr)\, , \\
+V\Bigl(\xi(x)\Bigr)&=\exp \Bigl(-\mi X_{a}\xi_{a}(x)\Bigr) \, ,
+\end{align*}
+所以这时的Goldstone玻色子作用量是
+\begin{align}
+\Gamma'[\xi,0]&=\Gamma[\xi,0]-\frac{1}{48\uppi^{2}}\epsilon_{\mu\nu\rho\sigma}\int \dif^{4}x\,
+\operatorname{Tr} \biggl\{
+A^{\mu}_{-\xi}A^{\nu}_{-\xi\,h}A^{\rho}_{-\xi\, h} A^{\sigma}_{-\xi\,h} \nonumber \\
+&\quad -A^{\mu}_{-\xi\, h}A^{\nu}_{-\xi}A^{\rho}_{-\xi} A^{\sigma}_{-\xi}
++\frac{1}{2}A^{\mu}_{-\xi\, h}A^{\nu}_{-\xi}A^{\rho}_{-\xi\, h} A^{\sigma}_{-\xi}
+\bigg\} \, .\label{22.7.38}
+\end{align}
+这个结果是不唯一的; 特别地, 在宇称守恒的理论中, 例如量子色动力学, 我们可以给有效作用量中添加额外的定域项抵消掉方程(\ref{22.7.38})中任何宇称不守恒的项.
+
+
+\section*{习题}
+\noindent 1. 设$m_{u}=m_{d}=0$, 计算衰变$\eta\to\gamma+\gamma$的速率至$m_{s}$的领头阶.
+\\
+\noindent 2. 考察手征$SU(3)$对称性, 对于费米子数守恒的理论, 设它的自旋$\frac{1}{2}$场的左手部分在这个对称性构成$N$个$SU(3)$的定义表示$\bf{3}$, 而它的右手部分则都是单态. 计算$SU(3)$对称性中的反常. 如果我们在添加$M$个费米子场, 并令它们的左手部分是单态, 右手部分按照对称无迹二阶$SU(3)$张量进行变换, 那么反常又是什么?\\
+\noindent 3. 在$n=4$味的情况下, 找到't Hooft匹配条件(\ref{22.5.5})和(\ref{22.5.6})的一个解. 在$n=2$味的情况下, 找到一个与本书给出的解不同的解.\\
+\noindent 4. 在不假定$\Delta S=0$的情况下, 从量子主方程推导出Zinn-Justin方程.\\
+
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+	\bibitem{1} J. Steinberger, {\textit{Phys. Rev.}} {\bf{76}}, 1180 (1949); 另见R. J. Finkelstein, {\textit{Phys.
+        Rev.}} {\bf{72}}, 415 (1949); H. Fukuda and Y. Miyamoto, {\textit{Prog. Theor. Phys.}} {\bf{4}}, 347 (1949); J. Schwinger, {\textit{Phys. Rev.}} {\bf{82}}, 664 (1951); L. Rosenberg, {\textit{Phys. Rev.}} {\bf{129}}, 2786 (1963). 在实验上发现$\pi^{0}$介子之前, S. Sakata和Y. Tanikawa对这个衰变速率做了一个粗略的估计, {\textit{Phys. Rev.}} {\bf{57}}, 548 (1940).
+    \bibitem{2} D. G. Sutherland, {\textit{Nucl. Phys.}} {\bf{B2}}, 433 (1967).
+    \bibitem{3} M. Veltman, {\textit{Proc. Roy. Soc.}} {\bf{A301}}, 107 (1967).
+    \bibitem{4} J. S. Bell and R. Jackiw, {\textit{Nuovo Cimento}} {\bf{60A}}, 47 (1969). 另见R. Jackiw, in {\textit{Lectures on Current Algebra and its Application,}} (Princeton Press, Priceton, 1972).
+    \bibitem{5} S. Adler, {\textit{Phys. Rev.}} {\bf{177}}, 2426 (1969). 另见S. Adler, in {\textit{Lectures on Elementary Particles and Quantum Field Theory - 1970 Brandeis University Summer Institute in Theoretical Physics,}} S. Deser, M. Grisaru, and H. Pendleton 编辑(MIT Press, Cambridge, MA, 1970): Volume I.
+    \bibitem{6} K. Fujikawa, {\textit{Phys. Rev. Lett.}} {\bf{42}}, 1195 (1979).
+    \bibitem[6a]{6a} M. F. Atiyah and I. M. Singer, {\textit{Proc. Nat. Acad. Sci.}} {\bf{81}}, 2597 (1984).
+    \bibitem{7} L. Alvarez-Gaum\`{e} and P. Ginsparg, {\textit{Ann. Phys.}} {\bf{161}}, 423 (1985).
+    \bibitem[7a]{7a} 关于更加细致的讨论, 参看Y. Frishman, A. Schwimmer, T. Banks, and S. Yankielowicz, {\textit{Nucl. Phys.}} {\bf{B117}}, 157 (1981).
+    \bibitem{8} W. A. Bardeen, {\textit{Phys. Rev.}} {\bf{184}}, 1848 (1969).
+    \bibitem[8a]{8a} 可参看, B. Zumino, Y-S. Wu, and A. Zee, {\textit{Nucl. Phys.}} {\bf{B239}}, 477 (1984).
+    \bibitem{9} S. L. Adler and W. A. Bardeen, {\textit{Phys. Rev.}} {\bf{182}}, 1517 (1969).
+    \bibitem{10} 可参看, H. Georgi, {\textit{Lie Algebras in Particle Physics}} (Benjamin-Cummings, Reading, MA, 1982): pp. 15, 198. 原始文献是I. Schur, {\textit{Sitz. Preuss. Akad.,}} p. 406 (1905).
+    \bibitem[10a]{10a} M. F. Atiyah and I. M. Singer, 参考文献[6a]; B. Zumino in {\textit{Relativity, Groups, and Topology II}}, B. S. De Witt and R. Stora编辑(North-Holland, Amsterdam, 1984); L. Alvarez-Gaum\'{e} and P. Ginsparg, 参考文献[7]; W. Bardeen amd B. Zumino, {\textit{Nucl. Phys.}} {\bf{B224}}, 421 (1984); R. Stora, in {\textit{Progress in Gauge Field Theory}}, G. 't Hooft等人编辑(Plenum, New York, 1984): 543; O. Alvarez, I. Singer, and B. Zumino, {\textit{Comm. Math. Phys.}} {\bf{96}}, 409 (1984); L. Alvarez-Gaum\'{e} and P. Ginsparg, {\textit{Nucl. Phys.}} {\bf{B262}}, 439 (1985); J. Ma\~{n}es, R. Stora, and B. Zumino, {\textit{Commun. Math. Phys.}} {\bf{102}}, 157 (1985); B. Zumino, {\textit{Nucl. Phys.}} {\bf{B253}}, 477 (1985); J. M. Bismut and D. S. Freed, {\textit{Commum. Math. Phys.}} {\bf{106}}, 159 (1986); {\bf{107}}, 103 (1986); D. S. Freed, {\textit{Commun. Math. Phys.}} {\bf{107}}, 483 (1986).
+    \bibitem[10b]{10b} E. Witten, {\textit{Phys. Lett.}} {\bf{117B}}, 324 (1982).
+    \bibitem{11} D. J. Gross and R. Jackiw, {\textit{Phys. Rev.}} {\bf{96}}, 477 (1969).
+    \bibitem{12} H. Georgi and S. L. Glashow, {\textit{Phys. Rev.}} {\bf{D6}}, 429 (1972).
+    \bibitem{13} M. L. Mehta, {\textit{J. Math. Phys.}} {\bf{7}}, 1824 (1966); M. L. Mehta and P. K. Srivastava, {\textit{J. Math. Phys.}} {\bf{7}}, 1833 (1966).
+    \bibitem[13a]{13a} C. Bouchiat, J. Iliopoulous和Ph. Meyer证明了标准电弱理论四夸克版本中的反常相消, {\textit{Phys. Lett}} {\bf{38B}}, 519 (1972); S. Weinberg, in {\textit{Foundamental Interactions in Physics and Astrophysics}}, G. Iverson等编辑(Plenum Press, New York, 1973): p. 157.
+    \bibitem{14} H. Georgi, in {\textit{Particles and Fields --- 1974}}, C. Carlson编辑(Amer. Inst. of Physics, New York, 1975).
+    \bibitem{15} R. Delbourgo and A. Salam, {\textit{Phys. Lett.}} {\bf{40B}}, 381 (1972); T. Eguchi and P. Freund, {\textit{Phys. Rev. Lett.}} {\bf{37}}, 1251 (1976). 另见N. K. Nielsen, M. T. Grisaru, R. Romer, and P. van Nieuwenhuizen, {\textit{Nucl. Phys.}} {\bf{B140}}, 477 (1978); M. J. Perry, {\textit{Nucl. Phys.}} {\bf{B134}}, 114 (1978); S. W. Hawking and C. Pope, {\textit{Nucl. Phys.}} {\bf{B146}}, 381 (1978); S. M. Christensen and M. J. Duff, {\textit{Phys. Lett.}} {\bf{76B}}, 571 (1978); R. Critchley, {\textit{Phys. Lett.}} {\bf{78B}}, 410 (1978); A. J. Hanson and H. Roman, {\textit{Phys. Lett.}} {\bf{80B}}, 58 (1978). 关于总的综述, 参看T. Eguchi, P. B. Gilkey, and A. J. Hanson, {\textit{Phys. Rep.}} {\bf{66}}, 213 (1980). 在$4n+2$维, 能动量张量的发散中也存在反常; 参看L. Alvarez-Gaum\`{e} and E. Witten, {\textit{Nucl. Phys.}} {\bf{B234}}, 269 (1984).
+    \bibitem{16} G. 't Hooft在Carg\'{e}se Summer Insitute给的讲义, 1979, in {\textit{Recent Developments in Gauge Theories}}, G. 't Hooft等人编辑(Plenum, New York, 1980), 再印于{\textit{Dynamical Gauge Symmetry Breaking}}, E. Farhi和R. Jackiw编辑(World Scientific, Singapore, 1982), 以及G. t' Hooft, {\textit{Under the Spell of the Gauge Principle}} (World Scientific, Singapore, 1994). 另见S. Dimopoulos, S. Raby, and L. Susskind, {\textit{Nucl. Phys.}} {\bf{B173}}, 208 (1980); S. Coleman and E. Witten, {\textit{Phys. Rev. Lett.}} {\bf{45}}, 1000 (1980); Y. Frishman, A. Schwimmer, T. Banks, and S. Yankielowicz, {\textit{Nucl. Phys.}} {\bf{B117}}, 157 (1981); A. Zee, Univ. of Peensylvania report, 1980 (未发表); R. Barbieri, L. Maiani, and R. Petronzio, {\textit{Phys. Lett.}} {\bf{96B}}, 63 (1980); G. Farrar, {\textit{Phys. Lett.}} {\bf{96B}}, 273 (1980); R. Chanda and P. Roy {\textit{Phys. Lett.}} {\bf{99B}}, 453 (1981).
+    \bibitem[16a]{16a} S. Weinberg and E. Witten, {\textit{Phys. Lett.}} {\bf{96B}}, 59 (1980).
+    \bibitem{17} J. Preskill and S. Weinberg, {\textit{Phys. Rev.}} {\bf{D24}}, 1059 (1981).
+    \bibitem{18} J. Wess and B. Zumino, {\textit{Phys. Lett.}} {\bf{37B}}, 95 (1971).
+    \bibitem[18a]{18a} R. Stora, in {\textit{Progress in Gauge Field Theory}}, G. 't Hooft等人编辑 (Plenum, New York, 1984): 543; B. Zumino, in {\textit{Relativity, Groups and Topology II}}, B. S. De Witt和R. Stora编辑(Elsevier, Amsterdam, 1984): 1293; J. Ma\~{n}es, R. Stora, and B. Zumino, {\textit{Commun. Math. Phys.}} {\bf{102}}, 157 (1985).
+    \bibitem[18b]{18b} L. D. Faddeev, {\textit{Phys. Lett.}} {\bf{145B}}, 81 (1984); B. Zumino, {\textit{Nucl. Phys.}} {\bf{B253}}, 477 (1985).
+    \bibitem[18c]{18c} J. Schwinger, {\textit{Phys. Rev. Lett.}} {\bf{3}}, 296 (1959).
+    \bibitem{19} J. A. Dixon, 未发表的预印本 (1976-9); {\textit{Commun. Math. Phys.}} {\bf{139}}. 495 (1991); F. Brandt, N. Dragon, and M. Kreuzer, {\textit{Nucl. Phys.}} {\bf{B332}}, 224 (1990); M. Dubois-Violette, M. Henneaux, M. Talon, and C. M. Viallet, {\textit{Phys. Lett.}} {\bf{B289}}, 361 (1992); M. Dubois-Violette, M.Talon, and C. M. Viallet, {\textit{Phys. Lett.}} {\bf{B158}}, 231 (1985); {\textit{Commun. Math. Phys.}} {\bf{102}}, 105 (1985); J. Ma\~{n}es and B. Zumino, in {\textit{Supersymmetry and its Applications: Superstrings, Anomalies, and Supergravity,}} G. W. Gibbons, S. W. Hawking, and P. K. Townsend编辑(Cambridge University Press, Cambridge, 1986).
+    \bibitem[19a]{19a} 参看H. Georgi, 参考文献[10]: Eq. (XXV11.9).
+    \bibitem{20} R. Stora, in {\textit{New Directions in Quantum Field Theory and Statistical Mechanics - Lectures at the 1976 Cargese Summer School}}, M. L\'{e}vy and P. Mitter编辑 (Plenum, New York, 1977).
+    \bibitem{21} J. A. Dixon, 参考文献[19].
+    \bibitem{22} G. Barnich and M. Henneaux, {\textit{Phys. Rev. Lett.}} {\bf{72}}, 1588 (1994); G. Barnich, F. Brandt, and M. Henneaux, {\textit{Commun. Math. Phys.}} {\bf{174}}, 57, 93 (1995).
+    \bibitem{23} W. Troost, P. van Nieuwenhuizen, and A. Van Proeyen, {\textit{Nucl. Phys.}} {\bf{B333}}, 727 (1990).
+    \bibitem{24} 我从B. Zumino获悉了这个证明, 私人通讯.
+    \bibitem{25} E. Witten, {\textit{Nucl. Phys.}} {\bf{B223}}, 442 (1983).
+    \bibitem{26} C.-S. Chu, P.-M. Ho, and B. Zumino, {\textit{Nucl. Phys.}} {\bf{B475}}, 484 (1996).
+\end{thebibliography} 

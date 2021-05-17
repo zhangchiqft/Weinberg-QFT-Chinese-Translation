@@ -1,0 +1,1372 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Wednesday, January 04, 2017 20:28:44}
+%TCIDATA{LastRevised=Friday, March 10, 2017 09:48:16}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{ComputeDefs=
+%$c_{00}(s)=\frac{1}{2\pi ^{2}}\left\{ C_{1}\left[ \frac{1}{12}-\frac{1}{%
+%s(s-1)}-\frac{1}{(s+1)(s)}\right] \right\} $
+%$\psi $
+%}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\begin{equation}
+\phi (x)=\left( 
+\begin{array}{c}
+\func{Re}\chi (x) \\ 
+\func{Im}\chi (x)%
+\end{array}%
+\right) \text{ ,}  \label{21.1.15}
+\end{equation}%
+\begin{equation}
+it^{\alpha }=\left( 
+\begin{array}{cc}
+-\func{Im}T^{\alpha } & -\func{Re}T^{\alpha } \\ 
+\func{Re}T^{\alpha } & -\func{Im}T^{\alpha }%
+\end{array}%
+\right) \text{ .}  \label{21.1.16}
+\end{equation}%
+\begin{equation}
+\mu _{\alpha \beta }^{2}=\func{Re}\left( \langle \chi \rangle _{\text{VAC}%
+}^{\dag },T_{\alpha }T_{\beta }\langle \chi \rangle _{\text{VAC}}\right) =%
+\frac{1}{2}\left( \langle \chi \rangle _{\text{VAC}}^{\dag },\{T_{\alpha
+},T_{\beta }\}\langle \chi \rangle _{\text{VAC}}\right) \text{ .}
+\label{21.1.17}
+\end{equation}%
+\begin{equation}
+S_{CD,AB}=i(2\pi )^{4}\delta ^{4}(p_{A}+p_{B}-p_{C}-p_{D})\langle
+C|J_{N\alpha }^{\nu }|A\rangle \Delta _{\alpha \nu ,\beta \lambda
+}(k)\langle D|J_{N\beta }^{\lambda }|B\rangle \text{ ,}  \label{21.1.21}
+\end{equation}%
+\begin{equation}
+S_{CD,AB}\rightarrow i(2\pi )^{4}\delta ^{4}(p_{A}+p_{B}-p_{C}-p_{D})k_{\nu
+}k_{\lambda }(\mu ^{-2})_{\alpha \beta }\langle C|J_{N\alpha }^{\nu
+}|A\rangle \frac{1}{k^{2}}\langle D|J_{N\beta }^{\lambda }|B\rangle \text{ .}
+\label{21.1.22}
+\end{equation}%
+\begin{equation}
+\sum_{n}Z_{\alpha n}Z_{\beta n}=\delta _{\alpha \beta }\text{ .}
+\label{21.1.23}
+\end{equation}%
+\begin{equation}
+S_{CD,AB}=i(2\pi )^{4}\delta ^{4}(p_{A}+p_{B}-p_{C}-p_{D})k_{\nu }k_{\lambda
+}F_{\alpha \gamma }^{-1}F_{\beta \gamma }^{-1}\langle C|J_{N\alpha }^{\nu
+}|A\rangle \frac{1}{k^{2}}\langle D|J_{N\beta }^{\lambda }|B\rangle \text{ .}
+\label{21.1.24}
+\end{equation}%
+\begin{equation}
+\mu _{\alpha \beta }^{2}=\sum_{n}F_{\alpha \gamma }Z_{\gamma n}F_{\beta
+\delta }Z_{\delta n}=F_{\alpha \gamma }F_{\beta \gamma }\text{ ,}
+\label{21.1.25}
+\end{equation}
+
+\section{21.2}
+
+\[
+i\sum_{nm\alpha }\partial _{\mu }\phi _{n}^{\prime }t_{nm}^{\alpha
+}A_{\alpha }^{\mu }v_{m}\text{ ,} 
+\]%
+\begin{equation}
+B[f]=\exp \left( \frac{-i}{2\xi }\int d^{4}x\sum_{\alpha }f_{\alpha
+}f_{\alpha }\right) \text{ .}  \label{21.2.1}
+\end{equation}%
+\begin{equation}
+L_{gf}=-\frac{1}{2\xi }\sum_{\alpha }f_{\alpha }f_{\alpha }\text{ .}
+\label{21.2.2}
+\end{equation}%
+\begin{equation}
+f_{\alpha }=\partial _{\mu }A_{\alpha }^{\mu }-i\xi (t_{\alpha })_{nm}\phi
+_{n}^{\prime }v_{m}\text{ ,}  \label{21.2.3}
+\end{equation}%
+\begin{equation}
+\frac{\partial P(\phi )}{\partial \phi _{n}}(t_{\alpha })_{nm}\phi _{m}=0%
+\text{ .}  \label{21.2.4}
+\end{equation}%
+\begin{equation}
+L_{A}=-\frac{1}{4}\sum_{\alpha }F_{\alpha }^{\mu \nu }F_{\alpha \mu \nu }%
+\text{ .}  \label{21.2.5}
+\end{equation}%
+\begin{eqnarray}
+\delta A_{\alpha }^{\mu } &=&-\sum_{\beta \gamma }C_{\alpha \beta \gamma
+}\epsilon _{\beta }A_{\gamma }^{\mu }+\partial ^{\mu }\epsilon _{\alpha }%
+\text{ ,}  \label{21.2.7} \\
+\delta \phi _{n} &=&i\sum_{\alpha m}\epsilon _{\alpha }(t_{\alpha
+})_{nm}\phi _{m}\text{ ,}  \label{21.2.8}
+\end{eqnarray}%
+\begin{equation}
+\delta f_{\alpha }=\square \epsilon _{\alpha }-\sum_{\beta \gamma }C_{\alpha
+\beta \gamma }\partial _{\mu }(\epsilon _{\beta }A_{\gamma }^{\mu })+\xi
+\sum_{n\beta }(t_{\alpha }v)_{n}\epsilon _{\beta }(t_{\beta }\phi )_{n}\text{
+.}  \label{21.2.9}
+\end{equation}%
+\begin{equation}
+L_{\omega }=\omega _{\alpha }^{\ast }\left[ \square \omega _{\alpha
+}-\sum_{\beta \gamma }C_{\alpha \beta \gamma }\partial _{\mu }(\omega
+_{\beta }A_{\gamma }^{\mu })+\xi \sum_{n\beta }(t_{\alpha }v)_{n}\omega
+_{\beta }(t_{\beta }\phi )_{n}\right] \text{ .}  \label{21.2.10}
+\end{equation}%
+\begin{equation}
+L_{\psi }=-\bar{\psi}(\partial -iA_{\alpha }t_{\alpha }^{(\psi
+)}+m_{0}+\Gamma _{n}\phi _{n})\psi \text{ ,}  \label{21.2.11}
+\end{equation}%
+\begin{eqnarray}
+\left[ t_{\alpha }^{(\psi )},\gamma _{4}m_{0}\right] &=&0\text{ ,}
+\label{21.2.12} \\
+\left[ t_{\alpha }^{(\psi )},\gamma _{4}\Gamma _{n}\right]
++\sum_{m}(t_{\alpha })_{mn}\gamma _{4}\Gamma _{m} &=&0\text{ .}
+\label{21.2.13}
+\end{eqnarray}%
+\begin{eqnarray}
+L_{\text{QUAD}} &=&-\frac{1}{4}\sum_{\alpha }(\partial ^{\mu }A_{\alpha
+}^{\nu }-\partial ^{\nu }A_{\alpha }^{\mu })(\partial _{\mu }A_{\alpha \nu
+}-\partial _{\nu }A_{\alpha \mu })  \nonumber \\
+&&-\frac{1}{2}\sum_{\alpha \beta }\mu _{\alpha \beta }^{2}A_{\alpha }^{\mu
+}A_{\beta \mu }-\frac{1}{2\xi }\sum_{\alpha }(\partial _{\mu }A_{\alpha
+}^{\mu })(\partial _{\nu }A_{\alpha }^{\nu })  \nonumber \\
+&&-\frac{1}{2}\sum_{n}(\partial _{\mu }\phi _{n}^{\prime })(\partial ^{\mu
+}\phi _{n}^{\prime })-\frac{1}{2}\sum_{nm}M_{nm}^{2}\phi _{n}^{\prime }\phi
+_{m}^{\prime }  \nonumber \\
+&&-\bar{\psi}(\partial +m)\psi -\partial _{\mu }\omega _{\alpha }^{\ast
+}\partial ^{\mu }\omega _{\alpha }-\xi \sum_{\alpha \beta }\mu _{\alpha
+\beta }^{2}\omega _{\alpha }^{\ast }\omega _{\beta }  \nonumber \\
+&&+\text{全导数 ,}  \label{21.2.14}
+\end{eqnarray}%
+\begin{equation}
+\mu _{\alpha \beta }^{2}=-\sum_{n}(t^{\alpha }v)_{n}(t^{\beta }v)_{n}\text{ ,%
+}  \label{21.2.15}
+\end{equation}%
+\begin{eqnarray}
+M_{nm}^{2} &=&\left. \frac{\partial ^{2}P(\phi )}{\partial \phi _{n}\partial
+\phi _{m}}\right\vert _{\phi =v}-\frac{\xi }{2}\sum_{\alpha }(t_{\alpha
+}v)_{n}(t_{\alpha }v)_{m}\text{ ,}  \nonumber \\
+m &=&m_{0}+\sum_{n}\Gamma _{n}v_{n}\text{ .}  \label{21.2.16}
+\end{eqnarray}%
+\begin{equation}
+\left. \frac{\partial P(\phi )}{\partial \phi _{n}}\right\vert _{\phi =v}=0%
+\text{ .}  \label{21.2.17}
+\end{equation}%
+\begin{equation}
+\sum_{m}\left. \frac{\partial ^{2}P(\phi )}{\partial \phi _{n}\partial \phi
+_{m}}\right\vert _{\phi =v}(t_{\alpha }v)_{m}=0\text{ .}  \label{21.2.18}
+\end{equation}%
+\begin{equation}
+\sum_{m}M_{nm}^{2}\left( \sum_{\beta }c_{\beta }t_{\beta }v\right) _{m}=\xi
+\sum_{\alpha \beta }\mu _{\alpha \beta }^{2}c_{\beta }(t_{\alpha }v)_{n}=\xi
+\mu ^{2}\left( \sum_{\alpha }c_{\alpha }t_{\alpha }v\right) _{n}\text{ .}
+\label{21.2.19}
+\end{equation}%
+\begin{eqnarray}
+A &:&\Delta _{\alpha \mu ,\beta \nu }(k)=\left[ \frac{1}{k^{2}+\mu ^{2}}%
+\left( \eta _{\mu \nu }-\frac{(1-\xi )k_{\mu }k_{\nu }}{k^{2}+\mu ^{2}\xi }%
+\right) \right] _{\alpha \beta }\text{ ,}  \label{21.2.20} \\
+\phi &:&\Delta _{nm}(k)=(k^{2}+M^{2})_{nm}^{-1}+\xi \sum_{\alpha \beta
+}(t_{\alpha }v)_{n}(t_{\beta }v)_{m}(k^{2})^{-1}(k^{2}+\xi \mu ^{2})_{\alpha
+\beta }^{-1}\text{ ,}  \label{21.2.21} \\
+\psi &:&\Delta (k)=[-ik+m]/(k^{2}+m^{2})\text{ ,}  \label{21.2.22} \\
+\omega &:&\Delta _{\alpha \beta }(k)=(k^{2}+\xi \mu ^{2})_{\alpha \beta
+}^{-1}\text{ .}  \label{21.2.23}
+\end{eqnarray}
+
+\section{21.3}
+
+\begin{equation}
+e_{L}=\frac{1}{2}(1+\gamma _{5})e\text{ , }e_{R}=\frac{1}{2}(1-\gamma _{5})e%
+\text{ ,}  \label{21.3.1}
+\end{equation}%
+\begin{equation}
+\gamma _{5}\nu _{eL}=\nu _{eL}\text{ .}  \label{21.3.2}
+\end{equation}%
+\[
+SU(2)_{L}\times U(1)_{L}\times U(1)_{R}\text{ ,} 
+\]%
+\begin{equation}
+\delta \left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right) =i\left[ \vec{\epsilon}\cdot \vec{t}+\epsilon _{L}t_{L}+\epsilon
+_{R}t_{R}\right] \left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right) \text{ ,}  \label{21.3.3}
+\end{equation}%
+\begin{eqnarray}
+\vec{t} &=&\frac{g}{4}(1+\gamma _{5})\left\{ \left( 
+\begin{array}{cc}
+0 & 1 \\ 
+1 & 0%
+\end{array}%
+\right) ,\left( 
+\begin{array}{cc}
+0 & -i \\ 
+i & 0%
+\end{array}%
+\right) ,\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & -1%
+\end{array}%
+\right) \right\} \text{ ,}  \label{21.3.4} \\
+t_{L} &\propto &(1+\gamma _{5})\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & 1%
+\end{array}%
+\right) \text{ ,}  \label{21.3.5} \\
+t_{R} &\propto &(1-\gamma _{5})\text{ ,}  \label{21.3.6}
+\end{eqnarray}%
+\begin{equation}
+y\equiv g^{\prime }\left[ \left( \frac{1+\gamma _{5}}{4}\right) \left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & 1%
+\end{array}%
+\right) +\left( \frac{1-\gamma _{5}}{2}\right) \right]  \label{21.3.7}
+\end{equation}%
+和\begin{equation}
+n_{e}\equiv g^{\prime \prime }\left[ \left( \frac{1+\gamma _{5}}{2}\right)
+\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & 1%
+\end{array}%
+\right) +\left( \frac{1-\gamma _{5}}{2}\right) \right]  \label{21.3.8}
+\end{equation}%
+\begin{equation}
+q=e\left( 
+\begin{array}{cc}
+0 & 0 \\ 
+0 & -1%
+\end{array}%
+\right) =\frac{e}{g}t_{3}-\frac{e}{g^{\prime }}y\text{ .}  \label{21.3.9}
+\end{equation}%
+\begin{equation}
+G=SU(2)_{L}\times U(1)  \label{21.3.10}
+\end{equation}%
+\begin{eqnarray}
+L_{YM}+L_{e} &=&-\frac{1}{4}(\partial _{\mu }\vec{A}_{\nu }-\partial _{\nu }%
+\vec{A}_{\mu }+g\vec{A}_{\mu }\times \vec{A}_{\nu })^{2}-\frac{1}{4}%
+(\partial _{\mu }B_{\nu }-\partial _{\nu }B_{\mu })^{2}  \nonumber \\
+&&-\bar{\ell}(\partial -i\vec{A}\cdot \vec{t}_{L}-iBy)\ell \text{ .}
+\label{21.3.11}
+\end{eqnarray}%
+\begin{equation}
+W^{\mu }=\frac{1}{\sqrt{2}}(A_{1}^{\mu }+iA_{2}^{\mu })\text{ ,}
+\label{21.3.12}
+\end{equation}%
+\begin{equation}
+W^{\mu \ast }=\frac{1}{\sqrt{2}}(A_{1}^{\mu }-iA_{2}^{\mu })\text{ ,}
+\label{21.3.13}
+\end{equation}%
+\begin{equation}
+Z^{\mu }=\cos \theta A_{3}^{\mu }+\sin \theta B^{\mu }\text{ ,}
+\label{21.3.14}
+\end{equation}%
+\begin{equation}
+A^{\mu }=-\sin \theta A_{3}^{\mu }+\cos \theta B^{\mu }\text{ ,}
+\label{21.3.15}
+\end{equation}%
+\begin{equation}
+A_{3}^{\mu }=\cos \theta Z^{\mu }-\sin \theta A^{\mu }\text{ ,}
+\label{21.3.16}
+\end{equation}%
+\begin{equation}
+B^{\mu }=\sin \theta Z^{\mu }+\cos \theta A^{\mu }\text{ .}  \label{21.3.17}
+\end{equation}%
+\begin{equation}
+q=-\sin \theta t_{3}+\cos \theta y\text{ .}  \label{21.3.18}
+\end{equation}%
+\begin{equation}
+g=-e/\sin \theta \text{ , }g^{\prime }=-e/\cos \theta  \label{21.1.19}
+\end{equation}%
+\begin{eqnarray}
+iL_{e}^{\prime } &=&-\overline{\left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right) }\left[ \sum_{\alpha }A_{\alpha }t_{\alpha }\right] \left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right)  \nonumber \\
+&=&-\overline{\left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right) }[\frac{1}{\sqrt{2}}W(t_{1L}-it_{2L})+\frac{1}{\sqrt{2}}W^{\ast
+}(t_{1L}+it_{2L})  \nonumber \\
+&&+Z(t_{3L}\cos \theta +y\sin \theta )+A(-t_{3L}\sin \theta +y\cos \theta
+)]\left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right)  \nonumber \\
+&=&\frac{g}{\sqrt{2}}\left( \bar{e}W\left( \frac{1+\gamma _{5}}{2}\right)
+\nu _{e}\right) +\frac{g}{\sqrt{2}}\left( \bar{\nu}_{e}W^{\ast }\left( \frac{%
+1+\gamma _{5}}{2}\right) e\right)  \nonumber \\
+&&-\frac{1}{2}\sqrt{g^{2}+g^{\prime 2}}\bar{\nu}_{e}Z\left( \frac{1+\gamma
+_{5}}{2}\right) \nu _{e}+\frac{(g^{2}-g^{\prime 2})}{2\sqrt{g^{2}+g^{\prime
+2}}}\bar{e}Z\left( \frac{1+\gamma _{5}}{2}\right) e  \nonumber \\
+&&+g^{\prime }\bar{e}Z\left( \frac{1-\gamma _{5}}{2}\right) e-e(\bar{e}Ae)%
+\text{ .}  \label{21.3.20}
+\end{eqnarray}%
+\begin{equation}
+L_{\phi e}=-G_{e}\overline{\left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right) }_{L}\left( 
+\begin{array}{c}
+\phi ^{+} \\ 
+\phi ^{0}%
+\end{array}%
+\right) e_{R}+\text{H.c. ,}  \label{21.3.21}
+\end{equation}%
+\begin{eqnarray}
+\vec{t}^{(\phi )} &=&\frac{g}{2}\left\{ \left( 
+\begin{array}{cc}
+0 & 1 \\ 
+1 & 0%
+\end{array}%
+\right) ,\left( 
+\begin{array}{cc}
+0 & -i \\ 
+i & 0%
+\end{array}%
+\right) ,\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & -1%
+\end{array}%
+\right) \right\} \text{ ,}  \label{21.3.22} \\
+y^{(\phi )} &=&-g^{\prime }/2\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & 1%
+\end{array}%
+\right) \text{ ,}  \label{21.3.23}
+\end{eqnarray}%
+\begin{equation}
+q^{(\phi )}=\frac{e}{g}t_{3}^{(\phi )}-\frac{e}{g^{\prime }}y^{(\phi
+)}=e\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & 0%
+\end{array}%
+\right) \text{ .}  \label{21.3.24}
+\end{equation}%
+\begin{equation}
+L_{\phi }=-\frac{1}{2}\left\vert (\partial _{\mu }-i\vec{A}_{\mu }\cdot \vec{%
+t}^{(\phi )}-iB_{\mu }y^{(\phi )})\phi \right\vert ^{2}-\frac{\mu ^{2}}{2}%
+\phi ^{\dag }\phi -\frac{\lambda }{4}(\phi ^{\dag }\phi )^{2}\text{ ,}
+\label{21.3.25}
+\end{equation}%
+\begin{equation}
+\phi \equiv \left( 
+\begin{array}{c}
+\phi ^{+} \\ 
+\phi ^{0}%
+\end{array}%
+\right) \text{ .}  \label{21.3.26}
+\end{equation}%
+\begin{equation}
+\langle \phi \rangle ^{\dag }\langle \phi \rangle \equiv v^{2}=\left\vert
+\mu ^{2}\right\vert /\lambda \text{ .}  \label{21.3.27}
+\end{equation}%
+\begin{equation}
+\langle \phi ^{+}\rangle =0\text{ , }\langle \phi ^{0}\rangle =v>0\text{ .}
+\label{21.3.28}
+\end{equation}%
+\begin{eqnarray}
+-\frac{1}{2}\left\vert \left( \vec{A}_{\mu }\cdot \vec{t}^{(\phi )}+B_{\mu
+}y^{\left( \phi \right) }\right) \langle \phi \rangle \right\vert ^{2} &=&-%
+\frac{1}{2}\left\vert \left( \frac{g}{2}\vec{A}_{\mu }\cdot \vec{\tau}-\frac{%
+g^{\prime }}{2}B_{\mu }\right) \left( 
+\begin{array}{c}
+0 \\ 
+v%
+\end{array}%
+\right) \right\vert ^{2}  \nonumber \\
+&=&-\frac{v^{2}g^{2}}{4}W_{\mu }^{\dag }W^{\mu }-\frac{v^{2}}{8}%
+(g^{2}+g^{\prime 2})Z_{\mu }Z^{\mu }\text{ .}  \label{21.3.29}
+\end{eqnarray}%
+\begin{equation}
+m_{W}=\frac{v|g|}{2}\text{ , }m_{Z}=\frac{v\sqrt{g^{2}+g^{\prime 2}}}{2}%
+\text{ .}  \label{21.3.30}
+\end{equation}%
+\begin{equation}
+m_{e}=G_{e}v\text{ .}  \label{21.3.31}
+\end{equation}%
+\begin{equation}
+\left( \frac{g}{\sqrt{2}}\right) ^{2}\frac{1}{m_{W}^{2}}\left( \bar{e}\gamma
+^{\lambda }\left( \frac{1+\gamma _{5}}{2}\right) \nu _{e}\right) \left( \bar{%
+\nu}_{\mu }\gamma _{\lambda }\left( \frac{1+\gamma _{5}}{2}\right) \mu
+\right) +\text{H.c.}  \label{21.3.32}
+\end{equation}%
+\begin{equation}
+\frac{G_{F}}{\sqrt{2}}\left( \bar{e}\gamma ^{\lambda }(1+\gamma _{5})\nu
+_{e}\right) \left( \bar{\nu}_{\mu }\gamma _{\lambda }(1+\gamma _{5})\mu
+\right) +\text{H.c.}  \label{21.3.33}
+\end{equation}%
+\begin{equation}
+g^{2}/m_{W}^{2}=4\sqrt{2}G_{F}\text{ .}  \label{21.3.34}
+\end{equation}%
+\begin{equation}
+v=\frac{2m_{W}}{g}=\frac{1}{2^{1/4}G_{F}^{1/2}}=247\text{\textrm{Gev} .}
+\label{21.3.35}
+\end{equation}%
+\begin{equation}
+G_{e}=\frac{0.511\text{Mev}}{247GeV}=2.07\times 10^{-6}\text{ .}
+\label{21.3.36}
+\end{equation}%
+\begin{eqnarray*}
+m_{W} &=&\frac{ev}{2|\sin \theta |}=\frac{37.3\text{GeV}}{|\sin \theta |}%
+\text{ ,} \\
+m_{Z} &=&\frac{ev}{2|\sin \theta ||\cos \theta |}=\frac{74.6\text{GeV}}{%
+|\sin 2\theta |}\text{ .}
+\end{eqnarray*}%
+\begin{eqnarray}
+m_{W} &=&\frac{38.4\text{GeV}}{|\sin \theta |}\text{ ,}  \label{21.3.37} \\
+m_{Z} &=&\frac{76.9\text{GeV}}{|\sin 2\theta |}\text{ .}  \label{21.3.38}
+\end{eqnarray}%
+\begin{equation}
+\frac{G_{F}}{\sqrt{2}}\left[ \bar{e}\gamma _{\lambda }(1+\gamma _{5})\nu
+_{e}+\bar{\mu}\gamma _{\lambda }(1+\gamma _{5})\nu _{\mu }\right] J^{\lambda
+}+\text{H.c. ,}  \label{21.3.39}
+\end{equation}%
+\begin{equation}
+J^{\lambda }=\bar{u}\gamma ^{\lambda }(1+\gamma _{5})d\cos \theta _{c}+\bar{u%
+}\gamma ^{\lambda }(1+\gamma _{5})s\sin \theta _{c}\text{ .}  \label{21.3.40}
+\end{equation}%
+\begin{equation}
+Q=\left( \frac{1+\gamma _{5}}{2}\right) \left[ 
+\begin{array}{c}
+u \\ 
+d\cos \theta _{c}+s\sin \theta _{c}%
+\end{array}%
+\right] \text{ ,}  \label{21.3.41}
+\end{equation}%
+\begin{equation}
+\sum_{Q}\bar{Q}\gamma ^{\mu }(t_{3L}\cos \theta +y\sin \theta )Q=\sum_{Q}%
+\bar{Q}\gamma ^{\mu }(t_{3L}\sec \theta +q\tan \theta )Q\text{ ,}
+\label{21.3.42}
+\end{equation}%
+\begin{equation}
+\bar{c}\gamma ^{\lambda }(1+\gamma _{5})[-d\sin \theta _{c}+s\cos \theta
+_{c}]\text{ ,}  \label{21.3.43}
+\end{equation}%
+\[
+J^{\lambda }=(\bar{u}\cos \theta _{c}-\bar{c}\sin \theta _{c})\gamma
+^{\lambda }(1+\gamma _{5})d+(\bar{u}\sin \theta _{c}+\bar{c}\cos \theta
+_{c})\gamma ^{\lambda }(1+\gamma _{5})s\text{ .} 
+\]%
+\begin{equation}
+\left( \frac{1+\gamma _{5}}{2}\right) \left[ 
+\begin{array}{c}
+c \\ 
+-d\sin \theta _{c}+s\cos \theta _{c}%
+\end{array}%
+\right] \text{ .}  \label{21.3.44}
+\end{equation}%
+\begin{equation}
+J^{\lambda }=\overline{\left[ 
+\begin{array}{c}
+u \\ 
+c \\ 
+t%
+\end{array}%
+\right] }\gamma ^{\lambda }(1+\gamma _{5})V\left[ 
+\begin{array}{c}
+d \\ 
+s \\ 
+b%
+\end{array}%
+\right] \text{ ,}  \label{21.3.45}
+\end{equation}%
+\begin{eqnarray}
+&&\left( \frac{1+\gamma _{5}}{2}\right) \left[ 
+\begin{array}{c}
+u \\ 
+V_{ud}d+V_{us}s+V_{ub}b%
+\end{array}%
+\right] \text{ ,}  \label{21.3.46} \\
+&&\left( \frac{1+\gamma _{5}}{2}\right) \left[ 
+\begin{array}{c}
+c \\ 
+V_{cd}d+V_{cs}s+V_{cb}b%
+\end{array}%
+\right] \text{ ,}  \label{21.3.47} \\
+&&\left( \frac{1+\gamma _{5}}{2}\right) \left[ 
+\begin{array}{c}
+t \\ 
+V_{td}d+V_{ts}s+V_{tb}b%
+\end{array}%
+\right] \text{ .}  \label{21.3.48}
+\end{eqnarray}%
+\begin{eqnarray}
+L_{\phi } &=&-\sum_{ijn}G_{ij}^{n}\overline{\left( 
+\begin{array}{c}
+U_{iL} \\ 
+D_{iL}%
+\end{array}%
+\right) }\cdot \left( 
+\begin{array}{c}
+\phi _{n}^{0} \\ 
+\phi _{n}^{-}%
+\end{array}%
+\right) U_{jR}  \nonumber \\
+&&-\sum_{ijn}H_{ij}^{n}\overline{\left( 
+\begin{array}{c}
+U_{iL} \\ 
+D_{iL}%
+\end{array}%
+\right) }\cdot \left( 
+\begin{array}{c}
+-\phi _{n}^{-\dag } \\ 
+\phi _{n}^{0\dag }%
+\end{array}%
+\right) D_{jR}+\text{H.c. ,}  \label{21.3.49}
+\end{eqnarray}%
+\[
+L_{m}=-\sum_{ij}\overline{U_{iL}}m_{ij}^{U}U_{jR}-\sum_{ij}\overline{D_{iL}}%
+m_{ij}^{D}D_{jR}+\text{H.c. ,} 
+\]%
+\[
+m_{ij}^{U}=\sum_{n}G_{ij}^{n}\langle \phi _{n}^{0}\rangle _{\text{VAC}}\text{
+, }m_{ij}^{D}=\sum_{n}H_{ij}^{n}\langle \phi _{n}^{0}\rangle _{\text{VAC}%
+}^{\ast }\text{ .} 
+\]%
+\[
+m^{U\prime }=A_{L}^{U}m^{U}A_{R}^{U\dag }\text{ , }m^{D\prime
+}=A_{L}^{D}m^{D}A_{R}^{D\dag }\text{ .} 
+\]%
+\[
+Q_{iL}=\left( 
+\begin{array}{c}
+(A_{L}^{U-1}U_{L}^{\prime })_{i} \\ 
+(A_{L}^{D-1}D_{L}^{\prime })_{i}%
+\end{array}%
+\right) \text{ ,} 
+\]%
+\[
+V=A_{L}^{U}A_{L}^{D-1}\text{ .} 
+\]%
+\[
+\left( 
+\begin{array}{ccc}
+0.9745\text{-}0.9757 & 0.219\text{-}0.224 & 0.002\text{-}0.005 \\ 
+0.218\text{-}0.224 & 0.9736\text{-}0.9750 & 0.036\text{-}0.046 \\ 
+0.004\text{-}0.014 & 0.034\text{-}0.046 & 0.9989\text{-}0.9993%
+\end{array}%
+\right) \text{ ,} 
+\]
+
+\section{21.4}
+
+\begin{equation}
+T_{\alpha }=\sum_{A}e_{\alpha A}T_{A}\text{ ,}  \label{21.4.1}
+\end{equation}%
+\begin{equation}
+\left( \partial _{\mu }-i\sum_{\alpha }T_{\alpha }A_{\alpha \mu }\right)
+\psi =\left( \partial _{\mu }-i\sum_{A}T_{A}A_{A\mu }\right) \psi \text{ ,}
+\label{21.4.2}
+\end{equation}%
+其中\begin{equation}
+A_{A\mu }\equiv \sum_{\alpha }e_{\alpha A}A_{\alpha \mu }\text{ .}
+\label{21.4.3}
+\end{equation}%
+\begin{eqnarray}
+\psi &\rightarrow &g\psi \text{ ,}  \label{21.4.4} \\
+\sum_{A}T_{A}A_{A\mu } &\rightarrow &g\left( \sum_{A}T_{A}A_{A\mu }\right)
+g^{-1}-i(\partial _{\mu }g)g^{-1}\text{ ,}  \label{21.4.5}
+\end{eqnarray}%
+\begin{eqnarray}
+\tilde{\psi} &=&\gamma ^{-1}(\xi )\psi \text{ ,}  \label{21.4.6} \\
+\tilde{A}_{A}^{\mu } &=&\sum_{B}D_{AB}\left( \gamma ^{-1}(\xi )\right)
+A_{B}^{\mu }\text{ ,}  \label{21.4.7}
+\end{eqnarray}%
+\begin{equation}
+gT_{A}g^{-1}=\sum_{B}D_{BA}(g)T_{B}\text{ .}  \label{21.4.8}
+\end{equation}%
+\begin{eqnarray}
+\xi ^{a} &\rightarrow &\xi ^{a\prime }=f^{a}(\xi ,g)\text{ ,}  \label{21.4.9}
+\\
+\tilde{\psi} &\rightarrow &\tilde{\psi}^{\prime }=h(\xi ,g)\tilde{\psi}\text{
+,}  \label{21.4.10}
+\end{eqnarray}%
+\begin{equation}
+g\gamma (\xi )=\gamma \left( f(\xi ,g)\right) h(\xi ,g)\text{ ,}
+\label{21.4.11}
+\end{equation}%
+\[
+\sum_{A}T_{A}A_{A\mu }\rightarrow \sum_{A}T_{A}A_{A\mu }^{\prime }=g\left[
+\sum_{A}T_{A}A_{A\mu }-ig^{-1}\partial _{\mu }g\right] g^{-1}\text{ .} 
+\]%
+\begin{equation}
+i\sum_{A}T_{A}\tilde{A}_{A\mu }^{\prime }=h(\xi ,g)\left[ i\sum_{A}T_{A}%
+\tilde{A}_{A\mu }+\gamma ^{-1}(\xi )[g^{-1}\partial _{\mu }g]\gamma (\xi )%
+\right] h^{-1}(\xi ,g)\text{ .}  \label{21.4.12}
+\end{equation}%
+\begin{eqnarray}
+\gamma ^{-1}(\xi ^{\prime })\partial _{\mu }\gamma (\xi ^{\prime }) &=&h(\xi
+,g)\gamma ^{-1}(\xi )[g^{-1}\partial _{\mu }g]\gamma (\xi )h^{-1}(\xi ,g) 
+\nonumber \\
+&&+h(\xi ,g)[\gamma ^{-1}(\xi )\partial _{\mu }\gamma (\xi )]h^{-1}(\xi
+,g)+h(\xi ,g)\partial _{\mu }h^{-1}(\xi ,g)\text{ .}  \label{21.4.13}
+\end{eqnarray}%
+\begin{eqnarray}
+&&\gamma ^{-1}(\xi ^{\prime })\partial _{\mu }\gamma (\xi ^{\prime
+})-i\sum_{A}T_{A}\tilde{A}_{A\mu }^{\prime }  \nonumber \\
+&=&h(\xi ,g)\left[ \gamma ^{-1}(\xi )\partial _{\mu }\gamma (\xi
+)-i\sum_{A}T_{A}\tilde{A}_{A\mu }\right] h^{-1}(\xi ,g)  \nonumber \\
+&&-\left[ \partial _{\mu }h(\xi ,g)\right] h^{-1}(\xi ,g)\text{ .}
+\label{21.4.14}
+\end{eqnarray}%
+\begin{equation}
+i\sum_{a}iD_{a\mu }x_{a}+\sum_{i}iE_{i\mu }t_{i}\equiv \gamma ^{-1}(\xi
+)\partial _{\mu }\gamma (\xi )-i\sum_{A}T_{A}\tilde{A}_{A\mu }
+\label{21.4.15}
+\end{equation}%
+\begin{equation}
+D_{a\mu }\rightarrow D_{a\mu }^{\prime }\text{ , }E_{i\mu }\rightarrow
+E_{i\mu }^{\prime }\text{ ,}  \label{21.4.16}
+\end{equation}%
+\begin{eqnarray}
+\sum_{a}D_{a\mu }^{\prime }x_{a} &=&h(\xi ,g)\left( \sum_{a}D_{a\mu
+}x_{a}\right) h^{-1}(\xi ,g)\text{ ,}  \label{21.4.17} \\
+\sum_{a}E_{i\mu }^{\prime }t_{i} &=&h(\xi ,g)\left( \sum_{i}E_{i\mu
+}t_{i}\right) h^{-1}(\xi ,g)+i\left( \partial _{\mu }h(\xi ,g)\right)
+h^{-1}(\xi ,g)\text{ ,}  \label{21.4.18}
+\end{eqnarray}%
+\begin{equation}
+D_{\mu }\tilde{\psi}=\partial _{\mu }\tilde{\psi}+i\sum_{i}t_{i}E_{i\mu }%
+\tilde{\psi}  \label{21.4.19}
+\end{equation}%
+\begin{equation}
+\tilde{F}_{A\mu \nu }\equiv \sum_{B}D_{AB}\left( \gamma ^{-1}(\xi )\right)
+\left( \partial _{\mu }A_{B\nu }-\partial _{\nu }A_{B\mu
+}-\sum_{CD}C_{BCD}A_{C\mu }A_{D\nu }\right) \text{ .}  \label{21.4.20}
+\end{equation}%
+\begin{equation}
+\tilde{F}_{A\mu \nu }\rightarrow \tilde{F}_{A\mu \nu }^{\prime
+}=\sum_{B}D_{AB}\left( h(\xi ,g)\right) \tilde{F}_{B\mu \nu }\text{ .}
+\label{21.4.21}
+\end{equation}%
+\begin{eqnarray}
+&&\sum_{a}iD_{a\mu }x_{a}+\sum_{i}iE_{i\mu }t_{i}  \nonumber \\
+&=&\gamma ^{-1}\partial _{\mu }\gamma (\xi )-i\sum_{AB\alpha
+}T_{A}D_{AB}(\gamma ^{-1}(\xi ))e_{\alpha B}A_{\alpha \mu }  \label{21.4.22}
+\end{eqnarray}%
+\begin{equation}
+\tilde{F}_{A\mu \nu }=\sum_{B\alpha }D_{AB}\left( \gamma ^{-1}(\xi )\right)
+e_{\alpha B}F_{\alpha \mu \nu }\text{ ,}  \label{21.4.23}
+\end{equation}%
+\begin{equation}
+F_{\beta \mu \nu }=\partial _{\mu }A_{\beta \nu }-\partial _{\nu }A_{\beta
+\mu }-\sum_{\gamma \delta }C_{\beta \gamma \delta }A_{\gamma \mu }A_{\delta
+\nu }\text{ ,}  \label{21.4.24}
+\end{equation}%
+\begin{equation}
+\sum_{CD}C_{BCD}e_{\gamma C}e_{\delta D}=\sum_{\beta }C_{\beta \gamma \delta
+}e_{\beta B}\text{ .}  \label{21.4.25}
+\end{equation}%
+\begin{equation}
+L_{A}=-\frac{1}{4}\sum_{\alpha }F_{\alpha \mu \nu }F_{\alpha }{}^{\mu \nu }%
+\text{ ,}  \label{21.4.26}
+\end{equation}%
+\begin{equation}
+\nu =\sum_{i}V_{i}(d_{i}+e_{i}-2)+2L+2\text{ ,}  \label{21.4.27}
+\end{equation}%
+\begin{equation}
+L=-\frac{1}{2}\sum_{ab}F_{ab}^{2}D_{a\mu }D_{b}{}^{\mu }\text{ ,}
+\label{21.4.28}
+\end{equation}%
+\begin{equation}
+(D_{a\mu })_{\text{LIN}}=\partial _{\mu }\xi _{a}-\sum_{\alpha }e_{\alpha
+a}A_{\alpha \mu }\text{ .}  \label{21.4.29}
+\end{equation}%
+\begin{equation}
+\sum_{ab}F_{ab}^{2}\xi _{a}e_{\alpha b}=0\text{ ,}  \label{21.4.30}
+\end{equation}%
+\begin{equation}
+(L_{\xi })_{\text{QUAD}}=-\frac{1}{2}\sum_{ab}F_{ab}^{2}\partial _{\mu }\xi
+_{a}\partial ^{\mu }\xi _{b}-\frac{1}{2}\sum_{\alpha \beta }\mu _{\alpha
+\beta }^{2}A_{\alpha \mu }A_{\beta }{}^{\mu }\text{ ,}  \label{21.4.31}
+\end{equation}%
+\begin{equation}
+\mu _{\alpha \beta }^{2}=\sum_{ab}F_{ab}^{2}e_{\alpha a}e_{\beta b}\text{ .}
+\label{21.4.32}
+\end{equation}%
+\begin{equation}
+\xi _{a}=\sum_{b}F_{ab}^{-1}\pi _{b}\text{ ,}  \label{21.4.33}
+\end{equation}%
+\[
+F_{ab}^{2}=-\sum_{nml}(x_{a})_{nm}(x_{b})_{nl}v_{m}v_{l}\text{ .} 
+\]%
+\[
+\sum_{d}\left[ C_{ibd}F_{dc}^{2}+C_{icd}F_{bd}^{2}\right] =0\text{ .} 
+\]%
+\begin{eqnarray*}
+\vec{x} &=&\frac{1}{4}(1+\gamma _{5})\left\{ \left( 
+\begin{array}{cc}
+0 & 1 \\ 
+1 & 0%
+\end{array}%
+\right) ,\left( 
+\begin{array}{cc}
+0 & -i \\ 
+i & 0%
+\end{array}%
+\right) ,\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & -1%
+\end{array}%
+\right) \right\} \text{ ,} \\
+t &=&-\left( 
+\begin{array}{cc}
+0 & 0 \\ 
+0 & 1%
+\end{array}%
+\right) \text{ .}
+\end{eqnarray*}%
+\begin{equation}
+\vec{T}=g\vec{x}\text{ , }T_{y}=g^{\prime }(x_{3}-t)\text{ .}
+\label{21.4.34}
+\end{equation}%
+\[
+e_{11}=e_{22}=e_{33}=g\text{ , }e_{y3}=g^{\prime }\text{ .} 
+\]%
+\[
+F_{11}^{2}=F_{22}^{2}\equiv F_{C}^{2}\text{ , }F_{33}^{2}\equiv F_{N}^{2}%
+\text{ .} 
+\]%
+\begin{eqnarray*}
+\mu _{11}^{2} &=&\mu _{22}^{2}=g^{2}F_{C}\text{ , }\mu
+_{33}^{2}=g^{2}F_{N}^{2}\text{ ,} \\
+\mu _{3y}^{2} &=&gg^{\prime }F_{N}^{2}\text{ , }\mu _{yy}^{2}=g^{\prime
+2}F_{N}^{2}\text{ .}
+\end{eqnarray*}%
+\begin{equation}
+m_{W}^{2}=g^{2}F_{C}^{2}\text{ , }m_{Z}^{2}=(g^{2}+g^{\prime 2})F_{N}^{2}%
+\text{ , }m_{A}^{2}=0\text{ .}  \label{21.4.35}
+\end{equation}%
+\[
+F_{C}=F_{N}\text{ .} 
+\]%
+\begin{equation}
+m_{Z}/m_{W}=\sqrt{1+g^{\prime 2}/g^{2}}=1/\sin \theta \text{ .}
+\label{21.4.36}
+\end{equation}%
+\[
+(L_{\phi })_{g=g^{\prime }=0}=-\frac{1}{2}\partial _{\mu }\phi _{n}\partial
+^{\mu }\phi _{n}-\frac{\mu ^{2}}{2}\phi _{n}\phi _{n}-\frac{\lambda }{4}%
+(\phi _{n}\phi _{n})^{2}\text{ ,} 
+\]%
+其中\[
+\phi _{1}\equiv \func{Im}\phi ^{+}\text{ ,}\phi _{2}\equiv \func{Re}\phi ^{+}%
+\text{ ,}\phi _{3}\equiv \func{Im}\phi ^{0}\text{ ,}\phi _{4}=\func{Re}\phi
+^{0}\text{ .} 
+\]
+
+\section{21.5}
+
+\[
+\begin{array}{cccc}
+\left( 
+\begin{array}{c}
+\nu _{e} \\ 
+e%
+\end{array}%
+\right) _{L} & \left( 
+\begin{array}{c}
+\nu _{\mu } \\ 
+\mu%
+\end{array}%
+\right) _{L} & \left( 
+\begin{array}{c}
+\nu _{\tau } \\ 
+\tau%
+\end{array}%
+\right) & \cdots \text{ ,} \\ 
+\overline{e_{R}} & \overline{\mu _{R}} & \overline{\tau _{R}} & \cdots \text{
+,} \\ 
+\left( 
+\begin{array}{c}
+u \\ 
+d%
+\end{array}%
+\right) _{L} & \left( 
+\begin{array}{c}
+c \\ 
+s%
+\end{array}%
+\right) _{L} & \left( 
+\begin{array}{c}
+t \\ 
+b%
+\end{array}%
+\right) _{L} & \cdots \text{ ,} \\ 
+\overline{u_{R}} & \overline{c_{R}} & \overline{t_{R}} & \cdots \text{ ,} \\ 
+\overline{d_{R}} & \overline{s_{R}} & \overline{b_{R}} & \cdots \text{ .}%
+\end{array}%
+\]%
+\begin{equation}
+Tr(\frac{1}{2}g_{s}\lambda _{3})^{2}=4n_{g}\times (\frac{1}{2}%
+g_{s})^{2}+4n_{g}\times (-\frac{1}{2}g_{s})^{2}=2n_{g}g_{s}^{2}\text{ .}
+\label{21.5.2}
+\end{equation}%
+\begin{equation}
+Tr(t_{3})^{2}=[3n_{g}+n_{g}]\times \lbrack (\frac{1}{2}g)^{2}+(-\frac{1}{2}%
+g)^{2}]=2n_{g}g^{2}\text{ .}  \label{21.5.3}
+\end{equation}%
+\begin{eqnarray}
+Try^{2} &=&2n_{g}(\frac{1}{2}g^{\prime })^{2}+n_{g}(-g^{\prime
+})^{2}+6n_{g}(-\frac{1}{6}g^{\prime })^{2}+3n_{g}(\frac{2}{3}g^{\prime
+})^{2}+3n_{g}(-\frac{1}{3}g^{\prime })^{2}  \nonumber \\
+&=&\frac{10}{3}n_{g}g^{\prime 2}\text{ .}  \label{21.5.4}
+\end{eqnarray}%
+\begin{equation}
+g_{s}^{2}=g^{2}=\frac{5}{3}g^{\prime 2}\text{ .}  \label{21.5.5}
+\end{equation}%
+\begin{eqnarray}
+\mu \frac{d}{d\mu }g_{s}(\mu ) &=&-\frac{g_{s}^{3}(\mu )}{4\pi ^{2}}\left( 
+\frac{11}{4}-\frac{n_{g}}{3}\right) \text{ ,}  \label{21.5.6} \\
+\mu \frac{d}{d\mu }g(\mu ) &=&-\frac{g^{3}(\mu )}{4\pi ^{2}}\left( \frac{11}{%
+6}-\frac{n_{g}}{3}\right) \text{ ,}  \label{21.5.7} \\
+\mu \frac{d}{d\mu }g^{\prime }(\mu ) &=&-\frac{g^{\prime 3}(\mu )}{4\pi ^{2}}%
+\left( -\frac{5n_{g}}{9}\right) \text{ .}  \label{21.5.8}
+\end{eqnarray}%
+\begin{eqnarray}
+\frac{1}{g_{s}^{2}(\mu )} &=&\frac{1}{g_{s}^{2}(M)}-\frac{1}{8\pi ^{2}}%
+\left( 11-\frac{4n_{g}}{3}\right) \ln \left( \frac{M}{\mu }\right) \text{ ,}
+\label{21.5.9} \\
+\frac{1}{g^{2}(\mu )} &=&\frac{1}{g^{2}(M)}-\frac{1}{8\pi ^{2}}\left( \frac{%
+22}{3}-\frac{4n_{g}}{3}\right) \ln \left( \frac{M}{\mu }\right) \text{ ,}
+\label{21.5.10} \\
+\frac{1}{g^{\prime 2}(\mu )} &=&\frac{1}{g^{\prime 2}(M)}-\frac{1}{8\pi ^{2}}%
+\left( -\frac{20n_{g}}{9}\right) \ln \left( \frac{M}{\mu }\right) \text{ .}
+\label{21.5.11}
+\end{eqnarray}%
+\begin{equation}
+g_{s}^{2}(M)=g^{2}(M)=\frac{5}{3}g^{\prime 2}(M)\text{ .}  \label{21.5.12}
+\end{equation}%
+\begin{equation}
+\frac{1}{g_{s}^{2}(\mu )}-\frac{1}{g^{2}(\mu )}=-\frac{11}{24\pi ^{2}}\ln
+\left( \frac{M}{\mu }\right)  \label{21.5.13}
+\end{equation}%
+\begin{equation}
+\frac{1}{g_{s}^{2}(\mu )}-\frac{3}{5g^{\prime 2}(\mu )}=-\frac{11}{12\pi ^{2}%
+}\ln \left( \frac{M}{\mu }\right) \text{ .}  \label{21.5.14}
+\end{equation}%
+\begin{equation}
+\sin ^{2}\theta =\frac{1}{6}+\frac{5e^{2}(m_{Z})}{9g_{s}^{2}(m_{Z})}\text{ .}
+\label{21.5.15}
+\end{equation}%
+\begin{equation}
+\ln \left( \frac{M}{m_{Z}}\right) =\frac{4\pi ^{2}}{11e^{2}}\left( 1-\frac{%
+8e^{2}(m_{Z})}{3g_{s}^{2}(m_{Z})}\right) \text{ ,}  \label{21.5.16}
+\end{equation}
+
+\section{21.6}
+
+\begin{equation}
+\psi _{n}(x)=\exp \left( iq_{n}\phi (x)/\hbar \right) \tilde{\psi}_{n}(x)%
+\text{ .}  \label{21.6.3}
+\end{equation}%
+\begin{equation}
+\phi (x)\rightarrow \phi (x)+\Lambda (x)\text{ .}  \label{21.6.4}
+\end{equation}%
+\begin{equation}
+L=-\frac{1}{4}\int d^{3}xF_{\mu \nu }F^{\mu \nu }+L_{s}[A_{\mu }-\partial
+_{\mu }\phi ]\text{ ,}  \label{21.6.5}
+\end{equation}%
+\begin{eqnarray}
+J(x) &=&\frac{\delta L_{s}}{\delta A(x)}\text{ ,}  \label{21.6.6} \\
+J^{0}(x) &=&-\frac{\delta L_{s}}{\delta A^{0}(x)}=-\frac{\delta L_{s}}{%
+\delta \dot{\phi}(x)\text{ .}}  \label{21.6.7}
+\end{eqnarray}%
+\begin{equation}
+\frac{\partial }{\partial t}\frac{\delta L_{s}}{\delta \dot{\phi}_{s}}=\frac{%
+\delta L_{S}}{\delta \phi (x)}=\nabla \cdot \frac{\delta L_{s}}{\delta 
+\mathbf{A}(x)}\text{ ,}  \label{21.6.8}
+\end{equation}%
+\begin{equation}
+L_{s}\simeq \int d^{3}x\left[ -\frac{1}{2}\left( \nabla \psi _{n}-2iet_{nm}%
+\mathbf{A}\psi _{m}\right) ^{2}+\frac{1}{2}m^{2}\psi _{n}\psi _{n}-\frac{1}{4%
+}g(\psi _{n}\psi _{n})^{2}\right] \text{ ,}  \label{21.6.21}
+\end{equation}%
+\[
+t=\left( 
+\begin{array}{cc}
+0 & -i \\ 
+i & 0%
+\end{array}%
+\right) \text{ .}
+\]%
+\begin{equation}
+L_{s}\simeq \int d^{3}x\left[ -2e^{2}\rho ^{2}\left( \nabla \phi -\mathbf{A}%
+\right) ^{2}+\frac{1}{2}m^{2}\rho ^{2}-\frac{1}{4}g\rho ^{4}-\frac{1}{2}%
+\left( \nabla \rho \right) ^{2}\right] \text{ ,}  \label{21.6.22}
+\end{equation}%
+\begin{eqnarray}
+\nabla \times \mathbf{B} &=&4e^{2}\rho ^{2}(\nabla \rho -\mathbf{A})
+\label{21.6.23} \\
+\nabla ^{2}\rho  &=&-m^{2}\rho +g\rho ^{3}+4e^{2}\rho (\nabla \phi -\mathbf{A%
+})^{2}\text{ .}  \label{21.6.24}
+\end{eqnarray}%
+\begin{equation}
+\lambda \equiv \frac{1}{\sqrt{4e^{2}\langle \rho \rangle ^{2}}}=\frac{\sqrt{g%
+}}{2em}\text{ .}  \label{21.6.25}
+\end{equation}%
+\begin{equation}
+\xi =1/m\sqrt{2}\text{ .}  \label{21.6.26}
+\end{equation}%
+\begin{equation}
+\Delta =\frac{1}{2}m^{2}\langle \rho \rangle ^{2}-\frac{1}{4}\langle \rho
+\rangle ^{4}=m^{4}/4g\text{ .}  \label{21.6.27}
+\end{equation}%
+\begin{equation}
+\Delta \simeq \frac{1}{8e^{2}\lambda ^{2}\xi ^{2}}\text{ .}  \label{21.6.28}
+\end{equation}%
+\begin{equation}
+W_{V}\approx N\pi \xi ^{2}\Delta +\frac{1}{2}B^{2}\times \left\{ 
+\begin{array}{c}
+1-N\pi \lambda ^{2} \\ 
+0%
+\end{array}%
+\right. 
+\begin{array}{c}
+N\leq 1/\pi \lambda ^{2} \\ 
+N\geq 1/\pi \lambda ^{2}%
+\end{array}%
+\text{ .}  \label{21.6.29}
+\end{equation}%
+\[
+B_{c1}\approx \sqrt{2\Delta }\xi /\lambda \text{ , }B_{c2}\approx \sqrt{%
+2\Delta }\lambda /\xi \text{ .}
+\]%
+\[
+W_{V}\approx N\pi \xi ^{2}\Delta =eB\xi ^{2}\Delta \approx
+(B/B_{c2})W_{N}\approx (B_{c1}/B)W_{S}\text{ .}
+\]%
+\begin{equation}
+\left( \mathbf{A}-\nabla \phi \right) _{\theta }=A(r)\text{ ,}
+\label{21.6.30}
+\end{equation}%
+\begin{equation}
+B_{z}=\left( \nabla \times (\mathbf{A}-\nabla \phi )\right) _{z}=A^{\prime
+}(r)+A(r)/r\text{ ,}  \label{21.6.31}
+\end{equation}%
+\begin{eqnarray}
+A^{\prime \prime }(r)+r^{-1}A^{\prime }(r)-r^{-2}A(r) &=&\frac{\rho
+^{2}(r)A(r)}{\lambda ^{2}\langle \rho \rangle ^{2}}\text{ ,}  \label{21.6.32}
+\\
+\rho ^{\prime \prime }(r)+r^{-1}\rho ^{\prime }(r)+\frac{1}{2\xi ^{2}}\left(
+\rho (r)-\frac{\rho ^{3}(r)}{\langle \rho \rangle ^{2}}\right) 
+&=&4e^{2}\rho (r)A^{2}(r)\text{ .}  \label{21.6.33}
+\end{eqnarray}%
+\begin{eqnarray}
+A^{\prime \prime }+A^{\prime }/r-A/r^{2} &=&0\text{ ,}  \label{21.6.34} \\
+\rho ^{\prime \prime }+\rho ^{\prime }/r &=&4e^{2}A^{2}\rho \text{ .}
+\label{21.6.35}
+\end{eqnarray}%
+\begin{equation}
+A(r)=\frac{Br}{2}+\frac{C}{2er}\text{ ,}  \label{21.6.36}
+\end{equation}%
+\begin{eqnarray}
+L &=&-\sum_{s}\int d^{3}pa^{\dag }(\mathbf{p},s,t)\left[ -i\frac{\partial }{%
+\partial t}+E(\mathbf{p})\right] a(\mathbf{p},s,t)  \nonumber \\
+&&+\sum_{s_{1}s_{2}s_{3}s_{4}}\int
+d^{3}p_{1}d^{3}p_{2}d^{3}p_{3}d^{3}p_{4}V_{s_{1}s_{2}s_{3}s_{4}}(\mathbf{p}%
+_{1},\mathbf{p}_{2},\mathbf{p}_{3},\mathbf{p}_{4})  \nonumber \\
+&&\times a^{\dag }(\mathbf{p}_{1},s_{1},t)a^{\dag }(\mathbf{p}_{2},s_{2},t)a(%
+\mathbf{p}_{3},s_{3},t)a(\mathbf{p}_{4},s_{4},t)\delta ^{3}(\mathbf{p}_{1}+%
+\mathbf{p}_{2}-\mathbf{p}_{3}-\mathbf{p}_{4})  \nonumber \\
+&&+\cdots \text{ ,}  \label{21.6.37}
+\end{eqnarray}%
+\begin{equation}
+E(p)=0\text{ \  对于}S\text{上的}\mathbf{p}\text{ .}
+\label{21.6.38}
+\end{equation}%
+\begin{equation}
+\mathbf{p}=\mathbf{k}+n(\mathbf{k})\ell \text{ ,}  \label{21.6.39}
+\end{equation}%
+\begin{equation}
+E(\mathbf{p})=v_{F}(\mathbf{k})\ell \text{ ,}  \label{21.6.40}
+\end{equation}%
+\begin{equation}
+v_{F}(\mathbf{k})\equiv n(\mathbf{k})\cdot \left( \nabla _{\mathbf{p}}E(%
+\mathbf{p})\right) _{\mathbf{p}=\mathbf{k}}\text{ .}  \label{21.6.41}
+\end{equation}%
+\begin{equation}
+\frac{1}{\omega -v_{F}(\mathbf{k})\ell +i\epsilon }\text{ .}  \label{21.6.42}
+\end{equation}%
+\begin{equation}
+M\propto \kappa ^{L}\text{ .}  \label{21.6.43}
+\end{equation}%
+\begin{equation}
+L=I-\sum_{i}V_{i}+1\text{ .}  \label{21.6.44}
+\end{equation}%
+\begin{equation}
+2I+E=\sum_{i}n_{i}V_{i}\text{ ,}  \label{21.6.45}
+\end{equation}%
+\begin{equation}
+L=1-\frac{1}{2}E+\frac{1}{2}\sum_{i}V_{i}(n_{i}-2)\text{ .}  \label{21.6.46}
+\end{equation}%
+\begin{eqnarray}
+L &=&-\sum_{s}\int d^{3}x\psi _{s}^{\dag }(\mathbf{x},t)\left[ -i\frac{%
+\partial }{\partial t}-A_{0}(\mathbf{x},t)+E(-i\nabla +\mathbf{A}(\mathbf{x}%
+,t))\right] \psi _{s}(x,t)  \nonumber \\
+&&+\sum_{s_{1}s_{2}s_{3}s_{4}}\int
+d^{3}x_{1}d^{3}x_{2}d^{3}x_{3}d^{3}x_{4}V_{s_{1}s_{2}s_{3}s_{4}}(\mathbf{x}%
+_{1},\mathbf{x}_{2},\mathbf{x}_{3},\mathbf{x}_{4})  \nonumber \\
+&&\times \psi _{s_{1}}^{\dag }(\mathbf{x}_{1},t)\psi _{s_{2}}^{\dag }(%
+\mathbf{x}_{2},t)\psi _{s_{3}}(\mathbf{x}_{3},t)\psi _{s_{4}}(\mathbf{x}%
+_{4},t)\text{ ,}  \label{21.6.47}
+\end{eqnarray}%
+其中\begin{equation}
+\psi _{s}(\mathbf{x},t)\equiv (2\pi )^{-3/2}\int d^{3}p\exp (i\mathbf{p}%
+\cdot \mathbf{x})a(\mathbf{p},s,t)\text{ .}  \label{21.6.48}
+\end{equation}%
+\begin{eqnarray}
+\Delta L &=&\frac{1}{4}\int
+d^{3}x_{1}d^{3}x_{2}d^{3}x_{3}d^{4}x_{4}%
+\sum_{s_{1}s_{2}s_{3}s_{4}}V_{s_{1}s_{2}s_{3}s_{4}}(\mathbf{x}_{1},\mathbf{x}%
+_{2},\mathbf{x}_{3},\mathbf{x}_{4})  \nonumber \\
+&&\times \left[ \Psi _{s_{2}s_{1}}^{\dag }(\mathbf{x}_{2},\mathbf{x}%
+_{1},t)-\psi _{s_{1}}^{\dag }(\mathbf{x}_{1},t)\psi _{s_{2}}^{\dag }(\mathbf{%
+x}_{2},t)\right]   \nonumber \\
+&&\times \left[ \Psi _{s_{3}s_{4}}(\mathbf{x}_{3},\mathbf{x}_{4},t)-\psi
+_{s_{3}}(\mathbf{x}_{3},t)\psi _{s_{4}}(\mathbf{x}_{4},t)\right] 
+\label{21.6.49}
+\end{eqnarray}%
+\begin{eqnarray}
+&&L+\Delta L  \nonumber \\
+&=&-\sum_{s}\int d^{3}x\psi _{s}^{\dag }(\mathbf{x},t)\left[ -i\frac{%
+\partial }{\partial t}-A_{0}(\mathbf{x},t)+E(-i\nabla +\mathbf{A}(\mathbf{x}%
+,t))\right] \psi _{s}(x,t)  \nonumber \\
+&&-\frac{1}{4}\sum_{s_{1}s_{2}s_{3}s_{4}}\int
+d^{3}x_{1}d^{3}x_{2}d^{3}x_{3}d^{3}x_{4}V_{s_{1}s_{2}s_{3}s_{4}}(\mathbf{x}%
+_{1},\mathbf{x}_{2},\mathbf{x}_{3},\mathbf{x}_{4})  \nonumber \\
+&&\times \lbrack \psi _{s_{1}}^{\dag }(\mathbf{x}_{1},t)\psi _{s_{2}}^{\dag
+}(\mathbf{x}_{2},t)\Psi _{s_{3}s_{4}}(\mathbf{x}_{3},\mathbf{x}_{4},t)+\Psi
+_{s_{2}s_{1}}^{\dag }(\mathbf{x}_{2},\mathbf{x}_{1},t)\psi _{s_{3}}(\mathbf{x%
+}_{3},t)\psi _{s_{4}}(\mathbf{x}_{4},t)  \nonumber \\
+&&-\Psi _{s_{2}s_{1}}^{\dag }(\mathbf{x}_{2},\mathbf{x}_{1},t)\Psi
+_{s_{3}s_{4}}(\mathbf{x}_{3},\mathbf{x}_{4},t)]\text{ .}  \label{21.6.50}
+\end{eqnarray}%
+\begin{eqnarray}
+\Gamma \lbrack \Psi ] &=&\frac{1}{4}\int dt\int
+d^{3}x_{1}d^{3}x_{2}d^{3}x_{3}d^{3}x_{4}V_{s_{1}s_{2}s_{3}s_{4}}(\mathbf{x}%
+_{1},\mathbf{x}_{2},\mathbf{x}_{3},\mathbf{x}_{4})  \nonumber \\
+&&\times \Psi _{s_{2}s_{1}}^{\dag }(\mathbf{x}_{2},\mathbf{x}_{1},t)\Psi
+_{s_{3}s_{4}}(\mathbf{x}_{3},\mathbf{x}_{4},t)  \nonumber \\
+&&-\frac{i}{2}\ln \det \left( 
+\begin{array}{cc}
+A & B \\ 
+B^{\dag } & -A^{T}%
+\end{array}%
+\right) +\text{常数 .}  \label{21.6.51}
+\end{eqnarray}%
+\begin{eqnarray}
+A_{\mathbf{x}^{\prime }s^{\prime }t^{\prime },\mathbf{x}st} &\equiv &\delta
+_{s^{\prime }s}\left\{ -i\frac{\partial }{\partial t}-A_{0}(\mathbf{x}%
+,t)+E(-i\nabla +\mathbf{A}(\mathbf{x},t))\right\} \delta ^{3}(\mathbf{x}%
+^{\prime }-\mathbf{x})\delta (t^{\prime }-t)\text{ ,}  \label{21.6.52} \\
+B_{\mathbf{x}^{\prime }s^{\prime }t^{\prime },\mathbf{x}st} &\equiv &-\Delta
+_{s^{\prime }s}(\mathbf{x}^{\prime },\mathbf{x},t)\delta (t^{\prime }-t)%
+\text{ ,}  \label{21.6.53}
+\end{eqnarray}%
+\begin{equation}
+\Delta _{s^{\prime }s}(\mathbf{x}^{\prime },\mathbf{x},t)\equiv \frac{1}{2}%
+\sum_{\sigma ^{\prime }\sigma }\int d^{3}yd^{3}y^{\prime }V_{s^{\prime
+}s\sigma ^{\prime }\sigma }(\mathbf{x}^{\prime },\mathbf{x},\mathbf{y}%
+^{\prime },\mathbf{y})\Psi _{s^{\prime }s}(\mathbf{x}^{\prime },\mathbf{x},t)%
+\text{ .}  \label{21.6.54}
+\end{equation}%
+\begin{equation}
+\Psi _{+-}(\mathbf{x}^{\prime },\mathbf{x},t)=-\Psi _{-+}(\mathbf{x}^{\prime
+},\mathbf{x},t)\equiv \Psi (\mathbf{x}^{\prime },\mathbf{x},t)\text{ ,}
+\label{21.6.55}
+\end{equation}%
+\begin{eqnarray}
+V_{+-+-}(\mathbf{x}^{\prime },\mathbf{x},t)-V_{+--+}(\mathbf{x}^{\prime },%
+\mathbf{x},t) &=&-V_{-++-}(\mathbf{x}^{\prime },\mathbf{x},t)+V_{-+-+}(%
+\mathbf{x}^{\prime },\mathbf{x},t)  \nonumber \\
+&\equiv &2V(\mathbf{x}^{\prime },\mathbf{x},t)\text{ .}  \label{21.6.56}
+\end{eqnarray}%
+\begin{eqnarray}
+\Delta _{+-}(\mathbf{x}^{\prime },\mathbf{x},t) &=&-\Delta _{-+}(\mathbf{x}%
+^{\prime },\mathbf{x},t)\equiv \Delta (\mathbf{x}^{\prime },\mathbf{x},t)%
+\text{ ,}  \label{21.6.57} \\
+\Delta _{++}(\mathbf{x}^{\prime },\mathbf{x},t) &=&\Delta _{--}(\mathbf{x}%
+^{\prime },\mathbf{x},t)=0\text{ .}  \label{21.6.58}
+\end{eqnarray}%
+\begin{eqnarray}
+\Gamma \lbrack \Psi ] &=&\int dt\int
+d^{3}x_{1}d^{3}x_{2}d^{3}x_{3}d^{3}x_{4}V(\mathbf{x}_{1},\mathbf{x}_{2},%
+\mathbf{x}_{3},\mathbf{x}_{4})  \nonumber \\
+&&\times \Psi ^{\dag }(\mathbf{x}_{2},\mathbf{x}_{1},t)\Psi (\mathbf{x}_{3},%
+\mathbf{x}_{4},t)  \nonumber \\
+&&-i\ln \det \left( 
+\begin{array}{cc}
+A & B \\ 
+B^{\dag } & -A^{T}%
+\end{array}%
+\right) +\text{常数 .}  \label{21.6.59}
+\end{eqnarray}%
+其中\begin{eqnarray}
+A_{\mathbf{x}^{\prime }t^{\prime },\mathbf{x}t} &\equiv &\left\{ -i\frac{%
+\partial }{\partial t}-A_{0}(\mathbf{x},t)+E(-i\nabla +\mathbf{A}(\mathbf{x}%
+,t))\right\} \delta ^{3}(\mathbf{x}^{\prime }-\mathbf{x})\delta (t^{\prime
+}-t)\text{ ,}  \label{21.6.60} \\
+B_{\mathbf{x}^{\prime }t^{\prime },\mathbf{x}t} &\equiv &-\Delta (\mathbf{x}%
+^{\prime },\mathbf{x},t)\delta (t^{\prime }-t)\text{ ,}  \label{21.6.61}
+\end{eqnarray}%
+以及\begin{equation}
+\Delta (\mathbf{x}^{\prime },\mathbf{x},t)\equiv \int d^{3}yd^{3}y^{\prime
+}V(\mathbf{x}^{\prime },\mathbf{x},\mathbf{y}^{\prime },\mathbf{y})\Psi (%
+\mathbf{x}^{\prime },\mathbf{x},t)\text{ .}  \label{21.6.62}
+\end{equation}%
+\begin{eqnarray}
+\Psi (\mathbf{x}^{\prime },\mathbf{x}) &=&\int d^{3}pe^{i\mathbf{p}\cdot (%
+\mathbf{x}^{\prime }-\mathbf{x})}\Psi (\mathbf{p})\text{ ,}  \label{21.6.63}
+\\
+\Delta (\mathbf{x}^{\prime },\mathbf{x}) &=&(2\pi )^{-3}\int d^{3}pe^{i%
+\mathbf{p}\cdot (\mathbf{x}^{\prime }-\mathbf{x})}\Delta (\mathbf{p})\text{ ,%
+}  \label{21.6.64}
+\end{eqnarray}%
+\begin{eqnarray}
+&&\int d^{3}x_{1}d^{3}x_{2}d^{3}x_{3}d^{3}x_{4}e^{i\mathbf{p}^{\prime }\cdot
+(\mathbf{x}_{1}-\mathbf{x}_{2})}e^{i\mathbf{p}\cdot (\mathbf{x}_{3}-\mathbf{x%
+}_{4})}V(\mathbf{x}_{1},\mathbf{x}_{2},\mathbf{x}_{3},\mathbf{x}_{4}) 
+\nonumber \\
+&\equiv &V_{4}V(\mathbf{p}^{\prime },\mathbf{p})  \label{21.6.65}
+\end{eqnarray}%
+\begin{eqnarray}
+V[\Psi ] &\equiv &-\Gamma \lbrack \Psi ]/V_{4}  \nonumber \\
+&=&-\int d^{3}pd^{3}p^{\prime }\Psi ^{\ast }(\mathbf{p}^{\prime })V(\mathbf{p%
+}^{\prime },\mathbf{p})\Psi (\mathbf{p})  \nonumber \\
+&&+\frac{i}{(2\pi )^{4}}\int d\omega d^{3}p\ln \left( 1-\frac{\left\vert
+\Delta (\mathbf{p})\right\vert ^{2}}{\omega ^{2}-E^{2}(\mathbf{p})+i\epsilon 
+}\right)   \label{21.6.67}
+\end{eqnarray}%
+\begin{equation}
+\Delta (\mathbf{p})=-\int d^{3}p^{\prime }V(\mathbf{p},\mathbf{p}^{\prime
+})\Psi (\mathbf{p}^{\prime })\text{ .}  \label{21.6.68}
+\end{equation}%
+\begin{eqnarray}
+V[\Delta ] &=&-\int d^{3}pd^{3}p^{\prime }\Delta ^{\ast }(\mathbf{p}^{\prime
+})V^{-1}(\mathbf{p}^{\prime },\mathbf{p})\Delta (\mathbf{p})  \nonumber \\
+&&-\frac{1}{(2\pi )^{3}}\int d^{3}p\left[ \sqrt{E^{2}(\mathbf{p})+\left\vert
+\Delta (\mathbf{p})\right\vert ^{2}}-E(\mathbf{p})\right] \text{ .}
+\label{21.6.69}
+\end{eqnarray}%
+\begin{eqnarray*}
+0 &=&\left. \frac{\delta V[\Delta ]}{\delta \Delta ^{\ast }(\mathbf{p})}%
+\right\vert _{\Delta =\Delta _{0}} \\
+&=&-\int d^{3}p^{\prime }V^{-1}(\mathbf{p},\mathbf{p}^{\prime })\Delta _{0}(%
+\mathbf{p}^{\prime })-\frac{1}{2(2\pi )^{3}}\frac{\Delta _{0}(\mathbf{p})}{%
+\sqrt{E^{2}(\mathbf{p})+\left\vert \Delta _{0}(\mathbf{p})\right\vert ^{2}}}
+\end{eqnarray*}%
+\begin{equation}
+\Delta _{0}(p)=-\frac{1}{2(2\pi )^{3}}\int d^{3}p^{\prime }\frac{V(\mathbf{p}%
+,\mathbf{p}^{\prime })\Delta _{0}(\mathbf{p}^{\prime })}{\sqrt{E^{2}(\mathbf{%
+p}^{\prime })+\left\vert \Delta _{0}(\mathbf{p}^{\prime })\right\vert ^{2}}}%
+\text{ .}  \label{21.6.70}
+\end{equation}%
+\begin{eqnarray}
+V[\Delta ] &=&-\kappa ^{2}\int_{S}d^{2}kd^{2}k^{\prime }\Delta ^{\ast }(%
+\mathbf{k}^{\prime })V^{-1}(\mathbf{k}^{\prime },\mathbf{k})\Delta (\mathbf{k%
+})  \nonumber \\
+&&-\frac{1}{(2\pi )^{3}}\int_{0}^{\kappa }d\ell \int_{S}d^{2}k\left[ \sqrt{%
+\ell ^{2}v_{F}^{2}(\mathbf{k})+|\Delta (\mathbf{k})|^{2}}-\ell v_{F}(\mathbf{%
+k})\right] \text{ .}  \label{21.6.71}
+\end{eqnarray}%
+\begin{equation}
+V_{\mu }^{-1}(\mathbf{k}^{\prime },\mathbf{k})\equiv \left. -\frac{\delta
+^{2}V[\Delta ]}{\delta \Delta ^{\ast }(\mathbf{k}^{\prime })\delta \Delta (%
+\mathbf{k})}\right\vert _{\Delta (\mathbf{k})=\Delta (\mathbf{k})^{\ast
+}=\mu }\text{ ,}  \label{21.6.72}
+\end{equation}%
+\begin{eqnarray}
+V[\Delta ] &=&-\int_{S}d^{2}kd^{2}k^{\prime }\Delta ^{\ast }(\mathbf{k}%
+^{\prime })V_{\mu }^{-1}(\mathbf{k}^{\prime },\mathbf{k})\Delta (\mathbf{k})
+\nonumber \\
+&&-\frac{1}{(2\pi )^{3}}\int_{0}^{\kappa }d\ell \int_{S}d^{2}k[\sqrt{\ell
+^{2}v_{F}^{2}(\mathbf{k})+|\Delta (\mathbf{k})|^{2}}-\ell v_{F}(\mathbf{k}) 
+\nonumber \\
+&&-\frac{|\Delta (\mathbf{k})|^{2}}{2(\ell ^{2}v_{F}^{2}(\mathbf{k})+\mu
+^{2})^{1/2}}+\frac{\mu ^{2}|\Delta (\mathbf{k})|^{2}}{4(\ell ^{2}v_{F}^{2}(%
+\mathbf{k})+\mu ^{2})^{3/2}}]\text{ .}  \label{21.6.73}
+\end{eqnarray}%
+\begin{eqnarray}
+V[\Delta ] &=&-\int_{S}d^{2}kd^{2}k^{\prime }\Delta ^{\ast }(\mathbf{k}%
+^{\prime })V_{\mu }^{-1}(\mathbf{k}^{\prime },\mathbf{k})\Delta (\mathbf{k})
+\nonumber \\
+&&+\frac{1}{2(2\pi )^{3}}\int_{S}d^{2}k\frac{|\Delta (\mathbf{k})|^{2}}{%
+v_{F}(\mathbf{k})}\left[ \ln \left( \frac{|\Delta (\mathbf{k})|}{\mu }%
+\right) -1\right] \text{ .}  \label{21.6.74}
+\end{eqnarray}%
+\begin{equation}
+\Delta _{0}(\mathbf{k})=\frac{1}{2(2\pi )^{3}}\int_{S}d^{2}k^{\prime }V_{\mu
+}(\mathbf{k},\mathbf{k}^{\prime })v_{F}^{-1}(\mathbf{k}^{\prime })\Delta
+_{0}(\mathbf{k}^{\prime })\ln \left( \frac{|\Delta _{0}(\mathbf{k}^{\prime
+})|}{\mu }\right) \text{ .}  \label{21.6.75}
+\end{equation}%
+\begin{equation}
+\Delta \equiv V(0)-V(\Delta _{0})=\int_{S}d^{2}k\frac{|\Delta _{0}(\mathbf{k}%
+)|^{2}}{2(2\pi )^{3}v_{F}(\mathbf{k})}\text{ .}  \label{21.6.76}
+\end{equation}%
+\[
+\mu \frac{d}{d\mu }V_{\mu }^{-1}(\mathbf{k}^{\prime },\mathbf{k})=-\frac{%
+\delta ^{2}(\mathbf{k}^{\prime }-\mathbf{k})}{2(2\pi )^{3}v_{F}(\mathbf{k})}
+\]%
+\begin{equation}
+\mu \frac{d}{d\mu }V_{\mu }(\mathbf{k}^{\prime },\mathbf{k})=\frac{1}{2(2\pi
+)^{3}}\int d^{2}k^{\prime \prime }V_{\mu }(\mathbf{k}^{\prime },\mathbf{k}%
+^{\prime \prime })v_{F}^{-1}(\mathbf{k}^{\prime \prime })V_{\mu }(\mathbf{k}%
+^{\prime \prime },\mathbf{k})\text{ .}  \label{21.6.77}
+\end{equation}%
+\begin{equation}
+K_{\mu }(\mathbf{k}^{\prime },\mathbf{k})\equiv \frac{1}{2(2\pi )^{3}}%
+v_{F}^{-1/2}(\mathbf{k}^{\prime })v_{F}^{-1/2}(\mathbf{k})V_{\mu }(\mathbf{k}%
+^{\prime },\mathbf{k})\text{ ,}  \label{21.6.78}
+\end{equation}%
+\begin{equation}
+\mu \frac{d}{d\mu }K_{\mu }=K_{\mu }^{2}\text{ .}  \label{21.6.79}
+\end{equation}%
+\begin{equation}
+V_{\mu }(\mathbf{k}^{\prime },\mathbf{k})=2(2\pi )^{3}v_{F}^{1/2}(\mathbf{k}%
+)v_{F}^{1/2}(\mathbf{k}^{\prime })\sum_{n}\frac{u_{n}(\mathbf{k})u_{n}^{\ast
+}(\mathbf{k}^{\prime })}{\ln (\Lambda _{n}/\mu )}\text{ ,}  \label{21.6.80}
+\end{equation}%
+\begin{equation}
+\sum_{n}u_{n}(\mathbf{k})u_{n}^{\ast }(\mathbf{k}^{\prime })=\delta ^{2}(%
+\mathbf{k}-\mathbf{k}^{\prime })\text{ .}  \label{21.6.81}
+\end{equation}%
+\begin{equation}
+V[\Delta ]=\frac{1}{2(2\pi )^{3}}\int d^{2}kd^{2}k^{\prime }\sum_{n}\frac{%
+\Delta ^{\ast }(\mathbf{k}^{\prime })u_{n}^{\ast }(\mathbf{k}^{\prime
+})\Delta (\mathbf{k})u_{n}(\mathbf{k})}{\sqrt{v_{F}(\mathbf{k}^{\prime
+})v_{F}(\mathbf{k})}}\left[ \ln \left( \frac{|\Delta (\mathbf{k})|}{\Lambda
+_{n}}\right) -1\right] \text{ .}  \label{21.6.82}
+\end{equation}%
+\begin{equation}
+\Psi (\mathbf{x},\mathbf{x}^{\prime },t)=\exp \left( -i\phi (\mathbf{x}%
+,t)\right) \tilde{\Psi}(\mathbf{x},\mathbf{x}^{\prime },t)\exp (-i\phi (%
+\mathbf{x}^{\prime },t))\text{ .}  \label{21.6.83}
+\end{equation}%
+\begin{equation}
+\Gamma \lbrack \phi ,A]=\Gamma _{\Delta =0}[A]-i\ln \det \left[ 
+\begin{array}{cc}
+A & B \\ 
+B^{\dag } & -A^{T}%
+\end{array}%
+\right] +i\ln \det \left[ 
+\begin{array}{cc}
+A & 0 \\ 
+0 & -A^{T}%
+\end{array}%
+\right]   \label{21.6.84}
+\end{equation}%
+\begin{eqnarray}
+A_{x^{\prime }t^{\prime },xt} &=&\left[ -i\frac{\partial }{\partial t}%
++eA_{0}(\mathbf{x},t)-e\dot{\phi}(\mathbf{x},t)+E\left( -i\nabla +e\mathbf{A}%
+(\mathbf{x},t)-e\nabla \phi (\mathbf{x},t\right) )\right]   \nonumber \\
+&&\times \delta ^{3}(\mathbf{x}^{\prime }-\mathbf{x})\delta (t^{\prime }-t)%
+\text{ ,}  \label{21.6.85} \\
+B_{x^{\prime }t^{\prime },xt} &=&\Delta _{0}(\mathbf{x}^{\prime }-\mathbf{x}%
+)\delta (t^{\prime }-t)\text{ .}  \label{21.6.86}
+\end{eqnarray}
+
+\section{附录}
+
+\begin{equation}
+\sum_{ab}F_{ab}^{2}\xi _{a}e_{\alpha b}=0\text{ .}  \label{21.A.1}
+\end{equation}%
+\begin{equation}
+g=\exp \left( -i\sum_{\alpha }\theta _{\alpha }T_{\alpha }\right) \exp
+\left( i\sum_{a}\phi _{a}x_{a}\right) \exp \left( i\sum_{i}\mu
+_{i}t_{i}\right) \text{ ,}  \label{21.A.2}
+\end{equation}%
+\begin{equation}
+\sum_{ab}F_{ab}^{2}\phi _{a}e_{\alpha b}=0\text{ .}  \label{21.A.3}
+\end{equation}%
+\begin{equation}
+g=1+i\sum_{a}\phi _{a}^{0}x_{a}+i\sum_{i}\mu _{i}^{0}t_{i}\text{ ,}
+\label{21.A.4}
+\end{equation}%
+\begin{equation}
+g=1+i\sum_{i}\phi _{a}x_{a}+i\sum_{i}\mu _{i}t_{i}-i\sum_{\alpha }\theta
+_{\alpha }T_{\alpha }\text{ ,}  \label{21.A.5}
+\end{equation}%
+\begin{eqnarray}
+\phi _{a}(\theta ) &\equiv &\phi _{a}^{0}+\sum_{\alpha }\theta _{\alpha
+}e_{\alpha a}\text{ ,}  \label{21.A.6} \\
+\mu _{i}(\theta ) &\equiv &\mu _{i}^{0}+\sum_{\alpha }\theta _{\alpha
+}e_{\alpha i}\text{ ,}  \label{21.A.7}
+\end{eqnarray}%
+\begin{equation}
+\sum_{ab}F_{ab}^{2}\phi _{a}(\theta )\phi _{b}(\theta )\text{ .}
+\label{21.A.8}
+\end{equation}%
+\begin{equation}
+g=\gamma (\xi )=\exp \left( i\sum_{a}\xi _{a}x_{a}\right)   \label{21.A.9}
+\end{equation}%
+\begin{equation}
+\gamma (\xi )=\exp \left( -i\sum_{\alpha }\theta _{\alpha }(\xi )T_{\alpha
+}\right) \gamma (\phi (\xi ))\exp \left( i\sum_{i}\mu _{i}(\xi )t_{i}\right) 
+\text{ ,}  \label{21.A.10}
+\end{equation}%
+\begin{equation}
+\xi _{a}^{\prime }=\phi _{a}(\xi )\text{ .}  \label{21.A.11}
+\end{equation}
+
+\end{document}

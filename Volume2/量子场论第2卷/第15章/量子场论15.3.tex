@@ -1,0 +1,80 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Friday, March 18, 2016 18:18:07}
+%TCIDATA{LastRevised=Friday, March 18, 2016 18:41:04}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{场方程与守恒律}
+
+在方程(\ref{15.2.3})中使用矩阵$g_{\alpha \beta }$的方程(\ref{15.2.9}), 全拉格朗日密度是\begin{equation}
+\mathscr{L}=-\frac{i}{4}F_{\alpha \mu \nu }F_{\alpha }{}^{\mu\nu}+\mathscr{L}%
+_{M}(\psi ,D_{\mu }\psi )\text{ ,}  \label{15.3.1}
+\end{equation}%
+在没有规范场时, $\mathscr{L}%
+_{M}(\psi ,\partial _{\mu }\psi )$将是\textquotedblleft 物质\textquotedblright 拉格朗日密度. 
+原则上, 我们可以引入$%
+\mathscr{L}_{M}$对$F_{\alpha \mu \nu }$以及高阶协变导数$D_{\nu }D_{\mu }\psi $, $D_{\lambda
+}F_{\alpha \mu \nu }$等的相关性, 但是, 因为与电动力学相同的原因, 我们在这里将这些不可重整项排除在外: 正如12.3节所讨%
+论的, 在普通的能量下, 
+这样的项将被某些非常大的质量项的负幂次高度抑制. 由于这个原因, 对于弱作用, 电磁作用和强作用的标准模型, 它的拉格朗日量的一般形式为(\ref{15.3.1}).
+
+规范场的运动方程在这里是\begin{eqnarray*}
+\partial _{\mu }\frac{\partial \mathscr{L}}{\partial (\partial _{\mu
+}A_{\alpha \nu })} &=&-\partial _{\mu }F_{\alpha }{}^{\mu \nu }=\frac{%
+\partial \mathscr{L}}{\partial A_{\alpha \nu }} \\
+&=&-F_{\gamma }{}^{\nu \mu }C_{\gamma \alpha \beta }A_{\beta \mu }-i\frac{%
+\partial \mathscr{L}_{M}}{\partial D_{\nu }\psi }t_{\alpha }\psi 
+\end{eqnarray*}%
+因而\begin{equation}
+\partial _{\mu }F_{\alpha }{}^{\mu \nu }=-\mathscr{J}_{\alpha}{}^{\nu}\text{
+,}  \label{15.3.2}
+\end{equation}%
+其中$\mathscr{J}_{\alpha}{}^{\nu}$是流:%
+\begin{equation}
+\mathscr{J}_{\alpha}{}^{\nu}\equiv --F_{\gamma }{}^{\nu \mu }C_{\gamma
+\alpha \beta }A_{\beta \mu }-i\frac{\partial \mathscr{L}_{M}}{\partial
+D_{\nu }\psi }t_{\alpha }\psi \text{ .}  \label{15.3.3}
+\end{equation}%
+流$\mathscr{J}_{\alpha}{}^{\nu}$在平常的意义下守恒\begin{equation}
+\partial _{\nu }\mathscr{J}_{\alpha}{}^{\nu}=0\text{ ,}  \label{15.3.4}
+\end{equation}%
+这一点即可以从$\psi $的运动方程和不变性条件(\ref{15.2.2})中看到, 也可以, 
+更简单地, 从场方程(\ref%
+{15.3.2})中直接得出.
+
+\end{document}

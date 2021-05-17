@@ -1,0 +1,135 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Saturday, January 07, 2017 16:21:54}
+%TCIDATA{LastRevised=Saturday, January 07, 2017 16:39:07}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+
+\begin{document}
+
+
+\begin{equation}
+F(g)=\sum_{n}f_{n}g^{n}  \label{20.7.1}
+\end{equation}%
+\begin{equation}
+B(z)\equiv \sum_{n}f_{n}z^{n}/n!\text{ .}  \label{20.7.2}
+\end{equation}%
+\[
+\int_{0}^{\infty }\exp (-z/g)z^{n}dz=n!g^{n+1}
+\]%
+\begin{equation}
+gF(g)=\int_{0}^{\infty }\exp (-z/g)B(z)dz\text{ .}  \label{20.7.3}
+\end{equation}%
+\begin{equation}
+F(g)\equiv \int [d\phi ]\exp (I[\phi ,g])\text{ .}  \label{20.7.4}
+\end{equation}%
+\begin{eqnarray}
+f_{n} &=&\frac{1}{2\pi i}\int [d\phi ]\toint dgg^{-n-1}\exp (I[\phi ,g]) 
+\nonumber \\
+&=&\frac{1}{2\pi i}\int [d\phi ]\toint dg\exp \left( I[\phi ,g]-(n+1)\ln
+g\right) \text{ ,}  \label{20.7.5}
+\end{eqnarray}%
+\begin{equation}
+\left. \frac{\delta I[\phi ,g_{n}]}{\delta \phi (x)}\right\vert _{\phi =\phi
+_{n}}=0\text{ ,}  \label{20.7.6}
+\end{equation}%
+\begin{equation}
+\left. \frac{\partial I[\phi ,g_{n}]}{\partial g}\right\vert _{g=g_{n}}=%
+\frac{n+1}{g_{n}}\text{ .}  \label{20.7.7}
+\end{equation}%
+\begin{equation}
+I[\phi ,g]=-\frac{1}{2}\int \partial _{i}\phi \partial _{i}\phi d^{4}x-\frac{%
+g}{24}\int \phi ^{4}d^{4}x\text{ ,}  \label{20.7.8}
+\end{equation}%
+\begin{equation}
+\square \phi _{n}=\frac{1}{6}g_{n}\phi _{n}^{3}\text{ .}  \label{20.7.9}
+\end{equation}%
+\begin{equation}
+\phi _{n}(x)=(-g_{n})^{-1/2}\chi (x)\text{ ,}  \label{20.7.10}
+\end{equation}%
+\begin{equation}
+\square \chi =-\frac{1}{6}\chi ^{3}\text{ .}  \label{20.7.11}
+\end{equation}%
+\[
+-\frac{1}{24}\int d^{4}x\phi _{n}^{4}=\frac{n+1}{g_{n}}
+\]%
+\begin{equation}
+g_{n}=-\frac{1}{24(n+1)}\int d^{4}x\chi ^{4}\text{ .}  \label{20.7.12}
+\end{equation}%
+\begin{eqnarray}
+I[\phi _{n},g_{n}] &=&-\frac{1}{2}\int \partial _{i}\phi _{n}\partial
+_{i}\phi _{n}d^{4}x-\frac{g_{n}}{24}\int \phi _{n}^{4}d^{4}x=\frac{g_{n}}{24}%
+\int \phi _{n}^{4}d^{4}x  \nonumber \\
+&=&-n-1\text{ .}  \label{20.7.13}
+\end{eqnarray}%
+\begin{eqnarray}
+f_{n} &\approx &g_{n}^{-n-1}\exp \left( I[\phi _{n},g_{n}]\right)
+=(n+1)^{n+1}\left( -\frac{e}{24}\int \chi ^{4}d^{4}x\right) ^{-n-1} 
+\nonumber \\
+&\approx &n!\left( -\frac{1}{24}\int \chi ^{4}d^{4}x\right) ^{-n}\text{ .}
+\label{20.7.14}
+\end{eqnarray}%
+\begin{equation}
+z_{1}=-\frac{1}{24}\int \chi ^{4}d^{4}x\text{ .}  \label{20.7.15}
+\end{equation}%
+\begin{equation}
+\chi =\frac{4\sqrt{3}a}{r^{2}+a^{2}}\text{ ,}  \label{20.7.16}
+\end{equation}%
+\begin{equation}
+z_{1}=-96\pi ^{2}a^{4}\int_{0}^{\infty }\frac{r^{2}dr^{2}}{(r^{2}+a^{2})^{4}}%
+=-16\pi ^{2}\text{ .}  \label{20.7.17}
+\end{equation}%
+\begin{equation}
+\Lambda ^{2}=\mu ^{2}\exp \left( \frac{12\pi }{(33-2n_{f})\alpha _{s}(\mu )}%
+\right) \text{ ,}  \label{20.7.18}
+\end{equation}%
+\begin{equation}
+\Lambda ^{d}\propto \exp \left( \frac{6\pi d}{(33-2n_{f})\alpha _{s}(\mu )}%
+\right) \text{ .}  \label{20.7.19}
+\end{equation}%
+\begin{equation}
+F(\alpha _{s})=\sum_{n}f_{n}\alpha _{s}^{n}\text{ ,}  \label{20.7.20}
+\end{equation}%
+\begin{equation}
+\alpha _{s}F(\alpha _{s})=\int_{0}^{\infty }\exp (-z/\alpha _{s})B(z)dz\text{
+.}  \label{20.7.21}
+\end{equation}%
+\begin{equation}
+z_{1}=\frac{6\pi d}{(33-2n_{f})}\text{ .}  \label{20.7.22}
+\end{equation}
+
+\end{document}

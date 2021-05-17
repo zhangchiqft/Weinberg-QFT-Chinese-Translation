@@ -1,0 +1,2662 @@
+\chapter{自发破缺的整体对称性}
+
+本世纪(这里指20世纪)的绝大多数物理都建立在对称性原理之上: 首先是Einstein1905年狭义相对论的时空对称性, 然后是内部对称性, 例如20世纪30年代的近似$SU(2)$同位旋对称性. 因此, 与对基本粒子频谱的探查猜测得出的内部对称性相比, 当在20世纪60年代发现内部对称性比它还要多时, 这是十分令人振奋的. 底层理论会有``自发破缺''的精确对称性或近似对称性, 也就是说, 这些对称性没有实现为该理论物理态的对称变换, 特别地, 这些对称性并不保持真空态不变. 突破是近似整体对称性$SU(2)\times SU(2)$破缺的发现, 它是强相互作用的对称性, 将在19.3节进行细致的讨论. 在此之后不久, 就发现了对称性$SU(2)\times U(1)$的自发破缺, 这是弱相互作用和电磁作用的精确定域对称性, 这将会在第21章用更加一般的定域对称性破缺单独进行处理. 在本章我们先对整体对称性破缺做一般讨论, 然后转向物理的例子.
+
+\section{简并真空}
+
+我们无需寻找对称性自发破缺的例子. 考察一个椅子, 对于组成椅子的原子而言, 控制它们的方程有旋转对称性, 但是这些方程的解, 真实的椅子, 却在空间中有确定的方向. 在这里我们不会考察{\kai{物体}}的对称性破缺, 例如椅子, 而是考察任意真实量子场论基态的对称性破缺, 即真空的对称性破缺.
+
+在场论中, 自发破缺的对称性总是与真空态的简并相联系. 例如, 考察作用量的一个对称变换, 且该对称变换也是对场积分所用测度的对称变换, 该对称变换线性地作用在一组标量场上$\phi_{n}(x)$:
+\begin{equation}
+\phi_{n}(x)\rightarrow \phi^{\prime}_{n}(x) = \sum_{m} L_{nm}\phi_{m}(x)\text{ .} \label{19.1.1}
+\end{equation}
+($\phi_{n}$不一定是基本场; 它们可以是复合的, 像$\bar{\psi}\Gamma_{n}\psi$.) 正如我们在16.4节中所看到的, 这样量子有效作用量$\Gamma[\phi]$就会有相同的对称性
+\begin{equation}
+\Gamma[\phi]=\Gamma[L\phi] \text{ .} \label{19.1.2}
+\end{equation}
+对于真空, $\phi(x)$的期望值必须使得真空能$-\Gamma[\phi]$处在最小值, 例如$\phi(x)$处在$\phi(x)=\bar{\phi}$(一个常数). 但如果$L\bar{\phi}\neq\bar{\phi}$, 那么这个真空就不是唯一的; 就像处在$\bar{\phi}$这一点, $-\Gamma[\phi]$会在$\phi=L\bar{\phi}$处有相同的值. 若对称变换(\ref{19.1.1})是一反射, $\phi\rightarrow-\phi$, 那么在这一简单情况中, 如果$-\Gamma[\phi]$在$\phi$的非零值$\bar{\phi}$处取得最小值, 那么它会有两个最小值点, $\bar{\phi}$和$-\bar{\phi}$, 每一个对应于一个对称性破缺的态.
+
+我们还无法在这种情况下得出对称性破缺的结论, 因为我们还没有排除这样的可能性: 真实的真空是真空态的线性叠加, $\phi_{m}$在这些真空态中有不同的期望值, 但是真正的真空却表现出了假定的对称性. 例如, 在有对称性$\phi\rightarrow-\phi$的理论中, 即使$-\Gamma[\phi]$在$\phi$的某个非零值$\bar{\phi}$处取最小值, 也会有两种情况, $\vert\text{VAC},\pm\rangle$和$\vert\text{VAC},+\rangle+\vert\text{VAC},-\rangle$, 对于前者, $\Phi$有期望值$\bar{\phi}$和$-\bar{\phi}$, 而后者{\kai{会}}遵循$\phi\rightarrow-\phi$下的对称性, 我们如何知道 真空是态$\vert\text{VAC},\pm\rangle$中的一个, 还是像$\vert\text{VAC},+\rangle+\vert\text{VAC},-\rangle$这样的线性组合? 我们假定的变换$\phi\rightarrow-\phi$下的对称性会告诉我们, 哈密顿量的真空矩阵元是
+\[
+\langle\text{VAC},+\vert H\vert\text{VAC},+\rangle = \langle\text{VAC},-\vert H\vert\text{VAC},-\rangle \equiv a
+\]
+($a$是实数)以及
+\[
+\langle\text{VAC},+\vert H\vert\text{VAC},-\rangle = \langle\text{VAC},-\vert H\vert\text{VAC},+\rangle \equiv b
+\]
+($b$是实数), 所以哈密顿量的本征态是$\vert\text{VAC},+\rangle\pm\vert\text{VAC},-\rangle$, 而能量是$a\pm\vert b\vert$. 这些能量本征态在对称变换$\phi\rightarrow-\phi$下不变(或者在相差一个符号的意义下不变). 事实上, 椅子也会有相同的问题. 孤立椅子的量子力学基态实际上是旋转不变的; 它是角动量量子数为零的态, 因此在空间中没有特定的方向.
+
+实际上, 只有无限大的理想系统才会发生对称性自发破缺. 对于椅子而言, 对称性破缺的出现是因为它有宏观的转动惯量$I$, 这使得它的基态是将旋转激发态累积后的一部分, 这些旋转激发态的能量只间隔非常小的量级为$\hbar^{2}/I$的量. 这使得椅子的态矢对外部的微扰及其敏感; 即使是非常弱的外场, 它所造成的能量偏移也要比这些旋转能量之间的能量差要大得多. 其结果是, 对于椅子的基态或者其它角动量量子数确定的态, 任何旋转不对称的外场就会使得其它角动量量子数的分量快速增长. 在椅子的态中, 相对小的外部微扰稳定的不是那些有着明确角动量量子数的态, 而是那些有着明确方向的态, 这样的态, 其所在的底层理论的旋转对称性是破缺的.
+
+对于真空同样如此, 自发对称性破缺的可能性又一次与系统的大尺寸相关, 特别是与空间的大体积相关. 在前面反射对称性的例子中, 哈密顿量的非对角元$b$会包含一个场构型积分, 这一场构型会从$\phi=\bar{\phi}$处的最小值隧穿到$\phi=-\bar{\phi}$的最小值, 所以, 若空间体积为$\mathscr{V}$, $b$要比对角矩阵元$a$小一个形式为$\exp(-C\mathscr{V})$的势垒穿透因子, 其中$C$是与该理论微观参量相关的正常数\footnote{例如, 类比经典波动力学的势垒穿透问题, 对于形式为$-\frac{1}{2}\partial_{\mu}\phi\partial^{\mu}\phi-V(\phi)$的拉格朗日密度, 我们有$C=\int^{+\bar{\phi}}_{-\bar{\phi}}\sqrt{2V(\phi)}\,\dif \phi$. 一会儿我们就会给出一个证明非对角矩阵元$b$对于无限体积为零的一般讨论, 所以我们不用费心计算这里的$b$.}. 因此, 对于宏观体积, 两个能量本征态$\vert\text{VAC},+\rangle\pm\vert\text{VAC},-\rangle$高度简并, 这使得若微扰是$\phi$的奇次泛函, 这两个态会被紧密地混合在一起. 因此, 即使这样的微扰$H^{\prime}$很弱, 无论与$H$的非对角指数压低矩阵元相比, 还是与微扰的非对角指数压低矩阵元相比, 微扰$H^{\prime}$的两个对角元$\langle\text{VAC},\pm\vert H^{\prime}\vert\text{VAC},\pm\rangle$之间的差值都比要它们大得多. 因此对于微扰后的哈密顿量而言, 它的真空态会非常接近使微扰对角化的对称性破缺态$\vert\text{VAC},\pm\rangle$中的一个, 而{\kai{不}}是不变态$\vert\text{VAC},+\rangle\pm\vert\text{VAC},-\rangle$. 那么对于非常小的微扰而言, $\vert\text{VAC},\pm\rangle$中的哪一个才是真正的真空呢? 这取决与微扰, 但由于这两个态通过原始哈密顿量的对称变换相关, 所以这并不重要; 如果微扰足够小, 观测者就无法分辨出其中的差别.
+
+当空间体积无限大时, 场期望值不同的真空态之间的矩阵元精确为零.\cite{1} 对于无限大的体积, 一般的真空态$\vert v\rangle$可以定义为动量为零的态
+\begin{equation}
+\mathbf{P}\vert v\rangle=0 \text{ ,} \label{19.1.3}
+\end{equation}
+这里的本征值是{\kai{离散}}的动量本征值. (这排除了单粒子态或多粒子态, 对于这样的态, 在无限大空间中, 零动量值总是连续动量值的一部分.) 一般而言会有多个这样的态. 它们通常可以展成一组离散基, 并且我们的记法也视它们是离散的. 它们将被选成正交的
+\begin{equation}
+\langle u\vert v \rangle = \delta_{uv} \text{ .} \label{19.1.4}
+\end{equation}
+等时定域厄密算符的积在这些态之间的任何矩阵元可以表示为态的和:
+\begin{align}
+\langle u\vert A(\mathbf{x})\,B(0)\vert v\rangle &= \sum_{w}\langle u\vert A(0)\vert w\rangle\,\langle w \vert B(0)\vert n\rangle \nonumber \\
+&\quad \int\dif^{3}p\,\sum_{N}\langle u\vert A(0)\vert N,\mathbf{p}\rangle\,\langle N,\mathbf{p} \vert B(0)\vert n\rangle \me^{-\mi \mathbf{p}\cdot\mathbf{x}} \text{ ,} \label{19.1.5}
+\end{align}
+其中$\vert N,\mathbf{p}\rangle$是一组连续的态, 它们带有3-动量$\mathbf{p}$且互相成交, 它们与$\vert v \rangle$共同张开了整个物理的Hilbert空间. (这里的$N$可以包含连续指标和离散指标. 我们同时扔掉了时间变量.) 由于$\vert N,\mathbf{p}\rangle$属于动量算符$\mathbf{P}$的连续谱, 我们不加证明地假定, 矩阵元对$\mathbf{p}$的依赖性足够光滑(即, Lebesgue可积), 进而可以使用Riemann-Lebesgue定理,\cite{2} 这使得对$\mathbf{p}$的积分在$\vert \mathbf{x}\vert\rightarrow \infty$时为零. 那么, 在这一极限下我们就会有
+\begin{equation}
+\langle u \vert A(\mathbf{x})\,B(0)\vert v \rangle \xrightarrow[\vert\mathbf{x}\vert\rightarrow\infty]{}
+\sum_{w}\langle u\vert A(0)\vert w\rangle\,\langle w\vert B(0)\vert v\rangle \text{ .} \label{19.1.6}
+\end{equation}
+类似地,
+\begin{equation}
+\langle u \vert B(0)\, A(\mathbf{x})\vert v \rangle \xrightarrow[\vert\mathbf{x}\vert\rightarrow\infty]{}
+\sum_{w}\langle u\vert B(0)\vert w\rangle\,\langle w\vert A(0)\vert v\rangle \text{ .} \label{19.1.7}
+\end{equation}
+但是因果律告诉我们, 当$\mathbf{x}\neq 0$时, 等时对易子$[A(\mathbf{x}),B(0)]$为零(见5.1节), 所以矩阵元(\ref{19.1.6})和矩阵元(\ref{19.1.7})是相等的, 因此, 厄米矩阵$\langle u\vert A(0)\vert v\rangle$, $\langle u\vert B(0)\vert v\rangle$等都必须彼此对易. 由此得出它们可以同时对角化. 按照需要转化到这一基, 这样, 对于理论的每一个厄米定域算符$A(\mathbf{x})$, 我们有
+\begin{equation}
+\langle u\vert A(0)\vert v\rangle = \delta_{uv}\, a_{v} \label{19.1.8}
+\end{equation}
+其中$a_{v}$是$A$在态$\vert v\rangle$下的期望值, 是一实数. 所以, 对于无限大的体积, 任何用定域算符构建的哈密顿量在不同真空$\vert v\rangle$之间的矩阵元都为零. 当哈密顿量没有非对角项时, 任何两个通过对称操作连接的$\vert v\rangle$将是简并的. 用这种定域算符构建的对称性破缺微扰在同一基将是对角的, 因而它所产生的基态是$\vert v\rangle$中的一个, 而不是它们的线性组合.
+
+让人安心的是, 若真空态$\vert v\rangle$相对与场相关的小微扰稳定, 那么它也是满足集团分解条件(见第4章)的真空态. 这一原理要求, 对于物理的真空态$\vert\text{VAC}\rangle$
+\begin{equation}
+\langle \text{VAC}\vert A(\mathbf{x})\, B(0) \vert \text{VAC} \rangle \xrightarrow[\mathbf{x}\rightarrow\infty]{}
+\langle \text{VAC}\vert A(\mathbf{x})\vert \text{VAC}\rangle\,\langle \text{VAC}\vert B(0)\vert \text{VAC}\rangle \text{ .} \label{19.1.7}
+\end{equation}
+如果我们将真空态取成方程(\ref{19.1.8})所定义的基中的任何一个$\vert v\rangle$态, 那么这一条件就是满足的, 但是如果我们将其取为几个$\vert v\rangle$的线性组合, 那么这一条件就是不满足的.
+\section{Goldstone玻色子}
+
+我们现在具体到{\kai{连续}}对称性自发破缺的情况. 在这一情况下有一个定理, (这个定理有一个重要的例外, 将在第21章进行考察)对于每一个破缺的对称性, 物理粒子的谱中就必须包含一个质量和自旋均为零的粒子. 这样的粒子被称为Goldstone玻色子(或Nambu-Goldstone玻色子), 它是Goldstone\cite{3}和Nambu\cite{4}在一特定模型中首次遇到的; 在此之后, Goldstone, Salam和我自己\cite{5}给出了两个存在这种粒子的一般性证明. 这两个证明在这一节均会展示出来, 然后我们将进一步考察Goldstone粒子的性质.
+
+假定作用量和测度在一个连续对称变换下不变, 且在该对称变换下, 一组厄密标量场$\phi
+_{n}(x)$(基本场或复合场)进行一个无限小的线性变换\begin{equation}
+\phi _{n}(x)\rightarrow \phi _{n}(x)+\mathrm{i}\epsilon \sum_{m}t_{nm}\phi
+_{m}(x)\text{ ,}  \label{19.2.1}
+\end{equation}%
+其中$\mathrm{i}t_{nm}$是有限的实矩阵. 那么, 正如我们在16.4节中所发现的, 有效作用量在这一变换下也是不变的\begin{equation}
+\sum_{n,m}\int \frac{\delta \Gamma \lbrack \phi ]}{\delta \phi _{n}(x)}%
+t_{nm}\phi _{m}(x)\,\mathrm{d}^{4}x=0\text{ .}  \label{19.2.2}
+\end{equation}%
+我们将特定到平移不变理论的情况, 且要求场为常数场$\phi _{n}$, 这时,
+正如我们在16.2节所看到的, 有效作用量采取如下的形式\begin{equation}
+\Gamma \lbrack \phi ]=-\mathscr{V}V(\phi )\text{ ,}  \label{19.2.3}
+\end{equation}%
+其中$\mathscr{V}$是时空体积而$V(\phi )$被称为有效势. 那么方程(\ref{19.2.2})可以写成\begin{equation}
+\sum_{n,m}\frac{\partial V(\phi )}{\partial \phi _{n}}t_{nm}\phi _{m}=0\text{
+.}  \label{19.2.4}
+\end{equation}%
+我们将要使用的对称性要求是对上式做$\phi _{\ell
+}$的微分得到的:%
+\begin{equation}
+\sum_{n}\frac{\partial V(\phi )}{\partial \phi _{n}}t_{n\ell }+\sum_{n,m}%
+\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial \phi _{\ell }}%
+t_{nm}\phi _{m}=0\text{ .}  \label{19.2.5}
+\end{equation}%
+现在指定到$\phi _{n}$是$V(\phi )$的最小值点的情况, 即, $\phi
+_{n}$是真空期望值$\bar{\phi}_{n}$.
+既然$V(\phi )$在它的最小值处是稳定的, 那么方程(\ref{19.2.5})%
+中的第一项为零, 所以\begin{equation}
+\sum_{n,m}\left. \frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial
+\phi _{\ell }}\right\vert _{\phi =\bar{\phi}}t_{nm}\bar{\phi}_{m}=0\text{ .}
+\label{19.2.6}
+\end{equation}%
+16.1节的一般性结论表明, 方程(\ref{19.2.6})中的二阶导数正是动量空间中所有外线标记为$n$和$\ell $的单粒子不可约连通Feynman%
+图之和. 正如16.1节末尾所给出的, 它与动量空间传播子的倒数相关,
+其关系是\begin{equation}
+\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial \phi _{\ell }}%
+=\Delta _{n\ell }^{-1}(0)\text{ ,}  \label{19.2.7}
+\end{equation}%
+所以, 方程(\ref{19.2.6})给出\begin{equation}
+\sum_{n,m}\Delta _{n\ell }^{-1}(0)t_{nm}\bar{\phi}_{m}=0\text{ .}
+\label{19.2.8}
+\end{equation}%
+因此, 如果对称性是破缺的,
+这会使得$\sum_{m}t_{nm}\bar{\phi}_{m}$不为零, 那么它就是$\Delta _{n\ell
+}^{-1}(0)$本征值为零的本征矢. 存在这种矢量意味着$\Delta _{n\ell }(q)$在$q^{2}=0$处有一极点. 在$q^{2}=0$处的这一极%
+点, 其留数的阶等于矢量$t\bar{\phi}$张成的空间的维数, 其中$t$取遍该理论这一连续对称性的所有生成元. 粗略地讲, 对于每一个独立的破缺对称性会存在一个无质量的玻色子.
+
+在对称性破缺的经典例子中, 拉格朗日量含有一组实标量场$\phi _{n}$, 个数为$N$, 并采取如下的形式\begin{equation}
+\mathscr{L}=-\frac{1}{2}\sum_{n}\partial _{\mu }\phi _{n}\partial ^{\mu
+}\phi _{n}-\frac{\mathscr{M}^{2}}{2}\sum_{n}\phi _{n}\phi _{n}-\frac{g}{4}%
+\left( \sum_{n}\phi _{n}\phi _{n}\right) ^{2}\text{ .}  \label{19.2.9}
+\end{equation}%
+在群$O(N)$的作用下, 即对分量为$\phi _{n}$的$N$-矢量的旋转操作, 它是不变的.
+对于常数场, 树级近似下的有效势就由拉格朗日密度中非导数项的负数给定\begin{equation}
+V(\phi )\simeq \frac{\mathscr{M}^{2}}{2}\sum_{n}\phi _{n}\phi _{n}+\frac{g}{4%
+}\left( \sum_{n}\phi _{n}\phi _{n}\right) ^{2}\text{ .}  \label{19.2.10}
+\end{equation}%
+像往常一样, 我们假定$g$%
+是正定的. (否则, $V(\phi )$的最小值即使存在也处在微扰论的适用范围之外.) 如果$\mathscr{M}^{2}$也是正定的, $V(\phi )$的最小值就在%
+点$\phi =0$, 这一点在$O(N)$下是不变的. 另一方面, 当$%
+\mathscr{M}^{2}<0$时, 最小值所在的点$\bar{\phi}_{n}$使得\begin{equation}
+\sum_{n}\bar{\phi}_{n}\bar{\phi}_{n}=-\mathscr{M}^{2}/g\text{ .}
+\label{19.2.11}
+\end{equation}%
+那么, 树级近似下的质量矩阵就是\begin{align}
+M_{nm}^{2} &=\left. \frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial
+\phi _{m}}\right\vert _{\phi =\bar{\phi}}  \nonumber \\
+&=\mathscr{M}^{2}\delta _{nm}+g\delta _{nm}\sum_{\ell }\bar{\phi}_{\ell }%
+\bar{\phi}_{\ell }+2g\bar{\phi}_{n}\bar{\phi}_{m}  \nonumber \\
+&=2\,g\,\bar{\phi}_{n}\,\bar{\phi}_{m}\text{ .}  \label{19.2.12}
+\end{align}%
+它有一个本征值非零的本征矢$\bar{\phi}_{n}$:%
+\begin{equation}
+m^{2}=2g\sum_{n}\bar{\phi}_{n}\bar{\phi}_{n}=2\vert \mathscr{M}%
+^{2}\vert \text{ ,}  \label{19.2.13}
+\end{equation}%
+以及$N-1$个垂直于$\bar{\phi}$且本征值为零的本征矢.
+仅有$N-1$个Goldstone玻色子出现的原因正是$O(N)$破缺到了$O(N-1)$($O(N)$中使得$\bar{\phi}$不变的子群,) 因此独立的%
+破缺对称性的数目是$O(N)
+$的维数减去$O(N-1)$的维数,
+即\begin{equation}
+\frac{1}{2}N(N-1)-\frac{1}{2}(N-1)(N-2)=N-1\text{ .}  \label{19.2.14}
+\end{equation}
+
+关于Goldstone玻色子的存在性有另一个证明, 在这个证明中没有用到有效作用量的形式理论. 我们在第7章知道, 作用量的任何连续对称性都%
+会给出一个守恒流$J^{\mu }$:%
+\begin{equation}
+\frac{\partial J^{\mu }(x)}{\partial x^{\mu }}=0\text{ ,}  \label{19.2.15}
+\end{equation}%
+以及诱导出相应对称变换的荷$Q$%
+\begin{equation}
+Q=\int \mathrm{d}^{3}x\,J^{0}(\mathbf{x},0)\text{ ,}  \label{19.2.16}
+\end{equation}%
+\begin{equation}
+\Big[ Q,\phi _{n}(x)\Big] =-\sum_{m}t_{nm}\phi _{m}(x)\text{ .}
+\label{19.2.17}
+\end{equation}%
+像方程(\ref{19.2.15})---(\ref{19.2.17})这样的算符关系不受自发对称性破缺的影响, 这体现出了物理{\kai{态}}的%
+性质. 现在, 考察流和场的对易子的真空期望值. 对中间态求和, 这是\begin{equation}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}}=(2\uppi)^{-3}\int \mathrm{d}^{4}p\left[ \rho _{n}^{\lambda }(p)\,%
+\mathrm{e}^{\mathrm{i}p\cdot (y-x)}-\tilde{\rho}_{n}^{\lambda }(p)\,\mathrm{e}%
+^{\mathrm{i}p\cdot (x-y)}\right] \text{ ,}  \label{19.2.18}
+\end{equation}%
+其中, 利用平移不变性,%
+\begin{align}
+(2\uppi)^{-3}\mathrm{i}\rho _{n}^{\lambda }(p) &=\sum_{N}\langle \text{VAC}%
+|J^{\lambda }(0)|N\rangle\, \langle N|\phi _{n}(0)|\text{VAC}\rangle \delta
+^{4}(p-p_{N})\text{ ,}  \label{19.2.19} \\
+(2\uppi)^{-3}\mathrm{i}\tilde{\rho}_{n}^{\lambda }(p) &=\sum_{N}\langle
+\text{VAC}|\phi _{n}(0)|N\rangle\, \langle N|J^{\lambda }(0)|\text{VAC}\rangle
+\delta ^{4}(p-p_{N})\text{ .}  \label{19.2.20}
+\end{align}%
+我们通常将$J^{\lambda }$和$\phi _{n}$%
+取成厄米算符, 在这一情况下, 方程(\ref{19.2.19})和(\ref%
+{19.2.20})是复共轭\begin{equation}
+\rho _{n}^{\lambda }(p)=-\tilde{\rho}_{n}^{\lambda \ast }(p)\text{ ,}
+\label{19.2.21}
+\end{equation}%
+但在这里将不会做这一假定.
+
+Lorentz不变性告诉我们, $\rho $%
+和$\tilde{\rho}$必须采取如下的形式\begin{align}
+\rho _{n}^{\lambda }(p) &=p^{\lambda }\rho _{n}(-p^{2})\theta (p^{0})\text{
+,}  \label{19.2.22} \\
+\tilde{\rho}_{n}^{\lambda }(p) &=p^{\lambda }\tilde{\rho}_{n}(-p^{2})\theta
+(p^{0})\text{ .}  \label{19.2.23}
+\end{align}%
+(因子$\theta (p^{0})$, 在$p^{0}>0$时取$+1$,
+在其它情况下为零, 它是$p_{N}$是物理态的4-动量这一性质所要求的.) 这给出\begin{align}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}} &=\frac{\partial }{\partial y_{\lambda }}\int \mathrm{d}\mu
+^{2}\,\Big[\rho _{n}(\mu ^{2})\Delta _{+}(y-x;\mu ^{2})  \nonumber \\
+&\quad+\tilde{\rho}_{n}(\mu ^{2})\Delta _{+}(x-y;\mu ^{2})\Big]\text{ ,}
+\label{19.2.24}
+\end{align}%
+其中$\Delta _{+}$是熟悉的函数\begin{equation}
+\Delta _{+}(z;\mu ^{2})=(2\uppi)^{-3}\int \mathrm{d}^{4}p\,\theta
+(p^{0})\,\delta (p^{2}+\mu ^{2})\,\mathrm{e}^{\mathrm{i}p\cdot z}\text{ .}
+\label{19.2.25}
+\end{equation}%
+正如在第5章中所评述的, Lorentz不变性仅允许$\Delta
+_{+}(z;\mu ^{2})$依赖于$z^{2}$, $\mu ^{2}$和$%
+\theta (z^{0})$, 而当$z^{2}>0$时, 则只依赖$z^{2}$和$\mu ^{2}$. 因此, 当$x-y$类空时, $\Delta _{+}(x-y;\mu ^{2})$和$\Delta _{+}(y-x;\mu
+^{2})$相等, 所以, 在这一情况下\begin{equation}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}}=\frac{\partial }{\partial y_{\lambda }}\int \mathrm{d}\mu
+^{2}\,\Big[\rho _{n}(\mu ^{2})+\tilde{\rho}_{n}(\mu ^{2})\Big]\Delta _{+}(y-x;\mu ^{2})%
+\text{ .}  \label{19.2.26}
+\end{equation}%
+但是, 所有对易子对于类空的$x-y$必须为零, 所以\begin{equation}
+\rho _{n}(\mu ^{2})=-\tilde{\rho}_{n}(\mu ^{2})\text{ ,}  \label{19.2.27}
+\end{equation}%
+因此, 对于一般的$x$和$y$,
+方程(\ref{19.2.24})给出\begin{equation}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}}=\frac{\partial }{\partial y_{\lambda }}\int \mathrm{d}\mu
+^{2}\,\rho _{n}(\mu ^{2})\Big[ \Delta _{+}(y-x;\mu ^{2})-\Delta _{+}(x-y;\mu
+^{2})\Big] \text{ .}  \label{19.2.28}
+\end{equation}%
+若方程(\ref{19.2.21})也参与进来, 方程(\ref{19.2.27})还证明了$%
+\rho _{n}(\mu ^{2})$是{\kai{实}}的.
+
+现在我们使用$J^{\lambda }(y)$守恒这一性质. 对方程(\ref%
+{19.2.28})两边作用导数$\partial
+/\partial y^{\lambda }$, 并使用熟悉的方程\begin{equation}
+(\square _{y}-\mu ^{2})\,\Delta _{+}(y-x;\mu ^{2})=0\text{ ,}  \label{19.2.29}
+\end{equation}%
+我们发现, 对于{\kai{所有}}的$x$和$y$%
+\begin{equation}
+0=\int \mathrm{d}\mu ^{2}\,\mu ^{2}\rho _{n}(\mu ^{2})\Big[ \Delta
+_{+}(y-x;\mu ^{2})-\Delta _{+}(x-y;\mu ^{2})\Big] \text{ ,}
+\label{19.2.30}
+\end{equation}%
+(因为$\Delta _{+}(x-y)$对于类时或类光的$x-y$不是{\kai{偶}}函数)所以\begin{equation}
+\mu ^{2}\rho _{n}(\mu ^{2})=0\text{ .}  \label{19.2.31}
+\end{equation}
+
+一般情况下, 我们可以从此得出$\rho _{n}(\mu ^{2})$对于所有的$\mu ^{2}$均为零. 然而,
+在对称性破缺的情况下, 这是不可能的. 在方程(\ref{19.2.28})中令$\lambda =0$和$x^{0}=y^{0}=t$:%
+\begin{align*}
+\Big\langle \Big[ J^{0}(\mathbf{y},t),\phi _{n}(\mathbf{x},t)\Big]
+\Big\rangle _{\text{VAC}} &=2\mathrm{i}(2\uppi)^{-3}\int \mathrm{d}\mu
+^{2}\,\rho _{n}(\mu ^{2}) \\
+&\quad\times \int \mathrm{d}^{4}p\,\sqrt{\mathbf{p}^{2}+\mu ^{2}}\,\mathrm{e}^{\mathrm{i}%
+\mathbf{p}\cdot (\mathbf{y}-\mathbf{x})}\delta (p^{2}+\mu ^{2}) \\
+&=\mathrm{i}\delta ^{3}(\mathbf{y}-\mathbf{x})\int \mathrm{d}\mu ^{2}\,\rho
+_{n}(\mu ^{2})\text{ .}
+\end{align*}%
+积分并使用方程(\ref{19.2.16})%
+和(\ref{19.2.17}), 这给出\begin{equation}
+-\sum_{m}t_{nm}\langle \phi _{m}\rangle _{\text{VAC}}=\mathrm{i}\int \mathrm{%
+d}\mu ^{2}\,\rho _{n}(\mu ^{2})\text{ .}  \label{19.2.32}
+\end{equation}%
+仅当\begin{equation}
+\rho _{n}(\mu ^{2})=\mathrm{i}\delta (\mu ^{2})\sum_{m}t_{nm}\langle \phi
+_{m}(0)\rangle _{\text{VAC}}\text{ ,}  \label{19.2.33}
+\end{equation}%
+方程(\ref{19.2.31})和(\ref{19.2.32})才能是一致的. (因为在这一情况下方程(\ref{19.2.1})要求$t_{nm}
+$是虚的, 所以它对于厄米场$\phi _{n}$是实的.) 因此,
+只要对称性是破缺的, $%
+\rho _{n}(\mu ^{2})$不能是零, 而是完全由正比于$\delta (\mu ^{2})$的项构成. 这样的项显然只能出现在有无质量%
+粒子的理论中, 这是因为, 若非如此, 质心能量平方$-p_{N}^{2}$就无法向下扩展至零. 更进一步, $\delta (\mu
+^{2})$仅能从零质量的单粒子态中产生; 多粒子态将会贡献可扩展至$\mu
+^{2}=0$的连续区. 态$\phi _{n}(0)|$VAC$\rangle $%
+是旋转不变的, 所以对于任何螺度非零的态$N$,
+$\langle N|\phi _{n}(0)|$VAC$\rangle $必须为零.
+另外, 对于任意的态$N$,
+若它的内禀宇称或(未破缺的)内部量子数与$%
+J^{0}$不同, $\langle VAC|J^{0}|N\rangle $为零.
+那么, 我们得出: $t_{nm}\langle \phi
+_{n}(0)\rangle _{\text{VAC}}\neq 0${\kai{的破缺对称性会要求出现一个自旋零的无质量粒子,
+且该粒子与$J^{0}$有相同的宇称和内部量子数}}.
+它们就是我们的Goldstone玻色子.
+
+当自发破缺的对称性是定域对称性而非整体对称性时, 之上的讨论就失效了. 我们要么选择一个Lorentz-协变规范, 例如$\partial_{\mu}A^{\mu}=0$这样的Landau规范, 在这一情况下, 我们在15.7节看到量子力学的正定性假设被破坏了, %
+要么选择像$A_{3}^{\mu}=0$这样的轴向规范, 在这一情况下, 量子力学的普通规则成立但显式的Lorentz不变性丢失了. 我们将第21章看到, 这一例外不仅仅是技术上的问题; 自发破缺的定域对称性不给出Goldstone玻色子.
+
+我们来更细致地看一下$\rho_{n}(\mu^{2})$中$\delta$-函数的系数是如何与Goldstone玻色子的性质如何关联起来的, 这对于后面的讨论将是有用的. %
+对于4-动量为$p_{B}^{\mu }$的自旋零玻色子$B$, Lorentz不变性要求流在真空态与单粒子态之间的矩阵元采取如下的形式\begin{equation}
+\langle \text{VAC}|J^{\lambda }(x)|B\rangle =\mathrm{i}\frac{F\,p_{B}^{\lambda
+}\,\mathrm{e}^{\mathrm{i}p_{B}\cdot x}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{
+,}  \label{19.2.34}
+\end{equation}%
+其中$\mathbf{p}_{B}$是$B$的动量, $%
+p_{B}^{0}\equiv |\mathbf{p}_{B}|$而$F$是带有能量量纲的常系数. (由于$%
+p_{B\lambda }p_{B}^{\lambda }=0$, 所以这与流守恒是一致的.) 另外, 标量场$\phi _{n}(y)$在单粒子态%
+和真空态之间的矩阵元形式如下\begin{equation}
+\langle B|\phi _{n}(y)|\text{VAC}\rangle =\frac{Z_{n}\,\mathrm{e}^{-\mathrm{i}%
+p_{B}\cdot y}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{ ,}  \label{19.2.35}
+\end{equation}%
+其中$Z_{n}$是一无量纲常数. 这样, 从方程(\ref{19.2.34})和(%
+\ref{19.2.35})中我们就有\begin{align*}
+(2\uppi)^{-3}\mathrm{i}\rho _{n}(-p^{2})p^{\lambda }\theta (p^{0}) &\equiv
+\int \mathrm{d}^{3}p_{B}\,\langle \text{VAC}|J^{\lambda }(0)|B\rangle \langle
+B|\phi _{n}(0)|\text{VAC}\rangle \delta ^{4}(p-p_{B}) \\
+&=\delta (p^{0}-|\mathbf{p}|)(2\uppi)^{-3}(2p^{0})^{-1}p^{\lambda }\mathrm{i%
+}FZ_{n} \\
+&=\theta (p^{0})\delta (-p^{2})(2\uppi)^{-3}p^{\lambda }\mathrm{i}FZ_{n}%
+\text{ ,}
+\end{align*}%
+所以\begin{equation}
+\rho _{n}(\mu ^{2})=FZ_{n}\delta (\mu ^{2})\text{ .}  \label{19.2.36}
+\end{equation}%
+与方程(\ref{19.2.33})相比较, 这给出\begin{equation}
+\mathrm{i}FZ_{n}=-\sum_{m}t_{nm}\langle \phi _{m}(0)\rangle _{\text{VAC}}%
+\text{ .}  \label{19.2.37}
+\end{equation}
+
+更一般地, 我们可以有多个破缺的对称性, 它们对应的生成元和流分别是$t_{a}$和$J^{\mu}_{a}$, 在$t_{a}$的线性组合都是破缺的意义下, 我们可以将它们取成独立的.
+对于这些对称性中的每一个, 存在一个Goldstone玻色子$|B_{a}\rangle $, 并且我们可以将$Z_{an}$和$F_{ab}$定义成%
+\begin{equation}
+\langle \text{VAC}|J_{a}^{\lambda }(x)|B_{b}\rangle =\mathrm{i}\frac{%
+F_{ab}\,p_{B}^{\lambda }\,\mathrm{e}^{\mathrm{i}p_{B}\cdot x}}{(2\uppi)^{3/2}%
+\sqrt{2p_{B}^{0}}}\text{ ,}  \label{19.2.38}
+\end{equation}%
+\begin{equation}
+\langle B_{a}|\phi _{n}(y)|\text{VAC}\rangle =\frac{Z_{an}\,\mathrm{e}^{-%
+\mathrm{i}p_{B}\cdot y}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{ .}
+\label{19.2.39}
+\end{equation}%
+方程(\ref{19.2.37})对于每一个$a$%
+都是成立的, 所以\begin{equation}
+\mathrm{i}\sum_{b}F_{ab}Z_{bn}=-\sum_{m}[t_{a}]_{nm}\langle \phi
+_{m}(0)\rangle _{\text{VAC}}\text{ .}  \label{19.2.40}
+\end{equation}%
+例如, 在之前所讨论的$%
+O(N)$模型中, 我们选择我们的基使得真空期望值指向1-方向\begin{equation}
+\bar{\phi}_{m}\equiv \langle \phi _{m}(0)\rangle _{\text{VAC}}=v\delta _{m1}%
+\text{ .}  \label{19.2.41}
+\end{equation}%
+$N-1$个破缺对称性的生成元$t_{a}$(其中$a=2\cdots N$)可以定义为$1$-$a$平面上无限小旋转的生成元. 加上一个方便的归一化选择,
+它们就有了非零元\begin{equation}
+\lbrack t_{a}]_{1a}=-[t_{a}]_{a1}=\mathrm{i}  \label{19.2.42}
+\end{equation}%
+(其中没有对$a$进行求和). 对于未破缺的$O(N-1)$对称性, 在这一对称性$N-1$个Goldstone玻色子按照它的矢量表示进行变换, 这一%
+对称性告诉我们\begin{equation}
+F_{ab}=\delta _{ab}F\text{ , \ \ \ \ \ }Z_{a1}=0\text{ , \ \ \ \ \ }%
+Z_{ab}=Z\delta _{ab}\text{ .}  \label{19.2.43}
+\end{equation}%
+那么, 方程(\ref{19.2.40})就会要求\begin{equation}
+FZ=v\text{ .}  \label{19.2.44}
+\end{equation}%
+习惯上取$Z=1$的场重整化方案, 这样$F=v$. 因此, $F$反映了对称性破缺的强度. 我们将会看到, 参量$%
+1/F$既决定了Goldstone玻色子彼此之间的相互作用强度, 同时也决定了Goldstone玻色子与其它粒子的相互作用强度.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=4.0in]{191}
+ \caption{这是对称流$J^{\mu}(x)$矩阵元中极点项的Feynman图, 该对称流处在两个一般态$\alpha$和$\beta$之间, 且该极点项是Goldstone玻色子内线引起的, 在图中标记为$\pi$.}
+ \label{fig:19.1}
+\end{figure}
+
+除了Goldstone玻色子质量为零外, 破缺的对称性还告诉了我们其它事情;
+它同时稍微约束了Goldstone%
+玻色子在低能下的相互作用. 为了在最简单的例子中看到这一点,
+考察与一个破缺对称性相联系的流$J^{\mu }(x)$. 在任意两个态$\alpha ,\beta $之间:%
+\begin{equation}
+\left\langle \beta |J^{\mu }(x)|\alpha \right\rangle =\mathrm{e}^{\mathrm{i}%
+q\cdot x}\left\langle \beta |J^{\mu }(0)|\alpha \right\rangle \text{ ,}
+\label{19.2.45}
+\end{equation}%
+其中\begin{equation}
+q^{\mu }\equiv p_{\alpha }^{\mu }-p_{\beta }^{\mu }\text{ .}  \label{19.2.46}
+\end{equation}%
+我们知道$J^{\mu }(x)$在真空态和单Goldstone玻色子态$|B,\mathbf{q}%
+\rangle $之间的矩阵元不为零, 且这一矩阵元由方程(\ref{19.2.34})给出. 由极点学的通用规则(见第10章)可以得出, 矩阵元(\ref{19.2.45})在$%
+q^{2}\rightarrow 0$处有一极点, 且\footnote{当Goldstone玻色子对应的是基本场, 方程(\ref{19.2.47})可%
+以通过观察图\ref{fig:19.1}中所示的这类Feynman图获得.
+对于过程$\alpha \rightarrow \beta +B$, $S$-矩阵元中的因子$\mathrm{i}(2\uppi)^{4}$%
+被$B$传播子所附带的因子$-\mathrm{i}(2\uppi)^{-4}$抵消了. 而极点学的一般规则告诉我们, 即使Goldstone玻色子是%
+复合粒子, 相同结果同样成立.}%
+\begin{equation}
+\left\langle \beta |J^{\mu }(0)|\alpha \right\rangle \rightarrow \frac{%
+\mathrm{i}F\,q^{\mu }}{q^{2}}M_{\beta \alpha }\text{ ,}  \label{19.2.47}
+\end{equation}%
+其中$\mi(2\uppi)^{4}\delta ^{4}(p_{\alpha }-p_{\beta }-q)M_{\beta
+\alpha }/(2\uppi)^{3/2}(2q^{0})^{1/2}$是在跃迁$%
+\alpha \rightarrow \beta $中发射一个4-动量为$q$的Goldstone玻色子的$S$-%
+矩阵元. 我们因此写下\begin{equation}
+\left\langle \beta |J^{\mu }(0)|\alpha \right\rangle =N_{\beta \alpha }^{\mu
+}+\frac{\mathrm{i}Fq^{\mu }}{q^{2}}M_{\beta \alpha }\text{ ,}
+\label{19.2.48}
+\end{equation}%
+其中$N_{\beta \alpha }^{\mu }$定义为对流的矩阵元的非极点贡献. 从方程(\ref{19.2.45})中我们看到, 流$J^{\mu }$的守恒律$%
+\partial _{\mu }J^{\mu }=0$要求(\ref{19.2.48})在与$%
+q^{\mu }$收缩之后为零, 因此\begin{equation}
+M_{\beta \alpha }=\frac{\mathrm{i}}{F}q_{\mu }N_{\beta \alpha }^{\mu }\text{
+.}  \label{19.2.49}
+\end{equation}%
+一个可以立即得出的结果是, 除非$N_{\beta \alpha }^{\mu }$在$q\rightarrow 0$处有一零点, 否则在跃迁$\alpha
+\rightarrow \beta $中发射一个Goldstone玻色子的矩阵元$M_{\beta \alpha }$在$%
+q\rightarrow 0$时为零. 这被称为"Adler(阿德勒)零点".\cite{6}
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=5.0in]{192}
+ \caption{上边两图同样是对称流$J^{\mu}(x)$矩阵元中极点项的Feynman图, 矩阵元两边的态是一般态$\alpha$和$\beta$, 只不过这时的极点项是由于内线接近它们的质量壳造成的. 实线代表``硬''外线; 波浪线代表流$J^{\mu}(x)$的插入; 阴影圆盘代表是有相同外线的所有图之和.}
+ \label{fig:19.2}
+\end{figure}
+
+事实上, 通常发生的情况是$N_{\alpha\beta}^{\mu}${\kai{确实}}在$q=0$处有极点. 这是因为, 流$J^{\mu}(x)$的顶点可以连在过程$\alpha\rightarrow\beta$的一条外线上. (见图\ref{fig:19.2}.) 例如, 如果插入在出粒子线或处粒子线上的流$J^{\mu}$带走了动量$q^{\mu}$, 那么对于动量为$p$且质量为$m$的外粒子线, 连接这一顶角与图剩余部分的内线就会分别携带4-动量$p^{\mu}+q^{\mu}$或$p^{\mu}-q^{\mu}$, 因此它的传播子就会给$N_{\beta\alpha}^{\mu}$贡献因子
+\begin{equation}
+\Big[ (p\pm q)^{2}+m^{2}\Big] ^{-1}=\Big[ \pm 2p\cdot q+q^{2}\Big]
+^{-1}\rightarrow \pm \frac{1}{2p\cdot q}\text{ .}  \label{19.2.50}
+\end{equation}%
+对于固定方向的$\mathbf{p}$, 方程(\ref{19.2.50})中的因子$1/|\mathbf{q}|$会与方程(\ref{19.2.49})中的因子$|\mathbf{q}|$相抵消, 这在$|\mathbf{q}\rightarrow 0|$的极限下会给出有限的结果(尽管这一结果与$\mathbf{q}$的方向相关). 另一方面, 流$J^{\mu}$与过程$\alpha\rightarrow\beta$的内线相连的那些图, 它们对$N_{\alpha\beta}^{\mu}$的贡献在$|\mathbf{q}|\rightarrow 0$时没有奇点, 因此被方程(\ref{19.2.49})中的因子$|\mathbf{q}|$抵消了. 因此, 方程(\ref{19.2.49})可以认为有如下的含义: {\kai{在过程$\alpha\rightarrow\beta$中发射一个软\textit{Goldstone}玻色子的振幅可以从那些Goldstone玻色子仅从外线上发射的图得出, 而发射\textit{Goldstone}玻色子的顶角可以通过对单粒子态之间的跃迁使用方程(\ref{19.2.49})得出.}}
+
+关于Goldstone玻色子彼此之间的相互作用或者它与其它标量的相互作用, 利用有效作用量形式理论可以导出一些有趣的结果. 对于这个目的, 我们注意到, 如果我们定义一组重整化Goldstone玻色场$\pi_{a}$, 使得
+\begin{equation}
+\langle B_{a}|\pi _{b}(x)|\text{VAC}\rangle =\frac{\mathrm{e}^{-\mathrm{i}%
+p_{B}\cdot x}\delta _{ab}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{ ,}
+\label{19.2.51}
+\end{equation}%
+那么方程(\ref{19.2.39})告诉我们
+\begin{equation}
+\phi _{n}(x)=\sum_{a}Z_{an}\pi _{a}(x)+\cdots \text{ ,}  \label{19.2.52}
+\end{equation}%
+其中``$\cdots$''代表不产生Goldstone玻色子的场. 但方程(\ref{19.2.40})给出$Z_{an}=\sum_{b}F_{ab}^{-1}(\mi t_{b}\bar{\phi})_{n}$. 因此, 对于$N$个4-动量为零的Goldstone玻色子$\pi_{a_{1}},\cdots,\pi_{a_{N}}$, 它们之间任何反应的振幅在树级近似下可以利用如下的有效作用量计算出来
+\begin{equation}
+\mathscr{H}_{\text{eff}}=\frac{1}{N!}g_{a_{1}\cdots a_{N}}\pi _{a_{1}}\cdots
+\pi _{a_{N}}\text{ ,}  \label{19.2.53}
+\end{equation}%
+其中
+\begin{equation}
+g_{a_{1}\cdots a_{N}}=\sum_{b_{1}\cdots b_{N}}\left.
+F_{a_{1}b_{1}}^{-1}\cdots F_{a_{N}b_{N}}^{-1}(\mathrm{i}t_{b_{1}}\bar{\phi}%
+)_{n_{1}}\cdots (\mathrm{i}t_{b_{N}}\bar{\phi})_{n_{N}}\,\frac{\partial
+^{N}V(\phi )}{\partial \phi _{n_{1}}\cdots \partial \phi _{n_{N}}}%
+\right\vert _{\phi =\bar{\phi}}\text{ .}  \label{19.2.54}
+\end{equation}%
+那么, $\phi=\bar{\phi}$处的方程(\ref{19.2.4})暗示了, 单个Goldstone玻色线湮没到真空的所有``蝌蚪图''之和为零, 而方程(\ref{19.2.6})则告诉我们Goldstone玻色子在零4-动量处跃迁到任何其它标量的振幅为零. 为了在这些结果之上更进一步, 我们可以继续相对标量场微分. 例如, 对于任意的对称性生成元$t$, 方程(\ref{19.2.5})的导数给出:
+\begin{equation}
+\sum_{n}\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial \phi _{m}}%
+\,t_{n\ell }+\sum_{n}\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial
+\phi _{\ell }}\,t_{nm}+\sum_{n,k}\frac{\partial ^{3}V(\phi )}{\partial \phi
+_{n}\partial \phi _{m}\partial \phi _{\ell }}\,t_{nk}\phi _{k}=0\text{ .}
+\label{19.2.55}
+\end{equation}%
+将$t$取成破缺对称性生成元$t_{a}$中的一个, 令$\phi=\bar{\phi}$, 与$(t_{b}\bar{\phi})_{m}(t_{c}\bar{\phi})_{\ell}$, 使用方程(\ref{19.2.6}), 这给出
+\begin{equation}
+\sum_{n,m,\ell }\left. \frac{\partial ^{3}V(\phi )}{\partial \phi
+_{n}\partial \phi _{m}\partial \phi _{\ell }}\right\vert _{\phi =\bar{\phi}%
+}(t_{a}\bar{\phi})_{n}(t_{b}\bar{\phi})_{m}(t_{c}\bar{\phi})_{\ell }=0\text{
+,}  \label{19.2.56}
+\end{equation}
+所以, 有三条零4-动量Goldstone玻色外线的所有图之和为零. 特别地, 这意味着在一般过程中, 到小的Goldstone玻色子能量的领头阶, 低能Goldstone玻色外线上不会发射低能Goldstone玻色子.
+
+\section{自发破缺的近似对称性}
+
+上一节我们处理的是不保持真空不变的作用量的精确对称性, 这种对称性被称作自发破缺的. 我们将考察在这种理论的作用量中增加一个小的对称性破缺项的效应. 在强作用理论以及凝聚态物理的某些领域中, 这种自发破缺的近似对称性是非常重要的. 我们将看到, 近似对称性的自发破缺并不会导致无质量Goldstone玻色子的出现, 出现的是一个质量很小的无自旋粒子, 这种粒子通常被称为{\kai{赝}\textit{Goldstone}玻色子}.\cite{7}
+
+在这里我们继续处理平移不变的理论, 在这样的理论中, 有效作用量可以像方程(\ref{19.2.3})中那样表示成有效势$V(\phi)$的形式, 且$V(\phi)$依赖一组与时空无关的标量场期望值$\phi_{n}$. 若一个作用量服从某组生成元为$t_{\alpha}$的近似连续对称性, 那么有效势可以写成
+\begin{equation}
+V(\phi )=V_{0}(\phi )+V_{1}(\phi )\text{ ,}  \label{19.3.1}
+\end{equation}%
+其中$V_{0}(\phi )$满足不变性条件\footnote{我们将一般的对称性生成元记做$t_{\alpha
+},t_{\beta }$等, 与独立的破缺对称性生成元不同, 对于那些生成元, 下标$\alpha $%
+取值$a,b$等.}%
+\begin{equation}
+\sum_{n,m}\frac{\partial V_{0}(\phi )}{\partial \phi _{n}}\,(t_{\alpha
+})_{nm}\phi _{m}=0  \label{19.3.2}
+\end{equation}%
+而$V_{1}(\phi)$是作用量中的对称性破缺给出的小修正. 假定这一微扰将势的最小值点从$\phi_{0}$偏移至$\bar{\phi}=\phi_{0}+\phi_{1}$, 其中$\phi_{0}$是$V_{0}(\phi)$的最小值点, $\phi_{1}$是对称性破缺微扰中的一阶小量. 这样, 真空态的平衡条件就是
+\begin{equation}
+\left. \frac{\partial V(\phi )}{\partial \phi _{n}}\right\vert _{\phi =\phi
+_{0}+\phi _{1}}=0\text{ .}  \label{19.3.3}
+\end{equation}%
+左边的零阶项就是$[\partial V_{0}(\phi)/\partial \phi_{n}]_{\phi=\phi_{0}}$, 由于$\phi_{0}$的定义就是$V_{0}(\phi)$的最小值点, 所以它为零. 因此一阶项也必须为零, 因而:
+\begin{equation}
+\sum_{m}\left. \frac{\partial ^{2}V_{0}(\phi )}{\partial \phi _{n}\partial
+\phi _{m}}\right\vert _{\phi =\phi _{0}}\phi _{1m}+\left. \frac{\partial
+V_{1}(\phi )}{\partial \phi _{n}}\right\vert _{\phi =\phi _{0}}=0\text{ .}
+\label{19.3.4}
+\end{equation}%
+将方程(\ref{19.2.6})中的$V$替换成不变项$V_{0}$并将$\bar{\phi}$替换成$\phi_{0}$后, 它在这里就是成立的:
+\begin{equation}
+\sum_{nl}\left. \frac{\partial ^{2}V_{0}(\phi )}{\partial \phi _{n}\partial
+\phi _{m}}\right\vert _{\phi =\phi _{0}}(t_{\alpha })_{nl}\,\phi _{0l}=0\text{
+.}  \label{19.3.5}
+\end{equation}%
+因此, 给方程(\ref{19.3.4})乘以$(t_{\alpha}\phi_{0})_{n}$并对$n$求和给出
+\begin{equation}
+\sum_{n}(t_{\alpha }\phi _{0})_{n}\left. \frac{\partial V_{1}(\phi )}{%
+\partial \phi _{n}}\right\vert _{\phi =\phi _{0}}=0\text{ .}  \label{19.3.6}
+\end{equation}%
+回忆$V(\phi)$作为单粒子不可约图生成函数的解释, 并注意到, 当没有微扰$V_{1}$时, $\phi_{n}$的Goldstone分量是那些处在$t_{\alpha}\phi_{0}$方向的分量(见方程(\ref{19.2.33})), 方程(\ref{19.3.6})的左边正比于所有``蝌蚪''图的和, 在蝌蚪图中, 赝Goldstone玻色子湮没在真空之中. 因此, 方程可以叙述为条件: 到$V_{1}$中的一阶, {\kai{赝}\textit{Goldstone}玻色子没有蝌蚪图}.
+
+这一计算的含义在于, 如果我们不从满足方程(\ref{19.3.6})的零阶期望值出发, 那么即使很小的微扰也会对$\bar{\phi}$产生很大的改变, 这将破坏$\bar{\phi}$在$\phi_{0}$附近的展开. 幸运的是, 对于紧Lie群, 总可能选择$\phi_{0}$使之满足方程(\ref{19.3.6}). 为了看到这点, 注意到, 势$V_{0}(\phi)$在实线性变换$\phi\rightarrow L\phi$的群下不变暗示了: 如果$\phi_{\ast}$是势的一个最小值点, 那么$L\phi_{\ast}$也是最小值点. 对于连续的变换群, 我们总可以将变换参数化为$L(\theta)$, 使得
+\begin{equation}
+\frac{\partial L(\theta )}{\partial \theta_{\alpha }}L^{-1}(\theta )=%
+\mathrm{i}N_{\alpha \beta }(\theta )t_{\beta }\text{ ,}  \label{19.3.7}
+\end{equation}%
+其中$N_{\alpha\beta}$是依赖于群参量$\theta_{\alpha}$的非奇异矩阵. (在实表示中, $\mi t_{\alpha}$是实的, 而非$t_{\alpha}$.) 现在考察函数$V_{1}(L(\theta)\phi_{\ast})$. 当群是紧致群时, 随着$\theta$跑遍整个群体积, $L(\theta)\phi_{\ast}$映射到一个紧致流形, 并且, 只要$V_{1}(\phi)$是连续的, 那么它在任何这样的紧致面上必有一个最小值, 记这个最小值点为$L(\theta_{\ast}\phi_{\ast})$. $V_{1}(L(\theta)\phi_{\ast})$对$\theta_{\alpha}$的导数是
+\begin{equation}
+\frac{\partial V_{1}(L(\theta )\phi _{\ast })}{\partial \theta _{\alpha }}%
+=\sum_{n}\left. \frac{\partial V_{1}(\phi )}{\partial \phi _{n}}\right\vert
+_{\phi =L(\theta _{\ast })\phi _{\ast }}\,N_{\alpha\beta}(\theta)\,(\mi t_{\beta }L(\theta _{\ast })\phi
+_{\ast })_{n}\text{ .}  \label{19.3.8}
+\end{equation}%
+它必须在最小值点$\theta_{\ast}$处为零, 既然$N_{ab}$是非奇异的, 这暗示了
+\begin{equation}
+0=\sum_{n}\left. \frac{\partial V_{1}(\phi )}{\partial \phi _{n}}\right\vert
+_{\phi =L(\theta _{\ast })\phi _{\ast }}(t_{\beta }L(\theta _{\ast })\phi
+_{\ast })_{n}\text{ .}  \label{19.3.9}
+\end{equation}
+然而, 如果我们选择$\phi_{0}=L(\theta_{\ast})\phi_{\ast}$, 那么方程(\ref{19.3.6})总是满足的.
+
+方程(\ref{19.3.6})被称为{\kai{真空对齐}}条件(vacuum alignment condition),\cite{8} 这是因为它一般会有这样的效应: 迫使真空所破缺的对称性的方向与哈密顿量中的对称项破缺性构成某种队列. 例如, %
+考察上一节所引入的$SO(N)$自发破缺到$SO(N-1)$的情况. 当对称性破缺微扰不存在时, 没有方法分辨{\kai{哪个}}$SO(N-1)$群是未破缺的; 对于$SO(N)$保持某个$N$-矢$\phi_{0m}$不变的$SO(N-1)$子群, 若理论的动力学所给出的基态在该子群的作用下不变, 那么通过实施一个$SO(N)$旋转, 我们能发现另一个基态, 这个基态在保持另一个$N$-矢不变的$SO(N-1)$子群的作用下不变. 如果我们增加一个微扰, 这个微扰在$SO(N)$的作用下 像$N$-矢$\phi_{n}$(不一定由基本场构成)的分量$\sum_{n}u_{n}\phi_{n}$那样变换, 那么这个哈密顿量在$SO(N)$一个特定的$SO(N-1)$子群下不变, 即保持矢量$u$不变的旋转所构成的子群. 没有真空对齐条件, 我们可以认为剩余的精确对称性是$SO(N-2)$, 组成这个群的旋转{\kai{既}}保持$u$不变{\kai{又}}保持表征真空对称性的矢量$\phi_{0}$不变. 但伴随$V_{1}(\phi)=\sum_{n}u_{n}\phi_{n}$, 条件(\ref{19.3.6})告诉我们, 当处在真正的真空时, 对于所有的$SO(N)$生成元$t_{\alpha}$有$\sum_{n}(t_{\alpha}\phi_{0})_{n}u_{n}=0$. $SO(N)$生成元$t_{\alpha}$展开了所有反对称$N\times N$矩阵的空间, 所以这一条件要求$\phi_{0}$必须处在与$u$相同的方向上, 因而未破缺的对称性是$SO(N-1)$, 而不是$SO(N-2)$.
+
+根据16.1节的一般结果,
+赝Goldstone玻色子直到一阶的质量矩阵$M_{ab}$给定为\begin{equation}
+M_{ab}^{2}=\sum_{mn}Z_{an}Z_{bm}\left. \frac{\partial ^{2}V(\phi )}{\partial
+\phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi _{0}+\phi _{1}}\text{ ,}
+\label{19.3.10}
+\end{equation}%
+其中$Z_{an}$是方程(\ref{19.2.39})所定义的场场重整化常数. 既然质量矩阵(\ref{19.3.10})%
+在零阶为零, 一阶项给出\begin{equation}
+M_{ab}^{2}=\sum_{mn}Z_{an}Z_{bm}\left[ \sum_{\ell }\left. \frac{\partial
+^{3}V_{0}(\phi )}{\partial \phi _{\ell }\partial \phi _{m}\partial \phi _{n}}%
+\right\vert _{\phi =\phi _{0}}\phi _{1\ell }+\left. \frac{\partial
+^{2}V_{1}(\phi )}{\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi
+=\phi _{0}}\right] \text{ ,}  \label{19.3.11}
+\end{equation}%
+其中$Z_{an}$在这里由(\ref{19.2.40})%
+的零阶近似给出:%
+\begin{equation}
+Z_{an}=\sum_{b}F_{ab}^{-1}(\mathrm{i}t_{b}\phi _{0})_{n}\text{ .}
+\label{19.3.12}
+\end{equation}%
+为了计算质量矩阵(\ref%
+{19.3.11}), 我们取方程(\ref{19.2.55})中的$t$为破缺对称性生成元$t_{a}$中的一个, 令$\phi =\phi _{0}$,
+并与$(t_{b}\phi _{0})_{m}\phi _{1\ell }$收缩:%
+\begin{align*}
+0 &=\sum_{nm\ell }\left. \frac{\partial ^{3}V_{0}(\phi )}{\partial \phi
+_{\ell }\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi
+_{0}}\phi _{1\ell }(t_{a}\phi _{0})_{n}(t_{b}\phi _{0})_{m} \\
+&\quad+\sum_{nm}\left. \frac{\partial ^{2}V_{0}(\phi )}{\partial \phi
+_{n}\partial \phi _{m}}\right\vert _{\phi =\phi _{0}}(t_{a}\phi
+_{1})_{n}(t_{b}\phi _{0})_{m}+\sum_{n\ell }\left. \frac{\partial
+^{2}V_{0}(\phi )}{\partial \phi _{n}\partial \phi _{\ell }}\right\vert
+_{\phi =\phi _{0}}(t_{a}t_{b}\phi _{0})_{n}\phi _{1\ell }\text{ .}
+\end{align*}%
+根据方程(\ref{19.2.6}), 右边的第二项为零, 而第三项可以利用方程(\ref{19.3.4})进行重写, 这给了我们\begin{equation}
+\sum_{nm\ell }\left. \frac{\partial ^{3}V_{0}(\phi )}{\partial \phi _{\ell
+}\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi _{0}}\phi
+_{1\ell }(t_{a}\phi _{0})_{n}(t_{b}\phi _{0})_{m}=\left. \frac{\partial
+V_{1}(\phi )}{\partial \phi _{n}}\right\vert _{\phi =\phi
+_{0}}(t_{a}t_{b}\phi _{0})_{n}\text{ .}  \label{19.3.13}
+\end{equation}%
+这样, 在方程(\ref{19.3.11})使用上式就给出了赝Goldstone玻色子的质量矩阵公式,
+以$V_{1}$的形式, 这个公式是\begin{align}
+M_{cd}^{2} &=-\sum_{ab}F_{ca}^{-1}F_{db}^{-1}\Bigg[(t_{a}\phi
+_{0})_{n}(t_{b}\phi _{0})_{m}\left. \frac{\partial ^{2}V_{1}(\phi )}{%
+\partial \phi _{m}\partial \phi _{n}}\right\vert _{\phi =\phi _{0}}
+\nonumber \\
+&\quad+(t_{a}t_{b}\phi _{0})_{n}\left. \frac{\partial V_{1}(\phi )}{\partial
+\phi _{n}}\right\vert _{\phi =\phi _{0}}\Bigg]\text{ .}  \label{19.3.14}
+\end{align}
+
+为了使它是一个合理的质量矩阵, 它最好是正定的. 为了看到这一点, 将这一结果重写成对群参量$\theta _{\alpha }$的导数形式将是方便的. 对方%
+程(\ref{19.3.8})做相对$\theta _{\beta }$的微分, 令$\theta =\theta _{\ast }$, 并使用%
+方程(\ref{19.3.9})和$\phi _{0}=L(\theta _{\ast })\phi
+_{\ast }$, 这给出\begin{equation}
+M_{ab}^{2}=\sum_{cd\alpha \beta }N_{a\alpha }^{-1}(\theta _{\ast })N_{b\beta
+}^{-1}(\theta _{\ast })F_{ac}^{-1}F_{bd}^{-1}\left. \frac{\partial
+^{2}V_{1}(L(\theta )\phi _{\ast })}{\partial \theta _{\alpha }\partial
+\theta _{\beta }}\right\vert _{\theta =\theta _{\ast }}\text{ .}
+\label{19.3.15}
+\end{equation}%
+由于$\theta _{\ast }$是函数$V_{1}(L(\theta
+)\phi _{\ast })$的{\kai{最小值点}}, 右边的矩阵是正定的.
+
+这一公式有一个稍微更加熟悉的版本, 在那个版本中, 质量矩阵表示成了对称性生成元与对称性破缺微扰的双重对易子的真空期望值.
+假定哈密顿量中的对称性破缺微扰$H_{1}$是算符$\Phi _{n}$的线性组合\begin{equation}
+H_{1}=\sum_{n}u_{n}\Phi _{n}  \label{19.3.16}
+\end{equation}%
+(算符$\Phi _{n}$不必须是基本标量场), 这构成了生成元为$t_{\alpha }$的对称群的一个表示, 也就是说\begin{equation}
+\lbrack T_{\alpha },\Phi _{n}]=-(t_{\alpha })_{mn}\Phi _{m}\text{ ,}
+\label{19.3.17}
+\end{equation}%
+其中$T_{\alpha }$是该对称群的量子力学生成元. 根据16.3节的结果, 势的对称性破缺部分是\begin{equation}
+V_{1}(\phi )=\langle H_{1}\rangle _{\langle \Phi \rangle =\phi
+}=\sum_{n}u_{n}\phi _{n}\text{ ,}  \label{19.3.18}
+\end{equation}%
+中间表达式中的下标表示的是在期望值所取的最小能量态上, $\Phi_{n}$有期望值$\phi_{n}$. 这样, 真空对齐条件(\ref{19.3.6})就变成
+\[
+0=\sum_{n}u_{n}(t_{\alpha }\phi _{0})_{n}\text{ ,}
+\]%
+或者, 使用方程(\ref{19.3.17})%
+\begin{equation}
+0=\langle \lbrack T_{\alpha },H_{1}]\rangle _{0}\text{ ,}  \label{19.3.19}
+\end{equation}%
+下标$0$现在表示期望值取在$\Phi_{n}$有期望值$\phi_{0n}$的真空态上. 另外, 方程(\ref{19.3.14})在这里所给出的质量矩阵是
+\[
+M_{cd}^{2}=-\sum_{ab}F_{ca}^{-1}F_{db}^{-1}\sum_{n}u_{n}(t_{a}t_{b}\phi
+_{0})_{n}\text{ ,}
+\]%
+使用方程(\ref{19.3.17}), 这变成
+\begin{equation}
+M_{cd}^{2}=-\sum_{ab}F_{ca}^{-1}F_{db}^{-1}\langle \lbrack
+T_{a},[T_{b},H_{1}]]\rangle _{0}\text{ .}  \label{19.3.20}
+\end{equation}
+它关于$c$和$d$是对称的. 为了看到这一点, 注意到, 利用Jacobi恒等式和群对易关系, 方程(\ref{19.3.20})与它交换指标$c,d$后的差可以写成$\langle [T_{\alpha},H_{1}]\rangle_{0}$的线性组合, 而根据真空对齐条件(\ref{19.3.19}), 这为零. 质量矩阵(\ref{19.3.20})同样也是正定的, 这是因为, 对于旋转真空态$\exp(\mi \theta_{a}T_{a})|0\rangle$, $\theta=0$这一点位于真空能$\langle \exp(-\mi \theta_{a}T_{a})H_{1}\exp(\mi \theta_{a}T_{a})\rangle_{0}$的{\kai{最小值点}}.
+
+\section{作为Goldstone玻色子的$\pi$介子}
+
+在基本粒子物理学中, 破缺对称性的经典粒子是强相互作用被称为$SU(2)\times SU(2)$的近似对称性. 根据我们目前的理解, 产生这一对称性的原因是两个夸克场$u$和$d$碰巧有相对较小的质量. (19.7节给出了一个估计.)
+在$u$和$d$是无质量的近似下, 量子色动力学的拉格朗日量(\ref{18.7.5})是
+\begin{equation}
+\mathscr{L}= -\bar{u}\gamma^{\mu}D_{\mu}u-\bar{d}\gamma^{\mu}D_{\mu}d-\cdots \text{ ,} \label{19.4.1}
+\end{equation}
+其中$D_{\mu}$是色规范协变导数(见方程(\ref{15.1.10}))而``$\cdots$''指代那些只包含胶子场和/或其它的夸克味但不包含$u$%
+或$d$的项. 这一拉格朗日量在如下的变换下不变:
+\begin{equation}
+\left( \begin{array}{c}
+u \\ d%
+\end{array} \right) \rightarrow \exp \left( \mi\vec{\,\theta}^{V}\cdot\!\vec{\,t}+\mi\,\gamma_{5}\!\vec{\,\theta}^{A}\cdot\!\vec{\,t}\,\right)
+\left(  \begin{array}{c}
+u\\ d%
+\end{array}%
+\right) \text{ ,}\label{19.4.2}
+\end{equation}
+其中$\cvec{t}$是同位旋矩阵的3-矢\footnote{为了与普通3-矢区分开, 我们用箭头来标记同位旋空间中的3-矢, 对于普通3-矢则继续用黑体字母标记.}
+\[
+t_{1}=\frac{1}{2}\left(
+\begin{array}{cc}
+0 & 1 \\
+1 & 0%
+\end{array}%
+\right) \text{ , \ \ \ \ \ }t_{2}=\frac{1}{2}\left(
+\begin{array}{cc}
+0 & -\mi \\
+\mi & 0%
+\end{array}%
+\right) \text{ , \ \ \ \ \ }t_{3}=\frac{1}{2}\left(
+\begin{array}{cc}
+1 & 0 \\
+0 & -1%
+\end{array}%
+\right) \text{ .}
+\]%
+而$\cvec{\theta}^{V}$和$\cvec{\theta}^{A}$是独立的实3-矢.\footnote{拉格朗日量(\ref{19.4.1})有这一对称性是因为
+$\overline{\gamma_{5}\psi}\gamma^{\mu}=-\bar{\psi}\gamma_{5}\gamma^{\mu}=+\bar{\psi}\gamma^{\mu}\gamma_{5}$. 这一拉格朗日量还有另外两个连续的内部对称性. 一个是重子数守恒, 即在$u$夸克场和$d$夸克场的普通相位变换下的不变性. 这是未破缺的且与另一个对称性对易, 所以它不影响我们这一节的讨论. 另一个对称性是夸克二重态与$\exp(\mi\alpha\gamma_{5})$相乘后的不变性. 正如23.5节所讨论的, 这一$U(1)$对称性被瞬子所附带的非微扰效应内在且严重地破坏了.} 这一Lie代数可以写成两个对易的$SU(2)$子代数的形式, 这两个子代数分别只作用在夸克场的左手部分和右手部分上, 它们的生成元是
+\begin{equation}
+\cvec{t}_{L}=\frac{1}{2}(1+\gamma_{5})\cvec{t}\text{ ,} \qquad\qquad\qquad
+\cvec{t}_{R}=\frac{1}{2}(1-\gamma_{5})\cvec{t}\text{ ,} \label{19.4.3}
+\end{equation}
+并满足对易关系
+\begin{align}
+[t_{Li},t_{Lj}]&= \mi\,\epsilon_{ijk}\, t_{Lk}\text{ ,} \label{19.4.4} \\
+[t_{Ri},t_{Rj}]&= \mi\,\epsilon_{ijk}\, t_{Rk}\text{ ,} \label{19.4.5} \\
+[t_{Li},t_{Rj}]&= 0\text{ .}  \label{19.4.6}
+\end{align}
+因此底层的对称群可以等同为$SU(2)\times SU(2)$. 它有另一个显然的$SU(2)$子群, 这一子群由$\cvec{\theta}^{A}=0$的普通同位旋变换构成, 而它的生成元是
+\begin{equation}
+\cvec{t}=\cvec{t}_{L}+\cvec{t}_{R} \text{ .}  \label{19.4.7}
+\end{equation}
+$SU(2)\times SU(2)$的代数可以写成$\cvec{t}$和另一生成元三重态的形式:
+\begin{equation}
+\cvec{x}=\cvec{t}_{L}-\cvec{t}_{R}=\gamma_{5}\cvec{t}  \label{19.4.8}
+\end{equation}
+而对易关系是
+\begin{align}
+[t_{i},t_{j}]&= \mi\,\epsilon_{ijk}\, t_{k}\text{ ,} \label{19.4.9} \\
+[t_{i},x_{j}]&= \mi\,\epsilon_{ijk}\, x_{k}\text{ ,} \label{19.4.10} \\
+[x_{i},x_{j}]&= \mi\,\epsilon_{ijk}\, t_{k}\text{ .}  \label{19.4.11}
+\end{align}
+我们将看到这一$SU(2)\times SU(2)$对称性是自发破缺的, 而该对称群由$\cvec{t}$生成的同位旋子群是一个普通的未破缺(尽管是近似的)对称性.
+
+通过Noether的方法(参看7.3节), 我们可以从拉格朗日量(\ref{19.4.1})中导出守恒矢量流和守恒轴矢量流
+\begin{equation}
+\cvec{V}{}^{\mu}=\mi\,\bar{q}\gamma^{\mu}\cvec{t}q \text{ ,} \qquad\qquad\qquad
+\cvec{A}{}^{\mu}=\mi\,\bar{q}\gamma^{\mu}\gamma_{5}\cvec{t}q \text{ ,}  \label{19.4.12}
+\end{equation}
+\begin{equation}
+\partial_{\mu}\cvec{V}{}^{\mu}=\partial_{\mu}\cvec{A}{}^{\mu}=0 \text{ ,} \label{19.4.13}
+\end{equation}
+其中$q$是夸克二重态,
+\begin{equation}
+q\equiv
+\left(  \begin{array}{c}
+u\\ d%
+\end{array}%
+\right)
+\end{equation}
+它们所附带的荷分别是同位旋的生成元和剩余对称性的生成元
+\begin{align}
+\cvec{T} &= \int \dif^{3}x\, \cvec{V}{}^{0} \text{ ,} \label{19.4.15}  \\
+\cvec{X} &= \int \dif^{3}x\, \cvec{A}{}^{0} \text{ .} \label{19.4.16}
+\end{align}
+对流(\ref{19.4.12})归一化使得量子算符$\cvec{T}$和$\cvec{X}$满足与矩阵$\cvec{t}$和$\cvec{x}$相同的对易关系
+\begin{align}
+[T_{i},T_{j}]&= \mi\,\epsilon_{ijk}\, T_{k}\text{ ,} \label{19.4.17} \\
+[T_{i},X_{j}]&= \mi\,\epsilon_{ijk}\, X_{k}\text{ ,} \label{19.4.18} \\
+[X_{i},X_{j}]&= \mi\,\epsilon_{ijk}\, T_{k}\text{ .}  \label{19.4.19}
+\end{align}
+作用在夸克场上, 这些算符诱导了变换(\ref{19.4.2}), 也就是说
+\begin{align}
+\Big[\,\cvec{T},q\Big]&= -\cvec{t}\,q \text{ ,} \label{19.4.20} \\
+\Big[\cvec{X},q\Big]&= -\cvec{x}\,q \text{ ,} \label{19.4.21}
+\end{align}
+
+如果这一对称性是精确对称性且未破缺, 那么它会要求任何的单强子态$|h\rangle$与另一个宇称相反但自旋, 重子数且奇异数相同的态$\cvec{X}|h\rangle$简并.\footnote{满足这一条件的方法之一让强子的质量为零, 有螺度为$\pm\tfrac{1}{2}$的两个态$|\pm\rangle$, 但自旋, 重子数以及奇异数相同; 那么态$|+\rangle+|-\rangle$和$|+\rangle-|-\rangle$将会有相反的宇称. 除非我们对轴矢量流的矩阵元做出进一步的假定, 否则我们无法确定未破缺的手征对称性必然给出核子质量为零. 然而, 正如我们将在22.5节所看到的, 事实上, 一个精确的未破缺手征对称性将会要求{\kai{一些}}重子是无质量的.} 在强子频谱中没有看到这样的宇称倍增, 所以我们只能得出这样的结论: 如果手征对称性$SU(2)\times SU(2)$%
+完全只是一个很好的近似, 那么它必须自发破缺到它的同位旋$SU(2)$子群. 在这一情况下, 算符$\cvec{X}$把单强子态$|h\rangle$变换到了强子$h$加上一个无质量的赝标量Goldstone玻色子, 所以强子频谱的宇称倍增是不需要的.
+
+量子色动力学是否真的呈现出了这样的对称性破缺模型? 这个问题包含了强相互作用动力学所有的复杂性. 我们将在19.9节看到, 相信量子色动力学中的同位旋$SU(2)$没有自发破缺有着一般性的理由. 但是要证明$SU(2)\times SU(2)$的手征部分{\kai{是}}自发破缺的则困难得多. (但根据22.5节所给出的一个讨论, 对于有{\kai{三}}个夸克味的量子色动力学, 它的$SU(3)\times SU(3)$对称性一定是自发破缺的.) 在某种意义上, 在20世纪60年代意识到无需对手征对称性的破缺机制有细致的理解算得上是一个突破; 通过{\kai{假定}}$SU(2)\times SU(2)$破缺到了$SU(2)$, 我们就导出了这一对称性破缺最有趣的结果.
+
+$u$夸克和$d$夸克的质量虽小但不为零, 所以$SU(2)\times SU(2)$对称性不是精确的. 破缺的{\kai{近似}}手征对称性蕴含了一个近似无质量Goldstone玻色子的存在, 而这个Goldstone玻色子与破缺对称性生成元$\cvec{X}$所生成的Goldstone玻色子有着相同的量子数: 它必须是一个宇称为负, 自旋为零, 同位旋为1, 而重子数和奇异数为零的态. 事实上, 最轻的强子是$\pi$介子, 它精确拥有这些量子数, 由此我们得出: $\pi$介子就是近似手征对称性自发破缺所附带的Goldstone玻色子. 正如我们将在下面看到的, 与$m_{u}$和$m_{d}$的线性组合成正比的是$m_{\pi}^{2}$而不是$m_{\pi}$, 并且$m_{\pi}^{2}/m_{N}^{2}\simeq0.022$非常小, 所以我们从自发破缺的$SU(2)\times SU(2)$%
+所导出的结果应该是合理准确的.
+
+在探索$\pi$介子相互作用的手征对称性会产生什么样的结果时, 注意到如下的事实将是非常有用的: 尽管强相互作用不以任何方式依赖于弱相互作用的存在, 但对称流$\cvec{V}{}^{\mu}$和$\cvec{A}{}^{\mu}$碰巧进入到像核$\beta$-衰变这样的奇异数守恒的半轻子弱相互作用中.
+正如我们将在21.3节所看到的, 电弱相互作用的标准模型要求这些相互作用在低能时的有效拉格朗日量必须采取形式:
+\begin{equation}
+\mathscr{L}_{\text{wk}}=-\frac{\mathrm{i}G_{\text{wk}}}{\sqrt{2}}\left(
+V_{+}^{\lambda }+A_{+}^{\lambda }\right) \sum_{\ell }\bar{\ell}\gamma
+_{\lambda }(1+\gamma _{5})\nu _{\ell }+\text{H.c.}  \label{19.4.22}
+\end{equation}%
+其中$\ell$取遍三个轻子$e$, $\mu$和$\tau$的重整化场; 而$\nu_{\ell}$取遍相应中微子的重整化场; 而$V_{\pm}^{\lambda}$和$A_{\pm}^{\lambda}$是电荷改变流
+\begin{equation}
+V_{\pm }^{\lambda }=V_{1}^{\lambda }\pm \mathrm{i}V_{2}^{\lambda }\text{ ,}%
+\qquad\qquad\qquad A_{\pm }^{\lambda }=A_{1}^{\lambda }\pm \mathrm{i}%
+A_{2}^{\lambda }\text{ .}  \label{19.4.23}
+\end{equation}%
+常数\footnote{$G_{\text{wk}}$与通常的Fermi耦合常数和Cabibbo角$\theta_{C}$的关系是$G_{\text{wk}}=G_{F}\cos\theta_{C}$;
+参看21.3节.}$G_{\text{wk}}$可以从同一同位旋多重态中自旋为零的态之间的$\beta$-跃迁速率中测量出来, 例如衰变$\pi^{+}\rightarrow \pi^{0}+e^{+}+\nu_{e}$和${}^{14}O\rightarrow{}^{14}N^{\ast}+e^{+}+\nu_{e}$. 这些跃迁中的动量传递非常小, 所以(强相互作用中的)宇称守恒和旋转不变性告诉我们: 只有$\int\dif^{3}x\, V_{-}^{0}=T_{1}-\mi T_{2}$的矩阵元进入到了这些衰变的$S$-矩阵元中. 这一算符在一给定同位旋多重态的各种态之间的矩阵元正是Clebsch-Gordan系数, 所以从这些``$0\rightarrow0$''过程的速率中, 我们可以计算出方程(\ref{19.4.22})中耦合常数的一个值\cite{9}: %
+$G_{\text{wk}}\simeq 1.14959(38)\times 10^{-5}\,\mathrm{GeV}^{-2}$. %
+另一方面, 在$\pi$介子的衰变过程$\pi^{+}\rightarrow \mu^{+}+\nu_{\mu}$中, 我们需要的唯一流矩阵元是$A_{-}^{\lambda}$在单$\pi$介子态和真空态之间的矩阵元:
+\begin{equation}
+\langle \text{VAC}|A_{i}{}^{\mu }(x)|\pi _{j}\rangle =\frac{\mathrm{i}F_{\pi
+}\,\delta _{ij}\,p_{\pi }^{\mu }\,\mathrm{e}^{\mathrm{i}p_{\pi }\cdot x}}{2(2\uppi%
+)^{3/2}\sqrt{2p_{\pi }^{0}}}\text{ ,}  \label{19.4.24}
+\end{equation}%
+除了因子$F_{\pi}$外, 剩下的量都是已知的. $\pi$介子衰变的速率变成
+\begin{equation}
+\Gamma (\pi \rightarrow \mu +\nu )=\frac{G_{\text{wk}}^{2}F_{\pi }^{2}m_{\mu
+}^{2}(m_{\pi }^{2}-m_{\mu }^{2})^{2}}{16\uppi m_{\pi }^{3}}\text{ .}
+\label{19.4.25}
+\end{equation}%
+已经知道$\pi^{+}\rightarrow \mu^{+}+\nu_{\mu}$的速率是$\Gamma=(2.6033(24)\times 10^{-8}\,\mathrm{s})^{-1}$, 再加上前面$G_{\text{wk}}$的值, 我们发现\footnote{遇到$\pi$介子衰变常数$f_{\pi}$是很常见的, 以$F_{\pi}$的形式, 它的各种定义方式是$F_{\pi}$, $F_{\pi}/\sqrt{2}$或$F_{\pi}/2$.}
+\begin{equation}
+F_{\pi }\simeq 184\,\mathrm{MeV}\text{ .}  \label{19.4.26}
+\end{equation}%
+
+我们现在来考察$\cvec{A}^{\mu}$在单核子态之间的矩阵元. 它本身就非常有趣, 并且像19.2节讨论的那样, 它提供了我们计算核子碰撞过程中发射低能$\pi$介子所需的信息. 沿用10.6节用于电磁流的相同原因, 我们会发现Lorentz不变性和宇称守恒要求这一矩阵元采取如下的形式\footnote{标准模型中的流$A_{\pm}^{\mu}$拥有电荷共轭性, 这使得系数$h(q^{2})$为零. 在弱流中可能会有电荷共轭性相反的``第二类''项\cite{10}, 它会给出不为零的$h(q^{2})$, 但还没有这种项存在的证据. 我们将会看到, 对于从手征对称性得到的推论而言, 保留$h(q^{2})$项并不会有什么影响.}
+\begin{align}
+&\langle p|A_{+}^{\mu }(x)|n\rangle  =(2\uppi)^{-3}\,\me^{\mi q\cdot x}  \nonumber
+\\
+&\quad\times \bar{u}_{p}\Big[ -\mi\gamma ^{\mu }\gamma _{5}f(q^{2})+q^{\mu
+}\gamma _{5}g(q^{2})+\mi q_{\nu }[\gamma ^{\mu },\gamma ^{\nu }]\gamma
+_{5}h(q^{2})\Big] u_{n}\text{ ,}  \label{19.4.27}
+\end{align}%
+其中$q\equiv p_{n}-p_{p}$. 在$SU(2)\times SU(2)$对称性是精确对称性的近似下, 流守恒要求
+\begin{equation}
+q_{\mu }\langle p|A_{+}^{\mu }(x)|n\rangle =0\text{ .}  \label{19.4.28}
+\end{equation}%
+利用Dirac旋量$u_{p}$和$u_{n}$的定义方程,
+\[
+\bar{u}_{p}(\mathrm{i}\,\slashed{p}_{p}+m_{N})=(\mathrm{i}\,\slashed{p}%
+_{n}+m_{N})u_{n}=0\text{ ,}
+\]%
+我们看到\[
+q_{\mu }\bar{u}_{p}[-\mathrm{i}\gamma ^{\mu }\gamma _{5}]u_{n}=-2m_{N}\bar{u}%
+_{p}\gamma _{5}u_{n}
+\]%
+因而方程(\ref{19.4.28})要求
+\begin{equation}
+2m_{N}f(q^{2})=q^{2}g(q^{2})\text{ .}  \label{19.4.29}
+\end{equation}%
+如果$g(q^{2})$在$q^{2}=0$处没有奇点, 那么(\ref{19.4.29})将会要求$m_{N}=0$或$f(0)=0$, 前者肯定不对, 后者也不对. 事实上, 在中子衰变这样的低能核子$\beta$-衰变中测量出了$f(0)$, 在中子衰变中这通常称为$g_{A}$; 我们发现这个量拥有值
+\begin{equation}
+f(0)\equiv g_{A}=1.2573(28)\text{ .}  \label{19.4.30}
+\end{equation}%
+$m_{N}$和$f(0)=g_{A}$均非小量的事实要求, 在精确$SU(2)\times SU(2)$对称性的极限下, $g(q^2)$必须在$q^{2}\to 0$时有一极点:
+\begin{equation}
+g(q^{2})\rightarrow \frac{2m_{N}g_{A}}{q^{2}}\text{ .}  \label{19.4.31}
+\end{equation}%
+无质量$\pi$介子会自然地提供这样的极点, 而$\pi$介子也是精确$SU(2)\times SU(2)$对称性的自发破缺所要求的. 假定$\pi$介子与单核子态的耦合就如同相互作用拉格朗日量是\footnote{这是赝标量$\pi$介子-核子耦合%
+$G_{\pi N}$的传统定义, 在这里引入因子2是为了与同位旋矩阵中的$1/2$相抵消.}$-2\mi G_{\pi N}\cvec{\pi}\bar{N}\gamma_{5}\cvec{t}N$. 方程(\ref{19.4.24})告诉我们, 流在单$\pi$介子态和真空态之间的矩阵元就如同$\cvec{A}^{\mu}(x)$中有了形式为$F_{\pi}\partial^{\mu}\cvec{\pi}/2$的项. 因此, 在$q^{2}\to 0$的极限下, 矩阵元(\ref{19.4.27})有极点
+\[
+\langle p|A_{+}^{\mu }(x)|n\rangle \rightarrow \left[ \frac{\me^{\mi q\cdot x}}{(2%
+\uppi)^{3}}\right] \Big[ \mi(2\uppi)^{4}2G_{\pi N}\bar{u}_{p}(\mi\gamma
+_{5})u_{n}\Big] \left[ \frac{-\mi}{(2\uppi)^{4}q^{2}}\right] \Big[ \mi q^{\mu
+}F_{\pi }/2\Big] \text{ .}
+\]%
+与方程(\ref{19.4.27})相比, 我们看到交换单$\pi$介子在$q^{2}\to 0$时给了函数$g(q^{2})$一个极点
+\begin{equation}
+g(q^{2}) \to \frac{G_{\pi N}F_{\pi }}{q^{2}} \text{ .}  \label{19.4.32}
+\end{equation}%
+汇合方程(\ref{19.4.31})和(\ref{19.4.32}), 我们发现
+\begin{equation}
+G_{\pi N}=\frac{2m_{N}g_{A}}{F_{\pi }}\text{ .}  \label{19.4.33}
+\end{equation}%
+这是著名的Goldberger-Treiman关系.\cite{11} 它工作地相当好; 取$m_{N}=(m_{p}+m_{n})/2=9.389\,\mathrm{MeV}$, $g_{A}=1.257$和$F_{\pi}=184\,\mathrm{GeV}$, 这给出$G_{\pi N}\simeq12.7$, 与各种方法(包括核子-核散射中单$\pi$介子极点的效应以及$\pi$介子-核散射中单核子极点的效应)测量出来的值%
+\footnote{教科书\cite{12}值是$G^{2}_{\pi N}/4\uppi=14.3$或$G_{\pi N}=13.4$, 关于中子-质子在$162\,\mathrm{Gev}$处的电荷交换散射, 最近一项高精度的研究\cite{13}给出了值$G^{2}_{\pi N}/\uppi=14.6\pm0.3$或$G_{\pi N}=13.5$.}$G_{\pi N}=13.5$符合得相当好.
+
+在真实世界中, $\pi$介子不是无质量的, $SU(2)\times SU(2)$也不是对称性(即使在自发破缺之前)也不是精确的. 这一情况可以用上一节所给出的一般形式理论进行分析. 拉格朗日量(\ref{19.4.1})在该哈密顿量中产生了对称性破缺项
+\begin{equation}
+H_{1}=m_{u}\bar{u}u+m_{d}\bar{d}d=(m_{u}+m_{d})\Phi
+_{4}^{+}+(m_{u}-m_{d})\Phi _{3}^{-}  \label{19.4.34}
+\end{equation}%
+其中\begin{equation}
+\Phi _{4}^{+}\equiv \tfrac{1}{2}(\bar{u}u+\bar{d}d)\text{ ,}\qquad\qquad\qquad%
+\Phi _{3}^{-}=\tfrac{1}{2}(\bar{u}u-\bar{d}d)\text{ .}  \label{19.4.35}
+\end{equation}%
+算符$\Phi_{4}^{+}$和$\Phi_{3}^{-}$是空间分量, 并且正如这个记号所要显示的, 它们在$SU(2)\times SU(2)$下按照独立手征4-矢$\Phi_{\alpha}^{\pm}$的分量进行变换:
+\begin{align}
+\cvec{\Phi} {}^{+} &=\mi\bar{q}\gamma _{5}\cvec{t}q\text{ ,}\qquad\qquad\qquad\Phi _{4}^{+}=%
+\tfrac{1}{2}\bar{q}q\text{ ,}  \label{19.4.36} \\
+\cvec{\Phi} {}^{-} &=\bar{q}\,\cvec{t}q\text{ ,}\qquad\qquad\qquad\Phi _{4}^{-}=-\tfrac{1}{2}\mi%
+\bar{q}\gamma _{5}q\text{ .}  \label{19.4.37}
+\end{align}
+它们是手征4-矢, 也就是说
+\begin{align}
+\Big[\,\cvec{T},\Phi^{\pm}_{n}\Big] &= -\sum_{m} (\!\vec{\,\mathscr{T}})_{nm}\Phi^{\pm}_{m}\text{ ,} \label{19.4.38}\\
+\Big[\cvec{X},\Phi^{\pm}_{n}\Big] &= -\sum_{m} (\!\vec{\,\mathscr{X}})_{nm}\Phi^{\pm}_{m}\text{ ,} \label{19.4.39}
+\end{align}
+其中$\cvec{\mathscr{T}}$和$\cvec{\mathscr{X}}$是$4\times 4$厄米矩阵, 它们构成了$SU(2)\times SU(2)\equiv SO(4)$代数的4-矢表示:
+\begin{align}
+&(\mathscr{T}_{a})_{bc} = -\mi\epsilon _{abc}\text{ ,}\qquad \qquad (%
+\mathscr{T}_{a})_{b4}=(\mathscr{T}_{a})_{4b}=(\mathscr{T}_{a})_{44}=0\text{ ,%
+}  \label{19.4.40} \\
+&(\mathscr{X}_{a})_{b4} = -(\mathscr{X}_{a})_{4b}=-\mi\delta _{ab}\text{ ,}%
+\qquad \quad (\mathscr{X}_{c})_{ab}=(\mathscr{X}_{c})_{44}=0\text{ .}
+\label{19.4.41}
+\end{align}%
+这一记号使得很容易就看到生成元$T_{1}$, $T_{2}$, $X_{1}$, $X_{2}$和$X_{3}$的真空对齐条件, 它们分别采取如下的形式
+\begin{align}
+0 &=\langle \Phi _{2}^{-}\rangle _{0}=\langle \Phi _{1}^{-}\rangle
+_{0}=\langle \Phi _{1}^{+}\rangle _{0}=\langle \Phi _{2}^{+}\rangle _{0}
+\nonumber \\
+&=(m_{u}+m_{d})\langle \Phi _{3}^{+}\rangle _{0}+(m_{d}-m_{u})\langle \Phi
+_{4}^{-}\rangle _{0}\text{ .}  \label{19.4.42}
+\end{align}%
+我们已经假定了, 在$u$夸克和$d$夸克的质量为零的前提下, 对称性$SU(2)\times SU(2)$自发破缺的方式会保护由$\cvec{T}$生成的$SU(2)$对称性和宇称不破缺, 在这一情况下, $\langle\Phi_{n}^{+}\rangle_{0}$指向4-方向并且$\langle\Phi_{n}^{-}\rangle_{0}$为零, 这使得条件(\ref{19.4.42})是满足的. 但有了$m_{u}=m_{d}=0$, 通过对这一对称性破缺解做任意的$SU(2)\times SU(2)$变换, 我们就可以得到另一个宇称定义不同的对称性破缺解. 因此当$u$夸克和$d$夸克的质量为零时, 尽管在所有情况中$\langle\Phi_{n}^{-}\rangle_{0}=0$, 但是无法分辨$\langle\Phi_{n}^{+}\rangle_{0}=0$应该指向什么方向, 或者$SU(2)\times SU(2)$的哪个$SU(2)$子群是不破缺的. 真空对齐条件(\ref{19.4.43})告诉我们, 若对称性被被微扰(\ref{19.4.34})内在地破坏了, 并且对称性自发破缺的方式使得$\langle\Phi_{n}^{-}\rangle_{0}=0$, 那么真空``排列''的方式要使$\langle\Phi_{n}^{+}\rangle_{0}$指向4-方向, 这使得未破缺的$SU(2)$对称性是普通的同位旋.
+
+这一形式理论可以用来计算$\pi$介子质量. 从方程(\ref{19.4.39})---(\ref{19.4.41}), 我们发现
+\begin{equation}
+\lbrack X_{a},[X_{b},\Phi _{4}^{+}]]=\delta _{ab}\Phi _{4}^{+}\text{ ,}%
+\qquad \qquad \qquad \lbrack X_{a},[X_{b},\Phi _{3}^{-}]]=\Phi
+_{a}^{-}\delta _{b3}\text{ .}  \label{19.4.43}
+\end{equation}%
+另外, 同位旋不变性告诉我们, 19.2节引入的对称性破缺参量$F_{ab}$正比于$\delta_{ab}$, 根据(\ref{19.4.24}), 比例因子就是$F_{\pi}/2$, 所以
+\begin{equation}
+F_{ab}=\delta _{ab}F_{\pi }/2\text{ .}  \label{19.4.44}
+\end{equation}%
+因此, 方程(\ref{19.3.20})就给出了$\pi$介子质量矩阵
+\begin{equation}
+m_{ab}^{2}=\delta _{ab}m_{\pi }^{2}\text{ ,}  \label{19.4.45}
+\end{equation}%
+其中\begin{equation}
+m_{\pi }^{2}=-4(m_{u}+m_{d})\langle \Phi _{4}^{+}\rangle _{0}/F_{\pi }^{2}%
+\text{ .}  \label{19.4.46}
+\end{equation}%
+虽然我们没有对$m_{u}$和$m_{d}$的比值做任何假定, 但是带电$\pi$介子和中性$\pi$介子的质量结果是相等的, 这是十分惊人的. 我们会在下面看到这一比值并不在1附近; 同位旋是一个好量子数不是因为$u$夸克和$d$夸克质量近乎相等, 而是因为它们的质量{\kai{很小}}. 另外, 正如所承诺的, 正比于夸克质量的是$\pi$介子质量的{\kai{平方}}, 所以夸克质量应该非常小. (19.7节有一个估计.) 观测到的$\pi$介子质量差并非源于$u$夸克和$d$夸克的质量差, 而是源于电磁. 诚然, $\pi$介子同位旋多重态的质量差是唯一一个仅用交换单光子就成功计算出的质量差.\cite{14}
+
+当然, 即使把夸克质量考虑在内, 我们依旧可以用方程(\ref{19.4.24})来定义$F_{\pi}$; 它的散度给出
+\begin{equation}
+\langle \text{VAC}|\partial _{\mu }A_{i}{}^{\mu }(x)|\pi _{j}\rangle =\frac{%
+F_{\pi }\delta _{ij}m_{\pi }^{2}\mathrm{e}^{\mathrm{i}p_{\pi }\cdot x}}{2(2%
+\uppi)^{3/2}\sqrt{2p_{\pi }^{0}}}\text{ .}  \label{19.4.47}
+\end{equation}%
+取代假定$\partial_{\mu}\cvec{A}{}^{\mu}$为零, 我们现在可以假定它{\kai{很小}}, 大约是$m_{\pi}^{2}$阶, 除此之外, 为了弥补$m_{\pi}^{2}$比较小还要有一个$pi$介子极点. 根据方程(\ref{19.4.47}), $\partial_{\mu}\cvec{A}{}^{\mu}$在单$\pi$介子极点附加的矩阵元行为就如同$\partial_{\mu}\cvec{A}{}^{\mu}$是%
+$F_{\pi}m_{\pi}^{2}$乘以一个合适的重整化$\pi$介子场. 例如, $\partial_{\mu}A_{+}^{\mu}$的单核子矩阵元应该是
+\begin{equation}
+\langle p|\partial _{\mu }A_{+}^{\mu }(0)|n\rangle \simeq \frac{F_{\pi
+}m_{\pi }^{2}}{2}\left[ \frac{-\mi}{(2\uppi)^{4}(q^{2}+m_{\pi }^{2})}\right] %
+\Big[ \mi(2\uppi)^{4}2G_{\pi N}\bar{u}_{p}(-\mi\gamma _{5})u_{n}\Big] \text{ ,%
+}  \label{19.4.48}
+\end{equation}%
+所以, 以(\ref{19.4.27})中形状因子的形式
+\begin{equation}
+q^{2}g(q^{2})-2m_{N}f(q^{2})\simeq -\frac{G_{\pi N}F_{\pi }m_{\pi }^{2}}{%
+q^{2}+m_{\pi }^{2}}\text{ .}  \label{19.4.49}
+\end{equation}%
+可以预期, 这一公式不仅在$q^{2}\to -m_{\pi}^{2}$的极限下是成立的, 当$q^{2}$的量级时$m_{\pi}^{2}$时, 这一公式也是成立的, 这是因为对于所有这样小的$q^{2}$, 主导$\partial_{\mu}A^{\mu}$矩阵元的是$\pi$介子极点. 另外, 对于这样的$q^{2}$, 取代方程(\ref{19.4.32}), 我们有
+\begin{equation}
+g(q^{2})\simeq \frac{G_{\pi N}F_{\pi }}{q^{2}+m_{\pi }^{2}}  \label{19.4.50}
+\end{equation}%
+从方程(\ref{19.4.49})和(\ref{19.4.50}), 我们发现对于$m_{\pi}^{2}$阶的$q^{2}$,
+\begin{equation}
+f(q^{2})\simeq G_{\pi N}F_{\pi }{\Big/}2m_{N}\text{ .}  \label{19.4.51}
+\end{equation}%
+在$q^{2}$从0到$m^{2}_{\pi}$阶的范围内, 这一函数粗略是一常数, 这是不奇怪的, 因为它没有单$\pi$介子极点, 并且在$q^{2}$这样小的范围内也没有其它东西能给与它实质上的变化. 这个常数值近似为$f(0)\equiv g_{A}$, 进而方程(\ref{19.4.51})又一次给出了Goldberger-Treiman关系.
+
+现在, 我们可以用19.2节的结果计算在任意过程$\alpha \to \beta$中发射单个低能$\pi$介子的振幅了. 我们发现, 在用于计算该振幅的Feynman图中, $\pi$介子只能在过程的外线上发射, 而方程(\ref{19.2.49})表明, 计算这些贡献时可以把$\pi$介子场的相互作用看做$\partial_{\mu}\cvec{\pi}\cdot\cvec{A}_{N}/F_{\pi}$, 其中的下标$N$是指我们扔掉了轴矢量流矩阵元中的单$\pi$介子极点项. 我们从方程(\ref{19.4.27})(并使用同位旋不变性)得出, 对于从核子线上发射的$\pi$介子, 这一相互作用实际上等效于
+\[
+-\frac{\mi g_{A}}{F_{\pi }}\,\partial _{\mu }\cvec{\pi} \,\bar{N}\gamma ^{\mu }\gamma
+_{5}\cvec{t}N\text{ .}
+\]
+利用自由粒子的Dirac方程, 我们可以看到, 对于质量壳上的核子(即, 位于图\ref{fig:19.2}中的单核子极点), 这等效于赝标量相互作用$-2\mi \,m_{N}\,g_{A}\,\cvec{\pi}\cdot \bar{N}\gamma_{5}\cvec{t}N/F_{\pi}$. 这又提供了Goldberger-Treiman关系(\ref{19.4.33})的另一例证.
+
+\subsection*{* * *}
+
+我们这里的讨论并不是按照这些概念的历史发展顺序展开的. 事实上, 按年代来讲, 历史发展的进程几乎与这里论述的顺序截然相反. 在粒子物理中, 对称性破缺始于Goldberger-Teriman关系(\ref{19.4.33}), 这是在1957年基于对$\pi$介子衰变的动力学计算导出的. 为了解释这一非常粗略计算难以置信的成功, 几个理论家\cite{15}引入了``轴矢量流的部分守恒(partial conservation of the axial-vector current)''(PCAC)这个概念, 即, 尽管轴矢量流本身不是守恒的($\pi$介子的确会衰变说明了这一点), 但是它的散度$\partial_{\mu}A^{\mu}_{\pm}$正比于$\pi$介子场. 就其本身而言, 这个假设毫无意义------我们在第10章看到, 对于{\kai{任意}}场, 只要它在真空和单$\pi$介子态之间的矩阵元不为零, 它就可以被认为是$\pi$介子场. 尽管当时还不清楚, 但真正被假定的是轴矢量流的散度{\kai{很小}}, 约为$m_{\pi}^{2}$阶, 除此之外, 还有一个$\pi$介子极点可以赋予它很大的矩阵元值. 这个问题在很大程度上被Nambu在1960年的一篇文章上澄清了,\cite{16} 他指出, 在$\pi$介子质量为零的极限下, 轴矢量流可以视为是精确守恒的, 在这种情况下, Goldberger-Treiman关系可以像我们这里做的那样推导出来. 在这篇文章以及Nambu与Jona-Lasinio随后的一篇文章中,\cite{17} Nambu意识到$\pi$介子表现出无质量或者近无质量是某个精确或近似对称性破缺的表现. %
+在与其它合作者的努力下,\cite{18}
+Nambu还给出了在各种过程中如何计算发射单个软$\pi$介子的速率. 随后, Goldstone\cite{3}注意到破缺的对称性总是蕴含着无质量玻色子, 而这在1962年由Goldstone, Salam和我\cite{5}证明了, 证明的方法就是19.2节给出的讨论.
+
+这个把$\pi$介子作为Goldstone玻色子的早期工作完全不依赖对破缺对称群的性质所做的任何特殊假定; 例如, 它可以是三个对易$U(1)$群的直积, 这个群的生成元构成了同位旋矢量, 亦或是非紧群$SO(3,1)$, 这样在对易关系(\ref{19.4.19})的右边就会出现一个负号. 仅当我们所考察的过程包含两个以上$\pi$介子时, 破缺对称群的性质才变得重要起来, 这始于1965年的Adler-Weisberger求和规则,\cite{19} 它成功地证明了破缺对称性确实是$SU(2)\times SU(2)$. (这样的过程将在下一节进行讨论.) 找到对称群$SU(2)\times SU(2)$导致了关注点的偏移,\cite{20} 人们越来越关注这一对称性在强相互作用物理中的应用, 而远离了早期对流本身的关注.
+
+这一工作完全不是在强作用的一个特定理论下完成的. 量子色动力学在1973年被快速地接受为强相互作用的正确理论, 其中的原因之一就是它将$SU(2)\times SU(2)$对称性解释为$u$夸克和$d$夸克质量太小所给出的简单结果.
+
+
+\section{有效场论: $\pi$介子和核子}
+
+
+在19.2节, 通过给对称流在态$\alpha$和$\beta$之间的矩阵元附加流守恒条件, 我们知晓了如何计算在跃迁$\alpha \to \beta +B$中发射一个低能Goldstone玻色子$B$的振幅. 在这个计算中, 我们没有用到破缺对称群的任何细节; 流守恒就是我们需要的全部. 如果我们想计算发射和/或吸收{\kai{两个}}Goldstone玻色子的矩阵元, 就像Goldstone玻色子散射过程中那样, 一个新的要素会参与进来. 这里我们必须要给形如
+\[
+\langle\beta|T\{J_{1}^{\lambda_{1}}(x_{1}),J_{2}^{\lambda_{2}}(x_{2})\}|\alpha\rangle
+\]
+这样的矩阵元附加流守恒条件, 其中态$\alpha$和$\beta$包含除这两个Goldstone玻色子以外其它参与反应的粒子. 然而, 当我们用散度算符$\partial/\partial x_{1}^{\lambda_{1}}$作用在这一矩阵元上时, 编时乘积$T\{\cdots\}$的定义中所包含的函数$\theta(x_{1}^{0}-x_{2}^{0})$和$\theta(x_{2}^{0}-x_{1}^{0})$, 它们的导数所给出的贡献不为零. 这一贡献等同于等时对易子$\delta(x_{1}^{0}-x_{2}^{0})[J_{1}^{0}(x_{1}),J_{2}^{\lambda_{2}}(x_{2})]$的矩阵元, 它的值依赖于群代数的对易关系. 这使得这样的多Goldstone玻色子过程特别有趣, 我们可以利用它们通过实验确定破缺对称群的性质, 而对于仅包含单个Goldstone玻色子的过程, 这一方法是不可能的. 由于出现了这样的流对易子, 这一方法被称为{\kai{流代数}}方法.\cite{21}
+
+流代数方法被用于多Goldstone玻色子振幅的早期计算中.\cite{22} 不幸的是, 这样的计算是很冗杂的, 尤其是所包含的Goldstone玻色子的个数在3个以上时, 而且像量子色动力学的手征对称性这样非精确的对称性, 对其该如何处理也毫无头绪. 由于这个原因, 引入了另一种更加物理的计算技巧,\cite{23} 这个技巧基于有效拉格朗日量的使用: 我们就通过微扰论的方法, 利用Goldstone玻色子以及$\alpha$态和$\beta$中的其它粒子的某个拉格朗日量计算Goldstone玻色子的振幅, 对这个拉格朗日量的要求是它服从假定的破缺对称性.
+
+最初, 有效拉格朗日量处理的合理性是基于流代数. 通过使用流代数可以看到, 一旦知道了破缺对称性所附带的流的等时对易关系, 过程$\alpha\to\beta$的矩阵元, 以及流在各个单粒子态之间的矩阵元, 在过程$\alpha \to \beta+ B_{1}+B_{2}+\cdots$中发射一组低能Goldstone玻色子的振幅就被确定了. 我们知道, 通过Noether的技巧, 遵循破缺对称性的拉格朗日量将允许构建守恒流并使其有着合适的等时对易子, 所以, 如果我们就用这样的拉格朗日量计算低能Goldstone玻色子的振幅, 并给$M_{\beta\alpha}$和流的单粒子矩阵元代入正确的值, 我们所得到的答案肯定与流代数提供的答案相同. 在只有Goldstone玻色子相互作用的情况中, 态$\alpha$和$\beta$均可以取成真空, 而我们所需要的信息就只剩下单个Goldstone玻色子与真空之间的矩阵元$F$.
+
+这类例子中第一个,\cite{23} 其出发点是$\sigma$-模型的拉格朗日量.\cite{24} 我们暂且将关注点限制在这一模型的玻色截面, 它的拉格朗日量是19.2节所使用的例子中对称性为$SO(4)$的那一个:
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\partial _{\mu }\phi _{n}\partial ^{\mu }\phi _{n}-\frac{\mathscr{M}^{2}%
+}{2}\phi _{n}\phi _{n}-\frac{\lambda }{4}(\phi _{n}\phi _{n})^{2}\text{ ,}
+\label{19.5.1}
+\end{equation}%
+其中的$n$对值1, 2, 3, 4求和, 赝标量场$\vec{\phi}$是同位旋矢量, 标量场$\phi_{4}$是同位旋标量.
+
+任何类型的有效拉格朗日量所面临的直接问题是, 为了用它计算散射振幅, 要么我们必须把微扰论每一阶的所有Feynman图都纳入进来, 要么找到某个基本原理进而扔掉高阶导数项. 对于%
+破缺对称性通过各种场的线性变换进行实现的拉格朗日量, 像(\ref{19.5.1}), 我们还无法找到这样的基本原理. %
+幸运的是, 任何这样的拉格朗日量都可以被重塑, 进而可以用Feynman图生成振幅关于Goldstone玻色子能量的幂级数表达式. 为了做到这点, 我们必须在时空中的每一点进行对称变换以消除掉与该理论的Goldstone玻色子相对应的场. Goldstone玻色子自由度则作为该对称变换的参量重新出现在变换后的理论中. 然而, 既然这个拉格朗日量在时空独立的对称变换下不变, 那么当这个Goldstone玻色场是常数时, 这个拉格朗日量必须独立于这个新的Goldstone玻色场, 因此在该拉格朗日量中, 凡是包含这些新Goldstone玻色子的项至少含有一个该场的时空导数. 这些导数在我们计算Goldstone玻色子反应的$S$-矩阵元时引入了Goldstone玻色子的能量, 并且, 正如我们将看到的, 这使得我们可以使用这一拉格朗日量去构建该$S$-矩阵元关于这些能量的幂级数表达式.
+
+例如, \:为了将拉格朗日量(\ref{19.5.1})重塑成有用的形式, \: 我们将4-矢$\phi_{n}$写成在前三个分量($\phi_{n}$的\\Goldstone部分)为零的4-矢$\{0,0,0,\sigma\}$上作用一个手征旋转$R$:
+\begin{equation}
+\phi _{n}(x)=R_{n4}(x)\sigma (x)  \label{19.5.2}
+\end{equation}%
+其中$R_{nm}(x)$是正交矩阵
+\begin{equation}
+R^{T}(x)\,R(x)=1  \label{19.5.3}
+\end{equation}%
+因此
+\begin{equation}
+\sigma (x)=\sqrt{\sum_{n}\phi _{n}(x)^{2}}\text{ .}  \label{19.5.4}
+\end{equation}%
+这样, 拉格朗日量(\ref{19.5.1})就变成
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\sum_{n=1}^{4}\left( R_{n4}\partial _{\mu }\sigma +\sigma
+\partial _{\mu }R_{n4}\right) ^{2}-\frac{1}{2}\mathscr{M}^{2}\sigma ^{2}-\frac{\lambda
+}{4}\sigma ^{4}\text{ .}  \label{19.5.5}
+\end{equation}%
+由于$R$是正交矩阵, $\partial_{\mu}\sigma \partial^{\mu}\sigma$项与$R$无关, 并且交叉项为零
+\[
+\sum_{n}R_{n4}^{2}=1\text{ ,}\qquad\sum_{n}R_{n4}\partial _{\mu }R_{n4}=\frac{1}{2}%
+\partial _{\mu }\sum_{n}R_{n4}^{2}=0\text{ ,}
+\]%
+所以$\mathscr{L}$变成
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\partial _{\mu }\sigma \partial ^{\mu }\sigma -\frac{1}{2}%
+\sigma ^{2}\sum_{n=1}^{4}\partial ^{\mu }R_{n4}\partial _{\mu }R_{n4}-\frac{1%
+}{2}\mathscr{M}^{2}\sigma ^{2}-\frac{\lambda }{4}\sigma ^{4}\text{ .}  \label{19.5.6}
+\end{equation}%
+如果$\mathscr{M}^{2}$是负的, 那么$\sigma$的真空期望值就不为零, 这一期望值在最低阶由后两项和的最小值点给出, 处于$\sigma=\vert\mathscr{M}\vert/\sqrt{\lambda}$.
+
+取代场变量$\phi_{n}$, 我们的变量现在是$\sigma -|\mathscr{M}|/\sqrt{\lambda}$以及用来参数化旋转$R$的其它参量. 例如, 这些参量可以简单地选为$R_{a4}$本身(其中$a,b$从现在开始是同位旋矢量指标, 取值1, 2, 3),  而$R_{44}$由$R$是正交矩阵这一条件决定. 另一种参数化将会给出更加简单的最终结果, 并且由于这些原因在历史上也是首先使用这种参数化方式. 这种参数化是定义
+\begin{equation}
+\zeta _{a}\equiv \frac{\phi _{a}}{\phi _{4}+\sigma }  \label{19.5.7}
+\end{equation}%
+并取\begin{equation}
+R_{a4}=\frac{2\zeta _{a}}{1+\cvec{\zeta}{}^{2}}=-R_{4a}\text{ ,}\qquad R_{44}=\frac{1-%
+\cvec{\zeta}{}^{2}}{1+\cvec{\zeta}{}^{2}}\text{ ,}\qquad R_{ab}=\delta _{ab}-\frac{2\zeta
+_{a}\zeta _{b}}{1+\cvec{\zeta}{}^{2}}\text{ ,}  \label{19.5.8}
+\end{equation}%
+使得\begin{equation}
+\phi _{a}/\sigma =R_{a4}=\frac{2\zeta _{a}}{1+\cvec{\zeta}{}^{2}}\text{ ,}\qquad\phi
+_{4}/\sigma =R_{44}=\frac{1-\cvec{\zeta}{}^{2}}{1+\cvec{\zeta}{}^{2}}\text{ .}
+\label{19.5.9}
+\end{equation}%
+那么拉格朗日量(\ref{19.5.6})变成
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\partial _{\mu }\sigma \partial ^{\mu }\sigma -2\sigma ^{2}%
+\vec{D}_{\mu }\cdot \vec{D}^{\mu }-\frac{1}{2}\mathscr{M}^{2}\sigma ^{2}-\frac{\lambda
+}{4}\sigma ^{4}\text{ ,}  \label{19.5.10}
+\end{equation}%
+其中\begin{equation}
+\vec{D}_{\mu }\equiv \frac{\partial _{\mu }\cvec{\zeta}}{1+\cvec{\zeta}{}^{2}}%
+\text{ .}  \label{19.5.11}
+\end{equation}
+无论我们使用那种参数化方式, 场$\cvec{\zeta}$的相互作用都包含场导数, 它显然描述的是无质量粒子. 它们是(相差一个归一化)我们的新$\pi$介子场.
+
+除去表象不同, 这一拉格朗日量在$SO(4)$下仍然是不变的, 但现在$SO(4)$是以非线性的方式实现的. 在由无限小参量$\cvec{\theta}$参数化的同位旋变换下, 场$\cvec{\zeta}$就像普通的同位旋矢量那样旋转, 而$\sigma$是同位旋标量:
+\begin{equation}
+\delta \cvec{\zeta}=\cvec{\theta}\times \cvec{\zeta}\text{ ,}\qquad\qquad\qquad\delta \sigma =0%
+\text{ ,}  \label{19.5.12}
+\end{equation}%
+所以拉格朗日量(\ref{19.5.10})显然是同位旋不变的. 另一方面, 在破缺对称性的变换下, 若该变化由无限小矢量$\cvec{\epsilon}$参数化, 那么原始场的变换为
+\begin{equation}
+\delta \vec{\phi}=2\cvec{\epsilon}\phi _{4}\text{ ,}\qquad\qquad\qquad\delta \phi _{4}=-2\cvec{%
+\epsilon}\cdot \vec{\phi}\text{ .}  \label{19.5.13}
+\end{equation}%
+这样, 我们从方程(\ref{19.5.7})发现
+\begin{equation}
+\delta \cvec{\zeta}=\cvec{\epsilon}(1-\cvec{\zeta}{}^{2})+2\cvec{\zeta}(\cvec{%
+\epsilon}\cdot \cvec{\zeta})\text{ ,}\qquad\qquad\qquad\delta \sigma =0\text{ .}
+\label{19.5.14}
+\end{equation}%
+在破缺对称性变换(\ref{19.5.14})下, $\vec{D}_{\mu}$进行的是线性(尽管是场相关的)同位旋旋转
+\begin{equation}
+\delta \vec{D}_{\mu }=2(\cvec{\zeta}\times \cvec{\epsilon})\times \vec{D}_{\mu
+}  \label{19.5.15}
+\end{equation}%
+而方程(\ref{19.5.10})是同位旋不变的, 所以拉格朗日量(\ref{19.4.10})在这一变换下不变. 由于变换规则(\ref{19.5.15}), $\vec{D}_{\mu}$通常被称为$\pi$介子场的{\kai{协变导数}}.
+
+变换规则(\ref{19.5.12})和(\ref{19.5.14})指定了群$SU(2)\times SU(2)$所谓的{\kai{非线性实现}}.\cite{25} %
+Lie群的非线性的一般理论将在下一节给出; 在那里我们会证明, 在相差场的重定义的意义下, 若要求用$\cvec{\zeta}$线性地实现同位旋$SU(2)$子群, 那么变换规则(\ref{19.5.12})和%
+(\ref{19.5.14})提供了$SU(2)\times SU(2)$最一般的实现.
+
+我们看到这些新$\pi$介子场的每个相互作用都伴随着一个时空导数, 这使得有效耦合在$\pi$介子能量很低时会很弱.
+(这个论述在下文中会更细致.) 因此, 在$\pi$介子能量足够低时, 我们可以用在这一拉格朗日量在树级近似下复现流代数的软$\pi$介子定理. 对于这个目的, 唯一必要的是拉格朗日量是$SO((4)$-不变的. 然而, 既然$\sigma$场是$SO(4)$标量, 它在维持拉格朗日量的$SO(4)$不变性上毫无作用, 因而可以抛弃掉.\footnote{或者, 我们可以转到这样的极限: $\mathscr{M}$和$\lambda$一起趋于无穷, 但保持$\sigma$的期望值为一常数.} 当然, 这一处理改变了理论的物理内涵,
+但它不改变软$\pi$介子定理所给出的振幅. 这样, 拉格朗日量(\ref{19.5.10})就简化成
+\begin{equation}
+\mathscr{L}=-\frac{F^{2}}{2}\vec{D}_{\mu }\vec{D}^{\mu }=-\frac{F^{2}}{2}\frac{%
+\partial _{\mu }\cvec{\zeta}\cdot \partial ^{\mu }\cvec{\zeta}}{(1+\cvec{\zeta}%
+{}^{2})^{2}}\text{ ,}  \label{19.5.16}
+\end{equation}%
+其中$F=2\langle\sigma\rangle=2|\mathscr{M}|/\sqrt{\lambda}$. (我们很快就会看到, 这个$F$与上一节所讨论的常数$F_{\pi}$相同.) 由于多个原因, 使用按照惯例归一化的$\pi$介子场
+\begin{equation}
+\cvec{\pi}=F\cvec{\zeta}  \label{19.5.17}
+\end{equation}%
+进行处理是更加方便的, 这样拉格朗日量(\ref{19.5.16})变成
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\frac{\partial _{\mu }\cvec{\pi}\cdot \partial ^{\mu }\cvec{\pi}%
+}{(1+\cvec{\pi}{}^{2}/F^{2})^{2}}\text{ .}  \label{19.5.18}
+\end{equation}%
+因子$1/F$的作用类似于耦合常数, 对于相互作用中每个额外的$\pi$介子都会有这样一个因子. 方程(\ref{19.5.18})描述的正是所谓的``非线性$\sigma$-模型'', 确切的说这里的是$SU(2)\times SU(2)$自发破缺到$SU(2)$的特殊情况.
+
+一个关键点: 为了导出(\ref{19.5.18}), 出发点不一定非得是``线性$\sigma$-模型''拉格朗日量(\ref{19.5.1}). 诚然, 我们不需要从{\kai{任何}}特定的理论出发. 我们可以使用方程(\ref{19.5.18})仅因为它在$SO(4)$变换(\ref{19.5.12})和(\ref{19.5.14})下不变, 而流代数则告诉我们这是我们为得到低能$\pi$介子反应振幅所需要的全部.
+
+在引入软$\pi$介子有效拉格朗日量的数年后, 出现另外一种证明有效场论技术是合理的方法,\cite{26} 这一方法不依赖流代数并且允许计算不限制在Goldstone玻色子能量几乎为零的极限下.
+它基于如下的认识(在形式上还没具现化为一个定理): 当我们从Feynman图计算物理振幅时, 如果我们所使用的是包含相关自由度的最一般拉格朗日量, 并且该拉格朗日量满足该理论假定的对称性, 那么我们就构建出了与相对论, 量子力学以及假定对称性的一般原理相容的最一般振幅. 这正是本书卷I所基于的观点.
+在当前情况下, ``相关''的自由度是Goldstone玻色子本身, 态$\alpha$和$\beta$中的粒子, 以及这些粒子通过与低能Goldstone玻色子相互作用产生的任何其它粒子. 援引有效场论的这一合理性理由, 我们就无需与流代数的复杂性纠缠. 更重要的, 现代有效场论方法所给出的结果使得我们跳出了极低能量的极限, 并允许我们对任意内禀对称性破缺进行系统的处理.
+
+根据这一方法, 为了将$\pi$介子相互作用振幅计算至$\pi$介子能量的任意阶, 我们所使用的拉格朗日量要包含按照规则(\ref{19.5.12})和(\ref{19.5.14})变换的$\pi$介子场$\cvec{\zeta}$且必须是%
+这类拉格朗日量中最一般的形式:
+\begin{equation}
+\mathscr{L}_{\text{eff}}=-\frac{F^{2}}{2}\vec{D}_{\mu }\vec{D}^{\mu }-\frac{c_{4}}{4}(%
+\vec{D}_{\mu }\vec{D}^{\mu })^{2}-\frac{c_{4}^{\prime }}{4}(\vec{D}_{\mu
+}\cdot \vec{D}_{\nu })(\vec{D}^{\mu }\cdot \vec{D}^{\nu })-\cdots \text{ .}
+\label{19.5.19}
+\end{equation}%
+``$\cdots$''所代表的项会包含协变导数$\vec{D}_{\mu}$的高次项, 或者更高阶的协变导数, 它的一般结构将在下一节进行描述. 系数$c_{4}$和$c_{4}^{\prime}$是无量纲的, 而对于所有高阶项, 其系数的量纲是质量的负幂次.
+
+考察一个一般过程, 该过程包含任意多个入射$\pi$介子和出射$\pi$介子. 我们假定它们的能量和动量最多是$Q$阶的, 且$Q$与量子色动力学特征标度(例如核子质量或$\rho$的质量)相比很小. 那么即使是像(\ref{19.5.19})这样在通常意义下无法重整的拉格朗日量, 我们在12.3节看到, 只要这样的拉格朗日量包含对称性所允许的可能的项, 那么总会有可用的抵消项来抵消每一个无穷大, 进而使得这样的拉格朗日量产生有限的结果. 如果我们通过指定各种Goldstone玻色子散射振幅在$Q$阶能量处的值来定义常数$F^{2}$, $c_{4}$, $c_{4}^{\prime}$, $\cdots$的重整化值, 那么动量空间Feynman图中的积分将由虚动量中同样也为$Q$阶的那部分虚动量主导.(这是因为重整化使得它们有限, 而理论中又没有其它可能的有效截断.) 这样, 我们就可以将微扰论发展为$Q$的幂级数表达式.
+
+对于图的量级的阶, 每个相互作用顶角中的每个导数以及随之的每个$\vec{D}_{\mu}$会贡献一个$Q$因子;
+每个$\pi$介子内线传播子贡献因子$Q^{-2}$; 而图的每个圈所附带的积分体积元$\dif^{4}q$贡献因子$Q^{4}$; 所以一般的连通图所做的贡献是$Q^{\nu}$阶的, 其中
+\begin{equation}
+\nu =\sum_{i}V_{i}d_{i}-2I+4L\text{ .}  \label{19.5.20}
+\end{equation}%
+这里的$d_{i}$是$i$类相互作用中导数的数目, $V_{i}$是图中$i$类相互作用顶点的数目, $I$是$\pi$介子内线的数目, 而$L$是圈的数目. 根据熟悉的拓扑等式(参看方程(\textcolor{red}{4.4.7})), 这些量之间的关系是:
+\begin{equation}
+L=I-\sum_{i}V_{i}+1\text{ ,}  \label{19.5.21}
+\end{equation}%
+所以我们可以消掉$I$并写出
+\begin{equation}
+\nu =\sum_{i}V_{i}(d_{i}-2)+2L+2\text{ .}  \label{19.5.22}
+\end{equation}%
+它的关键之处在于这里的每一项都是正的; 方程(\ref{19.5.19})中的每个相互左右都至少有两个导数, 并且显然$L\geq0$. 因此每一过程的领头项是$Q^{2}$阶的, 这样的项只能出现在{\kai{树}}图中(即, $L=0$), 并且这样的树图只能用方程(\ref{19.5.19})中只有两个导数的项构建(即, 当$d_{i}\neq 2$时, $V_{i}=0$):
+\begin{equation}
+\mathscr{L}_{2}=-\frac{F^{2}}{2}\vec{D}_{\mu }\vec{D}^{\mu }=-\frac{1}{2}\frac{%
+\partial _{\mu }\cvec{\pi}\partial ^{\mu }\cvec{\pi}}{(1+\cvec{\pi}%
+{}^{2}/F^{2})^{2}}\text{ .}  \label{19.5.23}
+\end{equation}%
+例如, $\pi$介子-$\pi$介子散射的$S$-矩阵元中出现的不变振幅$M$
+\begin{equation}
+S=\mi(2\uppi )^{4}\delta ^{4}(p_{A}+p_{B}-p_{C}-p_{D})M(2\uppi
+)^{-6}(16E_{A}E_{B}E_{C}E_{D})^{-1/2}  \label{19.5.24}
+\end{equation}%
+它在这一阶给定为
+\begin{align}
+M_{abcd}^{(\nu =2)} &=4F^{-2}\Big[\delta _{ab}\delta _{cd}(-p_{A}\cdot
+p_{B}-p_{C}\cdot p_{D})+\delta _{ac}\delta _{bd}(p_{A}\cdot p_{C}+p_{B}\cdot
+p_{D})  \nonumber \\
+&\quad+\delta _{ad}\delta _{bc}(p_{A}\cdot p_{D}+p_{B}\cdot p_{C})\Big]\text{ ,}
+\label{19.5.25}
+\end{align}
+其中$a$, $b$, $c$, $d$分别是$\pi$介子$A$, $B$, $C$, $D$的同位旋指标.(本节后面将会把$\pi$介子拥有有限质量所带来的效应考虑进去.) 是否可以将方程(\ref{19.5.25})用作领头项并不依赖于我们对原始拉格朗日量(\ref{19.5.1})中耦合常数$\lambda$的大小%
+做了什么样的假定, 甚至不依赖于这一公式对于该拉格朗日量是否是成立的, 它只依赖于特征$\pi$介子能量$Q$是个小量这个假定.
+
+对于任何Goldstone玻色子反应的振幅, 下一项将是$Q^{4}$阶的, 这样的项来源有两个, 一个是仅包含拉格朗日量(\ref{19.5.16})的单圈图, 另一个是只用相互作用(\ref{19.5.16})和方程(\ref{19.5.19})中的$d=4$项产生的某个单极点构成的树图:
+\begin{align}
+M_{abcd}^{(\nu =4)} &=\frac{\delta _{ab}\delta _{cd}}{F^{4}}\bigg[-\frac{1}{2\uppi
+^{2}}s^{2}\ln (-s)-\frac{1}{12\uppi ^{2}}(u^{2}-s^{2}+3t^{2})\ln (-t)
+\nonumber \\
+&\quad-\frac{1}{12\uppi ^{2}}(t^{2}-s^{2}+3u^{2})\ln (-u)+\frac{1}{3\uppi ^{2}}%
+(s^{2}+t^{2}+u^{2})\ln \Lambda ^{2}  \nonumber \\
+&\quad-\frac{1}{2}c_{4}s^{2}-\frac{1}{4}c_{4}^{\prime }(t^{2}+u^{2})\bigg]+\text{%
+交叉项 ,}  \label{19.5.26}
+\end{align}%
+其中``交叉项''是指$B\leftrightarrow C$对换和$B\leftrightarrow D$对换给出的项, 而$s$, $t$, $u$是Mandelstam变量
+\[
+s=-(p_{A}+p_{B})^{2}\text{ ,}\qquad t=-(p_{A}-p_{C})^{2}\text{ ,}\qquad%
+u=-(p_{A}-p_{D})^{2}\text{ .}
+\]%
+这一结果与截断$\Lambda$的相关性可以通过重新定义常数$c_{4}$和$c_{4}^{\prime}$消除掉. 重整化耦合是
+\begin{align}
+c_{4R} &=c_{4}-\frac{2}{3\pi ^{2}}\ln \left( \frac{\Lambda ^{2}}{\mu ^{2}}%
+\right) \text{ ,}  \label{19.5.27} \\
+c_{4R}^{\prime } &=c_{4}^{\prime }-\frac{4}{3\pi ^{2}}\ln \left( \frac{%
+\Lambda ^{2}}{\mu ^{2}}\right) \text{ ,}  \label{19.5.28}
+\end{align}%
+其中$\mu$是任意的$Q$阶重整化标度, 插入$\mu$是为了让对数定义合理. 以这些重整化耦合的形式, 振幅(\ref{19.5.26})采取如下的形式
+\begin{align}
+M_{abcd}^{(\nu =4)} &=\frac{\delta _{ab}\delta _{cd}}{F^{4}}\bigg[-\frac{1}{2\uppi
+^{2}}s^{2}\ln \left( \frac{-s}{\mu ^{2}}\right) -\frac{1}{12\uppi ^{2}}%
+(u^{2}-s^{2}+3t^{2})\ln \left( \frac{-t}{\mu ^{2}}\right)   \nonumber \\
+&\quad-\frac{1}{12\uppi ^{2}}(t^{2}-s^{2}+3u^{2})\ln \left( \frac{-u}{\mu ^{2}}%
+\right) -\frac{1}{2}c_{4R}s^{2}-\frac{1}{4}c_{4R}^{\prime }(t^{2}+u^{2})\bigg]
+\nonumber \\
+&\quad +\text{交叉项 .}  \label{19.5.29}
+\end{align}%
+这种计算可以算至$Q$的任意阶, 并且对于每一阶的结果, 我们总会遇到有限多个新耦合, 这些耦合的重整化用来消除物理振幅的截断相关性. 注意领头的$\nu=2$项与$\nu=4$的修正项的比值是$Q^{2}/8\uppi^{2}F^{2}$阶的, 所以, 只要$\pi$介子能量均远小于一个阶为$2\uppi F$的量, 这就很可能是一个有用的表达式.
+
+这一微扰表达式也可用来把无所不在的参量$F$和测量到的$\pi$介子衰变振幅$F_{\pi}$关联起来. 回忆$\cvec{\zeta}$的变换规则(\ref{19.5.14}), 轴矢量流给定为
+\[
+\cvec{\epsilon}\cdot \cvec{A}{}^{\mu }=-\frac{\partial\mathscr{L}}{\partial (\partial
+_{\mu }\cvec{\zeta})}\cdot \delta \cvec{\zeta}
+\]%
+因而
+\begin{equation}
+\cvec{A}{}^{\mu }=-(1-\cvec{\zeta}{}^{2})\frac{\partial \mathscr{L}}{\partial (\partial
+_{\mu }\cvec{\zeta})}-2\cvec{\zeta}\,\cvec{\zeta}\cdot \left( \frac{\partial \mathscr{L}}{%
+\partial (\partial _{\mu }\cvec{\zeta})}\right) \text{ .}  \label{19.5.30}
+\end{equation}%
+($\cvec{A}{}^{\mu}$是$2\cvec{x}$所生成的对称性的Nother流, 它在核子二重态上表示成$2\gamma_{5}\cvec{t}=\gamma_{5}\cvec{\tau}$.) 积掉其它所有场, 并用方程(\ref{19.5.17})将$\cvec{\zeta}$表示成正则归一化$\pi$介子场$\cvec{\pi}$, 做完这些后我们发现
+\begin{equation}
+\cvec{A}{}^{\mu }=F\left[ \partial ^{\mu }\cvec{\pi}\frac{(1-\cvec{\pi}^{2}/F^{2})%
+}{(1+\cvec{\pi}^{2}/F^{2})}+\frac{2\cvec{\pi}(\cvec{\pi}\cdot \partial ^{\mu }%
+\cvec{\pi})}{F^{2}(1+\cvec{\pi}^{2}/F^{2})^{2}}\right] +\cdots \text{ .}
+\label{19.5.31}
+\end{equation}%
+利用我们的$\pi$介子能量幂级数微扰表达式计算$\langle\text{VAC}|\cvec{A}{}^{\mu}|\pi\rangle$, 我们看到, 在这里,  最低阶的$\pi$介子衰变振幅是
+\begin{equation}
+F_{\pi }=F\text{ .}  \label{19.5.32}
+\end{equation}%
+更进一步, Lorentz不变性和方程(\ref{19.5.22})告诉我们高阶修正必须正比于$p_{\pi}^{2}/F_{\pi}^{2}$的次方, 而这对于无质量$\pi$介子为零, 所以方程(\ref{19.5.32})在$m_{\pi}\to 0$的极限下实际上是精确的. 因此我们可以猜测, 当$\pi$介子能量小于阶为$2\uppi F_{\pi}=1200\,\mathrm{MeV}$的量时, 我们的微扰表达式将是有用的.
+
+为了与实验相联系, 我们必须处理$\pi$介子质量不为零的现实. 当$\pi$介子处在质量壳上时, 它的4-动量的时间分量不可能小于$m_{\pi}$, 所以在计数$\pi$介子的特征能量和动量$Q$的幂次时, 我们必须认为$m_{\pi}$是$Q$阶的. 但是我们在上一节看到, $m_{\pi}^{2}$正比于夸克质量的线性组合, 所以, 对于给定的Feynman图, 我们对其阶数$Q^{\nu}$的公式(\ref{19.5.22})应该变成
+\begin{equation}
+\nu =\sum_{i}V_{i}(d_{i}+2m_{i}-2)+2L+2\text{ ,}  \label{19.5.33}
+\end{equation}%
+其中$m_{i}$是$i$类相互作用中夸克质量因子的个数.
+
+包含夸克质量的相互作用可以通过它们在$SU(2)\times SU(2)$或者等效的$SO(4)$下的变换性质区分出来. 方程(\ref{19.4.34})表明夸克质量的一阶项按照两个标量的线性组合那样变换, 具体来说这两个标量是手征4-矢$\Phi_{n}^{+}$的第四分量和另一手征4-矢$\Phi_{n}^{-}$的第三分量,  而系数分别为$m_{u}+m_{d}$和$m_{u}-m_{d}$. 因此有效作用量中$m_{u}+m_{d}$的一阶项$\Delta\mathscr{L}^{+}$和$m_{u}-m_{d}$的一阶项$\Delta\mathscr{L}^{-}$%
+分别必须拥有手征4-矢第四分量的变换性质和手征4-矢第三分量的变换性质, 当然, 它们还得是Lorentz标量. 对于第四分量是标量的手征4-矢而言, 一个显然的候选者是我们本节开头的$\phi_{n}$. 根据方程(\ref{19.5.9}), 它的第四分量就是$\sigma(1-\cvec{\zeta}{}^{2})/(1+\cvec{\zeta}{}^{2})$. 因子$\sigma$是手征标量, 它不影响这个量的手征变换性质, 因而可以被扔掉. 通过要求$\cvec{\pi}{}^{2}=F_{\pi}^{2}\cvec{\zeta}{}^{2}$的系数是$-m_{\pi}^{2}/2$, 我们可以确定这一项的归一化, 这使得, 除了一个额外的常数外,
+\begin{equation}
+\Delta \mathscr{L}^{+}=-\frac{m_{\pi }^{2}F_{\pi }^{2}}{2}\frac{\cvec{\zeta}{}^{2}}{1+%
+\cvec{\zeta}{}^{2}}=-\frac{m_{\pi }^{2}}{2}\frac{\cvec{\pi}{}^{2}}{1+\cvec{\pi}%
+{}^{2}/F_{\pi }^{2}}\text{ .}  \label{19.5.34}
+\end{equation}%
+我们会在下一节看到, 这是$\pi$介子场唯一的既没有导数且按照手征4-矢的第四分量变换的标量函数. 另一方面, {\kai{不}}存在$\pi$介子场的标量函数使得它自身既没有导数且按照手征4-矢的第三分量进行变换, 这是因为, 如果这样的函数是某个手征4-矢的第三分量, 那么它关于$\pi$介子场必须是奇的, 因而它是赝标量而非标量. 因此, (\ref{19.5.34})是唯一$d_{i}=0$且$m_{i}=1$的相互作用. 令人惊奇的是, $u$夸克和$d$夸克质量中的同位旋破缺差不影响$\pi$介子质量, 这是我们在上一节所看到的, 此外, 它也不影响任何没有导数的多$\pi$介子相互作用.
+
+我们现在能够计算$\pi$介子-$\pi$介子散射振幅中真实的$\nu=2$领头项. 根据方程(\ref{19.5.33}), 这些项只能从树图中产生, 而这些树图是用方程(\ref{19.5.23})中$d=2$, $m=0$的$\pi$介子相互作用或者方程(\ref{19.5.34})中$d=0$, $m=1$的$\pi$介子相互作用构建的. 到这一阶, 方程(\ref{19.5.24})所定义的不变振幅$M$现在是
+\begin{equation}
+M_{abcd}^{(\nu =2)}=4F_{\pi }^{-2}\Big[ \delta _{ab}\delta _{cd}(s-m_{\pi
+}^{2})+\delta _{ac}\delta _{bd}(t-m_{\pi }^{2})+\delta _{ad}\delta
+_{bc}(u-m_{\pi }^{2})\Big] \text{ .}  \label{19.5.35}
+\end{equation}%
+特别地, 在阈值处, $s=4m_{\pi}^{2}$且$t=u=0$, 因此
+\begin{align}
+M_{abcd}^{(\nu =2)}(\text{阈值}) &=4m_{\pi }^{2}F_{\pi
+}^{-2}[3\delta _{ab}\delta _{cd}-\delta _{ac}\delta _{bd}-\delta _{ad}\delta
+_{bc}]  \nonumber \\
+&=4m_{\pi }^{2}F_{\pi }^{-2}\Big[ 7M_{ab,cd}^{(0)}-2M_{ab,cd}^{(2)}\Big]
+\text{ ,}  \label{19.5.36}
+\end{align}%
+其中$M^{(0)}$和$M^{(2)}$是张量, 它们表示同位旋$T=0$或$T=2$的2-$\pi$介子态:
+\begin{equation}
+M_{ab,cd}^{(0)}=\tfrac{1}{3}\delta _{ab}\delta _{cd}\text{ ,}  \label{19.5.37}
+\end{equation}%
+\begin{equation}
+M_{ab,cd}^{(2)}=\tfrac{1}{2}(\delta _{ac}\delta _{bd}+\delta _{ad}\delta
+_{bc}-\tfrac{2}{3}\delta _{ab}\delta _{cd})\text{ ,}  \label{19.5.38}
+\end{equation}%
+它们的归一化使得$\operatorname{Tr}M^{T}=2T+1$. 这个结果通常表示成散射长度的形式. 根据3.6节和3.7节, 对于同位旋为$T$的态中的两个$\pi$介子, 它们的散射长度$a_{T}$给定\cite{27}为$1/32\uppi m_{\pi}$乘以方程(\ref{19.5.36})中$M^{T}$的系数:
+\[
+a_{0}=\frac{7m_{\pi }}{8\uppi F_{\pi }^{2}}=0.16\,m_{\pi }^{-1}\text{ ,}\qquad a_{2}=-%
+\frac{m_{\pi }}{4\uppi F_{\pi }^{2}}=-0.046\,m_{\pi }^{-1}\text{ .}
+\]
+$\pi$介子的散射长度很难测量, 但是对像$\pi+N\to\pi+\pi+N$和$K\to\pi+\pi+e+\nu$这种过程的细致研究分别给出了$a_{0}$和$a_{2}$的值,\cite{28} $(0.26\pm0.05)m_{\pi}^{-1}$和$(-0.028\pm0.012)m_{\pi}^{-1}$, 这与理论值是一致的. $m_{\pi}/2\uppi F_{\pi}$的高阶修正似乎提高了符合程度.
+
+这一形式理论可以被推广进而描述$\pi$介子与核子或其它粒子的相互作用. 最简单的方法是给我们所出发的拉格朗日量增加一项, 使得该项包含核子二重态场$N$:
+\begin{equation}
+\mathscr{L}_{N}=-\bar{N}\,\Big(\slashed{\partial} +g[\phi _{4}+2\mi\cvec{t}\cdot \vec{\phi}\gamma _{5}]\Big)\,N%
+\text{ ,}  \label{19.5.39}
+\end{equation}%
+其中$\cvec{t}$是同位旋$1/2$的同位旋矩阵矢量(即, Pauli矩阵$\cvec{\tau}$除以2.) 在手征变换
+\begin{align}
+\delta \vec{\phi} &=2\cvec{\epsilon}\,\phi _{4}\text{ ,}\qquad\qquad\delta \phi _{4}=-2%
+\cvec{\epsilon}\cdot \vec{\phi}\text{ ,}  \label{19.5.40} \\
+\delta N &=-2\mi\gamma _{5}\cvec{\epsilon}\cdot \cvec{t}N
+\label{19.5.41}
+\end{align}%
+下它是不变的. 现在, 为了消除非导数$\pi$介子耦合, 我们必须把核子场$N$写成表示(\ref{19.5.41})中的$SO(4)$旋转$R$作用在新的核子场$\widetilde{N}$上
+\begin{equation}
+N\equiv \frac{(1-2\mi\gamma _{5}\cvec{t}\cdot \cvec{\zeta})}{\sqrt{1+\cvec{\zeta}%
+{}^{2}}}\,\widetilde{N}  \label{19.5.42}
+\end{equation}%
+其中$\cvec{\zeta}$还是由方程(\ref{19.5.7})给出. 有了这个变换, 方程(\ref{19.5.39})中的非导数项现在只依赖于$\widetilde{N}$和$\sigma$:
+\[
+\bar{N}[\phi _{4}+2\mi\cvec{t}\cdot \vec{\phi}\gamma _{5}]N=\sigma\bar{\widetilde{N}\,}\!%
+\widetilde{N}\text{ .}
+\]%
+另一方面, 导数项包含方程(\ref{19.5.41})中矩阵的导数, 这产生了核子拉格朗日量:
+\begin{equation}
+\mathscr{L}_{N}=-\Bar{\widetilde{N}\,}\!\left[ \slashed{\partial} +g\sigma +2\mi\frac{\cvec{t}\cdot (\cvec{\zeta}%
+\times \slashed{\partial} \cvec{\zeta})}{1+\cvec{\zeta}{}^{2}}+2\mi\gamma _{5}\cvec{t}\cdot
+\vec{\slashed{D}}\right] \widetilde{N}  \label{19.5.43}
+\end{equation}%
+或者以正则归一化$\pi$介子场(\ref{19.5.17})的形式:
+\begin{equation}
+\mathscr{L}_{N}=-\bar{\widetilde{N}\,}\!\left[ \slashed{\partial} +g\sigma +\frac{2\mi\cvec{t}\cdot (\cvec{\pi}%
+\times \slashed{\partial} \cvec{\pi})}{F_{\pi }^{2}[1+\cvec{\pi}{}^{2}/F_{\pi }^{2}]}+%
+\frac{2\mi\gamma _{5}\cvec{t}\cdot \slashed{\partial} \cvec{\pi}}{F_{\pi }^{2}[1+\cvec{\pi}%
+{}^{2}/F_{\pi }^{2}]}\right] \widetilde{N}\text{ .}  \label{19.5.44}
+\end{equation}%
+既然$\sigma$的真空期望值不为零, 我们看到核子在这里的静质量不为零, 若非变换(\ref{19.5.40})和(\ref{19.5.41})下的对称性是破缺的, 这个结果本不会出现.
+
+由于它自身的结构, 拉格朗日量(\ref{19.5.44})是手征不变的. 这一点也可利用前面得到的$\sigma$和$\cvec{\pi}$的手征变换性质直接看到, 同时注意到, 在手征变换(\ref{19.5.40})和(\ref{19.5.41})下, 方程(\ref{19.5.42})所定义的新核子场的变换为
+\begin{equation}
+\delta \widetilde{N}=2\mi\cvec{t}\cdot \lbrack \,\cvec{\zeta}\times \cvec{\epsilon}\,]%
+\widetilde{N}\text{ .}  \label{19.5.45}
+\end{equation}%
+即, 在手征变换下, $\widetilde{N}$进行一个与$\vec{D}_{\mu}$相同的同位旋旋转(\ref{19.5.15}), 当然, 这个旋转处在$T=1/2$的表示下. 同位旋旋转参量$\cvec{\zeta}\times\cvec{\epsilon}$是时空相关的, 所以$\widetilde{N}$的导数就有一个不同的手征变换性, 但是可以直接验证方程(\ref{19.5.43})中第一项和的第三项的组合按照手征协变导数那样进行变换: 即,
+\begin{equation}
+\delta \mathscr{D}_{\mu }\widetilde{N}=2\mi\cvec{t}\cdot \lbrack \,\cvec{\zeta}\times \cvec{%
+\epsilon}\,]\mathscr{D}_{\mu }\widetilde{N}\text{ ,}  \label{19.5.46}
+\end{equation}%
+其中
+\begin{equation}
+\mathscr{D}_{\mu }\widetilde{N}\equiv \left[ \partial _{\mu }+2\mi\,\frac{\cvec{t}\cdot (\cvec{%
+\zeta}\times \partial \cvec{\zeta})}{1+\cvec{\zeta}{}^{2}}\right] \widetilde{N}\text{
+.}  \label{19.5.47}
+\end{equation}
+因此拉格朗日量(\ref{19.5.43})(以及随之的(\ref{19.5.44}))显然是手征不变的, 这是因为它是同位旋不变的, 并且构建它的元素只有$\widetilde{N}$, $\mathscr{D}_{\mu}\widetilde{N}$, $\sigma$和$\vec{D}_{\mu}$, 所有这些元素在手征变换下进行相同的同位旋旋转.
+
+再重申一次, 我们出发的拉格朗日量具体是什么并不重要. 和之前考察的纯$\pi$介子理论一样, 重要的是拉格朗日量的手征不变性. 为了是手征不变的, 拉格朗日量必须保持同位旋不变, 并且只能用$\widetilde{N}$, $\mathscr{D}_{\mu}\widetilde{N}$和$\vec{D}_{\mu}$(以及这些量的高阶协变导数)这些元素进行构建. 最一般的手征不变拉格朗日量是新核子场的双线性型, 并且所包含的导数不超过一阶, 因此它采取如下的形式
+\begin{equation}
+\mathscr{L}_{N,0}=-\bar{\widetilde{N}\,}\!\left[ \slashed{\mathscr{D}}+m_{N}+2\mi g_{A}\gamma _{5}\cvec{t}\cdot \vec{\slashed{D}}%
+\right] \widetilde{N}  \label{19.5.48}
+\end{equation}%
+或者以$\pi$介子场(\ref{19.5.17})的形式:
+\begin{equation}
+\mathscr{L}_{N,0}=-\bar{\widetilde{N}\,}\!\left[ \slashed{\partial} +m_{N}+\frac{2\mi\cvec{t}\cdot (\cvec{\pi}%
+\times \slashed{\partial} \cvec{\pi})}{F_{\pi }^{2}[1+\cvec{\pi}{}^{2}/F_{\pi }^{2}]}+%
+\frac{2\mi g_{A}\gamma _{5}\cvec{t}\cdot \slashed{\partial} \cvec{\pi}}{F_{\pi }[1+\cvec{\pi}%
+{}^{2}/F_{\pi }^{2}]}\right] \widetilde{N}\text{ .}  \label{19.5.49}
+\end{equation}%
+
+注意到, 我们在方程(\ref{19.5.48})的最后一项中插入了一个任意常数$g_{A}$, 这是因为这一项本身是手征对称的, 因而手征对称性无法决定它的系数. (这与方程(\ref{19.5.43})中的第三项相反, 它与第一项合起来给出手征不变量这个条件固定了它的系数.) 通过构建核子拉格朗日量(\ref{19.5.48})产生的轴矢量流中的额外项, 我们可以验证这里插入的常数$g_{A}$确实是$\beta$-衰变的轴矢量耦合. 或者, 通过分部积分和Dirac方程, 我们可以发现$\pi$介子-核子相互作用$-2\mi g_{A}\bar{\widetilde{N}\,}\!\gamma_{5}\cvec{t}\cdot(\slashed{\partial}\cvec{\pi})\widetilde{N}/F_{\pi}$%
+在核子质量壳上等效于相互作用$-4\mi m_{N}g_{A}\bar{\widetilde{N}\,}\!\gamma_{5}\cvec{t}\cdot\cvec{\pi}\widetilde{N}/F_{\pi}$, 这对应于$\pi$介子-核子耦合常数
+\[
+G_{\pi N}=2m_{N}g_{A}/F_{\pi }\text{ ,}
+\]%
+而这正是Goldberger-Treiman关系(\ref{19.4.33}).
+
+附带地, 如果我们在计算中使用了拉格朗日量(\ref{19.5.44}), 我们就会得到$g_{A}=1$的Goldberger-Treiman关系. %
+然而, 这是我们作为出发点的相互作用(\ref{19.5.39}), 它的特定形式的产物. 我们可以引入一个不可重整的导数耦合项%
+\footnote{核子二重态的左手部分和右手部分分别按照$SU(2)\times SU(2)$的$(\frac{1}{2},0)$表示和$(0,\frac{1}{2})$表示变换. 因此, 双线性型$\bar{N}\gamma_{\mu}\gamma_{5}N$是$(\frac{1}{2},0)$项或$(0,\frac{1}{2})$项的二次项之和, 所以它按照(1,0)表示, (0,0)表示以及(0,1)表示的直和变换. 在方程(\ref{19.5.50})中, 我们把$\bar{N}\gamma_{\mu}\gamma_{5}N$中的(1,0)+(0,1)项与反对称张量耦合在一起, 这构成了$SU(2)\times SU(2)$的4-矢$\phi_{n}$和$\partial_{\mu}\phi_{n}$. 它在变换(\ref{19.5.40})和(\ref{19.5.41})下的不变性显然可以直接验证.}
+\begin{equation}
+\mathscr{L}_{N}^{\prime }=\mi g^{\prime }\bar{N}\left[ (\,\cvec{t}\cdot \vec{\phi}\slashed{\partial}
+\phi _{4}-\phi _{4}\cvec{t}\cdot \slashed{\partial} \vec{\phi}\,)\gamma _{5}+\cvec{t}\cdot
+(\vec{\phi}\times \slashed{\partial} \vec{\phi}\,)\right] N\text{ .}  \label{19.5.50}
+\end{equation}%
+可以直接证明, 以变换后的场$\sigma$, $\widetilde{N}$和$\cvec{\zeta}$, 它采取如下的形式
+\[
+\mathscr{L}_{N}^{\prime }=-8\mi\sigma ^{2}g^{\prime }\bar{\widetilde{N}\,}\!\cvec{t}\cdot \vec{\slashed{D}}\gamma
+_{5}\widetilde{N}\text{ .}
+\]%
+由于$\sigma$的真空期望值不为零, 所以这对$\pi$介子-核子耦合常数有贡献, 并对$g_{A}$有一个正比于$g^{\prime}$的贡献. 因此, $g_{A}=1${\kai{不}}由破缺的$SU(2)\times SU(2)$d对称性单独决定; 通过引入相互作用(\ref{19.5.50})并调整$g^{\prime}$, 我们可以把$g_{A}$变成任意值.
+
+现在我们来考察如何用这个拉格朗日量计算既包含$\pi$介子又包含核子的反应的振幅. 由于核子不可能是$\pi$介子这样的%
+``软''粒子, 我们必须得特别关照核子传播子. 若进入图的核子线携带$m_{N}$阶的在壳4-动量$p$, 然后又从与软$\pi$介子的相互作用中吸收了分量远小于$m_{N}$的净4-动量$q$, 那么它会有传播子
+\begin{equation}
+\frac{-\mi(\slashed{p}+\slashed{q})+m_{N}}{(p+q)^{2}+m_{N}^{2}}\xrightarrow[\:q\to 0\:]{} \frac{-\mi\,\slashed{p}+m_{N}}{%
+2p\cdot q}\text{ .}  \label{19.5.51}
+\end{equation}%
+(通过在核子拉格朗日量中引入高阶导数项, 我们可以把忽略的项考虑进来.) 再次假定所有外$\pi$介子4-动量的分量最多%
+是$Q$阶的, 并在$Q$阶重整化点定义所有重整化耦合, 这使得积分以$\pi$介子内线也拥有4-动量$Q$的方式收敛. 这样, 方程(\ref{19.5.51})表明核子内线的贡献是$1/Q$阶的. 这种过程的一般Feynman图对不变振幅会有一个$Q^{\nu}$阶的贡献, 而这时,
+\begin{equation}
+\nu=\sum_{i}V_{i}(d_{i}+2m_{i})-2I_{\pi }-I_{N}+4L\text{ .}  \label{19.5.52}
+\end{equation}%
+这里的$V_{i}$是与$i$类相互作用相对应的顶角个数, $d_{i}$是每个这样的相互作用中导数的数目, $m_{i}$是每个相互作用中夸克味的数目, $I_{\pi}$和$I_{N}$分别是$\pi$介子内线的个数和核子内线的个数, $L$是图中圈的个数. 我们使用熟悉的连通图拓扑关系:
+\begin{equation}
+L=I_{\pi }+I_{N}-\sum_{i}V_{i}+1  \label{19.5.53}
+\end{equation}%
+以及
+\begin{equation}
+2I_{N}+E_{N}=\sum_{i}V_{i}n_{i}\text{ ,}  \label{19.5.54}
+\end{equation}%
+其中$n_{i}$是$i$类相互作用中核子场的个数, $E_{N}$是核子外线的个数. 消掉$I_{N}$和$I_{\pi}$, 这给出
+\begin{equation}
+\nu =\sum_{i}V_{i}\left( d_{i}+2m_{i}+\frac{n_{i}}{2}-2\right) +2L-\frac{%
+E_{N}}{2}+2\text{ .}  \label{19.5.55}
+\end{equation}%
+这里的关键点在于第一项中的系数$d_{i}+2m_{i}+\frac{1}{2}n_{i}-2$总是不小于零的. 对于$n_{i}=0$的纯$\pi$介子相互作用, 我们已经看到$d_{i}+2m_{i}\geq2$, 对(\ref{19.5.49})的观察表明对于$n_{i}=2$且$m_{i}=0$的$\pi$介子-核子相互作用$d_{i}\geq1$. 任何$n_{i}=2$且$m_{i}\geq1$的相互作用或者任何$n_{i}\geq4$的相互作用显然也有$d_{i}\geq2$. 因此, 当$Q\ll 2\uppi F_{\pi}$时, 领头项是相互作用满足
+\[
+d_{i}+2m_{i}+\frac{n_{i}}{2}-2=0
+\]%
+的树图(即, $L=0$). 满足这个条件的相互作用就是方程(\ref{19.5.23}), (\ref{19.5.34})和(\ref{19.5.49})中写出的那些相互作用, 除此之外可能的相互作用是$d_{i}=0$且$n_{i}=4$的相互作用:
+\begin{equation}
+\left( \bar{\widetilde{N}\,}\Gamma _{\alpha }\widetilde{N}\right) \left( \bar{\widetilde{N}\,}\Gamma
+^{\alpha }\widetilde{N}\right) \text{ ,}  \label{19.5.56}
+\end{equation}
+其中$\Gamma_{\alpha}$和$\Gamma^{\alpha}$是自旋空间和同位旋空间中的矩阵, 它们给出Lorentz不变, 空间反演不变以及同位旋不变的4-费米子相互作用. 最后这个相互作用对于多核子过程非常重要, \cite{29} 但是我们不会在这里考察这样的过程.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=5.0in]{193}
+ \caption{这是用有效手征拉格朗日量计算软$\pi$介子在核子上散射的Feynman图. 虚线是$\pi$介子, 实线是核子.}
+ \label{fig:19.3}
+\end{figure}
+
+
+我们现在对$\pi$介子-核子散射使用这一方法. 对于能量约为$m_{\pi}$阶的$\pi$介子, $\pi$介子-核子的散射振幅由图\ref{fig:19.3}中的Feynman图给出, 这些图给不变振幅的贡献均是$m_{\pi}$阶的. 然而, 当处在阈值时, 主要贡献来自于图\ref{fig:19.3}(\textcolor{red}{c}), 其它图会被一个额外因子$m_{\pi}/m_{N}$压低. 这是因为当处在阈值时, 静止参考系中的入射$\pi$介子和出射$\pi$介子4-动量$q$和$q^{\prime}$以及核子4-动量$p$和$p^{\prime}$给定为
+\begin{equation}
+q=q^{\prime}=(0,0,0,m_{\pi})=\left(\frac{m_{\pi}}{m_{N}}\right)p=\left(\frac{m_{\pi}}{m_{N}}\right)p^{\prime}
+\text{ .}  \label{19.5.57}
+\end{equation}
+因此当处在阈值时, 来自图\ref{fig:19.3}(\textcolor{red}{a})或图\ref{fig:19.3}(\textcolor{red}{b})的不变振幅正比于
+\begin{align*}
+&\bar{u}\,\gamma_{5}\,\slashed{q}\,\frac{(-\mi(\slashed{p}\pm\slashed{q})+m_{N})}{(p\pm q)^{2}+m_{N}^{2}} \,\gamma_{5}\,\slashed{q}\, u \\
+&=\frac{m_{\pi}^{2}\bar{u}\gamma_{5}(-\mi\,\slashed{p}(1\pm m_{\pi}/m_{N})+m_{N})\gamma_{5}u}{(\mp 2m_{\pi}m_{N}-m_{\pi}^{2})} \\
+&=\frac{\mp m_{\pi}}{2m_{N}\pm m_{\pi}}\bar{u}(\mi\, \slashed{p}(1\pm m_{\pi}/m_{N})+m_{N})u
+=\frac{m_{\pi}^{2}}{2m_{N}\pm m_{\pi}}
+\end{align*}
+其中$u$是满足$\bar{u}u=1$的Dirac旋量. 与之相对的是, 图\ref{fig:19.3}(\textcolor{red}{c})给$M$的贡献是$m_{\pi}$阶的. 我们可以用核子同位旋指标将这个振幅写成$2\times 2$矩阵:
+\[
+M_{ba}=\frac{-2\mi}{F_{\pi}^{2}}\, t_{c} \epsilon_{abc}\,\bar{u}(-\mi\,\slashed{q}-\mi\,\slashed{q}^{\prime})u\text{ ,}
+\]
+其中$q^{\prime}$和$q$是末态$\pi$介子和初态$\pi$介子的4-动量, 而$b$和$a$是相应的同位旋矢量指标. 利用方程(\ref{19.5.57})\\和动量空间Dirac方程$(\mi\,\slashed{p}+m_{N})u=0$, 这变成
+\begin{equation}
+M_{ba}=\frac{-4\mi m_{\pi}}{F_{\pi}^{2}}\,t_{c}\,\epsilon_{abc}=\frac{-4m_{\pi}}{F_{\pi}^{2}}\,\cvec{t}\cdot
+[\cvec{t}^{(\pi)}]_{ba} \text{ ,} \label{19.5.58}
+\end{equation}
+其中$[t_{c}^{(\pi)}]_{ba}\equiv -\mi\epsilon_{bac}$是$\pi$介子同位旋矢量矩阵. 在总同位旋为$T$的态中, 矩阵$\cvec{t}\cdot\cvec{t}^{(\pi)}$的本征值等于$\frac{1}{2}[T(T+1)-2-\frac{3}{4}]$, 所以在同位旋$T=1/2$和$T=3/2$的态中, 不变振幅是\cite{30}
+\[
+M_{1/2}=4m_{\pi}/F_{\pi}^{2}\text{ ,}\qquad\qquad M_{3/2}=-2m_{\pi}/F_{\pi}^{2}\text{ ,}
+\]
+这些结果通常写成散射长度的形式, 它们的定义是是不变振幅除以$4\uppi(1+m_{\pi}/m_{N})$:
+\begin{align}
+a_{1/2}&=\frac{m_{\pi}}{\uppi F_{\pi}^{2}(1+m_{\pi}/m_{N})}=0.15\,m_{\pi}^{-1} \text{ ,} \label{19.5.59} \\
+a_{3/2}&=-\frac{m_{\pi}}{2\uppi F_{\pi}^{2}(1+m_{\pi}/m_{N})}=-0.075\,m_{\pi}^{-1} \text{ .} \label{19.5.60}
+\end{align}
+它们与实验值\cite{12}$a_{1/2}=(0,173\pm0.003)m_{\pi}^{-1}$和$a_{3/2}=(-0.101\pm0.004)m_{\pi}^{-1}$基本一致.
+(结果(\ref{19.5.59})\\和(\ref{19.5.60})被认为仅在$m_{\pi}/m_{N}$的最低阶成立, 但对于因子$1+m_{\pi}/m_{N}$, 由于它仅来自于散射长度的定义, 我们保留这一因子.)
+
+在$m_{\pi}$的下一阶, 对散射长度的修正有如下几个来源. 图\ref{fig:19.3}(\textcolor{red}{a})和\ref{fig:19.3}(\textcolor{red}{b})的Born图, 它们名义上是领头阶的, 但正如我们所看到的, 它们在阈值出会被一个额外的因子$m_{\pi}/m_{N}$压低. 存在额外的树图, 它包含的顶角有两个导数. 在这些树图中, 最特殊的一种会包含不含导数的顶角, 它们来自于正比于$m_{\pi}^{2}$的对称性破缺相互作用. 这些相互作用的手征变换性质和时空变换性质必须与方程(\ref{19.4.34})中的算符相同: 两个不同的手征4-矢$\Phi_{n}^{+}$和$\Phi_{n}^{-}$的第四分量和第三分量. 对于有着这种变换性质的算符且要求它是核子场的双线性型, 我们有两个显然的候选者: 一个$\Phi_{4}^{+}$项,
+\[
+\bar{N}N=\left( \frac{1-\cvec{\zeta}{}^{2}}{1+\cvec{\zeta}{}^{2}}\right) \bar{\widetilde{N}\,}\!%
+\widetilde{N}-4\mi\left( \frac{\cvec{\zeta}}{1+\cvec{\zeta}{}^{2}}\right) \cdot \bar{\widetilde{%
+N}\,}\!\gamma _{5}\cvec{t}\widetilde{N}\text{ ,}
+\]%
+以及一个$\Phi_{3}^{-}$项,
+\[
+\bar{N}t_{3}N=\bar{\widetilde{N}\,}\!t_{3}\widetilde{N}-2\left( \frac{\zeta _{3}}{1+\cvec{\zeta}%
+{}^{2}}\right) \bar{\widetilde{N}\,}\!\cvec{t}\cdot \cvec{\zeta}\widetilde{N}-\mi\left( \frac{\zeta
+_{3}}{1+\cvec{\zeta}{}^{2}}\right) \bar{\widetilde{N}\,}\!\gamma _{5}\widetilde{N}\text{ .}
+\]%
+手征对称性在$\widetilde{N}$上的作用就像普通的同位旋旋转, 所以它们无法混合标量核子双线性型和赝标量核子双线性型. 因此实际上有两个独立的$\Phi_{4}^{+}$算符:
+\begin{equation}
+\left( \frac{1-\cvec{\zeta}{}^{2}}{1+\cvec{\zeta}{}^{2}}\right)\bar{\widetilde{N}\,}\!\widetilde{N}
+\label{19.5.61}
+\end{equation}%
+和
+\begin{equation}
+\mi\left( \frac{\cvec{\zeta}}{1+\cvec{\zeta}{}^{2}}\right) \cdot \bar{\widetilde{N}\,}\!\gamma _{5}%
+\cvec{t}\widetilde{N}\text{ ,}  \label{19.5.62}
+\end{equation}%
+以及两个独立的$\Phi_{3}^{-}$算符:
+\begin{equation}
+\bar{\widetilde{N}\,}\!t_{3}\widetilde{N}-2\left( \frac{\zeta _{3}}{1+\cvec{\zeta}{}^{2}}\right)
+\bar{\widetilde{N}\,}\!\cvec{t}\cdot \cvec{\zeta}\widetilde{N}  \label{19.5.63}
+\end{equation}%
+和
+\begin{equation}
+\mi\left( \frac{\zeta _{3}}{1+\cvec{\zeta}{}^{2}}\right) \bar{\widetilde{N}\,}\!\gamma _{5}\widetilde{%
+N}\text{ .}  \label{19.5.64}
+\end{equation}%
+我们会在下一节证明, 与方程(\ref{19.4.34})中核子场的双线性项变换性质相同的算符只有这些.
+算符(\ref{19.5.62})和(\ref{19.5.64})修正了$\pi$介子-核子耦合的Goldberger-Treiman公式, 其中前者显然是同位旋守恒而后者显然是同位旋破缺的. 另两个算符, (\ref{19.5.61})和(\ref{19.5.63}), 它们直接贡献于核子质量和低能$\pi$介子-核子散射. 从它们对核子质量的贡献, 我们看到后两项以如下的形式进入到有效拉格朗日量中(现在将$\cvec{\zeta}$替换成传统的归一化$\pi$介子场):
+\begin{align}
+\delta \mathscr{L}_{\text{eff}} &=-\frac{\delta m_{p}+\delta m_{n}}{2}\left( \frac{1-%
+\cvec{\pi}{}^{2}/F_{\pi }^{2}}{1+\cvec{\pi}{}^{2}/F_{\pi }^{2}}\right)\bar{\widetilde{N}\,}\!%
+\widetilde{N}  \nonumber \\
+&\quad-(\delta m_{p}-\delta m_{n})\left[ \bar{\widetilde{N}\,}\! t_{3}\widetilde{N}-\frac{2}{F_{\pi
+}^{2}}\left( \frac{\pi _{3}}{1+\cvec{\pi}{}^{2}/F_{\pi }^{2}}\right)\bar{\widetilde{N}\,}\!%
+\cvec{t}\cdot \cvec{\pi}\widetilde{N}\right] \text{ ,}  \label{19.5.65}
+\end{align}%
+其中$\delta m_{p}$和$\delta m_{n}$是夸克质量项(\ref{19.4.34})对质子质量和中子质量的修正. 它对$\pi$介子-核子散射长度的贡献是(依旧写成核子同位旋空间中的矩阵):
+\begin{equation}
+\delta M_{ba}=\frac{2[\delta m_{p}+\delta m_{n}]}{F_{\pi }^{2}}\delta _{ab}+%
+\frac{2[\delta m_{p}-\delta m_{n}]}{F_{\pi }^{2}}(t_{a}\delta
+_{3b}+t_{b}\delta _{3a})\text{ .}  \label{19.5.66}
+\end{equation}%
+
+方程(\ref{19.5.65})中的第一项通常被称为``$\sigma$-项''. 第二项是对$\sigma$-项的同位旋破缺修正, 这一项仅会在包含中性$\pi$介子的过程中显现出来, 例如电荷交换过程$\pi^{+}+n\to\pi^{0}+p$和$\pi^{-}+p\to\pi^{0}+n$. 即使无法直接测量核子质量偏移$\delta m_{p,n}$, 我们会在19.7节看到, $SU(3)$对称性使得我们可以从超子质量差中计算出它们的质量差. 这给出%
+$\delta m_{p}-\delta m_{n}=-2.5\,\mathrm{MeV}$. 不幸的是, 对于方程(\ref{19.5.65})中第一项的系数$\delta m_{p}+\delta m_{n}$, 我们还没有一个可信的理论估计.
+
+方程(\ref{19.4.34})表明, 在量子色动力学中, 方程(\ref{19.5.66})中的系数$\delta m_{p}+\delta m_{n}$和$\delta m_{p}-\delta m_{n}$分别正比于$m_{u}+m_{d}$和$m_{u}-m_{d}$. 我们会在19.7节证明, $m_{u}$和$m_{d}$根本不是简并的, 所以这些系数大约是同一量级; 对$\sigma$-项的同位旋破缺修正并不是远小于$\sigma$-项本身. 我们会再次看到, 同位旋守恒在强子物理中是一个好近似不仅是因为$u$夸克和$d$夸克的质量近似相等, 还由于它们的质量很小.
+
+这里所使用的类似于(\ref{19.5.19})或(\ref{19.5.49})的拉格朗日量是{\kai{有效场论}}方法中的一个例子, 我们在12.3节就引入了它. 类似的技巧已经用于处理包含奇异粒子的介子-重子相互作用(参看19.7节), 夸克和轻子在能量低于电弱对称性破缺能标时的相互作用(参看21.3节), 它甚至还被用来处理超导问题(参看21.6节).
+在所有这些情况中, 就解出量子场论潜在的广义原理和对称性所造成的效应而言, 有效场论提供了最方便的方法.
+\subsection*{* * *}
+
+破缺对称性所给出的低能定理与色散关系结合后会给出有用的求和的规则. 我们来看一下对于手征对称性这是如何运作的, 忽略比较小的$u$夸克, $d$夸克以及$\pi$介子质量. 考察无质量$\pi$介子在核子上的向前散射, 其中$\pi$介子携带同位旋矢量指标$a$以及4-动量$q$, 核子携带4-动量$p$, 散射后产生了携带同位旋矢量指标$b$的$\pi$介子. 由$S_{fi}=-2\uppi\mi\delta^{4}(P_{f}-P_{i})M_{fi}$定义的散射振幅$M$, 其在$q$的第一阶由图\ref{fig:19.3}的Feynman图给定为
+\begin{align}
+&-2\uppi \mi M =\frac{1}{(2\uppi )^{6}(2q^{0})}  \nonumber \\
+&\times \bar{u}\Bigg[\left( -\mi\frac{(2\uppi )^{4}2g_{A}\gamma _{5}t_{b}\slashed{q}}{F_{\pi }}%
+\right) \left( \frac{-\mi}{(2\uppi )^{4}}\frac{-\mi(\slashed{p}+\slashed{q})+m_{N}}{(p+q)^{2}+M^{2}}%
+\right) \left( \mi\frac{(2\uppi )^{4}2g_{A}\gamma _{5}t_{a}\slashed{q}}{F_{\pi }}\right)
+\nonumber \\
+&+\left( \mi\frac{(2\uppi )^{4}2g_{A}\gamma _{5}t_{a}\slashed{q}}{F_{\pi }}\right) \left(
+\frac{-\mi}{(2\uppi )^{4}}\frac{-\mi(\slashed{p}-\slashed{q})+m_{N}}{(p-q)^{2}+M^{2}}\right) \left( -\mi%
+\frac{(2\uppi )^{4}2g_{A}\gamma _{5}t_{b}\slashed{q}}{F_{\pi }}\right)   \nonumber \\
+&-4\mi\frac{t_{c}\epsilon _{abc}\slashed{q}}{F_{\pi }^{2}}\Bigg]u\text{ .}  \label{19.5.67}
+\end{align}
+到$q$的这一阶, 方括号内前两项的核子传播子可以近似为
+\[
+\frac{-\mi(\slashed{p}\pm \slashed{q})+m_{N}}{(p\pm q)^{2}+M^{2}}\approx \frac{-\mi\,\slashed{p}+m_{N}}{\pm
+2p\cdot q}\text{ .}
+\]%
+这样, 通过利用$\slashed{q}\,\slashed{q}=q^{2}=0$, $\bar{u}\gamma_{\mu}u=-\mi p\cdot q/m_{N}$以及$[t_{a},t_{b}]=\mi\epsilon_{abc}t_{c}$, 方程(\ref{19.5.67})可以进一步简化. 另外, 在实验室参考系下(对于较小的$q$, 这一参考系与质心参考系相同), 我们有$p\cdot q=-m_{N}\omega$, 其中$\omega\equiv q^{0}$是核子静止参考系中的$\pi$介子能量. 最后, 传统的向前散射振幅(它的绝对值平方是向前散射的微分截面)由方程(\textcolor{red}{3.6.9})给出, 为$f\equiv -4\uppi^{2}\omega M$. 将这些放在一起, 我们发现当$\omega \ll m_{N}$时, $\pi$介子能量$\omega$处的向前散射振幅给定为
+\begin{equation}
+f_{ba}(\omega )\rightarrow -\mi\frac{\omega }{\uppi F_{\pi }^{2}}%
+(1-g_{A}^{2})\epsilon _{abc}t_{c}\text{ .}  \label{19.5.68}
+\end{equation}%
+特别地, 对于$\pi^{+}$介子-质子散射, 我们必须要用$v_{b}^{\ast}v_{a}$收缩方程(\ref{19.5.68}), 并令$t_{3}=+\frac{1}{2}$, 其中$\cvec{v}$是归一化同位旋矢量$(1,\mi,0)/\sqrt{2}$. 这样, $\pi^{+}$介子-质子的低能向前散射振幅就是
+\begin{equation}
+f_{\pi ^{+}p}(\omega )\rightarrow -\frac{\omega }{2\uppi F_{\pi }^{2}}%
+(1-g_{A}^{2})\text{ .}  \label{19.5.69}
+\end{equation}%
+
+现在, 方程(\textcolor{red}{10.8.24})就给出了无质量$\pi^{+}$介子在质子上向前散射的色散关系(加上减除除多项式$P(E)\propto E$)
+\begin{align}
+f_{\pi ^{+}p}(\omega ) &=R+\frac{\mi\omega }{4\uppi }\sigma _{\pi ^{+}p}(\omega
+)  \nonumber \\
+&\quad+\frac{\omega }{4\uppi ^{2}}\int_{0}^{\infty }\left[ \frac{\sigma _{\pi
+^{+}p}(E)}{E-\omega }-\frac{\sigma _{\pi ^{-}p}(E)}{E+\omega }\right] \dif E%
+\text{ ,}  \label{19.5.70}
+\end{align}%
+其中$R$是可能的减除常数, $\omega$和$E$是质子静止参考系中的$\pi$介子能量. 对这一色散关系与低能极限(\ref{19.5.69})做一比较, 这给出$R=0$, 以及
+\begin{equation}
+g_{A}^{2}=1+\frac{F_{\pi }^{2}}{2\uppi }\int_{0}^{\infty }[\sigma _{\pi
+^{+}p}(E)-\sigma _{\pi ^{-}p}(E)]\,\dif E/E\text{ .}  \label{19.5.71}
+\end{equation}
+这是著名的Adler-Weisberger求和规则,\cite{19} 这里所对应的是手征对称性是精确对称性且$m_{\pi}=0$的情况. 对于$\pi$介子在任意重子或介子上的散射, 包含它在自身上的散射, 可以导出类似的求和规则.\cite{30a}
+
+\section{有效场论: 一般对称性的破缺}
+
+
+上一节所描述的构建有效拉格朗日量的技巧针对的是$SU(2)\times SU(2)$破缺到$SU(2)$的情况, 这一技巧很快就被推广\cite{31}至一般群$G$破缺到它的任意子群$H$的情况. 考察一个量子场论, 它的拉格朗日量在场$\psi_{n}(x)$的普通线性时空无关变换$g$下不变:
+\begin{equation}
+\psi _{n}(x)\rightarrow \sum_{m}g_{nm}\psi _{m}(x)\text{ ,}  \label{19.6.1}
+\end{equation}%
+而$g$构成任意的紧致Lie群$G$. 我们假定这一对称群自发破缺到对称变换的某个子群$H\subset G$, 该子群保持所有真空期望值不变: 对于$h\in H$,
+\begin{equation}
+\sum_{m}h_{nm}\langle \psi _{m}(x)\rangle _{\text{VAC}}=\langle \psi
+_{n}(x)\rangle _{\text{VAC}}\text{ .}  \label{19.6.2}
+\end{equation}%
+(我们不需要所有的$\psi$都是标量, 但显然只有标量会有不为零的期望值.) 在上一节开头的例子中, $G$是$SO(4)$群, 场$\psi_{n}$构成该群的4-矢表示, 而它们的期望值把$SO(4)$破缺至保持第4-轴不动的旋转子群$H=SO(3)$. 在一般情况下, 场$\psi_{n}$可能构成$G$的可约表示而非不可约表示, 就我们上一节的例子而言, 它在我们引入核子场后就变成了这样的情况.
+
+接下来, 我们将场空间中的任意一``点''$\psi_{n}$表示成$G$变换作用Goldstone模已经被消掉的场$\tilde{\psi}_{n}$:
+\begin{equation}
+\psi _{n}(x)=\sum_{m}\gamma _{nm}(x)\tilde{\psi}_{m}(x)\text{ .}
+\label{19.6.3}
+\end{equation}%
+例如, 在上一节中, $\gamma$就是我们称为$R$的$SO(4)$旋转, 而$\tilde{\psi}_{n}$所满足的条件是该4-矢的前三个分量为零.
+
+为了给出这个条件更一般的公式化表述, 我们假定用$G$的实表示进行处理. (这并没有丢失一般性, 原因是我们没有坚持使用不可约表示, 所以如果我们作为出发点的场构成$G$的复表示, 我们总可以把$\psi_{n}$取成这些复场的实部和虚部.) 正如19.2节所证明的, 质量矩阵的无质量本征矢正是矢量的线性独立组合$\sum_{m}[t^{\alpha}]_{nm}\langle\psi_{m}(0)\rangle_{\text{VAC}}$, 其中$t^{\alpha}$是$G$的生成元. (表示是实的意味着$\mi t^{\alpha}$是实的, $G$是紧致的意味着我们可以把表示选成幺正的, 进而这个表示同时是正交的, 这使得$t^{\alpha}$是虚的同时是反对称的.) 因此, $\tilde{\psi}_{n}$不包含Goldstone模这个条件可以公式化为
+\begin{equation}
+\sum_{nm}\tilde{\psi}_{n}(x)[t^{\alpha }]_{nm}\langle \psi _{m}(0)\rangle _{%
+\text{VAC}}=0\text{ .}  \label{19.6.4}
+\end{equation}%
+这里相互独立的条件个数是群$G$的维数减去子群$H$的维数, 其中对子群$H$的要求是它的生成元要湮灭$\langle\psi_{m}(0)\rangle_{\text{VAC}}$. 和上一节一样, 以这种方式被消掉的Goldstone玻色场会重新出现在用来参数化变换$\gamma_{nm}(x)$的场中, 这种场的个数正是%
+$\operatorname{dim}(G)-\operatorname{dim}(H)$. 一般而言, $\tilde{\psi}_{n}$会包含理论的所有重场, 包含那些时空对称性质与Goldstone玻色子不同的场(就像上一节的核子).
+
+有必要证明我们总可以选择变换$\gamma_{nm}(x)$使得方程(\ref{19.6.4})是满足的. 对于这个目的, 考察如下的量
+\begin{equation}
+V_{\psi }(g)\equiv \sum_{nm}\psi _{n}g_{nm}\langle \psi _{m}(0)\rangle _{%
+\text{VAC}}\text{ ,}  \label{19.6.5}
+\end{equation}%
+其中$g$的取值范围是$\psi_{n}$构成的实正交表示中的整个群$G$. 这显然是$g$的连续实函数, 而且由于这个群是紧致的, $V_{\psi}(g)$也是$g$的有界函数. 因此, 在每个时空点$x$, $V_{\psi(x)}(g)$会在某个群元处到达最大值, 我们称其为$\gamma(x)$. 当$g=\gamma(x)$时, $V_{\psi(x)}(g)$相对$g$的任意变分必须是稳定的. 然而, 群元$g$的任何无限小偏移总可以写成线性组合
+\[
+\delta g=\mi \sum_{\alpha }\epsilon _{\alpha }\,g\,t^{\alpha }\text{ ,}
+\]%
+其中$\epsilon_{\alpha}$是无限小的实系数, 它可以依赖于$g$. 这样, $V_{\psi(x)}(g)$相对$g=\gamma(x)$处的任意变分必须是稳定的条件就变成
+\begin{align*}
+0 &=\delta V_{\psi (x)}\Big( \gamma (x)\Big) =\mi\sum_{\alpha }\epsilon
+_{\alpha }\sum_{nml}\psi _{n}(x)\gamma _{nl}(x)\,t_{lm}^{\alpha }\langle \psi
+_{m}(0)\rangle _{\text{VAC}} \\
+&=\mi\sum_{\alpha }\epsilon _{\alpha }\sum_{nml}[\gamma ^{-1}(x)]_{ln }\psi
+_{n}(x)t_{lm}^{\alpha }\langle \psi _{m}(0)\rangle _{\text{VAC}}\text{ .}
+\end{align*}%
+它对于所有变分都必须是满足的, 因此对于所有的$\epsilon_{\alpha}$也必须是满足的, 因此我们看到当$\tilde{\psi}(x)=\gamma^{-1}(x)\psi(x)$时, 方程(\ref{19.6.4})是成立的, 这正是我们要证明的. 在拉格朗日量为(\ref{19.4.1})的纯玻色理论中, $\tilde{\psi}_{n}$是4-矢场$(0,0,0,\sigma)$. 这指向了真空期望值$\langle \psi_{n}\rangle$的方向, 但并非总是这样的情况.
+
+附带地, 在处理复场时, 没有必要把$\tilde{\psi}(x)$上的条件用它的实部和虚部表述出来.
+如果一组场$\chi(x)$按照$G$的某个复表示变换, 且该表示由厄米生成元$T^{\alpha}$生成, 那么在实表示中
+\[
+\psi (x)=\left(
+\begin{array}{c}
+\operatorname{Re}\chi (x) \\
+\operatorname{Im}\chi (x)%
+\end{array}%
+\right)
+\]%
+生成元是
+\[
+\mi\,t^{\alpha }=\left(
+\begin{array}{cc}
+-\operatorname{Im}T^{\alpha } & -\operatorname{Re}T^{\alpha } \\
+\operatorname{Re}T^{\alpha } & -\operatorname{Im}T^{\alpha }%
+\end{array}%
+\right) \text{ .}
+\]%
+那么, 直接以$T^{\alpha}$和$\chi(x)$的形式, 条件(\ref{19.6.4})可以表述成
+\[
+\operatorname{Im}\left( \tilde{\chi}(x)^{\dag }\,T^{\alpha }\,\langle \chi (0)\rangle _{%
+\text{VAC}}\right) =0\text{ .}
+\]
+
+由于只假定了该拉格朗日量在时空不相关的$G$变换下不变, 所以在经过变换(19.6.3)后, 我们会发现这个拉格朗日量会依赖于$\gamma(x)$和$\tilde{\psi}(x)$, 然而在每个$\gamma$-相关项中至少有一个导数. 正如已经提及的, 用来指定$\gamma(x)$的时空相关参量将扮演Goldstone玻色场的角色. 我们现在必须要来考察如何对$\gamma(x)$参数化.
+
+从一开始就必须要意识到: 方程(\ref{19.6.3})中$\gamma$的选择一般不是唯一的. 这是因为, 在方程(\ref{19.6.3})意义下, $\langle\psi_{m}(0)\rangle_{\text{VAC}}$是$H$-不变量, 那么, 对于方程所定义的量(\ref{19.6.2})而言, 在$g$右乘未破缺子群$H$的任意元素$h$后, 这个量是不变的:
+\begin{equation}
+V_{\psi }(g)=V_{\psi }(gh)\qquad\text{对于}\qquad h\in H\text{ .}
+\label{19.6.6}
+\end{equation}%
+由此得出, 如果$\gamma$使得$V_{\psi}(g)$最大化, 那么$\gamma h$也是如此, 这使得条件(\ref{19.6.4})对于$\tilde{\psi}=h^{-1}\gamma^{-1}\psi$和$\tilde{\psi}=\gamma^{-1}\psi$均是满足的. 因此, 迄今为止$\gamma$仅在相差右乘$H$中的一个元素的意义下是定义好的. (例如, 在上一节的例子中, 4-维旋转$R$可以右乘一个仅作用在4-矢的前三个分量上的旋转.) 如果两个群元$\gamma_{1}$和$\gamma_{2}$满足$\gamma_{1}=\gamma_{2}h$, 其中$h\in H$, 那么我们可以认为这两个群元是等价的. 由于这个关系有反身性(如何$\gamma_{1}$等价于$\gamma_{2}$, 那么$\gamma_{2}$等价于$\gamma_{1}$), 对称性($\gamma_{1}$等价于自身)和传递性(如果$\gamma_{1}$等价于$\gamma_{2}$, $\gamma_{2}$等价于$\gamma_{3}$, 那么$\gamma_{1}$等价于$\gamma_{3}$), 这个关系是等价关系. 因此, 群$G$的元素可以分成不相交的``等价类'', 组成每个等价类的元素$\gamma$仅相差右乘$H$中的一个元素. 这称为$G$相对于$H$的{\kai{右陪集}}. 我们所需要的是右陪集空间(记做$G/H$)的参数化.
+
+对于这个目的, 我们仅需从每个右陪集中选出一个代表元即可. 对于上一节的$SO(4)$对称性破缺到$SO(3)$, 将这些代表元选为由3-矢$\cvec{\zeta}$参数化的旋转$R$比较方便. 还有另一种选择, 这种选择对于任何的紧致子群$G$破缺到任何子群$H$都是适用的. 我们先把我们对$G$生成元的记号拓广至对称性破缺模型.
+$H$独立生成元的完备集记为$t_{i}$. 根据方程(\ref{19.6.2}), 它们满足
+\begin{equation}
+\sum_{m}(t_{i})_{nm}\,\langle \psi _{m}\rangle _{\text{VAC}}=0\text{ .}
+\label{19.6.7}
+\end{equation}%
+既然$H$是子群, 那么$t_{i}$构成子代数
+\begin{equation}
+\lbrack t_{i},t_{j}]=\mi \sum_{k}C_{ijk}t_{k}\text{ .}  \label{19.6.8}
+\end{equation}%
+我们把$G${\kai{剩余的}}独立生成元记做$x_{a}$, 并选择基使得结构常数全反对称. (这样的基对于紧致群总是存在的, 参看15.2节.) 既然方程(\ref{19.6.8})的右边没有出现$x_{a}$, 那么结构常数$C_{ija}$全为零, 再加上它们是全反对称的, 所以$C_{iaj}=0$, 这样,
+\begin{equation}
+\lbrack t_{i},x_{a}]=\mi\sum_{b}C_{iab}x_{b}\text{ .}  \label{19.6.9}
+\end{equation}%
+然而, $x$彼此之间的对易子{\kai{不}}一定是$t$的线性组合; 这依赖于$G$和$H$的性质, 以及$H$如何嵌入到$G$中的. (当$C_{abc}$为零时, 右陪集空间$G/H$被称为{\kai{对称空间}}). 一般而言, 我们可以写成
+\begin{equation}
+\lbrack x_{a},x_{b}]=\mi\sum_{i}C_{abi}t_{i}+\mi\sum_{c}C_{abc}x_{c}\text{ .}
+\label{19.6.10}
+\end{equation}%
+任何一组生成元, 若它们的对易关系形式与(\ref{19.6.8})---(\ref{19.6.10})相同, 那么它们被称为该Lie代数的{\textit{Cartan}}{\kai{分解}}. 手征$SU(2)\times SU(2)$Lie代数(\ref{19.4.9})---(\ref{19.4.11})就提供了一个例子, 而在这个例子中, $C_{abc}$碰巧为零.
+
+因为$t_{i}$和$x_{a}$张开了$G$的Lie代数, $G$的任何有限元素可以表示成
+\begin{equation}
+g=\exp \left[ \mi\sum_{a}\xi _{a}x_{a}\right] \exp \left[ \mi\sum_{i}\theta
+_{i}t_{i}\right] \text{ ,}  \label{19.6.11}
+\end{equation}%
+其中$\xi_{a}$和$\theta_{i}$是一组实参量. 但是方程(\ref{19.6.3})中的变换$\gamma(x)$迄今为止仅是在相差右乘$H$中的一个元素的意义下定义好的, 所以我们可以规定$\gamma$的定义, 取其为如下的形式.
+\begin{equation}
+\gamma (x)=\exp \left[ \mi\sum_{a}\xi _{a}(x)x_{a}\right] \text{ .}
+\label{19.6.12}
+\end{equation}%
+$\xi_{a}(x)$可以等同为(除去归一化后)Goldstone玻色场.
+
+在下文中, 我们假定已经从每个右陪集中选出了代表元, 并将其表示成一些参量$\xi_{a}$的连续函数$\gamma(\xi)$. 方程(\ref{19.6.12})在一般情况下提供了一个清晰的例子, 但是我们并不把自身限制在这一参数化下.
+
+现在, 假定我们用方程(\ref{19.6.3})把拉格朗日量中的所有$\psi(x)$场替换成$\gamma(x)\tilde{\psi}(x)$. 场的导数给定为
+\begin{equation}
+\partial _{\mu }\psi (x)=\gamma (x)\Big[ \partial _{\mu }\tilde{\psi}%
+(x)+(\gamma ^{-1}(x)\partial _{\mu }\gamma (x))\tilde{\psi}(x)\Big] \text{
+.}  \label{19.6.13}
+\end{equation}%
+因此, 当我们把拉格朗日量表示成$\tilde{\psi}$而非$\psi$时, Goldstone玻色场会凭借$\gamma^{-1}(x)\partial_{\mu}\gamma(x)$对$\xi_{a}(x)$及其导数的依赖而出现.
+
+像$\gamma(x)$这样的群元, 它的任意变分可以写成它自身乘以该群生成元的线性组合. 在我们的基下, 我们可以将其写成
+\begin{equation}
+\gamma ^{-1}(x)\partial _{\mu }\gamma (x)=\mi\sum_{a}x_{a}D_{a\mu
+}(x)+\mi\sum_{i}t_{i}E_{i\mu }(x)\text{ ,}  \label{19.6.14}
+\end{equation}%
+其中$D_{a\mu}$和$E_{i\mu}$采取如下的形式
+\begin{align}
+D_{a\mu }(x) &=\sum_{b}D_{ab}\Big( \xi (x)\Big) \partial _{\mu }\xi
+_{b}(x)\text{ ,}  \label{19.6.15} \\
+E_{i\mu }(x) &=\sum_{b}E_{ib}\Big( \xi (x)\Big) \partial _{\mu }\xi
+_{b}(x)\text{ .}  \label{19.6.16}
+\end{align}
+因此, Goldstone玻色场将会经由$D_{a\mu}(x)$和$E_{i\mu}(x)$(以及它们的导数)的出现进入到拉格朗日量中. 注意到, 当破缺对称性是精确对称性时, $\xi$的每个相互作用至少会包含一个导数, 所以拉格朗日量中不可能出现质量项$m^{2}_{ab}\xi_{a}\xi_{b}$, 并且当Goldstone玻色子4-动量为零时, 所有这些相互作用为零.
+
+即使我们不知道潜在拉格朗日量的细节, 关于$D_{a\mu}$和$E_{i\mu}$是以何种方式出现在变换后的拉格朗日量的, 我们可以从它们的变换性质中获得大量信息. 在群$G$的任意群元$g$的作用下, 原始场$\psi$按照方程(\ref{19.6.1})变换:
+\begin{equation}
+\psi (x)\rightarrow \psi ^{\prime }(x)=g\psi (x)=g\gamma \Big( \xi
+(x)\Big) \tilde{\psi}(x)\text{ .}  \label{19.6.17}
+\end{equation}%
+现在, $g\gamma(\xi)$是群$G$的元素, 所以它必须与某个$\gamma(\xi^{\prime})$处在同一个右陪集中, 因而它可以写成如下的形式,
+\begin{equation}
+g\gamma \Big( \xi (x)\Big) =\gamma \Big( \xi ^{\prime }(x)\Big)
+h\Big( \xi (x),g\Big) \text{ ,}  \label{19.6.18}
+\end{equation}%
+其中$h$是未破缺子群$H$中的元素. 将其代入方程(\ref{19.6.17}), 我们发现$\psi^{\prime}(x)$变成(\ref{19.6.3})的形式
+\begin{equation}
+\psi ^{\prime }(x)=\gamma \Big( \xi ^{\prime }(x)\Big) \tilde{\psi}%
+^{\prime }(x)\text{ ,}  \label{19.6.19}
+\end{equation}%
+其中$\xi^{\prime}(x)$由方程(\ref{19.6.18})定义, 并且
+\begin{equation}
+\tilde{\psi}^{\prime }(x)\equiv h\Big( \xi (x),g\Big) \tilde{\psi}(x)%
+\text{ .}  \label{19.6.20}
+\end{equation}%
+在上一节开头的例子中, $\tilde{\psi}$由单个同位旋标量$\sigma$组成, 并且, 由于它在未破缺的同位旋子群下是不变的, 它同时是手征不变量. 更一般的, 我们发现这里的$\tilde{\psi}(x)$不一定在一般的$G$变换下不变, 但是它的$G$变换只依赖于它在子群$H$下的变换. 在上一节中, 我们在引入核子场时看到了这一点; 在一般的无限小破缺手征对称变换下, 场$\widetilde{N}$按照场相关的同位旋旋转(\ref{19.5.45})变换.
+
+对于原始场$\psi_{n}$上的特定线性$G$变换, 方程(\ref{19.6.18})和(\ref{19.6.20})所指定的$\xi\to\xi^{\prime}$和$\tilde{\psi}\to\tilde{\psi}^{\prime}$的%
+变换规则并没有给这个变换的性质提供参考信息. 事实也的确如此, 为了导出这些变换规则, 我们没有必要要求作为出发点的拉格朗日量在线性$G$变换下不变. 给定任意一组场, 要求群$G$以线性或非线性的方式作用在上面, 并且$G$有一个保持一组特定的场值(它们的真空期望值)不变的子群$H$, 我们(至少在特定场值的有限邻域内)总可以用一组$\xi_{a}$和$\tilde{\psi}_{n}$表示这些场, 而$\xi_{a}$和$\tilde{\psi}_{n}$在$G$下的变换规则就是方程(\ref{19.6.18})和(\ref{19.6.20})所定义的标准实现%
+$\xi\to\xi^{\prime}$和$\tilde{\psi}\to\tilde{\psi}^{\prime}$. 这一实现的唯一性十分重要, 这一点首先是对$SU(2)\times SU(2)$破缺到$SU(2)$的情况\cite{25}给出了证明, 然后推广至一般Lie群破缺至它的任意子群的情况.\cite{31} 为了简化讨论, 我们注意到, 对于任意一组场, 若它们按照任意紧致Lie群$G$的非线性实现进行变换, 那么总可以定义这些场(以及可能的额外场\footnote{例如, 极角$\theta$和方位角$\varphi$构成了$SO(3)$的非线性实现; 通过增加变量$r$, 我们可以构建在$SO(3)$下线性变换的量$x_{1}$, $x_{2}$和$x_{3}$.})的函数, 使得这些函数在$G$下线性变换.\cite{32} 从这一线性实现出发, 本节的讨论使得我们可以用变换规则(\ref{19.6.18})和(\ref{19.6.20})来构建$\xi$场和$\tilde{\psi}$场.
+
+
+尽管对于一般的$g\in G$, $\xi(x)$和$\tilde{\psi}(x)$的变换比较复杂, 但是当$g$本身是未破缺子群$H$中的成元$h$时, 情况会简单得多. 通常总可能选择Goldstone玻色场$\xi_{a}(x)$, 使得它按照未破缺子群$H$的某个{\kai{线性}}表示$\mathscr{D}_{ab}(h)$进行变换:
+\begin{equation}
+h\gamma (\xi )h^{-1}=\gamma \Big( \mathscr{D}(h)\xi \Big) \text{ .}  \label{19.6.21}
+\end{equation}%
+例如, 对于上一节所用的陪集空间$SO(4)/SO(3)$, 在它的参数化中, Goldstone玻色场$\zeta_{a}$构成同位旋3-矢.
+对于适用范围更广的基于方程(\ref{19.6.12})的参数化, 对易关系(\ref{19.6.9})表明$x_{a}$在$H$下线性变换:
+\begin{equation}
+hx_{b}h^{-1}=\sum_{a}\mathscr{D}_{ba}(h)x_{a}\text{ ,}  \label{19.6.22}
+\end{equation}%
+由此可以立即得出方程(\ref{19.6.21}). %
+比较方程(\ref{19.6.21})和方程(\ref{19.6.18}), 我们看到对于$g=h\in H$,
+\begin{align}
+\xi _{a}^{\prime }(x) &=\sum_{b}\mathscr{D}_{ab}(h)\xi _{b}(x)\text{ ,}
+\label{19.6.23} \\
+\tilde{\psi}_{n}^{\prime }(x) &=\sum_{m}h_{nm}\tilde{\psi}_{m}(x)\text{ .}
+\label{19.6.24}
+\end{align}
+换句话说, $\xi_{a}$和$\tilde{\psi}_{n}$在$H$下分别按照表示$\mathscr{D}_{ab}(h)$和$h_{nm}$自身变换.
+
+我们现在必须要考察如何构建在变换(\ref{19.6.18})和(\ref{19.6.20})下不变的最一般拉格朗日量. 对于一般的$g\in G$, 变换$\xi \to \xi^{\prime}$是非线性的且非常复杂, 这使得$\xi_{a}(x)$只能凭借$D_{a\mu}(x)$和$E_{i\mu}(x)$这样的量出现在拉格朗日量中.
+幸运的是, 这些量的变换规则十分简单. 对方程(\ref{19.6.18})相对$x^{\mu}$微分一次并左乘它的逆. 这给出
+\begin{align*}
+\gamma ^{-1}\Big( \xi (x)\Big) \partial _{\mu }\gamma \Big( \xi
+(x)\Big)  &=\left[ g\gamma \Big( \xi (x)\Big) \right] ^{-1}\partial
+_{\mu }\Big[ g\gamma \Big( \xi (x)\Big) \Big]  \\
+&=h^{-1}\Big( \xi (x),g\Big) \gamma ^{-1}\Big( \xi ^{\prime }(x)\Big)
+\partial _{\mu }\Big[ \gamma \Big( \xi ^{\prime }(x)\Big) h\Big( \xi
+(x),g\Big) \Big]  \\
+&=h^{-1}\Big( \xi (x),g\Big) \Big[ \gamma ^{-1}\Big( \xi ^{\prime
+}(x)\Big) \partial _{\mu }\gamma \Big( \xi ^{\prime }(x)\Big) \Big]
+h\Big( \xi (x),g\Big)  \\
+&\quad+h^{-1}\Big( \xi (x),g\Big) \partial _{\mu }h\Big( \xi (x),g\Big)
+\end{align*}%
+因而
+\begin{align}
+\gamma ^{-1}\Big( \xi ^{\prime }(x)\Big) \partial _{\mu }\gamma \Big(
+\xi ^{\prime }(x)\Big)  &=h\Big( \xi (x),g\Big) \Big[ \gamma
+^{-1}\Big( \xi (x)\Big) \partial _{\mu }\gamma \Big( \xi (x)\Big) %
+\Big] h^{-1}\Big( \xi (x),g\Big)   \nonumber \\
+&\quad-\Big[ \partial _{\mu }h\Big( \xi (x),g\Big) \Big] h^{-1}\Big( \xi
+(x),g\Big) \text{ .}  \label{19.6.25}
+\end{align}%
+方程(\ref{19.6.14})所给出的$\gamma^{-1}\partial_{\mu}\gamma$是$x$和$t$的线性组合. 另外, 方程(\ref{19.6.25})右边的第二项仅是$t$的线性组合. 既然$x_{a}$和$t_{i}$全是互相独立的, 方程(\ref{19.6.25})两边每个生成元的系数必须全部相等:
+\begin{align}
+\sum_{a}x_{a}D_{a\mu }^{\prime } &=h(\xi ,g)\left( \sum_{a}x_{a}D_{a\mu
+}\right) h^{-1}(\xi ,g)\text{ ,}  \label{19.6.26} \\
+\sum_{i}t_{i}E_{i\mu }^{\prime } &=h(\xi ,g)\left( \sum_{i}t_{i}E_{i\mu
+}\right) h^{-1}(\xi ,g)\text{ ,}  \nonumber \\
+&\quad+\mi \Big[ \partial_{\mu}h(\xi,g)\Big] h^{-1}(\xi,g)    \label{19.6.27}
+\end{align}%
+或者, 更细致一些,
+\begin{align}
+D_{a\mu }^{\prime }(x) &=\sum_{b}\mathscr{D}_{ab}\Big( h\Big( \xi (x),g\Big)
+\Big) D_{b\mu }(x)\text{ ,}  \nonumber \\
+E_{i\mu }^{\prime }(x) &=\sum_{j}\mathscr{E}_{ij}\Big( h\Big( \xi (x),g\Big)
+\Big) E_{j\mu }(x)  \nonumber \\
+&\quad-\sum_{b}\mathscr{H}_{ib}\Big( h\Big( \xi (x),g\Big) \Big) \,\partial _{\mu }\xi
+_{b}(x)\text{ ,}  \label{19.6.28}
+\end{align}%
+其中$D_{a\mu}$和$E_{i\mu}$由方程(\ref{19.6.15})和(\ref{19.6.16})定义, 并且
+\[
+\Big[ \partial _{\mu }h\Big( \xi (x),g\Big) \Big] h^{-1}\Big( \xi
+(x),g\Big) =\mi\sum_{ib}\mathscr{H}_{ib}\Big( \xi (x) \Big)
+t_{i}\partial _{\mu }\xi _{b}(x)\text{ ,}
+\]%
+\[
+h\,t_{j}\,h^{-1}=\sum_{i}\mathscr{E}_{ij}(h)t_{i}\text{ ,}
+\]%
+而$\mathscr{D}_{ab}$由方程(\ref{19.6.22})定义. 我们看到$D_{a\mu}(x)$是Goldstone玻色场的``协变导数'', 它在一般群元$g\in G$下的变换很像场$\tilde{\psi}$: 尽管分属不同的表示, 但都投射到$H$变换$h(\xi(x),g)$. 例如, 在上一节的$SO(4)$理论中, $\pi$介子场$\cvec{\zeta}$的协变导数是$\partial_{\mu}\cvec{\zeta}/(1+\cvec{\zeta}{}^{2})$, 它在无限小手征变换下的变换是同位旋旋转(\ref{19.5.15}).
+
+另一方面, $E_{j\mu}(x)$的变换是非齐次的, 很像规范场. 方程(\ref{19.6.28})中的额外项可以用$\tilde{\psi}$导数中的非齐次项抵消.  对方程(\ref{19.6.20})微分一次, 我们有
+\[
+\partial _{\mu }\tilde{\psi}^{\prime }(x)=h\Big( \xi (x),g\Big) \Big[
+\partial _{\mu }\tilde{\psi}(x)+h^{-1}\Big( \xi (x),g\Big) \partial _{\mu
+}h\Big( \xi (x),g\Big) \tilde{\psi}(x)\Big] \text{ .}
+\]%
+与方程(\ref{19.6.27})相结合, 这给出
+\begin{equation}
+\Big( \mathscr{D}_{\mu }\tilde{\psi}(x)\Big) ^{\prime }=h\Big( \xi (x),g\Big)
+\mathscr{D}_{\mu }\tilde{\psi}(x)\text{ ,}  \label{19.6.29}
+\end{equation}%
+其中$\mathscr{D}_{\mu}\tilde{\psi}$是重粒子场的协变导数:
+\begin{equation}
+\mathscr{D}_{\mu }\tilde{\psi}(x)\equiv \partial _{\mu }\tilde{\psi}%
+(x)+\mi\sum_{i}t_{i}E_{i\mu }(x)\tilde{\psi}(x)\text{ .}  \label{19.6.30}
+\end{equation}
+(在$SO(4)$破缺到$SO(3)$的情况中, 方程(\ref{19.5.47})就提供了这种导数的一个例子.) {\kai{任何拉格朗日量, 若它在未破缺子群$H$下不变, 并且它是用$\tilde{\psi}$, $\mathscr{D}_{\mu}\tilde{\psi}$和$D_{a\mu}$构建的, 那么它在整个群$G$下不变.}}
+
+可重整性不是这里担心的问题, 所以我们也可考察包含多个时空导数的量. 其中的一个例子是$\mathscr{D}_{\nu}\mathscr{D}_{\mu}\tilde{\psi}$, 它通过重复操作(\ref{19.6.30})获得:
+\begin{equation}
+\mathscr{D}_{\nu }\mathscr{D}_{\mu }\tilde{\psi}=\Bigg[ \partial _{\nu }+\mi\sum_{j}t_{j}E_{j\nu }%
+\Bigg] \left[ \partial _{\mu }+\mi\sum_{i}t_{i}E_{i\mu }\right] \tilde{\psi}%
+\text{ .}  \label{19.6.31}
+\end{equation}%
+它的变换和$\mathscr{D}_{\mu}\tilde{\psi}$一样
+\begin{equation}
+(\mathscr{D}_{\nu }\mathscr{D}_{\mu }\tilde{\psi})^{\prime }=h(\xi ,g)\mathscr{D}_{\nu }\mathscr{D}_{\mu }\tilde{\psi%
+}\text{ .}  \label{19.6.32}
+\end{equation}%
+其它协变量可以用协变Goldstone玻色子导数(\ref{19.6.15})的协变导数构建, 这种量的定义很像(\ref{19.6.30}), 但是要把$t_{i}$替换成由$x_{a}$所构建的$H$表示中的相应矩阵:
+\begin{equation}
+\mathscr{D}_{\nu }D_{a\mu }=\partial _{\nu }D_{a\mu }+\sum_{ib}C_{iab}E_{i\nu }D_{b\mu
+}\text{ ,}  \label{19.6.33}
+\end{equation}%
+它的变换和$D_{a\mu}$一样:
+\begin{equation}
+(\mathscr{D}_{\nu }D_{a\mu })^{\prime }=\sum_{b}\mathscr{D}_{ab}(h,g)\mathscr{D}_{\nu }D_{b\mu }\text{ .}
+\label{19.6.34}
+\end{equation}%
+另外, 通过对$E_{i\mu}$的导数做反对称化, 我们可以消掉(\ref{19.6.27})中的非齐次项. 这产生``曲率''
+\begin{equation}
+R_{i\mu \nu }\equiv \partial _{\nu }E_{i\mu }-\partial _{\mu }E_{i\nu
+}-\mi\sum_{j,k}C_{ijk}E_{j\mu }E_{k\nu }\text{ .}  \label{19.6.35}
+\end{equation}%
+这实际上并不是一个新量; 很容易看到``物质''场$\tilde{\psi}$的反对称协变导数正比于这一曲率
+\begin{equation}
+\lbrack \mathscr{D}_{\nu },\mathscr{D}_{\mu }]\tilde{\psi}=\sum_{i}t_{i}\,R_{i\mu \nu }\tilde{\psi}%
+\text{ .}  \label{19.6.36}
+\end{equation}%
+当然, 通过取$\mathscr{D}_{\mu}\tilde{\psi}$和$D_{a\mu}$的高阶协变导数, 我们可以继续这一过程, 进而构造出更多的协变量.
+
+值得注意的是, 一旦给定了群$G$和$H$, 并给定了陪集空间$G/H$的参数化, $D_{a\mu}$和$E_{i\mu}$就可以被彻底地计算出来, 而且它们并不依赖场$\psi_{n}$假定的变换性质, 也不依赖用来表示破缺对称群Lie代数的特定矩阵$x_{a}$和$t_{i}$. 例如, 在指数参数化(\ref{19.6.12})中, 这些协变量的幂级数展开中的前几项可以从方程(\ref{19.6.12})和(\ref{19.6.14})中轻松地计算出来
+\begin{align}
+D_{a\mu } &=\partial _{\mu }\xi _{a}+\tfrac{1}{2}\sum_{bc}C_{abc}\xi
+_{b}\partial _{\mu }\xi _{c}  \nonumber \\
+&\quad+\tfrac{1}{6}\sum_{bcd}\left[ \sum_{e}C_{cde}C_{bea}+\sum_{i}C_{cdi}C_{bia}%
+\right] \,\xi _{b}\xi _{c}\partial _{\mu }\xi _{d}  \nonumber \\
+&\quad+O(\xi ^{3}\partial _{\mu }\xi )\text{ ,}  \label{19.6.37} \\
+E_{i\mu } &=\tfrac{1}{2}\sum_{ab}C_{abi}\xi _{a}\partial _{\mu }\xi _{b}+%
+\tfrac{1}{6}\sum_{abcd}C_{acd}\,C_{bdi}\,\xi _{a}\xi _{b}\partial _{\mu }\xi _{c}
+\nonumber \\
+&\quad+O(\xi ^{3}\partial _{\mu }\xi )\text{ .}  \label{19.6.38}
+\end{align}
+为了构建包含Goldstone玻色场$\xi_{a}$以及一组重粒子场的最一般拉格朗日量, 我们需要知道的只有$G$到$H$的自发对称性破缺模式, 以及重粒子场在$H$而不是$G$下的变换性质: 这个拉格朗日量要取成$\tilde{\psi}$, $\mathscr{D}_{\mu}\tilde{\psi}$, $D_{a\mu}$以及高阶协变导数的最一般的$H$-不变函数.
+
+现在考察这样的情况: $G$下的对称性不仅是自发破缺的, 甚至本来就不是精确的. 假定在初始拉格朗日量中有一项$\Delta\mathscr{L}$, 它在线性变换$\psi\to g\psi$的群$G$下{\kai{不是}}不变的, 而是像$G$的某个(可约或不可约)表示的分量的线性组合那样进行变换. 即, 我们取
+\begin{equation}
+\Delta \mathscr{L}=\sum_{A}c_{A}\mathcal{O}_{A}\text{ ,}  \label{19.6.39}
+\end{equation}%
+其中$\mathcal{O}_{A}$在$G$下按照某个表示$D[g]_{AB}$变换:
+\begin{equation}
+\mathcal{O}_{A}\rightarrow \sum_{B}D[g]_{AB}\mathcal{O}_{B}\text{ .}  \label{19.6.40}
+\end{equation}%
+如果我们现在用$\xi_{a}$和$\tilde{\psi}$替换场$\psi$, 拉格朗日量中的这一项依旧会采取(\ref{19.6.39})的形式, 但是方程(\ref{19.6.40})现在变成
+\begin{equation}
+\mathcal{O}_{A}\Big[ f_{a}(\xi ,g),h(\xi ,g)\tilde{\psi}\Big] =%
+\sum_{B}D[g]_{AB}\,\mathcal{O}_{B}\Big[ \xi ,\tilde{\psi}\Big] \text{ ,}
+\label{19.6.41}
+\end{equation}%
+其中$f_{a}(\xi,g)$是给$\xi_{a}$作用$g$变换后的结果, 由方程(\ref{19.6.18})定义:
+\begin{equation}
+g\gamma \left( \xi \right) =\gamma \Big( f(\xi ,g)\Big) h(\xi ,g)\text{ .}
+\label{19.6.42}
+\end{equation}%
+我们将会看到, 找到满足方程(\ref{19.6.41})的算符集是很容易, 并且, 在指定好$\tilde{\psi}$的特定$H$-不变函数后, 这个解是唯一的.
+
+首先, 考察$\xi_{a}=0$且$g=\gamma(\xi^{\prime})$的情况. 在这一情况下有$g\gamma(\xi)=\gamma(\xi^{\prime})$, 所以
+\[
+f_{a}\Big( 0,\gamma (\xi ^{\prime })\Big) =\xi _{a}^{\prime }\text{ ,}\qquad\qquad h\Big( 0,\gamma (\xi ^{\prime })\Big) =1\text{ .}
+\]%
+将其代入方程(\ref{19.6.41}), 我们发现(去掉撇号):
+\begin{equation}
+\mathcal{O}_{A}\Big[ \xi _{a},\tilde{\psi}\Big] =\sum_{B}D[\gamma (\xi )]_{AB}\,\mathcal{O}_{B}%
+\Big[ 0,\tilde{\psi}\Big] \text{ .}  \label{19.6.43}
+\end{equation}%
+如果我们知道算符$\mathcal{O}_{A}$在$\xi_{a}=0$时的形式, 那么对于所有的$\xi_{a}$, 这给出了算符$\mathcal{O}_{A}[\xi_{a},\tilde{\psi}]$.
+
+现在取$\xi_{a}=0$, $g$则取成未破缺子群$H$中的元素$h$. 这时我们有$g\gamma(\xi)=h$, 所以
+\[
+f_{a}(0,h)=0\text{ ,}\qquad\qquad h(0,h)=h\text{ .}
+\]%
+将其代入方程(\ref{19.6.41}), 我们发现
+\begin{equation}
+\mathcal{O}_{A}\Big[ 0,h\tilde{\psi}\Big] =\sum_{B}D[h]_{AB}\,\mathcal{O}_{B}\Big[ 0,\tilde{%
+\psi}\Big] \text{ .}  \label{19.6.44}
+\end{equation}%
+换句话说, 当$\xi=0$时, $\mathcal{O}_{A}$在线性$H$变换下的变换必须与在$G$的表示(\ref{19.6.40})中发现的变换相同. (然而, 对于确定$G$表示(\ref{19.6.40})中所发现的各种不可约$H$表示的归一化而言, 这些毫无帮助; 其中的一些表示甚至可能完全不起作用.)
+
+最后, 我们注意到, 任意一组满足(\ref{19.6.44})的算符$\mathcal{O}$使得我们可以用方程(\ref{19.6.43})构建满足最一般的$G$变换规则%
+(\ref{19.6.40})的算符.
+利用方程(\ref{19.6.43})和(\ref{19.6.44}), 方程(\ref{19.6.41})的左边变成
+\begin{align*}
+\mathcal{O}_{A}\Big[ f_{a}(\xi ,g),h(\xi ,g)\tilde{\psi}\Big]  &=\sum_{B}D\Big[
+\gamma \Big( f(\xi ,g)\Big) \Big] _{AB}\,\mathcal{O}_{B}\Big[ 0,h(\xi ,g)\tilde{%
+\psi}\Big]  \\
+&=\sum_{BC}D\Big[ \gamma \Big( f(\xi ,g)\Big) \Big] _{AB}\,D[h(\xi
+,g)]_{BC}\,\mathcal{O}_{C}\Big[ 0,\tilde{\psi}\Big]  \\
+&=\sum_{B}D\Big[ \gamma \Big( f(\xi ,g)\Big) h(\xi ,g)\Big] _{AB}\,\mathcal{O}_{B}%
+\Big[ 0,\tilde{\psi}\Big]  \\
+&=\sum_{B}D[ g\gamma (\xi )] _{AB}\,\mathcal{O}_{B}\Big[ 0,\tilde{\psi}%
+\Big]  \\
+&=\sum_{B}D[g]_{AB}\,\mathcal{O}_{B}\Big[ \xi ,\tilde{\psi}\Big] \text{ ,}
+\end{align*}
+这正是我们所要证明的.
+
+作为一个例子, 考察上一节的$SO(4)$群自发破缺到$SO(3)$群, 并假定我们希望用Goldstone玻色场$\cvec{\zeta}(x)$和其它场$\tilde{\psi}(x)$构建的算符按照$SO(4)$的4-矢表示变换. 根据(\ref{19.6.43}), 它们必须采取如下的形式
+\[
+\mathcal{O}_{n}\Big[ \cvec{\zeta},\tilde{\psi}\Big] =R_{nm}(\cvec{\zeta})\,\mathcal{O}_{m}\Big[
+0,\tilde{\psi}\Big] \text{ ,}
+\]%
+其中$R$是方程(\ref{19.5.8})和(\ref{19.5.9})定义的$SO(4)$旋转:
+\[
+R_{a4}=\frac{2\zeta _{a}}{1+\cvec{\zeta}{}^{2}}\text{ ,}\qquad \qquad R_{44}=\frac{%
+1-\cvec{\zeta}{}^{2}}{1+\cvec{\zeta}{}^{2}}\text{ .}
+\]%
+如果我们把$R$的其它分量选为
+\[
+R_{ab}=\delta _{ab}-\frac{2\zeta _{a}\zeta _{b}}{1+\cvec{\zeta}{}^{2}}\text{ ,}\qquad \qquad R_{4a}=-\frac{2\zeta _{a}}{1+\cvec{\zeta}{}^{2}}\text{ ,}
+\]%
+那么$R$就满足正交矩阵的条件. 因此, 对于任何的标量(与赝标量相反)算符, 若它按照手征4-矢的第4分量和第3分量进行变换, 那么它必须以如下的形式出现在拉格朗日量中:
+\[
+\Phi _{4}^{+}\Big[ \cvec{\zeta},\tilde{\psi}\Big] =-\left( \frac{2\cvec{%
+\zeta}}{1+\cvec{\zeta}{}^{2}}\right) \cdot \cvec{\Phi}{}^{+}\Big[ 0,\tilde{\psi}%
+\Big] +\left( \frac{1-\cvec{\zeta}{}^{2}}{1+\cvec{\zeta}{}^{2}}\right) \Phi
+_{4}^{+}\Big[ 0,\tilde{\psi}\Big]
+\]%
+以及
+\[
+\Phi _{3}^{-}\Big[ \cvec{\zeta},\tilde{\psi}\Big] =\left[ \Phi _{3}^{-}%
+\Big[ 0,\tilde{\psi}\Big] -\left( \frac{2\zeta _{3}}{1+\cvec{\zeta}{}^{2}}%
+\right) \cvec{\zeta}\cdot \cvec{\Phi}{}^{-}\Big[ 0,\tilde{\psi}\Big] \right]
++\left( \frac{2\zeta _{3}}{1+\cvec{\zeta}{}^{2}}\right) \Phi _{4}^{-}\Big[ 0,%
+\tilde{\psi}\Big] \text{ .}
+\]%
+算符$\cvec{\Phi}{}^{+}[0,\tilde{\psi}]$, $\Phi^{+}_{4}[0,\tilde{\psi}]$, $\cvec{\Phi}{}^{-}[0,\tilde{\psi}]$%
+和$\Phi_{4}^{-}[0,\tilde{\psi}]$要满足的唯一条件是, 它们在Lorentz变换下分别是赝标量, 标量, 标量和赝标量, 而在同位旋变换下分别是同位旋矢量, 同位旋标量, 同位旋矢量和同位旋标量, 但它们没有必要以任何方式相互关联. %
+对于仅包含$\pi$介子的过程, 我们所使用的拉格朗日量不包含$\pi$介子场$\cvec{\zeta}$以外的场, 所以算符%
+$\cvec{\Phi}{}^{+}[0,\tilde{\psi}]$, $\cvec{\Phi}{}^{-}[0,\tilde{\psi}]$和$\Phi_{4}^{-}[0,\tilde{\psi}]$%
+必须全部为零, 而$\Phi_{4}^{+}[0,\tilde{\psi}]$则只是数值常数. 正如上一节所承诺的, 我们看到, 有效拉格朗日量中唯一的非导数手征对称性破缺算符正比于$(1-\cvec{\zeta}{}^{2})/(1+\cvec{\zeta}{}^{2})$, 因而正比于算符(\ref{19.5.34}). 为了引入同时是核子场双线性型的对称性破缺算符, 宇称手征以及同位旋守恒要求我们取
+\begin{align*}
+\cvec{\Phi}{}^{+}\Big[ 0,\widetilde{N}\Big]  &\propto \bar{\widetilde{N}\,}\!%
+\gamma _{5}\cvec{t}\widetilde{N}\text{ ,}&& \Phi _{4}^{+}\Big[ 0,%
+\widetilde{N}\Big] \propto \bar{\widetilde{N}\,}\!\widetilde{N}\text{ ,} \\
+\cvec{\Phi}{}^{-}\Big[ 0,\widetilde{N}\Big]  &\propto \bar{\widetilde{N}\,}\!%
+\cvec{t}\widetilde{N}\text{ ,}&&\Phi _{4}^{-}\Big[ 0,\widetilde{N}%
+\Big] \propto \bar{\widetilde{N}\,}\!\gamma _{5}\widetilde{N}\text{ .}
+\end{align*}%
+因此, 正如上一节所宣称的, 唯一的包含核子场双线性型的非导数对称性破缺项形式为(\ref{19.5.61})---(\ref{19.5.64}).
+
+若过程所包含的粒子3-动量很小, 唯像拉格朗日量就可用来计算这种过程的振幅, 而计算方法与上一节$\pi$介子和核子的手征理论所用的方法极其相似.
+在计数比较小的特征动量$Q$的幂次时, Goldstone玻色子内线总会贡献阶为$Q^{-2}$的因子. 另外, 对于场$\tilde{\psi}$所描述的(任意自旋的)重粒子, 它的一条内线在从Goldstone玻色场吸收净4-动量$q$后, 这条内线会有传播子
+\[
+\frac{N(p+q)}{(p+q)^{2}+M^{2}}\rightarrow \frac{N(p)}{2p\cdot q}
+\]%
+(其中$N$是多项式, 它依赖于粒子自旋以及场的类型, 而$M$是粒子质量)所以它会贡献一个阶为$Q^{-1}$的因子. 给出(\ref{19.5.55})的讨论在这里也是适用的, 对于给定的Feynman图, 他给出的$Q$的幂次是
+\begin{equation}
+\nu =\sum_{i}V_{i}(d_{i}+h_{i}/2-2)+2L-E_{h}/2+2\text{ ,}  \label{19.6.45}
+\end{equation}%
+其中$V_{i}$是$i$类顶角的个数, $d_{i}$是$i$类顶角中导数的个数(若破缺的是近似对称性 则是导数或Goldstone\\玻色子质量的个数), $h_{i}$是$i$类顶角中重粒子线的个数, $L$是圈的个数, 而$E_{h}$是重粒子外线的个数. 一般而言, 对于手征对称性所允许的一切相互作用, 系数$d_{i}+h_{i}/2-2$是非负的. 对于仅存在Goldstone玻色子之间的相互作用, 它们要么至少是协变导数(\ref{19.6.15})的双线性型, 要么正比于对称性破缺参量(例如上一节中的夸克质量), 而这些参量的量级是Goldstone玻色子质量的平方, 所以这些相互作用总有$d_{i}\geq2$. Goldstone玻色子与重粒子之间的相互作用必须包含协变导数(\ref{19.6.15})或(\ref{19.6.30}), 因而必须有$d_{i}\geq1$和$h_{i}\geq 2$. 使得$d_{i}+h_{i}/2<2$的相互作用只能是重粒子之间的三线性相互作用, 但是我们在所考察的图中所有的重强子都是非相对论性的, 所以这种相互作用被排除在外. 若所有相互作用均有$d_{i}+h_{i}/2\geq2$, 领头阶的图只能用那些$d_{i}+h_{i}/2=2$的相互作用进行构建并且不能包含圈. 修正依旧由那些含有多个导数和/或多个粒子场以及/或圈的相互作用给出.
+
+当内禀对称性没有破缺时, 只包含Goldstone玻色场的那部分拉格朗日量中$d_{i}=2$的项只有一个
+\begin{equation}
+\mathscr{L}_{\text{GB}}=-\frac{1}{2}\sum_{ab}F_{ab}^{2}D_{a\mu }D_{b}^{\mu }\text{ ,}
+\label{19.6.46}
+\end{equation}%
+其中$F_{ab}^{2}$是某个正定矩阵. 对于(\ref{19.6.12})以及一大类别的陪集参数化, 在$\xi_{a}\to 0$时, $\gamma(\xi)$趋于$1+\mi\xi_{a}x_{a}$, 所以方程(\ref{19.6.14})表明$D_{a\mu}$中的线性项只是$\partial_{\mu}\xi_{a}$. 那么, 动能拉格朗日量为$\frac{1}{2}\sum_{a}\partial_{\mu}\pi_{a}\partial^{\mu}\pi_{a}$的正则归一化Goldstone玻色场%
+$\pi_{a}$是
+\begin{equation}
+\pi _{a}=\sum_{b}F_{ab}\xi _{b}\text{ .}  \label{19.6.47}
+\end{equation}
+在上一节的$SO(4)$理论中, 生成元$x_{a}$和场$\xi_{a}$按照未破缺子群$H=SO(3)$的一个不可约表示变换, 所以在这一情况下$F_{ab}^{2}=F^{2}_{\pi}\delta_{ab}$, 而$F_{\pi}$是用来表征自发对称性破缺能量标度的常数. 在一般情况下, 我们可以(在不改变结构常数的前提下)选择生成元使得$F_{ab}^{2}$是对角的, 而这些对角元在$H$的每个不可约表示中都是相等的, 但在其它情况下则相互独立.
+
+\subsection*{* * *}
+我们已经看到如何从破缺对称群线性表示下的场出发构建出Goldstone玻色场的理论, 19.5节开头的$SU(2)\times SU(2)$4-矢$\phi_{n}(x)$就提供了一个例子. 当能量很低时, 唯一重要的自由度是Goldstone玻色子, 所以我们一般会扔掉场的非Goldstone部分, 例如方程(\ref{19.5.4})给出的$\sigma(x)$场. 但是在某些情况下, 我们必须要回到破缺对称群的整个线性表示, 在这种情况下, Goldstone场只是其中的一部分.
+
+如果我们通过变化温度或者增加外场的方式将一个系统带到二阶相变附近, 这样的情况就会发生, 在这样的情况下, 系统将会从破缺对称性光滑地过渡到未破缺的对称性.
+在相变的一边, 对称性是破缺的, 所以我们有无质量的Goldstone玻色子以及各种其它的有质量激发态, 它们一般无法构成构建破缺对称群线性表示所需要的完备多重态. 在相变的另一边, 对称性是未破缺的, 所以这时我们会有完备的线性多重态, 但它们一般不是无质量的. 如果这个相变是连续的, 那么在这个相变点附近, Goldstone玻色子必然是近无质量激发态构成的线性完备多重态的一部分. 除非偶然或是其它的对称性, 这个多重态会构成破缺对称群的{\kai{不可约}}表示. 场的这种不可约多重态被称为{\kai{序参量}}, 它仅在相变处才会变成无质量的.
+
+序参量的这种定义要比通常的定义更加精确. 通常所说的序参量是指任何一组期望值使得对称性破缺的场, 但这太含糊了------不存在这样的一组场, 使得我们可以把对称性的破缺归咎于这样场的期望值. 例如, 对于$u$夸克和$d$夸克无质量的量子色动力学, 它的$SU(2)\times SU(2)$对称性被$\bar{u}u+\bar{d}d$的期望值破坏了, 这是某个手征4-矢的第4分量, 但是夸克场的二次项或者更高次的项也会有非零的期望值, 并且它们属于$SU(2)\times SU(2)$的其它表示. 与之相反, 在$SU(2)\times SU(2)$变成未破缺对称性的光滑相变处, Goldstone玻色子只是$SU(2)\times SU(2)$的某个无质量表示的一部分, 而这为序参量提供了一个明确的定义.
+
+找到正确的序参量是十分重要的, 一方面是为了计算18.5节讨论的临界指数, 另一方面是为了处理像涡旋线或磁单极这样的构型, 我们会在21.6节和23.3节看到, 在这样的构型中, 当破缺对称性变成不破缺的对称性时会有一个奇点. 对于量子色动力学的手征$SU(2)\times SU(2)$对称性, 它的序参量通常假定是一个手征4-矢, 但真实情况是否的确如此, 这依旧是不清楚的.\cite{32a}
+\section{有效场论: $SU(3)\times SU(3)$}
+
+在20世纪60年代早期, 核物理的近似$SU(2)$同位旋对称性被Gell-Mann\cite{33}和Ne'eman\cite{34}推广至更加精确的$SU(3)$对称性, 这一对称性将已知的重子和介子划分到各种不可约表示之中: $1/2^{+}$重子$p$, $n$, $\Lambda^{0}$, $\Sigma^{\pm,0}$, $\Xi^{-,0}$的八重态; $0^{-}$介子$K^{+,0}$, $\pi^{\pm,0}$, $\eta^{0}$, $\overline{K}^{-,0}$的八重态; $1^{-}$介子$K^{\ast+,0}$, $\rho^{\pm,0}$, $\omega$, $\overline{K^{\ast}}^{-,0}$的八重态; 以及$3/2^{+}$重子$\Delta^{++,+,0,-}$, $\Sigma^{\ast+,0,-}$, $\Xi^{\ast0,-}$, $\Omega^{-}$的十重态.\footnoteB{这里的$1/2^{+}$, $0^{-}$, $1^{-}$等指的是$J^{P}$记法, 数字代表是的粒子总自旋$J$, 而$\pm$指的是粒子的宇称$P$.    \qquad    ------译者注}
+($\eta$和$\Omega$在当时还未发现.) 手征$SU(2)\times SU(2)$对称性在20世纪60年代中期取得了巨大成功, 在这之后, 人们很自然地假定强相互作用也遵循近似的$SU(3)\times SU(3)$对称性, 而这个对称性像$SU(2)\times SU(2)$一样自发破缺到它的对角子群, 即Gell-Mann和Ne'eman的$SU(3)$群. 因此, 在量子色动力学出现之后, 这种对称性产生的原因就变得十分清楚了: 存在3个而不2个非常轻的夸克; $u$夸克, $d$夸克, 以及第3个夸克$s$, $s$同$d$一样带有电荷$-1/3$. 在这一情况下, $SU(3)\times SU(3)$对称性由作用在$u,d,s$夸克场左手部分和右手部分上相互独立的$SU(3)$变换构成(类比方程(\ref{19.4.2})):
+\begin{equation}
+\left(
+\begin{array}{c}
+u \\
+d \\
+s%
+\end{array}%
+\right) \rightarrow \exp \left[ \mi\sum_{a}(\theta _{a}^{V}\lambda _{a}+\theta
+_{a}^{A}\lambda _{a}\gamma _{5})\right] \left(
+\begin{array}{c}
+u \\
+d \\
+s%
+\end{array}%
+\right) \text{ ,}  \label{19.7.1}
+\end{equation}%
+其中$\lambda_{a}$是无迹厄密矩阵的完备集:
+\begin{align}
+\lambda _{1} &=\left(
+\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0%
+\end{array}%
+\right) \text{ ,}\qquad\lambda _{2}=\left(
+\begin{array}{ccc}
+0 & -\mi & 0 \\
+\mi & 0 & 0 \\
+0 & 0 & 0%
+\end{array}%
+\right) \text{ ,}\qquad\lambda _{3}=\left(
+\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & 0%
+\end{array}%
+\right) \text{ ,}  \nonumber \\
+\lambda _{4} &=\left(
+\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & 0%
+\end{array}%
+\right) \text{ ,}\qquad\lambda _{5}=\left(
+\begin{array}{ccc}
+0 & 0 & -\mi \\
+0 & 0 & 0 \\
+\mi & 0 & 0%
+\end{array}%
+\right) \text{ ,}\qquad\lambda _{6}=\left(
+\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0%
+\end{array}%
+\right) \text{ ,}  \nonumber \\
+\lambda _{7} &=\left(
+\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & -\mi \\
+0 & \mi & 0%
+\end{array}%
+\right) \text{ ,}\qquad\lambda _{8}=\frac{1}{\sqrt{3}}\left(
+\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & -2%
+\end{array}%
+\right) \text{ ,}  \label{19.7.2}
+\end{align}%
+它们的归一化使得$\operatorname{Tr}(\lambda_{a}\lambda_{b})=2\delta_{ab}$. 因此, $SU(3)\times SU(3)$的生成元在夸克场上表示成未破缺$SU(3)$对称性的生成元$t_{a}=\lambda_{a}$以及破缺对称性的生成元%
+$x_{a}=\lambda_{a}\gamma_{5}$.
+
+为了定义Goldstone玻色子并解出它们的变换性质, 我们注意到, 在夸克场所构成的表示中, 任何$SU(3)\times SU(3)$变换可以写成未破缺$SU(3)$子群中的变换$\exp(\mi\sum_{a}\theta_{a}\lambda_{a})$乘以%
+$\exp(-\mi\gamma_{5}\sum_{a}\xi_{a}\lambda_{a})$.
+(在$\xi$前面插入负号是为了方便之后用这个场的分量比较19.5节引入的$\pi$介子场.)
+因此在这个表示下, $SU(3)\times SU(3)/SU(3)$的每个右陪集都由它内部的一个形为$\gamma(\xi)=\exp(-\mi\gamma_{5}\sum_{a}\xi_{a}\lambda_{a})$的矩阵%
+表示, 在去掉归一化后, 这些右陪集的参量$\xi_{a}$可以取成我们的Goldstone玻色场. 根据方程(\ref{19.6.18}), 这些场的变换规则满足
+\begin{align}
+&\exp \left[ \mi\sum_{a}(\theta _{a}^{V}\lambda _{a}+\theta _{a}^{A}\lambda
+_{a}\gamma _{5})\right] \exp \left( -\mi\gamma _{5}\sum_{a}\xi _{a}(x)\lambda
+_{a}\right)   \nonumber \\
+&\qquad=\exp \left( -\mi\gamma _{5}\sum_{a}\xi _{a}^{\prime }(x)\lambda _{a}\right)
+\exp \left( \mi\sum_{a}\theta _{a}(x)\lambda _{a}\right)   \label{19.7.3}
+\end{align}%
+其中$\theta_{a}(x)$是$\theta^{V}$, $\theta^{A}$和$\xi(x)$的某个函数. 另外, 根据方程(\ref{19.6.3}), 无Goldstone分量的夸克场$\tilde{q}(x)$在这里定义成
+\begin{equation}
+q(x)\equiv \left(
+\begin{array}{c}
+u(x) \\
+d(x) \\
+s(x)%
+\end{array}%
+\right) =\exp \left( -\mi\gamma _{5}\sum_{a}\xi _{a}(x)\lambda _{a}\right)
+\tilde{q}(x)  \label{19.7.4}
+\end{equation}%
+而它的变换性质由方程(\ref{19.6.24})给出:
+\begin{equation}
+{\tilde{q}}^{\,\prime }(x)=\exp \left( \mi\sum_{a}\theta _{a}(x)\lambda
+_{a}\right) \tilde{q}(x)\text{ .}  \label{19.7.5}
+\end{equation}%
+我们可以像之前一样引入协变导数(\ref{19.6.15})和(\ref{19.6.30}), 并利用它们构建手征不变的拉格朗日密度, 但对于手征对称性有一个更加简单的方法可供使用.
+
+注意到, 方程(\ref{19.7.3})中正比于$(1+\gamma_{5})$的那部分和正比于$(1-\gamma_{5})$的那部分变成
+\begin{align}
+&\exp \left( \mi\sum_{a}\theta _{a}^{L}\lambda _{a}\right) \exp \left(
+-\mi\sum_{a}\xi _{a}(x)\lambda _{a}\right)   \nonumber \\
+&\quad=\exp \left( -\mi\sum_{a}\xi _{a}^{\prime }(x)\lambda _{a}\right) \exp
+\left( i\sum_{a}\theta _{a}(x)\lambda _{a}\right)   \label{19.7.6}
+\end{align}%
+和
+\begin{align}
+&\exp \left( \mi\sum_{a}\theta _{a}^{R}\lambda _{a}\right) \exp \left(
+\mi\sum_{a}\xi _{a}(x)\lambda _{a}\right)   \nonumber \\
+&\quad=\exp \left( \mi\sum_{a}\xi _{a}^{\prime }(x)\lambda _{a}\right) \exp \left(
+\mi\sum_{a}\theta _{a}(x)\lambda _{a}\right)   \label{19.7.7}
+\end{align}%
+其中
+\[
+\theta _{a}^{L}\equiv \theta _{a}^{V}+\theta _{a}^{A}\text{ ,}\qquad\qquad%
+\theta _{a}^{R}\equiv \theta _{a}^{V}-\theta _{a}^{A}\text{ .}
+\]%
+给方程(\ref{19.7.7})的右边乘以方程(\ref{19.7.6})的逆, 我们就发现简单的变换规则
+\begin{equation}
+U^{\prime }(x)=\exp \left( \mi\sum_{a}\lambda _{a}\theta _{a}^{R}\right)
+U(x)\exp \left( -\mi\sum_{a}\lambda _{a}\theta _{a}^{L}\right) \text{ ,}
+\label{19.7.8}
+\end{equation}%
+其中$U(x)$是幺正幺模矩阵
+\begin{equation}
+U(x)\equiv \exp \left( 2\mi\sum_{a}\xi _{a}(x)\lambda _{a}\right) \text{ .}
+\label{19.7.9}
+\end{equation}
+换句话说, $U(x)$按照$SU(3)\times SU(3)$的$(\bf{\bar{3},3})$表示变换. 由于$U(x)$的分量不是独立的, 它依旧是$SU(3)\times SU(3)$的非线性实现; 它们服从非线性约束$U^{\dag}U=1$和$\operatorname{Det}U=1$.
+
+在Goldstone玻色子的拉格朗日量中, $(SU(3)\times SU(3))$不变的二阶时空导数项只有一个, 它是
+\begin{equation}
+\mathscr{L}_{2\,\text{deriv}}=-\tfrac{1}{16}F^{2}\operatorname{Tr}\{\partial_{\mu}U\,\partial^{\mu}U^{\dag}\}
+\text{ .}\label{19.7.10}
+\end{equation}
+其中$F^{2}$是留待决定的常数. 我们可以把$\xi_{a}$表示成按照惯例归一化的赝标量介子场, 即将其写成
+\begin{equation}
+\sum_{a}\lambda _{a}\xi _{a}=\frac{\sqrt{2}}{F}\left[
+\begin{array}{ccc}
+\frac{1}{\sqrt{2}}\pi ^{0}+\frac{1}{\sqrt{6}}\eta ^{0} & \pi ^{+} & K^{+} \\
+\pi ^{-} & -\frac{1}{\sqrt{2}}\pi ^{0}+\frac{1}{\sqrt{6}}\eta ^{0} & K^{0}
+\\
+\bar{K}^{-} & \bar{K}^{0} & -\sqrt{\frac{2}{3}}\eta ^{0}%
+\end{array}%
+\right] \equiv \frac{\sqrt{2}B}{F}\text{ ,}  \label{19.7.11}
+\end{equation}%
+这使得方程(\ref{19.7.10})中的动能项有着和往常相同的形式
+\[
+\mathscr{L}_{\text{kin}}=-\tfrac{1}{2}\partial _{\mu }\pi ^{0}\partial ^{\mu }\pi
+^{0}-\partial _{\mu }\pi ^{+}\partial ^{\mu }\pi ^{-}-\partial _{\mu
+}K^{+}\partial ^{\mu }\bar{K}^{-}-\partial _{\mu }K^{0}\partial ^{\mu }\bar{K%
+}^{0}-\tfrac{1}{2}\partial _{\mu }\eta ^{0}\partial ^{\mu }\eta ^{0}\text{ .}
+\]
+为了决定常数$F$, 我们发现, 当我们在$\xi$无限小时比较方程(\ref{19.7.4})和方程(\ref{19.5.42}), 分量$\xi_{1}$, $\xi_{2}$, $\xi_{3}$必须与19.5节引入的Goldstone玻色场$\zeta_{1}$, $\zeta_{2}$, $\zeta_{3}$相同. 这样, 用(\ref{19.7.11})比较(\ref{19.5.17})和(\ref{19.5.32}), 我们会发现方程(\ref{19.7.10})定义的常数$F$就是19.4节引入的$F_{\pi}=184\,\mathrm{MeV}$.
+
+夸克质量项破坏了量子色动力学的$SU(3)\times SU(3)$对称性. 利用方程(\ref{19.7.4})定义的夸克场$\tilde{q}(x)$, 这个质量项可以写成
+\begin{equation}
+\mathscr{L}_{\text{mass}}= -\bar{q}\,M_{q}\,q = -\bar{\tilde{q}}\,\me^{-\mi\sqrt{2}\gamma_{5}B/F_{\pi}}\,M_{q}\,
+\me^{-\mi\sqrt{2}\gamma_{5}B/F_{\pi}}\,\tilde{q}
+\label{19.7.12}
+\end{equation}
+其中
+\begin{equation}
+M_{q}=\left[
+\begin{array}{ccc}
+m_{u} & 0 & 0 \\
+0 & m_{d} & 0 \\
+0 & 0 & m_{s}%
+\end{array}%
+\right] \text{ .}  \label{19.7.13}
+\end{equation}%
+方程(\ref{19.7.12})包含一个纯玻色部分, 这个玻色部分是通过将夸克双线性型替换成它的真空期望值获得的, 它的值由未破缺的$SU(3)$对称性以及宇称对称性给出\footnote{真空遵循的宇称守恒律, 荷守恒律以及奇异数守恒律与夸克质量矩阵所遵循的守恒律相同, 这是19.3节讨论的真空对齐条件所给出的结果. 同样, 如果夸克场的定义使得夸克质量都是正定的, 那么在假定$v>0$后, 对于经由$SU(3)\times SU(3)$变换旋转的真空态, 真正的真空应该处在真空能的最小值而非最大值这个条件给出了方程(\ref{19.7.3})中的负号, 我们将会看到, 正是这个符号使得赝Goldstone玻色子八重态的质量为正.}
+\begin{equation}
+\langle \bar{\tilde{q}}_{n}\gamma _{5}\tilde{q}_{m}\rangle _{0}=0\text{ ,}\qquad\qquad%
+\langle \bar{\tilde{q}}_{n}\tilde{q}_{m}\rangle _{0}=-v\delta _{nm}\text{ .}
+\label{19.7.14}
+\end{equation}%
+那么, 拉格朗日量中的Goldstone玻色子质量项就是
+\begin{align}
+-\frac{v}{F_{\pi }^{2}}\operatorname{Tr}\{B,\{B,M_{q}\}\} &=-\frac{v}{F_{\pi }^{2}}%
+\Bigg[4m_{u}\left( \frac{1}{\sqrt{2}}\pi ^{0}+\frac{1}{\sqrt{6}}\eta ^{0}\right)
+^{2}+4(m_{u}+m_{d})\pi ^{+}\pi ^{-}  \nonumber \\
+&\quad+4(m_{u}+m_{s})K^{+}\bar{K}^{-}+4m_{d}\left( -\frac{1}{\sqrt{2}}\pi ^{0}+%
+\frac{1}{\sqrt{6}}\eta ^{0}\right) ^{2}  \nonumber \\
+&\quad+4(m_{d}+m_{s})K^{0}\bar{K}^{0}+\frac{8}{3}m_{s}(\eta ^{0})^{2}\Bigg]\text{ .}
+\label{19.7.15}
+\end{align}%
+由此, 我们可以读出\cite{35}
+\begin{equation}
+\begin{split}
+&m_{\pi ^{+}}^{2}=m_{\pi ^{0}}^{2}=\frac{4v}{F_{\pi }^{2}}[m_{u}+m_{d}]%
+\text{ ,}   \\
+&m_{K^{+}}^{2}=\frac{4v}{F_{\pi }^{2}}[m_{u}+m_{s}]\text{ ,}   \\
+&m_{K^{0}}^{2}=\frac{4v}{F_{\pi }^{2}}[m_{d}+m_{s}]\text{ ,}   \\
+&m_{\eta ^{0}}^{2}=\frac{4v}{F_{\pi }^{2}}\left[ \frac{4m_{s}+m_{d}+m_{u}}{%
+3}\right] \text{ ,}
+\end{split}\label{19.7.16}
+\end{equation}%
+以及一个$\pi^{0}$和$\eta^{0}$的混合项:
+\begin{equation}
+m_{\pi \eta }^{2}=\frac{4v}{\sqrt{3}F_{\pi }^{2}}[m_{u}-m_{d}]\text{ .}
+\label{19.7.17}
+\end{equation}%
+
+利用算符方法也可获得相同的结果. Noether定理使得我们可以构建生成元$T_{a}$和$X_{a}$, 使得它们满足
+\begin{equation}
+\lbrack T_{a},q]=-\lambda _{a}q\text{ ,}\qquad\qquad[X_{a},q]=-\gamma _{5}\lambda
+_{a}q\text{ .}  \label{19.7.18}
+\end{equation}%
+我们可以将实基下的Goldstone玻色场写成$\pi_{a}$, 其中$\pi^{\pm}=(\pi_{1}\pm\mi\pi_{2})/\sqrt{2}$, $\pi_{0}=
+\pi_{3}$, $K^{\pm}=(\pi_{4}\pm\mi \pi_{5})/\sqrt{2}$, $K^{0}=(\pi_{6}+\mi\pi_{7})/\sqrt{2}$, $\bar{K}^{0}=(\pi_{6}-\mi\pi_{7})/\sqrt{2}$, 以及$\eta^{0}=\pi_{8}$. 在自发对称性破缺下幸存的那个$SU(3)$对称性告诉我们, 这些玻色子的$F$-矩阵所采取的形式是$F_{ab}=F_{\pi}\delta_{ab}$.
+$SU(3)\times SU(3)$对称性同时也被哈密顿量中的质量项$H_{1}=m_{u}\bar{u}u+m_{d}\bar{d}d+m_{s}\bar{s}s=\bar{q}M_{q}q$%
+从本质上破坏了, 其中$M_{q}$是夸克质量矩阵(\ref{19.7.13}). 赝Goldstone玻色子的质量矩阵在这里由(\ref{19.3.20})给出, 它是
+\begin{equation}
+M_{ab}^{2}=-F_{\pi }^{-2}\langle \bar{q}\{\lambda _{a},\{\lambda
+_{b},M_{q}\}\}q\rangle _{0}\text{ .}  \label{19.7.19}
+\end{equation}%
+既然它已经是夸克质量的一阶项, 在这一阶我们可以使用未破缺$SU(3)$关系$\langle \bar{u}u\rangle_{0}=\langle\bar{d}d \rangle_{0}=\langle\bar{s}s\rangle_{0}\equiv-v$, 并像之前一样发现(\ref{19.7.16})和(\ref{19.7.17}).
+
+$K$介子二重态的质量$m_{K^{+}}=493.65\,\mathrm{MeV}$和$m_{K^{0}}=497.7\,\mathrm{MeV}$非常接近并且远大于$\pi$介子的质量, 所以, 从(\ref{19.7.16})中我们可以看到$m_{u}$和$m_{d}$必须远小于$m_{s}$. 在计算对$m_{u}$和$m_{d}$比较敏感的量时, 比如$K$介子质量差或$\pi$介子质量, 我们同时还应该把其外一个比较小的修正考虑在内: 电磁效应. 电磁流是$J^{\mu}=\mi e\bar{q}\gamma^{\mu}Q q$, 其中$Q$是对角元为$2/3$, $-1/3$和$-1/3$的对角矩阵. 它与$SU(3)\times SU(3)$生成元的对易子是
+\[
+\lbrack T_{a},J^{\mu }]=-\mi e\,\tfrac{1}{2}\bar{q}\gamma ^{\mu }[Q,\lambda _{a}]q%
+\text{ ,}\qquad[X_{a},J^{\mu }]=-\mi e\,\tfrac{1}{2}\bar{q}\gamma ^{\mu }\gamma
+_{5}[Q,\lambda _{a}]q\text{ .}
+\]%
+我们看到$J^{\mu}$与$X_{3}$, $X_{6}$, $X_{7}$, $X_{8}$以及$T_{3}$, $T_{6}$, $T_{7}$, $T_{8}$对易, 所以哈密顿量的电磁部分在这些生成元生成的$SU(2)\times SU(2)\times U(1)\times U(1)$子群下不变. 因此, 在夸克质量为零的极限下, {\kai{对于中性赝{\textit{Goldstone}}玻色子}}$\pi^{0}$, $K^{0}$, $\bar{K}^{0}$以及$\eta^{0}$, 即与生成元为$X_{3}$, $X_{6}$, $X_{7}$, $X_{8}$的对称性自发破缺相联系的Goldstone玻色子, {\kai{电磁效应对它们的质量没有贡献}}.\cite{36} 另外, 在零夸克质量极限下, 有一个由$T_{6}$, $T_{7}$和$\sqrt{3}T_{8}-T_{3}$生成的未破缺$SU(2)$对称性, 在这个对称变换下, $K^{+}$和$\pi^{+}$像一个二重态那样进行变换, 这使得, 当夸克质量为零时, {\kai{对$K^{+}$和$\pi^{+}$质量的电磁修正是相同的}}.\cite{36} 既然夸克质量项和电磁修正都很小, 将这些效应视为有效夸克哈密顿量的额外修正是十分合理的. 那么, 在把电磁效应考虑在内之后, 我们看到质量公式(\ref{19.7.16})应该修正成\cite{37}
+\begin{align}
+&m_{K^{\pm }}^{2} =4v(m_{u}+m_{s})/F_{\pi }^{2}+\Delta \text{ ,}  \nonumber
+\\
+&m_{K^{0}}^{2} =m_{\bar{K}^{0}}^{2}=4v(m_{d}+m_{s})/F_{\pi }^{2}\text{ ,}
+\nonumber \\
+&m_{\pi ^{\pm }}^{2} =4v(m_{d}+m_{u})/F_{\pi }^{2}+\Delta \text{ ,}
+\label{19.7.20} \\
+&m_{\pi ^{0}}^{2} =4v(m_{d}+m_{u})/F_{\pi }^{2}\text{ ,}  \nonumber \\
+&m_{\eta }^{2} =4v(m_{u}+m_{d}+4m_{s})/3F_{\pi }^{2}\text{ ,}  \nonumber
+\end{align}%
+其中$\Delta$是$K^{+}$和$\pi^{+}$质量平方共用的电磁修正.
+
+这些公式给这五个赝Goldstone玻色子质量附加了一个线性关系, 这是Gell-Mann--Okubo关系的一个版本:%
+\footnote{这个关系最初是基于Gell-Mann和Ne'eman的近似$SU(3)$对称性对称出来的,\cite{38} 这个对称性由$T_{a}$生成并且在推导中忽视了同位旋多重态内部的质量差. 从这个推导出发, 我们无法分辨这个关系是适用于赝标量介子质量本身, 还是像这里这样适用于它们的平方. 实际上, 这个关系对于赝标量质量本身不是非常有效; 它所给出的$\eta$质量是$613\,\mathrm{MeV}$. Gell-Mann--Okubo关系对介子质量平方而非质量一阶非常有效表明, 应该把这些粒子解释成近似$SU(3)\times SU(3)$对称性自发破缺的Goldstone玻色子. 通过这个$T_{a}$生成的近似$SU(3)$对称性, Gell-Mann和Okuba还导出了其它粒子之间的关系, 例如(忽视同位旋破缺效应)最轻的重子八重态质量之间的关系$2m_{N}+2m_{\Xi}=3m_{\Lambda}+m_{\Sigma}$. 对于这样的多重态, 由于平均质量远大于多重态内部的质量差, 这个关系针对的是质量还是质量平方差距不大.}
+\begin{equation}
+3m_{\eta }^{2}+2m_{\pi ^{+}}^{2}-m_{\pi
+^{0}}^{2}=2m_{K^{+}}^{2}+2m_{K^{0}}^{2}\text{ .}  \label{19.7.21}
+\end{equation}%
+根据实验对$K$介子和$\pi$介子质量取值, 这个关系就给出了$\eta$的质量$566\,\mathrm{MeV}$, 而实验给出的值是$547\,\mathrm{MeV}$. 这个微小的差异通常来源于$\eta$态与一个更重的赝标量粒子的混合, 确切一些, $\eta$与$958\,\mathrm{MeV}$处的$\eta^{\prime}$的混合.
+
+这些公式中没有一个给出单个夸克质量确定的值. 事实也的确如此, 除非我们定义了夸克双线性型的重整化方案, 否则这些质量是不能良好定义的. 这个方案通常被设计成使得$m_{s}$等于同位旋多重态之间的质量差, 而这些同位旋多重态是某个$SU(3)$多重态中相差一个奇异数单位的两个同位旋多重态. 例如, 最轻的矢量介子八重态由$892\,\mathrm{MeV}$处的同位旋二重态$K^{\ast}$, $770\,\mathrm{MeV}$处$T=1$的$\rho$粒子以及$783\,\mathrm{MeV}$处$T=0$的$\omega$粒子构成; 这个$K^{\ast}$二重态被解释成一个$\bar{s}$反夸克与一个$u$夸克或一个$d$夸克构成的束缚态, 而它的反二重态则由一个$s$夸克和一个$\bar{u}$夸克或一个$\bar{d}$夸克构成; 至于$\rho$和$\omega$, 它们均解释成一个$\bar{u}$夸克或一个$\bar{d}$夸克与一个$u$夸克或一个$d$夸克构成的束缚态. 如果我们希望把$K^{\ast}$质量与$\rho$和$\omega$的平均质量之间的差归因于质量相对较大的$s$夸克, 那么我们必须对这个夸克双线性型做重整化, 使得$m_{s}-\frac{1}{2}(m_{u}+m_{d})=m_{K^{\ast}}-\frac{1}{2}(m_{\rho}+m_{\omega})=120\,\mathrm{MeV}$, 这给出$m_{s}=125\,\mathrm{MeV}$. 再加上前面的夸克比值, 这会给出$m_{d}=6.0\,\mathrm{MeV}$和$m_{u}=3.3\,\mathrm{MeV}$. 然而, 这些质量估计值远没有方程(\ref{19.7.22})中给出的质量比值那么可信. $m_{s}$通常被估计\cite{38b}成$180\,\mathrm{MeV}$而不是$125\,\mathrm{MeV}$.
+
+从质量公式(\ref{19.7.20})出发, 我们可以用$\pi$介子和$K$介子的质量表示夸克质量比值:\cite{37}
+\begin{equation}
+\frac{m_{d}}{m_{s}}=\frac{m_{K^{0}}^{2}+m_{\pi ^{+}}^{2}-m_{K^{+}}^{2}}{%
+m_{K^{0}}^{2}+m_{K^{+}}^{2}-m_{\pi ^{+}}^{2}}\text{ ,}\qquad \frac{m_{u}}{m_{s}%
+}=\frac{2m_{\pi ^{0}}^{2}-m_{K^{0}}^{2}-m_{\pi ^{+}}^{2}+m_{K^{+}}^{2}}{%
+m_{K^{0}}^{2}+m_{K^{+}}^{2}-m_{\pi ^{+}}^{2}}\text{ .}  \label{19.7.22}
+\end{equation}%
+利用质量值$m_{\pi^{+}}=139.57\,\mathrm{MeV}$, $m_{\pi^{0}}=134.974\,\mathrm{MeV}$, $m_{K^{+}}=493.65\,\mathrm{MeV}$
+以及$m_{K^{0}}=497.7\,\mathrm{MeV}$, 我们得到了比值$m_{d}/m_{s}=0.050$和$m_{u}/m_{s}=0.027$. 因此$d$夸克和$u$夸克的质量比值更接近于2而不是1. (在1996年的一个计算中\cite{38a}, 综合各方面的信息以及赝标量介子质量后, 这个计算给出了$m_{d}/m_{s}=0.053\pm0.002$和$m_{u}/m_{s}=0.029\pm0.003$.)
+
+质量项(\ref{19.7.12})包含介子-介子相互作用. 利用方程(\ref{19.7.14}), (\ref{19.7.11})以及(\ref{19.7.9}), 我们可以将拉格朗日量中该项的纯玻色部分写成
+\begin{equation}
+\mathscr{L}_{\text{mass, bosonic}}=\tfrac{1}{2}v\operatorname{Tr}\left\{ M_{q}(U^{\dag }+U)\right\}
+\text{ .}  \label{19.7.23}
+\end{equation}%
+这一项的形式也可通过一般的对称性讨论推断出来, 而这种讨论同时使得我们能够找到$M_{q}$可能的高阶项. 假定我们虚构出一个$3\times 3$外场$\chi$, 并将底层量子色动力学拉格朗日量中的质量项(\ref{19.7.12})替换成$\chi$-夸克耦合项
+\begin{equation}
+\mathscr{L}_{\chi }=-\bar{q}\left[ \tfrac{1}{2}(1+\gamma _{5})\chi +\tfrac{1}{2}%
+(1-\gamma _{5})\chi ^{\dag }\right] q\text{ ,}  \label{19.7.24}
+\end{equation}%
+在我们做替换$\chi=\chi^{\dag}=M_{q}$之后, 它就与方程(\ref{19.7.12})相同. 这个处理的关键之处在于, 如果我们赋予$\chi$形式的变换规则
+\begin{equation}
+\chi \rightarrow \exp \left( \mi\sum_{a}\lambda _{a}\theta _{a}^{R}\right)
+\,\chi\, \exp \left( -\mi\sum_{a}\lambda _{a}\theta _{a}^{L}\right) \text{ ,}
+\label{19.7.25}
+\end{equation}%
+那么拉格朗日量(\ref{19.7.24})在$SU(3)\times SU(3)$变换下形式上是不变的. 因此, 通过写出包含$U$和$\chi$的最一般$SU(3)\times SU(3)$拉格朗日量(到导数和$M_{q}$的某个给定阶), 并要求它在如下的宇称变换下不变
+\begin{equation}
+U(\mathbf{x},t)\leftrightarrow U^{\dag }(-\mathbf{x},t)\text{ ,}\qquad\qquad\chi
+\leftrightarrow \chi ^{\dag }\text{ ,}  \label{19.7.26}
+\end{equation}%
+然后做代换
+\begin{equation}
+\chi =\chi ^{\dag }=M_{q}\text{ ,}  \label{19.7.27}
+\end{equation}%
+我们就得到了可能的包含夸克质量的玻色项. 例如, 相互作用$\operatorname{Tr}(U^{\dag}\chi+U\chi^{\dag})$在$SU(3)\times SU(3)$以及宇称变换下不变, 在我们赋予$\chi$值(\ref{19.7.27})后, 它就变成与方程(\ref{19.7.23})相同的形式.
+
+利用这个技巧, Gasser和Leutwyler\cite{39}给出了赝标量多重态关于介子质量或动量4阶的完整有效拉格朗日量(其中夸克质量计成介子质量的二阶)
+\begin{align}
+&\mathscr{L}_{4} =L_{1}\operatorname{Tr}\Big\{ \partial _{\mu }U^{\dag }\,\partial ^{\mu }U\Big\}
+^{2}+L_{2}\operatorname{Tr}\Big\{ \partial _{\mu }U\,\partial _{\nu }U^{\dag }\Big\}
+\operatorname{Tr}\Big\{\partial ^{\mu }U\,\partial ^{\nu }U^{\dag }\Big\}  \nonumber \\
+&+L_{3}\operatorname{Tr}\Big\{ \partial _{\mu }U\,\partial ^{\mu }U^{\dag }\,\partial _{\nu
+}U\,\partial ^{\nu }U^{\dag }\Big\} +L_{4}\operatorname{Tr}\Big\{ \partial _{\mu
+}U\,\partial ^{\mu }U^{\dag }\Big\} \operatorname{Tr}\Big\{M_{q}(U+U^{\dag })\Big\}  \nonumber \\
+&+L_{5}\operatorname{Tr}\Big\{\partial _{\mu }U\,\partial ^{\mu }U^{\dag }\,(M_{q}U+U^{\dag
+}M_{q})\Big\}+L_{6}\Big[ \operatorname{Tr}\left\{ M_{q}(U+U^{\dag })\right\} \Big] ^{2}
+\nonumber \\
+&+L_{7}\Big[ \operatorname{Tr}\Big\{ (U^{\dag }-U)M_{q}\Big\} \Big]
+^{2}+L_{8}\operatorname{Tr}\Big\{ ((UM_{q})^{2}+(U^{\dag }M_{q})^{2})\Big\} \text{ ,}
+\label{19.7.28}
+\end{align}%
+其中$L_{1},\cdots,L_{8}$是常数, 它们的值可以通过比对实验给出. 到介子质量和动量的4阶, 完整的有效拉格朗日量是
+\begin{equation}
+\mathscr{L}_{\text{eff}}=\mathscr{L}_{2}+\mathscr{L}_{4}\text{ ,}  \label{19.7.29}
+\end{equation}%
+其中$\mathscr{L}_{2}$是(\ref{19.7.10})和(\ref{19.7.23})的和:
+\begin{equation}
+\mathscr{L}_{2}=-\tfrac{1}{16}F^{2}\,\operatorname{Tr}\left\{ \partial _{\mu }U\partial ^{\mu }U^{\dag
+}\right\} +\tfrac{1}{2}v\,\operatorname{Tr}\left\{ M_{q}(U^{\dag }+U)\right\} \text{ .}
+\label{19.7.30}
+\end{equation}%
+通过将导数$\partial_{\mu}$替换成合适的规范协变导数$D_{\mu}$, 并给$\mathscr{L}_{\text{eff}}$额外增加几项, 我们就可以引入电弱相互作用.
+
+沿用19.5节和19.6节中的幂次计数讨论, 为了将$S$-矩阵元计算至介子质量或动量的4阶, 我们必须要引入关于$\mathscr{L}_{2}$为任意阶且关于$\mathscr{L}_{4}$至多为一阶的树图, 以及仅从$\mathscr{L}_{2}$构建的圈图. Gasser, Leutwyler以及其他几个人利用这个有效作用量对介子动力学(以及相应的电弱相互作用)做了全面的研究.\cite{40}
+\subsection*{* * *}
+
+夸克质量项(\ref{19.7.12})自然会影响其它$SU(3)$多重态. 对于赝标量八重态以外的任何多重态, 这一项可以视为一阶微扰, 因此它会使一般多重态$|i\rangle$的质量矩阵发生偏移, 这个偏移等于
+\begin{equation}
+\delta m_{ij}=\langle i|\bar{\tilde{q}}M_{q}\tilde{q}|j\rangle   \label{19.7.31}
+\end{equation}%
+而$SU(3)$可以用来\cite{41}将不同的矩阵元$\langle i|\bar{\tilde{q}}M_{q}\tilde{q}|j\rangle$关联起来. 以这种方式, 我们可以直接证明
+\begin{equation}
+\frac{\delta m_{p}-\delta m_{n}}{m_{u}-m_{d}}=\frac{m_{\Xi }-m_{\Sigma }}{%
+m_{s}}\text{ .}  \label{19.7.32}
+\end{equation}
+利用这个公式以及方程(\ref{19.7.22}), 我们就可以给出夸克质量对核子质量分裂的贡献$\delta m_{p}-\delta m_{n}\approx -2.5\,\mathrm{MeV}$. 在方程(\ref{19.5.65})和(\ref{19.5.66})中使用这个结果可以算出低能$\pi$介子-核子相互作用中的领头同位旋对称性破缺. 当然, 这里所定义的$\delta m_{p}-\delta m_{n}$不是全部的质子-中子质量差, 整个质子-中子质量差还会从光子发射和吸收中得到一个重要的贡献. 因为中子是电中性的, 电磁项几乎肯定是正的, 这与观测到的质子-中子质量差$-1.3\,\mathrm{MeV}$相符, 丢失的$+1.2\,\mathrm{MeV}$可以用电磁效应解释. 不幸的是, 这种电磁质量差的精确计算已经被证实是非常困难的.
+
+\section[有效场论中的反常项]{有效场论中的反常项\footnote{本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过.}}
+
+为了实现前三节所描述的有效场论方案, 必要条件是作用量应该包含理论假定对称性允许的所有可能的项. 这些章节所描述的方法使得我们可以找到所有{\kai{显然}}不变的项, 一种方法是通过19.6节所描述的协变导数的一般理论, 或者, 对于手征对称性, 使用服从非线性约束的线性变换场, 例如19.7节的$U(x)$. 然而, 在有效场论中的作用量中还有可能存在反常项, 即作为要被积分的4维拉格朗日密度, 它们{\kai{不是}}不变的, 但是它们在破缺对称性下的变分是时空导数, 这保护了作用量中相应项的不变性.
+
+我们会在22.7节看到, 对于$SU(3)\times SU(3)$对称性, Wess和Zumino\cite{42}在研究夸克圈引起的``反常''时%
+发现了这样的项. 然而, 即使对夸克和胶子的底层理论一无所知, 这样的项依旧是可以理解的.
+
+描述Wess-Zumino项的最简单方法是将时空拓展成五维, 为了这个目的而将时空拓展至五维最早是Witten引入的.\cite{43}
+只要我们要求有效场论中的场在$x^{\mu}$以任何方向趋于无穷时有一个共同的极限, 我们就可以认为是时空有球面$S_{4}$的拓扑, 而无穷远处的点将作为普通的一个点纳入进来. 正如19.6节所论述的, 当群$G$破缺到它的子群$H$， Goldstone玻色场$\xi_{a}(x)$在任意时空点的可能值可以认为定义了陪集空间$G/H$($G$中的元素构成的空间, 并且如果任意两个元素可以通过右乘$H$中的元素变成彼此, 那个这两个元素是等价的)中的一个点, 所以函数$\xi_{a}(x)$的集合代表的是时空$S_{4}$球面到$G/H$的映射. 取决于$G/H$的拓扑, 我们有可能把$G/H$中的任意4-球面光滑地收缩到一个点; 即, 存在这样的可能性: 任何$\xi_{a}(x)$可以拓展至定义在$0\leq s\leq1$上的连续函数族$\xi_{a}(x;s)$, 使得$\xi_{a}(x;0)=\xi_{a}(x)$且$\xi_{a}(x;1)$是原始球面上的任意固定点(例如, $\xi_{a}=0$). 当其成立时, 它在数学上可以表述成同伦群$\pi_{4}(G/H)$是平庸的. (关于同伦群的讨论, 参看23.2节) 已知的是, $SU(N)\times SU(N)$自发破缺到$SU(N)$正是这样的情况, 这时$SU(N)\times SU(N)/SU(N)$与$SU(N)$本身的拓扑相同.\footnote{我们可以用$SU(N)$中的元素$U(x)$表示$SU(N)$在$SU(N)\times SU(N)$中的右陪集, 这一点证实了这个论述} 因此, 在物理学感兴趣的情况中, 即$G=SU(3)\times SU(3)$, $H=SU(3)$, 我们可以将Goldstone玻色场或者等价的$U(x)$(参看方程(\ref{19.7.9}))拓展至定义在五维球体$B_{5}$上的幺正幺模%
+矩阵$U(y)$, 我们取$B_{5}$的坐标为$x^{\mu}$和$s$, 而它的表面就是时空的4维球面.
+
+现在, 考察由$U(y)$构成的函数:
+\begin{equation}
+\omega (y)\equiv -\frac{\mi}{240\uppi^{2}}\epsilon ^{ijklm}\operatorname{Tr}\left\{ U^{-1}%
+\frac{\partial U}{\partial y^{i}}U^{-1}\frac{\partial U}{\partial y^{j}}%
+U^{-1}\frac{\partial U}{\partial y^{k}}U^{-1}\frac{\partial U}{\partial y^{l}%
+}U^{-1}\frac{\partial U}{\partial y^{m}}\right\} \text{ ,}  \label{19.8.1}
+\end{equation}%
+其中指标$i,j$等跑遍坐标$x^{\mu}$和$s$的五个方向. (这里的相位以及数值系数的选择是为了后面的方便.) 它在手征变换(\ref{19.7.8})下显然是不变的. 另外, 由于$\epsilon^{ijklm}$是张量密度, $\omega(y)$的积分显然(在相差一个符号的意义下)独立于对五维坐标$y^{i}$的选择. 更进一步, 这个积分只依赖于$U(y)$在球面的值; 即$U$在时空中的值. 为了验证最后一点, 注意到, 当我们对球体内部的$U(y)$做一个无限小变分$\delta U(y)$后, $\omega(y)$的变化是一个导数:
+\begin{equation}
+\delta \omega (y)=-\frac{\mi}{48\uppi^{2}}\epsilon ^{ijklm}\frac{\partial }{%
+\partial y^{m}}\operatorname{Tr}\left\{ U^{-1}\frac{\partial U}{\partial y^{i}}U^{-1}\frac{%
+\partial U}{\partial y^{j}}U^{-1}\frac{\partial U}{\partial y^{k}}U^{-1}%
+\frac{\partial U}{\partial y^{l}}U^{-1}\delta U\right\} \text{ ,}
+\label{19.8.2}
+\end{equation}%
+(关于此式的计算, 参看23.4节), 所以$U(y)$的变换不影响它在时空中的取值, 并且对于球面为时空的5维球体$B_{5}$, $U(y)$的变换也不影响(\ref{19.8.1})在这个5维球体上的积分. 因此我们可以认为这个积分是作用量中的一项:
+\begin{equation}
+I_{\text{WZW}}[U]=n\int_{B_{5}}\dif^{5}y\,\omega (y)  \label{19.8.3}
+\end{equation}%
+其中的系数$n$现在还没有任何限制.
+
+这一项可以写成对一个拉格朗日密度的积分, 但是这个拉格朗日密度不是$(SU(3)\times SU(3))$-不变量. 利用方程(\ref{19.7.9}), 在介子场很小的极限下, $\omega(x)$中的领头项是
+\begin{equation}
+\omega (x)\rightarrow \frac{8\sqrt{2}}{15\uppi ^{2}F_{\pi }^{2}}\epsilon
+^{ijklm}\operatorname{Tr}\left\{ \frac{\partial B}{\partial y^{i}}\frac{\partial B}{%
+\partial y^{j}}\frac{\partial B}{\partial y^{k}}\frac{\partial B}{\partial
+y^{l}}\frac{\partial B}{\partial y^{m}}\right\} \text{ ,}  \label{19.8.4}
+\end{equation}%
+其中的$B$是Goldstone玻色场矩阵(\ref{19.7.11}). 那么, 从Gauss定理可以得出
+\begin{equation}
+I_{\text{WZW}}[U]=\frac{8\sqrt{2}n}{15\uppi ^{2}F_{\pi }^{2}}\,\epsilon ^{\mu
+\nu \rho \sigma }\int_{S_{4}}\dif^{4}x\,\operatorname{Tr}\left\{ B\frac{\partial B}{\partial
+x^{\mu }}\frac{\partial B}{\partial x^{\nu }}\frac{\partial B}{\partial
+x^{\rho }}\frac{\partial B}{\partial x^{\sigma }}\right\} +O\left( \frac{%
+B^{6}}{F_{\pi }^{6}}\right) \text{ .}  \label{19.8.5}
+\end{equation}%
+尽管这个积分是手征不变的, 但它不能写成一个手征不变的密度在时空上的积分, 这是因为任何手征不变密度必须要用Goldstone玻色场的一阶和高阶协变导数进行构造, 所以, 如果表示成Goldstone玻色场的幂级数, 这种不变密度中的领头项应该只包含$B$的导数, 但不应该包含$B$本身.
+
+Witten注意到, 在有效作用量引入这一项解决了$SU(3)\times SU(3)$有效理论与实验的一个矛盾. 由于有效拉格朗日量(\ref{19.7.28})和(\ref{19.7.30})(或者这类项的高阶项)中没有$\epsilon^{\mu\nu\rho\sigma}$项, 宇称守恒会附加这样的要求, 这些项关于Goldstone玻色场必须为{\kai{偶}}, 这就排除了像$K+\bar{K}\to 3\pi$的过程. 一方面, 在量子色动力学的潜在理论中没有用来解释这种选择规则的对称性, 另一方面, 还有实验上的证据反对这一点, 正如Witten指出的, $\phi$介子即被观测到衰变到$K+\bar{K}$末态也被观测到衰变到$3\pi$末态. 方程(\ref{19.8.5})证明了作用量中的Wess-Zumino-Witten项会移除这种不需要的选择规则.
+
+值得注意的是, Wess-Zumino-Witten项的系数不是可以随便调节的参量. 这是Witten所证明的,\cite{43} 原因是: 在保持时空边界$S_{4}$上的$U(x)$不变的前提下, 尽管函数$U(y)$在$B_{5}$中的光滑变化不影响该项的值, 但如果$U(y)$在$B_{5}$中的变化是不连续的, 那么Wess-Znmino-Witten项就{\kai{会}}受到影响. 我们可以认为5维球体$B_{5}$是5维球面$S_{5}$的一半, 而时空$S_{4}$就是$B_{5}$与另一半$B_{5}^{\prime}$的交界. (可以类比地认为$S_{5}$是地球的表面, 时空$S_{4}$是赤道, 而$B_{5}$和$B_{5}^{\prime}$分别是北半球和南半球.)
+由于$S_{4}$同时是$S_{5}$的另一半的边界, 我们也可以将Wess-Zumino-Witten项写成
+\begin{equation}
+I_{\text{WZW}}^{\prime }[U]=-n\int_{B_{5}^{\prime }}\dif^{5}y\,\omega (y)
+\label{19.8.6}
+\end{equation}%
+这里的负号是因为$B_{5}^{\prime}$的边界是方向相反的4维球面. 对于任意的Goldstone玻色场, 不设$n=0$却要求(\ref{19.8.3})和(\ref{19.8.6})相等是不可能的, 但是为了不让(\ref{19.8.3})与(\ref{19.8.6})的差影响路径积分中的权重因子$\exp(\mi I)$, 只能要求它们的差是$2\uppi$的整数倍. 即,
+\begin{equation}
+I_{\text{WZW}}[U]-I_{\text{WZW}}^{\prime }[U]=n\int_{S_{5}}\dif^{5}y\,\omega
+(y)=2\uppi \times \text{整数 .}  \label{19.8.7}
+\end{equation}%
+有了我们在$\omega(y)$的定义(\ref{19.8.1})中插入的归一化因子, $\omega(y)$在五维球面上的积分值\cite{44}$为2\uppi$. 由此得出{\kai{系数$n$必须是整数}}.
+
+Wess-Zumino-Witten项的例子提出了这样的问题: 作用量是否还存在其它的反常项, 它不一定与夸克圈相关, 它在$SU(3)\times SU(3)$下是不变的, 但是却无法写成$SU(3)\times SU(3)$不变拉格朗日密度的4维积分. 幸运的是, 答案是否定的. 业已证明,\cite{45} 对于任意群$G$破缺它的任意子群$H$(并有$\pi_{4}(G/H)=0$), 在作用量中, Goldstone玻色场$\xi_{a}(x)$的任意项$F[\xi]$可以写成$G$-不变5-形式$\Omega$在5维球体$B_{5}$上的积分, 而该5维球体的边界是4维时空球面$S_{4}$:
+\begin{equation}
+F[\xi ]=\int_{B_{5}}\dif^{5}y\,\epsilon ^{ijklm}\,\frac{\partial \xi _{a}}{\partial
+y^{i}}\frac{\partial \xi _{b}}{\partial y^{j}}\frac{\partial \xi _{c}}{%
+\partial y^{k}}\frac{\partial \xi _{d}}{\partial y^{l}}\frac{\partial \xi
+_{e}}{\partial y^{m}}\Omega _{abcde}(\xi (y))\text{ .}  \label{19.8.8}
+\end{equation}%
+为了使其独立于$\xi_{a}(x)$扩展至5维球体内部的特定方式, $\Omega$应该是恰当的, 也就是说它是某个4-形式的外导数
+\begin{equation}
+\Omega _{abcde}(\xi )=(\partial /\partial \xi_{\lbrack a})\mathscr{L}_{bcde]}(\xi )
+\label{19.8.9}
+\end{equation}%
+(像往常一样, 这里的方括号是指对括号内的指标做反对称化), 这使得
+\begin{equation}
+F(\xi )=\int_{S_{4}}\dif^{4}x\,\epsilon ^{\mu \nu \rho \sigma }\frac{\partial \xi
+^{a}}{\partial x^{\mu }}\frac{\partial \xi ^{b}}{\partial x^{\nu }}\frac{%
+\partial \xi ^{c}}{\partial x^{\rho }}\frac{\partial \xi ^{d}}{\partial
+x^{\sigma }}\mathscr{L}_{abcd}(\xi )\text{ .}  \label{19.8.10}
+\end{equation}%
+由此得出$\Omega$也是闭的; 即, 它的外导数为零
+\begin{equation}
+(\partial /\partial \xi _{\lbrack f})\Omega _{abcde]}(\xi )=0\text{ .}
+\label{19.8.11}
+\end{equation}
+其中4-形式$\mathscr{L}_{abcd}(\xi)$也是$G$-不变量, 泛函(\ref{19.8.10})正是作用量中普通的显式$G$-不变项, 这正是我们在前三节讨论过的.
+作用量中的反常项源于这样的可能性: 尽管$\Omega(y)$中的每一项是$G$-不变量并且是某个4-形式的外导数, 但是其中的一些项可能不是$G$-不变4-形式的外导数. 因此, 作用量中的新项可以视为独立的$G$-不变闭5-形式, 也就是说不存在它们真实的线性组合使得这个线性组合是$G$-不变4-形式的外导数.
+它们在数学中被称为{\textit{de Rham}}{\kai{上同调群}}$H^{5}(G/H;\mathbf{R})$的生成元. (这里的群乘法规则就是加法.) 对于各种拓扑的流形, 它们的de Rham上同调群已经被计算出来了.\cite{46} 特别地,
+$H^{5}(SU(N)\times SU(N)/SU(N),\mathbf{R})$只有一个生成元, 它由方程(\ref{19.8.1})给出. 因此, 即便对夸克和胶子的底层理论一无所知, 除了整数$n$的值外, 我们可以知晓Goldstone玻色子作用量中关于反常项的一些信息. 我们将在22.7节看到, 在$SU(N_{c})$规范理论中, 这个整数等于色的数目$N_{c}$, 而它在量子色动力学中就是$n=3$.
+
+\section{未破缺的对称性}
+
+我们已经看到, 在假定理论在群$G$下不变(或近似不变)且群$G$自发破缺到子群$H$后, 如何从这一假定推导出Goldstone玻色子的性质以及它们的低能相互作用. 但是对于$G$是$SU(2)\times SU(2)$或$SU(3)\times SU(3)$的情况, 当我们对这些情况应用这个方法时, 根据实验, 我们不得不把对称性破缺模型取成$SU(2)\times SU(2)$或$SU(3)\times SU(3)$破缺到它们的非手征$SU(2)$子群或$SU(3)$子群. 在22.5节我们将会证明, 当$u$夸克, $d$夸克和$s$夸克无质量时,
+量子色动力学中的$SU(3)\times SU(3)$对称性实际上必须自发破缺, 但是对于仅$u$夸克和$d$夸克无质量的$SU(2)\times SU(2)$对称性, 在量子色动力学的基础上证明这一对称性也自发破缺则要困难的多.%
+\footnote{Weingarten\cite{47}利用格点方法证明了, 无论手征对称性是否破缺, 量子色动力学中含有无质量$u$夸克和$d$夸克的最轻粒子必须与$\pi$介子的量子数相同. 我们会在22.5节看到, 由于量子色动力学中存在费米圈引起的反常, 再加上夸克禁闭的假定, 这会要求某个强子是无质量的, 由此可以得出$\pi$介子正是那个无质量粒子, 而这正是手征对称性自发破缺的有力论点.} 另一方面, 它们的非手征$SU(2)$或$SU(3)${\kai{未}}破缺有一个直观的讨论, 这个讨论基于所谓的{\kai{质量滞留条件}}\cite{48}(\textit{persistent mass condition}), 它的具体陈述是: 对于复合粒子, 如果组成这个复合粒子的粒子的是有质量的, 那么这个复合粒子将是有质量的. 如果我们赋予夸克相同的质量, 类似于同位旋守恒这样的非手征对称性是不会被破坏的, 那么如果它们自发破缺了, 我们将会有由有质量夸克复合构成的无质量Goldstone玻色子, 与质量滞留条件矛盾. Vafa和Witten证明了, 在类似量子色动力学的规范理论中,  那些不被夸克质量破坏的非手征对称性不可能自发破缺, 我们会在下文中给出这个证明. 这一结果不仅仅是出于理论上的兴趣; 我们会在21.4节看到, 电弱规范对称的自发破缺有可能被一种``拟色''(technicolor)理论描述, 这个理论类似于量子色动力学, 并且在检验这个想法时, 知道理论中的那个对称性未破缺非常重要.
+
+考察类似量子色动力学的规范理论, 该理论在规范群的恒等表示中有多个费米子``味''. 如果所有费米子都有质量,
+那么对于费米子味上的所有整体非手征变换下, 若该变化与费米子质量矩阵对易, 那么理论在这个变换下就是不变的.
+例如, 如果$n_{1}$个有共同质量$m_{1}$的费米子简并, $n_{2}$个有共同质量$m_{2}$的费米子简并, 等等, 那么这个整体对称群就是$U(n_{1})\times U(n_{2})\times \cdots$.
+(一个特殊情况是, 如果没有简并, 我们就会在$U(1)\times U(1)\times \cdots$下有一个整体对称性; 这样的一个例子是量子色动力学中的重子数, 奇异数等的守恒.)
+{\kai{这些对称性不可能自发破缺}}.
+
+为了证明这点, 我们来考察$r$个费米子场与$r$个反费米子场的一般Green函数.\footnote{在Witten和Vafa的原始工作中,\cite{49} 他们首先证明了在$r=1$且$x=y$的情况下没有对称性破缺, 然后他们注意到, 真空期望值中没有对称性破缺并不能排除在其它Green函数发生自发对称性破缺的可能性, 因而他们转向另一个不同的证明方法.} 在路径积分形式体系下, 这是\footnote{我们在15.5节看到, 分子和分母均正比于规范群的无限体积, 它们在比值(\ref{19.9.1})中抵消了. 出现无限大因子损坏了之后讨论的严格性, 但是如果我们通过引入鬼场移除它, 那么后面一些依赖于作用量正定性的步骤将会产生困难. 处理这个问题的一个方法是将连续时空替换成有限的格点, 在这种情况下, 规范群的体积是有限的, 就不再需要规范规定或者鬼场.}
+\begin{align}
+&\quad\left\langle T\left\{ \Psi _{u_{1}k_{1}}(x_{1})\cdots \Psi
+_{u_{r}k_{r}}(x_{r})\,\Psi _{v_{1}l_{1}}^{\dag }(y_{1})\cdots \Psi
+_{v_{r}l_{r}}^{\dag }(y_{r})\right\} \right\rangle _{\text{VAC}}  \nonumber
+\\
+&=\frac{1}{Z}\int [\dif A][\dif\psi ][\dif\psi ^{\dag }]\,\psi
+_{u_{1}k_{1}}(x_{1})\cdots \psi _{u_{r}k_{r}}(x_{r})\,\psi _{v_{1}l_{1}}^{\dag
+}(y_{1})\cdots \psi _{v_{r}l_{r}}^{\dag }(y_{r})  \nonumber \\
+&\quad\times \exp \left( \mi I_{\text{gauge}}[A]+\mi I_{\text{Dirac}}[\psi ,\psi
+^{\dag };A]\right) \text{ ,}  \label{19.9.1}
+\end{align}%
+其中$k_{1},\cdots,k_{r}$和$l_{1},\cdots,l_{r}$是Dirac自旋指标, $u_{1},\cdots,u_{r}$和$v_{1},\cdots,v_{r}$是味指标, $I_{\text{gauge}}[A]$是纯规范理论的作用量, $I_{\text{Dirac}}[\psi,\psi^{\dag};A]$是有规范场$A_{\alpha}^{\mu}(x)$时的Dirac场作用量, 而$Z$是真空-真空振幅
+\begin{equation}
+Z\equiv \int [\dif A][\dif\psi ][\dif\psi ^{\dag }]\exp \left( \mi I_{\text{gauge}%
+}[A]+\mi I_{\text{Dirac}}[\psi ,\psi ^{\dag };A]\right) \text{ .}
+\label{19.9.2}
+\end{equation}%
+在这里需要在欧几里得时空下进行处理, 这样$x^{4}=x_{4}=\mi x^{0}$, $y^{4}=y_{4}=\mi y^{0}$以及$A_{\alpha}^{4}=A_{4\alpha}=\mi A_{0\alpha}$全是实的. (参看第23章的附录A.) 在这一情况下, Dirac作用量是
+\begin{equation}
+I_{\text{Dirac}}[\psi ,\psi ^{\dag };A]=\mi\int \dif^{3}x\int \dif x^{4}\,\psi ^{\dag
+}[\slashed{D}+M]\psi \text{ ,}  \label{19.9.3}
+\end{equation}%
+其中$M$是费米子质量矩阵, $\slashed{D}$是与欧几里得Dirac矩阵收缩的欧几里得协变导数
+\begin{equation}
+\slashed{D}=\sum_{i=1}^{4}(\partial _{i}-\mi t^{\alpha }A_{i\alpha })\,\gamma _{i}\text{ ,}
+\label{19.9.4}
+\end{equation}%
+其中, 像往常一样, $\gamma_{4}=\mi \gamma^{0}$. 由于这个作用量是费米场的双线性型, 我们可以直接积掉对这些场的积分
+\begin{align}
+&\left\langle T\left\{ \Psi _{u_{1}k_{1}}(x_{1})\cdots \Psi
+_{u_{r}k_{r}}(x_{r})\Psi _{v_{1}l_{1}}^{\dag }(y_{1})\cdots \Psi
+_{v_{r}l_{r}}^{\dag }(y_{r})\right\} \right\rangle _{\text{VAC}}  \nonumber
+\\
+&\qquad=\frac{1}{Z}\int [\dif A]\operatorname{Det}(\slashed{D}+M)\exp \big(\mi I_{\text{gauge}}[A]\big)  \nonumber \\
+&\qquad\qquad\times \left[ (\slashed{D}+M)_{x_{1}u_{1}k_{1},y_{1}v_{1}l_{1}}^{-1}\cdots
+(\slashed{D}+M)_{x_{r}u_{r}k_{r},y_{r}v_{r}l_{r}}^{-1}\pm \text{置换}%
+\right] \text{ ,}  \label{19.9.5}
+\end{align}%
+其中``$\pm$置换''表明我们要对$\psi$场的所有$r!$个置换求和, 其中的负号针对的是奇置换, 并有
+\begin{equation}
+Z\equiv \int [\dif A]\operatorname{Det}(\slashed{D}+M)\exp \big(\mi I_{\text{gauge}}[A]\big)\text{ .}  \label{19.9.6}
+\end{equation}
+对于味指标上的任意幺正变换, 若它与质量矩阵$M$对易, 那么表达式(\ref{19.9.5})在这样的变换下显然是不变的. 对规范场和鬼场的泛函积分产生了何种非微扰效应并不重要; 这些场对问题中的对称性不敏感, 这使得方程(\ref{19.9.5})中剩余的泛函积分不能破缺这些对称性.\footnote{在夸克有质量的量子色动力学中, 证明$\mathsf{P}$, $\mathsf{C}$和$\mathsf{T}$没有自发破缺要更加困难, 这是因为这些对称性作用在规范场上的方式是不平庸的. Vafa和Witten\cite{50}应用参考文献49的方法证明了$\mathsf{P}$在量子色动力学中是不自发破缺的.} 但为了提高这个讨论的可信度, 我们必须证明表达式(\ref{19.9.5})是定义合理的.
+
+这不仅是出于数学严谨性的理论问题. 正如我们在19.1节看到的, 对称性没有自发破缺的标志除了基态在对称变换下不变外, 基态的对称性还要在小微扰下稳定. 如果我们通过增加一个小微扰$\delta M$破坏$M$的对称性, 并且表达式(\ref{19.9.5})在$\delta M\to0$时变得奇异, 那么, 对称性破缺矩阵元中的$\delta M$因子可能会被$\delta M=0$的矩阵元中的奇点抵消. 这精确在手征对称性的情况中发生了, 它出现在$M$的一些本征值为零的对称性极限中.
+在这一情况下, 只要$\slashed{D}$有零本征值, 当我们趋于零质量的对称性极限时, 对称性破缺期望值分子中的质量因子就会被传播子$(\slashed{D}+M)^{-1}$分母中的质量因子抵消. 由于这个原因,
+只有当理论的质量矩阵$M$的本征值都不为零时, 这个讨论才能处理该理论的非手征对称性.
+
+为了在这一情况下给矩阵元设定上下界, 首先注意到, 这里的微分算符(\ref{19.9.4})是反厄米的, 所以只要厄米矩阵$M$%
+没有零本征值, $\slashed{D}+M$就有合理定义的逆. 此外, 当$M$满足对称性所需的条件时, 例如对于$U(n)$对称性$M$要有$n$个相等本征值, 对于方程(\ref{19.9.5})中剩余的对规范场的积分, 包括$Z$中的积分, 我们还需要证明这些积分不会使得这个表达式奇异. 我们将会看到, 在某些整体对称变换下不变的费米子质量矩阵$M$被破坏这个对称性的小量$\delta M$扰动时,
+这会确保期望值(\ref{19.9.5})在这一对称变换下的变化在$\delta M\to0$的极限下为零.
+
+很难证明坐标空间Green函数(\ref{19.9.5})是非奇异的, 所以我们先来考察如下弥散场的矩阵元
+\begin{equation}
+\Psi _{u}[f]\equiv \int \dif^{4}x\,f^{k\dag }(x)\,\Psi_{uk}(x)\text{ ,}
+\label{19.9.7}
+\end{equation}%
+其中$f^{k}(x)$是光滑且平方可积的任意函数. 用这些项, 方程(\ref{19.9.5})可以写成
+\begin{align}
+&\left\langle T\left\{ \Psi _{u_{1}}[f_{1}]\cdots \Psi _{u_{r}}[f_{r}]\,\Psi
+_{v_{1}}^{\dag }[g_{1}]\cdots \Psi _{v_{r}}^{\dag }[g_{r}]\right\}
+\right\rangle _{\text{VAC}}  \nonumber \\
+&\qquad=\frac{1}{Z}\int [\dif A]\operatorname{Det}(\slashed{D}+M)\exp (\mi I_{\text{gauge}}[A])  \nonumber \\
+&\qquad\qquad\times \left[ (\slashed{D}+M)_{f_{1}u_{1},f_{1}v_{1}}^{-1}\cdots
+(\slashed{D}+M)_{f_{r}u_{r},f_{r}v_{r}}^{-1}\pm \text{置换}\right] \text{ ,%
+}  \label{19.9.8}
+\end{align}%
+其中
+\begin{equation}
+(\slashed{D}+M)_{f\,u,g\,v}^{-1}\equiv \int \dif^{4}x\int \dif^{4}y\,f^{k\dag
+}(x)\,(\slashed{D}+M)_{x\,u\,k,y\,v\,l}^{-1}\,g^{l}(y)\text{ .}  \label{19.9.9}
+\end{equation}%
+在这一基下, 对于给定的规范场, 费米子传播子不仅是定义合理的, 并且在$A_{\alpha}^{\mu}(x)$中一致收敛:%
+\footnote{为了看到这点, 我们可以用$M$的本征矢展开
+\[
+M_{uv}c^{a}_{v}=m_{a}\,c^{a}_{u}\text{ ,}\qquad c_{u}^{a\ast}c^{b}_{u}=\delta_{ab}
+\]
+然后, 采用Vafa和Witten使用的一个技巧,\cite{49} 将方程(\ref{19.9.9})写成
+\begin{align*}
+(\slashed{D}+M)^{-1}_{f\,u,g\,v}&=\sum_{a} c_{u}^{a\ast}c^{a}_{v} \int\dif^{4}x \int\dif^{4}y \, f^{k\dag}(x)\, (\slashed{D}+m_{a})^{-1}_{x\,k,y\,l}\,g^{l}(y) \\
+&=\sum_{a}\pm c_{u}^{a\ast}c^{a}_{v}\int^{\infty}_{0}\dif \tau\,\exp(-|m_{a}|\tau)\int\dif^{4}x \int\dif^{4}y \,f^{k\dag}(x)\, (\exp(\mp\tau\slashed{D}))_{x\,k,y\,l}\, g^{l}(y)\text{ ,}
+\end{align*}
+其中$\pm$是$m_{a}$的正负号. 矩阵$c_{u}^{a\ast}c^{a}_{v}$与算符$(\exp(\mp\tau\slashed{D}))_{x\,k,y\,l}$均是幺正的, 所以
+\[
+\left\vert c_{u}^{a\ast}c^{a}_{v}\int\dif^{4}x \int\dif^{4}y \,f^{k\dag}(x)\, (\exp(\mp\tau\slashed{D}))_{x\,k,y\,l}\, g^{l}(y)\right\vert^{2}\leq \int\dif^{4}x\,|f(x)|^{2}\int\dif^{4}y\,|g(y)|^{2}=1\text{ .}
+\]
+在积分中使用这一公式就给出了方程(\ref{19.9.10}).}
+\begin{equation}
+\left\vert (\slashed{D}+M)_{f\,u,g\,v}^{-1}\right\vert \leq \sum_{a}\frac{1}{|m_{a}|}\text{
+,}  \label{19.9.10}
+\end{equation}%
+其中$m_{a}$是$M$的本征值, 方便起见, 我们对函数$f_{i}(x)$和$g_{j}(y)$归一化使得
+\begin{equation}
+\int f_{i}^{\dag }(x)f_{i}(x)\,\dif^{4}x=\int g_{j}^{\dag }(y)g_{j}(y)\,\dif^{4}y=1%
+\text{ .}  \label{19.9.11}
+\end{equation}%
+(这里没有使用求和约定.) 更进一步, 在规范场上取平均的权重函数是正定的:\footnote{在费米子行列式中, 我们使用了$\operatorname{Det}(\slashed{D}+M)=\operatorname{Det}\gamma_{5}(\slashed{D}+M)\gamma_{5}
+=\operatorname{Det}(-\slashed{D}+M)$的性质.}
+\begin{align}
+\operatorname{Det}(\slashed{D}+M)\exp (\mi I_{\text{gauge}}[A]) &=\exp \left( -\tfrac{1}{4}\int \dif^{3}x\int
+\dif x^{4}\sum_{i=1}^{4}\sum_{j=1}^{4}F_{ij}{}^{2}\right)   \nonumber \\
+&\quad\times \sqrt{\operatorname{Det}\Big[ (\mi D)^{2}+M^{2}\Big] }\text{ .}  \label{19.9.12}
+\end{align}%
+当权重函数正定时, 任意函数的均值会被那个函数的上下界约束. 在方程(\ref{19.9.8})使用约束(\ref{19.9.10}), 矩阵元被约束在
+\begin{equation}
+\left\vert \left\langle T\left\{ \Psi _{u_{1}}[f_{1}]\cdots \Psi
+_{u_{r}}[f_{r}]\Psi _{v_{1}}^{\dag }[g_{1}]\cdots \Psi _{v_{r}}^{\dag
+}[g_{r}]\right\} \right\rangle _{\text{VAC}}\right\vert \leq r!\left[
+\sum_{a}\frac{1}{|m_{a}|}\right] ^{r}\text{ .}  \label{19.9.13}
+\end{equation}%
+因此, 当$M$中的对称性破缺项$\delta M$趋于零时, 不存在能够抵消$\delta M$因子的奇点. 为了更清楚地看到这一点, 我们可以使用相同的方法证明, 如果我们用一个非常小的对称性破缺项$\delta M$扰动$M$, 那么方程(\ref{19.9.8})中$\delta M$的一阶项被约束在
+\begin{align}
+&\left\vert \delta \left\langle T\left\{ \Psi _{u_{1}}[f_{1}]\cdots \Psi
+_{u_{r}}[f_{r}]\Psi _{v_{1}}^{\dag }[g_{1}]\cdots \Psi _{v_{r}}^{\dag
+}[g_{r}]\right\} \right\rangle _{\text{VAC}}\right\vert   \nonumber \\
+&\qquad\leq r\,r!\sum_{a,b}\frac{|(\delta M)_{ab}|}{|m_{a}m_{b}|}\,\left[ \sum_{a}%
+\frac{1}{|m_{a}|}\right] ^{r-1}\text{ ,}  \label{19.9.14}
+\end{align}
+所以它在$\delta M\to0$时为零.
+
+在真实世界中, 夸克质量既不为零也不简并, 所以从之上的讨论中可以立即得出: 类似重子数守恒, 奇异数守恒等这样的$U(1)$对称性既不自发破缺也没有内禀破缺. 其它强相互作用对称性, 例如同位旋或$SU(3)$, 它们的问题更多. 如果$u$, $d$夸克或者$u$, $d$, $s$夸克质量非零且相等, 那些这些对称性是完全不破缺的, 然而, 正如我们在19.7节看到的, 这些质量完全不简并; 产生同位旋对称性和$SU(3)$对称性的原因不是因为它们的质量相等, 而是因为它们的质量很小. 如果我们赋予两个或三个夸克相等的质量并让这些质量变得任意小, 这些对称性确实保持不破缺的状态, 所以在任何对这些质量不敏感的反应中, 同位旋或$SU(3)$是很好的近似. 然而, 并非所有反应都对这些质量不敏感, 这是因为, 当两个或三个夸克无质量时, $\pi$介子或者$\pi$介子所述的赝标量八重态会变成无质量. 这对于同位旋不是问题, 我们在19.5节看到, 尽管$m_{u}\neq m_{d}$, 但是到夸克质量的一阶, 同位旋三重态依旧简并. 对于$SU(3)$, 夸克的质量差产生了$\pi$介子, $K$介子和$\eta$之间的质量差, 这使得由单介子极点主导的反应{\kai{会}}显示与$SU(3)$非常大的背离行为.
+
+\section{$U(1)$问题}
+
+量子色动力学在解释强相互作用对称性模型上的成功起初看起来似乎被一个失败损毁了. 正如我们在19.5节看到的, 强相互作用的破缺$SU(2)\times SU(2)$对称性是$u$夸克和$d$夸克质量很小的自然结果. 但是, 对于$u$夸克和$d$夸克质量很小的量子色动力学, 它的拉格朗日量有另一个手征对称性,\cite{51} $U(1)_{A}$对称性, 它的变换是
+\begin{equation}
+u\rightarrow \exp (\mi\gamma _{5}\theta )u\text{ ,}\qquad\qquad d\rightarrow \exp (\mi\gamma
+_{5}\theta )d\text{ .}  \label{19.10.1}
+\end{equation}%
+这种对称性如果破缺的话, 它会像$SU(2)\times SU(2)$一样给强子频谱附加宇称倍增, 但是这种宇称倍增并没有被观测到. 另一方面, $U(1)_{A}$对称性的破缺意味着存在一个质量与$\pi$介子相差无几的同位旋标量$0^{-}$Goldstone玻色子. 已知的事实是$\eta$介子是同位旋标量$0^{-}$玻色子, 但它比$\pi$介子重得多, 而且我们在19.7节看到, 可以很好地将其理解成$SU(3)\times SU(3)$的一个Goldstone玻色子.
+在认为$s$夸克和$u$夸克以及$d$夸克属于相对较轻的夸克后, 除了$SU(3)\times SU(3)$外, 量子色动力学的拉格朗日量还会有$U(1)$手征对称性, 其变换是
+\begin{equation}
+u\rightarrow \exp(\mi\gamma _{5}\theta )u\text{ ,}\qquad d\rightarrow \exp (\mi\gamma
+_{5}\theta )d\text{ ,}\qquad s\rightarrow \exp (\mi\gamma _{5}\theta )s\text{ .}
+\label{19.10.2}
+\end{equation}%
+这种对称性的自发破缺会要求存在{\kai{两个}}同位旋标量$0^{-}$介子: 一个是$\eta$, 而另一个的质量与$\pi$介子质量相差无几.
+
+这个预测可以做的更精细些.\cite{52} 如果我们在无质量量子色动力学的自发破缺对称性中引入变换(\ref{19.10.2}), 那么当夸克质量存在时, 我们会遇到(\ref{19.7.12})项:
+\begin{equation}
+\mathscr{L}_{\text{mass}}=-\bar{q}\,M_{q}\,q=-\bar{\tilde{q}}\,\me^{-\mi\sqrt{2}\gamma _{5}B/F_{\pi
+}}\,M_{q}\,\me^{-\mi\sqrt{2}\gamma _{5}B/F_{\pi }}\,\tilde{q}\text{ ,}  \label{19.10.3}
+\end{equation}%
+其中依旧有
+\begin{equation}
+M_{q}=\left[
+\begin{array}{ccc}
+m_{u} & 0 & 0 \\
+0 & m_{d} & 0 \\
+0 & 0 & m_{s}%
+\end{array}%
+\right] \text{ ,}  \label{19.10.4}
+\end{equation}%
+但$B$现在含有破缺对称性(\ref{19.10.2})的Goldstone玻色场$\zeta$:
+\begin{align}
+B &=\left[
+\begin{array}{ccc}
+\frac{1}{\sqrt{2}}\pi ^{0}+\frac{1}{\sqrt{6}}\eta ^{0} & \pi ^{+} & K^{+} \\
+\pi ^{-} & -\frac{1}{\sqrt{2}}\pi ^{0}+\frac{1}{\sqrt{6}}\eta ^{0} & K^{0}
+\\
+\bar{K}^{-} & \bar{K}^{0} & -\sqrt{\frac{2}{3}}\pi ^{0}%
+\end{array}%
+\right]   \nonumber \\
+&\quad+\frac{F_{\pi }}{\sqrt{3}F_{\zeta }}\left[
+\begin{array}{ccc}
+\zeta  & 0 & 0 \\
+0 & \zeta  & 0 \\
+0 & 0 & \zeta
+\end{array}%
+\right] \text{ ,}  \label{19.10.5}
+\end{align}%
+其中$F_{\zeta}$是$U(1)_{A}$Goldstone玻色子与相应流的未知耦合(插入因子$\sqrt{3}$是为了将来的方便). 我们可以再次使用未破缺的$SU(3)$对称性将夸克双线性的真空期望值写成(\ref{19.7.14})的形式, 并展成玻色场的幂级数, 我们发现拉格朗日量中的Goldstone玻色子质量项采取如下的形式
+\begin{align}
+-\frac{v}{F_{\pi }^{2}}\operatorname{Tr}\{B,\{B,M_{q}\}\} &=-\frac{v}{F_{\pi }^{2}}%
+\Bigg[4m_{u}\left( \frac{1}{\sqrt{2}}\pi ^{0}+\frac{1}{\sqrt{6}}\eta ^{0}+\frac{%
+F_{\pi }}{\sqrt{3}F_{\zeta }}\zeta \right) ^{2}  \nonumber \\
+&\quad+4(m_{u}+m_{d})\pi ^{+}\pi ^{-}+4(m_{u}+m_{s})K^{+}\bar{K}^{-}  \nonumber
+\\
+&\quad+4m_{d}\left( -\frac{1}{\sqrt{2}}\pi ^{0}+\frac{1}{\sqrt{6}}\eta ^{0}+%
+\frac{F_{\pi }}{\sqrt{3}F_{\zeta }}\zeta \right) ^{2}  \nonumber \\
+&\quad+4(m_{d}+m_{s})K^{0}\bar{K}^{0}+4m_{s}\left( -\sqrt{\frac{2}{3}}\eta ^{0}+%
+\frac{F_{\pi }}{\sqrt{3}F_{\zeta }}\zeta \right) ^{2}\Bigg]\text{ .}
+\label{19.10.6}
+\end{align}%
+带荷且奇异的介子质量与之前相同, 但现在的中性非奇异介子的质量矩阵是
+\begingroup
+\renewcommand*{\arraystretch}{2.0}
+\begin{equation}
+M_{0}^{2}=8v\left[
+\begin{array}{ccc}
+\dfrac{m_{u}+m_{d}}{2F_{\pi }^{2}} & \dfrac{m_{u}-m_{d}}{2\sqrt{3}F_{\pi }^{2}}
+& \dfrac{m_{u}-m_{d}}{\sqrt{6}F_{\pi }F_{\zeta }} \\
+\dfrac{m_{u}-m_{d}}{2\sqrt{3}F_{\pi }^{2}} & \dfrac{m_{u}+m_{d}+4m_{s}}{%
+6F_{\pi }^{2}} & \dfrac{m_{u}+m_{d}-2m_{s}}{3\sqrt{2}F_{\pi }F_{\zeta }} \\
+\dfrac{m_{u}-m_{d}}{\sqrt{6}F_{\pi }F_{\zeta }} & \dfrac{m_{u}+m_{d}-2m_{s}}{3%
+\sqrt{2}F_{\pi }F_{\zeta }} & \dfrac{m_{u}+m_{d}+m_{s}}{3F_{\zeta }^{2}}%
+\end{array}%
+\right]   \label{19.10.7}
+\end{equation}%
+\endgroup
+其中行与列按照$\pi^{0}$, $\eta^{0}$和$\zeta$的顺序排列.
+
+在$m_{u}$和$m_{d}$为零的极限下, 这个矩阵有两个本征值为零的本征矢:
+\begin{equation}
+u_{a}=\left(
+\begin{array}{c}
+1 \\
+0 \\
+0%
+\end{array}%
+\right) \text{ ,}\qquad u_{b}=\frac{1}{\sqrt{F_{\pi }^{2}+2F_{\zeta }^{2}}}\left(
+\begin{array}{c}
+0 \\
+F_{\pi } \\
+\sqrt{2}F_{\zeta }%
+\end{array}%
+\right) \text{ .}  \label{19.10.8}
+\end{equation}%
+在这个正交基下, 到$m_{u}$和$m_{d}$的一阶, 质量平方矩阵是
+\begin{align}
+m_{aa}^{2} &\simeq u_{a}^{\text{T}}M_{0}^{2}u_{a}=\frac{4v(m_{u}+m_{d})}{%
+F_{\pi }^{2}}\text{ ,}  \label{19.10.9} \\
+m_{bb}^{2} &\simeq u_{b}^{\text{T}}M_{0}^{2}u_{b}=\frac{12v(m_{u}+m_{d})}{%
+F_{\pi }^{2}+2F_{\zeta }^{2}}\text{ ,}  \label{19.10.10} \\
+m_{ab}^{2} &=m_{ba}^{2}\simeq \frac{\sqrt{3}v(m_{u}-m_{d})}{2F_{\pi }\sqrt{%
+F_{\pi }^{2}+2F_{\zeta }^{2}}}\text{ .}  \label{19.10.11}
+\end{align}%
+非对角项(\ref{19.10.11})的效应是使得本征值的积降低一个可忽视的比例$(m_{u}-m_{d})^{2}/64(m_{u}+m_{d})^{2}$, 当然, 本征值的和依旧和以前一样, 所以对角元(\ref{19.10.9})和(\ref{19.10.10})是本征值很好的近似.
+比较方程(\ref{19.10.9})与方程(\ref{19.7.16}), 我们发现对应本征矢$u_{a}$的粒子是$\pi^{0}$. 对应$u_{b}$的另一个粒子有质量
+\begin{equation}
+m_{b}\simeq \sqrt{m_{bb}^{2}}\simeq \frac{\sqrt{3}m_{\pi }F_{\pi }}{\sqrt{%
+F_{\pi }^{2}+2F_{\zeta }^{2}}}\leq \sqrt{3}m_{\pi }\text{ .}
+\label{19.10.12}
+\end{equation}
+因此, 在$\pi$介子之外, 破缺的$U(1)_{A}$对称性会额外要求存在一个质量小于$\sqrt{3}m_{\pi}$的中性赝标量Goldstone玻色子.
+声称这样的强相互作用粒子不存在几乎是没有必要的.\footnote{注意到, 取$F_{\zeta}\gg F_{\pi}$会使得这个额外的中性标量的质量非常小, 但是它的相互作用会变得非常弱使得它可以逃脱探测. 在量子色动力学中产生一个很大的$F_{\pi}$对$F_{\zeta}$的比值看起来似乎是不可能的, 但是若理论中存在额外变量可以避免瞬子引起的宇称破坏, 在这样的理论中确实发生了类似的事情; 参看23.6节.} 我们会在23.5节看到, 由于发现了破坏额外$U(1)_{A}$对称性的非微扰效应, 这一问题最终被解决了.
+
+
+\section*{习题}
+\noindent 1. 对$SU(3)$对称群(生成元为$t_{1}$, $t_{2}$, $t_{3}$)自发破缺到$SU(2)$子群(生成元为$t_{3}$)的情况应用整体对称性破缺的一般理论.
+在无限小$SO(3)$变换下, Goldstone玻色场如何变换? (使用陪集空间$SO(3)/SO(2)$的指数参数化.) 计算Goldstone玻色场的协变导数$D_{a\mu}$, 对于未破缺对称性生成元$t_{3}$的$q$值不为零的一般场, 计算该场的协变导数. 仅包含Goldstone玻色子且导数不超过二阶的最一般$SO(3)$-不变拉格朗日量是什么? 利用这个拉格朗日量计算Goldstone玻色子弹性散射不变振幅中关于它们能量的最低阶项. 含有两个非Goldstone玻色场因子且导数最多有一个的最一般$SO(3)$-不变拉格朗日量是什么?
+像$SO(3)$3-矢的3-分量那样变换, 且仅是Goldstone玻色场的函数(没有导数), 它的最一般形式是什么?
+将这一项加到拉格朗日量中, 并选择系数使得Goldstone玻色子拥有质量$m$, 重新计算最低阶的Goldstone玻色子散射振幅.
+
+\noindent 2. 考察一个具有$SU(N)$整体对称性的理论, 它的对称性自发破缺到$SU(N-1)$. 假定我们添加一个很小的对称性破缺微扰, 并且这个微扰处在$SU(N)$的定义表示$\bm{N}$中. 将真空排列考虑在内, 完全不破缺的对称群是什么? 若对称性破缺微扰处在$SU(N)$的伴随表示中, 又是什么样的情况?
+
+\noindent 3. 将$\pi$介子质量考虑在内, 计算直至一圈阶的$\pi$介子-$\pi$介子散射振幅
+
+\noindent 4. 类比Adler-Weisberger求和规则的$\pi$介子-$\pi$介子散射情况, 推导``Adler求和规则''.
+
+\noindent 5. 在$SU(2)\times SU(2)/SU(2)$的陪集被参数化成$\exp(\mi\xi_{a}x_{a})$的情况下, 计算$\pi$介子场$\xi_{a}$的$SU(3)\times SU(3)$变换性质.
+
+\noindent 6. 使用方程(\ref{19.7.31})和$SU(3)$对称性导出关系(\ref{19.7.32})
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+	\bibitem{1} S. Coleman, `Secret symmetry: an introduction to spontaneous symmetry breakdown and gauge fields,'
+        in {\textit{Aspects of Symmetry: Selected Erice Lecture of Sidney Coleman}} (Cambridge University Press, Cambridge, 1985).
+    \bibitem{2} E. C. Titchmarsh, {\textit{Introduction to the Theory of Fourier Integrals}} (Oxford University Press, Oxford, 1937): Section 1.4.
+    \bibitem{3} J. Goldstone. {\textit{Nuovo. Cimento}} {\bf{9}}, 154 (1961).
+    \bibitem{4} Y. Nambu, {\textit{Phys. Rev. Lett.}} {\bf{4}}, 380 (1960).
+    \bibitem{5} J. Goldstone, A. Salam, and S. Weinberg, {\textit{Phys. Rev.}} {\bf{127}}, 965 (1962).
+    \bibitem{6} S. Adler, {\textit{Phys. Rev.}} {\bf{137}}, B1022 (1965).
+    \bibitem{7} S. Weinberg, {\textit{Phys. Rev. Lett.}}, {\bf{29}}, 1698 (1972).
+    \bibitem{8} R. Dashen, {\textit{Phys. Rev.}} {\bf{183}}, 1245 (1969). 关于这个贡献的修正, 可参看J. F. Donoghue, B. R. Holstein, and D. Wyler, {\textit{Phys. Rev.}} {\bf{D47}}, 2089 (1993); J. Bijnens, {\textit{Phys. Lett.}} {\bf{B306}}, 343 (1993); K. Maltman and D. Kotchan, {\textit{Mod. Phys. Lett.}}, {\bf{A5}}, 2457 (1990); R. Urech, {\textit{Nucl. Phys.}} {\bf{B433}}, 234 (1995); R. Baur and R. Urech, Zurich-Karlsruhe preprint ZU-TH 22/95, TTP95-31, hep-ph/9508393 (1995).
+    \bibitem{9} 关于综述文章, 可参看I. S. Towner {\textit{et al.}}, Chalk River preprint nuclth/9507005 (1995).
+    \bibitem{10} S. Weinberg, {\textit{Phys. Rev.}} {\bf{112}}, 1375 (1958).
+    \bibitem{11} M. L. Goldberger and S. Treiman, {\textit{Phys. Rev.}} {\bf{111}}, 354 (1966).
+    \bibitem{12} T. Ericson and W. Weise, {\textit{Pions and Nuclei}} (Clarendon Press, Oxford, 1988).
+    \bibitem{13} T. Ericson {\textit{et al.}}, CERN preprint CERN-TH/95-50 (1995).
+    \bibitem{14} T. Das, G. S. Guralnik, V. S. Mathur, F. E. Low and J. E. Young, {\textit{Phys. Rev. Lett.}} {\bf{18}}, 759 (1967).
+    \bibitem{15} J. Bernstein, S. Fubini, M. Gell-Mann, and W. Thirring, {\textit{Nuovo Cimento}} {\bf{17}}, 757 (1960); M. Gell-Mann and M. L\'{e}vy, 参看文献24; K-C. Chou, {\textit{Soviet Physics JETP}} {\bf{12}}, 492 (1961).
+    \bibitem{16} Y. Nambu, {\textit{Phys. Rev. Lett.}} {\bf{4}}, 380 (1960).
+    \bibitem{17} Y. Nambu and G. Jona-Lasinio, {\textit{Phys. Rev.}} {\bf{122}}, 345 (1961).
+    \bibitem{18} Y. Nambu and D. Lurie, {\textit{Phys. Rev.}} {\bf{125}}, 1429 (1962); Y. Nambu and E. Shrauner, {\textit{Phys. Rev.}} {\bf{128}}, 862 (1962).
+    \bibitem{19} S. L. Adler, {\textit{Phys. Rev. Lett.}} {\bf{14}}, 1051 (1965); {\textit{Phys. Rev.}} {\bf{140}}, B736 (1965); W. I. Weisberger, {\textit{Phys. Rev. Lett.}} {\bf{14}}, 1047 (1965); {\textit{Phys. Rev.}} {\bf{143}}, 1302 (1965). 在参考文献27中以一种不同的方式引入了$\pi$介子质量为有限值时的效应 , 方法是结合$\pi$介子-核子散射长度的流代数结果与散射长度的求和规则, 这个求和规则是M. L. Goldberger, H.Miyazawa和R. Oehme从向前散射的色散关系中导出的, \textit{Phys. Rev.} {\bf{99}}, 986 (1955); M. L. Goldberger, in {\textit{Dispersion Relations and Elementary Particles}} (Wiley, New York, 1960): p. 146.
+    \bibitem{20} S. Weinberg, `Current Algebra - Rapporteur's Report' in {\textit{Proceedings of the International Conference on High-Energy Physics, Vienna, 1968}} (CERN, Geneva, 1968): p. 253.
+    \bibitem{21} M. Gell-Mann, {\textit{Physics}} {\bf{1}}, 63 (1964).
+    \bibitem{22} S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{16}}, 879 (1966).
+    \bibitem{23} S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{18}}, 188 (1967).
+    \bibitem{24} M. Gell-Mann and M. L\'{e}vy, {\textit{Nuovo Cimento}} {\bf{16}}, 705 (1960).
+    \bibitem{25} S. Weinberg, {\textit{Phys. Rev.}} {\bf{166}}, 1568 (1968).
+    \bibitem{26} S. Weinberg, {\textit{Physica}} {\bf{96A}}, 327 (1979).
+    \bibitem{27} 这些散射长度最初是用流代数技巧计算的, 参看S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{17}}, 616 (1966).
+    \bibitem{28} 综述可参看, J. F. Donoghue, E. Golowich, and B. R. Holstein, {\textit{Dynamics of the Standard Model}} (Cambridge University Press, Cambridge, 1992): Section VI-4. 对强相互作用能量偏移的测量以及对$\pi^{-}p$原子中$1s$态宽度的测量给出了结果 $a(\pi^{-}p\to\pi^{-}p)=\frac{2}{3}a_{1/2}+\frac{1}{3}a_{3/2}=0.0885(9)m_{\pi}^{-1}$和
+        $a(\pi^{-}p\to\pi^{0}n)=\frac{1}{3}\sqrt{2}(a_{3}-a_{1})=-0.136(10)m_{\pi}^{-1}$; 参看D. Sigg {\textit{et al.}}, preprint ETHZ-IPP PR-95-4, July 1995, 发表在{\textit{Phys. Rev. Lett.}}上.
+    \bibitem{29} S. Weinberg, {\textit{Phys. Lett.}} {\bf{B251}}, 288 (1990); {\textit{Nucl. Phys.}} {\bf{B363}}, 3 (1991); {\textit{Phys. Lett.}} {\bf{B295}}, 114 (1992). C. Ord\'{o}\~{n}ez, L. Ray, and U. van Kolck, {\textit{Phys. Lett.}} {\bf{B291}}, 459 (1992); C. Ord\'{o}\~{n}ez, L. Ray, and U. van Kolck, {\textit{Phys. Rev. Lett.}} {\bf{72}}, 1982 (1994); U. van Kolck, {\textit{Phys. Rev.}}, {\bf{C49}}, 2932 (1994); U. van Kolck, J. Friar, and T. Goldman, to appear in {\textit{Phys. Lett. B.}} 核力的这一方法被C. Ord\'{o}\~{n}ez, L. Ray和U. van Kolck总结在 nucl-th/9511380, 投递至 {\textit{Phys. Rev. C}}; J. Friar, {\textit{Few-Body Systems Suppl.}} {\bf{99}}, 1 (1996). 这些技术在相关核过程上的应用可参看T.-S. Park, D.-P. Min, and M. Rho, {\textit{Phys. Rep.}} {\bf{233}}, 341 (1993); nucl-th/9505017; S. R. Beane, C. Y. Lee, and U. van Kolck, {\textit{Phys. Rev.}}, {\bf{C52}}, 2915 (1995); T. Cohen, J. Friar, G. Miller, and U. van Kolck, nucl-th/9512036; D. B. Kaplan, M. Savage, and M. Wise, nucl-th/9605002.
+    \bibitem{30} S. Weinberg, 参考文献 27. Y. Tomozawa独立地计算出了$\pi$介子-核子的散射长度, {\textit{Nuovo Cimento}} {\bf{46A}}, 707 (1966).
+    \bibitem[30a]{30a} S. L. Adler, {\textit{Phys. Rev.}} {\bf{140}}, B736 (1965).
+    \bibitem{31} S. Coleman, J. Wess, and B. Zumino, {\textit{Phys. Rev.}} {\bf{177}}, 2239 (1969); C. G. Callan, S. Coleman, J. Wess, and B. Zumino, {\textit{Phys. Rev.}} {\bf{177}}, 2247 (1969).
+    \bibitem{32} R. S. Palais, {\textit{J. Math. Mech.}} {\bf{6}}, 673 (1957); G. D. Mostow, {\textit{Annals of Math.}} {\bf{65}}, 432 (1957).
+    \bibitem[32a]{32a} 关于其它可能性的讨论, 参看S. Weinberg, {\textit{Physica Scripta}} {\bf{21}}, 773 (1980).
+    \bibitem{33} M. Gell-Mann, Cal. Tech. Synchotron Laboratory Report CTSL-20 (1961), 未发表. M. Gell-Mann和Y. Ne'eman在其它几篇关于$SU(3)$对称性的文章中再现了这个结果, {\textit{The Eightfold Way}} (Benjamin, New York, 1964).
+    \bibitem{34} Y. Ne'eman, {\textit{Nucl. Phys.}} {\bf{26}}, 222 (1961).
+    \bibitem{35} M. Gell-Mann, R. J. Oakes, and B. Renner, {\textit{Phys. Rev.}} {\bf{175}}, 2195 (1968); S. Glashow and S. Weinberg, {\textit{Phys. Rev. Lett.}} {\bf{20}}, 224 (1968).
+    \bibitem{36} R. Dashen, {\textit{Phys. Rev.}} {\bf{183}}, 1245 (1969). P. Langacker和H. Pagels考察了修正, {\textit{Phys. Rev.}} {\bf{D8}}, 4620 (1973). G. S. Guralnik证明了在参考文献17的模型中, 电磁效应对$\pi^{0}$质量没有修正, {\textit{Nuovo Cimento}} {\bf{36}}, 1002 (1965).
+    \bibitem{37} S. Weinberg, I. I. Rabi的{\kai{纪念文集}}, {\textit{Trans. N. Y. Acad. Sci.}} {\bf{38}}, 185 (1977).
+    \bibitem{38} M. Gell-Mann, 参考文献33; S. Okuba, {\textit{Prog. Theor. Phys.}}, {\bf{27}}, 949 (1962).
+    \bibitem[38a]{38a} H. Leutwyler, Bern-CERN preprint CERN-TH/96-44, hep-ph/-9602366, 待发表(1996).
+    \bibitem[38b]{38b} J. F. Donoghue, E. Golowich, and B. R. Holstein, 参考文献28.
+    \bibitem{39} J. Gasser and H. Leutwyler, {\textit{Nucl. Phys.}} {\bf{B250}}, 465 (1985). 另见J. Gasser and H. Leutwyler, {\textit{Ann. Phys.}} {\bf{158}}, 142 (1984).
+    \bibitem{40} 关于这方面的纵览, 参看H. Leutwyler, in {\textit{Proceedings of the XXVI International Conference on High Energy Nuclear Physics, Dallas, 1992}}, J. Sanford编辑(American Institute of Physics, New York, 1993): 185; U. G. Meissner, {\textit{Rep. Prog. Phys.}} {\bf{56}}, 903 (1993); A. Pich, Valencia preprint FTUV/95-4, February 1995, 发表在{\textit{Reports on Progress in Physics}}; J. Bijnens, G. Ecker, and J. Gasser, in {\textit{The Daphne Physics Handbook}}, Vol. 1, L. Maiani, G. Pancheri, and N. Paver编辑(INFN, Frascati, 1995): Chapter 3 and 3.1; G. Ecker, preprint hep-ph/9501357, 发表在{\textit{Progress in Particle and Nuclear Physics}}, Vol. 35 (Pergamon Press, Oxford).
+    \bibitem{41} S. Coleman and S. Glashow, {\textit{Phys. Rev. Lett.}} {\bf{6}}, 423 (1961); S. Okubo, {\textit{Phys. Lett.}} {\bf{4}}, 14 (1963).
+    \bibitem{42} J. Wess and B. Zumino, {\textit{Phys. Lett.}} {\bf{37B}}, 95 (1971).
+    \bibitem{43} E. Witten, {\textit{Nucl. Phys.}} {\bf{B223}}, 422 (1983).
+    \bibitem{44} R. Bott and R. Seely, {\textit{Comm. Math. Phys.}} {\bf{62}}, 235 (1978).
+    \bibitem{45} E. D'Hoker and S. Weinberg, {\textit{Phys. Rev.}} {\bf{D50}}, R6050 (1994).
+    \bibitem{46} {\textit{Encyclopedic Dictionary of Mathematics}}, S. Iyanaga and Y. Kawada编辑(MIT Press, Cambridge, 1980); W. Greub, S. Halperin, and R. Vanstone, {\textit{Connections, Curvature and Cohomology}}, Vol III, (Academic Press, New York, 1976); A. Borel, {\textit{Ann. Math.}} (2) {\bf{57}}, 115 (1953); 另见A. Borel, {\textit{Collected Papers}}, Vol I (Springer Verlag, Berlin, 1983).
+    \bibitem{47} D. Weingarten, {\textit{Phys. Rev. Lett.}} {\bf{51}}, 1830 (1983).
+    \bibitem{48} J. Preskill and S. Weinberg, {\textit{Phys. Rev.}} {\bf{D24}}, 1059 (1981). 这是't Hooft之前讨论的修正版, 't Hooft的讨论考察了大夸克质量极限; 参看G. 't Hooft在Carg\`{e}se Summer Institute给出的讲义, 1979, in {\textit{Recent Developments in Gauge Theories}}, G 't Hooft等编辑, (Plenum, New York, 1980), 再刊于{\textit{Dynamical Gauge Symmetry Breaking}}, E. Farhi and R. Jackiw编辑, (World Scientific, Singapore, 1982), and in G. 't Hooft, {\textit{Under the Spell of the Gauge Principle}} (World Scientific, Singapore, 1994). 另见22.5节.
+    \bibitem{49} C. Vafa and E. Witten, {\textit{Nucl. Phys.}} {\bf{B234}}, 173 (1984). 另见C. Vafa and E. Witten, {\textit{Commun. Math. Phys.}} {\bf{95}}, 257 (1984).
+    \bibitem{50} C. Vafa and E. Witten, {\textit{Phys. Rev. Lett.}} {\bf{53}}, 535 (1984).
+    \bibitem{51} S. L. Glashow, in {\textit{Hadrons and Their Interactions}}, A. Zichichi编辑 (Academic Press, New York, 1968); S. L. Glashow, R. Jackiw, and S-S. Shei, {\textit{Phys. Rev.}} {\bf{187}}, 1916 (1969); M. Gell-Mann, in {\textit{Proc. Third Topical Conf. on Part. Phys.}}, W. A. Simonds and S. F. Tuan编辑 (Western Periodicals, Los Angeles, 1970); {\textit{Acta Phys. Austriaca Suppl.}} {\bf{IX}}, 1972 (1972); H. Fritzsch and M. Gell-Mann, in {\textit{Proceedings of the XVI International Conference on High Energy Physics}}, J. D. Jackson and A. Roberts编辑 (Fermi National Accelerator Laboratory, Batavia, IL, 1972); {\textit{Phys. Lett.}}  {\bf{47B}}, 365 (1973).
+    \bibitem{52} S. Weinberg, {\textit{Phys. Rev.}} {\bf{D11}}, 3583 (1975).
+\end{thebibliography}
+

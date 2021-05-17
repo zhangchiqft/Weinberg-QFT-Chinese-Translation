@@ -1,0 +1,1322 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+
+\chapter{外场中的束缚态} \label{cha:14}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[564]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[564]}}}
+  \markboth{第14章\quad 外场中的束缚态}{第14章\quad 外场中的束缚态}
+
+在第11章对辐射修正的处理中, 我们仅比微扰论的最低阶多迈出一步. 然而, 存在一类非常重要的问题, 在这类问题中, %
+即便是最简单的计算, 也要求我们从一开始就要考虑数类到耦合常数, 例如$e$的, 任意高阶的\,Feynman\,图. %
+这些问题是那些涉及束缚态的问题\ezx 在电动力学中, 既有普通的原子和分子, 也有电子偶素或$\mu $子偶素这样的奇异原子.
+
+很容易看到, 这种问题必然会面临普通微扰论的失效. 例如, 将电子\lzx 质子散射的振幅看作质心系能量$E$的函数.
+如\,\ref{sec:10.3}\,节所示, 束缚态的存在, 例如氢原子的基态, 意味着这一振幅在$E=m_{p}+m_{e}-13.6\,\mathrm{eV}$处有%
+一极点. 然而, 在电子\lzx 质子散射的微扰展开中, 任何单个项中都没有这样的极点. 因此, %
+这样的极点只能来自所有图之和在质心能接近$m_{p}+m_{e}$时的发散.
+
+这一微扰级数发散的原因也很容易看到, 特别是在我们考虑旧式微扰论的编时图而不是\,Feynman\,图的时候. 假定在质心系中电子和质子均有量级$q\ll m_{e}$的动量, 并考虑一个电子和质子的动量不同但大小也为$q$的中间态. 这个态所贡献的能量分母因子将是$[q^{2}/m_{e}]^{-1}$阶的. 每个这样的态还会贡献一个$e^{2}/q^{2}$ ($e^{2}/r$的\,Fourier\,变换)阶的\,Coulomb\,相互作用的矩阵元, 并且, 相应的动量空间积分会贡献一个$q^{3}$阶的因子. 综合以上这些, %
+我们看到每个额外的\,Coulomb\,相互作用贡献一个阶为
+\[
+[q^{2}/m_{e}]^{-1}[e^{2}/q^{2}][q^{3}]=e^{2}m_{e}/q
+\]%
+的整体因子. 因此, 当$q$小于或等于$e^{2}m_{e}$阶时, 或者换句话说, 当动能和势能
+是$q^{2}/m_{e}$阶的, 不再大于$e^{4}/m_{e}$, 即氢原子的束缚能量级时, 微扰论会失效.
+
+我们这\marginpar[\flushright{\small[565]\hspace*{5mm}}]{{\small\hspace*{5mm}[565]}}里的问题是研究如何利用微扰论计算束缚态问题中的辐射修正, 对那些需要对所有阶求和的图进行求和, 并只保留有限个不需要求和的图.
+
+\section{Dirac\,方程} \label{sec:14.1}
+\setcounter{equation}{0}
+
+这一章, 我们只考虑电子(或$\mu$子)与像原子核这样的带电重粒子之间的\,Coulomb\,相互作用产生的束缚态问题. %
+如\,\ref{sec:13.6}\,节所示, 计入这一相互作用可以通过在相互作用拉格朗日量中加入表示\,c\,-数%
+外矢势$\mathscr{A}^{\mu }(x)$的项{}$^*$\footnote{$^*${}在本章, 我们重新用大写字母$\Psi$来标记\,Heisenberg\,%
+绘景中的电子场, 保留小写字母$\psi$来表示时间相关性仅由\,c\,-数外场$\mathscr{A}^{\mu }(x)$决定的\,Dirac\,场.}
+\begin{align}
+\mathscr{L}_{\mathscr{A}} &=- \mi e\bar{\Psi}\gamma ^{\mu }\Psi \mathscr{A}%
+_{\mu }-\tfrac{1}{2}(Z_{3}-1)(\partial ^{\mu }\mathscr{A}^{\nu }-\partial
+^{\nu }\mathscr{A}^{\mu })(\partial _{\mu }A_{\nu }-\partial _{\nu }A^{\mu })
+\nonumber \\
+&\quad- \mi e(Z_{2}-1)\mathscr{A}_{\mu }\,\bar{\Psi}\gamma ^{\mu }\Psi
+\label{14.1.1}
+\end{align}%
+来实现, 这一相互作用是通过将方程(\ref{11.1.6})相互作用部分中的量子矢势$A^{\mu }$替换为$A^{\mu }+%
+\mathscr{A}^{\mu }$得到的. 例如, 对处在原点且电荷为$Ze$的单个带电重粒子,%
+\begin{equation}
+\mathscr{A}^{0}(x)=\frac{Z\,e}{4\uppi \vert\bx\vert }\:,\qquad\hAAA(x)=0\:.  \label{14.1.2}
+\end{equation}%
+相互作用(\ref{14.1.1})就是要必须计入所有阶的贡献. 在本节, 我们将考虑只有这一个相互作用的理论, 而将辐射修正留至后续章节.
+
+物理学家们在幼儿园里就学会了处理这类问题的方法: 求解有外场的\,Dirac\,波动方程. 在这里推导这一方程看起来似乎是不必要的, 但正如第1章中所强调的, 
+Dirac\,将这一方程作为一种相对论\,Schr\"{o}dinger\,方程的原始动机并没有经受住检验.
+另外, 在我们的推导中, 将发现必须要在\,Dirac\,方程的解上附加归一化条件, 而这个条件在\,Dirac\,方法中看起来似乎是{\KAI{特设}}的. 在下一节辐射修正的处理中, 这里所讨论的\,Dirac\,方程的解将是关键因素.
+
+这里\marginpar[\flushright{\small[566]\hspace*{5mm}}]{{\small\hspace*{5mm}[566]}}, 我们将在\,Heisenberg\,绘景的版本下进行处理, 其中算符对时间的依赖由包含外场作用(\ref{14.1.1})但不包含其他相互作用的哈密顿量决定. 电子场$\psi (x)$在这一绘景下满足场方程
+\begin{equation}
+\left[ \gamma ^{\lambda }\frac{\partial }{\partial x^{\lambda }}+m+ \mi e\gamma
+^{\lambda }\mathscr{A}_{\lambda }(x)\right] \psi (x)=0\:.
+\label{14.1.3}
+\end{equation}%
+这不是\,Dirac\,原始含义下的\,Dirac\,方程,\textsuperscript{\cite{1}} 因为这里的$\psi (x)$不是\,c\,-数波函数而是量子算符. %
+c\,-数\,Dirac\,{\KAI{波函数}}定义为\begin{align}
+u_{N}(x) &\equiv (\Phi _{0},\psi (x)\Phi _{N})\:,  \label{14.1.4} \\
+v_{N}(x) &\equiv (\Phi _{N},\psi (x)\Phi _{0})\:,  \label{14.1.5}
+\end{align}%
+其中$\Phi _{N}$是态矢的正交完备集, 而$\Phi _{0}$是真空.
+由方程(\ref{14.1.3})中立刻可知这些函数满足齐次\,Dirac\,方程\begin{align}
+\left[ \gamma ^{\lambda }\frac{\partial }{\partial x^{\lambda }}+m+ \mi e\gamma
+^{\lambda }\mathscr{A}_{\lambda }(x)\right] u_{N}(x) &=\left[ \gamma
+^{\lambda }\frac{\partial }{\partial x^{\lambda }}+m+ \mi e\gamma ^{\lambda }%
+\mathscr{A}_{\lambda }(x)\right] v_{N}(x)  \nonumber \\
+&=0\:.  \label{14.1.6}
+\end{align}%
+我们也可以从\,Dirac\,场的等时反对易关系中导出归一化条件. 相互作用(\ref%
+{14.1.1})不会影响这些归一化条件, 所以归一化条件可以取成与自由场相同的形式:%
+\begin{equation}
+\{\psi (\bx,t),\bar{\psi}(\by,t)\}= \mi\gamma ^{0}\updelta ^{3}(%
+\bx-\by)\:.  \label{14.1.7}
+\end{equation}%
+取真空期望值, 并插入对$\Phi _{N}$的求和, 我们发现\begin{equation}
+\sum_{N}u_{N}(\bx,t)u_{N}^{\dag }(\by,t)+\sum_{N}v_{N}(\bx,t)v_{N}^{\dag }(\by,t)=\updelta ^{3}(\bx-\by)\:,
+\label{14.1.8}
+\end{equation}%
+对$N$的求和理解成对连续态的积分以及对所有离散束缚态的求和.
+
+我们主要感兴趣的情况是外场不依赖于时间, 像(\ref{14.1.2}). 在这种情况下, $\Phi _{N}$可以取为哈密顿量(%
+包含相互作用(\ref{14.1.1}))本征值为$E_{N}$的本征态. 这样, 时间平移不变性就告诉我们$u_{N}(x)$和$v_{N}(x)$对时%
+间的依赖是:%
+\begin{equation}
+u_{N}(\bx,t)=\me^{-\mi E_{N}t}u_{N}(\bx)\:, \qquad%
+v_{N}(\bx,t)=\me^{+\mi E_{N}t}v_{N}(\bx)\:.  \label{14.1.9}
+\end{equation}%
+这样, 齐次\,Dirac\,方程(\ref{14.1.6})就变成\marginpar[\flushright
+{\raisebox{-5.5ex}[0pt]{{\small[567]\hspace*{5mm}}}}]{{\raisebox{-5.5ex}[0pt]{\small\hspace*{5mm}[567]}}}
+\begin{gather}
+\mi\gamma ^{0}\left[ \bm{\gamma} \cdot \bm{\nabla}+m+\mi e\gamma ^{\lambda }%
+\mathscr{A}_{\lambda }(\bx)\right] u_{N}(\bx) = E_{N}u_{N}(%
+\bx)\:,  \label{14.1.10} \\
+\mi\gamma ^{0}\left[ \bm{\gamma} \cdot \bm{\nabla}+m+\mi e\gamma ^{\lambda }%
+\mathscr{A}_{\lambda }(\bx)\right] v_{N}(\bx) = -E_{N}v_{N}(%
+\bx)\:.  \label{14.1.11}
+\end{gather}%
+方程(\ref{14.1.11})右边的负号表明$v_{N}$是著名的\,Dirac\,``负能''解. 正如方程(\ref{14.1.8})所表明的,
+构造波函数完备集需要这些负能解. 当然, 对合适的外场, 理论中不存在负能{\KAI{态}}, 所以所有的$E_{N}$都是正的, 但是, %
+那些$u_{N}$或$v_{N}$非零的态之间仍然存在着一个重要差异: 定义(\ref{14.1.4})和(\ref{14.1.5})表明, 仅当一个态分别具有电荷$-e$和$+e$时, 这个态才可以有$u_{N}\neq 0$或$v_{N}\neq 0$. 正是在这一意义下, Dirac\,方程的负能解与反粒子的存在相关. 然而, 这个讨论并没有涉及\,Dirac\,方程的任何细节, 甚至没有考虑电子自旋.
+
+由\,Dirac\,波动方程(\ref{14.1.10})和(\ref{14.1.11}), 我们很容易看到能量不同的波函数是正交的. 即,%
+\[
+(E_{M}-E_{N}^{\ast })\Bigl(u_{N}^{\dag}u_{M}\Bigr) =
+\bm{\nabla}\cdot \Bigl(u_{N}^{\dag }\mi\gamma ^{0}\bm{\gamma}u_{M}\Bigr)\,
+\]%
+所以, 如果$\lvert\bx\rvert^{2}(u_{N}^{\dag }\mi\gamma ^{0}\bm{\gamma}u_{M})$在$\lvert \bx\rvert
+\to 0$且$\lvert\bx\rvert\to\infty$时仍然是有界的, 那么
+\begin{equation}
+\int \dif^{3}x\:\Bigl( (u_{N}^{\dag }(\bx)u_{M}(\bx)\Bigr) =0 \quad \text{如果}\quad E_{N}\neq E_{M}^{\ast }\:.  \label{14.1.12}
+\end{equation}%
+若$v_{N}$有类似的边界条件, 我们以同样的方法发现
+\begin{align}
+&\int \dif^{3}x\:\Bigl( v_{N}^{\dag }(\bx)v_{M}(\bx)\Bigr)  = 0%
+\quad \text{如果}\quad E_{N}\neq E_{M}^{\ast }\:,  \label{14.1.13} \\
+&\int \dif^{3}x\:\Bigl( u_{N}^{\dag }(\bx)v_{M}(\bx)\Bigr)  = 0%
+\quad \text{如果}\quad E_{N}\neq -E_{M}^{\ast }\:,
+\label{14.1.14}
+\end{align}%
+取$N=M$, 方程(\ref{14.1.12})和(\ref{14.1.13})告诉我们能量都是实的.
+在方程(\ref{14.1.12})\yzx (\ref{14.1.14})中去掉$E_{M}$上的复共轭标记, 我们看到能量不同的$u$是正交的, %
+能量不同的$v$是正交的, 并且(只要势能没有强到产生负能{\KAI{态}})所有$u$与所有$v$正交. 那么, %
+通过恰当地选择那些与能量一起表征态的分立量子数, 我们总可以将结果整理成
+\begin{gather}
+\int \dif^{3}x\:\Bigl( u_{N}^{\dag }(\bx)u_{M}(\bx)\Bigr)  = 0%
+\quad \text{如果}\quad N\neq M\:,  \label{14.1.15} \\
+\int \dif^{3}x\:\left( v_{N}^{\dag }(\bx)v_{M}(\bx)\right)  = 0%
+\quad \text{如果}\quad N\neq M\:,  \label{14.1.16} \\
+\int \dif^{3}x\:\left( u_{N}^{\dag }(\bx)v_{M}(\bx)\right)  =0 \:.  \label{14.1.17}
+\end{gather}%
+给方\marginpar[\flushright{\small[568]\hspace*{5mm}}]{{\small\hspace*{5mm}[568]}}程(\ref{14.1.8})右乘$u_{M}(\bx)$或$v_{M}(\by)$, 我们就会发现这些波函数一定满足归一化条件
+\begin{equation}
+\int \dif^{3}y\:\left( u_{N}^{\dag }(\by)u_{M}(\by)\right) =\int
+\dif^{3}y\:\left( v_{N}^{\dag }(\by)v_{M}(\by)\right) =\updelta _{NM}\:,  \label{14.1.18}
+\end{equation}%
+其中$\updelta _{NM}$是克罗内克$\updelta$-符号与动量空间$\updelta$-函数的乘积, %
+定义$\sum_{N}$时使用的归一化是$\sum_{N}\updelta_{MN}=1$. 这些归一化条件与\,Dirac\,波函数的概率解释并无直接关系, 而是来自场的反对易关系(\ref{14.1.7}).
+
+我们现在详细说明一下$\hAAA=0$的纯静电外场的情况. 在我们的\,Dirac\,矩阵标准表示中, 有
+\[
+\bm{\gamma}=\mi
+\begin{pmatrix}
+0 & -\bm{\sigma} \\
+\bm{\sigma} & 0%
+\end{pmatrix} \:, \qquad
+\mi\gamma ^{0}=\beta =
+\begin{pmatrix}
+0 & 1 \\
+1 & 0%
+\end{pmatrix} \:,
+\]%
+其中$\bm{\sigma}$是通常的$2\times 2$ Pauli\,矩阵\,3\,-矢, 这里的``1''和``0''是$2\times 2$单位阵和零矩阵. %
+通过令
+\begin{equation}
+u_{N}=\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+f_{N}+\mi g_{N} \\
+f_{N}-\mi g_{N}%
+\end{pmatrix} \:,  \label{14.1.19}
+\end{equation}%
+我们引入两分量波函数$f_{N}$和$g_{N}$. 这样, 能量本征值条件(%
+\ref{14.1.10})就取如下形式:%
+\begin{gather}
+(\bm{\sigma}\cdot \bm{\nabla})f_{N}  = (E_{N}+e\mathscr{A}^{0}+m)g_{N}\:
+,  \label{14.1.20} \\
+(\bm{\sigma}\cdot \bm{\nabla})g_{N}  = -(E_{N}+e\mathscr{A}^{0}-m)f_{N}\:
+.  \label{14.1.21}
+\end{gather}%
+在$e\mathscr{A}^{0}r\approx Z\alpha \ll 1$的非相对论情况下, 束缚能$m-E_{N}$是$Z^{2}\alpha ^{2}m$阶的, %
+而梯度算符是$Z\alpha m$阶的, 所以$g_{N}$要比$f_{N}$小一个阶为$Z\alpha$的因子. %
+(为了得到位置波函数$v_{N}$, 要把所有的$E_{N}$替换成$-E_{N}$, 所以在这一情况下, $f_{N}$要比$g_{N}$小同样的因子.) 在本节末尾我们将回到这个非相对论情况.
+
+根据空间反演, 物理态可以分成奇和偶两类:%
+\begin{equation}
+\mathsf{P}\Phi _{N}=\eta _{N}\Phi _{N}\:,  \label{14.1.22}
+\end{equation}%
+其中$\eta _{N}$是符号因子$\pm 1$. 回忆起电子的内禀宇称被定义成$+1$, Dirac\,场具有空间反演性质
+\[
+\mathsf{P}\psi (\bx,t)\mathsf{P}^{-1}=\beta \,\psi (-\bx,t)
+\]%
+所以方程(\ref{14.1.4})和(\ref{14.1.22})表明\,Dirac\,波函数满足宇称条件
+\begin{equation}
+u_{N}(\bx)=\eta_{N}\beta\, u_{N}(-\bx)  \label{14.1.23}
+\end{equation}%
+或者等价地\marginpar[\flushright{\small[569]\hspace*{5mm}}]{{\small\hspace*{5mm}[569]}}
+\begin{equation}
+f_{N}(\bx)=\eta _{N}f_{N}(-\bx)\:, \qquad g_{N}(%
+\bx)=-\eta _{N}g_{N}(-\bx)\:.  \label{14.1.24}
+\end{equation}%
+要注意的是, 与态的宇称相同的是$f_{N}(\bx)$, 而不是$g_{N}(\bx)$.
+
+这里势$\mathscr{A}^{0}$是旋转不变的, 波动方程的解可以根据它们的总角动量$j$和宇称$\eta$进行分类. %
+对给定的$j$, 分量$f$和$g$可以展成轨道角动量为$\ell =j+\frac{1}{2}$和$\ell =j-\frac{1%
+}{2}$的球谐函数, 但对于确定的宇称$\eta =(-1)^{j\mp \frac{1}{2}}$, %
+方程(\ref{14.1.24})表明$f$中只能有$\ell =j\mp \frac{1}{2}$而$g$中只能有$\ell =j\pm \frac{1}{2}$. %
+于是, 通常的角动量加法规则就表明了, 对总角动量为$j$, 总角动量$z$-分量为$\mu$, %
+且宇称为$(-1)^{j\mp \frac{1}{2}}$的态, ``大''两分量波函数$f$具有如下形式
+\begin{equation}
+f(\bx)=\left(
+\begin{array}{l}
+C_{j\mp \frac{1}{2},\frac{1}{2}}(j\:\mu ;\mu -\frac{1}{2}\quad\frac{1}{2})Y_{j\mp
+\frac{1}{2}}^{\mu -\frac{1}{2}}(\hat{\bx}) \\
+C_{j\mp \frac{1}{2},\frac{1}{2}}(j\:\mu ;\mu +\frac{1}{2}\:\:{-\frac{1}{2}})Y_{j\mp
+\frac{1}{2}}^{\mu +\frac{1}{2}}(\hat{\bx})%
+\end{array}%
+\right) F(|\bx|)\:,  \label{14.1.25}
+\end{equation}%
+其中$C$和$Y$是通常的\,Clebsch-Gordan\,系数和球谐函数.\textsuperscript{\cite{2}} 此外, 对任何总角动量给定且宇称确定的波函数,
+利用算符$\bm{\sigma}\cdot \hat{\bx}$, 我们可以构造出另一个$j$和$\mu$相同但宇称相反的波函数, 所以, %
+``小''分量可以写成如下形式%
+\begin{equation}
+g(\bx)=\bm{\sigma}\cdot \hat{\bx}\left(
+\begin{array}{l}
+C_{j\mp \frac{1}{2},\frac{1}{2}}(j\:\mu ;\mu -\frac{1}{2}\quad\frac{1}{2})Y_{j\mp
+\frac{1}{2}}^{\mu -\frac{1}{2}}(\hat{\bx}) \\
+C_{j\mp \frac{1}{2},\frac{1}{2}}(j\:\mu ;\mu +\frac{1}{2}\:\:{-\frac{1}{2}})Y_{j\mp
+\frac{1}{2}}^{\mu +\frac{1}{2}}(\hat{\bx})%
+\end{array}%
+\right) G(|\bx|)\:.  \label{14.1.26}
+\end{equation}%
+习惯上将态的轨道角动量$\ell$定义为``大''分量$f(\bx)$的轨道角动量,%
+\begin{equation}
+\ell =j\mp \tfrac{1}{2}\:,  \label{14.1.27}
+\end{equation}%
+这使得宇称总是$(-1)^{\ell }$\:.
+
+将方程(\ref{14.1.25})和(\ref{14.1.26})代入方程(\ref{14.1.20})和(\ref{14.1.21})给%
+出了耦合微分方程
+\begin{align}
+\frac{\dif G}{\dif r}+\frac{k+1}{r}G+(E+e\mathscr{A}^{0}-m)F &=0\:,
+\label{14.1.28} \\
+\frac{\dif F}{\dif r}-\frac{k-1}{r}F-(E+e\mathscr{A}^{0}+m)G &=0\:, \label{14.1.29}
+\end{align}%
+其中, 对宇称$\eta =(-1)^{j\mp \frac{1}{2}}$,%
+\begin{equation}
+k\equiv \pm (j+\tfrac{1}{2})\:.  \label{14.1.30}
+\end{equation}
+
+我们现在专注于\marginpar[\flushright{\small[570]\hspace*{5mm}}]{{\small\hspace*{5mm}[570]}}简单\,Coulomb\,外场(\ref{14.1.2}), 对这个外场, $e\mathscr{A}^{0}=Z\alpha /r$. %
+这一情况\textsuperscript{\cite{3}}下对\,Dirac\,方程的处理是熟悉的, 所以, 仅仅为了完整性, 我们在这里简单总结一下. %
+很容易看到原点附近的解趋于$r^{s-1}$, 其中$s^{2}=k^{2}-Z^{2}\alpha ^{2}$. (注意到$k^{2}\geq 1$, %
+所以指数$s$对于$Z\alpha\leq 1$是实的.) 而$s<0$的解与归一化条件(\ref{14.1.18})不相容, 我们必须丢弃掉. %
+这样, 波函数在$r\to\infty$时不能发散这一条件就确定了能量本征值的允许值:%
+\begin{equation}
+E_{n,j}=m\left[ 1+\left( \frac{Z\alpha }{n-j-\frac{1}{2}+\sqrt{(j+\frac{1}{2}%
+)^{2}-Z^{2}\alpha ^{2}}}\right) ^{2}\right] ^{-1/2}\:,  \label{14.1.31}
+\end{equation}%
+其中$n$是``主量子数''且
+\begin{equation}
+j+\tfrac{1}{2}\leq n\:.  \label{14.1.32}
+\end{equation}%
+值得注意的是, 这些能量并不依赖宇称或$\ell $, 而只依赖于$n$和$j$. 在$n=j+\frac{1}{2}$的情况下, %
+我们只有$k>0$以及宇称$(-1)^{j-\frac{1}{2}}$, 从而使$\ell =j-\frac{1}{2}$, 除此之外, %
+每一个$n$和$j$都有两个解, 分别对应$k$的两个符号或两个可能的宇称. %
+方程(\ref{14.1.32})与熟悉的非相对论约束$\ell \leq n-1$是相同的.
+
+对于$Z\alpha \ll 1$的轻原子, 方程(\ref{14.1.31})给出了幂级数
+\begin{equation}
+E=m\left[ 1-\frac{Z^{2}\alpha ^{2}}{2n^{2}}+\frac{Z^{4}\alpha ^{4}}{n^{4}}%
+\left( \frac{3}{8}-\frac{n}{2j+1}\right) +\cdots \right] \:. \label{14.1.33}
+\end{equation}%
+当然, 前两项就代表静质量能和非相对论\,Schr\"{o}dinger\,方程给出的束缚能. %
+既依赖$j$也依赖$n$的领头项是这里的第三项, 它是第一个相对论修正. 对$n=1$, %
+总角动量只有一个值$j=\frac{1}{2}$, 并且, 由于这里$n=j+\frac{1}{2}$, 所以只有一个宇称$(-1)^{j-\frac{1}{2}}=+1$,
+对应于$\ell =0$. 因此, 在氢原子$n=1$的态中, 很难看到方程(\ref{14.1.33})中的相对论修正效应, %
+虽然我们将在\,\ref{sec:14.3}\,节看到这在最近变得可能了. 另一方面, 对$n=2$, %
+我们有一个两种宇称都有的$j=\frac{1}{2}$的态(即, $2s_{1/2}$态和$2p_{1/2}$态),
+以及$j=\frac{3}{2}$且宇称为负的态$2p_{3/2}$. 方程(\ref{14.1.33})给出了氢原子中$p$态之间的分裂%
+\begin{equation}
+E(2p_{3/2})-E(2p_{1/2})=\frac{\alpha ^{4}m_{e}}{32}=4.5823\times 10^{-5}\,\mathrm{eV}\:.  \label{14.1.34}
+\end{equation}%
+这种相对论性的线分裂称为原子态的{\KAI{精细结构}}. 从一开始就知道这一预测与所观测到的精细结构是高度吻合的. 另一方面, %
+Dirac\,方程并不给\marginpar[\flushright{\small[571]\hspace*{5mm}}]{{\small\hspace*{5mm}[571]}}出$2s_{1/2}$态和$2p_{1/2}$态之间的任何能量差,
+所以这将是寻找进一步的修正效应的好地方, 我们将在\,\ref{sec:14.3}\,节中对此进行考察.
+
+在结束本节之前, 对一般的静电势$\mathscr{A}^{0}$, 我们将考察波函数和矩阵元在非相对论情况下的近似形式. (对\,Coulomb\,势, %
+这是$Z\alpha \ll 1$的极限.) 既然这里$E_{N}+m\simeq 2m\gg |e\mathscr{A}^{0}|$,
+电子波函数的``小''分量近似地由大分量给出
+\begin{equation}
+g_{N}\simeq (\bm{\sigma}\cdot \bm{\nabla})f_{N}/2m\:.  \label{14.1.35}
+\end{equation}%
+这样方程(\ref{14.1.21})就变成了非相对论\,Schr\"{o}dinger\,方程
+\begin{equation}
+\left[ -\frac{\nabla ^{2}}{2m}-e\mathscr{A}^{0}\right] f_{N}\simeq (E_{N}-m)f_{N}\:.  \label{14.1.36}
+\end{equation}%
+既然在$f_{N}$的方程中自旋自由度与轨道自由度之间不再有耦合, 对该方程的解, 我们可以找到如下形式的完备集
+\[
+f_{N}=\chi _{N}\,\psi _{N}(\bx)\:,
+\]%
+其中$\chi _{N}$是两分量常值旋量, 而$\psi _{N}(\bx)$是\,Schr\"{o}dinger\,方程的普通单分量解. %
+然而, 我们经常考虑总角动量有确定值$j$的态, 对这样的态, $f_{N}$(对非零轨道角动量)是这些项的和.
+
+在非相对论近似下, 四分量\,Dirac\,波函数取如下形式
+\begin{equation}
+u_{N}\simeq \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+(1+\mi\bm{\sigma}\cdot \bm{\nabla}/2m)f_{N} \\
+(1-\mi\bm{\sigma}\cdot \bm{\nabla}/2m)f_{N}%
+\end{bmatrix}  \label{14.1.37}
+\end{equation}%
+而方程(\ref{14.1.18})给出了归一化条件
+\begin{equation}
+\int \dif^{3}x\:(f_{N}^{\dag},f_{M})\simeq \updelta_{NM}-\tfrac{1}{4}(\bv^{2})_{NM}\,  \label{14.1.38}
+\end{equation}%
+其中
+\[
+(\bv^{2})_{NM}\equiv -\frac{1}{m^{2}}\int \dif^{3}x\:f_{N}^{\dag }(\bx)\nabla ^{2}f_{M}(\bx)\:.
+\]%
+在联系外场中的矩阵元与自由粒子矩阵元时, 注意到能量本征态$N$中的动量空间波函数可以写成
+\begin{equation}
+u_{N}(\bp)\equiv (2\uppi )^{-3/2}\int \dif^{3}x\:\me^{-\mi\bp\cdot
+\bx}u_{N}(\bx)\simeq \sum_{\sigma }u(\bp,\sigma )[f_{N}(%
+\bp)]_{\sigma }\:  \label{14.1.39}
+\end{equation}%
+是很有用的\marginpar[\flushright{\small[572]\hspace*{5mm}}]{{\small\hspace*{5mm}[572]}}, 其中$u(\bp,\sigma )$是自由粒子\,Dirac\,旋量
+\begin{gather*}
+u(\bp,\sigma ) \simeq \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+(1-\bp\cdot \bm{\sigma}/2m)\chi _{\sigma } \\
+(1+\bp\cdot \bm{\sigma}/2m)\chi _{\sigma }%
+\end{bmatrix}\:, \\
+\chi _{+\frac{1}{2}} \equiv
+\begin{pmatrix} 1 \\ 0 \end{pmatrix} \:, \qquad
+\chi _{-\frac{1}{2}}\equiv
+\begin{pmatrix}
+0 \\ 1
+\end{pmatrix}
+\end{gather*}%
+而$f_{N}(\bp)$是两分量\,Schr\"{o}dinger\,波函数的\,Fourier\,变换
+\[
+f_{N}(\bp)\equiv (2\uppi )^{-3/2}\int \dif^{3}x\:\me^{-\mi\bp\cdot \bx}f_{N}(\bx)\:.
+\]
+
+\subsection*{* * *}
+
+最后, 作为计算各种微扰效应的辅助, 我们给出\,16\,个独立的$4\times 4$电子矩阵元的领头项
+\begin{align}
+(\bar{u}_{M}\,u_{N}) &\simeq(f_{M}^{\dag }\,f_{N})-\frac{1}{4m^{2}}(\bm{\nabla}%
+f_{M}^{\dag }\cdot \bm{\sigma}\:\bm{\sigma}\cdot \bm{\nabla}f_{N})\:,
+\label{14.1.40} \\
+\mi(\bar{u}_{M}\gamma ^{0}u_{N}) &\simeq(f_{M}^{\dag }\,f_{N})+\frac{1}{4m^{2}}%
+(\bm{\nabla}f_{M}^{\dag }\cdot \bm{\sigma}\:\bm{\sigma}\cdot \bm{\nabla}f_{N})%
+\:,  \label{14.1.41} \\
+(\bar{u}_{M}\,\bm{\gamma}\,u_{N}) &\simeq\frac{1}{2m}[(\bm{\nabla}f_{M}^{\dag
+}\cdot \bm{\sigma}\:\bm{\sigma}f_{N})-(f_{M}^{\dag } \bm{\sigma}\:%
+\bm{\sigma}\cdot \bm{\nabla}f_{N})]\:,  \label{14.1.42} \\
+(\bar{u}_{M}\,[\gamma ^{0},\bm{\gamma}]\,u_{N}) &\simeq\frac{\mi}{m}[(\bm{\nabla}%
+f_{M}^{\dag }\cdot \bm{\sigma}\:\bm{\sigma}f_{N})+(f_{M}^{\dag } %
+\bm{\sigma}\:\bm{\sigma}\cdot \bm{\nabla}f_{N})]\:,  \label{14.1.43} \\
+(\bar{u}_{M}\,[\gamma ^{i},\gamma ^{j}]\,u_{N}) &\simeq2\mi\epsilon
+_{ijk}(f_{M}^{\dag }\sigma _{k}f_{N})\:,  \label{14.1.44} \\
+(\bar{u}_{M}\,\gamma _{5}\bm{\gamma}\,u_{N}) &\simeq-\mi(f_{M}^{\dag }\bm{\sigma}%
+f_{N})\:,  \label{14.1.45} \\
+(\bar{u}_{M}\,\gamma _{5}\gamma ^{0}\,u_{N}) &\simeq\frac{1}{2m}[(\bm{\nabla}%
+f_{M}^{\dag }\cdot \bm{\sigma}f_{N})-(f_{M}^{\dag }\bm{\sigma}\cdot %
+\bm{\nabla}f_{N})]\:,  \label{14.1.46} \\
+(\bar{u}_{M}\,\gamma _{5}\,u_{N}) &\simeq\frac{\mi}{2m}[(\bm{\nabla}f_{M}^{\dag
+}\cdot \bm{\sigma}f_{N})+(f_{M}^{\dag }\bm{\sigma}\cdot \bm{\nabla}f_{N})]%
+\:.  \label{14.1.47}
+\end{align}
+
+\newpage
+
+\section{外场中的辐射修正} \label{sec:14.2}
+\setcounter{equation}{0}
+
+我们现在来考虑上一节结果的辐射修正, 这些辐射修正是电子与量子电磁场以及带电重粒子外场相互作用引起的. %
+这些辐射修正可以用通常的\,Feynman\,图进行计算, 外场的全部效果就是修正存在电磁外场时的电子场传播子%
+(并提供方程(\ref{14.1.1})中依赖外场的重正化抵消项.)
+再具体些, 在任意图的电子内线中, 插入任意多个与相互作用(\ref{14.1.1})中\marginpar[\flushright{\small[573]\hspace*{5mm}}]{{\small\hspace*{5mm}[573]}}第一项对应的顶点, %
+其效果相当于将裸坐标空间传播子$-\mi S(x-y)$替换成修正了的传播子
+\begin{align}
+&{-}\mi S_{\mathscr{A}}(x,y) \equiv -\mi S(x-y)+(-\mi)^{2}\int
+\dif^{4}z_{1}\:S(x-z_{1})e\gamma ^{\mu }\mathscr{A}_{\mu }(z_{1})S(z_{1}-y)  \nonumber \\
+&+(-\mi)^{3}\int \dif^{4}z_{1}\int \dif^{4}z_{2}\:S(x-z_{1})e\gamma ^{\mu }\mathscr{A}%
+_{\mu }(z_{1})S(z_{1}-z_{2})e\gamma ^{\nu }\mathscr{A}_{\nu}(z_{2})S(z_{2}-y)  \nonumber \\
+&+\cdots \:,  \label{14.2.1}
+\end{align}%
+其中, 像通常那样,%
+\[
+S(x-y)\equiv \frac{1}{(2\uppi )^{4}}\int \dif^{4}p\:\frac{-\mi\gamma _{\lambda
+}p^{\lambda }+m}{p^{2}+m^{2}-\mi\epsilon }\me^{\mi p\cdot (x-y)}\:.
+\]%
+(因为外场破坏了平移不变性, 所以我们必须将$S_{\mathscr{A}}$写成$x$和$y$的函数而不是$x-y$的函数.) %
+\ref{sec:6.4}\,节中证明的定理告诉我们, 方程(\ref{14.2.1})与
+\begin{equation}
+{-}\mi S_{\mathscr{A}}(x,y)=(\Phi _{0},T\{\psi (x),\bar{\psi}(y)\}\Phi _{0})_{\mathscr{A}}  \label{14.2.2}
+\end{equation}%
+是相同的, 方程右边的下标$\mathscr{A}$表示在定义真空态$\Phi
+_{0}$和电子场$\psi (x)$的Heisenberg绘景中, 唯一考虑的相互作用是存在外场的相互作用(\ref{14.1.1}). %
+在方程(\ref{14.2.2})插入中间态$\Phi _{N}$的完备集, 这给出了用上一节引入的\,Dirac\,波函数$u_{N}$和$v_{N}$表示的传播子
+\begin{equation}
+\mi S_{\mathscr{A}}(x,y)=\theta (x^{0}-y^{0})\sum_{N}u_{N}(x)\bar{u}%
+_{N}(y)-\theta (y^{0}-x^{0})\sum_{M}v_{M}(x)\bar{v}_{M}(y)\:. \label{14.2.3}
+\end{equation}%
+另一个得到传播子(\ref{14.2.2})的可能方法是作为{\KAI{非齐次}}\,\textit{Dirac}\,{\KAI{方程}}的解:%
+\begin{equation}
+\left[ \gamma ^{\lambda }\frac{\partial }{\partial x^{\lambda }}+m+\mi e\gamma
+^{\lambda }\mathscr{A}_{\lambda }(x)\right] S_{\mathscr{A}}(x,y)=\updelta
+^{4}(x-y)\:,  \label{14.2.4}
+\end{equation}%
+这一方程可以从场方程(\ref{14.1.3})和反对易关系(\ref{14.1.7})得到, 或者由微扰级数(\ref{14.2.1})形式地得到. 另外, %
+方程(\ref{14.2.3})告诉了我们传播子满足的边界条件: 在$x^{0}-y^{0}\rightarrow \infty$时, %
+它的\,Fourier\,分解只包含正比于$E>0$的$\exp (-\mi E(x^{0}-y^{0}))$的``正频项'', %
+而在$x^{0}-y^{0}\rightarrow -\infty$时, 则只包含正比于$E>0$的$\exp (+\mi E(x^{0}-y^{0}))$的``负频项''. %
+即使在外场过强以至于无法采用微扰级数(\ref{14.2.1})的情况下, %
+也可以利用满足这些边界条件的非齐次\,Dirac\,方程来得到该传播子的数值解.\textsuperscript{\cite{4}} %
+只要算出了传播子$S_{\mathscr{A}}(x,y)$\marginpar[\flushright{\small[574]\hspace*{5mm}}]{{\small\hspace*{5mm}[574]}}, 外场中的散射振幅就可以用普通的\,Feynman\,图进行计算, %
+但是要将$S(x-y)$替换成$S_{\mathscr{A}}(x,y)$ (并将$\mathscr{A}$-相关的重正化抵消项插入到合适的地方).
+
+现在我们来看一下如何利用这种传播子被修正后的微扰级数计算束缚态能级的位移. %
+考虑全电子传播子$S_{\mathscr{A}}^{\prime}(x,y)$, 其中包含了电子与量子电磁场以及外场的相互作用:%
+\begin{equation}
+{-}\mi S_{\mathscr{A}}^{\prime }(x,y)\equiv (\Omega _{0},T\{\Psi (x),\bar{\Psi}%
+(y)\}\Omega _{0})_{\mathscr{A}}  \label{14.2.5}
+\end{equation}%
+其中, $\Psi (x)$是包含所有相互作用的\,Heisenberg\,绘景中的电子场, 而$\Omega _{0}$是全哈密顿量的真空本征态.
+对不依赖时间的外势,
+我们可以找到全哈密顿量的一组完备正交的本征态$\Omega _{N}$\:, 相应的本征值为$E_{N}^{\prime }$\:. 在方程(\ref{14.2.5})%
+的算符乘积中插入这些态的和, 我们有
+\begin{align}
+{-}\mi S_{\mathscr{A}}^{\prime }(x,y) &=\theta (x^{0}-y^{0})\me^{-\mi E_{N}^{\prime}(x^{0}-y^{0})}\sum_{N}U_{N}(\bx)\bar{U}_{N}(\by)  \nonumber \\
+&\quad-\theta (y^{0}-x^{0})\me^{-\mi E_{N}^{\prime }(y^{0}-x^{0})}\sum_{N}V_{N}(\bx)\bar{V}_{N}(\by)\:,  \label{14.2.6}
+\end{align}%
+其中
+\begin{align}
+(\Omega _{0},\Psi (\bx,t)\Omega _{N}) &\equiv \me^{-\mi E_{N}^{\prime
+}t}U_{N}(\bx)\:,  \label{14.2.7} \\
+(\Omega _{N},\Psi (\bx,t)\Omega _{0}) &\equiv \me^{+\mi E_{N}^{\prime
+}t}V_{N}(\bx)\:.  \label{14.2.8}
+\end{align}%
+(求和包含对连续态的积分和对分立束缚态的求和. 像前面一样, 仅当态$\Omega _{N}$分别有电荷$-e$%
+和$+e$时, $U_{N}$和$V_{N}$才是非零的.) 我们可以将传播子重新定义为能量而非时间的函数
+\begin{equation}
+S_{\mathscr{A}}^{\prime }(\bx,\by;E)\equiv \int_{-\infty
+}^{\infty }\dif x^{0}\:\me^{\mi E(x^{0}-y^{0})}S_{\mathscr{A}}^{\prime }(x,y)\:.  \label{14.2.9}
+\end{equation}%
+(时间平移不变性要求$S_{\mathscr{A}}^{\prime}(x,y)$是$x^{0}-y^{0}$的函数而不是$x$和$y$各自的函数.) %
+从方程(\ref{14.2.6})中我们看到
+\begin{equation}
+S_{\mathscr{A}}^{\prime }(\bx,\by;E)=\sum_{N}\frac{U_{N}(%
+\bx)\bar{U}_{N}(\by)}{E_{N}^{\prime }-E-\mi\epsilon }-\sum_{N}%
+\frac{V_{N}(\bx)\bar{V}_{N}(\by)}{E_{N}^{\prime }+E-\mi\epsilon}\:.  \label{14.2.10}
+\end{equation}%
+特别地, $S_{\mathscr{A}}^{\prime }(\bx,\by;E)
+$在所有电子束缚态能量处有极点, 且在所有负的正电子束缚态能量处有极点. %
+(当然, 正电子在普通的带正电荷的\,Coulomb\,外场中没有束缚态.)
+
+\newpage
+
+我们现在考虑全传播子的最低阶辐射修正\marginpar[\flushright{\small[575]\hspace*{5mm}}]{{\small\hspace*{5mm}[575]}}. 这里\,Feynman\,规则给出到这一阶的全传播子是%
+$S_{\mathscr{A}}^{\prime}=S_{\mathscr{A}}+\delta S_{\mathscr{A}}$, 其中修正项为
+\begin{equation}
+\delta S_{\mathscr{A}}(x,y)=\int \dif^{4}z\int \dif^{4}w\:S_{\mathscr{A}}(x,z)\,\Sigma
+_{\mathscr{A}}^{\ast }(z,w)\,S_{\mathscr{A}}(w,y)\:,  \label{14.2.11}
+\end{equation}%
+$\mi\Sigma _{\mathscr{A}}^{\ast }$是所有具有一个入电子线和一个出电子线的单圈图(去掉了最后的电子传播子)之和, %
+计算这些图时, 要将电子内线的$S(x-y)$换成$S_{\mathscr{A}}(x,y)$, 最后再加上一个二阶重正化抵消项. %
+用能量变量代替时间变量, 这是
+\begin{equation}
+\delta S_{\mathscr{A}}(\bx,\by;E)=\int \dif^{3}z\int \dif^{3}w\:S_{%
+\mathscr{A}}(\bx,\bz;E)\,\Sigma _{\mathscr{A}}^{\ast }(\bz%
+,\bw;E)\,S_{\mathscr{A}}(\bw,\by;E)\:,
+\label{14.2.12}
+\end{equation}%
+其中
+\begin{equation}
+\Sigma _{\mathscr{A}}^{\ast }(\bz,\bw;E)\equiv \int
+\dif z^{0}\:\me^{\mi E(z^{0}-w^{0})}\Sigma _{\mathscr{A}}^{\ast }(z,w)\:.
+\label{14.2.13}
+\end{equation}
+
+这些辐射修正的效果是将波函数变成$U_{N}=u_{N}+\delta u_{N}$和$V_{N}=v_{N}+\delta v_{N}$, %
+并将束缚态能量变成$E_{N}^{\prime }=E_{N}+\delta E_{N}$, 所以全传播子是
+\begin{align}
+S_{\mathscr{A}}^{\prime }(\bx,\by;E) &\simeq S_{\mathscr{A}}(%
+\bx,\by;E)  \nonumber \\
+&\quad+\sum_{N}\frac{\delta u_{N}(\bx)\bar{u}_{N}(\by)+u_{N}(%
+\bx)\delta \bar{u}_{N}(\by)}{E_{N}-E}  \nonumber \\
+&\quad-\sum_{N}\frac{\delta v_{N}(\bx)\bar{v}_{N}(\by)+v_{N}(%
+\bx)\delta \bar{v}_{N}(\by)}{E_{N}+E}  \nonumber \\
+&\quad-\sum_{N}\frac{u_{N}(\bx)\bar{u}_{N}(\by)\delta E_{N}}{%
+(E_{N}-E)^{2}}+\sum_{N}\frac{v_{N}(\bx)\bar{v}_{N}(\by)\delta
+E_{N}}{(E_{N}+E)^{2}}\:.  \label{14.2.14}
+\end{align}%
+(因为我们现在没有在散射态的连续谱中取$E$\:, 所以我们扔掉了$\mi\epsilon$项.) %
+我们看到电子束缚态的能量位移$\delta E_{N}$由全传播子中$-u_{N}(\bx)\bar{u}%
+_{N}(\by)/(E_{N}-E)^{2}$的系数给出. 为了计算它, 我们注意到方程(\ref{14.2.3})给出
+\begin{equation}
+S_{\mathscr{A}}(\bx,\by;E)=\sum_{N}\frac{u_{N}(\bx)\bar{%
+u}_{N}(\by)}{E_{N}-E-\mi\epsilon }-\sum_{N}\frac{v_{N}(\bx)\bar{v%
+}_{N}(\by)}{E_{N}+E-\mi\epsilon }\:.  \label{14.2.15}
+\end{equation}%
+将其代入方程(\ref{14.2.12}), 给出
+\begin{align}
+\delta S_{\mathscr{A}}(\bx,\by;E) &=\sum_{N,M}\frac{u_{N}(%
+\bx)\bar{u}_{M}(\by)}{(E_{N}-E)(E_{M}-E)}  \nonumber \\
+&\quad\times \int \dif^{3}z\int \dif^{3}w\:\bar{u}_{N}(\bz)\,\Sigma _{\mathscr{A}%
+}^{\ast }(\bz,\bw;E)\,u_{M}(\bw)+\cdots   \label{14.2.16}
+\end{align}%
+其中\marginpar[\flushright{\small[576]\hspace*{5mm}}]{{\small\hspace*{5mm}[576]}}, 省略号代表至少含有一个负能极点的额外项. 比较$(E_{N}-E)^{-2}$在这里与方程(\ref{14.2.14})中的系数, 我们发现
+\begin{equation}
+\delta E_{N}=-\int \dif^{3}x\int \dif^{3}y\:\bar{u}_{N}(\bx)\,\Sigma _{%
+\mathscr{A}}^{\ast }(\bx,\by;E_{N})\,u_{N}(\by)\:. \label{14.2.17}
+\end{equation}%
+$u_{N}$是齐次\,Dirac\,方程满足归一化条件(\ref{14.1.8})的解, 所以这非常像普通的一阶微扰论, 只不过把哈密顿量的微扰换成%
+了$-\Sigma ^{\ast }$.
+
+一般而言, $\delta E_{N}$是复的. 这就是不稳定原子能级辐射衰变到更低能级的结果; 我们在第3章中看到, %
+能量为$E$的不稳定态与衰变速率$\Gamma$在各种振幅的复值能量$E-\mi\Gamma /2$处产生了极点. %
+因而方程(\ref{14.2.17}) 的虚部等于$-\Gamma /2$, 而它的实部给出了能量位移.
+
+$\Sigma ^{\ast }$的\,Feynman\,图如图14.1%
+所示. (注意到这里出现了新的光子蝌蚪图, 这是因为一般\,Feynman 规则中禁止这种图出现的\,Lorentz\,不变性与电荷共轭不变性被外场破坏了.) 应用位置空间\,Feynman\,规则, 这些图给出\begin{align}
+&\mi\Sigma _{\mathscr{A}}^{\ast }(x,y) = [e\gamma ^{\mu }]\,[-\mi S_{\mathscr{A}%
+}(x,y)]\,\bigl[e\gamma _{\mu }\bigr]\,[-\mi D(x-y)]  \nonumber \\
+&-\Bigl[ e\gamma ^{\mu }\updelta ^{4}(x-y)\Bigr] \int
+\dif^{4}z\:[-\mi D(x-z)]\,\operatorname{Tr}\bigl\{[-\mi S_{\mathscr{A}}(z,z)]\,\bigl[e\gamma _{\mu }\bigr]\bigr\}  \nonumber \\
+&-\mi(Z_{2}-1)(\gamma ^{\mu }\partial _{\mu }+m)\updelta ^{4}(x-y)+\mi\delta m\,\updelta ^{4}(x-y)  \nonumber \\
+&+e\gamma ^{\mu }(Z_{2}-1)\updelta ^{4}(x-y)\mathscr{A}_{\mu }(x)  \nonumber
+\\
+&+\mi(Z_{3}-1)[e\gamma _{\mu }]\updelta ^{4}(x-y)\int \dif^{4}z\:[-\mi D(x-z)]\,\partial
+_{\nu }(\partial ^{\nu }\mathscr{A}^{\mu }(z)-\partial ^{\mu }\mathscr{A}%
+^{\nu }(z))\:,  \label{14.2.18}
+\end{align}%
+其中重正化常\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[577]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[577]}}}数$(Z_{2}-1)$, $(Z_{3}-1)$与$\delta m$计算至$e$的第二阶. (第二项中的负号就是通常伴随闭合费米圈的那个负号.)
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1401.eps}\\
+  \caption{有外场时的电子自能函数$\Sigma^{\ast}_{\mathscr{A}}(x,y)$的最低阶\,Feynman\,图. %
+  这里的双实线代表包含了外场效应的电子传播子$S_{\mathscr{A}}$; 单实线是入电子线和出电子线; 波浪线是虚光子; %
+  ×代表重正化抵消项.}
+  \label{fig:14.1}
+\end{figure}
+
+对于$Z\alpha$量级为一的强场, 构形空间电子传播子$S_{\mathscr{A}}$和方程(\ref{14.2.17})和(\ref{14.2.18})%
+中的积分需要数值地计算.\textsuperscript{\cite{4}} 然而, 对弱场, 我们可以在方程(%
+\ref{14.2.18})中应用级数(\ref{14.2.1})的前几项并以封闭的形式计算这些积分. 出于这个目的, 在动量空间中处理更加方便, 定义:%
+\begin{equation}
+S_{\mathscr{A}}(x,y)=(2\uppi )^{-4}\int \dif^{4}p^{\prime }\,\dif^{4}p\:\ze^{\mi p^{\prime
+}\cdot x}\me^{-\mi p\cdot y}\:S_{\mathscr{A}}(p^{\prime },p)\:, \label{14.2.19}
+\end{equation}%
+\begin{equation}
+\Sigma _{\mathscr{A}}^{\ast }(x,y)=(2\uppi )^{-4}\int \dif^{4}p^{\prime
+}\,\dif^{4}p\:\me^{\mi p^{\prime }\cdot x}\ze^{-\mi p\cdot y}\,\Sigma _{\mathscr{A}}^{\ast
+}(p^{\prime },p)\:,  \label{14.2.20}
+\end{equation}%
+\begin{equation}
+u_{N}(\bx)=(2\uppi )^{-3/2}\int \dif^{3}p\:\me^{\mi\bp\cdot \bx%
+}u_{N}(\bp)\:,  \label{14.2.21}
+\end{equation}%
+\begin{equation}
+\mathscr{A}^{\mu }(x)=\int \dif^{4}q\:\me^{\mi q\cdot x}\mathscr{A}^{\mu }(q)\:.
+\label{14.2.22}
+\end{equation}%
+(在这里, 我们不妥当地对一个函数与它的\,Fourier\,变换用了同一个符号, 我们会标明变量以区分出哪个是哪个.) 这样方程(%
+\ref{14.2.1})和(\ref{14.2.18})就变成\begin{align}
+S_{\mathscr{A}}(p^{\prime },p) &=\frac{-\mi\xxp+m}{p^{2}+m^{2}-\mi%
+\epsilon }-\mi e\,\frac{-\mi\xxp^{\prime }+m}{p^{\prime 2}+m^{2}-\mi\epsilon }%
+\,\xxAA(p^{\prime }-p)\,\frac{-\mi\xxp+m}{%
+p^{2}+m^{2}-\mi\epsilon }  \nonumber \\
+&\qquad\qquad\qquad+\cdots \:,  \label{14.2.23}
+\end{align}%
+和\marginpar[\flushright{\small[578]\hspace*{5mm}}]{{\small\hspace*{5mm}[578]}}
+\begin{align}
+&\Sigma _{\mathscr{A}}^{\ast }(p^{\prime },p) =\frac{\mi e^{2}}{(2\uppi )^{4}}%
+\int \frac{\dif^{4}k}{k^{2}-\mi\epsilon }\,\gamma ^{\mu }S_{\mathscr{A}}(p^{\prime
+}-k,p-k)\gamma _{\mu }  \nonumber \\
+&+[-(Z_{2}-1)(\mi\xxp+m)+Z_{2}\delta m]\,\updelta ^{4}(p^{\prime
+}-p)-\mi e(Z_{2}-1)\,\xxAA(p^{\prime }-p)  \nonumber \\
+&-\frac{\mi e^{2}\gamma ^{\mu }}{(2\uppi )^{4}}\frac{1}{(p-p^{\prime
+})^{2}-\mi\epsilon }\int \dif^{4}q\:\operatorname{Tr}\{S_{\mathscr{A}}(q,q+p^{\prime }-p)\gamma
+_{\mu }\}  \nonumber \\
+&+\frac{\mi e(Z_{3}-1)}{(p-p^{\prime })^{2}-\mi\epsilon }\Bigl[ (p-p^{\prime
+})^{2}\,\xxAA(p^{\prime }-p)-(\xxp-\xxp^{\prime
+})\,(p-p^{\prime })\cdot \mathscr{A}(p^{\prime }-p)\Bigr] \:.
+\label{14.2.24}
+\end{align}%
+因为外场是不含时的, 所以$S_{\mathscr{A}}(x,y)$和$\Sigma _{\mathscr{A}%
+}^{\ast }(x,y)$可以只通过依赖差$x^{0}-y^{0}$而与$x^{0}$和$y^{0}$相关, %
+所以$S_{\mathscr{A}}(p^{\prime },p)$, $\Sigma _{\mathscr{A}}^{\ast }(p^{\prime },p)$%
+以及$\mathscr{A}^{\mu }(p^{\prime }-p)$必须正比于$\updelta (p^{\prime 0}-p^{0})$:%
+\begin{equation}
+\mathscr{A}^{\mu }(p^{\prime }-p)=\updelta (p^{\prime 0}-p^{0})\mathscr{A}%
+^{\mu }(\bp^{\prime }-\bp)\:,  \label{14.2.25}
+\end{equation}%
+\begin{equation}
+S_{\mathscr{A}}(p^{\prime },p)=\updelta (p^{\prime 0}-p^{0})S_{\mathscr{A}}(%
+\bp^{\prime },\bp;p^{0})\:, \label{14.2.26}
+\end{equation}%
+\begin{equation}
+\Sigma _{\mathscr{A}}^{\ast }(p^{\prime },p)=\updelta (p^{\prime
+0}-p^{0})\Sigma _{\mathscr{A}}^{\ast }(\bp^{\prime },\bp;p^{0})%
+\:.  \label{14.2.27}
+\end{equation}%
+于是, 方程(\ref{14.2.17})和(\ref{14.2.13})就给出了能量位移
+\begin{equation}
+\delta E_{N}=-\int \dif^{3}p^{\prime }\int \dif^{3}p\:\bar{u}_{N}(\bp^{\prime
+})\,\Sigma _{\mathscr{A}}^{\ast }(\bp^{\prime },\bp;E_{N})\,u_{N}(\bp)\:,  \label{14.2.28}
+\end{equation}%
+其中$\Sigma _{\mathscr{A}}^{\ast }(\bp^{\prime },\bp;E_{N})$由方程(\ref{14.2.23}), (\ref{14.2.24})和(%
+\ref{14.2.27})给出. 在下一节计算弱外场中的能量位移时, 这是我们将用到的主要公式.
+
+\section{轻原子中的\,Lamb\,移动} \label{sec:14.3}
+\setcounter{equation}{0}
+
+我们现在来考虑一般静电场中非相对论性电子能级的辐射修正, 例如处在$Z\alpha \ll 1$的轻核的\,Coulomb\,场中的电子. %
+在这一极限下, 将\,Coulomb\,场按弱微扰处理是很自然的, 但是我们会看到这将导致红外发散, 这种红外发散与\,\ref{sec:11.3}\,节中的红外发散有关. 这个红外发散其实不是真实的, 这是因为\,4\,-动量$\bp,E_{N}$和$\bp^{\prime
+},E_{N}^{\prime }$不在电子质量壳上, 但它确实迫使我们要小心翼翼地处理.
+
+通常处理这一问题的方法是将对虚光子能量的积分分成低能区间和高能区间, 在低能区间, 我们可以非相对论地处理电子, %
+但必须计入外场的所有阶效应, 而\marginpar[\flushright{\small[579]\hspace*{5mm}}]{{\small\hspace*{5mm}[579]}}在高能区域, 则必须考虑相对论效应, 但可以只计入外场的最低阶效应. 不过, %
+我们将在这里引入一个虚构的光子质量$\mu $, 选择$\mu$使它远大于电子的典型动能, 但远小于电子的典型动量. %
+对于\,Coulomb\,场, 这相当于要求
+\begin{equation}
+(Z\alpha )^{2}m_{e}\ll \mu \ll Z\alpha m_{e}\:.  \label{14.3.1}
+\end{equation}%
+我们将方程(\ref{14.2.24})前两项(包括抵消项$Z_{2}-1$和$Z_{2}\delta m$的式子)中的光子传播子写成如下形式
+\begin{equation}
+\frac{1}{k^{2}-\mi\epsilon }=\left[ \frac{1}{k^{2}+\mu ^{2}-\mi\epsilon }\right]
++\left[ \frac{1}{k^{2}-\mi\epsilon }-\frac{1}{k^{2}+\mu ^{2}-\mi\epsilon }\right]
+\:.  \label{14.3.2}
+\end{equation}%
+相应地, 能量位移是两个项的和, 一个``高能''项和一个``低能''项: 计算高能项的方法是在方程(\ref{14.2.24})的前三项中应用光子传播子(\ref{14.3.2})的第一项, 并将结果加到方程(\ref{14.2.24})的最后两个不是红外发散的项(真空极化项)上; %
+计算低能项则是对方程(\ref{14.2.24})的前三项中使用光子传播子(\ref{14.3.2})的第二项. 这个处理的一个优点是, %
+我们可以直接利用\,\ref{sec:11.3}\,节和\,\ref{sec:11.4}\,节中的相对论性计算结果, 而不需要做从光子质量截断到红外能量截断这个相当棘手的转化. 当然, 在最后, 我们就必须去检验在能量位移的高能贡献和低能贡献中, 对光子质量$\mu$的依赖抵消掉了, %
+从而使总能量位移是$\mu $-无关的.%
+
+\newpage
+
+\subsection*{\textit{A} \  高\quad 能\quad 项}
+
+因为$\mu$被取成远大于原子束缚能, 我们可以只保留外场的最低阶项. %
+在不依赖时间的一般外矢势$\mathscr{A}^{\mu }(\bx)$中, %
+动量空间中原子能级的单圈辐射修正由方程(\ref{14.2.28})给出, 其中的自能插入$\Sigma _{\mathscr{A}}(p^{\prime },p)$由方%
+程(\ref{14.2.24})和(\ref{14.2.23})给出. 外场的零阶项简单地抵消掉了: $\delta m$项抵消了$\mathscr{A}=0$的第一项; %
+$Z_{3}-1$项抵消了$\mathscr{A}=0$的第三项; 而由于$u(p)$满足\,Dirac\,方程, $Z_{2}-1$项等于零. %
+$\Sigma_{\mathscr{A}}(p^{\prime },p)$中$\mathscr{A}^{\mu }$的一阶项可以写成如下形式
+\begin{equation}
+\Sigma _{\mathscr{A}1}(p^{\prime },p)=-\mi e\mathscr{A}_{\mu }(p^{\prime
+}-p)\Gamma _{1}^{\mu }(p^{\prime },p)  \label{14.3.3}
+\end{equation}%
+其中\marginpar[\flushright{\small[580]\hspace*{5mm}}]{{\small\hspace*{5mm}[580]}}
+\begin{align}
+\Gamma _{1}^{\mu }(p^{\prime },p) &=\frac{\mi e^{2}}{(2\uppi )^{4}}\int \frac{%
+\dif^{4}k}{k^{2}+\mu ^{2}-\mi\epsilon }  \nonumber \\
+&\quad\times \gamma ^{\nu }\left[ \frac{-\mi(\xxp^{\prime }-\xxk%
+)+m_{e}}{(p^{\prime }-k)^{2}+m_{e}^{2}-\mi\epsilon }\right] \gamma ^{\mu }%
+\left[ \frac{-\mi(\xxp-\xxk)+m_{e}}{(p-k)^{2}+m_{e}^{2}-\mi%
+\epsilon }\right] \gamma _{\nu }  \nonumber \\
+&\quad+(Z_{2}-1)\gamma ^{\mu }  \nonumber \\
+&\quad -\frac{\mi e^{2}\gamma _{\nu }}{(2\uppi )^{4}}\frac{1}{(p-p^{\prime})^{2}-\mi\epsilon }  \nonumber \\
+&\quad\times \int \dif^{4}l\:\operatorname{Tr}\left\{ \left[ \frac{-\mi\xxl+m_{e}}{%
+l^{2}+m_{e}^{2}}\right] \gamma ^{\mu }\left[ \frac{-\mi\xxl-\mi\xxp%
+^{\prime }+\mi\xxp+m_{e}}{(l+p^{\prime }-p)^{2}+m_{e}^{2}}\right]\gamma ^{\nu }\right\}   \nonumber \\
+&\quad-\frac{Z_{3}-1}{(p^{\prime }-p)^{2}-\mi\epsilon }\Bigl[ (p-p^{\prime
+})^{2}\eta ^{\mu \nu }-(p^{\prime }-p)^{\mu }(p^{\prime }-p)^{\nu }\Bigr]
+\gamma _{\nu }\:.  \label{14.3.4}
+\end{align}%
+比较前两项与方程(\ref{11.3.1})和(\ref{11.3.8}), 并比较接下来的两项与方程(\ref{11.3.9}), %
+(\ref{11.2.3})和(\ref{11.2.15}), 这告诉我们$\Gamma _{1}^{\mu}(p^{\prime },p)$是完整的单圈顶点函数, 包含了真空极化和所有抵消项, 而我们已经在\,\ref{sec:11.3}\,节计算过它的质壳矩阵元. 利用方程(\ref{14.2.26})和(\ref{14.2.25}), %
+可知它对能量位移(\ref{14.2.28})的贡献是
+\begin{align}
+\lbrack \delta E_{N}]_{\mbox{\scriptsize 高能}} &=\mi e\int \dif^{3}p^{\prime }\int
+\dif^{3}p\:\left( \bar{u}_{N}(\bp^{\prime })\Gamma _{1}^{\mu }(\bp%
+^{\prime },E_{N},\bp,E_{N})u_{N}(\bp)\right)   \nonumber \\
+&\quad\times \mathscr{A}_{\mu }(\bp^{\prime }-\bp)\:. \label{14.3.5}
+\end{align}%
+(这其实可以猜出来, 只需将电子与外场相互作用中的$\gamma ^{\mu }$替换成$\Gamma_{1}^{\mu }$即可.) %
+正如我们在\,\ref{sec:14.1}\,节讨论过的, 因为$Z\alpha \ll 1$, %
+我们可以将方程(\ref{14.3.5})中的\,Dirac\,波函数$u_{N}$近似取为
+\begin{equation}
+[u_{N}(\bp)]_{\alpha}=\sum_{\sigma}u_{\alpha}(\bp,\sigma)[f_{N}(\bp)]_{\sigma }\:,  \label{14.3.6}
+\end{equation}%
+其中$f_{N}$是电子在外\,Coulomb\,场中的非相对论两分量波函数, $u(\bp,\sigma)$是动量空间\,Dirac\,方程%
+\begin{equation}
+[ \mi\gamma_{\mu}p^{\mu}+m_{e}]u(\bp,\sigma)=0  \label{14.3.7}
+\end{equation}%
+的自旋$z$-分量为$\sigma$的归一化四分量解. 既然$u_{N}(%
+\bp)$近似满足自由粒子\,Dirac\,方程, 方程(\ref{10.6.15})给出了$\Gamma _{1}^{\mu }$矩阵元的一般%
+形式\begin{align}
+&\bar{u}_{M}(\bp^{\prime })[\gamma ^{\mu }+\Gamma _{1}^{\mu
+}(p^{\prime },p)]u_{N}(\bp)  \nonumber \\
+&=\bar{u}_{M}(\bp^{\prime })\Bigl[\gamma ^{\mu }F_{1}(q^{2})+\tfrac{1}{2}%
+\mi\,[\gamma ^{\mu },\gamma ^{\nu }]\,q_{\nu }\,F_{2}(q^{2})\Bigr]u_{N}(\bp)\:,  \label{14.3.8}
+\end{align}%
+其中$q=p^{\prime }-p$\marginpar[\flushright{\small[581]\hspace*{5mm}}]{{\small\hspace*{5mm}[581]}}. 波函数$u_{N}(\bp)$在$\lvert\bp\rvert\gg Z\alpha m_{e}$时衰减得非常快, %
+所以我们只需要极限$\lvert q^{2}\rvert \ll m_{e}^{2}$下的$F_{1}(\bq^{2})$和$F_{2}(\bq^{2})$. %
+在这一极限下, 方程(\ref{11.3.31}), (\ref{10.6.18})和(\ref{11.3.16})给出
+\begin{equation}
+F_{1}(q^{2})\simeq 1+\frac{e^{2}}{24\uppi ^{2}}\left( \frac{q^{2}}{m_{e}^{2}}%
+\right) \left[\ln \left( \frac{\mu ^{2}}{m_{e}^{2}}\right) +\frac{2}{5}+\frac{3}{4}\right] \:,  \label{14.3.9}
+\end{equation}%
+\begin{equation}
+F_{2}(q^{2})\simeq \frac{e^{2}}{16m_{e}\uppi ^{2}}\:.  \label{14.3.10}
+\end{equation}
+
+我们先考虑方程(\ref{14.3.8})中$F_{1}$项的贡献, 这一项到目前为止对能量位移的贡献最大, 并且最有趣的问题也出自对它的计算. 对$\hAAA=0$的纯静电场, 方程(\ref{14.3.5}), (\ref{14.3.8})和(\ref{14.3.9})给出
+\begin{align}
+&[ \delta E_{N}]_{F_{1}} =-\frac{e^{2}}{24\uppi ^{2}m_{e}^{2}}\left[
+\ln \left( \frac{\mu ^{2}}{m_{e}^{2}}\right) +\frac{2}{5}+\frac{3}{4}\right]
+\nonumber \\
+&\quad\times \int \dif^{3}p^{\prime }\int \dif^{3}p\:\bar{u}_{N}(\bp^{\prime
+})\Bigl( -\mi e\mathscr{A}^{0}(\bp^{\prime }-\bp)\Bigr) \gamma
+^{0}(\bp^{\prime }-\bp)^{2}u_{N}(\bp)\:.
+\label{14.3.11}
+\end{align}%
+为了计算这个贡献, 我们可以采用非相对论矩阵元(\ref{14.1.41})中的领头项, 得到\begin{align}
+\lbrack \delta E_{N}]_{F_{1}} &=-\frac{e^{2}}{24\uppi ^{2}m_{e}^{2}}\left[
+\ln \left( \frac{\mu ^{2}}{m_{e}^{2}}\right) +\frac{2}{5}+\frac{3}{4}\right]
+\nonumber \\
+&\quad\times \int \dif^{3}p^{\prime }\int \dif^{3}p\:f_{N}^{\dag }(\bp^{\prime })\,e%
+\mathscr{A}^{0}(\bp^{\prime }-\bp)[\bp^{\prime }-%
+\bp]^{2}f_{N}(\bp)\:,  \label{14.3.12}
+\end{align}%
+而在位置空间的结果是%
+\begin{equation}
+[ \delta E_{N}]_{F_{1}}=\frac{e^{2}}{24\uppi ^{2}m_{e}^{2}}\left[ \ln
+\left( \frac{\mu ^{2}}{m_{e}^{2}}\right) +\frac{2}{5}+\frac{3}{4}\right]
+\int \dif^{3}x\:f_{N}^{\dag }(\bx)\,[e\nabla ^{2}\mathscr{A}^{0}(\bx%
+)]f_{N}(\bx)\:.  \label{14.3.13}
+\end{equation}%
+特别地, 对\,Coulomb\,势(\ref{14.1.2}), 我们有$e\nabla ^{2}\mathscr{A}^{0}(\bx%
+)=-Ze^{2}\updelta ^{3}(\bx)$, 指标$N$中包括主量子数$n$和角动量量子数$j,m,\ell$, %
+而方程(\ref{11.2.41})给出$[f_{njm\ell }(0)]_{\sigma }=2(Z\alpha m_{e}/n)^{3/2}\updelta _{\ell
+,0}\updelta _{\sigma ,m}/\sqrt{4\uppi }$. 那么能量位移就是
+\begin{equation}
+[\delta E_{jnl}]_{F_{1}}=-\frac{2Z^{4}\alpha ^{5}m_{e}}{3\uppi n^{3}}%
+\left[ \ln \left( \frac{\mu ^{2}}{m_{e}^{2}}\right) +\frac{2}{5}+\frac{3}{4}%
+\right] \updelta _{\ell ,0}\:.  \label{14.3.14}
+\end{equation}%
+($\delta E$不依赖总角动量$z$-分量$m$是由旋转不变性保证的.) 方程(\ref{14.3.12})和(\ref{14.3.13})括号中的$%
+\,\frac{2}{5}$项来自于真空极化, 并正好产生了\,\ref{sec:11.2}\,节中尝试性计算给出的能量位移.%
+
+在继续计算磁矩和能量位移的低能贡献之前\marginpar[\flushright{\small[582]\hspace*{5mm}}]{{\small\hspace*{5mm}[582]}}, 值得注意的是, 在进一步处理之前, 我们现在得到的结果就给出了\,Lamb\,位移的一个合理的量级估计. 我们可以预计, 低能项将包含一个正比于$\ln (\mu /B)$项, %
+该项的系数会使这一项抵消掉方程(\ref{14.3.12})对$\mu $的依赖. 这里的常数$B$是为了使对数变量无量纲而必须引入的一个能量; 既然最终提供了红外截断的是电子被束缚在原子中这一事实, 我们可以猜测$B$是典型的原子束缚能,
+量级为$B\simeq (Z\alpha )^{2}m_{e}$. 因此, 态$N$中主量子数为$n$且轨道角动量为$\ell$的总能量位移采取如下形式
+\begin{equation}
+\delta E_{N}=-\frac{2Z^{4}\alpha ^{5}m_{e}}{3\uppi n^{3}}\left[ \ln \Bigl(
+Z^{4}\alpha ^{4}\Bigr) \delta _{\ell ,0}+O(1)\right] \:. \label{14.3.15}
+\end{equation}%
+对氢原子的$2s$态, 对数项单独给出
+\[
+\delta E_{2s}\simeq -\frac{\alpha ^{5}m_{e}}{12\uppi }\ln \Bigl( \alpha
+^{4}\Bigr) =5.5\times 10^{-6}\,\mathrm{eV}=1300\,\mathrm{MHz}\times 2\uppi \hbar\:.
+\]%
+我们将看到, 方程(\ref{14.3.15})中的``$O(1)$''项会使总能量位移降低大约$25\%$.
+
+现在我们考虑$\Gamma _{1}^{\mu }$矩阵元中$F_{2}$项的贡献,
+正如我们在\,\ref{sec:10.6}\,节中看到的那样, 这一贡献可以解释为对电子磁矩的辐射修正. 在方程(\ref{14.3.5})%
+中应用方程(\ref{14.3.10}), (\ref{14.3.8})和(\ref{14.3.6}), 我们看到这一项给出的能量位移为
+\begin{align}
+[\delta E_{N}]_{F_{2}} &=-\frac{e^{2}}{32\uppi ^{2}m_{e}}\int
+\dif^{3}p^{\prime }\int \dif^{3}p\left( \bar{u}_{N}(\bp^{\prime })\,[\gamma
+^{\mu },\gamma ^{\nu }]u_{N}(\bp)\right)   \nonumber \\
+&\qquad\times e\mathscr{A}_{\mu }(\bp^{\prime }-\bp)\,(p^{\prime}-p)_{\nu },  \label{14.3.16}
+\end{align}%
+或者, 在位置空间,
+\begin{equation}
+\lbrack \delta E_{N}]_{F_{2}}=\frac{\mi e^{2}}{64\uppi ^{2}m_{e}}\int \dif^{3}x\:(\bar{%
+u}_{N}(\bx)[\gamma ^{\mu },\gamma ^{\nu }]u_{N}(\bx))\,e%
+\mathscr{F}_{\mu \nu }(\bx)\:,  \label{14.3.17}
+\end{equation}%
+其中
+\begin{equation}
+\mathscr{F}_{\mu \nu }(\bx)\equiv \partial _{\mu }\mathscr{A}_{\nu }(%
+\bx)-\partial _{\nu }\mathscr{A}_{\mu }(\bx)\:. \label{14.3.18}
+\end{equation}%
+对$\hAAA=0$的纯静电场, 这是
+\begin{equation}
+[\delta E_{N}]_{F_{2}}=\frac{-\mi e^{2}}{32\uppi ^{2}m_{e}}\int
+\dif^{3}x\:\Bigl( \bar{u}_{N}(\bx)[\bm{\gamma} ,\gamma ^{0}]u_{N}(\bx)\Bigr) \cdot \bm{\nabla}
+[e\mathscr{A}^{0}(\bx)]\:.  \label{14.3.19}
+\end{equation}%
+在$Z\alpha \ll 1$的非相对论极限下, 我们可以采用近似结果(\ref{14.1.43}), 这个结果在这里是\vspace{-.1mm}
+\begin{align}
+(\bar{u}_{N}[\gamma ^{0},\bm{\gamma}]u_{N}) &\simeq \frac{\mi}{m_{e}}[(%
+\bm{\nabla}f_{N}^{\dag }\cdot \bm{\sigma}\:\bm{\sigma}f_{N})+(f_{N}^{\dag }%
+\bm{\sigma}\:\bm{\sigma}\cdot \bm{\nabla}f_{N})]  \nonumber \\
+&=\frac{\mi}{m_{e}}[\bm{\nabla}(f_{N}^{\dag }f_{N})-\mi(\bm{\nabla}f_{N}^{\dag
+}\times \bm{\sigma})f_{N}-\mi f_{N}^{\dag }(\bm{\sigma}\times \bm{\nabla}f_{N})]\:.  \label{14.3.20}
+\end{align}%
+在方程(\ref{14.3.8})应用上式并分部积分\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[583]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[583]}}}, 这部分的能量位移是
+\begin{align}
+\lbrack \delta E_{N}]_{F_{2}} &=\frac{e^{2}}{32\uppi ^{2}m_{e}^{2}}\int
+\dif^{3}x\:\Bigl[-|f_{N}(\bx)|^{2}\nabla ^{2}(e\mathscr{A}^{0}(\bx))
+\nonumber \\
+&\quad+2\mi\,f_{N}^{\dag }(\bx)\,\bm{\sigma}\cdot (\bm{\nabla}(e\mathscr{A}^{0}(%
+\bx))\times \bm{\nabla}f_{N}(\bx))\Bigr]\:.  \label{14.3.21}
+\end{align}%
+结合方程(\ref{14.3.12})和(\ref{14.3.21})就给出了在任意静电势$\mathscr{A}^{0}$中能量位移的所有高能贡献:%
+\begin{align}
+\lbrack \delta E_{N}]_{\mbox{\scriptsize 高能}} &=\frac{e^{2}}{24\uppi
+^{2}m_{e}^{2}}\left[ \ln \left( \frac{\mu ^{2}}{m_{e}^{2}}\right) +\frac{2}{5%
+}\right] \int \dif^{3}x\:f_{N}^{\dag }(\bx)\,[e\nabla ^{2}\mathscr{A}^{0}(%
+\bx)]f_{N}(\bx)  \nonumber \\
+&\quad+\frac{\mi e^{2}}{16\uppi ^{2}m_{e}^{2}}\int \dif^{3}x\:f_{N}^{\dag }(\bx)\,%
+\bm{\sigma}\cdot (\bm{\nabla}(e\mathscr{A}^{0}(\bx))\times \bm{\nabla}%
+f_{N}(\bx))\:.  \label{14.3.22}
+\end{align}
+
+\subsection*{\textit{B} \  低\quad 能\quad 项}
+
+能量位移的低能贡献是通过对光子传播子做替换\begin{equation}
+\frac{1}{k^{2}-\mi\epsilon }\rightarrow \frac{1}{k^{2}-\mi\epsilon }-\frac{1}{%
+k^{2}+\mu ^{2}-\mi\epsilon }\:,  \label{14.3.23}
+\end{equation}%
+然后从方程(\ref{14.2.24})的前三项中得到的. 这一替换最终将用于在$\mu$阶$k$值处截断对光子\,4\,-动量$k$的积分, %
+但是, 直到我们仔细地将质量重正化考虑在内, 我们才能看到这一点, 所以我们将非相对论近似推迟至那之后. 另外, 我们现在引入的光子动量同原子态的束缚能一样小, 或者比原子态的束缚能还要小, 所以产生这一束缚的静电力必须要处理到所有阶.
+
+取代采用动量空间的公式(\ref{14.2.24}), 回到构形空间公式(\ref{14.2.18})会更方便一些. 这给出电子自能函数的低能贡献
+\begin{align}
+[\Sigma _{\mathscr{A}}^{\ast }(x,y)]_{\mbox{\scriptsize 低能}}
+&=\mi e^{2}\gamma ^{\rho }\,S_{\mathscr{A}}(x,y)\,\gamma _{\rho }\,D(x-y;\mu
+)+\delta m_{e}(\mu )\,\updelta ^{4}(x-y)  \nonumber \\
+&\quad-(Z_{2}(\mu )-1)(\gamma ^{\mu }[\partial _{\mu }+\mi e\mathscr{A}_{\mu
+}]+m_{e})\updelta ^{4}(x-y)\:,  \label{14.3.24}
+\end{align}%
+其中$D(x-y;\mu )$是修正后的光子传播子\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[584]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[584]}}}
+\begin{equation}
+D(x-y;\mu )=\frac{1}{(2\uppi )^{4}}\int \dif^{4}k\:\me^{\mi k\cdot (x-y)}\left[ \frac{1}{%
+k^{2}-\mi\epsilon }-\frac{1}{k^{2}+\mu ^{2}-\mi\epsilon }\right] \:, \label{14.3.25}
+\end{equation}%
+并且, 抵消项$Z_{2}(\mu )-1$和$\delta m(\mu )$是用该修正传播子计算的. 从时间变量转化到能量变量, %
+对函数(\ref{14.2.13})的低能贡献就是
+\begin{align}
+\lbrack \Sigma _{\mathscr{A}}^{\ast }(\bx,\by;E)]_{\mbox{\scriptsize 低能}} &=\frac{\mi e^{2}}{(2\uppi )^{4}}\int \dif^{4}k\:\gamma ^{\rho }\,S_{%
+\mathscr{A}}(\bx,\by;E-k^{0})\,\gamma _{\rho }  \nonumber \\
+&\times \left[ \frac{1}{k^{2}-\mi\epsilon }-\frac{1}{k^{2}+\mu ^{2}-\mi\epsilon
+}\right] \me^{\mi\bk\cdot (\bx-\by)}  \nonumber \\
+&-(Z_{2}(\mu )-1)\Bigl( \bm{\gamma}\cdot \bm{\nabla}+\mi\gamma ^{0}E+\mi e\gamma
+^{\nu }\mathscr{A}_{\nu }+m_{e}\Bigr) \updelta ^{3}(\bx-\by)
+\nonumber \\
+&+\delta m_{e}(\mu )\,\updelta ^{3}(\bx-\by)\:. \label{14.3.26}
+\end{align}%
+于是, 方程(\ref{14.2.17})就给出了能量位移的低能贡献
+\begin{align}
+&[\delta E_{N}]_{\mbox{\scriptsize 低能}} =-\int \dif^{3}x\int \dif^{3}y\:\bar{u}%
+_{N}(\bx)\,[\Sigma _{\mathscr{A}}^{\ast }(\bx,\by%
+;E_{N})]_{\mbox{\scriptsize 低能}}\,u_{N}(\by)  \nonumber \\
+&=\frac{-\mi e^{2}}{(2\uppi )^{4}}\int \dif^{4}k\int \dif^{3}x\int \dif^{3}y\:\bar{u}_{N}(%
+\bx)\,\gamma ^{\rho }\,S_{\mathscr{A}}(\bx,\by%
+;E_{N}-k^{0})\,\gamma _{\rho }\,u_{N}(\by)  \nonumber \\
+&\qquad\qquad\times \left[ \frac{1}{k^{2}-\mi\epsilon }-\frac{1}{k^{2}+\mu ^{2}-i\epsilon
+}\right] \me^{\mi\bk\cdot (\bx-\by)}  \nonumber \\
+&-\delta m_{e}(\mu )\int \dif^{3}x\:\bar{u}_{N}(\bx)u_{N}(\bx)%
+\:.  \label{14.3.27}
+\end{align}%
+注意到, 由于\,Dirac\,波函数$u_{N}(\bx)$满足\,Dirac\,方程(\ref{14.1.10}), %
+正比于$Z_{2}(\mu )-1$的项被扔掉了. 对于\,Coulomb\,场中的电子传播子, 我们使用方程(\ref{14.2.15}):%
+\[
+S_{\mathscr{A}}(\bx,\by;E)=\sum_{M}\frac{u_{M}(\bx)\bar{%
+u}_{M}(\by)}{E_{M}-E-\mi\epsilon }-\sum_{M}\frac{v_{M}(\bx)\bar{v%
+}_{M}(\by)}{E_{M}+E-\mi\epsilon }\:,
+\]%
+其中第一项和第二项中的求和分别取遍单电子态和单正电子态.
+做$k^{0}$积分的最简单方法是, 对第一项选择在下半平面闭合大半圆积分围道,
+对第二项选择在上半平面闭合大半圆积分围道:%
+\begin{align*}
+&\int \dif k^{0}\,\left( \frac{1}{k^{2}+\mu ^{2}-\mi\epsilon }\right) \left( \frac{1%
+}{E_{M}\mp E_{N}\pm k^{0}-\mi\epsilon }\right)  \\
+&\qquad\qquad=\frac{\mi\uppi }{\sqrt{\bk^{2}+\mu ^{2}}}\left( \frac{1}{E_{M}\mp
+E_{N}+\sqrt{\bk^{2}+\mu ^{2}}-\mi\epsilon }\right)
+\end{align*}%
+如果$\mu$被换成\marginpar[\flushright{\small[585]\hspace*{5mm}}]{{\small\hspace*{5mm}[585]}}了$0$\:, 也用同样的方法处理. 能量位移(\ref%
+{14.3.27})现在变成
+\begin{eqnarray}
+&&\lbrack \delta E_{N}]_{\mbox{\scriptsize 低能}} = -\frac{e^{2}}{2(2\uppi )^{3}}\int
+\dif^{3}k \,\sum_{M}  \nonumber \\
+&&\times \Biggl[ \Gamma _{MN}^{\rho }(\bk)^{\ast }\Gamma _{\rho MN}(%
+\bk)\Biggl(\frac{1}{\left\vert \bk\right\vert
+(E_{M}-E_{N}+\left\vert \bk\right\vert -\mi\epsilon )}  \nonumber \cr
+&&\qquad\quad-\frac{1}{\sqrt{\bk^{2}+\mu ^{2}}(E_{M}-E_{N}+\sqrt{\bk%
+^{2}+\mu ^{2}}-\mi\epsilon )}\Biggr)  \nonumber \\
+&&-\tilde{\Gamma}_{MN}^{\rho }(\bk)^{\ast }\tilde{\Gamma}_{\rho MN}(%
+\bk)\Biggl(\frac{1}{\left\vert \bk\right\vert
+(E_{M}+E_{N}+\left\vert \bk\right\vert -\mi\epsilon )}  \nonumber \\
+&&\qquad\quad-\frac{1}{\sqrt{\bk^{2}+\mu ^{2}}(E_{M}+E_{N}+\sqrt{\bk%
+^{2}+\mu ^{2}}-\mi\epsilon )}\Biggr)\Biggr]  \nonumber \\
+&&-\delta m_{e}(\mu )\int \dif^{3}x\:\bar{u}_{N}(\bx)u_{N}(\bx)%
+\:,  \label{14.3.28}
+\end{eqnarray}%
+其中\begin{align}
+\Gamma _{MN}^{\rho }(\bk) &\equiv \int \dif^{3}y\:\me^{-\mi\bk\cdot
+\by}\bar{u}_{M}(\by)\gamma ^{\rho }u_{N}(\by)\:,
+\label{14.3.29} \\
+\tilde{\Gamma}_{MN}^{\rho }(\bk) &\equiv \int \dif^{3}y\:\me^{-\mi\bk%
+\cdot \by}\bar{v}_{M}(\by)\gamma ^{\rho }u_{N}(\by)%
+\:.  \label{14.3.30}
+\end{align}%
+(当然, 方程(\ref{14.3.28})中对$M$的``求和''仅有%
+第一项中的电子态贡献和第二项中的正电子态贡献.) 方程(\ref{14.3.28})可以从旧式微扰论中更直接地导出; 能量分母$E_{M}-E_{N}+\omega$和$E_{M}+E_{N}+\omega$是从%
+中间态的能量中减去初态的能量$E_{N}$后的结果, 前者的中间态由能量为$E_{M}$电子和能量为$\omega$的光子构成, %
+后者的中间态由能量为$E_{M}$的正电子, 能量为$\omega$的光子, 以及初末态电子构成. (参看图14.2.)
+
+\begin{figure}[h!]
+\centering
+\includegraphics{1402.eps}\\
+  \caption{电子能量位移低能部分的旧式微扰论图. 这里实线是电子; 波浪线是光子, 虚线截断的粒子线对应出现在(\ref{14.3.28})前两项中的中间态.}
+ \label{fig:14.2}
+\end{figure}
+
+在对方程(\ref{14.3.28})取任何近似之前, 利用从电流守%
+恒中导出的关系, 将矩阵元$\Gamma
+_{MN}^{\rho }$和$\tilde{\Gamma}_{MN}^{\rho }$的时间分量表示成相应的空间分量将是方便的:{}$^*$\footnote{$^*${}为了导出方程(\ref{14.3.31}), 注意到
+\begin{align*}
+&k_{i}\Gamma _{MN}^{i}(\bk) =-\mi\int \dif^{3}x\:\me^{-\mi\bk\cdot
+\bx}\:\bm{\nabla}\cdot (\bar{u}_{M}(\bx)\bm{\gamma}u_{N}(\bx)) \\
+&=\mi\int \dif^{3}x\:\me^{-\mi\bk\cdot \bx}\,\partial _{0}\left[ \left(
+\bar{u}_{M}(\bx)\gamma ^{0}u_{N}(\bx)\right)
+e^{-\mi(E_{N}-E_{M})x^{0}}\right] _{x^{0}=0}=(E_{N}-E_{M})\Gamma _{MN}^{0}(%
+\bk)\:.
+\end{align*}%
+方程(\ref{14.3.32})以同样的方式导出.}\marginpar[\flushright
+{\raisebox{-10ex}[0pt]{{\small[586]\hspace*{5mm}}}}]{{\raisebox{-10ex}[0pt]{\small\hspace*{5mm}[586]}}}
+\begin{align}
+k_{i}\,\Gamma _{MN}^{i}(\bk)&=(E_{N}-E_{M})\Gamma _{MN}^{0}(\bk)\:,  \label{14.3.31} \\
+k_{i}\,\tilde{\Gamma}_{MN}^{i}(\bk)&=(E_{N}+E_{M})\tilde{\Gamma}_{MN}^{0}(\bk)\:.  \label{14.3.32}
+\end{align}%
+更进一步, 通过完备性关系(\ref{14.1.8}), 可以直接证明:%
+\begin{equation}
+\sum_{M}\left[ |\Gamma _{MN}^{0}(\bk)|^{2}+|\tilde{\Gamma}_{MN}^{0}(%
+\bk)|^{2}\right] =1  \label{14.3.33}
+\end{equation}%
+和\begin{align}
+&\sum_{M}\left[ |\Gamma _{MN}^{0}(\bk)|^{2}(E_{M}-E_{N})-|\tilde{%
+\Gamma}_{MN}^{0}(\bk)|^{2}(E_{M}+E_{N})\right]   \nonumber \\
+&=\sum_{M}\left[ -\Gamma _{MN}^{0\ast }(\bk)\:\bk\cdot \bm{\Gamma}%
+_{MN}(\bk)-\tilde{\Gamma}_{MN}^{0\ast }(\bk)\:\bk\cdot
+\tilde{\bm{\Gamma}}_{MN}(\bk)\right]   \nonumber \\
+&=-\mi\bk\cdot \int \dif^{3}x\:\bar{u}_{N}(\bx)\,\bm{\gamma}\,u_{N}(%
+\bx)=0\:,  \label{14.3.34}
+\end{align}%
+上式最后一步是根据宇称条件(\ref{14.1.23})得到的. 以这一方式, 方程(\ref{14.3.28})可以重新写成
+\begin{eqnarray}
+&&\lbrack \delta E_{N}]_{\mbox{\scriptsize 低能}} =  \nonumber \\
+&&-\frac{e^{2}}{2(2\uppi )^{3}}\int \dif^{3}k\,\sum_{M}\left[ \frac{\Bigl( |%
+\bm{\Gamma}_{MN}(\bk)|^{2}-|\bk\cdot \bm{\Gamma}_{MN}(\bk)|^{2}/\bk^{2}\Bigr) }{|\bk|\:(E_{M}-E_{N}+\left\vert \bk
+\right\vert -\mi\epsilon )}\right.   \nonumber \\
+&&\qquad-\left. \frac{\Bigl( |\bm{\Gamma}_{MN}(\bk)|^{2}-|\bk\cdot %
+\bm{\Gamma}_{MN}(\bk)|^{2}/(\bk^{2}+\mu ^{2})\Bigr) }{\sqrt{%
+\bk^{2}+\mu ^{2}}\,(E_{M}-E_{N}+\sqrt{\bk^{2}+\mu ^{2}}%
+-\mi\epsilon )}\right]   \nonumber \\
+&&+\frac{e^{2}}{2(2\uppi )^{3}}\int \dif^{3}k\,\sum_{M}\left[ \frac{\Bigl( |\tilde{%
+\bm{\Gamma}}_{MN}(\bk)|^{2}-|\bk\cdot \tilde{\bm{\Gamma}}_{MN}(%
+\bk)|^{2}/\bk^{2}\Bigr) }{|\bk|\:(E_{M}+E_{N}+\left\vert
+\bk\right\vert )}\right.   \nonumber \\
+&&\qquad-\left. \frac{\Bigl( |\tilde{\bm{\Gamma}}_{MN}(\bk)|^{2}-|\bk%
+\cdot \tilde{\bm{\Gamma}}_{MN}(\bk)|^{2}/(\bk^{2}+\mu
+^{2})\Bigr) }{\sqrt{\bk^{2}+\mu ^{2}}\,(E_{M}+E_{N}+\sqrt{\bk%
+^{2}+\mu ^{2}})}\right]   \nonumber \cr
+&&-\frac{e^{2}}{(2\uppi )^{3}}\int \dif^{3}k\,\sum_{M}|\tilde{\Gamma}_{MN}^{0}(%
+\bk)|^{2}\left( \frac{1}{\bk^{2}}-\frac{1}{\bk^{2}+\mu
+^{2}}\right)   \nonumber \\
+&&+\tfrac{1}{2}\alpha \mu -\delta m_{e}(\mu )\int \dif^{3}x\:\bar{u}_{N}(\bx%
+)u_{N}(\bx)\:,  \label{14.3.35}
+\end{eqnarray}%
+在倒数第二项中\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[587]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[587]}}}, 我们用到了初等积分
+\[
+\int \dif^{3}k\:\left( \frac{1}{\bk^{2}}-\frac{1}{\bk^{2}+\mu ^{2}}\right) =2\mu \uppi ^{2}\:.
+\]%
+
+至此, 这只是方程(\ref{14.3.28})一个精确的改写. 我们现在必须借助几个近似.
+首先, 考虑质量重正化. 在\,\ref{sec:11.4}\,节中, 我们已经计算了到$\alpha$阶的$\delta m_{e}(\mu )$;
+结果是
+\begin{equation}
+\delta m_{e}(\mu )=\frac{2m_{e}\uppi ^{2}e^{2}}{(2\uppi )^{4}}\int_{0}^{1}\dif x%
+\left[ 1+x\right] \ln \left( \frac{m_{e}^{2}x^{2}+\mu ^{2}(1-x)}{%
+m_{e}^{2}x^{2}}\right) \:.  \label{14.3.36}
+\end{equation}%
+尽管在\,\ref{sec:11.4}\,节中我们认为$\mu$是正规化质量而取了$\mu$远大于$m_{e}$, %
+对这里我们所感兴趣的情况$\mu \ll m_{e}$, 我们还是可以用方程(\ref{14.3.36})得到$\delta m_{e}(\mu)$的值. %
+在这一极限下, 方程(\ref{14.3.36})给出
+\begin{equation}
+\delta m_{e}(\mu )\rightarrow \frac{\alpha \mu }{2}\left[ 1-\frac{3\mu }{%
+2\uppi m_{e}}+\dots \right] \:.  \label{14.3.37}
+\end{equation}%
+我们又回想起, 当$Z\alpha\ll 1$时, $u_{N}(\bx)$由方程(\ref{14.1.37})给定
+\begin{equation}
+u_{N}(\bx)=\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+(1-\bm{\sigma}\cdot \bv/2+\cdots )f_{N}(\bx) \\
+(1+\bm{\sigma}\cdot \bv/2+\cdots )f_{N}(\bx)%
+\end{bmatrix}\:.  \label{14.3.38}
+\end{equation}%
+其中省略号代表$Z\alpha$的高阶项; $\bv$是非相对论速度算符$-\mi\bm{\nabla}/m_{e}$; %
+$f_{N}(\bx)$是非相对论\,Schr\"{o}dinger\,方程的两分量旋量解, 按照方程(\ref{14.1.38})归一化,
+使得\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[588]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[588]}}}
+\begin{equation}
+\int \dif^{3}x\:|f_{N}(\bx)|^{2}=1-\tfrac{1}{4}(\bv^{2})_{NN}+\cdots \:.  \label{14.3.39}
+\end{equation}%
+这给出了方程(\ref{14.3.35})中$%
+\,\delta m_{e}(\mu )$的系数\begin{equation}
+\int \dif^{3}x\:\bar{u}_{N}(\bx)u_{N}(\bx)=1-\tfrac{1}{2}(\bv%
+^{2})_{NN}+\cdots \:.  \label{14.3.40}
+\end{equation}%
+我们立刻注意到, $-\delta m_{e}(\mu)\int \dif^{3}x\,\bar{u}_{N}u_{N}$中的领头项抵消了%
+方程(\ref{14.3.35})中的$\alpha \mu /2$项. 我们其实可以预估出这个抵消, 原因是在$Z\alpha\to 0$的极限下, %
+方程(\ref{14.3.35})中的$\alpha \mu /2$项仍然保留下来, 以及$m_{e}(\mu )$作为重正化电子质量的定义%
+意味着在这一极限下不存在能量位移. 通过相同的讨论, %
+我们可以预估出$\delta m_{e}(\mu )$中的$\alpha \mu ^{2}/m_{e}$阶项(这一项大于$\alpha (Z\alpha )^{4}m_{e}$%
+阶项, 因\vspace{-5mm}\linebreak
+\pagebreak
+
+\noindent
+而不能简单地忽略掉)抵消了方程(\ref{14.3.35})中与它同阶的第二项和第三项.{}$^*$\footnote{$^*${}这个抵消的证明如下. 我们预期方程(\ref{14.3.35}) 中的第二项和第三项足够小, 使得它%
+们可以用$u_{N}(\bx)$所满足的\,Dirac\,方程的极端非相对论近似$\beta u_{N}(\bx)=u_{N}(\bx)$ 来计算.
+另一方面, 尽管正电子波函数$v_{M}(\bx)$中的\,Coulomb\,力可以被忽略掉, 第三项中对$M$的求和中还是包含了来自相对论性正电子的重要贡献, 所以我们采用近似$v_{\bp,\sigma }(\bx)\simeq
+(2\uppi )^{-3/2}v(\bp,\sigma )e^{\mi p\cdot x}$, 其中$v(\bp,\sigma )$是\,\ref{sec:5.5}\,节中引入的正电子旋量, 它的归一化为$\bar{v}(\bp^{\prime },\sigma )v(\bp,\sigma )=\updelta _{\sigma ^{\prime },\sigma}$. 因此, 在方程(\ref{14.3.35})的第二项和第三项中, 对$M$ 的求和近似为
+\[
+\tfrac{1}{2}\left[ \sum_{M}\tilde{\Gamma}_{MN}^{i\ast }(\bk)\tilde{%
+\Gamma}_{MN}^{j}(\bk)+(i\leftrightarrow j)\right] \simeq \updelta
+_{ij}\left( \frac{\sqrt{\bk^{2}+m_{e}^{2}}+m_{e}}{2\sqrt{\bk%
+^{2}+m_{e}^{2}}}\right) \:,
+\]%
+\[
+\sum_{M}|\tilde{\Gamma}_{MN}^{0}(\bk)|^{2}\simeq \left( \frac{\sqrt{%
+\bk^{2}+m_{e}^{2}}-m_{e}}{2\sqrt{\bk^{2}+m_{e}^{2}}}\right)
+\:.
+\]%
+那么, 到$\mu /m_{e}$的领头阶, 方程(\ref{14.3.35})中的第二项和第三项分别是%
+\[
+\frac{e^{2}}{4m_{e}(2\uppi )^{3}}\int \dif^{3}k\left[ \frac{2}{k}-\frac{%
+(3-k^{2}/(k^{2}+\mu ^{2}))}{\sqrt{k^{2}+\mu ^{2}}}\right] \left( \frac{\sqrt{%
+\bk^{2}+m_{e}^{2}}+m_{e}}{2\sqrt{\bk^{2}+m_{e}^{2}}}\right)
+\simeq \frac{\alpha \mu ^{2}}{4\uppi m_{e}}
+\]%
+和\[
+-\frac{e^{2}}{2(2\uppi )^{3}}\int \dif^{3}k\left( \frac{1}{\bk^{2}}-\frac{1%
+}{\bk^{2}+\mu ^{2}}\right) \left( \frac{\sqrt{\bk^{2}+m_{e}^{2}%
+}-m_{e}}{2\sqrt{\bk^{2}+m_{e}^{2}}}\right) \simeq -\frac{\alpha \mu
+^{2}}{\uppi m_{e}}\:.
+\]%
+(方程(\ref{14.3.32})排除了对后一表达式的相对论修正可能没有被因子$\bk^{2}/m_{e}$压低的可能性, %
+这一因子在$\lvert \bk\rvert ^{2}\ll m_{e}^{2}$时会出现在该表达式中.)
+这两项被$-\delta m_{e}(\mu )\int \dif^{3}x\,\bar{u}_{N}(%
+\bx)u_{N}(\bx)$中的$+3\alpha \mu ^{2}/4\uppi m_{e}$抵消了. 最后, 我们注意到, 对于对正电子态求和的估计, 它的相对论修正将会包含额外的因子$v^{2}/c^{2}\approx (Z\alpha )^{2}$, %
+这产生了阶为$\alpha (Z\alpha )^{2}\mu ^{2}/m_{e}\ll \alpha (Z\alpha)^{4}m_{e}$的贡献, %
+这证明了这里所采用的非相对论近似是合理的.} 另一方面, $\delta
+m_{e}$中$\alpha \mu ^{2}/m_{e}$项与矩阵元(\ref{14.3.40})中\marginpar[\flushright{\small[589]\hspace*{5mm}}]{{\small\hspace*{5mm}[589]}}第二项的乘积的阶是$(Z\alpha )^{2}\alpha \mu
+^{2}/m_{e}\ll \alpha (Z\alpha )^{4}m_{e}$, 因而可以被忽略掉. 到$\alpha (Z\alpha )^{4}m_{e}$阶, %
+质量重正化仅剩的影响是$\delta m_{e}(\mu)$中的领头项与$\int \dif^{3}x\,\bar{u}_{N}u_{N}
+$中$(Z\alpha )^{2}$阶项的乘积:%
+\[
+-\left[ \frac{e^{2}\mu }{8\uppi }\right] \left[ -\frac{1}{2}(\bv%
+^{2})_{NN}\right] =\frac{e^{2}\mu }{16\uppi }(\bv^{2})_{NN}\:.
+\]%
+(这是质量重正化对电子动能的影响, 在\,\ref{sec:1.3}\,节曾提到过.) 可以证明, 如果我们忽略能级之间的差异, %
+这正是方程(\ref{14.3.35})中第一项的负数. 为了看到这一点, 注意到这一项中的积分实际上在$\lvert \bk
+\rvert\sim \mu \ll Z\alpha m_{e}$处被截断了, 所以我们可以在$\bk\rightarrow 0$的极限下计算矩阵%
+元$\bm{\Gamma}_{MN}(\bk)$. 到$Z\alpha$的最低阶, 方程(\ref{14.1.42})给出%
+\begin{equation}
+\bm{\Gamma}_{MN}(0)=(\bv)_{MN}  \label{14.3.41}
+\end{equation}%
+然后利用非相对论\,Schr\"{o}dinger\,方程解$f_{N}$的完备性,
+我们有\begin{equation}
+\sum_{M}\Gamma _{MN}^{i\ast }(\bk)\Gamma _{MN}^{j}(\bk)\simeq
+(v^{i}v^{j})_{NN}\:,  \label{14.3.42}
+\end{equation}%
+所以, 到这一阶
+\begin{align*}
+&-\frac{e^{2}}{2(2\uppi )^{3}}\int \dif^{3}k\:\sum_{M}\left[ \frac{\Bigl( |%
+\bm{\Gamma}_{MN}(\bk)|^{2}-|\bk\cdot \bm{\Gamma}_{MN}(\bk
+)|^{2}/\bk^{2}\Bigr) }{\bk^{2}}\right.  \\
+&\qquad-\left. \frac{\Bigl( |\bm{\Gamma}_{MN}(\bk)|^{2}-|\bk\cdot %
+\bm{\Gamma}_{MN}(\bk)|^{2}/(\bk^{2}+\mu ^{2})\Bigr) }{\bk^{2}+\mu ^{2}}\right]  \\
+&\simeq -\frac{e^{2}}{2(2\uppi )^{3}}(\bv^{2})_{NN}\int \dif^{3}k\left[
+\frac{2}{3\bk^{2}}-\frac{1-\bk^{2}/3(\bk^{2}+\mu ^{2})}{%
+\bk^{2}+\mu ^{2}}\right]  \\
+&=-\frac{e^{2}\mu }{16\uppi }(\bv^{2})_{NN}\:.
+\end{align*}%
+因此, 在质量重正化之后, 我们只剩下了方程(\ref{14.3.35})中的第一项, 再补上去掉的能量差$E_{N}-E_{M}$:%
+\begin{align}
+\lbrack \delta E_{N}]_{\mbox{\scriptsize 低能}} &=\frac{e^{2}}{2(2\uppi )^{3}}\int
+\dif^{3}k\:\sum_{M}(E_{M}-E_{N})  \nonumber \\
+&\quad\times \left[ \frac{\Bigl( |\bm{\Gamma}_{MN}(\bk)|^{2}-|\bk%
+\cdot \bm{\Gamma}_{MN}(\bk)|^{2}/\bk^{2}\Bigr) }{\bk%
+^{2}(E_{M}-E_{N}+\left\vert \bk\right\vert -\mi\epsilon )}\right.
+\nonumber \\
+&\quad-\left. \frac{\Bigl( |\bm{\Gamma}_{MN}(\bk)|^{2}-|\bk\cdot %
+\bm{\Gamma}_{MN}(\bk)|^{2}/(\bk^{2}+\mu ^{2})\Bigr) }{(%
+\bk^{2}+\mu ^{2})(E_{M}-E_{N}+\sqrt{\bk^{2}+\mu ^{2}}%
+-\mi\epsilon )}\right] \:.  \label{14.3.43}
+\end{align}%
+再一次利用方程(\ref{14.3.41}),
+给出\marginpar[\flushright
+{\raisebox{9ex}[0pt]{{\small[590]\hspace*{5mm}}}}]{{\raisebox{9ex}[0pt]{\small\hspace*{5mm}[590]}}}
+\begin{align}
+\lbrack \delta E_{N}]_{\mbox{\scriptsize 低能}} &=\frac{e^{2}}{2(2\uppi )^{3}}%
+\sum_{M}(E_{M}-E_{N})|\bv_{MN}|^{2}  \nonumber \\
+&\quad\times \int \dif^{3}k\:\biggl[ \frac{2}{3\bk^{2}(E_{M}-E_{N}+\left\vert
+\bk\right\vert -\mi\epsilon )}   \nonumber \\
+&\quad- \frac{1-\bk^{2}/3(\bk^{2}+\mu ^{2})}{(\bk%
+^{2}+\mu ^{2})(E_{M}-E_{N}+\sqrt{\bk^{2}+\mu ^{2}}-\mi\epsilon )}\biggr]
+\:.  \label{14.3.44}
+\end{align}%
+尽管电子动量的典型值远大于原子能量差的典型值, 但它不是这一积分中$\left\vert \bk\right\vert$的典型值, %
+这是因为, 如果我们不保留分母中的$E_{M}-E_{N}$项, 这一积分会红外发散. 在$\mu \gg |E_{M}-E_{N}|\sim
+(Z\alpha )^{2}m_{e}$的极限下, 通过将方程(\ref{14.3.44})中积分的积分区域分为两段, %
+一段从$0$到$\lambda$, 另一段从$\lambda$到无穷, 其中对$\lambda$的选择仅要求$%
+\,|E_{M}-E_{N}|\ll \lambda \ll \mu $, 我们就可以把这个积分算出来. 以这种方式, 我们发现
+\begin{align*}
+&\int_{0}^{\infty }k^{2}\dif k\:\biggl[ \frac{2}{3k^{2}(E_{M}-E_{N}+k-\mi\epsilon )}\\
+&\qquad\qquad - \frac{1-k^{2}/3(k^{2}+\mu ^{2})}{(k^{2}+\mu ^{2})(E_{M}-E_{N}+%
+\sqrt{k^{2}+\mu ^{2}}-\mi\epsilon )}\biggr]  \\
+&\simeq \frac{2}{3}\left[ \ln \left( \frac{\mu }{2|E_{M}-E_{N}|}\right) +%
+\frac{5}{6}+\mi\uppi \theta (E_{N}-E_{M})\right] \:.
+\end{align*}%
+这里的纯虚项反映了原子从态$N$衰变到能量更低的态$M$的可能性. 这一项贡献了衰变率, 由能量位移虚部给出. 我们在这里感兴趣的是能量位移的实部, 因而会在下文中扔掉这个虚的项. 方程(\ref{14.3.44})现在给出
+\begin{equation}
+[ \delta E_{N}]_{\mbox{\scriptsize 低能}}=\frac{e^{2}}{6\uppi ^{2}}%
+\sum_{M}(E_{M}-E_{N})|\bv_{MN}|^{2}\left[ \ln \left( \frac{\mu }{%
+2|E_{N}-E_{M}|}\right) +\frac{5}{6}\right] \:.  \label{14.3.45}
+\end{equation}
+
+\subsection*{\textit{C} \  总能量位移}
+
+我们需要在\marginpar[\flushright{\small[591]\hspace*{5mm}}]{{\small\hspace*{5mm}[591]}}方程(\ref{14.3.45})中的求和与高能项(\ref{14.3.22})中的矩阵元之间建立一个联系. 出于这个目的, 我们先来看看如果可以略去方程(\ref{14.3.45})中的对数, 方程(\ref{14.3.45})中的求和将会是什么值. %
+我们注意到$(E_{M}-E_{N})\bv_{NM}=[\bv,H]_{NM}$, 所以
+\begin{align*}
+\sum_{M}(E_{M}-E_{N})\vert \bv_{MN}\vert ^{2} &=\tfrac{1}{2%
+}\sum_{M}\Bigl( [v^{i},H]_{NM}\,v_{MN}^{i}+v_{NM}^{i}\,[H,v^{i}]_{MN}\Bigr)  \\
+&=-\frac{1}{2m_{e}^{2}}\Bigl( [p^{i},[p^{i},H]]\Bigr) _{NN}\:.
+\end{align*}%
+非相对论哈密顿量$H$中唯一不与动量算符$\bp$对易的项是势能项$-e\mathscr{A}^{0}(\bx)$, 所以这给出
+\begin{equation}
+\sum_{M}(E_{M}-E_{N})\vert \bv_{MN}\vert ^{2}=-\frac{e}{%
+2m_{e}^{2}}\Bigl( \nabla ^{2}\mathscr{A}^{0}(\bx)\Bigr) _{NN}\:.%
+  \label{14.3.46}
+\end{equation}%
+对方程(\ref{14.3.45})和(\ref{14.3.22})的观察表明, 高能项中正比于$\ln \mu$的项被低能项中正比于$\ln \mu$的%
+项抵消了:%
+\begin{align}
+\delta E_{N} &=[\delta E_{N}]_{\mbox{\scriptsize 高能}}+[\delta E_{N}]_{\mbox{\scriptsize 低能}}  \nonumber \\
+&=\frac{e^{2}}{6\uppi ^{2}}\sum_{M}(E_{M}-E_{N})\vert \bv%
+_{MN}\vert ^{2}\left[ \ln \left( \frac{m_{e}}{2\left\vert
+E_{N}-E_{M}\right\vert }\right) +\frac{5}{6}-\frac{1}{5}\right]   \nonumber \\
+&\quad-\frac{e^{2}}{16\uppi ^{2}m_{e}^{2}}\Bigl( \bm{\sigma}\cdot \bm{\nabla}(e%
+\mathscr{A}^{0}(\bx))\times \bp\Bigr) _{NN}\:.
+\label{14.3.47}
+\end{align}
+
+至此, 我们处理的是一般的静电场$\mathscr{A}^{0}(\bx)$. 我们现在专门来考虑纯Coulomb场, 此时
+\begin{equation}
+\mathscr{A}^{0}(\bx)=Ze/\lvert \bx\rvert \:.\label{14.3.48}
+\end{equation}%
+在这种情况下, 方程(\ref{14.3.46})变成
+\begin{equation}
+\sum_{M}(E_{M}-E_{N})|\bv_{MN}|^{2}=\frac{Ze^{2}}{2m_{e}^{2}}\Bigl(
+\updelta ^{3}(\bx)\Bigr) _{NN}=\frac{Ze^{2}}{2m_{e}^{2}}\Bigl(
+f_{N}^{\dag }(0)f_{N}(0)\Bigr) \:.  \label{14.3.49}
+\end{equation}%
+这仅对$\ell =0$才是非零的. 另外, 方程(\ref{14.3.47})中后一项中矩阵元的值是
+\begin{equation}
+\Bigl( \bm{\sigma}\cdot \bm{\nabla}(e\mathscr{A}^{0}(\bx))\times
+\bp\Bigr) _{NN}=-Ze\Bigl( \frac{1}{r^{3}}\bm{\sigma}\cdot \bL\Bigr) _{NN}\:,  \label{14.3.50}
+\end{equation}%
+这个矩阵元仅当$\ell \neq 0$时才是非零的. 因此, 现在分别考虑$\ell =0$和$\ell \neq 0$这两种情况将是有用的.
+
+\noindent {\boldmath \bf{i}. $\ell=0$}\marginpar[\flushright{\small[592]\hspace*{5mm}}]{{\small\hspace*{5mm}[592]}}
+
+在这里定义一个平均激发能量$\Delta E_{N}$将是方便的:%
+\begin{align}
+&\sum_{M}|\bv_{MN}|^{2}(E_{M}-E_{N})\ln |E_{N}-E_{M}| \equiv \ln
+\Delta E_{N}\sum_{M}|\bv_{MN}|^{2}(E_{M}-E_{N})  \nonumber \\
+&\qquad\qquad\qquad=\frac{Ze^{2}}{2m_{e}^{2}}\ln \Delta E_{N}\Bigl(f_{N}^{\dag}(0)f_{N}(0)\Bigr) \:.  \label{14.3.51}
+\end{align}%
+对氢原子的$s$-波态, 指标$N$由主量子数$n$和自旋$z$-分量$m$构成, %
+而$[f_{nm}(0)]_{\sigma }=2(Z\alpha m_{e}/n)^{3/2}\updelta _{\sigma ,m}/\sqrt{4\uppi}$, 所以
+\begin{equation}
+\Bigl( f_{N}^{\dag}(0)f_{N}(0)\Bigr) =\frac{1}{\uppi }\left( \frac{Z\alpha m_{e}}{n}\right) ^{3}\:.  \label{14.3.52}
+\end{equation}%
+在方程(\ref{14.3.47})中应用方程(\ref{14.3.51})和(\ref{14.3.52})给出了这些态的能量位移
+\begin{equation}
+[\delta E]_{n,\ell =0}=\frac{4\alpha (Z\alpha )^{4}m_{e}}{3\uppi n^{3}}%
+\left[ \ln \left( \frac{m_{e}}{2\Delta E_{n,\ell =0}}\right) +\frac{19}{30}%
+\right] \:.  \label{14.3.53}
+\end{equation}
+\noindent {\boldmath \bf{ii}. $\ell\neq 0$}
+
+对非零的轨道角动量, 求和(\ref{14.3.49})为零, 所以(\ref{14.3.51})这个定义是不合适的. 取代它, 在这里将平均%
+激发能量$\Delta E_{N}$定义成
+\begin{equation}
+\sum_{M}(E_{M}-E_{N})|\bv_{MN}|^{2}\ln |E_{N}-E_{M}|\equiv \frac{%
+2(Z\alpha )^{4}m_{e}}{n^{3}}\ln \left( \frac{2\Delta E_{N}}{Z^{2}\alpha
+^{2}m_{e}}\right)   \label{14.3.54}
+\end{equation}%
+将是方便的. (由于方程(\ref{14.3.49})为零, 这使得在测量方程(\ref%
+{14.3.54})中的$E_{N}-E_{M}$时选择何种单位变得无关紧要.) 另外, 在总角动量为$j$而轨道角动量为$%
+\,\ell$的态中, 标量积$\bm{\sigma}\cdot\bL$取熟悉的值$j(j+1)-\ell (\ell +1)-%
+\frac{3}{4}$, 并且对主量子数$n$, 算符$1/r^{3}$具有期望值
+\begin{equation}
+\int \dif^{3}r\:|f_{N}|^{2}/r^{3}=\frac{2Z^{3}\alpha ^{3}m_{e}^{3}}{n^{3}\ell
+(\ell +1)(2\ell +1)}\:.  \label{14.3.55}
+\end{equation}%
+将所有这些代入方程(\ref{14.3.47}), 对$\ell \neq 0$我们有:%
+\begin{align}
+\lbrack \delta E]_{jn\ell } &=-\frac{4\alpha (Z\alpha )^{4}m_{e}}{3\uppi n^{3}%
+}\ln \left( \frac{2\Delta E_{jn\ell }}{Z^{2}\alpha ^{2}m_{e}}\right)
+\nonumber \\
+&\quad+\frac{\alpha (Z\alpha )^{4}m_{e}}{2\uppi n^{3}}\left[ \frac{j(j+1)-\ell
+(\ell +1)-\frac{3}{4}}{\ell (\ell +1)(2\ell +1)}\right] \:.
+\label{14.3.56}
+\end{align}
+
+剩下要做的\marginpar[\flushright{\small[593]\hspace*{5mm}}]{{\small\hspace*{5mm}[593]}}就是应用这些结果给出能量位移的数值结果. 这里的平均激发能量必须做数值计算; 利用非相对论氢原子波函数, %
+它们的值是\textsuperscript{\cite{5}}:%
+\begin{align*}
+\Delta E_{1s} &=19.769266917(6)\,\mathrm{Ry} \: , \\
+\Delta E_{2s} &=16.63934203(1)\,\mathrm{Ry} \:, \\
+\Delta E_{2p} &=0.9704293186(3)\,\mathrm{Ry} \:,
+\end{align*}%
+这里$1\,\mathrm{Ry}\equiv m_{e}\alpha ^{2}/2=13.6057\,\mathrm{eV}$. 于是方程(\ref{14.3.53})给出
+\begin{align}
+[\delta E]_{1s} &=\frac{4\alpha ^{5}m_{e}}{3\uppi }\left[ \ln \left(
+\frac{m_{e}}{2\Delta E_{1s}}\right) +\frac{19}{30}\right] =3.3612\times 10^{-6}\,\mathrm{eV}  \nonumber \\
+&\qquad\quad=2\uppi \hbar \times 8127.4\,\mathrm{MHz}\:,  \label{14.3.57} \\
+\lbrack \delta E]_{2s} &=\frac{\alpha ^{5}m_{e}}{6\uppi }\left[ \ln \left(
+\frac{m_{e}}{2\Delta E_{2s}}\right) +\frac{19}{30}\right] =4.2982\times
+10^{-5}\:\mathrm{eV}  \nonumber \\
+&\qquad\quad=2\uppi \hbar \times 1039.31\,\mathrm{MHz}\:,  \label{14.3.58}
+\end{align}%
+而方程(\ref{14.3.56})给出\begin{align}
+\lbrack \delta E]_{2p_{1/2}} &=\frac{\alpha ^{5}m_{e}}{6\uppi }\left[ \ln
+\left( \frac{\alpha ^{2}m_{e}}{2\Delta E_{2p}}\right) -\frac{1}{8}\right]
+=-5.3267\times 10^{-8}\:\mathrm{eV}  \nonumber \\
+&\qquad\quad=2\uppi \hbar \times -12.88\:\mathrm{MHz}\:.  \label{14.3.59}
+\end{align}
+
+经典的\,Lamb\,位移是氢原子$2s$态和$2p_{\frac{1}{2}}$态之间的能量差, 这些态在没有辐射修正时是简并的.
+我们的计算给出了
+\[
+[\delta E]_{2s}-[\delta E]_{2p_{1/2}}=4.35152\times 10^{-6}\:\mathrm{eV}%
+=2\uppi \hbar \times 1052.19\,\mathrm{MHz}\:.
+\]%
+这与\,Kroll\,和\,Lamb\textsuperscript{\cite{6}}\,以及\,French\,和\,Weisskopf\textsuperscript{\cite{7}}\,的旧结果相同, 他们的结果是通过旧式微扰论的技术%
+得到的. 在本节开头红外截断是$\alpha ^{2}m_{e}=2\,\mathrm{Ry}$阶的假定下, %
+我们通过仅考虑高能贡献对$2s$能量位移的影响给出了$1300\,\mathrm{MHz}$的粗略估计. %
+现在可以看到这个估计过高了, 这个过高的估计主要因为有限红外截断的真实值$\Delta E_{2s}=16.64\,\mathrm{Ry}$远大于我们的估计值. 另一方面, 如\,\ref{sec:1.3}\,节中所描述的, 在{\KAI{紫外}}截断猜测为$m_{e}$的前提下, %
+通过只考虑$2s$态的{\KAI{低能}}贡献, Hans Bethe\,在\,1947\,年就能对\,Lamb\,位移做出相当好的估计, %
+$1040\,\mathrm{MHz}$. (Bethe\,对激发能做了第一个估计, $\Delta E_{2s}\simeq 17.8\:\mathrm{Ry}$.)
+
+这里描述的\,Lamb\,位移的计算\marginpar[\flushright{\small[594]\hspace*{5mm}}]{{\small\hspace*{5mm}[594]}}, 已经计入高阶辐射修正以及核的大小和反冲效应做了进一步的完善. 目前, %
+最大的不确定性来自于质子荷半径方均根$r_{p}$的准确值. 对于$r_{p}=0.862\times 10^{-13}\,\mathrm{cm}$或%
+$r_{p}=0.805\times10^{-13}\,\mathrm{cm}$, 一个计算\textsuperscript{\cite{9}}给出\,Lamb\,位移是\,1057.87$\:\mathrm{MHz}$或%
+$1057.85\:\mathrm{MHz}$, 而另一个计算\textsuperscript{\cite{10}}给出的是$1057.883\,\mathrm{MHz}$或$1057.865\,%
+\mathrm{MHz}$. 确定了质子半径的不确定性, 理论结果与目前的实验值\,1057.845(9)\:$\mathrm{%
+MHz}$\textsuperscript{\cite{11}}是高度吻合的. 这个实验的精度主要为氢原子$2p$态的约$100\,\mathrm{MHz}$的自然展宽所限, %
+进一步提高精度将非常困难.
+
+最近几年, 关于$1s$态本身能量位移的测量有一个重大进展: 直接比较$1s$-$2s$的共振频率与$4$倍的%
+$2s$-$4s$和$2s$-$4d$双光子共振频率. 这些$s$态和$d$态要比$2p$态窄得多, %
+所以相比经典的\,Lamb\,位移, 这些频率的差可以更精确地测出来. 在一小段时间里曾认为理论和实验之间存在矛盾. %
+计算\textsuperscript{\cite{12,13}}表明, 对$r_{p}=0.862(11)\times 10^{-13}\,\mathrm{cm}$或%
+$0.805(11)\times 10^{-13}\,\mathrm{cm}$的质子半径, %
+通过将质子尺寸与其他修正考虑在内, 理论中的$1s$能量从以前的$8127.4\,\mathrm{MHz}$分别被提高到$8173.12(6)%
+\,\mathrm{MHz}$或$8172.94(9)\,\mathrm{MHz}$. 质子半径$r_{p}=0.862(11)\times 10^{-13}\,\textrm{cm}$给出的%
+结果是我们认为更可靠的那个, 但与测量值$8172.86(5)\,\mathrm{MHz}$符合得不太好. 但在后来的计算中, %
+仍采用这个质子半径但计入$\alpha ^{2}(Z\alpha )^{5}$阶项, 所给出的$1s,2s$%
+和$4s$态的能量位移与实验相符. 所以, 显然量子电动力学又胜利了.
+
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+\markright{习\qquad 题}    %单眉
+
+
+\begin{KAI}
+
+1. 考虑一个质量为$m\neq 0$的带电标量粒子, %
+它由一个仅与不含时的外电磁场$\mathscr{A}^{\mu}(x)$相互作用的场$\phi(x)$描述. %
+令$\Phi_{N}$是能量为$E_{N}$ 的归一化单玻色态或单反波色态的一个完备集, 记真空为$\Phi_{0}$, %
+并定义$u_{N}(\bx)\me^{-\mi E_{N}t}\equiv (\Phi_{0},\phi(\bx,t)\Phi_{N})$以及%
+$v_{N}(\bx)\me^{\mi E_{N}t}\equiv (\Phi_{N},\phi(\bx,t)\Phi_{0})$. %
+证明$u_{N}$和$v_{N}$合起来构成了一个完备集, %
+并给出一般函数$f(\bx)$在$u_{N}$和$v_{N}$上的展开系数公式.
+
+2. 假定我们在习题\,1\,的理论中计入辐射修正. 令$\mi\Pi^{\ast}(x,y)$是到$\alpha$阶的只有一条入带电标量线和一条出带电标量线的所有图(去掉末态标量传播子)之和. 计算这些辐射修正引起的单玻色态能量$E_{N}$的位移, %
+用$u_{N}(\bx)$和$\Pi^{\ast}(x,y)$表示.
+
+3. 利用\,\ref{sec:14.3}\,节的结果计算氢原子$2p$态的辐射衰变速率.\marginpar[\flushright{\small[595]\hspace*{5mm}}]{{\small\hspace*{5mm}[595]}}
+
+4. 假定电子与轻标量场$\phi$有形如$g\phi\bar{\psi}_{e}\psi_{e}$的相互作用. %
+假定标量质量$m_{\phi}$处在$(Z\alpha)^{2}m_{e}\ll m_{\phi}\ll Z\alpha m_{e}$的范围内. 计算这个相互作用造成的氢原子$1s$态的能量位移.
+
+5. 对习题\,4\,计算出$m_{\phi}=0$的结果.
+
+ \end{KAI}
+  \markboth{第14章\quad 外场中的束缚态}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}P. A. M. Dirac, {\textit{Proc. Roy. Soc. (London)}} {\bf{A117}}, 610 (1928).
+     \addcontentsline{toc}{section}{参考文献}
+  \markboth{第14章\quad 外场中的束缚态}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\bibitem {2}可参看\,A. R. Edmonds, {\textit{Angular Momentum in Quantum Mechanics,}} (Princeton University Press, Princeton, 1957); M. E. Rose, {\textit{Elementary Theory of Angular Momentum}} (John Wiley \& Sons, Now York, 1957).
+\bibitem {3}可参看\,L. I. Schiff, {\textit{Quantum Mechanics}}, (McGraw-Hill, New York, 1949): Section 43. 原始文献是\,C. G. Darwin, {\textit{Proc. Roy. Soc. (London)}} {\bf{A118}}, 654 (1928); {\textit{ibid}}., {\bf{A120}}, 621 (1928); W. Gordon, {\textit{Zeit. f. Phys.}} {\bf{48}}, 11 (1928).
+\bibitem {4}G. E. Brown, J. S. Langer, and G. W. Schaefer, {\textit{Proc. Roy. Soc. (London)}} {\bf{A251}}, 92 (1959); G. E. Brown and D. F. Mayers, {\textit{Proc. Roy. Soc. (London)}} {\bf{A251}}, 105 (1959); A. M. Desiderio and W. R. Johnson, {\textit{Phys. Rev.}} {\bf{A3}}, 1267 (1971).
+\bibitem {5}R. W. Huff, {\textit{Phys. Rev.}} {\bf{186}}, 1367 (1969).
+\bibitem {6}N. M. Kroll amd W. E. Lamb, {\textit{Phys. Rev.}} {\bf{75}}, 388 (1949).
+\bibitem {7}J. B. French and V. F. Weisskopf, {\textit{Phys. Rev.}} {\bf{75}}, 1240 (1949).
+\bibitem {8}H. A. Bethe, {\textit{Phys. Rev.}} {\bf{72}}, 339 (1947).
+\bibitem {9}J. R. Sapirstein and D. R. Yennie, 收录于 {\textit{Quantum Electrodynamics}}, T. Kinoshita\,编辑 (World Scientific, Singapore, 1990): p. 575, 以及所引的文献.
+\bibitem {10}H. Grotch, {\textit{Foundations of Physics}} {\bf{24}}, 249 (1994).
+\bibitem {11}S. R. Lundeen and F. M. Pipkin\marginpar[\flushright{\small[596]\hspace*{5mm}}]{{\small\hspace*{5mm}[596]}}, {\textit{Phys. Rev. Lett.}} {\bf{46}}, 232 (1981); S. R. Lundeen and F. M. Pipkin, {\textit{Metrologia}} {\bf{22}}, 9 (1986). 综述参看\,F. M. Pipkin, 收录于 {\textit{Quantum Electrodynamics}}, T. Kinoshita\,编辑 (World Scientific, Singapore, 1990): p. 697.
+\bibitem {12}M. Weitz, A. Huber, F. Schmidt-Kaler, D. Leibfried, and T. W. H\"{a}nsch, {\textit{Phys. Rev. Lett.}} {\bf{72}}, 328 (1994).
+\bibitem {13}M. Weitz, F. Schmidt-Kaler, and T. W. H\"{a}nsch, {\textit{Phys. Rev. Lett.}} {\bf{68}}, 1120 (1992), 以及文献[12].
+\bibitem {14}K. Pachucki, {\textit{Phys. Rev. Lett.}} {\bf{72}}, 3154 (1994).
+\end{thebibliography}

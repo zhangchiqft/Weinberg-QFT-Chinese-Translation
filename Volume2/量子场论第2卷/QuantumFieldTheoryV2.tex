@@ -1,0 +1,302 @@
+
+
+
+% Authors:   张驰       天津大学理学院物理系2011级本科
+%           李文都  lwdallen@126.com  天津大学理学院物理系理论物理13级博士
+
+
+
+\documentclass[11pt,a4paper]{book}%文档类型为书籍类
+
+
+
+
+\input{package} %调入package
+
+\input{setup}   %调入全局设置
+
+\graphicspath{{figures/}}  % 定义所有的 .eps 文件在 figures 子目录下
+
+
+%======================= 文档开始============================%
+
+
+\begin{document}
+	%\hypersetup{CJKbookmarks=true}
+\begin{CJK*}{GBK}{song}%开始CJK
+\CJKindent
+
+
+
+%!!!!!!!!!!!!!!!!!!标题页!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
+
+\title{\Huge\bfseries The Quantum Theory of Fields \\ \Large \bfseries Volume II Modern Applications}
+
+\author{Steven Weinberg(著)\\University of Texas at Austin \\
+\\  张驰(译)\thanks{此版仅为译稿, 未经校对, 如有任何翻译录入错误, 请联系zhangchi\_110@163.com} }
+\date{}
+
+
+
+\maketitle
+%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
+\setcounter{tocdepth}{1}
+\clearpage{\pagestyle{empty}\cleardoublepage} \setcounter{page}{1}
+\pagenumbering{roman}
+
+\renewcommand{\contentsname}{目\qquad 录}
+\pdfbookmark[0]{目~~录}{mulu}
+\titlecontents{chapter} [6em]{\sihao\song}
+                             {\contentslabel{3em}} {}{\titlerule*[1em]{$\cdot$}\contentspage}%目录中章的显示格式
+\titlecontents{section} [6em]{\xiaosihao\song}
+                             {\contentslabel{3em}}{} {\titlerule*[1em]{$\cdot$}\contentspage}
+
+\tableofcontents
+
+\setcounter{tocdepth}{2}
+
+
+
+\newpage\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+
+
+
+
+
+
+%======================= 自定义页眉与页脚的格式============================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%==========================================================================%
+
+
+%===============================数学环境的设置======================%
+
+\renewcommand{\proof}{\kai{证明:}}%
+
+
+%=======================定义各种中文标题===================================%
+\renewcommand{\chaptername}{第~\arabic{chapter} 章}
+\renewcommand{\thesubsection}{\CJKnumber{\value{subsection}}、}
+\renewcommand\figurename{图}
+\renewcommand\tablename{\CJKfamily{hei} 表}
+%\renewcommand{\captionlabeldelim}{\ }%去掉图标签后面的冒号
+
+%==========================================================================%
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@更改计数器值及各计数器的从属关系设置@@@@@@@@@@@@@@@@%
+
+%\setcounter{page}{155}%更改page的计数器值
+\setcounter{chapter}{14}%更改chapter的计数器值
+\numberwithin{equation}{section}%公式计数器从属于节计数器
+\numberwithin{figure}{chapter}%图计数器从属于节计数器
+\numberwithin{table}{chapter}%表计数器从属于章计数器
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+\phantomsection
+\markboth{记~号}{记~号}
+%\pdfbookmark[0]{记号}{记号}
+\addcontentsline{toc}{chapter}{记~~号}
+\include{Notation}
+
+
+\newpage\clearpage{\pagestyle{empty}\cleardoublepage}
+\setcounter{page}{1}%单独从 1 开始编页码
+\pagenumbering{arabic}
+
+
+%第十五章 非阿贝尔规范场论
+\include{chapter15}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+
+%第十六章 外场方法
+\include{chapter16}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+
+%第十七章 规范理论的重整化
+\include{chapter17}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+
+%第十八章 重整化群方法
+\include{chapter18}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+
+%第十九章 自发破缺的整体对称性
+\include{chapter191}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+
+%第二十章 算符积展开
+\include{chapter20}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+
+%第二十一章 自发破缺的规范对称性
+\include{chapter21}
+
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+%第二十二章  反常
+\include{chapter22}
+
+\renewcommand\thesection{\thechapter.\arabic{section}}
+%===============================================================================%
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+\fancyhead[RO,LE]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.8pt}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%===========================章节的标题格式====================================%
+\titleformat{\chapter}{\centering\CJKfamily{hei}\huge}{\chaptertitlename}{1em}{}
+\titlespacing{\chapter}{0pt}{3.5ex plus .1ex minus .2ex}{10\wordsep}
+\titleformat{\section}{\centering\CJKfamily{hei}\Large}{\thesection}{1em}{}
+\titlespacing{\section}{2em}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+\titleformat{\subsection}{\centering\CJKfamily{kai}\large}{}{0em}{}
+\titlespacing{\subsection}{2em}{1.5ex plus .1ex minus .2ex}{\wordsep}
+\renewcommand{\captionfont}{\small}
+
+%第二十三章 外场构型
+\include{chapter23}
+
+
+\end{CJK*}%结束CJK
+\end{document} %文档结束

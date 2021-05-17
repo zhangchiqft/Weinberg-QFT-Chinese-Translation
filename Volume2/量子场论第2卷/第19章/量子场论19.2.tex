@@ -1,0 +1,405 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Monday, September 26, 2016 15:23:50}
+%TCIDATA{LastRevised=Friday, September 30, 2016 12:52:51}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+假定作用量和测度在一个连续对称变换下不变, 且在该对称变换下, 一组厄密标量场$\phi
+_{n}(x)$(基本场或复合场)进行一个无限小的线性变换\begin{equation}
+\phi _{n}(x)\rightarrow \phi _{n}(x)+\mathrm{i}\epsilon \sum_{m}t_{nm}\phi
+_{m}(x)\text{ ,}  \label{19.2.1}
+\end{equation}%
+其中$\mathrm{i}t_{nm}$是有限的实矩阵. 正如我们在16.4节中所发现的, 有效作用量在这一变换下也是不变的\begin{equation}
+\sum_{n,m}\int \frac{\delta \Gamma \lbrack \phi ]}{\delta \phi _{n}(x)}%
+t_{nm}\phi _{m}(x)\mathrm{d}^{4}x=0\text{ .}  \label{19.2.2}
+\end{equation}%
+我们将特定到平移不变理论的情况, 且要求场为常数场$\phi _{n}$, 这时, 
+正如我们在16.2节所看到的, 有效作用量采取如下的形式\begin{equation}
+\Gamma \lbrack \phi ]=-\mathscr{V}V(\phi )\text{ ,}  \label{19.2.3}
+\end{equation}%
+其中$\mathscr{V}$是时空体积而$V(\phi )$被称为有效势. 那么方程(\ref{19.2.2})可以写成\begin{equation}
+\sum_{n,m}\frac{\partial V(\phi )}{\partial \phi _{n}}t_{nm}\phi _{m}=0\text{
+.}  \label{19.2.4}
+\end{equation}%
+我们将要使用的对称性要求是对上式做$\phi _{\ell
+}$的微分得到的:%
+\begin{equation}
+\sum_{n}\frac{\partial V(\phi )}{\partial \phi _{n}}t_{n\ell }+\sum_{n,m}%
+\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial \phi _{\ell }}%
+t_{nm}\phi _{m}=0\text{ .}  \label{19.2.5}
+\end{equation}%
+现在指定到$\phi _{n}$是$V(\phi )$的最小值点的情况, 即, $\phi
+_{n}$是真空期望值$\bar{\phi}_{n}$. 
+既然$V(\phi )$在它的最小值处是稳定的, 方程(\ref{19.2.5})%
+中的第一项为零, 所以\begin{equation}
+\sum_{n,m}\left. \frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial
+\phi _{\ell }}\right\vert _{\phi =\bar{\phi}}t_{nm}\bar{\phi}_{m}=0\text{ .}
+\label{19.2.6}
+\end{equation}%
+16.1节的一般性结论表明, 方程(\ref{19.2.6})中的二阶导数正是动量空间中所有外线标记为$n$和$\ell $的单粒子不可约连通Feynman%
+图之和. 正如16.1节末尾所给出的, 它与动量空间传播子的导数相关, 
+其关系是\begin{equation}
+\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial \phi _{\ell }}%
+=\Delta _{n\ell }^{-1}(0)\text{ ,}  \label{19.2.7}
+\end{equation}%
+所以, 方程(\ref{19.2.6})给出\begin{equation}
+\sum_{n,m}\Delta _{n\ell }^{-1}(0)t_{nm}\bar{\phi}_{m}=0\text{ .}
+\label{19.2.8}
+\end{equation}%
+如果对称性是破缺的, 
+这会使得$\sum_{m}t_{nm}\bar{\phi}_{m}$不为零, 那么它就是$\Delta _{n\ell
+}^{-1}(0)$本征值为零的本征矢. 存在这种矢量意味着$\Delta _{n\ell }(q)$在$q^{2}=0$处有一极点. 在$q^{2}=0$处的这一极%
+点, 其留数的阶等于矢量$t\bar{\phi}$张成的空间的维数, 其中$t$取遍该理论连续对称性的所有生成元. 粗略地讲, 对于每一个独立的破缺对称性%
+存在一个无质量的玻色子.
+
+在对称性破缺的经典例子中, 拉格朗日量含有一组实标量场$\phi _{n}$, 个数为$N$, 并采取如下的形式\begin{equation}
+\mathscr{L}=-\frac{1}{2}\sum_{n}\partial _{\mu }\phi _{n}\partial ^{\mu
+}\phi _{n}-\frac{\mathscr{M}^{2}}{2}\sum_{n}\phi _{n}\phi _{n}-\frac{g}{4}%
+\left( \sum_{n}\phi _{n}\phi _{n}\right) ^{2}\text{ .}  \label{19.2.9}
+\end{equation}%
+在群$O(N)$的作用下, 即对分量为$\phi _{n}$的$N$-矢量的旋转操作, 它是不变的. 
+对于常数场, 树级近似下的有效势就由拉格朗日密度中非导数项的负数给定\begin{equation}
+V(\phi )\simeq \frac{\mathscr{M}^{2}}{2}\sum_{n}\phi _{n}\phi _{n}+\frac{g}{4%
+}\left( \sum_{n}\phi _{n}\phi _{n}\right) ^{2}\text{ .}  \label{19.2.10}
+\end{equation}%
+像往常一样, 我们假定$g$%
+是正定的. (否则, $V(\phi )$的最小值即使存在也处在微扰论的适用范围之外.) 如果$\mathscr{M}^{2}$也是正定的, $V(\phi )$的最小值就在%
+点$\phi =0$, 这一点在$O(N)$下是不变的. 另一方面, 当$%
+\mathscr{M}^{2}<0$时, 最小值所在的点$\bar{\phi}_{n}$使得\begin{equation}
+\sum_{n}\bar{\phi}_{n}\bar{\phi}_{n}=-\mathscr{M}^{2}/g\text{ .}
+\label{19.2.11}
+\end{equation}%
+那么, 树级近似下的质量矩阵就是\begin{eqnarray}
+M_{nm}^{2} &=&\left. \frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial
+\phi _{m}}\right\vert _{\phi =\bar{\phi}}  \nonumber \\
+&=&\mathscr{M}^{2}\delta _{nm}+g\delta _{nm}\sum_{\ell }\bar{\phi}_{\ell }%
+\bar{\phi}_{\ell }+2g\bar{\phi}_{n}\bar{\phi}_{m}  \nonumber \\
+&=&2g\bar{\phi}_{n}\bar{\phi}_{m}\text{ .}  \label{19.2.12}
+\end{eqnarray}%
+它有一个本征值非零的本征矢$\bar{\phi}_{n}$:%
+\begin{equation}
+m^{2}=2g\sum_{n}\bar{\phi}_{n}\bar{\phi}_{n}=2\left\vert \mathscr{M}%
+^{2}\right\vert \text{ ,}  \label{19.2.13}
+\end{equation}%
+以及$N-1$个垂直于$\bar{\phi}$且本征值为零的本征矢. 
+仅有$N-1$个Goldstone玻色子出现的原因正是$O(N)$破缺到了$O(N-1)$($O(N)$中使得$\bar{\phi}$不变的子群,) 因此独立的%
+破缺对称性的数目是$%
+O(N) $的维数减去$O(N-1)$的维数, 即\begin{equation}
+\frac{1}{2}N(N-1)-\frac{1}{2}(N-1)(N-2)=N-1\text{ .}  \label{19.2.14}
+\end{equation}
+
+关于Goldstone玻色子的存在性有另一个证明, 在这个证明中没有用到有效作用量形式理论. 我们在第7章知道, 作用量的任何连续对称性都%
+会给出一个守恒流$J^{\mu }$:%
+\begin{equation}
+\frac{\partial J^{\mu }(x)}{\partial x^{\mu }}=0\text{ ,}  \label{19.2.15}
+\end{equation}%
+以及诱导出相应对称变换的荷$Q$%
+\begin{equation}
+Q=\int \mathrm{d}^{3}xJ^{0}(\mathbf{x},0)\text{ ,}  \label{19.2.16}
+\end{equation}%
+\begin{equation}
+\left[ Q,\phi _{n}(x)\right] =-\sum_{m}t_{nm}\phi _{m}(x)\text{ .}
+\label{19.2.17}
+\end{equation}%
+像方程(\ref{19.2.15})---(\ref{19.2.17})这样的算符关系不受自发对称性破缺的影响, 这体现出了物理{\kai{态}}的性%
+质. 现在, 考察流和场的对易子的真空期望值. 
+对中间态求和, 这是\begin{equation}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}}=(2\uppi)^{-3}\int \mathrm{d}^{4}p\left[ \rho _{n}^{\lambda }(p)%
+\mathrm{e}^{\mathrm{i}p\cdot (y-x)}-\tilde{\rho}_{n}^{\lambda }(p)\mathrm{e}%
+^{\mathrm{i}p\cdot (x-y)}\right] \text{ ,}  \label{19.2.18}
+\end{equation}%
+其中, 利用平移不变性,%
+\begin{eqnarray}
+(2\uppi)^{-3}\mathrm{i}\rho _{n}^{\lambda }(p) &=&\sum_{N}\langle \text{VAC}%
+|J^{\lambda }(0)|N\rangle \langle N|\phi _{n}(0)|\text{VAC}\rangle \delta
+^{4}(p-p_{N})\text{ ,}  \label{19.2.19} \\
+(2\uppi)^{-3}\mathrm{i}\tilde{\rho}_{n}^{\lambda }(p) &=&\sum_{N}\langle 
+\text{VAC}|\phi _{n}(0)|N\rangle \langle N|J^{\lambda }(0)|\text{VAC}\rangle
+\delta ^{4}(p-p_{N})\text{ .}  \label{19.2.20}
+\end{eqnarray}%
+我们通常将$J^{\lambda }$和$\phi _{n}$%
+取成厄米算符, 在这一情况下, 方程(\ref{19.2.19})和(\ref%
+{19.2.20})是复共轭\begin{equation}
+\rho _{n}^{\lambda }(p)=-\tilde{\rho}_{n}^{\lambda \ast }(p)\text{ ,}
+\label{19.2.21}
+\end{equation}%
+但在这里将不会做这一假定.
+
+Lorentz不变性告诉我们, $\rho $%
+和$\tilde{\rho}$必须采取如下的形式\begin{eqnarray}
+\rho _{n}^{\lambda }(p) &=&p^{\lambda }\rho _{n}(-p^{2})\theta (p^{0})\text{
+,}  \label{19.2.22} \\
+\tilde{\rho}_{n}^{\lambda }(p) &=&p^{\lambda }\tilde{\rho}_{n}(-p^{2})\theta
+(p^{0})\text{ .}  \label{19.2.23}
+\end{eqnarray}%
+(因子$\theta (p^{0})$, 在$p^{0}>0$时取$+1$, 
+在其它情况下为零, 它是$p_{N}$是物理态的4-动量这一性质所要求的.) 这给出\begin{eqnarray}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}} &=&\frac{\partial }{\partial y_{\lambda }}\int \mathrm{d}\mu
+^{2}[\rho _{n}(\mu ^{2})\Delta _{+}(y-x;\mu ^{2})  \nonumber \\
+&&+\tilde{\rho}_{n}(\mu ^{2})\Delta _{+}(x-y;\mu ^{2})]\text{ ,}
+\label{19.2.24}
+\end{eqnarray}%
+其中$\Delta _{+}$是熟悉的函数\begin{equation}
+\Delta _{+}(z;\mu ^{2})=(2\uppi)^{-3}\int \mathrm{d}^{4}p\theta
+(p^{0})\delta (p^{2}+\mu ^{2})\mathrm{e}^{\mathrm{i}p\cdot z}\text{ .}
+\label{19.2.25}
+\end{equation}%
+正如在第5章中所评述的, Lorentz不变性仅允许$\Delta
+_{+}(z;\mu ^{2})$仅依赖于$z^{2}$, $\mu ^{2}$和$%
+\theta (z^{0})$, 而当$z^{2}>0$时, 则只依赖$z^{2}$和$\mu ^{2}$. 因此, 当$x-y$类空时, $\Delta _{+}(x-y;\mu ^{2})$和$\Delta _{+}(y-x;\mu
+^{2})$相等, 所以, 在这一情况下\begin{equation}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}}=\frac{\partial }{\partial y_{\lambda }}\int \mathrm{d}\mu
+^{2}[\rho _{n}(\mu ^{2})+\tilde{\rho}_{n}(\mu ^{2})]\Delta _{+}(y-x;\mu ^{2})%
+\text{ .}  \label{19.2.26}
+\end{equation}%
+但是, 所有对易子对于类空的$x-y$必须为零, 所以\begin{equation}
+\rho _{n}(\mu ^{2})=-\tilde{\rho}_{n}(\mu ^{2})\text{ ,}  \label{19.2.27}
+\end{equation}%
+因此, 对于一般的$x$和$y$, 
+方程(\ref{19.2.24})给出\begin{equation}
+\left\langle \left[ J^{\lambda }(y),\phi _{n}(x)\right] \right\rangle _{%
+\text{VAC}}=\frac{\partial }{\partial y_{\lambda }}\int \mathrm{d}\mu
+^{2}\rho _{n}(\mu ^{2})\left[ \Delta _{+}(y-x;\mu ^{2})-\Delta _{+}(x-y;\mu
+^{2})\right] \text{ .}  \label{19.2.28}
+\end{equation}%
+若方程(\ref{19.2.21})也参与进来, 方程(\ref{19.2.27})还证明了$%
+\rho _{n}(\mu ^{2})$是{\kai{实}}的.
+
+现在我们使用$J^{\lambda }(y)$守恒这一性质. 对方程(\ref%
+{19.2.28})两边作用导数$\partial
+/\partial y^{\lambda }$, 并使用熟悉的方程\begin{equation}
+(\square _{y}-\mu ^{2})\Delta _{+}(y-x;\mu ^{2})=0\text{ ,}  \label{19.2.29}
+\end{equation}%
+我们发现, 对于{\kai{所有的}}$x$和$%
+y $%
+\begin{equation}
+0=\int \mathrm{d}\mu ^{2}\mu ^{2}\rho _{n}(\mu ^{2})\left[ \Delta
+_{+}(y-x;\mu ^{2})-\Delta _{+}(x-y;\mu ^{2})\right] \text{ ,}
+\label{19.2.30}
+\end{equation}%
+(因为$\Delta _{+}(x-y)$对于类时或类光的$x-y$不是{\kai{偶}}函数)%
+所以\begin{equation}
+\mu ^{2}\rho _{n}(\mu ^{2})=0\text{ .}  \label{19.2.31}
+\end{equation}
+
+一般情况下, 我们可以从此得出$\rho _{n}(\mu ^{2})$对于所有的$\mu ^{2}$均为零. 然而, 
+在对称性破缺的情况下, 这是不可能的. 在方程(\ref{19.2.28})中令$\lambda =0$和$x^{0}=y^{0}=t$:%
+\begin{eqnarray*}
+\left\langle \left[ J^{0}(\mathbf{y},t),\phi _{n}(\mathbf{x},t)\right]
+\right\rangle _{\text{VAC}} &=&2\mathrm{i}(2\uppi)^{-3}\int \mathrm{d}\mu
+^{2}\rho _{n}(\mu ^{2}) \\
+&&\times \int \mathrm{d}^{4}p\sqrt{p^{2}+\mu ^{2}}\mathrm{e}^{\mathrm{i}%
+\mathbf{p}\cdot (\mathbf{y}-\mathbf{x})}\delta (p^{2}+\mu ^{2}) \\
+&=&\mathrm{i}\delta ^{3}(\mathbf{y}-\mathbf{x})\int \mathrm{d}\mu ^{2}\rho
+_{n}(\mu ^{2})\text{ .}
+\end{eqnarray*}%
+积分并使用方程(\ref{19.2.16})%
+和(\ref{19.2.17}), 这给出\begin{equation}
+-\sum_{m}t_{nm}\langle \phi _{m}\rangle _{\text{VAC}}=\mathrm{i}\int \mathrm{%
+d}\mu ^{2}\rho _{n}(\mu ^{2})\text{ .}  \label{19.2.32}
+\end{equation}%
+仅当\begin{equation}
+\rho _{n}(\mu ^{2})=\mathrm{i}\delta (\mu ^{2})\sum_{m}t_{nm}\langle \phi
+_{m}(0)\rangle _{\text{VAC}}\text{ ,}  \label{19.2.33}
+\end{equation}%
+方程(\ref{19.2.31})和(\ref{19.2.32})才能是一致的. (因为在这一情况下方程(\ref{19.2.1})要求$%
+t_{nm} $是虚的, 所以它对于厄米场$\phi _{n}$是实的.) 因此, 只要对称性是破缺的, $\rho _{n}(\mu ^{2})$不能是零, 而%
+是完全由正比于$\delta (\mu ^{2})$%
+的项构成. 这样的项显然只能出现在有无质量粒子的理论中, 这是因为, 若非如此, 质心能量平方$-p_{N}^{2}$就无法向下扩展至零. 更进一步, $\delta
+(\mu ^{2})$仅能从零质量的单粒子态中产生; 多粒子态将会贡献可扩展值$\mu
+^{2}=0$的连续区. 态$\phi _{n}(0)|$VAC$\rangle $%
+是旋转不变的, 所以对于任何螺度非零的态$N$, 
+$\langle N|\phi _{n}(0)|$VAC$\rangle $必须为零. 
+另外, 对于任意的态$N$, 
+若它的内禀宇称或(未破缺的)内部量子数与$%
+J^{0}$不同, $\langle VAC|J^{0}|N\rangle $为零. 
+那么, 我们得出$t_{nm}\langle \phi
+_{n}(0)\rangle _{\text{VAC}}\neq 0${%
+\kai{的破缺对称性会要求出现一个自旋零的无质量粒子,
+且该粒子与$J^{0}$有相同的宇称和内部量子数}}. 它们就是我们的Goldstone玻色子.
+
+对于4-动量为$p_{B}^{\mu }$的自旋零玻色子$B$, Lorentz不变性要求流在真空态与单粒子态之间的矩阵元采取如下的形式\begin{equation}
+\langle \text{VAC}|J^{\lambda }(x)|B\rangle =\mathrm{i}\frac{Fp_{B}^{\lambda
+}\mathrm{e}^{\mathrm{i}p_{B}\cdot x}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{
+,}  \label{19.2.34}
+\end{equation}%
+其中$\mathbf{p}_{B}$是$B$的动量, $%
+p_{B}^{0}\equiv |\mathbf{p}_{B}|$而$F$是带有能量量纲的常系数. (由于$%
+p_{B\lambda }p_{B}^{\lambda }=0$, 所以这与流守恒是一致的.) 另外, 标量场$\phi _{n}(y)$在单粒子态%
+和真空态之间的矩阵元形式如下\begin{equation}
+\langle B|\phi _{n}(y)|\text{VAC}\rangle =\frac{Z_{n}\mathrm{e}^{-\mathrm{i}%
+p_{B}\cdot y}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{ ,}  \label{19.2.35}
+\end{equation}%
+其中$Z_{n}$是一无量纲常数. 这样, 从方程(\ref{19.2.34})和(%
+\ref{19.2.35})中我们就有\begin{eqnarray*}
+(2\uppi)^{-3}\mathrm{i}\rho _{n}(-p^{2})p^{\lambda }\theta (p^{0}) &\equiv
+&\int \mathrm{d}^{3}p_{B}\langle \text{VAC}|J^{\lambda }(0)|B\rangle \langle
+B|\phi _{n}(0)|\text{VAC}\rangle \delta ^{4}(p-p_{B}) \\
+&=&\delta (p^{0}-|\mathbf{p}|)(2\uppi)^{-3}(2p^{0})^{-1}p^{\lambda }\mathrm{i%
+}FZ_{n} \\
+&=&\theta (p^{0})\delta (-p^{2})(2\uppi)^{-3}p^{\lambda }\mathrm{i}FZ_{n}%
+\text{ ,}
+\end{eqnarray*}%
+所以\begin{equation}
+\rho _{n}(\mu ^{2})=FZ_{n}\delta (\mu ^{2})\text{ .}  \label{19.2.36}
+\end{equation}%
+与方程(\ref{19.2.33})相比较, 这给出\begin{equation}
+\mathrm{i}FZ_{n}=-\sum_{m}t_{nm}\langle \phi _{m}(0)\rangle _{\text{VAC}}%
+\text{ .}  \label{19.2.37}
+\end{equation}
+
+对于这些对称性中的每一个, 存在一个Goldstone玻色子$|B_{a}\rangle $, 并且我们可以将$Z_{an}$和$F_{ab}$定义成%
+\begin{equation}
+\langle \text{VAC}|J_{a}^{\lambda }(x)|B_{b}\rangle =\mathrm{i}\frac{%
+F_{ab}p_{B}^{\lambda }\mathrm{e}^{\mathrm{i}p_{B}\cdot x}}{(2\uppi)^{3/2}%
+\sqrt{2p_{B}^{0}}}\text{ ,}  \label{19.2.38}
+\end{equation}%
+\begin{equation}
+\langle B_{a}|\phi _{n}(y)|\text{VAC}\rangle =\frac{Z_{an}\mathrm{e}^{-%
+\mathrm{i}p_{B}\cdot y}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{ .}
+\label{19.2.39}
+\end{equation}%
+方程(\ref{19.2.37})对于每一个$a$%
+都是成立的, 所以\begin{equation}
+\mathrm{i}\sum_{b}F_{ab}Z_{bn}=-\sum_{m}[t_{a}]_{nm}\langle \phi
+_{m}(0)\rangle _{\text{VAC}}\text{ .}  \label{19.2.40}
+\end{equation}%
+例如, 在之前所讨论的$%
+O(N)$模型中, 我们选择我们的基使得真空期望值指向1-方向\begin{equation}
+\bar{\phi}_{m}\equiv \langle \phi _{m}(0)\rangle _{\text{VAC}}=v\delta _{m1}%
+\text{ .}  \label{19.2.41}
+\end{equation}%
+$N-1$个破缺对称性的生成元$t_{a}$(其中$a=2\cdots N$)可以定义为$1$-$a$平面上无限小旋转的生成元. 加上一个方便的归一化选择, 
+它们就有了非零元\begin{equation}
+\lbrack t_{a}]_{1a}=-[t_{a}]_{a1}=\mathrm{i}  \label{19.2.42}
+\end{equation}%
+(其中没有对$a$进行求和). 对于未破缺的$O(N-1)$对称性, 在这一对称性$N-1$个Goldstone玻色子按照它的矢量表示进行变换, 这一%
+对称性告诉我们\begin{equation}
+F_{ab}=\delta _{ab}F\text{ , \ \ \ \ \ }Z_{a1}=0\text{ , \ \ \ \ \ }%
+Z_{ab}=Z\delta _{ab}\text{ .}  \label{19.2.43}
+\end{equation}%
+那么, 方程(\ref{19.2.40})就会要求\begin{equation}
+FZ=v\text{ .}  \label{19.2.44}
+\end{equation}%
+习惯上取$Z=1$的场重整化方案, 这样$F=v$. 因此, $F$反映了对称性破缺的强度. 我们将会看到, 参量$%
+1/F$既决定了Goldstone玻色子彼此之间的相互作用强度, 同时也决定了Goldstone玻色子与其它粒子的相互作用强度.
+
+除了Goldstone玻色子质量为零外, 破缺的对称性还告诉了我们其它事情; 
+它同时稍微约束了Goldstone%
+玻色子在低能下的相互作用. 为了在最简单的例子中看到这一点, 
+考察与一个破缺对称性相联系的流$J^{\mu }(x)$. 在任意两个态$\alpha ,\beta $之间:%
+\begin{equation}
+\left\langle \beta |J^{\mu }(x)|\alpha \right\rangle =\mathrm{e}^{\mathrm{i}%
+q\cdot x}\left\langle \beta |J^{\mu }(0)|\alpha \right\rangle \text{ ,}
+\label{19.2.45}
+\end{equation}%
+其中\begin{equation}
+q^{\mu }\equiv p_{\alpha }^{\mu }-p_{\beta }^{\mu }\text{ .}  \label{19.2.46}
+\end{equation}%
+我们知道$J^{\mu }(x)$在真空态和单Goldstone玻色子态$|B,\mathbf{q}%
+\rangle $之间的矩阵元不为零, 且这一矩阵元由方程(\ref{19.2.34})给出. 由极点学的通用规则(见第10章)可以得出, 矩阵元(\ref{19.2.45})在$%
+q^{2}\rightarrow 0$处有一极点, 且\footnote{当Goldstone玻色子对应的是基本场, 方程(\ref{19.2.47})可%
+以通过观察图\ref{fig:19.1}中所示的这类Feynman图获得. 
+对于过程$\alpha \rightarrow \beta +B$, $S$-矩阵元中的因子$\mathrm{i}(2\uppi)^{4}$%
+被$B$传播子所附带的因子$-\mathrm{i}(2\uppi)^{-4}$抵消了. 而极点学的一般规则告诉我们, 即使Goldstone玻色子是%
+复合粒子, 相同结果同样成立.}%
+\begin{equation}
+\left\langle \beta |J^{\mu }(0)|\alpha \right\rangle \rightarrow \frac{%
+\mathrm{i}Fq^{\mu }}{q^{2}}M_{\beta \alpha }\text{ ,}  \label{19.2.47}
+\end{equation}%
+其中$i(2\uppi)^{4}\delta ^{4}(p_{\alpha }-p_{\beta }-q)M_{\beta
+\alpha }/(2\uppi)^{3/2}(2q^{0})^{1/2}$是在跃迁$%
+\alpha \rightarrow \beta $中发射一个4-动量为$q$的Goldstone玻色子的$S$-%
+矩阵元. 我们因此写下\begin{equation}
+\left\langle \beta |J^{\mu }(0)|\alpha \right\rangle =N_{\beta \alpha }^{\mu
+}+\frac{\mathrm{i}Fq^{\mu }}{q^{2}}M_{\beta \alpha }\text{ ,}
+\label{19.2.48}
+\end{equation}%
+其中$N_{\beta \alpha }^{\mu }$定义为对流的矩阵元的非极点贡献. 从方程(\ref{19.2.45})中我们看到, 流$J^{\mu }$的守恒律$%
+\partial _{\mu }J^{\mu }=0$要求(\ref{19.2.48})在与$%
+q^{\mu }$收缩之后为零, 因此\begin{equation}
+M_{\beta \alpha }=\frac{\mathrm{i}}{F}q_{\mu }N_{\beta \alpha }^{\mu }\text{
+.}  \label{19.2.49}
+\end{equation}%
+一个显然的结果是, 除非$N_{\beta \alpha }^{\mu }$在$q\rightarrow 0$处有一零点, 否则在跃迁$\alpha
+\rightarrow \beta $中发射一个Goldstone玻色子的矩阵元$M_{\beta \alpha }$在$%
+q\rightarrow 0$时为零. 这被称为"Adler(阿德勒)零点".\cite{6}
+
+\begin{equation}
+\left[ (p\pm q)^{2}+m^{2}\right] ^{-1}=\left[ \pm 2p\cdot q+q^{2}\right]
+^{-1}\rightarrow \pm \frac{1}{2p\cdot q}\text{ .}  \label{19.2.50}
+\end{equation}%
+\begin{equation}
+\langle B_{a}|\pi _{b}(x)|\text{VAC}\rangle =\frac{\mathrm{e}^{-\mathrm{i}%
+p_{B}\cdot x}\delta _{ab}}{(2\uppi)^{3/2}\sqrt{2p_{B}^{0}}}\text{ ,}
+\label{19.2.51}
+\end{equation}%
+\begin{equation}
+\phi _{n}(x)=\sum_{a}Z_{an}\pi _{a}(x)+\cdots \text{ ,}  \label{19.2.52}
+\end{equation}%
+\begin{equation}
+\mathscr{H}_{\text{eff}}=\frac{1}{N!}g_{a_{1}\cdots a_{N}}\pi _{a_{1}}\cdots
+\pi _{a_{N}}\text{ ,}  \label{19.2.53}
+\end{equation}%
+\begin{equation}
+g_{a_{1}\cdots a_{N}}=\sum_{b_{1}\cdots b_{N}}\left.
+F_{a_{1}b_{1}}^{-1}\cdots F_{a_{N}b_{N}}^{-1}(\mathrm{i}t_{b_{1}}\bar{\phi}%
+)_{n_{1}}\cdots (\mathrm{i}t_{b_{N}}\bar{\phi})_{n_{N}}\frac{\partial
+^{N}V(\phi )}{\partial \phi _{n_{1}}\cdots \partial \phi _{n_{N}}}%
+\right\vert _{\phi =\bar{\phi}}\text{ .}  \label{19.2.54}
+\end{equation}%
+\begin{equation}
+\sum_{n}\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial \phi _{m}}%
+t_{n\ell }+\sum_{n}\frac{\partial ^{2}V(\phi )}{\partial \phi _{n}\partial
+\phi _{\ell }}t_{nm}+\sum_{n,k}\frac{\partial ^{3}V(\phi )}{\partial \phi
+_{n}\partial \phi _{m}\partial \phi _{\ell }}t_{nk}\phi _{k}=0\text{ .}
+\label{19.2.55}
+\end{equation}%
+\begin{equation}
+\sum_{n,m,\ell }\left. \frac{\partial ^{3}V(\phi )}{\partial \phi
+_{n}\partial \phi _{m}\partial \phi _{\ell }}\right\vert _{\phi =\bar{\phi}%
+}(t_{a}\bar{\phi})_{n}(t_{b}\bar{\phi})_{m}(t_{c}\bar{\phi})_{\ell }=0\text{
+,}  \label{19.2.56}
+\end{equation}
+
+\end{document}

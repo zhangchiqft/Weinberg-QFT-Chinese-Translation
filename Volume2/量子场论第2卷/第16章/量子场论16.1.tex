@@ -1,0 +1,209 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, May 08, 2016 19:51:46}
+%TCIDATA{LastRevised=Wednesday, May 11, 2016 20:57:08}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+现在, $Z[J]$由含有流$J$的{%
+\kai{所有}}真空-真空振幅的和给出, 这些振幅中既包括连通图也包括非连通图, 但是, 对于在同一子图或不同的连通子图中仅相差顶点置换的那些图, 并没有%
+计为不同的图. 一个由$N$%
+个连通分支构成的一般图对$Z[J]$的贡献等于这些分支的贡献之积, 
+再除以顶点的置换数$N!$%
+, 即仅对一个连通分支与另一个连通分支的所有顶点进行置换产生的重复计数.\footnote{有$N$%
+个连通分支的Feynman图, 若每个分支中的顶点数分别为$n_{1}$, $n_{2}$, $\cdots n_{N}$, 从Dyson%
+展开中可知, 这个Feynman图的贡献正比于因子$%
+1/(n_{1}+\cdots n_{N})!$, 而因子$(n_{1}+\cdots n_{N})!/N!$%
+是这些顶点的置换数, 
+在置换计数时, 那些仅交换两个分支所有顶点的置换视为是等同的.} 因此, 所有图的和是\begin{equation}
+Z[J]=\sum_{n=0}^{\infty }\frac{1}{N!}(\mi W[J])^{N}=\exp (\mi W[J])\text{ ,}
+\label{16.1.3}
+\end{equation}%
+其中$\mi W[J]$是所有{\kai{连通}}%
+真空-真空振幅的和, 再一次地, 对于那些仅相差顶点置换的图, 并没有计为不同的图.
+
+由于众多目的, 更进一步, 并用所有连通{\kai{单粒子不可约}%
+}图取代$W[J]$进行处理将是有用的. (单粒子不可约图是指无法通过剪掉任何一条内线变得不连通的图.) 我们可以以如下方式给出这一求和的形式表达式. 首%
+先, 定义$\phi _{J}^{r}(x)$为算符有流$J$时的$\Phi ^{r}(x)$的真空期望值:%
+\begin{equation}
+\phi _{J}^{r}(x)\equiv \frac{\langle \text{VAC, out}|\Phi ^{r}(x)|\text{VAC,
+in}\rangle _{J}}{\langle \text{VAC, out}|\text{VAC, in}\rangle _{J}}=-\frac{%
+\mi}{Z[J]}\frac{\delta }{\delta J_{r}(x)}Z[J]  \label{16.1.4}
+\end{equation}%
+或者, 以连通图之和的形式\begin{equation}
+\phi _{J}^{r}(x)=\frac{\delta }{\delta J_{r}(x)}W[J]\text{ .}  \label{16.1.5}
+\end{equation}%
+这一公式可以逆转. 定义$J_{\phi r}(x)$为使(\ref{16.1.4})有规定值$\phi ^{r}(x)$的流:%
+\begin{equation*}
+\phi _{J}^{r}(x)=\phi ^{r}(x)\text{ \ \  如果 \ \ }%
+J_{r}(x)=J_{\phi r}(x)\text{ .}
+\end{equation*}%
+{\kai{量子有效作用量}}\cite{1}由Legendre变换定义为(作为$\phi $的泛函, 而非$J$)%
+\begin{equation}
+\Gamma \lbrack \phi ]\equiv -\int \dif^{4}x\phi ^{r}(x)J_{\phi
+r}(x)+W[J_{\phi }]\text{ .}  \label{16.1.6}
+\end{equation}%
+我们将证明$\Gamma \lbrack \phi ]$是有流$J_{\phi }$时的所有连通单粒子不可约图的和. 
+然而, 我们先来看一下它另一方面的物理意义.
+
+注意到, $\Gamma \lbrack \phi ]$的泛函导数是\begin{eqnarray*}
+\frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{s}(y)} &=&-\int \dif%
+^{4}x\phi ^{r}(x)\frac{\delta J_{\phi r}(x)}{\delta \phi ^{s}(y)}-J_{\phi
+s}(y) \\
+&&+\int \dif^{4}x\left[ \frac{\delta W[J]}{\delta J_{r}(x)}\right]
+_{J=J_{\phi }}\frac{\delta J_{\phi r}(x)}{\delta \phi ^{s}(y)}
+\end{eqnarray*}%
+或者, 使用方程(\ref{16.1.5})%
+\begin{equation}
+\frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{s}(y)}=-J_{\phi s}(y)\text{
+.}  \label{16.1.7}
+\end{equation}%
+因此, $\Gamma \lbrack \phi ]$是\textquotedblleft 有效作用量\textquotedblright , 也就是%
+说, 在{\kai{没有}}流$J$时, 外场$\phi
+^{s}(y)$的可能值由$\Gamma $的驻\textquotedblleft 点\textquotedblright 给定:%
+\begin{equation}
+\frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{s}(y)}=0\text{ \ \  对%
+于 \ \ }J=0\text{ .}  \label{16.1.8}
+\end{equation}%
+可以与经典场方程做一比较, 经典场方程仅要求实际的作用量$I[\phi ]$%
+是稳定的. 因此, 方程(\ref%
+{16.1.8})可以视为将量子修正考虑在内之后外场$%
+\phi $的运动方程.
+
+$\Gamma \lbrack \phi ]$不仅提供了量子修正后的场方程; 它还是有效作用量, 也就是说, 如果作用量是$\Gamma
+\lbrack \phi ]$而不是$I[\phi ]$, 利用从此得出的顶点, $\mi W[J]$可以作为真空-真空振幅的连通{\kai{树}}图和算出. 我们%
+这里的树图是指, 如果剪断任何一条内线这个图变得不连通. 通过用$\Gamma \lbrack \phi ]$而非$I[\phi ]$, 就将%
+所有的圈图效应考虑在内了.
+
+为了看到这点,\cite{2} 我们来考察将用来代替$W[J]$%
+的量$W_{\Gamma }[J,g]$, 如果我们用作用量$g^{-1}\Gamma \lbrack \phi ]$代替$I[\phi
+]$:%
+\begin{eqnarray}
+\exp \{\mi W_{\Gamma }[J,g]\} &\equiv &\int \prod_{r,x}\dif\phi ^{r}(x)\exp
+\{\mi g^{-1}\left[ \Gamma \lbrack \phi ]+\int \dif^{4}x\phi ^{r}(x)J_{r}(x)%
+\right]  \notag \\
+&&+\epsilon \text{项}\}\text{ ,}  \label{16.1.9}
+\end{eqnarray}%
+其中$g$是任意常数. 这里的传播子是$g^{-1}\Gamma \lbrack \phi ]$中$\phi $的二次项系数的逆, 
+因而正比于$g$, 而所有顶点的贡献均正比于$1/g$, 
+所以, 若一个图包含$V$个顶点(包含那些流$J$产生的顶点)和$I$条内线(包含那些与$J$顶点相连的线), 那么它正比于$g^{I-V}$. 对%
+于任何连通图, 圈的数目是$L=I-V+1$, 所以$W_{\Gamma }[J,g]$中的$L$-圈项与$g$的关系是\begin{equation}
+\left( W_{\Gamma }[J,g]\right) _{L\text{ loops}}\propto g^{L-1}\text{ .}
+\label{16.1.10}
+\end{equation}%
+等效地, 我们可以写成(%
+至少形式上地)%
+\begin{equation}
+W_{\Gamma }[J,g]=\sum_{L=0}^{\infty }g^{L-1}W_{\Gamma }^{(L)}[J]\text{ ,}
+\label{16.1.11}
+\end{equation}%
+其中(通过令$g=1$可以看到), $W_{\Gamma }^{(L)}[J]$是对连通真空振幅$W_{\Gamma }[J,1]$的$L$-圈贡%
+献, 而$W_{\Gamma }[J,1]$是通过使用$%
+\Gamma \lbrack \phi ]$({\kai{不含}}因子$g$)而非作用量$I[\phi ]$获得的.
+
+现在, 我们在这里只关心无圈的{\kai{树}}图的和, 计算这些图所用的顶点和传播子是从$\Gamma \lbrack \phi ]$%
+而非$I[\phi ]$中得出的. 在我们目前的记法中, 这是$%
+W_{\Gamma }^{(0)}[J]$. 为了孤立出方程(\ref{16.1.11})中$L=0$的项, 考察极限$g\rightarrow 0$. 在这一极限%
+下, 路径积分(\ref{16.1.9})被稳相点所主导,%
+\begin{equation}
+\exp \left\{ \mi W_{\Gamma }[J,g]\right\} \propto \exp \left\{ \mi g^{-1}%
+\left[ \Gamma \lbrack \phi _{J}]+\int \dif^{4}x\phi _{J}^{r}(x)J_{r}(x)%
+\right] \right\} \text{ ,}  \label{16.1.12}
+\end{equation}%
+其中, 由于它作为场的定义是由$J$产生的, 场$\phi
+_{J}$是指数的驻点, 也就是说\begin{equation}
+\left. \frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{r}(x)}\right\vert
+_{\phi =\phi _{J}}=-J_{r}(x)\text{ .}  \label{16.1.13}
+\end{equation}%
+方程(\ref{16.1.12})中的比例因子一般是$J$的泛函, 但它是$g$的幂级数并从$g^{0}$阶项开始. 因此, 对两边取对数, 并将$g^{-1}$阶项孤立%
+出来, 这会给出\begin{equation}
+W_{\Gamma }^{(0)}[J]=\Gamma \lbrack \phi _{J}]+\int \dif^{4}x\phi
+_{J}^{r}(x)J_{r}(x)\text{ .}  \label{16.1.14}
+\end{equation}%
+在方程(\ref{16.1.6})中令$\phi =\phi _{J}$, 
+我们看到方程(\ref{16.1.14})的右边正是$W[J]$:%
+\begin{equation}
+W_{\Gamma }^{(0)}[J]=W[J]\text{ .}  \label{16.1.15}
+\end{equation}%
+概括一下, 这说明, 通过用$\Gamma \lbrack \phi ]$代替$I[\phi ]$(下标$%
+\Gamma $)并只保持树(0-圈)图可以算出$W[J]$:%
+\begin{equation}
+\mi W[J]=\int_{\substack{ \mathrm{CONNECTED}  \\ \mathrm{TREE}}}\left[
+\prod_{r,x}\dif\phi ^{r}(x)\right] \exp \left\{ \mi\Gamma \lbrack \phi ]+\mi%
+\int \phi ^{r}(x)J_{r}(x)\dif^{4}x\right\} \text{ .}  \label{16.1.16}
+\end{equation}
+
+等价地, 对于某个固定场$\phi _{0}^{r}(x)$, $\mi\Gamma \lbrack \phi _{0}]$可以表示为真空-真空振幅%
+的单粒子不可约图的和, 而这里的计算使用的是偏移作用量$I[\phi +\phi _{0}]$:%
+\begin{equation}
+\mi\Gamma \lbrack \phi _{0}]=\int_{\substack{ \mathrm{1PI} \\ \mathrm{%
+CONNECTED}}}\left[ \prod_{r,x}\dif\phi ^{r}(x)\right] \exp \{\mi I[\phi
++\phi _{0}]\}\text{ .}  \label{16.1.17}
+\end{equation}%
+这是因为只要是$\phi _{0}$出现的地方, 无论是方程(%
+\ref{16.1.17})中单粒子不可约图中的顶点还是传播子, 都会与一个外$\phi $-线相连. (限制在单粒子不可约图上在方程(\ref{16.1.17})%
+中扮演了一个重要角色; 没有这个限制, 我们偏移积分变量所产生的积分显然与$\phi _{0}$无关.) 取代方程(\ref{16.1.17}), 写成%
+\begin{equation}
+\exp \left[ \mi\Gamma \lbrack \phi _{0}]\right] =\int_{\mathrm{1PI}}\left[
+\prod_{r,x}\dif\phi ^{r}(x)\right] \exp \{\mi I[\phi +\phi _{0}]\}
+\label{16.1.18}
+\end{equation}%
+通常是方便的, 其中我们计算的路径积分包含所有图, 包括连通或非联通的, 但在每个图中, 每个连通分支都是不可约的.
+
+\subsection{* * *}
+
+这一形式理论提供了对树图求和的简单方法. 作为一个例子, 考察全两点函数$\Delta ^{rx,sy}$与它的单粒子不可约部分$\Pi
+_{rx,sy}$之间的关系. 从方程(%
+\ref{16.1.5})和(\ref{16.1.7})中, 我们发现\begin{eqnarray}
+\Delta ^{rx,sy} &\equiv &\frac{\delta ^{2}W[J]}{\delta J_{r}(x)\delta
+J_{s}(y)}=\frac{\delta \phi _{J}^{r}(x)}{\delta J_{s}(y)}\text{ ,}
+\label{16.1.19} \\
+&&\Pi _{rx,sy}\equiv \frac{\delta ^{2}\Gamma \lbrack \phi ]}{\delta \phi
+^{r}(x)\delta \phi ^{s}(y)}=-\frac{\delta J_{\phi r}(x)}{\delta \phi ^{s}(y)}%
+\text{ .}  \label{16.1.20}
+\end{eqnarray}%
+由此立刻得出矩阵$\Delta $%
+和$\Pi $之间的关系为\begin{equation}
+\Delta =-\Pi ^{-1}\text{ .}  \label{16.1.21}
+\end{equation}%
+这是传播子与自能部分之间的关系(\ref{10.3.15})的抵消项, 其中方程(\ref{10.3.15})%
+分母中的额外项$q^{2}+m^{2}$代表单粒子不可约两点函数的零阶项.
+
+\end{document}

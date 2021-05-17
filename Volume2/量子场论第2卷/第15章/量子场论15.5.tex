@@ -1,0 +1,303 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, March 22, 2016 21:53:20}
+%TCIDATA{LastRevised=Saturday, March 26, 2016 12:11:46}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{De Witt-Faddeev-Popov方法}
+
+我们的路径积分公式(\ref%
+{15.4.16})是在一个有利于正则量子化的规范下导出的, 但是从这一公式导出的Feynman规则会隐藏理论潜在的旋转不变性与Lorentz不变性. 为了导%
+出显然Lorentz不变的Feynman规则, 我们需要改变规范.
+
+我们首先注意到的是, 
+方程(\ref{15.4.16})是(相差一个不重要的常数因子)一大类泛函积分中的一个特殊情况, 这类泛函积分的形式为:
+
+\begin{equation}
+\end{equation}%
+其中$\phi _{n}(x)$是一组规范场和物质场; $\prod_{n,x}d\phi _{n}(x)$是体积元; 而$\mathscr{G}\lbrack \phi ]$是$\phi
+_{n}(x)$的泛函, 并满足规范不变条件:%
+\[
+\]%
+其中$\phi _{\lambda n}(x)$是用一个规范变换作用在$\phi $上的结果, 该规范变换的参量是$\lambda _{\alpha }(x)$. (通常情%
+况下, 当这一点满足时, 
+泛函$\mathscr{G}$与体积元分别是不变的, 但在这里我们所需要的只有方程(\ref%
+{15.5.2}).) 另外, $f_{\alpha }[\phi ;x]$是这些场的\textquotedblleft 规范固定泛函\textquotedblright , 它不是规范不%
+变的且依赖于$x$和$\alpha $; $B[f]$%
+是针对$x$和$\alpha $的一般函数$f_{\alpha }(x)$所定义的某个数值泛函; 而\mathscr{F}是\textquotedblleft 矩阵\textquotedblright :%
+\[
+\]%
+(与我们通常函数的泛函或泛函的泛函的记法一致, $B[f[\phi ]]$所依赖的$%
+f_{\alpha }[\phi ;x]$值是, 对为未表示出的变量$\alpha $和$x$的所有值所取的值, 而表示出的变量, 函数$\phi _{n}(x)$, 保%
+持不变.) 方程(\ref{15.5.1})并不代表方程(\ref{15.4.16})最大可能的推广; 在15.7节我们将看到, 由于某些原因, 
+需要并存在进一步的推广. 这里我们从方程(%
+\ref{15.5.1})出发, 这是因为它将协助推动15.7节的形式体系, 并且就处理处在最方便规范下的非阿贝尔规范理论而言, 它是足够的.
+
+我们必须要验证路径积分(\ref{15.4.16})确实是方程(\ref%
+{15.5.1})的一个特殊情况. 在方程(\ref{15.4.16})中, 场$\phi _{n}(x)$由$%
+A_{\alpha \mu }(x)$和物质场$\psi _{\ell }(x)$构成, 并且
+
+\begin{eqnarray}
+f_{\alpha }[A,\psi ;x] &=&A_{\alpha 3}(x)\text{ ,}  \label{15.5.4} \\
+B[f] &=&\prod_{x,\alpha }\delta \left( f_{\alpha }(x)\right) \text{ ,}
+\label{15.5.5} \\
+\mathscr{G}\lbrack A,\psi ] &=&\exp \{iI+\epsilon \text{项}\}%
+\mathscr{O}_{A}\mathscr{O}_{B}\cdots \text{ ,}  \label{15.5.6} \\
+\prod_{n,x}d\phi _{n}(x) &=&\left[ \prod_{\ell ,x}d\psi _{\ell }(x)\right] %
+\left[ \prod_{\alpha ,\mu ,x}dA_{\alpha }{}^{\mu }(x)\right] \text{ .}
+\label{15.5.7}
+\end{eqnarray}%
+(我们现在去掉上下标$%
+\alpha ,\beta ,\cdots $之间的区别.) 比较方程(\ref{15.4.16})与方程(\ref{15.5.1}%
+)---(\ref{15.5.3}), 这表明了除去因子$\func{Det}\mathscr{F}\lbrack \phi ]$之外, 这%
+些路径积分实际上是相同的. 对于特定的规范固定泛函(\ref{15.5.4}), 这一因子是场无关的: 如果$%
+A_{\alpha }^{3}(x)=0$, 那么在参量为$%
+\lambda _{\alpha }(x)$的规范变换下, $%
+A_{\alpha }^{3}(x)$的变化是\[
+A_{\lambda \alpha }^{3}(x)=\partial _{3}\lambda _{\alpha }(x)=\int
+d^{4}y\lambda _{\alpha }(y)\partial _{3}\delta ^{4}(x-y)\text{ ,} 
+\]%
+使得方程(\ref{15.5.3})在这里变成场无关\textquotedblleft 矩阵\textquotedblright 
+\[
+\]%
+因此, 方程(\ref{15.5.1})中的行列式在这一规范下也是场无关的. 正如第9章所讨论过的, 泛函积分中的场无关因子仅影响空期望值与$S$-矩阵的%
+真空涨落部分, 因而与$S$%
+-矩阵元连通部分的计算是无关的.
+
+将任意非阿贝尔理论的泛函积分(\ref{15.4.16})视为一般路径积分(\ref{15.5.1})的一个特殊情况, 其中的关键之处在于, 在这一%
+形式下我们可以自由地改变规范. 特别地, 我们有一个定理, 即
+
+将方程(\ref{15.5.1})中的所有积分变量$\phi $替换成一个新的积分变量$\phi _{\Lambda }$, 
+其中的$\Lambda ^{\alpha }(x)$是任意(%
+但固定)一组规范变换参量:%
+\[
+\]%
+(这一步在数学上是平庸的, 就像将积分$\int_{-\infty
+}^{\infty }f(x)dx$变成$\int_{-\infty }^{\infty }f(y)dy$, 并且没有使用我们关于规范不变性的假定.) 现%
+在使用已假定的测度$\Pi
+d\phi $乘以泛函$\mathscr{G}\lbrack \phi ]$的规范不变性(\ref{15.5.2}), 将其重写为\[
+\]%
+既然$\Lambda ^{\alpha }(x)$是任意的, 
+这时左边不能与它相关. 因此, 在一个合适的权重因子$\rho \lbrack \Lambda ]$(会在后面选定)下积掉$\Lambda ^{\alpha
+}(x)$会给出\begin{equation}
+\mathscr{I}\int \left[ \prod_{\alpha ,x}d\Lambda ^{\alpha }(x)\right] \rho
+\lbrack \Lambda ]=\int \left[ \prod_{n,x}d\phi _{n}(x)\right] \mathscr{G}%
+\lbrack \phi ]C[\phi ]\text{ ,}  \label{15.5.10}
+\end{equation}%
+其中\begin{equation}
+C[\phi ]\equiv \int \left[ \prod_{\alpha ,x}d\Lambda ^{\alpha }(x)\right]
+\rho \lbrack \Lambda ]B\left[ f[\phi _{\Lambda }]\right] \det \mathscr{F}%
+\lbrack \phi _{\Lambda }]\text{ .}  \label{15.5.11}
+\end{equation}%
+现在, 方程(\ref{15.5.3})给出\begin{equation}
+\mathscr{F}_{\alpha x,\beta y}=\left. \frac{\delta f_{\alpha }[(\phi
+_{\Lambda })_{\lambda };x]}{\delta \lambda ^{\beta }(y)}\right\vert
+_{\lambda =0}\text{ .}  \label{15.5.12}
+\end{equation}%
+我们假定这些变换构成群; 即, 我们可以将先进行参量为$\Lambda ^{\alpha }(x)$的规范变换再进行参量为$\lambda ^{\alpha }(x)$的规范变换%
+后的结果, 写成规范变换参量为$\tilde{\Lambda}^{\alpha }(x;\Lambda
+,\lambda )$的单次\textquotedblleft 乘积\textquotedblright 规范变换作用后的结果,%
+\begin{equation}
+(\phi _{\Lambda })_{\lambda }=\phi _{\tilde{\Lambda}(\Lambda ,\lambda )}%
+\text{ .}  \label{15.5.13}
+\end{equation}%
+利用偏(泛函)微分的链式法则, 我们就有\begin{equation}
+\mathscr{F}_{\alpha x,\beta y}[\phi _{\Lambda }]=\int \mathscr{I}_{\alpha
+x,\gamma z}[\phi ,\Lambda ]\mathscr{R}^{\gamma z}{}_{\beta y}[\Lambda ]d^{4}z%
+\text{ ,}  \label{15.5.14}
+\end{equation}%
+其中\begin{equation}
+\mathscr{I}_{\alpha x,\gamma z}[\phi ,\Lambda ]\equiv \left. \frac{\delta
+f_{\alpha }[\phi _{\tilde{\Lambda}};x]}{\delta \tilde{\Lambda}^{\gamma }(z)}%
+\right\vert _{\tilde{\Lambda}=\Lambda }=\frac{\delta f_{\alpha }[\phi
+_{\Lambda };x]}{\delta \Lambda ^{\gamma }(z)}  \label{15.5.15}
+\end{equation}%
+以及\begin{equation}
+\mathscr{R}^{\gamma z}{}_{\beta y}[\Lambda ]=\left. \frac{\delta \tilde{%
+\Lambda}^{\gamma }(z;\Lambda ,\lambda )}{\delta \lambda ^{\beta }(y)}%
+\right\vert _{\lambda =0}\text{ .}  \label{15.5.16}
+\end{equation}%
+由此得出\begin{equation}
+\det \mathscr{F}\lbrack \phi _{\Lambda }]=\det \mathscr{I}\lbrack \phi
+,\Lambda ]\det \mathscr{R}\lbrack \Lambda ]\text{ .}  \label{15.5.17}
+\end{equation}%
+我们注意到, $\det \mathscr{I}\lbrack \phi
+,\Lambda ]$就是积分变量从$\Lambda
+^{\alpha }(x)$变换到($\phi $固定的)$%
+f_{\alpha }[\phi _{\Lambda };x]$的雅克比行列式. 因此, 如果我们将权重函数$\rho (\Lambda )$选为%
+\begin{equation}
+\rho (\Lambda )=1/\det \mathscr{R}\lbrack \Lambda ]  \label{15.5.18}
+\end{equation}%
+那么\begin{eqnarray}
+C[\phi ] &=&\int \left[ \prod_{\alpha ,x}d\Lambda ^{\alpha }(x)\right] \det %
+\mathscr{I}\lbrack \phi ,\Lambda ]B\left[ f[\phi _{\Lambda }]\right] 
+\nonumber \\
+&=&\int \left[ \prod_{\alpha ,x}df_{\alpha }(x)\right] B[f]\equiv C\text{ ,}
+\label{15.5.19}
+\end{eqnarray}%
+它显然是独立于$\phi $的. (%
+读者可以认为方程(\ref%
+{15.5.18})给出了群的参量空间上的不变(Haar)测度.) 这样, 最终我们有\begin{equation}
+\mathscr{I}=\frac{C\int \left[ \prod_{n,x}d\phi _{n}(x)\right] \mathscr{G}%
+\lbrack \phi ]}{\int \left[ \prod_{\alpha ,x}d\Lambda ^{\alpha }(x)\right]
+\rho \lbrack \Lambda ]}\text{ .}  \label{15.5.20}
+\end{equation}%
+这个结果显然与我们对$f_{\alpha }[\phi ;x]$的选择无关, 
+它已经被简化成单变量的积分, 并且它仅通过常数$C$与$B[f]$相关, 这正是所要证明的.
+
+在继续应用这个定理之前, 我们应该暂停一下, 关注推导中的一个技巧点. 由于同一个原因, 方程(\ref{15.5.20})的分子和分母中的积分都是病%
+态定义的. 因为假定$%
+\mathscr{G}\lbrack \phi ]$是规范不变的, 
+它对$\phi $的积分不可能收敛的; 对于将$\phi $变成$%
+\phi _{\lambda }$的\textquotedblleft 轨道\textquotedblright , 这样的轨道能够抵达所有可能的$\lambda _{\alpha
+}(x)$, 而$\mathscr{G}\lbrack \phi ]$沿着所有这样的轨道都是常数. 
+同样, 分母中的积分也是发散的, 这是因为$\rho
+\lbrack \Lambda ]\Pi d\Lambda $就是普通的群积分的不变体积元, 
+并且它沿着\textquotedblleft 轨道\textquotedblright $\Lambda \rightarrow \tilde{\Lambda}(\Lambda ,\lambda )$%
+是常数. 通过在一个有限的时空晶格内表述该理论, 方程(\ref{15.5.20})中分子和分母的发散都可以被消除掉, 在这一情况下, 规范群的体积就%
+是整体Lie群本身的体积乘以晶格格位的数目. 
+对于方程(\ref{15.5.20})左边的原始定义(\ref{15.5.1})而言, 由于规范固定因子$B[f]$消除了这一发散, 我们可%
+以推测, 随着晶格格位的数目趋于无穷, 它在方程(\ref{15.5.20})右边的分子和分母之间抵消了.
+
+现在, 切入主题. 我们已经看到, 轴向规范下的真空期望值(\ref{15.4.16})有一般形式的路径积分(\ref{15.5.1}%
+)给出. 装备了之上的定理后, 对于$f_{\alpha }[A,\psi ;x]$和$B[f]$%
+的(几乎)任意选择, 我们得到结论\begin{eqnarray}
+\langle T\{\mathscr{O}_{A}\mathscr{O}_{B}\cdots \}_{V} &\propto &\int \left[
+\prod_{\ell ,x}d\psi _{\ell }(x)\right] \left[ \prod_{\alpha ,\mu
+,x}dA_{\alpha }{}^{\mu }(x)\right]  \nonumber \\
+&&\times \mathscr{O}_{A}\mathscr{O}_{B}\exp \{iI+\epsilon \text{项}\}B%
+\left[ f[A,\psi ]\right] \det \mathscr{F}\lbrack A,\psi ]\text{ .}
+\label{15.5.21}
+\end{eqnarray}%
+因此, 我们现在可以在一个更加方便的规范下使用方程(\ref{15.5.21})推导Feynman规则.
+
+我们知道如何计算的路径积分是高斯型乘以多项式的路径积分, 
+所以我们一般会取\begin{equation}
+B[f]=\exp \left( -\frac{i}{2\xi }\int d^{4}xf_{\alpha }(x)f_{\alpha
+}(x)\right) \text{ ,}  \label{15.5.22}
+\end{equation}%
+\qquad 其中$\xi $是任意的实参量. 在这一选择下, 因子$%
+B$在方程(\ref{15.5.21})中的效应仅是给有效拉格朗日量增加一项\begin{equation}
+\mathscr{L}_{\text{EFF}}=\mathscr{L}-\frac{1}{2\xi }f_{\alpha }f_{\alpha }%
+\text{ .}  \label{15.5.23}
+\end{equation}
+
+Lorentz不变的规范固定函数$f_{\alpha }$的最简单选择与电动力学中的选择相同:%
+\begin{equation}
+f_{\alpha }=\partial _{\mu }A_{\alpha }{}^{\mu }\text{ .}  \label{15.5.24}
+\end{equation}%
+这样, 裸规范场的传播子就可以像量子电动力学中那样进行计算. 
+有效作用量的自由矢量玻色子部分可以写成\begin{eqnarray*}
+I_{0A} &=&-\int d^{4}x[\frac{1}{4}(\partial _{\mu }A_{\alpha \nu }-\partial
+_{\nu }A_{\alpha \mu })(\partial ^{\mu }A_{\alpha }{}^{\nu }-\partial ^{\nu
+}A_{\alpha }{}^{\mu }) \\
+&&+\frac{1}{2\xi }(\partial _{\mu }A_{\alpha }{}^{\mu })(\partial _{\nu
+}A_{\alpha }{}^{\nu })+\epsilon \text{项}] \\
+&=&-\frac{1}{2}\int d^{4}x\mathscr{D}_{\alpha \mu x,\beta \nu y}A_{\alpha
+}{}^{\mu }(x)A_{\beta }{}^{\nu }(y)\text{ ,}
+\end{eqnarray*}%
+其中\begin{eqnarray*}
+\mathscr{D}_{\alpha \mu x,\beta \nu y} &=&\eta _{\mu \nu }\frac{\partial ^{2}%
+}{\partial x^{\lambda }\partial y_{\lambda }}\delta ^{4}(x-y)\delta _{\alpha
+\beta } \\
+&&-\left( 1-\frac{1}{\xi }\right) \frac{\partial ^{2}}{\partial x^{\mu
+}\partial y^{\nu }}\delta ^{4}(x-y)\delta _{\alpha \beta }+\epsilon \text{%
+项} \\
+&=&(2\pi )^{-4}\delta _{\alpha \beta }\int d^{4}p\left[ \eta _{\mu \nu
+}(p^{2}-i\epsilon )-\left( 1-\frac{1}{\xi }\right) p_{\mu }p_{\nu }\right]
+e^{ip\cdot (x-y)}\text{ .}
+\end{eqnarray*}%
+取方括号中矩阵的倒数, 我们就得到了传播子:%
+\begin{eqnarray}
+\Delta _{\alpha \mu ,\beta \nu }(x,y) &=&(\mathscr{D}^{-1})_{\alpha \mu
+x,\beta \nu y}  \nonumber \\
+&=&(2\pi )^{-4}\int d^{4}p\left[ \eta _{\mu \nu }+(\xi -1)\frac{p_{\mu
+}p_{\nu }}{p^{2}}\right] \frac{e^{ip\cdot (x-y)}}{p^{2}-i\epsilon }\text{ .}
+\label{15.2.25}
+\end{eqnarray}%
+这既是Landau规范的推广, 
+也是Feynman规范的推广, 可以通过取$\xi =0$和$\xi =1$分别回到这两个规范. 当$\xi
+\rightarrow 0$时, 除了$f_{\alpha }=0$附近, 
+泛函(\ref{15.5.22})振荡的非常剧烈, 所以这个泛函的作用就像$\delta $-函数, 给泛函积分强加了Landau规范条件$\partial _{\mu }A^{\mu }=0$, 它很自%
+然地导出了满足条件$%
+\partial ^{\mu }\Delta _{\alpha \mu ,\beta \nu }=0$所相应的传播子. 对于不为零的$\xi $值, 泛函$B[f]$并不挑%
+出规范场, 使得$A_{\alpha \mu }$满足任何特定规范条件, 
+但是通常将传播子(\ref%
+{15.5.25})称为\textquotedblleft 广义Feynman规范\textquotedblright 或\textquotedblleft 广义$\xi $-%
+规范\textquotedblright 下的传播子. 
+一个很好的计算物理振幅的策略是, 保持$\xi $%
+任意, 而在计算的最后检验结果是不是$\xi $-无关的.
+
+附加一个限制后, Feynman规则现在是显然的: 顶点的贡献可以从原始拉格朗日$\mathscr{L}$的相互作用项中读出来, 而规范场%
+由方程(\ref{15.5.25})给出, 物质场传播子像往常那样计算. 确切些, $\mathscr{L}$中的三线性相互作用\[
+-\frac{1}{2}C_{\alpha \beta \gamma }(\partial _{\mu }A_{\alpha \nu
+}-\partial _{\nu }A_{\alpha \mu })A_{\beta }{}^{\mu }A_{\gamma }{}^{\nu }
+\]%
+对应与三个矢量玻色子线相连的顶点, 这些线携带(入)动量$p,q,k$以及Lorentz和规范指标$\mu \alpha ,\nu \beta ,\rho
+\gamma $, 那么, 根据动量空间Feynman规则, 这种顶点对被积函数的贡献是\begin{equation}
+i(2\pi )^{4}\delta ^{4}(p+q+k)[-iC_{\alpha \beta \gamma }]\left[ p_{\nu
+}\eta _{\mu \lambda }-p_{\lambda }\eta _{\mu \nu }+q_{\lambda }\eta _{\nu
+\mu }-q_{\mu }\eta _{\nu \lambda }+k_{\mu }\eta _{\lambda \nu }-k_{\nu }\eta
+_{\lambda \mu }\right] \text{ .}  \label{15.5.26}
+\end{equation}%
+另外, $\mathscr{L}$中的$A^{4}$相互作用项,%
+\[
+-\frac{1}{4}C_{\epsilon \alpha \beta }C_{\epsilon \gamma \delta }A_{\alpha
+\mu }A_{\beta \nu }A_{\gamma }{}^{\mu }A_{\delta }{}^{\nu }\text{ ,}
+\]%
+它对应与四个矢量玻色子线相连的顶点. 如果这些线携带(入)动量$%
+p,q,k,\ell $, 以及Lorentz和规范指标$\mu \alpha ,\nu \beta ,\rho \gamma $和$\sigma \delta $, 那%
+么这种顶点对被积函数的贡献是\begin{eqnarray}
+&&i(2\pi )^{4}\delta ^{4}(p+q+k+\ell )\times \lbrack -C_{\epsilon \alpha
+\beta }C_{\epsilon \gamma \delta }(\eta _{\mu \rho }\eta _{\nu \sigma }-\eta
+_{\mu \sigma }\eta _{\nu \rho })  \nonumber \\
+&&-C_{\epsilon \alpha \gamma }C_{\epsilon \alpha \beta }(\eta _{\mu \sigma
+}\eta _{\rho \nu }-\eta _{\mu \nu }\eta _{\sigma \rho })-C_{\epsilon \alpha
+\delta }C_{\epsilon \beta \gamma }(\eta _{\mu \nu }\eta _{\rho \sigma }-\eta
+_{\mu \rho }\eta _{\sigma \nu })]\text{ .}  \label{15.5.27}
+\end{eqnarray}%
+(回忆起结构常数$C_{\alpha \beta
+\gamma }$包含耦合常数因子, 
+所以因子(\ref{15.5.26})和(\ref{15.5.27})%
+关于耦合常数分别是一阶和二阶的.)
+
+在这一Feynman规则中, 还有一个困难我们没有处理, 即, 方程(\ref{15.5.21})中出现了因子$\det \mathscr{F}$, 对于一般%
+的规范, 它{\kai{不}}是常数. 
+我们现在转向这个因子的考察.
+
+\end{document}

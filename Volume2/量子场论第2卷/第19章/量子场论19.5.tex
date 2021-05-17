@@ -1,0 +1,391 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, October 16, 2016 20:53:39}
+%TCIDATA{LastRevised=Wednesday, October 19, 2016 20:48:15}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\begin{equation}
+L=-\frac{1}{2}\partial _{\mu }\phi _{n}\partial ^{\mu }\phi _{n}-\frac{M^{2}%
+}{2}\phi _{n}\phi _{n}-\frac{\lambda }{4}(\phi _{n}\phi _{n})^{2}\text{ ,}
+\label{19.5.1}
+\end{equation}%
+\begin{equation}
+\phi _{n}(x)=R_{n4}(x)\sigma (x)  \label{19.5.2}
+\end{equation}%
+\begin{equation}
+R^{T}(x)R(x)=1  \label{19.5.3}
+\end{equation}%
+\begin{equation}
+\sigma (x)=\sqrt{\sum_{n}\phi _{n}(x)^{2}}\text{ .}  \label{19.5.4}
+\end{equation}%
+\begin{equation}
+L=-\frac{1}{2}\sum_{n=1}^{4}\left( R_{n4}\partial _{\mu }\sigma +\sigma
+\partial _{\mu }R_{n4}\right) ^{2}-\frac{1}{2}M^{2}\sigma ^{2}-\frac{\lambda 
+}{4}\sigma ^{4}\text{ .}  \label{19.5.5}
+\end{equation}%
+\[
+\sum_{n}R_{n4}^{2}=1\text{ ,}\sum_{n}R_{n4}\partial _{\mu }R_{n4}=\frac{1}{2}%
+\partial _{\mu }\sum_{n}R_{n4}^{2}=0\text{ ,}
+\]%
+\begin{equation}
+L=-\frac{1}{2}\partial _{\mu }\sigma \partial ^{\mu }\sigma =\frac{1}{2}%
+\sigma ^{2}\sum_{n=1}^{4}\partial ^{\mu }R_{n4}\partial _{\mu }R_{n4}-\frac{1%
+}{2}M^{2}\sigma ^{2}-\frac{\lambda }{4}\sigma ^{4}\text{ .}  \label{19.5.6}
+\end{equation}%
+\begin{equation}
+\zeta _{a}\equiv \frac{\phi _{a}}{\phi _{4}+\sigma }  \label{19.5.7}
+\end{equation}%
+并取\begin{equation}
+R_{a4}=\frac{2\zeta _{a}}{1+\vec{\zeta}^{2}}=-R_{4a}\text{ ,}R_{44}=\frac{1-%
+\vec{\zeta}^{2}}{1+\vec{\zeta}^{2}}\text{ ,}R_{ab}=\delta _{ab}-\frac{2\zeta
+_{a}\zeta _{b}}{1+\vec{\zeta}^{2}}\text{ ,}  \label{19.5.8}
+\end{equation}%
+使得\begin{equation}
+\phi _{a}/\sigma =R_{a4}=\frac{2\zeta _{a}}{1+\vec{\zeta}^{2}}\text{ ,}\phi
+_{4}/\sigma =R_{44}=\frac{1-\vec{\zeta}^{2}}{1+\vec{\zeta}^{2}}\text{ .}
+\label{19.5.9}
+\end{equation}%
+\begin{equation}
+L=-\frac{1}{2}\partial _{\mu }\sigma \partial ^{\mu }\sigma -2\sigma ^{2}%
+\vec{D}_{\mu }\cdot \vec{D}^{\mu }-\frac{1}{2}M^{2}\sigma ^{2}-\frac{\lambda 
+}{4}\sigma ^{4}\text{ ,}  \label{19.5.10}
+\end{equation}%
+其中\begin{equation}
+\vec{D}_{\mu }\equiv \frac{\partial _{\mu }\vec{\zeta}}{1+\vec{\zeta}^{2}}%
+\text{ .}  \label{19.5.11}
+\end{equation}%
+\begin{equation}
+\delta \vec{\zeta}=\vec{\theta}\times \vec{\zeta}\text{ ,}\delta \sigma =0%
+\text{ ,}  \label{19.5.12}
+\end{equation}%
+\begin{equation}
+\delta \vec{\phi}=2\vec{\epsilon}\phi _{4}\text{ ,}\delta \phi _{4}=-2\vec{%
+\epsilon}\cdot \vec{\phi}\text{ .}  \label{19.5.13}
+\end{equation}%
+\begin{equation}
+\delta \vec{\zeta}=\vec{\epsilon}(1-\vec{\zeta}^{2})+2\vec{\zeta}(\vec{%
+\epsilon}\cdot \vec{\zeta})\text{ ,}\delta \sigma =0\text{ .}
+\label{19.5.14}
+\end{equation}%
+\begin{equation}
+\delta \vec{D}_{\mu }=2(\vec{\zeta}\times \vec{\epsilon})\times \vec{D}_{\mu
+}  \label{19.5.15}
+\end{equation}%
+\begin{equation}
+L=-\frac{F^{2}}{2}\vec{D}_{\mu }\vec{D}^{\mu }=-\frac{F^{2}}{2}\frac{%
+\partial _{\mu }\vec{\zeta}\cdot \partial ^{\mu }\vec{\zeta}}{(1+\vec{\zeta}%
+^{2})^{2}}\text{ ,}  \label{19.5.16}
+\end{equation}%
+\begin{equation}
+\vec{\pi}=F\vec{\zeta}  \label{19.5.17}
+\end{equation}%
+\begin{equation}
+L=-\frac{1}{2}\frac{\partial _{\mu }\vec{\pi}\cdot \partial ^{\mu }\vec{\pi}%
+}{(1+\vec{\pi}^{2}/F^{2})^{2}}\text{ .}  \label{19.5.18}
+\end{equation}%
+\begin{equation}
+L_{\text{eff}}=-\frac{F^{2}}{2}\vec{D}_{\mu }\vec{D}^{\mu }-\frac{c_{4}}{4}(%
+\vec{D}_{\mu }\vec{D}^{\mu })^{2}-\frac{c_{4}^{\prime }}{4}(\vec{D}_{\mu
+}\cdot \vec{D}_{\nu })(\vec{D}^{\mu }\cdot \vec{D}^{\nu })-\cdots \text{ .}
+\label{19.5.19}
+\end{equation}%
+\begin{equation}
+\nu =\sum_{i}V_{i}d_{i}-2I+4L\text{ .}  \label{19.5.20}
+\end{equation}%
+\begin{equation}
+L=I-\sum_{i}V_{i}+1\text{ ,}  \label{19.5.21}
+\end{equation}%
+\begin{equation}
+\nu =\sum_{i}V_{i}(d_{i}-2)+2L+2\text{ .}  \label{19.5.22}
+\end{equation}%
+\begin{equation}
+L_{2}=-\frac{F^{2}}{2}\vec{D}_{\mu }\vec{D}^{\mu }=-\frac{1}{2}\frac{%
+\partial _{\mu }\vec{\pi}\partial ^{\mu }\vec{\pi}}{(1+\vec{\pi}%
+^{2}/F^{2})^{2}}\text{ .}  \label{19.5.23}
+\end{equation}%
+\begin{equation}
+S=i(2\pi )^{4}\delta ^{4}(p_{A}+p_{B}-p_{C}-p_{D})M(2\pi
+)^{-6}(16E_{A}E_{B}E_{C}E_{D})^{-1/2}  \label{19.5.24}
+\end{equation}%
+\begin{eqnarray}
+M_{abcd}^{(\nu =2)} &=&4F^{-2}[\delta _{ab}\delta _{cd}(-p_{A}\cdot
+p_{B}-p_{C}\cdot p_{D})+\delta _{ac}\delta _{bd}(p_{A}\cdot p_{C}+p_{B}\cdot
+p_{D})  \nonumber \\
+&&+\delta _{ad}\delta _{bc}(p_{A}\cdot p_{D}+p_{B}\cdot p_{C})]\text{ ,}
+\label{19.5.25}
+\end{eqnarray}%
+\begin{eqnarray}
+M_{abcd}^{(\nu =4)} &=&\frac{\delta _{ab}\delta _{cd}}{F^{4}}[-\frac{1}{2\pi
+^{2}}s^{2}\ln (-s)-\frac{1}{12\pi ^{2}}(u^{2}-s^{2}+3t^{2})\ln (-t) 
+\nonumber \\
+&&-\frac{1}{12\pi ^{2}}(t^{2}-s^{2}+3u^{2})\ln (-u)+\frac{1}{3\pi ^{2}}%
+(s^{2}+t^{2}+u^{2})\ln \Lambda ^{2}  \nonumber \\
+&&-\frac{1}{2}c_{4}s^{2}-\frac{1}{4}c_{4}^{\prime }(t^{2}+u^{2})]+\text{%
+交叉项 ,}  \label{19.5.26}
+\end{eqnarray}%
+\[
+s=-(p_{A}+p_{B})^{2}\text{ ,}t=-(p_{A}-p_{C})^{2}\text{ ,}%
+u=-(p_{A}-p_{D})^{2}\text{ .}
+\]%
+\begin{eqnarray}
+c_{4R} &=&c_{4}-\frac{2}{3\pi ^{2}}\ln \left( \frac{\Lambda ^{2}}{\mu ^{2}}%
+\right) \text{ ,}  \label{19.5.27} \\
+c_{4R}^{\prime } &=&c_{4}^{\prime }-\frac{4}{3\pi ^{2}}\ln \left( \frac{%
+\Lambda ^{2}}{\mu ^{2}}\right) \text{ ,}  \label{19.5.28}
+\end{eqnarray}%
+\begin{eqnarray}
+M_{abcd}^{(\nu =4)} &=&\frac{\delta _{ab}\delta _{cd}}{F^{4}}[-\frac{1}{2\pi
+^{2}}s^{2}\ln \left( \frac{-s}{\mu ^{2}}\right) -\frac{1}{12\pi ^{2}}%
+(u^{2}-s^{2}+3t^{2})\ln \left( \frac{-t}{\mu ^{2}}\right)   \nonumber \\
+&&-\frac{1}{12\pi ^{2}}(t^{2}-s^{2}+3u^{2})\ln \left( \frac{-u}{\mu ^{2}}%
+\right) -\frac{1}{2}c_{4R}s^{2}-\frac{1}{4}c_{4R}^{\prime }(t^{2}+u^{2})] 
+\nonumber \\
+&&+\text{交叉项 ,}  \label{19.5.29}
+\end{eqnarray}%
+\[
+\vec{\epsilon}\cdot \vec{A}^{\mu }=-\frac{\partial L}{\partial (\partial
+_{\mu }\vec{\zeta})}\cdot \delta \vec{\zeta}
+\]%
+\begin{equation}
+\vec{A}^{\mu }=-(1-\vec{\zeta}^{2})\frac{\partial L}{\partial (\partial
+_{\mu }\vec{\zeta})}-2\vec{\zeta}\vec{\zeta}\cdot \left( \frac{\partial L}{%
+\partial (\partial _{\mu }\vec{\zeta})}\right) \text{ .}  \label{19.5.30}
+\end{equation}%
+\begin{equation}
+\vec{A}^{\mu }=F\left[ \partial ^{\mu }\vec{\pi}\frac{(1-\vec{\pi}^{2}/F^{2})%
+}{(1+\vec{\pi}^{2}/F^{2})}+\frac{2\vec{\pi}(\vec{\pi}\cdot \partial ^{\mu }%
+\vec{\pi})}{F^{2}(1+\vec{\pi}^{2}/F^{2})^{2}}\right] +\cdots \text{ .}
+\label{19.5.31}
+\end{equation}%
+\begin{equation}
+F_{\pi }=F\text{ .}  \label{19.5.32}
+\end{equation}%
+\begin{equation}
+\nu =\sum_{i}V_{i}(d_{i}+2m_{i}-2)+2L+2\text{ ,}  \label{19.5.33}
+\end{equation}%
+\begin{equation}
+\Delta L^{+}=-\frac{m_{\pi }^{2}F_{\pi }^{2}}{2}\frac{\vec{\zeta}^{2}}{1+%
+\vec{\zeta}^{2}}=-\frac{m_{\pi }^{2}}{2}\frac{\vec{\pi}^{2}}{1+\vec{\pi}%
+^{2}/F_{\pi }^{2}}\text{ .}  \label{19.5.34}
+\end{equation}%
+\begin{equation}
+M_{abcd}^{(\nu =2)}=4F_{\pi }^{-2}\left[ \delta _{ab}\delta _{cd}(s-m_{\pi
+}^{2})+\delta _{ac}\delta _{bd}(t-m_{\pi }^{2})+\delta _{ad}\delta
+_{bc}(u-m_{\pi }^{2})\right] \text{ .}  \label{19.5.35}
+\end{equation}%
+\begin{eqnarray}
+M_{abcd}^{(\nu =2)}(\text{阈值}) &=&4m_{\pi }^{2}F_{\pi
+}^{-2}[3\delta _{ab}\delta _{cd}-\delta _{ac}\delta _{bd}-\delta _{ad}\delta
+_{bc}]  \nonumber \\
+&=&4m_{\pi }^{2}F_{\pi }^{-2}\left[ 7M_{ab,cd}^{(0)}-2M_{ab,cd}^{(2)}\right] 
+\text{ ,}  \label{19.5.36}
+\end{eqnarray}%
+\begin{equation}
+M_{ab,cd}^{(0)}=\frac{1}{3}\delta _{ab}\delta _{cd}\text{ ,}  \label{19.5.37}
+\end{equation}%
+\begin{equation}
+M_{ab,cd}^{(2)}=\frac{1}{2}(\delta _{ac}\delta _{bd}+\delta _{ad}\delta
+_{bc}-\frac{2}{3}\delta _{ab}\delta _{cd})\text{ ,}  \label{19.5.38}
+\end{equation}%
+\[
+a_{0}=\frac{7m_{\pi }}{8\pi F_{\pi }^{2}}=0.16m_{\pi }^{-1}\text{ ,}a_{2}=-%
+\frac{m_{\pi }}{4\pi F_{\pi }^{2}}=-0.046m_{\pi }^{-1}\text{ .}
+\]%
+\begin{equation}
+L_{N}=-\bar{N}(\partial +g[\phi _{4}+2i\vec{t}\cdot \vec{\phi}\gamma _{5}])N%
+\text{ ,}  \label{19.5.39}
+\end{equation}%
+\begin{eqnarray}
+\delta \vec{\phi} &=&2\vec{\epsilon}\phi _{4}\text{ ,}\delta \phi _{4}=-2%
+\vec{\epsilon}\cdot \vec{\phi}\text{ ,}  \label{19.5.40} \\
+\delta N &=&-2i\gamma _{5}\vec{\epsilon}\cdot \vec{t}N\text{ .}
+\label{19.5.41}
+\end{eqnarray}%
+\begin{equation}
+N\equiv \frac{(1-2i\gamma _{5}\vec{t}\cdot \vec{\zeta})}{\sqrt{1+\vec{\zeta}%
+^{2}}}\tilde{N}  \label{19.5.42}
+\end{equation}%
+\[
+\bar{N}[\phi _{4}+2i\vec{t}\cdot \vec{\phi}\gamma _{5}]N=\sigma \bar{N}%
+\tilde{N}\text{ .}
+\]%
+\begin{equation}
+L_{N}=-\tilde{N}\left[ \partial +g\sigma +2i\frac{\vec{t}\cdot (\vec{\zeta}%
+\times \partial \vec{\zeta})}{1+\vec{\zeta}^{2}}+2i\gamma _{5}\vec{t}\cdot 
+\vec{D}\right] \tilde{N}  \label{19.5.43}
+\end{equation}%
+\begin{equation}
+L_{N}=-\tilde{N}\left[ \partial +g\sigma +\frac{2i\vec{t}\cdot (\vec{\pi}%
+\times \partial \vec{\pi})}{F_{\pi }^{2}[1+\vec{\pi}^{2}/F_{\pi }^{2}]}+%
+\frac{2i\gamma _{5}\vec{t}\cdot \partial \vec{\pi}}{F_{\pi }^{2}[1+\vec{\pi}%
+^{2}/F_{\pi }^{2}]}\right] \tilde{N}\text{ .}  \label{19.5.44}
+\end{equation}%
+\begin{equation}
+\delta \tilde{N}=2i\vec{t}\cdot \lbrack \vec{\zeta}\times \vec{\epsilon}]%
+\tilde{N}\text{ .}  \label{19.5.45}
+\end{equation}%
+\begin{equation}
+\delta D_{\mu }\tilde{N}=2i\vec{t}\cdot \lbrack \vec{\zeta}\times \vec{%
+\epsilon}]D_{\mu }\tilde{N}\text{ ,}  \label{19.5.46}
+\end{equation}%
+\begin{equation}
+D_{\mu }\tilde{N}\equiv \left[ \partial _{\mu }+2i\frac{\vec{t}\cdot (\vec{%
+\zeta}\times \partial \vec{\zeta})}{1+\vec{\zeta}^{2}}\right] \tilde{N}\text{
+.}  \label{19.5.47}
+\end{equation}%
+\begin{equation}
+L_{N,0}=-\tilde{N}\left[ D+m_{N}+2ig_{A}\gamma _{5}\vec{t}\cdot \vec{D}%
+\right] \tilde{N}  \label{19.5.48}
+\end{equation}%
+\begin{equation}
+L_{N,0}=-\tilde{N}\left[ \partial +m_{N}+\frac{2i\vec{t}\cdot (\vec{\pi}%
+\times \partial \vec{\pi})}{F_{\pi }^{2}[1+\vec{\pi}^{2}/F_{\pi }^{2}]}+%
+\frac{2ig_{A}\gamma _{5}\vec{t}\cdot \partial \vec{\pi}}{F_{\pi }[1+\vec{\pi}%
+^{2}/F_{\pi }^{2}]}\right] \tilde{N}\text{ .}  \label{19.5.49}
+\end{equation}%
+\[
+G_{\pi N}=2m_{N}g_{A}/F_{\pi }\text{ ,}
+\]%
+\begin{equation}
+L_{N}^{\prime }=ig^{\prime }\bar{N}\left[ (\vec{t}\cdot \vec{\phi}\partial
+\phi _{4}-\phi _{4}\vec{t}\cdot \partial \vec{\phi})\gamma _{5}+\vec{t}\cdot
+(\vec{\phi}\times \partial \vec{\phi})\right] N\text{ .}  \label{19.5.50}
+\end{equation}%
+\[
+L_{N}^{\prime }=-8i\sigma ^{2}g^{\prime }\tilde{N}\vec{t}\cdot \vec{D}\gamma
+_{5}\tilde{N}\text{ .}
+\]%
+\begin{equation}
+\frac{-i(p+q)+m_{N}}{(p+q)^{2}+m_{N}^{2}}\longrightarrow \frac{-ip+m_{N}}{%
+2p\cdot q}\text{ .}  \label{19.5.51}
+\end{equation}%
+\begin{equation}
+v=\sum_{i}V_{i}(d_{i}+2m_{i})-2I_{\pi }-I_{N}+4L\text{ .}  \label{19.5.52}
+\end{equation}%
+\begin{equation}
+L=I_{\pi }+I_{N}-\sum_{i}V_{i}+1  \label{19.5.53}
+\end{equation}%
+\begin{equation}
+2I_{N}+E_{N}=\sum_{i}V_{i}n_{i}\text{ ,}  \label{19.5.54}
+\end{equation}%
+\begin{equation}
+\nu =\sum_{i}V_{i}\left( d_{i}+2m_{i}+\frac{n_{i}}{2}-2\right) +2L-\frac{%
+E_{N}}{2}+2\text{ .}  \label{19.5.55}
+\end{equation}%
+\[
+d_{i}+2m_{i}+\frac{n_{i}}{2}-2=0\text{ .}
+\]%
+\begin{equation}
+\left( \tilde{N}\Gamma _{\alpha }\tilde{N}\right) \left( \tilde{N}\Gamma
+^{\alpha }\tilde{N}\right) \text{ ,}  \label{19.5.56}
+\end{equation}%
+\[
+\bar{N}N=\left( \frac{1-\vec{\zeta}^{2}}{1+\vec{\zeta}^{2}}\right) \tilde{N}%
+\tilde{N}-4i\left( \frac{\vec{\zeta}}{1+\vec{\zeta}^{2}}\right) \cdot \tilde{%
+N}\gamma _{5}\vec{t}\tilde{N}\text{ ,}
+\]%
+\[
+\bar{N}t_{3}N=\tilde{N}t_{3}\tilde{N}-2\left( \frac{\zeta _{3}}{1+\vec{\zeta}%
+^{2}}\right) \tilde{N}\vec{t}\cdot \vec{\zeta}\tilde{N}-i\left( \frac{\zeta
+_{3}}{1+\vec{\zeta}^{2}}\right) \bar{N}\gamma _{5}\tilde{N}\text{ .}
+\]%
+\begin{equation}
+\left( \frac{1-\vec{\zeta}^{2}}{1+\vec{\zeta}^{2}}\right) \bar{N}\tilde{N}
+\label{19.5.61}
+\end{equation}%
+\begin{equation}
+i\left( \frac{\vec{\zeta}}{1+\vec{\zeta}^{2}}\right) \cdot \bar{N}\gamma _{5}%
+\vec{t}\tilde{N}\text{ ,}  \label{19.5.62}
+\end{equation}%
+\begin{equation}
+\bar{N}t_{3}\tilde{N}-2\left( \frac{\zeta _{3}}{1+\vec{\zeta}^{2}}\right) 
+\bar{N}\vec{t}\cdot \vec{\zeta}\tilde{N}  \label{19.5.63}
+\end{equation}%
+\begin{equation}
+i\left( \frac{\zeta _{3}}{1+\vec{\zeta}^{2}}\right) \bar{N}\gamma _{5}\tilde{%
+N}\text{ .}  \label{19.5.64}
+\end{equation}%
+\begin{eqnarray}
+\delta L_{\text{eff}} &=&-\frac{\delta m_{p}+\delta m_{n}}{2}\left( \frac{1-%
+\vec{\pi}^{2}/F_{\pi }^{2}}{1+\vec{\pi}^{2}/F_{\pi }^{2}}\right) \bar{N}%
+\tilde{N}  \nonumber \\
+&&-(\delta m_{p}-\delta m_{n})\left[ \bar{N}t_{3}\tilde{N}-\frac{2}{F_{\pi
+}^{2}}\left( \frac{\pi _{3}}{1+\vec{\pi}^{2}/F_{\pi }^{2}}\right) \bar{N}%
+\vec{t}\cdot \vec{\pi}\tilde{N}\right] \text{ ,}  \label{19.5.65}
+\end{eqnarray}%
+\begin{equation}
+\delta M_{ba}=\frac{2[\delta m_{p}+\delta m_{n}]}{F_{\pi }^{2}}\delta _{ab}+%
+\frac{2[\delta m_{p}-\delta m_{n}]}{F_{\pi }^{2}}(t_{a}\delta
+_{3b}+t_{b}\delta _{3a})\text{ .}  \label{19.5.66}
+\end{equation}%
+\begin{eqnarray}
+-2\pi iM &=&\frac{1}{(2\pi )^{6}(2q^{0})}  \nonumber \\
+&&\times \bar{u}[\left( -i\frac{(2\pi )^{4}2g_{A}\gamma _{5}t_{b}q}{F_{\pi }}%
+\right) \left( \frac{-i}{(2\pi )^{4}}\frac{-i(p+q)+m_{N}}{(p+q)^{2}+M^{2}}%
+\right) \left( i\frac{(2\pi )^{4}2g_{A}\gamma _{5}t_{a}q}{F_{\pi }}\right)  
+\nonumber \\
+&&+\left( i\frac{(2\pi )^{4}2g_{A}\gamma _{5}t_{a}q}{F_{\pi }}\right) \left( 
+\frac{-i}{(2\pi )^{4}}\frac{-i(p-q)+m_{N}}{(p-q)^{2}+M^{2}}\right) \left( -i%
+\frac{(2\pi )^{4}2g_{A}\gamma _{5}t_{b}q}{F_{\pi }}\right)   \nonumber \\
+&&-4i\frac{t_{c}\epsilon _{abc}q}{F_{\pi }^{2}}]u\text{ .}  \label{19.5.67}
+\end{eqnarray}
+\[
+\frac{-i(p\pm q)+m_{N}}{(p\pm q)^{2}+M^{2}}\approx \frac{-ip+m_{N}}{\pm
+2p\cdot q}\text{ .}
+\]%
+\begin{equation}
+f_{ba}(\omega )\rightarrow -i\frac{\omega }{\pi F_{\pi }^{2}}%
+(1-g_{A}^{2})\epsilon _{abc}t_{c}\text{ .}  \label{19.5.68}
+\end{equation}%
+\begin{equation}
+f_{\pi ^{+}p}(\omega )\rightarrow -\frac{\omega }{2\pi F_{\pi }^{2}}%
+(1-g_{A}^{2})\text{ .}  \label{19.5.69}
+\end{equation}%
+\begin{eqnarray}
+f_{\pi ^{+}p}(\omega ) &=&R+\frac{i\omega }{4\pi }\sigma _{\pi ^{+}p}(\omega
+)  \nonumber \\
+&&+\frac{\omega }{4\pi ^{2}}\int_{0}^{\infty }\left[ \frac{\sigma _{\pi
+^{+}p}(E)}{E-\omega }-\frac{\sigma _{\pi ^{-}p}(E)}{E+\omega }\right] dE%
+\text{ ,}  \label{19.5.70}
+\end{eqnarray}%
+\begin{equation}
+g_{A}^{2}=1+\frac{F_{\pi }^{2}}{2\pi }\int_{0}^{\infty }[\sigma _{\pi
+^{+}p}(E)-\sigma _{\pi ^{-}p}(E)]dE/E\text{ .}  \label{19.5.71}
+\end{equation}
+
+\end{document}

@@ -1,0 +1,1935 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+
+\chapter{正则体系} \label{cha:7}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[292]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[292]}}}
+  \markboth{第7章\quad 正~\,则~\,体~\,系}{第7章\quad 正~\,则~\,体~\,系}
+
+自\,20\,世纪\,20\,年代后期量子场论在\,Born, Dirac, Fermi, Herisenberg, Jordan\,和\,Pauli\,等人的论文中诞生伊始,
+它在历史上的发展就与正则形式体系联系在一起, 这个联系是如此的紧密,
+使得现今对这个课题的任何处理都理所应当地从一个拉格朗日量出发, 然后加入正则量子化规则.
+大多数量子场论书采用这种方法. 然而历史上的先例并非是采纳这个形式体系的一个具有说服力的理由.
+如果我们发现了一个量子场论, 它能导出物理上令人满意的$S$-矩阵,
+但是这个量子场论却无法通过拉格朗日量的正则量子化导出, 这是否会使我们感到困扰呢?
+
+从某种意义上讲, 这个问题是没有意义的, 这是因为, 我们会在\,\ref{sec:7.1}\,节看到: 所有最熟悉的量子场理论都可以构成正则系统, 并且它们可以轻松地变成一个拉格朗日的形式. 然而, 没有证据表明任何可信的量子场论都可以通过这种方式建立起来.
+并且, 哪怕能够这样, 它本身也无法解释为什么在构造各种量子场论时我们应该{\KAI{优先}}采用拉格朗日体系作为出发点.
+
+拉格朗日体系的关键是, 它使得满足\,Lorentz\,不变性以及其他对称性变得很容易: 如果一个经典理论拥有\,Lorentz\,不变的拉格朗日密度, 那么对这个理论的正则量子化将会给出一个\,Lorentz\,不变的量子理论.
+这就是说, 我们在这里将看到: 这样的理论允许构造出合适的量子力学算符,
+这些算符满足\,Poincar\'{e}\,代数中的对易关系, 因此给出了\,Lorentz\,不变的$S$-矩阵.
+
+这并不是那么平庸. 我们在上一章中看到, 在有导数耦合的理论或自旋$j\geq1$的理论中,
+将相互作用哈密顿量取为对标量相互作用密度的空间积分是不够的; 为了抵消传播子中的非协变项,
+我们还要给相互作用密度添加非标量项. 而拉格朗日量密度为标量的正则体系将自动给出这些额外项.
+后面, 当我们在卷\,\textrm{I\!I}\,讨论非阿贝尔规范理论时, 这些额外的便利就成了必需品;
+在这类理论中, 不从\,Lorentz\,不变且规范不变的拉格朗日密度出发而试图直接猜出哈密顿量的形式, 几乎是没有希望的.
+
+\section[正~\,则~\,变~\,量]{正则变量} \label{sec:7.1}
+\setcounter{equation}{0}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[293]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[293]}}}
+
+我们将在本节证明, 迄今为止我们所建立的各种量子场论满足对易关系以及正则体系中的哈密顿版运动方程.
+计算$S$-矩阵(无论是通过算符方法还是路径积分方法)所需要的正是哈密顿体系,
+但是选出一个哈密顿量, 使得它给出\,Lorentz\,不变的$S$-矩阵, 并非总那么简单.
+为了平衡本章, 我们将采用拉格朗日版的正则体系作为出发点,
+并由它导出物理上令人满意的哈密顿量. 本节的目的是确定各种场理论中的正则场以及它们的共轭,
+告诉我们如何在拉格朗日量中分离出自由场部分, 并附带消除我们对正则形式是否确实适用于真实物理理论的疑虑.
+
+我们首先来证明第5章中构造的自由场将自动给出量子算符$q^{n}(\bx,t)$与正则共轭算符%
+$p_{n}(\bx,t)$的系统, 它们满足熟悉的正则对易或反对易关系:
+\begin{equation}
+[q^{n}(\bx,t),p_{\bar{n}}(\by,t)]_{\mp}= \mi\updelta^{3}(\bx-\by)\updelta_{\bar{n}}^{n} \:, \label{7.1.1}%
+\end{equation}%
+\begin{equation}
+[q^{n}(\bx,t),q^{\bar{n}}(\by,t)]_{\mp}=0 \:,
+\label{7.1.2}%
+\end{equation}%
+\begin{equation}
+[ p_{n}(\bx,t),p_{\bar{n}}(\by,t)]_{\mp}=0\:,
+\label{7.1.3}%
+\end{equation}
+其中下标$\mp$表示: 如果两个算符产生和湮没的粒子中有一个是玻色子, 则是对易子;
+如果两个都是费米子, 则是反对易子. 例如, 对零自旋的自荷共轭粒子, \ref{sec:5.2}\,节中构造的实标量场$\phi(\bx)$满足对易关系
+\[
+[\phi(x),\phi(y)]_{-}=\Delta(x-y)\:, %
+\]
+其中$\Delta$是函数
+\[
+\Delta(x)\equiv\int\frac{\dif^{3}k}{2k^{0}(2\uppi)^{3}}[\me^{\mi k\cdot x}-\me^{-\mi k\cdot x}]\:,
+\]
+并有$k^{0}\equiv\sqrt{\bk^{2}+m^{2}}$. 我们注意到
+\[
+\Delta(\bx,0)=0 \:, \qquad \dot{\Delta}(\bx,0)=-\mi\updelta^{3}(\bx) \: .
+\]
+(加点\marginpar[\flushright{\small[294]\hspace*{5mm}}]{{\small\hspace*{5mm}[294]}}代表对时间$x^{0}$求导.) 那么, 很容易看到场与它的时间导数$\dot{\phi}$ 服从等时对易关系:
+\begin{equation}
+[\phi(\bx,t),\dot{\phi}(\by,t)]_{-}=\mi\updelta^{3}(\bx-\by)\:,  \label{7.1.4}%
+\end{equation}%
+\begin{equation}
+[\phi(\bx,t),\phi(\by,t)]_{-}=0\:,  \label{7.1.5}%
+\end{equation}%
+\begin{equation}
+[\dot{\phi}(\bx,t),\dot{\phi}(\by,t)]_{-}=0 \: . \label{7.1.6}%
+\end{equation}
+因而我们可以定义满足正则对易关系(\ref{7.1.1})\yzx (\ref{7.1.3})的正则变量
+\begin{equation}
+q(\bx,t)\equiv\phi(\bx,t)\:, \qquad
+p(\bx,t)\equiv\dot{\phi}(\bx,t) \:. \label{7.1.7}%
+\end{equation}
+
+对反粒子不是自身的零自旋粒子的复标量场, 对易关系是
+\[
+[\phi(x),\phi^{\dag}(y)]_{-}=\Delta(x-y) \:,  \qquad
+[\phi(x),\phi(y)]_{-}=0 \:.
+\]
+我们因此可以将自由粒子正则变量定义为复算符
+\begin{align}
+q(\bx,t)  &\equiv \phi(\bx,t)\:, \label{7.1.8}\\
+p(\bx,t)  &= \dot{\phi}^{\dag}(\bx,t)\:. \label{7.1.9}%
+\end{align}
+等价地, 将$\phi$写为$\phi\equiv(\phi_{1}+\mi\phi_{2})/\sqrt{2}$, 则$k=1,2$的$\phi_{k}$是厄米的,
+我们有正则变量
+\begin{align}
+q^{k}(\bx,t)  &= \phi_{k}(\bx,t)\:, \label{7.1.10}\\
+p_{k}(\bx,t)  &= \dot{\phi}_{k}(\bx,t)\:,  \label{7.1.11}%
+\end{align}
+并且它们满足对易关系(\ref{7.1.1})\yzx (\ref{7.1.3}).
+
+对于自旋\,1\,粒子的实矢量场, \ref{sec:5.3}\,节给出了它的对易关系
+\[
+[v^{\mu}(x),v^{\nu}(y)]_{-}=\left[  \eta^{\mu\nu}-\frac{\partial^{\mu
+}\partial^{\nu}}{m^{2}}\right]  \Delta(x-y)\:.%
+\]
+(我们对矢量场使用$v^{\mu}$而不是$V^{\mu}$是因为我们想把大写字母用在\,Heisenberg\,绘景的场中.) 这里的自由粒子正则变量可以取为
+\begin{gather}
+q^{i}(\bx,t)=v^{i}(\bx,t)\:, \label{7.1.12}\\
+p_{i}(\bx,t)=\dot{v}^{i}(\bx,t)+\frac{\partial v^{0}%
+(\bx,t)}{\partial x^{i}}\:,  \label{7.1.13}%
+\end{gather}
+其中$i=1,2,3$. 读者可以验证(\ref{7.1.12})与(\ref{7.1.13})满足对易关系(\ref{7.1.1})\yzx (\ref{7.1.3}).
+场方程(\ref{5.3.36})与(\ref{5.3.38}), 再结合方程(\ref{7.1.13})使得我们可以把$v^{0}$表示成其他变量\marginpar[\flushright
+{\raisebox{-4ex}[0pt]{{\small[295]\hspace*{5mm}}}}]{{\raisebox{-4ex}[0pt]{\small\hspace*{5mm}[295]}}}
+\begin{equation}
+v^{0}=m^{-2}\bm{\nabla }\cdot\bp\:,  \label{7.1.14}%
+\end{equation}
+所以$v^{0}$不能被当作$q$. 这些结果到复矢量场的延伸与复标量场的处理方法相同.
+
+对于非\,Majorana\,的自旋$\frac{1}{2}$粒子的\,Dirac\,场, \ref{sec:5.5}\,节表明它的反对易子是
+\[
+[\psi_{n}(x),\psi_{\bar{n}}^{\dag}(y)]_{+}=\Big[(-\gamma^{\mu}%
+\partial_{\mu}+m)\beta\Big]_{n,\bar{n}}\Delta(x-y)
+\]
+以及
+\[
+[\psi_{n}(x),\psi_{\bar{n}}(y)]_{+}=0\:.%
+\]
+因为$\psi_{n}$和$\psi_{n}^{\dag}$的反对易子在等时情况下不为零, 这里将它们取为独立的正则变量将是不自洽的. 通常转而定义
+\begin{align}
+q^{n}(x)  &  \equiv\psi_{n}(x)\:, \label{7.1.15}\\
+p_{n}(x)  &  \equiv \mi\psi_{n}^{\dag}(x)\:. \label{7.1.16}%
+\end{align}
+这样就很容易看到(\ref{7.1.15})和(\ref{7.1.16})满足正则反对易关系(\ref{7.1.1})\yzx (\ref{7.1.3}).
+
+任何算符系统, 如果它满足类似(\ref{7.1.1})\yzx (\ref{7.1.3})的对易关系或反对易关系,
+那么我们就可以定义量子力学泛函导数: 对于$q^{n}(\bx,t)$和$p_{n}(\bx,t)$%
+的任意玻色型泛函$F[q(t),p(t)]$, 其中$q$和$p$处在给定时刻$t$,
+我们可以定义{}$^*$\footnote{$^*${}我们在这里使用一个符号约定并在此之后一直使用;
+如果$f(x,y)$是两类变量的函数, 其中每类变量统称为$x$和$y$, 那么$F[f(y)]$代表的泛函依赖于函数$f(x,y)$在$y$固定时对于所有$x$的值.
+玻色型泛函是指每一项中只包含偶数个费米场.}%
+\begin{align}
+\frac{\updelta F[q(t),p(t)]}{\updelta q^{n}(\bx,t)}  &  \equiv
+\mi\Big[p_{n}(\bx,t),F[q(t),p(t)]\Big]\:, \label{7.1.17}\\
+\frac{\updelta F[q(t),p(t)]}{\updelta p_{n}(\bx,t)}  &  \equiv
+\mi\Big[F[q(t),p(t)],q^{n}(\bx,t)\Big]\:. \label{7.1.18}%
+\end{align}
+这样定义的动机是源于如下的事实, 如果$F[q(t),p(t)]$写成所有$q$处在所有$p$的左边的形式, 那么(\ref{7.1.17})和(\ref{7.1.18})恰好分别是对$q^{n}$ 的左导数和对$p_{n}$的右导数. 这就是说, 对$q$和$p$的任意\,c\,-数{}$^{**}$\footnote{$^{**}${}其中, 当$q^{n}$和$p_{n}$分别是玻色变量或费米变量时, $\updelta
+q^{n}$和$\updelta p_{n}$分别被理解成与所有费米算符对易和反对易, 而与所有玻色算符都对易.}%
+变分$\updelta q$和$\updelta p$, 我们有\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[296]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[296]}}}
+\begin{align*}
+\updelta F[q(t),p(t)]  &= \int \dif^{3}x \:\sum_{n}\Biggl(\updelta q^{n}(\bx%
+,t)\frac{\updelta F[q(t),p(t)]}{\updelta q^{n}(\bx,t)}\\
+&  \quad+\frac{\updelta F[q(t),p(t)]}{\updelta p_{n}(\bx,t)}\updelta
+p_{n}(\bx,t)\Biggr)\:.%
+\end{align*}
+对于更普遍的泛函, 我们需要定义(\ref{7.1.17})和(\ref{7.1.18})来确定可能出现的各种符号与等时对易子.
+
+特别地, $H_{0}$是自由粒子态上的时间平移生成元, 意思是:
+\begin{align}
+q^{n}(\bx,t) &= \exp(\mi H_{0}t)q^{n}(\bx,0)\exp(-\mi H_{0}t)\:, \label{7.1.19}\\
+p_{n}(\bx,t) &= \exp(\mi H_{0}t)p_{n}(\bx,0)\exp(-\mi H_{0}t)\:,  \label{7.1.20}%
+\end{align}
+所以自由粒子算符随时间的变化满足
+\begin{equation}
+\dot{q}^{n}(\bx,t)=\mi[H_{0},q^{n}(\bx,t)]
+=\frac{\updelta H_{0}}{\updelta p_{n}(\bx,t)} \:,  \label{7.1.21}%
+\end{equation}%
+\begin{equation}
+\dot{p}_{n}(\bx,t)=-\mi[p_{n}(\bx,t),H_{0}]=
+-\frac{\updelta H_{0}}{\updelta q^{n}(\bx,t)}\:. \label{7.1.22}%
+\end{equation}
+可以认出这些正是哈密顿体系中熟悉的动力学方程.
+
+自由粒子哈密顿量总是下面的形式
+\begin{equation}
+H_{0}=\sum_{n,\sigma}\int \dif^{3}k\: a^{\dag}(\bk,\sigma,n)\,a(\bk%
+,\sigma,n)\sqrt{\bk^{2}+m_{n}^{2}}\:. \label{7.1.23}%
+\end{equation}
+$H_{0}$可以用时刻$t$的$q$和$p$来重新表示. 例如, 对于一个实标量场, 很容易看到方程(\ref{7.1.23})与泛函
+\begin{equation}
+H_{0}=\int \dif^{3}x \:\Bigl[\tfrac{1}{2}p^{2}+\tfrac{1}{2}(\bm{\nabla}q)^{2}%
++\tfrac{1}{2}m^{2}q^{2}\Bigr] \label{7.1.24}%
+\end{equation}
+相差一个常数项. 更精确些, 利用(\ref{7.1.7})以及标量场$\phi$的\,Fourier\,表示, 方程(\ref{7.1.24})变成:
+\begin{align}
+H_{0}  &= \tfrac{1}{2}\int \dif^{3}k \: k^{0} \left[a(\bk),a^{\dag}(\bk)\right]_{+} \nonumber\\
+&= \int \dif^{3}k\: k^{0}\left(a^{\dag}(\bk)a(\bk)+\tfrac{1}%
+{2}\updelta^{3}(\bk-\bk)\right)  \:. \label{7.1.25}%
+\end{align}
+除了无限大的常数项\marginpar[\flushright{\small[297]\hspace*{5mm}}]{{\small\hspace*{5mm}[297]}}, 这与方程(\ref{7.1.23})是相同的. 这样的常数项只影响零点能, 在没有引力的情况下, 这一项没有物理上的意义.{}$^*$\footnote{$^*${}然而, 该项中的{\KAI{变化}}源于场的边界条件的变化,
+比如, 如果我们不在无限大空间而在平行板间的有限大空间中进行量子化, 这是有物理意义且曾经被测量到.\textsuperscript{\cite{1}}} 对于其他场, 我们将在\,\ref{sec:7.5}\,节给出$H_{0}$以$q$和$p$为变量的显式泛函表达式.
+
+在量子场论教科书中, 通常是将方程(\ref{7.1.25})作为方程(\ref{7.1.24})的导出结果,
+而方程(\ref{7.1.24})又是由拉格朗日量密度导出的. 在我看来, 这样做是一个退步, 因为方程(\ref{7.1.25}){\KAI{必须}}成立; 如果某个假定的自由粒子拉格朗日量(可以相差一个常数项)不能给出方程(\ref{7.1.25}),
+我们必须认为这是个错误的拉格朗日量. 相反, 我们应该问什么样的自由场拉格朗日量能给出无自旋粒子的方程(\ref{7.1.25}), 或者更普遍地,
+给出自由粒子哈密顿量(\ref{7.1.23}). 这个问题可以通过哈密顿量到拉格朗日量的\,Legendre\,变换来回答;
+自由场拉格朗日量为
+\begin{equation}
+L_{0}[q(t),\dot{q}(t)]= \sum_{n}\int \dif^{3}x \: p_{n}(\bx,t)\,\dot{q}^{n}(\bx,t)-H_{0}\:,  \label{7.1.26}%
+\end{equation}
+这里, 所有的$p_{n}$要被替换成它用$q^{n}$和$\dot{q}^{n}$表示的表达式%
+(以及我们将看到的一些可能的辅助场).
+例如, 从哈密顿量(\ref{7.1.24}%
+)和(\ref{7.1.7}%
+)我们可以导出标量场的自由场拉格朗日量:
+\begin{align}
+L_{0} &= \int \dif^{3}x \: \Bigl[p\dot{q}-\tfrac{1}{2}p^{2}-\tfrac{1}{2}\left(
+\bm{\nabla}q\right)  ^{2}-\tfrac{1}{2}m^{2}q^{2} \Bigr]\nonumber\\
+&= \int \dif^{3}x \: \Bigl[-\tfrac{1}{2}\partial_{\mu}\phi\partial^{\mu}\phi
+-\tfrac{1}{2}m^{2}\phi^{2}\Bigr]\:. \label{7.1.27}%
+\end{align}
+不管我们认为标量场的完整拉格朗日量会是什么, 这一项都必须分离出来并作为微扰论的零阶项.
+对本节描述的其他正则系统都可以做一个类似的练习, 但从现在起,
+我们将满足于猜出自由场拉格朗日量的形式, 然后确认它会给出正确的自由粒子哈密顿量.
+
+我们已经看到各种自由场理论可以用正则项表达. 那么证明对于相互作用场也同样如此只需简单的一步.
+我们可以在所谓的``Heisenberg绘景''中引入正则变量, 它们定义为
+\begin{align}
+Q^{n}(\bx,t)  &\equiv \exp(\mi Ht) q^{n}(\bx,0) \exp(-\mi Ht)\:, \label{7.1.28}\\
+P_{n}(\bx,t)  &\equiv \exp(\mi Ht) p_{n}(\bx,0) \exp(-\mi Ht)\:, \label{7.1.29}%
+\end{align}
+其中$H$是\marginpar[\flushright{\small[298]\hspace*{5mm}}]{{\small\hspace*{5mm}[298]}}全哈密顿量. 由于这是与$H$对易的相似变换, 全哈密顿量作为\,Heisenberg\,绘景中算符的泛函与它作为$q$和$p$的泛函是一样的:
+\[
+H[Q,P] = \me^{\mi Ht}\,H[q,p]\, \me^{-\mi Ht}=H[q,p]\:.%
+\]
+另外, 由于方程(\ref{7.1.28})\yzx (\ref{7.1.29})定义了一个相似变换,
+Heisenberg\,绘景中的算符仍旧满足对易关系或反对易关系:
+\begin{equation}
+[Q^{n}(\bx,t),P_{\bar{n}}(\by,t)]_{\mp}=
+\mi\updelta^{3}(\bx-\by)\updelta_{\bar{n}}^{n}\:,  \label{7.1.30}%
+\end{equation}%
+\begin{equation}
+[ Q^{n}(\bx,t),Q^{\bar{n}}(\by,t)]_{\mp}=0\:, \label{7.1.31}%
+\end{equation}%
+\begin{equation}
+[ P_{n}(\bx,t),P_{\bar{n}}(\by,t)]_{\mp}=0\:. \label{7.1.32}%
+\end{equation}
+然而,
+它们现在对时间的依赖为
+\begin{equation}
+\dot{Q}^{n}(\bx,t)=\mi [H,Q^{n}(\bx,t)]
+=\frac{\updelta H}{\updelta P_{n}(\bx,t)}\:,  \label{7.1.33}%
+\end{equation}%
+\begin{equation}
+\dot{P}_{n}(\bx,t)=-\mi [P_{n}(\bx,t),H]
+=-\frac{\updelta H}{\updelta Q^{n}(\bx,t)}\:. \label{7.1.34}%
+\end{equation}
+例如, 我们可以将实标量场的哈密顿量取为自由粒子项(\ref{7.1.24})加上对标量相互作用密度$\mathscr{H}$的积分,
+这样用\,Heisenberg\,绘景下的变量表示就有
+\begin{equation}
+H=\int \dif^{3}x\:\Bigl[\tfrac{1}{2}P^{2}+\tfrac{1}{2}(\bm{\nabla}Q)^{2}+\tfrac
+{1}{2}m^{2}Q^{2}+\mathscr{H}(Q)\Bigr]\:. \label{7.1.35}%
+\end{equation}
+在这种情况下, 给出$Q$的正则共轭变量的公式与自由场的情况相同:
+\begin{equation}
+P=\dot{Q} \:. \label{7.1.36}%
+\end{equation}
+然而, 正如我们将看到的, 正则共轭变量$P_{n}(x)$与场变量以及它们的时间导数之间的关系,
+一般而言, 与自由粒子算符不同, 但必须要从方程(\ref{7.1.33})和(\ref{7.1.34})中推出.
+
+\section{拉格朗日体系} \label{sec:7.2}
+\setcounter{equation}{0}
+
+在看到各种真实的理论可以被纳入正则体系之后, 我们现在必须要面对的问题是如何选择哈密顿量.
+我们将在下一节中看到, 确保\,Lorentz\,不变性以及其他对称性的最简单方法是选择一个合适的拉格朗日量并从它导出哈密顿量.
+这样做基本是不失一般性的; 给定一个真实的哈密顿量, 通过逆用这里将要描述的从拉格朗日量导出哈密顿量的过程,
+我们一般可以重构出可以导出给定哈密顿量的拉格朗日量.
+(方程(\ref{7.1.26})的\marginpar[\flushright{\small[299]\hspace*{5mm}}]{{\small\hspace*{5mm}[299]}}推导给出了这种重构的一个例子.) 然而, 尽管我们能从哈密顿量导出拉格朗日量或从拉格朗日量导出哈密顿量, 在探讨物理上令人满意的理论时, 通过穷举可能的拉格朗日量而非哈密顿量要更容易一些.
+
+一般而言, 拉格朗日量是一组同属一类的场$\Psi^{\ell}(\bx,t)$和其时间导数$\dot{\Psi
+}^{\ell}(\bx,t)$的泛函{}$^*$\footnote{$^*${}回忆, 在我们所使用的泛函记号中,
+类似$L$这种明显写出变量$t$的泛函被理解成依赖于场$\Psi^{\ell}(\bx,t)$和%
+$\dot{\Psi}^{\ell}(\bx,t)$, 其中没有明显写出的变量$\ell$和$\bx$在明显写出的变量$t$的固定值处取遍它们的所有值.
+我们用大写字母$\Psi$和$\Pi$是为了表示它们是相互作用场而不是自由场.}%
+$L[\Psi(t),\dot{\Psi}(t)]$. 共轭场$\Pi_{\ell}(\bx,t)$定义为变分导数{}$^{**}$\footnote{$^{**}${}由于$\Psi$和$\dot{\Psi}$%
+一般不满足简单的对易或反对易关系, 我们无法像上一节那样定义对$Q$和$P$的泛函导数,
+给这里遇到的泛函导数做一个简单定义. 转而, 我们就指定变分导数是它们是\,c\,-数变量时的变分导数,
+而负号及等时对易子或反对易子会在需要时补充进来以便公式在量子力学时成立. 就我所知,
+这些细节不会影响重要的问题.}%
+\begin{equation}
+\Pi_{\ell}(\bx,t)\equiv\frac{\updelta L[\Psi(t),\dot{\Psi}(t)]}%
+{\updelta\dot{\Psi}^{\ell}(\bx,t)}\:,  \label{7.2.1}%
+\end{equation}
+运动方程是
+\begin{equation}
+\dot{\Pi}_{\ell}(\bx,t)=\frac{\updelta L[\Psi(t),\dot{\Psi}(t)]}%
+{\updelta\Psi^{\ell}(\bx,t)}\:. \label{7.2.2}%
+\end{equation}
+这些场方程可以重新用变分原理表述, 这个表述是非常有用的. 我们在整个时空上定义$\Psi^{\ell}(x)$的一个泛函, 称为{\KAI{作用量}}
+\begin{equation}
+I[\Psi]\equiv\int_{-\infty}^{\infty}\dif t\:L[\Psi(t),\dot{\Psi}(t)]\:. \label{7.2.3}%
+\end{equation}
+在$\Psi(x)$的任意变分下, $I[\Psi]$的变化是
+\[
+\updelta I[\Psi]=\int_{-\infty}^{\infty}\dif t\int \dif^{3}x
+\left[  \frac{\updelta L}{\updelta\Psi^{\ell}(x)}\updelta\Psi^{\ell}(x)
++\frac{\updelta L}{\updelta\dot{\Psi}^{\ell}(x)}\updelta\dot{\Psi}^{\ell}(x)\right]  \:.%
+\]
+假定$\updelta\Psi^{\ell}(x)$在$t\to\pm\infty$时为零, 我们可以分部积分, 并将上式写成
+\begin{equation}
+\updelta I[\Psi]=\int \dif^{4}x \left[\frac{\updelta L}{\updelta\Psi^{\ell}(x)}%
+-\frac{\dif}{\dif t}\frac{\updelta L}{\updelta\dot{\Psi}^{\ell}(x)}\right]\updelta\Psi^{\ell}(x) \:. \label{7.2.4}%
+\end{equation}
+
+
+我们看到, 当且仅当场满足场方程(\ref{7.2.2})时, 作用量对于在$t\to\pm\infty$时为零的所有变分$\updelta\Psi^{\ell}$才是驻定的.
+
+因为场\marginpar[\flushright{\small[300]\hspace*{5mm}}]{{\small\hspace*{5mm}[300]}}方程由泛函$I[\Psi]$决定, 因此在尝试构造Lorentz不变理论时会自然地取$I[\Psi]$为一个标量泛函. 特别地, 既然$I[\Psi]$是$L[\Psi(t),\dot{\Psi}(t)]$ 的时间积分, 我们猜测$L$本身应该是对一个普通标量函数的空间积分, 而这个函数的变量是$\Psi(x)$和$\partial\Psi(x)/\partial x^{\mu}$,
+这个函数被称为{\KAI{拉格朗日密度}}$\mathscr{L}$:
+\begin{equation}
+L[\Psi(t),\dot{\Psi}(t)]=\int \dif^{3}x\:\mathscr{L}\bigl(\Psi(\bx,t),
+\bm{\nabla}\Psi(\bx,t),\dot{\Psi}(\bx,t)\bigr)\:,
+\label{7.2.5}%
+\end{equation}
+这使得作用量是
+\begin{equation}
+I[\Psi]=\int \dif^{4}x\:\mathscr{L}\Bigl(\Psi(x),\partial\Psi(x)/\partial x^{\mu}\Bigr)\:. \label{7.2.6}%
+\end{equation}
+当前基本粒子理论中所有的场理论都采用这种形式的拉格朗日量.
+
+让$\Psi^{\ell}(x)$变分$\updelta\Psi^{\ell}(x)$, 并分部积分, 我们得到$L$的变分:
+\begin{align*}
+\updelta L  &= \int \dif^{3}x \left[  \frac{\partial\mathscr{L}}{\partial\Psi
+^{\ell}}\updelta\Psi^{\ell}+\frac{\partial\mathscr{L}}{\partial(\bm{\nabla}\Psi
+^{\ell})}\bm{\nabla}\updelta\Psi^{\ell}+\frac{\partial\mathscr{L}}{\partial
+\dot{\Psi}^{\ell}}\updelta\dot{\Psi}^{\ell}\right] \\
+&  =\int \dif^{3}x\left[  \left(  \frac{\partial\mathscr{L}}{\partial\Psi^{\ell}%
+}-\bm{\nabla}\cdot\frac{\partial\mathscr{L}}{\partial(\bm{\nabla}\Psi^{\ell}%
+)}\right)  \updelta\Psi^{\ell}+\frac{\partial\mathscr{L}}{\partial\dot{\Psi
+}^{\ell}}\updelta\dot{\Psi}^{\ell}\right]  \:, %
+\end{align*}
+所以(略去其中明显的变量)%
+\begin{equation}
+\frac{\updelta L}{\updelta\Psi^{\ell}}=\frac{\partial\mathscr{L}}{\partial\Psi^{\ell}}
+-\bm{\nabla}\cdot\frac{\partial\mathscr{L}}{\partial(\bm{\nabla}\Psi^{\ell})}\:,  \label{7.2.7}%
+\end{equation}%
+\begin{equation}
+\frac{\updelta L}{\updelta\dot{\Psi}^{\ell}}=\frac{\partial\mathscr{L}}{\partial\dot{\Psi}^{\ell}}\:. \label{7.2.8}%
+\end{equation}
+于是场方程(\ref{7.2.2})为\begin{equation}
+\frac{\partial}{\partial x^{\mu}}\frac{\partial\mathscr{L}}{\partial
+(\partial\Psi^{\ell}/\partial x^{\mu})}=\frac{\partial\mathscr{L}}%
+{\partial\Psi^{\ell}}\:. \label{7.2.9}%
+\end{equation}
+这被称为\textit{Euler-Lagrange}{\KAI{方程}}.
+正如预期的那样, 如果$\mathscr{L}$是标量, 那么这些方程就是\,Lorentz\,不变的.
+
+除了\,Lorentz\,不变外, 作用量$I$还被要求是{\KAI{实}}的. 这是因为我们希望有多少个场就有多少个场方程.
+通过将任意复场分成它们的实部和虚部, 我们总可以认为$I$是若干个, 例如$N$个, {\KAI{实}}场的泛函. 除了一些特殊情况外, 方程数目太多以至于无法同时满足,
+如果$I$是复的且有着独立的实部和虚部, 那么$I$ 的实部和虚部是驻定的这个条件(Euler-Lagrange方程)对于$N$个场会给出$2N$个场方程.
+我们将在下一节看到, 作用量是实的还确保了各种对称变换的生成元是厄米算符.
+
+尽管\marginpar[\flushright{\small[301]\hspace*{5mm}}]{{\small\hspace*{5mm}[301]}}拉格朗日体系使得构造满足\,Lorentz\,不变性以及其他对称性的理论变得简单, 但为了计算$S$-矩阵, 我们仍需要相互作用哈密顿量的一个公式. 一般而言, 哈密顿量由\,\textit{Legendre}\,{\KAI{变换}}给出
+\begin{equation}
+H = \sum_{\ell}\int \dif^{3}x\:\Pi_{\ell}(\bx,t)\dot{\Psi}^{\ell}(\bx,t)
+-L[\Psi(t),\dot{\Psi}(t)]\:. \label{7.2.10}%
+\end{equation}
+尽管方程(\ref{7.2.1})一般不能使$\dot{\Psi}^{\ell}$唯一地表示成$\Psi^{\ell}$和$\Pi_{\ell}$,
+但很容易看到, 对于任何满足方程(\ref{7.2.1})的$\dot{\Psi}^{\ell}$, 方程(\ref{7.2.10})对它的变分导数为零, 所以方程(\ref{7.2.10})一般只是$\Psi^{\ell}$和$\Pi_{\ell}$的泛函. 它对这些变量的变分导数是
+\begin{align*}
+\frac{\updelta H}{\updelta\Psi^{\ell}(\bx,t)}\bigg\rvert_{\Pi}  &
+=\int \dif^{3}y\:\sum_{\ell^{\prime}}\Pi_{\ell^{\prime}}(\by,t)
+\frac{\updelta\dot{\Psi}^{\ell^{\prime}}(\by,t)}{\updelta\Psi^{\ell}(\bx,t)}\bigg\rvert _{\Pi}
+-\frac{\updelta L}{\updelta\Psi^{\ell}(\bx,t)}\bigg\rvert_{\dot{\Psi}}\\
+&  \quad-\int \dif^{3}y\:\sum_{\ell^{\prime}}
+\frac{\updelta L}{\updelta\dot{\Psi}^{\ell^{\prime}}(\by,t)}\bigg\rvert_{\Psi}
+\frac{\updelta\dot{\Psi}^{\ell^{\prime}}(\by,t)}{\updelta\Psi^{\ell}(\bx,t)}\bigg\rvert_{\Pi}\:, %
+\end{align*}%
+\begin{align*}
+ \frac{\updelta H}{\updelta\Pi_{\ell}(\bx,t)}\bigg\rvert_{\Psi}
+&=\dot{\Psi}^{\ell}(\bx,t) + \int \dif^{3}y\:\sum_{\ell^{\prime}} \Pi_{\ell^{\prime}}(\by,t)
+ \frac{\updelta\dot{\Psi}^{\ell^{\prime}}(\by,t)}{\updelta\Pi^{\ell}(\bx,t)}\bigg\rvert_{\Psi}\\
+& \quad -\int \dif^{3}y\:\sum_{\ell^{\prime}}
+\frac{\updelta L}{\updelta\dot{\Psi}^{\ell^{\prime}}(\by,t)}\bigg\rvert_{\Psi}
+\frac{\updelta\dot{\Psi}^{\ell^{\prime}}(\by,t)}{\updelta\Pi^{\ell}(\bx,t)}\bigg\rvert_{\Psi}\:, %
+\end{align*}
+其中下标代表在这些变分导数中保持不变的量. 利用$\Pi_{\ell}$的定义方程(\ref{7.2.1}), 它们化简为
+\begin{equation}
+\frac{\updelta H}{\updelta\Psi^{\ell}(\bx,t)}\bigg\rvert_{\Pi}
+=-\frac{\updelta L}{\updelta\Psi^{\ell}(\bx,t)}\bigg\rvert_{\dot{\Psi}}\:,  \label{7.2.11}%
+\end{equation}
+和
+\begin{equation}
+\frac{\updelta H}{\updelta\Pi_{\ell}(\bx,t)}\bigg\rvert_{\Psi}
+=\dot{\Psi}^{\ell}(\bx,t)\:. \label{7.2.12}%
+\end{equation}
+于是运动方程(\ref{7.2.2}%
+)等价于\begin{equation}
+\left.  \frac{\updelta H}{\updelta\Psi^{\ell}(\bx,t)}\right\vert _{\Pi
+}=-\dot{\Pi}_{\ell}(\bx,t) \label{7.2.13} \:.%
+\end{equation}
+
+
+现在, 我们应该尝试去做的一件很自然的事: 将一般场变量$\Psi^{\ell}$及其共轭$\Pi_{\ell}$与上一节中的正则变量$Q^{n}$和$P_{n}$等同起来,
+并赋予它们相同的正则对易关系(\ref{7.1.30})\yzx (\ref{7.1.32}), 这使得方程(\ref{7.2.12})与(\ref{7.2.13})与哈密顿运动方程(\ref{7.1.33})和(\ref{7.1.34})一致.
+无导数耦合的实标量场$\Phi$就是这样的一个简单例子. 考虑拉格朗日量密度{}$^*$\footnote{$^*${}我们没有在$-\frac
+{1}{2}\partial_{\mu}\Phi\partial^{\mu}\Phi$中计入一个任意常数因子, 这是因为, 对于任何这种常数, 如果它是正的, 它就能被吸收进$\Phi$的归一化中. 如果常数是负的, 我们将会看到这会导致一个没有下界的哈密顿量. 常数$m$被称为裸质量. 满足可重正原理的最一般拉格朗日量(将在第12章讨论)就是这种形式,
+其中$\mathscr{H}(\Phi)$是$\Phi$的四次多项式.}\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[302]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[302]}}}
+\begin{equation}
+\mathscr{L}=-\frac{1}{2}\partial_{\mu}\Phi\partial^{\mu}\Phi-
+\frac{m^{2}}{2}\Phi^{2}-\mathscr{H}(\Phi)\:,  \label{7.2.14}%
+\end{equation}
+它可以通过在上一节中得到的自由场拉格朗日密度上附加$\Phi$的一个实函数$-\mathscr{H}(\Phi)$得到.
+Euler-Lagrange方程在这里是
+\begin{equation}
+(\square-m^{2})\Phi=\mathscr{H}^{\prime}(\Phi)\:. \label{7.2.15}%
+\end{equation}
+从这个拉格朗日量密度, 我们计算出$\Phi$的正则共轭:
+\begin{equation}
+\Pi=\frac{\partial\mathscr{L}}{\partial\dot{\Phi}}=\dot{\Phi}\:,  \label{7.2.16}%
+\end{equation}
+如果我们将$\Phi$和$\Pi$视为正则变量$Q$和$P$, 这与方程(\ref{7.1.36})相同. 哈密顿量现在由方程(\ref{7.2.10})给出{}$^{**}$\footnote{$^{**}${}为了能将$H$ 解释成能量, 它应该有下界. 前两项正定表明我们对方程(\ref{7.2.14})第一项符号的猜测是正确的. 剩下的条件就是$\frac{1}{2}m^{2}%
+\Phi^{2}+\mathscr{H}(\Phi)$作为$\Phi$的函数必须有下界.}%
+\begin{align}
+H &= \int \dif^{3}x \:(\Pi\dot{\Phi}-\mathscr{L})\nonumber\\
+  &= \int \dif^{3}x \,\Bigl[\tfrac{1}{2}\Pi^{2}+\tfrac{1}{2}(\bm{\nabla}\Phi
+)^{2}+\tfrac{1}{2}m^{2}\Phi^{2}+\mathscr{H}(\Phi)\Bigr]\:,  \label{7.2.17}%
+\end{align}
+可以看出它就是哈密顿量(\ref{7.1.35}). 这个小练习不应该被视为哈密顿量的另一种推导,
+而应该将它作为拉格朗日量(\ref{7.2.14})可以作为一个可能的标量场理论的一个验证.
+
+事情不总是那么简单. 在上一节我们就看到, 存在这样的场变量, 它们不是正则场变量$Q^{n}$也没有正则共轭, 例如矢量场的时间分量或\,Dirac\,场的厄米共轭; 但\,Lorentz\,不变性仍要求它们必须出现在矢量场和\,Dirac\,场的拉格朗日量中.
+
+从拉格朗日体系的观点来看, 类似矢量场的时间分量或\,Dirac\,场的厄米共轭这样的场变量,
+它们的特殊性源于如下的事实, 尽管它们出现在拉格朗日量中, 但是它们的时间导数却没有.
+我们把时间导数没有出现在拉格朗日量中的场变量$\Psi^{\ell}$记为$C^{r}$;
+其余的独立场变量是正则变量$Q^{n}$. $Q^{n}$具有正则共轭\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[303]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[303]}}}
+\begin{equation}
+P_{n}(\bx,t)=\frac{\updelta L[Q(t),\dot{Q}(t),C(t)]}{\updelta\dot{Q}^{n}(\bx,t)}\:, \label{7.2.18}%
+\end{equation}
+并满足对易关系(\ref{7.1.30})\yzx (\ref{7.1.32}), 但$C^{r}$没有正则共轭. 由于$\updelta L/\updelta\dot{C}^{r}=0$, 哈密顿量(\ref{7.2.10})一般是
+\begin{equation}
+H=\sum_{n}\int \dif^{3}x\:P_{n}\dot{Q}^{n}-L[Q(t),\dot{Q}(t),C(t)]\:, \label{7.2.19}%
+\end{equation}
+但在我们将$C^{r}$与$\dot{Q}^{\ell}$表示成$Q$和$P$之前, 这还没有什么用. $C^{r}$的运动方程仅包含场与它们的一阶时间导数
+\begin{equation}
+0=\frac{\updelta L[Q(t),\dot{Q}(t),C(t)]}{\updelta C^{r}(\bx,t)}\:. \label{7.2.20}%
+\end{equation}
+在本章所要讨论的简单情况下, 由这些方程联立方程(\ref{7.2.18})可以解出用$Q$和$P$%
+表示的$C^{r}$与$\dot{Q}^{\ell}$. \ref{sec:7.6}\,节将演示在这种情况下怎样避免真地去解$C^{r}$与$\dot{Q}^{\ell}$. 在类似电动力学这样的规范理论中,
+必须采用其他方法: 要么选择一个特定规范, 就像第8章中要做的那样, 要么采用卷\textrm{I\!I}中要讨论的更加现代的协变方法.
+
+一旦我们导出了作为$Q$和$P$的泛函的哈密顿量, 注意这里的$Q$和$P$处在\,Heisenberg\,绘景中, 为了应用微扰论, 我们必须过渡到相互作用绘景. 哈密顿量是不含时的, 所以它可以用$t=0$时的$P_{n}$和$Q^{n}$表示, 它等于相互作用绘景中$t=0$处的对应算符$p_{n}$和$q^{n}$. 那么以这种方式导出的哈密顿量可以用相互作用绘景中的$q$和$p$表示, 并分成两个部分,
+合适的自由粒子项$H_{0}$和相互作用$V$. 最后, 利用时间依赖方程(\ref{7.1.21})和(\ref{7.1.22})以及对易或反对易关系(\ref{7.1.1})\yzx (\ref{7.1.3}), 将$V(t)$ 中的$q$和$p$表示成湮没算符和产生算符的线性组合.
+
+我们将在\,\ref{sec:7.5}\,节给出这种处理的一些例子; 目前, 我们只给出最简单类型的一个例子, 哈密顿量为(\ref{7.2.17})的标量场. 我们将$H$分成自由粒子项与相互作用
+\begin{align}
+H &= H_{0}+V\label{7.2.21}\\
+H_{0} &= \int \dif^{3}x\: \Bigl[\tfrac{1}{2}\Pi^{2}+\tfrac{1}{2}(\bm{\nabla}\Phi
+)^{2}+\tfrac{1}{2}m^{2}\Phi^{2}\Bigr]\label{7.2.22}\\
+V &= \int \dif^{3}x\:\mathscr{H}(\Phi)\:. \label{7.2.23}%
+\end{align}
+这里$\Phi$和$\Pi$取\marginpar[\flushright{\small[304]\hspace*{5mm}}]{{\small\hspace*{5mm}[304]}}在同一时刻$t$, 并且$H$不含$t$, 但$H_{0}$和$V$通常不是这样.
+
+我们现在过渡到相互作用表示, 在方程(\ref{7.2.22})和(\ref{7.2.23})中取$t=0$, 我们可以将$\Phi$和$\Pi$简单地替换成相互作用绘景中的变量$\phi$ 和$\pi$, 这是因为方程(\ref{7.1.28})和(\ref{7.1.29})定义了它们在那个时刻相等. 为了在相互作用绘景中计算相互作用$V(t)$, 我们使用相似变换(\ref{3.5.5})%
+\begin{align}
+V(t) &= \exp(\mi H_{0}t)\,V\, \exp(-\mi H_{0}t)  \nonumber \\
+     &= \int \dif^{3}x\:\mathscr{H}\Bigl(\phi(\bx,t)\Bigr)\:. \label{7.2.24}%
+\end{align}
+同一变换作用在$H_{0}$上保持它不变:
+\begin{align}
+H_{0} &= \exp(\mi H_{0}t)\,H_{0}\,\exp(-\mi H_{0}t) \nonumber \\
+&  =\int \dif^{3}x\:\Bigl[\tfrac{1}{2}\pi^{2}(\bx,t)+\tfrac{1}{2}%
+\Bigl(\bm{\nabla}\phi(\bx,t)\Bigr)^{2}+\tfrac{1}{2}m^{2}\phi
+^{2}\Bigr]\:. \label{7.2.25}%
+\end{align}
+$\pi$和$\dot{\phi}$之间的关系由方程(\ref{7.1.21})确定
+\begin{equation}
+\dot{\phi}(\bx,t)=\frac{\updelta H_{0}}{\updelta\pi(\bx,t)}=\pi(\bx,t)\:. \label{7.2.26}%
+\end{equation}
+(这恰好与方程(\ref{7.2.16})中的关系相同, 但是我们将会看到, 一般而言不能期望总会有这个关系.) 另外, $\phi$的运动方程由方程(\ref{7.1.22})确定
+\begin{equation}
+\dot{\pi}(\bx,t)=-\frac{\updelta H_{0}}{\updelta\phi(\bx,t)}%
+=+\nabla^{2}\phi(\bx,t)-m^{2}\phi(\bx,t)\:,  \label{7.2.27}%
+\end{equation}
+它与方程(\ref{7.2.26})联立就给出了场方程
+\begin{equation}
+(\square-m^{2})\phi(x)=0\:. \label{7.2.28}%
+\end{equation}
+实的通解可以表示成
+\begin{equation}
+\phi(x)=(2\uppi)^{-3/2}\int \dif^{3}p\: (2p^{0})^{-1/2}
+\Bigl[\me^{\mi p\cdot x}a(\bp)+\me^{-\mi p\cdot x}a^{\dag}(\bp)\Bigr]  \label{7.2.29}%
+\end{equation}
+其中$p^{0}=\sqrt{\bp^{2}+m^{2}}$, $a(\bp)$是$\bp$的算符函数, 形式未知.
+这样方程(\ref{7.2.26})就给出了正则共轭
+\begin{equation}
+\pi(x)=-\mi(2\uppi)^{-3/2} \int \dif^{3}p\: (p^{0}/2)^{1/2}
+\Bigl[\me^{\mi p\cdot x}a(\bp) - \me^{-\mi p\cdot x}a^{\dag}(\bp)\Bigr]\:. \label{7.2.30}%
+\end{equation}
+为了得到期望中的对易关系,
+\begin{align}
+& \Big[\phi(\bx,t),\pi(\by,t)\Big]_{-}=\mi\,\updelta^{3}(\bx-\by)\:, \label{7.2.31}\\
+&  \Big[\phi(\bx,t),\phi(\by,t)\Big]_{-}=0\:, \label{7.2.32}\\
+&  \Big[\pi(\bx,t),\pi(\by,t)\Big]_{-}=0\:,   \label{7.2.33}%
+\end{align}
+\pagebreak
+
+\noindent
+我们\marginpar[\flushright{\small[305]\hspace*{5mm}}]{{\small\hspace*{5mm}[305]}}必须要求$a$满足熟悉的对易关系
+\begin{align}
+&  \Big[a(\bp),a^{\dag}(\bp^{\prime})\Big]=\updelta^{3}%
+(\bp-\bp^{\prime})\:, \label{7.2.34}\\
+&  \Big[a(\bp),a(\bp^{\prime})\Big]=0\:. \label{7.2.35}%
+\end{align}
+另外, 在上一节我们已经证明了, 除去一个无关紧要的常数外, 在方程(\ref{7.2.25})中使用这些展开将会给出通常的自由粒子哈密顿量公式(\ref{4.2.11}). 正如前面说过的,
+这些结果甚至不该视为方程(\ref{7.2.29}), (\ref{7.2.34})和(\ref{7.2.35})的另一种推导(这一结果在第5章以完全不同的理由得到), 而应该视为方程(\ref{7.2.14})的前两项可以作为实标量场的正确的自由粒子拉格朗日量的验证.
+我们现在可以继续用微扰论计算$S$-矩阵, 取(\ref{7.2.24})为$V(t)$, 而场$\phi(x)$则由方程(\ref{7.2.29})给定.
+
+这里所阐明的步骤将会用到\,\ref{sec:7.5}\,节中的例子上, 那些例子更加复杂也更加有趣.
+
+\subsection*{* * *}
+
+在考察物理理论的各种可能的拉格朗日量密度时, 通常会使用分部积分, 这样就将仅相差一个全导数$\partial
+_{\mu}\mathscr{F}^{\mu}$的拉格朗日密度看作是等价的. 显然这样的全导数项对作用量无贡献并且不影响场方程.
+同样显然的是, 拉格朗日密度中的空间导数项$\bm{\nabla}\cdot\mathscr{F}$对拉格朗日量无贡献, 因此不影响由拉格朗日量定义的量子理论.{}$^\P$\footnote{$^\P${} 这是在通常假设的场在无限处为零的前提下成立的. 当我们允许拓扑不同的场时, 这些结果不一定适用, 这些将在卷\textrm{I\!I}中进行讨论.}%
+这里不太显然且不太重要的是: 拉格朗日密度中的{\KAI{时间}}导数$\partial_{0}\mathscr{F}^{0}$也不影响理论的量子结构. 为了看到这点,
+在拉格朗日量上增加上一个更一般的项
+\begin{equation}
+\Delta L(t)=\int \dif^{3}x\:D_{n,\bx}[Q(t)]\,\dot{Q}^{n}(\bx,t)\:,  \label{7.2.36}%
+\end{equation}
+其中$D$是给定时刻的$Q$的泛函, $D$对$n$和$\bx$的依赖关系任意, 我们来考察加上这种项后的影响. 这将导致作为$Q(t)$和$\dot{Q}(t)$ 的泛函的共轭变量$P(t)$会有如下大小的改变
+\begin{equation}
+\Delta P_{n}(\bx,t)=\frac{\updelta\Delta L(t)}{\updelta\dot{Q}^{n}(\bx,t)}=D_{n,\bx}[Q(t)]\:. \label{7.2.37}%
+\end{equation}
+由此可知, 当哈密顿量表示成$Q(t)$和$\dot{Q}(t)$的泛函时, 它没有变化:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[306]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[306]}}}
+\begin{equation}
+\int \dif^{3}x\:\Delta P_{n}(\bx,t)\dot{Q}^{n}(\bx,t)-\Delta L(t)=0\:. \label{7.2.38}%
+\end{equation}
+因此, 把哈密顿量表示成旧正则变量$Q^{n}$和$P_{n}$的泛函, 它也没有变化. 然而, 当哈密顿量表示成{\KAI{新}}正则变量$Q^{n}$和$P_{n}+\Delta P_{n}$ 泛函时与表示成$Q^{n}$和$P_{n}$的泛函时, 这两个泛函{\KAI{不}}是同一个, 并且在由新拉格朗日量$\mathscr{L}+\Delta\mathscr{L}$描述的理论中, 满足正则对易关系的是新正则变量$Q^{n}$和$P_{n}+\Delta P_{n}$而非$Q^{n}$和$P_{n}$. $Q_{n}$彼此之间的对易关系以及$Q^{n}$与$P_{m}$ 的对易关系由通常的正则关系给定, 但$P_{n}$ 彼此之间的对易关系现在是:
+\begin{align}
+[P_{n}(\bx,t),P_{m}(\by,t)]  &= [P_{n}(\bx,t)+
+\Delta P_{n}(\bx,t),P_{m}(\by,t)+\Delta P_{m}(\by,t)]\nonumber\\
+&\quad -[\Delta P_{n}(\bx,t),P_{m}(\by,t)+\Delta P_{m}(\by,t)] \nonumber\\
+&\quad -[P_{n}(\bx,t)+\Delta P_{n}(\bx,t),\Delta P_{m}(\by,t)] \nonumber\\
+&\quad +[\Delta P_{n}(\bx,t),\Delta P_{m}(\by,t)]  \nonumber\\
+&= -\mi\frac{\updelta D_{n,\bx}[Q(t)]}{\updelta Q^{m}(\by,t)}%
++\mi\frac{\updelta D_{m,\by}[Q(t)]}{\updelta Q^{n}(\bx,t)}\:. \label{7.2.39}%
+\end{align}
+一般而言, 这并不为零,
+但是如果拉格朗日量中加上的项是时间的全导数
+\begin{equation}
+\Delta L=\frac{\dif G}{\dif t}=\int \dif^{3}x\:
+\frac{\updelta G[Q(t)]}{\updelta Q^{n}(\bx,t)}\dot{Q}^{n}(\bx,t)\:,  \label{7.2.40}%
+\end{equation}
+那么方程(\ref{7.2.36})中的$D$就是如下的特定形式
+\begin{equation}
+D_{n,\bx}[Q]=\frac{\updelta G[Q(t)]}{\updelta Q^{n}(\bx,t)}\:.
+\label{7.2.41}%
+\end{equation}
+在这种情况下,
+对易子(\ref{7.2.39})为零, 所以变量$Q^{n}$和$P_{n}$满足通常的对易关系. 我们已经看到, 如果拉格朗日量中发生的是形如(\ref{7.2.36})的变化, 那么哈密顿量表示成$Q^{n}$和$P_{n}$的泛函的形式就不会发生变化, 并且, 正如我们所证明的,
+既然这些变量的对易关系没有改变, 那么在拉格朗日量加上的项(\ref{7.2.36})对理论的量子结构就没有影响.
+因此, 无论是在量子场论和经典场论中, 彼此之间通过分部积分得到的不同拉格朗日量都可以认为是等价的.
+
+\section{整体对称性} \label{sec:7.3}
+\setcounter{equation}{0}
+
+我们现在来研究拉格朗日体系的一个关键点, 它为对称性原理的量子力学实现提供了一个自然框架.
+这是因为拉格朗日体系中的动力学方程采用一种变分原理的形式, 即驻定作用量原理.
+考虑场的如下无穷小变换\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[307]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[307]}}}
+\begin{equation}
+\Psi^{\ell}(x) \to \Psi^{\ell}(x)+\mi \epsilon\mathscr{F}^{\ell}(x)  \label{7.3.1}%
+\end{equation}
+使得作用量(\ref{7.2.3})在这个变换下不变:
+\begin{equation}
+0=\updelta I=\mi\epsilon\int \dif^{4}x\:
+\frac{\updelta I[\Psi]}{\updelta\Psi^{\ell}(x)}\mathscr{F}^{\ell}(x). \label{7.3.2}%
+\end{equation}
+(其中$\epsilon$是一个常数, 这种对称性被称为{\KAI{整体}}对称性. 一般而言, $\mathscr{F}^{\ell}$依赖场及其场在$x$处的导数.) 显然, 如果场满足动力学方程, 那么对于场的{\KAI{所有}}无穷小变分, 方程(\ref{7.3.2})自动满足; 这里的无限小对称变换指的是{\KAI{不}}满足动力学方程却仍使作用量不变的无穷小变换.
+如果我们现在考虑同一变换但其中的$\epsilon$现在是时空位置的任意函数
+\begin{equation}
+\Psi^{\ell}(x)\to \Psi^{\ell}(x)+\mi\epsilon(x)\mathscr{F}^{\ell}(x)\:,  \label{7.3.3}%
+\end{equation}
+这时, 作用量的变分一般不为零, 它必须取如下的形式
+\begin{equation}
+\updelta I=-\int \dif^{4}x\:J^{\mu}(x)\frac{\partial\epsilon(x)}{\partial x^{\mu}} \label{7.3.4}%
+\end{equation}
+才能使作用量在$\epsilon(x)${\KAI{是}}一个常数时为零. 如果我们{\KAI{现在}}令$I[\Psi]$中的场满足场方程, 那么对于那些大时空距离下为零的场变分, $I$ 是驻定的, 其中包括形如(\ref{7.3.3})的变分, 所以在这种情况下, (\ref{7.3.4})应该为零. 做分部积分, 我们看到$J^{\mu}(x)$必须满足守恒律:
+\begin{equation}
+0=\frac{\partial J^{\mu}(x)}{\partial x^{\mu}}\:. \label{7.3.5}%
+\end{equation}
+由此立即得出
+\begin{equation}
+0=\frac{\dif F}{\dif t}\:,  \label{7.3.6}%
+\end{equation}
+其中
+\begin{equation}
+F\equiv\int \dif^{3}x\:J^{0}\:. \label{7.3.7}%
+\end{equation}
+对于每个独立的无限小对称变换, 存在一个这样的守恒流$J^{\mu}$和一个运动常数$F$. 这体现了正则体系的一个普遍特征, 这个特征通常被称为\,Noether\,(诺特)定理: {\KAI{对称性意味着守恒律}}.
+
+很多\marginpar[\flushright{\small[308]\hspace*{5mm}}]{{\small\hspace*{5mm}[308]}}对称变换不仅使作用量不变也使拉格朗日量不变. 尽管普遍的\,Lorentz\,变换并不是这样, 但是像空间的平移和旋转, 同位旋变换以及其他内部对称变换确实是这样的情况, 当拉格朗日量不变时, 我们可以走得更远, 并写出守恒量$F$的显式表达式. 考察$\epsilon(x)$依赖于$t$但不依赖$\bx$的场变分(\ref{7.3.3}), 在这种情况下,
+作用量的变分是
+\begin{align}
+\updelta I  &= \mi\int \dif t\int \dif^{3}x\:\Biggl[\frac{\updelta L[\Psi(t),\dot{\Psi}%
+(t)]}{\updelta\Psi^{\ell}(\bx,t)}\epsilon(t)\mathscr{F}^{\ell}(\bx,t)\nonumber\\
+&\quad+\frac{\updelta L[\Psi(t),\dot{\Psi}(t)]}{\updelta\dot{\Psi}^{\ell
+}(\bx,t)}\frac{\dif}{\dif t}\Bigl(\epsilon(t)\mathscr{F}^{\ell}(\bx,t)\Bigr)\Biggr]\:. \label{7.3.8}%
+\end{align}
+当$\epsilon$是常数时, 我们要求拉格朗日量在该对称变换下不变, 这个要求给出
+\begin{equation}
+0=\int \dif^{3}x\left[  \frac{\updelta L[\Psi(t),\dot{\Psi}(t)]}{\updelta\Psi^{\ell
+}(\bx,t)}\mathscr{F}^{\ell}(\bx,t)+\frac{\updelta L[\Psi
+(t),\dot{\Psi}(t)]}{\updelta\dot{\Psi}^{\ell}(\bx,t)}\frac{\dif}%
+{\dif t}\mathscr{F}^{\ell}(\bx,t)\right]  \:,  \label{7.3.9}%
+\end{equation}
+所以对于一般场(无论是否满足场方程), 作用量变分是
+\begin{equation}
+\updelta I=\mi\int \dif t\int \dif^{3}x\:\frac{\updelta L[\Psi(t),\dot{\Psi}(t)]}%
+{\updelta\dot{\Psi}^{\ell}(\bx,t)}\dot{\epsilon}(t)\mathscr{F}^{\ell}(\bx,t)\:. \label{7.3.10}%
+\end{equation}
+与方程(\ref{7.3.4})比较给出
+\begin{equation}
+F=-\mi\int \dif^{3}x\frac{\updelta L[\Psi(t),\dot{\Psi}(t)]}{\updelta\dot{\Psi}^{\ell
+}(\bx,t)}\mathscr{F}^{\ell}(\bx,t)\:. \label{7.3.11}%
+\end{equation}
+利用对称性条件(\ref{7.3.9}), 读者可以很容易地验证, 对于任何满足动力学方程(\ref{7.2.2})的场, $F$确实是不依赖时间的.
+
+其他对称变换, 例如同位旋变换, 它们不仅保持作用量和拉格朗日量不变, 而且保持拉格朗日密度不变.
+在这种情况下, 我们可以再进一步, 得到流$J^{\mu}(x)$的显式表达式. 像方程(\ref{7.2.6})那样, 将作用量写为拉格朗日量密度的积分, 当$\epsilon(x)$是一般的无限小参量时, 它在变换(\ref{7.3.3})下的变分是
+\begin{align}
+\updelta I[\Psi]  &  =\mi\int \dif^{4}x\:\Bigg[\frac{\partial\mathscr{L}(\Psi
+(x),\partial_{\mu}\Psi(x))}{\partial\Psi^{\ell}(x)}\mathscr{F}^{\ell}(x)\epsilon(x)\nonumber\\
+&  \quad+\frac{\partial\mathscr{L}(\Psi(x),\partial_{\mu}\Psi(x))}%
+{\partial(\partial_{\mu}\Psi^{\ell}(x))}\partial_{\mu}
+\Bigl(\mathscr{F}^{\ell}(x)\epsilon(x)\Bigr)  \Bigg]\:. \label{7.3.12}%
+\end{align}
+我们\marginpar[\flushright{\small[309]\hspace*{5mm}}]{{\small\hspace*{5mm}[309]}}要求拉格朗日密度在$\epsilon$是常数时不变, 这会要求
+\begin{equation}
+0=\frac{\partial\mathscr{L}(\Psi(x),\partial_{\mu}\Psi(x))}{\partial\Psi
+^{\ell}(x)}\mathscr{F}^{\ell}(x)+\frac{\partial\mathscr{L}(\Psi(x),\partial
+_{\mu}\Psi(x))}{\partial(\partial_{\mu}\Psi^{\ell}(x))}\partial_{\mu
+}\mathscr{F}^{\ell}(x)\:,  \label{7.3.13}%
+\end{equation}
+所以对任意场, 作用量的变分是
+\begin{equation}
+\updelta I[\Psi]=\mi\int \dif^{4}x\:\frac{\partial\mathscr{L}(\Psi(x),\partial_{\mu
+}\Psi(x))}{\partial(\partial_{\mu}\Psi^{\ell}(x))}\mathscr{F}^{\ell
+}(x)\partial_{\mu}\epsilon(x)\:. \label{7.3.14}%
+\end{equation}
+与方程(\ref{7.3.4})比较给出\begin{equation}
+J^{\mu}=-\mi\frac{\partial\mathscr{L}}{\partial(\partial\Psi^{\ell}/\partial
+x^{\mu})}\mathscr{F}^{\ell}\:. \label{7.3.15}%
+\end{equation}
+利用对称性条件(\ref{7.3.13}), 很容易看到, 当场满足\,Euler-Lagrange\,方程(\ref{7.2.9})时, $\partial_{\mu}J^{\mu}$为零. 又注意到对流(\ref{7.3.15})的时间分量的积分就是前面导出的值(\ref{7.3.11}).
+
+到目前为止, 我们提到的所有结果同样适用于经典的和量子的场理论. 想要看到守恒量$F$的量子性质, 最容易的方法是考察拉格朗日量(并不必须是拉格朗日密度)的如下对称性: 将正则场$Q^{n}(\bx,t)$(就是那些时间导数出现在拉格朗日量中的$\Psi^{\ell}$)%
+变换成同一时刻依赖$\bx$和其自身的泛函的对称变换. 对这样的变换, 我们有
+\begin{equation}
+\mathscr{F}^{n}(\bx,t)=\mathscr{F}^{n}[Q(t);\bx]\:. \label{7.3.16}%
+\end{equation}
+正如我们将要看到的, 无限小空间平移与旋转以及所有的无限小内部对称变换, 它们的形式都是(\ref{7.3.1})和(\ref{7.3.16}), 其中$\mathscr{F}^{n}$是$Q^{m}$ 的线性泛函, 但是我们在这里不需要假定对称性是线性的. 对于所有这样的对称性, 算符$F$不仅守恒, 并且在量子力学中充当该对称性的{\KAI{生成元}}.
+
+为了看到这点, 首先注意到, 当$\Psi^{\ell}$是正则场$Q^{n}$时, 泛函导数$\updelta L/\updelta\dot{\Psi}^{\ell}$等于正则共轭$P_{n}$, 而当$\Psi^{\ell}$ 是辅助场$C^{r}$时, 这个泛函导数为零; 因此我们可以将方程(\ref{7.3.11})重新表述为
+\begin{equation}
+F=-\mi\int \dif^{3}x\:P_{n}(\bx,t)\mathscr{F}^{n}(\bx,t)
+=-\mi\int \dif^{3}x\:P_{n}(\bx,t)\mathscr{F}^{n}[Q(t);\bx]\:.   \label{7.3.17}%
+\end{equation}
+为了计算某一时刻$t$时$F$与正则场$Q^{m}(\bx,t)$的对易子(不是反对易子), 我们可以借助方程(\ref{7.3.6})计算$t$时刻作为$Q$和$P$ 的泛函的$F$, 然后利用等时对易关系(\ref{7.1.30})\yzx (\ref{7.1.32})得到{}$^*$\footnote{$^*${}我们在这里假定了, 对玻色或费米的$Q^{n}$, 变分$\mathscr{F}^{n}$ 也分别是玻色或费米的. 唯一的例外是被称为超对称的一些对称性, 这种情况中$F$是费米的, 并且如果$Q^{n}$也是费米的, 那么(\ref{7.3.18})是反对易子.}\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[310]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[310]}}}%
+\begin{equation}
+[ F,Q^{n}(\bx,t)]_{-}=-\mathscr{F}^{n}(\bx,t)\:.
+\label{7.3.18}%
+\end{equation}
+这就是说$F$是形式为方程(\ref{7.3.16})的变换的生成元. 方程(\ref{7.3.17})加上正则对易法则又给出
+\begin{equation}
+[ F,P_{n}(\bx,t)]_{-}=\int \dif^{3}y\:P_{m}(\by,t)\frac
+{\updelta\mathscr{F}^{m}(Q(t);\by)}{\updelta Q^{n}(\bx,t)}\:.  \label{7.3.19}%
+\end{equation}
+当$F^{m}$线性时, 方程(\ref{7.3.19})告诉我们$P_{n}$逆步(contragrediently)变换到$Q^{n}$.
+
+作为第一个例子, 考察时空平移的对称变换:
+\begin{equation}
+\Psi^{\ell}(x) \to \Psi^{\ell}(x+\epsilon)=\Psi^{\ell}(x)
++\epsilon^{\mu}\partial_{\mu}\Psi^{\ell}(x)\:. \label{7.3.20}%
+\end{equation}
+这是(\ref{7.3.1})的形式, 其中$\epsilon^{\mu}$是\,4\,个独立参量, 而\,4\,个相应的变换函数是
+\begin{equation}
+\mathscr{F}_{\mu}^{\ell}=-\mi\partial_{\mu}\Psi^{\ell}\:. \label{7.3.21}%
+\end{equation}
+结果是我们有了\,4\,个独立的守恒流, 它们通常合在一起写进{\KAI{能动量张量}}$T^{\mu}{}_{\!\nu}$中:
+\begin{equation}
+\partial_{\mu}T^{\mu}{}_{\!\nu}=0 \label{7.3.22}%
+\end{equation}
+由此, 对平移``流''的时间分量做空间积分, 我们就导出了不含时的量(不要与正则共轭场变量$P_{n}(\bx,t)$混淆):
+\begin{equation}
+P_{\nu}=\int \dif^{3}x\:T^{0}{}_{\nu}\:,  \label{7.3.23}%
+\end{equation}%
+\begin{equation}
+\frac{\dif}{\dif t}P_{\nu}=0\:. \label{7.3.24}%
+\end{equation}
+拉格朗日量在空间平移下不变, 所以依照上面的一般结果, 我们可以推断出$P_{\nu}$的空间分量取如下的形式
+\begin{equation}
+\bP\equiv-\int \dif^{3}x\:P_{n}(\bx,t)\bm{\nabla}Q^{n}(\bx,t)\:. \label{7.3.25}%
+\end{equation}
+利用等时对易关系(\ref{7.1.30})\yzx (\ref{7.1.32}), 我们同时得到了该算符与正则场及其共轭的对易子:\marginpar[\flushright
+{\raisebox{-9.5ex}[0pt]{{\small[311]\hspace*{5mm}}}}]{{\raisebox{-9.5ex}[0pt]{\small\hspace*{5mm}[311]}}}
+\begin{align}
+[\bP,Q^{n}(\bx,t)]_{-}  &= \mi\bm{\nabla}Q^{n}(\bx,t)\:, \label{7.3.26}\\
+[\bP,P_{n}(\bx,t)]_{-}  &= \mi\bm{\nabla}P_{n}(\bx,t)\:. \label{7.3.27}%
+\end{align}
+由此可知, 对$Q$和$P$的任何函数$\mathscr{G}$, 只要它不显含$\bx$, 我们就有
+\begin{equation}
+\Big[\bP,\mathscr{G}(x)\Big]=\mi\bm{\nabla}\mathscr{G}(x)\:.  \label{7.3.28}%
+\end{equation}
+这些结果表明算符$\bP$确实是空间平移的生成元.
+
+相反, 拉格朗日量$L(t)$在时间平移下并不保持不变. 然而, 我们已经知道了时间平移的生成元; 它就是哈密顿量$P^{0}\equiv H$, 而我们知道, 对于\,Heisenberg\,绘景算符的任何函数$\mathscr{G}$, 它满足对易关系
+\begin{equation}
+[ H,\mathscr{G}(\bx,t)]=-\mi\dot{\mathscr{G}}(\bx,t)\:. \label{7.3.29}%
+\end{equation}
+
+
+如果我们进一步假定拉格朗日量是某个拉格朗日密度的积分, 那么就可以得到能动量张量$T^{\mu}{}_{\!\nu}$的显式表达式. 然而, 拉格朗日密度$\mathscr{L}(x)$ 在时空平移下不是不变的, 所以我们在这里无法使用方程(\ref{7.3.15}). 取代拉格朗日密度, 注意到在时空平移
+\begin{equation}
+\Psi^{\ell}(x)\to\Psi^{\ell}(x+\epsilon(x))=\Psi^{\ell}(x)+\epsilon^{\mu}(x)\partial_{\mu}\Psi^{\ell}(x) \label{7.3.30}%
+\end{equation}
+下, 作用量的变化为
+\begin{equation}
+\updelta I[\Psi]=\int \dif^{4}x\left(  \frac{\partial\mathscr{L}}{\partial
+\Psi^{\ell}}\epsilon^{\mu}\partial_{\mu}\Psi^{\ell}+\frac{\partial
+\mathscr{L}}{\partial(\partial_{\nu}\Psi^{\ell})}\partial_{\nu}[\epsilon^{\mu
+}\partial_{\mu}\Psi^{\ell}]\right)  \:. \label{7.3.31}%
+\end{equation}
+Euler-Lagrange\,方程(\ref{7.2.9})表明正比于$\epsilon$的项加起来是%
+$\epsilon^{\mu}\partial_{\mu}\mathscr{L}$, 所以
+\begin{equation}
+\updelta I[\Psi]=\int \dif^{4}x\left(  \frac{\partial\mathscr{L}}{\partial x^{\mu}%
+}\epsilon^{\mu}+\frac{\partial\mathscr{L}}{\partial(\partial_{\nu}\Psi^{\ell
+})}\partial_{\mu}\Psi^{\ell}\partial_{\nu}\epsilon^{\mu}\right)  \:.
+\label{7.3.32}%
+\end{equation}
+做分部积分, 我们看到它变为方程(\ref{7.3.4})的形式
+\begin{equation}
+\updelta I=-\int \dif^{4}x\:T^{\nu}{}_{\!\mu}\partial_{\nu}\epsilon^{\mu} , \label{7.3.33}%
+\end{equation}
+其中的``流''是
+\begin{equation}
+T^{\nu}{}_{\!\mu}=\updelta_{\mu}^{\nu}\mathscr{L}-
+\frac{\partial\mathscr{L}}{\partial(\partial_{\nu}\Psi^{\ell})}\partial_{\mu}\Psi^{\ell}\:. \label{7.3.34}%
+\end{equation}
+作为一个检验, 我们看到, 方程(\ref{7.3.23})的空间分量与我们前面得到的$\bP$的表达式(\ref{7.3.25})相同, 而对$\mu=0$, 方程(\ref{7.3.23})给出了通常的哈密顿量表达式:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[312]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[312]}}}
+\begin{equation}
+H\equiv-P_{0}=\int \dif^{3}x \left[\sum_{n}P_{n}\dot{Q}^{n}-\mathscr{L}\right]   \:. \label{7.3.35}%
+\end{equation}
+(提醒: 通过提升方程(\ref{7.3.34})中的第二个指标而得到的张量$T^{\mu\nu}$, 一般而言, 不是对称的, 因而不能用在广义相对论场方程的右边. 用作引力场源的正确能动量张量是下一节将要引入的对称张量$\Theta^{\mu\nu}$.)
+
+在很多理论中, 存在一个或多个对称性原理, 它们宣称, 在正则场的一组不依赖坐标的线性变换
+\begin{equation}
+Q^{n}(x)\to Q^{n}(x)+\mi\epsilon^{a}(t_{a})^{n}{}_{m}Q^{m}(x)   \label{7.3.36}%
+\end{equation}
+与任意辅助场$C^{r}$的一组合适的变换
+\begin{equation}
+C^{r}(x)\to C^{r}(x)+\mi\epsilon^{a}(\tau_{a})^{r}{}_{s}C^{s}(x)\:  \label{7.3.37}%
+\end{equation}
+下, 作用量是不变的. 这里的$t_{a}$和$\tau_{a}$是厄米矩阵, 这些厄米矩阵构成了该对称群\,Lie\,代数的某些表示, 并且我们这里对重复的群指标$a,b,$ 等进行求和. (例如, 电动力学中就有这样的对称性, 其中唯一的矩阵$t^{n}{}_{m}$是对角的, 每个场所携带的电荷在主对角上.) 对任何这样的对称性, 我们可以推测出存在另一组守恒流$J_{a}^{\mu}$:
+\begin{equation}
+\partial_{\mu}J_{a}^{\mu}=0\:,  \label{7.3.38}%
+\end{equation}
+它的时间分量是一组时间无关算符$T_{a}$的密度
+\begin{equation}
+T_{a}=\int \dif^{3}x\:J_{a}^{0}\:. \label{7.3.39}%
+\end{equation}
+如果拉格朗日量与作用量在变换(\ref{7.3.36})下不变, 方程(\ref{7.3.11})就提供了$T_{a}$的一个显式表达式:
+\begin{equation}
+T_{a}=-\mi\int \dif^{3}x\:P_{n}(\bx,t)(t_{a})^{n}{}_{m}Q^{m}(\bx,t).  \label{7.3.40}%
+\end{equation}
+等时对易关系在这里给出
+\begin{align}
+\Big[T_{a},Q^{n}(x)\Big]  &= -(t_{a})^{n}{}_{m}Q^{m}(x)\:,  \label{7.3.41}\\
+\Big[T_{a},P_{n}(x)\Big]  &= +(t_{a})^{m}{}_{n}P_{m}(x)\:. \label{7.3.42}%
+\end{align}
+(当$t_{a}$是对角矩阵时, 这告诉我们, $Q^{n}$和$P_{n}$所携带的$T_{a}$值分别减少和增多了, 而减少和增多的量就是$t_{a}$的第$n$个对角元.) 利用这些结果,
+我们可以计算出$T_{a}$与其他生成元$T_{b}$的对易子:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[313]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[313]}}}
+\begin{equation}
+[T_{a},T_{b}]_{-}=\mi\int \dif^{3}x\left[-P_{m}\,(t_{a})^{m}{}_{n}(t_{b})^{n}{}_{k}Q^{k}
++P_{n}\,(t_{b})^{n}{}_{k}(t_{a})^{k}{}_{m}Q^{m}\right]   \:. \label{7.3.43}%
+\end{equation}
+因此, 如果矩阵$t_{a}$构成的\,Lie\,代数具有结构常数$f_{ab}{}^{c}$,
+\begin{equation}
+[ t_{a},t_{b}]_{-}=\mi f_{ab}{}^{c}\,t_{c}\:,  \label{7.3.44}%
+\end{equation}
+那么量子算符$T_{a}$也是这样:
+\begin{equation}
+[ T_{a},T_{b}]_{-}=\mi f_{ab}{}^{c}\,T_{c}\:. \label{7.3.45}%
+\end{equation}
+这证实了(\ref{7.3.40})已被正确地归一化, 具有成为对称群生成元的资格.
+
+拉格朗日量是拉格朗日密度的积分, 如果拉格朗日量密度在(\ref{7.3.36})和(\ref{7.3.37})下不变,
+我们可以再进一步, 利用方程(\ref{7.3.15})给出与这些整体对称性相关的流的显式表达式:
+\begin{equation}
+J_{a}^{\mu}\equiv-\mi\frac{\partial\mathscr{L}}{\partial(\partial Q^{n}/\partial x^{\mu})}
+(t_{a})^{n}{}_{m}Q^{m}-\mi\frac{\partial\mathscr{L}}{\partial(\partial
+C^{r}/\partial x^{\mu})}(\tau_{a})^{r}{}_{s}C^{s}\:. \label{7.3.46}%
+\end{equation}
+举例说明一下,
+假定我们有{\KAI{两}}%
+个质量相等的实标量场,
+拉格朗日密度为\begin{equation}
+\mathscr{L}=-\tfrac{1}{2}\partial_{\mu}\Phi_{1}\partial^{\mu}\Phi_{1}
+-\tfrac{1}{2}m^{2}\Phi_{1}^{2}-\tfrac{1}{2}\partial_{\mu}\Phi_{2}\partial^{\mu}\Phi_{2}
+-\tfrac{1}{2}m^{2}\Phi_{2}^{2}-\mathscr{H}(\Phi_{1}^{2}+\Phi_{2}^{2})\:. \label{7.3.47}%
+\end{equation}
+在类似(\ref{7.3.36})的线性变换下:
+\[
+\updelta\Phi_{1}=-\epsilon\Phi_{2}\:, \qquad \updelta\Phi_{2}=+\epsilon\Phi_{1}\:, %
+\]
+它是不变的, 所以存在一个守恒流(\ref{7.3.46}):
+\[
+J^{\mu}=\Phi_{2}\partial^{\mu}\Phi_{1}-\Phi_{1}\partial^{\mu}\Phi_{2}.
+\]
+
+
+流的显式表达式(\ref{7.3.46})可以用来导出其他有用的对易关系. 特别地, 因为拉格朗日密度不含辅助场的时间导数, 我们有
+\begin{equation}
+J_{a}^{0}=-\mi P_{n}(t_{a})^{n}{}_{m}Q^{m}\:. \label{7.3.48}%
+\end{equation}
+那么, 我们不仅可以导出一般场与对称性生成元$T_{a}$的等时对易子, 还能导出它与密度$J_{a}^{0}$的等时对易子:
+\begin{align}
+[J_{a}^{0}(\bx,t),Q^{n}(\by,t)]  &=
+-\updelta^{3}(\bx-\by)\,(t_{a})^{n}{}_{m}Q^{m}(\bx,t)\:, \label{7.3.49}\\
+[J_{a}^{0}(\bx,t),P_{m}(\by,t)]  &=
+\updelta^{3}(\bx-\by)\,(t_{a})^{n}{}_{m}P_{n}(\bx,t)\:. \label{7.3.50}%
+\end{align}
+如果辅助场被构造成了$P$和$Q$的定域函数, 并且它们按照生成元为$\tau_{a}$的对称性代数的一个表示进行变换, 那么还有\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[314]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[314]}}}
+\begin{equation}
+[ J_{a}^{0}(\bx,t),C^{r}(\by,t)]=-\updelta^{3}%
+(\bx-\by)\,(\tau_{a})^{r}{}_{s}C^{s}(\bx,t)\:.
+\label{7.3.51}%
+\end{equation}
+我们经常将方程(\ref{7.3.49}%
+)与(\ref{7.3.51}%
+)概括在一个对易关系中\begin{equation}
+[ J_{a}^{0}(\bx,t),\Psi^{\ell}(\by,t)]=-\updelta
+^{3}(\bx-\by)\,(t_{a})^{\ell}{}_{\ell^{\prime}}\Psi
+^{\ell^{\prime}}(\bx,t)\:. \label{7.3.52}%
+\end{equation}
+在第10章, 对于那些包含流$J^{\mu}$的矩阵元, 我们将利用类似(\ref{7.3.49})\yzx (\ref{7.3.51})的对易关系导出一个被称为\,Ward\,恒等式的关系.
+
+\section{Lorentz\,不变性} \label{sec:7.4}
+\setcounter{equation}{0}
+
+我们现在将证明拉格朗日密度的\,Lorentz\,不变性隐含了$S$-矩阵的\,Lorentz\,不变性. 考虑一个无限小\,Lorentz\,变换
+\begin{align}
+\Lambda^{\mu}{}_{\!\nu} &  =\updelta^{\mu}{}_{\!\nu}+\omega^{\mu}{}_{\!\nu}\:, \label{7.4.1}\\
+\omega_{\mu\nu}  &  =-\omega_{\nu\mu}\:. \label{7.4.2}%
+\end{align}
+根据上一节的分析, 作用量在这类变换下不变立刻告诉我们存在一组守恒``流''$\mathscr{M}^{\rho\mu\nu}$:
+\begin{equation}
+\partial_{\rho}\mathscr{M}^{\rho\mu\nu}=0\:,  \label{7.4.3}%
+\end{equation}%
+\begin{equation}
+\mathscr{M}^{\rho\mu\nu}=-\mathscr{M}^{\rho\nu\mu}, \label{7.4.4}%
+\end{equation}
+$\omega_{\mu\nu}$的每个独立分量对应一个流. 对这些``流''的时间分量的积分给出了一组不依赖时间的张量:
+\begin{equation}
+J^{\mu\nu}\equiv\int \dif^{3}x \: \mathscr{M}^{0\mu\nu}\:,  \label{7.4.5}%
+\end{equation}%
+\begin{equation}
+\frac{\dif}{\dif t}J^{\mu\nu}=0\:. \label{7.4.6}%
+\end{equation}
+我们将证明$J^{\mu\nu}$是齐次\,Lorentz\,群的生成元.
+
+我们希望得到张量$\mathscr{M}^{\rho\mu\nu}$的显式表达式, 但是\,Lorentz\,变换是作用在坐标上的, 因而它无法保持拉格朗日密度不变, 所以我们不能直接使用上一节的结果. 然而,
+平移不变性允许我们将\,Lorentz\,不变性表示为拉格朗日密度在场和场导数的一组变换下的对称性.
+场会经历矩阵变换\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[315]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[315]}}}
+\begin{equation}
+\updelta\Psi^{\ell}=\frac{\mi}{2}\omega^{\mu\nu}(\mathscr{J}_{\mu\nu})^{\ell}{}_{m}\Psi^{m}\:,  \label{7.4.7}%
+\end{equation}
+其中$\mathscr{J}_{\mu\nu}$是一组满足齐次\,Lorentz\,群代数的矩阵
+\begin{equation}
+[\mathscr{J}_{\mu\nu},\mathscr{J}_{\rho\sigma}] = \mi\mathscr{J}_{\rho\nu}\eta_{\mu\sigma}
+-\mi\mathscr{J}_{\sigma\nu}\eta_{\mu\rho}-\mi\mathscr{J}_{\mu\sigma}\eta_{\nu\rho}
++\mi\mathscr{J}_{\mu\rho}\eta_{\nu\sigma}\:.  \label{7.4.8}%
+\end{equation}
+例如, 对于一个标量场$\phi$, 我们有$\updelta\phi=0$, 所以$\mathscr{J}_{\mu\nu}=0$, 而对于一个$(A,B)$型的不可约场, 我们有
+\[
+\mathscr{J}_{ij}=\epsilon_{ijk}(\mathscr{A}_{k}+\mathscr{B}_{k})\:, \qquad
+\mathscr{J}_{k0}=-\mi(\mathscr{A}_{k}-\mathscr{B}_{k})\:, %
+\]
+其中$\hAAA$和$\hBBB$分别是自旋$A$和$B$的自旋矩阵. 特别地, 我们注意到, 对于协变矢量场有$\updelta V_{\kappa}=\omega_{\kappa}{}^{\!\lambda}V_{\lambda}$, 于是有
+\[
+(\mathscr{J}_{\rho\sigma})_{\kappa}{}^{\!\lambda}=-\mi\eta_{\rho\kappa}%
+\updelta_{\sigma}{}^{\!\lambda}+\mi\eta_{\sigma\kappa}\updelta_{\rho}{}^{\!\lambda}\:.%
+\]
+像方程(\ref{7.4.7})中那样变换的场, 它的导数就像另外一个这样的场进行变换, 但是会有一个额外的矢量指标
+\begin{equation}
+\updelta(\partial_{\kappa}\Psi_{\ell})=
+\tfrac{1}{2}\mi\omega^{\mu\nu}(\mathscr{J}_{\mu\nu})_{\ell}{}^{m}\partial_{\kappa}\Psi_{m}
++\omega_{\kappa}{}^{\!\lambda}\partial_{\lambda}\Psi_{\ell}\:. \label{7.4.9}%
+\end{equation}
+假定拉格朗日密度在方程(\ref{7.4.7})和(\ref{7.4.9})的联合变换下不变, 于是
+\begin{align*}
+0  &  =\frac{\partial\mathscr{L}}{\partial\Psi^{\ell}}\,\frac{\mi}{2}\,
+\omega^{\mu\nu}(\mathscr{J}_{\mu\nu})^{\ell}{}_{m}\Psi^{m}
++\frac{\partial\mathscr{L}}{\partial(\partial_{\kappa}\Psi^{\ell})}\,\frac{\mi}{2}\,
+\omega^{\mu\nu}(\mathscr{J}_{\mu\nu})^{\ell}{}_{m}\partial_{\kappa}\Psi^{m}\\
+& \quad+\frac{\partial\mathscr{L}}{\partial(\partial_{\kappa}\Psi^{\ell})} \,
+\omega_{\kappa}{}^{\!\lambda}\partial_{\lambda}\Psi^{\ell}\:.%
+\end{align*}
+令$\omega^{\mu\nu}$的系数为零给出
+\begin{align*}
+0 &= \frac{\mi}{2}\frac{\partial\mathscr{L}}{\partial\Psi^{\ell}}
+(\mathscr{J}_{\mu\nu})^{\ell}{}_{m}\Psi^{m}
++\frac{\mi}{2}\frac{\partial\mathscr{L}}{\partial(\partial_{\kappa}\Psi^{\ell})}
+(\mathscr{J}_{\mu\nu})^{\ell}{}_{m}\partial_{\kappa}\Psi^{m}\\
+&  \quad+\frac{1}{2}\,\frac{\partial\mathscr{L}}{\partial(\partial_{\kappa}\Psi^{\ell})}\,
+(\eta_{\kappa\mu}\partial_{\nu}-\eta_{\kappa\nu}\partial_{\mu})\Psi^{\ell}\:.%
+\end{align*}
+利用\,Euler-Lagrange\,方程(\ref{7.2.9}), 以及能动量张量$T_{\mu\nu}$的表达式(\ref{7.3.34}),
+我们可以将其写为
+\begin{equation}
+0=\partial_{\kappa}\left[\frac{\mi}{2}\frac{\partial\mathscr{L}}%
+{\partial(\partial_{\kappa}\Psi^{\ell})}(\mathscr{J}_{\mu\nu})^{\ell}{}_{m}\Psi^{m}\right]  -\frac{1}{2}(T_{\mu\nu}-T_{\nu\mu})\:. \label{7.4.10}%
+\end{equation}
+这立刻启发了一个新的能动量张量定义,
+称为{\KAI{贝林凡特}}(\textit{Belinfante}){\KAI{张量}}:\textsuperscript{\cite{2}}
+\begin{align}
+\Theta^{\mu\nu} &= T^{\mu\nu}-\frac{\mi}{2}\,\partial_{\kappa}
+\Bigg[\frac{\partial\mathscr{L}}{\partial(\partial_{\kappa}\Psi^{\ell})}
+(\mathscr{J}^{\mu\nu})^{\ell}{}_{m}\Psi^{m}\nonumber\\
+& \quad -\frac{\partial\mathscr{L}}{\partial(\partial_{\mu}\Psi^{\ell})}
+\,(\mathscr{J}^{\kappa\nu})^{\ell}{}_{m}\Psi^{m}
+-\frac{\partial\mathscr{L}}{\partial(\partial_{\nu}\Psi^{\ell})}(\mathscr{J}^{\kappa\mu})^{\ell}{}_{m}
+\Psi^{m}\Bigg]\:. \label{7.4.11}%
+\end{align}
+方括号中的量对$\mu$和$\kappa$明显是反对称的\marginpar[\flushright
+{\raisebox{7ex}[0pt]{{\small[316]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[316]}}}, 所以$\Theta^{\mu\nu}$满足的守恒律与$T^{\mu\nu}$相同,
+\begin{equation}
+\partial_{\mu}\Theta^{\mu\nu}=0\:. \label{7.4.12}%
+\end{equation}
+出于同一原因, 当我们在方程(\ref{7.4.11})中令$\mu=0$时, 指标$\kappa$只取遍空间分量, 所以当我们对全空间积分时, 这里的导数项就被扔掉了
+\begin{equation}
+\int\Theta^{0\nu}\:\dif^{3}x=\int T^{0\nu}\:\dif^{3}x=P^{\nu}\:,  \label{7.4.13}%
+\end{equation}
+其中$P^{0}\equiv H$. 因此, $\Theta^{\mu\nu}$可以被认为{\KAI{是}}能动量张量, 就像$T^{\mu\nu}$那样. 然而方程(\ref{7.4.10})告诉我们, 不同于$T^{\mu\nu}$, Belinfante\,张量$\Theta^{\mu\nu}$不仅是守恒的而且是{\KAI{对称}}的:
+\begin{equation}
+\Theta^{\mu\nu}=\Theta^{\nu\mu}\:. \label{7.4.14}%
+\end{equation}
+作为引力场源的是$\Theta^{\mu\nu}$而不是$T^{\mu\nu}$.\textsuperscript{\cite{3}} 由于$\Theta^{\mu\nu}$的对称性, 我们可以再构造一个守恒的张量密度:
+\begin{equation}
+\mathscr{M}^{\lambda\mu\nu}\equiv x^{\mu}\Theta^{\lambda\nu}-x^{\nu}\Theta^{\lambda\mu}\:. \label{7.4.15}%
+\end{equation}
+它在
+\begin{equation}
+\partial_{\lambda}\mathscr{M}^{\lambda\mu\nu}=\Theta^{\mu\nu}-\Theta^{\nu\mu}=0 \label{7.4.16}%
+\end{equation}
+的意义上是守恒的. 因此\,Lorentz\,不变性允许我们再定义一个不含时的张量
+\begin{equation}
+J^{\mu\nu}=\int\mathscr{M}^{0\mu\nu}\,\dif^{3}x
+=\int \dif^{3}x\:(x^{\mu}\Theta^{0\nu}-x^{\nu}\Theta^{0\mu})\:. \label{7.4.17}%
+\end{equation}
+
+
+旋转生成元$J_{k}=\epsilon_{ijk}J^{ij}/2$不仅与时间无关, 也不{\KAI{显}}含时间, 所以它与哈密顿量对易
+\begin{equation}
+[H,\bJ]=0\:. \label{7.4.18}%
+\end{equation}
+另外, 对函数$\Theta^{0\nu}$使用方程(\ref{7.3.28}), 我们有
+\begin{align*}
+[P_{j},J_{i}] &= \frac{1}{2} \epsilon_{i\ell k}[P_{j},J^{\ell k}]
+=\frac{\mi}{2}\,\epsilon_{i\ell k}\,\int \dif^{3}x
+\left(x^{\ell}\frac{\partial}{\partial x^{j}}\Theta^{0k}
+-x^{k}\frac{\partial}{\partial x^{j}}\Theta^{0\ell}\right) \\
+&= -\mi\,\epsilon_{ijk}\int \dif^{3}x\:\Theta^{0k},
+\end{align*}
+因而\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[317]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[317]}}}
+\begin{equation}
+[P_{j},J_{i}]=-\mi\,\epsilon_{ijk}\,P_{k}\:. \label{7.4.19}%
+\end{equation}
+另一方面, ``增速''生成元$K_{k}\equiv J^{k0}$, 尽管它与时间无关, 但显含时间坐标
+\[
+K_{k}=\int \dif^{3}x\:(x^{k}\Theta^{00}-x^{0}\Theta^{0k})\:, %
+\]
+或者更明显地
+\begin{equation}
+\bK=-t\bP+\int \dif^{3}x\:\bx\:\Theta^{00}(\bx,t)\:. \label{7.4.20}%
+\end{equation}
+既然这是一个常数, 我们有$0=\dot{\bK}=-\bP+\mi[H,\bK]$, 所以
+\begin{equation}
+[H,\bK]=-\mi\,\bP\:. \label{7.4.21}%
+\end{equation}
+另外, 再次使用方程(\ref{7.3.28})给出
+\[
+[P_{j},K_{k}]=\mi\int \dif^{3}x\:x^{k}\:\frac{\partial}{\partial x^{j}}\Theta^{00}
+=-\mi\updelta_{jk}\int \dif^{3}x\:\Theta^{00},
+\]
+因此
+\begin{equation}
+[ P_{j},K_{k}]=-\mi\,\updelta_{jk}\,H  \:. \label{7.4.22}%
+\end{equation}
+
+
+对任何合理的拉格朗日密度, 在\,\ref{sec:3.3}\,节的意义下, 算符(\ref{7.4.20})是``光滑''的, 即在$t\to\pm\infty$%
+时, $\me^{\mi H_{0}t}\int\dif^{3}x\:\bx\:\Theta^{00}(\bx,0)\me^{-\mi H_{0}t}$中的相互作用项为零.{}$^*$\footnote{$^*${}当我们称某个相互作用绘景算符在$t\to\pm\infty$时为零, 我们是指这个算符在能量本征态的光滑叠加态之间的矩阵元在该极限下为零.} %
+(注意, 为了能够引入``入''态和``出''态以及$S$-矩阵, $\me^{\mi H_{0}t}\int \dif^{3}x\:\bx\:\Theta^{00}(\bx,0)\me^{-\mi H_{0}t}$中的相互作用项在$t\to\pm\infty$时必须为零.) 有了光滑性假定和对易关系(\ref{7.4.21}), 我们可以重复\,\ref{sec:3.3}\,节的论证, 并得到结论: $S$-矩阵是\,Lorentz\,不变的.
+
+\subsection*{* * *}
+
+在\,\ref{sec:3.3}\,节中, 我们用同样的论证来证明\,Lorentz\,群中余下的对易关系, 即$J^{\mu\nu}$间的对易关系, 具有正确的形式. 这也可直接给出旋转生成元的对易子, 它在这里的形式为
+\begin{equation}
+J^{ij}=\int \dif^{3}x\:\frac{\partial\mathscr{L}}{\partial\dot{\Psi}^{\ell}}
+\left(-x^{i}\partial_{j}\Psi^{\ell}+x^{j}\partial_{i}\Psi^{\ell}
+-\mi(\mathscr{J}^{ij})^{\ell}{}_{m}\Psi^{m}\right)  \:. \label{7.4.23}%
+\end{equation}
+既然拉格朗日密度不依赖辅助场的时间导数, 并且旋转生成元不会混合正则场和辅助场, 这也可以写成仅对正则场的求和:\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[318]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[318]}}}
+\begin{equation}
+J^{ij}=\int \dif^{3}x\:P_{n}\,\Bigl(-x^{i}\partial_{j}Q^{n}+x^{j}\partial_{i}Q^{n}
+-\mi(\mathscr{J}^{ij})^{n}{}_{n^{\prime}}Q^{n^{\prime}}\Bigr) \:. \label{7.4.24}%
+\end{equation}
+那么从正则对易关系就立即得出
+\begin{align}
+[J^{ij},Q^{n}(x)]_{-} &= -\mi(-x_{i}\partial_{j}+x_{j}\partial_{i})Q^{n}(x)
+-(\mathscr{J}^{ij})^{n}{}_{n^{\prime}}Q^{n^{\prime}}(x)\:, \label{7.4.25}\\
+[J^{ij},P_{n}(x)]_{-} &= \mi(-x_{i}\partial_{j}+x_{j}\partial_{i})P^{n}(x)
++(\mathscr{J}^{ij})^{n^{\prime}}{}_{\!n}P_{n^{\prime}}(x)\:. \label{7.4.26}%
+\end{align}
+这些结果可以用来导出通常的$J^{ij}$之间的对易关系以及$J^{ij}$与其他生成元的对易关系.{}$^*$\footnote{$^*${}另外, 因为$J^{ij\,}$与$H$和$P_{n}\dot{Q}^{n}$ 对易, 所以它与$L$对易. 因此$J^{ij}$与辅助场的对易子必须与$L$的旋转不变性相容.} %
+如果不存在辅助场, 那么同样的论证可以用于``增速''生成元以补完%
+$P^{\mu}$和$J^{\mu\nu}$满足非齐次\,Lorentz\,群对易关系的证明. 然而, ``增速''矩阵$\mathscr{J}^{i0}$一般会混合正则场和辅助场(例如矢量场的$V^{i}$ 分量和$V^{0}$分量), 所以对$J^{i0}$彼此间的对易关系的直接证明必须依具体情况而定. 幸运的是, \ref{sec:3.3}\,节中所给出的$S$-矩阵的\,Lorentz\,不变性的证明不需要这些.
+
+\section{过渡到相互作用绘景\,: 例子} \label{sec:7.5}
+\setcounter{equation}{0}
+
+在\,\ref{sec:7.2}\,节末尾, 我们展示了如何用一个简单标量场论的拉格朗日量导出它在相互作用绘景中包含的相互作用与自由场的结构.
+我们现在将转向更加复杂且更有启发性的例子.
+
+\subsection*{标量场, 导数耦合}
+
+先考虑一个中性标量场,
+但现在包含导数耦合.
+取拉格朗日量为\begin{equation}
+\mathscr{L}=-\tfrac{1}{2}\partial_{\mu}\Phi\partial^{\mu}\Phi-\tfrac{1}%
+{2}m^{2}\Phi^{2}-J^{\mu}\partial_{\mu}\Phi-\mathscr{H}(\Phi)\:,   \label{7.5.1}%
+\end{equation}
+其中, $J^{\mu}$要么是\,c\,-数的外流(与前面介绍的流$J^{\mu}$无关), 要么是$\Phi$以外的各种场的泛函(在这种情况下, 那些包含其他场的项需要加到(\ref{7.5.1})中.) 现在, $\Phi$的正则共轭是\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[319]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[319]}}}
+\begin{equation}
+\Pi=\frac{\partial\mathscr{L}}{\partial\dot{\Phi}}=\dot{\Phi}-J^{0}   \label{7.5.2}%
+\end{equation} 
+
+\newpage
+
+\noindent 而哈密顿量是
+\begin{align*}
+H &= \int \dif^{3}x\:[\Pi\dot{\Phi}-\mathscr{L}]\\
+  &= \int \dif^{3}x\:\Bigl[\Pi(\Pi+J^{0})+\tfrac{1}{2}(\bm{\nabla}\Phi)^{2}-\tfrac{1}{2}(\Pi+J^{0})^{2}\\
+  & \quad+\tfrac{1}{2}m^{2}\Phi^{2}+\bJ\cdot\bm{\nabla}\Phi
+  +J^{0}(\Pi+J^{0})+\mathscr{H}(\Phi)\Bigr]\:.%
+\end{align*}
+整理这些项, 我们可以将其写为
+\begin{align}
+H     &= H_{0}+V   \:, \label{7.5.3}\\
+H_{0} &= \int \dif^{3}x \: \Bigl[\tfrac{1}{2}\Pi^{2}
++\tfrac{1}{2}(\bm{\nabla}\Phi)^{2}+\tfrac{1}{2}m^{2}\Phi^{2}\Bigr]\:, \label{7.5.4}\\
+V  &  =\int \dif^{3}x\:\Bigl[\Pi J^{0}+\bJ\cdot\bm{\nabla}\Phi+\tfrac{1}%
+{2}(J^{0})^{2}+\mathscr{H}(\Phi)\Bigr]\:. \label{7.5.5}%
+\end{align}
+正如\,\ref{sec:7.2}\,节所阐明的, 我们可以通过将$\Pi$和$\Phi$替换为$\pi$和$\phi$过渡到相互作用绘景%
+(尽管我们不打算挑明这件事, 但对流$J^{\mu}$中的任意场也同样如此):
+\begin{equation}
+H_{0}=\int \dif^{3}x\:\Biggl[\tfrac{1}{2}\pi^{2}(\bx,t)
++\tfrac{1}{2}\Bigl(\bm{\nabla}\phi(\bx,t)\Bigr)^{2}
++\tfrac{1}{2}m^{2}\phi^{2}(\bx,t)\Biggr]\:,  \label{7.5.6}%
+\end{equation}%
+\begin{align}
+V(t)&=\int \dif^{3}x\: \Bigg[\pi(\bx,t)J^{0}(\bx,t)+J(\bx%
+,t)\cdot\bm{\nabla}\phi(\bx,t)\nonumber\\
+& \phantom{=\int \dif^{3}x\:}+\tfrac{1}{2}\Big[J^{0}(\bx,t)\Big]^{2}+\mathscr{H}(\phi
+(\bx,t))\Bigg]\:. \label{7.5.7}%
+\end{align}
+自由粒子哈密顿量正好与方程(\ref{7.2.25})相同, 并像\,\ref{sec:7.2}\,节中那样给出方程(\ref{7.2.26})\yzx (\ref{7.2.35}). 事实上, 无论总哈密顿量是什么样, 我们都{\KAI{必须}}将(\ref{7.5.6})取成我们必须要分离出的部分,
+并称其为自由粒子部分, 这是因为, 正如我们所看到的, 在将标量场展成满足对易关系(\ref{7.2.34})和(\ref{7.2.35})的产生湮没算符时, 正是这种形式的自由哈密顿量, 才使得标量场有了正确的展开(\ref{7.2.29}),
+而其余部分则被称为相互作用.
+最后一步是将相互作用哈密顿量中的$\pi$替换成它在相互作用绘景中的值$\dot{\phi}$%
+({\KAI{不}}是它在\,Heisenberg\,绘景中的值$\dot{\phi}-J^{0}$):
+\begin{equation}
+V(t)=\int \dif^{3}x\:\Bigg[J^{\mu}(\bx,t)\partial_{\mu}\phi(\bx%
+,t)+\tfrac{1}{2}\Big[J^{0}(\bx,t)\Big]^{2}+\mathscr{H}(\phi
+(\bx,t))\Bigg]\:. \label{7.5.8}%
+\end{equation}
+方程(\ref{7.5.8})中额外\marginpar[\flushright{\small[320]\hspace*{5mm}}]{{\small\hspace*{5mm}[320]}}的非协变项和我们在\,\ref{sec:6.2}\,节中所看到的一样, 它正是抵消$\partial\phi$传播子中的非协变项所需要的.
+
+\subsection*{矢量场, 自旋 1}
+
+对于自旋1粒子的矢量场$V_{\mu}$, 正则量子化会得到相似的结果.
+我们在这里以开放的心态, 写出一种极为普遍的拉格朗日密度
+\begin{equation}
+\mathscr{L}=-\tfrac{1}{2}\alpha\,\partial_{\mu}V_{\nu}\partial^{\mu}V^{\nu}
+-\tfrac{1}{2}\beta\,\partial_{\mu}V_{\nu}\partial^{\nu}V^{\mu}
+-\tfrac{1}{2}m^{2}\,V_{\mu}V^{\mu}+J_{\mu}V^{\mu}\:,  \label{7.5.9}%
+\end{equation}
+其中, $\alpha,\beta$和$m^{2}$现在而言是任意常数, $J_{\mu}$要么是一个\,c\,-数外流, 要么是一个依赖于除$V^{\mu}$之外的场的算符, 在后一种情况下, 包含这些场的额外项要加到$\mathscr{L}$上. $V_{\mu}$的\,Euler-Lagrange\,场方程是
+\[
+-\alpha\square V_{\nu}-\beta\partial_{\nu}(\partial_{\mu}V^{\mu})+m^{2}V_{\nu}=J_{\nu}\:.%
+\]
+取散度给出\begin{equation}
+-(\alpha+\beta)\square\partial_{\lambda}V^{\lambda}+m^{2}\partial_{\lambda
+}V^{\lambda}=\partial_{\lambda}J^{\lambda}\:. \label{7.5.10}%
+\end{equation}
+这是质量为$m^{2}/(\alpha+\beta)$, 源为$\partial_{\lambda}J^{\lambda}/(\alpha+\beta)$的一般标量场的方程. 我们希望描述的理论只包含自旋\,1\,粒子不包含自旋\,0\,粒子, 所以为了避免$\partial_{\lambda}V^{\lambda}$作为一个独立传播的标量场出现, 我们取$\alpha=-\beta$, 在这种情况下, $\partial_{\lambda}V^{\lambda}$可以用一个外流或者其他场表示, 例如$\partial_{\lambda}J^{\lambda}/m^{2}$. 常数$\alpha$可以被吸收到$V_{\mu}$ 的定义中, 所以我们可以取$\alpha=-\beta=1$, 因而
+\begin{equation}
+\mathscr{L}=-\tfrac{1}{4}F_{\mu\nu}F^{\mu\nu}-\tfrac{1}{2}m^{2}V_{\mu}V^{\mu}+J_{\mu}V^{\mu}, \label{7.5.11}%
+\end{equation}
+其中
+\begin{equation}
+F_{\mu\nu}\equiv\partial_{\mu}V_{\nu}-\partial_{\nu}V_{\mu}\:.  \label{7.5.12}%
+\end{equation}
+拉格朗日量相对矢量场时间导数的导数是
+\begin{equation}
+\frac{\partial\mathscr{L}}{\partial\dot{V}_{\mu}}=-F^{0\mu}\:.  \label{7.5.13}%
+\end{equation}
+在$\mu$是一个空间指标$i$时, 这是非零的, 所以$V^{i}$是正则场, 共轭为
+\begin{equation}
+\Pi^{i}=F^{i0}=\dot{V}^{i}+\partial_{i}V^{0}, \label{7.5.14}%
+\end{equation}
+另一方面$F^{00}=0$, 所以$\dot{V}^{0}$不出现在拉格朗日量中, 因此$V^{0}$是一个辅助场.
+这并不会带来严重的困难: $\partial\mathscr{L}/\partial\dot{V}^{0}$为零意味着$V^{0}$的场方程不包含二阶时间导数, 因而可以作为一个消除场变量的约束. 特别地, $\nu=0$的\,Euler-Lagrange\,方程是\marginpar[\flushright
+{\raisebox{-3ex}[0pt]{{\small[321]\hspace*{5mm}}}}]{{\raisebox{-3ex}[0pt]{\small\hspace*{5mm}[321]}}}
+\begin{equation}
+\partial_{i}F^{i0}=m^{2}V^{0}-J^{0} \label{7.5.15}%
+\end{equation}
+或利用方程(\ref{7.5.14})写成
+\begin{equation}
+V^{0}=\frac{1}{m^{2}}(\bm{\nabla}\cdot\bm{\Pi}+J^{0}). \label{7.5.16}%
+\end{equation}
+
+
+现在我们来计算这个理论的哈密顿量$H=\int\dif^{3}x\:(\bm{\Pi}\cdot\dot{\bV}-\mathscr{L})$.
+方程(\ref{7.5.14})使得我们可以用$\bm{\Pi}$和$J^{0}$表示$\dot{\bV}$:
+\[
+\dot{\bV}=-\bm{\nabla}V^{0}+\bm{\Pi}
+=\bm{\Pi}-\frac{1}{m^{2}}\bm{\nabla}(\bm{\nabla}\cdot\bm{\Pi}+J^{0})\:, %
+\]
+所以
+\begin{align*}
+H &= \int \dif^{3}x\:\Bigg[\bm{\Pi}^{2}+m^{-2}(\bm{\nabla}\cdot\bm{\Pi})
+     (\bm{\nabla}\cdot\bm{\Pi}+J^{0})   \\
+  &\quad-\tfrac{1}{2}\bm{\Pi}^{2}+\tfrac{1}{2}(\bm{\nabla}\times\bV)^{2}
+  +\tfrac{1}{2}m^{2}\bV^{2}\\
+  &\quad-\tfrac{1}{2}m^{-2}(\bm{\nabla}\cdot\bm{\Pi}+J^{0})^{2}%
+-\bJ\cdot\bV+m^{-2}J^{0}(\bm{\nabla}\cdot\bm{\Pi}%
++J^{0})\Bigg]\:.%
+\end{align*}
+
+
+再一次地, 我们将其分成自由粒子项$H_{0}$和相互作用$V$:
+\begin{equation}
+H=H_{0}+V\:,  \label{7.5.17}%
+\end{equation}
+并通过将\,Heisenberg\,绘景下的$\bV$和$\bm{\Pi}$替换成它们在相互作用绘景中的%
+对应物$\bv$和$\bm{\pi}$过渡到相互作用绘景(并且, 虽然没有显式地表示出来, 对出现在$J^{\mu}$中的任何场及其共轭也做同样处理):
+\begin{align}
+&  H_{0}=\int \dif^{3}x\:\left[  \frac{1}{2}\bm{\pi}^{2}+\frac{1}{2m^{2}%
+}(\bm{\nabla}\cdot\bm{\pi})^{2}+\frac{1}{2}(\bm{\nabla}\times\bv%
+)^{2}+\frac{m^{2}}{2}\bv^{2}\right]  \:, \label{7.5.18}\\
+&  V=\int \dif^{3}x\left[  -\bJ\cdot\bv+m^{-2}J^{0}\bm{\nabla}\cdot
+\bm{\pi}+\frac{1}{2m^{2}}(J^{0})^{2}\right]  \:. \label{7.5.19}%
+\end{align}
+于是$\bm{\pi}$和$\bv$之间的关系是
+\begin{equation}
+\dot{\bv}=\frac{\updelta H_{0}(\bv,\bm{\pi})}{\updelta\bm{\pi}}
+=\bm{\pi}-m^{-2}\bm{\nabla}(\bm{\nabla}\cdot\bm{\pi}), \label{7.5.20}%
+\end{equation}
+而``场方程''是
+\begin{equation}
+\dot{\bm{\pi}}=-\frac{\updelta H_{0}(\bv,\bm{\pi})}{\updelta\bv}
+=+\nabla^{2}\bv-\bm{\nabla}(\bm{\nabla}\cdot\bv)-m^{2}\bv\:. \label{7.5.21}%
+\end{equation}
+由于$V^{0}$不是一个独立场变量, 它无法通过一个相似变换与任何相互作用绘景对象$v^{0}$相关. 转而,
+我们可以{\KAI{引入}}一个量
+\begin{equation}
+v^{0}\equiv m^{-2}\bm{\nabla}\cdot\bm{\pi}\:. \label{7.5.22}%
+\end{equation}
+\pagebreak
+
+\noindent
+这样\marginpar[\flushright{\small[322]\hspace*{5mm}}]{{\small\hspace*{5mm}[322]}}方程(\ref{7.5.20})就允许我们将$\bm{\pi}$写成
+\begin{equation}
+\bm{\pi}=\dot{\bv}+ \bm{\nabla} v^{0}\:. \label{7.5.23}%
+\end{equation}
+将其代入方程(\ref{7.5.22})和(\ref{7.5.21})就给出了如下形式的场方程
+\begin{align*}
+&  \nabla^{2}v^{0}+\bm{\nabla}\cdot\dot{\bv}-m^{2}v^{0}=0\:, \\
+&  \nabla^{2}\bv-\bm{\nabla}(\bm{\nabla}\cdot\bv)-\ddot{\bv}
+-\bm{\nabla}\dot{v}^{0}-m^{2}\bv=0\:.%
+\end{align*}
+这些可以合并成协变形式
+\begin{equation}
+\square v^{\mu}-\partial^{\mu}\partial_{\nu}v^{\nu}-m^{2}v^{\mu}=0\:.   \label{7.5.24}%
+\end{equation}
+取散度给出
+\begin{equation}
+\partial_{\mu}v^{\mu}=0, \label{7.5.25}%
+\end{equation}
+因而
+\begin{equation}
+(\square-m^{2})v^{\mu}=0\:. \label{7.5.26}%
+\end{equation}
+满足方程(\ref{7.5.25})和(\ref{7.5.26})的实矢量场可以表示成一个\,Fourier\,变换
+\begin{align}
+v^{\mu}(x)  &=(2\uppi)^{-3/2}\sum_{\sigma}\int \dif^{3}p\:(2p^{0})^{-1/2}%
+\Bigl\{e^{\mu}(\bp,\sigma)a(\bp,\sigma)\me^{\mi p\cdot x}\nonumber\\
+&\quad+e^{\mu\ast}(\bp,\sigma)a^{\dag}(\bp,\sigma)\me^{-\mi p\cdot x}\Big\}\:, \label{7.5.27}%
+\end{align}
+其中$p^{0}=\sqrt{\bp^{2}+m^{2}}$; $\sigma=+1,0,-1$的$e^{\mu}(\bp,\sigma)$是三个独立的矢量, 满足
+\begin{equation}
+p_{\mu}e^{\mu}(\bp,\sigma)=0 \label{7.5.28}%
+\end{equation}
+且已归一化成
+\begin{equation}
+\sum_{\sigma}e^{\mu}(\bp,\sigma)e^{\nu\ast}(\bp,\sigma
+)=\eta^{\mu\nu}+p^{\mu}p^{\nu}/m^{2}\text{ ;} \label{7.5.29}%
+\end{equation}
+而$a(\bp,\sigma)$是算符系数. 利用方程(\ref{7.5.23}), (\ref{7.5.27})和(\ref{7.5.29})可以计算出$\bv$和$\bm{\pi}$满足正确的对易关系
+\begin{align}
+&  \Big[v^{i}(\bx,t),\pi^{j}(\by,t)\Big]=\mi\,\updelta_{ij}%
+\,\updelta^{3}(\bx-\by)\:, \nonumber\\
+&  \Big[v^{i}(\bx,t),v^{j}(\by,t)\Big]=\Big[\pi^{i}%
+(\bx,t),\pi^{j}(\by,t)\Big]=0\:,  \label{7.5.30}%
+\end{align}
+其中假定了$a(\bp,\sigma)$和$a^{\dag}(\bp,\sigma)$满足对易关系
+\begin{align}
+&  \Big[a(\bp,\sigma),a^{\dag}(\bp^{\prime},\sigma^{\prime
+})\Big]=\updelta^{3}(\bp^{\prime}-\bp)\updelta_{\sigma^{\prime
+}\sigma}\:, \label{7.5.31}\\
+&  \Big[a(\bp,\sigma),a(\bp^{\prime},\sigma^{\prime
+})\Big]=0\:. \label{7.5.32}%
+\end{align}
+\pagebreak
+
+\noindent
+我们\marginpar[\flushright{\small[323]\hspace*{5mm}}]{{\small\hspace*{5mm}[323]}}已经知道了自旋\,1\,粒子的矢量场必须取成(\ref{7.5.27})的形式, 所以我们对这些结果的推导可以用来证明方程(\ref{7.5.18})确实给出了正确的有质量自旋\,1\,粒子的自由粒子哈密顿量.
+也很容易验证方程(\ref{7.5.18})可以写成(相差一个常数项)自由粒子能量的标准形式,
+形如$\sum_{\sigma}\int \dif^{3}p\:p^{0}\:a^{\dag}(\bp,\sigma)a(\bp,\sigma)$. 最后, 在方程(\ref{7.5.19})中使用方程(\ref{7.5.22})给出相互作用绘景中的相互作用
+\begin{equation}
+V(t)=\int \dif^{3}x\left[  -J_{\mu}v^{\mu}+\frac{1}{2m^{2}}(J^{0})^{2}\right] \:. \label{7.5.33}%
+\end{equation}
+方程(\ref{7.5.33})中额外的非协变项, 就像我们在第6章中所看到的, 正是抵消矢量场传播子中的非协变项所需要的.
+
+\subsection*{\textit{Dirac} 场, 自旋 1/2}
+
+对于自旋\,1/2\,粒子的\,Dirac\,场, 我们尝试取拉格朗日量为
+\begin{equation}
+\mathscr{L}=-\bar{\Psi}(\gamma^{\mu}\partial_{\mu}+m)\Psi-\mathscr{H}(\bar{\Psi},\Psi), \label{7.5.34}%
+\end{equation}
+其中$\mathscr{H}$是$\bar{\Psi}$和$\Psi$的实函数. $\mathscr{L}$不是实的, 但是作用量是,
+这是因为
+\[
+\bar{\Psi}\gamma^{\mu}\partial_{\mu}\Psi-(\bar{\Psi}\gamma^{\mu}\partial_{\mu}\Psi)^{\dag}
+=\bar{\Psi}\gamma^{\mu}\partial_{\mu}\Psi+(\partial_{\mu}\bar{\Psi})\gamma^{\mu}\Psi
+=\partial_{\mu}(\bar{\Psi}\gamma^{\mu}\Psi)\:.%
+\]
+因此, 通过要求作用量对$\bar{\Psi}$的变分驻定而得到的场方程, 与通过要求作用量对$\Psi$的变分驻定而得到的场方程, 二者互为伴随方程,
+如果我们希望避免过多的场方程, 这正是所需要的. $\Psi$的正则共轭是
+\begin{equation}
+\Pi=\frac{\partial\mathscr{L}}{\partial\dot{\Psi}}=-\bar{\Psi}\gamma^{0}\:,  \label{7.5.35}%
+\end{equation}
+所以我们不应该把$\bar{\Psi}$看作是$\Psi$那样的场, 而是正比于$\Psi$的正则共轭的场. 哈密顿量是
+\[
+H=\int \dif^{3}x\:[\Pi\dot{\Psi}-\mathscr{L}]
+=\int \dif^{3}x\:\Big[\Pi\gamma^{0}[\bm{\gamma}\cdot\bm{\nabla}+m]\Psi+\mathscr{H}\Big]\:.%
+\]
+我们将其写为
+\begin{equation}
+H=H_{0}+V\:,  \label{7.5.36}%
+\end{equation}
+其中
+\begin{align}
+H_{0}  &  =\int \dif^{3}x\:\Pi\gamma^{0}[\bm{\gamma}\cdot\bm{\nabla}+m]\Psi\:, \label{7.5.37}\\
+V  &  =\int \dif^{3}x\:\mathscr{H}(\bar{\Psi},\Psi)\:. \label{7.5.38}%
+\end{align}
+
+\pagebreak
+
+我们\marginpar[\flushright{\small[324]\hspace*{5mm}}]{{\small\hspace*{5mm}[324]}}现在过渡到相互作用绘景. 由于方程(\ref{7.5.35})不涉及时间, 相似变换(\ref{7.1.28})和(\ref{7.1.29})立即给出
+\begin{equation}
+\pi=-\bar{\psi}\gamma^{0}\:. \label{7.5.39}%
+\end{equation}
+同样, 在方程(\ref{7.5.37})和(\ref{7.5.38})中将$\Psi$和$\Pi$替换成$\psi$和$\pi$就可以计算出$H_{0}\,%
+$和$V(t)$. 这给出运动方程
+\begin{equation}
+\dot{\psi}=\frac{\updelta H_{0}}{\updelta\pi}=\gamma^{0}(\bm{\gamma}\cdot \bm{\nabla}+m)\psi\label{7.5.40}%
+\end{equation}
+或者更简洁的
+\begin{equation}
+(\gamma^{\mu}\partial_{\mu}+m)\psi=0\:. \label{7.5.41}%
+\end{equation}
+(另一运动方程, $\dot{\pi}=-\updelta H_{0}/\updelta\psi$, 给出就是该方程的伴方程.) 任何满足方程(\ref{7.5.41})的场都可以写成一个\,Fourier\,变换
+\begin{equation}
+\psi(x)=(2\uppi)^{-3/2}\int \dif^{3}p\,\sum_{\sigma}\Bigl\{
+u(\bp,\sigma)\,\me^{\mi p\cdot x}\,a(\bp,\sigma)
++v(\bp,\sigma)\,\me^{-\mi p\cdot x}\,b^{\dag}(\bp,\sigma)\Bigr\}  \:,  \label{7.5.42}%
+\end{equation}
+其中$p^{0}\equiv\sqrt{\bp^{2}+m^{2}}$; $a(\bp,\sigma)$和$b^{\dag}(\bp,\sigma)$是算符系数; 而$u(\bp,\pm\frac{1}{2})$ 是方程
+\begin{equation}
+(\mi\gamma^{\mu}p_{\mu}+m)u(\bp,\sigma)=0 \label{7.5.43}%
+\end{equation}
+的两个独立解, 对于$v(\bp,\pm\frac{1}{2})$类似有
+\begin{equation}
+(-\mi\gamma^{\mu}p_{\mu}+m)v(\bp,\sigma)=0  \:,\label{7.5.44}%
+\end{equation}
+它们归一化成{}$^*$\footnote{$^*${}矩阵$\mi\gamma^{\mu}p_{\mu}$有本征值$\pm m$, 所以$\Sigma u\bar{u}$和$\Sigma v\bar{v}$必须分别正比于投影矩阵%
+$(-\mi\gamma^{\mu}p_{\mu}+m)/2m$和$(\mi\gamma^{\mu}p_{\mu}+m)/2m$.
+通过将比例因子吸收进$u$和$v$的定义, 我们可以将其调整到只相差一个符号. 整体的符号由正定性决定:
+$\operatorname{Tr}\Sigma u\bar{u}\beta=\Sigma u^{\dag}u$
+和$\operatorname{Tr}\Sigma v\bar{v}\beta=\Sigma v^{\dag}v$必须是正的.}%
+\begin{align}
+\sum_{\sigma}u(\bp,\sigma)\bar{u}(\bp,\sigma) &=
+\frac{(-\mi\gamma^{\mu}p_{\mu}+m)}{2p^{0}}\:, \label{7.5.45}\\
+\sum_{\sigma}v(\bp,\sigma)\bar{v}(\bp,\sigma) &=
+-\frac{(\mi\gamma^{\mu}p_{\mu}+m)}{2p^{0}}\:. \label{7.5.46}%
+\end{align}
+为了得到希望的反对易子\begin{align}
+\Big[\psi_{\alpha}(\bx,t),\bar{\psi}_{\beta}(\by,t)\Big]_{+}  &
+=\Big[\psi_{\alpha}(\bx,t),\pi_{\gamma}(\by,t)\Big]_{+}%
+(\gamma^{0})_{\gamma\beta}\nonumber\\
+&= \mi\,(\gamma^{0})_{\alpha\beta}\updelta^{3}(\bx-\by)\:, \label{7.5.47}\\
+\Big[\psi_{\alpha}(\bx,t),\psi_{\beta}(\by,t)\Big]_{+}  &
+=0\:,  \label{7.5.48}%
+\end{align}
+我们\marginpar[\flushright{\small[325]\hspace*{5mm}}]{{\small\hspace*{5mm}[325]}}必须取如下的反对易关系
+\begin{align}
+\Big[a(\bp,\sigma),a^{\dag}(\bp^{\prime},\sigma^{\prime
+})\Big]_{+} &= \Big[b(\bp,\sigma),b^{\dag}(\bp^{\prime}%
+,\sigma^{\prime})\Big]_{+}=\updelta^{3}(\bp^{\prime}-\bp%
+)\updelta_{\sigma^{\prime}\sigma},\label{7.5.49}\\
+\Big[a(\bp,\sigma),a(\bp^{\prime},\sigma^{\prime})\Big]_{+}  &
+=\Big[b(\bp,\sigma),b(\bp^{\prime},\sigma^{\prime}%
+)\Big]_{+}=\nonumber\\
+\Big[a(\bp,\sigma),b(\bp^{\prime},\sigma^{\prime})\Big]_{+}  &
+=\Big[a(\bp,\sigma),b^{\dag}(\bp^{\prime},\sigma^{\prime
+})\Big]_{+}=0\:,  \label{7.5.50}%
+\end{align}
+以及它们的共轭. 这些与我们第5章得到的结果一致, 从而证明了(\ref{7.5.37})是自旋$\frac{1}{2}$%
+自由粒子正确的哈密顿量. 写成$a$和$b$的形式, 这个哈密顿量是
+\begin{equation}
+H_{0}=\sum_{\sigma}\int \dif^{3}p\:p^{0}\left(  a^{\dag}(\bp,\sigma
+)a(\bp,\sigma)-b(\bp,\sigma)b^{\dag}(\bp%
+,\sigma)\right)  \:. \label{7.5.51}%
+\end{equation}
+我们可以将其重新写成一个形式更加常见的哈密顿量, 它要加上另一个无限大\,c\,-数{}$^*$\footnote{$^*${}注意\,c\,-数项的负号.
+一种尚属猜测的被称为{\KAI{超对称}}\textsuperscript{\cite{4}}的对称性联系了玻色场和费米场的数目, %
+从而使得$H_{0}$中的\,c\,-数全部抵消.}%
+\begin{equation}
+H_{0}=\sum_{\sigma}\int \dif^{3}\bp\:p^{0}\Big[a^{\dag}(\bp%
+,\sigma)a(\bp,\sigma)+b^{\dag}(\bp,\sigma)b(\bp%
+,\sigma)-\updelta^{3}(\bp-\bp)\Big]\:. \label{7.5.52}%
+\end{equation}
+因为\,c\,-数只影响所测量的所有能量的能量零点, 所以仅当我们担心引力现象时, 方程(\ref{7.5.52})中的\,c\,-数项才是重要的; 否则, 我们就可以像处理标量场那样在这里把它扔掉.
+在这种理解下, $H_{0}$是正定算符, 同玻色子的情况一样.
+
+\section{约束与\,Dirac\,括号}  \label{sec:7.6}
+\setcounter{equation}{0}
+
+从拉格朗日量导出哈密顿量的主要障碍是出现了约束. 对这一问题的标准分析是\,Dirac\,\textsuperscript{\cite{5}}给出的, 我们在这里将沿用他的术语. 对本章所讨论的简单理论, 很容易辨认出非约束的正则场, Dirac\,的分析不是真正必需的.
+我们在这里将用有质量的实矢量场理论做一个说明, 在下一章回到\,Dirac\,的方法上来, 那里它才是真正有用的.
+
+{\KAI{初级约束}}(\textit{primary constraints})要么是强加在系统上的(如我们在下一章为电磁场选择规范),
+要么源于拉格朗日量自身的结构. 后一类的一个例子是, 考察有质量矢量场$V^{\mu}$与流$J_{\mu}$进行相互作用的拉格朗日量(\ref{7.5.11}):\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[326]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[326]}}}
+\begin{equation}
+\mathscr{L}=-\tfrac{1}{4}F_{\mu\nu}F^{\mu\nu}-\tfrac{1}{2}m^{2}V_{\mu}V^{\mu}+J_{\mu}V^{\mu},\label{7.6.1}%
+\end{equation}
+其中\begin{equation}
+F_{\mu\nu}\equiv\partial_{\mu}V_{\nu}-\partial_{\nu}V_{\mu}\:.\label{7.6.2}%
+\end{equation}
+假定我们尝试在同一基上处理$V^{\mu}$的全部\,4\,个分量. 那么我们应该定义共轭
+\begin{equation}
+\Pi^{\mu}\equiv\frac{\partial\mathscr{L}}{\partial(\partial_{0}V_{\mu})}=-F^{0\mu}\:.\label{7.6.3}%
+\end{equation}
+我们立即找到初级约束:
+\begin{equation}
+\Pi_{0}=0\:.\label{7.6.4}%
+\end{equation}
+更普遍地, 只要无法从方程$\Pi_{\ell}=\updelta L/\updelta\partial_{0}\Psi^{\ell}$中解出以$\Pi_{\ell}\,%
+$和$\Psi^{\ell}$表示的所有$\partial_{0}\Psi^{\ell}$(至少是定域地),
+我们就会遇到初级约束.
+当且仅当矩阵
+$\updelta^{2}L/\linebreak\updelta(\partial_{0}\Psi^{\ell})\updelta(\partial_{0}\Psi^{m})$%
+的行列式为零时, 这样的情况就会出现. 这种拉格朗日量被称为{\KAI{非正规的}}(\textit{irregular}).
+
+接下来, 有{\KAI{次级约束}}(\textit{secondary constraints}), 它源于初级约束要与运动方程相自洽的要求. 对于有质量矢量场, 这正是$V^{0}$的\,Euler-Lagrange\,方程(\ref{7.5.16}):%
+\begin{equation}
+\partial_{i}\Pi_{i}=m^{2}V^{0}-J^{0}\:. \label{7.6.5}%
+\end{equation}
+在这里我们止步于次级约束, 但在其他理论中还会遇到进一步的约束, 这些约束源于次级约束要与场方程相自洽的要求,
+以此类推. 初级, 次级等约束之间的区别是不重要的; 我们在这里一起处理它们.
+
+在某个类型的约束之间存在更为重要的另一种区别. 对于有质量矢量场, 我们发现的约束是被称为{\KAI{第二类}}%
+约束的一种约束, 对这类约束, 存在针对对易关系的通用方法. 为了解释第一类约束与第二类约束之间的区别,
+并介绍处理第二类约束的方法, 先回顾一下经典力学中\,Poisson\,括号的定义对我们是有帮助的.
+
+考虑依赖一组变量$\Psi^{a}(t)$及其时间导数$\dot{\Psi}^{a}(t)$的任意拉格朗日量$L(\Psi,\dot{\Psi})$. (量子场论的拉格朗日量是一种特殊情况, 其指标$a$ 取遍所有的$\ell,\bx$对.) 通过
+\begin{equation}
+\Pi_{a}\equiv\frac{\partial L}{\partial\dot{\Psi}^{a}}\:, \label{7.6.6}%
+\end{equation}
+我们\marginpar[\flushright{\small[327]\hspace*{5mm}}]{{\small\hspace*{5mm}[327]}}可以定义{\KAI{所有}}这些变量的正则共轭. $\Pi$和$\Psi$一般不是独立变量,
+但却可以通过各种约束方程关联, 这些约束中既包括初级也包括次级约束.
+Poisson\,括号定义为\begin{equation}
+[A,B]_{\text{P}}\equiv\frac{\partial A}{\partial\Psi^{a}}\frac{\partial B}{\partial\Pi_{a}}
+-\frac{\partial B}{\partial\Psi^{a}}\frac{\partial A}{\partial\Pi_{a}} \label{7.6.7}%
+\end{equation}
+这里, 在计算对$\Psi^{a}$和$\Pi_{a}$的导数时忽略了约束. 特别地, 我们总有%
+$[\Psi^{a},\Pi_{b}]_{\text{P}}=\updelta_{b}^{a}$. (这里及后面的所有场都取在同一时刻, 并扔掉了所有的时间变量.)
+这些括号的代数性质与对易子相同:
+\begin{equation}
+[A,B]_{\text{P}}=-[B,A]_{\text{P}}\:,  \label{7.6.8}%
+\end{equation}%
+\begin{equation}
+[ A,BC]_{\text{P}}=[A,B]_{\text{P}}C+B[A,C]_{\text{P}}\:,  \label{7.6.9}%
+\end{equation}
+其中包括\,Jacobi\,恒等式
+\begin{equation}
+[A,[B,C]_{\text{P}}]_{\text{P}}+[B,[C,A]_{\text{P}}]_{\text{P}}+[C,[A,B]_{\text{P}}]_{\text{P}}=0\:. \label{7.6.10}%
+\end{equation}
+如果我们可以使用通常的对易关系$[\Psi^{a},\Pi_{b}]=\mi\updelta_{b}^{a}$, $[\Psi^{a},\Psi^{b}]=[\Pi_{a},\Pi_{b}]=0$, 那么对于$\Psi$和$\Pi$的任意两个函数, 它们的对易子将是$[A,B]=\mi[A,B]_{\text{P}}$. 但是约束并不总是允许我们能够做到这点.
+
+一般而言, 约束可以表示成$\chi_{N}=0$的形式, 其中$\chi_{N}$是$\Psi$和$\Pi$的一组函数.
+由于我们把次级约束连同初级约束一并纳入进来, 所有约束的集合与运动方程$\dot{A}=[A,H]_{\text{P}}$必须自洽,
+因此, 当约束方程$\chi_{N}=0$被满足时,
+\begin{equation}
+[\chi_{N},H]_{\text{P}}=0  \:. \label{7.6.11}%
+\end{equation}
+
+
+当我们(在计算出\,Poisson\,括号{\KAI{之后}})附加约束时, 如果它与所有其他约束的\,Poisson\,括号为零,
+我们称它为{\KAI{第一类}}约束. 在下一章电磁场的量子化中, 我们将看到这类约束的一个简单例子,
+这里面的第一类约束源于作用量的对称性, 电磁规范不变性. 事实上, 第一类约束$\chi_{N}=0$的集合%
+总是与一个对称群相联系, 在该群下, 任意量$A$经过了一个无限小变换
+\begin{equation}
+\updelta_{N}A\equiv\sum_{N}\epsilon_{N}\,[\chi_{N},A]_{\text{P}}\:. \label{7.6.12}%
+\end{equation}
+(它们\marginpar[\flushright{\small[328]\hspace*{5mm}}]{{\small\hspace*{5mm}[328]}}在场论中是定域变换, 这是因为指标$N$会包含时空坐标.) 方程(\ref{7.6.11}) 表明这个变换保持哈密顿量不变,
+并且对第一类约束, 这个变换也遵守所有其他约束. 这样的第一类约束可以通过选取规范消除.
+
+在所有第一类约束通过选取规范被消除后, 剩下的约束方程$\chi_{N}=0$使得这些约束彼此之间的\,Poisson\,括号的线性组合$\sum
+_{N}u_{N}[\chi_{N},\chi_{M}]$不为零. 由此可知剩余约束的\,Poisson\,括号构成的矩阵是非奇异的:
+\begin{equation}
+\operatorname{Det}C\neq0\:,  \label{7.6.13}%
+\end{equation}
+其中
+\begin{equation}
+C_{NM}\equiv[\chi_{N},\chi_{M}]_{\text{P}}\:. \label{7.6.14}%
+\end{equation}
+这类约束被称为{\KAI{第二类}}约束. 注意, 第二类约束的个数总是偶数, 这是因为奇数维反对称矩阵的行列式始终为零.
+
+正如我们所看到的, 在有质量矢量场的情况下, 约束是
+\begin{equation}
+\chi_{1\bx}=\chi_{2\bx}=0\:,  \label{7.6.15}%
+\end{equation}
+其中
+\begin{equation}
+\chi_{1\bx}=\Pi_{0}(\bx) \:, \qquad  \chi_{2\bx}=
+\partial_{i}\Pi_{i}(\bx)-m^{2}V^{0}(\bx)-J^{0}(\bx)\:. \label{7.6.16}%
+\end{equation}
+这些约束的\,Poisson\,括号是
+\begin{equation}
+C_{1\bx,2\by}=-C_{2\by,1\bx}
+=[\chi_{1\bx},\chi_{2\by}]_{\text{P}}
+=m^{2}\updelta^{3}(\bx-\by)   \label{7.6.17}%
+\end{equation}
+并且, 显然有,
+\begin{equation}
+C_{1\bx,1\by}=C_{2\bx,2\by}=0\:.  \label{7.6.18}%
+\end{equation}
+这个``矩阵''显然是不奇异的, 所以约束(\ref{7.6.15})是第二类约束.
+
+Dirac\,提出, 当所有约束都是第二类约束时, 对易关系将由
+\begin{equation}
+[A,B]=\mi[A,B]_{\text{D}}\:,  \label{7.6.19}%
+\end{equation}
+给出, 其中$[A,B]_{\text{D}}$是\,Poisson\,括号的推广, 被称为\,\textit{Dirac}\,{\KAI{括号}}:
+\begin{equation}
+[A,B]_{\text{D}}\equiv [A,B]_{\text{P}}-[A,\chi_{N}]_{\text{P}}\,(C^{-1})^{NM}\,[\chi_{M},B]_{\text{P}}\:. \label{7.6.20}%
+\end{equation}
+(这里\marginpar[\flushright{\small[329]\hspace*{5mm}}]{{\small\hspace*{5mm}[329]}}的$N$和$M$是包含空间位置的混合指标, 它的取值类似于矢量场例子中的$1,\bx$ 和$2,\bx$.) 他注意到\,Dirac\,括号同\,Poisson\, 括号一样, 满足与对易子相同的代数关系
+\begin{equation}
+[A,B]_{\text{D}}=-[B,A]_{\text{D}}\:,  \label{7.6.21}%
+\end{equation}%
+\begin{equation}
+[A,BC]_{\text{D}}=[A,B]_{\text{D}}C+B[A,C]_{\text{D}}\:,
+\label{7.6.22}%
+\end{equation}%
+\begin{equation}
+[A,[B,C]_{\text{D}}]_{\text{D}}+[B,[C,A]_{\text{D}}]_{\text{D}}+[C,[A,B]_{\text{D}}]_{\text{D}}=0\:,  \label{7.6.23}%
+\end{equation}
+以及关系
+\begin{equation}
+[\chi_{N},B]_{\text{D}}=0 \label{7.6.24}%
+\end{equation}
+这使得对易关系(\ref{7.6.19})与约束$\chi_{N}=0$自洽. 另外, 只要方程$\chi_{N}^{\prime}=0$与$\chi_{N}=0$定义了相同的相空间子流形,
+那么将$\chi_{N}$换成任意函数$\chi_{N}^{\prime}$都不会改变\,Dirac\,括号. 但是所有这些良好的性质并没有证明对易子确实以\,Dirac\,括号的形式由方程(\ref{7.6.19})给出.
+
+Maskawa\,(益川)和\,Nakajima\,(中岛)\textsuperscript{\cite{6}}证明了一个强有力定理, 如果说它没有完全解决这个问题, 但它也启发了这个问题的解决方法, 他们证明了, 对任何一组服从第二类约束的正则变量$\Psi^{a}$和$\Pi_{a}$,
+总可以通过一个正\linebreak
+\newpage
+
+\noindent 则变换{}$^*$\footnote{$^*${}回想一下，我们说的正则变换是指从一组相空间坐标$\Psi^{a},\Pi_{a}$%
+到另一组相空间坐标$\tilde{\Psi}^{a},\tilde{\Pi}_{a}$的变换, 它使得$[\tilde{\Psi}^{a},\tilde{\Pi}_{b}]_{\text{P}}=\updelta_{b}^{a}$%
+且$[\tilde{\Psi}^{a},\tilde{\Psi}^{b}]_{\text{P}}=[\tilde{\Pi}_{a},\tilde{\Pi}_{b}]=0$,
+其中的\,Poisson\,括号是用$\Psi^{a}$和$\Pi_{a}$计算出来. 由此可知, 无论是用$\Psi^{a}$和$\Pi_{a}$计算, 还是用$\tilde{\Psi}^{a}$和$\tilde{\Pi}_{a}$ 计算,
+任意函数$A,B$的\,Poisson\,括号都是相同的. 由此还可以知道, 如果$\Psi^{a}$和$\Pi_{a}$%
+满足哈密顿运动方程, 那么$\tilde{\Psi}^{a}$和$\tilde{\Pi}_{a}$也满足同一运动方程.
+正则变换会改变拉格朗日量, 但变化的只是一个时间导数, 而这是不影响作用量的.}%
+构造两组变量$Q^{n},\mathscr{Q}^{r}$以及它们各自的共轭$P_{n},\mathscr{P}_{r}$, 使得约束变成$\mathscr{Q}^{r}=\mathscr{P}_{r}=0$. 利用这些坐标计算\,Poisson\,括号, 并将约束函数重新定义为$\chi_{1r}=\mathscr{Q}^{r}$, $\chi_{2r}=\mathscr{P}_{r}$, 我们有
+\[
+C_{1r,2s}=[\mathscr{Q}^{r},\mathscr{P}_{s}]_{\text{P}}=\updelta_{s}^{r}\:, %
+\]%
+\[
+C_{1r,1s}=[\mathscr{Q}^{r},\mathscr{Q}^{s}]_{\text{P}}=0 \:, \qquad C_{2r,2s}=[\mathscr{P}_{r},\mathscr{P}_{s}]_{\text{P}}=0\:, %
+\]
+并且对于任意函数$A,B$%
+\[
+[A,\chi_{1r}]_{\text{P}}=-\frac{\partial A}{\partial\mathscr{P}_{r}}\: , \qquad
+[A,\chi_{2r}]_{\text{P}}= \frac{\partial A}{\partial\mathscr{Q}^{r}}\:, %
+\]
+这个$C$-矩阵具有逆$C^{-1}=-C$, 所以\,Dirac\,括号(\ref{7.6.20})在这里是
+\begin{align}
+[A,B]_{\text{D}} &= [A,B]_{\text{P}} + [A,\chi_{1r}]_{\text{P}}[\chi_{2r},B]_{\text{P}}
+  -[A,\chi_{2r}]_{\text{P}}[\chi_{1r},B]_{\text{P}}\nonumber\\
+& =[A,B]_{\text{P}}-\frac{\partial A}{\partial\mathscr{Q}^{r}}\frac{\partial B}{\partial\mathscr{P}_{r}}
++\frac{\partial B}{\partial\mathscr{Q}^{r}}\frac{\partial A}{\partial\mathscr{P}_{r}}\nonumber\\
+& =\frac{\partial A}{\partial Q^{n}}\frac{\partial B}{\partial P_{n}}%
+-\frac{\partial B}{\partial Q^{n}}\frac{\partial A}{\partial P_{n}}\:.  \label{7.6.25}%
+\end{align}
+换句话说\marginpar[\flushright
+{\raisebox{7ex}[0pt]{{\small[330]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[330]}}}, \textit{Dirac}\,{\KAI{括号等于用约化的非约束正则变量集合}}\,$Q^{n},P_{n}$\,{\KAI{计算出的}}\,\emph{Poisson}\,{\KAI{括号}}. 如果我们假定这些非约束变量满足正则对易关系,
+那么一般算符$A,B$的对易子就由方程(\ref{7.6.19})以\,Dirac\,括号的形式给出.%
+{}$^{**}$\footnote{$^{**}${}我们是否应该采用\,Maskawa-Nakajima\,所构造的正则变换给出的非约束正则变量$Q^{n},P_{n}$%
+的正则对易关系, 这依旧是个有待解决的问题. 根本上, 对这种对易关系的检验就是要检验它们与第5章所导出的自由场对易关系是否自洽, 但是为了使用这个检验,
+我们需要知道$Q^{n}$和$P_{n}$是什么. 在本章的附录中, 我们会展示两大类理论, 在这些理论中,
+我们可以辨认出一组非约束的$Q$和$P$, 使得\,Dirac\,对易关系(\ref{7.6.19})可以从$Q$和$P$%
+通常的正则对易关系中得出. 我们也将证明, 在这些情况下, 由非约束的$\Psi$和$\Pi$%
+定义的哈密顿量也可以写成用约束变量表示的形式.}%
+
+
+我们现在回到有质量矢量场的情况, 来看一下它是如何通过\,Dirac\,括号量子化的.
+这是一种很容易用非约束变量{}$^\dag$\footnote{$^\dag${}这是本章附录\,A\,部分中所讨论的理论的一种特殊情况.}%
+$V_{i}$和$\Pi_{i}$表示约束变量$V^{0}$和$\Pi_{0}$的情况; 我们有$\Pi_{0}=0$,
+而$V^{0}$由方程(\ref{7.6.5})给出. 由方程(\ref{7.6.17})和(\ref{7.6.18}),
+我们看到$C_{NM}$在这里有逆
+\begin{equation}
+(C^{-1})^{1\bx,2\by}=-(C^{-1})^{2\by,1\bx}%
+=-m^{-2}\updelta^{3}(\bx-\by)\:,  \label{7.6.26}%
+\end{equation}%
+\begin{equation}
+(C^{-1})^{1\bx,1\by}=(C^{-1})^{2\bx,2\by}=0\:. \label{7.6.27}%
+\end{equation}
+因此\,Dirac\,的处理(\ref{7.6.19}), (\ref{7.6.20})给出了等时对易子
+\begin{align}
+[A,B]  &= \mi[A,B]_{\text{P}}\nonumber\\
+&  +\mi m^{-2}\int \dif^{3}z\:\Big([A,\Pi_{0}(\bz)]_{\text{P}}\,[\partial_{i}%
+\Pi_{i}(\bz)-m^{2}V^{0}(\bz)-J^{0}(\bz),B]_{\text{P}}-A\leftrightarrow B\Big)\:. \label{7.6.28}%
+\end{align}
+根据定义, 我们有
+\begin{equation}
+[V^{\mu}(\bx),\Pi_{\nu}(\by)]_{\text{P}}=\updelta^{3}(\bx-\by)\updelta_{\nu}^{\mu}\:, \qquad
+[V^{\mu}(\bx),V^{\nu}(\by)]_{\text{P}}
+=[\Pi_{\mu}(\bx),\Pi_{\nu}(\by)]_{\text{P}}=0\:. \label{7.6.29}%
+\end{equation}
+因此\marginpar[\flushright
+{\raisebox{-3ex}[0pt]{{\small[331]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[331]}}}
+\begin{align}
+[ V^{i}(\bx),V^{j}(\by)]  &  =[V^{0}(\bx%
+),V^{0}(\by)]=0\:, \nonumber\\
+[ V^{i}(\bx),V^{0}(\by)]  &  =-\mi m^{-2}\partial_{i}%
+\updelta^{3}(\bx-\by)\:, \nonumber\\
+[ V^{i}(\bx),\Pi_{j}(\by)]  &= \mi\updelta_{j}^{i}\updelta
+^{3}(\bx-\by)\:, \label{7.6.30}\\
+[ V^{0}(\bx),\Pi_{j}(\by)]  &  =[V^{\mu}(\bx%
+),\Pi_{0}(\by)]=0\:, \nonumber\\
+[\Pi^{\mu}(\bx),\Pi^{\nu}(\by)]  &  =0\:.\nonumber
+\end{align}
+如果我们假定非约束变量满足通常的正则对易关系$[V^{i}(\bx),\Pi_{j}(\by)]
+=\mi\updelta_{j}^{i}\updelta^{3}(\bx-\by)$和$[V^{i}(\bx),V^{j}(\by)]
+=[\Pi_{i}(\bx),\Pi_{j}(\by)]=0$, 然后利用约束计算包含$\Pi_{0}$和$V^{0}$的对易子, 我们会发现这二者确实相同.
+
+\section[场的重定义与冗余耦合]%
+{场的重定义与冗余耦合{}$^*$\footnote{$^*${}本节或多或少的处在本书的发展主线之外，可以在第一次阅读时略过。}%
+} \label{sec:7.7}
+\setcounter{equation}{0}
+
+无论作用量是什么, 质量和$S$-矩阵元这样的可观测量可能与其中的一些耦合参量无关,
+这样的耦合参量称作{\KAI{冗余}}参量.
+这是因为这些参量的变化可以通过简单地重新定义场变量消除掉. 对场的连续重定义,
+例如无限小定域\vspace{-5mm}\linebreak
+
+\newpage
+
+\noindent 变换$\Psi^{\ell}(x)\to\Psi^{\ell}(x)+\epsilon F^{\ell}(\Psi(x),\partial_{\mu}\Psi(x),\cdots)$, 显然不影响该理论中的任何{\KAI{可观测量}},{}$^*$\footnote{$^*${}例如, \ref{sec:10.2}\,节中的定理证明了,
+只要乘上正确的场重正化常数, 我们就可以从{\KAI{任意}}算符(如果这些算符在真空与参与反应的粒子的单粒子态之间的矩阵元不为零)%
+的编时乘积的真空期望值中获得$S$-矩阵元.} 尽管它将理所应当地改变场的矩阵元自身的值.
+
+我们如何辨别一个理论中参量的某个变化能否通过场的重新定义消除呢? 连续的定域场重定义会使得作用量发生如下形式的改变
+\begin{equation}
+\updelta I[\Psi]=\epsilon\sum_{\ell}\int \dif^{4}x\:\frac{\updelta I[\Psi]}{\updelta
+\Psi^{\ell}(x)}\,F^{\ell}(\Psi(x),\partial\Psi(x),\cdots)\:. \label{7.7.1}%
+\end{equation}
+所以耦合参量$g_{i}$的任意变化$\updelta g_{i}$, 它们在作用量中引起的形如\begin{equation}
+\sum_{i}\frac{\partial I}{\partial g_{i}}\updelta g_{i}=-\epsilon\sum_{\ell}\int
+\dif^{4}x\:\frac{\updelta I[\Psi]}{\updelta\Psi^{\ell}(x)}\,F^{\ell}(\Psi(x),\partial
+\Psi(x),\cdots)\:,  \label{7.7.2}%
+\end{equation}
+的变化可以通过场重定义抵消
+\[
+\Psi^{\ell}(x)\to\Psi^{\ell}(x)+\epsilon F^{\ell}(\Psi(x),\partial_{\mu}\Psi(x),\cdots)\:, %
+\]
+因而\marginpar[\flushright{\small[332]\hspace*{5mm}}]{{\small\hspace*{5mm}[332]}}对任何可观测量没有影响.
+换句话说, {\KAI{当我们改变一个参量时, 如果作用量的改变在我们使用场方程$\updelta I / \updelta\Psi^{\ell}=0$后为零, 那么这个耦合常数就是冗余的.}}
+
+例如, 假定我们将标量场理论的拉格朗日密度写成如下形式
+\[
+\mathscr{L}=-\tfrac{1}{2}Z(\partial^{\mu}\Phi\,\partial_{\mu}\Phi+m^{2}\Phi^{2})
+-\tfrac{1}{24}gZ^{2}\Phi^{4}\:.%
+\]
+常数$Z$是冗余耦合, 这是因为
+\[
+\frac{\partial I}{\partial Z}=\tfrac{1}{2}\int \dif^{4}x\:\Phi(\square\Phi
+-m^{2}\Phi-\tfrac{1}{6}gZ\Phi^{3})\:, %
+\]
+当我们使用场方程时
+\[
+\square\Phi-m^{2}\Phi=\tfrac{1}{6}gZ\Phi^{3}\:, %
+\]
+它等于零. 另一方面, 裸质量$m$和耦合常数$g$以及$m$和$g$的函数都不是冗余的.
+
+在这个例子中, 为了抵消$Z$带来的改变, 需要的场重定义是一个尺度的重新标度,
+其中$F$正比于$\Phi$. (由于这个原因, $Z$被称为场重正化常数.) 这是保证该作用量的一般形式不变的最一般场变换.
+但是对于\,\ref{sec:12.3}\,节和\,\ref{sec:12.4}\,节考虑的更普遍的作用量, 那里的作用量包含任意个场和场导数,
+我们将不得不既要考虑非线性场重定义也要考虑线性场重定义,
+并且那个理论的参量中有一个无限大的子集将是冗余的.
+
+\section*{附录\quad 从正则对易子到~Dirac 括号}
+
+\addcontentsline{toc}{section}{附录\quad 从正则对易子到~Dirac 括号}                %自动提目录
+\markright{附录\quad 从正则对易子到~Dirac 括号}      %%前双后单书眉
+
+\def\theequation{\arabic{chapter}.A.\arabic{equation}}
+
+\setcounter{equation}{0}
+
+
+本附录中我们将证明, 在两类理论中,
+将对易子以Dirac括号乘$\mi$的形式给出的公式是从一个约化变量集的通常的正则对易关系得到的.
+
+\subsection*{\textit{A}}
+
+假定(像在有质量矢量场$V^{\mu}$的情况中那样), 在拉格朗日量$L$中出现的量子变量$\Psi^{a}$和$\Pi_{a}$可以被分成两类:%
+{}$^*$\footnote{$^*${}我们再次使用一个紧凑的记法. 其中, 类似$a,n$和$r$的指标包含空间坐标$\bx\,%
+$和离散指标. 重复指标代表进行求和和积分. 所有的量子变量被理解成是在同一时刻取值, 通常的时间变量都被扔掉了.
+$\mathscr{Q}^{r}$与\,\ref{sec:7.2}\,节所引入的$C^{r}$相同.} 一组独立的正则变量$Q^{n}$(类似$V^{i}(\bx)$)以及独立的正则共轭$P_{n}=\partial L/\partial\dot{Q}^{n}$; 以及另一组$\mathscr{Q}^{r}(\bx)$(类似$V^{0}$),
+后者的时间导数不出现在拉格朗日量中. 初级约束是条件$\chi_{1r}=0$, 其中\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[333]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[333]}}}
+\begin{equation}
+\chi_{1r}=\mathscr{P}_{r} \label{7.A.1}%
+\end{equation}
+是共轭于$\mathscr{Q}^{r}$的变量. 次级约束从$\mathscr{Q}^{r}$的运动方程$0=\partial L/\partial\mathscr{Q}^{r}$得出; 我们假定这些约束是``可解的''\ezx 即, 它们可以写成$\chi_{2r}=0$%
+的形式, 其中$\chi_{2r}$形如
+\begin{equation}
+\chi_{2r}=\mathscr{Q}^{r}-f^{r}(Q,P)\:. \label{7.A.2}%
+\end{equation}
+(方程(\ref{7.6.5})提供了一个例子, 在那里独立的$P$(这里是$\Pi_{i}$)和$Q$给出了$V^{0}$.) 我们假定独立的$Q$和$P$满足通常的正则对易规则
+\begin{equation}
+[Q^{n},P_{m}]=\mi\updelta_{m}^{n} \:, \qquad [Q^{n},Q^{m}]=[P_{n},P_{m}]=0\:. \label{7.A.3}%
+\end{equation}
+约束$\chi_{2r}=0$给出包含$\mathscr{Q}$的对易子:%
+\begin{equation}
+[\mathscr{Q}^{r},Q^{n}]=-\mi\frac{\partial f^{r}}{\partial P_{n}}  \:, \qquad
+[\mathscr{Q}^{r},P_{n}]=\mi\frac{\partial f^{r}}{\partial Q^{n}}\:,  \label{7.A.4}%
+\end{equation}%
+\begin{equation}
+[\mathscr{Q}^{r},\mathscr{Q}^{s}]=\mi\Gamma^{rs}\:,  \label{7.A.5}%
+\end{equation}
+其中$\Gamma^{rs}$是\,Poisson\,括号\begin{equation}
+\Gamma^{rs}\equiv[ f^{r},f^{s}]_{\text{P}}\:,  \label{7.A.6}%
+\end{equation}
+并且, 显而易见地, 所有包含$\mathscr{P}_{r}$的对易子为零:%
+\begin{equation}
+[\mathscr{P}_{r},Q^{n}]=[\mathscr{P}_{r},P_{n}]=[\mathscr{P}_{r},\mathscr{Q}^{s}]
+=[\mathscr{P}_{r},\mathscr{P}_{s}]=0\:. \label{7.A.7}%
+\end{equation}
+
+
+现在我们将这些对易子与\,Dirac\,括号进行比较. 约束函数的\,Poisson\,括号是
+\begin{equation}
+C_{1r,1s}\equiv[\chi_{1r},\chi_{1s}]_{\text{P}}=0\:,  \label{7.A.8}%
+\end{equation}%
+\begin{equation}
+C_{1r,2s}\equiv-C_{2s,1r}\equiv[\chi_{1r},\chi_{2s}]_{\text{P}}=-\updelta_{s}^{r}\:,  \label{7.A.9}%
+\end{equation}%
+\begin{equation}
+C_{2r,2s}\equiv[\chi_{2r},\chi_{2s}]_{\text{P}}
+=[f^{r}(Q,P),f^{s}(Q,P)]_{\text{P}}\equiv\Gamma^{rs}\:. \label{7.A.10}%
+\end{equation}
+(在有质量矢量场的例子中, $\Gamma^{rs}$为零, 但是这里的讨论在$\Gamma^{rs}$不为零时同样适用.) 容易看到$C$-矩阵有逆
+\begin{equation}%
+\begin{split}
+(C^{-1})^{1r,1s}  &=\Gamma^{rs} \:, \qquad (C^{-1})^{2r,2s}=0\:, \\
+(C^{-1})^{1r,2s}  &=-(C^{-1})^{2s,1r}=\updelta_{s}^{r}\:.%
+\end{split}
+\label{7.A.11}%
+\end{equation}
+另外\marginpar[\flushright{\small[334]\hspace*{5mm}}]{{\small\hspace*{5mm}[334]}}, 任意函数$A$与约束函数的\,Poisson\,括号是
+\[
+[A,\chi_{1r}]_{\text{P}}=\frac{\partial A}{\partial\mathscr{Q}^{r}} \:, \qquad
+[A,\chi_{2r}]_{\text{P}}=-\frac{\partial A}{\partial\mathscr{P}_{r}}-[A,f^{r}(Q,P)]_{\text{P}}\:.%
+\]
+因此\,Dirac\,括号是
+\begin{align}
+[A,B]_{\text{D}}  &= [A,B]_{\text{P}}
+-\frac{\partial A}{\partial\mathscr{Q}^{r}}\frac{\partial B}{\partial\mathscr{P}_{r}}
++\frac{\partial B}{\partial\mathscr{Q}^{r}}\frac{\partial A}{\partial\mathscr{P}_{r}} \nonumber\\
+&  \quad+\frac{\partial A}{\partial\mathscr{Q}^{r}}\,\Gamma^{rs}\,
+\frac{\partial B}{\partial\mathscr{Q}^{s}}-\frac{\partial A}{\partial\mathscr{Q}^{r}}\,[B,f^{r}]_{\text{P}}
++[A,f^{r}]_{\text{P}}\,\frac{\partial B}{\partial \mathscr{Q}^{r}}\:. \label{7.A.12}%
+\end{align}
+
+
+现在, 如果$A$和$B$都只是独立正则变量$Q^{n}$和$P_{n}$的函数,
+那么$\partial A/\partial\mathscr{Q}^{r}=\partial B/\partial\mathscr{Q}^{r}=0$,
+所以\,Dirac\,括号等于\,Poisson\,括号. 特别地,
+\begin{equation}
+[Q^{n},P_{m}]_{\text{D}}=\updelta_{m}^{n}\:, \qquad
+[Q^{n},Q^{m}]_{\text{D}}=[P_{n},P_{m}]_{\text{D}}=0\:. \label{7.A.13}%
+\end{equation}
+当$A$是$\mathscr{Q}^{r}$而$B$是$Q$和$P$的函数时, 方程(\ref{7.A.12})右边仅第五项有贡献. 特别地
+\begin{equation}
+[\mathscr{Q}^{r},Q^{n}]_{\text{D}}=-\frac{\partial f^{r}}{\partial
+P_{n}}\text{ , \ \ \ \ \ }[\mathscr{Q}^{r},P_{n}]_{\text{D}}=+\frac{\partial
+f^{r}}{\partial Q^{n}}\:. \label{7.A.14}%
+\end{equation}
+当$A$和$B$都是$\mathscr{Q}$时, 我们仅有第四项
+\begin{equation}
+[\mathscr{Q}^{r},\mathscr{Q}^{s}]_{\text{D}}=\Gamma^{rs}\:.  \label{7.A.15}%
+\end{equation}
+最后, 当$A$是$\mathscr{P}_{r}$而$B$任意时, 我们仅有第一项和第三项, 它们相互抵消:
+\begin{equation}
+[\mathscr{P}_{r},B]_{\text{D}}=[\mathscr{P}_{r},B]_{\text{P}}
++\frac{\partial B}{\partial\mathscr{Q}^{r}}=0\:. \label{7.A.16}%
+\end{equation}
+比较方程(\ref{7.A.13})\yzx (\ref{7.A.16})与方程(\ref{7.A.3})\yzx (\ref{7.A.7}), 这表明在任何情况下,
+对易子等于\,Dirac\,括号乘以$\mi$. 这是我们唯一期待的, 这是因为, 正如\,\ref{sec:7.6}\,节所评述的, %
+所有包含约束函数的\,Dirac\,括号为零, 所以, 包含$\mathscr{Q}^{r}$和(或)$\mathscr{P}_{s}$的\,Dirac\,括号%
+是通过利用约束方程将$\mathscr{Q}^{r}$和(或)$\mathscr{P}_{s}$用独立的$Q$和$P$表示而给出的.
+
+\subsection*{\textit{B}}
+
+接下来考虑这样的情况, 其中的约束取为加在$\Psi^{a}$上的条件$\chi_{1r}(\Psi)=0$,
+以及数量相同的加在$\Pi_{a}$上独立的条件$\chi_{2r}(\Pi)=0$, 前者可以通过将其表示成更小的一组非约束变量$Q^{n}$的形式解出, 后者可以通过将$\Pi_{a}$
+表\marginpar[\flushright{\small[335]\hspace*{5mm}}]{{\small\hspace*{5mm}[335]}}示成更小的一组非约束$P_{n}$的形式解出. (我们将在下一章看到一个例子, 其中加在$\Psi^{a}$上的约束是用来消除第一类约束的规范固定条件, 而加在$\Pi_{a}$ 上的约束是第二类约束,
+它源于第一类约束要与场方程一致的要求.) 我们假定非约束变量满足通常的正则对易关系%
+$[Q^{n},P_{m}]=\mi\updelta_{m}^{n}$, $[Q^{n},Q^{m}]=[P_{n},P_{m}]=0$.
+受约束的动量与不受约束的动量的关系为
+\begin{equation}
+P_{n}=\frac{\partial L}{\partial\dot{Q}^{n}}
+=\frac{\partial L}{\partial\dot{\Psi}^{b}}\frac{\partial\Psi^{b}}{\partial Q^{n}}
+=\Pi_{b}\frac{\partial\Psi^{b}}{\partial Q^{n}}\:. \label{7.A.17}%
+\end{equation}
+由此得出
+\[
+ [\Psi^{a},\Pi_{b}]\frac{\partial\Psi^{b}}{\partial Q^{n}}
+=[\Psi^{a},P_{n}]=\mi\frac{\partial\Psi^{a}}{\partial Q^{n}}%
+\]
+或者, 换种形式,%
+\begin{equation}
+\{[\Psi^{a},\Pi_{b}]-\mi\updelta_{b}^{a}\}\frac{\partial\Psi^{b}}{\partial Q^{n}}=0\:. \label{7.A.18}%
+\end{equation}
+现在, 对于所有的$Q$, $\Psi^{a}=\Psi^{a}(Q)$满足约束$\chi_{1r}(\Psi)=0$, 所以
+\begin{equation}
+\frac{\partial\chi_{1r}}{\partial\Psi^{b}}\frac{\partial\Psi^{b}}{\partial Q^{n}}=0\:. \label{7.A.19}%
+\end{equation}
+进一步, 矢量$(V_{r})_{b}\equiv\partial\chi_{1r}/\partial\Psi^{b}$构成了正交于所有矢量%
+$(U_{n})^{b}\equiv\partial\Psi^{b}/\partial Q^{n}$的一个完备集, 这是因为, 如果存在某个其他矢量$V_{b}$, 它对所有的$n$有$V_{b}(U_{n})^{b}=0$, 那么将会有加在$\Psi^{a}$上的额外约束.
+因此方程(\ref{7.A.18})意味着
+\begin{equation}
+[\Psi^{a},\Pi_{b}]=\mi\updelta_{b}^{a} + \mi c_{r}^{a}\frac{\partial\chi_{1r}}{\partial\Psi^{b}} \label{7.A.20}%
+\end{equation}
+其中$c_{r}^{a}$是未知常数. 为了确定这些常数, 我们利用其他约束, 即$\chi_{2r}(\Pi)=0$. 由此得出
+\[
+0=[\Psi^{a},\chi_{2r}(\Pi)]=\mi[\Psi^{a},\Pi_{b}]\frac{\partial\chi_{2r}(\Pi)}{\partial\Pi_{b}}\:.%
+\]
+利用方程(\ref{7.A.20}), 我们就有
+\begin{equation}
+\frac{\partial\chi_{2r}(\Pi)}{\partial\Pi_{a}}=-c_{s}^{a}\frac{\partial
+\chi_{1s}(\Psi)}{\partial\Psi^{b}}\frac{\partial\chi_{2r}(\Pi)}{\partial
+\Pi_{b}}\:. \label{7.A.21}%
+\end{equation}
+我们可以看出与$c_{s}^{a}$相乘的因子就是\,Poisson\,括号
+\[
+\frac{\partial\chi_{1s}(\Psi)}{\partial\Psi^{b}}\frac{\partial\chi_{2r}(\Pi)}{\partial\Pi_{b}}
+=[\chi_{1s},\chi_{2r}]_{\text{P}}\equiv C_{1s,2r}\:.%
+\]
+另外, 由于$\chi_{1s}$只依赖于$\Psi$而$\chi_{2r}$只依赖于$\Pi$,
+在约束的\,Poisson\,括号中只有它们不为零, 所以
+\[
+C_{1r,1s}=C_{2r,2s}=0\:.%
+\]
+因此\marginpar[\flushright{\small[336]\hspace*{5mm}}]{{\small\hspace*{5mm}[336]}}方程(\ref{7.A.21})可以写成
+\begin{equation}
+\frac{\partial\chi_{N}}{\partial\Pi_{a}}=-c_{s}^{a}\,C_{1s,N} \label{7.A.22}%
+\end{equation}
+其中$N$取遍所有约束函数. 对于第二类约束, 它具有唯一解
+\begin{equation}
+c_{s}^{a}=-\frac{\partial\chi_{N}}{\partial\Pi_{a}}(C^{-1})^{N,1s}%
+=-\frac{\partial\chi_{2r}}{\partial\Pi_{a}}(C^{-1})^{2r,1s}\:. \label{7.A.23}%
+\end{equation}
+在方程(\ref{7.A.20})中使用上式给出
+\begin{equation}
+[\Psi^{a},\Pi_{b}]=\mi\left[ \updelta_{b}^{a}-\frac{\partial\chi_{2r}}{\partial\Pi_{a}}(C^{-1})^{2r,1s}
+\frac{\partial\chi_{1s}}{\partial\Psi^{b}}\right]  \:. \label{7.A.24}%
+\end{equation}
+$\Psi^{a}$和$\Pi_{b}$与约束函数的\,Poisson\,括号是
+\begin{equation}%
+\begin{split}
+[\Psi^{a},\chi_{1r}]_{\text{P}}  &=0 \:, \qquad
+[\Psi^{a},\chi_{2r}]_{\text{P}}=\frac{\partial\chi_{2r}}{\partial\Pi_{a}}\:, \\
+[\chi_{1r},\Pi_{b}]_{\text{P}} &= \frac{\partial\chi_{1r}}{\partial\Psi^{b}} \:, \qquad [\chi_{2r},\Pi_{b}]_{\text{P}}=0\:,
+\end{split}  \label{7.A.25}%
+\end{equation}
+所以方程(\ref{7.A.24})右边括号中的量是\,Dirac\,括号
+\begin{equation}
+[\Psi^{a},\Pi_{b}]=\mi[\Psi^{a},\Pi_{b}]_{\text{D}}\:,   \label{7.A.26}%
+\end{equation}
+这正是所要证明的. 另外, 容易看到, 由于$C^{-1}$没有\,11\,分量或\,22\,分量, 其余的\,Dirac\,括号是
+\begin{equation}
+[\Psi^{a},\Psi^{b}]_{\text{D}}=[\Pi_{a},\Pi_{b}]_{\text{D}}=0\:,  \label{7.A.27}%
+\end{equation}
+所以, 非常直接地有
+\begin{equation}
+[\Psi^{a},\Psi^{b}]=\mi[\Psi^{a},\Psi^{b}]_{\text{D}} \:, \qquad
+[\Pi_{a},\Pi_{b}]=\mi[\Pi_{a},\Pi_{b}]_{\text{D}}\:.  \label{7.A.28}%
+\end{equation}
+
+
+\subsection*{* * *}
+
+除了对易规则, 我们还需要哈密顿量的一个显式表达式. 通常的正则体系告诉我们取
+\begin{equation}
+H=P_{n}\dot{Q}^{n}-L\:,  \label{7.A.29}%
+\end{equation}
+求和取遍独立的正则变量. 在附录所考虑的两类理论中, 哈密顿量可以用约束变量的形式写成
+\begin{equation}
+H=\Pi_{a}\dot{\Psi}^{a}-L\:. \label{7.A.30}%
+\end{equation}
+对于\,A\,类理论, 这是平庸的; 对$a$的求和取遍了所有$\Psi^{n}=Q^{n}$和$\Pi_{n}=P_{n}$是独立正则变量的$n$值,
+以及所有$\Pi_{r}=\mathscr{P}_{r}=0$的$r$值. 对于\,B\,类理论, 我们注意到方程(\ref{7.A.17})给出\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[337]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[337]}}}
+\[
+P_{n}\dot{Q}^{n}=\Pi_{b}\frac{\partial\Psi^{b}}{\partial Q^{n}}\dot{Q}^{n}%
+=\Pi_{b}\dot{\Psi}^{b}%
+\]
+它又一次给出了方程(\ref{7.A.30}).
+
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+%\markright{习\qquad 题}    %单眉
+
+
+\begin{KAI}
+
+1. 考虑一组实标量场$\Phi^{n}$的理论, 拉格朗日密度是%
+$\mathscr{L}=-\tfrac{1}{2}\sum_{m\,n}\partial_{\mu}\Phi^{n}\partial^{\mu}\Phi^{m}\cdot\linebreak
+f_{nm}(\Phi),$其中$f_{nm}(\Phi)$ 是场的任意非奇异实矩阵函数. (这被称为{\KAI{非线性$\sigma$-模型}}.) %
+对这个理论做正则量子化. 在相互作用绘景中推导出相互作用$V[\phi(t),\dot{\phi}(t)]$.
+
+
+2. 考虑一组实标量场$\Phi^{n}$和\,Dirac\,场$\Psi^{i}$的理论, %
+拉格朗日密度是$\mathscr{L}=\mathscr{L}_{0}+\mathscr{L}_{1}$, 其中$\mathscr{L}_{0}$是通常的自由场拉格朗日密度, $\mathscr{L}_{1}$是包含$\Phi^{n}$ 和$\Psi^{i}$但不包含场导数的相互作用项. 推导出对称能动量张量$\Theta^{\mu\nu}$的显式表达式.
+
+3. 对习题\,2\,所描述的理论, 假设拉格朗日密度在整体无限小对称变换%
+$\updelta \Phi^{n}=\mi\epsilon\sum_{m}t^{n}{}_{m}\Phi^{m}$和%
+$\updelta\Psi^{i}=\mi\epsilon\sum_{j}\tau^{i}{}_{j}\Psi^{j}$下不变. 推导出与这个对称性对应的守恒流的显式表达式.
+
+4. 考虑复标量场$\Phi$和实矢量场$V^{\mu}$的理论, 拉格朗日密度是
+\[
+\mathscr{L}=-(D_{\mu}\Phi)^{\dag}\,D^{\mu}\phi -\tfrac{1}{4}F_{\mu\nu}F^{\mu\nu}
+-\tfrac{1}{2}m^{2}V_{\mu}V^{\mu} -\mathscr{H}(\Phi^{\dag}\Phi) \:,
+\]
+其中$D_{\mu}\equiv\partial_{\mu}-\mi gV_{\mu}$, $F_{\mu\nu}\equiv\partial_{\mu}V_{\nu}-\partial_{\nu}V_{\mu}$, 而$\mathscr{H}$是任意函数. 对这个理论做正则量子化. 在相互作用绘景中推导出相互作用.
+
+
+5. 对习题\,4\,中的理论, 推导出对称能动量张量$\Theta^{\mu\nu}$的显式表达式, 并推导出与对称性$\updelta\Phi=\mi\epsilon\Phi,\,\updelta V^{\mu}=0$ 对应的守恒流的显式表达式.
+
+6. 证明\,Dirac\,括号满足\,Jacobi\,恒等式(\ref{7.6.23}).
+
+7. 证明, Dirac\,括号与如何选择刻画相空间的给定子流形的约束函数$\chi_{N}$无关.
+
+ \end{KAI}  \markboth{第7章\quad 正~\,则~\,体~\,系}{参~\,考~\,文~\,献}      %%前双后单书眉
+ 
+\marginpar[\flushright
+{\raisebox{-5.5ex}[0pt]{{\small[338]\hspace*{5mm}}}}]{{\raisebox{-5.5ex}[0pt]{\small\hspace*{5mm}[338]}}}
+\begin{thebibliography}{99}                                                                                               %
+
+
+
+\bibitem {1}H. B. G. Casimir, {\textit{Proc. K. Ned. Akad. Wet.}}
+\textbf{{51}}, 635 (1948); M. J. Spaarnay, {\textit{Nature}} \textbf{{180}},
+334 (1957).
+     \addcontentsline{toc}{section}{参考文献}
+  \markboth{第7章\quad 正~\,则~\,体~\,系}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+
+\bibitem {2}F. Belinfante, {\textit{Physica}} \textbf{{6}}, 887 (1939);
+另见L. Rosenfeld, {\textit{M\'{e}moires de l'Academie Roy.
+Belgique}} \textbf{{6}}, 30 (1930).
+
+\bibitem {3}可参看\,S. Weinberg, {\textit{Gravitation and Cosmology}} (Wiley, New York, 1972): Chapter 12.
+
+\bibitem {4}可参看\,J. Wess and J. Bagger, {\textit{Supersymmetry and Supergravity}} (Princeton Univercity Press, Princeton 1983) 以及那里引用的原始文献.
+
+\bibitem {5}P. A. M. Dirac, {\textit{Lectures on Quantum Mechanics}} (Yeshiva
+University, New York, 1964). 另见\,P. A. M. Dirac, {\textit{Can. J.
+Math.}} \textbf{{2}}, 129 (1950); {\textit{Proc. Roy. Soc. London}}, ser. A,
+\textbf{{246}}, 326 (1958); P. G. Bergmann, {\textit{Helv. Phys. Acta Suppl.}}
+IV, 79 (1956).
+
+\bibitem {6}T. Maskawa and H. Nakajima, {\textit{Prog. Theor. Phys.}} \textbf{{56}}, 1295 (1976). 我很感谢\,J. Feinberg\,让我注意到了这个文献.
+
+\end{thebibliography}
+

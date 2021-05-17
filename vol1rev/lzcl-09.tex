@@ -1,0 +1,1672 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+
+\chapter{路径积分方法} \label{cha:9}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[376]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[376]}}}
+  \markboth{第9章\quad 路径积分方法}{第9章\quad 路径积分方法}
+
+在第7章和第8章, 我们用正则量子化算符体系来推导各种理论的\,Feynman\,规则. 在很多情况下, 例如有导数耦合的标量场或者质量为零或非零的矢量场, 这个步骤尽管直接却很难处理. 相互作用哈密顿量会包含一个协变项和一个非协变项, 前者等于负的拉格朗日量中的相互作用项, 而后者用以抵消传播子中的非协变项. 在电动力学的情况中, 这个非协变项(\,Coulomb\,能)尽管在时间上是定域, 但不是空间定域的. 最后的结果仍然相当简单: Feynman\,规则正是那些我们应该通过协变的传播子以及用负拉格朗日量中的相互作用项计算顶点贡献所得到的. 得到这些结果时的繁琐, 对第7和第8章中所考虑的理论来说已经够糟了, 对更加复杂的理论, 像卷\,I\!I\,中将要讨论的非阿贝尔规范理论以及广义相对论, 这种繁琐将是无法接受的. 我们将更希望有这样的计算方法: 
+它可以直接从拉格朗日量得到最终的\,Lorentz\,协变的\,Feynman\,规则.
+
+幸运地是, 这样的方法确实存在. 它是由量子力学的路径积分方法给出的. 它首次出现在\,Feynman\,的普林斯顿大学博士论文\textsuperscript{\cite{1}}中, 更准确的说是非相对论量子力学那部分中, 作为一种直接基于拉格朗日量而非哈密顿量的方法. 在这方面, 这个方法受到了\,Dirac\,\textsuperscript{\cite{2}}早期工作的启发.
+路径积分方法(连同来自灵感的猜测)在稍后\,Feynman\,推导他的图形规则中起了部分作用\textsuperscript{\cite{3}}. 然而, 尽管\,Feynman\,图在\,20\,世纪\,50\,年代就得到广泛应用, 大多数物理学家(包括我自己)倾向于用\,Schwinger\,和\,Tomonaga\,的算符方法导出它们, Dyson\,在\,1949\,年证明这一方法所导出的图形规则与\,Feynman\,用他自己的方法导出的规则相同.
+
+路径积分于\,20\,世纪\,60\,年代末期复兴\marginpar[\flushright{\small[377]\hspace*{5mm}}]{{\small\hspace*{5mm}[377]}}, 当时\,Faddeev\,(法捷耶夫)和\,Popov\,(波波夫)\textsuperscript{\cite{4}}以及\,De Witt
+(德怀特)\textsuperscript{\cite{5}}阐明了怎样将其应用于非阿贝尔规范理论和广义相对论. 对大多数理论家来说,
+转折点出现在\,1971\,年, 当时\,'t Hooft\,(特·霍夫特)\textsuperscript{\cite{6}}利用路径积分方法, 在一个使相互作用的高能行为变得明显的规范下, 导出了自发破缺规范理论(将在卷\,\textrm{I\!I}\,讨论)的\,Feynman\,规则, 特别地, 这囊括了弱作用和电磁作用理论.
+不久之后, 如我们将在卷\,I\!I\,讨论的, 我们发现路径积分方法让我们可以计入那些在零耦合常数处有本性奇点的$S$-矩阵贡献, 而这样的贡献不可能在任何有限阶微扰论中被发现. 自此以后, 这里所描述的路径积分方法就成了所有使用量子场论的物理学家不可或缺的工具.
+
+这时候读者可能会产生疑问, 既然路径积分方法这么方便, 那么我们为什么还要劳神费力地在第7章介绍正则体系.
+事实上, Feynman\,起初似乎认为他的路径积分方法是普通的量子力学正则形式的一个替代品. 从正则形式体系出发有两个理由. 一个是原理上的: 尽管路径积分体系给我们提供了明显\,Lorentz\,不变的图形规则,
+但它并没有说清为什么以这种方式计算的$S$-矩阵是幺正的. 就我所知, 证明路径积分体系给出的$S$-矩阵幺正的唯一方法是, 用它重构出幺正性非常显然的正则体系. 这里有这样的麻烦; 采用正则方法, 幺正性明显但\,Lorentz\,不变性不显然, 采用路径积分方法, Lorentz\,不变性明显但幺正性远没有那么显然. 既然这里是从正则方法导出的路径积分方法, 我们又知道两种方法给出相同的$S$-矩阵, 所以$S$-矩阵必须既是\,Lorentz\,不变的又是幺正的.
+
+先引入正则体系的第二个原因更加实际: 存在这样的重要理论, 在这些理论中, Feynman\,路径积分方法的最简单版本, 即从拉格朗日量中直接抽取传播子和相互作用顶点, 是错的. 一个例子是非线性$\sigma$-模型, 它的拉格朗日量密度是$\mathscr{L}=-\frac{1}{2}g_{k\ell}(\phi)\partial_{\mu}\phi^{k}\partial^{\mu}\phi^{\ell}$.
+在这类理论中, 采用直接从拉格朗日密度导出的朴素的\,Feynman\,规则给出的$S$-矩阵不仅是错的甚至是不幺正的,
+并且还依赖于我们定义标量场的方式.\textsuperscript{\cite{7}} 本章中, 我们将从正则体系推导出路径积分体系, 我们将从这种方式看到: 什么样的额外顶点需要被补充进\,Feynman\,路径积分方法的最简版本中.
+
+\section{普遍的路径积分公式} \label{sec:9.1}
+\setcounter{equation}{0}
+\marginpar[\flushright
+{\raisebox{5.5ex}[0pt]{{\small[378]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[378]}}}
+
+我们从一个一般的量子力学系统出发, 它的厄米算符``坐标''\,$Q_{a}$\,以及共轭``动量''\,$P_{b}$\,满足正则对易关系%
+{}$^*$\footnote{$^*${}我们在这里默认假定所有第一类约束通过选择规范被消除了, 而剩下的所有第二类约束通过将约束自由度表示成非约束的$Q_{a}$和$P_{a}$被``解出''了, 就像\,\ref{sec:7.6}\,节中那样. %
+Faddeev\,阐述了路径积分方法在约束系统中的直接应用.\textsuperscript{\cite{8}}}:
+\newpage
+\ \vspace{-5mm}
+\begin{align}
+[ Q_{a},P_{b}] &=\mi\,\updelta _{ab}\:,  \label{9.1.1} \\
+[ Q_{a},Q_{b}] &=[P_{a},P_{b}]=0\:.  \label{9.1.2}
+\end{align}%
+(在本节以及接下来的三节, 我们只考虑玻色算符, 它满足对易关系而不是反对易关系. 在\,\ref{sec:9.5}\,节, 我们的结果将被推广到包含费米算符的情况.) 在一个场论中, 指标$a$由空间位置$\bx$和一个离散的\,Lorentz\,指标以及种类指标$m$构成, 我们按照惯例写成
+\begin{align}
+Q_{\bx,m} &\equiv Q_{m}(\bx)\:,  \label{9.1.3} \\
+P_{\bx,m} &\equiv P_{m}(\bx)\:.  \label{9.1.4}
+\end{align}%
+另外, 方程(\ref{9.1.1})中的克罗内克$\updelta$-符号在场论中理解成
+\begin{equation}
+\updelta _{\bx,m\,;\,\by,n}\equiv \updelta ^{3}(\bx-\by)\updelta _{mn}\:.  \label{9.1.5}
+\end{equation}%
+然而, 目前采用方程(\ref{9.1.1})和(\ref{9.1.2})中的较紧凑记法更方便. 这些是``Schr\"{o}dinger-绘景''算符, 取在了固定时刻(例如, $t=0$). Heisenberg\,绘景中的含时算符稍后考虑.%
+
+既然$Q_{a}$全部对易, 我们可以找到一个本征值为$q_{a}$的共同本征态:%
+\begin{equation}
+Q_{a}\lvert q\rangle = q_{a}\,\lvert q\rangle \:. \label{9.1.6}
+\end{equation}%
+(我们在这里用小写的$q$和$p$标记本征值而不像第7章中那样用来标记相互作用绘景中的算符, 但由于我们在本章不用相互作用绘景, 因而不会产生混淆.) 本征矢可以取成正交的,%
+\begin{equation}
+\langle q^{\prime}\vert q\rangle = \prod_{a}\updelta(q_{a}^{\prime}-q_{a})\equiv \updelta(q^{\prime}-q)\:,  \label{9.1.7}
+\end{equation}%
+使完备性关系变为
+\begin{equation}
+1=\int \prod_{a}\dif q_{a}\: \lvert q\rangle \,\langle q\rvert \:.  \label{9.1.8}
+\end{equation}%
+类似地\marginpar[\flushright{\small[379]\hspace*{5mm}}]{{\small\hspace*{5mm}[379]}}, 我们可以找到$P_{a}$的一组完备正交基:%
+\begin{align}
+P_{a}\lvert p\rangle &= p_{a}\vert p\rangle \:,  \label{9.1.9} \\
+\langle p^{\prime}\vert p\rangle  &=\prod_{a}\updelta(p_{a}^{\prime}-p_{a})\equiv \updelta(p^{\prime }-p)\:,  \label{9.1.10}  \\
+1 &=\int \prod_{a}\dif p_{a}\:\lvert p\rangle \, \langle p\rvert \:.  \label{9.1.11}
+\end{align}%
+和往常一样, 由方程(\ref{9.1.1})可知这两组完备的本征态具有标量积{}$^*$\footnote{$^*${}这个证明依循的路线与点粒子的量子力学相同. 由方程(\ref{9.1.1}), 我们看到$P_{b}$ 以$-\mi\partial /\partial q_{b}$的方式作用在$q$-基中的波函数上. 于是方程(\ref{9.1.12})的右边视为$P$的一个本征态在该基下的波函数. 因子$\prod 1/\sqrt{2\uppi}$由归一化要求, 方程(\ref{9.1.10}), 所确定.}%
+\begin{equation}
+\langle q\vert p \rangle =\prod_{a}\frac{1}{\sqrt{2\uppi}}\exp(\mi q_{a}p_{a})\:.  \label{9.1.12}
+\end{equation}
+
+在\,Heisenberg\,绘景中, $Q$算符和$P$算符以下面的方式依赖于时间
+\begin{align}
+Q_{a}(t) &\equiv \exp (\mi Ht)\,Q_{a}\,\exp (-\mi Ht)\:,  \label{9.1.13} \\
+P_{a}(t) &\equiv \exp (\mi Ht)\,P_{a}\,\exp (-\mi Ht)\:,  \label{9.1.14}
+\end{align}%
+其中$H$是总哈密顿量. 这些算符有本征态$\lvert q;t\rangle$和$\lvert p;t\rangle$
+\begin{align}
+Q_{a}\lvert q;t\rangle  &=q_{a}\lvert q;t\rangle \:,  \label{9.1.15} \\
+P_{a}\lvert p;t\rangle  &=p_{a}\lvert p;t\rangle \:,  \label{9.1.16}
+\end{align}%
+它们以如下方式给定
+\begin{align}
+&\lvert q;t \rangle  =\exp (\mi Ht)\lvert q\rangle \:, \label{9.1.17} \\
+&\lvert p;t\rangle  = \exp (\mi Ht)\lvert p\rangle \:. \label{9.1.18}
+\end{align}%
+(注意$\lvert q;t\rangle$是$Q_{a}(t)$的本征值为$q_{a}$的本征态,
+而{\KAI{不}}是态$\lvert q\rangle$演化时间$t$后的态. 这是为什么它对时间的依赖由因子$\exp(\mi Ht)$而非$\exp(-\mi Ht)$给出.) 这%
+些态显然满足完备性和正交性条件
+\begin{align}
+&\langle q^{\prime};t\vert q;t \rangle = \updelta (q^{\prime }-q) \:,  \label{9.1.19} \\
+&\langle p^{\prime};t\vert p;t \rangle = \updelta (p^{\prime }-p) \:,  \label{9.1.20} \\
+&\int \prod_{a}\dif q_{a}\:\lvert q;t\rangle \,\langle q;t\rvert=1 \:, \label{9.1.21} \\
+&\int \prod_{a}\dif p_{a}\:\lvert p;t\rangle \,\langle p;t\rvert=1 \:,  \label{9.1.22}
+\end{align}%
+以及另外的\marginpar[\flushright{\small[380]\hspace*{5mm}}]{{\small\hspace*{5mm}[380]}}
+\begin{equation}
+\langle q;t\vert p;t \rangle =\prod_{a}\frac{1}{\sqrt{2\uppi}}\exp(\mi q_{a}p_{a})\:.  \label{9.1.23}
+\end{equation}%
+
+如果, 通过在时刻$t$处的测量, 我们发现我们的系统处在确定的态$\lvert q;t\rangle$上, 那么在时刻$t^{\prime}$测量给出态$\lvert q^{\prime};t^{\prime}\rangle$的概率振幅就是标量积$\langle q^{\prime};t^{\prime}\vert q;t\rangle$. 我们核心的动力学问题就是计算这个标量积.
+
+当$t^{\prime}$和$t$无限接近时, 例如$t^{\prime}=\tau+\dif\tau$而$t=\tau$, 这很简单. 利用方程(\ref{9.1.17}), 我们有%
+\begin{equation}
+\langle q^{\prime}; \tau +\dif\tau \vert q;\tau \rangle
+=\langle q^{\prime};\tau \lvert \exp(-\mi H\,\dif\tau)\lvert q;\tau\rangle \:.  \label{9.1.24}
+\end{equation}%
+哈密顿量作为函数$H(Q,P)$给出, 但既然(\ref{9.1.13})和(\ref{9.1.14})是相似变换, 并且$H$与它自身对易, 它可以等价地写成$Q(t)$和$P(t)$的{\KAI{同一}}个函数%
+\begin{equation}
+H\equiv H(Q,P) = \me^{\mi Ht}H(Q,P)\me^{-\mi Ht} = H\Bigl( Q(t),P(t)\Bigr) \:. \label{9.1.25}
+\end{equation}%
+通过利用对易关系(\ref{9.1.1})和(\ref{9.1.2})交换$Q$和$P$的次序, 这一函数可以被写成各种不同的形式, 不同的形式中有着不同的常系数. 采用这样一种标准形式将是方便的: 所有的$Q$都处在所有$P$的{\KAI{左边}}. 例如, 给定哈密顿量中形如$P_{a}Q_{b}P_{c}$的一项, 我们将其重新写为$P_{a}Q_{b}P_{c}=Q_{b}P_{a}P_{c}-\mi\updelta_{ab}P_{c}$. 在这个约定下, 方程(\ref{9.1.24})中哈密顿量中的$Q_{a}(t)$可以用它们的本征值$q_{a}^{\prime}$ 代替{}$^*$\footnote{$^*${}这是唯一的可能, 因为对无限小的$\dif\tau$, $\exp(-\mi H\,\dif\tau)$对$H$是线性的.}. 为了处理$P(t)$, 我们用方程(\ref{9.1.23})在$P$-本征态$\lvert p;\tau\rangle$下展开$\lvert q;\tau\rangle$, 发现
+\begin{align}
+\langle q^{\prime};\tau +\dif \tau \vert q;\tau \rangle  &=
+\int\prod_{a}\dif p_{a}\: \langle q^{\prime};\tau\vert
+\exp\Bigl(-\mi H(Q(\tau ),P(\tau))\dif\tau \Bigr)\vert p;\tau\rangle   \nonumber \\
+&\quad \qquad \times \langle p;\tau \vert q;\tau \rangle   \nonumber \\
+&=\int \prod_{a}\frac{\dif p_{a}}{2\uppi}\:\exp \biggl[-\mi H(q^{\prime},p)\dif \tau
++\mi\sum_{a}(q_{a}^{\prime}-q_{a})p_{a}\biggr] \:, \label{9.1.26}
+\end{align}%
+其中每个$p_{a}$从$-\infty$积分到$+\infty$.%
+
+现在让我们回到更普遍的有限时间间隔的情况. 为了计算$t<t^{\prime}$的$\langle q^{\prime};t^{\prime}\vert q;t\rangle$, 我们将从$t$到$t^{\prime}$ 的时间间隔分割成段$t,\,\tau_{1},\,\tau_{2},\,\cdots \tau_{N},\,t^{\prime}$, 其中
+\begin{equation}
+\tau_{k+1}-\tau_{k}= \dif \tau =(t^{\prime }-t)/(N+1),  \label{9.1.27}
+\end{equation}%
+并对每个时刻$\tau_{k}$的\marginpar[\flushright{\small[381]\hspace*{5mm}}]{{\small\hspace*{5mm}[381]}}态$\vert q;\tau_{k}\rangle$的完备集求和:%
+\begin{equation}
+\langle q^{\prime};t^{\prime} \vert q;t\rangle = \int \dif q_{1}\cdots \dif q_{N}\,
+\langle q^{\prime};t^{\prime} \vert q_{N};\tau_{N}\rangle\,
+\langle q_{N};\tau_{N}\vert q_{N-1};\tau_{N-1}\rangle \cdots
+\langle q_{1};\tau _{1}\vert q;t\rangle   \label{9.1.28}
+\end{equation}%
+代入方程(\ref{9.1.26}), 这变成
+\begin{align}
+&\langle q^{\prime };t^{\prime} \vert q;t\rangle  = \int \Biggl[\prod_{k=1}^{N}\prod_{a}\dif q_{k,a}\biggr]\, \biggl[\prod_{k=0}^{N}\prod_{a}\dif p_{k,a}/2\uppi \Biggr]   \nonumber \\
+&\times \exp \Biggl[ \mi\sum_{k=1}^{N+1}\Biggl\{
+\sum_{a}(q_{k,a}-q_{k-1,a})p_{k-1,a}-H(q_{k},p_{k-1})\dif\tau \Biggr\} \Biggr] \:,  \label{9.1.29}
+\end{align}%
+其中
+\begin{equation}
+q_{0}\equiv q \:, \qquad q_{N+1}\equiv q^{\prime }\:.  \label{9.1.30}
+\end{equation}
+
+我们的结果, 方程(\ref{9.1.29}), 可以变成更加简洁的形式. 定义光滑插值函数, $q(\tau)$和$p(\tau)$, 使得
+\begin{equation}
+q_{a}(\tau_{k})\equiv q_{k,a} \:, \qquad p_{a}(\tau_{k})\equiv p_{k,a}\:.  \label{9.1.31}
+\end{equation}%
+在$\dif\tau \to 0$(即, $N\to\infty$)的极限下, 方程(\ref{9.1.29})中指数的幅角就变成了对$\tau$的积分
+\begin{align}
+&\sum_{k=1}^{N+1}\Biggl\{ \sum_{a}(q_{k,a}-q_{k-1,a})p_{k-1,a}-H(q_{k},p_{k-1})\dif\tau\Biggr\} \nonumber \\
+&=\sum_{k=1}^{N+1}\Biggl\{ \sum_{a}\dot{q}_{a}(\tau_{k})p_{a}(\tau_{k})
+-H\Bigl( q(\tau_{k}),p(\tau_{k})\Bigr) \Biggr\} \,\dif\tau + O(\dif \tau ^{2}) \nonumber \\
+&\to \int_{t}^{t^{\prime}}\Biggl\{ \sum_{a}\dot{q}_{a}(\tau)p_{a}(\tau)
+-H\Bigl( q(\tau),p(\tau)\Bigr) \Biggr\} \dif \tau \:. \label{9.1.32}
+\end{align}%
+进一步, 我们可以定义{\KAI{对函数}}$q(\tau),p(\tau)$的积分
+\begin{equation}
+\int \prod_{\tau,a}\dif q_{a}(\tau)\prod_{\tau,b}\frac{\dif p_{b}(\tau)}{2\uppi} \cdots
+\equiv \lim_{\dif\tau \to 0}\int \prod_{k,a}\dif q_{k,a}\prod_{k,b}\frac{\dif p_{k,b}}{2\uppi}\cdots \:.  \label{9.1.33}
+\end{equation}%
+于是方程(\ref{9.1.29})就变成了一个有约束的路径积分
+\begin{align}
+&\langle q^{\prime};t^{\prime}\vert q;t\rangle= \int\limits_{\substack{q_{a}(t)=q_{a} \\
+q_{a}(t^{\prime})=q_{a}^{\prime}}} \prod_{\tau,a}\dif q_{a}(\tau) \prod_{\tau,b}\frac{\dif p_{b}(\tau)}{2\uppi} \nonumber \\
+&\qquad \times \exp \Biggl[ \mi\int_{t}^{t^{\prime}}\dif\tau \Biggl\{
+\sum_{a}\dot{q}_{a}(\tau)p_{a}(\tau)-H\Bigl(q(\tau),p(\tau)\Bigr) \Biggr\} \Biggr] \:.  \label{9.1.34}
+\end{align}%
+这称为{\KAI{路径积分}}, 这是因为我们对所有从$\tau =t$的$q$到$\tau=t^{\prime}$的$q^{\prime}$的路径$q(\tau)$进行积分, 同样地还对所有的$p(\tau)$ 积分. 以\marginpar[\flushright{\small[382]\hspace*{5mm}}]{{\small\hspace*{5mm}[382]}}这种方式写矩阵元的巨大优点是, 就像在\,\ref{sec:9.3}\,节所要讲的, 路径积分按$H$中的耦合常数展开的幂级数很容易计算.%
+
+路径积分体系不仅允许我们计算像$\langle q^{\prime};t^{\prime}\vert q;t\rangle$这样的跃迁概率振幅, 还允许我们计算一般算符$\mathcal{O}(P(t),Q(t))$ 的编时乘积在态$\langle q^{\prime};t^{\prime}\rvert$和$\lvert q;t\,\rangle$间的矩阵元. 将这些算符定义成(不同于$H$)%
+所有的$P$处在{\KAI{左边}}而所有的$Q$处在{\KAI{右边}}将是方便的. 这样, 通过将任意这样的算符$\mathcal{O}(P(\tau),Q(\tau))$插入方程(\ref{9.1.26}), 我们就有
+\begin{align}
+&\langle q^{\prime };\tau + \dif \tau \vert \mathcal{O}\Bigl(P(\tau),Q(\tau)\Bigr)\vert q;\tau\rangle
+=\int \prod_{a} \dif p_{a} \nonumber \\
+&\quad \times \langle q^{\prime};\tau \rvert \exp \Bigl( -\mi H\Bigl(Q(\tau),P(\tau)\Bigr)\dif\tau \Bigr) \,\lvert p;\tau \rangle \langle p;\tau \rvert \mathcal{O}\Bigl(P(\tau),Q(\tau)\Bigr)\lvert q;\tau \rangle   \nonumber \\
+&=\int \prod_{a}\frac{\dif p_{a}}{2\uppi }\exp \Biggl[ -\mi H(q^{\prime},p)\dif\tau
++\mi\sum_{a}(q_{a}^{\prime}-q_{a})p_{a}\Biggr] \mathcal{O}(p,q)\:. \label{9.1.35}
+\end{align}%
+为了计算$t_{A}>t_{B}>\cdots$的算符乘积$\mathcal{O}_{A}\Bigl(P(t_{A}),Q(t_{A})\Bigr) \mathcal{O}_{B}\Bigl(P(t_{B}),Q(t_{B})\Bigr)$的矩阵元, 我们可以在方程(\ref{9.1.28})中的合适的态之间插入$\mathcal{O}$-算符, 并应用方程(\ref{9.1.35}). 例如, 如果时刻$t_{A}$落在$\tau_{k}$和$\tau_{k+1}$ 之间, 那么在$\langle q_{k+1};\tau_{k+1}\rvert$和$\lvert q_{k};\tau _{k}\rangle$之间插入$\mathcal{O}_{A}\Bigl(P(t_{A}),Q(t_{A})\Bigr)$. 注意, 在方程(\ref{9.1.28}) 中对态的每个相继的求和都是在下一个时间,由于我们假定了$t_{A}>t_{B}>\cdots$, 所以这是唯一的可能性. 依循与前面相同的步骤, 现在我们可以得到普遍的路径积分公式
+\begin{align}
+&\langle q^{\prime},t^{\prime}\rvert \mathcal{O}_{A}\Bigl(P(t_{A}),Q(t_{A})\Bigr)
+\mathcal{O}_{B}\Bigl( P(t_{B}),Q(t_{B})\Bigr) \cdots \lvert q,t\rangle   \nonumber \\
+&=\int\limits_{\substack{ q_{a}(t)=q_{a} \\ q_{a}(t^{\prime})=q_{a}^{\prime}}}
+\prod_{\tau,a}\dif q_{a}(\tau)\prod_{\tau,b}\frac{\dif p_{b}(\tau)}{2\uppi}\,
+\mathcal{O}_{A}\Bigl( p(t_{A}),q(t_{A})\Bigr) \mathcal{O}_{B}\Bigl(p(t_{B}),q(t_{B})\Bigr)\cdots \nonumber \\
+&\qquad\times \exp \Biggl[ \mi\int_{t}^{t^{\prime}}\dif\tau \Biggl\{ \sum_{a}\dot{q}_{a}(\tau)p_{a}(\tau)-H\Bigl( q(\tau),p(\tau)\Bigr) \Biggr\} \Biggr] \:.  \label{9.1.36}
+\end{align}%
+
+这个结果只有在时间按照
+\begin{equation}
+t^{\prime }>t_{A}>t_{B}> \cdots t\:.  \label{9.1.37}
+\end{equation}%
+排序之后才是正确的.
+然而, 方程(\ref{9.1.36})的右边并没有什么指定了时间变量的次序. 因此, 如果给我们的是类似方程(\ref{9.1.36})右边的路径积分, 其中$t_{A},t_{B},\cdots$ 以任意次序排列(都处在$t$和$t^{\prime}$之间, 其中$t<t^{\prime}$), 那么这个路径积分将等于像方程(\ref{9.1.36})左边那样的矩阵元, 但是其中的算符(从左到右)以时间减少的次序排列. 也就是说, 对以任意次序排列的$t_{A},t_{B},\cdots$, 我们有\marginpar[\flushright
+{\raisebox{-23ex}[0pt]{{\small[383]\hspace*{5mm}}}}]{{\raisebox{-23ex}[0pt]{\small\hspace*{5mm}[383]}}}
+\begin{align}
+&\langle q^{\prime },t^{\prime}\rvert T\Bigl\{ \mathcal{O}_{A}\Bigl( P(t_{A}),Q(t_{A})\Bigr), \mathcal{O}_{B}\Bigl(P(t_{B}),Q(t_{B})\Bigr),\cdots \Bigr\} \lvert q,t\rangle \nonumber \\
+&=\int\limits_{\substack{ q_{a}(t)=q_{a} \\ q_{a}(t^{\prime})=q_{a}^{\prime}}}
+\prod_{\tau,a}\dif q_{a}(\tau)\prod_{\tau,b}\frac{\dif p_{b}(\tau)}{2\uppi}\,
+\mathcal{O}_{A}\Bigl( p(t_{A}),q(t_{A})\Bigr)\mathcal{O}_{B}\Bigl(p(t_{B}),q(t_{B})\Bigr)\cdots \nonumber \\
+&\qquad\times \exp \Biggl[ \mi\int_{t}^{t^{\prime}}\dif\tau \,
+\Biggl\{ \sum_{a}\dot{q}_{a}(\tau)p_{a}(\tau)-H\Bigl(q(\tau),p(\tau)\Bigr)\Biggr\} \Biggr]\:,  \label{9.1.38}
+\end{align}%
+其中$T$代表通常的编时乘积.
+
+或许应该强调一下, 方程(\ref{9.1.38})中的\,c\,-数函数$q_{a}(\tau),p_{a}(\tau)$仅是积分变量, 尤其是它们{\KAI{没有}}被要求服从经典哈密顿动力学的运动方程
+\begin{align}
+\dot{q}_{a}(\tau)-\frac{\partial H(q(\tau),p(\tau))}{\partial p_{a}(\tau)} &=0\:,  \label{9.1.39} \\
+\dot{p}_{a}(\tau)+\frac{\partial H(q(\tau),p(\tau))}{\partial q_{a}(\tau)} &=0\:.  \label{9.1.40}
+\end{align}%
+(由于这个原因, 方程(\ref{9.1.38})中的哈密顿量$H(q(\tau),p(\tau))$对于$\tau$并{\KAI{不}}是常数.) 然而, 在一种极限意义下, 路径积分确实遵循这些运动方程. 假定方程(\ref{9.1.38})中的一个函数, 例如$\mathcal{O}_{A}\Bigl(p(t_{A}),q(t_{A})\Bigr)$, 恰巧是方程(\ref{9.1.39})或方程(\ref{9.1.40})的左边. 我们注意到(对$t<t_{A}<t^{\prime }$)%
+\begin{align*}
+\biggl(\dot{q}_{a}(t_{A})-\frac{\partial H(q(t_{A}),p(t_{A}))}{\partial p_{a}(t_{A})}\biggr)\,
+\exp \Bigl(\mi I[q,p]\Bigr)  &= -\mi\frac{\updelta}{\updelta p_{a}(t_{A})}\exp\Bigl(\mi I[q,p]\Bigr) \:, \\
+\biggl(\dot{p}_{a}(t_{A})+\frac{\partial H(q(t_{A}),p(t_{A}))}{\partial q_{a}(t_{A})}\biggr)\,
+\exp \Bigl(\mi I[q,p]\Bigr)  &= \mi \frac{\updelta}{\updelta q_{a}(t_{A})}\exp \Bigl(\mi I[q,p]\Bigr)\:,
+\end{align*}%
+其中$\mi I$是方程(\ref{9.1.38})中指数的幅角:%
+\begin{equation*}
+I[q,p]\equiv \int_{t}^{t^{\prime}}\dif\tau\: \Biggl\{\sum_{a}\dot{q}_{a}(\tau)p_{a}(\tau)
+-H\Bigl(q(\tau),p(\tau)\Bigr) \Biggr\} \:.
+\end{equation*}%
+只要$t_{A}$不碰到$t$或$t^{\prime}$, 对$q_{a}(t_{A})$和$p_{a}(t_{A})$的积分就是不受约束的, 因而在对积分收敛性做了合理的假定后, 这些变分导数的积分必须为零. 因此, 如果$\mathcal{O}_{A}(p,q)$被取成是运动方程(\ref{9.1.39})或(\ref{9.1.40})的左边, 那么路径积分(\ref{9.1.38})为零.
+
+仅当积分变量$q_{a}(t_{A}),p_{a}(t_{A})$独立于出现在方程(\ref{9.1.38})中任何其他函数$\mathcal{O}_{B}$, $\mathcal{O}_{C}$等中的任何变量$q_{a}(t_{B})$, $p_{a}(t_{B})$等时, 且仅当我们禁止$t_{A}$逼近$t_{B}$, $t_{C}$ 等, 以及$t$或$t^{\prime}$时, 这个简单规则才是适用的. \marginpar[\flushright{\small[384]\hspace*{5mm}}]{{\small\hspace*{5mm}[384]}}当$t_{A}$逼近, 例如$t_{B}$ 时, 这个路径积分将会包含一个正比于$\updelta(t_{A}-t_{B})$或它的导数的非零项. 这些$\updelta$-函数与算符体系中编时乘积定义中隐含的阶跃函数的时间导数是相同的.
+
+在计算路径积分(\ref{9.1.34})%
+和(\ref{9.1.38})时, 我们仅需要知道经典哈密顿量, 即\,c\,-数函数$H(q,p)$. 如果我们通过路径积分定义一个理论, 那么就会自然地产生一个问题: 在众多可能的量子力学哈密顿量$H(Q,P)$(彼此相差$Q$和$P$的次序)中, 哪一个控制这个路径积分所对应的量子理论? 我们的推导已经给出了一个答案: 量子哈密顿量将被取成所有的$Q$ 在左边, 而所有的$P$在右边. 但是给这个做法赋予太多的含义将是一个错误. 对于出现在类似(\ref{9.1.34})或(\ref{9.1.38})中的路径积分中的测度$\prod\dif q_{a}(\tau)\,\prod\dif p_{b}(\tau)$, 有许许多多的解释方法. 我们的处理方式, 即把所有的$Q$放在所有$P$的左边, 仅当测度依据方程(\ref{9.1.31})\yzx (\ref{9.1.33})来解释时才是合适的. 其他测度将给出算符次序的其他方案. 这不是一个急迫的问题, 因为哈密顿量中算符次序的不同方案仅对应常数的不同选择, 这些常数是作为哈密顿量中各%
+项系数出现的, 而在我们给出这些理论的普遍公式描述时, 这些常数总要留作任意参量.
+
+很难将方程(\ref{9.1.38})中给出的一般路径积分用于数值计算或作为严格定理的基础. 为此, 用路径积分计算欧几里得空间中的振幅更好一些, %
+这时$t$被一个虚量$-\mi x_{4}$所替换, 并且方程(\ref{9.1.38})中指数的幅角是一个负的实量. 以这种方式, %
+取代了在从一个路径到另一路径的被积函数中产生快速振荡的锯齿状路径, 所有的锯齿路径都被指数地抑制掉了. %
+尽管我们不会在这里研究它, 量子场论可以从欧几里得时空中的\,Feynman\,振幅入手进而建立起来.\textsuperscript{\cite{8a}} 在一些看似合理的假定下, %
+闵可夫斯基时空的\,Feynman\,振幅有可能从与之对应的欧几里得振幅重构出来.\textsuperscript{\cite{8b}} %
+但是如果我们仅打算用路径积分计算微扰论中的\,Feynman\,振幅, 我们也可以坚持路径积分的闵可夫斯基空间的形式.
+
+
+\section{过渡到$S$-矩阵} \label{sec:9.2}
+\setcounter{equation}{0}
+\marginpar[\flushright
+{\raisebox{5.5ex}[0pt]{{\small[385]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[385]}}}
+
+正如前面提到的, 通过让指标$a$取遍空间中的点$\bx$以及自旋和种类指标$m$, 并分别将$Q_{a}(t)$和$P_{a}(t)$替换成$Q_{m}(\bx,t)$ 和$P_{m}(\bx,t)$, 我们可以很容易地将\,\ref{sec:9.1}\,节中的一般量子力学结果转变成适合量子场论的记法. 这样, 方程(\ref{9.1.38})变成{}$^*$\footnote{$^*${}我们现在把$H$和$\mathcal{O}$所带的括号写成方括号, 这是提醒我们$H[q(t),p(t)]$和$\mathcal{O}[p(t),q(t)]$是在固定时刻$t$的$q_{m}(\bx,t)$%
+和$p_{m}(\bx,t)$的{\KAI{泛函}}.}
+\begin{align}
+& \langle q^{\prime},t^{\prime}\vert \,T\{\mathcal{O}_{A}[P(t_{A}),Q(t_{A})],
+\mathcal{O}_{B}[P(t_{B}),Q(t_{B})],\cdots\}\vert q,t\rangle   \nonumber \\
+&\quad=\int\limits_{\substack{ q_{m}(\bx,t)=q_{m}(\bx) \\ q_{m}(\bx,t^{\prime})
+=q_{m}^{\prime }(\bx)}}\prod_{\tau ,\bx,m}\dif q_{m}(\bx,\tau)
+\prod_{\tau,\bx,m}\frac{\dif p_{m}(\bx,\tau)}{2\uppi }  \nonumber \\
+&\quad\times \mathcal{O}_{A}\Bigl[ p(t_{A}),q(t_{A})\Bigr]\,
+\mathcal{O}_{B}\Bigl[p(t_{B}),q(t_{B})\Bigr] \cdots   \nonumber \\
+&\quad\times \exp \Biggl[ \mi\int_{t}^{t^{\prime}}\dif \tau\: \Biggl\{ \int \dif^{3}x\:
+\sum_{m}\dot{q}_{m}(\bx,\tau)p_{m}(\bx,\tau)-H\Bigl[q(\tau),p(\tau)\Bigr]\Biggr\}\Biggr] \:.  \label{9.2.1}
+\end{align}%
+
+然而在场论中, 方程(\ref{9.2.1})不完全是我们想要的. 实验中测量的并不是量子场$Q$的本征态$\langle q^{\prime},t^{\prime}\rvert$和$\lvert q,t\rangle$ 之间的跃迁概率振幅, 而是测量$S$-矩阵元,
+即分别处在$t\to-\infty$或$t\to +\infty$时, 包含确定数目的各种类型的粒子态之间的跃迁概率振幅. 这些态被称为``入''态和``出''态, $\lvert \alpha,\text{in}\rangle$和$\vert\beta,\text{out}\rangle$, 其中$\alpha$和$\beta$代表用各种粒子的动量, 自旋$z$-分量(或螺旋度)以及种类所表征的粒子集合. 为了计算编时乘积(可能是空的)在这些态之间的矩阵元, 我们需要在方程(\ref{9.2.1})上的任意固定时刻$t$和$t^{\prime}$乘上``波函数''%
+$\langle\beta,\text{out}\vert q^{\prime},t^{\prime}\rangle$和%
+$\langle q,t\vert \alpha,\text{in}\rangle$, 方便起见, 这里的$t$和$t^{\prime}$分别取$-\infty$和$+\infty$, 然后对这些波函数的``变量''$q_{m}(\bx)$和$q_{m}^{\prime}(\bx)$积分. 但是, 取代用如下条件约束对$q_{m}(\bx,\tau)$的路径积分
+\begin{equation}
+q_{m}(\bx,+\infty )=q_{m}^{\prime }(\bx)\:, \qquad
+q_{m}(\bx,-\infty )=q_{m}(\bx)\:,  \label{9.2.2}
+\end{equation}%
+然后再对$q_{m}^{\prime}(\bx)$和$q_{m}(\bx)$积分, 我们也可以对$q_{m}(\bx,\tau)$(以及$p_{m}(\bx,\tau)$)做没有约束的积分, 并令波函数的变量等于方程(\ref{9.2.2})给出的值:%
+\begin{align}
+&\langle \beta ,\text{out}\vert \,T\Bigl\{ \mathcal{O}_{A}\Bigl[P(t_{A}),Q(t_{A})\Bigr],%
+\mathcal{O}_{B}\Bigl[P(t_{B}),Q(t_{B})\Bigr],\cdots \Bigr\}\, \vert\alpha ,\text{in}\rangle \nonumber \\
+&\quad=\int \prod_{\tau,\bx,m}\dif q_{m}(\bx,\tau)\prod_{\tau,\bx,m}
+(\dif p_{m}(\bx,\tau)/2\uppi )  \nonumber \\
+&\qquad\times \mathcal{O}_{A}\Bigl[ p(t_{A}),q(t_{A})\Bigr]\,
+\mathcal{O}_{B}\Bigl[p(t_{B}),q(t_{B})\Bigr] \cdots   \nonumber \\
+&\qquad\times \exp \Biggl[ \mi\int_{-\infty }^{\infty}\dif\tau\:
+\Biggl\{ \int \dif^{3}x\:\sum_{m}\dot{q}_{m}(\bx,\tau)p_{m}(\bx,\tau)
+-H\Bigl[q(\tau),p(\tau)\Bigr] \Biggr\} \Biggr]   \nonumber \\
+&\qquad\times \langle \beta ,\text{out}\vert q(+\infty );+\infty\rangle \,
+\langle q(-\infty);-\infty \vert \alpha,\text{in}\rangle \:.  \label{9.2.3}
+\end{align}%
+附带说一下\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[386]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[386]}}}, 这个结果立刻给出{}$^*$\footnote{$^*${}只需要注意, 对于哈密顿量$H[P(t),Q(t)]+\sum_{A}\int
+\dif^{3}x\,\epsilon_{A}(\bx,t)\mathcal{O}_{A}(\bx,t)$, $S$-矩阵由方程(\ref{9.2.3})给定为
+\begin{align*}
+&\langle \beta ,\text{out}\vert \alpha ,\text{in}\rangle_{\epsilon }
+=\int \prod_{\tau,\bx,m}\dif q_{m}(\bx,\tau)\prod_{\tau,\bx,m}(\dif p_{m}(\bx,\tau)/2\uppi) \\
+&\qquad\times \exp \Biggl[\mi\int_{-\infty}^{+\infty}\dif\tau \: \Biggl\{\int \dif^{3}x\:
+\dot{q}_{m}(\bx,\tau)p_{m}(\bx,\tau)-H\Bigl[q(\tau),p(\tau)\Bigr]  \\
+&\qquad\qquad-\sum_{A}\int \dif^{3}x\:\epsilon_{A}(\bx,\tau)O_{A}(\bx,\tau)\Biggr\}\Biggr] \\
+&\qquad\times \langle \beta ,\text{out}\vert q(+\infty);+\infty \rangle \,
+\langle q(-\infty);-\infty \vert \alpha ,\text{in}\rangle \:.
+\end{align*}%
+方程(\ref{6.4.3})的左边是该表达式对$\epsilon_{a},\epsilon_{b}$等在$\epsilon=0$处的导数, 它给出了方程(\ref{9.2.3})的右边, 再利用方程(\ref{9.2.3}) 就立刻给出方程(\ref{6.4.3})的右边.}方程(\ref{6.4.3}), 这是我们反复使用的一个定理, 它将离壳\,Feynman\,图之和与\,Heisenberg\,绘景算符在精确能量本征态之间的矩阵元关联起来.%
+
+现在必须要考虑如何计算作为最后一对因子出现在方程(\ref{9.2.3})中的波函数. 我们现在考虑最简单但最重要的情况, 真空. %
+(我们在\,\ref{sec:6.4}\,节看到, $S$-矩阵元可以很容易地从编时乘积的真空期望值中计算出来.) 我们像往常一样假定, 在$t\to\pm\infty$ 时, 计算矩阵元可以认为没有相互作用. ``入''真空和``出''真空因而可以通过以下条件定义
+\begin{equation}
+\begin{split}
+&a_{\text{in}}(\bp,\sigma,n) \lvert \text{VAC, in}\rangle = 0\:, \\
+&a_{\text{out}}(\bp,\sigma,n)\lvert \text{VAC, out}\rangle = 0\:,
+\end{split} \label{9.2.4}
+\end{equation}%
+其中$a_{\text{in}}$和$a_{\text{out}}$分别是算符$Q_{m}(\bx,t)$在$t\to \infty $和$t\to +\infty$时的平面波展开中, 作为$\exp(\mi\bp\cdot\bx-\mi Et)$的系数出现的算符.
+例如, 对于中性无自旋粒子的实标量场, 我们实际上有
+\begin{align}
+&\Phi (\bx,t)\xrightarrow[]{t\to \mp\infty}
+(2\uppi)^{-3/2} \int\dif^{3}p\:(2E)^{-1/2}\Bigl[ a_{\substack{\text{in}\\ \text{out}}}(\bp)\me^{\mi p\cdot x}+\text{H.c.} \Bigr] \:,  \label{9.2.5}  \\
+&\Pi (\bx,t)\xrightarrow[]{t\rightarrow\mp\infty}\dot{\Phi}(\bx,t)  \nonumber \\
+&\xrightarrow[]{t\rightarrow\mp\infty} -\mi(2\uppi)^{-3/2}\int \dif^{3}p\:(E/2)^{1/2}
+\Bigl[ a_{\substack{ \text{in} \\ \text{out}}}(\bp)\me^{\mi p\cdot x}-\text{H.c.}\Bigr]  \label{9.2.6}
+\end{align}%
+其中$p^{0}\equiv E\equiv \sqrt{\bp^{2}+m^{2}}$\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[387]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[387]}}}, 并且我们在这里用传统的$\Phi$和$\Pi$而不是$Q$和$P$来表示标量场, 并扔掉了不必需的指标$m,\sigma,n$. 做逆\,Fourier\,变换并对得到的表达式做线性组合, 我们有
+\begin{align}
+a_{\substack{ \text{in} \\ \text{out}}}(\bp) &= \lim_{t\to \mp\infty} \frac{\me^{\mi Et}}{(2\uppi)^{3/2}}
+\int \dif^{3}x\:\me^{-\mi\bp\cdot \bx} \nonumber \\
+&\quad\times \Biggl[ \sqrt{\frac{E}{2}}\Phi(\bx,t)+\mi\sqrt{\frac{1}{2E}}\Pi(\bx,t)\Biggr] \:.  \label{9.2.7}
+\end{align}
+正如\,\ref{sec:9.1}\,节中提到的, ``动量''\,$\Pi(\bx,t)$\,作为变分导数$-\mi\updelta/\updelta\phi(\bx,t)$%
+作用在$\phi$-基下的波函数上, 所以在这个基下, 条件(\ref{9.2.4})变成%
+\begin{equation}
+0=\int \dif^{3}x\:\me^{-\mi\bp\cdot \bx}\biggl[ \frac{\updelta}{\updelta\phi(x)}
++E(\bp)\phi(\bx)\biggr]\: \Bigl\langle \phi (t \to \mp\infty);\mp\infty
+\Big\vert\text{VAC},\substack{\text{in} \\ \text{out}}\Bigr\rangle \:.  \label{9.2.8}
+\end{equation}%
+这个类常微分方程有一个著名的高斯解, 所以我们在这里尝试一下高斯拟设:%
+\begin{equation}
+\Bigl\langle \phi(t\to\mp\infty);\mp\infty \Big\vert \text{VAC},\substack{\text{in} \\ \text{out}}\Bigr\rangle =\mathscr{N}\: \exp \biggl( -\tfrac{1}{2}\int\dif^{3}x\,\dif^{3}y\:
+\mathscr{E}(\bx,\by)\phi(\bx)\phi(\by)\biggr) \:,  \label{9.2.9}
+\end{equation}%
+其中核$\mathscr{E}$以及常数$\mathscr{N}$待定. 将它代入方程(\ref{9.2.8}), 我们看到,
+如果对所有的$\phi$%
+\begin{equation}
+0=\int \dif^{3}x\:\me^{-\mi\bp\cdot\bx}\biggl[ \int \dif^{3}y\:%
+\mathscr{E}(\bx,\by)\phi(\by)-E(\bp)\phi(\bx)\biggr]   \label{9.2.10}
+\end{equation}%
+或者换种形式, 如果
+\begin{equation}
+\int \dif^{3}x\:\me^{-\mi\bp\cdot \bx}\mathscr{E}(\bx,\by)
+=E(\bp)\,\me^{-\mi\bp\cdot \by}\:,  \label{9.2.11}
+\end{equation}%
+那么真空波函数的泛函微分方程将被满足. 通过逆\,Fourier\,变换, 可以很容易找到这个解
+\begin{equation}
+\mathscr{E}(\bx,\by)=(2\uppi)^{-3}
+\int \dif^{3}p\:\me^{\mi\bp\cdot(\bx-\by)}E(\bp) \:.  \label{9.2.12}
+\end{equation}%
+(回忆$E(\bp)\equiv \sqrt{\bp^{2}+m^{2}}$). 这实际上是核$\mathscr{E}$最有用的表示, 我们顺便注意到, 对$\bx\neq \by$, $\mathscr{E}$ 也可以写成负一阶\,Hankel\,函数的形式
+\begin{equation}
+\mathscr{E}(\bx,\by)=\frac{m}{2\uppi^{2}r}\:\frac{\dif}{\dif r}
+\biggl(\frac{1}{r}{\rm K}_{-1}(mr)\biggr) \:,  \label{9.2.13}
+\end{equation}%
+其中$r\equiv \lvert \bx-\by\rvert$\marginpar[\flushright{\small[388]\hspace*{5mm}}]{{\small\hspace*{5mm}[388]}}. 方程(\ref{9.2.9})中的常数$\mathscr{N}$ 可以从真空态的归一化条件中形式地获得,
+但我们不会用到这个结果.
+
+根据方程(\ref{9.2.9}), 在标量场理论中计算真空期望值时, 方程(\ref{9.2.3})中后两个因子的乘积是
+\begin{align}
+&\langle \text{VAC},\text{out}\vert \phi(\infty);+\infty\rangle \,
+\langle \phi(-\infty);-\infty \vert \text{VAC},\text{in}\rangle   \nonumber \\
+&\qquad=\lvert\mathscr{N}\rvert^{2} \, \exp \biggl(-\tfrac{1}{2}\int\dif^{3}x\,\dif^{3}y\:
+\mathscr{E}(\bx,\by)\,\Bigl[\phi(\bx,+\infty)\phi(\by,+\infty) \nonumber \\
+&\phantom{\langle \text{VAC},\text{out}\vert \phi(\infty);+\infty\rangle \,\langle}
++\phi(\bx,-\infty) \phi(\by,-\infty)\Bigr]\biggr)  \label{9.2.14} \\
+&\qquad=\lvert\mathscr{N}\rvert^{2}\,\exp \biggl(-\tfrac{1}{2}\epsilon
+\int \dif^{3}x\,\dif^{3}y\int_{-\infty}^{\infty}\dif\tau \:\mathscr{E}(\bx,\by)
+\phi(\bx,\tau)\phi(\by,\tau)\me^{-\epsilon\lvert \tau\rvert}\biggr) \:,  \nonumber
+\end{align}%
+其中$\epsilon$是正的无限小. 为了获得最终的表达式, 我们使用了任意适度光滑函数$f(\tau)$的如下性质,%
+\begin{equation}
+f(+\infty)+f(-\infty) = \lim_{\epsilon\to 0_{+}}\epsilon
+\int_{-\infty}^{\infty}\dif\tau\: f(\tau)\,\me^{-\epsilon \lvert \tau \rvert}\:. \label{9.2.15}
+\end{equation}%
+现在将方程(\ref{9.2.14})代入(\ref%
+{9.2.3})给出\begin{align}
+&\Bigl\langle \text{VAC},\text{out}\Big\vert\, T\Bigl\{ \mathcal{O}_{A}\Bigl[\Pi(t_{A}),\Phi(t_{A})\Bigr],
+\mathcal{O}_{B}\Bigl[\Pi(t_{B}),\Phi(t_{B})\Bigr],\cdots \Bigr\}
+\Big\vert\text{VAC},\text{in}\Bigr\rangle   \nonumber \\
+&=\lvert\mathscr{N}\vert^{2} \int \prod_{\tau,\bx}\dif\phi(\bx,\tau)
+\prod_{\tau,\bx}(\dif\pi(\bx,\tau)/2\uppi)\:
+\mathcal{O}_{A}\Bigl[\pi(t_{A}),\phi(t_{A})\Bigr]   \nonumber \\
+&\quad\times \mathcal{O}_{B}\Bigl[\pi(t_{B}),\phi(t_{B})\Bigr] \cdots
+\exp\biggl[\mi\int_{-\infty}^{\infty} \dif\tau\: \biggl\{
+\int\dif^{3}x\:\dot{\phi}(\bx,\tau)\,\pi(\bx,\tau)  \nonumber \\
+&-H\Bigl[\phi(\tau),\pi(\tau)\Bigr] + \tfrac{1}{2}\mi\epsilon
+\int \dif^{3}x\,\dif^{3}y\: \mathscr{E}(\bx,\by)\me^{-\epsilon\lvert \tau \rvert}
+\phi(\bx,\tau)\phi(\by,\tau)\biggr\}\biggr]\:.  \label{9.2.16}
+\end{align}%
+我们将在\,\ref{sec:9.4}\,节看到, 方程(\ref{9.2.16})中指数幅角的最后一项的全部作用是: 为动量空间中的标量场传播子$[p^{2}+m^{2}-\mi\epsilon]^{-1}$的分母提供$-\mi\epsilon$. 我们将不会深入讨论一般的有自旋场相应细节, 而只是简单地给出一般描述
+\begin{align}
+&\Bigl\langle \text{VAC},\text{out}\Big\vert\, T\Bigl\{ \mathcal{O}_{A}\Bigl[P_{A}(t_{A}),Q_{A}(t_{A})\Bigr],
+\mathcal{O}_{B}\Bigl[P(t_{B}),Q(t_{B})\Bigr],\cdots \Bigr\}
+\Big\vert\text{VAC},\text{in}\Bigr\rangle \nonumber \\
+&= \lvert\mathscr{N}\rvert^{2}\int\Biggl[\prod_{\tau,\bx,m}\dif q_{m}(\bx,\tau)\Biggr]
+\Biggl[\prod_{\tau,\bx,m}\frac{\dif p_{m}(\bx,\tau)}{2\uppi}\Biggr]\:
+\mathcal{O}_{A}\Bigl[p(t_{A}),q(t_{A})\Bigr]  \nonumber \\
+&\quad\times \mathcal{O}_{B}\Bigl[p(t_{B}),q(t_{B})\Bigr] \cdots
+\exp\biggl[\mi\int_{-\infty}^{\infty} \dif\tau\: \biggl\{\int\dif^{3}x\:
+\sum_{m}\dot{q}_{m}(\bx,\tau)p_{m}(\bx,\tau)  \nonumber \\
+&\qquad\qquad -H\Bigl[q(\tau),p(\tau)\Bigr] + \mi\epsilon\,\text{项}\biggr\}\biggr]\:. \label{9.2.17}
+\end{align}%
+其中``$\mi\epsilon$项''的\marginpar[\flushright{\small[389]\hspace*{5mm}}]{{\small\hspace*{5mm}[389]}}作用只是在所有传播子的分母中加上正确的$-\mi\epsilon$.
+
+这里很适合提一下: 方程(\ref{9.2.17})中的不依赖场的因子是不重要的, 例如常数$\lvert\mathscr{N}\rvert^{2}$. 这是因为这样的因子对矩阵元$\langle\text{VAC},\text{out}\vert\text{VAC},\text{in}\rangle$也有贡献. 在计算编时乘积(或$S$-矩阵)的真空期待值的{\KAI{连通}}部分时, 通过除掉$\langle\text{VAC},\text{out}\vert\text{VAC},\text{in}\rangle$, 我们消除了连通真空涨落子图的贡献, 并且, 真空期待值中的任何常数因子在这个比值中也被消掉了.
+
+通过在方程(\ref{9.2.3})中插入合适的``波泛函'', 我们可以继续下去并计算多粒子态间的矩阵元. 通过将诸如(\ref{9.2.7})的湮没算符的共轭算符作用在真空态上, 我们就可以计算出它们; 在谐振子中, 可以证明那些波泛函是场的厄米多项式乘以真空态的高斯函数. 这里不需要将它们全部解出来, 这是因为, 就像\,\ref{sec:6.4}\,节中讨论过的, 真空期望值(\ref{9.2.17})是我们在计算$S$-矩阵元时所需要的全\nolinebreak
+部.
+
+\section{路径积分公式的拉格朗日版本} \label{sec:9.3}
+\setcounter{equation}{0}
+
+方程(\ref{9.1.38})或(\ref{9.2.17})中指数上的被积函数看起来像是与这个哈密顿量$H$对应的拉格朗日量$L$. 这一表面上的形式有些误导, 这是因为这里的``动量''\,$p_{a}(t)$或$p_{n}(\bx,t)$是独立变量, 还没有与$q_{a}(t)$或$q_{n}(\bx,t)$或它们的导数关联起来. 然而, 有很大且很重要的一类理论, 在这类理论中, 对``动量''的积分可以通过将其替换成正则形式体系所给定的值来完成, 在这种情况下, 路径积分中指数上的被积函数确实是拉格朗日量.
+
+这类理论是哈密顿量是``动量''的二次型的理论\ezx 用场论的语言表达就是%
+\begin{align*}
+H[Q,P] &= \tfrac{1}{2}\sum_{nm}\int \dif^{3}x\,\dif^{3}y\:
+A_{\bx n,\by m}[Q]\,P_{n}(\bx)\,P_{m}(\by)  \nonumber
+\end{align*}%
+\begin{align}
+&\quad+\sum_{n}\int \dif^{3}x\: B_{\bx n}[Q]\,P_{n}(\bx)+C[Q]  \label{9.3.1}
+\end{align}%
+其中``矩阵''$A$是\marginpar[\flushright{\small[390]\hspace*{5mm}}]{{\small\hspace*{5mm}[390]}}一个对称且非奇异的实矩阵. 这样, 方程(\ref{9.2.17})中指数中的幅角就是$p$的二次型:%
+\begin{align}
+&\int \dif\tau \:\Biggl\{ \int \dif^{3}x\,\sum_{n}p_{n}(\bx,\tau )\dot{q}_{n}(\bx,\tau)
+-H\Bigl[ q(\tau),p(\tau)\Bigr] \Biggr\}   \nonumber \\
+&=-\tfrac{1}{2}\sum_{nm}\int \dif^{3}x\,\dif^{3}y\,\dif\tau \,\dif\tau^{\prime}\:
+\mathscr{A}_{\tau \bx n,\tau^{\prime}\by m}[q]\,p_{n}(\bx,\tau)
+\,p_{m}(\by,\tau^{\prime})  \nonumber \\
+&\quad-\sum_{n}\int \dif^{3}x\int \dif\tau \:\mathscr{B}_{\tau\bx n}[q]\,p_{n}(\bx,\tau)-\mathscr{C}[q]\:,  \label{9.3.2}
+\end{align}%
+其中
+\begin{gather}
+\mathscr{A}_{\tau \bx n,\tau^{\prime}\by m}[q] \equiv
+A_{\bx n,\by m}[q(\tau)]\updelta(\tau - \tau^{\prime})\:, \label{9.3.3} \\
+\mathscr{B}_{\tau\bx n}[q] \equiv
+B_{\bx n}[q(\tau)]-\dot{q}_{n}(\bx,\tau)\:, \label{9.3.4} \\
+\mathscr{C}[q] \equiv \smallint \dif\tau \:C[q(\tau )]\:. \label{9.3.5}
+\end{gather}
+现在, 像(\ref{9.3.2})这样的二次型表达式, 对它的指数进行积分的结果一般会正比于将幅角的稳相点代入计算出的指数值. 对于只有有限个实变量$\xi_{s}$的情况, 这个公式是
+\begin{align}
+&\int_{-\infty }^{\infty }\Biggl(\prod_{s}\dif\xi_{s}\Biggr)
+\exp \Biggl\{-\tfrac{1}{2}\mi\sum_{sr}\mathscr{A}_{sr}\xi_{s}\xi_{r}
+-\mi\sum_{s}\mathscr{B}_{s}\xi_{s}-\mi\mathscr{C}\Biggr\}   \nonumber \\
+&= (\operatorname{Det}[\mi\mathscr{A}/2\uppi])^{-1/2}
+\exp\Biggl\{-\mi\tfrac{1}{2}\sum_{sr}\mathscr{A}_{sr}\bar{\xi}_{s}\bar{\xi}_{r}
+-\mi\sum_{s}\mathscr{B}_{s}\bar{\xi}_{s}-\mi\mathscr{C}\Biggr\} \:, \label{9.3.6}
+\end{align}%
+其中$\bar{\xi}$是稳相点
+\begin{equation}
+\bar{\xi}_{s} = -\sum_{r}(\mathscr{A}^{-1})_{sr}\mathscr{B}_{r}\:. \label{9.3.7}
+\end{equation}%
+(该公式的证明参看本章附录.) 因此, 只要方程(\ref{9.2.17})中的$\mathcal{O}_{A}$, $\mathcal{O}_{B}$%
+等独立于$p$, 对于这种哈密顿量, 通过将这些变量取在指数幅角中二次型表达式的稳相点, 我们就可以计算出方程(\ref{9.2.17})中对$p$的路径积分. 但是这个二次型的变分导数是
+\begin{align*}
+&\frac{\updelta}{\updelta p_{n}(\bx,\tau)} \int_{-\infty}^{\infty}\dif\tau \:
+\biggl\{ \int \dif^{3}x\:\dot{q}_{n}(\bx,\tau)p_{n}(\bx,\tau)
+-H\Bigl[q(\tau),p(\tau)\Bigr] + \mi\epsilon\,\text{项}\biggr\}  \\
+&\qquad=\dot{q}_{n}(\bx,\tau)-\frac{\updelta}{\updelta p_{n}(\bx,\tau)}H\Bigl[q(\tau),p(\tau)\Bigr] \:.
+\end{align*}%
+\pagebreak
+
+\noindent
+($\mi\epsilon$项只依赖$q$.) 因此使其为零的稳相``点''$\bar{p}_{n}(\bx,t)$由正则公式\marginpar[\flushright
+{\raisebox{-8ex}[0pt]{{\small[391]\hspace*{5mm}}}}]{{\raisebox{-8ex}[0pt]{\small\hspace*{5mm}[391]}}}
+\begin{equation}
+\dot{q}(\bx,\tau) = \left[ \frac{\updelta H\Bigl[ q(\tau),p(\tau)\Bigr]}{\updelta p_{n}(\bx,\tau)}\right]_{p=\bar{p}} \label{9.3.8}
+\end{equation}%
+给出. 若令$p_{n}(\bx,t)$等于这个值, 方程(\ref{9.2.17})中的指数幅角就{\KAI{是}}普通的拉格朗日量
+\begin{equation}
+L\Bigl[ q(\tau),\dot{q}(\tau)\Bigr] \equiv \int \dif^{3}x \:\Biggl(
+\sum_{n}\dot{q}_{n}(\bx,\tau)\bar{p}_{n}(\bx,\tau)
+-H\Bigl[ q(\tau),\bar{p}(\tau)\Bigr] \Biggr)   \label{9.3.9}
+\end{equation}
+并且, 我们可以将方程(\ref{9.2.17})写为
+\begin{align}
+&\Bigl\langle \text{VAC},\text{out}\Big\vert T\,\Bigl\{\mathcal{O}_{A}\Bigl[Q(t_{A})\Bigr],%
+\mathcal{O}_{B}\Bigl[Q(t_{B})\Bigr], \cdots \Bigr\}\, \Big\vert \text{VAC},\text{in}\Bigr\rangle \nonumber \\
+&= \lvert \mathscr{N} \rvert^{2} \int \prod_{\tau,\bx,n} \dif q_{n}(\bx,\tau) \:
+\Bigl( \operatorname{Det}\Bigl[ 2\mi\uppi \mathscr{A}[q]\Bigr] \Bigr)^{-1/2}  \nonumber \\
+&\qquad \times \mathcal{O}_{A}\Bigl[ q(t_{A})\Bigr] \mathcal{O}_{B}\Bigl[q(t_{B})\Bigr] \cdots  \nonumber \\
+&\qquad\times \exp \biggl[\mi\int_{-\infty}^{\infty}\dif\tau \:\Bigl\{ L\Bigl[ q(\tau),\dot{q}(\tau)\Bigr] +\mi\epsilon \,\text{项}\Bigr\} \biggr] \:. \label{9.3.10}
+\end{align}%
+(我们合并了$p_{n}$积分中的因子$1/2\uppi$和来自方程(\ref{9.3.6})中的行列式.) 这正是希望的路径积分公式的拉格朗日形式.
+
+在推导方程(\ref{9.3.10})时, 假定算符$\mathcal{O}_{A}$, $\mathcal{O}_{B},\cdots$独立于正则``动量''是必要的. 这并不像看上去那样特殊. 例如, 对标量场论, $\Phi$的正则共轭是$\Pi=\dot{\Phi}$, 如果算符的编时乘积中的一个算符是$\dot{\Phi}(t)$, 可能得到这个编时乘积的矩阵元的一种方式是: 将那个算符分别替换为$\Phi(t+\dif\tau)$和$\Phi(t)$, 然后取矩阵元的差, 再除以$\dif\tau$, 最后令$\dif\tau \to 0$. 等价地, 只要$t$不等于方程(\ref{9.3.10}) 中任何其他算符的时间变量,
+我们就能简单地做方程(\ref{9.3.10})对$t$的微分.
+
+方程(\ref{9.3.10})中还剩下的复杂问题是$\mathscr{A}[q]$的行列式. 如果$\mathscr{A}[q]$不依赖于场, 那么就不存在问题; 我们已经注意到整体的常数对真空期望值的连通部分没有贡献, 在那里我们除掉了正比于同一常数因子的真空\lzx 真空振幅. 例如, 对于一组实标量场$\Phi_{n}$, 如果它们彼此间存在非导数耦合且(或)与外部流$J_{n}$存在导数耦合, 那么就将是这样的情况. 这里的拉格朗日量密度是
+\[
+\mathscr{L}=-\sum_{n}\Bigl[ \tfrac{1}{2}\partial_{\lambda}\Phi _{n}\partial^{\lambda}\Phi_{n}
++J_{n}{}^{\lambda}\partial_{\lambda}\Phi _{n}\Bigr] - V(\Phi) \:.
+\]%
+对于\,\ref{sec:7.5}\,节的结果\marginpar[\flushright{\small[392]\hspace*{5mm}}]{{\small\hspace*{5mm}[392]}}, 从一个导数耦合的标量到几个导数耦合的标量有一个明显的推广, 这个推广表明这个拉格朗日量隐含了哈密顿量
+\begin{align*}
+H &=\int \dif^{3}x \: \sum_{n}\Bigl[ \tfrac{1}{2}\Pi_{n}^{2} + \tfrac{1}{2}(\bm{\nabla}\Phi_{n})^{2} \\
+&\quad+\bJ_{n}\cdot \bm{\nabla} \Phi _{n}+ J_{n}{}^{0}\Pi_{n} +\tfrac{1}{2}(J_{n}{}^{0})^{2}]+\int \dif^{3}x\: V(\Phi )\:.
+\end{align*}%
+(这里的$\Phi _{n}$被取成实标量, 但复标量也可以通过分成实部和虚部而被纳入进来.) 一般而言, 存在一个$\Pi_{n}$的线性非平庸项, 但二次项的系数是常数, 恰是单位``矩阵'':%
+\[
+\mathscr{A}_{xn,x^{\prime }n^{\prime }}=\updelta ^{4}(x-x^{\prime })\updelta
+_{nn^{\prime }}\:.
+\]%
+方程(\ref{9.3.10})中的因子$\Bigl(\operatorname{Det}\Bigl[2\mi\uppi\mathscr{A}[q]\Bigr]\Bigr)^{-1/2}$%
+在这里是一个与场无关的常数, 因而没有影响.
+
+然而, 问题不总是那么简单. 作为第二个例子, 我们考虑所谓的非线性$\sigma$-模型, 它的拉格朗日量密度是
+\[
+\mathscr{L} = -\tfrac{1}{2}\sum_{nm} \partial_{\lambda}\Phi_{n}\partial^{\lambda}\Phi_{m}
+\Bigl[ \updelta_{nm} + U_{nm}(\Phi) \Bigr] - V(\Phi )\:.
+\]%
+直接计算给出如下哈密顿量
+\[
+H=\int \dif^{3}x \: \biggl[ \tfrac{1}{2}\Pi_{n}\Bigl( 1 + U(\Phi) \Bigr)_{nm}^{-1}\Pi_{m}
++\tfrac{1}{2}\bm{\nabla}\Phi_{n}\cdot \bm{\nabla} \Phi_{m}\Bigl(1+U(\Phi)\Bigr)_{nm}+V(\Phi)\biggr] \:.
+\]%
+这里的$\mathscr{A}$是依赖场的量
+\[
+\mathscr{A}_{nx,my}=\Big[ 1+U(\Phi (x))\Big] _{nm}^{-1}\updelta ^{4}(x-y)%
+\:.
+\]%
+在这类情况下, 利用关系$\operatorname{Det}\mathscr{A}=\exp \operatorname{Tr}\ln \mathscr{A}$, 这个行列式可以重新表述为对有效拉格朗日量的贡献. 通过把连续的时空位置替换成分立的格点, 其中每个格点被时空体积为小量$\Omega$的独立区域所包围, 我们可以把$\mathscr{A}_{nx,my}$中的$\updelta$-函数理解成$\updelta ^{4}(x-y)=\Omega ^{-1}\updelta _{x,y}$, 从而使
+\[
+(\ln \mathscr{A})_{nx,my} = \updelta_{x,y} \Bigl[ -\ln (1+U(\Phi(x)))-1\cdot \ln \Omega \Bigr]_{nm}
+\]%
+其中矩阵的对数现在由它的幂级数展开定义
+\[
+\ln (1+U)=U-\frac{U^{2}}{2}+\frac{U^{3}}{3}-\cdots \:.
+\]%
+为了计算这个迹, 我们注意到$\sum_{x}\cdots = \Omega^{-1}\int d^{4}x\cdots$. 于是这里的行列式因子是\marginpar[\flushright
+{\raisebox{-4ex}[0pt]{{\small[393]\hspace*{5mm}}}}]{{\raisebox{-4ex}[0pt]{\small\hspace*{5mm}[393]}}}
+\[
+\operatorname{Det}\mathscr{A}\propto \exp \biggl[ -\Omega^{-1}\int \dif^{4}x\:%
+\operatorname{tr}\ln \Bigl[ 1+U(\Phi (x))\Bigr] \biggr] \:,
+\]%
+其中``$\operatorname{tr}$''被理解为普通矩阵意义下的迹. 比例常数(源于$-\ln\Omega$项)是与场无关的, 因此现在对它不感兴趣. 我们可以认为这个行列式提供了对有效拉格朗日量密度的一个修正
+\[
+\Delta \mathscr{L} = -\tfrac{1}{2}\mi\,\Omega^{-1}\operatorname{tr}\ln \Bigl[1+U(\Phi(x))\Bigr] \:.
+\]%
+因子$\Omega^{-1}$可以写成一个紫外发散积分
+\[
+\Omega^{-1} = \updelta^{4}(x-x) = (2\uppi)^{-4}\int \dif^{4}p\cdot 1\:.
+\]%
+不过对于这个理论, 通过在标量场时间导数的传播子中计入等时对易项,\textsuperscript{\cite{7}} $\Delta\mathscr{L}$给\,Feynman\,图贡献的额外项也可以在正则形式体系下导出，但是这里我们不演示如何得到这一结论. 忽略这个修正将导致$S$-矩阵对标量场定义方式有伪依赖性, 同时也与拉格朗日量在标量场变换下的任何对称性不相容.
+
+即便路径积分公式(\ref{9.3.10})中的因子$(\operatorname{Det}\mathscr{A})^{-1/2}$是与场无关的, 这个公式中的拉格朗日量也可能不是我们开始时的拉格朗日量. 作为例子, 我们考虑一组实矢量场的理论, 它的拉格朗日密度为
+\begin{align*}
+\mathscr{L} &=-\sum_{n}\Big[\tfrac{1}{4}\bigl(\partial_{\mu}A_{n\lambda}-\partial_{\lambda}A_{n\mu}\bigr)
+\bigl( \partial^{\mu}A_{n}{}^{\lambda}-\partial^{\lambda}A_{n}{}^{\mu}\bigr)  \\
+&\quad+\tfrac{1}{2}m_{n}^{2}A_{n\lambda}A_{n}{}^{\lambda}+J_{n}{}^{\lambda}A_{n\lambda }\Big]\:,
+\end{align*}%
+其中流$J_{n}{}^{\mu}$要么是外部产生的\,c\,-数量, 要么依赖于其他场(在这种情况下, 描述这些场的项要加进拉格朗日量里). %
+对\,\ref{sec:7.5}\,节结果做一个简单的推广, 我们看到哈密顿量是
+\begin{align*}
+H &=\int \dif^{3}x \: \sum_{n}\Biggl[ \frac{1}{2}\Pi_{n}^{2}
++\frac{1}{2}(\bm{\nabla}\times \bA_{n})^{2} + \frac{1}{2}m_{n}^{2}\bA_{n}^{2} \\
+&\quad+\frac{1}{2m_{n}^{2}} (\bm{\nabla} \cdot \bm{\Pi}_{n})^{2}+\bJ_{n}\cdot\bA_{n}
+-\frac{1}{m_{n}^{2}}J_{n}^{0}\bm{\nabla} \cdot \bm{\Pi}_{n}+\frac{1}{2m_{n}^{2}}(J_{n}^{0})^{2}\Biggr]
+\end{align*}%
+这里仍要理解成必须加上一些其他的项, 这些项包含$J_{n}{}^{\mu}$中的所有场.
+这里的二次项系数要比我们第一个例子中的二次项系数复杂些:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[394]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[394]}}}
+\[
+\mathscr{A}_{nix,mjy} = \updelta_{nm} \biggl[ \updelta_{ij} \updelta^{4}(x-y)
+-\frac{1}{2m_{n}^{2}}\nabla_{i}\nabla_{j}\updelta^{4}(x-y)\biggr] \:,
+\]%
+但是它不依赖场, 从而使因子$(\operatorname{Det}\mathscr{A})^{-1/2}$不产生影响. 另一方面, 拉格朗日量(\ref{9.3.9})在这里不是我们由此出发的那个拉格朗日量; 它完全以$\bA$及其时空导数的形式表示, 而不依赖于任何时间分量$A^{0}$. 由于这个原因, 方程(\ref{9.3.10})的\,Lorentz\,不变性是很不明显的.
+
+为了补救这点, 我们可以重新引入辅助场. 假定我们给哈密顿量加上一项
+\[
+\Delta H = -\tfrac{1}{2} \sum_{n} m_{n}^{2} \int \dif^{3}x\:\Bigl[ A_{n}^{0}
+-m_{n}^{-2}\bm{\nabla} \cdot \bm{\Pi}_{n} + m_{n}^{-2}J_{n}^{0}\Bigr]^{2}
+\]%
+并对$A_{n}^{0}$以及$\bA_{n}$和$\bm{\Pi}_{n}$积分.
+由于$\Delta H$是$A^{0}$的二次型(且$A^{0}$的二阶项系数不依赖场), 它的稳相值为零, 这样只能引入一个不依赖场的整体因子. 然而, 假定我们在积掉$A_{n}^{0}${\KAI{之前}}积掉$\bm{\Pi}_{n}$. 路径积分(\ref{9.2.17})中的哈密顿量在这里就被替换成
+\begin{align*}
+H+\Delta H &= \int \dif^{3}x\: \sum_{n}\Bigl[\tfrac{1}{2}\bm{\Pi}_{n}^{2}
++\tfrac{1}{2}(\bm{\nabla} \times \bA_{n})^{2} + \tfrac{1}{2}m_{n}^{2}{\bA_{n}}^{2} \\
+&\quad-\tfrac{1}{2}m_{n}^{2}(A_{n}^{0})^{2} + \bJ_{n}\cdot \bA_{n}
+-J_{n}^{0}A_{n}^{0}+A_{n}^{0}\bm{\nabla} \cdot \bm{\Pi}_{n}\Bigr]\:.
+\end{align*}%
+这依然是$\bm{\Pi}_{n}$的二次型, 其中二次项系数不依赖场(并且更简单些), 所以对$\bm{\Pi}_{n}$的积分可以通过将$\bm{\Pi}_{n}$替换成它在泛函%
+$\sum_{n}\int\dif^{3}x\,\bm{\Pi}_{n}\cdot\dot{\bA}_{n}-H-\Delta H$的稳相点值完成:%
+\[
+\bm{\Pi}_{n}=\dot{\bA}_{n}+\bm{\nabla} A_{n}^{0}\:.
+\]%
+当以这种方式消掉$\bm{\Pi}_{n}$后, $\sum_{n}\int \dif^{3}x\,\bm{\Pi}_{n}\cdot \dot{\bA}_{n}-H-\Delta H$正是我们作为出发点的\,Lorentz\,不变拉格朗日量.
+
+为了兼顾到可能要引入像$A_{n}^{0}$这种辅助场的需求, 从现在起, 我们将写出用场$\psi_{\ell}$消掉正则共轭后的路径积分公式, 这里$\psi_{\ell}$包含正则场$q_{n}$和辅助场$c_{r}$:
+\begin{align}
+&\Bigl\langle \text{VAC},\text{out}\Big\vert T\,\Bigl\{ \mathcal{O}_{A}\Bigl[\Psi_{A}(t_{A})\Bigr],
+\mathcal{O}_{B}\Bigl[\Psi_{B}(t_{B})\Bigr] ,\cdots \Bigr\} \Big\vert \text{VAC},\text{in}\Bigr\rangle   \nonumber \\
+&\propto \int \prod_{\tau,\bx,n}\dif\psi _{n}(\bx,\tau)\:
+\mathcal{O}_{A}\Bigl[\psi(t_{A})\Bigr] \,\mathcal{O}_{B}\Bigl[\psi (t_{B})\Bigr] \cdots \nonumber \\
+&\times \exp\biggl[ \mi\int_{-\infty }^{\infty}\dif\tau\:\Bigl\{
+L\Bigl[ \psi(\tau),\dot{\psi}(\tau)\Bigr] + \mi\epsilon\,\text{项}\Bigr\} \biggr] \:,  \label{9.3.11}
+\end{align}%
+现在\marginpar[\flushright{\small[395]\hspace*{5mm}}]{{\small\hspace*{5mm}[395]}}, 它被理解成: $L$将包含可能与场相关的因子$(\operatorname{Det}\mathscr{A})^{-1/2}$产生的任何项.
+
+
+\section{Feynman\,规则的路径积分推导} \label{sec:9.4}
+\setcounter{equation}{0}
+
+我们现在可以用路径积分体系来推导一大类理论中的\,Feynman\,规则了. 在这里, 我们将关注场算符(及其伴算符)编时乘积的真空期望值,%
+\begin{equation}
+M_{\ell_{A}\ell_{B}\cdots}(x_{A}x_{B}\cdots) = \frac{\langle \text{VAC},\text{out}\vert\,
+T\{ \Psi_{\ell_{A}}(x_{A}),\Psi_{\ell_{B}}(x_{B})\cdots\}\, \vert \text{VAC},\text{in}\rangle}{\langle \text{VAC},\text{out}\vert \text{VAC},\text{in}\rangle} \label{9.4.1}
+\end{equation}%
+通过剥离出与每个场相关联的终端传播子, 将它们替换成相应自由场中乘在产生算符或湮没算符上的系数函数, 并对这些系数函数的指标求和, 我们可以从中获得$S$-矩阵元(见\,\ref{sec:6.4}\,节).
+
+对于哈密顿量是$\Pi$的二次型这种较简单的理论, 方程(\ref{9.3.11})给出
+\begin{equation}
+M_{\ell_{A}\ell_{B}\cdots}(x_{A}x_{B}\cdots) = \frac{\ds\int \biggl[
+\prod\limits_{x,\ell}\dif\psi_{\ell}(x)\biggr] \psi _{\ell_{A}}(x_{A})\,
+\psi _{\ell _{B}}(x_{B})\cdots \me^{\mi I[\psi]}}{
+\ds\int\prod\limits_{x,\ell}\dif\psi_{\ell}(x)\:\me^{\mi I[\psi]}}\:,
+\label{9.4.2}
+\end{equation}%
+其中$I[\psi]$是作用量
+\begin{equation}
+I[\psi] = \int_{-\infty }^{\infty} \dif\tau \: \Bigl\{ L\Bigl[ \psi(\tau),\dot{\psi}(\tau)\Bigr]
++ \mi\epsilon \,\text{项}\Bigr\}   \label{9.4.3}
+\end{equation}%
+此时$L$包含方程(\ref{9.3.10})中依赖于场的行列式中可以出现的所有项.
+
+我们现在假定, 拉格朗日量是拉格朗日量密度的积分, 拉格朗日量密度由一个不含相互作用的二次型项$\mathscr{L}_{0}$%
+加上一个拉格朗日相互作用密度$\mathscr{L}_{1}$构成:%
+\begin{align}
+L\Bigl[ \psi(\tau),\dot{\psi}(\tau)\Bigr] &= \int \dif^{3}x\:\Bigl[\mathscr{L}_{0}\Bigl(\psi(\bx,\tau),\partial_{\mu} \psi(\bx,\tau)\Bigr) \nonumber \\
+&\quad+\mathscr{L}_{1}\Bigl(\psi(\bx,\tau),\partial_{\mu}\psi(\bx,\tau)\Bigr) \Bigr]\:.  \label{9.4.4}
+\end{align}%
+即, 作用量(\ref{9.4.3})是\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[396]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[396]}}}
+\begin{align}
+I[\psi] &= I_{0}[\psi] + I_{1}[\psi] \:,  \label{9.4.5} \\
+I_{0}[\psi] &= \int \dif^{4}x\:\mathscr{L}_{0}\Bigl(\psi(x),\partial_{\mu}\psi(x)\Bigr)
++ \mi\epsilon\,\text{项}, \label{9.4.6} \\
+I_{1}[\psi] &= \int \dif^{4}x\:\mathscr{L}_{1}\Bigl(\psi(x),\partial_{\mu}\psi(x)\Bigr) \:.  \label{9.4.7}
+\end{align}%
+既然$\mathscr{L}_{0}$和``$\mi\epsilon$项''是场的二次型, 我们总可以将$I_{0}$写成一般的二次型形式
+\begin{equation}
+I_{0}[\psi] = -\tfrac{1}{2}\int \dif^{4}x\,\dif^{4}x^{\prime}\:
+\sum_{\ell,\ell^{\prime}}\mathscr{D}_{\ell x,\ell^{\prime}x^{\prime}}\:
+\psi_{\ell}(x)\,\psi_{\ell^{\prime}}(x^{\prime})\:.  \label{9.4.8}
+\end{equation}%
+例如, 对于一个质量为$m$的实标量场, 未微扰拉格朗日量是
+\begin{equation}
+\mathscr{L}_{0} = -\tfrac{1}{2}\partial_{\mu}\phi \partial^{\mu}\phi
+- \tfrac{1}{2}m^{2}\phi^{2}  \label{9.4.9}
+\end{equation}%
+而$I_{0}$中的$\mi\epsilon$项由方程(\ref{9.2.16})给定为
+\begin{equation}
+\tfrac{1}{2}\mi\epsilon \int \dif t\int \dif^{3}x\,\dif^{3}x^{\prime }\:
+\mathscr{E}(\bx,\bx^{\prime})\,\phi(\bx,t)\phi(\bx^{\prime},t) \label{9.4.10}
+\end{equation}%
+所以这里
+\begin{equation}
+\mathscr{D}_{x,x^{\prime}} = \frac{\partial}{\partial x^{\mu}}\,
+\frac{\partial}{\partial x_{\mu}^{\prime}}\,\updelta^{4}(x-x^{\prime})
++m^{2}\,\updelta^{4}(x-x^{\prime}) - \mi\epsilon \mathscr{E}(\bx,\bx^{\prime})
+\updelta (t-t^{\prime}) \:. \label{9.4.11}
+\end{equation}%
+(由于$\mi\epsilon$项中的$\me^{-\epsilon\lvert \tau \rvert}$因子产生的是高阶$\epsilon$修正, 我们现在扔掉它.) 为了处理相互作用, 我们将指数展成$I_{1}$的幂级数,%
+\begin{equation}
+\exp (\mi I[\psi])=\exp(\mi I_{0}[\psi])\sum_{N=0}^{\infty}\frac{\mi^{N}}{N!}\,\Bigl(I_{1}[\psi]\Bigr)^{N}  \label{9.4.12}
+\end{equation}
+然后将$I_{1}$展成场的幂级数. 我们在方程(\ref{9.4.2})的分子和分母中所遇到的一般积分形式如下
+\begin{equation}
+\mathscr{I}_{\ell_{1}\ell_{2}\cdots}(x_{1}x_{2}\cdots) \equiv \int
+\Biggl(\prod_{\ell,x}\dif\psi_{\ell}(x)\Biggr)\: \me^{\mi I_{0}[\psi]}\,
+\psi_{\ell_{1}}(x_{1})\,\psi_{\ell_{2}}(x_{2})\cdots \:,  \label{9.4.13}
+\end{equation}%
+其中$\psi_{\ell_{1}}(x_{1})$, $\psi_{\ell_{2}}(x_{2})$等场因子来自于$I_{1}[\psi]$%
+和(或)本来出现在方程(\ref{9.4.2})分子中的$\psi_{\ell_{A}}(x_{A})$等场因子. 当$I_{0}[\psi]$的形式是(\ref{9.4.8})时, 积分(\ref{9.4.13})与本章附录所计算的积分就是同一形式, 只不过离散指标$s$被替换成一对指标$\ell,x$. 因而我们可以使用方程(\ref{9.A.12})和(\ref{9.A.15}), 它在这里给出\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[397]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[397]}}}
+\begin{equation}
+\mathscr{I}_{\ell_{1}\ell_{2}\cdots}(x_{1}x_{2}\cdots) =
+\biggl[\operatorname{Det}\biggl(\frac{\mi\mathscr{D}}{2\uppi}\biggr)\biggr]^{-1/2}
+\sum_{\mbox{\scriptsize 场的配对}}\quad \prod_{\mbox{\scriptsize 配对}}\:
+\Bigl[-\mi\mathscr{D}^{-1}\Bigr]_{\mbox{\scriptsize 配对场}}\:. \label{9.4.14}
+\end{equation}%
+这恰好相当于在协变形式下计算方程(\ref{9.4.2})分子的坐标空间\,Feynman\,规则: 按照相互作用$I_{1}$展开, 然后对$I_{1}$中的所有场彼此之间以及与$\psi_{\ell_{A}}(x_{A})$等场的所有配对方式求和,
+其中每个配对的贡献由$I_{1}[\psi]$中场系数乘积的时空积分和``传播子''$-\mi\Delta$的乘积给出, 其中
+\begin{equation}
+\Delta_{\ell_{1}\ell_{2}}(x_{1},x_{2})=(\mathscr{D}^{-1})_{\ell_{1}x_{1},\ell_{2}x_{2}}\:. \label{9.4.15}
+\end{equation}%
+(方程(\ref{9.4.14})中的因子$[\operatorname{Det}(\mi\mathscr{D}/2\uppi)]^{-1/2}$%
+实际上代表了包含任意数量的单圈且不与任何其他线相连的图的贡献, 但是无论怎样, 这个因子都会在比值(\ref{9.4.2})中抵消.)
+
+接下来计算传播子(\ref{9.4.15}). 我们将方程(\ref{9.4.15})理解成一个积分方程
+\begin{equation}
+\sum_{\ell_{2}}\int \dif^{4}x_{2} \:\mathscr{D}_{\ell_{1}x_{1},\ell_{2}x_{2}}
+\Delta_{\ell_{2}\ell_{3}}(x_{2},x_{3})
+=\updelta^{4}(x_{1}-x_{3})\updelta_{\ell_{1}\ell_{3}}\:.  \label{9.4.16}
+\end{equation}%
+在没有外场时, 平移不变性要求$\mathscr{D}$必须只是$x_{1}-x_{2}$的函数, 它可以写成一个\,Fourier\,积分
+\begin{equation}
+\mathscr{D}_{\ell_{1}x_{1},\ell_{2}x_{2}}\equiv (2\uppi)^{-4}
+\int\dif^{4}p\:\me^{\mi p\cdot (x_{1}-x_{2})}\,\mathscr{D}_{\ell_{1}\ell_{2}}(p)\:. \label{9.4.17}
+\end{equation}%
+那么方程(\ref{9.4.16})的解是
+\begin{equation}
+\Delta_{\ell_{1}\ell_{2}}(x_{1},x_{2}) = (2\uppi)^{-4}\int \dif^{4}p\:
+\me^{\mi p\cdot(x_{1}-x_{2})}\,\mathscr{D}_{\ell_{1}\ell_{2}}^{-1}(p)\:, \label{9.4.18}
+\end{equation}%
+其中$\mathscr{D}^{-1}$就是矩阵$\mathscr{D}$在一般意义下的逆. 正如我们将看到的, $\mi\epsilon$项的作用是使这里的逆对所有实值的$p$都是合理定义的. 由此我们将计算传播子的问题简化成计算一个有限矩阵的逆.
+
+首先考察一个有质量标量场, 它的核$\mathscr{D}$取(\ref{9.4.11})的形式. 我们可以将其写成一个\,Fourier\,积分
+\begin{equation*}
+\mathscr{D}_{x,y} = (2\uppi)^{-4} \int \dif^{4}p\:\me^{\mi p\cdot (x-y)}
+\Bigl(p^{2}+m^{2}-\mi\epsilon E(\bp)\Bigr) \:,
+\end{equation*}%
+所以传播子是
+\begin{equation*}
+\Delta (x,y)=(2\uppi)^{-4}\int \dif^{4}p\:\me^{\mi p\cdot (x-y)}
+\Bigl(p^{2}+m^{2}-\mi\epsilon E(\bp)\Bigr)^{-1}\:.
+\end{equation*}%
+可以看出这与\marginpar[\flushright{\small[398]\hspace*{5mm}}]{{\small\hspace*{5mm}[398]}}算符方法得到的标量传播子是精确相同的. (由于$\epsilon$和$\epsilon E(\bp)$都是正的无限小量, 它们之间的差别是无关紧要的.)
+
+第二个例子, 考虑一个有质量的实矢量场. 未微扰拉格朗日量是
+\begin{equation*}
+\mathscr{L}_{0}=-\tfrac{1}{4}(\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu})
+(\partial^{\mu}A^{\nu} - \partial^{\nu}A^{\mu}) - \tfrac{1}{2}m^{2} A_{\mu }A^{\mu }\:.
+\end{equation*}%
+我们可以再次将$I_{0}[\psi]$写成(\ref{9.4.8})的形式, 它的核是
+\begin{align*}
+\mathscr{D}_{\rho x,\sigma y} &= \biggl[
+\eta_{\rho \sigma}\frac{\partial^{2}}{\partial x^{\mu}\partial y_{\mu }}
+-\frac{\partial^{2}}{\partial x^{\sigma}\partial y^{\rho}} + m^{2}\eta_{\rho\sigma}\biggr] \updelta^{4}(x-y) + \mi\epsilon\,\text{项} \\
+&=(2\uppi)^{-4}\int \dif^{4}p\:\me^{\mi p\cdot(x-y)}\Bigl[ \eta_{\rho\sigma}p^{2}
+-p_{\rho}p_{\sigma} + m^{2}\eta_{\rho\sigma} + \mi\epsilon\, \text{项}\Bigr] \:.
+\end{align*}%
+我们并不费心在这里证明它, 但是``$+\mi\epsilon$项''在这里采取简单形式$-\mi\epsilon E(\bp)
+\eta_{\rho\sigma}$. 那么矢量场传播子通过简单地对被积函数中的$4\times 4$矩阵取逆得到
+\begin{equation*}
+\Delta_{\rho\sigma}(x,y)=(2\uppi)^{-4}\int \frac{\dif^{4}p\:\me^{\mi p\cdot (x-y)}}{p^{2}+m^{2}-\mi\epsilon E(\bp)}\,\biggl[\eta_{\rho\sigma}+\frac{p_{\rho}p_{\sigma}}{m^{2}}\biggr] \:.
+\end{equation*}%
+(分子中正比于$\epsilon$的项被扔掉了. 分母中的$\epsilon$项在定义如何在质壳$p^{2}=-m^{2}$附近处理被积函数时是重要的.) 这与用算符方法导出的传播子是相同的, 只是正比于$\updelta(x^{0}-y^{0})$的非协变项没有出现. 以前这些非协变项是用来抵消相互作用哈密顿量中的非协变项, 但是现在\,Feynman\,规则中的顶点贡献是通过观察协变拉格朗日量直接获得的, 这种抵消不再需要了.
+
+有导数耦合的理论是同样简单的. 场导数$\partial_{\mu}\psi_{\ell}(x)$与任意其他场$\psi_{m}(y)$(或许它本身, 一个场导数)的配对产生的因子是
+\begin{align}
+\langle \partial_{\mu}\psi_{\ell}(x)\:\psi_{m}(y)\rangle  &=
+\frac{\int\biggl[\prod\limits_{x,\ell}\dif\psi_{\ell}(x)\biggr]\:
+\partial_{\mu}\psi_{\ell }(x)\,\psi_{m}(y)\,\me^{\mi I[\psi]}}{\int
+\biggl[\prod\limits_{x,\ell}\dif\psi_{\ell}(x)\biggr]\:\me^{\mi I[\psi ]}}  \nonumber \\
+&=\frac{\partial}{\partial x^{\mu}}\langle \psi_{\ell}(x)\,\psi_{m}(y)\rangle \:.  \label{9.4.19}
+\end{align}%
+这样的传播子没有非协变部分. 例如, 对于一个实标量场, $\partial_{\mu}\phi$与$\partial_{\nu}\phi$的配对给出的动量空间传播子是%
+$k_{\mu}k_{\nu}/(k^{2}+m^{2}-\mi\epsilon)$. 另外, 正如我们在上一节看到的, 标量场理论中如果有与其他场的导数耦合, 那么顶点可以直接从拉格朗日量中读出, 并且分别是协变的.
+
+\section{费米子的路径积分} \label{sec:9.5}
+\setcounter{equation}{0}
+\marginpar[\flushright
+{\raisebox{5.5ex}[0pt]{{\small[399]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[399]}}}
+
+我们现在着手来研究如何将路径积分体系扩展至既包含费米子又包含玻色子的理论. 通过类比玻色情况, 以能够给出``正确''\,Feynman\,规则为基准, 我们可以很容易地以纯形式的方式做这件事. 然而, 我们在这里将直接从量子力学原理导出费米的路径积分体系, 就像我们对玻色子做的那样.\textsuperscript{\cite{9}}
+
+像前面一样, 我们将从一般的量子力学系统出发, ``坐标''为$Q_{a}$和正则共轭``动量''为$P_{a}$, 不过现在它们满足反对易而不是对易关系:%
+\begin{align}
+\Bigl\{ Q_{a},P_{b}\Bigr\}  &= \mi\,\updelta _{ab}\:,  \label{9.5.1} \\
+\Bigl\{ Q_{a},Q_{b}\Bigr\}  &= \Bigl\{ P_{a},P_{b}\Bigr\} =0\:. \label{9.5.2}
+\end{align}%
+(它们是\,Schr\"{o}dinger\,-绘景算符, 换句话说, 是时间$t=0$时的\,Heisenberg\,-绘景算符.) 稍后我们将会把离散指标$a$替换成空间指标$\bx$ 和场指标$m$.%
+
+我们首先希望为$Q$和$P$所作用的态构造一组完备基. 注意到对于任意给定的$a$, 我们有
+\begin{equation}
+Q_{a}^{2}=P_{a}^{2}=0\:.  \label{9.5.3}
+\end{equation}%
+由此得出, 总存在被所有的$Q_{a}$湮没的``右矢''态$\lvert 0\rangle$,
+\begin{equation}
+Q_{a}\lvert 0\rangle =0\:,  \label{9.5.4}
+\end{equation}%
+以及被所有的$P_{a}$(从右边)湮没的``左矢''态$\langle 0\rvert$,
+\begin{equation}
+\langle 0\rvert P_{a}=0\:.  \label{9.5.5}
+\end{equation}%
+例如, 我们可以取
+\[
+\lvert 0\rangle \propto \Biggl( \prod_{a}Q_{a}\Biggr)\, \lvert f\rangle \:, \qquad
+\langle 0\rvert \propto \langle g\rvert \,\Biggl( \prod_{a}P_{a}\Biggr) \:,
+\]%
+其中$\lvert f\rangle$和$\langle g\rvert$是使得这些表达式不为零的任意右矢和左矢. (除非算符$\prod_{a}Q_{a}$和$\prod_{a}P_{a}$为零, 否则它们对于所有的$\lvert f\rangle$和%
+$\langle g\rvert$不能为零, 而我们已经假定了不是这样的情况.) 这些态通过方程(\ref{9.5.3})满足方程(\ref{9.5.4})和(\ref{9.5.5}). 它们一般不是唯一的, 这是因为可能存在其他玻色自由度以区分各种可能的$\lvert 0\rangle$和$\langle 0\vert$, 但简单起见, 我们在这里将只考虑这样的情况: 唯一的自由度是那些由费米算符$Q_{a}$和$P_{a}$描述的自由度, 并假定满足方程(\ref{9.5.4})和(\ref{9.5.5})的态除了相差常数因子外是唯一的, 我们对这个因子进行选择使得
+\begin{equation}
+\langle 0\vert 0\rangle =1\:.  \label{9.5.6}
+\end{equation}%
+(注意\marginpar[\flushright{\small[400]\hspace*{5mm}}]{{\small\hspace*{5mm}[400]}}, 如果我们定义了$\langle 0\rvert$是$Q_{a}$本征值为零的左本征态, 就不能采用这个归一化约定, 这是因为此时$\langle0\rvert \{Q_{a},P_{a}\}\lvert 0\rangle$将为零, 结合方程(\ref{9.5.1}), 这意味着$\langle 0\vert 0\rangle=0$.)
+
+正如我们在\,\ref{sec:7.5}\,节中看到的, 在\,Dirac\,理论中, $Q_{a}$不是厄米的, 而是有一个伴$-\mi P_{a}$, 在这种情况下, $\langle0\rvert${\KAI{可以}}简单地视为$\lvert 0\rangle$的伴. 然而, 存在一些费米算符(例如卷\,\textrm{I\!I}\,要引入的``鬼''场)使得$P_{a}$与$Q_{a}$的伴无关. 在下文中, 我们不需要假定$Q_{a}$或$P_{a}$的伴之间, 亦或$\lvert 0\rangle$和$\langle 0\rvert$之间存在任何关系.
+
+系统态的完备基由$\lvert0\rangle$以及任意个{\KAI{不同}}的$P$作用在$\lvert 0\rangle$上的态(关于指标$a,b\cdots$反对称)%
+\begin{equation}
+\lvert a,b,\cdots \rangle \equiv P_{a}\,P_{b}\cdots \lvert 0\rangle   \label{9.5.7}
+\end{equation}%
+给出. 即, $P$与$Q$的任意算符函数作用在这些态上的结果可以写成同一组态的线性组合. 特别地, 如果指标$a$不是$\lvert b,c,\cdots\rangle$中的任何一个指标, 那么
+\begin{align}
+Q_{a}\lvert b,c,\cdots \rangle  &=0\:,  \label{9.5.8} \\
+P_{a}\lvert b,c,\cdots \rangle  &=\vert a,b,c,\cdots \rangle \:.  \label{9.5.9}
+\end{align}%
+另一方面, 如果$a${\KAI{是}}序列$b,c,\cdots$中的一个指标, 我们总可以重写这个态(或许要改变它的符号), 使得$a$是这些指标的第一个, 在这种情况下, 我们有%
+\begin{align}
+Q_{a}\lvert a,b,c,\cdots \rangle  &= \mi\,\lvert b,c,\cdots \rangle \:,  \label{9.5.10} \\
+P_{a}\lvert a,b,c,\cdots \rangle  &=0\:.  \label{9.5.11}
+\end{align}
+
+类似地, 我们可以定义一组完备对偶基, 由$\langle 0\rvert$以及态(也是关于指标反对称的)
+\begin{equation}
+\langle a,b,\cdots \vert \equiv \langle 0\rvert \cdots (-\mi Q_{b})(-\mi Q_{a}) \label{9.5.12}
+\end{equation}%
+组成. 利用方程(\ref{9.5.4})\yzx (\ref{9.5.6})以及反对易关系(\ref{9.5.1}), 我们看到这些态的标量积取值
+\begin{align}
+&\langle c,d,\cdots \vert \,a,b,\cdots \rangle  =\langle 0\rvert \cdots
+(-\mi Q_{d})(-\mi Q_{c})\, P_{a}P_{b}\cdots \lvert 0\rangle   \nonumber \\
+&\qquad=\begin{cases}
+0 &\quad \text{如果 \ }\{c,d,\cdots \}\neq \{a,b,\cdots \} \\
+1 &\quad \text{如果 \ }c=a,\text{\thinspace }d=b,\text{ 等等,}%
+\end{cases}%    \label{9.5.13}
+\end{align}%
+其中$\{\cdots\}$在这里表示括号内的这组指标不考虑顺序.
+
+在推导\,Feynman\,规则时, 我们希望能够将类似(\ref{9.5.7})这样的对中间态求和改写成对%
+$Q_{a}$或$P_{a}$本征态的积分. 然而, 这些算符是不可能有通常意义下的(除零以外)本征值的. 假定我们尝试找到一个态$\lvert q\rangle$, (对于所有的$a$)
+满足\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[401]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[401]}}}
+\begin{equation}
+Q_{a}\lvert q\rangle = q_{a}\lvert q\rangle \:.  \label{9.5.14}
+\end{equation}%
+由方程(\ref{9.5.2}), 我们看到
+\begin{equation}
+q_{a}q_{b}+q_{b}q_{a}=0,  \label{9.5.15}
+\end{equation}%
+这对于普通数是不可能的. 然而, 并没有什么阻止我们引入\,``变量''\,(称为\,\textit{Grassmann}\,({\KAI{格%
+拉斯曼}})\,{\KAI{变量}})\,$q_{a}$\,的代数, 只要我们所关注的是物理\,Hilbert\,空间, 它的作用就和\,c\,-数一样, 但它仍然满足反对易关系(\ref{9.5.15}). 我们进一步要求
+\begin{equation}
+\{q_{a},q_{b}^{\prime }\}=\{q_{a},Q_{b}\}=\{q_{a},P_{b}\}=0\:,  \label{9.5.16}
+\end{equation}%
+其中$q$和$q^{\prime}$代表这些变量的任意两个``值''. 我们现在构造满足方程(\ref{9.5.14})的本征态$\lvert q\rangle$:
+\begin{equation}
+\lvert q\rangle =\exp \Biggl( -\mi\sum_{a}P_{a}q_{a}\Biggr)\, \lvert 0\rangle,   \label{9.5.17}
+\end{equation}%
+其中指数像通常那样通过它的幂级数展开定义. (为了证明方程(\ref{9.5.14}), 利用所有$P_{a}q_{a}$彼此对易以及自身平方为零的性质, 这使得
+\begin{align*}
+[Q_{a}-q_{a}]\,\lvert q\rangle  &= [Q_{a}-q_{a}]\,\exp (-\mi P_{a}q_{a})\,
+\exp\Biggl(-\mi\sum_{b\neq a}P_{b}q_{b}\Biggr)\, \vert 0\rangle  \\
+&=[Q_{a}-q_{a}]\,[1-\mi P_{a}q_{a}]\,\exp \Biggl(-\mi\sum_{b\neq a}P_{b}q_{b}\Biggr)\lvert 0\rangle  \\
+&=[-\mi\{Q_{a},P_{a}\}q_{a}-q_{a}]\,\exp \Biggl(-\mi\sum_{b\neq a}P_{b}q_{b}\Biggr)\lvert 0\rangle =0\:,
+\end{align*}%
+正是方程(\ref{9.5.14})所要求的.) 我们也可以定义左本征态$\langle q\rvert$\,({\KAI{不是}}$\lvert q\rangle$\,的伴)为
+\begin{equation}
+\langle q\rvert \equiv \langle 0\rvert \Biggl(\prod_{a}Q_{a}\Biggr) \,
+\exp\Biggl(-\mi\sum_{a}q_{a}P_{a}\Biggr)= \langle 0\rvert \Biggl(\prod_{a}Q_{a}\Biggr)\,
+\exp\Biggl(+\mi\sum_{a}P_{a}q_{a}\Biggr) \:,  \label{9.5.18}
+\end{equation}%
+其中$\prod\limits_{a}$是由我们所指定作为标准顺序下的乘积. 沿用对方程(\ref{9.5.14})的讨论, 我们看到
+\begin{equation}
+\langle q\rvert Q_{a}=\langle q\rvert q_{a}\:.  \label{9.5.19}
+\end{equation}%
+这些本征态有标量积\marginpar[\flushright{\small[402]\hspace*{5mm}}]{{\small\hspace*{5mm}[402]}}
+\begin{align*}
+\langle q^{\prime}\vert q\rangle &= \langle 0\rvert\,\Biggl(\prod_{a}Q_{a}\Biggr)
+\exp\Biggl(\mi\sum_{b}P_{b}(q_{b}^{\prime}-q_{b})\Biggr) \,\lvert 0\rangle  \\
+&=\langle 0\rvert\,\Biggl( \prod_{a}Q_{a}\Biggr)\,
+\Biggl(\prod_{b}(1+\mi P_{b}(q_{b}^{\prime}-q_{b}))\Biggr)\, \lvert 0\rangle\:.
+\end{align*}%
+将每一$Q_{a}$ (从最右端开始)移至右边产生因子$\mi^{2}(q_{a}^{\prime}-q_{a})$, 我们可以将其从左边移出标量积, 从而
+\begin{equation}
+\langle q^{\prime}\vert q\rangle = \prod_{a}(q_{a}-q_{a}^{\prime})\:.  \label{9.5.20}
+\end{equation}%
+我们将看到方程(\ref{9.5.20})在对$q$的积分中扮演了$\updelta$-函数的角色.
+
+以同样的方式, 我们可以构造$P_{a}$的右本征态和左本征态:%
+\begin{align}
+P_{a} \lvert p\rangle  &=p_{a}\lvert p\rangle \:,  \label{9.5.21} \\
+\langle p\rvert P_{a} &=\langle p\rvert p_{a}\:,  \label{9.5.22}
+\end{align}%
+其中$p_{a}$是类似于$q_{a}$的反对易\,c\,-数(为了方便一般将它取为与$q_{a}$以及所有的费米算符反对易, 并且它们彼此之间也反对易), 且有
+\begin{align}
+\lvert p\rangle  &= \exp \Biggl(-\mi\sum_{a}Q_{a}p_{a}\Biggr)\,\Biggl(\prod_{b}P_{b}\Biggr)\,\lvert 0\rangle \:,  \label{9.5.23} \\
+\langle p\rvert  &=\langle 0\rvert \,\exp\Biggl(-\mi\sum_{a}p_{a}Q_{a}\Biggr), \label{9.5.24}
+\end{align}%
+标量积是(现在是通过将$P$移至左边得到)%
+\begin{equation}
+\langle p^{\prime}\vert p\rangle =\prod_{a}(p_{a}^{\prime}-p_{a})\:. \label{9.5.25}
+\end{equation}%
+这两类本征态彼此之间的标量积是
+\begin{align*}
+\langle q\vert p\rangle  &= \langle q\vert \,\exp \Biggl(-\mi\sum_{a}Q_{a}p_{a}\Biggr)\,
+\Biggl( \prod_{a}P_{a}\Biggr)\, \vert 0\rangle  \\
+&=\Biggl(\prod_{a}\exp(-\mi q_{a}p_{a})\Biggr)\, \langle q\rvert\,
+\Biggl( \prod_{a}P_{a}\Biggr)\, \lvert 0\rangle  \\
+&=\Biggl(\prod_{a}\exp(-\mi q_{a}p_{a})\Biggr)\langle 0\vert \,
+\Biggl(\prod_{a}Q_{a}\Biggr)\, \Biggr( \prod_{a}P_{a}\Biggr)\, \vert 0\rangle
+\end{align*}%
+因此
+\begin{equation}
+\langle q\vert p\rangle = \chi _{N}\exp\Bigl(-\mi\sum_{a}q_{a}p_{a}\Bigr) =
+\chi_{N}\exp\Bigl(\mi\sum_{a}p_{a}q_{a}\Bigr) \:,  \label{9.5.26}
+\end{equation}%
+其中$\chi_{N}$是只与$Q_{a}$算符的个数$N$有关的相位\marginpar[\flushright{\small[403]\hspace*{5mm}}]{{\small\hspace*{5mm}[403]}}:%
+\[
+\chi _{N}\equiv \langle 0\vert \,\Biggl(\prod_{a}Q_{a}\Biggr)\,\Biggl(\prod_{a}P_{a}\Biggr)\,
+\lvert 0\rangle = \mi^{N}(-1)^{N(N-1)/2}\:.
+\]%
+我们也发现了更为简单的
+\begin{equation}
+\langle p\vert q\rangle = \prod_{a}\exp (-\mi p_{a}q_{a})\:.  \label{9.5.27}
+\end{equation}
+
+很容易看到, 态$\lvert q\rangle$在某种意义上是完备基.\,($\lvert p\rangle$也是如此.) 从定义(\ref{9.5.17}), 我们看到在这个一般的基下, 态$\lvert a,b,\cdots \rangle$恰好是(可以相差一个相位)\,$\lvert q\rangle\, $展成$q$的乘积之和中乘积$q_{a}q_{b}\cdots$的系数. 因此, 我们可以将任意态$\lvert f\rangle$ 写成如下的形式
+\[
+\vert f\rangle =f_{0}\vert q\rangle _{0}+\sum_{a}f_{a}\vert q\rangle _{a}+\sum_{a\neq
+b}f_{ab}\vert q\rangle _{ab}+\cdots \:,
+\]%
+其中$f$是数系数, 而$\lvert q\rangle$的下标$a,b,\cdots$代表$q_{a}q_{b}\cdots$在$\lvert q\rangle$中的系数.
+
+在对态的求和中, 引入一类对费米变量的积分将是非常方便的, 这类积分被称为\,\textit{Berezin}\,({\KAI{别列津}}){%
+\KAI{积分}},\textsuperscript{\cite{10}} 它被设计成将这种反对易\,c\,-数乘积的系数挑选出来. 对于任意一组这样的变量$\xi_{n}$(要么$p$要么$q$要么两者都有), 最一般的函数$f(\xi)$(要么是一个\,c\,-数要么是类似$\lvert q\rangle$的态矢)可以写成
+\begin{equation}
+f(\xi) = \Biggl(\prod_{n}\xi_{n}\Biggr)c + \xi\,\text{因子较少的项},  \label{9.5.28}
+\end{equation}%
+而对$\xi$的积分简单地定义成
+\begin{equation}
+\int \Biggl(\prod_{n}^{\thicksim} \dif\xi_{n}\Biggr)\, f(\xi)\equiv c,  \label{9.5.29}
+\end{equation}%
+其中方程(\ref{9.5.29})中的波浪号代表我们使用了一个方便的约定, 即将微分的次序与方程(\ref{9.5.28})中积分变量乘积的次序相反. 既然这个乘积在任意两个$\xi$的交换下是反对称的, 积分在任意两个$\dif\xi$的交换下也是反对称的, 所以这些``微分''实际上是反对易的
+\begin{equation}
+\dif\xi_{n}\dif\xi_{m} + \dif\xi_{m}\dif\xi_{n}=0\:.  \label{9.5.30}
+\end{equation}%
+另外, 系数$c$自身可能依赖于不进行积分但与参与积分的$\xi$反对易的\,c\,-数变量, 在这一情况下, 在积分之前, 很重要的一件事是将所有的$\xi$移至$c$ 的左边以标准化$c$的定义, 这也是我们在方程(\ref{9.5.28})中所做的.
+
+例如\marginpar[\flushright{\small[404]\hspace*{5mm}}]{{\small\hspace*{5mm}[404]}}, 对于一对反对易\,c\,-数$\xi_{1}$与$\xi _{2}$, 由于$\xi_{1}$和$\xi_{2}$ 的平方以及所有高次幂为零, 所以它们的最一般函数形如
+\[
+f(\xi_{1},\xi_{2}) = \xi_{1}\xi_{2}\,c_{12} + \xi_{1}\,c_{1} + \xi_{2}\,c_{2} + d \:.
+\]%
+这个函数有如下的积分
+\begin{gather*}
+\int \dif\xi_{1} \: f(\xi_{1},\xi_{2}) = \xi_{2}\,c_{12} + c_{1} \:, \qquad
+\int \dif\xi_{2} \: f(\xi_{1},\xi_{2}) =-\xi_{1}\,c_{12} + c_{2} \:, \\
+\int \dif\xi_{2}\,\dif\xi_{1}\:f(\xi_{1},\xi_{2}) = c_{12}\:.
+\end{gather*}%
+注意到多重积分与重复积分是相同的:%
+\[
+\int \dif\xi_{2}\,\dif\xi_{1}\:f(\xi_{1},\xi_{2}) = \int \dif\xi_{2} \biggl[
+\int \dif\xi_{1}\:f(\xi_{1},\xi_{2})\biggr] \:,
+\]%
+这个结果可以轻松地推广至对任意个费米变量的积分. (为了得到这一结果而不带来额外的符号因子, 我们取方程(\ref{9.5.29})中微分乘积的次序为方程(\ref{9.5.28})中变量乘积的逆序.) 实际上, 我们可以先定义对单个反对易\,c\,-数$\xi_{1}$的积分, 然后以通常的方式通过迭代定义多重积分.
+反对易\,c\,-数的最一般函数对每个反对易\,c\,-数都是线性的:%
+\[
+f(\xi_{1},\xi_{2},\cdots) = b(\xi_{2}\cdots) + \xi_{1}c(\xi_{2}\cdots )
+\]%
+(因为$\xi _{1}^{2}=0$), 并且它对$\xi_{1}$的积分定义成
+\[
+\int \dif\xi_{1}\:f(\xi_{1},\xi_{2},\cdots) = c(\xi_{2},\cdots )\:.
+\]%
+重复这一过程给出的多重积分与方程(\ref{9.5.28})和(\ref{9.5.29})所定义的相同.
+
+这个积分定义也具有一些普通实变量(从$-\infty$到$+\infty$)的多重积分的性质, 但存在重要差异.
+
+显然, Berezin\,积分是线性的, 也就是说
+\begin{equation}
+ \int \Biggl( \prod_{n}^{\sim}\dif\xi_{n}\Biggr)\, \Bigl[ f(\xi) + g(\xi) \Bigr]
+=\int \Biggl( \prod_{n}^{\sim}\dif\xi_{n}\Biggr) f(\xi)
++\int \Biggl( \prod_{n}^{\sim}\dif\xi_{n}\Biggr) g(\xi)  \label{9.5.31}
+\end{equation}%
+以及\begin{equation}
+ \int \Biggl( \prod_{n}^{\sim}\dif\xi_{n}\Biggr)\, \Bigl[f(\xi)a(\xi^{\prime})\Bigr]
+=\Biggl[\int \Biggl( \prod_{n}^{\sim}\dif\xi_{n}\Biggr)\, f(\xi)\Biggr] a(\xi^{\prime})\:,  \label{9.5.32}
+\end{equation}%
+其中$a(\xi^{\prime})$是我们{\KAI{没有}}对其积分的反对易\,c\,-数$\xi_{m}^{\prime}$的任意函数(包含一个常数). 然而, 左乘的线性性质不是那么明显. 如果我们对$\nu$个变量积分, 由于假定了$\xi_{m}^{\prime}$与所有的$\xi_{n}$反对易, 我们有\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[405]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[405]}}}
+\[
+a\Bigl( (-)^{\nu}\xi^{\prime}\Bigr) \,\Biggl( \prod_{n}\xi_{n} \Biggr)
+=\Biggl( \prod_{n}\xi_{n} \Biggr) \,a(\xi^{\prime})
+\]%
+从而
+\begin{equation}
+\int \Biggl( \prod_{n}\dif\xi_{n}\Biggr)\, \Bigl[ a\Bigl( (-)^{\nu}\xi^{\prime}\Bigr) f(\xi)\Bigr] =a(\xi^{\prime}) \,\int \Biggl( \prod_{n}\dif\xi_{n}\Biggr)\, f(\xi )\:.  \label{9.5.33}
+\end{equation}%
+因而取微分$\dif\xi_{n}$与所有的反对易变量(包括$\xi_{n}$)反对易是非常方便的(尽管不是严格必须的):%
+\begin{equation}
+(\dif\xi_{n})\xi_{m}^{\prime} + \xi_{m}^{\prime}(\dif\xi_{n}) =0  \label{9.5.34}
+\end{equation}%
+在这一情况下, 方程(\ref{9.5.33})变得更简单
+\begin{equation}
+\int a(\xi^{\prime})\Biggl( \prod_{n}\dif\xi_{n}\Biggr)\,f(\xi )
+=a(\xi^{\prime})\int \Biggl( \prod_{n}\dif\xi_{n}\Biggr)\,f(\xi )\:. \label{9.5.35}
+\end{equation}%
+与普通积分的另一个相似点是, 对于任意一个独立于$\xi$的反对易\,c\,-数$\xi^{\prime}$,%
+\begin{equation}
+ \int \Biggl(\prod_{n}\dif\xi_{n}\Biggr) f(\xi + \xi^{\prime})
+=\int \Biggl(\prod_{n}\dif\xi_{n}\Biggr) f(\xi)\:,  \label{9.5.36}
+\end{equation}%
+这是因为将$\xi$改变一个常数仅对$f$中个数小于$\xi$-变量总数的项有影响.
+
+另一方面, 考虑如下的变量代换\begin{equation}
+\xi_{n}\to \xi_{n}^{\prime} = \sum_{m}\mathscr{S}_{nm}\xi_{m}\:,  \label{9.5.37}
+\end{equation}%
+其中$\mathscr{S}$是普通数的任意非奇异矩阵. 新变量的积是
+\[
+\prod_{n}\xi_{n}^{\prime} = \sum_{m_{1}m_{2}\cdots}\Bigl( \prod_{n}\mathscr{S}_{nm_{n}}\xi_{m_{n}}\Bigr) \:.
+\]%
+但这里的$\prod\limits_{n}\xi_{m_{n}}$恰与乘积(以原始的顺序) $\prod\limits_{n}\xi _{n}$是相同的, 唯一不同的是一个符号因子$\epsilon[m]$, 它由置换$n\to m_{n}$ 是原始顺序的偶置换还是奇置换来决定是$+1$还是$-1$:
+\[
+\prod_{n}\xi_{n}^{\prime} = \left[ \sum_{m_{1}m_{2}\cdots }\Big( \prod_{n}%
+\mathscr{S}_{nm_{n}}\Big) \epsilon \lbrack m]\right] \prod_{n}\xi _{n}=(%
+\operatorname{Det}\mathscr{S})\prod_{n}\xi _{n}\:.
+\]%
+无论将$\xi_{n}$取成什么顺序, 只要将$\xi_{n}^{\prime}$取成相同的顺序, 这就是成立的. 由此可知$\prod\limits_{n}\xi_{n}^{\prime}$在任意函数$f(\xi)$ 中的系数恰是$(\operatorname{Det}%
+\mathscr{S})^{-1}$乘以$\prod\limits_{n}\xi_{n}$的系数, 我们将这一结论表示成\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[406]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[406]}}}
+\begin{equation}
+\int \Biggl(\prod_{n}^{\sim}\dif\xi_{n}^{\prime}\Biggr)\,f =
+(\operatorname{Det}\mathscr{S})^{-1}\int\Biggl( \prod_{n}^{\sim}\dif\xi_{n}\Biggr) f\:. \label{9.5.38}
+\end{equation}%
+除了$(\operatorname{Det}\mathscr{S})$的幂次是$-1$而非$+1$, 这就是通常的积分变量代换规则. 稍后, 在推导含有费米子理论的\,Feynman\,规则时, 我们将采用方程(\ref{9.5.38})以及线性性质(\ref{9.5.31}), (\ref{9.5.32})和(\ref{9.5.35})来计算在这一推导中遇到的积分.
+
+我们现在可以利用这个积分定义将完备性条件写成对本征值积分的公式. 正如前面已经提及的,
+任何态$\lvert f\rangle$都可以用一系列态$\lvert 0\rangle$, $\lvert a\rangle$, $\lvert a,b\rangle$等展开, 并且这些态是(可以相差一个相位)乘积$1,$ $q_{a}$, $q_{a}q_{b}$等在%
+$Q$-本征态$\lvert q\rangle$中的系数. 根据这里的积分定义, 通过对$\lvert q\rangle$与所有$a${\KAI{不}}等于$b,c,d,\cdots$的$q_{a}$的乘积积分,
+我们可以挑出态$\lvert q\rangle$中任意乘积$q_{b}q_{c}q_{d}\cdots$的系数. 因此, 通过将函数$f(q)$选成这种$q$乘积的合适的和, 我们可以将任意态$\lvert f\rangle$写成一个积分:%
+\begin{equation}
+\lvert f\rangle =\int \Biggl( \prod_{a}^{\sim}\dif q_{a}\Biggr)\, \lvert q\rangle f(q)
+=\int \lvert q\rangle \Biggl( \prod_{a}^{\sim}\dif q_{a}\Biggr)\, f(q)\:.  \label{9.5.39}
+\end{equation}%
+(我们可以将$\lvert q\rangle$移至微分的左边而不带来任何符号上的变化, 这是因为方程(\ref{9.5.17})中用来定义$\lvert q\rangle$的指数仅包含偶数个费米变量.) 为了找到给定态矢$\vert f\rangle$的函数$f(q)$, 取方程(\ref{9.5.39})与某些左矢\,$\langle q^{\prime}\rvert$\,(其中$q^{\prime}$是任意固定的$Q$-本征值)的标量积. 根据方程(\ref{9.5.35})和(\ref{9.5.20}), 这等于
+\[
+\langle q^{\prime} \vert f\rangle = \int \Biggl(\prod_{a}(q_{a}-q_{a}^{\prime})\Biggr)\,
+\Biggl( \prod_{b}^{\sim}\dif q_{b}\Biggr) \,f(q)\:.
+\]%
+将每个因子$(q_{a}-q_{a}^{\prime})$经过每个微分$\dif q_{b}$移至右边会产生符号因子$(-)^{N^{2}}=(-)^{N}$, 其中的$N$现在是变量$q_{a}$的总数, 所以
+\[
+\langle q^{\prime}\vert f\rangle = (-)^{N}\int \Biggl( \prod_{b}^{\sim}\dif q_{b}\Biggr)\,
+\Biggl( \prod_{a}(q_{a}-q_{a}^{\prime})\Biggr)\, f(q)\:.
+\]% 
+
+\newpage
+
+\noindent 我们可以将$f(q)$重写为$f(q^{\prime}+(q-q^{\prime}))$并按照$q-q^{\prime}$的幂次展开. 所有高于最低阶的项在与乘积$\prod(q_{a}-q_{a}^{\prime})$ 相乘后为零, 所以\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[407]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[407]}}}
+\begin{equation}
+\Biggl( \prod_{a}(q_{a}-q_{a}^{\prime}) \Biggr)\, f(q)=
+\Biggl( \prod_{a}(q_{a}-q_{a}^{\prime}) \Biggr)\, f(q^{\prime})\:, \label{9.5.40}
+\end{equation}%
+这部分地验证了我们关于方程(\ref{9.5.20})在对$q$的积分中扮演了$\updelta$-函数角色的说法. 利用方程(\ref{9.5.32}), 我们现在有
+\[
+\langle q^{\prime}\vert f\rangle = (-)^{N}\Biggl[ \int\Biggl( \prod_{b}^{\sim}\dif q_{b}\Biggr)\,
+\Biggl( \prod_{a}(q_{a}-q_{a}^{\prime})\Biggr)\, f(q^{\prime}) \Biggr] \:.
+\]%
+积分中正比于$\prod q_{a}$的项的系数是$f(q^{\prime})$, 所以根据我们的积分定义有$\langle q^{\prime}\vert f\rangle =(-)^{N}f(q^{\prime})$. 将其代回方程(\ref{9.5.39})就给出我们的完备性关系
+\[
+\lvert f\rangle = (-)^{N}\int \lvert q\rangle\, \Biggl( \prod_{b}^{\sim}\dif q_{b}\Biggr)\,
+\langle q\vert f\rangle \:,
+\]%
+或者作为一个算符方程
+\begin{equation}
+1=\int \lvert q\rangle\, \Biggl( \prod_{a}^{\sim}-\dif q_{a}\Biggr)\, \langle q\vert \:. \label{9.5.41}
+\end{equation}%
+以精确相同的方式，我们还可以证明\begin{equation}
+1=\int \lvert p\rangle \,\Biggl( \prod_{a}^{\sim}\dif p_{a}\Biggr)\, \langle p\rvert \:. \label{9.5.42}
+\end{equation}
+
+我们现在可以计算跃迁矩阵元了. 像往常一样, 我们定义依赖时间的算符
+\begin{align}
+Q_{a}(t) &\equiv \exp(\mi Ht)Q_{a}\exp(-\mi Ht),  \label{9.5.43} \\
+P_{a}(t) &\equiv \exp(\mi Ht)P_{a}\exp(-\mi Ht),  \label{9.5.44}
+\end{align}%
+以及它们的右本征态和左本征态
+\begin{align}
+\lvert q;t\rangle  &\equiv \exp (\mi Ht)\lvert q\rangle \:,
+&&\lvert p;t\rangle \equiv \exp (\mi Ht)\lvert p\rangle \:,  \label{9.5.45} \\
+\langle q;t\rvert  &\equiv \langle q\rvert \exp (-\mi Ht)\:,
+&&\langle p;t\rvert \equiv \langle p\rvert \exp (-\mi Ht)\:.  \label{9.5.46}
+\end{align}%
+于是时间相差无穷小的$q$-本征态之间的标量积是
+\[
+\langle q^{\prime };\tau +\dif\tau \vert q;\tau \rangle
+=\langle q^{\prime}\vert \exp(-\mi H\dif\tau )\vert q\rangle \:.
+\]% 
+
+\newpage
+
+\noindent 现在将方程(\ref{9.5.42})插入到算符$\exp(-\mi H\dif\tau)$的左边. 在这里将哈密顿算符$H(P,Q)$定义成所有的$P$处在所有$Q$的左边将是方便的, 这使得(对无限小的$\dif\tau$)
+\[
+\langle p\vert \exp \Bigl(-\mi H(P,Q)\dif\tau \Bigr) \vert q\rangle
+=\langle p\vert q\rangle\exp \Bigl(-\mi H(p,q)\dif\tau \Bigr) \:.
+\]%
+(我们可以将\,c\,-数$H(p,q)$移至\marginpar[\flushright{\small[408]\hspace*{5mm}}]{{\small\hspace*{5mm}[408]}}矩阵元的任意一边, 因为已假定哈密顿量中的每一项中都包含偶数个费米算符, 这不会引起任何符号改变.) 这给出
+\begin{align*}
+&\langle q^{\prime};\tau + \dif\tau \vert q;\tau \rangle =
+\int \langle q^{\prime}\vert p\rangle \,\Biggl(\prod_{a}^{\sim}\dif p_{a}\Biggr)\,
+\langle p\vert\exp(-\mi H\dif\tau)\vert q\rangle  \\
+&\qquad\qquad=\int \langle q^{\prime}\vert p\rangle\, \Biggl( \prod_{a}^{\sim}\dif p_{a}\Biggr)\,
+\langle p\vert q\rangle\, \exp \Bigl(-\mi H(p,q)\dif\tau \Bigr) \:.
+\end{align*}%
+利用方程(\ref{9.5.26})和(\ref{9.5.27}), 并注意到乘积$p_{a}q_{a}$和$p_{a}q_{a}^{\prime}$与所有的反对易\,c\,-数对易, 我们发现
+\begin{equation}
+ \langle q^{\prime};\tau + \dif\tau \vert q;\tau \rangle
+=\int \Biggl( \prod_{a}^{\sim}\mi\,\dif p_{a}\Biggr)\,
+\exp\Biggl[\mi\sum_{a}p_{a}(q_{a}^{\prime}-q_{a})-\mi H(p,q)\dif\tau \Biggr] \:.  \label{9.5.47}
+\end{equation}
+
+剩余的推导所依循的路线与\,\ref{sec:9.1}\,节相同. 为了计算算符乘积的矩阵元$\langle q^{\prime };t^{\prime}\vert\, \mathcal{O}_{A}(P(t_{A}),Q(t_{A}))\:$
+$\mathcal{O}_{B}(P(t_{B}),Q(t_{B}))\cdots \vert q;t\rangle$(其中$t^{\prime}>t_{A}>t_{B}>\cdots >t$), 将$t$到$t^{\prime}$的时间间隔分成大量非常小的时间步长; 在每个时间点插入完备性关系(\ref{9.5.41}); 利用方程(\ref{9.5.47})计算由此给出的矩阵元(在合适的地方插入$\mathcal{O}_{A},\mathcal{O}_{B}$ 等);
+将所有微分移至左边(这不会带来符号变化, 因为在每一步中我们都有相同数目的$\dif p$和$\dif q$); 然后引入函数$q_{a}(t)$和$p_{a}(t)$, 将它们插入每个区间中的$q_{a}$和$p_{a}$之间. 由此我们发现
+\begin{align}
+&\langle q^{\prime};t^{\prime}\vert\, T\Bigl\{ \mathcal{O}_{A}\Bigl(P(t_{A}),Q(t_{A})\Bigr),\,
+\mathcal{O}_{B}\Bigl(P(t_{B}),Q(t_{B})\Bigr),\cdots\Bigr\}\, \vert q;t\rangle   \nonumber \\
+&\quad=(-\mi)^{N}\chi_{N}\int\limits_{q_{a}(t)=q_{a},q_{a}(t^{\prime})=q_{a}^{\prime}}
+\Biggl(\prod_{a\tau}^{\sim}\dif q_{a}(\tau)\dif p_{a}(\tau)\Biggr)   \nonumber \\
+&\quad\times \mathcal{O}_{A}\Bigl( p(t_{A}),q(t_{A})\Bigr) \,
+\mathcal{O}_{B}\Bigl( p(t_{B}),q(t_{B})\Bigr) \cdots   \nonumber \\
+&\quad\times \exp \Biggl[\mi\int_{t}^{t^{\prime}}\dif\tau\:\Biggl\{ \sum_{a}p_{a}(\tau)\dot{q}_{a}(\tau)
+-H\Bigl( p(\tau),q(\tau)\Bigr) \Biggr\} \Biggr] \:.  \label{9.5.48}
+\end{align}%
+如果时间是原来假定的顺序$t_{A}>t_{B}>\cdots$, 那么符号$T$在这里就代表普通乘积. 然而, 右边关于$\mathcal{O}_{A},\mathcal{O}_{B},\cdots$是全对称的(除了反对易\,c\,-数的交换带来的负号), 所以, 在这里假定$T$被解释成编时乘积之后, 如果算符的时间编序包含奇数次费米算符的置换时带一个整体的负号, 那么这个公式对($t$和$t^{\prime}$之间的)一般时间都成立.
+
+直到现在, 我们还保留着总的相位因子$(-\mi)^{N}\chi_{N}$. 但实际上这些相位仅对真空\lzx 真空跃迁振幅有贡献, 因而对我们是不重要的.
+
+过渡到量子场论依照的\marginpar[\flushright{\small[409]\hspace*{5mm}}]{{\small\hspace*{5mm}[409]}}仍是\,\ref{sec:9.2}\,节中刻画玻色场的同一路线. 算符编时乘积的真空期望值由类似方程(\ref{9.2.17})的公式给出:%
+\begin{align}
+&\Bigl\langle \text{VAC},\text{out}\Bigr\vert \,T\Bigl\{\mathcal{O}_{A}\Bigl[ P(t_{A}),Q(t_{A})\Bigr],\,
+\mathcal{O}_{B}\Bigl[ P(t_{B}),Q(t_{B})\Bigr] ,\cdots \Bigr\}\, \Bigl\vert \text{VAC},\text{in}\Bigr\rangle   \nonumber \\
+&\propto \int \Biggl[ \prod_{\tau,\bx,m}\dif q_{m}(\bx,\tau)\Biggr]
+\Biggl[ \prod_{\tau,\bx,m}\dif p_{m}(\bx,\tau)\Biggr]\: %
+\mathcal{O}_{A}\Bigl[ p(t_{A}),q(t_{A})\Bigr]   \nonumber \\
+&\times \mathcal{O}_{B}\Bigl[ p(t_{B}),q(t_{B})\Bigr] \cdots \exp
+\biggl[\mi\int_{-\infty}^{\infty}\dif\tau \:\biggl\{\int \dif^{3}x\:\sum_{m}p_{m}(\bx,\tau)%
+\,\dot{q}_{m}(\bx,\tau)  \nonumber \\
+&\qquad\qquad-H\Bigl[ q(\tau),p(\tau)\Bigr] +\mi\epsilon\, \text{项}\biggr\}\biggr], \label{9.5.49}
+\end{align}%
+其中比例常数对于所有算符$\mathcal{O}_{A},\mathcal{O}_{B}$等都是相同的, 而``$\mi\epsilon$项''仍旧源于真空波函数. 像往常一样, 我们将每个像$a$ 这样的离散指标替换成空间位置$\bx$和场指标$m$. 我们同样扔掉了微分乘积上的波浪号, 这是因为它只影响路径积分中的常数相位.
+
+费米情况和玻色情况的一个主要差异是我们这里并不希望在积掉$q$之前积掉$p$. 事实上, 在电弱作用的标准模型中(以及其他理论, 例如更早的$\beta$-衰变的\,Fermi\,理论), 正则共轭$p_{m}$是与$\dot{q}_{m}$无关的辅助场, 并且拉格朗日量对$\dot{q}_{m}$是线性的, %
+从而方程(\ref{9.5.49})中的量$\int\dif^{3}x\,\sum_{m}p_{m}\dot{q}_{m}-H$代表的{\KAI{正是}}拉格朗日量$L$.
+对于携带非零量子数的费米场(像量子电动力学中的电子场), 它的哈密顿量中的每一项一般包含相同数量的$p$ (正比于$q^{\dag}$)和$q$. 特别地, 哈密顿量中的自由粒子项$H_{0}$关于$p$和$q$是双线性的, 从而
+\begin{align}
+&\int_{-\infty}^{\infty} \dif\tau\: \bigg\{ \int \dif^{3}x\:
+\sum_{m}p_{m}(\bx,\tau)\dot{q}_{m}(\bx,\tau)-H_{0}\Bigl[q(\tau),p(\tau)\Bigr]
++\mi\epsilon\, \text{项}\biggr\}   \nonumber \\
+&=-\sum_{nm}\int \dif^{4}x\,\dif^{4}y\:\mathscr{D}_{mx,ny}\,p_{m}(x)\,q_{n}(y), \label{9.5.50}
+\end{align}%
+其中$\mathscr{D}$为某个数值``矩阵''. 相互作用哈密顿量$V\equiv H-H_{0}$是相同数量的费米型$q$与$p$的乘积(系数可以依赖于玻色场)之和, 所以当我们将方程(\ref{9.5.49})展成$V$的幂级数时, 我们会遇到如下形式的费米积分
+\newpage
+\ \vspace{-5mm}
+\begin{eqnarray}
+&&\mathscr{I}_{n_{1}m_{1}n_{2}m_{2}\cdots n_{N}m_{N}}(x_{1},y_{1},x_{2},y_{2},\cdots,x_{N},y_{N})
+\equiv \int \Biggl[\prod_{\tau,\bx,m}\dif q_{m}(\bx,\tau)\Biggr]   \nonumber \\
+&&\times \Biggl[ \prod_{\tau,\bx,m}\dif p_{m}(\bx,\tau)\Biggr] \,
+q_{m_{1}}(x_{1})\,p_{n_{1}}(y_{1})\,q_{m_{2}}(x_{2})\,p_{n_{2}}(y_{2})\cdots
+q_{m_{N}}(x_{N})\,p_{n_{N}}(y_{N})  \nonumber \\
+&&\times \exp \biggl(-\mi\sum_{mn}\int \dif^{4}x\,\dif^{4}y\:\mathscr{D}_{mx,ny}\,p_{m}(x)\,q_{n}(y)\biggr)   \label{9.5.51}
+\end{eqnarray}%
+的和\marginpar[\flushright
+{\raisebox{7ex}[0pt]{{\small[410]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[410]}}}, 求和中每个这样的项都对应\,Feynman\,图中一组可能的顶点, 其中每个顶点所贡献的系数由$\mi$乘以相互作用中对应项中场乘积的系数给出.
+
+为了计算这类积分, 首先考察所有这些积分的一个生成函数:%
+\begin{align}
+\mathscr{I}(f,g) &\equiv \int \Biggl[ \prod_{\bx,\tau,m}\dif q_{m}(\bx,\tau)\,
+\dif p_{m}(\bx,\tau)\Biggr]   \nonumber \\
+&\quad\times \exp \biggl(-\mi\sum_{mn}\int \dif^{4}x\,\dif^{4}y\:\mathscr{D}_{mx,ny}\:
+p_{m}(x)\,q_{n}(y)  \nonumber \\
+&\quad-\mi\sum_{m}\int \dif^{4}x\:p_{m}(x)\,f_{m}(y)
+-\mi\sum_{n}\int \dif^{4}y\:g_{n}(y)\,q_{n}(y)\biggr)\:,  \label{9.5.52}
+\end{align}%
+其中$f_{m}(x)$和$g_{n}(y)$是任意反对易\,c\,-数函数. 我们平移到新的积分变量
+\begin{align*}
+p_{m}^{\prime}(x) &= p_{m}(x)+\sum_{n}\int \dif^{4}y\:g_{n}(y)\,(\mathscr{D}^{-1})_{ny,mx}\:, \\
+q_{n}^{\prime}(y) &= q_{n}(y)+\sum_{m}\int \dif^{4}x\:(\mathscr{D}^{-1})_{ny,mx}\,f_{m}(x)\:.
+\end{align*}%
+利用平移不变性条件(\ref%
+{9.5.36}), 我们发现\begin{align}
+\mathscr{I}(f,g) &=\exp \biggl( \mi\sum_{mn}\int \dif^{4}x\,\dif^{4}y\:
+(\mathscr{D}^{-1})_{ny,mx}\,g_{n}(y)\,f_{m}(x)\biggr)   \nonumber \\
+&\quad\times \int \Biggl[ \prod_{\bx,\tau,m}\dif q_{m}^{\prime}(\bx,\tau)\,
+\dif p_{m}^{\prime}(\bx,\tau)\Biggr]   \nonumber \\
+&\quad\times \exp \biggl(-\mi\sum_{mn}\int \dif^{4}x\,\dif^{4}y\:\mathscr{D}_{mx,ny}\:
+p_{m}^{\prime}(x)\,q_{n}^{\prime}(y)\biggr) \:.  \label{9.5.53}
+\end{align}%
+这个积分是一个常数(即, 不依赖于函数$f$和$g$), 利用方程(\ref{9.5.38})可以证明它正比于$\operatorname{Det}\mathscr{D}$. 对于我们更重要的是第一个因子. 将这个因子展成$gf$的幂级数, 并将其与方程(\ref{9.5.52})的直接展开比较, 我们看到\marginpar[\flushright
+{\raisebox{-10ex}[0pt]{{\small[411]\hspace*{5mm}}}}]{{\raisebox{-10ex}[0pt]{\small\hspace*{5mm}[411]}}}
+\begin{align}
+&\mathscr{I}_{n_{1}m_{1}n_{2}m_{2}\cdots n_{N}m_{N}}(x_{1},y_{1},x_{2},y_{2},\cdots,x_{N},y_{N}) \nonumber \\
+&\propto \sum_{\text{pairings}}\updelta_{\text{pairing}}\,\prod_{\text{pairs}}
+\Bigl(-\mi\mathscr{D}^{-1}\Bigr)_{\text{paired}\:mx,ny}  \label{9.5.54}
+\end{align}%
+其中的比例常数不依赖$x,y,m$或$n$且与这些变量的数目无关. 这个求和是对$p$和$q$的所有不同配对方式求和, 如果不同的配对方式相差的仅是配对的次序, 那么这种配对方式不计算在内. 换句话说, 我们对$p$或$q$的$N!$个置换求和. 当置换为偶时, 符号因子$\updelta_{\text{pairing}}$是$+1$, 如果为奇则是$-1$.
+
+这个符号因子与配对求和恰与我们以前在推导\,Feynman\,规则时所遇到的一样, 其中对配对的求和对应于对\,Feynman\,图中连接顶点的方式求和, 而因子$(\mathscr{D}^{-1})_{mx,ny}$扮演了将$q_{m}(x)$与$p_{n}(y)$配对的传播子的角色. 在自旋$\frac{1}{2}$的\,Dirac\,体系中, 自由粒子的作用量是
+\begin{align}
+&\int_{-\infty}^{\infty} \dif\tau\:\biggl\{ \int \dif^{3}x\:
+\sum_{m}p_{m}(\bx,\tau)\dot{q}_{m}(\bx,\tau)
+-H_{0}\Bigl[ q(\tau),p(\tau)\Bigr]\biggr\}   \nonumber \\
+&=-\int \dif^{4}x\:\bar{\psi}(x)\,[\gamma^{\mu}\partial_{\mu}+m]\,\psi (x)\:,  \label{9.5.55}
+\end{align}%
+其中, 按照通常的记法, 这里的正则变量是
+\begin{equation}
+q_{m}(x)=\psi_{m}(x) \:,  \qquad p_{m}(x)=-[\bar{\psi}(x)\gamma^{0}]_{m}=\mi\psi_{m}^{\dag}(x) \label{9.5.56}
+\end{equation}%
+其中$m$是\,4\,-值Dirac指标. 与方程(\ref{9.5.50})比较, 我们发现这里的
+\begin{align}
+\mathscr{D}_{mx,ny} &= \biggl[ \gamma^{0}\,\biggl( \gamma^{\mu}\frac{\partial}{\partial x^{\mu}}+m
+-\mi\epsilon\biggr) \biggr]_{mn}\updelta^{4}(x-y)   \nonumber \\
+&=\int \frac{\dif^{4}k}{(2\uppi)^{4}}\:\Bigl( \gamma^{0}[\mi\gamma^{\mu}k_{\mu}+m-\mi\epsilon]\Bigr)_{mn} \,
+\me^{\mi k\cdot (x-y)}\:.  \label{9.5.57}
+\end{align}%
+(尽管我们没有在这里详细地解出它, 但是这里$\mi\epsilon$项产生的方式与\,\ref{sec:9.2}\,节中的标量场相同.) 于是传播子是
+\begin{equation}
+(\mathscr{D}^{-1})_{mx,ny} = \int \frac{\dif^{4}k}{(2\uppi)^{4}}\:
+\Bigl( [\mi\gamma^{\mu}k_{\mu} + m - \mi\epsilon]^{-1}[-\gamma^{0}]\Bigr)_{mn}\,
+\me^{\mi k\cdot (x-y)}\:,\label{9.5.58}
+\end{equation}%
+和我们在算符体系中所得到一样. 产生额外因子$-\mi\gamma^{0}$是因为该传播子是%
+$T\{\psi_{m}(x),-[\bar{\psi}(y)\gamma^{0}]_{n}\}$的真空期望值,
+而不是$T\{\psi_{m}(x),\bar{\psi}_{n}(y)\}$.
+
+作为一个用路径积分方法比用算符方法更容易求解的例子, 我们来计算一个只与外场相互作用的\,Dirac\,场的真空\lzx 真空振幅对场的依赖.
+取拉格朗日量为\marginpar[\flushright
+{\raisebox{-4ex}[0pt]{{\small[412]\hspace*{5mm}}}}]{{\raisebox{-4ex}[0pt]{\small\hspace*{5mm}[412]}}}
+\begin{equation}
+\mathscr{L}=-\bar{\psi}[\gamma ^{\mu }\partial _{\mu }+m+\Gamma ]\psi \:,  \label{9.5.59}
+\end{equation}%
+其中$\Gamma(x)$是体现费米子与外场相互作用的矩阵, 依赖于$x$. 根据方程(\ref{9.5.49}), 在有外场存在时, 真空滞留振幅是
+\begin{align}
+&\langle \text{VAC},\text{out}\vert \text{VAC},\text{in}\rangle_{\Gamma}
+\propto \int \Biggl[ \prod_{\tau,\bx,m}\dif q_{m}(\bx,\tau)\Biggr]
+\Biggl[ \prod_{\tau,\bx,m}\dif p_{m}(\bx,\tau)\Biggr] \nonumber \\
+&\quad\times \exp \biggl\{ -\mi\int \dif^{4}x\:p^{\mathrm{T}}\,\gamma^{0}[\gamma^{\mu}\partial_{\mu}
++m+\Gamma-\mi\epsilon]\,q\biggr\},   \label{9.5.60}
+\end{align}%
+其中比例常数与$\Gamma(x)$无关. 我们将上式写成
+\begin{align}
+&\langle \text{VAC},\text{out}\vert \text{VAC},\text{in}\rangle_{\Gamma }
+\propto \int \Biggl[\prod_{\tau,\bx,m}\dif q_{m}(\bx,\tau)\Biggr]
+\Biggl[ \prod_{\tau,\bx,m}\dif p_{m}(\bx,\tau)\Biggr] \nonumber \\
+&\quad\times \exp \biggl\{-\mi\sum_{mn}\int\dif^{4}x\,\dif^{4}y\:p_{m}(x)\,q_{n}(y)\,\mathscr{K}
+[\Gamma]_{mx,ny}\biggr\} \:,  \label{9.5.61}
+\end{align}%
+其中
+\begin{equation}
+\mathscr{K}[\Gamma]_{mx,ny}=\biggl( \gamma^{0}\,\biggl[ \gamma^{\mu}\frac{\partial}{\partial x^{\mu}}
++m+\Gamma(x)-\mi\epsilon \,\biggr] \biggr)_{mn}\,\updelta^{4}(x-y)\:.  \label{9.5.62}
+\end{equation}%
+为了计算它, 我们将积分变量$q_{n}(x)$变为
+\begin{equation}
+q_{m}^{\prime}(x) \equiv \sum_{n}\int \dif^{4}y\:\mathscr{K}[\Gamma]_{mx,ny}\,q_{n}(y)\:.  \label{9.5.63}
+\end{equation}%
+现在, 剩下的积分与$\Gamma$无关, 所以真空滞留振幅的所有依赖关系都包含于因在方程(\ref{9.5.38})中改变变量产生的行列式中:%
+\begin{equation}
+\langle \text{VAC},\text{out}\vert \text{VAC},\text{in}\rangle_{\Gamma}
+\propto \operatorname{Det}\mathscr{K}[\Gamma]\:.  \label{9.5.64}
+\end{equation}
+
+为了再现微扰论的结果, 我们先写出
+\begin{equation}
+\mathscr{K}[\Gamma]\equiv \mathscr{D}+\mathscr{G}[\Gamma]\:,  \label{9.5.65}
+\end{equation}%
+\begin{equation}
+\mathscr{G}[\Gamma]_{mx,ny} = \Bigl(\gamma^{0}\Gamma(x)\Bigr)_{mn} \,\updelta^{4}(x-y)\:,  \label{9.5.66}
+\end{equation}%
+并展成$\mathscr{G}[\Gamma]$的幂级数. 于是方程(\ref{9.5.64})给出
+\begin{align}
+&\langle \text{VAC},\text{out}\vert \text{VAC},\text{in}\rangle_{\Gamma}
+\propto \operatorname{Det}\Bigl( \mathscr{D}[1+\mathscr{D}^{-1}\mathscr{G}[\Gamma]]\Bigr)   \nonumber \\
+&=[\operatorname{Det}\mathscr{D}]\, \exp \Biggl( \sum_{n=1}^{\infty}
+\frac{(-1)^{n+1}}{n}\operatorname{Tr}\,(\mathscr{D}^{-1}\mathscr{G}[\Gamma])^{n}\Biggr) \:.  \label{9.5.67}
+\end{align}%
+这正是我们希望从\,Feynman\,规则中得到的\marginpar[\flushright{\small[413]\hspace*{5mm}}]{{\small\hspace*{5mm}[413]}}: 该理论中来自内线和顶点的贡献是$-\mi\mathscr{D}^{-1}$和$-\mi\mathscr{G}[\Gamma]$; $n$个${-}\mathscr{D}^{-1}\mathscr{G}[\Gamma]$因子乘积的迹因而对应于由$n$条内线连接起来的有%
+$n$个顶点的圈; $1/n$是伴随这种圈的通常的组合学因子(见\,\ref{sec:6.1}\,节); %
+符号因子是$(-1)^{n+1}$而不是$(-1)^{n}$ 是因为费米圈会有一个额外的负号; 指数中出现对$n$的求和是因为真空振幅振幅中有包括了任意多个圈的图的贡献. 从\,Feynman\,规则导出$\Gamma$-无关因子$\operatorname{Det}\mathscr{D}$并不那么容易; 它代表了任意个不携带顶点的费米圈的贡献.
+
+更重要的是, 一个类似方程(\ref{9.5.64})的公式允许我们通过拓扑定理导出像$\mathscr{K}[\Gamma]$这样的核的本征值信息,
+从而导出非微扰结果. 这将在卷\,\textrm{I\!I}\,进行进一步的探索.
+
+\section{量子电动力学的路径积分表述} \label{sec:9.6}
+\setcounter{equation}{0}
+
+在应用到无质量自旋\,1\,粒子的规范理论时, 诸如量子电动力学, 量子场论的路径积分方法显示出了它的优势. 上一章中在推导量子电动力学的\,Feynman\,规则时包含了相当多左支右绌的补救, 例如论证光子传播子$\Delta^{\mu\nu}(q)$中正比于$q^{\mu}$或$q^{\nu}$的项可以被扔掉, 以及纯类时项将恰好可以抵消哈密顿量中的\,Coulomb\,项, 从而使有效光子传播子可以被取作\,$\eta^{\mu\nu}/q^{2}$. 用第8章的方法论证这一结果的合理性将使我们陷入到对\,Feynman\, 图的复杂分析中.
+但是正如我们所要看到的, 路径积分方法会给出所需要的光子传播子形式, 却甚至不需要考察\,Feynman\,图的细节.
+
+在第8章, 我们发现在\,Coulomb\,规范下, 光子与带电粒子相互作用的哈密顿量取如下的形式
+\begin{equation}
+H[\bA,\bm{\Pi}_{\perp},\cdots] = H_{\text{M}} + \int \dif^{3}x\:
+\Bigl[ \tfrac{1}{2}\bm{\Pi}_{\perp}^{2} + \tfrac{1}{2}(\bm{\nabla} \times \bA)^{2}-%
+\bA\cdot \bJ\Bigr] +V_{\text{Coul}}\:.  \label{9.6.1}
+\end{equation}%
+这里的$\bA$是矢势, 服从\,Coulomb\,规范条件
+\begin{equation}
+\bm{\nabla} \cdot \bA=0\:,  \label{9.6.2}
+\end{equation}%
+而$\bm{\Pi}_{\bot}$是它的正则共轭的无散部分, 满足相同约束\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[414]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[414]}}}
+\begin{equation}
+\bm{\nabla} \cdot \bm{\Pi}_{\bot} = 0\:.  \label{9.6.3}
+\end{equation}%
+另外, $H_{\text{M}}$是物质哈密顿量而$V_{\text{Coul}}$是\,Coulomb\,能
+\begin{equation}
+V_{\text{Coul}}(t)=\tfrac{1}{2}\int \dif^{3}x\,\dif^{3}y\:J^{0}(\bx,t)J^{0}(\by,t)
+\Big/4\uppi\lvert \bx-\by \rvert \:. \label{9.6.4}
+\end{equation}
+
+就像所有其他哈密顿系统, 我们可以将编时乘积的真空期望值作为一个路径积分来计算{}$^*$\footnote{$^*${}%
+注意到$\bm{\pi} (x)$是量子算符$\bm{\Pi}_{\bot}$的内插\,c\,-数场, 它们彼此的对易关系以及与$\bA$的对易关系与$\bm{\Pi}$的那些对易关系相同, 但不像$\bm{\Pi}$, 它与所有正则物质变量对易.}%
+\begin{align}
+&\langle T\{\mathcal{O}_{A}\mathcal{O}_{B}\cdots \}\rangle_{\text{VAC}}
+=\int \Biggl[ \prod_{x,i}\dif a_{i}(x)\prod_{x,i}\dif\pi_{i}(x)\prod_{x,\ell}\dif\psi_{\ell}(x)\Biggr] \mathcal{O}_{A}\mathcal{O}_{B}\cdots  \nonumber \\
+&\times \exp \biggl\{ \mi\int \dif^{4}x\:\Bigl[ \bm{\pi}\cdot \dot{\ba}-%
+\tfrac{1}{2}\bm{\pi}^{2}-\tfrac{1}{2}(\bm{\nabla} \times \ba)^{2}+\ba\cdot\bJ
++\mathscr{L}_{\text{M}}\Bigr]-\mi\int \dif t\:V_{\text{Coul}}\biggr\}  \nonumber \\
+&\times \Biggl[ \prod_{x}\updelta \Bigl(\bm{\nabla} \cdot \ba(x)\Bigr)\Biggr]
+\Biggl[\prod_{x}\updelta \Bigl(\bm{\nabla} \cdot \bm{\pi}(x)\Bigr) \Biggr] \:, \label{9.6.5}
+\end{align}%
+其中$\psi_{\ell}(x)$是一般的物质场. 在将(\ref{9.6.5})写成物质的拉格朗日密度形式时, 我们假定了$H_{\text{M}}$是定域的并且要么对物质$\pi$是线性的(就像旋量电动力学中那样)%
+要么是不依赖场的系数的二次型(就像标量电动力学中那样). 我们已经在方程(\ref{9.6.5})中插入了$\updelta$-函数{}$^{**}$\footnote{$^{**}${}这不是严格精确的. 例如, 如果我们取正则变量$a_{1}$, $a_{2}$和$\pi_{1}$, $\pi_{2}$, 而$a_{3}$和$\pi_{3}$则被视为由方程(\ref{9.6.2})和(\ref{9.6.3})给定的那些变量的泛函, 这样我们应该插入如下的$\updelta$-函数
+\[
+\prod_{x}\updelta \Bigl( a_{3}(x)+\partial_{3}^{-1}\Bigl( \partial_{1}a_{1}(x)+\partial_{2}a_{2}(x)\Bigr)\Bigr)\,
+\updelta \Bigl( \pi_{3}(x)+\partial_{3}^{-1}\Bigl(\partial_{1}\pi_{1}(x)+\partial_{2}\pi_{2}(x)\Bigr)\Bigr) \:.
+\]%
+然而, 这与方程(\ref{9.6.5})中的$\updelta $-函数仅差一个因子$\operatorname{Det}\partial _{3}^{2}$, 这个因子%
+尽管是无限大, 但却不依赖场, 因而在类似方程(\ref{9.4.1})中的比值中消掉了.}以确保其满足约束(\ref{9.6.2})%
+和(\ref{9.6.3}).
+
+方程(\ref{9.6.5})中的指数幅角显然是$\bm{\pi}$中独立分量(例如$\pi_{1}$和$\pi _{2}$)的二次型,  其中$\bm{\pi}$的二阶项系数不依赖场. 因此, 依照方程(\ref{9.A.9}), 通过令$\bm{\pi}$等于指数幅角的稳相点就能完成对$\bm{\pi}$的积分(可以相差一个常数因子), 即令$\bm{\pi}=\dot{\ba}$:%
+\begin{align}
+&\langle T\{\mathcal{O}_{A}\mathcal{O}_{B}\cdots\}\rangle_{\text{VAC}}
+=\int \Biggl[ \prod_{x,i}\dif a_{i}(x)\prod_{x,\ell}\dif\psi_{\ell}(x)\Biggr] \nonumber \\
+&\times \mathcal{O}_{A}\mathcal{O}_{B}\cdots\, \exp
+\bigg\{\mi\int \dif^{4}x\:\biggl[\frac{1}{2}\dot{\ba}^{2}-
+\frac{1}{2}(\bm{\nabla}\times\ba)^{2} + \ba\cdot \bj+\mathscr{L}_{\text{M}}\biggr] \nonumber \\
+&\qquad\qquad-\mi\int \dif t\:V_{\text{Coul}}+\mi\epsilon\: \text{项}\biggr\}\,
+\Biggl[\prod_{x}\updelta(\bm{\nabla} \cdot \ba(x))\Biggr] \:.  \label{9.6.6}
+\end{align}%
+为了显现出这个结果满足协变性\marginpar[\flushright
+{\raisebox{7.3ex}[0pt]{{\small[415]\hspace*{5mm}}}}]{{\raisebox{7.3ex}[0pt]{\small\hspace*{5mm}[415]}}}, 我们采用一个技巧. 引入新的积分变量$a^{0}(x)$, 并将作用量中的\,Coulomb\,项${-}\int \dif t\,V_{\text{Coul}}$换成
+\begin{equation}
+\int\dif^{4}x\:\biggl[-a^{0}(x)j^{0}(x)+\frac{1}{2}\Bigl(\bm{\nabla}a^{0}(x)\Bigr)^{2}\biggr]\:.\label{9.6.7}
+\end{equation}%
+既然(\ref{9.6.7})是$a^{0}$的二次型, 通过令$a^{0}(x)$等于(\ref{9.6.7})的稳相点, 也就是
+\[
+-j^{0}(x)-\nabla ^{2}a^{0}(x)=0
+\]%
+的解, 或者换种形式
+\begin{equation}
+a^{0}(\bx,t)=\int \dif^{3}y\:\frac{j^{0}(\by,t)}{4\uppi\lvert\bx-\by\rvert }\:,  \label{9.6.8}
+\end{equation}%
+我们就能做掉对$a^{0}$的积分(可以差一个常数因子). 将其应用在方程(\ref{9.6.7})中恰好给出\,Coulomb\,作用${-}\int \dif t\,V_{\text{Coul}}$. 因此我们可以将方程(\ref{9.6.6})中的指数幅角重新写为
+\begin{align*}
+&\quad\tfrac{1}{2}\dot{\ba}^{2}-\tfrac{1}{2}(\bm{\nabla} \times \ba)^{2}+%
+\ba\cdot \bj+\mathscr{L}_{\text{M}}-a^{0}j^{0}+\tfrac{1}{2}(\bm{\nabla}a^{0})^{2} \\
+&=-\tfrac{1}{4}f_{\mu \nu }f^{\mu \nu }+a_{\mu }j^{\mu }+\mathscr{L}_{\text{M}}+\text{全导数}
+\end{align*}%
+其中$f_{\mu\nu}=\partial_{\mu}a_{\nu}-\partial_{\nu}a_{\mu}$, 并对$a^{0}$, $\ba$以及物质场积分. 这样, 路径积分(\ref{9.6.6})现在就变成
+\begin{align}
+&\langle T\{\mathcal{O}_{A}\mathcal{O}_{B}\cdots\}\rangle_{\text{VAC}}
+\propto \int \Biggl[\prod_{x,\mu}\dif a_{\mu}(x)\Biggr]\,
+\Biggl[\prod_{x,\ell}\dif\psi_{\ell}(x)\Biggr]   \nonumber \\
+&\quad\times \mathcal{O}_{A}\mathcal{O}_{B}\cdots \:\exp \Bigl(\mi I[a,\psi]\Bigr)
+\prod_{x}\updelta \Bigl(\bm{\nabla} \cdot \ba(x)\Bigr) \:, \label{9.6.9}
+\end{align}%
+其中$I$是原始作用量
+\begin{equation}
+I[a,\psi] = \int \dif^{4}x\:\bigl[ -\tfrac{1}{4}f_{\mu\nu}f^{\mu\nu} +
+a_{\mu}j^{\mu} + \mathscr{L}_{\text{M}}\bigr] + \mi\epsilon\,\text{项} \:. \label{9.6.10}
+\end{equation}
+
+现在, 除了最后确保Coulomb规范条件的$\updelta$-函数乘积,
+所有的量都是明显\,Lorentz\,-不变且规范不变的\marginpar[\flushright{\small[416]\hspace*{5mm}}]{{\small\hspace*{5mm}[416]}}.{}$^*$\footnote{$^*${}注意现在$a^{0}(x)${\KAI{不}}等于值(\ref{9.6.8}), 而是一个独立的积分变量. 我们不先对$a^{0}(x)$积分, 这样做将回到方程(\ref{9.6.6}), 而是和$\ba(x)$一起处理.} 为了更进一步, 我们将用一个简化版的技巧\textsuperscript{\cite{4,5}}, 这个技巧将在卷\,I\!I\,中被用来处理更加困难的非阿贝尔规范理论. 简单起见, 我们在这里处理的是算符$\mathcal{O}_{A}[A,\Psi]$, $\mathcal{O}_{B}[A,\Psi ],\cdots$以及作用量$I[a,\psi]$和测度$\bigl[ \prod \dif a\bigr]\bigl[\prod \dif\psi\bigr]$ 均规范不变的情况.
+
+首先, 将方程(\ref{9.6.9})中的所有场积分变量$a_{\mu}(x)$和$\psi(x)$替换成新变量
+\begin{equation}
+a_{\mu\Lambda}(x) \equiv a_{\mu}(x) + \partial_{\mu}\Lambda (x)\:, \label{9.6.11}
+\end{equation}
+\begin{equation}
+\psi_{\ell \Lambda}(x) \equiv \exp \Bigl( \mi\,q_{\ell}\Lambda (x)\Bigr)\psi_{\ell}(x) \:, \label{9.6.12}
+\end{equation}%
+其中$\Lambda(x)$为任意的有限量. 这一步在数学上是平庸的, 就像把积分$\int_{-\infty}^{\infty}f(x)\,\dif x$写成$\int_{-\infty}^{\infty}f(y)\,\dif y$, 并不需要用到理论是规范不变的假定. 接下来, 利用规范不变性将作用量, 测度以及$\mathcal{O}$-函数中的$a_{\mu\Lambda}(x)$和$\psi_{\ell\Lambda}(x)$%
+分别替换成原始场$a_{\mu}(x)$和$\psi_{\ell}(x)$. 于是方程(\ref{9.6.9})变成
+\begin{align}
+&\Bigl\langle T\Bigl\{\mathcal{O}_{A}[A,\Psi],\,\mathcal{O}_{B}[A,\Psi],\cdots\Bigr\}\Bigr\rangle_{\text{VAC}}  \nonumber \\
+&\qquad\propto \int \Biggl[ \prod_{x,\mu}\dif a_{\mu}(x)\Biggr]\,
+\Biggl[ \prod_{x,\ell}\dif\psi_{\ell}(x)\Biggr]\:\mathcal{O}_{A}[a,\psi]\mathcal{O}_{B}[a,\psi]\cdots   \nonumber \\
+&\qquad\qquad\times \exp \Bigl(\mi I[a,\psi]\Bigr)
+\prod_{x}\updelta \Bigl( \bm{\nabla} \cdot\ba(x)+\nabla^{2}\Lambda (x)\Bigr) \:.  \label{9.6.13}
+\end{align}%
+现在, 函数$\Lambda(x)$是随机选择的, 所以, 尽管它出现在式子中, 方程(\ref{9.6.13})的右边不能依赖这一函数. 我们将利用这一性质将路径积分改写成更加方便的形式. 给方程(\ref{9.6.13})乘以泛函
+\begin{equation}
+B[\Lambda,a] = \exp \biggl( -\tfrac{1}{2}\mi\alpha \int \dif^{4}x\:
+\Bigl( \partial_{0}a^{0}-\nabla^{2}\Lambda \Bigr)^{2}\biggr)   \label{9.6.14}
+\end{equation}%
+(其中$\alpha$是一任意常数), 并对$\Lambda(x)$积分. 通过平移积分变量$\Lambda(x)$, 并注意到(\ref{9.6.13})实际上与$\Lambda$无关, 我们看到这实际上就相当于给方程(\ref{9.6.13})乘上不依赖场的常数
+\begin{equation}
+\int \Biggl[ \prod_{x}\dif\Lambda(x)\Biggr]\: \exp
+\biggl( -\tfrac{1}{2}\mi\alpha\int\dif^{4}x\:\Bigl(\nabla^{2}\Lambda\Bigr)^{2}\biggr) \:. \label{9.6.15}
+\end{equation}%
+这一因子在\marginpar[\flushright{\small[417]\hspace*{5mm}}]{{\small\hspace*{5mm}[417]}}真空期望值的连通部分被抵消了, 因而没有物理效应. 但是方程(\ref{9.6.13})仅在我们积掉$a^{\mu}(x)$和$\psi(x)${\KAI{之后}}才是$\Lambda$-无关的. 我们也可以在积掉$a^{\mu}(x)$和$\psi(x)${\KAI{之前}}积掉$\Lambda(x)$, 在这种情况下, 方程(\ref{9.6.13})中的因子$\prod_{x}\updelta\bigl( \bm{\nabla}\cdot\ba(x)+{\nabla }^{2}\Lambda\bigr)$被替换成
+\begin{align}
+&\int \Biggl[ \prod_{x}\dif\Lambda(x)\Biggr]\: \exp
+\biggl(-\tfrac{1}{2}\mi\alpha\int\dif^{4}x\:\Bigl(\partial_{0}a^{0}-\nabla^{2}\Lambda\Bigr)^{2}\biggr)
+\prod_{x}\updelta \Bigl( \bm{\nabla} \cdot \ba(x)+\nabla^{2}\Lambda \Bigr) \nonumber \\
+&\qquad\propto \exp \biggl( -\tfrac{1}{2}\mi\alpha \int \dif^{4}x\:(\partial_{\mu}a^{\mu})^{2}\biggr) \:,  \label{9.6.16}
+\end{align}%
+其中``$\propto$''还是意味着比例常数是不依赖场的因子. 扔掉常数因子, 方程(\ref{9.6.9})现在就变成
+\begin{equation}
+\langle T\{\mathcal{O}_{A}\mathcal{O}_{B}\cdots\}\rangle_{\text{VAC}}\propto
+\int \Biggl[ \prod_{x,\mu}\dif a_{\mu}(x)\Biggr]\, \Biggl[ \prod_{x,\ell}\dif\psi_{\ell}(x)\Biggr]\:
+\mathcal{O}_{A}\mathcal{O}_{B}\cdots \exp (\mi I_{\text{eff}}[a,\psi])\:,  \label{9.6.17}
+\end{equation}%
+其中
+\begin{equation}
+I_{\text{eff}}[a,\psi] = I[a,\psi]-\tfrac{1}{2}\alpha
+\int( \partial_{\mu}a^{\mu})^{2}\,\dif^{4}x\:.  \label{9.6.18}
+\end{equation}%
+现在这个结果是明显\,Lorentz\,-不变的.
+
+我们将(\ref{9.6.18})中的新项视为对作用量非微扰部分的贡献, 它的光子部分现在变成
+\begin{align}
+I_{0}[a] &= \int \dif^{4}x\:\Bigl[ -\tfrac{1}{4}(\partial_{\mu}a_{\nu}
+-\partial_{\nu}a_{\mu})(\partial^{\mu}a^{\nu}-\partial^{\nu}a^{\mu})
+-\tfrac{1}{2}\alpha(\partial_{\mu}a^{\mu})^{2}+\mi\epsilon\,\text{项}\Bigr] \nonumber \\
+&=-\tfrac{1}{2}\int\dif^{4}x\,\dif^{4}y\:a^{\mu}(x)\,a^{\nu}(y)\,D_{\mu x,\nu y}\:,  \label{9.6.19}
+\end{align}%
+其中\begin{align}
+\mathscr{D}_{\mu x,\nu y} &= \biggl[ \eta_{\mu\nu}\frac{\partial^{2}}{\partial x^{\rho}\partial y_{\rho}}
+-(1-\alpha )\frac{\partial^{2}}{\partial x^{\mu}\partial y^{\nu}}\biggr]\,
+\updelta^{4}(x-y)+\mi\epsilon\,\text{项} \nonumber \\
+&=(2\uppi)^{-4}\int \dif^{4}q\:\Bigl[ \eta_{\mu\nu}q^{2}-(1-\alpha)q_{\mu}q_{\nu}
+-\mi\epsilon \eta_{\mu\nu}\Bigr] \me^{\mi q\cdot (x-y)}\:. \label{9.6.20}
+\end{align}%
+那么, 对方程(\ref{9.6.20})的被积函数中$4\times 4$矩阵取逆就能立即得到光子传播子
+\begin{equation}
+\Delta_{\mu x,\nu y}=(2\uppi)^{-4} \int \dif^{4}q\:
+\biggl[ \frac{\eta^{\mu\nu}}{q^{2}-\mi\epsilon}+\frac{(1-\alpha)}{\alpha}
+\frac{q^{\mu}q^{\nu}}{(q^{2}-\mi\epsilon)^{2}}\biggr]\: \me^{\mi q\cdot (x-y)}\:.  \label{9.6.21}
+\end{equation}%
+我们可以按照看起来最方便的形式自由地选择$\alpha$. 两个通常的选择是$\alpha=1$, 它给出了\,\textit{Feynman}\,{\KAI{规范}}下的传播子:%
+\begin{equation}
+\Delta_{\mu x,\nu y}^{\text{Feynman}} = (2\uppi)^{-4}
+\int \dif^{4}q\:\biggl[ \frac{\eta_{\mu\nu}}{q^{2}-\mi\epsilon}\biggr]\:\me^{\mi q\cdot(x-y)} \label{9.6.22}
+\end{equation}%
+或者$\alpha =\infty$\marginpar[\flushright{\small[418]\hspace*{5mm}}]{{\small\hspace*{5mm}[418]}}, 在这种情况下, 因子(\ref{9.6.14})起到的作用和$\updelta$-函数一样, 从而得到\,\textit{Landau}\,{\KAI{规范}}下的传播子(通常也叫作\,\textit{Lorentz}\,{\KAI{规范}}):%
+\begin{equation}
+\Delta_{\mu x,\nu y}^{\text{Landau}} = (2\uppi)^{-4}\int \dif^{4}q\:
+\biggl[ \frac{\eta_{\mu\nu}}{q^{2}-\mi\epsilon}-\frac{q^{\mu}q^{\nu}}{(q^{2}-\mi\epsilon)^{2}}\biggr]\: \me^{\mi q\cdot (x-y)}\:.  \label{9.6.23}
+\end{equation}%
+采用这类明显\,Lorentz\,不变的相互作用和传播子会使实际计算变得方便很多.
+
+\section[各~\,种~\,统~\,计]{各种统计{}$^*$\footnote{$^*${}本节或多或少的处在本书的发展主线之外, 可以在第一次阅读时跳过.}} \label{sec:9.7}
+\setcounter{equation}{0}
+
+我们现在可以着手处理第4章提出的问题: 当我们交换全同粒子时, 态矢有哪些可能的改变?
+
+为此, 我们将考察散射过程中初态或末态的制备. 假定通过某种缓慢变化的外场, 其中一个态中的一组不可分辨粒子从动量为$\bk_{1},\bk_{2}$等的标准构形变成动量为%
+$\bp_{1},\bp_{2}$等的特定构形, 在这个过程中保持粒子相距足够远以保证应用非相对论量子力学是合理的. (我们不在这里明显写出自旋指标; 它们应该被理解成伴随着动量指标.) 为了计算这个过程的振幅, 我们可以采用路径积分方法,{}$^*$\footnote{$^*${}在这里我将依循\,Laidlaw\,(莱德劳)和\,C. Dewitt\,的讨论,\textsuperscript{\cite{11}} 不同的是他们将路径积分方法应用于整个散射过程, 而不仅限于初态或末态的制备. 在一个相对论性理论中, 粒子产生或湮没的可能性使得必须将路径积分方法应用于场而不是粒子轨道. 对于我们而言, 这不是问题, 因为我们将这样的计算限制在了充分早或充分晚的时期, 这时参与散射过程的粒子彼此相距极远.} %
+把\,\ref{sec:9.1}\,节中的$q$和$p$取为粒子位置与动量, 而不是场和它们的正则共轭. 无论粒子是玻色子还是费米子亦或是别的什么东西, 它们总是满足正则对易关系而不是反对易关系,
+所以目前我们还没有把自己局限在某种特定的统计中. 路径积分公式(\ref{9.1.34})将振幅$\langle \bp_{1},\bp_{2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle_{\text{D}}$作为对路径的积分给出, 在这个积分中一个粒子的动量从$\bk_{1}$连续变化到$\bp_{1}$, 另一全同粒子的动量从$\bk_{2}$连续变化到$\bp_{2}$, 以此类推. 下标``\,D\,''表示我们所计算的振幅针对的是可分辨(distinguishable)粒子. 特别地, 这一振幅在$\bp${\KAI{和}} $\bk$的同时置换下是对称的, 但是在$\bp${\KAI{或}} $\bk$的分别置换下没有特定的对称性. \marginpar[\flushright{\small[419]\hspace*{5mm}}]{{\small\hspace*{5mm}[419]}}但是如果粒子真是不可分辨的, 那么存在其他拓扑上不同的路径, 但最终会产生同一末态构形. 对于维度$d\geq 3$ 的{\KAI{空间}}, 唯一的这类路径{}$^{**}$\footnote{$^{**}${}这被形式地表述为: $d\geq 3$的空间中, 构形空间的第一同伦群是置换群.\textsuperscript{\cite{12}} $N$ 个不可分辨粒子的``构形空间''意味着$N$ 个$d$-矢的空间, 排除掉彼此重合(或者处在一个任意的极限距离内)的$d$-矢, 并将仅相差一个矢量置换的构形等价起来.}%
+是那些将$\bk_{1},\bk_{2},\cdots$变成$\bp_{1},\bp_{2},\cdots$的%
+非平庸置换$\mathscr{P}$给出的路径. 因此真正的振幅应该写成
+\begin{equation}
+\langle \bp_{1},\bp_{2},\cdots \vert \bk_{1},\bk_{2},\cdots\rangle =\sum_{\mathscr{P}}C_{\mathscr{P}}\langle \bp_{\mathscr{P}1},\bp_{\mathscr{P}2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle_{\text{D}}\:,  \label{9.7.1}
+\end{equation}%
+求和遍历态中$N$个不可分辨粒子的所有$N!$个置换, 而$C_{\mathscr{P}}$是一组复常数. 这些振幅必须满足不可分辨粒子的合成规则:%
+\begin{align}
+\langle \bp_{1},\bp_{2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle  &=\frac{1}{N!}\int \dif^{3}q_{1}\,\dif^{3}q_{2}\cdots \:
+\langle\bp_{1},\bp_{2},\cdots \vert \bq_{1},\bq_{2},\cdots \rangle  \nonumber \\
+&\quad \times\langle \bq_{1},\bq_{2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle \:.  \label{9.7.2}
+\end{align}%
+利用方程(\ref{9.7.1}), 这就是要求
+\begin{align*}
+&\sum_{\mathscr{P}}C_{\mathscr{P}}\: \langle \bp_{\mathscr{P}1},\bp_{\mathscr{P}2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle_{\text{D}}
+=\frac{1}{N!}\sum_{\mathscr{P}^{\prime},\mathscr{P}^{\prime\prime}}C_{\mathscr{P}^{\prime}}\,
+C_{\mathscr{P}^{\prime\prime}} \int\dif^{3}q_{1}\,\dif^{3}q_{2}\cdots   \\
+&\qquad\times \langle \bp_{\mathscr{P}^{\prime}1},\bp_{\mathscr{P}^{\prime}2},\cdots \vert \bq_{1},\bq_{2},\cdots \rangle_{\text{D}}\:
+\langle \bq_{\mathscr{P}^{\prime\prime}1},\bq_{\mathscr{P}^{\prime\prime}2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle_{\text{D}}
+\end{align*}%
+对右边第一个振幅中的初态和末态作置换$\mathscr{P}^{\prime \prime }$, 给出
+\begin{align*}
+&\sum_{\mathscr{P}}C_{\mathscr{P}}\: \langle \bp_{\mathscr{P}1},\bp_{\mathscr{P}2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle_{\text{D}} =
+\frac{1}{N!}\sum_{\mathscr{P}^{\prime},\mathscr{P}^{\prime\prime}}C_{\mathscr{P}^{\prime}}\,
+C_{\mathscr{P}^{\prime \prime}}\int \dif^{3}q_{1}\,\dif^{3}q_{2}\cdots  \\
+&\times \langle \bp_{\mathscr{P}^{\prime \prime }\mathscr{P}^{\prime}1},
+\bp_{\mathscr{P}^{\prime \prime}\mathscr{P}^{\prime }2},\cdots \vert %
+\bq_{\mathscr{P}^{\prime \prime}1},\bq_{\mathscr{P}^{\prime
+\prime }2},\cdots \rangle _{\text{D}}\:\langle \bq_{\mathscr{P}^{\prime
+\prime }1},\bq_{\mathscr{P}^{\prime \prime }2},\cdots \vert \bk_{1},%
+\bk_{2},\cdots \rangle_{\text{D}}
+\end{align*}%
+但是振幅$\langle \bp_{1},\bp_{2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle_{\text{D}}$满足{\KAI{可分辨}}粒子的构造规则
+\begin{align}
+\langle \bp_{1},\bp_{2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle_{\text{D}}
+&= \int \dif^{3}q_{1}\,\dif^{3}q_{2}\,\cdots \:
+\langle\bp_{1},\bp_{2},\cdots \vert \bq_{1},\bq_{2},\cdots\rangle_{\text{D}}  \nonumber \\
+&\quad \times\langle \bq_{1},\bq_{2},\cdots \vert
+\bk_{1},\bk_{2},\cdots\rangle _{\text{D}}\:,  \label{9.7.3}
+\end{align}%
+所以, 要使得物理振幅的合成规则能写成
+\begin{align*}
+\sum_{\mathscr{P}}C_{\mathscr{P}}\:\langle \bp_{\mathscr{P}1},\bp_{\mathscr{P}2},\cdots \vert \bk_{1},\bk_{2},\cdots \rangle _{\text{D}}
+&=\frac{1}{N!}\sum_{\mathscr{P}^{\prime},\mathscr{P}^{\prime \prime}}
+C_{\mathscr{P}^{\prime}}\,C_{\mathscr{P}^{\prime \prime}} \\
+&\quad\times \langle \bp_{\mathscr{P}^{\prime \prime}\mathscr{P}^{\prime}1},\bp_{\mathscr{P}^{\prime \prime}\mathscr{P}^{\prime }2},\cdots \vert
+\bk_{1},\bk_{2},\cdots \rangle_{\text{D}}\:,
+\end{align*}%
+当且仅当\marginpar[\flushright{\small[420]\hspace*{5mm}}]{{\small\hspace*{5mm}[420]}}
+\begin{equation}
+C_{\mathscr{P}^{\prime}\mathscr{P}^{\prime \prime}}
+=C_{\mathscr{P}^{\prime}}C_{\mathscr{P}^{\prime\prime}}\:.  \label{9.7.4}
+\end{equation}%
+就是说, 系数$C_{\mathscr{P}}$必须构成置换群的一维表示. 但是置换群仅有两个这样的表示: 一个是恒等表示, 对于所有的置换$C_{\mathscr{P}}=+1$, 而另一个是交错表示, 由$\mathscr{P}$是偶置换还是奇置换决定$C_{\mathscr{P}}=+1$还是$C_{\mathscr{P}}=-1$. 这两种可能性分别对应玻色统计和费米统计.{}$^*$\footnote{$^*${}在文献中有大量关于玻色或费米之外其他可能的统计的讨论, 通常在{\KAI{仲(parastatistics)统计}}这个条目下. 已经证明$d\geq 3$的空间中的仲统计理论等价于所有粒子都是普通的费米子或玻色子但携带额外量子数的理论, 从而使波函数在动量和自旋的置换下有着不寻常的性质.}
+
+这一讨论的漂亮之处在于它使得为什么二维空间是个例外变得清楚. 在二维空间中, 存在着丰富得多的拓扑不等价的路径种类.{}$^{**}$\footnote{$^{**}${}这被表述为, 二维空间中, 构形空间的第一同伦群不是置换群,
+而是一个更大的群, 称为{\KAI{辫子群}}.\textsuperscript{\cite{14}}} 例如, 一个粒子绕另一粒子转确定圈数的路径不能变形成没有绕圈的路径. 结果是, 在二维空间, 有可能存在{\KAI{任意子}},\textsuperscript{\cite{15}} 任意子有着比费米统计或玻色统计\textsuperscript{\cite{8a}}更普遍的置换性质.
+
+\newpage
+\section*{附录\quad 高斯多重积分}
+
+\addcontentsline{toc}{section}{附录\quad 高斯多重积分}                %自动提目录
+\markright{附录\quad 高斯多重积分}      %%前双后单书眉
+
+\def\theequation{\arabic{chapter}.A.\arabic{equation}}
+
+\setcounter{equation}{0}
+
+
+我们首先希望对有限个实变量$\xi_{r}$计算指数上是$\xi$的一般二次函数的多重积分
+\begin{equation}
+\mathscr{I} \equiv \int_{-\infty}^{\infty}\prod_{r}\dif\xi_{r}\:\exp\Bigl\{-Q(\xi)\Bigr\} \:,\label{9.A.1}
+\end{equation}
+\begin{equation}
+Q(\xi) = \tfrac{1}{2}\sum_{rs}K_{rs}\xi_{r}\xi_{s} + \sum_{r}L_{r}\xi_{r} + M \:,  \label{9.A.2}
+\end{equation}%
+其中$K_{rs}$, $L_{r}$和$M$是任意常数, 这里只要求矩阵$K$是对称且非奇异的. 为此, 我们从$K_{rs}$, $L_{r}$和$M$都是实的且$K_{rs}$ 正定这一情况开始考虑. 一般结果可以通过解析延拓得到.
+
+任何实对称矩阵都可以被一个正交矩阵对角化. 因此存在一个矩阵$\mathscr{S}$, 具有逆$\mathscr{S}^{\text{T}}=\mathscr{S}^{-1}$, 使得
+\begin{equation}
+\Bigl( \mathscr{S}^{\text{T}}K\mathscr{S}\Bigr)_{rs} = \updelta_{rs}\kappa_{r}\:.  \label{9.A.3}
+\end{equation}%
+因为假定$K$是正定且非奇异的\marginpar[\flushright{\small[421]\hspace*{5mm}}]{{\small\hspace*{5mm}[421]}}, 所以本征值$\kappa_{r}$正定. 我们可以利用矩阵$\mathscr{S}$做一个变量变换:%
+\begin{equation}
+\xi_{r} = \sum_{s} \mathscr{S}_{rs}\xi_{s}^{\prime}\:.  \label{9.A.4}
+\end{equation}%
+这一变换的雅克比行列式$\lvert \operatorname{Det}\mathscr{S}\rvert$是\,1, 所以多重积分(\ref{9.A.1})现在由普通积分的乘积给定:
+\begin{align}
+\mathscr{I} &= \me^{-M} \prod_{r} \int_{-\infty}^{\infty} \dif\xi^{\prime}\:
+\exp\biggl\{-\frac{\kappa_{r}}{2}\xi^{\prime 2}-(\mathscr{S}^{\text{T}}L)_{r}\xi^{\prime}\biggr\}\nonumber\\
+&=\me^{-M} \prod_{r} \sqrt{\frac{2\uppi}{\kappa_{r}}}\exp\biggl\{ \frac{1}{2\kappa_{r}}(\mathscr{S}^{\text{T}}L)_{r}^{2}\biggr \} \:.  \label{9.A.5}
+\end{align}%
+而方程(\ref{9.A.3})的行列式和逆是
+\[
+\operatorname{Det}K=\prod_{r}\kappa_{r} \:,  \qquad
+K_{rs}^{-1}=\sum_{\ell}\mathscr{S}_{r\ell}\mathscr{S}_{s\ell}\kappa_{\ell }^{-1}\:,
+\]%
+所以方程(\ref{9.A.5})可以写成
+\begin{equation}
+\mathscr{I} = \biggl( \operatorname{Det}\biggl(\frac{K}{2\uppi}\biggr)\biggr)^{-1/2}
+\exp \Biggl\{ \tfrac{1}{2}\sum_{rs}L_{r}L_{s}K_{rs}^{-1}-M\Biggr\} \:.  \label{9.A.6}
+\end{equation}%
+方程(\ref{9.A.1})定义了$K_{rs}$, $L_{r}$和$M$的一个函数, 对于$K_{rs}$为实且正定这一使得积分收敛的区域, 该函数在收敛面周围的有限区域中对$K_{rs}$ 是解析的, 并且对这样的$K_{rs}$, 它对任意的$L_{r}$和$M$都是解析的. 既然对实的$K_{rs}$, $L_{r}$和$M$以及正定的$K_{rs}$, (\ref{9.A.6}) 等于(\ref{9.A.1}), 方程(\ref{9.A.6})就给出了方程(\ref{9.A.1})到整个复平面的解析延拓, 其中包含一个平方根所要求的分支割线. 平方根的符号由这一解析延拓所确定. 在场论中, 除了由``$\mi\epsilon$''项所带来的小实部, $K_{rs}$实际上是虚的.
+
+用函数(\ref{9.A.2})的稳相点来表示方程(\ref{9.A.6})是有用的:%
+\begin{gather}
+\bar{\xi}_{r} = -\textstyle\sum_{s} K_{rs}^{-1}\,L_{s}\:,  \label{9.A.7} \\
+\partial Q(\xi)/\partial \xi_{r}=0\quad \text{在}\:\xi =\bar{\xi}\:,  \label{9.A.8}
+\end{gather}%
+这样
+\begin{equation}
+\mathscr{I} = \biggl( \operatorname{Det}\biggl(\frac{K}{2\uppi}\biggr) \biggr)^{-1/2}
+\exp \Bigl\{ -Q(\bar{\xi})\Bigr\} \:.  \label{9.A.9}
+\end{equation}%
+要记住的结果是: {\KAI{通过令积分变量等于指数幅角的驻定点, 高斯积分可以被确定到只差一个行列式因子.}}
+
+接下来\marginpar[\flushright{\small[422]\hspace*{5mm}}]{{\small\hspace*{5mm}[422]}}, 我们希望用这一结果计算积分
+\begin{equation}
+I_{r_{1}\cdots r_{2N}}\equiv \int\Biggl(\prod_{r}\dif\xi_{r}\Biggr)\,\xi_{r_{1}}\xi_{r_{2}}\cdots\xi_{r_{2N}}
+\exp \Biggl\{ -\tfrac{1}{2}\sum_{rs}K_{rs}\xi_{r}\xi_{s}\Biggr\} \:.  \label{9.A.10}
+\end{equation}%
+(在这类积分中, 被积函数中包含奇数个$\xi$-因子的积分显然为零.) 从方程(\ref{9.A.1})中$\exp\bigl(-\sum_{r}L_{r}\xi_{r}\bigr)$的级数展开, 我们有求和规则
+\begin{align}
+&\sum_{N=0}^{\infty}\:\sum_{r_{1}r_{2}\cdots r_{2N}}\frac{1}{(2N!)}%
+I_{r_{1}r_{2}\cdots r_{2N}}L_{r_{1}}L_{r_{2}}\cdots L_{r_{2N}}  \nonumber \\
+&\quad=\int \Biggl(\prod_{r}\dif\xi_{r}\Biggr)\: \exp \Biggl\{-\sum_{r}L_{r}\xi_{r}-%
+\frac{1}{2}\sum_{rs}K_{rs}\xi_{r}\xi_{s}\Biggr\}   \nonumber \\
+&\quad= \biggl[ \operatorname{Det}\biggl( \frac{K}{2\uppi}\biggr) \biggr]^{-1/2}
+\exp \Biggl\{ \frac{1}{2}\sum_{rs}L_{r}L_{s}K_{rs}^{-1}\Biggr\} \nonumber \\
+&\quad=\biggl[ \operatorname{Det}\biggl( \frac{K}{2\uppi}\biggr) \biggr]^{-1/2}
+\sum_{N=0}^{\infty}\frac{1}{N!2^{N}}\Biggl(\sum_{rs}L_{r}L_{s}K_{rs}^{-1}\Biggr)^{N}\:.  \label{9.A.11}
+\end{align}%
+比较$L_{r_{1}}L_{r_{2}}\cdots L_{r_{2N}}$在两边的系数, 我们看到$I_{r_{1}r_{2}\cdots r_{2N}}$必须正比于$K^{-1}$的矩阵元的乘积之和, 对称性要求它采取如下形式
+\begin{equation}
+I_{r_{1}r_{2}\cdots r_{2N}} = c_{N}\sum_{\substack{\text{pairings} \\ \text{of}\:r_{1}\cdots r_{2N}}}
+\prod_{\text{pairs}}(K^{-1})_{\text{paired indices}} \:.  \label{9.A.12}
+\end{equation}%
+这里的求和是对指标$r_{1}\cdots r_{2N}$的所有配对方式求和, 如果两个配对方式的差别仅仅是配对的次序或是配对中指标的次序, 那么这两种配对方式就被认为是相同的. 为了计算常数因子$c_{N}$, 我们注意到在方程(\ref{9.A.12})中, 配对求和中项的数目$\nu_{N}$等于指标置换的个数$(2N)!$除以置换每对指标的个数$N!$%
+以及指标对内置换的个数$2^{N}$%
+\begin{equation}
+\nu _{N}=\frac{(2N)!}{N!2^{N}} \:.  \label{9.A.13}
+\end{equation}%
+因此方程(\ref{9.A.12})给出
+\begin{equation}
+\sum_{r_{1}r_{2}\cdots r_{2N}}L_{r_{1}}L_{r_{2}}\cdots L_{r_{2N}}I_{r_{1}r_{2}\cdots r_{2N}}
+=\nu_{N}c_{N}\,\Biggl(\sum_{rs}L_{r}L_{s}K_{rs}^{-1}\Biggr)^{N}  \label{9.A.14}
+\end{equation}%
+将其与方程(\ref{9.A.11})比较表明因子$(2N)!$和$(N!2^{N})$被$\nu_{N}$抵消, 给我们留下
+\begin{equation}
+c_{N}=\biggl[ \operatorname{Det}\biggl( \frac{K}{2\uppi}\biggr)\biggr]^{-1/2} \:.\label{9.A.15}
+\end{equation}%
+例如\marginpar[\flushright{\small[423]\hspace*{5mm}}]{{\small\hspace*{5mm}[423]}},%
+\begin{align}
+I_{r_{1}r_{2}} &= I_{0}(K^{-1})_{r_{1}r_{2}}\:,  \label{9.A.16} \\
+I_{r_{1}r_{2}r_{3}r_{4}} &= I_{0}\Bigl[(K^{-1})_{r_{1}r_{2}}(K^{-1})_{r_{3}r_{4}} \nonumber \\
+&\quad+(K^{-1})_{r_{1}r_{3}}(K^{-1})_{r_{2}r_{4}}+(K^{-1})_{r_{1}r_{4}}(K^{-1})_{r_{2}r_{3}}\Bigr] \:,  \label{9.A.17}
+\end{align}%
+以此类推, 其中$I_{0}$是没有指标的积分
+\begin{align}
+I_{0} &\equiv \int \Biggl( \prod_{r}\dif\xi_{r}\Biggr)\:
+\exp \Biggl\{ -\tfrac{1}{2}\sum_{rs}K_{rs}\xi_{r}\xi_{s}\Biggr\}   \nonumber \\
+&=\biggl[ \operatorname{Det}\biggl( \frac{K}{2\uppi}\biggr) \biggr]^{-1/2} \:.  \label{9.A.18}
+\end{align}
+
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+\markright{习\qquad 题}    %单眉
+
+
+\begin{KAI}
+
+1. 考虑一质量为$m$的非相对论性粒子, 它在势$V(x)=m\omega^{2}x^{2}/2$中沿$x$-轴运动. %
+利用路径积分方法求出该粒子在$t_{1}$时刻处在$x_{1}$, 而在$t$时刻处在$x$和$x+\dif x$之间的概率.
+
+
+2. 对于由质量$m\neq0$的单个无自旋粒子构成的态, 求出它在场空间中的波函数. %
+利用这个结果推导吸收或发射这种粒子的\,Feynman\,规则.
+
+3. 在质量$m\neq0$的中性矢量场的理论中, 求出真空在场空间中的波函数. %
+利用这个结果推导$\mi\epsilon$项在这个场的传播子中的形式.
+
+4. 自旋\,3/2\,的自由\,Rarita-Schwinger\,场$\psi^{\mu}$的拉格朗日密度是
+\[
+\mathscr{L} = -\bar{\psi}^{\mu}(\gamma^{\nu}\partial_{\nu}+m)\psi_{\mu} - \tfrac{1}{3}\bar{\psi}^{\mu}(\gamma_{\mu}\partial_{\nu}+\gamma_{\nu}\partial_{\mu})\psi^{\nu}
++\tfrac{1}{3}\bar{\psi}^{\mu}\gamma_{\mu}(\gamma^{\sigma}\partial_{\sigma}-m)\gamma^{\nu}\psi_{\nu} \:.
+\]
+用路径积分方法求出这个场的传播子.
+
+
+ \end{KAI}
+  \markboth{第9章\quad 路径积分方法}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}R. P. Feynman, {\textit{The Principle of Least Action in Quantum Mechanics}} (Princeton University, 1942; University Microfilms Publication No. 2948, Ann Arbor). 另见\,R. P. Feynman and A. R. Hibbs, {\textit{Quantum Mechanics and Path Integrals}} (McGraw-Hill, New York, 1965). 普遍的可以参看\,J. Glimm and A. Jaffe, {\textit{Quantum Physics-A Functional Integral Point of View}}, 2nd edn (Springer-Verlag, New York, 1987).
+     \addcontentsline{toc}{section}{参考文献}
+  \markboth{第9章\quad 路径积分方法}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\bibitem {2}P. A. M. Dirac\marginpar[\flushright{\small[424]\hspace*{5mm}}]{{\small\hspace*{5mm}[424]}}, {\textit{Phys. Zeits. Sowjetunion}} {\bf{3}}, 62 (1933).
+\bibitem {3}R. P. Feynman, {\textit{Rev. Mod. Phys.}} {\bf{20}}, 367 (1948); {\textit{Phys. Rev.}} {\bf{74}}, 939, 1430 (1948); {\bf{76}}, 749, 769 (1949); {\bf{80}}, 440 (1950).
+\bibitem {4}L. D. Faddeev and V. N. Popov, {\textit{Phys. Lett}}. {\bf{B25}}, 29 (1967). 另见\,R. P. Feynman, {\textit{Acta Phys. Pol.}} {\bf{24}}, 697 (1963); S. Mandelstam, {\textit{Phys. Rev.}} {\bf{175}}, 1580, 1604 (1968).
+\bibitem {5}B. De Witt, {\textit{Phys. Rev. Lett.}} {\bf{12}}, 742 (1964).
+\bibitem {6}G. 't Hooft, {\textit{Nucl. Phys.}} {\bf{B35}}, 167 (1971).
+\bibitem {7}I. S. Gerstein, R. Jackiw, B. W. Lee, and S. Weinberg, {\textit{Phys. Rev.}} {\bf{D3}}, 2486 (1971).
+\bibitem {8}L. D. Faddeev, {\textit{Teor. Mat. Fizika}}, {\bf{1}}, 3 (1969); 英译\,{\textit{Theor. Math. Phys.}} {\bf{1}}, 1 (1970).
+\bibitem [8a]{8a}J. Schwinger, {\textit{Proc. Nat. Acad. Sci.}} {\bf{44}}, 956 (1958).
+\bibitem [8b]{8b}K. Osterwalder and R. Schrader, {\textit{Phys. Rev. Lett.}} {\bf{29}}, 1423 (1972); {\textit{Commun. Math. Phys.}} {\bf{31}}, 83 (1973); {\textit{Commun. Math. Phys.}} {\bf{42}}, 281 (1975). Osterwalder-Schrader\,公理要求光滑、欧几里得协变, ``反射阳性(reflection positivity)'', 置换对称性, 以及集团分解.
+\bibitem {9}与\,J. Polchinski\,的讨论极大地启发了本节的内容.
+\bibitem {10}F. A. Berezin, {\textit{The Method of Second Quantization}} (Academic Press, New York, 1966).
+\bibitem {11}M. G. G. Laidlaw and C. M. De Witt, {\textit{Phys. Rev.}} D {\bf{3}}, 1375 (1970).
+\bibitem {12}J. M. Leinaas and J. Myrheim, {\textit{Nuovo Cimento}} {\bf{37 B}}, 1 (1977).
+\bibitem {13}Y. Ohnuki and S. Kamefuchi, {\textit{Phys. Rev.}} {\bf{170}}, 1279 (1968); {\textit{Ann. Phys.}} {\bf{57}}, 337 (1969); K. Dr\"{u}hl, R. Haag, and J. E. Roberts, {\textit{Commun. Math. Phys.}} {\bf{18}}, 204 (1970).
+\bibitem {14}辫子群由\,E. Artin\,引入. 参看\,{\textit{The Collected Papers of E. Artin}}, S. Lang and J. E. Tate\,编辑(Addison-Wesley, Reading, MA, 1965).
+\bibitem {15}F. Wilczek, {\textit{Phys. Rev. Lett.}} {\bf{49}}, 957 (1982); K. Fredenhagen, M. R. Gaberdiel, and S. M. R\"{u}ger, Cambridge preprint DAMTP-94-90 (1994). 另见\,J. M. Leinass and J. Myrheim, 文献[12].
+\end{thebibliography}

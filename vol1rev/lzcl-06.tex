@@ -1,0 +1,990 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+\chapter{Feynman\,规则} \label{cha:6}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[259]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[259]}}}
+  \markboth{第6章\quad Feynman\,规则}{第6章\quad Feynman\,规则}
+
+在前几章中, 在构造哈密顿量密度时使用协变自由场的目的是使$S$-矩阵满足\,Lorentz\,不变性和集团分解原理. 当以这种方式构造哈密顿量密度时,
+我们用来计算$S$-矩阵的不同微扰论就不会产生差异; 在相互作用密度的每一阶, 所得结果都自动满足这些不变性要求和集团分解条件. 然而, 如果计算时使用的微扰论版本使得$S$-矩阵的\,Lorentz\,不变性与集团分解特性在计算中的每一步都是显然的, 那么这个微扰论就有明显实用上的优点. 20\,世纪\,30\,年代所采用的微扰论并不是这样, 我们在\,\ref{sec:3.5}\,节开头描述过它, 那个微扰论现在被称为``旧式微扰论''. Feynman, Schwinger\,和\,Tomonaga\,在\,20\,世纪\,40\,年代后期的巨大成就就是%
+发展出了计算$S$-矩阵的微扰技术, 在这个微扰计算中, Lorentz\,不变性和集团分解性自始至终都是显而易见的. %
+这一章将概述\,Feynman\,发展的图形计算技巧, 这个技术是\,Feynman\,在\,1948\,年的\,Poconos\,(波科诺庄园)会议上首次描述的. %
+Feynman\,导出这些规则部分是通过他发展的路径积分方法, 这将是第9章的主题. %
+在本章, 我们将采用\,Dyson\textsuperscript{\cite{1}}在\,1949\,年提出的方法, 在量子场论中, %
+这个方法直到\,20\,世纪\,70\,年代几乎是所有微扰论分析的基础, %
+并仍然为\,Feynman\,规则的引入提供了一个特别显然的方式.
+
+\section{规则的推导} \label{sec:6.1}
+\setcounter{equation}{0}
+
+我们的出发点是由\,Dyson\,级数(\ref{3.5.10})与自由粒子态的表达式(\ref{4.2.2})合起来得到的$S$-矩阵公式:
+\newpage
+\ \vspace{-5mm} 
+\begin{eqnarray}
+&&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime};\,\bp_{2}^{\prime}\sigma_{2}^{\prime}
+n_{2}^{\prime};\cdots \:,\: \bp_{1}\sigma_{1}n_{1};\,\bp_{2}\sigma_{2}n_{2};\cdots}\nonumber\\
+&&  =\sum_{N=0}^{\infty}\frac{(-\mi)^{N}}{N!}\int \dif^{4}x_{1}\cdots \dif^{4}x_{N}\,\Bigl(\Phi_{0},\cdots a(\bp_{2}^{\prime}\sigma
+_{2}^{\prime}n_{2}^{\prime})a(\bp_{1}^{\prime}\sigma_{1}^{\prime}%
+n_{1}^{\prime}) \nonumber\\
+&&  \quad\times T\Big\{\mathscr{H}(x_{1})\cdots\mathscr{H}(x_{N})\Big\}a^{\dag
+}(\bp_{1}\sigma_{1}n_{1})a^{\dag}(\bp_{2}\sigma_{2}n_{2}%
+)\cdots\Phi_{0}\Bigr) \:. \label{6.1.1}%
+\end{eqnarray}
+提醒一下\marginpar[\flushright{\raisebox{5ex}[0pt]{{\small[260]\hspace*{5mm}}}}]{{\raisebox{5ex}[0pt]{\small\hspace*{5mm}[260]}}}: $\bp$, $\sigma$和$n$分别标记粒子的动量、 自旋与种类; 其中加撇的是末态粒子的指标; $\Phi_{0}$是自由粒子真空态; $a$和$a^{\dag}$ 是湮没算符和产生算符; $T$代表编时, 它是指将$\mathscr{H}(x)$按照变量$x^{0}$递减的顺序从左到右依次排列; $\mathscr{H}(x)$是相互作用哈密顿密度, 取成场和伴随场的多项式
+\begin{equation}
+\mathscr{H}(x)=\sum_{i}g_{i}\mathscr{H}_{i}(x) \: ,  \label{6.1.2}%
+\end{equation}
+其中的每一项$\mathscr{H}_{i}$是确定数目的每类场与其伴随场的乘积. 对于种类$n$的粒子, 如果它的场在齐次\,Lorentz\,群(包含或者不包含空间反演)的一个特定表示下进行变换, 那么这个场就是
+\begin{align}
+\psi_{\ell}(x)  &  =\sum_{\sigma}(2\uppi)^{-3/2}\int \dif^{3}p\:
+\Big[u_{\ell}(\bp,\sigma,n)\,a(\bp,\sigma,n)\,\me^{\mi p\cdot x}\nonumber\\
+& \quad +v_{\ell}(\bp,\sigma,n)\,a^{\dag}(\bp,\sigma
+,n^{\text{c}})\,\me^{-\mi p\cdot x}\Bigr]\:. \label{6.1.3}%
+\end{align}
+这里的$n^{\text{c}}$是指种类$n$的反粒子, 而$\exp(\pm \mi p\cdot x)$在$p^{0}=\sqrt{\bp^{2}+m_{n}^{2}}$处取值. 系数函数$u_{\ell}$ 和$v_{\ell}$ 依赖于场的\,Lorentz\,变换性质以及场描述的粒子的自旋; 我们在第5章计算过它们. (例如, 在标量场中, $u_{\ell}$对于能量为$E$ 的粒子就是$(2E)^{-1/2}$, 而在\,Dirac\,场中, $u_{\ell}$和$v_{\ell}$ 是\,\ref{sec:5.5}\,节中引入的归一化\,Dirac\,旋量.) %
+指标$\ell$在这里标记粒子类型和场变换所遵循的\,Lorentz\,群表示, 以及表示中的分量指标. 不需要另外处理包含场的导数的相互作用; 在我们的观点看来, 场(\ref{6.1.3})的导数就是另外一个(\ref{6.1.3}) 描述的场, 只不过$u_{\ell}$和$v_{\ell}$不同. 这里, 对随意地被称为``粒子''的那些粒子, 诸如电子、 质子等, 以及随意地被称为``反粒子''的那些粒子, 诸如正电子和反质子, 我们要做一下区分. 湮没粒子并产生反粒子的场算符称为``场''; 它们的伴随算符, 湮没反粒子并产生正粒子, 被称为``伴随场 (field adjoints)''. 当然, 像光子和$\pi^{0}$这\marginpar[\flushright{\small[261]\hspace*{5mm}}]{{\small\hspace*{5mm}[261]}}样的粒子, 反粒子是其本身; 对于这些粒子, 伴随场正比于场.
+
+我们接着把方程(\ref{6.1.1}%
+)中的所有湮没算符挪到右边, 为此我们反复利用对易或反对易关系: \begin{align}
+a(\bp\:\sigma\:n)a^{\dag}(\bp^{\prime}\sigma^{\prime}n^{\prime})
+&= \pm a^{\dag}(\bp^{\prime}\sigma^{\prime}n^{\prime})a(\bp\:\sigma\:n) \nonumber\\
+&\quad+\updelta^{3}(\bp^{\prime}-\bp)\updelta_{\sigma^{\prime}\sigma}
+\updelta_{n^{\prime}n}\label{6.1.4}\\
+a(\bp\:\sigma\:n)a(\bp^{\prime}\sigma^{\prime}n^{\prime})
+&=\pm a(\bp^{\prime}\sigma^{\prime}n^{\prime})a(\bp\:\sigma\:n)\label{6.1.5}\\
+a^{\dag}(\bp\:\sigma\:n)a^{\dag}(\bp^{\prime}\sigma^{\prime}n^{\prime})
+&=\pm a^{\dag}(\bp^{\prime}\sigma^{\prime}n^{\prime})a^{\dag}(\bp\:\sigma\:n) \label{6.1.6}%
+\end{align}
+(对于反粒子同样如此), 右边的符号$\pm$在粒子$n$和$n^{\prime}$都是费米子时取$-$号, 如果其中有一个是玻色子或者都是玻色子则取$+$号. 无论何时, 只要一个湮没算符出现在最右边(或者一个产生算符出现在最左边), 这一项对方程(\ref{6.1.1})的贡献就为零, 这是因为这些算符湮没真空态:
+\begin{align}
+&  a(\bp\:\sigma\:n)\,\Phi_{0}=0 \:, \label{6.1.7}\\
+&  \Phi_{0}^{\dag}\,a^{\dag}(\bp\:\sigma\:n)=0 \:. \label{6.1.8}%
+\end{align}
+对方程(\ref{6.1.1})的其余贡献来自于方程(\ref{6.1.4})右边的$\updelta$-函数项, 这时初末态或相互作用哈密顿量密度中的每个产生算符和湮没算符以这种方式与其他湮没算符或产生算符配对.
+
+按照这种方式, 方程(\ref{6.1.1})中关于多项式$\mathscr{H}(\psi(x),\psi^{\dag}(x))$中每一项$\mathscr{H}_{i}$的给定阶,
+其贡献要通过对产生算符和湮没算符的所有配对方式求和来给出,\textsuperscript{\cite{2}} 而求和的每一项是对数个因子乘积的积分, 这些因子如下:
+
+\noindent(a) 量子数为$\bp^{\prime},\sigma^{\prime},n^{\prime}$的末态粒子与$\mathscr{H}_{i}(x)$%
+中的伴随场$\psi_{\ell}^{\dag}(x)$配对产生因子
+\begin{equation}
+\Bigl[ a(\bp^{\prime}\sigma^{\prime}n^{\prime}),\psi_{\ell}^{\dag}(x)\Bigr]_{\mp}
+=(2\uppi)^{-3/2}\me^{-\mi p^{\prime}\cdot x}
+u_{\ell}^{\ast}(\bp^{\prime}\sigma^{\prime}n^{\prime}) \: . \label{6.1.9}%
+\end{equation}
+(b) 量子数为$\bp^{\prime},\sigma^{\prime},n^{\prime\text{c}}$的末态反粒子与$\mathscr{H}_{i}(x)$%
+中的场$\psi_{\ell}(x)$配对产生因子
+\begin{equation}
+\Bigl[a(\bp^{\prime}\sigma^{\prime}n^{\prime\text{c}}),\psi_{\ell}(x)\Bigr]_{\mp}
+=(2\uppi)^{-3/2}\me^{-\mi p^{\prime}\cdot x}v_{\ell}(\bp^{\prime}\sigma^{\prime}n^{\prime})\: . \label{6.1.10}%
+\end{equation}
+(c) 量子数为$\bp,\sigma,n$的初态粒子与$\mathscr{H}_{i}(x)$中的场$\psi_{\ell}(x)$%
+配对产生因子
+\begin{equation}
+\Bigl[\psi_{\ell}(x),a^{\dag}(\bp\,\sigma\, n)\Bigr]_{\mp}
+=(2\uppi)^{-3/2}\me^{\mi p\cdot x}u_{\ell}(\bp\,\sigma\, n)\: .\label{6.1.11}%
+\end{equation}
+(d) 量子\marginpar[\flushright{\small[262]\hspace*{5mm}}]{{\small\hspace*{5mm}[262]}}数为$\bp,\sigma,n^{\text{c}}$的初态反粒子与$\mathscr{H}_{i}(x)$中的伴随场%
+$\psi_{\ell}^{\dag}(x)$配对产生因子\begin{equation}
+\Bigl[ \psi_{\ell}^{\dag}(x),a^{\dag}(\bp\,\sigma\, n^{\text{c}})\Bigr]_{\mp}
+=(2\uppi)^{-3/2}\me^{\mi p\cdot x}v_{\ell}^{\ast}(\bp\,\sigma\, n) \: . \label{6.1.12}%
+\end{equation}
+(e) 量子数为$\bp^{\prime},\sigma^{\prime},n^{\prime}$的末态粒子(或反粒子)与量子数为%
+$\bp,\sigma,n$的初态粒子(或反粒子)配对产生因子
+\begin{equation}
+\Bigl[ a(\bp^{\prime}\sigma^{\prime}n^{\prime}),a^{\dag}(\bp\:\sigma\:n)\Bigr]_{\mp}
+=\updelta^{3}(\bp^{\prime}-\bp)\updelta_{\sigma^{\prime}\sigma}\updelta_{n^{\prime}n}\: .
+\label{6.1.13}%
+\end{equation}
+(f) $\mathscr{H}_{i}(x)$中的场$\psi_{\ell}(x)$与$\mathscr{H}_{j}(y)$中的伴随场%
+$\psi_{m}^{\dag}(y)$配对产生因子{}$^*$\footnote{$^*${}如果相互作用$\mathscr{H}(x)$被写成正规乘积的形式, 就像方程(\ref{5.1.35})中那样(此处原书误植为(\ref{5.1.33})\ezx 译者注). 那么在{\KAI{同一}}相互作用中不存在场与伴随场的配对. 若非如此, 我们就需要用某类正规化给$\Delta_{\ell m}(0)$赋予意义.}%
+\begin{align}
+\theta(x-y)  & \Bigl[\psi_{\ell}^{+}(x),\psi_{m}^{+\dag}(y)\Bigr]_{\mp} \pm
+\theta(y-x)\Bigl[\psi_{m}^{-\dag}(y),\psi_{\ell}^{-}(x)\Bigr]_{\mp} \nonumber\\
+& \equiv - \mi\,\Delta_{\ell m}(x,y) \: ,  \label{6.1.14}%
+\end{align}
+其中$\psi^{+}$和$\psi^{-}$分别是$\psi$中湮没粒子和产生反粒子的项:
+\begin{align}
+\psi_{\ell}^{+}(x) &= (2\uppi)^{-3/2}\int \dif^{3}p\sum_{\sigma}
+u_{\ell}(\bp\:\sigma\:n)\,\me^{\mi p\cdot x}\,a(\bp\:\sigma\:n)\:, \label{6.1.15}\\
+\psi_{\ell}^{-}(x) &= (2\uppi)^{-3/2}\int \dif^{3}p\sum_{\sigma}
+v_{\ell}(\bp\:\sigma\:n)\,\me^{-\mi p\cdot x}\,a^{\dag}(\bp\:\sigma\:n^{\text{c}})\:. \label{6.1.16}%
+\end{align}
+$\theta(x-y)$是阶跃函数, 在$x^{0}>y^{0}$时等于\,1\,而在$x^{0}<y^{0}$时等于\,0. 方程(\ref{6.1.14})中会出现阶跃函数是因为方程(\ref{6.1.1})中有编时乘积; 只有开始时方程(\ref{6.1.1})中的$\mathscr{H}(x)$处在$\mathscr{H}(y)$的左边, 即$x^{0}>y^{0}$, 我们才会遇到$\mathscr{H}(x)$中的湮没场$\psi^{+}(x)$ 与$\mathscr{H}(y)$中的产生场$\psi^{+\dag}(y)$%
+配对; 类似地, 仅当开始时方程(\ref{6.1.1})中的$\mathscr{H}(y)$处在$\mathscr{H}(x)$的左边, 即$y^{0}>x^{0}$, 我们才会遇到$\mathscr{H}(y)$ 中的湮没场$\psi^{-\dag}(y)$与$\mathscr{H}(x)$中%
+的产生场$\psi^{-}(x)$的配对. ((\ref{6.1.14})第二项中的$\pm$符号后面会解释.) (\ref{6.1.14})被称为{\KAI{传播子}}; 我们将在下一节进行计算.
+
+将这些因子乘起来, 乘上后面讨论的数值因子, 然后对$x_{1}\cdots x_{N}$积分, 并对所有的配对求和, 再对各类相互作用的数目求和, 我们就可获得$S$-矩阵.
+在补充所有细节之前, 我们先来刻画一个图形体系以跟踪所有这些配对, 这将会方便我们的讨论.
+
+计算$S$-矩阵\marginpar[\flushright{\small[263]\hspace*{5mm}}]{{\small\hspace*{5mm}[263]}}的规则可以非常方便地用\emph{Feynman}{\KAI{图}}来表示 (参看图6.1). 图由点和线构成, 点称为{\KAI{顶点}}, 每个顶点代表一个$\mathscr{H}_{i}(x)$, 而每条{\KAI{线}}代表一个湮没算符和一个产生算符的配对. 更具体些:
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0601.eps}\\
+\caption{在坐标空间计算$S$-矩阵时产生的算符配对的图形表示. 对于\,Feynman\,图的每一条线, 右边的表达式是一因子, 这一因子要被包含进$S$-矩阵的坐标空间积分中.}
+\end{figure}
+
+\noindent(a) 表示一个末态粒子与某个$\mathscr{H}(x)$中的一个伴随场配对的线,
+从代表$\mathscr{H}(x)$的\marginpar[\flushright{\small[264]\hspace*{5mm}}]{{\small\hspace*{5mm}[264]}}顶点出发, 向上离开图, 携带一个指向上方的箭头.
+
+\noindent(b) 表示一个末态反粒子与某个$\mathscr{H}(x)$中的一个场配对的线, 也从代表$\mathscr{H}(x)$的顶点出发, 向上离开图, 但携带一个指向下方的箭头. (对于$\gamma$和$\pi^{0}$这样的粒子, 由于它们是自己的反粒子, 箭头全部略掉.)
+
+\noindent(c) 表示一个初态粒子与某个$\mathscr{H}(x)$中的一个场配对的线, 从下方进入图, 终止于代表$\mathscr{H}(x)$的顶点, 携带一个指向上方的箭头.
+
+\noindent(d) 表示一个初态反粒子与某个$\mathscr{H}(x)$中的一个场配对的线, 也从下方进入图, 终止于代表$\mathscr{H}(x)$的顶点, 但携带一个指向下方的箭头.
+
+\noindent(e) 表示一个末态粒子或反粒子与一个初态粒子或反粒子配对的线, 从下至上穿过图, 不碰任何顶点, 对于粒子和反粒子, 箭头分别指向上方或下方.
+
+\noindent(f) 表示$\mathscr{H}(x)$中的一个场与$\mathscr{H}(y)$中的一个伴随场配对的线, 连接代表$\mathscr{H}(x)$的顶点与代表$\mathscr{H}(y)$ 的顶点, 携带一个由$y$指向$x$的箭头.
+
+注意, 箭头的指向总是和粒子的运动方向相同, 与反粒子的运动方向相反. (正如上面提到的, 对于光子这样反粒子是其本身的粒子, 箭头应该被略掉.) 规则(f)中指定的箭头方向与这一约定是一致的, 这是因为$\mathscr{H}_{j}(y)$中的伴随场要么产生一个被$\mathscr{H}_{i}(x)$中的场湮没的粒子, 要么湮没一个由$\mathscr{H}_{i}(x)$中的场产生的反粒子. 又注意到, 因为$\mathscr{H}_{i}(x)$中的每个场或伴随场一定会与某些量配对, 所以, 对于与方程(\ref{6.1.2}) 中的$\mathscr{H}_{i}(x)$项对应的第$i$类顶点, 与该顶点相连的线正好等于$\mathscr{H}_{i}(x)$中场和伴随场因子的总数. 这些线中, 箭头指向顶点或离开顶点的数目分别等于相应相互作用项中场的数目或伴随场的数目.
+
+在给定过程中, 为了计算方程(\ref{6.1.2})中每一相互作用项$\mathscr{H}_{i}(x)$的给定阶$N_{i}$对$S$-矩阵的贡献, 我们要执行以下的步骤:
+
+\noindent(i) 画出包含$N_{i}$个$i$类顶点的所有\,Feynman\,图, 对于初态中每个粒子或反粒子, 它们的线从下方进入图, 对于末态中的每个粒子或反粒子, 它们的线从上方离开图, 再\marginpar[\flushright{\small[265]\hspace*{5mm}}]{{\small\hspace*{5mm}[265]}}加上任意条连接顶点的内线, 从而按照要求赋予每个顶点恰当数目的连线. 这些线携带前面所描述的箭头, 每个箭头可以指向下也可以指向上. 每个顶点用相互作用类型$i$和时空坐标$x^{\mu}$标记. 每条内线和外线在它与顶点相连的末端用场类型$\ell$标记%
+(对应在该顶点产生或湮没粒子和反粒子的场$\psi_{\ell}(x)$或$\psi_{\ell}^{\dag}(x)$), 并用初态或末态粒子(或反粒子)的量子数$\bp,\sigma,n$ 或%
+$\bp^{\prime},\sigma^{\prime},n^{\prime}$标记每个进入或离开图的外线.
+
+\noindent(ii) 对于每个$i$类顶点, 计入因子$-\mi$(来自方程(\ref{6.1.1})中的$(-\mi)^{N}$)%
+和因子$g_{i}$($\mathscr{H}_{i}(x)$中乘在场乘积上的耦合常数). 对于每条从上方离开图的线, %
+根据箭头指向上方还是下方, 分别引入因子(\ref{6.1.9})或(\ref{6.1.10}). 对于每条从下方进入图的线, 依旧根据箭头方向, 分别引入因子(\ref{6.1.11})或(\ref{6.1.12}). 对于每条直接穿过图的线, 引入因子(\ref{6.1.13}). 对于每条连接两个顶点的内线, 引入因子(\ref{6.1.14}).
+
+\noindent(iii) 对所有这些因子的乘积做关于每个顶点坐标$x_{1},x_{2},\cdots$的积分.
+
+\noindent(iv) 将以这种方式从每个\,Feynman\,图得到的结果加起来. 将每一相互作用类型中每一阶的贡献加起来,  直到我们力所能及的那一阶, 我们就获得了$S$-矩阵的完全微扰级数.
+
+注意到, 我们没有在这些规则中引入方程(\ref{6.1.1})中的因子$1/N!$, 这是因为方程(\ref{6.1.1})中的编时乘积是对$x_{1},x_{2},\cdots,x_{N}$的$N!$ 个置换求和, 每个置换对最终结果给出相同的贡献. 换一种方式, $N$个顶点的\,Feynman\,图是$N!$个相互等价的图中的一个, 这些等价图相差的仅是顶点上标记的置换, 而这产生了一个因子$N!$, 抵消了方程(\ref{6.1.1})中的$1/N!$. (这一规则存在例外, 我们会在后面讨论.) 由于这个原因, 从现在起, 如果一组\,Feynman\,图中的差别只是重新标记顶点, 我们只计入其中一个图.
+
+在某些情况下, 在单个\,Feynman\,图的贡献中要计入一些额外的组合因子或符号:
+
+\noindent(v) 假定相互作用$\mathscr{H}_{i}(x)$ (在其他场和伴随场之外)包含$M$个{\KAI{相同的}}场.  假定这些场中的每一个与另一个不同的相互作用(对每个都不同)的伴随场配对, 或者与初末态中的伴随场配对.
+这些伴随场中的第一个可以与$\mathscr{H}_{i}\,(x)$中\marginpar[\flushright{\small[266]\hspace*{5mm}}]{{\small\hspace*{5mm}[266]}}的$M$个全同场中的任何一个进行配对; 第二个可以与剩下的$M-1$个全同场中的任何一个进行配对, 以此类推, 这产生了额外的因子$M!$. 为了补偿这点, 重新定义耦合常数$g_{i}$, 使得任何包含$M$ 个全同场(或伴随场)的$\mathscr{H}_{i}(x)$都出现显式因子$1/M!$, 这将是方便的. 例如, 对标量场$\phi(x)$是$M$阶的相互作用将写成$g\phi^{M}/M!$.
+(更普遍地, 当相互作用包含对同一对称多重态的$M$个场因子的乘积的求和, 或由于种种原因, 耦合系数在$M$个玻色场或费米场的置换下对称或全反对称时, 通常也写上显式因子$1/M!$.)
+
+然而, 这样抵消$M!$因子不总是完全的. 例如, 考虑这样一个\,Feynman\,图, 其中相互作用$\mathscr{H}_{i}(x)$中的$M$个全同场与{\KAI{单个}}其他的相互作用$\mathscr{H}_{j}(y)$%
+中相应的$M$个伴随场进行配对. (参看图6.2.) 那么按照上面的分析, 我们发现仅有$M!$个不同的配对(因为我们所谓的第一个, 第二个, $\cdots\cdots$ 伴随场在这里没有差别), 仅抵消了两个不同的相互作用中的一个$M!$因子. 在这种情况下, 我们不得不在这类\,Feynman\,图的贡献中``手动''放上一个额外的因子$1/M!$.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0602.eps}\\
+\caption{$S$-矩阵中要求额外组合因子的图的例子. 如果一个相互作用包含某个场因子三次(除此之外还可以包含场), 我们通常在相互作用哈密顿密度中引入因子$1/3!$, 这样在对这些场与它们在其他相互作用中的伴随场配对的各种方式求和而产生的因子就会被这个因子抵消掉. 但在这个图中, 存在两个这样的$1/3!$因子, 但不同配对方式仅有$3!$种, 所以多出了额外的因子$1/3!$.}
+\end{figure}
+
+当顶点的某些置换对\,Feynman\,图没有影响时, 就会产生另外的组合因子. 此前我们注意到, 如果$N!$个图之间相差的仅是$N$个顶点的重新标记, 那么级数(\ref{6.1.1})中的因子$1/N!$通常被$N!$个图的求和抵消. 然而, 在重新标记顶点不产生新图的情况下, 这个抵消是不完全的. 如果理论存在二次相互作用$\mathscr{H}(x)=\psi_{\ell}^{\dag}M_{\ell\ell^{\prime}}\psi_{\ell^{\prime}}$, 其中的$M$可能依赖于外场, 那么在我们计算真空到真空$S$-矩阵元时, 这种情况通常都会发生. (这类真空涨落图的物理意义将在卷\,\textrm{I\!I}\,进行详细的讨论.) $\mathscr{H}$的$N$阶\,Feynman\,图是有$N$个角的环.
+(参看\marginpar[\flushright{\small[267]\hspace*{5mm}}]{{\small\hspace*{5mm}[267]}}图6.3.) 沿着环将每个顶点的指标依次移到下个顶点的置换产生同一图, 所以这里只有$(N-1)!$个不同的图. 因此这样的图会伴随因子
+\begin{equation}
+\frac{(N-1)!}{N!}=\frac{1}{N}\text{ .} \label{6.1.17}%
+\end{equation}
+(vi) 在包含费米场的理论中, 利用方程(\ref{6.1.4})\yzx (\ref{6.1.6})把湮没算符移至右边以及把产生算符移至左边, 这个操作会给各种配对的贡献中带来负号. 具体地说, 在(\ref{6.1.1})中将所有配对算符调整成彼此相邻的置换中(湮没算符在与其配对的产生算符的左边), 只要包含奇数次费米算符的交换, 我们就会得到一个负号. (这是因为, 为了计算某一配对的贡献, 我们可以首先置换方程(\ref{6.1.1})中的所有算符, 使得每个湮没算符都在与其配对的产生算符的左边, 忽视所有未配对算符的对易子和反对易子, 然后将每个配对算符的乘积替换成它们的对易子或反对易子.) 一个可以立即看出的结果是, 对于费米传播子, 方程(\ref{6.1.14})中两项的相对符号中会产生一个负号. 无论哪种置换将$\mathscr{H}(x)$中一个场的湮没部分$\psi^{+}(x)$放在$\mathscr{H}(y)$中%
+某个伴随场的产生部分$\psi^{+\dag}(y)$的左边, 那么, 将伴随场的湮没部分$\psi^{-\dag}(y)$放在场的产生部分$\psi^{-}(x)$的左边, 这个置换会包含一次额外的费米算符交换, 在费米子的情况下, 这样就在方程(\ref{6.1.14})中的第二项产生负号.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0603.eps}\\
+\caption{真空\lzx 真空振幅的一个八阶图, 其中粒子仅与外场相互作用. 在这个图中, 波浪线表示外场. 有$7!$个这样的图, 不同的图相差顶点的重新标记,  而顶点标记只是沿着环旋转的那些图没有被计成不同的图. 因而来自Dyson公式(\ref{6.1.1})的因子$1/8!$在这里没有被全部抵消, 留下了额外的因子$1/8$.}
+\end{figure}
+
+另外, 在整个\,Feynman\,图的贡献中也可能会出现负号. 作为一个例子, 我们来考察如下的理论, 费米子唯一的相互作用取如下形式
+\begin{equation}
+\mathscr{H}(x)=\sum_{\ell mk}g_{\ell mk}\psi_{\ell}^{\dag}(x)\psi_{m}(x)\phi_{k}(x) \:, \label{6.1.18}%
+\end{equation}
+其中$g_{\ell mk}$是一般常数, $\psi_{\ell}(x)$是一组复费米场, 而$\phi_{m}(x)$是一组实玻色场(不一定是标量场). (不仅是量子电动力学, 在包含弱相互作用, 电磁相互作用以及强相互作用的整个``标准模型''中, 所有的费米子相互作用都可以写成这种形式.) 我们首先处理费米子\lzx 费米子散射, $1\,2\to 1^{\prime}\,2^{\prime}$, 至$\mathscr{H}$的第二阶. 在方程(\ref{6.1.1})的二阶项中, 费米算符以这样的顺序出现(这里有明显的缩写)
+\begin{equation}
+a(2^{\prime})a(1^{\prime})\psi^{\dag}(x)\psi(x)\psi^{\dag}(y)\psi(y)a^{\dag}(1)a^{\dag}(2)\:.\label{6.1.19}%
+\end{equation}
+到这一阶有两个连通图, 对应配对\marginpar[\flushright{\raisebox{-5ex}[0pt]{{\small[268]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[268]}}}
+\begin{equation}
+[a(2^{\prime})\psi^{\dag}(x)]\,[a(1^{\prime})\psi^{\dag}(y)]\,[\psi(y)a^{\dag}(1)]\,[\psi(x)a^{\dag}(2)] \label{6.1.20}
+\end{equation}
+和
+\begin{equation}
+[a(1^{\prime})\psi^{\dag}(x)]\,[a(2^{\prime})\psi^{\dag}(y)]\,[\psi(y)a^{\dag}(1)]\,[\psi(x)a^{\dag}(2)]\: . \label{6.1.21}%
+\end{equation}
+
+\noindent (参看图6.4.) 为了从(\ref{6.1.19})得到(\ref{6.1.20}), 费米算符要作{\KAI{偶数}}次置换. (例如, 将$\psi(x)$右移三个算符, 然后将$a(1^{\prime})$右移一个算符.) 因此, 配对(\ref{6.1.20})的贡献中没有额外的负号. 这个结果本身不是那么重要; $S$-矩阵的{\KAI{总}}符号在跃迁概率中并不重要,  并且在所有情况下都依赖于对初末态的符号约定. 重要的是配对(\ref{6.1.20})和(\ref{6.1.21})的贡献具有相反的符号, 这可以很容易地看出: 这两个配对之间的唯一差异是交换了两个费米算符$a(1^{\prime})$和$a(2^{\prime})$. 实际上, 这个相对的负号正是\,Fermi\,统计要求的: 它使得散射振幅在粒子$1^{\prime}$ 和$2^{\prime}$(或$1$和$2$)的交换下反对称.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0604.eps}\\
+\caption{这是含有相互作用(\ref{6.1.18})的理论中费米子\lzx 费米子散射的二阶连通图. 在这里, 直线代表费米子; 虚线是中性玻色子. 这两个图的贡献之间存在一个符号差异, 这源于第二幅图表示的配对中有一次额外的费米算符交换.}
+\end{figure}
+
+
+然而, 即使在微扰论的最低阶, 也不能认为所有的符号因子都以这种简单的方式与末态或初态的反对称性相联系. 我们举例证明这一点, 考虑费米子\lzx 反费米子散射, $1\,2^{\text{c}}\to 1^{\prime}\,2^{\prime\text{c}}$, 对于同一相互作用(\ref{6.1.18}), 精确到二阶.
+费米算符在方程(\ref{6.1.1})的\marginpar[\flushright{\small[269]\hspace*{5mm}}]{{\small\hspace*{5mm}[269]}}二阶项中以如下顺序出现:
+\begin{equation}
+a(2^{\prime\text{c}})a(1^{\prime})\psi^{\dag}(x)\psi(x)\psi^{\dag}%
+(y)\psi(y)a^{\dag}(1)a^{\dag}(2^{\text{c}})\text{ .} \label{6.1.22}%
+\end{equation}
+在这里, 这一阶也有两个\,Feynman\,图, 分别对应于配对
+\begin{equation}
+[a(2^{\prime\text{c}})\psi(x)]\,[a(1^{\prime})\psi^{\dag}(x)]\,
+[\psi(y)a^{\dag}(1)]\,[\psi^{\dag}(y)a^{\dag}(2^{\text{c}})] \label{6.1.23}%
+\end{equation}
+和
+\begin{equation}
+[a(2^{\prime\text{c}})\psi(x)]\,[a(1^{\prime})\psi^{\dag}(y)]\,
+[\psi(y)a^{\dag}(1)]\,[\psi^{\dag}(x)a^{\dag}(2^{\text{c}})] \: . \label{6.1.24}%
+\end{equation}
+
+\noindent (参看图6.5.) 为了从(\ref{6.1.22})到(\ref{6.1.23}), 我们需要费米算符进行偶数次置换(例如, 将$\psi(x)$左移两个算符, 将$\psi^{\dag}(y)$右移两个算符) 所以在配对(\ref{6.1.23})的贡献中没有额外的负号. 另一方面, 为了从(\ref{6.1.22})到(\ref{6.1.24}), 我们需要费米算符进行奇数次置换(先进行实现(\ref{6.1.23})的步骤, 再{\KAI{加上}}$\psi^{\dag}(x)$和$\psi^{\dag}(y)$的交换) 所以这个配对的贡献会伴随一个额外的负号.{}$^*$\footnote{$^*${}实际上, 这个符号并非完全与\,Fermi\,统计的要求无关. 同一个场能湮没一个粒子并产生一个反粒子, 所以,  如果一个过程的初态粒子或反粒子是另一个过程的末态反粒子或粒子, 那么它们之间存在一个关系, 称为``交叉对称性(crossing symmetry)''. 特别地, 过程$1\,2^{\text{c}}\to 1^{\prime}\,2^{\prime\text{c}}$%
+的振幅与``交叉''过程$1\,2^{\prime}\to1^{\prime}\,2$的振幅相关; 两个配对(\ref{6.1.23})和(\ref{6.1.24}%
+)恰好对应这一过程的两个图, 它们相差的是$1$和$2^{\prime}$(或$1^{\prime}$和$2$)的交换, 所以, 散射振幅在初态(或末态)粒子的交换下的反对称性会自然地要求这两个配对的相对贡献间差一个负号.
+然而, 交叉对称性不是一个普通的对称性(它涉及运动学变量的一个解析延拓), 并且对于一般的过程很难在任意精度上使用它.}%
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0605.eps}\\
+\caption{包含相互作用(\ref{6.1.18}%
+)的理论中费米子\lzx 反费米子散射的二阶连通图. 在这里, 取决于箭头方向, 直线分别代表费米子或反费米子; 虚线是中性玻色子. 这两个图的贡献之间存在一个符号差异, 源于第二个图所表示的配对中有一次额外的费米算符交换.}
+\end{figure}
+
+当我们考察高阶贡献时会遇到额外的符号. 对于这里考察的理论类型, 费米子的相互作用全部形如(\ref{6.1.18}), 在一般的\,Feynman\,图中, 费米线要么穿过图,
+在\marginpar[\flushright{\small[270]\hspace*{5mm}}]{{\small\hspace*{5mm}[270]}}这个过程与玻色场有任意数目的相互作用并形成一串费米线, 如图6.6所示, 要么构成费米{\KAI{圈}}, 如图6.7所示. 给任意过程的\,Feynman\,图加上一个有$M$个角的费米圈, 考察这个费米圈的效应. 这个费米圈对应费米算符的配对
+\begin{equation}
+[\psi(x_{1})\bar{\psi}(x_{2})]\,[\psi(x_{2})\bar{\psi}(x_{3})]\,\cdots\,
+[\psi(x_{M})\bar{\psi}(x_{1})]\: . \label{6.1.25}%
+\end{equation}
+另一方面, 这些算符在方程(\ref{6.1.1})中以如下的次序出现
+\begin{equation}
+\bar{\psi}(x_{1})\psi(x_{1})\bar{\psi}(x_{2})\psi(x_{2})\cdots\bar{\psi}%
+(x_{M})\psi(x_{M}) \:.  \label{6.1.26}%
+\end{equation}
+为了从(\ref{6.1.26})到(\ref{6.1.25}), 我们需要对费米算符做奇次置换(将$\bar{\psi}(x_{1})$右移$2M-1$个算符), 所以对于每个这样的费米圈, 它的贡献会伴随一个负号.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0606.eps}\\
+\caption{包含相互作用(\ref{6.1.18})的理论中, 费米子\lzx 玻色子散射的二阶连通图. 直线是费米子, 虚线是中性玻色子.}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics{0607.eps}\\
+\caption{包含相互作用(\ref{6.1.18})的理论中, 玻色子\lzx 玻色子散射的最低阶连通图. 由于配对费米场的置换, 这样的费米圈图产生一个额外的负号.}
+\end{figure}
+
+这些规则给出了全部的$S$-矩阵,  其中包括了不同集团的粒子在相距极远的各个时空区域各自进行相互作用的贡献. %
+我们在第4章讨论过, 为了在计算$S$-矩阵时排除掉这部分, 我们只计入{\KAI{连通}}\,Feynman\,图. %
+特别地, 这样也排除了只是穿过图而没有发生相互作用的线, 这些线会产生因子(\ref{6.1.13}).
+
+为了使\,Feynman\,规则完全清晰, 我们将在两个不同的理论中计算粒子散射对$S$-矩阵的低阶贡献.
+
+\newpage
+
+\subsection*{理\quad 论\quad  I}
+\marginpar[\flushright{\raisebox{3ex}[0pt]{{\small[271]\hspace*{5mm}}}}]{{\raisebox{3ex}[0pt]{\small\hspace*{5mm}[271]}}}
+
+考察费米子与自荷共轭玻色子的理论, 相互作用为(\ref{6.1.18}). 费米子\lzx 玻色子散射的最低阶连通图如6.6所示. 按照图6.1中描述的规则, 相对应的$S$-矩阵元是
+\begin{align}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\,\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\,\bp_{2}\sigma_{2}n_{2}}=\nonumber\\
+&  (2\uppi)^{-6}\sum_{k^{\prime}l^{\prime}m^{\prime}\,klm}(-\mi)^{2}
+g_{l^{\prime}m^{\prime}k^{\prime}}\,g_{mlk}\,
+u_{l^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})\,
+u_{l}(\bp_{1}\,\sigma_{1}\,n_{1})\nonumber\\
+&  \times\int \dif^{4}x\int \dif^{4}y\:\Bigl(-\mi\Delta_{m^{\prime}m}(y-x)\Bigr)\me^{-\mi p_{1}^{\prime}\cdot y}\me^{\mi p_{1}\cdot x} \nonumber\\
+&  \times\Bigl[\me^{-\mi p_{2}^{\prime}\cdot y}
+u_{k^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+\me^{\mi p_{2}\cdot x}\,u_{k}(\bp_{2}\,\sigma_{2}\,n_{2})\nonumber\\
+& +\phantom{\Bigl[}\me^{-\mi p_{2}^{\prime}\cdot x}u_{k}^{\ast}(\bp_{2}^{\prime}\,\sigma
+_{2}^{\prime}\,n_{2}^{\prime})\me^{\mi p_{2}\cdot y}\,u_{k^{\prime}}(\bp%
+_{2}\,\sigma_{2}\,n_{2})\Bigr] \: . \label{6.1.27}%
+\end{align}
+(这里\marginpar[\flushright{\small[272]\hspace*{5mm}}]{{\small\hspace*{5mm}[272]}}的指标$1$和$2$分别指代费米子和玻色子.) 费米子\lzx 费米子散射也有两个二阶图, 如图6.4所示. 它们给出了$S$-矩阵元
+\begin{align}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\,\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\,\bp_{2}\sigma_{2}n_{2}}
+=(2\uppi)^{-6}\sum_{k^{\prime}l^{\prime}m^{\prime}klm}(-\mi)^{2}
+g_{m^{\prime}mk^{\prime}}\,g_{l^{\prime}lk}\nonumber\\
+&  \times u_{m^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+u_{l^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})\,
+u_{m}(\bp_{2}\,\sigma_{2}\,n_{2})u_{l}(\bp_{1}\,\sigma_{1}\,n_{1})\nonumber\\
+&  \times\int \dif^{4}x\int \dif^{4}y\:\me^{-\mi p_{2}^{\prime}\cdot x}\me^{-\mi p_{1}^{\prime
+}\cdot y}\me^{\mi p_{2}\cdot x}\me^{\mi p_{1}\cdot y}(-\mi)\Delta_{k^{\prime}k}(x-y)\nonumber\\
+& -[1^{\prime}\rightleftharpoons2^{\prime}] \label{6.1.28}%
+\end{align}
+这里的最后一项代表减去在前一项中交换粒子$1^{\prime}$和$2^{\prime}$%
+(或等价地交换$1$和$2$)得到的一项. 在这一理论中, 没有玻色子\lzx 玻色子散射的二阶图; 最低阶的图是四阶, %
+例如图6.7. 在我们计算传播子并过渡到动量空间之后, %
+我们会在\,\ref{sec:6.3}\,节给出更多像方程(\ref{6.1.27})和(\ref{6.1.28})这样具体的公式.
+
+在上面的例子中, 相互作用(\ref{6.1.18})中的三个场互不相同. 对于三个场都相同的三线性相互作用, 或者至少是三个场以一种对称的方式进入的三线性相互作用, 考察下面的例子是有益的。
+
+\subsection*{理\quad 论\quad  I\!I}
+
+现在, 取相互作用密度是一组{\KAI{实}}玻色场$\phi_{\ell}(x)$的三线性积的和.
+\begin{equation}
+\mathscr{H}(x)=\frac{1}{3!}\sum_{\ell mn}g_{\ell mn}\phi_{\ell}(x)\phi
+_{m}(x)\phi_{n}(x)\label{6.1.29}%
+\end{equation}
+其中$g_{\ell mn}$是实的全对称耦合系数. 假定我们要考察散射过程$1\,2\to1^{\prime}\,2^{\prime}$到这个相互作用的第二阶. 两个顶点中的每一个都要与四条外线中的两个相连. (唯一的其他可能性是, 一条外线与一个顶点相连, 另外三条与另一顶点相连, 但是已经与三条外线相连的顶点没有剩余的线与其他顶点相连, 所以这是非连通图的贡献.) 每个顶点还剩下的那条线恰好连接两个顶点. 这样的图有\,3\,个, 它们的区别是: 与线\,1\,连接同一顶点的是线\,2, 线$1^{\prime}$还是线$2^{\prime}$. (参看图6.8.) 通过上面的规则, 这三个图对$S$-矩阵的贡献是\marginpar[\flushright
+{\raisebox{-7ex}[0pt]{{\small[273]\hspace*{5mm}}}}]{{\raisebox{-7ex}[0pt]{\small\hspace*{5mm}[273]}}}
+\begin{eqnarray}
+&&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\,\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\,\bp_{2}\sigma_{2}n_{2}}\nonumber\\
+&&= (-\mi)^{2}(2\uppi)^{-6}\sum_{\ell\ell^{\prime}\ell^{\prime\prime}mm^{\prime}m^{\prime\prime}}
+g_{\ell\ell^{\prime}\ell^{\prime\prime}}\,g_{mm^{\prime}m^{\prime\prime}}
+\int \dif^{4}x\int \dif^{4}y\, \Bigl(-\mi\Delta_{\ell^{\prime\prime}m^{\prime\prime}}(x,y)\Bigr)\nonumber\\
+&& \qquad\times\Bigl[u_{\ell}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+\,\me^{-\mi p_{1}^{\prime}\cdot x}\,u_{\ell^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+\,\me^{-\mi p_{2}^{\prime}\cdot x}\nonumber\\
+&&  \qquad\phantom{\times\Bigl[u_{\ell}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})}
+\:\times u_{m}(\bp_{1}\,\sigma_{1}\,n_{1})\,\me^{\mi p_{1}\cdot y}
+\,u_{m^{\prime}}(\bp_{2}\,\sigma_{2}\,n_{2})\,\me^{\mi p_{2}\cdot y}\nonumber\\
+&& \qquad+ \phantom{\Bigl[}
+u_{\ell^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+\,\me^{-\mi p_{1}^{\prime}\cdot x}\,u_{\ell}(\bp_{1}\,\sigma_{1}\,n_{1})\,
+\me^{\mi p_{1}\cdot x}\nonumber\cr
+&& \qquad\phantom{\times\Bigl[u_{\ell}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})}\:
+\times u_{m^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})\,
+\me^{-\mi p_{2}^{\prime}\cdot y}\,u_{m}(\bp_{2}\,\sigma_{2}\,n_{2})\,\me^{\mi p_{2}\cdot y}\nonumber\\
+&&  \qquad+\phantom{\Bigl[}
+u_{\ell^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+\,\me^{-\mi p_{2}^{\prime}\cdot x}\,
+u_{\ell}(\bp_{1}\,\sigma_{1}\,n_{1})\,\me^{\mi p_{1}\cdot x}\nonumber\\
+&&\qquad\phantom{\times\Bigl[u_{\ell}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})}\:
+\times u_{m^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})\,
+\me^{-\mi p_{1}^{\prime}\cdot y}\,u_{m}(\bp_{2}\,\sigma_{2}\,n_{2})\,\me^{\mi p_{2}\cdot y}\Bigr]\:.
+\label{6.1.30}%
+\end{eqnarray}
+更特殊些, 如果在这个理论中的玻色子是单一种类的无自旋粒子, 那么我们可以将相互作用(\ref{6.1.29})写成
+\begin{equation}
+\mathscr{H}=g\phi^{3}/3!\label{6.1.31}%
+\end{equation}
+于是标量\lzx 标量散射的$S$-矩阵元(\ref{6.1.30})变成
+\begin{align*}
+&  S_{\bp_{1}^{\prime}\,\bp_{2}^{\prime}\:,\:\bp%
+_{1}\,\bp_{2}}=\\
+&  \frac{\mi g^{2}}{(2\uppi)^{6}\sqrt{16E_{1}^{\prime}E_{2}^{\prime}E_{1}E_{2}}}
+\int \dif^{4}x\int \dif^{4}y\:\Delta_{F}(x-y)\\
+&\quad \times\Bigl[\exp(-\mi(p_{1}^{\prime}+p_{2}^{\prime})\cdot x)
+\exp(\mi(p_{1}+p_{2})\cdot y)\\
+&\qquad +\exp(\mi(p_{1}-p_{1}^{\prime})\cdot x)\exp(\mi(p_{2}-p_{2}^{\prime})\cdot y)\\
+&\qquad +\exp(\mi(p_{1}-p_{2}^{\prime})\cdot x)\exp(\mi(p_{2}-p_{1}^{\prime})\cdot y)\Bigr] \: ,
+\end{align*}
+其\marginpar[\flushright{\small[274]\hspace*{5mm}}]{{\small\hspace*{5mm}[274]}}中$\Delta_{F}(x-y)$是标量场传播子, 将在下一节计算. 这里不存在$\mathscr{H}(x)$的三阶项或其他奇数阶项.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0608.eps}\\
+\caption{包含有相互作用(\ref{6.1.29})的理论中, 玻色子\lzx 玻色子散射的二阶连通图.}
+\end{figure}
+
+\section{传播子的计算}  \label{sec:6.2}
+\setcounter{equation}{0}
+
+我们现在计算传播子(\ref{6.1.14}), 传播子是\,Feynman\,规则中的一个重要元素, 它来源于场$\psi_{\ell}(x)$与伴随场$\psi_{m}^{\dag}(y)$的配对. 将方程(\ref{6.1.15})与(\ref{6.1.16})代入方程(\ref{6.1.14}), 并利用湮没算符与产生算符的对易或反对易关系, 我们立即有
+\begin{align}
+&  -\mi\Delta_{\ell m}(x-y)=\theta(x-y)(2\uppi)^{-3}\int \dif^{3}p\:
+\sum_{\sigma}u_{\ell}(\bp\,\sigma\, n)u_{m}^{\ast}(\bp\,\sigma\, n)
+\me^{\mi p\cdot(x-y)}\nonumber\\
+& \qquad\pm\theta(y-x)(2\uppi)^{-3}\int \dif^{3}p\:\sum_{\sigma}
+v_{m}^{\ast}(\bp\,\sigma\, n)v_{\ell}(\bp\,\sigma \,n)\me^{\mi p\cdot(y-x)}\: .\label{6.2.1}%
+\end{align}
+在第5章计算对易子和反对易子的过程中, 我们证明了
+\begin{equation}
+\sum_{\sigma}u_{\ell}(\bp\,\sigma\, n)u_{m}^{\ast}(\bp\,\sigma \,n)
+=\left( 2\sqrt{\bp^{2}+m_{n}^{2}}\right)^{-1}\,P_{\ell m}
+\Bigl(\bp,\sqrt{\bp^{2}+m_{n}^{2}}\Bigr)  \: ,
+\label{6.2.2}%
+\end{equation}%
+\begin{equation}
+\sum_{\sigma}v_{\ell}(\bp\,\sigma\,n)v_{m}^{\ast}(\bp\,\sigma\,n)=
+\pm\left(  2\sqrt{\bp^{2}+m_{n}^{2}}\right)^{-1}\, P_{\ell m}\Bigl(
+-\bp,-\sqrt{\bp^{2}+m_{n}^{2}}\Bigr)  \:, \label{6.2.3}%
+\end{equation}
+其中$P_{\ell m}(\bp,\omega)$是$\bp$和$\omega$的多项式. (这里与方程(\ref{6.2.1})一样, 正号和负号分别指代玻色场和费米场.) 例如, 如果$\psi_{\ell}(x)$和$\psi_{m}(y)$是自旋\,0\,粒子的标量场$\phi(x)$和$\phi(y)$,  那么我们就有
+\begin{equation}
+P(p)=1 \: . \label{6.2.4}%
+\end{equation}
+如果$\psi_{\ell}(x)$和$\psi_{m}(y)$是自旋$\frac{1}{2}$粒子的\,Dirac\,场, 那么
+\begin{equation}
+P_{\ell m}(p)=\Bigl[(-\mi\gamma_{\mu}p^{\mu}+m)\beta\Bigr]_{\ell m} \:, \label{6.2.5}%
+\end{equation}
+其中这里的$\ell$和$m$是\,4\,-值\,Dirac\,指标. (这里出现矩阵$\beta$是因为我们考虑的是$\psi_{\ell}(x)$与$\psi_{m}^{\dag}(y)$的配对, 在$\psi(x)$ 与$\bar{\psi}(y)\equiv\psi^{\dag}(y)\beta$的配对中, $\beta$就不会出现.) 如果$\psi_{\ell}(x)$和$\psi_{m}(y)$是自旋\,1\,粒子的矢量场$V_{\mu}(x)$ 和$V_{\nu}(y)$, 那么
+\begin{equation}
+P_{\mu\nu}(p)=\eta_{\mu\nu}+m^{-2}p_{\mu}p_{\nu}  \: . \label{6.2.6}%
+\end{equation}
+更普遍地\marginpar[\flushright{\small[275]\hspace*{5mm}}]{{\small\hspace*{5mm}[275]}}, 如果$\psi_{\ell}(x)$和$\psi_{m}(y)$是自旋$j$粒子的场$\psi_{ab}(x)$ 和$\psi_{\tilde
+{a}\tilde{b}}(y)$的分量, 其中这两个场分别属于齐次\,Lorentz\,群的不可约$(A,B)$表示和$(\tilde{A},\tilde{B})$%
+表示, 那么{}$^*$\footnote{$^*${}原书方程(\ref{6.2.7})中有笔误. \ezx 译者注}
+\begin{align}
+P_{ab,\tilde{a}\tilde{b}}(p) &  =\sum_{a^{\prime}b^{\prime}}\sum_{\tilde
+{a}^{\prime}\tilde{b}^{\prime}}\sum_{\sigma}C_{AB}(j\sigma,a^{\prime}%
+b^{\prime})C_{\tilde{A}\tilde{B}}(j\sigma,\tilde{a}^{\prime}\tilde{b}^{\prime
+})\nonumber\\
+&  \quad\times\Bigl[\exp(-\theta\hat{\bp}\cdot\bJ^{(A)})\Bigr]_{aa^{\prime}}
+\Bigl[\exp(+\theta\hat{\bp}\cdot\bJ^{(B)})\Bigr]_{bb^{\prime}} \nonumber\\
+&  \quad\times\Bigl[\exp(-\theta\hat{\bp}\cdot\bJ^{(\tilde{A})})\Bigr]_{\tilde{a}\tilde{a}^{\prime}}
+\Bigl[\exp(+\theta\hat{\bp}\cdot\bJ^{(\tilde{B})})\Bigr]_{\tilde{b}\tilde{b}^{\prime}}\:,\label{6.2.7}%
+\end{align}
+其中$\sinh\theta=\lvert \bp\rvert /m$, 而$a,b,\tilde{a},\tilde{b}$以单位步长分别从$-A$取到$+A$, 从$-B$到$+B$, 从$-\tilde{A}$ 到$+\tilde{A}$ 以及从$-\tilde{B}$到$+\tilde{B}$, 对指标$a^{\prime},b^{\prime},\tilde{a}^{\prime}$和$\tilde{b}^{\prime}$也同样如此.
+
+将方程(\ref{6.2.2})和(\ref{6.2.3})代入方程(\ref{6.2.1})得出
+\begin{align}
+-\mi\Delta_{\ell m}(x,y) &= \theta(x-y)P_{\ell m}\left(-\mi\frac{\partial}{\partial x}\right) \Delta_{+}(x-y)\nonumber\\
+&  \quad+\theta(y-x)P_{\ell m}\left(-\mi\frac{\partial}{\partial x}\right)\Delta_{+}(y-x)\: , \label{6.2.8}%
+\end{align}
+其中$\Delta_{+}(x)$是第5章引入的函数
+\begin{equation}
+\Delta_{+}(x)\equiv(2\uppi)^{-3}\int \dif^{3}p \: (2p^{0})^{-1}\,\me^{\mi p\cdot x}\label{6.2.9}%
+\end{equation}
+其中$p^{0}$取为$+\sqrt{\bp^{2}+m^{2}}$.
+
+为了更进一步, 我们必须讨论一下如何扩张多项式$P(p)$的定义. 方程(\ref{6.2.2})和(\ref{6.2.3})仅对``质量壳上''的\,4\,-动量, 即$p^{0}=\pm\sqrt{\bp^{2}%
++m^{2}}$, 定义了多项式$P(p)$. 由于任意幂次的$(p^{0})^{2\nu}$或$(p^{0})^{2\nu+1}$总可以分别写成$(\bp^{2}+m^{2})^{\nu}$%
+或$p^{0}(\bp^{2}+m^{2})^{\nu}$, 所以这类\,4\,-动量的任意多项式函数总可以写成$p^{0}$的线性函数. 因此我们可以通过如下条件定义多项式$P^{(L)}(q)$
+\begin{equation}%
+\begin{split}
+P^{(L)}(p) &= P(p) \qquad \left(\text{对于 }p^{0}=\sqrt{\bp^{2}+m^{2}}\right)  \: , \\
+P^{(L)}(q) &  =P^{(0)}(\bq)+q^{0}P^{(1)}(\bq)\qquad (\text{对于一般的}\,q^{\mu})\:,
+\end{split} \label{6.2.10}
+\end{equation}
+其中$P^{(0,1)}$是仅依赖于$\bq$的多项式. 现在我们可以利用
+\begin{equation}
+\frac{\partial}{\partial x^{0}}\theta(x^{0}-y^{0})=-\frac{\partial}{\partial
+x^{0}}\theta(y^{0}-x^{0})=\updelta(x^{0}-y^{0})\label{6.2.11}%
+\end{equation}
+($\theta(x)$在$x^{0}=0$处有一个单位跃阶, 而在其他地方是常数)将方程(\ref{6.2.8})中的导数算符移至$\theta$函数的左边的\marginpar[\flushright
+{\raisebox{-12ex}[0pt]{{\small[276]\hspace*{5mm}}}}]{{\raisebox{-12ex}[0pt]{\small\hspace*{5mm}[276]}}}
+\begin{align}
+\Delta_{\ell m}(x,y) &  =P_{\ell m}^{(L)}\left(-\mi\frac{\partial}{\partial x}\right)
+\Delta_{F}(x-y)\nonumber\\
+&\quad+\updelta(x^{0}-y^{0})P_{\ell m}^{(1)}(-\mi\nabla)\Bigl[\Delta
+_{+}(x-y)-\Delta_{+}(y-x)\Bigr] \: , \label{6.2.12}%
+\end{align}
+其中$\Delta_{F}$是``Feynman\,传播子''
+\begin{equation}
+-\mi\Delta_{F}(x)\equiv\theta(x)\Delta_{+}(x)+\theta(-x)\Delta_{+}(-x)\:.\label{6.2.13}%
+\end{equation}
+然而, 当$x^{0}=0$时, 由于方程(\ref{6.2.9})中的变换$\bx\to-\bx$可以被积分变量的变换$\bp\to-\bp$补偿, 函数$\Delta_{+}(x)$是$\bx$的偶函数, 所以我们可以扔掉方程(\ref{6.2.12})中的第二项, 写成
+\begin{equation}
+\Delta_{\ell m}(x,y)=P_{\ell m}^{(L)}\left(-\mi\frac{\partial}{\partial
+x}\right)  \Delta_{F}(x-y) \:. \label{6.2.14}%
+\end{equation}
+
+将\,Feynman\,传播子表示成\,Fourier\,积分将是特别有用的. 方程(\ref{6.2.13})中的阶跃函数具有\,Fourier\,表示{}$^*$\footnote{$^*${}为了证明这点, 注意到, 如果$t>0$, 那么积分围道可以通过下半平面的一个大半圆按顺时针方向闭合, 所以积分结果来自极点$s=-\mi\epsilon$处的贡献, 值为$-2\uppi \mi$. 如果$t<0$, 那么积分围道可以通过上半平面的一个大半圆按逆时针方向闭合, 这个区域内被积函数是解析的, 积分结果为零.}%
+\begin{equation}
+\theta(t)=\frac{-1}{2\uppi\mi}\int_{-\infty}^{\infty}\frac{\exp(-\mi st)}%
+{s+\mi\epsilon}\:\dif s  \: .\label{6.2.15}%
+\end{equation}
+可以将它与$\Delta_{+}(x)$的\,Fourier\,积分(\ref{6.2.9})相结合. 我们在方程(\ref{6.2.13})的第一项中引入新的积分变量$\bq\equiv\bp$ 和$q^{0}=p^{0}+s$, 这给出
+\begin{align*}
+-\mi\Delta_{F}(x) &= -\frac{1}{2\uppi \mi}\int \dif^{3}q\int_{-\infty}^{\infty}%
+\dif q^{0}\:\frac{\exp(\mi\bq\cdot\bx-\mi q^{0}x^{0})}{(2\uppi)^{3}%
+2\sqrt{\bq^{2}+m^{2}}}\\
+&  \quad\times\biggl[\Bigl(q^{0}-\sqrt{\bq^{2}+m^{2}}+\mi\epsilon\Bigr)^{-1}
++\Bigl(-q^{0}-\sqrt{\bq^{2}+m^{2}}+\mi\epsilon\Bigr)^{-1}\biggr]  \: .
+\end{align*}
+合并分母并采取4-维记法, 我们有\begin{equation}
+\Delta_{F}(x)=(2\uppi)^{-4}\int \dif^{4}q\:\frac{\exp(\mi \bq\cdot \bx)}{q^{2}%
++m^{2}-\mi\epsilon}\: , \label{6.2.16}%
+\end{equation}
+其中$q^{2}\equiv\bq^{2}-(q^{0})^{2}$. (由于$\epsilon$的唯一重要之处是它是一个正无穷小量, 我们将分母中的$2\epsilon\sqrt{\bq^{2}+m^{2}}$ 换成了$\epsilon$.) 这顺带告诉我们$\Delta_{F}$是\,Klein-Gordon\,微分算符的\,Green\,函数, 即\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[277]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[277]}}}
+\begin{equation}
+(\square-m^{2})\Delta_{F}(x) = -\updelta^{4}(x),\label{6.2.17}%
+\end{equation}
+其边界条件由分母中的$-\mi\epsilon$确定: 如方程(\ref{6.2.13})所示, $\Delta_{F}(x)$在$x^{0}\to+\infty$或$x^{0}\to-\infty$时分别只包含正频项或负频项, 即$\exp(-\mi x^{0}\sqrt{\bp^{2}+m^{2}})$或$\exp(+\mi x^{0}\sqrt{\bp^{2}+m^{2}})$.
+
+现在将方程(\ref{6.2.16})代入方程(\ref{6.2.14}), 这给出的传播子是
+\begin{equation}
+\Delta_{\ell m}(x,y)=(2\uppi)^{-4}\int \dif^{4}q\:\frac{P_{\ell m}^{(L)}%
+(q)\me^{\mi q\cdot(x-y)}}{q^{2}+m^{2}-\mi\epsilon}\: .\label{6.2.18}%
+\end{equation}
+这个表达式有一个明显的问题. 当$p$在质量壳$p^{2}=-m^{2}$上时, 多项式$P(p)$是\,Lorentz\,协变的, 但是在方程(\ref{6.2.18})中, 我们要对所有的$q^{\mu}$ 积分, 并没有限制在质量壳上. 对于一般的$q^{\mu}$, 多项式$P^{(L)}(q)$定义为$q^{0}$的线性多项式, 除非这个多项式对每个空间分量$q^{i}$ 也是线性的, 否则这个多项式显然没有\,Lorentz\,协变性. 作为替代, 我们总能对一般的\,4\,-动量$q^{\mu}$定义多项式$P(p)$的扩张, 我们简称为$P(q)$, 使得$P(q)$对一般的$q^{\mu}$是\,Lorentz\,协变的, 满足
+\[
+P_{\ell m}(\Lambda q)=D_{\ell\ell^{\prime}}(\Lambda)D_{mm^{\prime}}^{\ast
+}(\Lambda)P_{\ell^{\prime}m^{\prime}}(q) \: ,
+\]
+其中$\Lambda^{\mu}{}_{\!\nu}$是一般\,Lorentz\,变换, 而$D(\Lambda)$是\,Lorentz\,群的一个合适表示. 例如, 对于标量场, Dirac\,场和$4$-矢量场, 这些协变扩张显然是通过将方程(\ref{6.2.4}),  (\ref{6.2.5})和(\ref{6.2.6})中的$p^{\mu}$替换为一般的$4$-动量$q^{\mu}$实现的. 对于标量场和\,Dirac\,场, 它们已经是$q^{0}$的线性函数, 所以$P^{(L)}(q)$和$P(q)$之间没有差异:
+\begin{equation}
+P_{\ell m}^{(L)}(q)=P_{\ell m}(q) \qquad \text{(标量场, Dirac场).}  \label{6.2.19}%
+\end{equation}
+另一方面, 对自旋\,1\,粒子的矢量场, 协变多项式$P_{\mu\nu}(q)\equiv\eta_{\mu\nu}+m^{-2}q_{\mu}q_{\nu}$的\,00\,分量是$q^{0}$的二次, 所以这时{\KAI{存在}}一个差异:
+\begin{align}
+P_{\mu\nu}^{(L)}(q) &= \eta_{\mu\nu}+m^{-2} \Bigl[q_{\mu}q_{\nu}-\updelta_{\mu
+}^{0}\updelta_{\nu}^{0}(q_{0}^{2}-\bq^{2}-m^{2})\Bigr]\nonumber\\
+&= P_{\mu\nu}(q)+m^{-2}(q^{2}+m^{2})\updelta_{\mu}^{0}\updelta_{\nu}^{0} \:. \label{6.2.20}%
+\end{align}
+(这里额外的项通过两个条件确定, 一个是它必须抵消$P_{00}(q)$中的$(q_{0})^{2}$项, 另一个是当$q^{\mu}$在质量壳上时, 它必须为零.) 将其代入方程(\ref{6.2.18}), 这给出的矢量场传播子是
+\begin{equation}
+\Delta_{\mu\nu}(x,y)=(2\uppi)^{-4}\int \dif^{4}q\:\frac{P_{\mu\nu}(q)\me^{\mi q\cdot
+(x-y)}}{q^{2}+m^{2}-\mi\epsilon}+m^{-2}\updelta^{4}(x-y)\updelta_{\mu}^{0}%
+\updelta_{\nu}^{0}\: .\label{6.2.21}%
+\end{equation}
+第一项\marginpar[\flushright{\small[278]\hspace*{5mm}}]{{\small\hspace*{5mm}[278]}}是明显协变的, 而第二项, 尽管不协变, 却是定域的, 所以, 通过给哈密顿密度加上一个定域的非协变项, 我们可以消掉它. 特别地, 如果$V_{\mu}(x)$通过$\mathscr{H}(x)$中的$V_{\mu}(x)J^{\mu}(x)$与其他场进行相互作用, 那么方程(\ref{6.2.21})中第二项的效果是产生有效相互作用
+\[
+-\mi\mathscr{H}_{\rm  eff}(x)=\tfrac{1}{2}\Bigl[-\mi J^{\mu}(x)\Bigr]\:\Bigl[-\mi J^{\nu}(x)\Bigr]
+\:\Bigl[-\mi m^{-2}\updelta_{\mu}^{0}\updelta_{\nu}^{0}\Bigr]\: .
+\]
+(因子$-\mi$就是伴随顶点和传播子的那个因子. 需要因子$\frac{1}{2}$是因为将其他场与$\mathscr{H}_{\rm eff}%
+(x)$配对时存在两种方法, 这两种方法相差的只是$J^{\mu}$和$J^{\nu}$的交换.) 因此, %
+通过给$\mathscr{H}(x)$加入非协变项
+\begin{equation}
+\mathscr{H}_{\rm NC}(x)=-\mathscr{H}_{\rm eff}(x)=\frac{1}{2m^{2}}\Big[J^{0}(x)\Big]^{2}\:, \label{6.2.22}%
+\end{equation}
+方程(\ref{6.2.21})中非协变的第二项的影响就可以被抵消掉.
+矢量场的等时对易子在零间隔处有一奇异性, 正是这个奇异性要求我们采用更加广泛的一类相互作用而不是限于一个标量密度. $S$-矩阵在这一理论中的\,Lorentz\,不变性的非微扰证明将在下一章给出.
+
+不应该认为这是仅与自旋$j\geq1$相关的现象. 例如, 考虑与自旋$j=0$的粒子关联的矢量场, 它等于(第5章讨论过的)标量场的导数$\partial_{\lambda}\phi(x)$. 对于这个场与标量$\phi^{\dag}(y)$的配对, 多项式$P(p)$在壳时是
+\begin{equation}
+P_{\lambda}(p)=\mi p_{\lambda}\:, \label{6.2.23}%
+\end{equation}
+而$\partial_{\lambda}\phi(x)$与$\partial_{\eta}\phi^{\dag}(y)$的配对给出多项式
+\begin{equation}
+P_{\lambda,\eta}(p)=p_{\lambda}p_{\eta}\: .\label{6.2.24}%
+\end{equation}
+对于一般的离壳\,4\,-动量$q^{\mu}$, 再一次将方程(\ref{6.2.23})和(\ref{6.2.24})中的$p^{\mu}$换成$q^{\mu}$就可获得协变多项式. 方程(\ref{6.2.23}) 表明$P_{\lambda}(q)$已经是$q_{0}$的线性函数, 因此$P_{\lambda}(q)$和$P_{\lambda}^{(L)}(q)$之间没有差异. 然而, 对于方程(\ref{6.2.24}), 确实存在一个差异:
+\begin{align}
+P_{\lambda,\eta}^{(L)}(q) &= q_{\lambda}q_{\eta}-(q_{0}^{2}-\bq^{2}-m^{2})
+\updelta_{\lambda}^{0}\updelta_{\eta}^{0}\nonumber\\
+&=P_{\lambda,\eta}(q)+(q^{2}+m^{2})\updelta_{\lambda}^{0}\updelta_{\eta}^{0}\: , \label{6.2.25}%
+\end{align}
+所以这里传播子是
+\begin{equation}
+\Delta_{\lambda,\eta}(x,y)=(2\uppi)^{-4}\int \dif^{4}q\:\frac{q_{\lambda}q_{\eta
+}\me^{\mi q\cdot x}}{q^{2}+m^{2}-\mi\epsilon}+\updelta_{\lambda}^{0}\updelta_{\eta}%
+^{0}\updelta^{4}(x-y)\: .\label{6.2.26}%
+\end{equation}
+像上面一样\marginpar[\flushright{\small[279]\hspace*{5mm}}]{{\small\hspace*{5mm}[279]}}, 通过给相互作用加上非协变项
+\begin{equation}
+\mathscr{H}_{\rm NC}(x)=\tfrac{1}{2}\Big[J^{0}(x)\Big]^{2} \: ,
+\label{6.2.27}%
+\end{equation}
+第二项的非协变影响就可以被移除, 这里的$J^{\mu}(x)$是$\mathscr{H}(x)$协变部分中与$\partial_{\mu}\phi(x)$乘在一起的流.
+
+应该清楚(至少对有质量粒子), 通过这种给哈密顿量密度加入非协变定域项的方法, 我们总可以抵消传播子中非协变部分的影响. 这是因为, 当$q^{\mu}$在质量壳上时, %
+传播子中的分子$P_{\ell m}^{(L)}(q)$必须等于协变多项式$P_{\ell m}(q)$, %
+所以$P_{\ell m}^{(L)}(q)$与$P_{\ell m}(q)$之差必须包含因子$q^{2}+m^{2}$. 在这个差值对方程(\ref{6.2.18})的贡献中, 这个因子抵消了分母$(q^{2}+m^{2}-\mi\epsilon)$, 所以方程(\ref{6.2.18})总等于协变项加上正比于$\updelta$-函数$\updelta^{4}(x-y)$或其导数的项.
+通过给相互作用加上一个与场或场导数耦合的流的二次项, 后一项的效应可以被消掉. 下文中将默认这样的项已被包含在相互作用中, 这样我们将在传播子(\ref{6.2.18})中使用{\KAI{协变}}多项式$P_{\ell m}(q)$, 而不再标记指标``$L$''.
+
+看起来这似乎只是一个{\KAI{临时应对}}的手段. 幸运的是, 在下一章所讨论的正则体系中, 哈密度量密度中会自动出现一个非协变项, 这个非协变项正是抵消传播子的非协变项所需要的.
+事实上, 这正是引入正则体系的一部分动机.
+\newpage
+\subsection*{* * *}
+
+在结束本节之前, 说一下传播子通常出现在文献中的其他定义是有益的, 这些定义等价于方程(\ref{6.2.1}). 首先, 对方程(\ref{6.1.14})取真空期望值, 这给出
+\begin{align}
+-\mi\Delta_{\ell m}(x,y) &= \theta(x-y)\left\langle \left[  \psi_{\ell}%
+^{+}(x),\psi_{m}^{+\dag}(y)\right]  _{\mp}\right\rangle _{0}\nonumber\\
+&  \quad\pm\theta(y-x)\left\langle \left[  \psi_{m}^{-\dag}(y),\psi_{\ell}%
+^{-}(x)\right]  _{\mp}\right\rangle _{0} \: . \label{6.2.28}%
+\end{align}
+(这里的$\langle AB\cdots\rangle_{0}$表示真空期望值$(\Phi_{0},AB\cdots\Phi_{0})$.) 因为$\psi_{\ell}^{+}(x)$和$\psi_{m}^{-\dag}(y)$都湮没真空, 所以方程(\ref{6.2.28})中的每个对易子或反对易子只有一项对传播子有贡献:
+\begin{equation}
+-\mi\Delta_{\ell m}(x,y)=\theta(x-y)\langle\psi_{\ell}^{+}(x)\psi_{m}^{+\dag
+}(y)\rangle_{0}\pm\theta(y-x)\langle\psi_{m}^{-\dag}(y)\psi_{\ell}%
+^{-}(x)\rangle_{0}\: .\label{6.2.29}%
+\end{equation}
+此外\marginpar[\flushright{\small[280]\hspace*{5mm}}]{{\small\hspace*{5mm}[280]}}, $\psi^{-\dag}$和$\psi^{+}$湮没右边的真空态, 而$\psi^{-}$和$\psi^{+\dag}$湮没左边的真空态, 所以无论$\psi^{+}$和$\psi^{-}$ 处在方程何处, 它们都可以被替换成完整的场$\psi=\psi^{+}+\psi^{-}$:
+\begin{equation}
+-\mi\Delta_{\ell m}(x,y)=\theta(x-y)\langle\psi_{\ell}(x)\psi_{m}^{\dag
+}(y)\rangle_{0}\pm\theta(y-x)\langle\psi_{m}^{\dag}(y)\psi_{\ell}%
+(x)\rangle_{0} \: . \label{6.2.30}%
+\end{equation}
+这通常写作
+\begin{equation}
+-\mi\Delta_{\ell m}(x,y)=\langle T\{\psi_{\ell}(x)\psi_{m}^{\dag}(y)\}\rangle_{0} \:, \label{6.2.31}%
+\end{equation}
+其中$T$是编时乘积, 现在它的定义扩展{}$^*$\footnote{$^*${}这与此前我们在第3章中对哈密顿量密度定义的编时乘积是不一致的,  这是因为哈密顿量密度仅能包含偶数个费米场因子.}至所有场, 对费米算符的任何奇次置换, 它的定义要加一个负号.
+
+
+\section{动量空间规则} \label{sec:6.3}
+\setcounter{equation}{0}
+
+在\,\ref{sec:6.1}\,节中介绍的\,Feynman\,规则具体说明了如何计算一个给定的$N$阶图对$S$-矩阵的贡献, %
+这个贡献是对$N$个时空坐标的积分, 被积函数是与时空相关的因子的乘积. 对于一个末态粒子(或反粒子)线, %
+如果它携带动量$p^{\prime\mu}$, 从时空坐标为$x^{\mu}$的顶点离开图, %
+我们就会得到一个正比于$\exp(-\mi p^{\prime}\cdot x)$的因子, 对于初态粒子线, 如果它携带动量$p^{\mu}$, 然后进入时空坐标为$x^{\mu}$的顶点, 我们就会得到一个正比于$\exp(+\mi p\cdot x)$的因子. 我们在\,\ref{sec:6.2}\,节中看到, %
+如果一个内线从$y$跑到$x$, 那么与这个内线相关的因子就可以表示成对离壳\,4\,-动量$q^{\mu}$的积分, 这个积分是被积函数正比于$\exp(\mi q\cdot(x-y))$ 的\,Fourier\,积分. 我们可以将$q^{\mu}$看作沿着内线, 以箭头的方向, %
+从$y$流向$x$ 的\,4\,-动量. 因此, 对每个顶点的时空坐标的积分仅产生因子
+\begin{equation}
+(2\uppi)^{4}\updelta^{4}\left(  \sum p+\sum q-\sum p^{\prime}-\sum q^{\prime}\right) \:, \label{6.3.1}%
+\end{equation}
+其中$\sum p^{\prime}$和$\sum p$分别代表所有离开顶点的末态粒子的总\,4\,-动量和所有进入顶点的初态粒子的总\,4\,-动量; 而$\sum q^{\prime}$和$\sum q$ 分别代表箭头离开顶点和箭头进入顶点的内线带有的总$4$-动量.
+当然, 取代对$x^{\mu}$积分, 我们现在必须对每一内线的\,Fourier\,变量$q^{\mu}$积分.
+
+这些\marginpar[\flushright{\small[281]\hspace*{5mm}}]{{\small\hspace*{5mm}[281]}}讨论可以被整理成一组新的\,Feynman\,规则(参看图6.9), 在这组Feynman 规则下, 对$S$-矩阵的贡献是对动量变量的积分:
+
+\begin{figure}[h!]
+\centering
+\includegraphics{0609.eps}\\
+\caption{在动量空间计算$S$-矩阵时产生的算符配对的图形表示. 对于\,Feynman\,图的每一条线, 右边的表达式是必须被包含进$S$-矩阵的动量空间积分中的因子.}
+\end{figure}
+
+\begin{itemize}
+\item[(i)] 和\,\ref{sec:6.1}\,节中讲的一样, 画出所需阶的所有\,Feynman\,图. 然而, 取代用时空坐标来标记每个顶点, 现在用一个离壳的\,4\,-动量标记每个内线, 这个动量通常被视作沿箭头的方向流动(对于没有箭头的中性粒子线, 则可以是两个方向中的任一个方向).
+\item[(ii)] 对\marginpar[\flushright{\small[282]\hspace*{5mm}}]{{\small\hspace*{5mm}[282]}}于每个$i$类顶点, 计入因子
+\begin{equation}
+-\mi(2\uppi)^{4}g_{i}\:\updelta^{4}\left(\sum p+\sum q-\sum p^{\prime}-\sum q^{\prime}\right)  \label{6.3.2}%
+\end{equation}
+其中动量求和的意义与(\ref{6.3.1})中的求和相同. 这个$\updelta$-函数确保了$4$-动量在图中的每个顶点上守恒. 对每个从上方离开图的外线, 根据箭头指向上方还是指向下方, 分别计入因子$(2\uppi)^{-3/2}u_{\ell}^{\ast}(\bp^{\prime}\sigma^{\prime}n^{\prime})$或%
+$(2\uppi)^{-3/2}v_{\ell}(\bp^{\prime}\sigma^{\prime}n^{\prime})$. 对每个从下方进入图的外线, 根据箭头指向上方还是指向下方, 分别计入因子$(2\uppi)^{-3/2}u_{\ell}(\bp\,\sigma\,n)$%
+或$(2\uppi)^{-3/2}v_{\ell}^{\ast}(\bp\,\sigma\,n)$. 对于每个内线, 如果它的端点分别被标记为$\ell$和$m$, 箭头由$m$指向$\ell$, 且携带动量指标$q^{\mu}$, 那么其计入的因子是$-\mi\Delta_{\ell m}(x)$的被积函数中$\me^{\mi q\cdot x}$的系数:
+\begin{equation}
+-\mi(2\uppi)^{-4}P_{\ell m}(q)\Big/(q^{2}+m_{\ell}^{2}-\mi\epsilon)\:.\label{6.3.3}%
+\end{equation}
+提醒: 对\,4\,-动量为$q$的标量或反标量, $u$和$v$就是$(2q^{0})^{-1/2}$, 而多项式$P(q)$是\,1. 对于$4$-动量为$p$, 质量为$M$的旋量, $u$ 和$v$ 是\,\ref{sec:5.5}\,节中描述的归一化\,Dirac\,旋量, %
+多项式$P(p)$是矩阵$(-\mi\gamma_{\mu}p^{\mu}+M)\beta$.
+
+\item[(iii)] 对于所有的这些因子的乘积, 对内线所携带的\,4\,-动量积分, 并对所有场指标$\ell,m$等求和.
+
+\item[(iv)] 将所有以这种方式从每个\,Feynman\,图得到的结果加起来.
+\end{itemize}
+
+和\,\ref{sec:6.1}\,节第(v)部分和第(vi)部分中所讲的相同, 我们可能还需要计入额外的组合因子以及费米算符带来的符号. 在本节末尾会给出这样的例子.
+
+
+对每个内线, 我们有一个$4$-动量积分变量, 但它们中的很多个被顶点附带的$\updelta$-函数消掉了. 由于能量和动量分别对一个\,Feynman\,图的每个连通部分都守恒, 如果一个\,Feynman\,图有$C$个连通部分, 那么最后会剩下$C$个$\updelta$-函数. 因此, 在有$I$个内线和$V$个顶点的图中, {\KAI{没有}}被$\updelta$-函数确定的独立$4$-动量的数目是$I-[V-C]$. 这显然也是独立圈的个数$L$:
+\begin{equation}
+L=I-V+C  \:,  \label{6.3.4}%
+\end{equation}
+$L$的\marginpar[\flushright{\small[283]\hspace*{5mm}}]{{\small\hspace*{5mm}[283]}}定义是剪断它却不会使图变成非连通图的内线的最大数目, 这是因为只有这样的内线才能被赋予独立的\,4\,-动量. 我们可以认为独立动量变量描述的是在每个圈内循环流动的动量. 特别地, {\KAI{树}}图中没有圈; 对于这样的图, 在将$\updelta$- 函数考虑进去后不会有动量空间积分剩下来.
+
+例如, 对于相互作用为(\ref{6.1.18})的理论, 在动量空间\,Feynman\,规则下, 费米子\lzx 玻色子散射的$S$-矩阵(\ref{6.1.27})是
+\begin{align*}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\:\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\:\bp_{2}\sigma_{2}n_{2}}=\\
+&  \sum_{k^{\prime}l^{\prime}m^{\prime}klm}(-\mi)^{2}(2\uppi)^{8}
+g_{l^{\prime}m^{\prime}k^{\prime}}\,g_{mlk}\,
+u_{l^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+u_{l}(\bp_{1}\,\sigma_{1}\,n_{1})\\
+\times &  \int \dif^{4}q\:\left(  -\mi(2\uppi)^{-4}
+\frac{P_{m^{\prime}m}(q)}{q^{2}+m_{m}^{2}-\mi\epsilon}\right)  \\
+\times & (2\uppi)^{-6}\Bigl[u_{k^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+u_{k}(\bp_{2}\,\sigma_{2}\,n_{2})\updelta^{4}(p_{1}+p_{2}-q)\updelta^{4}(q-p_{1^{\prime}}-p_{2^{\prime}})\\
+&+u_{k}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+u_{k^{\prime}}(\bp_{2}\,\sigma_{2}\,n_{2})\updelta^{4}(p_{2}-p_{1^{\prime}}+q)
+\updelta^{4}(p_{1}-p_{2^{\prime}}-q)\Bigr] \:,%
+\end{align*}
+这里的指标$1$和$2$分别代表费米子和玻色子. 动量空间积分在这里是平庸的, 这个积分给出
+\begin{align}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\:\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\:\bp_{2}\sigma_{2}n_{2}}
+=\mi(2\uppi)^{-2}\updelta^{4}(p_{1}+p_{2}-p_{1}^{\prime}-p_{2}^{\prime})\nonumber\\
+&  \times\sum_{k^{\prime}l^{\prime}m^{\prime}klm}g_{l^{\prime}m^{\prime
+}k^{\prime}}\,g_{mlk}\,u_{l^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma
+_{1}^{\prime}\,n_{1}^{\prime})\,u_{l}(\bp_{1}\,\sigma_{1}\,n_{1})\nonumber\\
+\times &  \bigg[\frac{P_{m^{\prime}m}(p_{1}+p_{2})}{(p_{1}+p_{2})^{2}%
++m_{m}^{2}-\mi\epsilon}\:u_{k^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma
+_{2}^{\prime}\,n_{2}^{\prime})u_{k}(\bp_{2}\,\sigma_{2}\,n_{2})\nonumber\\
+&  +\frac{P_{m^{\prime}m}(p_{2^{\prime}}-p_{1})}{(p_{2^{\prime}}%
+-p_{1})^{2}+m_{m}^{2}-\mi\epsilon}\:u_{k}^{\ast}(\bp_{2}^{\prime}\,%
+\sigma_{2}^{\prime}\,n_{2}^{\prime})u_{k^{\prime}}(\bp_{2}\,\sigma_{2}\,%
+n_{2})\bigg]\: .\label{6.3.5}%
+\end{align}
+以同样的方式, 同一理论中的费米子\lzx 费米子散射的$S$-矩阵元是
+\begin{align}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\:\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\:\bp_{2}\sigma_{2}n_{2}}=\mi(2\uppi)^{-2}\updelta^{4}(p_{1}+p_{2}%
+-p_{1}^{\prime}-p_{2}^{\prime})\nonumber\\
+&  \times\sum_{k^{\prime}l^{\prime}m^{\prime}klm}g_{m^{\prime}mk^{\prime}%
+}\,g_{l^{\prime}lk}\frac{P_{k^{\prime}k}(p_{1^{\prime}}-p_{1})}{(p_{1^{\prime
+}}-p_{1})^{2}+m_{k}^{2}-\mi\epsilon}\nonumber\\
+&  \times u_{m^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+\,u_{l^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+\,u_{m}(\bp_{2}\,\sigma_{2}\,n_{2})\,u_{l}(\bp_{1}\,\sigma_{1}\,n_{1})\nonumber\\
+&  -[1^{\prime}\rightleftharpoons2^{\prime}]\: .\label{6.3.6}%
+\end{align}
+
+
+这些例子表明我们需要一个更紧凑的记法. 我们可以定义费米子\lzx 玻色子耦合矩阵
+\begin{equation}
+[\Gamma_{k}]_{lm}\equiv g_{lmk} \: . \label{6.3.7}%
+\end{equation}
+在矩阵记号下, 费米子\lzx 玻色子散射的矩阵元(\ref{6.3.5})和费米子\lzx 费米子散射的矩阵元(\ref{6.3.6})%
+可以重新写为
+\begin{align}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\:\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\:\bp_{2}\sigma_{2}n_{2}}=\mi(2\uppi)^{-2}\updelta^{4}(p_{1}+p_{2}%
+-p_{1}^{\prime}-p_{2}^{\prime})\nonumber\\
+\times & \sum_{k^{\prime}k} \Bigg[\left(u^{\dag}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+\Gamma_{k^{\prime}}\frac{P(p_{1}+p_{2})}{(p_{1}+p_{2})^{2}+M^{2}-\mi\epsilon}
+\Gamma_{k}u(\bp_{1}\,\sigma_{1}\,n_{1})\right) \nonumber\\
+&  \qquad\times u_{k^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+u_{k}(\bp_{2}\,\sigma_{2}\,n_{2})\nonumber\\
+&  +\:\left(  u^{\dag}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+\Gamma_{k^{\prime}}\frac{P(p_{1}-p_{2}^{\prime})}{(p_{1}-p_{2}^{\prime})^{2}+M^{2}-\mi\epsilon}
+\Gamma_{k}u(\bp_{1}\,\sigma_{1}\,n_{1})\right) \nonumber\\
+&  \qquad\times u_{k}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+u_{k^{\prime}}(\bp_{2}\,\sigma_{2}\,n_{2})\Bigg]\label{6.3.8}%
+\end{align}
+和\marginpar[\flushright{\raisebox{7ex}[0pt]{{\small[284]\hspace*{5mm}}}}]{{\raisebox{7ex}[0pt]{\small\hspace*{5mm}[284]}}}
+\begin{align}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\:\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\:\bp_{2}\sigma_{2}n_{2}}=\mi(2\uppi)^{-2}\updelta^{4}(p_{1}+p_{2}%
+-p_{1}^{\prime}-p_{2}^{\prime})\nonumber\\
+&  \qquad\times\sum_{k^{\prime}k}\frac{P_{k^{\prime}k}(p_{1^{\prime}}-p_{1}%
+)}{(p_{1^{\prime}}-p_{1})^{2}+m_{k}^{2}-\mi\epsilon}\nonumber\\
+&  \qquad\times\left(  u^{\dag}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+\Gamma_{k^{\prime}}u(\bp_{2}\,\sigma_{2}\,n_{2})\right)
+\left( u^{\dag}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+\Gamma_{k}u(\bp_{1}\,\sigma_{1}\,n_{1})\right)  \nonumber\\
+&  \qquad\quad-[1^{\prime}\rightleftharpoons2^{\prime}] \:, %
+\label{6.3.9}%
+\end{align}
+其中, $M^{2}$和$m^{2}$分别是方程(\ref{6.3.8})和(\ref{6.3.9})中的费米子和玻色子的对角质量矩阵.
+矩阵记法下的一般规则是, 沿着箭头指示的{\KAI{相反}}方向, 依次写下系数函数, 耦合矩阵和传播子.
+在同样的记法下, 同一理论中的玻色子\lzx 玻色子散射的$S$-矩阵元是单圈图的求和, 如图6.7所示:
+\begin{align}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\:\bp%
+_{2}^{\prime}\sigma_{2}^{\prime}n_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}%
+n_{1}\:\bp_{2}\sigma_{2}n_{2}}=-(2\uppi)^{-6}\updelta^{4}(p_{1}+p_{2}%
+-p_{1}^{\prime}-p_{2}^{\prime})\nonumber\\
+&  \times\sum_{k_{1}k_{2}k_{1}^{\prime}k_{2}^{\prime}}
+u_{k_{1}^{\prime}}^{\ast}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime}\,n_{1}^{\prime})
+u_{k_{2}^{\prime}}^{\ast}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime}\,n_{2}^{\prime})
+u_{k_{1}}(\bp_{1}\,\sigma_{1}\,n_{1})
+u_{k_{2}}(\bp_{2}\,\sigma_{2}\,n_{2})\nonumber\\
+&  \times\int \dif^{4}q\:\operatorname{Tr}\Bigg\{\Gamma_{k_{2}^{\prime}}%
+\frac{P(q)}{q^{2}+M^{2}-\mi\epsilon}\Gamma_{k_{1}^{\prime}}
+\frac{P(q+p_{1}^{\prime})}{(q+p_{1}^{\prime})^{2}+M^{2}-\mi\epsilon}\nonumber\\
+&  \qquad\qquad\times\Gamma_{k_{1}}
+\frac{P(q+p_{1}^{\prime}-p_{1})}{(q+p_{1}^{\prime}-p_{1})^{2}+M^{2}-\mi\epsilon}
+\Gamma_{k_{2}}\frac{P(q-p_{2}^{\prime})}{(q-p_{2}^{\prime})^{2}+M^{2}-\mi\epsilon}\Bigg\}\nonumber\\
+&  +\cdots \: ,\label{6.3.10}%
+\end{align}
+其中最后一行的省略号表示的是置换玻色子$1^{\prime},2^{\prime},2$得到的项. 右式开头的负号是费米圈带来的额外负号. 注意, 在消掉$\updelta$-函数后, 这里只有一个动量空间积分, 这正是一个单圈图所需要的. 我们会在第11章看到如何处理这类动量空间积分.
+
+为了\marginpar[\flushright{\small[285]\hspace*{5mm}}]{{\small\hspace*{5mm}[285]}}更具体些, 考虑这样一个理论, 其中质量为$M$的\,Dirac\,旋量场$\psi(x)$与质量为$m$的赝标量场$\phi(x)$%
+通过相互作用$-\mi g\phi\bar{\psi}\gamma_{5}\psi$进行作用. (插入的因子$-\mi$是为了使相互作用在耦合常数$g$为实数时是厄米的.) 回忆, 对于标量, 多项式$P(q)$就是\,1, 而对旋量则是$[-\mi\gamma_{\mu}q^{\mu}+M]\beta$. 另外, 对能量为$E$ 的标量场, $u$是$(2E)^{-1/2}$, 而对旋量场, $u$ 是\,\ref{sec:5.5}\, 节中讨论的通常的归一化\,Dirac\,旋量. 对于费米子\lzx 玻色子散射, 费米子\lzx 费米子散射和玻色子\lzx 玻色子散射, 方程(\ref{6.3.8}), (\ref{6.3.9}) 和(\ref{6.3.10}) 给出最低阶连通$S$-矩阵元:
+\begin{align*}
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}\,\bp_{2}^{\prime}\:,\:
+\bp_{1}\sigma_{1}\,\bp_{2}}=-\mi(2\uppi)^{-2}g^{2}(4E_{2}^{\prime}E_{2})^{-1/2}
+\updelta^{4}(p_{1}+p_{2}-p_{1}^{\prime}-p_{2}^{\prime})\\
+&\qquad\times\bigg[\Big(\bar{u}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime})
+\,\gamma_{5}\,\frac{-\mi\gamma_{\mu}(p_{1}+p_{2})^{\mu}+M}{(p_{1}+p_{2})^{2}+M^{2}-\mi\epsilon}
+\,\gamma_{5}\,u(\bp_{1}\,\sigma_{1})\Big)\\
+&  \qquad+\phantom{\bigg[}\Big(\bar{u}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime})
+\,\gamma_{5}\,\frac{-\mi\gamma_{\mu}(p_{1}-p_{2}^{\prime})^{\mu}+M}{(p_{1}-p_{2}^{\prime})^{2}+M^{2}-\mi\epsilon}
+\,\gamma_{5}\,u(\bp_{1}\,\sigma_{1})\Big)\bigg] \:, \\
+&  S_{\bp_{1}^{\prime}\sigma_{1}^{\prime}\:\bp_{2}^{\prime}%
+\sigma_{2}^{\prime}\:,\:\bp_{1}\sigma_{1}\:\bp_{2}\sigma_{2}}
+=-\mi(2\uppi)^{-2}g^{2}\updelta^{4}(p_{1}+p_{2}-p_{1}^{\prime}-p_{2}^{\prime})\\
+&  \qquad\times\Big(\bar{u}(\bp_{2}^{\prime}\,\sigma_{2}^{\prime})
+\,\gamma_{5}\,u(\bp_{2}\,\sigma_{2})\Big)\:
+\Big(\bar{u}(\bp_{1}^{\prime}\,\sigma_{1}^{\prime})\,\gamma_{5}\,u(\bp_{1}\,\sigma_{1})\Big)\\
+&  \qquad\times\frac{1}{(p_{1^{\prime}}-p_{1})^{2}+m^{2}-\mi\epsilon}\\
+&  \qquad\quad-[1^{\prime}\rightleftharpoons2^{\prime}]\: ,\\
+&  S_{\bp_{1}^{\prime}\bp_{2}^{\prime}\:,\:\bp%
+_{1}\bp_{2}}=-(2\uppi)^{-6}\,g^{4}\,(16E_{1}E_{2}E_{1}^{\prime}%
+E_{2}^{\prime})^{-1/2}\,\updelta^{4}(p_{1}+p_{2}-p_{1}^{\prime}-p_{2}^{\prime
+})\\
+&  \qquad\times\int \dif^{4}q\:\operatorname{Tr}\Bigg\{\gamma_{5}\,
+\frac{-\mi\gamma_{\mu}q^{\mu}+M}{q^{2}+M^{2}-\mi\epsilon}\,\gamma_{5}\,
+\frac{-\mi\gamma_{\mu}(q+p_{1}^{\prime})^{\mu}+M}{(q+p_{1}^{\prime})^{2}+M^{2}-\mi\epsilon}\\
+&  \qquad\times\gamma_{5}\,\frac{-\mi\gamma_{\mu}(q+p_{1}^{\prime}-p_{1})^{\mu}%
++M}{(q+p_{1}^{\prime}-p_{1})^{2}+M^{2}-\mi\epsilon}\,\gamma_{5}\,
+\frac{-\mi\gamma_{\mu}(q-p_{2}^{\prime})^{\mu}+M}{(q-p_{2}^{\prime})^{2}+M^{2}-\mi\epsilon}\Bigg\}
++\cdots \: ,%
+\end{align*}
+其中, 最后一个式子中的省略号代表对粒子$2,1^{\prime},2^{\prime}$的置换求和. 费米传播子分子中的因子$\beta$已经用来将$u^{\dag}$换成$\bar{u}$.
+
+\subsection*{* * *}
+
+另一些有用的拓扑结果给出了线的一些守恒律. 我们暂且可以认为所有的内线和外线在顶点处产生, 而在内线中成对消失, 或者在外线离开图时消失. (这与线携带箭头的指向无关.) 于是产生的线与消失的线相等给出\marginpar[\flushright{\raisebox{-5ex}[0pt]{{\small[286]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[286]}}}
+\begin{equation}
+2I+E=\sum_{i}n_{i}V_{i} \: , \label{6.3.11}%
+\end{equation}
+其中$I$是内线的数目, $E$是外线的数目, $V_{i}$是第$i$类顶点的数目, 而$n_{i}$是与该顶点相连的线的数目. (这对每一类场分别成立.) 特别的, 如果所有的相互作用包含的场数目相同, 即$n_{i}=n$, 那么就有
+\begin{equation}
+2I+E=nV \: ,\label{6.3.12}%
+\end{equation}
+其中$V$是所有顶点的总数. 在这种情况下, 我们可以从方程(\ref{6.3.4})和(\ref{6.3.11})中消去$I$,  并看到, 对于一个连通图(即$C=1$), 顶点数是
+\begin{equation}
+V=\frac{2L+E-2}{n-2} \: .\label{6.3.13}%
+\end{equation}
+例如, 对于三线性相互作用, $L=0,1,2\cdots$的散射过程($E=4$)的图有$V=2,4,6\cdots$个顶点. 一般而言, 按耦合常数幂次的展开是圈数逐渐增加的展开.
+
+
+\section[离~\,质~\,量~\,壳]{离质量壳} \label{sec:6.4}
+\setcounter{equation}{0}
+
+在任意$S$-矩阵元的\,Feynman\,图中, 所有外线都是``在质量壳''的; 即, 质量为$m$的粒子的外线所带的$4$-动量满足约束$p_{\mu}p^{\mu}=-m^{2}$.
+考察那些``离质量壳''的\,Feynman\,图经常也是重要的, 对于这样的图, 它的外线能量像内线所携带的能量一样是自由量, 与任何$3$-动量无关. 一方面, 它们作为更大\,Feynman\,图的部分而出现; 例如,
+在一个图的内线上插入的圈可以认为是有两个外线的\,Feynman\,图, 只不过这两个外线都是离壳的.
+
+当然, 一旦我们计算出了一个给定\,Feynman\,图的离壳贡献后, 通过回到质壳上, 我们可以很容易地计算出与之相联系的$S$-矩阵元:
+令沿着线流{\KAI{入}}图的$4$-动量$p^{\mu}$对初态粒子取$p^{0}=\sqrt{\bp^{2}+m^{2}}$,
+对末态中的粒子取$p^{0}=-\sqrt{\bp^{2}+m^{2}}$, 并对初态粒子或反粒子计入合适的外线因子%
+$(2\uppi)^{-3/2}u_{\ell}$或$(2\uppi)^{-3/2}v_{\ell}^{\ast}$,
+对末态粒子或反粒子计入因子$(2\uppi)^{-3/2}u_{\ell}^{\ast}$或$(2\uppi)^{-3/2}v_{\ell}$. 事实上,
+我们在第9章接触路径积分方法后, 我们会发现最方便的做法是先导出{\KAI{所\marginpar[\flushright{\small[287]\hspace*{5mm}}]{{\small\hspace*{5mm}[287]}}有}}外线离壳的图的\,Feynman\,规则,
+然后通过令外线所带的动量逼近适合它们的质量壳来得到$S$-矩阵元.
+
+离壳的\,Feynman\,图只是更广的一类\,Feynman\,规则中的一种特殊情况, 这种推广的\,Feynman\,图考虑了各种可能的外场效应. 假定我们向哈密顿量中加入包含外场$\epsilon_{a}(x)$的项之和, 这使得$S$-矩阵的Dyson级数(\ref{3.5.10})中使用的相互作用$V(t)$被换成了
+\begin{equation}
+V_{\epsilon}(t)=V(t)+\sum_{a}\int\dif^{3}x\:\epsilon_{a}(\bx,t)\,o_{a}(\bx,t)\:.\label{6.4.1}%
+\end{equation}
+``流''$o_{a}(t)$对时间的依赖关系正是通常的相互作用绘景中对时间的依赖关系:
+\begin{equation}
+o_{a}(t)=\exp(\mi H_{0}t)\,o_{a}(0)\,\exp(-\mi H_{0}t)\:, \label{6.4.2}%
+\end{equation}
+但除此之外它是个相当任意的算符. 这样一来, 对于任意给定的跃迁$\alpha\to\beta$, 它的$S$-矩阵就变成了\,c\,-数函数$\epsilon_{a}(t)$的泛函$S_{\beta\alpha}[\epsilon]$.
+计算这个泛函的\,Feynman\,规则是通常\,Feynman\,规则的一个显然推广.
+除了从$V(t)$得到的普通顶点外, 我们必须引入额外的顶点: 如果$o_{a}(x)$是$n_{a}$个场因子的乘积, 那么位置指标为$x$的任何$o_{a}$顶点都必须有$n_{a}$ 条相应类型的外线与其相连,
+它对位置空间\,Feynman\,规则的贡献等于$-\mi\epsilon_{a}(x)$乘以任何出现在$o_{a}(x)$中的数值因子.
+由此得出, $S_{\beta\alpha}[\epsilon]$对$\epsilon_{a}(x),\epsilon_{b}(y)\cdots$在%
+$\epsilon\to0$处的$r$阶变分导数由具有$r$个额外顶点的位置空间\,Feynman\,图给出,
+这些顶点分别与$n_{a},n_{b}\cdots$条内线相连, 但不连接外线. 这些顶点携带{\KAI{不}}进行积分的位置指标$x,y\cdots$; 每个这样的顶点的贡献等于$-\mi$ 乘以出现在与其关联的流$o_{a}$中的所有数值因子.
+
+特别地, 在这些流都是单个场因子的情况下, 即,
+\[
+V_{\epsilon}(t)=V(t)+\sum_{\ell}\int \dif^{3}x\:\epsilon_{\ell}(\bx,t)\psi_{\ell}(\bx,t)\:,
+\]
+$S_{\beta\alpha}[\epsilon]$对$\epsilon_{\ell}(x),\epsilon_{m}(y)\cdots$的$r$阶变分导数在$\epsilon\,
+=0$处由含有$r$个额外顶点的位置空间图给出, 这些顶点带有时空指标$x,y\cdots$,
+并且每个只与一条$\ell,m\cdots$类\marginpar[\flushright{\small[288]\hspace*{5mm}}]{{\small\hspace*{5mm}[288]}}的粒子内线相连. 这些可以看作是离壳的外线, 不同的是, 它们对$S$-矩阵元的贡献不是$(2\uppi)^{-3/2}u_{\ell}(\bp,\sigma)\me^{\mi p\cdot x}$%
+或$(2\uppi)^{-3/2}u_{\ell}^{\ast}(\bp,\sigma)\me^{-\mi p\cdot x}$%
+这样的系数函数而是一个{\KAI{传播子}}加上一个来自线末端顶点的因子$-\mi$.
+从变分导数
+\[
+\left[  \frac{\updelta^{r}S_{\beta\alpha}[\epsilon]}{\updelta\epsilon_{\ell
+}(x)\,\updelta\epsilon_{m}(y)\cdots}\right]  _{\epsilon=0}
+\]
+的每条离壳线中移除传播子, 再做一个适当的\,Fourier\,变换, 乘上适当的系数函数$u_{\ell},u_{\ell}^{\ast}$等, 再乘上因子$(-\mi)^{r}$, 我们就得到了一个动量空间的\,Feynman\,图, 在这个图中, 态$\alpha$和$\beta$中的粒子处在质量壳上,
+此外还有$r$条$\ell,m\cdots$类的外线, 它们携带动量$p,p^{\prime}\cdots$.
+
+在很多问题中, 意识到存在如下关系都是非常有用的, 对于任何离壳振幅, 所有微扰论图的贡献之和与\,Heisenberg\,绘景中相应算符编时乘积在全哈密顿量本征态之间的矩阵元有一个关系.
+这一关系由一个定理给出,\textsuperscript{\cite{3}}
+它的陈述是, 到微扰论的所有阶{}$^*$\footnote{$^*${}对单个$O$算符, 这是\,Schwinger\,作用量原理的一个版本.\textsuperscript{\cite{4}}}
+\begin{equation}
+\left[\frac{\updelta^{r}S_{\beta\alpha}[\epsilon]}{\updelta\epsilon_{a}(x)\,\updelta\epsilon_{b}(y)\cdots}\right]  _{\epsilon=0}=\left(\Psi_{\beta}{}^{\!-},T\Big\{-\mi O_{\alpha}(x),-\mi O_{b}(y)\cdots\Big\}
+\Psi_{\alpha}{}^{\!+}\right)  \:, \label{6.4.3}%
+\end{equation}
+其中$O_{a}(x)$等是$o_{a}(x)$在\,Heisenberg\,绘景中的对应
+\begin{equation}
+O_{a}(\bx,t)=\exp(\mi Ht)\,o_{a}(\bx,0)\,\exp(-\mi Ht)
+=\Omega(t)\,o_{a}(\bx,t)\,\Omega^{-1}(t) \: , \label{6.4.4}%
+\end{equation}%
+\begin{equation}
+\Omega(t)\equiv \me^{\mi Ht}\,\me^{-\mi H_{0}t}\: , \label{6.4.5}%
+\end{equation}
+而$\Psi_{\beta}{}^{\!+}$和$\Psi_{\beta}{}^{\!-}$分别是全哈密顿量$H$的``入''本征态和``出''本征态.
+
+证明如下. 由方程(\ref{3.5.10}),
+我们立即看出方程(\ref{6.4.3}%
+)的左边是\begin{align}
+&  \left[  \frac{\updelta^{r}S[\epsilon]}{\updelta\epsilon_{a_{1}}(x_{1}%
+)\cdots\updelta\epsilon_{a_{r}}(x_{r})}\right] _{\epsilon=0}
+=\sum_{N=0}^{\infty}\frac{(-\mi)^{N+r}}{N!}\int_{-\infty}^{\infty}\dif\tau_{1}\cdots \dif\tau_{N}\nonumber\\
+&\quad\times\bigg(\Phi_{\beta},\:T\Big\{V(\tau_{1})\cdots V(\tau_{N}%
+)o_{a_{1}}(x_{1})\cdots o_{a_{r}}(x_{r})\Big\}\Phi_{\alpha}\bigg)\:.\label{6.4.6}%
+\end{align}
+明确起见, 假定$x_{1}^{0}\geq x_{2}^{0}\geq\cdots\geq x_{r}^{0}$. 那么我们可以将所有大于$x_{1}^{0}$的$\tau$记为$\tau_{01}\cdots\tau_{0N_{0}}$; 将处在$x_{1}^{0}$与$x_{2}^{0}$之间的所有$\tau$记为$\tau_{11}\cdots\tau_{1N_{1}}$, 依次做下去;
+最后将所有小于$x_{r}^{0}$的$\tau$记为$\tau_{r1}\cdots\tau_{rN_{r}}$.
+这样方程(\ref{6.4.6})就变成:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[289]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[289]}}}
+\begin{align*}
+&  \left[  \frac{\updelta^{r}S[\epsilon]}{\updelta\epsilon_{a_{1}}(x_{1}%
+)\cdots\updelta\epsilon_{a_{r}}(x_{r})}\right]  _{\epsilon=0}
+=\sum_{N=0}^{\infty}\frac{(-\mi)^{N+r}}{N!}\sum_{N_{0}N_{1}\cdots N_{r}}
+\frac{N!\updelta_{N,N_{0}+N_{1}+\cdots+N_{r}}}{N_{0}!N_{1}!\cdots N_{r}!}\\
+& \quad\times\int_{x_{1}^{0}}^{\infty}\dif \tau_{01}\cdots \dif\tau_{0N_{0}}%
+\int_{x_{2}^{0}}^{x_{1}^{0}}\dif\tau_{11}\cdots \dif\tau_{1N_{1}}\cdots
+\int_{-\infty}^{x_{r}^{0}}\dif\tau_{r1}\cdots \dif\tau_{rN_{r}}\\
+&  \quad\times\bigg(\Phi_{\beta},\:T\Big\{V(\tau_{01})\cdots V(\tau_{0N_{0}%
+})\Big\}\,o_{a_{1}}(x_{1})\,T\Bigl\{V(\tau_{11})\cdots V(\tau_{1N_{1}})\Bigr\}\,o_{a_{2}}(x_{2})\cdots\\
+&  \quad\times\cdots o_{a_{r}}(x_{r})\,T\Bigl\{V(\tau_{r1})\cdots V(\tau_{rN_{r}})\Bigr\}
+\Phi_{\alpha}\bigg)\: .%
+\end{align*}
+因子$N!/N_{0}!N_{1}!\cdots N_{r}!$是将$N$个$\tau$分到$r+1$个子集而每个子集又分别包含$N_{0},N_{1},\cdots N_{r}$个$\tau$的途径的数目. 取代对服从约束条件$N_{0}+N_{1}+\cdots N_{r}=N$的$N_{0},N_{1},\cdots N_{r}$求和, 继而再对$N$求和, 我们可以对$N_{0},N_{1},\cdots N_{r}$独立地求和,
+令出现在$(-\mi)^{N}$中的$N$等于$N_{0}+N_{1}+\cdots+N_{r}$. 这样
+\begin{align}
+&  \left[  \frac{\updelta^{r}S[\epsilon]}{\updelta\epsilon_{a_{1}}(x_{1}%
+)\cdots\updelta\epsilon_{a_{r}}(x_{r})}\right]  _{\epsilon=0}
+=(-\mi)^{r}\bigg(\Phi_{\beta},\,U(\infty,x_{1}^{0})\,o_{a_{1}}(x_{1})\nonumber\\
+&  \times U(x_{1}^{0},x_{2}^{0})\,o_{a_{2}}(x_{2})\,U(x_{2}^{0},x_{3}^{0})\cdots
+o_{a_{r}}(x_{r})\,U(x_{r}^{0},-\infty)\Phi_{\alpha}\bigg)\: ,\label{6.4.7}%
+\end{align}
+其中
+\begin{equation}
+U(t^{\prime},t)=\sum_{N=0}^{\infty}\frac{(-\mi)^{N}}{N!}
+\int_{t}^{t^{\prime}}\dif\tau_{1}\cdots \dif\tau_{N}\:T\Big\{V(\tau_{1})\cdots V(\tau_{N})\Big\}\:.\label{6.4.8}%
+\end{equation}
+算符$U(t^{\prime},t)$满足微分方程
+\begin{equation}
+\frac{\dif}{\dif t^{\prime}}U(t^{\prime},t)=-\mi V(t^{\prime})U(t^{\prime},t)\label{6.4.9}%
+\end{equation}
+显然有初始条件
+\begin{equation}
+U(t,t)=1 \: . \label{6.4.10}%
+\end{equation}
+它有解
+\begin{equation}
+U(t^{\prime},t)=\exp(\mi H_{0}t^{\prime})\exp(-\mi H(t^{\prime}-t))
+\exp(-\mi H_{0}t)=\Omega^{-1}(t^{\prime})\Omega(t)\label{6.4.11}%
+\end{equation}
+其中的$\Omega$由方程(\ref{6.4.5})给定. 将方程(\ref{6.4.11})代入方程(\ref{6.4.7}), 并利用方程(\ref{6.4.4}), 我们有
+\begin{align}
+&  \left[  \frac{\updelta S[\epsilon]}{\updelta\epsilon_{a_{1}}(x_{1})\cdots
+\updelta\epsilon_{a_{r}}(x_{r})}\right]  _{\epsilon=0}\nonumber\\
+&  =(-\mi)^{r}\bigg(\Omega(\infty)\Phi_{\beta},\:O_{a_{1}}(x_{1})\cdots O_{a_{r}%
+}(x_{r})\Omega(-\infty)\Phi_{\alpha}\bigg)\: . \label{6.4.12}%
+\end{align}
+在这个结果的推导中\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[290]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[290]}}}, 我们假定了$x_{1}^{0}\geq x_{2}^{0}\geq\cdots\geq x_{r}^{0}$, 所以我们可以也将右边算符的乘积换成编时乘积:%
+\begin{align}
+&  \left[  \frac{\updelta S[\epsilon]}{\updelta\epsilon_{a_{1}}(x_{1})\cdots
+\updelta\epsilon_{a_{r}}(x_{r})}\right]  _{\epsilon=0}\nonumber\\
+&  =(-\mi)^{r}\bigg(\Omega(\infty)\Phi_{\beta},\:T\Big\{O_{a_{1}}(x_{1})\cdots
+O_{a_{r}}(x_{r})\Big\}\Omega(-\infty)\Phi_{\alpha}\bigg)\: .
+\label{6.4.13}%
+\end{align}
+但是, 现在两边对$a$和$x$是全对称的(对费米子则是全反对称的), 所以这个关系对时间$x_{1}^{0}\cdots x_{r}^{0}$的任意顺序都成立. 另外, 我们在\,\ref{sec:3.1}\,节看到(就方程(\ref{3.1.12})的意义而言)%
+\begin{equation}
+\Psi_{\beta}{}^{\!\pm}=\Omega(\mp\infty)\Phi_{\beta} \:.\label{6.4.14}%
+\end{equation}
+因此方程(\ref{6.4.13})正是期望的结果(\ref{6.4.3}).
+
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+\markright{习\qquad 题}    %单眉
+
+
+\begin{KAI}
+
+1. 考虑一个实标量场$\phi$的理论, 相互作用(在相互作用绘景中)是$V=g\int\dif^{3}x\:\phi(x)^{3}/3!$. %
+计算标量\lzx 标量散射的连通$S$-矩阵元到$g$的二阶, 做掉所有积分. %
+利用这个结果计算标量\lzx 标量散射在质心系下的微分截面.
+
+
+2. 考虑如下的理论, 它包含玻色子$B$的中性标量场$\phi(x)$和费米子$F$的复\,Dirac\,场$\psi(x)$, %
+相互作用(在相互作用绘景中)是$V=\mi g\int\dif^{3}x\:\bar{\psi}(x)\gamma_{5}\psi(x)\phi(x)$. %
+画出所有$g^{2}$阶的连通\,Feynman\,图, 并计算过程$F^{\text{c}}+B\to F^{\text{c}}+B$, $F+F^{\text{c}}\to F+F^{\text{c}}$和$F^{\text{c}}+F\to B+B$ 的$S$-矩阵元(其中$F^{\text{c}}$是$F$的反粒子). 做掉所有积分.
+
+
+3. 考虑一个实标量场$\phi(x)$的理论, 相互作用为$V=g\int\dif^{3}x\:\phi(x)^{4}/4!$. %
+计算标量\lzx 标量散射的$g$ 阶$S$-矩阵, 并用这一结果计算微分散射截面. %
+计算标量\lzx 标量散射$S$-矩阵的$g^{2}$阶修正项, 将这个结果表示成单个\,4\,-动量的积分, 并把所有$x$积分都做掉.
+
+
+4. 在\,Feynman\,图\marginpar[\flushright{\small[291]\hspace*{5mm}}]{{\small\hspace*{5mm}[291]}}中, Dirac\,场的导数$\partial_{\mu}\psi_{\ell}(x)$与伴随场$\psi^{\dag}_{m}(y)$收缩给出的贡献是什么?
+
+
+5. 利用\,\ref{sec:6.4}\,节的定理, 就习题\,1\,中的理论, 计算\,Heisenberg\,绘景算符的真空期望值$(\Psi_{0},\Phi(x)\Psi_{0})$和$(\Psi_{0},T\{\Phi(x),\Phi(y)\}\Psi_{0})$分别直到$g$阶和$g^{2}$阶的表达式.
+
+ \end{KAI}
+\markright{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\begin{thebibliography}{9}                                                                                                %
+\bibitem {1}F. J. Dyson, {\textit{Phys. Rev.}} \textbf{{75}}, 486, 1736 (1949).
+     \addcontentsline{toc}{section}{参考文献}
+\markright{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\bibitem {2}这一结果的正式表述为\,{\textit{Wick}\,\KAI{定理}}; 参看\,G. C. Wick, {\textit{Phys.Rev.}} \textbf{{80}}, 268 (1950).
+\bibitem {3}我不知道谁首先证明了这个定理. 在\,1950\,年代早期就有一些理论学者知道它, 包括\,M. Gell-Mann\,和\,F. E. Low.
+\bibitem {4}J. Schwinger, {\textit{Phys. Rev.}} \textbf{{82}}, 914 (1951).
+\end{thebibliography}

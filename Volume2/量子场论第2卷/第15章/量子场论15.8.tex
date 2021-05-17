@@ -1,0 +1,256 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, April 03, 2016 23:26:51}
+%TCIDATA{LastRevised=Thursday, April 14, 2016 20:11:08}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{BRST对称性的推广}
+
+上一节所描述的BRST对称性有一个很有用的推广, 使得我们可以在一大类理论的量子化中使用它, 而这些理论中包括广义相对论和弦论. 在所有这些情形中, 
+我们处理的作用量$I[\phi ]$%
+和测度$[d\phi ]\equiv \prod_{r}d\phi ^{r}$在如下的无限小变换下不变:%
+\begin{equation}
+\phi ^{r}\rightarrow \phi ^{r}+\epsilon ^{A}\delta _{A}\phi ^{r}\text{ .}
+\label{15.8.1}
+\end{equation}%
+这是缩略的\textquotedblleft De
+Witt\textquotedblright 记号, 其中$r$和$A$%
+包含时空坐标和离散指标, 而求和包含对这些坐标的积分. 例如, 对于规范变换(\ref{15.1.9}), 指标$A$%
+由群指标$\alpha $和时空坐标$x$构成, 并有$\epsilon ^{\alpha x}\equiv
+\epsilon ^{\alpha }(x)$, 而指标$r$由矢量指标$\mu $, 群指标$\alpha $以及时空坐标$x$组成, 并有$\phi
+^{\mu \alpha x}\equiv A_{\mu }^{\alpha }(x)$; 以方程(\ref%
+{15.8.1})的记法, 变换(\ref{15.1.9})中的变分$\delta _{A}\phi ^{r}$变成\[
+\delta _{\beta y}\phi ^{\mu \alpha x}=\delta _{\beta }^{\alpha }\frac{%
+\partial }{\partial x^{\mu }}\delta ^{4}(x-y)+C_{\gamma \alpha }^{\beta
+}\phi ^{\mu \gamma x}\delta ^{4}(x-y)\text{ .} 
+\]%
+正如上一节所讨论的特殊情况------Yang-Mills理论, BRST%
+不变性可以用来替代这些理论的Faddeev-Popov-De Witt表述, 而即便Faddeev-Popov-De Witt方法失效了, BRST不变性依旧是%
+适用的. 然而, 为了产生引入BRST不变性的动机, 
+在这里, 我们着手于那些有着一般定域对称性的理论, 从这些理论的Faddeev-Popov-De Witt表述出发, 然后转向进一步推广的%
+考察.
+
+沿用导出方程(\ref{15.5.21})的讨论, 我们就获得了广义Faddeev-Popov-De Witt定理:%
+\begin{equation}
+\frac{C}{\Omega }\int [\dif\phi ]\me^{\mi I[\phi ]}V[\phi ]=\int [\dif\phi ]%
+\me^{\mi I[\phi ]}B[f[\phi ]]\det (\delta _{A}f_{B}[\phi ])V[\phi ]\text{ ,}
+\label{15.8.2}
+\end{equation}%
+其中$V[\phi ]$是$\phi ^{r}$的任意泛函, 并满足在规范变换(%
+\ref{15.8.1})下不变; $f_{A}[\phi ]$是一组$\phi ^{r}$的规范固定泛函\footnote{%
+我们用相同的字母$A,B$等来标记$f_{A}$和规范变分$%
+\delta _{A}$, 是为了强调规范固定泛函的数目要与独立规范变换的数目相同. 然而, 在某些情形下, 例如弦理论, 会很自然的使用$f^{a}$, 这里的指%
+标$a$会取遍与规范变分$%
+\delta _{A}$上的指标$A$\textquotedblleft 同样多\textquotedblright 的值, 但所取的值却完全不同. 只要%
+我们能够定义$f_{A}=c_{Aa}f^{a}$, 其中$c_{Aa}$是场无关且非奇异的, 那么在现在的形式理论中就不需要作出改变.}, 对它的选择要%
+使得\textquotedblleft 矩阵\textquotedblright $\delta
+_{A}f_{B}[\phi ]$有一个非零的行列式, 而$B[f]$是$f_{A}$的泛函, 
+它的选择多少有些任意(例如$\prod_{A}\delta (f_{A})$.) 常数$\Omega 
+$是规范群的体积元, 而常数$C$(就像方程(\ref{15.5.19})那样)定义为\begin{equation}
+C\equiv \int [\dif f]B[f]\text{ .}  \label{15.8.3}
+\end{equation}%
+我们已经看到, 方程(\ref%
+{15.8.2})在规范理论中的重要性在于, 它告诉我们右边的积分独立于规范固定泛函$f_{A}$的选择, 
+而仅通过常数$C$与$B[f]$相关. 在这里, 我们可以给通常无限大的规范群体积$\Omega $赋予某些含义, 
+就像我们在有限时空晶格上的规范理论中所做的那样, 这样, 方程(%
+\ref{15.8.2})在作为左边的积分公式时也可以有值.
+
+为了定义幂零的BRST变换, 我们必须先把泛函$B[f]$%
+表示成Fourier变换\begin{equation}
+B[f]=\int [\dif h]\exp (\mi h^{A}f_{A})\mathscr{B}\lbrack h]\text{ ,}
+\label{15.8.4}
+\end{equation}%
+其中$[\dif h]\equiv \prod_{A}\dif h^{A}$. 另外, 
+行列式可以表示成对费米c-数场\footnote{在弦论和其它地方, 通常会发现鬼场$\omega ^{\ast A}$和$\omega ^{A}$分别%
+写成了$b^{A}$(或$b_{A}$)和$c^{A}$.}$\omega
+^{\ast A}$和$\omega ^{A}$的积分:%
+\begin{equation}
+\det (\delta _{A}f_{B}[\phi ])\propto \int [\dif\omega ^{\ast }][\dif\omega
+]\exp (\mi\omega ^{\ast B}\omega ^{A}\delta _{A}f_{B})\text{ ,}
+\label{15.8.5}
+\end{equation}%
+其中$[\dif\omega ^{\ast }]\equiv \prod_{A}\dif\omega ^{\ast A}$%
+而$[\dif\omega ]\equiv \prod_{A}\dif\omega ^{A}$, 像往常一样, \textquotedblleft $\propto $\textquotedblright 
+是指比例因子与场无关. 将这些代入方程(\ref%
+{15.8.2}), 就给出了规范固定路径积分的普遍公式\begin{eqnarray}
+&&\int [\dif\phi ]\exp \left( iI(\phi )\right) B[f[\phi ]]\det (\delta
+_{A}f_{B}[\phi ])V[\phi ]  \nonumber \\
+&\propto &\int [\dif\phi ][\dif h][\dif\omega ^{\ast }][\dif\omega ]\exp
+\left( iI_{\mathrm{NEW}}[\phi ,h,\omega ,\omega ^{\ast }]\right) \mathscr{B}%
+\lbrack h]V[\phi ]\text{ ,}  \label{15.8.6}
+\end{eqnarray}%
+其中$I_{\mathrm{NEW}}$是新的总作用量:%
+\begin{equation}
+I_{\mathrm{NEW}}[\phi ,h,\omega ,\omega ^{\ast }]=I[\phi ]+h^{A}f_{A}[\phi
+]+\omega ^{\ast B}\omega ^{A}\delta _{A}f_{B}[\phi ]\text{ .}  \label{15.8.7}
+\end{equation}
+
+我们在15.6节提到过, 在对所有$\phi ^{r}$的积分中包含哪些仅相差规范变换(\ref{15.8.1})的$\phi ^{r}$, 而我们可%
+以把鬼场看成对这一积分的补救. 因为鬼场是费米场, 所以鬼线构成的圈会携带额外的负号, 这使得这些圈抵消了对规范等价的$\phi $%
+的积分. 但为了使其成功运作, 鬼场$\omega ^{A}$的数目必须要和独立规范变换的数目一样多. 即, 
+既然$\omega ^{A}$是独立的, 那么规范变换(\ref{15.8.1})必须全是独立的. 对于Yang-Mills理论中的规范变换和广%
+义相对论中的坐标变换, 正是这种情况, 但不总是这样. 理论的规范变换不独立的经典例子是$p$-形式规范场, 我们在8.8节描述过这一理论. $p$-形式$A$($p$阶反对称张%
+量)承载规范变换$A\rightarrow A+\dif%
+\phi $, 其中$\phi $是$(p-1)$-形式, 而$%
+\dif\phi $是它的外导数(反对称化导数). 由于$\dif$是幂零的, 当$p\geq 2$时, 我们可以让$\phi $偏移$\dif\psi $但不改变%
+规范变换, 所以在规范变换的规范变换下存在一个不变性, 其中变换参量是$(p-2)$-形式$\psi $. 在这种情况下, 由于引入了太多的鬼场我们必%
+须要进行补偿, 进而又要引入\textquotedblleft 鬼场的鬼场\textquotedblright .\cite{15} 当$p\geq 3$时, 我%
+们需要通过引入\textquotedblleft 
+鬼场的鬼场的鬼场\textquotedblright 进行补偿, 以此类推. 在下文中, 我们将假定规范变换(\ref{15.8.1})都是%
+独立的, 使得鬼场$\omega ^{A}$(%
+和反鬼场$\omega ^{\ast A}$)是我们需要的全部.
+
+尽管原始对称性(\ref{15.8.1})%
+被非规范不变泛函$B[f]$%
+的插入所消除, 但是, 在无限小BRST变换下, 新的总作用量有一个恰当对称性\begin{equation}
+\chi \rightarrow \chi +\theta s\chi \text{ ,}  \label{15.8.8}
+\end{equation}%
+其中$\chi $是$\phi ^{r}$, $\omega ^{A}$, $\omega ^{\ast A}$%
+或$h^{A}$中的任意一个量; $%
+\theta $是无限小反对易c-数; 
+而$s$是\textit{Slavnov}{\kai{(斯拉夫诺夫)算符}}%
+\begin{equation}
+s=\omega ^{A}\delta _{A}\phi ^{r}\frac{\delta _{L}}{\delta \phi ^{r}}-\frac{1%
+}{2}\omega ^{B}\omega ^{C}f^{A}{}_{BC}\frac{\delta _{L}}{\delta \omega ^{A}}%
+-h^{A}\frac{\delta _{L}}{\delta \omega ^{\ast A}}\text{ .}  \label{15.8.9}
+\end{equation}%
+在方程(\ref{15.8.9})中, 下标$L$代表左微分, 它的定义满足如果$\delta F=\delta _{\chi }G$, 那么$\delta
+_{L}F/\delta \chi =G$, 而$f^{A}{}_{BC}$是对易关系中所出现的结构常数\footnote{例如, 对于作用在%
+物质场$\psi (x)$上的规范变换, 我们有$\delta _{\beta y}\psi (x)=it_{\beta }\psi
+(x)\delta ^{4}(x-y)$, 因而$\delta _{\beta y}\delta _{\gamma
+z}\psi (x)=-t_{\gamma }t_{\beta }\psi (x)\delta ^{4}(x-y)\delta ^{4}(x-z)$. 
+因此, 在这一情况下, 我们有$f_{\beta y\gamma z}^{\alpha x}=C_{\beta \gamma }^{\alpha
+}\delta ^{4}(x-y)\delta ^{4}(x-z)$.}%
+\begin{equation}
+\lbrack \delta _{B},\delta _{C}]=f^{A}{}_{BC}\delta _{A}\text{ .}
+\label{15.8.10}
+\end{equation}%
+$f^{A}{}_{BC}$在非阿贝尔规范理论和弦理论中是场无关的, 尽管不总是这样, 但BRST形式理论没有限制在这一情形下. 直接的计算给出%
+\begin{eqnarray}
+s^{2} &=&\frac{1}{2}\omega ^{A}\omega ^{B}\left[ \delta _{A}\phi ^{s}\frac{%
+\delta _{L}(\delta _{B}\phi ^{r})}{\delta \phi ^{s}}-\delta _{B}\phi ^{s}%
+\frac{\delta _{L}(\delta _{A}\phi ^{r})}{\delta \phi ^{s}}%
+-f^{C}{}_{AB}\delta _{C}\phi ^{r}\right] \frac{\delta _{L}}{\delta \phi ^{r}}
+\nonumber \\
+&&-\frac{1}{2}\omega ^{B}\omega ^{C}\omega ^{D}\left[
+f^{E}{}_{BC}f^{A}{}_{DE}+\delta _{D}\phi ^{r}\frac{\delta _{L}f^{A}{}_{BC}}{%
+\delta \phi ^{r}}\right] \frac{\delta _{L}}{\delta \omega ^{A}}\text{ .}
+\label{15.8.11}
+\end{eqnarray}%
+因此, BRST变换是幂零变换的条件等价于对易关系(\ref{15.8.10}), 再加上一个相容性条件\begin{equation}
+f^{E}{}_{[BC}f^{A}{}_{D]E}+\delta _{\lbrack D}\phi ^{r}\left( \delta
+_{L}f^{A}{}_{BC]}/\delta \phi ^{r}\right) =0\text{ ,}  \label{15.8.12}
+\end{equation}%
+其中, 下标中的括号代表对括号内的指标$B,C$和$D$做反对称化. 按照导出通常的Jacobi等式的方法, 
+方程(\ref{15.8.12})可以从对易关系(\ref{15.8.10})中导出, 对于含有场相关结构常数的对称性, 它取代了Jacobi%
+等式.
+
+为了证明变换(\ref{15.8.8})是$I_{%
+\mathrm{NEW}}$的对称性, 我们注意到(回忆起$\theta $与$\omega ^{\ast A}$%
+反对易)方程(\ref{15.8.7})可以重写为\begin{equation}
+I_{\mathrm{NEW}}[\phi ,h,\omega ,\omega ^{\ast }]=I[\phi ]-s(\omega ^{\ast
+A}f_{A})\text{ .}  \label{15.8.13}
+\end{equation}%
+因为BRST变换在场$\phi $上的效果就是规范变换(\ref{15.8.1}%
+), 只不过其中的$\epsilon ^{A}$被换成了$\theta \omega ^{A}$, 而这个规范变换与所有的$\phi ^{r}$%
+对易, 所以$I[\phi ]$项是BRST-不变的. 由于BRST变换是幂零的, 所以$s(\omega ^{\ast A}f_{A})$项是%
+BRST不变的.
+
+由于几个原因, 我们需要考察一类更广的作用量, 这类作用要求在BRST变换(\ref{15.8.8})下不变, 但超出了Faddeev-Popov-De Witt方法所构建%
+出的作用量的范围. 这些作用量给出了物理上合理的结果, 作为迈向这个证明的一步, 我们现在证明如下的普遍结果(在上一节使用过), 最普遍的鬼数为零%
+的BRST-不变泛函是两项的和, 其中第一项仅是场$%
+\phi $的泛函, 而另一项由BRST%
+算符$s$作用在鬼数为$-1$%
+的任意泛函$\Psi $上给出:%
+\begin{equation}
+I_{\mathrm{NEW}}[\phi ,\omega ,\omega ^{\ast },h]=I_{0}[\phi ]+s\Psi \lbrack
+\phi ,\omega ,\omega ^{\ast },h]\text{ ,}  \label{15.8.14}
+\end{equation}%
+例如Faddeev-Popov-De Witt作用量(\ref{15.8.13}%
+). 简言之, 构成BRST上同调的规范不变泛函$I[\phi ]$仅是场$\phi ^{r}$的泛函.
+
+为了证明方程(\ref{15.8.14}), 我们注意到BRST变换(\ref{15.8.8})---(\ref%
+{15.8.9})并不改变$h^{A}$场和$\omega
+^{\ast A}$场的总数, 所以, 如果我们将$I$展成$I_{N}$项的级数, 其中$I_{N}$包含总数为$N$的$h^{A}$场和$\omega ^{\ast A}$场, 
+那么在$sI$中, $N$不同的项之间不存在抵消, 所以每一项必须分别是BRST-不变的:%
+\begin{equation}
+sI_{N}=0\text{ .}  \label{15.8.15}
+\end{equation}%
+我们接下来引入所谓的Hodge(霍奇)算符:%
+\begin{equation}
+t\equiv \omega ^{\ast A}\frac{\delta }{\delta h^{A}}\text{ .}
+\label{15.8.16}
+\end{equation}%
+可以验证反对易关系\begin{equation}
+\{s,t\}=-\omega ^{\ast A}\frac{\delta _{L}}{\delta \omega ^{\ast A}}-h^{A}%
+\frac{\delta }{\delta h^{A}}\text{ .}  \label{15.8.17}
+\end{equation}%
+那么, 用算符$\{s,t\}$作用$I_{N}$%
+并利用方程(\ref{15.8.15})就给出了\begin{equation}
+stI_{N}=-NI_{N}\text{ ,}  \label{15.8.18}
+\end{equation}%
+所以, 除了$I_{0}$外, 每个$I_{N}$%
+都是BRST-恰当的, 也就是说, 它可以写成算符$s$作用其它某个泛函上. 因此, 完整的泛函$I$可以写成$I_{0}+s\Psi $的形式, 其中%
+\begin{equation}
+\Psi =-\sum_{N=1}^{\infty }\frac{tI_{N}}{N}\text{ .}  \label{15.8.19}
+\end{equation}%
+$I_{0}$定义为$\omega ^{\ast A}$和$h^{A}$, 并且既然我们假定它的鬼数为零, 它也必须独立于$\omega ^{A}$, 这正是所要%
+证明的.
+
+为了证明, 在规范固定泛函$\Psi $的定义改变时, 
+物理矩阵元是不变的, 
+我们定义费米\textquotedblleft 荷\textquotedblright $Q$, 使得任意算符$%
+\Phi $在BRST变换下的变化是\[
+\]%
+其中, 根据$\Phi $是玻色的还是费米的, 分别在$%
+[x,y]_{\mp }\equiv xy\mp yx$使用上部的符号和下部的符号. 如同上一节, 这样, BRST变换的幂零性就告诉我们$Q^{2}=0$. 
+当且仅当物理态$|\alpha \rangle $%
+和$\langle \beta |$满足\[
+\]%
+规范不变算符在物理态之间的矩阵元才独立于$\Psi $的选择, 这一条件又一次告诉我们, 物理上可分辨的物理态与$Q$的上同调中的元素一一对应. 因此, 如果我%
+们能找到{\kai{某个}}$\Psi $, 就像Yang-Mills理论中的轴向规范, 使得在这个规范下鬼场不与其它场相互作用, 那么对于任意的%
+规范固定泛函$\Psi $, 广义BRST-不变作用量(\ref{15.8.14})就会产生物理上合理的结果. 如果$\Psi $的这一无鬼%
+(ghost-free)选择对于实际运算而言并不方便, 就像轴向规范由于违反的Lorentz%
+不变性, 我们可以选择任何我们想要的规范固定泛函$\Psi $, 并依旧可以确信, 当初态和末态没有鬼时, 存在幺正的$S$%
+-矩阵.
+
+发现了\textquotedblleft 反-BRST\textquotedblright 
+对称下的不变性的表明了, 除去表象, 在$\omega ^{A}$%
+和$\omega ^{\ast A}$的角色之间有相似之处, 但这依旧保持着些许神秘.
+
+\end{document}

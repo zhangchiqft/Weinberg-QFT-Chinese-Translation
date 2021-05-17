@@ -1,0 +1,173 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Friday, May 13, 2016 16:11:21}
+%TCIDATA{LastRevised=Saturday, May 14, 2016 22:32:18}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+令$\phi $偏移$\phi _{0}$, 这样方程(%
+\ref{16.1.18})中的作用量是:%
+\begin{eqnarray}
+I[\phi +\phi _{0}] &=&-\mathscr{V}_{4}\left[ \lambda +\frac{1}{2}m^{2}\phi
+_{0}^{2}+\frac{1}{24}g\phi _{0}^{4}\right] -[m^{2}\phi _{0}+\frac{1}{6}g\phi
+_{0}^{3}]\int \dif^{4}x\phi  \nonumber \\
+&&-\int \dif^{4}x\left[ \frac{1}{2}\partial _{\rho }\phi \partial ^{\rho
+}\phi +\frac{1}{2}\mu ^{2}(\phi _{0})\phi ^{2}\right] -\int \dif^{4}x\left[ 
+\frac{1}{6}g\phi _{0}\phi ^{3}+\frac{1}{24}g\phi ^{4}\right] \text{ ,}
+\label{16.2.4}
+\end{eqnarray}%
+其中$\mu ^{2}$是场相关质量\begin{equation}
+\mu ^{2}(\phi _{0})=m^{2}+\frac{1}{2}g\phi _{0}^{2}\text{ .}  \label{16.2.5}
+\end{equation}%
+注意到, 现在出现了正比于$\phi $的新相互作用(%
+这对于单粒子不可约图没有任何影响)和正比于$\phi ^{3}$的新相互作用, 
+以及与原相互作用中的项有相同结构的项.
+
+图\ref{fig:16.1}展示了$\Gamma \lbrack \phi _{0}]$%
+到两圈阶的Feynman图. 真空-%
+真空振幅中的零圈阶项由$I[\phi +\phi _{0}]$中的常数项给出\begin{equation}
+\mi\,\Gamma ^{(0\text{ loop})}[\phi _{0}]=-\mi\mathscr{V}_{4}\left( \lambda +%
+\frac{1}{2}m^{2}\phi _{0}^{2}+\frac{g}{24}\phi _{0}^{4}\right) \text{ .}
+\label{16.2.6}
+\end{equation}%
+单圈项给定为\begin{eqnarray}
+\exp \left( \mi\Gamma ^{(1\text{ loop})}[\phi _{0}]\right) &=&\int \prod_{x}%
+\dif\phi (x)\exp \{-\frac{1}{2}\mi\int \dif^{4}x\left[ \partial _{\rho }\phi
+\partial ^{\rho }\phi +\mu ^{2}(\phi _{0})\phi ^{2}\right]  \nonumber \\
+&&+\epsilon \text{项}\}\text{ .}  \label{16.2.7}
+\end{eqnarray}%
+在第九章我们学习过如何计算这样的积分, 
+结果由方程(9.A.18)给出\begin{equation}
+\mi\Gamma ^{(1\text{ loop})}[\phi _{0}]=\ln \det \left( \frac{\mi K}{\uppi}%
+\right) ^{-1/2}=-\frac{1}{2}Tr\ln \left( \frac{\mi K}{\uppi}\right) \text{ ,}
+\label{16.2.8}
+\end{equation}%
+其中\begin{equation}
+K_{x,y}=\left[ \frac{\partial ^{2}}{\partial x^{\lambda }\partial y_{\lambda
+}}+\mu ^{2}(\phi _{0})-\mi\epsilon \right] \delta ^{4}(x-y)\text{ .}
+\label{16.2.9}
+\end{equation}%
+像往常一样, 为了计算这样的矩阵, 经由动量空间将$K$对角化将是有帮助的:%
+\begin{eqnarray}
+K_{p,q} &=&\int \frac{\dif^{4}x}{(2\pi )^{2}}\me^{-\mi p\cdot x}\frac{\dif%
+^{4}y}{(2\pi )^{2}}\me^{\mi q\cdot y}K_{x,y}  \nonumber \\
+&=&\left( p^{2}+\mu ^{2}(\phi _{0})-\mi\epsilon \right) \delta ^{4}(p-q)%
+\text{ .}  \label{16.2.10}
+\end{eqnarray}%
+对角矩阵的对数就是对对角元取对数:%
+\begin{equation}
+\left[ \ln \left( \frac{\mi K}{\uppi}\right) \right] _{p,q}=\ln \left[ \frac{%
+\mi}{\uppi}(p^{2}+\mu ^{2}(\phi _{0})-\mi\epsilon )\right] \delta ^{4}(p-q)
+\label{16.2.11}
+\end{equation}%
+那么, 它的迹是\begin{eqnarray}
+\mi\Gamma ^{(1\text{ loop})}[\phi _{0}] &=&-\frac{1}{2}\int \dif^{4}p\left[
+\ln \left( \frac{\mi K}{\uppi}\right) \right] _{p,p}  \nonumber \\
+&&-\frac{\mathscr{V}_{4}}{2(2\uppi)^{4}}\int \dif^{4}p\ln \left( \frac{\mi}{%
+\uppi}(p^{2}+\mu ^{2}(\phi _{0})-\mi\epsilon )\right) \text{ .}
+\label{16.2.12}
+\end{eqnarray}%
+将方程(\ref{16.2.6})和(\ref{16.2.12})合在一起, 我们就有了到一圈阶的有效势\begin{equation}
+V(\phi _{0})=\lambda +\frac{1}{2}m^{2}\phi _{0}^{2}+\frac{g}{24}\phi
+_{0}^{4}+\mathscr{I}\left( \mu ^{2}(\phi _{0})\right) \text{ ,}
+\label{16.2.13}
+\end{equation}%
+其中\begin{equation}
+\mathscr{I}(\mu ^{2})\equiv \frac{-\mi}{2(2\uppi)^{4}}\int \dif^{4}p\ln
+\left( \frac{\mi}{\uppi}(p^{2}+\mu ^{2}-\mi\epsilon )\right) \text{ .}
+\label{16.2.14}
+\end{equation}
+
+有效势的这一公式包含紫外发散是及其显然的. 幸运的是, 这些紫外发散会自然地被理论参量的重整化所吸收. 尽管积分(\ref{16.2.14})是发%
+散的, 简单的幂次级数表明通过对$\mu ^{2}$微分三次可以使这个积分收敛:%
+\[
+\mathscr{I}^{\prime \prime \prime }(\mu ^{2})=\frac{-\mi}{(2\uppi)^{4}}\int %
+\dif^{4}p(p^{2}+\mu ^{2}-\mi\epsilon )^{-3}\text{ .}
+\]%
+$-\mi\epsilon $项又一次告诉我们, 必须要逆时针旋转$%
+p^{0}$围道, 使得$p^{0}=\mi p^{4}$, 而$p^{4}$%
+从$-\infty $取到$+\infty $:%
+\[
+\mathscr{I}^{\prime \prime \prime }(\mu ^{2})=\frac{1}{(2\uppi)^{4}}%
+\int_{0}^{\infty }\frac{2\uppi^{2}k^{3}\dif k}{(k^{2}+\mu ^{2})^{3}}=\frac{1%
+}{32\pi ^{2}\mu ^{2}}\text{ .}
+\]%
+积分三次, 我们就有\[
+\mathscr{I}(\mu ^{2})=\frac{\mu ^{4}\ln \mu ^{2}}{64\uppi^{2}}+A+B\mu
+^{2}+C\mu ^{4}\text{ .}
+\]%
+常数$A,$ $B,$ $C$不由这一计算方法决定, 而且, 既然它们显然无论如何都是无穷大的, 这也很难说的上是一个严重问题. 
+我们通过定义$\lambda ,$ $m^{2}$和$g
+$的\textquotedblleft 重整化\textquotedblright 
+值来消除这些常数:%
+\begin{eqnarray*}
+\lambda _{R} &\equiv &\lambda +A+Bm^{2}+Cm^{4}\text{ ,} \\
+m_{R}^{2} &\equiv &m^{2}+gB+2gm^{2}C\text{ ,} \\
+g_{R} &\equiv &g+6g^{2}C\text{ .}
+\end{eqnarray*}%
+那么, 对于到一圈阶的势, 我们的最终结果是\begin{equation}
+V(\phi _{0})=\lambda _{R}+\frac{1}{2}m_{R}^{2}\phi _{0}^{2}+\frac{g_{R}}{24}%
+\phi _{0}^{4}+\frac{\mu ^{4}(\phi _{0})\ln \mu ^{2}(\phi _{0})}{64\uppi^{2}}%
+\text{ .}  \label{16.2.15}
+\end{equation}%
+其中$\mu (\phi _{0})$是方程(\ref{16.2.5})%
+所定义的场相关质量, 
+到这一阶, 它可以用$m_{R}$%
+和$g_{R}$而非$m$和$g$计算出来:%
+\[
+\mu ^{2}(\phi )=m_{R}^{2}+\frac{1}{2}g_{R}\phi ^{2}\text{ .}
+\]
+
+如果理论包含一个自旋$\frac{1}{2}$的复费米场$\psi (x)$%
+,\quad 并且它与标量$\phi $相互作用, 那么会有类似的结果成立. 例如, 如果相互作用哈密顿密度有简单形式$G\phi \bar{\psi}\psi $, 那%
+么在有一常数背景标量场$\phi _{0}$的情况下, 费米子的质量$M(\phi _{0})$就有形式:%
+\[
+M(\phi _{0})=M(0)+G\phi _{0}\text{ .}
+\]%
+很容易看到势(\ref{16.2.15})在这一情况下得到一个额外项:%
+\begin{eqnarray}
+V(\phi _{0}) &=&\lambda _{R}+\frac{1}{2}m_{R}^{2}\phi _{0}^{2}+\frac{g_{R}}{%
+24}\phi _{0}^{4}+\frac{\mu ^{4}(\phi _{0})\ln \mu ^{2}(\phi _{0})}{64\uppi%
+^{2}}  \nonumber \\
+&&-\frac{M^{4}(\phi _{0})\ln M^{2}(\phi _{0})}{16\uppi^{2}}\text{ .}
+\label{16.2.16}
+\end{eqnarray}%
+新项中的数值系数是方程(\ref{16.2.15})中$\mu ^{4}\ln \mu ^{2}$项的数值系数的4倍, 这是因为这里假定$\psi $和$\bar{\psi}$所%
+描述的费米子和反费米子是不同的, 并且它们中的每一个都有两个自旋态, 符号相反是由于(正如第9章所示), 高斯型的费米路径积分所给出的结果正比于%
+指数中的系数矩阵的行列式, 不同于玻色路径积分, 后者给出的结果正比于这一行列式的倒数. 
+
+\end{document}

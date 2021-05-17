@@ -1,0 +1,636 @@
+\chapter{外场方法}
+考察有经典外场的量子场论通常是有益的. 一个原因是, 在很多物理情况下, 确实出现了外场, 例如经典电磁场或引力场, 或者%
+真空期望值不为零的标量场. (我们将在第19章看到, 这种标量场会在拉格朗日量的对称性自发破缺中扮演一个重要角色.) 然而, %
+即便问题中没有出现真正的外场, 通过在一个虚拟外场下考察物理振幅可以极大地简化一些计算. 这一章将会证明, 可以将所有%
+的多圈效应等效成对``树''图的求和, 这些树图的顶点和传播子从{\kai{量子有效作用量}}中获得, 而量子有效作用量不是别的%
+, 正是有外场时的单粒子不可约连通真空-真空振幅. 在下一章将会看到, 这提供了一种极其方便的方法, 即补全了始于第15章的非%
+阿贝尔规范理论可重整性的证明, 又简化了荷重整化因子的计算, 而后者, 正是我们在构建量子色动力学中渐进自由的临界性质%
+时所需要的.
+
+\section{量子有效作用量}
+考察一作用量为$I[\phi]$的量子场论, 并假定我们``打开''了与该理论的场$\phi^{r}(x)$相耦合的经典流$J_{r}(x)$. 那么, 有这些流%
+的完整真空-真空振幅是
+\begin{align}
+Z[J]&\equiv \langle \text{VAC, out} \vert \text{VAC, in} \rangle_{J} \nonumber\\
+&=\int \left[ \prod_{s,y} \dif \phi^{s}(y)\right] \exp \Big( \mi I[\phi] +\mi \int \dif^{4}x \: \phi^{r}(x)J_{r}(x)
++ \epsilon \text{项}\Big) \text{ .} \label{16.1.1}
+\end{align}
+场$\phi^{r}(x)$不需要是标量. 它们甚至可以是费米的, 尽管如此, 直到16.4节, 我们都不会费心于追踪这一情况下会出现的符号.) %
+计算$Z[J]$的Feynman规则与计算没有外流的真空-真空振幅$Z[0]$的Feynman规则相同, 只不过现在的Feynman图要包含一种新顶点, %
+这一顶点与{\kai{单个}}$\phi^{r}$-线相连. 这类顶点会用坐标$x$进行标记, 并且会给坐标空间Feynman振幅的被积函数贡献``耦合''%
+因子$\mi J_{r}(x)$. 等价地, 我们可以说, 在$Z[J]$作为$J$的幂级数展开式中, 正比于$\mi J_{r}(x)\mi J_{s}(y)\cdots$的项, %
+它的系数就是外线(包含传播子)对应于$\phi^{r}(x)$, $\phi^{s}(y)$等场的图的和. %
+特别地, 一阶导数给出对应于$\phi^{r}(x)$的量子力学算符$\Phi^{r}(x)$的真空矩阵元:
+\begin{align}
+	\left[ \frac{\delta}{\delta J_{r}(y)} Z[J]\right]_{J=0} &= \mi\int \left[ \prod_{r,x}\dif \phi^{r}(x)\right]\phi^{r}(y)
+	\, \exp\{\mi I[\phi]+\epsilon \text{项}\} \nonumber \\
+	&= \mi \langle \text{VAC, out}\vert \Phi^{r}(y) \vert \text{VAC, in}\rangle_{J=0} \text{ .} \label{16.1.2}
+\end{align}
+对于泛函$Z[J]$的定义(\ref{16.1.1}), 其中的场$\phi^{r}(x)$可以不是基本场(即, 出现在作用量中的场), 而是基本场的乘积, 我们有时
+也会处理这样的$Z[J]$. %
+若$\phi^{r}(x)$是$N$个基本场的乘积, Z[J]的Feynman规则中的新顶点就会与$N$个线相连. 本章的一些结果(包含方程(\ref{16.1.2}))%
+适用于这一情况, 但是, 凡是涉及Feynman图的地方, 将默认假定$\phi^{r}(x)$是基本的.
+
+现在, $Z[J]$由含有流$J$的{\kai{所有}}真空-真空振幅的和给出, 这些振幅中既包括连通图也包括非连通图, 但是, 对于在同一子图或不同的连%
+通子图中仅相差顶点置换的那些图, 并没有计为不同的图. 一个由$N$%
+个连通分支构成的一般图对$Z[J]$的贡献等于这些分支的贡献之积,
+再除以顶点的置换数$N!$%
+, 即仅对一个连通分支与另一个连通分支的所有顶点进行置换产生的重复计数.\footnote{有$N$%
+个连通分支的Feynman图, 若每个分支中的顶点数分别为$n_{1}$, $n_{2}$, $\cdots n_{N}$, 从Dyson%
+展开中可知, 这个Feynman图的贡献正比于因子$%
+1/(n_{1}+\cdots n_{N})!$, 而因子$(n_{1}+\cdots n_{N})!/N!$%
+是这些顶点的置换数,
+在置换计数时, 那些仅交换两个分支所有顶点的置换视为是等同的.} 因此, 所有图的和是\begin{equation}
+Z[J]=\sum_{n=0}^{\infty }\frac{1}{N!}(\mi W[J])^{N}=\exp (\mi W[J])\text{ ,}
+\label{16.1.3}
+\end{equation}%
+其中$\mi W[J]$是所有{\kai{连通}}%
+真空-真空振幅的和, 再一次地, 对于那些仅相差顶点置换的图, 并没有计为不同的图.
+
+由于众多目的, 更进一步, 并用所有连通{\kai{单粒子不可约}}图取代$W[J]$进行处理将是有用的. (单粒子不可约图是指无法通过剪掉任%
+何一条内线变得不连通的图.) 我们可以以如下方式给出这一求和的形式表达式. 首先, 定义$\phi _{J}^{r}(x)$为算符有流$J$时%
+的$\Phi ^{r}(x)$的真空期望值:%
+\begin{equation}
+\phi _{J}^{r}(x)\equiv \frac{\langle \text{VAC, out}|\Phi ^{r}(x)|\text{VAC,
+in}\rangle _{J}}{\langle \text{VAC, out}|\text{VAC, in}\rangle _{J}}=-\frac{%
+\mi}{Z[J]}\frac{\delta }{\delta J_{r}(x)}Z[J]  \label{16.1.4}
+\end{equation}%
+或者, 以连通图之和的形式\begin{equation}
+\phi _{J}^{r}(x)=\frac{\delta }{\delta J_{r}(x)}W[J]\text{ .}  \label{16.1.5}
+\end{equation}%
+这一公式可以逆转. 定义$J_{\phi r}(x)$为使(\ref{16.1.4})有规定值$\phi ^{r}(x)$的流:%
+\[
+\phi _{J}^{r}(x)=\phi ^{r}(x)\text{ \ \  如果 \ \ }%
+J_{r}(x)=J_{\phi r}(x)\text{ .}
+\]%
+{\kai{量子有效作用量}}\cite{1}%
+由Legendre变换定义(作为$%
+\phi $的泛函, 而非$J$)%
+\begin{equation}
+\Gamma \lbrack \phi ]\equiv -\int \dif^{4}x\,\phi ^{r}(x)J_{\phi
+r}(x)+W[J_{\phi }]\text{ .}  \label{16.1.6}
+\end{equation}%
+我们将证明$\Gamma \lbrack \phi ]$是有流$J_{\phi }$时的所有连通单粒子不可约图的和.
+然而, 我们先来看一下它另一方面的物理意义.
+
+注意到, $\Gamma \lbrack \phi ]$的泛函导数是\begin{align*}
+\frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{s}(y)} &=-\int \dif%
+^{4}x\:\phi ^{r}(x)\,\frac{\delta J_{\phi r}(x)}{\delta \phi ^{s}(y)}-J_{\phi
+s}(y) \\
+&\quad+\int \dif^{4}x\left[ \frac{\delta W[J]}{\delta J_{r}(x)}\right]
+_{J=J_{\phi }}\frac{\delta J_{\phi r}(x)}{\delta \phi ^{s}(y)}
+\end{align*}%
+或者, 使用方程(\ref{16.1.5})%
+\begin{equation}
+\frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{s}(y)}=-J_{\phi s}(y)\text{
+.}  \label{16.1.7}
+\end{equation}%
+因此, $\Gamma \lbrack \phi ]$是\textquotedblleft 有效作用量\textquotedblright , 也就是%
+说, 在{\kai{没有}}流$J$时, 外场$\phi ^{s}(y)$的可能值由$\Gamma $%
+的驻\textquotedblleft 点\textquotedblright 给定:%
+\begin{equation}
+\frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{s}(y)}=0\text{ \ \  对%
+于 \ \ }J=0\text{ .}  \label{16.1.8}
+\end{equation}%
+可以与经典场方程做一比较, 经典场方程仅要求实际的作用量$I[\phi ]$%
+是稳定的. 因此, 方程(\ref%
+{16.1.8})可以视为将量子修正考虑在内的外场$%
+\phi $的运动方程.
+
+$\Gamma \lbrack \phi ]$不仅提供了量子修正后的场方程; 它还是有效作用量, 也就是说, 如果作用量是$\Gamma
+\lbrack \phi ]$而不是$I[\phi ]$, 利用从此得出的顶点, $\mi W[J]$可以作为真空-真空振幅的连通{\kai{树}}图和算出. 我%
+们这里的树图是指, 如果剪断任何一条内线这个图就会变得不连通. 通过用$\Gamma \lbrack \phi ]$而非$I[\phi ]$, 就%
+将所有的圈图效应考虑在内了.
+
+为了看到这点,\cite{2} 我们来考察将用来代替$W[J]$%
+的量$W_{\Gamma }[J,g]$, 如果我们用作用量$g^{-1}\Gamma \lbrack \phi ]$代替$I[\phi
+]$:%
+\begin{align}
+\exp \{\mi W_{\Gamma }[J,g]\} &\equiv \int \prod_{r,x}\dif\phi ^{r}(x)\exp
+\bigg\{\mi g^{-1}\Big[ \Gamma \lbrack \phi ]+\int \dif^{4}x\:\phi ^{r}(x)J_{r}(x)%
+\Big]   \nonumber \\
+&\quad+\epsilon \text{项}\bigg\}\text{ ,}  \label{16.1.9}
+\end{align}%
+其中$g$是任意常数. 这里的传播子是$g^{-1}\Gamma \lbrack \phi ]$中$\phi $的二次项系数的逆,
+因而正比于$g$, 而所有顶点的贡献均正比于$1/g$,
+所以, 若一个图包含$V$个顶点(包含那些流$J$产生的顶点)和$I$条内线(包含那些与$J$顶点相连的线), 那么它正比于$g^{I-V}$. 对%
+于任何连通图, 圈的数目是$L=I-V+1$, 所以$W_{\Gamma }[J,g]$中的$L$-圈项与$g$的关系是\begin{equation}
+\Big( W_{\Gamma }[J,g]\Big) _{L\text{ loops}}\propto g^{L-1}\text{ .}
+\label{16.1.10}
+\end{equation}%
+等效地, 我们可以写成(%
+至少形式上地)%
+\begin{equation}
+W_{\Gamma }[J,g]=\sum_{L=0}^{\infty }g^{L-1}W_{\Gamma }^{(L)}[J]\text{ ,}
+\label{16.1.11}
+\end{equation}%
+其中(通过令$g=1$可以看到), $W_{\Gamma }^{(L)}[J]$是对连通真空振幅$W_{\Gamma }[J,1]$的$L$-圈贡%
+献, 而$W_{\Gamma }[J,1]$是通过使用$%
+\Gamma \lbrack \phi ]$({\kai{不含}}因子$g$)而非作用量$I[\phi ]$获得的.
+
+现在, 我们在这里只关心无圈的{\kai{树}}图的和,
+计算这些图所用的顶点和传播子是从$\Gamma \lbrack \phi
+]$而非$I[\phi ]$中得出的. 在我们目前的记法中, 这是$W_{\Gamma }^{(0)}[J]$. 为了孤立出方程(\ref{16.1.11})中$L=0$的项, 考%
+察极限$g\rightarrow 0$. 在这一极限下, 路径积分(\ref{16.1.9})被稳相点所主导,%
+\begin{equation}
+\exp \Big\{ \mi W_{\Gamma }[J,g]\Big\} \propto \exp \left\{ \mi\, g^{-1}%
+\Big[ \Gamma [ \phi _{J}]+\int \dif^{4}x\,\phi _{J}^{r}(x)J_{r}(x)%
+\Big] \right\} \text{ ,}  \label{16.1.12}
+\end{equation}%
+其中, 由于它是作为$J$所产生的场定义的, 场$\phi
+_{J}$是指数的驻点, 也就是说\begin{equation}
+\left. \frac{\delta \Gamma \lbrack \phi ]}{\delta \phi ^{r}(x)}\right\vert
+_{\phi =\phi _{J}}=-J_{r}(x)\text{ .}  \label{16.1.13}
+\end{equation}%
+方程(\ref{16.1.12})中的比例因子一般是$J$的泛函, 但它是$g^{0}$阶项开始的$g$的幂级数. 因此, 对两边取对数, 并将$g^{-1}$阶项孤立%
+出来, 这会给出\begin{equation}
+W_{\Gamma }^{(0)}[J]=\Gamma \lbrack \phi _{J}]+\int \dif^{4}x\:\phi
+_{J}^{r}(x)J_{r}(x)\text{ .}  \label{16.1.14}
+\end{equation}%
+在方程(\ref{16.1.6})中令$\phi =\phi _{J}$,
+我们看到方程(\ref{16.1.14})的右边正是$W[J]$:%
+\begin{equation}
+W_{\Gamma }^{(0)}[J]=W[J]\text{ .}  \label{16.1.15}
+\end{equation}%
+概括一下, 这说明, 通过用$\Gamma \lbrack \phi ]$代替$I[\phi ]$(下标$%
+\Gamma $)并只保持树(0-圈)图可以算出$W[J]$:%
+\begin{equation}
+\mi W[J]=\int\limits_{\substack{ \mathrm{CONNECTED} \\ \mathrm{TREE}}}\left[
+\prod_{r,x}\dif\phi ^{r}(x)\right] \exp \left\{ \mi\,\Gamma \lbrack \phi ]+\mi%
+\int \phi ^{r}(x)J_{r}(x)\,\dif^{4}x\right\} \text{ .}  \label{16.1.16}
+\end{equation}
+
+现在, $\mi W[J]$的任何连通图都可视为树图, 只不过其中的顶点由单粒子不可约子图组成. 因此, 为了使方程(\ref{16.1.16})成立%
+, $\mi \Gamma[\phi]$必须是外线数目任意的所有单粒子不可约连通图的和, 而图中的每一外线对应的是因子$\phi$而非传播子或波函数. 由于这个原因, 在$\Gamma[\phi]$围绕某个固定场$\phi_{0}$关于场以及场导数的幂级数展开中, 展开系数可以视为{\kai{重整化}}耦合常数, 而这里的重整化``点''是由$\phi_{0}$而非某组动量指定的.
+
+等价地, 对于某个固定场$\phi _{0}^{r}(x)$, $\mi\Gamma \lbrack \phi _{0}]$可以表示为真空-真空振幅%
+的单粒子不可约图的和, 只不过计算使用的是偏移作用量$I[\phi +\phi _{0}]$:%
+\begin{equation}
+\mi\,\Gamma \lbrack \phi _{0}]=\int\limits_{\substack{ \mathrm{1PI} \\ \mathrm{%
+CONNECTED}}}\left[ \prod_{r,x}\dif\phi ^{r}(x)\right] \exp \{\mi\, I[\phi
++\phi _{0}]\}\text{ .}  \label{16.1.17}
+\end{equation}%
+这是因为只要是$\phi _{0}$出现的地方, 无论是方程(%
+\ref{16.1.17})中单粒子不可约图中的顶点还是传播子, 都会与一个外$\phi $-线相连. (限制在单粒子不可约图上在方程(\ref{16.1.17})%
+中扮演了一个重要角色; 没有这个限制, 我们偏移积分变量所产生的积分显然与$\phi _{0}$无关.) 取代方程(\ref{16.1.17}), 写成%
+\begin{equation}
+\exp \Big[ \mi\,\Gamma \lbrack \phi _{0}]\Big] =\int\limits_{\mathrm{1PI}}\left[
+\prod_{r,x}\dif\phi ^{r}(x)\right] \exp \Big\{\mi \,I[\phi +\phi _{0}]\Big\}
+\label{16.1.18}
+\end{equation}%
+通常是方便的, 其中我们计算的路径积分包含所有图, 包括连通或非联通的, 但在每个图中, 每个连通分支都是不可约的.
+
+\subsection*{* * *}
+
+这一形式理论提供了对树图求和的简单方法. 作为一个例子, 考察全两点函数$\Delta ^{rx,sy}$与它的单粒子不可约部分$\Pi
+_{rx,sy}$之间的关系. 从方程(%
+\ref{16.1.5})和(\ref{16.1.7})中, 我们发现\begin{align}
+\Delta ^{rx,sy} &\equiv \frac{\delta ^{2}W[J]}{\delta J_{r}(x)\delta
+J_{s}(y)}=\frac{\delta \phi _{J}^{r}(x)}{\delta J_{s}(y)}\text{ ,}
+\label{16.1.19} \\
+\Pi _{rx,sy}&\equiv \frac{\delta ^{2}\Gamma \lbrack \phi ]}{\delta \phi
+^{r}(x)\delta \phi ^{s}(y)}=-\frac{\delta J_{\phi r}(x)}{\delta \phi ^{s}(y)}%
+\text{ .}  \label{16.1.20}
+\end{align}%
+由此立刻得出``矩阵''$\Delta $%
+和$\Pi $之间的关系为\begin{equation}
+\Delta =-\Pi ^{-1}\text{ .}  \label{16.1.21}
+\end{equation}%
+这一关系是传播子与自能部分之间的常见关系(\textcolor{red}{10.3.15})的副本, 在方程(\textcolor{red}{10.3.15})中, %
+分母中的额外项$q^{2}+m^{2}$代表单粒子不可约两点函数的零阶项.
+
+\section{有效作用量的计算}
+
+为了看到上一节的形式理论在真实情况中是如何运作的, 考察一个简单例子, 单个实标量场$\phi(x)$的可重整理论, 其作用量为
+\begin{equation}
+	I[\phi]=-\int \dif^{4}x \:\Big[ \lambda + \tfrac{1}{2}\partial_{\rho}\phi \partial^{\rho}\phi
+		+\tfrac{1}{2}m^{2}\phi^{2}+\tfrac{1}{24} \, g\phi^{4}\Big]\text{ .} \label{16.2.1}
+\end{equation}
+(在这里, 我们在拉格朗日密度中引入了``宇宙学常数''$-\lambda$, 这样做的原因在后文中将会变得非常清楚). 简单起见, 假定我们希望
+计算的是某个位置无关场$\phi_{0}(x)=\phi_{0}$的$\Gamma[\phi_{0}]$. $\Gamma[\phi_{0}]$中的每一项将包含一时空体积因子
+\begin{equation}
+	\mathscr{V}_{4} = \int \dif^{4}x = \delta^{4}(p-p)(2\uppi)^{4}  \label{16.2.2}
+\end{equation}
+这产生于动量守恒$\delta$-函数. 因而, 对于常数的$\phi_{0}$, 我们将写出
+\begin{equation}
+	\Gamma[\phi_{0}]=-\mathscr{V}_{4}V(\phi_{0}) \text{ ,} \label{16.2.3}
+\end{equation}
+其中$V(\phi_{0})$是一普通函数, 称为{\kai{有效势}}. 在本节, 我们将计算有效势至它的一阶. 这一工作最初是由Coleman和E. Weinberg\cite{3}在
+研究对称性自发破缺时完成的, 对称性自发破缺将是第19章和第21章的主题. 他们也将这一结果用于重整化群的一个早期应用, 我们会在18.2节描述它.
+
+令$\phi $偏移$\phi _{0}$, 这样, 方程(%
+\ref{16.1.18})中的作用量是:\footnote{对于$m^{2}<0$的理论, 在微扰论的适用性上有一限制, 我们会在下一节讨论它.}%
+\begin{align}
+&I[\phi +\phi _{0}] = -\mathscr{V}_{4}\Big[ \lambda +\tfrac{1}{2}m^{2}\phi
+_{0}^{2}+\tfrac{1}{24}g\phi _{0}^{4}\Big] -[m^{2}\phi _{0}+\tfrac{1}{6}g\phi
+_{0}^{3}]\int \dif^{4}x\:\phi   \nonumber \\
+&\qquad-\int \dif^{4}x\Big[ \tfrac{1}{2}\partial _{\rho }\phi \partial ^{\rho
+}\phi +\tfrac{1}{2}\mu ^{2}(\phi _{0})\phi ^{2}\Big] -\int \dif^{4}x\Big[
+\tfrac{1}{6}g\phi _{0}\phi ^{3}+\tfrac{1}{24}g\phi ^{4}\Big] \text{ ,}
+\label{16.2.4}
+\end{align}%
+其中$\mu ^{2}$是场相关质量\begin{equation}
+\mu ^{2}(\phi _{0})=m^{2}+\tfrac{1}{2}g\phi _{0}^{2}\text{ .}  \label{16.2.5}
+\end{equation}%
+注意到, 现在出现了正比于$\phi $的新相互作用(%
+这对于单粒子不可约图没有任何影响)和正比于$\phi ^{3}$的新相互作用,
+以及与原相互作用有相同结构的项.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=4.0in]{161}
+ \caption{相互作用为$\phi^{4}$的中性标量场$\phi$的量子有效作用量的Feynman图, 这些图依次对应零圈阶, 单圈阶和两圈阶.}
+ \label{fig:16.1}
+\end{figure}
+
+图\ref{fig:16.1}展示了$\Gamma \lbrack \phi _{0}]$%
+到两圈阶的Feynman图. 真空-%
+真空振幅中的零圈阶项由$I[\phi +\phi _{0}]$中的常数项给出\begin{equation}
+\mi \,\Gamma ^{(0\text{ loop})}[\phi _{0}]=-\mi \mathscr{V}_{4}\left(
+\lambda +\frac{1}{2}m^{2}\phi _{0}^{2}+\frac{g}{24}\phi _{0}^{4}\right)
+\text{ .}  \label{16.2.6}
+\end{equation}%
+单圈项给定为\begin{align}
+\exp \left( \mi\Gamma ^{(1\text{ loop})}[\phi _{0}]\right)  &=\int \prod_{x}%
+\dif\phi (x)\:\exp \Big\{-\tfrac{1}{2}\mi\int \dif^{4}x\Big[ \partial _{\rho }\phi
+\partial ^{\rho }\phi +\mu ^{2}(\phi _{0})\phi ^{2}\Big]   \nonumber \\
+&\quad+\epsilon \text{项}\Big\}\text{ .}  \label{16.2.7}
+\end{align}%
+在第九章我们学习过如何计算这样的积分,
+结果由方程(\textcolor{red}{9.A.18})给出\begin{equation}
+\mi\Gamma ^{(1\text{ loop})}[\phi _{0}]=\ln \operatorname{Det} \left( \frac{\mi K}{\uppi}%
+\right) ^{-1/2}=-\frac{1}{2}\operatorname{Tr}\ln \left( \frac{\mi K}{\uppi}\right) \text{ ,}
+\label{16.2.8}
+\end{equation}%
+其中\begin{equation}
+K_{x,y}=\left[ \frac{\partial ^{2}}{\partial x^{\lambda }\partial y_{\lambda
+}}+\mu ^{2}(\phi _{0})-\mi\epsilon \right] \delta ^{4}(x-y)\text{ .}
+\label{16.2.9}
+\end{equation}%
+像往常一样, 为了计算这样的矩阵, 经由动量空间将$K$对角化将是有帮助的:%
+\begin{align}
+K_{p,q} &=\int \frac{\dif^{4}x}{(2\uppi )^{2}}\,\me^{-\mi p\cdot x}\,\frac{\dif%
+^{4}y}{(2\uppi )^{2}}\,\me^{\mi q\cdot y}K_{x,y}  \nonumber \\
+&=\Big( p^{2}+\mu ^{2}(\phi _{0})-\mi\epsilon \Big) \delta ^{4}(p-q)%
+\text{ .}  \label{16.2.10}
+\end{align}
+对角矩阵的对数就是对主对角元取对数:%
+\begin{equation}
+\left[ \ln \left( \frac{\mi K}{\uppi}\right) \right] _{p,q}=\ln \left[ \frac{%
+\mi}{\uppi}(p^{2}+\mu ^{2}(\phi _{0})-\mi\epsilon )\right] \delta ^{4}(p-q)
+\label{16.2.11}
+\end{equation}%
+那么, 它的迹是\begin{align}
+&\quad\mi\Gamma ^{(1\text{ loop})}[\phi _{0}] =-\frac{1}{2}\int \dif^{4}p\left[
+\ln \left( \frac{\mi K}{\uppi}\right) \right] _{p,p}  \nonumber \\
+&\qquad-\frac{\mathscr{V}_{4}}{2(2\uppi)^{4}}\int \dif^{4}p\:\ln \left( \frac{\mi}{%
+\uppi}(p^{2}+\mu ^{2}(\phi _{0})-\mi\epsilon )\right) \text{ .}
+\label{16.2.12}
+\end{align}%
+将方程(\ref{16.2.6})和(\ref{16.2.12})合在一起, 我们就有了到一圈阶的有效势\begin{equation}
+V(\phi _{0})=\lambda +\frac{1}{2}m^{2}\phi _{0}^{2}+\frac{g}{24}\phi
+_{0}^{4}+\mathscr{I}\Big( \mu ^{2}(\phi _{0})\Big) \text{ ,}
+\label{16.2.13}
+\end{equation}%
+其中\begin{equation}
+\mathscr{I}(\mu ^{2})\equiv \frac{-\mi}{2(2\uppi)^{4}}\int \dif^{4}p\:\ln
+\left( \frac{\mi}{\uppi}[p^{2}+\mu ^{2}-\mi\epsilon ]\right)
+\text{ .}  \label{16.2.14}
+\end{equation}
+
+有效势的这一公式包含紫外发散是极其显然的. 幸运的是, 这些紫外发散会自然地被理论参量的重整化所吸收. 尽管积分(\ref{16.2.14})是发%
+散的, 简单的幂次级数表明, 通过对$\mu ^{2}$微分三次可以使这个积分收敛:%
+\[
+\mathscr{I}^{\prime \prime \prime }(\mu ^{2})=\frac{-\mi}{(2\uppi)^{4}}\int %
+\dif^{4}p\:(p^{2}+\mu ^{2}-\mi\epsilon )^{-3}\text{ .}
+\]%
+$-\mi\epsilon $项又一次告诉我们, 必须要逆时针旋转$%
+p^{0}$围道, 使得$p^{0}=\mi p^{4}$, 而$p^{4}$%
+从$-\infty $取到$+\infty $:%
+\[
+\mathscr{I}^{\prime \prime \prime }(\mu ^{2})=\frac{1}{(2\uppi)^{4}}%
+\int_{0}^{\infty }\frac{2\uppi^{2}k^{3}\dif k}{(k^{2}+\mu ^{2})^{3}}=\frac{1%
+}{32\uppi ^{2}\mu ^{2}}\text{ .}
+\]%
+积分三次, 我们就有\[
+\mathscr{I}(\mu ^{2})=\frac{\mu ^{4}\ln \mu ^{2}}{64\uppi^{2}}+A+B\,\mu
+^{2}+C\,\mu ^{4}\text{ .}
+\]%
+常数$A,$ $B,$ $C$不由这一计算方法决定, 而且, 既然它们显然无论如何都是无穷大的, 这也很难说的上是一个严重问题.
+我们通过定义$\lambda ,$ $m^{2}$和$g
+$的\textquotedblleft 重整化\textquotedblright
+值来消除这些常数:%
+\begin{align*}
+\lambda _{R} &\equiv \lambda +A+Bm^{2}+Cm^{4}\text{ ,} \\
+m_{R}^{2} &\equiv m^{2}+gB+2gm^{2}C\text{ ,} \\
+g_{R} &\equiv g+6g^{2}C\text{ .}
+\end{align*}%
+那么, 对于到一圈阶的势, 我们的最终结果是\begin{equation}
+V(\phi _{0})=\lambda _{R}+\frac{1}{2}m_{R}^{2}\phi _{0}^{2}+\frac{g_{R}}{24}%
+\phi _{0}^{4}+\frac{\mu ^{4}(\phi _{0})\ln \mu ^{2}(\phi _{0})}{64\uppi^{2}}%
+\text{ .}  \label{16.2.15}
+\end{equation}%
+其中$\mu (\phi _{0})$是方程(\ref{16.2.5})%
+所定义的场相关质量,
+到这一阶, 它可以用$m_{R}$%
+和$g_{R}$而非$m$和$g$计算出来:%
+\[
+\mu ^{2}(\phi )=m_{R}^{2}+\frac{1}{2}g_{R}\phi ^{2}\text{ .}
+\]
+
+如果理论包含一个自旋$\frac{1}{2}$的复费米场$\psi (x)$%
+, 并且它与标量$\phi $相互作用, 那么会有类似的结果成立. 例如, 如果相互作用哈密顿密度有简单形式$G\phi \bar{\psi}\psi $, 那%
+么在有一常数背景标量场$\phi _{0}$的情况下, 费米子的质量$M(\phi _{0})$就有形式:%
+\[
+M(\phi _{0})=M(0)+G\phi _{0}\text{ .}
+\]%
+很容易看到势(\ref{16.2.15})在这一情况下得到一个额外项:%
+\begin{align}
+V(\phi _{0}) &=\lambda _{R}+\frac{1}{2}m_{R}^{2}\phi _{0}^{2}+\frac{g_{R}}{%
+24}\phi _{0}^{4}+\frac{\mu ^{4}(\phi _{0})\ln \mu ^{2}(\phi _{0})}{64\uppi%
+^{2}}  \nonumber \\
+&\quad-\frac{M^{4}(\phi _{0})\ln M^{2}(\phi _{0})}{16\uppi^{2}}\text{ .}
+\label{16.2.16}
+\end{align}%
+新项中的数值系数是方程(\ref{16.2.15})中$\mu ^{4}\ln \mu ^{2}$项的数值系数的4倍, 这是因为这里假定$\psi $和$\bar{\psi}$所%
+描述的费米子和反费米子是不同的, 并且它们中的每一个都有两个自旋态, 符号相反是由于(正如第9章所示), 高斯型的费米路径积分所给出的结果正比于%
+指数中系数矩阵的行列式, 不同于玻色路径积分, 后者给出的结果正比于这一行列式的倒数.
+
+
+\section{能量诠释}
+
+分别以能量和能量密度的形式, 对有效作用量$%
+\Gamma \lbrack \phi ]$和有效势$V[\phi ]$有一重要的解释.\cite{4} 为了看到这一点, 假定我们打开流$J^{n}(\mathbf{x},t)$, 它从$t=-\infty $时的%
+零光滑地增长至一有限值$\mathscr{I}^{n}(\mathbf{x})$, 并在一段很长的时间$T$内保持该值, 在此之后又光滑的衰减到$t=+\infty $时的零.
+这一微扰的效应是将真空转化至有确定能量$E[\mathscr{I}]$($\mathscr{I}(\mathbf{x})$的泛函)%
+的态, 在这个态上会持续时间$T$, 然后又回到真空. 然而, 尽管\textquotedblleft 出\textquotedblright 真空与\textquotedblleft 入%
+\textquotedblright 真空是相同的物理态, 但是在时段$T$内会累积相因子$\exp (-\mi E[\mathscr{I}]T)$, 所%
+以这两个态矢会相差相因子$\exp (-\mi E[\mathscr{I}]T)$:
+\begin{equation}
+\langle \text{VAC, out}|\text{VAC, in}\rangle _{J}=\exp \Big( -\mi E[%
+\mathscr{I}]T\Big) \text{ .}  \label{16.3.1}
+\end{equation}%
+与方程(\ref{16.1.1})和(\ref{16.1.3})相比较, 这给出\begin{equation}
+W[J]=-E[\mathscr{I}]T \text{ .} \label{16.3.2}
+\end{equation}
+
+为了看到这一能量与有效作用量之间的联系, 假定我们要寻找一个态$\Omega _{\phi }$, 它使得能量期望值最小\begin{equation}
+\langle H\rangle _{\Omega }=\frac{(\Omega ,H\Omega )}{(\Omega ,\Omega )}%
+\text{ ,}  \label{16.3.3}
+\end{equation}%
+它满足条件: 量子场$\Phi _{n}(%
+\mathbf{x},t)$有一与时间无关的期望值$\phi _{n}(\mathbf{x})$\begin{equation}
+\frac{(\Omega ,\Phi _{n}(\mathbf{x},t)\Omega )}{(\Omega ,\Omega )}=\phi _{n}(%
+\mathbf{x})\text{ .}  \label{16.3.4}
+\end{equation}%
+同时附加上$\Omega $是归一化的条件将是方便的\begin{equation}
+(\Omega ,\Omega )=1\text{ .}  \label{16.3.5}
+\end{equation}%
+为了最小化服从约束(\ref%
+{16.3.4})和(\ref{16.3.5})的期望值(\ref{16.3.3}%
+), 我们使用拉格朗日数乘法, 转而最小化如下的量\begin{equation}
+(\Omega ,H\Omega )-\alpha (\Omega ,\Omega )-\int \dif^{3} x\,\beta ^{n}(\mathbf{x}%
+)\Big( \Omega ,\Phi _{n}(\mathbf{x})\Omega \Big) \text{ ,}  \label{16.3.6}
+\end{equation}%
+这样, $\Omega $上就没有约束了. 这给出\begin{equation}
+H\Omega =\alpha \Omega +\int \dif^{3} x\,\beta ^{n}(\mathbf{x})\Phi _{n}(\mathbf{x}%
+)\Omega \text{ .}  \label{16.3.7}
+\end{equation}%
+选择$\alpha $和$\beta ^{n}(\mathbf{x})$的方式要使得约束(\ref{16.3.4})和(\ref{16.3.5})被满足, 因而它们会以泛函的形式依赖于规定的%
+期望值$\phi _{n}(\mathbf{x})$.
+
+好了, 我们曾说过, 当有流$\mathscr{I}^{n}(\mathbf{x})$时, 哈密顿量$H-\int \dif^{3}x\mathscr{I}^{n}(\mathbf{x})\Phi _{n}(x)$会%
+有本征值$E[\mathscr{I}]$:%
+\begin{equation}
+\left[ H-\int \dif^{3}x\mathscr{I}^{n}(\mathbf{x})\Phi _{n}(x)\right] \Psi _{%
+\mathscr{I}}=E[\mathscr{I}]\Psi _{\mathscr{I}}\text{ ,}  \label{16.3.8}
+\end{equation}%
+其中$\Psi _{\mathscr{I}}$是归一化的本征矢. 更进一步, 既然缓慢地打开这个流使得真空转化成这一能量本征态, 我们可以假%
+定$E[\mathscr{I}]$是有流时的最低能量本征态. 因此, 如果\begin{align}
+\Omega  &=\Psi _{\mathscr{I}_{\phi }}\text{ ,}  \label{16.3.9} \\
+\alpha  &=E[\mathscr{I}_{\phi }]\text{ ,}  \label{16.3.10} \\
+\beta ^{n}(\mathbf{x}) &=\mathscr{I}_{\phi }^{n}(\mathbf{x})\text{ ,}
+\label{16.3.11}
+\end{align}%
+方程(\ref{16.3.4}), (\ref{16.3.5})和(\ref{16.3.7})就会被满足, 其中$\mathscr{I}_{\phi }(%
+\mathbf{x})$是使得$\Phi (x)$在态$\Psi _{%
+\mathscr{I}}$上有期望值$\phi (\mathbf{x})$%
+的流.
+
+在方程(\ref{16.3.8})中取$\mathscr{I}=%
+\mathscr{I}_{\phi }$, 并取其与$\Psi _{\mathscr{I}%
+_{\phi }}$的标量积, 对于约束场$\Phi _{n}$有期望值$\phi _{n}$的态, 它的最低能量被视作是\begin{equation}
+\langle H\rangle _{\Omega }=E[\mathscr{I}_{\phi }]+\int \dif^{3}x\,\mathscr{I}%
+_{\phi }^{n}(\mathbf{x})\phi _{n}(\mathbf{x})\text{ .}  \label{16.3.12}
+\end{equation}%
+回忆方程(\ref{16.3.2})以及$J(x)$的假定形式, 这是\begin{equation}
+\langle H\rangle _{\Omega }=\frac{1}{T}\left[ -W[J_{\phi }]+\int \dif%
+^{4}x\,J_{\phi }^{n}(\mathbf{x})\phi _{n}(\mathbf{x})\right] =-\frac{1}{T}%
+\Gamma \lbrack \phi ]\text{ .}  \label{16.3.13}
+\end{equation}
+
+正如上一节所指出的,
+如果场$\phi (x)$在一个很大的时空体积$\mathscr{V}_{4}=\mathscr{V}_{3}T$%
+上有常数值$\phi $, 那么我们可以将有效作用量写成有效势$V(\phi )$的形式:%
+\begin{equation}
+\Gamma \lbrack \phi ]=-\mathscr{V}_{3}\,T\,V(\phi )\text{ .}  \label{16.3.14}
+\end{equation}%
+在这一情况下, 方程(\ref%
+{16.3.13})告诉我们能量密度是\begin{equation}
+\langle H\rangle _{\Omega }/\mathscr{V}_{3}=V(\phi )\text{ .}
+\label{16.3.15}
+\end{equation}%
+主要结果是: {\kai{对于所有态,
+若它服从标量场$\Phi_{n}$在态上的期望值为$\phi_{n}$的约束条件,
+那么它的能量密度期望值的最小值是$V(\phi)$}}. 一个结果是, 在没有外流时, 真空态将放松至另一个态, 在这个态中, 由于场方程(\ref{16.1.8})的要求, 势$%
+V(\phi )$是{\kai{稳定的}}, 此外它也是{\kai{最小的}}.
+
+这一结果帮助解决了量子有效势诠释中的一个问题, 路径积分形式理论的欧几里得版本(将在第23章的附录A进行描述)使得两点函数$%
+\Delta $(在矩阵意义下)为正这件事变得显然, 所以,
+根据方程(\ref{16.1.2}), $-\Pi =\Delta ^{-1}$也是这样. 再加上方程(\ref%
+{16.2.3}), 这暗示了, 对于单个标量场, 有效势$V(\phi )$对$\phi $%
+的二阶导数必须为正(%
+或零). 更普遍的, 有效势必须是{\kai{凸}}的:\cite{5}%
+\[
+V\Big( \lambda \phi _{1}+(1-\lambda )\phi _{2}\Big) \leq \lambda V(\phi
+_{1})+(1-\lambda )V(\phi _{2})\text{ \ \  对于 \ }0\leq \lambda
+\leq 1\text{ .}
+\]%
+但对方程(\ref{16.2.13})的检查表明, 当$m^{2}<0$和$g>0$时, 对于作用量为(\ref{16.2.1})的标量场论, 在$\phi $处在有效势的两个极值点$\pm \sqrt{%
+6\left\vert m^{2}\right\vert /g}$之间时, 它的有效势的零%
+圈近似有一个{\kai{负定}}的二阶导数. 会产生这个矛盾%
+是因为, 微扰论的引出暗中依赖于稳定真空的存在, 但当$V^{\prime \prime }(\phi )<0$%
+时, 场$\phi $所处的值$\tilde{\phi}$%
+使得$V(\tilde{\phi})-J_{\phi }\tilde{\phi}$是{\kai{极大值}}而不是极小值, 这意味着当有流$J_{\phi }$%
+时, 真空态是不稳定的.
+
+那么, 当$m<0$且$\phi $处在有效势的两个极小值之间时, 这一标量场真正的有效势是什么呢? 本节的结果是, 我们必须找到使得算符$\Phi $的期%
+望值等于$\phi $的最小能量态. 只要$\phi $处在该势的两个极小值之间, 通过将$\Phi $取做$\phi $处在极小值$\phi \simeq \pm \sqrt{6\left\vert m^{2}\right\vert /g}$%
+时的态的合适的线性组合, 我们就可以赋予$%
+\Phi $期望值$\phi $. 这一态中的能量等于极小值处的能量, 所以这一态显然使得能量最小化. (在体积无限大的极限下,
+交叉项为零, 原因会在19.1节进行阐述.) 因此, 在两个极小值之间的有效势是{\kai{常数}}, 这满足二阶导数非负的要求. 相同的讨论表明, 在有限%
+势有两个能量不等的定域极小值的更普遍理论中, 这两个极小值之间的有效势是线性的.\cite{6}
+
+\section{有效作用量的对称性}
+
+虽然不总是这样, 但在某些情况下, 作用量$I[\phi ]$%
+的对称性自动地也是有效作用量的$\Gamma \lbrack \phi ]$%
+的对称性. 例如, 在16.2节的例子中, 作用量(\ref{16.2.1})%
+在离散变换$\phi \rightarrow -\phi $下有一对称性. 因此, 从$Z[J]$%
+和$W[J]$的定义中可以知道, 它们在相对应的反射$J\rightarrow -J$下是偶的. 这样,
+方程(\ref{16.1.5})表明$\phi _{-J}=-\phi _{J}$,
+因此$J_{-\phi }=-J_{\phi }$, 所以方程(%
+\ref{16.1.6})表明$\Gamma \lbrack \phi ]$在$\phi
+\rightarrow -\phi $下是偶的. 这一结果被单圈结果(\ref{16.2.15})所证实. 对于(\ref{16.2.16})中的费%
+米圈贡献, 在$M(0)=0$的特殊情况下, 这一贡献也呈现出在$\phi \rightarrow -\phi $下的对称性, 这是因为, 在这一%
+情况下, 作用量在$\phi \rightarrow
+-\phi $和$\psi \rightarrow \gamma _{5}\psi $的组合变换下不变.
+
+除非我们能够证明附加于作用量的对称性也适用于有效作用量,
+否则我们在建立理论的可重整性时会遇到问题. 例如, 在上面的例子中, 如果假定$I[\phi ]$对$\phi $%
+是偶的, 但$\Gamma \lbrack \phi ]$却不是, 那么$\Gamma $中正比于$\int \dif%
+^{4}x\,\phi $项和$\int \dif^{4}x\,\phi ^{3}$项的系数将会发散, 但作用量的对称性将不允许我们引入吸收这些无限%
+大的抵消项.
+
+在这一动机下, 我们现在转向一类重要的对称性, 这类对称性由如下的无限小变换生成\begin{equation}
+\chi ^{n}(x)\rightarrow \chi ^{n}(x)+\epsilon F^{n}[x;\chi ]\text{ ,}
+\label{16.4.1}
+\end{equation}%
+其中$F^{n}$是$x^{\mu }$的函数但以泛函的形式依赖于$%
+\chi ^{n}$. (例如, $F^{n}[x;\chi ]$可以是$\chi
+^{n}$以及$\chi ^{n}$在点$x$处导数的普通函数.) 我们现在使用符号$\chi ^{n}$而非$\phi ^{r}$来标记不同类型的场, 是为%
+了强调它们不仅包含普通的规范场和物质场(它们在下一章会被记为$\phi ^{r}(x)$), 而且包含出现在规范固定作用量中的所有其它场, 包括%
+鬼场. 我们再次指出: $\chi
+^{n}(x)$不一定是标量, 它可以是任意类型的场.
+
+我们假定作用量和测度均在对称变换(\ref{16.4.1})%
+下不变:%
+\begin{align}
+I[\chi +\epsilon \,F] &=I[\chi ]\text{ ,}  \label{16.4.2} \\
+\prod_{n,x}\dif\Big( \chi ^{n}(x)+\epsilon\, F[x;\chi ]\Big)  &=\prod_{n,x}%
+\dif\chi ^{n}(x)\text{ .}  \label{16.4.3}
+\end{align}%
+(实际上, 仅乘积$(\prod_{n,x})\dif\chi
+^{n}(x)\exp (\mi I)$不变就足够了,
+但这时方程(\ref{16.4.2})和(\ref{16.4.3})%
+往往都是成立的.) 用$\chi
+^{n}(x)+\epsilon F^{n}[x;\chi ]$替换方程(\ref{16.1.1}%
+)中的积分变量, 这样我们就有\begin{align*}
+Z[J] &=\int \left[ \prod_{n,x}\dif\Big( \chi ^{n}(x)+\epsilon \,F^{n}[x;\chi
+]\Big) \right]  \\
+&\quad\times \exp \left\{ \mi\, I[\chi +\epsilon \,F]+\mi\int \dif^{4}x\Big( \chi
+^{n}(x)+\epsilon \,F^{n}[x;\chi ]\Big) J_{n}(x)\right\}  \\
+&=\int \left[ \prod_{n,x}\dif\chi ^{n}(x)\right] \exp \left\{ \mi\, I[\chi ]+%
+\mi\int \dif^{4}x\,\Big( \chi ^{n}(x)+\epsilon\, F^{n}[x;\chi ]\Big)
+J_{n}(x)\right\}  \\
+&=Z[J]+\mi\epsilon \int \left( \prod_{n,x}\dif\chi ^{n}(x)\right) \int
+F^{n}(y;\chi )J_{n}(y)\dif^{4}y \\
+&\quad\times \exp \left\{ \mi I[\chi ]+\mi\int \dif^{4}x\,\chi
+^{n}(x)J_{n}(x)\right\}
+\end{align*}%
+因而\begin{equation}
+\int \dif^{4}y\,\langle F^{n}(y)\rangle _{J}J_{n}(y)=0\text{ ,}  \label{16.4.4}
+\end{equation}%
+其中$\langle \:\: \rangle _{J}$代表有流$%
+J_{n}(x)$时的量子平均值,%
+\begin{align}
+Z[J]\langle F^{n}(y)\rangle _{J} &\equiv \int \left( \prod_{n,x}\dif\chi
+^{n}(x)\right) F^{n}[y;\chi ]  \nonumber \\
+&\quad\times \exp \left\{ \mi I[\chi ]+\mi\int \dif^{4}x\,\chi
+^{n}(x)J_{n}(x)\right\} \text{ ,}  \label{16.4.5}
+\end{align}%
+归一化使得$\langle 1\rangle _{J}=1$. 但回忆起$J_{n}(y)$是以有效作用量$\Gamma \lbrack \chi ]$的形式通过方程(\ref%
+{16.1.7})给定的\[
+J_{n,\chi }(y)=-\frac{\delta \Gamma \lbrack \chi ]}{\delta \chi ^{n}(y)}%
+\text{ .}
+\]%
+因此, 方程(\ref{16.4.4})可以写成\begin{equation}
+0=\int \dif^{4}y\,\langle F^{n}(y)\rangle _{J_{\chi }}\,\frac{\delta \Gamma
+\lbrack \chi ]}{\delta \chi ^{n}(y)}\text{ .}  \label{16.4.6}
+\end{equation}%
+换句话说, $\Gamma \lbrack \chi ]$在无限小变换\begin{equation}
+\chi ^{n}(y)\rightarrow \chi ^{n}(y)+\epsilon \langle F^{n}(y)\rangle
+_{J_{\chi }} \text{ .} \label{16.4.7}
+\end{equation}%
+下不变. 这样的对称性条件被称为\textit{Slavnov-Taylor}%
+{\kai{恒等式}}.\cite{7}
+
+这一对称变换是否是我们所出发的对称变换呢? 对于一类非常重要的无限小对称变换确实是这样, 即那些{%
+\kai{线性}}的变换. 对于这样的对称性, $F$是\begin{equation}
+F^{n}[x;\chi ]=s^{n}(x)+\int t^{n}{}_{\!m}(x,y)\chi ^{m}(y)\,\dif^{4}y\text{ .}
+\label{16.4.8}
+\end{equation}%
+(在最通常的情况下, $s^{n}(x)$%
+为零而$t^{n}{}_{\!m}(x,y)$是常数矩阵与$\delta ^{4}(x-y)$之积.) 对于任何线性的$F$, 我们有\[
+\langle F^{n}(y)\rangle _{J}=s^{n}(x)+\int t^{n}{}_{\!m}(x,y)\langle \chi
+^{m}(y)\rangle _{J}\,\dif^{4}y\text{ .}
+\]%
+但对于任何固定的$\chi $, $%
+J_{\chi }$定义为使得$\langle \chi
+^{m}(y)\rangle _{J}$等于$\chi ^{m}(y)$的流$J$的值, 所以\begin{equation}
+\langle F^{n}(y)\rangle _{J_{\chi }}=s^{n}(x)+\int t^{n}{}_{\!m}(x,y)\chi
+^{m}(y)\,\dif^{4}y=F^{n}[x;\chi ]\text{ .}  \label{16.4.9}
+\end{equation}%
+因此, 对于所有的泛函线性变换$\chi ^{n}\rightarrow \chi ^{n}+\epsilon F$,
+若该变换保持$I[\chi ]$和测度不变, 那么方程(\ref{16.4.6})%
+会要求$\Gamma \lbrack \chi ]$在这样的变换下不变.
+
+我们有时还要处理非线性的对称变换. 15.7节所讨论的BRST变换就提供了一个重要例子. 对于非线性的变换, 使得有限作用量不变的对称变换(\ref{16.4.7})一般与保持%
+原作用量不变的假设对称变换(\ref{16.4.1}){\kai{不}}相同, 这是因为场的非线性泛函的均值一般不等于平均场的泛函. 的确如此, $\langle F^{n}\rangle _{J_{\chi }}$作为%
+$\chi $的泛函, 它的形式一般会依赖于系统的动力学, 并且通常是非定域. 这一复杂性将在下一章利用反括号的方法进行处理.
+
+\subsection*{* * *}
+
+直到现在, 我们默认假定场$\chi ^{n}$和相对应的变换函数$F^{n}$以及流$J_{n}$都是玻色的. 当其中的一些量是费米量时, 特别%
+地, 就像超对称变换或BRST变换, 在那里$\epsilon $是常数而$\chi ^{n}$和$F^{n}$有相反的统计, 这时我们将需要%
+注意到可能出现的符号因子. 当流像方程(\ref%
+{16.1.1})和(\ref{16.1.5})中那样插入在场的右边时, 方程(\ref%
+{16.1.5})和(\ref{16.1.7})会变成如下的形式\begin{equation}
+\frac{\delta _{R}W[J]}{\delta J_{m}(y)}=\chi _{J}^{m}(y)\text{ ,}
+\label{16.4.10}
+\end{equation}%
+\begin{equation}
+\frac{\delta _{L}\Gamma \lbrack \chi ]}{\delta \chi ^{m}(y)}=-J_{\chi ,m}(y)%
+\text{ ,}  \label{16.4.11}
+\end{equation}%
+其中下标$R$和$L$是指导数是从右边和左边作用的. 因此, Slavnov-Taylor恒等式(%
+\ref{16.4.6})应该写成\begin{equation}
+0=\int \dif^{4}y\,\langle F^{n}(y)\rangle _{J_{\chi }}\,\frac{\delta _{L}\Gamma
+\lbrack \chi ]}{\delta \chi ^{n}(y)}\text{ .}  \label{16.4.12}
+\end{equation}
+
+\section*{习题}
+
+\noindent 1. 考察赝实标量$\phi (x)$与复Dirac场$\psi (x)$的理论, 它们的质量分别是$M$和$m$, 相互作用为$g\bar{\psi}\gamma _{5}\psi \phi $. 计算$%
+\phi =$常数, $\psi =0$时的有效势,
+并计算至一圈阶.
+\\
+
+\noindent 2. 导出$\delta ^{3}W[J]/\delta J_{n}(x)\delta J_{m}(y)\delta
+J_{\ell }(z)$和$\delta ^{4}W[J]/\delta J_{n}(x)\delta J_{m}(y)\delta
+J_{\ell }(z)\delta J_{k}(w)$的一般公式,
+将其写成$\Gamma \lbrack \phi ]$对$\phi $%
+的变分导数的形式. 指出这些公式中的每一项分别对应那些Feynman图.
+\\
+
+\noindent 3. 对于六维中相互作用拉格朗日密度为$g\phi ^{3}/6$%
+的中性标量场$\phi $的理论, 计算有效势至一圈阶.
+\\
+
+\noindent 4. 假定作用量$I[\phi ]$在{\kai{有限大}}矩阵变换$\phi
+_{n}(x)\rightarrow \sum_{m}M_{nm}\phi _{m}(x)$下不变.
+那么在流的何种变换下$W[J]$不变? 利用这一结果导出$\Gamma \lbrack \phi ]$的对称性质
+
+%++++++++++++++++++参考文献+++++++++
+\renewcommand{\sectionmark}[1]{\markright{ #1}{}}
+\renewcommand{\bibname}{参考文献}
+
+\begin{thebibliography}{99}
+\bibitem {1}有效作用量$\Gamma[\phi]$由J. Goldstone, A.Salam和S. Weinberg引入, {\textit{Phys. Rev.}} {\bf{127}}, 965 (1962), 在这里是以微扰论的方式, 将其作为对单粒子不可约图的求和定义的. 非微扰定义(\ref{16.1.6})是如下几人独立地给出的, B. De Witt, in {\textit{Relativity, Groups. and Topology - Lectures Delivered at Les Houches during the 1963 Session of the Summer School of Theoretical Physics,}} C. De Witt和B. De Witt编辑. (Gordon and Breach, New York, 1964); G. Jona-Lasinio, {\textit{Nuovo Cimento}} {\bf{34}}, 1790 (1964).
+\bibitem {2}S. Coleman, {\textit{Aspect of Symmetry}} (Cambridge University Press, Cambridge, 1985): pp. 135-6
+\bibitem {3}S. Coleman and E. Weinberg, {\textit{Phys. Rev.}} {\bf{D7}}, 1888 (1973).
+\bibitem {4}K. Symanzik, {\textit{Comm. Math. Phys.}} {\bf{16}}, 48 (1970); S. Coleman, {\textit{Aspects of Symmetry}} (Cambridge University Press, Cambridge, 1985): pp. 139-42.
+\bibitem {5}K. Symanzik, 参考文献4; J. Iliopoulos, C. Itzyskon, and A. Matrin, {\textit{Rev. Mod. Phys.}} {\bf{47}}, 165 (1975).
+\bibitem {6}Y. Fujimoto, L. O'Raifeartaigh, and G. Parravicini, {\textit{Nucl. Phys.}} {\bf{B212}}, 268 (1983); R. W. Haymaker and J. Perez-Mercader, {\textit{Phys. Rev.}} {\bf{D27}}, 1948 (1983); C. M. Bender and F. Cooper, {\textit{Nucl. Phys.}} {\bf{B224}}, 403 (1983); M. Hindmarsh and D. Johnston, {\textit{J. Math. Phys.}} {\bf{A19}}, 141 (1986); V. Branchina, P. Castorina, and D. Zappal\`{a}, {\textit{Phys. Rev.}} {\bf{D41}}, 1948 (1990); K. Cahill, {\textit{Phys. Rev.}} {\bf{D52}}, 4704 (1995).
+\bibitem {7}A. A. Slavnov, {\textit{Theor. Math. Phys.}} {\bf{10}}, 152 (1972) [英译版: {\textit{Theor. and Math. Phys.}} {\bf{10}}, 99 (1972)]; J. C. Taylor, {\textit{Nucl. Phys.}} {\bf{B33}}, 436 (1971).
+\end{thebibliography}

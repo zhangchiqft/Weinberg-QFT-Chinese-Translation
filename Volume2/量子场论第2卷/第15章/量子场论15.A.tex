@@ -1,0 +1,227 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, April 24, 2016 21:15:04}
+%TCIDATA{LastRevised=Friday, April 29, 2016 20:50:30}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{关于Lie代数的一个定理}
+
+在这个附录中, 我们所考察的是一般的Lie代数$%
+\mathscr{G}$, 生成元为$t_{\alpha }$, 结构常数为$C^{\alpha }$ $_{\beta \gamma }$, 并证%
+明如下3个条件的等价性:
+
+存在一个实的对称正定矩阵$g_{\alpha \beta }$, 其满足不变性条件\begin{equation}
+g_{\alpha \beta }C^{\beta }\text{ }_{\gamma \delta }=-g_{\gamma \beta
+}C^{\beta }\text{ }_{\alpha \delta }\text{ .}  \label{15.A.1}
+\end{equation}%
+(这正是在15.2节中证明的物理背景所需要的条件(\ref{15.2.4}).)
+
+该Lie代数存在一组基(即, 一组生成元$\tilde{t}_{\alpha }=\mathscr{S}%
+_{\alpha \beta }t_{\beta }$, 其中$\mathscr{S}$是非奇异的实矩阵), 使得这组基的结构常数$\tilde{C}^{\alpha }$
+$_{\beta \gamma }$不仅对于下指标$%
+\beta $和$\gamma $是反对称的, 并且对于全部3个指标$\alpha ,$ $%
+\beta $和$\gamma $是全反对称的.
+
+Lie代数$\mathscr{G}$是相互交换的紧致单纯子代数与$%
+U(1) $子代数的直和, 记为$%
+\mathscr{H}_{m}$的直和
+
+我们将通过证明a推出b, b%
+推出c, 以及c推出a的方式来证明陈述a, b和c的等价性. 作为中间的一个副产品, 我们也将证明, 如果这些条件被满足了, 
+那么能够选出$\mathscr{G}$的一组基$t_{ma}$, 其中$m$标记$t_{ma}$所属的单纯或$U(1)$子代数$%
+\mathscr{H}_{m}$, $a$标记该子代数下的个体生成元, 使得满足方程(\ref{15.A.1})的矩阵采取形式\begin{equation}
+g_{ma,nb}=g_{m}^{-2}\delta _{mn}\delta _{ab}\text{ ,}  \label{15.A.2}
+\end{equation}%
+其中$g_{m}^{-2}$是任意的正实数.
+
+首先, 我们假定\textbf{a}, 即存在满足不变性条件(\ref%
+{15.A.1})的实对称正定矩阵$%
+g_{\alpha \beta }$. 那么, 我们就可以定义新的生成元\begin{equation}
+\tilde{t}_{\alpha }\equiv (g^{-1/2})_{\alpha \beta }t_{\beta }\text{ ,}
+\label{15.A.3}
+\end{equation}%
+其中实的逆平方根矩阵$g^{-1/2}$的存在性由$g_{\alpha \beta }$%
+的正定性保证. 这些生成元满足Lie代数\begin{equation}
+\left[ \tilde{t}_{\alpha },\tilde{t}_{\beta }\right] =i\tilde{C}_{\alpha
+\beta \gamma }\tilde{t}_{\gamma }\text{ ,}  \label{15.A.4}
+\end{equation}%
+其中\begin{equation}
+\tilde{C}_{\alpha \beta \gamma }\equiv (g^{-1/2})_{\alpha \alpha ^{\prime
+}}(g^{-1/2})_{\beta \beta ^{\prime }}(g^{+1/2})_{\gamma \gamma ^{\prime
+}}C^{\gamma ^{\prime }}{}_{\alpha ^{\prime }\beta ^{\prime }}\text{ .}
+\label{15.A.5}
+\end{equation}%
+(在这一基下, 不再区分上下标$\alpha $, $\beta $等将是方便的, 取代$\tilde{C}^{\gamma }{}_{\alpha \beta }$, 
+写成$\tilde{C}_{\gamma \alpha \beta }$.) 那么, 
+方程(\ref{15.A.1})就告诉我们$%
+\tilde{C}_{\alpha \gamma \delta }$关于$\alpha $和$\gamma $%
+是反对称的并且关于$%
+\gamma $和$\delta $也是反对称的, 
+进而是全反对称的, 证明了\textbf{b}.
+
+接下来, 我们假定\textbf{b}, 
+即存在Lie代数的一组基使得结构常数是全反对称的. 在这一基下, 伴随表示的矩阵$(\tilde{t}^{A}{}_{\alpha
+})_{\beta \gamma }\equiv -i\tilde{C}_{\beta \gamma \alpha }$是纯虚且全反对称的, 因而%
+是厄米的. 根据关于厄米矩阵的一般定理,\footnote{%
+如果一组矩阵$H_{\alpha }$的一组基不是不可约的, 那么由定义可知, 必存在一组矢量$u_{n}$, 它们张开了一个子空间(不是整%
+个空间), 使得这个子空间在$H_{\alpha }$的作用下不变: 即, 对于所有的$\alpha $和$n$, $%
+H_{\alpha }u_{n}=\sum_{m}(C_{\alpha })_{mn}u_{m}$. 在这一情况下, 我们可以取矢量$u_{n}$以及张开正交于%
+所有$u_{n}$的空间的矢量$%
+v_{k} $构成一个基. 如果$H_{\alpha
+} $是厄米的, 那么$(u_{n},H_{\alpha
+}v_{k})=\sum_{m}(C_{\alpha })_{mn}^{\ast }(u_{m},v_{k})=0$, 所以由$v_{k}$张开的空间在$H_{\alpha }$%
+也是不变的: $H_{a}v_{k}=\sum_{\ell }(D_{\alpha
+})_{\ell k}v_{\ell }$. 在这一基下, 矩阵$H_{\alpha }$可以同时约化至分块对角形式:%
+\[
+H_{\alpha }=\left( 
+\begin{array}{cc}
+C_{\alpha } & 0 \\ 
+0 & D_{\alpha }%
+\end{array}%
+\right) \text{ .} 
+\]%
+以这种方式继续下去, 
+我们可以完全地将矩阵$H_{\alpha }$约化至每个分块矩阵都是不可约的分块对角形式.} $\tilde{t}^{A}{}_{\alpha }$%
+要么是不可约的, 要么是完全可约的.
+
+一组不可约的$N\times N$矩阵$%
+\tilde{t}^{\mathrm{A}}{}_{\alpha }$是指, 对于这组矩阵不存在维数$<N$的子空间, 使得该子空间在所有的$\tilde{t}^{\mathrm{A}}{}_{\alpha }$作%
+用下不变------即, 不存在一组个数小于$N$的非零矢量$(u_{r})_{\beta }$, 使得对于每一$\alpha $和$r$, $(\tilde{t}^{\mathrm{A}}{}_{\alpha })_{\beta
+\gamma }(u_{r})_{\gamma }$是矢量$(u_{s})_{\beta }$的线性组合. 既然矩阵$(\tilde{t}%
+^{\mathrm{A}}{}_{\alpha })_{\beta \gamma }$正比于这组基下的结构常数, 这等价于陈述: 不存在一%
+组线性组合$\mathscr{T}_{r}\equiv
+(u_{r})_{\gamma }\tilde{t}^{\mathrm{A}}{}_{\gamma }$, 使得它与所有$\tilde{t}^{\mathrm{A}}{}_{\alpha }$的%
+对易封闭, 即对于每一$%
+\alpha $和$r$, $[\tilde{t}^{\mathrm{A}}{}_{\alpha }$, $\mathscr{T}%
+_{r}] $是$\mathscr{T}_{s}$的线性组合. 
+这样的矩阵$\mathscr{T}_{r}$将构成整个Lie代数的一个不变子代数的生成元; 这种矩阵不存在意味着Lie%
+代数是单纯的.
+
+一组矩阵$\tilde{t}^{\mathrm{A}}{}_{\alpha }$完全可约是指, 通过选择合适的基, 它们可以写成分块对角的超矩阵%
+\begin{equation}
+(\tilde{t}^{\mathrm{A}}{}_{\alpha })_{ma,nb}=[t^{\mathrm{A}(m)}{}_{\alpha
+}]_{ab}\delta _{mn}\text{ ,}  \label{15.A.6}
+\end{equation}%
+其中子矩阵$t^{\mathrm{A}(m)}{}_{\alpha }$%
+要么不可约要么为零.%
+\footnote{这里$m$和$n$用来标记沿着主对角的块, 而$a$和$b$标记这些块内的行和列. 另外, $m$是不求和的, 
+且指标$a$, $b$等的范围一般会依赖于$m$.} 对Lie代数本身也采用这组基, 那么结构常数就变成\begin{equation}
+\tilde{C}_{\ell c,ma,nb}=\mi(\tilde{t}^{\mathrm{A}}{}_{\ell c})_{ma,nb}=\mi%
+(t^{\mathrm{A}(m)}{}_{\ell c})_{ab}\delta _{mn}\text{ .}  \label{15.A.7}
+\end{equation}%
+但是, 既然它是全反对称的, 并正比于$\delta _{mn}$, 它必须也正比于$\delta _{\ell n}$和$%
+\delta _{\ell m}$:%
+\begin{equation}
+\tilde{C}_{\ell c,ma,nb}=\delta _{\ell n}\delta _{\ell m}C_{cab}^{(\ell )}%
+\text{ .}  \label{15.A.8}
+\end{equation}%
+换句话说, 在这组基下, 
+对于Lie代数的{\kai{任何}}表示$t^{(m)}{}_{a}\equiv t_{ma}$, 我们有\begin{equation}
+\lbrack t^{(m)}{}_{a},t^{(m)}{}_{b}]=\mi\delta
+_{mn}C_{cab}^{(m)}t^{(m)}{}_{c}\text{ ,}  \label{15.A.9}
+\end{equation}%
+其中$C_{cab}^{(m)}$是实的且关于指标$a$, $b$, $c$反对称. 当我们说Lie代数是子代数$%
+t^{(m)}$的{\kai{直和}}时, 我们是指, 能够找到一组基, 使得在这组基下, 生成元落入集合$t^{(m)}$中, 并且一个集合内的生成元, 它%
+们彼此之间的对易子有该集合内的生成元的线性组合给出, 并且一个集合内的所有生成元与所有其它集合内的所有生成元对易. 
+对于每一个$m$, 伴随表示$t^{(m)A}$的矩阵的集合要么不可约要么为零, 分别对应于单独子代数或者由所谓的$U(1)$生成元构成的子代数, 后者与%
+整个代数的所有生成元均对易.
+
+因此, 我们证明了, 对于最一般的Lie代数, 若它的结构常数是全反对称的, 那么它是一个或多单纯Lie代数和/或$U(1)$Lie代数的直和. 更进一步, 单纯%
+子代数是紧致的, 也就是说, 每个矩阵$-C_{acd}^{(m)}C_{bdc}^{m}$%
+是正定的, 这是因为对于任意实矢量$u_{a}$, $%
+-C_{acd}^{(m)}C_{bdc}^{(m)}u_{a}u_{b}=\sum_{cd}[%
+\sum_{a}u_{a}C_{acd}^{(m)}]^{2}$是正量的和, 
+除非$u_{a}=0$, 否则它不能为零, 既然对于$u_{a}\neq 0$, 条件$%
+\sum_{a}u_{a}C_{acd}^{(m)}=0$将给出$%
+\sum_{a}u_{a}t^{(m)}{}_{a}$本身是一个不变阿贝尔子代数, 与$%
+t_{a}^{(m)}$构成单Lie代数的事实相矛盾. 这完成了\textbf{c}%
+的证明.
+
+最后, 我们假定\textbf{c}, 即Lie%
+代数是一组单纯Lie代数或$U(1)$Lie代数的直和; 也就是说, 在某个基$t_{a}^{(m)}=\mathscr{S}%
+_{ma,\alpha }t_{\alpha }$下, 其中$\mathscr{S}$是实的且非奇异, 我们有\[
+\lbrack t_{a}^{(m)},t_{b}^{(m)}]=\mi\delta _{nm}C^{(m)c}{}_{ab}t_{c}^{(m)}%
+\text{ ,}
+\]%
+其中每一子代数$t^{(m)}$不是单纯的就与所有一切的量均对易. 我们进一步假定单纯子代数是紧致的, 也就是说, 矩阵\begin{equation}
+g_{ab}^{(m)}\equiv -C^{(m)c}{}_{ab}C^{(m)d}{}_{bc}  \label{15.A.10}
+\end{equation}%
+是正定的. 为了构建满足方程(\ref{15.A.1})的实正定矩阵$g_{\alpha \beta }$, 在生成元的基为$t_{ma}=t_{a}^{(m)}$下, 我们取%
+\begin{equation}
+g_{ma,nb}\equiv g_{ab}^{(m)}\delta _{mn}\text{ ,}  \label{15.A.11}
+\end{equation}%
+其中, 当$t^{(m)}$是单纯子代数时, $g_{ab}^{(m)}$取为矩阵(\ref%
+{15.A.10}), 而当$t^{(m)}$是一个或多个$U(1)$子代数的直和时, $%
+g_{ab}^{(m)}$取为任意的实对称正定矩阵. 由于每一个$%
+g_{ab}^{(m)}$是实对称正定矩阵, 那么矩阵(\ref{15.A.11})显然也是如此. 为了验证要求(%
+\ref{15.A.1}), 回忆结构常数的Jacobi%
+恒等式:%
+\begin{equation}
+C^{(m)c}{}_{ad}C^{(m)d}{}_{be}+C^{(m)c}{}_{bd}C^{(m)d}{}_{ea}+C^{(m)c}{}_{ed}C^{(m)d}{}_{ab}=0
+\label{15,.A.12}
+\end{equation}%
+然后与$C^{(m)e}{}_{fc}$收缩. 重新命名第三项的指标, 使得$c\rightarrow d\rightarrow e\rightarrow c$, 并使用%
+方程(\ref{15.A.10}), 在做了这些之后, 针对单纯子代数的结果可以写成\[
+g_{df}^{(m)}C^{(m)d}{}_{ab}=C^{(m)c}{}_{ad}C^{(m)d}{}_{be}C^{(m)e}{}_{cf}-C^{(m)c}{}_{fd}C^{(m)d}{}_{be}C^{(m)e}{}_{ca}%
+\text{ .}
+\]%
+其中的关键点在于, 它表明左边关于$a$和$f$是全反对称的:%
+\begin{equation}
+g_{df}^{(m)}C^{(m)d}{}_{ab}=-g_{da}^{(m)}C^{(m)d}{}_{fb}\text{ .}
+\label{15.A.13}
+\end{equation}%
+这一结果在$U(1)$子代数中是平庸的, 在那里结构常数为零. 从方程(\ref%
+{15.A.13})中就立刻得出了对称性条件(\ref{15.A.1}), 因此完成了\textbf{a}的证明. 这样就完成了我们对陈述\textbf{a}, 
+\textbf{b}和\textbf{c}相互等价的证明.
+
+现在我们回到矩阵$g_{\alpha
+\beta }$. 有了全反对称的结构常数, 不变性条件(\ref%
+{15.2.4})可以表示为如下的陈述, 这一矩阵与Lie代数伴随表示中的所有矩阵均对易\begin{equation}
+\lbrack g,t^{\mathrm{A}}{}_{\gamma }]=0\text{ .}  \label{15.A.14}
+\end{equation}%
+我们已经看到所有的$(t^{%
+\mathrm{A}}{}_{\gamma })_{\alpha \beta }$都可以变成分块对角的形式, 并且沿着主对角的是不可约子矩阵(或零矩阵). 
+那么, 一个著名的定理\cite{25}会告诉我们, $g_{\alpha \beta }$%
+也必须是分块对角的, 
+且其中的块与$t^{\mathrm{A}}{}_{\gamma }$%
+中的块有相同的大小和位置, 而且每一块中的子矩阵正比于单位矩阵. (若$t^{\mathrm{A}}{}_{\gamma }$中的两个矩阵是等价的, 也%
+就是说这两个矩阵通过一个相似变换相关, 
+为了使将$g_{\alpha \beta }$的子矩阵变成正比于单位矩阵的形式, 可能就需要在那里对基做一个合适的变换.) 那么以方程(%
+\ref{15.A.11})的记法, 矩阵就由方程(\ref{15.A.2})给出.
+
+\end{document}

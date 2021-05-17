@@ -1,0 +1,411 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, March 29, 2016 20:49:49}
+%TCIDATA{LastRevised=Wednesday, April 06, 2016 21:46:44}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+我们在方程(\ref{15.6.3})和(\ref{15.6.4})%
+中已经看到, 对于非阿贝尔规范场论, 它的Feynman%
+规则可以从对物质场, 
+规范场合鬼场的路径积分中获得, 路径积分中的作用量进行了修正, 我们可以将其写成\begin{equation}
+I_{\text{MOD}}=I_{\text{EFF}}+I_{GH}=\int d^{4}x\mathscr{L}_{\text{MOD}}%
+\text{ ,}  \label{15.7.1}
+\end{equation}%
+\begin{equation}
+\mathscr{L}_{\text{MOD}}\equiv \mathscr{L}-\frac{1}{2\xi }f_{\alpha
+}f_{\alpha }+\omega _{\alpha }^{\ast }\Delta _{\alpha }\text{ ,}
+\label{15.7.2}
+\end{equation}%
+其中有一个我们现在引入的量\begin{equation}
+\Delta _{\alpha }(x)\equiv \int d^{4}y\mathscr{F}_{\alpha x,\beta y}[A,\psi
+]\omega _{\beta }(y)\text{ .}  \label{15.7.3}
+\end{equation}%
+它对应于(\ref{15.5.21})中规范固定泛函的选择:%
+\begin{equation}
+B[f]\propto \exp \left( -\frac{i}{2\xi }\int d^{4}xf_{\alpha }f_{\alpha
+}\right) \text{ .}  \label{15.7.4}
+\end{equation}%
+对于我们当前的目的, 
+将$B[f]$重写成Fourier积分将是有帮助的:%
+\begin{equation}
+B[f]=\int \left[ \prod_{\alpha ,x}dh_{\alpha }(x)\right] \exp \left[ \frac{%
+i\xi }{2}\int d^{4}xh_{\alpha }h_{\alpha }\right] \exp \left[ i\int
+d^{4}xf_{\alpha }h_{\alpha }\right] \text{ .}  \label{15.7.5}
+\end{equation}%
+我们现在必须要做对场$h_{\alpha }$(通常称为\textquotedblleft
+Nakanishi-Lautrup\textquotedblright 场\cite{11a}), 以及物质场, 规范场, 鬼场和反鬼场做路径积分, 其%
+中作用量是一个新的修正作用量 
+\begin{equation}
+I_{\text{NEW}}=\int d^{4}x\left( \mathscr{L}+\omega _{\alpha }^{\ast }\Delta
+_{\alpha }+h_{\alpha }f_{\alpha }+\frac{1}{2}\xi h_{\alpha }h_{\alpha
+}\right) \text{ .}  \label{15.7.6}
+\end{equation}
+
+这一修正作用量不是规范不变的------相反, 如果我们要在路径积分中能够使用它, 它不是规范不变的反而更好. 
+然而, 它在"BRST"对称变换下不变, 该对称变换由一无限小常数$\theta $参数化, $\theta $与$\omega _{\alpha }$, $\omega _{\alpha }^{\ast }$%
+以及所有的费米物质场{\kai{反对易}}. 对于给定的$\theta $,
+BRST变换是\begin{eqnarray}
+\delta _{\theta }\psi &=&it_{\alpha }\theta \omega _{\alpha }\psi \text{ ,}
+\label{15.7.7} \\
+\delta _{\theta }A_{\alpha \mu } &=&\theta D_{\mu }\omega _{\alpha }=\theta
+\lbrack \partial _{\mu }\omega _{\alpha }+C_{\alpha \beta \gamma }A_{\beta
+\mu }\omega _{\gamma }]\text{ ,}  \label{15.7.8} \\
+\delta _{\theta }\omega _{\alpha }^{\ast } &=&-\theta h_{\alpha }\text{ ,}
+\label{15.7.9} \\
+\delta _{\theta }\omega _{\alpha } &=&-\frac{1}{2}\theta C_{\alpha \beta
+\gamma }\omega _{\beta }\omega _{\gamma }\text{ ,}  \label{15.7.10} \\
+\delta _{\theta }h_{\alpha } &=&0\text{ .}  \label{15.7.11}
+\end{eqnarray}%
+(回忆起, 在费米路径积分中, $\omega _{\alpha }$和$\omega _{\alpha }^{\ast }$%
+之间不存在联系, 使得方程(\ref{15.7.9})不需要是方程(\ref{15.7.10})的共轭.) 因为$h_{\alpha
+}$是BRST-不变的, 所以, 如果我们想, 我们可以将方程(\ref{15.7.5})高斯因子$\exp (\frac{1}{2}i\xi
+\int h_{\alpha }h_{\alpha })$替换为$h_{\alpha }$的任意光滑泛函, 这会产生一个任意的泛函$B[f]$, 
+但是不会影响作用量的BRST不变性. 然而, 为了图形计算以及重整化的目的, 保持$B[f]$为高斯型将是有帮助的.
+
+在检查作用量(\ref{15.7.1})的不变性时, 首先, 注意到变换(\ref{15.7.7})---(\ref{15.7.11})的{\kai{幂零性}}%
+是很有帮助的; 即, 如果$%
+F$是$\psi ,A,\omega ,\omega ^{\ast }$以及$h$的任意泛函, 并且我们用\begin{equation}
+\delta _{\theta }F\equiv \theta sF  \label{15.7.12}
+\end{equation}%
+定义$F$, 那么\begin{equation}
+\delta _{\theta }(sF)=0\text{ ,}  \label{15.7.13}
+\end{equation}%
+或者, 等价地, 
+\begin{equation}
+s(sF)=0\text{ .}  \label{15.7.14}
+\end{equation}
+
+当$\delta _{\theta }$左右在单个场上时, 验证这一幂零性是直接的. 首先, 作用在物质场上,%
+\begin{eqnarray*}
+\delta _{\theta }s\psi &=&it_{\alpha }\delta _{\theta }(\omega _{\alpha
+}\psi )=-\frac{1}{2}iC_{\alpha \beta \gamma }t_{\alpha }\theta \omega
+_{\beta }\omega _{\gamma }\psi -t_{\alpha }t_{\beta }\omega _{\alpha }\theta
+\omega _{\beta }\psi \\
+&=&-\frac{1}{2}iC_{\alpha \beta \gamma }t_{\alpha }\theta \omega _{\beta
+}\omega _{\gamma }\psi +t_{\alpha }t_{\beta }\theta \omega _{\alpha }\omega
+_{\beta }\psi \text{ .}
+\end{eqnarray*}%
+右边第二项中的乘积$%
+\omega _{\alpha }\omega _{\beta }$关于$\alpha $和$\beta $%
+是反对称的, 所以我们可以将这一项中的$t_{\alpha
+}t_{\beta }$替换成$\frac{1}{2}[t_{\alpha },t_{\beta }]$, 
+这一项随之与第一项相抵消:%
+\begin{equation}
+ss\psi =0\text{ .}  \label{15.7.15}
+\end{equation}%
+下一步, 作用在规范场上, 我们有\begin{eqnarray*}
+\delta _{\theta }sA_{\alpha \mu } &=&\delta _{\theta }D_{\mu }\omega
+_{\alpha } \\
+&=&\partial _{\mu }\delta _{\theta }\omega _{\alpha }+C_{\alpha \beta \gamma
+}\delta _{\theta }A_{\beta \mu }\omega _{\gamma }+C_{\alpha \beta \gamma
+}A_{\beta \mu }\delta _{\theta }\omega _{\gamma } \\
+&=&\theta (-\frac{1}{2}C_{\alpha \beta \gamma }\partial _{\mu }(\omega
+_{\beta }\omega _{\gamma })+C_{\alpha \beta \gamma }(\partial _{\mu }\omega
+_{\beta })\omega _{\gamma } \\
+&&+C_{\alpha \beta \gamma }C_{\beta \delta \epsilon }A_{\delta \mu }\omega
+_{\epsilon }\omega _{\gamma }-\frac{1}{2}C_{\alpha \beta \gamma }C_{\gamma
+\delta \epsilon }A_{\beta \mu }\omega _{\delta }\omega _{\epsilon }) \\
+&=&\theta (\frac{1}{2}C_{\alpha \beta \gamma }(\partial _{\mu }\omega
+_{\beta })\omega _{\gamma }+\frac{1}{2}C_{\alpha \beta \gamma }(\partial
+_{\mu }\omega _{\gamma })\omega _{\beta } \\
+&&-C_{\alpha \beta \gamma }C_{\gamma \delta \epsilon }A_{\delta \mu }\omega
+_{\epsilon }\omega _{\beta }-\frac{1}{2}C_{\alpha \beta \gamma }C_{\gamma
+\delta \epsilon }A_{\beta \mu }\omega _{\delta }\omega _{\epsilon })\text{ .}
+\end{eqnarray*}%
+最后一式中, 由于$C_{\alpha \beta
+\gamma }$关于$\beta $和$\gamma $是反对称的, 所以前两项相互抵消了, 而第三项和第四项由于雅克比等式(\ref%
+{15.1.5})相互抵消, 所以\begin{equation}
+ssA_{\alpha \mu }=0\text{ .}  \label{15.7.16}
+\end{equation}%
+方程(\ref{15.7.9})和(\ref{15.7.11})立刻证明了\begin{equation}
+ss\omega _{\alpha }^{\ast }=0  \label{15.7.17}
+\end{equation}%
+和\begin{equation}
+ssh_{\alpha }=0\text{ .}  \label{15.7.18}
+\end{equation}%
+最后,%
+\begin{eqnarray*}
+\delta _{\theta }s\omega _{\alpha } &=&-\frac{1}{2}C_{\alpha \beta \gamma
+}\delta _{\theta }(\omega _{\beta }\omega _{\gamma }) \\
+&=&\frac{1}{4}\theta \left( C_{\alpha \beta \gamma }C_{\beta \delta \epsilon
+}\omega _{\delta }\omega _{\epsilon }\omega _{\gamma }-C_{\alpha \beta
+\gamma }C_{\gamma \delta \epsilon }\omega _{\beta }\omega _{\delta }\omega
+_{\epsilon }\right) \\
+&=&\frac{1}{2}\theta C_{\alpha \beta \gamma }C_{\gamma \delta \epsilon
+}\omega _{\delta }\omega _{\epsilon }\omega _{\beta }\text{ .}
+\end{eqnarray*}%
+但是, 乘积$\omega _{\beta }\omega _{\delta }\omega
+_{\epsilon }$是反对称的, 所以雅克比等式(\ref{15.1.5})表明它也为零\begin{equation}
+ss\omega _{\alpha }=0\text{ .}  \label{15.7.19}
+\end{equation}
+
+现在考察两个场$\phi _{1}$和$%
+\phi _{2}$的乘积, 它们中的一个是$\psi ,A,\omega ,\omega ^{\ast }$或$h$, 也可以二者都是, 并且它%
+们不一定在同一时空点上. 那么\[
+\delta _{\theta }(\phi _{1}\phi _{2})=\theta (s\phi _{1})\phi _{2}+\phi
+_{1}\theta (s\phi _{2})=\theta \left[ (s\phi _{1})\phi _{2}\pm \phi
+_{1}s\phi _{2}\right] \text{ ,} 
+\]%
+其中, 当$\phi _{1}$是玻色场时, 符号$\pm $取正号, 当$\phi _{1}$是费米场时, 则取负号. 即,%
+\[
+s(\phi _{1}\phi _{2})=(s\phi _{1})\phi _{2}\pm \phi _{1}s\phi _{2}\text{ .} 
+\]%
+正如我们所看到的, 由于$\delta _{\theta }(s\phi _{1})=\delta _{\theta }(s\phi _{2})=0$, BRST%
+变换在$s(\phi _{1}\phi _{2})$上的效果是\[
+\delta _{\theta }s(\phi _{1}\phi _{2})=(s\phi _{1})\theta (s\phi _{2})\pm
+\theta (s\phi _{1})(s\phi _{2})\text{ .} 
+\]%
+然而, $s\phi $总有一个与$\phi $%
+相反的统计, 所以将右边第一项中的$\theta $移至左边会引入一个符号因子$\mp $:%
+\[
+\delta _{\theta }s(\phi _{1}\phi _{2})=\theta \left[ \mp (s\phi _{1})(s\phi
+_{2})\pm (s\phi _{1})(s\phi _{2})\right] =0\text{ .} 
+\]%
+以这一方式继续下去, 
+我们会看到, BRST变换作用在不同时空点的场的任何乘积上都是幂零的:%
+\[
+\delta _{\theta }s(\phi _{1}\phi _{2}\phi _{3}\cdots )=0\text{ .} 
+\]%
+任何泛函$F[\phi ]$都能写成含有c-数系数的这种乘积的多重积分之和, 这样\begin{equation}
+\delta _{\theta }sF[\phi ]=\theta ssF[\phi ]=0\text{ .}  \label{15.7.20}
+\end{equation}%
+这样就补全了BRST变换幂零性的证明.
+
+现在我们回到作用量(\ref%
+{15.7.6})BRST不变性的验证. 首先, 注意到, 对于任何仅是物质场和规范场的泛函, BRST变换就是一个规范变换, 该规范变换%
+参量是无限小参量\begin{equation}
+\lambda _{\alpha }(x)=\theta \omega _{\alpha }(x)\text{ .}  \label{15.7.21}
+\end{equation}%
+因此, 方程(\ref{15.7.6})中的第一项自动是BRST不变的:%
+\begin{equation}
+\delta _{\theta }\int d^{4}x:\mathscr{L}=0\text{ .}  \label{15.7.22}
+\end{equation}%
+为了计算BRST变换在作用量(\ref{15.7.6})其它部分上的效果, 要注意到它在规范固定函数上的效应就是规范变换(\ref{15.7.21}), 所%
+以\begin{eqnarray*}
+\delta _{\theta }f_{\alpha }[x;A,\psi ] &=&\int \left. \frac{\delta
+f_{\alpha }[x;A_{\lambda },\psi _{\lambda }]}{\delta \lambda ^{\beta }(y)}%
+\right\vert _{\lambda =0}\theta \omega _{\beta }(y)d^{4}y \\
+&=&\theta \int \mathscr{F}_{\alpha x,\beta y}[A,\psi ]\omega _{\beta
+}(y)d^{4}y
+\end{eqnarray*}%
+或者以(\ref{15.7.3})的形式$\delta $%
+\begin{equation}
+\delta _{\theta }f_{\alpha }[x;A,\psi ]=\theta \Delta _{\alpha }(x;A,\psi
+,\omega )\text{ .}  \label{15.7.23}
+\end{equation}%
+(注意到$\mathscr{F}$是一个玻色量, 所以在这里将$\theta $%
+移至左边时没有符号变化.) 另外, 回忆起$\delta
+_{\theta }\omega _{\alpha }^{\ast }=-\theta h_{\alpha }$和$\delta
+_{\theta }h_{\alpha }=0$. 因此, 在\textquotedblleft 
+新\textquotedblright 作用量(\ref{15.7.6})的被积函数, 中除$:\mathscr{L}$以外的项可以写成\begin{equation}
+\omega _{\alpha }^{\ast }\Delta _{\alpha }+h_{\alpha }f_{\alpha }+\frac{1}{2}%
+\xi h_{\alpha }h_{\alpha }=s\left( \omega _{\alpha }^{\ast }f_{\alpha }+%
+\frac{1}{2}\xi \omega _{\alpha }^{\ast }h_{\alpha }\right)  \label{15.7.24}
+\end{equation}%
+或者, 以另一种形式\begin{equation}
+I_{NEW}=\int d^{4}x:\mathscr{L}+s\Psi \text{ ,}  \label{15.7.25}
+\end{equation}%
+其中\begin{equation}
+\Psi \equiv -\int d^{4}x(\omega _{\alpha }^{\ast }f_{\alpha }+\frac{1}{2}\xi
+\omega _{\alpha }^{\ast }h_{\alpha })\text{ .}  \label{15.7.26}
+\end{equation}%
+BRST变换的幂零性立刻告诉我们, $s\Psi $和$\int d^{4}x:\mathscr{L}$都是BRST不变的.
+
+在某种意义上, 这一结果的逆方向也是适用的: 我们会在17.2节看到, 
+对于服从BRST不变性以及拉格朗日量(\ref{15.7.25})其它对称性的可重整拉格朗日量, 除了各种常系数的值会有一个变化外, 它必须采取方程(\ref%
+{15.7.25})的形式. 但这还不足以确立这些理论的可重整性. BRST对称变换以非线性的方式作用在场上, 而在这一情形下, 
+拉格朗日量的对称性与矩阵元和Green函数的对称性之间不存在简单的联系. 利用下一章所发展的外场方法, 我们将在17.2节证明, Feynman振幅中%
+的紫外发散项(尽管有限部分不在此列)确实服从一种重整化后的BRST%
+不变性, 这使得可重整性的证明完整了.
+
+方程(\ref{15.7.25})表明, 任何规范理论的物理部分都包含在, BRST算符的{\kai{核}}(即, 
+一般的BRST不变项$\int d^{4}x\mathscr{L}%
++s\Psi $)模掉BRST变换的{\kai{像}}(即, 
+形式为$s\Psi $的项)后的那部分中. 任何幂零变换的核, 在模掉该变换的像后, 称为构成该变换的{\kai{上同调}}. 换另一说法, 一%
+个规范理论的物理部分可以等同为BRST算符的上同调.\cite{12} 一个基本的物理要求是, 物理态之间的矩阵元应该独立于我们对规范固定函%
+数$f_{\alpha }$的选择, 换句话说, 矩阵元应该独立于对方程(\ref{15.7.25})中泛函$\Psi $%
+的选择. 对于任意的矩阵元$\langle \alpha |\beta \rangle $, $\Psi $的变化$\tilde{\delta}\Psi $所引起的变化%
+是\begin{equation}
+\tilde{\delta}\langle \alpha |\beta \rangle =i\langle \alpha |\tilde{\delta}%
+I_{NEW}|\beta \rangle =i\langle \alpha |s\tilde{\delta}\Psi |\beta \rangle 
+\text{ .}  \label{15.7.27}
+\end{equation}%
+为了使其对于所有的算符$\Phi $都成立, $Q^{2}$要么为零, 要么正比于单位算符. 但是, 由于$Q^{2}$有一个不为零的鬼数\footnote{回%
+忆鬼数的定义, 它对于$%
+\omega _{\alpha }$为$+1$, 对于$\omega _{\alpha }^{\ast }$%
+为$-1$, 对于所有的规范场和物质场则是零.}, 它不可能正比于单位算符, 所以它必须为零:%
+\begin{equation}
+Q^{2}=0\text{ .}  \label{15.7.29}
+\end{equation}%
+从方程(\ref{15.7.27})和(\ref{15.7.28}), 我们得到\begin{equation}
+\tilde{\delta}\langle \alpha |\beta \rangle =\langle \alpha |[Q,\tilde{\delta%
+}\Psi ]|\beta \rangle \text{ .}  \label{15.7.30}
+\end{equation}%
+为了使其对于$\Psi $的所有变化$\tilde{\delta}\Psi $都为零, 
+必须有\begin{equation}
+\langle \alpha |Q=Q|\beta \rangle =0\text{ .}  \label{15.7.31}
+\end{equation}%
+因此, 物理态在幂零算符$Q$的核中. 两个物理态, 若它们仅相差$Q$的像中的一个态矢, 即, 形式为$%
+Q|\cdots \rangle $的态矢, 它们显然与所有其它的物理态的矩阵元是相同的, 因而在物理上是等价的. 
+因此, {\kai{独立}}的物理态对应于$Q$的核模掉$Q$的像后中的态------即, 它们对应于$Q$的上同调.
+
+为了看到这在实际情形中是如何运作的, 我们来考察一个纯电动力学的简单例子.\footnote{由于电动力学中的结构常数为零, 方程(\ref{15.6.11})和(%
+\ref{15.6.7})表明, 这里鬼场不与其它场耦合. 然而, 就用BRST对称性识别物理态这一点而言, 电动力学提供了一个很好的例子. 确实如此, 在分析%
+\textquotedblleft 入\textquotedblright 态和\textquotedblleft 出\textquotedblright 态上的物%
+理条件时, 我们忽略了相互作用, 所以, 由于这个原因, 处理非阿贝尔规范场论就像同时处理几个量子电动力学.} 
+取规范固定函数为$f=\partial
+_{\mu }A^{\mu }$并积掉辅助场$h$, BRST%
+变换(\ref{15.7.8})---(\ref{15.7.10})在这里是\begin{equation}
+sA_{\mu }=\partial _{\mu }\omega \text{ , \ \ \ \ \ }s\omega ^{\ast
+}=\partial _{\mu }A^{\mu }/\xi \text{ , \ \ \ \ \ }s\omega =0\text{ .}
+\label{15.7.32}
+\end{equation}%
+我们将场展成简正模\footnote{就像$\omega ^{\ast }(x)$并没有视为$\omega (x)$的厄密共轭, $%
+b^{\ast }$和$c^{\ast }$也不是$c$和$b$的共轭. 然而, 既然$A^{\mu }(x)$是厄密的, 那么如果$Q$是厄%
+密的, $\omega (x)$也将是厄密的.}%
+\begin{eqnarray}
+A^{\mu }(x) &=&(2\pi )^{-3/2}\int \frac{d^{3}p}{\sqrt{2p^{0}}}\left[ a^{\mu
+}(\mathbf{p})e^{ip\cdot x}+a^{\mu \ast }(\mathbf{p})e^{-ip\cdot x}\right] 
+\text{ ,}  \nonumber \\
+\omega (x) &=&(2\pi )^{-3/2}\int \frac{d^{3}p}{\sqrt{2p^{0}}}\left[ c(%
+\mathbf{p})e^{ip\cdot x}+c^{\ast }(\mathbf{p})e^{-ip\cdot x}\right] \text{ ,}
+\label{15.7.33} \\
+\omega ^{\ast }(x) &=&(2\pi )^{-3/2}\int \frac{d^{3}p}{\sqrt{2p^{0}}}\left[
+b(\mathbf{p})e^{ip\cdot x}+b^{\ast }(\mathbf{p})e^{-ip\cdot x}\right] \text{
+.}  \nonumber
+\end{eqnarray}%
+匹配方程(\ref{15.7.28})两边$e^{\pm
+ip\cdot x}$的系数给出\begin{eqnarray}
+\lbrack Q,a^{\mu }(\mathbf{p})]_{-} &=&-p^{\mu }c(\mathbf{p})\text{ , \ \ \
+\ \ }[Q,a^{\mu \ast }(\mathbf{p})]_{-}=p^{\mu }c^{\ast }(\mathbf{p})\text{ ,}
+\nonumber \\
+\lbrack Q,b(\mathbf{p})]_{+} &=&p^{\mu }a_{\mu }(\mathbf{p})/\xi \text{ , \
+\ \ \ }[Q,b^{\ast }(\mathbf{p})]_{+}=p^{\mu }a_{\mu }^{\ast }(\mathbf{p}%
+)/\xi \text{ ,}  \label{15.7.34} \\
+\lbrack Q,c(\mathbf{p})]_{+} &=&[Q,c^{\ast }(\mathbf{p})]_{+}=0\text{ .} 
+\nonumber
+\end{eqnarray}%
+考察任何满足物理条件(\ref{15.7.31})的态$|\psi \rangle $:%
+\begin{equation}
+Q|\psi \rangle =0\text{ .}  \label{15.7.35}
+\end{equation}%
+那么, 对于含有一个额外光子的态$|e,\psi \rangle =e_{\mu }a^{\mu
+\ast }(\mathbf{p})|\psi \rangle $, 如果$e_{\mu }p^{\mu }=0$, 
+它们就满足物理条件$%
+Q|e,\psi \rangle =0$. 另外, 态$|\psi \rangle ^{\prime
+}\equiv b^{\ast }(\mathbf{p})|\psi \rangle $满足\begin{equation}
+Q|\psi \rangle ^{\prime }=p^{\mu }a_{\mu }^{\ast }(\mathbf{p})|\psi \rangle
+/\xi \text{ ,}  \label{15.7.36}
+\end{equation}%
+所以$|e+\alpha p,\psi \rangle =|e,\psi \rangle +\xi \alpha
+Q|\psi \rangle ^{\prime }$, 因而物理上的等价于$|e,\psi \rangle $. 由此我们得出$e^{\mu }$物理上等价于$%
+e^{\mu }+\alpha p^{\mu }$, 这就是通常的光子极化矢量上的\textquotedblleft 规范不变\textquotedblright 条%
+件. 另一方面,%
+\[
+Qb^{\ast }(\mathbf{p})|\psi \rangle =p^{\mu }a_{\mu }^{\ast }(\mathbf{p}%
+)\neq 0\text{ ,} 
+\]%
+所以不满足$b^{\ast }|\psi \rangle $不物理条件(\ref{15.7.31}). 另外, 对于任何$e\cdot p\neq 0$的$e_{\mu }$,%
+\[
+c^{\ast }(\mathbf{p})|\psi \rangle =Qe_{\mu }a^{\mu \ast }(\mathbf{p})|\psi
+\rangle /e\cdot p 
+\]%
+所以$c^{\ast }|\psi \rangle $是BRST-恰当的, 因而等价于零. {%
+\kai{因此,物理的}\textit{Hilbert}空间是没有鬼粒子和反鬼粒子的.}
+
+为了保持Lorentz不变性, 我们必须要把$a^{\mu }(\mathbf{p})$全部4个分量解释成湮灭算符, 也就是说\begin{equation}
+0=a_{\mu }(\mathbf{p})|0\rangle \text{ ,}  \label{15.7.37}
+\end{equation}%
+其中$|0\rangle $是BRST-不变的真空态. 但是, 从BRST-不变的作用量(例如, $\xi =1$的作用量)所导出的正则对易%
+关系给出\begin{equation}
+\lbrack a_{\mu }(\mathbf{p}),a_{\nu }^{\ast }(\mathbf{p}^{\prime
+})]_{-}=\eta _{\mu \nu }\delta ^{3}(\mathbf{p}-\mathbf{p}^{\prime })\text{ ,}
+\label{15.7.38}
+\end{equation}%
+这对应于Feynman规范中的传播子. 这违反了量子力学通常的正定性规则, 原因是方程(\ref{15.7.37})和(%
+\ref{15.7.38})给出\cite{13}%
+\begin{equation}
+\langle 0|a_{0}(\mathbf{p})a_{0}^{\ast }(\mathbf{p})|0\rangle =-\langle
+0|0\rangle \text{ .}  \label{15.7.39}
+\end{equation}%
+虽然如此, 我们能够确信物理态之间的所有振幅满足通常的正定性条件, 这是因为物理态满足方程(\ref{15.7.31}), 而对于这样的态, 跃迁振幅%
+与更加物理的规范下的振幅, 例如Coulomb规范或轴向规范下的跃迁振幅, 是相同的, 而在那样的规范下正定性或幺正性的问题是不存在的.
+
+迄今为止所描述的Faddeev-Popov-De Witt形式理论, 它所产生的作用量关于鬼场$\omega _{\alpha }^{\ast }$和$\omega _{\alpha }$必%
+然是双线性的. 对于规范固定函数为$f_{\alpha }=\partial _{\mu
+}A_{\alpha }^{\mu }$的可重整Yang-Mills理论, 这是足够的, 但对于更普遍的情况, 作用量关于鬼场仅是双线性的还不够. 例如, 我们会%
+在17.2节看到, 在其它规范下, 对于有4条外鬼线的圈图中的紫外发散, 
+可重整Yang-Mills理论的拉格朗日密度中需要$\omega ^{\ast
+}\omega ^{\ast }\omega \omega $项用来充当它的抵消项.
+
+幸运的是, Faddeev-Popov-Dewitt形式理论仅代表生成一类等价拉格朗日量的一种方法, 其中拉格朗日量等价是指它们所产生的幺正$S$-矩阵相同. BRST%
+形式理论提供了一个更加普遍的方法, 它完全省去了Faddeev-Popov-De Witt形式理论. 在这一方法中, 取作用量为物质场, 规范场, $%
+\omega ^{A}$, $\omega ^{\ast A}$以及$h^{A}$场最一般的定域泛函, 但满足鬼数为零, 并且在BRST%
+变换(\ref{15.7.7})---(\ref{15.7.11})以及该理论其它任何的整体对称性不变. (对于可重整理论, 还要限制拉格%
+朗日密度是量纲小于等于4的算符, 但这个约束在下面的讨论中没有任何作用.) 我们会在下一节证明, 在一个比Yang-Mills理论更普遍的情形%
+下, 这类作用量的最普遍形式是, 仅是物质场和规范场(统称为$\phi $)的泛函, 再加上BRST算符$s$作用在鬼数为$-1$的任意泛%
+函$\Psi $上所产生的项:%
+\begin{equation}
+I_{\mathrm{NEW}}[\phi ,\omega ,\omega ^{\ast },h]=I_{0}[\phi ]+s\Psi \lbrack
+\phi ,\omega ,\omega ^{\ast },h]\text{ ,}  \label{15.7.40}
+\end{equation}%
+例如Faddeev-Popov-De Witt作用量(\ref{15.7.25}%
+), 只不过$s\Psi $现在关于鬼场和反鬼场不一定是双线性的.
+
+通过与之前相同的讨论, 我们得到这样的结论: 对于被BRST算符$Q$所湮灭的态, 它的$S$-矩阵元独立于方程(\ref{15.7.40})中$\Psi $%
+的选择, 所以如果存在$%
+\Psi $的任何选择使得鬼场退耦, 那么鬼场一般都会退耦. 在Yang-Mills理论中, 对轴向规范中的理论进行量子化提供了一个这样的$\Psi $, 所以这种%
+理论中, 不仅是类似于(%
+\ref{15.7.26})那些由Faddeev-Popov-De Witt形式理论所生成的理论, 对于泛函$\Psi \lbrack \phi ,\omega ,\omega ^{\ast },h]$%
+的任意选择, 鬼场都会退耦.
+
+我们可以更进一步, 并从对非Lorentz不变的规范, 
+例如轴向规范, 中的正则量子化的依赖中完全解放出来. 再一次, 取作用量为规范场, 物质场, $\omega ^{A}$场, $\omega ^{\ast A}$场以及$%
+h^{A}$场最一般的泛函, 满足鬼数为零, 且在BRST变换(\ref{15.7.7})---(\ref{15.7.11})以及该理论其它任何的整体对%
+称性不变, 其中整体对称性包含Lorentz不变性. 从作用量的BRST不变性中, 
+我们可以推断出存在一个守恒的BRST幂零算符$%
+Q$. 物理态的空间像上面一样定义为由$Q$湮灭的态构成的空间, 其中如果两个态的差是$Q$作用在另一个态, 那么这两个态视为等价. 已经证%
+明了, 对于Yang-Mills理论, 这一空间是没有鬼和反鬼的, 并有一个正定的范数, 并且这一空间中的$S$-矩阵是幺正的.
+
+这一步骤称为\textit{BRST}%
+{\kai{量子化}}. 它已经被扩展至含有其它定域对称性的理论, 例如广义相对论和弦论. 不幸的是, 到现在为止, BRST上同调无鬼以及作用在该%
+空间上的$S$-矩阵幺正, 
+看起来要在每一种情形下单独进行证明. 这些证明中的关键是, 对于每一个负范的自由度, 例如Yang-Mills理论中规范场的时间分量, 存在一%
+个定域对称性使得这一自由度被移除了.
+
+\end{document}

@@ -1,0 +1,101 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, September 20, 2016 15:19:30}
+%TCIDATA{LastRevised=Sunday, September 25, 2016 17:06:28}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+Gell-Mann和Low的开拓性文章\cite{1}%
+在很大程度上指向了\textquotedblleft 改良\textquotedblright 微扰论的问题------即, 使用重整化群的思想, 用微扰论%
+在某一给定阶的结果来研究它的下一阶. 为了阐明这一点, 我们先回到Gell-Mann和Low所研究的特殊情况: 量子色动力学中的真空极化.
+
+回忆, 按照方程(\ref{18.2.36}), 滑动标度$\mu $处的重整化电荷$e_{\mu }$表示成裸电荷$%
+e_{B}$后的形式为\begin{equation}
+e_{\mu }=N_{\mu }^{(A)-1}e_{B}\text{ ,}  \label{18.8.1}
+\end{equation}%
+其中$N_{\mu }^{(A)}$是一常数, 当其乘进未重整的电磁场中, 它会给出在标度$%
+\mu $处重整化的场. (参看方程(\ref{18.2.21}).) 因此我们可以定义重整化(因而也是截断无关的)全光子传播子$\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })$, 
+以裸场的全传播子$\Delta
+_{B\rho \sigma }^{\prime }(q,e_{B})$的形式, 这一传播子可以表示成\begin{equation}
+\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })=N_{\mu }^{(A)2}\Delta
+_{B\rho \sigma }^{\prime }(q,\mu ,e_{\mu })  \label{18.8.2}
+\end{equation}%
+在这种方式下, 函数$e_{\mu
+}^{2}\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })$由于等于$e_{B}^{2}\Delta _{B\rho \sigma }^{\prime }(q,e_{B})$而%
+与$\mu $无关, 又因为$e_{\mu }$和$%
+\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })$都是重整化量, 所以它也与截断无关. (在这里我们不%
+明确地写出截断相关性.) 但是Lorentz不变性和量纲分析告诉我们, 这一函数必须采取如下的形式:%
+\begin{equation}
+e_{\mu }^{2}\Delta _{\rho \sigma }^{\prime }(q,\mu ,e_{\mu })=\frac{\eta
+_{\rho \sigma }d(q^{2}/\mu ^{2},e_{\mu })}{q^{2}}+q_{\rho }q_{\sigma }\text{%
+项 .}  \label{18.8.3}
+\end{equation}%
+既然方程(\ref{18.8.3})与$\mu $无关, 我们在这里可以令$\mu =%
+\sqrt{q^{2}}\equiv q$, 这使得\begin{equation}
+d(q^{2}/\mu ^{2},e_{\mu })=d(1,e_{q})\text{ .}  \label{18.8.4}
+\end{equation}
+
+现在我们来看看关于$%
+d(q^{2}/\mu ^{2},e_{\mu })$的微扰级数结构这告诉了我们什么. $e$%
+的$\beta $-函数有展开:%
+\begin{equation}
+\beta (e)=b_{1}e^{3}+b_{2}e^{5}+b_{3}e^{7}+\cdots \text{ .}  \label{18.8.5}
+\end{equation}%
+那么$e_{\mu }$的重整化群方程就有级数解\begin{eqnarray}
+e_{q}^{2} &=&e_{\mu }^{2}-b_{1}e_{\mu }^{4}\ln \frac{q^{2}}{\mu ^{2}}%
+-b_{2}e_{\mu }^{6}\ln \frac{q^{2}}{\mu ^{2}}  \nonumber \\
+&&-\left( \frac{b_{1}b_{2}}{2}\ln ^{2}\frac{q^{2}}{\mu ^{2}}+b_{3}\ln \frac{%
+q^{2}}{\mu ^{2}}\right) e_{\mu }^{8}+\cdots \text{ .}  \label{18.8.6}
+\end{eqnarray}%
+如果我们也对$d$做展开:%
+\begin{equation}
+d(1,e)=e^{2}+d_{1}e^{4}+d_{2}e^{6}+d_{3}e^{8}+\cdots   \label{18.8.7}
+\end{equation}%
+那么\begin{eqnarray}
+d(q^{2}/\mu ^{2},e_{\mu }) &=&d(1,e_{q})=e_{\mu }^{2}-\left( b_{1}\ln \frac{%
+q^{2}}{\mu ^{2}}-d_{1}\right) e_{\mu }^{4}-\left( b_{2}\ln \frac{q^{2}}{\mu
+^{2}}-d_{2}\right) e_{\mu }^{6}  \nonumber \\
+&&-\left( \frac{1}{2}b_{1}b_{2}\ln ^{2}\frac{q^{2}}{\mu ^{2}}%
++(b_{3}-b_{1}d_{2})\ln \frac{q^{2}}{\mu ^{2}}-d_{3}\right) e_{\mu
+}^{8}+\cdots \text{ .}  \label{18.8.8}
+\end{eqnarray}%
+注意到, 在$d(q^{2}/\mu ^{2},e_{\mu })$的每一阶, $\ln (q^{2}/\mu ^{2})$的领头项幂次分别是$0,1,1,2,3,\cdots $. 另%
+外, 如果我们计算$d(q^{2}/\mu
+^{2},e_{\mu })$至$e_{\mu }^{6}$阶并以此决定$b_{1}$和$b_{2}$, 我们可以立即写出$e_{\mu }^{8}$阶中领头%
+对数的系数$-\frac{1}{2}b_{1}b_{2}$. 如果不使用重整化群方方法, 这里面的那一个都没有那么容易推断出来.
+
+\end{document}

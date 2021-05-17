@@ -1,0 +1,160 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, May 15, 2016 12:51:22}
+%TCIDATA{LastRevised=Thursday, May 19, 2016 16:48:46}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{能量诠释}
+
+分别以能量和能量密度的形式, 有效作用量$%
+\Gamma \lbrack \phi ]$和有效势$V[\phi ]$有重要的解释. 为了看到这一点, 假定我们打开流$J^{n}(\mathbf{x},t)$, 它从$t=-\infty $时的%
+零光滑地增长至一有限值$\mathscr{I}^{n}(\mathbf{x})$, 并在一段很长的时间$T$内保持该值, 在此之后又光滑的衰减到$t=+\infty $时的零. 
+这一微扰的效应是将真空转化至有确定能量$E[\mathscr{I}]$($\mathscr{I}(\mathbf{x})$的泛函)%
+的态, 在这个态上会持续时间$T$, 然后又回到真空. 然而, 尽管\textquotedblleft 出\textquotedblright 真空是与\textquotedblleft 入%
+\textquotedblright 真空相同的物理态, 但是在时段$T$内会累积相因子$\exp (-\mi E[\mathscr{I}]T)$, 所%
+以这两个态矢会相差相因子$\exp (-\mi E[\mathscr{I}]T)$:
+
+\begin{equation}
+\langle \text{VAC, out}|\text{VAC, in}\rangle _{J}=\exp \left( -\mi E[%
+\mathscr{I}]T\right) \text{ .}  \label{16.3.1}
+\end{equation}%
+与方程(\ref{16.1.1})和(\ref{16.1.3})相比较, 这给出\[
+W[J]=-E[\mathscr{I}]T 
+\]
+
+为了看到这一能量与有效作用量之间的联系, 假定我们要寻找一个态$\Omega _{\phi }$, 它使得能量期望值最小\begin{equation}
+\langle H\rangle _{\Omega }=\frac{(\Omega ,H\Omega )}{(\Omega ,\Omega )}%
+\text{ ,}  \label{16.3.3}
+\end{equation}%
+它满足条件: 量子场$\Phi _{n}(%
+\mathbf{x},t)$的期望值$\phi _{n}(\mathbf{x})$与时间无关\begin{equation}
+\frac{(\Omega ,\Phi _{n}(\mathbf{x},t)\Omega )}{(\Omega ,\Omega )}=\phi _{n}(%
+\mathbf{x})\text{ .}  \label{16.3.4}
+\end{equation}%
+同时附加上$\Omega $是归一化的条件将是方便的\begin{equation}
+(\Omega ,\Omega )=1\text{ .}  \label{16.3.5}
+\end{equation}%
+为了最小化服从约束(\ref%
+{16.3.4})和(\ref{16.3.5})的期望值(\ref{16.3.3}%
+), 我们使用拉格朗日数乘法, 转而最小化如下的量\begin{equation}
+(\Omega ,H\Omega )-\alpha (\Omega ,\Omega )-\int \dif x\beta ^{n}(\mathbf{x}%
+)\left( \Omega ,\Phi _{n}(\mathbf{x})\Omega \right) \text{ ,}  \label{16.3.6}
+\end{equation}%
+这样, $\Omega $上就没有约束了. 这给出\begin{equation}
+H\Omega =\alpha \Omega +\int \dif x\beta ^{n}(\mathbf{x})\Phi _{n}(\mathbf{x}%
+)\Omega \text{ .}  \label{16.3.7}
+\end{equation}%
+选择$\alpha $和$\beta ^{n}(\mathbf{x})$的方式要使得约束()和()被满足, 因而它们会以泛函的形式依赖于规划的%
+期望值$\phi _{n}(\mathbf{x})$.
+
+现在, 我们曾说过, 当有流$\mathscr{I}^{n}(\mathbf{x})$时, 哈密顿量$H-\int \dif^{3}x\mathscr{I}^{n}(\mathbf{x})\Phi _{n}(x)$会%
+有本征值$E[\mathscr{I}]$:%
+\begin{equation}
+\left[ H-\int \dif^{3}x\mathscr{I}^{n}(\mathbf{x})\Phi _{n}(x)\right] \Psi _{%
+\mathscr{I}}=E[\mathscr{I}]\Psi _{\mathscr{I}}\text{ ,}  \label{16.3.8}
+\end{equation}%
+其中$\Psi _{\mathscr{I}}$是归一化的本征矢. 更进一步, 既然缓慢地打开这个流使得真空转化成这一能量本章态, 我们可以假%
+定$E[\mathscr{I}]$是有流时的最低能量本征态. 因此, 如果\begin{eqnarray}
+\Omega &=&\Psi _{\mathscr{I}_{\phi }}\text{ ,}  \label{16.3.9} \\
+\alpha &=&E[\mathscr{I}_{\phi }]\text{ ,}  \label{16.3.10} \\
+\beta ^{n}(\mathbf{x}) &=&\mathscr{I}_{\phi }^{n}(\mathbf{x})\text{ ,}
+\label{16.3.11}
+\end{eqnarray}%
+方程(\ref{16.3.4}), (\ref{16.3.5})和(\ref{16.3.7})就会被满足, 其中$\mathscr{I}_{\phi }(%
+\mathbf{x})$是使得$\Phi (x)$在态$\Psi _{%
+\mathscr{I}}$上有期望值$\phi (\mathbf{x})$%
+的流.
+
+在方程(\ref{16.3.8})中取$\mathscr{I}=%
+\mathscr{I}_{\phi }$, 并取其与$\Psi _{\mathscr{I}%
+_{\phi }}$的标量积, 对于约束场$\Phi _{n}$有期望值$\phi _{n}$的态, 它的最低能量被视作是\begin{equation}
+\langle H\rangle _{\Omega }=E[\mathscr{I}_{\phi }]+\int \dif^{3}x\mathscr{I}%
+_{\phi }^{n}(\mathbf{x})\phi _{n}(\mathbf{x})\text{ .}  \label{16.3.12}
+\end{equation}%
+回忆方程(\ref{16.3.2})以及$J(x)$的假定形式, 这是\begin{equation}
+\langle H\rangle _{\Omega }=\frac{1}{T}\left[ -W[J_{\phi }]+\int \dif%
+^{4}xJ_{\phi }^{n}(\mathbf{x})\phi _{n}(\mathbf{x})\right] =-\frac{1}{T}%
+\Gamma \lbrack \phi ]\text{ .}  \label{16.3.13}
+\end{equation}
+
+正如上一节所指出的, 
+如果场$\phi (x)$在一个很大的时空体积$\mathscr{V}_{4}=\mathscr{V}_{3}T$%
+上有常数值$\phi $, 那么我们可以将有效作用量写成有效势$V(\phi )$的形式:%
+\begin{equation}
+\Gamma \lbrack \phi ]=-\mathscr{V}_{3}TV(\phi )\text{ .}  \label{16.3.14}
+\end{equation}%
+在这一情况下, 方程(\ref%
+{16.3.13})告诉我们能量密度是\begin{equation}
+\langle H\rangle _{\Omega }/\mathscr{V}_{3}=V(\phi )\text{ .}
+\label{16.3.15}
+\end{equation}%
+这是主要结果: {%
+\kai{对于所有态,
+若它服从标量场$\Phi_{n}$在态上的期望值为$\phi_{n}$约束条件,
+那么它的能量密度期望值的最小值是$V(\phi)$}}. 一个结果是, 在没有外流时, 真空态将放松至另一个态, 
+在这个态中, 势$V(\phi )$不仅是{\kai{稳定的}}, 并且由于场方程(\ref{16.1.8})的要求, 它也是{%
+\kai{最小的}}.
+
+这一结果帮助解决了量子有效势诠释中的一个问题, 路径积分形式理论的欧几里得版本(将在第23章的附录A进行描述)使得两点函数$%
+\Delta $(在矩阵意义下)为正这件事变得显然, 所以, 
+根据方程(\ref{16.1.2}), $-\Pi =\Delta ^{-1}$也是这样. 再加上方程(\ref%
+{16.2.3}), 这暗示了, 对于单个标量场, 有效势$V(\phi )$对$\phi $%
+的二阶导数必须为正(%
+或零). 更普遍的, 有效势必须是{\kai{凸}}的:\cite{5}%
+\[
+V\left( \lambda \phi _{1}+(1-\lambda )\phi _{2}\right) \leq \lambda V(\phi
+_{1})+(1-\lambda )V(\phi _{2})\text{ \ \  对于 \ }0\leq \lambda
+\leq 1\text{ .}
+\]%
+但对方程(\ref{16.2.13})的检查表明, 当$m^{2}<0$和$g>0$时, 对于作用量为(\ref{16.2.1})的标量场论, 它的有效势的零%
+圈近似在$\phi $处在有效势的两个极值点$\pm \sqrt{%
+6\left\vert m^{2}\right\vert /g}$之间时有一个QTO{TeX field}{{\ai{负定]}}的二阶导数. 会产生这个矛盾%
+是因为, 微扰论的引出暗中依赖于稳定真空的存在, 但当$V^{\prime \prime }(\phi )<0$%
+时, 场$\phi $所处的值$\tilde{\phi}$%
+使得$V(\tilde{\phi})-J_{\phi }\tilde{\phi}$是{%
+\kai{极大值}}而不是极小值, 这意味着在有流$J_{\phi }$%
+时真空态是不稳定的. }
+
+那么, 当$m<0$且$\phi $处在有效势的两个极小值之间时, 这一标量场真正的有效势是什么呢? 本节的结果是, 我们必须找到使得算符$\Phi $的期%
+望值等于$\phi $的最小能量态. 只要$\phi $处在该势的两个极小值之间, 通过将$\Phi $取做$\phi $处在极小值$\phi \simeq \pm \sqrt{6\left\vert m^{2}\right\vert /g}$%
+时的态的合适的线性组合, 我们就可以赋予$%
+\Phi $期望值$\phi $. 这一态中的能量等于极小值处的能量, 所以这一态显然使得能量最小化. (在体积无限大的极限下, 
+交叉项为零, 原因会在19.1节进行阐述.) 因此, 在两个极小值之间的有效势是{\kai{常数}}, 满足二阶导数非负的要求. 相同的讨论表明, 在有限%
+势有两个能量不等的定域极小值的更普遍理论中, 这两个极小值之间的有效势是线性的.\cite{6}
+
+\end{document}

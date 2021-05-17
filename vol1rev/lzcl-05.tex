@@ -1,0 +1,2669 @@
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
+\chapter{量子场与反粒子} \label{cha:5}
+ \thispagestyle{empty} \marginpar[\flushright{\raisebox{17ex}[0pt]{{\small[191]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[191]}}}
+  \markboth{第5章\quad 量子场与反粒子}{第5章\quad 量子场与反粒子}
+
+现在我们已经有了引入量子场所需的所有动机.\textsuperscript{\cite{1}} 在建立它的过程中, 我们将遇到一些将相对论与量子力学结合起来后得到的最不寻常且最通用的结果: 自旋与统计间的联系, 反粒子的存在, 以及粒子与反粒子之间的各种关系, 其中包括著名的$\mathsf{CPT}$定理.
+
+\section[自\quad 由\quad 场]{自由场} \label{sec:5.1}
+\setcounter{equation}{0}
+
+我们在第3章中看到, 只要相互作用可以写为
+\begin{equation}
+V(t)=\int \dif^{3}x \: \mathscr{H}(\bx,t)\:, \label{5.1.1}%
+\end{equation}
+$S$-矩阵将是\,Lorentz\,不变的, 其中$\mathscr{H}$是标量, 也就是说
+\begin{equation}
+U_{0}(\Lambda,a)\mathscr{H}(x)U_{0}^{-1}(\Lambda,a)=\mathscr{H}(\Lambda x+a) \: , \label{5.1.2}%
+\end{equation}
+并且它满足额外的条件:
+\begin{equation}
+\left[  \mathscr{H}(x),\mathscr{H}(x^{\prime})\right]=0 \qquad\text{当}\quad (x-x^{\prime})^{2}\geq0 \:. \label{5.1.3}%
+\end{equation}
+我们将会看到, 存在更普遍的可能性, 但是它们中的任何一个都与这里给出的相差不大. (是否将这里的$\Lambda$限制为固有正时\,Lorentz\,变换, 抑或可以包含空间反演, 我们暂且将这留作一个开放的问题.) 为了同时满足集团分解原理, 我们打算用产生和湮没算符来构造$\mathscr{H}(x)$, 但是这里我们将面临一个问题: 方程(\ref{4.2.12})表明, 在\,Lorentz\,变换下, 每个这样的算符都将乘上一个矩阵, 而这个矩阵依赖于算符所携带的动量. 我们怎样才能将这样的算符结合在一起构成一个标量? 答案是用{\KAI{场}}%
+\ezx 湮没场$\psi_{\ell}^{+}(x)$与产生场$\psi_{\ell}^{-}(x)$来构造$\mathscr{H}(x)$:\vspace{-.1mm}
+\begin{align}
+\psi_{\ell}^{+}(x) &= \sum_{\sigma n}\int \dif^{3}p\:
+u_{\ell}(x;\bp,\sigma,n)a(\bp,\sigma,n) \:, \label{5.1.4}\\
+\psi_{\ell}^{-}(x) &= \sum_{\sigma n}\int \dif^{3}p\:
+v_{\ell}(x;\bp,\sigma,n)a^{\dag}(\bp,\sigma,n) \: . \label{5.1.5}%
+\end{align}
+对它们的系\marginpar[\flushright
+{\raisebox{15ex}[0pt]{{\small[192]\hspace*{5mm}}}}]{{\raisebox{15ex}[0pt]{\small\hspace*{5mm}[192]}}}数{}$^*$\footnote{$^*${}提示: 指标$n$和$\sigma$ 分别取遍所有不同的粒子种类与自旋$z$-分量.}%
+$u_{\ell}(x;\bp,\sigma,n)$和$v_{\ell}(x;\bp,\sigma,n)$已经进行了选择, 使得每个场在\,Lorentz\,变换下乘上的是不依赖位置的矩阵:
+\begin{equation}
+U_{0}(\Lambda,a)\psi_{\ell}^{+}(x)U_{0}^{-1}(\Lambda,a)
+=\sum_{\bar{\ell}}D_{\ell\bar{\ell}}(\Lambda^{-1})\psi_{\bar{\ell}}^{+}(\Lambda x+a)\:, \label{5.1.6}%
+\end{equation}%
+\begin{equation}
+U_{0}(\Lambda,a)\psi_{\ell}^{-}(x)U_{0}^{-1}(\Lambda,a)
+=\sum_{\bar{\ell}}D_{\ell\bar{\ell}}(\Lambda^{-1})\psi_{\bar{\ell}}^{-}(\Lambda x+a)\:. \label{5.1.7}%
+\end{equation}
+(原则上, 对于湮没场和产生场, 我们可以有不同的变换矩阵$D^{\pm}$, 但是我们将看到, 我们总可以选择场使得这些矩阵相同.) 通过进行第二次\,Lorentz\,变换$\bar{\Lambda}$, 我们发现
+\[
+D(\Lambda^{-1})D(\bar{\Lambda}^{-1})=D((\bar{\Lambda}\Lambda)^{-1}) \:,
+\]
+所以取$\Lambda_{1}=(\Lambda)^{-1}$以及$\Lambda_{2}=(\bar{\Lambda})^{-1}$, 我们看到$D$-矩阵构成了齐次\,Lorentz\,群的一个{\KAI{表示}}:
+\begin{equation}
+D(\Lambda_{1})D(\Lambda_{2})=D(\Lambda_{1}\Lambda_{2})\:. \label{5.1.8}%
+\end{equation}
+存在很多这样的表示, 包括标量表示$D(\Lambda)=1$, 矢量表示$D(\Lambda)^{\mu}{}_{\!\nu}=\Lambda^{\mu}{}_{\!\nu}$,  以及许许多多张量表示和旋量表示. 这些特殊的表示是不可约的, 也就是说, 不可能通过选择基使得所有$D(\Lambda)$约化成相同形式的由两个或多个分块组成的分块对角矩阵, 不过目前我们不要求$D(\Lambda)$ 是不可约的; 一般而言, 它是一个分块对角矩阵, 每个分块中是任意行列的不可约表示. 就是说, 这里的指标$\ell$内部有两个指标, 一个取遍不同分块中所描述的粒子类型和不可约表示, 另外一个取遍单个不可约表示分量. 稍后我们将把这些场分成不可约场, 其中每个场仅描述一种粒子(和它的反粒子), 并且它在\,Lorentz\,群下进行的是不可约变换.
+
+一旦\marginpar[\flushright{\small[193]\hspace*{5mm}}]{{\small\hspace*{5mm}[193]}}我们知道了如何构造满足Lorentz变换规则(\ref{5.1.6}%
+)和(\ref{5.1.7}%
+)的场, 我们就能够将相互作用密度构造为\begin{align}
+\mathscr{H}(x)  &  =\sum_{NM}\sum_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime}%
+}\sum_{\ell_{1}\cdots\ell_{M}}g_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime
+},\,\ell_{1}\cdots\ell_{M}}\nonumber\\
+&  \quad\times\:\psi_{\ell_{1}^{\prime}}^{-}(x)\cdots\psi_{\ell_{N}^{\prime}%
+}^{-}(x)\,\psi_{\ell_{1}}^{+}(x)\cdots\psi_{\ell_{M}}^{+}(x)  \label{5.1.9}%
+\end{align}
+如果常系数$g_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime},\,\ell_{1}\cdots\ell_{M}}$被选成是\,Lorentz\,协变的, 那么这个相互作用密度在方程(\ref{5.1.2})的意义下就是一个标量, 也就是说, 对所有的$\Lambda$, 常系数满足:
+\begin{align}
+&  \sum_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime}}\sum_{\ell_{1}\cdots\ell
+_{M}}D_{\ell_{1}^{\prime}\bar{\ell}_{1}^{\prime}}(\Lambda^{-1})\cdots
+D_{\ell_{N}^{\prime}\bar{\ell}_{N}^{\prime}}(\Lambda^{-1})D_{\ell_{1}\bar
+{\ell}_{1}}(\Lambda^{-1})\cdots D_{\ell_{M}\bar{\ell}_{M}}(\Lambda
+^{-1})\nonumber\\
+&  \qquad\:\times g_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime},\,\ell_{1}%
+\cdots\ell_{M}}=g_{\bar{\ell}_{1}^{\prime}\cdots\bar{\ell}_{N}^{\prime}%
+,\,\bar{\ell}_{1}\cdots\bar{\ell}_{M}}\:. \label{5.1.10}%
+\end{align}
+(注意到这里没有包含导数, 这是因为我们仅仅将这些场分量的导数视作场分量的另一种类型.) 寻找满足方程(\ref{5.1.10})的系数$g_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime},\,\ell_{1}\cdots\ell_{M}}$%
+的任务, 原则上, 与利用\,Clebsch-Gordon\,系数将\,3\,-维旋转群的各种表示耦合在一起以构成旋转标量没有什么不同. 稍后, 我们就能将产生场和湮没场结合起来使得该密度还会在类空间隔上与自身对易.
+
+现在, 我们应该怎样取系数函数$u_{\ell}(x;\bp,\sigma,n)$和$v_{\ell}(x;\bp,\sigma,n)$呢? 方程(\ref{4.2.12})及其共轭给出了产生和湮没算符的变换规则{}$^*$\footnote{$^*${}这是针对有质量粒子的. 零质量的情况将在\,\ref{sec:5.9}\,节讨论.}%
+\begin{align}
+&  U_{0}(\Lambda,b)a(\bp,\sigma,n)U_{0}^{-1}(\Lambda,b)
+=\exp\Big(\mi(\Lambda p)\cdot b\Big)\sqrt{\vphantom{\big(}(\Lambda p)^{0}/p^{0}}\nonumber\\
+&  \qquad\qquad\times\:\sum_{\bar{\sigma}}D_{\sigma\bar{\sigma}}^{(j_{n})}
+\Big(W^{-1}(\Lambda,p)\Big)a(\bp_{\Lambda},\bar{\sigma},n) \:, \label{5.1.11}%
+\end{align}%
+\begin{align}
+&  U_{0}(\Lambda,b)a^{\dag}(\bp,\sigma,n)U_{0}^{-1}(\Lambda,b)
+=\exp\Bigl(-\mi(\Lambda p)\cdot b\Bigr)\sqrt{\vphantom{\big(}(\Lambda p)^{0}/p^{0}}\nonumber\\
+&  \qquad\qquad\times\:\sum_{\bar{\sigma}}D_{\sigma\bar{\sigma}}^{(j_{n})\ast}
+\Big(W^{-1}(\Lambda,p)\Big)a^{\dag}(\bp_{\Lambda},\bar{\sigma},n)
+\label{5.1.12}%
+\end{align}
+其中$j_{n}$是第$n$种粒子的自旋, 而$\bp_{\Lambda}$是$\Lambda p$的\,3\,-矢部分. (我们使用了旋转矩阵$D_{\sigma\bar{\sigma}}^{(j_{n})}$ 的幺正性以使方程(\ref{5.1.11}%
+)和(\ref{5.1.12})变成现在的形式.) 另外, 我们在\,\ref{sec:2.5}\,节中看到, 体积元$\dif^{3}p/p^{0}$是\,Lorentz\,不变量,
+所以我们可以将方\marginpar[\flushright{\small[194]\hspace*{5mm}}]{{\small\hspace*{5mm}[194]}}程(\ref{5.1.4})和(\ref{5.1.5})中的$\dif^{3}p$替换为$\dif^{3}(\Lambda p)p^{0}/(\Lambda p)^{0}$, 将这些放在一起, 我们发现
+\begin{align*}
+&  U_{0}(\Lambda,b)\psi_{\ell}^{+}(x)U_{0}^{-1}(\Lambda,b)
+=\sum_{\sigma\bar{\sigma}n}\int \dif^{3}(\Lambda p)\:u_{\ell}(x;\bp,\sigma,n)\\
+&  \quad\times\:\exp\Bigl(\mi(\Lambda p)\cdot b\Bigr)D_{\sigma\bar{\sigma}}^{(j_{n})}
+\Big(W^{-1}(\Lambda,p)\Big)\sqrt{\vphantom{\big(}p^{0}/(\Lambda p)^{0}}\,a(\bp_{\Lambda},\bar{\sigma},n)
+\end{align*}
+以及
+\begin{align*}
+&  U_{0}(\Lambda,b)\psi_{\ell}^{-}(x)U_{0}^{-1}(\Lambda,b)
+=\sum_{\sigma\bar{\sigma}n}\int \dif^{3}(\Lambda p)\: v_{\ell}(x;\bp,\sigma,n)\\
+&  \quad\times\:\exp\Bigl(-\mi(\Lambda p)\cdot b\Bigr)D_{\sigma\bar{\sigma}}^{(j_{n})\ast}
+\Big(W^{-1}(\Lambda,p)\Big)\sqrt{\vphantom{\big(}p^{0}/(\Lambda p)^{0}}
+\,a^{\dag}(\bp_{\Lambda},\bar{\sigma},n)\:.%
+\end{align*}
+我们看到, 为了使场满足\,Lorentz\,变换规则(\ref{5.1.6})和(\ref{5.1.7}), 需要如下充要条件成立
+\begin{align*}
+&  \sum_{\bar{\ell}}D_{\ell\bar{\ell}}(\Lambda^{-1})u_{\bar{\ell}}(
+\Lambda x+b;\bp_{\Lambda},\sigma,n)  =\sqrt{p^{0}\Big/(\Lambda
+p)^{0}}\\
+&  \qquad\times\:\sum_{\bar{\sigma}}D_{\sigma\bar{\sigma}}^{(j_{n})}%
+\Big(W^{-1}(\Lambda,p)\Big)\exp\Bigl(+\mi(\Lambda p)\cdot b\Bigr)u_{\ell}(x;\bp,\bar{\sigma},n)
+\end{align*}
+以及
+\begin{align*}
+&  \sum_{\bar{\ell}}D_{\ell\bar{\ell}}(\Lambda^{-1})v_{\bar{\ell}}(
+\Lambda x+b;\bp_{\Lambda},\sigma,n)=\sqrt{p^{0}\Big/(\Lambda p)^{0}}\\
+&  \qquad\times\:\sum_{\bar{\sigma}}D_{\sigma\bar{\sigma}}^{(j_{n})\ast
+}\Big(W^{-1}(\Lambda,p)\Big)\exp\Bigl(-\mi(\Lambda p)\cdot b\Bigr)v_{\ell}(x;\bp,\bar{\sigma},n)
+\end{align*}
+或者更方便的\begin{align}
+&  \sum_{\bar{\sigma}}u_{\bar{\ell}}(\Lambda x+b;\bp_{\Lambda},\bar{\sigma},n)  D_{\bar{\sigma}\sigma}^{(j_{n})}\Big(W(\Lambda,p)\Big)=\sqrt{p^{0}\Big/(\Lambda p)^{0}}\nonumber\\
+&  \qquad\quad\times\:\sum_{\ell}D_{\bar{\ell}\ell}(\Lambda)\exp\Bigl(\mi(\Lambda p)\cdot b\Bigr)u_{\ell}(x;\bp,\sigma,n) \label{5.1.13}%
+\end{align}
+以及\begin{align}
+&  \sum_{\bar{\sigma}}v_{\bar{\ell}}(\Lambda x+b;\bp_{\Lambda},\bar{\sigma},n)  D_{\bar{\sigma}\sigma}^{(j_{n})\ast}\Bigl(W(\Lambda,p)\Bigr)=\sqrt{p^{0}\Big/(\Lambda p)^{0}}\nonumber\\
+&  \qquad\quad\times\:\sum_{\ell}D_{\bar{\ell}\ell}(\Lambda)\exp\Bigl(-\mi(\Lambda p)\cdot b\Bigr)
+v_{\ell}(x;\bp,\sigma,n)\:. \label{5.1.14}%
+\end{align}
+有一些基本要求使得我们可以用有限个自由参量计算出系数函数$u_{\ell}$和$v_{\ell}$.
+
+我们\marginpar[\flushright{\small[195]\hspace*{5mm}}]{{\small\hspace*{5mm}[195]}}将在三个步骤中应用方程(\ref{5.1.13})和(\ref{5.1.14}), 依次考察三种不同类型的固有正时\,Lorentz\,变换:
+
+\subsection*{平\qquad 移}
+
+\noindent 首先来考察$\Lambda=1$且$b$任意的方程(\ref{5.1.13})和(\ref{5.1.14}). 我们立刻就发现$u_{\ell}(x;\bp,\sigma,n)$和$v_{\ell}(x;\bp,\sigma,n)$必须采取如下的形式
+\begin{gather}
+u_{\ell}(x;\bp,\sigma,n)=(2\uppi)^{-3/2}\me^{\mi p\cdot x} u_{\ell}(\bp,\sigma,n)\:,\label{5.1.15}\\
+v_{\ell}(x;\bp,\sigma,n)=(2\uppi)^{-3/2}\me^{-\mi p\cdot x}
+v_{\ell}(\bp,\sigma,n) \: ,  \label{5.1.16}%
+\end{gather} 
+
+\newpage
+
+\noindent 所以场是\,Fourier\,变换:
+\begin{equation}
+\psi_{\ell}^{+}(x) = \sum_{\sigma,n}(2\uppi)^{-3/2}\,
+\int \dif^{3}p\: u_{\ell}(\bp,\sigma,n)\me^{\mi p\cdot x}a(\bp,\sigma,n)\:,  \label{5.1.17}%
+\end{equation}
+和
+\begin{equation}
+\psi_{\ell}^{-}(x) = \sum_{\sigma,n}(2\uppi)^{-3/2}\,
+\int \dif^{3}p\:v_{\ell}(\bp,\sigma,n)\me^{-\mi p\cdot x}
+a^{\dag}(\bp,\sigma,n)\:.\label{5.1.18}%
+\end{equation}
+(因子$(2\uppi)^{-3/2}$也可以被吸收进$u_{\ell}$和$v_{\ell}$的定义中, 但是习惯上是在这些\,Fourier\,积分中将它们显式地写出来.) 利用方程(\ref{5.1.15}) 和(\ref{5.1.16}), 我们发现, 当且仅当对任意的齐次\,Lorentz\,变换$\Lambda$有
+\begin{align}
+\sum_{\bar{\sigma}}u_{\bar{\ell}}(\bp_{\Lambda},\bar{\sigma},n)  D_{\bar{\sigma}\sigma}^{(j_{n})}\Big(W(\Lambda,p)\Big)
+&=\sqrt{\frac{p^{0}}{(\Lambda p)^{0}}}\sum_{\ell}D_{\bar{\ell}\ell}(\Lambda)
+u_{\ell}(\bp,\sigma,n)\label{5.1.19}\\
+\noalign{\hbox{\text{和}}}
+\sum_{\bar{\sigma}}v_{\bar{\ell}}(\bp_{\Lambda},\bar{\sigma},n)
+D_{\bar{\sigma}\sigma}^{(j_{n})\ast}\Big(W(\Lambda,p)\Big) &= \sqrt{\frac{p^{0}}{(\Lambda p)^{0}}}
+\sum_{\ell}D_{\bar{\ell}\ell}(\Lambda)v_{\ell}(\bp,\sigma,n) \:, \label{5.1.20}%
+\end{align}
+方程(\ref{5.1.13})和(\ref{5.1.14})才是被满足的.
+
+\subsection*{增\qquad 速}
+
+\noindent 接下来, 在方程(\ref{5.1.19})和(\ref{5.1.20})中取$\bp=0$, 并令$\Lambda$为使质量为$m$的粒子从静止到某个\,4\,-动量$q^{\mu}$ 的标准增速$L(q)$.
+于是$L(p)=1$, 并且
+\[
+W(\Lambda,p)\equiv L^{-1}(\Lambda p)\Lambda L(p)=L^{-1}(q)L(q)=1\:.%
+\]
+因此, 在这种特殊情况下, 方程(\ref{5.1.19})和(\ref{5.1.20})给出
+\begin{equation}
+u_{\bar{\ell}}(\bq,\sigma,n)=(m/q^{0})^{1/2}\sum_{\ell}D_{\bar{\ell}\ell}(L(q))\,u_{\ell}(0,\sigma,n) \label{5.1.21}%
+\end{equation}
+和\marginpar[\flushright{\raisebox{-4ex}[0pt]{{\small[196]\hspace*{5mm}}}}]{{\raisebox{-4ex}[0pt]{\small\hspace*{5mm}[196]}}}
+\begin{equation}
+v_{\bar{\ell}}(\bq,\sigma,n)=(m/q^{0})^{1/2}\sum_{\ell}D_{\bar{\ell}\ell}(L(q))\,v_{\ell}(0,\sigma,n)\:. \label{5.1.22}%
+\end{equation}
+换句话说, 如果我们知道了零动量的$u_{\ell}(0,\sigma,n)$和$v_{\ell}(0,\sigma,n)$, 那么对于给定的齐次\,Lorentz\,群表示$D(\Lambda)$, 我们就知道所有$\bp$ 的函数$u_{\ell}(\bp,\sigma,n)$和$v_{\ell}(\bp,\sigma,n)$. (对于齐次\,Lorentz\,群的任意表示, 矩阵$D_{\bar{\ell}\ell}(L(q))$ 的显式表达式将在\,\ref{sec:5.7}\,节给出.)
+\newpage
+\subsection*{旋\qquad 转}
+
+\noindent 接下来, 取$\bp=0$, 但这次令$\Lambda$为$\bp_{\Lambda}=0$的\,Lorentz\,变换; 即取$\Lambda$为旋转$R$. 这时显然有$W(\Lambda,p)=R$, 因而方程(\ref{5.1.19})和(\ref{5.1.20})变成
+\begin{equation}
+\sum_{\bar{\sigma}}u_{\bar{\ell}}(0,\bar{\sigma},n)\,D_{\bar{\sigma}\sigma}^{(j_{n})}(R)
+=\sum_{\ell}D_{\bar{\ell}\ell}(R)u_{\ell}(0,\sigma,n) \label{5.1.23}%
+\end{equation}
+和\begin{equation}
+\sum_{\bar{\sigma}}v_{\bar{\ell}}(0,\bar{\sigma},n)\,D_{\bar{\sigma}\sigma}^{(j_{n})\ast}(R)  =\sum_{\ell}D_{\bar{\ell}\ell}(R)v_{\ell}(0,\sigma,n) \:, \label{5.1.24}%
+\end{equation}
+或者等价地
+\begin{equation}
+\sum_{\bar{\sigma}}u_{\bar{\ell}}(0,\bar{\sigma},n)\bJ_{\bar{\sigma}\sigma}^{(j_{n})}
+=\sum_{\ell}\hJJJ_{\bar{\ell}\ell}u_{\ell}(0,\sigma,n) \label{5.1.25}%
+\end{equation}
+和\begin{equation}
+\quad\sum_{\bar{\sigma}}v_{\bar{\ell}}(0,\bar{\sigma},n)\bJ_{\bar{\sigma}\sigma}^{(j_{n})\ast}
+=-\sum_{\ell}{\hJJJ}_{\bar{\ell}\ell}v_{\ell}(0,\sigma,n) \: ,  \label{5.1.26}%
+\end{equation}
+其中$\bJ^{(j)}$和$\hJJJ$分别是表示$D^{(j)}(R)$和$D(R)$中的角动量矩阵. 当限制$\Lambda$为旋转$R$时, 齐次\,Lorentz 群的任意表示$D(\Lambda)$显然会给出旋转群表示; 方程(\ref{5.1.25})和(\ref{5.1.26})告诉我们, 如果场$\psi_{\ell}^{\pm}(x)$所描述的是某个自旋为$j$ 的粒子, 那么表示$D(R)$的不可约分量中必须包含自旋\lzx $j$表示$D^{(j)}(R)$, 而系数$u_{\ell}(0,\sigma,n)$和$v_{\ell}(0,\sigma,n)$就描述了旋转群的自旋\lzx $j$ 表示如何出现在%
+$D(R)$中. 我们在\,\ref{sec:5.6}\,节将看到, 任意给定的旋转群不可约表示在固有正时\,Lorentz\,群的每个{\KAI{不可约}}表示中至多出现一次, 这使得如果场$\psi_{\ell}^{+}(x)$和$\psi_{\ell}^{-}(x)$进行不可约变换, 那么除了一个总标度外, 它们是唯一的. 更一般地讲, 湮没场或产生场中自由参量的数目(包括它们的总标度)等于场中不可约表示的数目.
+
+可以\marginpar[\flushright{\small[197]\hspace*{5mm}}]{{\small\hspace*{5mm}[197]}}直接证明由方程(\ref{5.1.21})和(\ref{5.1.22})给出的系数函数$u_{\ell}(\bp,\sigma,n)$和%
+$v_{\ell}(\bp,\sigma,n)$, 以及满足方程(\ref{5.1.23})和(\ref{5.1.24})的$u_{\ell}(0,\sigma,n)$和$v_{\ell}(0,\sigma,n)$, 将自动满足更普遍的要求(\ref{5.1.19})和(\ref{5.1.20}). 这留给读者作为一个练习.
+
+我们现在回到集团分解原理. 在方程(\ref{5.1.9})中插入方程(\ref{5.1.17})和(\ref{5.1.18})并对$\bx$积分, 相互作用哈密顿量是
+\begin{align}
+V  &  =\sum_{NM}\int \dif^{3}\bp_{1}^{\prime}\cdots \dif^{3}\bp_{N}^{\prime}
+\,\dif^{3}\bp_{1}\cdots \dif^{3}\bp_{M}\sum_{\sigma
+_{1}^{\prime}\cdots\sigma_{N}^{\prime}}\sum_{\sigma_{1}\cdots\sigma_{M}}%
+\sum_{n_{1}^{\prime}\cdots n_{N}^{\prime}}\sum_{n_{1}\cdots n_{M}}\nonumber\\
+&  \quad\times a^{\dag}(\bp_{1}^{\prime}\sigma_{1}^{\prime}%
+n_{1}^{\prime})\cdots a^{\dag}(\bp_{N}^{\prime}\sigma_{N}^{\prime}%
+n_{N}^{\prime})a(\bp_{M}\sigma_{M}n_{M})\cdots a(\bp_{1}%
+\sigma_{1}n_{1})\nonumber\\
+&  \quad\times\mathscr{V}_{NM}(\bp_{1}^{\prime}\sigma_{1}^{\prime}%
+n_{1}^{\prime}\cdots\bp_{N}^{\prime}\sigma_{N}^{\prime}n_{N}^{\prime
+}\,,\,\bp_{1}\sigma_{1}n_{1}\cdots\bp_{M}\sigma_{M}n_{M})
+\label{5.1.27}%
+\end{align}
+系数函数是
+\begin{align}
+&  \mathscr{V}_{NM}(\bp_{1}^{\prime}\sigma_{1}^{\prime}n_{1}^{\prime}\cdots,
+\bp_{1}\sigma_{1}n_{1}\cdots)
+=\updelta^{3}(\bp_{1}^{\prime}+\cdots-\bp_{1}-\cdots)\nonumber\\
+& \quad\times\tilde{\mathscr{V}}_{NM}(\bp_{1}^{\prime}\sigma
+_{1}^{\prime}n_{1}^{\prime}\cdots,\bp_{1}\sigma_{1}n_{1}\cdots) \:, \label{5.1.28}%
+\end{align}
+其中\begin{align}
+&  \tilde{\mathscr{V}}_{NM}(\bp_{1}^{\prime}\sigma_{1}^{\prime}%
+n_{1}^{\prime}\cdots\bp_{N}^{\prime}\sigma_{N}^{\prime}n_{N}^{\prime
+},\bp_{1}\sigma_{1}n_{1}\cdots\bp_{M}\sigma_{M}n_{M}%
+)=(2\uppi)^{3-3N/2-3M/2}\nonumber\\
+&  \qquad\times\sum_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime}}\sum_{\ell
+_{1}\cdots\ell_{M}}g_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime},\ell_{1}%
+\cdots\ell_{M}}v_{\ell_{1}^{\prime}}(\bp_{1}^{\prime}\sigma_{1}%
+^{\prime}n_{1}^{\prime})\cdots v_{\ell_{N}^{\prime}}(\bp_{N}^{\prime
+}\sigma_{N}^{\prime}n_{N}^{\prime})\nonumber\\
+&  \qquad\times u_{\ell_{1}}(\bp_{1}\sigma_{1}n_{1})\cdots u_{\ell_{M}%
+}(\bp_{M}\sigma_{M}n_{M})\:. \label{5.1.29}%
+\end{align}
+相互作用的形式明显保证了生成的$S$-矩阵满足集团分解原理: $\mathscr{V}_{NM}$有一个$\updelta$-函数, 而系数$\tilde{\mathscr{V}}_{NM}$(至少对于有限多个的场类型)在零粒子动量时最多具有分支点奇异性. 事实上, 我们可以反过来讨论这个问题; 任何算符可以写成(\ref{5.1.27})中那样, 而集团分解原理要求系数$\mathscr{V}_{NM}$像方程(\ref{5.1.28})那样写成一个动量守恒$\updelta$-函数%
+与光滑函数的乘积. 任何充分光滑的函数(但{\KAI{不是}}包含额外$\updelta$-函数的函数)都可以表达成方程(\ref{5.1.29})中那样.%
+{}$^\dag$\footnote{$^\dag${}对于一般函数, 指标$\ell$和$\ell^{\prime}$可能取遍整个无穷区间, 这里将$\ell$和$\ell^{\prime}$限制在有限范围内的原因与可重正原理相关, 这将在第12章讨论.} %
+{\KAI{因而, 集团分解原理加上\,\textit{Lorentz}\,不变性使得很自然地应该用湮没场和产生场构造相互作用密度.}}%
+
+
+如果\marginpar[\flushright{\small[198]\hspace*{5mm}}]{{\small\hspace*{5mm}[198]}}我们所需要的只是构造满足集团分解原理的标量相互作用密度, 那么我们可以以任意多项式(\ref{5.1.9})的形式结合产生算符和湮没算符, 其中耦合系数$g_{\ell_{1}^{\prime}\cdots\ell_{N}^{\prime},\ell_{1}\cdots\ell_{M}}$%
+仅满足不变性条件(\ref{5.1.10})(以及一个合适的实条件). 然而, 为了使$S$-矩阵是\,Lorentz\,不变的, 相互作用密度还要满足对易条件(\ref{5.1.3}). 产生场和湮没场的任意函数并不满足这一条件, 这是因为
+\begin{equation}
+[\psi_{\ell}^{+}(x),\psi_{{\bar{\ell}}}^{-}(y)]_{\mp}=(2\uppi)^{-3}%
+\sum_{\sigma\,n}\int \dif^{3}p\: u_{\ell}(\bp,\sigma,n)v_{\bar{\ell}}(\bp,\sigma,n)
+\me^{\mi p\cdot(x-y)} \label{5.1.30}%
+\end{equation}
+(如果场分量$\psi_{\ell}^{+}(x)$和$\psi_{{\bar{\ell}}}^{-}(y)$产生和湮没的粒子是玻色子或费米子, 那么符号$\mp$相应地表示对易子和反对易子,) 一般而言, 即使$x-y$是类空的, 上式也不为零. 显然, 仅用产生场和湮没场来构造相互作用密度不可能避免这一问题, 因为这样相互作用不可能厄米. 解决这一困难的唯一方法就是以线性组合的方式结合湮没场和产生场:%
+\begin{equation}
+\psi_{\ell}(x)\equiv\kappa_{\ell}\psi_{\ell}^{+}(x)+\lambda_{\ell}\psi_{\ell}^{-}(x) \:, \label{5.1.31}%
+\end{equation}
+其中, 场中的常数$\kappa$和$\lambda$以及任何其他的任意常数都调整成: 对于类空的$x-y$, 有
+\begin{equation}
+[\psi_{\ell}(x),\psi_{\ell^{\prime}}(y)]_{\mp}=[\psi_{\ell}(x),\psi_{\ell^{\prime}}^{\dag}(y)]_{\mp}=0\:. \label{5.1.32}%
+\end{equation}
+我们将在本章随后各节看到对各种不可约变换场如何做到这点. (通过在方程(\ref{5.1.31})中引入显式常数$\kappa$和$\lambda$,  我们可以以任何形式, 只要它看起来方便, 去选择产生场和湮没场的总标度.) 如果哈密顿量密度$\mathscr{H}(x)$是由这样的场及它们的共轭构造的, 并且产生和湮没费米子的场分量是偶数个, 那么它将满足对易关系(\ref{5.1.3}).
+
+条件(\ref{5.1.32})通常也称为{\KAI{因果律}}条件, 这是因为, 如果$x-y$是类空的, 没有信号能从$x$到达$y$, 这使得在点$x$处对$\psi_{\ell}$ 的测量不应该被在点$y$处对$\psi_{\ell^{\prime}}$或%
+$\psi_{\ell^{\prime}}^{\dag}$的测量所影响. 这种因果律的考察对电磁场看上去是合理的, 它的任何一个分量在给定时空点都可以被测量, 就像\,Bohr\,和\,Rosenfeld\,在他们的经典论文中展示的那样.\textsuperscript{\cite{2}} 然而, 这里我们将要处理的场, 像电子的Dirac场, 看起来在任何意义下似乎都不是可测的. 这里采取的观点是, 方程(\ref{5.1.32})是$S$-矩阵的\,Lorentz\,不变性所需要的, 对可测性或因果性没有做任何辅助假定.
+
+在构造\marginpar[\flushright{\small[199]\hspace*{5mm}}]{{\small\hspace*{5mm}[199]}}满足(\ref{5.1.32})的场(\ref{5.1.31})时有一个障碍. 这些场产生和湮没的粒子携带一个或多个不为零的守恒量子数, 例如电荷. 例如, 如果种类$n$的粒子对于电荷$Q$的值为$q(n)$, 那么
+\begin{align*}
+[Q,a(\bp,\sigma,n)] &= -q(n)a(\bp,\sigma,n) \:, \\
+[ Q,a^{\dag}(\bp,\sigma,n)] &= +q(n)a^{\dag}(\bp,\sigma,n)\:.%
+\end{align*}
+为了使$\mathscr{H}(x)$与电荷算符$Q$ (或者其他某个对称生成元)对易, 构造的场必须与$Q$有如下的简单对易关系:
+\begin{equation}
+[Q,\psi_{\ell}(x)]=-q_{\ell}\psi_{\ell}(x) \label{5.1.33}%
+\end{equation}
+这样, 我们就可以用场$\psi_{\ell_{1}}\psi_{\ell_{2}}\cdots$及其共轭$\psi_{m_{1}}^{\dag}\psi_{m_{2}}^{\dag}%
+\cdots$乘积的和来构造$\mathscr{H}(x)$, 并使得
+\[
+q_{\ell_{1}}+q_{\ell_{2}}+\cdots-q_{m_{1}}-q_{m_{2}}-\cdots=0\:,%
+\]
+$\mathscr{H}(x)$也随之与$Q$对易. 现在, 当且仅当被场$\psi_{\ell}^{+}(x)$消没的所有种类$n$的粒子均携带相同电荷$q(n)=q_{\ell}$, 方程(\ref{5.1.33}) 对湮没场的特定分量$\psi_{\ell}^{+}(x)$才是满足的, 并且, 当且仅当场$\psi_{\ell}^{-}(x)$产生的所有种类$\bar{n}$的粒子携带电荷均为$q(\bar{n})=-q_{\ell}$, 方程(\ref{5.1.33})对产生场的特定分量$\psi_{\ell}^{-}(x)$才是满足的. 我们看到, 为了使这样的理论对类似电荷这样的量子数守恒, 对这种量子数有非零值的粒子种类必须成对: 如果湮没场的一个特定分量湮没一个种类为$n$的粒子, 那么产生场的相同分量必产生一个种类为$\bar{n}$ 的粒子, 这个粒子称为$n$的{\KAI{反粒子}},  它们所有守恒量子数的值均相反. {\KAI{这就是存在反粒子的原因}}.
+
+如果表示$D(\Lambda)$不是不可约的, 那么对这些场可以取如下的基: $D(\Lambda)$在这个基下沿主对角线分解成块, 使得属于不同分块的场在\,Lorentz\,变换下不能相互转换. 同时, Lorentz\,变换不影响粒子种类. 因此, 取代考虑一个大的场, 其中包含许多不可约分量以及许多类粒子, 从现在起, 我们将集中考虑这样的场: 它仅湮没一种粒子(扔掉指标$n$)且只产生相应的反粒子, 并且在\,Lorentz\,群下进行不可约变换(以上所讨论的可以包含也可以不包含空间反演). 在这个理解下, 一般而言, 我们将必须考虑很多这样的场, 其中一些或许是由其他场的导数构成的. 在后面的各节中, 我们将确定系数函数$u_{\ell}(\bp,\sigma)$和$v_{\ell}(\bp,\sigma)$, 并确定常数$\kappa$与$\lambda$的\marginpar[\flushright{\small[200]\hspace*{5mm}}]{{\small\hspace*{5mm}[200]}}比值, 并对属于\,Lorentz\,群的最简单不可约表示的场, 即属于标量表示, 矢量表示, 以及\,Dirac\,旋量表示的场, 我们将先导出这些场的粒子与反粒子性质之间的关系. 在这之后, 我们将对一个完整且普遍的不可约表示重复这个分析。
+
+关于场方程的一些评述. 观察方程(\ref{5.1.31}), (\ref{5.1.17})和(\ref{5.1.18}), 它们表明, 一个有确定质量$m$的场, 它的所有分量都满足\,Klein-Gordon\, 方程:
+\begin{equation}
+(\square-m^{2})\psi_{\ell}(x)=0\:. \label{5.1.34}%
+\end{equation}
+一些场同时还满足其他方程, 这取决于场分量是否多于独立粒子态. 传统上, 量子场论一般从场方程或者是导出它们的拉格朗日量出发, 然后利用它们来导出场的单粒子湮没算符和产生算符表达式. 这里所使用的方法, 是从粒子出发, 并根据\,Lorentz\,不变性的要求导出场, 其中场方程几乎是偶然地作为该构造的副产品产生.
+
+\subsection*{* * *}
+
+在这里必须提及一个技巧。根据\,\ref{sec:4.4}\,节中证明的定理, 保证理论满足集团分解原理的条件是: 相互作用可以表示成产生和湮没算符乘积的和, 其中所有的产生算符处在所有湮没算符的左边, 并且系数只包含一个动量守恒$\updelta$-函数. 由于这个原因, 我们应将相互作用写成``正规编序''的形式
+\begin{equation}
+V=\int \dif^{3}x\:\colon\! \mathscr{F}(\psi(x),\psi^{\dag}(x))\colon \label{5.1.35}%
+\end{equation}
+冒号表示括在其中的表达式被改写成了(略掉非零的对易子或反对易子, 但要包含置换费米算符产生的负号)所有的产生算符处在所有湮没算符的左边的形式. 利用场的对易或反对易关系, 任何这类场的正规编序函数也可以写为带有c-数系数的场的普通乘积之和. 以这种方式重写$\colon\!\mathscr{F}\colon$会使得: 尽管是正规编序, 但如果它由满足方程(\ref{5.1.32})的场构成, 并且其中任意费米场分量的数量为偶数个, 那么当$x-y$类空时, $\colon\!\mathscr{F}(\psi(x),\psi^{\dag}(x))\colon$ 将显然与%
+$\colon\!\mathscr{F}(\psi(y),\psi^{\dag}(y))\colon$对易.
+
+\section{因果标量场} \label{sec:5.2}
+\setcounter{equation}{0}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[201]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[201]}}}
+
+我们首先考察单分量湮没场$\phi^{+}(x)$与单分量产生场$\phi^{-}(x)$, 它们按照\,Lorentz\,群的最简单表示\ezx 标量表示\ezx 进行变换, 这时有$D(\Lambda)=1$. 只考虑旋转, 这正是旋转群的标量表示, 此时$\hJJJ=0$, 所以方程(\ref{5.1.25})和(\ref{5.1.26})除$j=0$外没有其他解, 在这种情况下, $\sigma$和$\bar{\sigma}$只能取零值. 因此标量场仅能描述零自旋的粒子. 再假定场仅描述一种粒子, 没有可以区分的反粒子(这样就可以扔掉种类指标$n$, 自旋指标$\sigma$和场指标$\ell$), %
+$u_{\ell}(0\sigma n)$与$v_{\ell}(0\sigma n)$在这里仅是常数$u(0)$和$v(0)$. 调整湮没场和产生场的总尺度使得这些常数均取为$(2m)^{-1/2}$, 这将方便我们的讨论. 这样方程(\ref{5.1.21})和(\ref{5.1.22})就给出
+\begin{equation}
+u(\bp)=(2p^{0})^{-1/2} \label{5.2.1}%
+\end{equation}
+和
+\begin{equation}
+v(\bp)=(2p^{0})^{-1/2}\:. \label{5.2.2}%
+\end{equation}
+那么在标量情况下, 场(\ref{5.1.17})和(\ref{5.1.18})是
+\begin{equation}
+\phi^{+}(x)=\int \dif^{3}p\:(2\uppi)^{-3/2}(2p^{0})^{-1/2}a(\bp)\me^{\mi p\cdot x} \label{5.2.3}%
+\end{equation}
+和
+\begin{equation}
+\phi^{-}(x)=\int \dif^{3}p\:(2\uppi)^{-3/2}(2p^{0})^{-1/2}a^{\dag}(\bp)\me^{-\mi p\cdot x}
+=\phi^{+\dag}(x)\:. \label{5.2.4}%
+\end{equation}
+
+
+由$\phi^{+}(x)$和$\phi^{-}(x)$的多项式构成的哈密顿密度$\mathscr{H}(x)$自动满足要求(\ref{5.1.9}), 即按照一个标量变换. 仍待考察的是它是否满足$S$-矩阵\,Lorentz\,不变性的另一条件, 即对于类空间隔$x-y$, $\mathscr{H}(x)$与$\mathscr{H}(y)$对易. 如果$\mathscr{H}(x)$仅是$\phi^{+}(x)$ 的多项式, 将不存在什么问题. 所有的湮没算符对易或反对易, 所以对所有$x$和$y$, 取决于这个粒子是玻色子还是费米子, $\phi^{+}(x)$ 与$\phi^{+}(y)$ 分别对易或反对易:
+\begin{equation}
+[\phi^{+}(x),\phi^{+}(y)]_{\mp}=0\:. \label{5.2.5}%
+\end{equation}
+因此, 对所有$x$和$y$, 由$\phi^{+}(x)$的多项式构成的任意哈密顿密度$\mathscr{H}(x)$(或者, 对费米子, 任何这样的偶次多项式)将与$\mathscr{H}(y)$ 对易. 当然, 问题是, 为了保证厄米, $\mathscr{H}(x)$必须包含$\phi^{+\dag}(x)=\phi^{-}(x)$与$\phi^{+}(x)$, 而对于一般的类空间隔, $\phi^{+}(x)$ 与$\phi^{-}(y)$不对易或不反对易. 利用对易关系(玻色子)或反对易关系(费米子)(\ref{4.2.5}), 我们有\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[202]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[202]}}}
+\[
+[\phi^{+}(x),\phi^{-}(y)]_{\mp}=\int\frac{\dif^{3}p\,\dif^{3}p^{\prime}}%
+{(2\uppi)^{3}(2p^{0}\cdot2p^{\prime0})^{1/2}}\:\me^{\mi p\cdot x}\,\me^{-\mi p^{\prime
+}\cdot y}\updelta^{3}(\bp-\bp^{\prime}) \:,
+\]
+它会坍缩成一个积分
+\begin{equation}
+[\phi^{+}(x),\phi^{-}(y)]_{\mp}=\Delta_{+}(x-y) \: ,
+\label{5.2.6}%
+\end{equation}
+其中$\Delta_{+}$是标准函数
+\begin{equation}
+\Delta_{+}(x)\equiv\frac{1}{(2\uppi)^{3}}
+\int\frac{\dif^{3}p}{2p^{0}}\:\me^{\mi p\cdot x}\:. \label{5.2.7}%
+\end{equation}
+它是明显\,Lorentz\,不变的, 因此对于类空的$x$, 它仅依赖不变平方$x^{2}>0$. 因此, 对于类空的$x$, 通过选择坐标系
+\[
+x^{0}=0\:, \qquad  \lvert\bx\rvert = \sqrt{x^{2}} \:,
+\]
+我们可以算出$\Delta_{+}(x)$. 这样方程(\ref{5.2.7})就给出
+\begin{align*}
+\Delta_{+}(x)  &  =\frac{1}{(2\uppi)^{3}}\int\frac{\dif^{3}p}{2\sqrt{\bp%
+^{2}+m^{2}}}\: \me^{\mi\bp\cdot\bx}\\
+&  =\frac{4\uppi}{(2\uppi)^{3}}\int_{0}^{\infty}\frac{p^{2}\dif p}{2\sqrt
+{\bp^{2}+m^{2}}}\,\frac{\sin(p\sqrt{x^{2}})}{p\sqrt{x^{2}}}\:.%
+\end{align*}
+将积分变量变为$u\equiv p/m$, 这变成
+\begin{equation}
+\Delta_{+}(x)=\frac{m}{4\uppi^{2}\sqrt{x^{2}}}\int_{0}^{\infty}\frac{u\dif u}%
+{\sqrt{u^{2}+1}}\,\sin(m\sqrt{x^{2}}u), \label{5.2.8}%
+\end{equation}
+或者写成标准\,Hankel\,函数,
+\begin{equation}
+\Delta_{+}(x)=\frac{m}{4\uppi^{2}\sqrt{x^{2}}}\,\zK_{1}\Bigl(m\sqrt{x^{2}}\Bigr)\:. \label{5.2.9}%
+\end{equation}
+
+
+它不为零, 我们该如何处理呢? 注意到, 即使$\Delta_{+}(x)$不为零, 当$x^{2}>0$时, 它是$x^{\mu}$的偶函数. 代替只用$\phi^{+}(x)$, 我们尝试以如下线性组合构造$\mathscr{H}(x)$
+\[
+\phi(x)\equiv\kappa\phi^{+}(x)+\lambda\phi^{-}(x)\:.%
+\]
+利用方程(\ref{5.2.6}), 那么对于类空的$x-y$, 我们有
+\begin{align*}
+[\phi(x),\phi^{\dag}(y)]_{\mp}  &= \lvert\kappa\rvert^{2}[\phi^{+}(x),\phi^{-}(y)]_{\mp}
++\lvert\lambda\rvert^{2}[\phi^{-}(x),\phi^{+}(y)]_{\mp}\\
+&= (\lvert\kappa\rvert ^{2}\mp \lvert \lambda \rvert^{2}) \Delta_{+}(x-y)
+\end{align*}\vspace{-10mm}
+\begin{align*}
+\lbrack\phi(x),\phi(y)]_{\mp}  &  =\kappa\lambda([\phi^{+}(x),\phi
+^{-}(y)]_{\mp}+[\phi^{-}(x),\phi^{+}(y)]_{\mp})\\
+&  =\kappa\lambda(1\mp1)\Delta_{+}(x-y)\:.%
+\end{align*}
+当\marginpar[\flushright{\small[203]\hspace*{5mm}}]{{\small\hspace*{5mm}[203]}}且仅当粒子是{\KAI{玻色子}} (即, 取上面的符号)且$\kappa$和$\lambda$大小相等
+\[
+\lvert \kappa \rvert = \lvert \lambda \rvert \:,
+\]
+这两个式子才为零. 重新定义态的相位, 使得$a(\bp)\to \me^{\mi\alpha}a(\bp)$, $a^{\dag}(\bp)\to \me^{-\mi\alpha}a^{\dag}(\bp)$, 这样, $\kappa\to\kappa\me^{\mi\alpha}$, $\lambda\to\lambda\me^{-\mi\alpha}$, 我们可以改变$\kappa$和$\lambda$的相对相位. 令$\alpha=\frac{1}{2}\operatorname{Arg}(\lambda/\kappa)$, 以这种方式, 我们可以使$\kappa$和$\lambda$在相位上相等, 从而使得$\kappa$与$\lambda$相等.
+
+重新定义$\phi(x)$以吸收总因子$\kappa=\lambda$, 我们就有
+\begin{equation}
+\phi(x)=\phi^{+}(x)+\phi^{+\dag}(x)=\phi^{\dag}(x)\:. \label{5.2.10}%
+\end{equation}
+如果相互作用密度$\mathscr{H}(x)$由自伴标量场$\phi(x)$的正规编序多项式构成, 那么在类空间隔$x-y$上, $\mathscr{H}(x)$与$\mathscr{H}(y)$ 对易.
+
+即便对方程(\ref{5.2.10})中相对相位的选择是个约定问题, 一旦采用了某个约定, 无论该粒子的标量场出现在相互作用哈密顿密度中的什么地方, 都必须一直使用下去. 例如, 假定相互作用密度不仅包括场(\ref{5.2.10}), 也包含同一粒子的另一标量场
+\[
+\tilde{\phi}(x)=\me^{\mi \alpha}\phi^{+}(x)+\me^{-\mi\alpha}\phi^{+\dag}(x),
+\]
+其中$\alpha$是一任意相位. 同$\phi$一样, 在$x-y$类空时, $\tilde{\phi}(x)$与$\tilde{\phi}(y)$对易, 在这个意义上, $\tilde{\phi}$是因果的, 但$\tilde{\phi}(x)$与$\phi(y)$在类空间隔上不对易, 因此这两个场不能同时出现在同一个理论中.
+
+如果$\phi(x)$所产生或湮没的粒子携带电荷这样的守恒量子数, 那么, 当且仅当$\mathscr{H}(x)$的每一项包含相同数目的$a(\bp)$算符和$a(\bp)^{\dag}$算符时, $\mathscr{H}(x)$才会对该量子数守恒. 但是, 如果$\mathscr{H}(x)$由$\phi(x)=\phi^{+}(x)+\phi^{+\dag}(x)$的多项式构成, 这是不可能的. 换一种方式来说, 为了使$\mathscr{H}(x)$与电荷$Q$(或其他某个对称生成元)对易, 构成$\mathscr{H}(x)$的场与$Q$必须要有简单的对易关系. 对于$\phi^{+}(x)$与它的伴, 这是正确的, 其中
+\begin{align*}
+ [Q,\phi^{+}(x)]_{-}  &  =-q\phi^{+}(x)  \: , \\
+ [Q,\phi^{+\dag}(x)]_{-}  &  =+q\phi^{+\dag}(x) \ ,
+\end{align*}
+但是对自伴场(\ref{5.2.10})却不是这样.
+
+为了解决这个问题, 我们必须假定存在{\KAI{两个}}无自旋玻色子, 它们具有相同的质量$m$, 但电荷分别为$+q$和$-q$. 用$\phi^{+}(x)$与$\phi^{+\text{c}}(x)$ 表示这两个粒子的湮没场, 于是有{}$^*$\footnote{$^*${}指标``c''代表``荷共轭''. 应该记住, 不携带守恒量子数的粒子可以是它自己的反粒子, 即$a^{\text{c}}(\bp)=a(\bp)$, 也可以不是.}\vspace{-.1mm}
+\begin{align*}
+[ Q,\phi^{+}(x)]_{-}  &  =-q\phi^{+}(x)\:, \\
+[ Q,\phi^{+\text{c}}(x)]_{-}  &  =+q\phi^{+\text{c}}(x)\:.%
+\end{align*}
+将$\phi(x)$定义为线性组合\marginpar[\flushright
+{\raisebox{9ex}[0pt]{{\small[204]\hspace*{5mm}}}}]{{\raisebox{9ex}[0pt]{\small\hspace*{5mm}[204]}}}
+\[
+\phi(x)=\kappa\phi^{+}(x)+\lambda\phi^{+\text{c}\dagger}(x) \: ,
+\]
+它与$Q$的对易关系显然与只有$\phi^{+}(x)$时的对易关系相同
+\[
+[ Q,\phi(x)]_{-}=-q\phi(x)\:.%
+\]
+那么在类空间隔上, $\phi(x)$与其伴随场的对易子或反对易子为
+\begin{align*}
+[\phi(x),\phi^{\dag}(y)]_{\mp}  &= \lvert \kappa\rvert^{2}[\phi^{+}(x),\phi^{+\dag}(y)]
++ \lvert \lambda\rvert ^{2}[\phi^{+\text{c}\dag}(x),\phi^{+\text{c}}(y)]_{\mp}\\
+&= (\lvert \kappa\rvert^{2}\mp \lvert \lambda\rvert^{2})\Delta_{+}(x-y) \: ,
+\end{align*}
+而$\phi(x)$和$\phi(y)$对所有的$x$和$y$都自动对易或反对易, 这是因为$\phi^{+}$和$\phi^{+\text{c}\dag}(x)$湮没和产生的是不同粒子. 导出这个结果时, 我们默认粒子和反粒子具有相同的质量, 从而使得对易子或反对易子包含相同的函数$\Delta_{+}(x-y)$. 费米统计在这里又一次被排除掉, 这是因为除非$\kappa=\lambda=0$, 否则$\phi(x)$在类空间隔上不可能与$\phi^{\dag}(y)$反对易, 而这时场为零. 所以无自旋粒子必须是玻色子.
+
+对玻色统计, 为了使复的$\phi(x)$与$\phi^{\dag}(y)$在类空间隔上对易, 充要条件是$\lvert\kappa\rvert^{2}=\lvert \lambda\lvert^{2}$以及粒子和反粒子具有相同的质量. 通过重定义这两个粒子态的相对相位, 我们可以再一次赋予$\kappa$和$\lambda$以相同的相位, 在这种情况下$\kappa=\lambda$. 这个共同的相位因子可以再一次通过重定义场$\phi$消除掉, 使得
+\[
+\phi(x)=\phi^{+}(x)+\phi^{\text{c}+\dag}(x)
+\]
+或者更细致些
+\begin{equation}
+\phi(x)=\int\frac{\dif^{3}p}{(2\uppi)^{3/2}(2p^{0})^{1/2}}\left[  a(\bp%
+)\me^{\mi p\cdot x}+a^{\text{c}\dag}(\bp)\me^{-\mi p\cdot x}\right]  \:.
+\label{5.2.11}%
+\end{equation}
+这本质上是唯一的因果标量场. 这个公式既可用于反粒子是其自身的纯中性无自旋粒子(在这种情况下, 取$a^{\text{c}}(\bp)=a(\bp)$), 也可用于反粒子不是自身的粒子(这时$a^{\text{c}}(\bp\neq a(\bp)$).
+
+为了\marginpar[\flushright{\small[205]\hspace*{5mm}}]{{\small\hspace*{5mm}[205]}}将来的使用, 我们注意到这里复标量场与其伴随场的对易子为
+\begin{equation}
+[\phi(x),\phi^{\dag}(y)]=\Delta(x-y) \:, \label{5.2.12}%
+\end{equation}
+其中
+\begin{equation}
+\Delta(x-y)\equiv\Delta_{+}(x-y)-\Delta_{+}(y-x)=\int\frac{\dif^{3}p}{2p^{0}(2\uppi)^{3}}
+[\me^{\mi p\cdot(x-y)}-\me^{-\mi p\cdot(x-y)}]\:. \label{5.2.13}%
+\end{equation}
+
+
+现在, 我们来考察各种反演对称性在这个场上的效应. 首先, 从\,\ref{sec:4.2}\,节的结果,
+我们可以很容易看到空间反演算符在产生算符和湮没算符上的效应是:{}$^*$\footnote{$^*${}我们省略了反演算符%
+$\mathsf{P},\mathsf{C},\mathsf{T}$的下标$0$, 这是因为, 实际上在这些反演是好对称性的所有情况中, 在``入''态和``出''态上诱导出反演变换的算符和在自由粒子态上的相同.}%
+\begin{align}
+\mathsf{P}a(\bp)\mathsf{P}^{-1}  &  =\eta^{\ast}a(-\bp)\text{
+, }\label{5.2.14}\\
+\mathsf{P}a^{\text{c}\dag}(\bp)\mathsf{P}^{-1}  &  =\eta^{\text{c}%
+}a^{\text{c}\dag}(-\bp)\text{ , } \label{5.2.15}%
+\end{align}
+其中$\eta$和$\eta^{\text{c}}$分别是粒子和反粒子的内禀宇称. 将这些结果用于湮没场(\ref{5.2.3})和产生场(\ref{5.2.4})的荷共轭, 并将积分变量$\bp$变为$-\bp$, 我们看到
+\begin{align}
+\mathsf{P}\phi^{+}(x)\mathsf{P}^{-1} &= \eta^{\ast}\phi^{+}(\mathscr{P}x)  \label{5.2.16}\\
+\mathsf{P}\phi^{+\text{c}\dag}(x)\mathsf{P}^{-1}  &= \eta^{\text{c}}\phi^{+\text{c}\dag}(\mathscr{P}x)\: ,  \label{5.2.17}%
+\end{align}
+其中, 和前面一样, $\mathscr{P}x=(-\bx,x^{0})$. 我们看到, 一般而言, 用空间反演算符作用标量场$\phi(x)=\phi^{+}(x)+\phi^{+\text{c}\dag}(x)$将会给出另一个场%
+$\phi_{P}=\eta^{\ast}\phi^{+}+\eta^{\text{c}}\phi^{+\text{c}\dag}$. 两个场分别是因果的, 但如果$\phi$与$\phi_{P}^{\dag}$出现在同一相互作用中, 因为它们在类空间隔上一般不对易, 那么我们就有麻烦了. 确保\,Lorentz\,不变性, 宇称守恒和相互作用的厄米性的唯一方法是: 要求$\phi_{P}$正比于$\phi$, 因而
+\begin{equation}
+\eta^{\text{c}}=\eta^{\ast}\:. \label{5.2.18}%
+\end{equation}
+这就是说, {\KAI{包含无自旋粒子和它反粒子的态的内禀宇称}}$\eta\eta^{\text{c}}${\KAI{为偶}}. 我们现在就有
+\begin{equation}
+\mathsf{P}\phi(x)\mathsf{P}^{-1}=\eta^{\ast}\phi(\mathscr{P}x)\:.
+\label{5.2.19}%
+\end{equation}
+当无\marginpar[\flushright{\small[206]\hspace*{5mm}}]{{\small\hspace*{5mm}[206]}}自旋粒子的反粒子是其自身时, $\eta^{\text{c}}=\eta$, 这些结果同样成立, 并且暗示了这种粒子的内禀宇称是实的: $\eta=\pm1$.
+
+荷共轭可以用大致相同的方法处理. 由\,\ref{sec:4.2}\,节的结果, 我们有
+\begin{align}
+\mathsf{C}a(\bp)\mathsf{C}^{-1}  &  =\xi^{\ast}a^{\text{c}}(\bp)\:, \label{5.2.20}\\
+\mathsf{C}a^{\text{c}\dag}(\bp)\mathsf{C}^{-1} &= \xi^{\text{c}}a^{\dag}(\bp)\:,\label{5.2.21}%
+\end{align}
+其中$\xi$和$\xi^{\text{c}}$是荷共轭算符在单粒子态上作用附带的相位. 由此得出
+\begin{align}
+\mathsf{C}\phi^{+}(x)\mathsf{C}^{-1}  &  =\xi^{\ast}\phi^{+\text{c}}(x)\text{
+, }\label{5.2.22}\\
+\mathsf{C}\phi^{+\text{c}\dag}(x)\mathsf{C}^{-1}  &  =\xi^{\text{c}}%
+\phi^{+\dag}(x)\:. \label{5.2.23}%
+\end{align}
+为了使$\mathsf{C}\phi(x)\mathsf{C}^{-1}$正比于场$\phi^{\dag}(x)$, 这样它们在类空间隔上对易, 显然必须使
+\begin{equation}
+\xi^{\text{c}}=\xi^{\ast}\:. \label{5.2.24}%
+\end{equation}
+和通常的宇称一样, 对于由无自旋粒子及其反粒子构成的态, 态的内禀荷共轭宇称$\xi\xi^{\text{c}}$为偶. 我们现在就有
+\begin{equation}
+\mathsf{C}\phi(x)\mathsf{C}^{-1}=\xi^{\ast}\phi^{\dag}(x)\:. \label{5.2.25}%
+\end{equation}
+这些结果同样适用于反粒子为其自身的情况, 这时$\xi^{\text{c}}=\xi$. 在这种情况下, 像普通宇称一样, 荷共轭宇称一定是实的, $\xi=\pm1$.
+
+最后, 我们考虑时间反演. 我们从\,\ref{sec:4.2}\,节得到
+\begin{align}
+\mathsf{T}a(\bp)\mathsf{T}^{-1} &= \zeta^{\ast}a(-\bp) \:, \label{5.2.26}\\
+\mathsf{T}a^{\text{c}\dag}(\bp)\mathsf{T}^{-1}  &= \zeta^{\text{c}}a^{\text{c}\dag}(-\bp)\: .  \label{5.2.27}%
+\end{align}
+回忆起$\mathsf{T}$是反幺正的, 并再次将积分变量$\bp$变为$-\bp$, 我们发现
+\begin{align}
+\mathsf{T}\phi^{+}(x)\mathsf{T}^{-1}  &= \zeta^{\ast}\phi^{+}(-\mathscr{P}x)\label{5.2.28}\\
+\mathsf{T}\phi^{+\text{c}\dag}(x)\mathsf{T}^{-1}  &=\zeta^{\text{c}}\phi^{+\text{c}\dag}(-\mathscr{P}x)\: .  \label{5.2.29}%
+\end{align}
+为了使$\mathsf{T}\phi(x)\mathsf{T}^{-1}$与时间反演点$-\mathscr{P}x$处的场$\phi$有直接关系, 我们必须有\begin{equation}
+\zeta^{\text{c}}=\zeta^{\ast} \label{5.2.30}%
+\end{equation}
+以及随之的
+\begin{equation}
+\mathsf{T}\phi(x)\mathsf{T}^{-1}=\zeta^{\ast}\phi(-\mathscr{P}x)\:. \label{5.2.31}%
+\end{equation}
+
+
+\section{因果矢量场} \label{sec:5.3}
+\setcounter{equation}{0}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[207]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[207]}}}
+
+现在我们着手处理下一个最简单的场, 它按照\,4\,-矢变换, 是齐次\,Lorentz\,群最简单的非平庸表示. 现实中存在着有质量粒子$W^{\pm}$和$Z^{0}$, 它们在低能下由这种场描述并且它们在现代基本粒子物理中扮演日趋重要的角色, 所以这个例子不仅仅局限于教学. (另外, 尽管我们在这里仅考虑有质量的粒子, 但是建立量子电动力学的方法之一是, 在质量非常小的极限下, 用有质量矢量场描述光子.) 我们暂且将假定该场只描述一种粒子(扔掉种类指标$n$); 然后我们将考虑场既描述粒子又描述不同于它的反粒子的可能性.
+
+在\,Lorentz\,群的\,4\,-矢表示中, 表示矩阵$D(\Lambda)$的行与列由\,4\,-分量指标$\mu,\nu$等标记, 有
+\begin{equation}
+D(\Lambda)^{\mu}{}_{\!\nu}=\Lambda^{\mu}{}_{\!\nu}\:. \label{5.3.1}%
+\end{equation}
+矢量场的湮没部分和产生部分写为:
+\begin{equation}
+\phi^{+\mu}(x)=\sum_{\sigma}(2\uppi)^{-3/2}\int \dif^{3}p\:u^{\mu}(\bp%
+,\sigma)\,a(\bp,\sigma)\,\me^{\mi p\cdot x}\:, \label{5.3.2}%
+\end{equation}%
+\begin{equation}
+\phi^{-\mu}(x)=\sum_{\sigma}(2\uppi)^{-3/2}\int \dif^{3}p\:v^{\mu}(\bp%
+,\sigma)\,a^{\dag}(\bp,\sigma)\,\me^{-\mi p\cdot x} \:.
+\label{5.3.3}%
+\end{equation}
+任意动量的系数函数$u^{\mu}(\bp,\sigma)$和$v^{\mu}(\bp,\sigma)$
+基于它们的零动量形式由方程(\ref{5.1.21})和(\ref{5.1.22})给定, 在这里写为
+\begin{align}
+u^{\mu}(\bp,\sigma)  &= (m/p^{0})^{1/2}L(p)^{\mu}{}_{\!\nu}u^{\nu}(0,\sigma)\:,\label{5.3.4}\\
+v^{\mu}(\bp,\sigma)  &= (m/p^{0})^{1/2}L(p)^{\mu}{}_{\!\nu}v^{\nu}(0,\sigma)\:. \label{5.3.5}%
+\end{align}
+(我们对时空指标$\mu,\nu$等使用了通常的求和约定.) 另外, 零动量处的系数函数服从条件(\ref{5.1.25})和(\ref{5.1.26}):
+\begin{equation}
+\sum_{\bar{\sigma}}u^{\mu}(0,\bar{\sigma})\bJ_{\bar{\sigma}\sigma}^{(j)}
+=\hJJJ^{\mu}{}_{\!\nu}u^{\nu}(0,\sigma) \label{5.3.6}%
+\end{equation}
+和
+\begin{equation}
+-\sum_{\bar{\sigma}}v^{\mu}(0,\bar{\sigma})\bJ_{\bar{\sigma}\sigma}^{(j)\ast}
+=\hJJJ^{\mu}{}_{\!\nu}v^{\nu}(0,\sigma)\:.
+\label{5.3.7}%
+\end{equation}
+4\,-矢表示\marginpar[\flushright{\small[208]\hspace*{5mm}}]{{\small\hspace*{5mm}[208]}}中的转动生成元$\hJJJ^{\mu}{}_{\!\nu}$由方程(\ref{5.3.1}) 给出
+\begin{gather}
+(\mathscr{J}_{k})^{0}{}_{0}=(\mathscr{J}_{k})^{0}{}_{i}=(\mathscr{J}_{k})^{i}{}_{0}=0 \:,\label{5.3.8}\\
+(\mathscr{J}_{k})^{i}{}_{j}=-\mi \epsilon_{ijk}\:, \label{5.3.9}%\
+\end{gather}
+其中$i,j,k$在这里取遍$1,2,3$. 特别地, 我们注意到$\hJJJ^{2}$有如下的形式
+\begin{gather}
+(\hJJJ^{2})^{0}{}_{0}=(\hJJJ^{2})^{0}{}_{i}=(\hJJJ^{2})^{i}{}_{0}=0\:,\label{5.3.10}\\
+(\hJJJ^{2})^{i}{}_{j}= 2\updelta^{i}{}_{j}  \:.  \label{5.3.11}%
+\end{gather}
+于是从方程(\ref{5.3.6})和(\ref{5.3.7})得出
+\begin{equation}
+\sum_{\bar{\sigma}}u^{0}(0,\bar{\sigma})(\bJ^{(j)})_{\bar{\sigma}\sigma}^{2}=0\:, \label{5.3.12}%
+\end{equation}%
+\begin{equation}
+\sum_{\bar{\sigma}}u^{i}(0,\bar{\sigma})(\bJ^{(j)})_{\bar{\sigma}%
+\sigma}^{2}=2u^{i}(0,\sigma) \label{5.3.13}%
+\end{equation}
+和\begin{equation}
+\sum_{\bar{\sigma}}v^{0}(0,\bar{\sigma})(\bJ^{(j)\ast})_{\bar{\sigma
+}\sigma}^{2}=0\:, \label{5.3.14}%
+\end{equation}%
+\begin{equation}
+\sum_{\bar{\sigma}}v^{i}(0,\bar{\sigma})(\bJ^{(j)\ast})_{\bar{\sigma
+}\sigma}^{2}=2v^{i}(0,\sigma)  \:. \label{5.3.15}%
+\end{equation}
+另外, 我们回忆起熟悉的结果$(\bJ^{(j)})_{\bar{\sigma}\sigma}^{2}=j(j+1)\updelta_{\bar{\sigma}\sigma}$. 我们从方程(\ref{5.3.12})\yzx \linebreak
+(\ref{5.3.15}) 看到, 对于矢量场描述的粒子, 其自旋只有两种可能性: 要么$j=0$,  这时在$\bp=0$处只有$u^{0}$和$v^{0}$ 是非零的, 要么$j=1$(使得$j(j+1)=2$),  这时在$\bp=0$处只有空间分量$u^{i}$和$v^{i}$是非零的. 我们来更仔细地研究一下这两种可能性.
+
+\subsection*{自\quad 旋\quad  0}
+
+通过对场归一化的合适选择, 我们可以令$u^{\mu}(0)$和$v^{\mu}(0)$仅存的非零分量有如下约定值
+\begin{align*}
+u^{0}(0)  &=  \mi (m/2)^{1/2}\\
+v^{0}(0)  &= -\mi (m/2)^{1/2}\:.%
+\end{align*}
+(指标$\sigma$在这里只能取零, 因而被扔掉了.) 那么对于一般动量, 方程(\ref{5.3.4})和(\ref{5.3.5})给出
+\begin{equation}
+u^{\mu}(\bp)=\mi p^{\mu}(2p^{0})^{-1/2} \label{5.3.16}%
+\end{equation}
+以及\marginpar[\flushright{\raisebox{-3ex}[0pt]{{\small[209]\hspace*{5mm}}}}]{{\raisebox{-3ex}[0pt]{\small\hspace*{5mm}[209]}}}
+\begin{equation}
+v^{\mu}(\bp)=-\mi p^{\mu}(2p^{0})^{-1/2} \: . \label{5.3.17}%
+\end{equation}
+这里的矢量湮没场和产生场只不过是上一节中对无自旋粒子定义的标量湮没场和产生场$\phi^{\pm}(x)$的导数:
+\begin{equation}
+\phi^{+\mu}(x)=\partial^{\mu}\phi^{+}(x)\qquad\phi^{-\mu}(x)=\partial^{\mu
+}\phi^{-}(x)\:. \label{5.3.18}%
+\end{equation}
+显然无自旋粒子的因果矢量场也只是因果标量场的导数:
+\begin{equation}
+\phi^{\mu}(x)=\phi^{+\mu}(x)+\phi^{-\mu}(x)=\partial^{\mu}\phi(x)\:. \label{5.3.19}%
+\end{equation}
+因此我们不需要进一步探索这种情况.
+
+\subsection*{自\quad 旋\quad  1}
+
+由方程(\ref{5.3.6})和(\ref{5.3.7}), 我们立即看到$\sigma=0$的矢量$u^{i}(0,0)$和$v^{i}(0,0)$处在\,3\,-方向上. 选择合适的场归一化可以使这些矢量有如下值
+\begin{equation}
+u^{\mu}(0,0)=v^{\mu}(0,0)=(2m)^{-1/2}\left[
+\begin{array}
+[c]{c}%
+0\\
+0\\
+1\\
+0
+\end{array}
+\right] \:, \label{5.3.20}%
+\end{equation}
+其中\,4\,-矢分量始终以$1,2,3,0$的顺序排列. 为了找到其他分量, 我们用方程(\ref{5.3.6}), (\ref{5.3.7})和(\ref{5.3.9})计算上升下降算符$J_{1}^{(1)}\pm \mi J_{2}^{(1)}$在$u$和$v$上的作用. 这给出:
+\begin{equation}
+u^{\mu}(0,+1)=-v^{\mu}(0,-1)=-\frac{1}{\sqrt{2}}(2m)^{-1/2}\left[
+\begin{array}
+[c]{c}%
+1\\
++\mi\\
+0\\
+0
+\end{array}
+\right]  \:, \label{5.3.21}%
+\end{equation}%
+\begin{equation}
+u^{\mu}(0,-1)=-v^{\mu}(0,+1)=\frac{1}{\sqrt{2}}(2m)^{-1/2}\left[
+\begin{array}
+[c]{c}%
+1\\
+-\mi\\
+0\\
+0
+\end{array}
+\right]  \:. \label{5.3.22}%
+\end{equation}
+现在使用方程(\ref{5.3.4})和(\ref{5.3.5})给出
+\begin{equation}
+u^{\mu}(\bp,\sigma)=v^{\mu\ast}(\bp,\sigma)=(2p^{0})^{-1/2}e^{\mu}(\bp,\sigma) \label{5.3.23}%
+\end{equation}
+其中
+\begin{equation}
+e^{\mu}(\bp,\sigma)\equiv L^{\mu}{}_{\!\nu}(\bp)e^{\nu}(0,\sigma) \label{5.3.24}%
+\end{equation}
+并有\marginpar[\flushright{\small[210]\hspace*{5mm}}]{{\small\hspace*{5mm}[210]}}
+\begin{equation}
+e^{\mu}(0,0)=\left[
+\begin{array}
+[c]{c}%
+0\\
+0\\
+1\\
+0
+\end{array}
+\right]  \:, \quad
+e^{\mu}(0,+1)=-\frac{1}{\sqrt{2}}\left[
+\begin{array}
+[c]{c}%
+1\\
++\mi\\
+0\\
+0
+\end{array}
+\right]  \:, \quad
+e^{\mu}(0,-1)=\frac{1}{\sqrt{2}}\left[
+\begin{array}
+[c]{c}%
+1\\
+-\mi\\
+0\\
+0
+\end{array}
+\right]  \:. \label{5.3.25}%
+\end{equation}
+湮没场(\ref{5.3.2}%
+)和产生场(\ref{5.3.3}%
+)在这里是
+\begin{equation}
+\phi^{+\mu}(x)=\phi^{-\mu\dag}(x)=(2\uppi)^{-3/2}\sum_{\sigma}\int\frac{\dif^{3}p}
+{\sqrt{2p^{0}}}\,e^{\mu}(\bp,\sigma)\,a(\bp,\sigma)\,\me^{\mi p\cdot x} \:. \label{5.3.26}%
+\end{equation}
+场$\phi^{+\mu}(x)$和$\phi^{+\nu}(y)$显然对于所有$x$和$y$对易(或反对易), 但是$\phi^{+\mu}(x)$和$\phi^{-\nu}(y)$却不是这样. 它们的对易子(对于玻色子)或反对易子(对于费米子)是
+\begin{equation}
+\lbrack\phi^{+\mu}(x),\phi^{-\nu}(y)]_{\mp}=\int\frac{\dif^{3}p}{(2\uppi)^{3}2p^{0}}\,
+\me^{\mi p\cdot(x-y)}\,\Pi^{\mu\nu}(\bp) \label{5.3.27}%
+\end{equation}
+其中\begin{equation}
+\Pi^{\mu\nu}(\bp)\equiv\sum_{\sigma}e^{\mu}(\bp,\sigma
+)e^{\nu\ast}(\bp,\sigma)\:. \label{5.3.28}%
+\end{equation}
+利用方程(\ref{5.3.25})可以直接计算出$\Pi^{\mu\nu}(0)$是投影到与时间方向垂直的空间上的投影矩阵, 方程(\ref{5.3.24})随之证明了$\Pi^{\mu\nu}(\bp)$ 是投影到与\,4\,- 矢$p^{\mu}$方向垂直的空间上的矩阵:
+\begin{equation}
+\Pi^{\mu\nu}(\bp)=\eta^{\mu\nu}+p^{\mu}p^{\nu}/m^{2}\:. \label{5.3.29}%
+\end{equation}
+那么, 利用上节定义的$\Delta_{+}$函数, 对易子(或反对易子)(\ref{5.3.27})可以写为
+\begin{equation}
+[\phi^{+\mu}(x),\phi^{-\nu}(y)]_{\mp}
+=\left[  \eta^{\mu\nu}-\frac{\partial^{\mu}\partial^{\nu}}{m^{2}}\right]  \Delta_{+}(x-y)\:.\label{5.3.30}%
+\end{equation}
+对于我们当前的目的, 这个表达式的关键是, 它对类空的$x-y$不为零且关于$x-y$是{\KAI{偶函数}}. 因此, 我们可以重复上一节寻求构造因果场的思路: 构造湮没场和产生场的一个线性组合
+\[
+v^{\mu}(x)\equiv\kappa\phi^{+\mu}(x)+\lambda\phi^{-\mu}(x)
+\]
+它对类空的$x-y$有,
+\[
+[ v^{\mu}(x),v^{\nu}(y)]_{\mp}=\kappa\lambda[1\mp1]
+\left[\eta^{\mu\nu}-\frac{\partial^{\mu}\partial^{\nu}}{m^{2}}\right]  \Delta_{+}(x-y)
+\]
+以及\marginpar[\flushright{\small[211]\hspace*{5mm}}]{{\small\hspace*{5mm}[211]}}
+\[
+[v^{\mu}(x),v^{\nu\dag}(y)]_{\mp} = (\lvert \kappa\rvert^{2}\mp \lvert \lambda\rvert ^{2})
+\left[  \eta^{\mu\nu}-\frac{\partial^{\mu}\partial^{\nu}}{m^{2}}\right]  \Delta_{+}(x-y)\:.%
+\]
+为了使二者对于类空的$x-y$都为零, 充要条件是自旋\,1\,的粒子是{\KAI{玻色子}}且$\lvert \kappa\rvert=\lvert \lambda\rvert$. 通过对单粒子态相位的合适选择, 我们可以给$\kappa$和$\lambda$赋予相同的相位, 使得$\kappa=\lambda$, 通过重新定义场的总归一化因子, 我们可以扔掉共同的因子$\kappa$. 在做完这些之后, 我们发现自旋\,1\,有质量粒子的矢量场是
+\begin{equation}
+v^{\mu}(x)=\phi^{+\mu}(x)+\phi^{+\mu\dag}(x)\:. \label{5.3.31}%
+\end{equation}
+我们注意到它是实的:
+\begin{equation}
+v^{\mu}(x)=v^{\mu\dag}(x)\:. \label{5.3.32}%
+\end{equation}
+然而, 如果粒子携带非零的守恒量子数$Q$, 那么我们无法用这种场构造出$Q$守恒的相互作用. 我们反而要假定存在另一玻色子, 它与原先的玻色子具有相同的质量和自旋, 但携带相反的$Q$值, 并将因果场构造为
+\begin{equation}
+v^{\mu}(x)=\phi^{+\mu}(x)+\phi^{+\text{c}\mu\dag}(x), \label{5.3.33}%
+\end{equation}
+或者更详细一些
+\begin{align}
+v^{\mu}(x)  &= (2\uppi)^{-3/2}\sum_{\sigma}\int\frac{\dif^{3}p}{\sqrt{2p^{0}}%
+}\nonumber\\
+&  \quad\times [e^{\mu}(\bp,\sigma)a(\bp,\sigma)\me^{\mi p\cdot x}+e^{\mu\ast}(\bp,\sigma)a^{\text{c}\dag}(\bp,\sigma)\me^{-\mi p\cdot x}]\:, \label{5.3.34}%
+\end{align}
+其中上标``c''表示算符产生的反粒子与$\phi^{+\mu}(x)$湮没的粒子荷共轭. 这仍然是一个因果场, 但不再是实的. 通过令$a^{\text{c}}(\bp)=a(\bp)$, 我们同样能将该公式用于纯中性的自旋\,1\,粒子, 这种粒子的反粒子是其自身. 在这两种情况下, 矢量场与其伴随场的对易子是
+\begin{equation}
+[v^{\mu}(x),v^{\nu\dag}(y)]=\left[\eta^{\mu\nu}-\frac{\partial^{\mu}\partial^{\nu}}{m^{2}}\right]\Delta(x-y)\:, \label{5.3.35}%
+\end{equation}
+其中$\Delta(x-y)$是函数(\ref{5.2.13}).
+
+对有质量的自旋\,1\,粒子, 我们构造的实场和复场都满足有趣的场方程. 首先, 因为方程(\ref{5.3.26})中指数上的$p^{\mu}$满足$p^{2}=-m^{2}$, 所以场满足\,Klein-Gordon\,方程:
+\begin{equation}
+(\square-m^{2})v^{\mu}(x)=0\:, \label{5.3.36}%
+\end{equation}
+这与标量场相同\marginpar[\flushright{\small[212]\hspace*{5mm}}]{{\small\hspace*{5mm}[212]}}. 另外, 因为方程(\ref{5.3.24})显示出
+\begin{equation}
+e^{\mu}(\bp,\sigma)\,p_{\mu}=0\:, \label{5.3.37}%
+\end{equation}
+我们现在有另一方程
+\begin{equation}
+\partial_{\mu}v^{\mu}(x)=0\:. \label{5.3.38}%
+\end{equation}
+在质量很小的极限下, 方程(\ref{5.3.36})和(\ref{5.3.38})正是电动力学\,4\,-矢势在所谓\,Lorenz\,规范下的方程.{}$^\zc$\footnote{$^\zc${}原书此处的\,Lorenz\,规范误植为\,Lorentz\,规范, %
+前者是丹麦物理学家\,Ludvig Lorenz\,(路德维希\,\textperiodcentered\,洛伦茨), %
+后者是荷兰物理学家\,Hendrik Lorentz\,(亨德里克\,\textperiodcentered\,洛伦兹). \ezx 译者注}
+
+然而, 我们无法通过让质量趋于零从有质量自旋\,1\,粒子的任何理论中获得电动力学. 这一点可以通过考察相互作用密度$\mathscr{H}=J_{\mu}v^{\mu}$产生自旋\,1\,粒子的速率看出来, 其中$J_{\mu}$是任意\,4\,-矢流. 对矩阵元取平方并对自旋\,1\,粒子的自旋$z$-分量求和, 这给出的速率正比于
+\[
+\sum_{\sigma} \lvert \langle J_{\mu}\rangle e^{\mu}(p,\sigma)^{\ast} \rvert ^{2}
+= \langle J_{\mu}\rangle \langle J_{\nu}\rangle^{\ast}\Pi^{\mu\nu}(\bp)\:,%
+\]
+其中$\bp$是出射自旋\,1\,粒子的动量, 而$\langle J_{\mu}\rangle$是流(例如在$x=0$处)在所有其他粒子的初态和末态之间的矩阵元. $\Pi^{\mu\nu}(\bp)$中的$p^{\mu}p^{\nu}/m^{2}$, 一般而言, 会在$m\to 0$时引起发射速率爆炸. 避免这一灾难的唯一方法是令$\langle J_{\mu} \rangle p^{\mu}$为零, 这在坐标空间就是要求: 流$J^{\mu}$必须是{\KAI{守恒的}}, 也就是说$\partial_{\mu}J^{\mu}=0$. 事实也的确如此,  对流守恒的要求可以通过对态的简单计数看到. 一个有质量自旋\,1\,粒子有三个自旋态, 可以取成螺旋度为$+1,0,-1$的态, 而任何无质量自旋\,1\,粒子, 例如光子, 只能有螺旋度$+1$和$-1$: 流守恒条件正好确保了自旋\,1\,粒子的零螺旋度态在零质量极限下不被发射.
+
+同上节讨论的标量场一样, 反演可以以大致相同的方式处理. 为了计算空间反演的效应, 我们需要$e^{\mu}(\bp,\sigma)$的公式. 利用$L^{\mu}{}_{\!\nu}(-\bp)={\mathscr{P}}^{\mu}{}_{\!\rho}L^{\rho}{}_{\!\tau}(\bp)
+{\mathscr{P}}^{\tau}{}_{\!\nu}$以及方程(\ref{5.3.24}), 我们有
+\begin{equation}
+e^{\mu}(-\bp,\sigma)=-{\mathscr{P}}^{\mu}{}_{\!\nu}e^{\nu}(\bp,\sigma)\:. \label{5.3.39}%
+\end{equation}
+另外, 为了计算时间反演的效应, 我们需要$(-1)^{1+\sigma}e^{\mu\ast}(-\bp,-\sigma)$的公式. 利用$(-1)^{1+\sigma}e^{\mu\ast}(0,-\sigma)=-e^{\mu}(0,\sigma)$以及前面%
+$L^{\mu}{}_{\!\nu}(-\bp)$的公式, 我们发现\begin{equation}
+(-1)^{1+\sigma}e^{\mu\ast}(-\bp,-\sigma)={\mathscr{P}}^{\mu}{}_{\!\nu}\,e^{\nu}(\bp,\sigma)\:. \label{5.3.40}%
+\end{equation}
+利用这些结果以及\,\ref{sec:4.2}\,节给出的产生湮没算符的变换性质,
+我们可以直\marginpar[\flushright{\small[213]\hspace*{5mm}}]{{\small\hspace*{5mm}[213]}} 接解出产生场和湮没场的反演性质. 我们再一次发现, 为了使变换后的因果场在类空间隔上对易, 必须要求自旋\,1\,粒子和其反粒子的内禀空间反演相位, 荷共轭相位和时间反演相位有如下关系%
+\begin{equation}
+\eta^{\text{c}}=\eta^{\ast}\:, \label{5.3.41}%
+\end{equation}%
+\begin{equation}
+\xi^{\text{c}}=\xi^{\ast}\:, \label{5.3.42}%
+\end{equation}%
+\begin{equation}
+\zeta^{\text{c}}=\zeta^{\ast}\:. \label{5.3.43}%
+\end{equation}
+(特别地, 如果自旋\,1\,粒子的反粒子是其本身, 则所有相位必须是实的.) 满足了这些相位条件, 我们的因果矢量场(\ref{5.3.34})就有反演变换性质
+\begin{equation}
+\mathsf{P}v^{\mu}(x)\mathsf{P}^{-1}=-\eta^{\ast}{\mathscr{P}}^{\mu}{}_{\!\nu}v^{\nu}({\mathscr{P}}x)\:, \label{5.3.44}%
+\end{equation}%
+\begin{equation}
+\mathsf{C}v^{\mu}(x)\mathsf{C}^{-1}=\xi^{\ast}v^{\mu\dag}(x)\:,
+\label{5.3.45}%
+\end{equation}%
+\begin{equation}
+\mathsf{T}v^{\mu}(x)\mathsf{T}^{-1}=\zeta^{\ast}{\mathscr{P}}^{\mu}{}_{\!\nu}v^{\nu}(-{\mathscr{P}}x)\:. \label{5.3.46}%
+\end{equation}
+特别地, 方程(\ref{5.3.44})中的负号意味着, 对于按照极矢量变换的矢量场, 矩阵$\mathscr{P}^{\mu}{}_{\!\nu}$没有额外的相位或正负号, 因而描述的是内禀宇称$\eta=-1$的自旋\,1\,粒子.
+
+\section{Dirac\,形式体系} \label{sec:5.4}
+\setcounter{equation}{0}
+
+在齐次\,Lorentz\,群的所有表示中, 有一个表示在物理中扮演了特殊的角色. 正如我们在\,\ref{sec:1.1}\,节中看到的, %
+这个表示被\,Dirac\,引入到电子的理论中,\textsuperscript{\cite{3}} 但是像通常一样, 数学家在这之前就已经知道它了,\textsuperscript{\cite{4}}
+这是因为它为任意维旋转群或\,Lorentz\,群(实际上是它们的覆盖群\ezx 见\,\ref{sec:2.7}\,节)的两大类表示中的一类提供了基. %
+从我们在这里所遵循的观点看, 齐次\,Lorentz\,群的表示决定了按照该群变换的量子场的结构和性质, 所以, %
+按照它首次出现在数学中的方式, 而不是按照\,Dirac\,引入的方式, 来描述\,Dirac\,形式体系对于我们来说更加自然.
+
+对于齐次\,Lorentz\,群的一个表示, 我们通常是指一组满足群乘积法则的矩阵$D(\Lambda)$
+\[
+D(\bar{\Lambda})D(\Lambda)=D(\bar{\Lambda}\Lambda)\:.%
+\]
+就像\marginpar[\flushright{\small[214]\hspace*{5mm}}]{{\small\hspace*{5mm}[214]}}处理幺正算符$U(\Lambda)$那样, 我们可以通过考察无限小情形来研究这些矩阵的性质,
+\begin{equation}
+\Lambda^{\mu}{}_{\!\nu}=\updelta^{\mu}{}_{\!\nu}+\omega^{\mu}{}_{\!\nu}\:, \label{5.4.1}%
+\end{equation}%
+\begin{equation}
+\omega_{\mu\nu}=-\omega_{\nu\mu}\:, \label{5.4.2}%
+\end{equation}
+这时
+\begin{equation}
+D(\Lambda)=1+\frac{\mi}{2}\,\omega_{\mu\nu}\mathscr{J}^{\mu\nu}, \label{5.4.3}%
+\end{equation}
+其中$\mathscr{J}^{\mu\nu}=-\mathscr{J}^{\nu\mu}$是一组满足对易关系(\ref{2.4.12})的矩阵:
+\begin{equation}
+\mi[\mathscr{J}^{\mu\nu},\mathscr{J}^{\rho\sigma}]=\eta^{\nu\rho}%
+\mathscr{J}^{\mu\sigma}-\eta^{\mu\rho}\mathscr{J}^{\nu\sigma}-\eta^{\sigma\mu
+}\mathscr{J}^{\rho\nu}+\eta^{\sigma\nu}\mathscr{J}^{\rho\mu}\:.
+\label{5.4.4}%
+\end{equation}
+
+
+为了找到这样一组矩阵, 假定我们先构造出了满足如下{\KAI{反}}对易关系的矩阵$\gamma^{\mu}$
+\begin{equation}
+\{\gamma^{\mu},\gamma^{\nu}\}=2\eta^{\mu\nu}, \label{5.4.5}%
+\end{equation}
+并试定义
+\begin{equation}
+\mathscr{J}^{\mu\nu}=-\frac{\mi}{4}[\gamma^{\mu},\gamma^{\nu}]\:,
+\label{5.4.6}%
+\end{equation}
+利用方程(\ref{5.4.5})不难证明
+\begin{equation}
+[\mathscr{J}^{\mu\nu},\gamma^{\rho}]=-\mi\gamma^{\mu}\eta^{\nu\rho}+\mi\gamma^{\nu}\eta^{\mu\rho}.\label{5.4.7}%
+\end{equation}
+由此我们不难看出,方程(\ref{5.4.6})确实满足期望的对易关系(\ref{5.4.4}). 我们进一步假定矩阵$\gamma_{\mu}$是{\KAI{不可约的}}, 即, 不存在在所有这些矩阵下不变的真子空间. 否则, 我们可以选择更小的一组场分量, 它像方程(\ref{5.4.3})和(\ref{5.4.6})中那样变换, 并有一组不可约的$\gamma_{\mu}$.
+
+任何一组满足类似方程(\ref{5.4.5})(或者它的欧几里得类比, 也就是将$\eta_{\mu\nu}$替换成克罗内克$\updelta$-符号)的关系的矩阵, 被称为\,\textit{Clifford}\,{\KAI{(克利福德)代数}}. 齐次\,Lorentz\,群(或者, 更精确些, 它的覆盖群)的这个特殊表示的数学重要性源于如下事实(见\,\ref{sec:5.6}\,节): Lorentz\,群最一般的不可约表示要么是张量, 要么是按照方程(\ref{5.4.3})和(\ref{5.4.6})变换的旋量, 要么是一个张量和一个旋量的直积.
+
+对易关系(\ref{5.4.7})可以被总结为: $\gamma^{\rho}$是{\KAI{矢量}}, 也就是说方程(\ref{5.4.3})满足
+\begin{equation}
+D(\Lambda)\gamma^{\rho}D^{-1}(\Lambda)=\Lambda_{\sigma}{}^{\!\rho}\gamma^{\sigma}\:. \label{5.4.8}%
+\end{equation}
+在同样的意义下, 单位矩阵就是{\KAI{标量}}%
+\begin{equation}
+D(\Lambda)\mathbf{1}D^{-1}(\Lambda)= \mathbf{1}. \label{5.4.9}%
+\end{equation}
+而\marginpar[\flushright{\small[215]\hspace*{5mm}}]{{\small\hspace*{5mm}[215]}}方程(\ref{5.4.4})表明$\mathscr{J}^{\rho\sigma}$是反对称{\KAI{张量}}%
+\begin{equation}
+D(\Lambda)\mathscr{J}^{\rho\sigma}D^{-1}(\Lambda)=
+\Lambda_{\mu}{}^{\!\rho}\Lambda_{\nu}{}^{\!\sigma}\mathscr{J}^{\mu\nu}\:. \label{5.4.10}%
+\end{equation}
+用矩阵$\gamma^{\mu}$可以构造出其他全反对称张量
+\begin{equation}
+{\mathscr{A}}^{\rho\sigma\tau}\equiv\gamma^{\lbrack\rho}\gamma^{\sigma}\gamma^{\tau]}\:, \label{5.4.11}%
+\end{equation}%
+\begin{equation}
+\mathscr{P}^{\rho\sigma\tau\eta}=\gamma^{\lbrack\rho}\gamma^{\sigma}\gamma^{\tau}\gamma^{\eta]}\:. \label{5.4.12}%
+\end{equation}
+这里的中括号是标准记法, 表明我们对括号内指标的所有置换求和, 而对求和中偶置换和奇置换要分别加上正号和负号. 例如, 方程(\ref{5.4.11})是下式的简单记法
+\begin{align*}
+{\mathscr{A}}^{\rho\sigma\tau}  &  \equiv\gamma^{\rho}\gamma^{\sigma}\gamma^{\tau}
+-\gamma^{\rho}\gamma^{\tau}\gamma^{\sigma}-\gamma^{\sigma}\gamma^{\rho}\gamma^{\tau}\\
+&  \quad+\gamma^{\tau}\gamma^{\rho}\gamma^{\sigma}+\gamma^{\sigma}\gamma
+^{\tau}\gamma^{\rho}-\gamma^{\tau}\gamma^{\sigma}\gamma^{\rho}\:.%
+\end{align*}
+通过重复使用方程(\ref{5.4.5}), 我们可以将$\gamma$的任何乘积写成$\gamma$的反对称乘积乘以度规张量乘积的和, 所以对于用\,Dirac\,矩阵构造出的任何矩阵集合, 全反对称张量构成了一个完全基.
+
+这个形式体系自动包含了一个宇称变换, 通常取为
+\begin{equation}
+\beta\equiv \mi\gamma^{0}\:. \label{5.4.13}%
+\end{equation}
+作用在\,Dirac\,矩阵上给出
+\begin{equation}
+\beta\gamma^{i}\beta^{-1}=-\gamma^{i}\:, \qquad\qquad \beta\gamma^{0}\beta^{-1}=+\gamma^{0}\:. \label{5.4.14}%
+\end{equation}
+(我们这里的指标使$\mu$取遍值$0,1,2,\cdots$.) 作用在$\gamma$矩阵的任意乘积上, 取决于乘积中带空间指标的$\gamma$是偶数个还是奇数个, 相同的相似变换仅产生正号或负号. 特别地, \begin{equation}
+\beta\mathscr{J}^{ij}\beta^{-1}=\mathscr{J}^{ij}\:,
+\label{5.4.15}%
+\end{equation}%
+\begin{equation}
+\beta\mathscr{J}^{i0}\beta^{-1}=-\mathscr{J}^{i0}\:. \label{5.4.16}%
+\end{equation}
+
+
+迄今为止, 本节中的一切结果适用于任何时空维数以及任意``度规''$\eta_{\mu\nu}$. 然而, 四维时空有一特征, 即全反对称张量的指标不能超过\,4\,个, 所以张量序列$\mathbf{1},\gamma^{\rho},\mathscr{J}^{\rho\sigma},{\mathscr{A}}^{\rho\sigma\tau},\cdots
+$终结于张量(\ref{5.4.12}). 进一步, 这些张量在\,Lorentz\,变换和(或)宇称变换下的变换并不相同,
+所以它们是完全线性独立\marginpar[\flushright{\small[216]\hspace*{5mm}}]{{\small\hspace*{5mm}[216]}}的.{}$^*$\footnote{$^*${}换一种看法, 也可以通过它们构成正交基来证明它们是线性独立的, 其中两个矩阵的标量积定义为它们乘积的迹. 注意, 这些矩阵没有一个为零, 这是因为这些张量的每个分量正比于不同$\gamma$-矩阵的乘积, 并且这种乘积的平方等于正的或负的相应的平方的乘积, 因而等于$\pm1$.} %
+这些张量的线性独立分量的数目是: $\mathbf{1}$有\,1\,个, $\gamma^{\rho}$有\,4\,个, $\mathscr{J}^{\rho\sigma}$有\,6\,个, ${\mathscr{A}}^{\rho\sigma\tau}$有\,4\,个, $\mathscr{P}^{\mu\nu\rho\sigma}$有1个, 总共是\,16\,个独立分量. (普遍规则是, 对于$d$-维中带有$n$ 个指标的全反对称张量, 其独立分量的数目等于二项式系数$d!/n!(d-n)!$) 独立的$\nu\times\nu$矩阵最多有$\nu^{2}$个, 所以它们至少有$\sqrt{16}=4$ 行和$4$ 列. 维数最小的\,Dirac\,矩阵必须是不可约的; 如果可约, 在这些矩阵下不变的子空间将构成维数更低的表示. 因此我们将$\gamma$ 矩阵取为$4\times4$ 矩阵.
+
+(更普遍地, 若时空维数是任意偶数$d$, 那么可以建立有$0,1,\cdots,d$个指标的反对称张量, 它们包含的独立分量个数总共为
+\[
+\sum_{n=0}^{d}\frac{d!}{n!(d-n)!}=2^{d}\:,%
+\]
+所以$\gamma$-矩阵至少必须有$2^{d/2}$个行和列. 在奇数维空间或时空中, $n$秩和$d-n$秩的全反对称张量通过如下条件线性相关%
+{}$^{**}$\footnote{$^{**}${}这一约束并不妨碍在奇数维时空中\,Lorentz\,群对\,Dirac\,表示引入空间反演, 这是因为, 这里的张量$\epsilon^{\mu_{1}\mu_{2}\cdots\mu_{d}}$在空间坐标的反演下为偶. 如果我们不关心空间反演, 通过附加上述将$r$个与$d-r$个\,Dirac\,矩阵的反对称化积关联起来的条件, 我们也能在偶数维时空中构造出固有正时\,Lorentz\,群的$2^{(d-1)/2}$-维不可约表示. 方程(\ref{5.4.19})和(\ref{5.4.20})中的子矩阵会在下面提供一个例子.}%
+\[
+\gamma^{\lbrack\mu_{1}}\gamma^{\mu_{2}}\cdots\gamma^{\mu_{r}]}\propto
+\epsilon^{\mu_{1}\mu_{2}\cdots\mu_{d}}\gamma_{\lbrack\mu_{r+1}}\gamma
+_{\mu_{r+2}}\cdots\gamma_{\mu_{d}]}\:,%
+\]
+其中$r=0,1,2,\cdots,d-1$, $\epsilon^{\mu_{1}\mu_{2}\cdots\mu_{d}}$全反对称, 左边在$r=0$时取为单位矩阵. 在这些条件下, 仅有$2^{d-1}$个独立张量, 这要求$\gamma$-矩阵的最低维数为$2^{(d-1)/2}$.)
+
+现在回到\,4\,维时空, 我们将选择一组显式的$4\times4$的$\gamma$-矩阵. 一个非常方便的选择是
+\begin{equation}
+\gamma^{0}=-\mi\left[
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{3mm}& \mathbf{1}\\
+\mathbf{1} &\hspace*{3mm}& 0
+\end{array}
+\right]  \:,\qquad\bm{\gamma}=-\mi\left[
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{3mm}& \bm{\sigma}\\
+-\bm{\sigma} &\hspace*{3mm}& 0
+\end{array}
+\right]  \:, \label{5.4.17}%
+\end{equation}
+其中$\mathbf{1}$是$2\times2$单位矩阵, 而${\bm{\sigma}}$的分量是通常的\,Pauli\,矩阵\vspace{-.1mm}
+\begin{equation}
+\sigma_{1}=\left(
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{3mm}& 1\\
+1 &\hspace*{3mm}& 0
+\end{array}
+\right)  \:,\quad\sigma_{2}=\left(
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{3mm}& -\mi\\
+\mi &\hspace*{3mm}& 0
+\end{array}
+\right)  \:,\quad\sigma_{3}=\left(
+\begin{array}
+[c]{ccc}%
+1 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& -1
+\end{array}
+\right)  \:. \label{5.4.18}%
+\end{equation}
+($\sigma_{i}$就\marginpar[\flushright
+{\raisebox{8ex}[0pt]{{\small[217]\hspace*{5mm}}}}]{{\raisebox{8ex}[0pt]{\small\hspace*{5mm}[217]}}}是三维中的$2\times2$的$\gamma$-矩阵.) 可以证明,\textsuperscript{\cite{5}} 任何其他一组不可约的$\gamma$-矩阵与此只相差一个相似变换. 从方程(\ref{5.4.17}) 中, 我们可以简单地计算出\,Lorentz\,群生成元(\ref{5.4.6}):
+\begin{equation}
+\mathscr{J}^{ij}=\frac{1}{2}\epsilon_{ijk}\left[
+\begin{array}
+[c]{ccc}%
+\sigma_{k} &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& \sigma_{k}%
+\end{array}
+\right]  \label{5.4.19}%
+\end{equation}%
+\begin{equation}
+\mathscr{J}^{i0}=+\frac{\mi}{2}\left[
+\begin{array}
+[c]{ccc}%
+\sigma_{i} &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& -\sigma_{i}%
+\end{array}
+\right]  \:. \label{5.4.20}%
+\end{equation}
+(其中, $\epsilon_{ijk}$是三维中的全反对称张量, $\epsilon_{123}\equiv+1$.) 我们注意到它们是分块对角的, 所以\,Dirac\,矩阵固有正时\,Lorentz\,群提供了一个{\KAI{可约}}表示, 即两个不可约表示的直和, 这两个表示分别有$\mathscr{J}^{ij}=\pm \mi\epsilon_{ijk}\mathscr{J}^{k0}$.
+
+将全反对称张量(\ref{5.4.11})和(\ref{5.4.12})写成一种更简单的形式将更加方便. 矩阵(\ref{5.4.12})是全反对称矩阵, 因而正比于赝张量$\epsilon^{\rho\sigma\tau\eta}$, 这个赝张量被定义为一个全反对称量, 有$\epsilon^{0123}=+1$. 令$\rho,\sigma,\tau,\eta$分别等于$0,1,2,3$, 我们看到
+\begin{equation}
+\mathscr{P}^{\rho\sigma\tau\eta}=4!\,\mi\,\epsilon^{\rho\sigma\tau\eta}\gamma_{5}\:, \label{5.4.21}%
+\end{equation}
+其中
+\begin{equation}
+\gamma_{5}\equiv-\mi\gamma^{0}\gamma^{1}\gamma^{2}\gamma^{3}\:.\label{5.4.22}%
+\end{equation}
+矩阵$\gamma_{5}$是赝标量, 也就是说
+\begin{equation}
+[\mathscr{J}^{\rho\sigma},\gamma_{5}]=0\:, \label{5.4.23}%
+\end{equation}%
+\begin{equation}
+\beta\gamma_{5}\beta^{-1}=-\gamma_{5}\:. \label{5.4.24}%
+\end{equation}
+类似地, ${\mathscr{A}}^{\rho\sigma\tau}$必须正比于$\epsilon^{\rho\sigma\tau\eta}$与某个矩阵${\mathscr{A}}_{\eta}$的收缩, 令$\rho,\sigma,\tau$依次等于$0,1,2$或$0,1,3$或$0,2,3$或$1,2,3$, 我们发现
+\begin{equation}
+{\mathscr{A}}^{\rho\sigma\tau}=3!\,\mi\,\epsilon^{\rho\sigma\tau\eta}\gamma
+_{5}\gamma_{\eta}\:. \label{5.4.25}%
+\end{equation}
+因此, 16\,个独立的$4\times4$矩阵可以取为标量$\mathbf{1}$, 矢量$\gamma^{\rho}$, 反对称张量$\mathscr{J}^{\rho\sigma}$, ``轴''矢量$\gamma_{5}\gamma_{\eta}$以及赝标量$\gamma_{5}$. 很容易看到矩阵$\gamma_{5}$的平方等于$\mathbf{1}$%
+\begin{equation}
+\gamma_{5}{}^{2}=\mathbf{1} \label{5.4.26}%
+\end{equation}
+并与所有$\gamma^{\mu}$反对易\marginpar[\flushright{\small[218]\hspace*{5mm}}]{{\small\hspace*{5mm}[218]}}
+\begin{equation}
+\{\gamma_{5},\gamma^{\mu}\}=0\:. \label{5.4.27}%
+\end{equation}
+记成$\gamma_{5}$是非常恰当的, 因为反对易关系(\ref{5.4.26})和(\ref{5.4.27}), 再加上方程(\ref{5.4.5}), 它们合在一起表明了$\gamma^{0},\gamma^{1},\gamma^{2},\gamma^{3},\gamma_{5}$给出了五维时空中的\,Clifford\,代数. 对于$\gamma$-矩阵的特定$4\times4$表示(\ref{5.4.17}), 矩阵$\gamma_{5}$是
+\begin{equation}
+\gamma_{5}=\left[
+\begin{array}
+[c]{ccc}%
+\mathbf{1} &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& -\mathbf{1}%
+\end{array}
+\right]  \:. \label{5.4.28}%
+\end{equation}
+这个表示是方便的, 因为它将$\mathscr{J}^{\rho\sigma}$和$\gamma_{5}$简化成了分块对角形式. 我们将会看到, 这使它在$v\to c$的极端相对论极限下处理粒子时非常有用. (但这不是\,\ref{sec:1.1}\,节中\,Dirac\,最初引入的表示, %
+这是因为\,Dirac\,关注的是原子中的电子, 那里$v\ll c$, 而在这种情况下, %
+将$\gamma^{0}$而非$\gamma_{5}$取成对角形式将更加方便.)
+
+我们这里构造的齐次\,Lorentz\,群的表示不是幺正的, 这是因为生成元$\mathscr{J}^{\rho\sigma}$无法全部表示成厄米矩阵. 特别地, 在表示(\ref{5.4.17})中, $\mathscr{J}^{ij}$是厄米的, 但$\mathscr{J}^{i0}$是反厄米的. 通过引入方程(\ref{5.4.13})中的矩阵$\beta\equiv \zi\gamma^{0}$, 这种实条件可以非常方便地写成明显\,Lorentz\,不变的形式, $\beta$在表示(\ref{5.4.17})中的形式为
+\begin{equation}
+\beta=\left[
+\begin{array}
+[c]{ccc}%
+0 &\hspace*{3mm}& \mathbf{1}\\
+\mathbf{1} &\hspace*{3mm}& 0
+\end{array}
+\right]  \:. \label{5.4.29}%
+\end{equation}
+观察方程(\ref{5.4.17}), 它给出
+\begin{equation}
+\beta\gamma^{\mu\dag}\beta=-\gamma^{\mu}, \label{5.4.30}%
+\end{equation}
+从而有
+\begin{equation}
+\beta\mathscr{J}^{\rho\sigma\dagger}\beta=\mathscr{J}^{\rho\sigma} \:.\label{5.4.31}%
+\end{equation}
+因此, 尽管不幺正, 但矩阵$D(\Lambda)$满足赝幺正关系
+\begin{equation}
+\beta\, D(\Lambda)^{\dag}\,\beta=D(\Lambda)^{-1}\:. \label{5.4.32}%
+\end{equation}
+另外, $\gamma_{5}$厄米且与$\beta$反对易, 所以
+\begin{equation}
+\beta\gamma_{5}^{\dag}\beta=-\gamma_{5}, \label{5.4.33}%
+\end{equation}
+由此得出
+\begin{equation}
+\beta(\gamma_{5}\gamma_{\mu})^{\dagger}\beta=-\gamma_{5}\gamma_{\mu}\:. \label{5.4.34}%
+\end{equation}
+
+
+Dirac\,矩阵\marginpar[\flushright{\small[219]\hspace*{5mm}}]{{\small\hspace*{5mm}[219]}}及其相关矩阵还有重要的对称性质. 观察方程(\ref{5.4.17})和(\ref{5.4.18}), 可以看出$\gamma_{\mu}$对$\mu=0,2$对称, 对$\mu=1,3$反对称, 所以
+\begin{equation}
+\gamma_{\mu}^{\text{T}}=-\mathscr{C}\gamma_{\mu}\mathscr{C}^{-1}\:, \label{5.4.35}%
+\end{equation}
+其中\,T\,表示转置, 并且
+\begin{equation}
+\mathscr{C}\equiv\gamma_{2}\beta=-\mi\left[
+\begin{array}
+[c]{ccc}%
+\sigma_{2} &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& -\sigma_{2}%
+\end{array}
+\right]  \:. \label{5.4.36}%
+\end{equation}
+由此立即得出\begin{equation}
+\mathscr{J}_{\mu\nu}^{\text{T}}=-\mathscr{C}\mathscr{J}_{\mu\nu}\mathscr{C}^{-1}\:, \label{5.4.37}%
+\end{equation}%
+\begin{equation}
+\gamma_{5}^{\text{T}}=+\mathscr{C}\gamma_{5}\mathscr{C}^{-1}\:,\label{5.4.38}%
+\end{equation}%
+\begin{equation}
+(\gamma_{5}\gamma_{\mu})^{\text{T}}=+\mathscr{C}\gamma_{5}\gamma_{\mu}\mathscr{C}^{-1}\:. \label{5.4.39}%
+\end{equation}
+我们在下一节考察不同流的荷共轭性质时, 这些符号将会体现出它们的重要性. 当然, 我们可以结合转置和共轭以获得\,Dirac\,矩阵及相关矩阵的复共轭:
+\begin{equation}
+\gamma_{\mu}^{\ast}=\beta\mathscr{C}\gamma_{\mu}\mathscr{C}^{-1}\beta\:, \label{5.4.40}%
+\end{equation}%
+\begin{equation}
+\mathscr{J}_{\mu\nu}^{\ast}=-\beta\mathscr{C}\mathscr{J}_{\mu\nu}\mathscr{C}^{-1}\beta\:, \label{5.4.41}%
+\end{equation}%
+\begin{equation}
+\gamma_{5}^{\ast}=-\beta\mathscr{C}\gamma_{5}\mathscr{C}^{-1}\beta\:, \label{5.4.42}%
+\end{equation}%
+\begin{equation}
+(\gamma_{5}\gamma_{\mu})^{\ast}=-\beta\mathscr{C}\gamma_{5}\gamma_{\mu}\mathscr{C}^{-1}\beta\:. \label{5.4.43}%
+\end{equation}
+
+
+\section{因果\,Dirac\,场}  \label{sec:5.5}
+\setcounter{equation}{0}
+
+对于现在要构造的粒子湮没场和反粒子产生场, 我们希望它们在\,Lorentz\,群下按照上节讨论的\,Dirac\,表示进行变换. 一般而言, 它们取方程(\ref{5.1.17})和(\ref{5.1.18})所给的形式:
+\begin{equation}
+\psi_{\ell}^{+}(x)=(2\uppi)^{-3/2}\sum_{\sigma}\int \dif^{3}p\:u_{\ell}%
+(\bp,\sigma)\me^{\mi p\cdot x}a(\bp,\sigma) \label{5.5.1}%
+\end{equation}
+和
+\begin{equation}
+\psi_{\ell}^{-\text{c}}(x)=(2\pi)^{-3/2}\sum_{\sigma}\int \dif^{3}p\:v_{\ell}(\bp,\sigma)
+\me^{-\mi p\cdot x}a^{\text{c}\dag}(\bp,\sigma)\:.
+\label{5.5.2}%
+\end{equation}
+在这里省略了粒子种类指标\marginpar[\flushright{\small[220]\hspace*{5mm}}]{{\small\hspace*{5mm}[220]}}. 为了计算这些式子中的系数函数$u_{\ell}(\bp,\sigma)$ 和$v_{\ell}(\bp,\sigma)$, 我们必须先利用方程(\ref{5.1.25}) 和(\ref{5.1.26})找到动量为零时的$u_{\ell}$和$v_{\ell}$, 然后利用方程(\ref{5.1.21})和(\ref{5.1.22})计算出任意动量的$u_{\ell}$ 和$v_{\ell}$, 在这两种情况中, $D_{\bar{\ell}\ell}(\Lambda)$都是上节讨论的齐次\,Lorentz\,群的$4\times4$Dirac\,表示。
+
+利用方程(\ref{5.4.19}), 零动量条件(\ref{5.1.25})和(\ref{5.1.26})为{}$^*$\footnote{$^*${}我们在这里扔掉了种类指标$n$, 并将\,4\,-分量指标$\ell$替换成一对指标, 一个是\,2\,值指标$m$, 用来标记方程(\ref{5.4.19})和(\ref{5.4.20})中的子矩阵的行与列; 另一个指标取值$\pm$, 用来标记方程(\ref{5.4.19})和(\ref{5.4.20}) 中的超矩阵的行与列.}%
+\[
+\sum_{\bar{\sigma}}u_{\bar{m}\pm}(0,\bar{\sigma})\bJ_{\bar{\sigma
+}\sigma}^{(j)}=\sum_{m}\tfrac{1}{2}\bm{\sigma}_{\bar{m}m}u_{m\pm}(0,\sigma)
+\]
+和\[
+-\sum_{\bar{\sigma}}v_{\bar{m}\pm}(0,\bar{\sigma})\bJ_{\bar{\sigma
+}\sigma}^{(j)\ast}=\sum_{m}\tfrac{1}{2}\bm{\sigma}_{\bar{m}m}v_{m\pm}%
+(0,\sigma)\:.%
+\]
+换句话说, 如果我们把$u_{m\pm}(0,\sigma)$和$v_{m\pm}(0,\sigma)$看成是矩阵$U_{\pm}$和%
+$V_{\pm}$的$m,\sigma$元, 那么我们就有如下矩阵表示
+\begin{equation}
+U_{\pm}\bJ^{(j)}=\tfrac{1}{2}\bm{\sigma}U_{\pm} \label{5.5.3}%
+\end{equation}
+和
+\begin{equation}
+-V_{\pm}\bJ^{(j)\ast}=\tfrac{1}{2}\bm{\sigma}V_{\pm}\:.
+\label{5.5.4}%
+\end{equation}
+
+
+现在, $(2j+1)$-维表示矩阵$\bJ^{(j)}$和$-\bJ^{(j)\ast}$以及%
+$2\times2$矩阵$\frac{1}{2}\bm{\sigma}$都提供了旋转群\,Lie\,代数的不可约表示. 群论中有一个称为\,Schur\,引理\textsuperscript{\cite{6}}的一般定理, 它告诉我们, 当一个矩阵像$U_{\pm}$或$V_{\pm}$这样以方程(\ref{5.5.3})和(\ref{5.5.4})中的方式联系两个表示, 那么这个矩阵要么为零(这里对这种可能性不感兴趣)要么是非奇异的方阵. 因此, Dirac\,场仅能描述自旋$j=\frac{1}{2}$的粒子(使得$2j+1=2$), 并且矩阵$\bJ^{(1/2)}$和$-\bJ^{(1/2)\ast}$与$\frac{1}{2}\bm{\sigma}$ 只相差一个相似变换. 事实上, 在旋转生成元的标准表示(\ref{2.5.21})和(\ref{2.5.22})中, 我们有$\bJ^{(1/2)}=\frac{1}{2}\bm{\sigma}$和%
+$-\bJ^{(1/2)\ast}=\frac{1}{2}\sigma_{2}\bm{\sigma}\sigma_{2}.$ 由此得出$U_{\pm}$和$V_{\pm}\sigma_{2}$必须与$\bm{\sigma}$对易,  因而正比于单位矩阵:
+\begin{equation}
+u_{m\pm}(0,\sigma)=c_{\pm}\updelta_{m\sigma} \:, \qquad v_{m\pm}(0,\sigma)=-\mi d_{\pm}(\sigma_{2})_{m\sigma}\:. \label{5.5.5}%
+\end{equation}
+换句话说\marginpar[\flushright{\small[221]\hspace*{5mm}}]{{\small\hspace*{5mm}[221]}}
+\[
+u(0,\tfrac{1}{2})=\left[
+\begin{array}
+[c]{c}%
+c_{+}\\
+0\\
+c_{-}\\
+0
+\end{array}
+\right]  \text{ ,  \ \ \ \ \ }u(0,-\tfrac{1}{2})=\left[
+\begin{array}
+[c]{c}%
+0\\
+c_{+}\\
+0\\
+c_{-}%
+\end{array}
+\right]  \:,%
+\]%
+\[
+v(0,\tfrac{1}{2})=\left[
+\begin{array}
+[c]{c}%
+0\\
+d_{+}\\
+0\\
+d_{-}%
+\end{array}
+\right]  \text{ ,  \ \ \ \ \ }v(0,-\tfrac{1}{2})=-\left[
+\begin{array}
+[c]{c}%
+d_{+}\\
+0\\
+d_{-}\\
+0
+\end{array}
+\right]
+\]
+而有限动量的旋量是\begin{align}
+u(\bp,\sigma)  &= \sqrt{m/p^{0}}D\Big(L(p)\Big)u(0,\sigma)\:,\label{5.5.6}\\
+v(\bp,\sigma)  &= \sqrt{m/p^{0}}D\Big(L(p)\Big)v(0,\sigma)\:.
+\label{5.5.7}%
+\end{align}
+
+
+还需要讨论的是剩下常数$c_{\pm}$和$d_{\pm}$. 一般而言, 它们有很大的任意性\ezx 只要我们愿意, 我们甚至可以将$c_{-}$和$d_{-}$或$c_{+}$ 和$d_{+}$ 取为零, 这将使\,Dirac\,场只有{\KAI{两个}}非零分量. 能够告诉我们$c_{\pm}$或$d_{\pm}$的相对值的唯一物理原理是宇称守恒. 我们回忆一下, 在空间反演下, 粒子湮没算符和反粒子产生算符经历了变换:
+\begin{equation}
+\mathsf{P}a(\bp,\sigma)\mathsf{P}^{-1}=\eta^{\ast}a(-\bp,\sigma)
+\label{5.5.8}%
+\end{equation}%
+\begin{equation}
+\mathsf{P}a^{\text{c}\dag}(\bp,\sigma)\mathsf{P}^{-1}=\eta^{\text{c}%
+}a^{\text{c}\dag}(-\bp,\sigma) \label{5.5.9}%
+\end{equation}
+因而
+\begin{equation}
+\mathsf{P}\psi_{\ell}^{+}(x)\mathsf{P}^{-1}=\eta^{\ast}(2\uppi)^{-3/2}%
+\sum_{\sigma}\int \dif^{3}p\:u_{\ell}(-\bp,\sigma)\me^{\mi p\cdot\mathscr{P}x}a(\bp,\sigma)\:, \label{5.5.10}%
+\end{equation}%
+\begin{equation}
+\mathsf{P}\psi_{\ell}^{-\text{c}}(x)\mathsf{P}^{-1}=\eta^{\text{c}}%
+(2\uppi)^{-3/2}\sum_{\sigma}\int \dif^{3}p\:v_{\ell}(-\bp,\sigma)
+\me^{\mi p\cdot\mathscr{P}x}a^{\text{c}\dag}(\bp,\sigma)\:.   \label{5.5.11}%
+\end{equation}
+另外, 方程(\ref{5.4.16}), (\ref{5.1.21}%
+)和(\ref{5.1.22})给出\begin{equation}
+u(-\bp,\sigma)=\sqrt{m/p^{0}}\beta D(L(\bp))\beta u(0,\sigma) \label{5.5.12}%
+\end{equation}%
+\begin{equation}
+v(-\bp,\sigma)=\sqrt{m/p^{0}}\beta D(L(\bp))\beta v(0,\sigma)\:. \label{5.5.13}%
+\end{equation}
+(由于$\beta^{2}=1$, 我们不再区分$\beta$和$\beta^{-1}$.) 为了使点$x$处的场在宇称变换后正比于点$\mathscr{P}x$
+处\marginpar[\flushright{\small[222]\hspace*{5mm}}]{{\small\hspace*{5mm}[222]}}的场, 必须使$\beta u(0,\sigma)$ 和$\beta v(0,\sigma)$分别正比于$u(0,\sigma)$和$v(0,\sigma)$:
+\begin{equation}
+\beta u(0,\sigma)=b_{u}u(0,\sigma) \:, \qquad \beta v(0,\sigma)=b_{v}v(0,\sigma)\:, \label{5.5.14}%
+\end{equation}
+其中$b_{u}$和$b_{v}$是符号因子, $b_{u}^{2}=b_{v}^{2}=1$. 在这种情况下, 场具有简单的空间反演性质:
+\begin{equation}
+\mathsf{P}\psi^{+}(x)\mathsf{P}^{-1}=\eta^{\ast}b_{u}\beta\psi^{+}(\mathscr{P}x)\:, \label{5.5.15}%
+\end{equation}%
+\begin{equation}
+\mathsf{P}\psi^{-\text{c}}(x)\mathsf{P}^{-1}=\eta^{\text{c}}b_{v}\beta\psi^{-\text{c}}(\mathscr{P}x)\:. \label{5.5.16}%
+\end{equation}
+通过调整场的整体标度, 我们可以选择零动量处的系数函数使其具有如下形\nolinebreak
+式:
+\begin{equation}
+u(0,\tfrac{1}{2})=\frac{1}{\sqrt{2}}\left[
+\begin{array}
+[c]{c}%
+1\\
+0\\
+b_{u}\\
+0
+\end{array}
+\right]  \text{ ,  \ \ \ \ \ }u(0,-\tfrac{1}{2})=\frac{1}{\sqrt{2}%
+}\left[
+\begin{array}
+[c]{c}%
+0\\
+1\\
+0\\
+b_{u}%
+\end{array}
+\right]  \:, \label{5.5.17}%
+\end{equation}%
+\begin{equation}
+v(0,\tfrac{1}{2})=\frac{1}{\sqrt{2}}\left[
+\begin{array}
+[c]{c}%
+0\\
+1\\
+0\\
+b_{v}%
+\end{array}
+\right]  \text{ ,  \ \ \ \ \ }v(0,-\tfrac{1}{2})=\frac{-1}{\sqrt{2}%
+}\left[
+\begin{array}
+[c]{c}%
+1\\
+0\\
+b_{v}\\
+0
+\end{array}
+\right]  \:. \label{5.5.18}%
+\end{equation}
+
+
+现在, 我们尝试把湮没场和产生场放进一个线性组合
+\begin{equation}
+\psi(x)=\kappa\psi^{+}(x)+\lambda\psi^{-\text{c}}(x) \label{5.5.19}%
+\end{equation}
+并使它与自身和伴随场在类空间隔上对易或反对易. 直接计算给出
+\begin{equation}
+[\psi_{\ell}(x),\psi_{\bar{\ell}}^{\dag}(y)]_{\mp}=(2\uppi)^{-3}\int
+\dif^{3}p\:[\lvert \kappa\rvert^{2} N_{\ell\bar{\ell}}(\bp)\me^{\mi p\cdot(x-y)}\mp
+\lvert \lambda \rvert^{2} M_{\ell\bar{\ell}}(\bp)\me^{-\mi p\cdot(x-y)}]\:, \label{5.5.20}%
+\end{equation}
+其中\begin{equation}
+N_{\ell\bar{\ell}}(\bp)\equiv\sum_{\sigma}
+u_{\ell}(\bp,\sigma)u_{\bar{\ell}}^{\ast}(\bp,\sigma)\:, \label{5.5.21}%
+\end{equation}%
+\begin{equation}
+M_{\ell\bar{\ell}}(\bp)\equiv\sum_{\sigma}
+v_{\ell}(\bp,\sigma)v_{\bar{\ell}}^{\ast}(\bp,\sigma)\:. \label{5.5.22}%
+\end{equation}
+利用本征值条件(\ref{5.5.14})或者通过显式表达式(\ref{5.5.17})和(\ref{5.5.18}), 我们发现动量为零时:
+\begin{equation}
+N(0)=\frac{1+b_{u}\beta}{2}\:,\qquad \quad M(0)=\frac{1+b_{v}\beta}{2}\:. \label{5.5.23}%
+\end{equation}
+于是从方程(\ref{5.5.6})和(\ref{5.5.7})中\marginpar[\flushright{\small[223]\hspace*{5mm}}]{{\small\hspace*{5mm}[223]}}我们就得到
+\begin{equation}
+N(\bp)=\frac{m}{2p^{0}}D\Bigl(L(p)\Bigr)[1+b_{u}\beta]D^{\dag}\Bigl(L(p)\Bigr)\:, \label{5.5.24}%
+\end{equation}%
+\begin{equation}
+M(\bp)=\frac{m}{2p^{0}}D\Bigl(L(p)\Bigr)[1+b_{v}\beta]D^{\dag}\Bigl(L(p)\Bigr)\:.
+\label{5.5.25}%
+\end{equation}
+赝幺正条件(\ref{5.4.32})给出
+\[
+D\Big(L(p)\Big)\beta D^{\dag}\Big(L(p)\Big)=\beta
+\]
+以及
+\[
+D\Big(L(p)\Big)D^{\dag}\Big(L(p)\Big)=D\Big(L(p)\Big)\beta D^{-1}\Big(L(p)\Big)\beta \:.
+\]
+再注意到$\beta=\mi\gamma^{0}$, 于是利用\,Lorentz\,变换规则(\ref{5.4.8}), 我们有
+\begin{equation}
+D\Big(L(p)\Big)\beta D^{-1}\Big(L(p)\Big)=\mi L_{\mu}{}^{0}(p)\gamma^{\mu}=-\mi p_{\mu}\gamma^{\mu}/m\:. \label{5.5.26}%
+\end{equation}
+将这个也加进来, 我们发现{}$^*$\footnote{$^*${}有时会在\,Dirac\,旋量中引入一个额外因子$\sqrt{p^{0}/m}$, 从而使得自旋求和(\ref{5.5.27})和(\ref{5.5.28})分母中的$p^{0}$被换成$m$. 这里所采用的归一化的优点是它可以光滑地过渡到$m=0$的情况.}%
+\begin{equation}
+N(\bp)=\frac{1}{2p^{0}}[-\mi p^{\mu}\gamma_{\mu}+b_{u}m]\beta\:, \label{5.5.27}%
+\end{equation}%
+\begin{equation}
+M(\bp)=\frac{1}{2p^{0}}[-\mi p^{\mu}\gamma_{\mu}+b_{v}m]\beta\:. \label{5.5.28}%
+\end{equation}
+应用到方程(\ref{5.5.20}), 最终给出
+\begin{align}
+[\psi_{\ell}(x),\psi_{\bar{\ell}}^{\dag}(y)]_{\mp}  &= \bigl(\lvert\kappa\rvert^{2}
+[-\gamma^{\mu}\partial_{\mu}+b_{u}m]\beta\Delta_{+}(x-y)\nonumber\\
+&\quad\mp \lvert \lambda \rvert^{2}[-\gamma^{\mu}\partial_{\mu}+b_{v}m]
+\beta\Delta_{+}(y-x)\bigr)_{\ell\bar{\ell}}\:, \label{5.5.29}%
+\end{align}
+其中$\Delta_{+}$是\,\ref{sec:5.2}\,节引入的函数
+\[
+\Delta_{+}(x)\equiv\int\frac{\dif^{3}p}{2p^{0}(2\uppi)^{3}}\,\me^{\mi p\cdot x}\:.%
+\]
+我们在\,\ref{sec:5.2}\,节看到, 对于类空的$x-y$, $\Delta_{+}(x-y)$是$x-y$的偶函数, %
+这显然意味着它的一阶导数是$x-y$的奇函数. 因此, 为了使对易子或反对易子中的导数项和非导数项在类空间隔上都为零, %
+必须有如下充分必要条件
+\begin{equation}
+\lvert \kappa\rvert^{2} = \mp\lvert \lambda \rvert^{2} \label{5.5.30}%
+\end{equation}
+和\marginpar[\flushright{\small[224]\hspace*{5mm}}]{{\small\hspace*{5mm}[224]}}
+\begin{equation}
+\lvert \kappa \rvert^{2}b_{u}=\pm \lvert \lambda\rvert^{2}b_{v} \:. \label{5.5.31}%
+\end{equation}
+显然, 仅当我们选择下面的符号, $\mp=+$, 方程(\ref{5.5.30})才可能成立; 这就是说, {\textit{Dirac}\KAI{场描述的粒子一定是费米子}}. 那么必须有$\lvert\kappa\rvert^{2}=\lvert \lambda\rvert^{2}$以及$b_{u}=-b_{v}$. 同标量场一样, 我们可以重新定义产生湮没算符的相对相位以使比值$\kappa/\lambda$ 为正实数, 在这种情况下$\kappa=\lambda$, 并且通过调整场$\psi$的总标度与相位, 我们可以取
+\begin{equation}
+\kappa=\lambda=1\:. \label{5.5.32}%
+\end{equation}
+最后, 如果我们愿意, 我们可将$\psi$替换为$\gamma_{5}\psi$, 这改变了$b_{u}$和$b_{v}$的符号, 所以我们总可以取
+\begin{equation}
+b_{u}=-b_{v}=+1\:. \label{5.5.33}%
+\end{equation}
+为了将来的应用, 我们在这里将\,Dirac\,场重写为
+\begin{equation}
+\psi_{\ell}(x)=(2\uppi)^{-3/2}\sum_{\sigma}\int \dif^{3}p\:[u_{\ell}(\bp%
+,\sigma)\me^{\mi p\cdot x}a(\bp,\sigma)+v_{\ell}(\bp,\sigma)\me^{-\mi p\cdot x}a^{\text{c}\dag}(\bp,\sigma)] \label{5.5.34}%
+\end{equation}
+零动量处的系数函数是
+\begin{equation}
+u(0,\tfrac{1}{2})=\frac{1}{\sqrt{2}}\left[
+\begin{array}
+[c]{c}%
+1\\
+0\\
+1\\
+0
+\end{array}
+\right]  \text{ ,  \ \ \ \ \ }u(0,-\tfrac{1}{2})=\frac{1}{\sqrt{2}%
+}\left[
+\begin{array}
+[c]{c}%
+0\\
+1\\
+0\\
+1
+\end{array}
+\right]  \:, \label{5.5.35}%
+\end{equation}%
+\begin{equation}
+v(0,\tfrac{1}{2})=\frac{1}{\sqrt{2}}\left[
+\begin{array}
+[c]{c}%
+0\\
+1\\
+0\\
+-1
+\end{array}
+\right]  \text{ ,  \ \ \ \ \ }v(0,-\tfrac{1}{2})=\frac{1}{\sqrt{2}%
+}\left[
+\begin{array}
+[c]{c}%
+-1\\
+0\\
+1\\
+0
+\end{array}
+\right]  \:. \label{5.5.36}%
+\end{equation}
+自旋和是
+\begin{align}
+N(\bp) &= \frac{1}{2p^{0}}[-\mi p^{\mu}\gamma_{\mu}+m]\beta\:,\label{5.5.37}\\
+M(\bp) &= \frac{1}{2p^{0}}[-\mi p^{\mu}\gamma_{\mu}-m]\beta\:, \label{5.5.38}%
+\end{align}
+所以, 反对易子由方程(\ref{5.5.20}%
+)给定为\begin{equation}
+[\psi_{\ell}(x),\psi_{\bar{\ell}}^{\dag}(y)]_{+}=
+\{[-\gamma^{\mu}\partial_{\mu}+m]\beta\}_{\ell\bar{\ell}}\:\Delta(x-y)\:. \label{5.5.39}%
+\end{equation}
+
+
+现在我们回到场$\psi(x)$在空间反演后必须正比于$\psi(\mathscr{P}x)$这个要求. 要使之成为可能, 方程(\ref{5.5.15})和(\ref{5.5.16})中的相位必须相等, 因此粒子以及它们反粒子的内禀宇称必须有如下关系\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[225]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[225]}}}
+\begin{equation}
+\eta^{\text{c}}=-\eta^{\ast}\:. \label{5.5.40}%
+\end{equation}
+即, {\KAI{由自旋}}$\frac{1}{2}${\KAI{的粒子及其反粒子构成的态, 其内禀宇称$\eta\eta^{\text{c}}$为奇}}. 正是由于这个原因, 像$\rho^{0}$和$J/\psi$ 这样的负宇称介子才能被解释成夸克\lzx 反夸克对的$s$-波束缚态. 方程(\ref{5.5.15})和(\ref{5.5.16})现在给出的因果\,Dirac\,场在空间反演下的变换是
+\begin{equation}
+\mathsf{P}\psi(x)\mathsf{P}^{-1}=\eta^{\ast}\beta\psi(\mathscr{P}x)\:.
+\label{5.5.41}%
+\end{equation}
+
+
+在继续讨论其他反演之前, 比较适合在这里先说明一下, 方程(\ref{5.5.14}), (\ref{5.5.33})和(\ref{5.5.26})表明$u(\bp,\sigma)$和$v(\bp,\sigma)$%
+是$-\mi p^{\mu}\gamma_{\mu}/m$的本征矢, 本征值分别为$+1$和$-1$:
+\begin{equation}
+(\mi p^{\mu}\gamma_{\mu}+m)u(\bp,\sigma)=0 \:, \qquad
+(-\mi p^{\mu}\gamma_{\mu}+m)v(\bp,\sigma)=0\:. \label{5.5.42}%
+\end{equation}
+由此可知场(\ref{5.5.34})满足微分方程
+\begin{equation}
+(\gamma^{\mu}\partial_{\mu}+m)\psi(x)=0\:. \label{5.5.43}%
+\end{equation}
+这正是著名的自由自旋$\frac{1}{2}$粒子的\,Dirac\,方程. 根据这里采用的观点, 自由粒子的\,Dirac\,方程就是将固有正时\,Lorentz\,群的两个不可约表示结合起来构造成场的一种\,Lorentz\,不变记法, 只不过它在空间反演下也作简单变换.
+
+为了得到\,Dirac\,场的荷共轭性质与时间反演性质, 我们需要系数函数$u$和$v$的复共轭表达式. 这些函数在零动量处是实的, 但为了获得有限动量的系数函数, 我们必须乘上复矩阵$D(L(p))$. 从方程(\ref{5.4.41})中, 我们看到对于一般的实$\omega_{\mu\nu}$:
+\[
+[\exp(\tfrac{1}{2}\mi\mathscr{J}^{\mu\nu}\omega_{\mu\nu})]^{\ast}%
+=\beta\mathscr{C}\exp(\tfrac{1}{2}\mi\mathscr{J}^{\mu\nu}\omega_{\mu\nu})\mathscr{C}^{-1}\beta
+\]
+并且, 特别地
+\[
+D(L(p))^{\ast}=\beta\mathscr{C}D(L(p))\mathscr{C}^{-1}\beta\:.%
+\]
+我们同时注意到$\mathscr{C}^{-1}\beta u(0,\sigma)=-v(0,\sigma)$以及$\mathscr{C}^{-1}\beta v(0,\sigma)=-u(0,\sigma)$, 所以
+\begin{equation}
+u^{\ast}(\bp,\sigma)=-\beta\mathscr{C}v(\bp,\sigma)\:, \label{5.5.44}%
+\end{equation}%
+\begin{equation}
+v^{\ast}(\bp,\sigma)=-\beta\mathscr{C}u(\bp,\sigma)\:. \label{5.5.45}%
+\end{equation}
+为了使场与通过荷共轭变换得到的场在类空间隔上对易, 粒子和反粒子的荷共轭\marginpar[\flushright{\small[226]\hspace*{5mm}}]{{\small\hspace*{5mm}[226]}}宇称再次要求有如下关系
+\begin{equation}
+\xi^{\text{c}}=\xi^{\ast}\:. \label{5.5.46}%
+\end{equation}
+在这种情况下, 场的变换为
+\begin{equation}
+\mathsf{C}\psi(x)\mathsf{C}^{-1}=-\xi^{\ast}\beta\mathscr{C}\psi^{\ast}(x)\:. \label{5.5.47}%
+\end{equation}
+(我们把右边的厄米伴随场写为$\psi^{\ast}$而非$\psi^{\dag}$, 是为了强调它依旧是个列向量而非行向量.)
+
+尽管我们对粒子和它们的反粒子做了区分, 但是我们并没有排除它们是同一种粒子的可能性. 这种反粒子是其自身的自旋$\frac{1}{2}$粒子称为\textit{Majorana}{\KAI{费米子}}. 基于导出方程(\ref{5.5.47})的推理, 可以得出这种粒子的\,Dirac\,场必须满足实条件
+\begin{equation}
+\psi(x)=-\beta\mathscr{C}\psi^{\ast}(x)\:. \label{5.5.48}%
+\end{equation}
+对\,Majorana\,费米子, 内禀空间反演宇称必须是虚的, $\eta=\pm \mi$, 而荷共轭宇称必须是实的, $\xi=\pm1$.
+
+对于由一个粒子和它的反粒子构成的态, 它的内禀荷共轭相位对于费米子和玻色子有重要的区别. 这种态可以写成
+\[
+\Phi\equiv\sum_{\sigma,\sigma^{\prime}}\int \dif^{3}p\int \dif^{3}%
+p^{\prime}\:\chi(\bp,\sigma;\bp^{\prime},\sigma^{\prime})a^{\dag
+}(\bp,\sigma)\,a^{\text{c}\dag}(\bp^{\prime},\sigma^{\prime
+})\Phi_{0}\:,%
+\]
+其中$\Phi_{0}$是真空态. 在荷共轭下, 这个态变换成
+\[
+\mathsf{C}\Phi=\xi\xi^{\text{c}}\sum_{\sigma,\sigma^{\prime}}\int
+\dif^{3}p\int \dif^{3}p^{\prime}\:\chi(\bp,\sigma;\bp^{\prime}%
+,\sigma^{\prime})a^{\text{c}\dag}(\bp,\sigma)\,a^{\dag}(\bp%
+^{\prime},\sigma^{\prime})\Phi_{0}\:.%
+\]
+交换积分变量和求和变量, 并利用产生算符的反对易关系以及方程(\ref{5.5.46}%
+), 我们可以将其重新写为\[
+\mathsf{C}\Phi=-\sum_{\sigma,\sigma^{\prime}}\int \dif^{3}p\int
+\dif^{3}p^{\prime}\:\chi(\bp^{\prime},\sigma;\bp,\sigma)a^{\dag}(\bp,\sigma)\,
+a^{\text{c}\dag}(\bp^{\prime},\sigma^{\prime})\Phi_{0}\:.%
+\]
+即, {\KAI{由}}\,\textit{Dirac}\,{\KAI{场描述的粒子与其反粒子构成的态, 其内禀荷共轭宇称为奇}}, 也就是说, 如果态的波函数$\chi$在粒子及其反粒子的动量及自旋的交换下为偶或奇, 那么作用在该态上的荷共轭算符分别给出符号$-1$或$+1$. 这里的经典例子是电子偶素,  它是一个电子和一个正电子构成的束缚态. 最低的两个态是一对总自旋分别为$s=0$和$s=1$的近简并$s$-波态, 分\marginpar[\flushright{\small[227]\hspace*{5mm}}]{{\small\hspace*{5mm}[227]}}别被称为仲电子偶素和正电子偶素. 这两个态的波函数在动量的交换下为偶, 在自旋$z$%
+-分量的交换下分别为奇或偶, 所以仲电子偶素和正电子偶素分别有$\mathsf{C}=+1$和$\mathsf{C}=-1$. 电子偶素的衰变模式明确地证实了这些值: 仲电子偶素快速衰变成一对光子(每一个光子有$\mathsf{C}=-1$), 而正电子偶素只能以慢得多的速率衰变成三个或者更多的光子. 同样地, 在高能电子\lzx 正电子经由单光子中间态的湮没中, 单个$\rho^{0}$和$\omega^{0}$作为一个共振产生, 所以它们必须有$\mathsf{C}=-1$, 这与将它们解释成轨道角动量为零而总夸克自旋为\,1\,的夸克\lzx 反夸克束缚态是一致的.
+
+现在我们来处理时间反演. 回忆方程(\ref{4.2.15})给出的粒子湮没算符和反粒子产生算符的变换性质:
+\begin{equation}
+\mathsf{T}a(\bp,\sigma)\mathsf{T}^{-1}=\zeta^{\ast}(-1)^{\frac{1}{2}-\sigma}a(-\bp,-\sigma)\:, \label{5.5.49}%
+\end{equation}%
+\begin{equation}
+\mathsf{T}a^{\text{c}\dag}(\bp,\sigma)\mathsf{T}^{-1}=\zeta^{\text{c}%
+}(-1)^{\frac{1}{2}-\sigma}a^{\text{c}\dag}(-\bp,-\sigma)\:.
+\label{5.5.50}%
+\end{equation}
+因此, 场的时间反演给出
+\begin{align*}
+\mathsf{T}\psi_{\ell}(x)\mathsf{T}^{-1}  &  =(2\uppi)^{-3/2}
+\sum_{\sigma}\int \dif^{3}p\:(-1)^{\frac{1}{2}-\sigma}\\
+&  \quad\times[\zeta^{\ast}u_{\ell}^{\ast}(\bp,\sigma)\me^{-\mi p\cdot x}a(-\bp,-\sigma)
++\zeta^{\text{c}}v_{\ell}^{\ast}(\bp,\sigma)\me^{\mi p\cdot x}a^{\text{c}\dag}(-\bp,-\sigma)] \:.%
+\end{align*}
+为了将其变回$\psi$的形式, 我们将积分变量和求和变量重新定义为$-\bp$和$-\sigma$, 所以我们需要得到将$u_{\ell}^{\ast}(-\bp,-\sigma)$ 和$v_{\ell}^{\ast}(-\bp,-\sigma)$分别%
+写成$u_{\ell}(\bp,\sigma)$和$v_{\ell}(\bp,\sigma)$的表达式. 出于这个目的, 利用${\mathscr{J}}^{i0}$与$\beta$反对易而与$\gamma_{5}$ 对易, 以及前面$D(L(p))^{\ast}$的结果, 我们可以写出
+\[
+D^{\ast}(L(-\bp))=\gamma_{5}\beta D^{\ast}(L(\bp))\beta\gamma_{5}
+=\gamma_{5}\mathscr{C}D(L(\bp))\mathscr{C}^{-1}\gamma_{5}\:.%
+\]
+另外, 方程(\ref{5.4.36}), 以及(\ref{5.5.35})和(\ref{5.5.36})给出
+\[
+\gamma_{5}\mathscr{C}^{-1}u(0,-\sigma)=(-1)^{\frac{1}{2}-\sigma}u(0,\sigma)\:,%
+\]%
+\[
+\gamma_{5}\mathscr{C}^{-1}v(0,-\sigma)=(-1)^{\frac{1}{2}-\sigma}v(0,\sigma)\:,%
+\]
+因而\begin{equation}
+(-1)^{\frac{1}{2}-\sigma}u^{\ast}(-\bp,-\sigma)=-\gamma_{5}%
+\mathscr{C}u(\bp,\sigma)\:, \label{5.5.51}%
+\end{equation}%
+\begin{equation}
+(-1)^{\frac{1}{2}-\sigma}v^{\ast}(-\bp,-\sigma)=-\gamma_{5}%
+\mathscr{C}v(\bp,\sigma)\:. \label{5.5.52}%
+\end{equation}
+于是我们看到\marginpar[\flushright{\small[228]\hspace*{5mm}}]{{\small\hspace*{5mm}[228]}}, 为了使\,Dirac\,场在时间反演后正比于在时间反演点的自身(从而使两者在类空间隔上反对易), 内禀时间反演相位必须有如下的关系%
+\begin{equation}
+\zeta^{\text{c}}=\zeta^{\ast} \label{5.5.53}%
+\end{equation}
+而在这种情况下
+\begin{equation}
+\mathsf{T}\psi(x)\mathsf{T}^{-1}=-\zeta^{\ast}\gamma_{5}\mathscr{C}\psi
+(-\mathscr{P}x)\:. \label{5.5.54}%
+\end{equation}
+
+
+现在我们来考察如何用\,Dirac\,场和它们的伴随场构造标量相互作用密度. 此前已经提到过, Dirac\,表示是不幺正的, 所以$\psi^{\dag}\psi$不是标量. 为了解决这个问题, 一种方便的做法是定义一种新的伴随场:
+\begin{equation}
+\bar{\psi}\equiv\psi^{\dag}\beta\:. \label{5.5.55}%
+\end{equation}
+利用赝幺正条件(\ref{5.4.32}), 我们看到与$\bar{\psi}$构成的费米子双线性型有如下\,Lorentz变换性质
+\begin{equation}
+U_{0}(\Lambda)[\bar{\psi}(x)M\psi(x)]U_{0}^{-1}(\Lambda)=\bar{\psi}(\Lambda
+x)D(\Lambda)\,M\,D^{-1}(\Lambda)\psi(\Lambda x)\:. \label{5.5.56}%
+\end{equation}
+此外, 在空间反演下
+\begin{equation}
+\mathsf{P}[\bar{\psi}(x)M\psi(x)]\mathsf{P}^{-1}=\bar{\psi}(\mathscr{P}x)\beta
+M\beta\psi(\mathscr{P}x)\:. \label{5.5.57}%
+\end{equation}
+取矩阵$M$分别为$\mathbf{1},\gamma^{\mu},{\mathscr{J}}^{\mu\nu},\gamma_{5}\gamma^{\mu}$和$\gamma_{5}$, 产生的双线性型$\bar{\psi}M\psi$分别按照标量、 矢量、 张量、 轴矢量和赝标量变换. (``轴''和``赝''代表它们与普通矢量和标量的空间反演性质相反: 赝标量宇称为负, 而轴矢量的空间部分和时间部分的宇称分别为正和负.) 当双线性型中的两个费米子场代表两种不同的粒子时, 除了空间反演会产生一个内禀宇称的比, 这些结果同样成立。
+
+例如, $\beta$-衰变的原始\,Fermi\,理论中包含一个正比于%
+$\bar{\psi}_{p}\gamma^{\mu}\psi_{n}\bar{\psi}_{e}\gamma_{\mu}\psi_{\nu}$的相互作用密度.
+稍后大家意识到, \,Lorentz\,不变且宇称守恒的非导数$\beta$-衰变相互作用, 它的最普遍形式为几个乘积的线性组合, 这几个乘积通过分别将$\gamma_{\mu}$替换成五个协变$4\times4$矩阵$\mathbf{1},\gamma^{\mu},{\mathscr{J}}^{\mu\nu},\gamma
+_{5}\gamma^{\mu}$和$\gamma_{5}$获得. (我们在第2章讨论过, 我们定义的空间反演算符会使质子, 中子和电子都有宇称$+1$. 如果中微子是无质量的, 如有必要, 通过将中微子场替换为$\gamma_{5}\psi_{\nu}$,  它的宇称也可以被定义为$+1$.) 当李政道和杨振宁\textsuperscript{\cite{7}}在\,1956\,年对宇称守恒产生怀疑时, 他们罗列了可能的非导数相互作用, 其中包括了正比于$\bar
+{\psi}_{p}M\psi_{n}\bar{\psi}_{e}M\psi_{\nu}$和$\bar{\psi}%
+_{p}M\psi_{n}\bar{\psi}_{e}M\gamma_{5}\psi_{\nu}$的十项, 其中的$M$取遍矩阵$\mathbf{1},\gamma^{\mu},{\mathscr{J}}^{\mu\nu},\gamma_{5}\gamma^{\mu}$ 和$\gamma_{5}$.
+
+研究\marginpar[\flushright{\small[229]\hspace*{5mm}}]{{\small\hspace*{5mm}[229]}}这些双线性型的荷共轭性质同样是有益的. 利用方程(\ref{5.5.47})和(\ref{5.4.35})\yzx (\ref{5.4.39}), 我们有
+\begin{align}
+\mathsf{C}(\bar{\psi}M\psi)\mathsf{C}^{-1}  &  =(\beta\mathscr{C}\psi
+)^{\text{T}}\beta M(\beta\mathscr{C}\psi^{\ast})=-(\beta\mathscr{C}\psi^{\ast
+})^{\text{T}}M^{\text{T}}\mathscr{C}\psi\nonumber\\
+&  =\bar{\psi}\mathscr{C}^{-1}M^{\text{T}}\mathscr{C}\psi=\pm\bar{\psi}%
+M\psi\label{5.5.58}%
+\end{align}
+最后一个表达式中的符号对矩阵$\mathbf{1},\gamma_{5}\gamma^{\mu},\gamma_{5}$是正号, 对$\gamma^{\mu}$和${\mathscr{J}}^{\mu\nu}$则是负号. (第一行中的负号源于\,Fermi\,统计. 我们忽略了\,c\,-数反对易子.) 因此, 若$\bar{\psi}M\psi$是标量, 赝标量或轴矢量, 与流$\bar{\psi}M\psi$相互作用的玻色场必须有$\mathsf{C}=+1$, 若$\bar{\psi}M\psi$是矢量和反对称张量, 则必须有$\mathsf{C}=-1$. 这是证明$\pi^{0}$(它与赝标量或轴矢量核子流耦合)具有$\mathsf{C}=+1$而光子具有$\mathsf{C}=-1$%
+的一个途径.
+
+\section[齐次Lorentz群的一般不可约表示]%
+{齐次Lorentz群的一般不可约表示{}$^*$\footnote{$^*${}本节或多或少地处在本书的发展主线之
+外, 可以在第一次阅读时跳过.}}   \label{sec:5.6}
+\setcounter{equation}{0}
+
+我们现在将矢量场和\,Dirac\,场的特殊情况推广到场在齐次Lorentz群下按照一般不可约表示变换的情况.
+所有场可以用这些不可约场的直和来构造.
+
+固有正时\,Lorentz\,群的一般表示(或更恰当些, 它的无限小部分)由一组矩阵$\mathscr{J}_{\mu\nu}$给出,  这组矩阵满足群生成元的对易关系(\ref{5.4.4})
+\begin{equation}
+[\mathscr{J}_{\mu\nu},\mathscr{J}_{\rho\sigma}]= \mi \left(
+\mathscr{J}_{\rho\nu}\eta_{\sigma\mu}+\mathscr{J}_{\mu\rho}\eta_{\nu\sigma}
+-\mathscr{J}_{\sigma\nu}\eta_{\rho\mu}-\mathscr{J}_{\mu\sigma}\eta_{\nu\rho}\right)  \:, \label{5.6.1}%
+\end{equation}
+(当然, $\mathscr{J}_{\mu\nu}=-\mathscr{J}_{\nu\mu}$, 并且$\mathscr{J}_{\mu\nu}$的指标像通常一样通过与$\eta^{\mu\nu}$或$\eta_{\mu\nu}$收缩进行升降.) 为了看到如何构造这样的矩阵, 首先将$\mathscr{J}_{\mu\nu}$的\,6\,个独立分量分成两个$3$-矢: 角动量矩阵
+\begin{equation}
+\mathscr{J}_{1}=\mathscr{J}_{23} \:,\qquad\mathscr{J}_{2}
+=\mathscr{J}_{31}\:,\qquad\mathscr{J}_{3}=\mathscr{J}_{12}
+\label{5.6.2}%
+\end{equation}
+和增速
+\begin{equation}
+\mathscr{K}_{1}=\mathscr{J}_{10} \:,\qquad \mathscr{K}_{2}=\mathscr{J}_{20} \:,  \qquad\mathscr{K}_{3}=\mathscr{J}_{30}\:.
+\label{5.6.3}%
+\end{equation}
+于是方程(\ref{5.6.1})变成\vspace{-.1mm}
+\begin{equation}
+[\mathscr{J}_{i},\mathscr{J}_{j}]=\mi\epsilon_{ijk}\mathscr{J}_{k}\:, \label{5.6.4}%
+\end{equation}%
+\begin{equation}
+[\mathscr{J}_{i},\mathscr{K}_{j}]=\mi\epsilon_{ijk}\mathscr{K}_{k}\:, \label{5.6.5}%
+\end{equation}%
+\begin{equation}
+\lbrack\mathscr{K}_{i},\mathscr{K}_{j}]=-\mi\epsilon_{ijk}\mathscr{J}_{k}\:, \label{5.6.6}%
+\end{equation}
+其中$i,j,k$取遍值$1,2,3$\marginpar[\flushright
+{\raisebox{9ex}[0pt]{{\small[230]\hspace*{5mm}}}}]{{\raisebox{9ex}[0pt]{\small\hspace*{5mm}[230]}}}, $\epsilon_{ijk}$是$\epsilon_{123}=+1$的全反对称张量.
+方程(\ref{5.6.4})说明了矩阵$\hJJJ$生成了\,Lorentz\,群的旋转子群的一个表示, 而方程(\ref{5.6.5})则表示$\hKKK$是一个\,3\,-矢. 方程(\ref{5.6.6}) 右边的负号源于$\eta_{00}=-1$, 它在下文中扮演了一个关键角色.
+
+用两个退耦的自旋\,3\,-矢代替矩阵$\hJJJ$和$\hKKK$是非常方便的, 它们写为
+\begin{align}
+\hAAA &\equiv \frac{1}{2}(\hJJJ+\mi\hKKK)\:, \label{5.6.7}\\
+\hBBB &\equiv \frac{1}{2}(\hJJJ-\mi\hKKK)\:. \label{5.6.8}%
+\end{align}
+很容易看到对易关系(\ref{5.6.4})\yzx (\ref{5.6.6})等价于
+\begin{align}
+[\mathscr{A}_{i},\mathscr{A}_{j}] &= \mi\epsilon_{ijk}\mathscr{A}_{k} \:,\label{5.6.9}\\
+\lbrack\mathscr{B}_{i},\mathscr{B}_{j}]  &= \mi\epsilon_{ijk}\mathscr{B}_{k} \:,\label{5.6.10}\\
+\lbrack\mathscr{A}_{i},\mathscr{B}_{j}]  &=0  \:, \label{5.6.11}%
+\end{align}
+寻找满足方程(\ref{5.6.9})\yzx (\ref{5.6.11})的矩阵与寻找表示一对不耦合粒子自旋的矩阵, 这二者的方法是相同的\ezx 直和. 就是说我们用一对整数和(或)半整数$a,b$标记这些矩阵的行与列, $a,b$取遍如下的值
+\begin{align}
+a  &= -A,-A+1,\cdots,+A \:,\label{5.6.12}\\
+b  &= -B,-B+1,\cdots,+B,    \label{5.6.13}%
+\end{align}
+并令{}$^*$\footnote{$^*${}还有另一套形式体系,\textsuperscript{\cite{8}} 鉴于旋转群的自旋$j$表示可以写为$2j$个自旋$1/2$表示的对称化直积\ezx 即, 有$2j$个二值指标的对称$SU(2)$ 张量. 我们可以用$2A$个二值$(1/2,0)$指标和$2B$个二值$(0,1/2)$指标写出属于表示$(A,B)$的场, 后者会加点以便与前者区分.}%
+\begin{align}
+(\hAAA)_{a^{\prime}b^{\prime},ab} &= \updelta_{b^{\prime}b}\,
+\bJ_{a^{\prime}a}^{(A)}\:,\label{5.6.14}\\
+(\hBBB)_{a^{\prime}b^{\prime},ab} &= \updelta_{a^{\prime}a}\,
+\bJ_{b^{\prime}b}^{(B)}\:, \label{5.6.15}%
+\end{align}
+其中$\bJ^{(A)}$和$\bJ^{(B)}$是自旋$A$和$B$的标准自旋矩阵:
+\begin{align}
+\left(\bJ_{3}^{(A)}\right)_{a^{\prime}a} &= a\updelta_{a^{\prime}a} \:,\label{5.6.16}\\
+\left(\bJ_{1}^{(A)}\pm \mi\bJ_{2}^{(A)}\right)_{a^{\prime}a}
+&=\updelta_{a^{\prime},a\pm1}\sqrt{(A\mp a)(A\pm a+1)}\:,
+\label{5.6.17}%
+\end{align}
+\pagebreak
+
+\noindent
+$\bJ^{(B)}$同理. \marginpar[\flushright{\small[231]\hspace*{5mm}}]{{\small\hspace*{5mm}[231]}}这个表示用正整数和(或)半整数$A$和$B$标记. 我们看到$(A,B)$ 表示的维数为$(2A+1)(2B+1)$.
+
+齐次\,Lorentz\,群的有限维表示不是幺正的, 这是因为$\hAAA$和$\hBBB$是厄米的, 这样$\hJJJ$是厄米的, 但$\hKKK$ 是{\KAI{反厄米的}}. 这是由于方程(\ref{5.6.7})和(\ref{5.6.8})中的$\mi$, 这个$\mi$是(\ref{5.6.6})中的负号所要求的, 因而起源是齐次\,Lorentz\,群不同于\,4\,-维旋转群$SO(4)$, 它不是紧群, 相反它是被称为$SO(3,1)$的非紧群. 只有紧群才能有有限维幺正表示(除了表示中的非紧部分是平庸的单位表示的情况). 采用非幺正表示是没有问题的,
+因为我们现在考察的不是波函数而是场, 因而不需要正定的\,Lorentz\,不变范数.
+
+相比之下, 旋转群有幺正表示, 其生成元可以表示成厄米矩阵
+\begin{equation}
+\hJJJ=\hAAA+\hBBB\:, \label{5.6.18}%
+\end{equation}
+通过一般的矢量加法规则, 我们可以看到, 对于按照齐次\,Lorentz\,群的$(A,B)$表示变换的场, 它的分量在旋转下类似于自旋$j$的物体, 其中
+\[
+j=A+B,A+B-1,\cdots,\lvert A-B \rvert \:.%
+\]
+这使我们可以将$(A,B)$表示与可能更加熟悉的张量和旋量等同起来. 例如, $(0,0)$场显然是标量, 它只有一个$j=0$分量. $(\tfrac{1}{2},0)$或$(0,\tfrac{1}{2})$ 场只能有$j=+\tfrac{1}{2}$; 它们是\,Dirac\,旋量的上面两个分量(即$\gamma_{5}=+1$)和下面两个分量($\gamma_{5}=-1$). $(\tfrac{1}{2},\tfrac{1}{2})$ 场有$j=1$的分量和$j=0$的分量, 分别对应\,4\,-矢$v^{\mu}$的空间部分$\bv$和时间分量$v^{0}$. 更普遍地, $(A,A)$场包含的项仅有整数自旋$2A,2A-1,\cdots,0$, 并对应一个$2A$秩的无迹对称张量. (注意, 对于四维中的$2A$秩对称张量, 它的独立分量的数目是
+\[
+\frac{4\cdot5\cdots(4+2A-1)}{(2A)!}=\frac{(3+2A)!}{6(2A)!}%
+\]
+而无迹条件将其减少至
+\[
+\frac{(3+2A)!}{6(2A)!}-\frac{(1+2A)!}{6(2A-2)!}=(2A+1)^{2}\:,%
+\]
+这正是我们对$(A,A)$场所预期的.) 另外一个例子: $(1,0)$场或$(0,1)$场只能有$j=1$, 对应一个反对称张量$F^{\mu
+\nu}$, $F^{\mu\nu}$对$(1,0)$场和$(0,1)$场分别满足进一步的不可约``对\marginpar[\flushright{\small[232]\hspace*{5mm}}]{{\small\hspace*{5mm}[232]}}偶''条件
+\[
+F^{\mu\nu}=\pm\frac{\mi}{2}\,\epsilon^{\mu\nu\lambda\rho}\,F_{\lambda\rho}  \:.
+\]
+当然, 只有在四维中, 反对称二指标张量$F^{\mu\nu}$才能被分成这样的``自对偶''部分和``反自对偶''部分.
+
+一般的$N$秩张量按照$N$个$(\tfrac{1}{2},\tfrac{1}{2})$4\,-矢表示的直积变换. 因此它能被分解成(通过合适的对称化, 反对称化以及取迹)不可约项$(A,B)$, 其中$A=N/2,N/2-1,\cdots$且$B=N/2,N/2-1,\cdots$. 以这种方式, 我们可以构造$A+B$是整数的任何不可约表示$(A,B)$. 对于$A+B$是半奇数的自旋表示, 可以类似地用这些张量表示和\,Dirac\,表示$(\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})$的直积构造. 例如, 取矢量$(\tfrac{1}{2},\tfrac{1}{2})$表示与\,Dirac$(\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})$表示的直积, 这给出一个旋量\lzx 矢量$\psi^{\mu}$, 它按照如下可约表示变换
+\[
+(\tfrac{1}{2},\tfrac{1}{2})\otimes\lbrack(\tfrac{1}{2},0)\oplus(0,\tfrac{1}%
+{2})]=(\tfrac{1}{2},1)\oplus(\tfrac{1}{2},0)\oplus(1,\tfrac{1}{2}%
+)\oplus(0,\tfrac{1}{2})\:.%
+\]
+$\gamma_{\mu}\psi^{\mu}$按照普通的$(\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})$Dirac\,场变换, 所以通过要求$\gamma_{\mu}\psi^{\mu}=0$, 我们可以分离出$(\tfrac{1}{2},1)\oplus(1,\tfrac{1}{2})$表示.{}$^*$\footnote{$^*${}根据方程(\ref{5.6.18}), 这种场在普通旋转下按照两个$j=3/2$分量与两个$j=\frac{1}{2}$分量的直和变换. 通过附加\,Dirac\,方程$[\gamma^{\nu}\partial_{\nu}+m]\psi^{\mu}=0$, 重复加倍被消除, 而剩下的$j=\frac{1}{2}$分量被$\gamma_{\mu}\psi^{\mu}=0$(原书误植为$\partial_{\mu}\psi^{\mu}=0$)%
+的要求消除. 在这些条件下, 场描述一个自旋$j=3/2$的粒子.} %
+这就是\textit{Rarita-Schwinger}{\KAI{场}}.\textsuperscript{\cite{9}}
+
+至此, 我们在本节中只考虑了固有正时\,Lorentz\,群的表示. 若\,Lorentz\,群包含空间反演, %
+那么它的任何表示中必存在一个矩阵$\beta$, 这个矩阵反转带有奇数个空间指标的张量的符号, 特别地
+\begin{equation}
+\beta\hJJJ\beta^{-1}=+\hJJJ \:, \qquad \beta\hKKK\beta^{-1}=-\hKKK\:. \label{5.6.19}%
+\end{equation}
+表示成矩阵(\ref{5.6.7})和(\ref{5.6.8}), 上式是
+\begin{equation}
+\beta\hAAA\beta^{-1}=\hBBB\:, \qquad \beta\hBBB\beta^{-1}=\hAAA. \label{5.6.20}%
+\end{equation}
+因此, 除非$A=B$, 否则固有正时齐次\,Lorentz\,群的不可约$(A,B)$表示不提供包含空间反演的\,Lorentz\,群的表示. 而我们已经看到, 这些$(A,A)$表示是标量, 矢量和对称无迹张量. 若$A\neq B$, 包含空间反演的Lorentz群的不可约表示是直和$(A,B)\oplus(B,A)$\marginpar[\flushright{\small[233]\hspace*{5mm}}]{{\small\hspace*{5mm}[233]}}, 维数是$2(2A+1)(2B+1)$. 这些表示中的一个就是\,\ref{sec:5.4}\,节讨论的$(\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})$Dirac\,表示. %
+$4\times4$矩阵(\ref{5.4.29})提供了该表示的$\beta$-矩阵. 另一较熟悉的例子是$(1,0)\oplus(0,1)$表示, 正如我们所看到的, 它是包含自对偶部分和反自对偶部分的二秩反对称张量.
+
+\section[一般因果场]%
+{一般因果场{}$^{**}$\footnote{$^{**}${}本节或多或少地处在本书的发展主线之
+外, 可以在第一次阅读时跳过.}}  \label{sec:5.7}
+\setcounter{equation}{0}
+
+我们现在接着构造按照上节所描述的一般不可约$(A,B)$表示变换的场. 指标$\ell$在这里被替换为一对指标$a,b$, %
+取值范围为(\ref{5.6.12})和(\ref{5.6.13}), 于是场现在写成
+\begin{align}
+\psi_{ab}(x) &= (2\uppi)^{-3/2}\sum_{\sigma}\int \dif^{3}p\:\Big[\kappa
+\,a(\bp,\sigma)\me^{\mi p\cdot x}u_{ab}(\bp,\sigma)\nonumber\\
+&  \quad+\lambda\,a^{\text{c}\dag}(\bp,\sigma)\me^{-\mi p\cdot x}%
+v_{ab}(\bp,\sigma)\Big] \label{5.7.1}%
+\end{align}
+其中$\kappa$和$\lambda$是任意常数. 我们在这里保留反粒子是其自身的可能性, 在这种情况下$a^{\text{c}}(\bp,\sigma)=a(\bp,\sigma)$.
+
+我们第一个任务还是寻找零动量系数函数$u_{ab}(0,\sigma)$和$v_{ab}(0,\sigma)$. 加在$u(0,\sigma)$和$v(0,\sigma)$上的基本条件(\ref{5.1.25})\yzx (\ref{5.1.26})在这里是
+\[
+\sum_{\bar{\sigma}}u_{\bar{a}\bar{b}}(0,\bar{\sigma})\bJ_{\bar{\sigma
+}\sigma}^{(j)}=\sum_{a,b}\hJJJ_{\bar{a}\bar{b},ab}u_{ab}%
+(0,\sigma)\:,%
+\]%
+\[
+-\sum_{\bar{\sigma}}v_{\bar{a}\bar{b}}(0,\bar{\sigma})\bJ_{\bar{\sigma
+}\sigma}^{(j)\ast}=\sum_{a,b}\hJJJ_{\bar{a}\bar{b},ab}v_{ab}%
+(0,\sigma)\:,%
+\]
+或者利用方程(\ref{5.6.14})\yzx (\ref{5.6.15}%
+)%
+\begin{equation}
+\sum_{\bar{\sigma}}u_{\bar{a}\bar{b}}(0,\bar{\sigma})\bJ_{\bar{\sigma
+}\sigma}^{(j)}=\sum_{a}\bJ_{\bar{a}a}^{(A)}u_{a\bar{b}}(0,\sigma
+)+\sum_{b}\bJ_{\bar{b}b}^{(B)}u_{\bar{a}b}(0,\sigma)\:,
+\label{5.7.2}%
+\end{equation}%
+\begin{equation}
+-\sum_{\bar{\sigma}}v_{\bar{a}\bar{b}}(0,\bar{\sigma})\bJ_{\bar{\sigma
+}\sigma}^{(j)\ast}=\sum_{a}\bJ_{\bar{a}a}^{(A)}v_{a\bar{b}}%
+(0,\sigma)+\sum_{b}\bJ_{\bar{b}b}^{(B)}v_{\bar{a}b}(0,\sigma)\:.
+\label{5.7.3}%
+\end{equation}
+但是方程(\ref{5.7.2})是\,Clebsch-Gordon\,系数$C_{AB}(j\sigma;ab)$的定义条件! 这些系数由如下的要求定义:
+如果\marginpar[\flushright{\small[234]\hspace*{5mm}}]{{\small\hspace*{5mm}[234]}}态$\Psi_{ab}$在无限小旋转下的变换为
+\[
+\updelta\Psi_{ab}=\mi\sum_{\bar{a}}\bm{\theta}\cdot\bJ_{\bar{a}a}^{(A)}\Psi_{\bar{a}b}
++\mi\sum_{\bar{b}}\bm{\theta}\cdot\bJ_{\bar{b}b}^{(B)}\Psi_{a\bar{b}}%
+\]
+则在相同旋转下, 态
+\[
+\Psi^{j}{}_{\sigma}\equiv\sum_{ab}C_{AB}(j\sigma
+;ab)\Psi_{ab}%
+\]
+的变换为
+\[
+\updelta\Psi^{j}{}_{\sigma}=\mi\sum_{\bar{\sigma}}\bm{\theta}\cdot
+\bJ_{\bar{\sigma}\sigma}^{(j)}\Psi^{j}{}_{\bar{\sigma}}\:.%
+\]
+对方程(\ref{5.7.2})的观测表明系数$u_{ab}(0,\sigma)$满足这个要求, 因而, 除了一个可能的比例因子外, $u_{ab}(0,\sigma)$就是$C_{AB}(j\sigma;ab)$. 通常会选择这个常数使得
+\begin{equation}
+u_{ab}(0,\sigma)=(2m)^{-1/2}C_{AB}(j\sigma;ab)\:. \label{5.7.4}%
+\end{equation}
+这个结果是唯一的, 这是因为齐次Lorentz群的每个不可约$(A,B)$表示最多包含{\KAI{一个}}旋转群的自旋$j$表示. 类似地, 对方程(\ref{5.6.16})\yzx (\ref{5.6.17}) 的观察表明角动量矩阵的复共轭是
+\begin{equation}
+-\bJ_{\sigma\,\sigma^{\prime}}^{(j)\ast}
+=(-1)^{\sigma-\sigma^{\prime}}\bJ_{-\sigma,-\sigma^{\prime}}^{(j)}\:. \label{5.7.5}%
+\end{equation}
+因此, 如果我们将方程(\ref{5.7.3})按照$(-1)^{j-\sigma}v_{ab}(\bp,-\sigma)$的形式写出来, 它的形式就与方程(\ref{5.7.2})相同. 对常数因子进行合适的调整后, $v(0,\sigma)$的唯一解是
+\begin{equation}
+v_{ab}(0,\sigma)=(-1)^{j+\sigma}u_{ab}(0,-\sigma)\:. \label{5.7.6}%
+\end{equation}
+
+
+我们现在必须进行一个增速变换以计算有限动量的系数函数. 对固定方向$\hat{\bp}\equiv\bp/\lvert\bp\rvert$, 我们可以将增速(\ref{2.5.24})写成参量$\theta$的函数, $\theta$的定义是
+\begin{equation}
+\cosh\theta=\sqrt{\bp^{2}+m^{2}}/m \:,\qquad \sinh\theta=\lvert\bp\rvert/m. \label{5.7.7}%
+\end{equation}
+我们用$L^{\mu}{}_{\!\nu}(\theta)$取代$L^{\mu}{}_{\!\nu}(p)$, 其中
+\begin{align}
+L^{i}{}_{k}(\theta) &= \updelta_{ik} + (\cosh\theta-1)\hat{p}_{i}\hat{p}_{k}\:,\nonumber\\
+L^{i}{}_{0}(\theta) &= L^{0}_{i}(p)=\hat{p}_{i}\sinh\theta\:,\label{5.7.8}\\
+L^{0}{}_{0}(\theta) &= \cosh\theta \:.\nonumber
+\end{align}
+这种参量化的优点是
+\begin{equation}
+L(\bar{\theta})L(\theta)=L(\bar{\theta}+\theta)\:. \label{5.7.9}%
+\end{equation}
+对无限小的$\theta$, 我们有$[L(\theta)]^{\mu}{}_{\!\nu}\to\updelta^{\mu}{}_{\!\nu}+\omega^{\mu}{}_{\!\nu}$, 其中$\omega^{i}{}_{0}=\omega^{0}{}_{i}=\hat{p}_{i}\theta$且$\omega^{i}{}_{j}=\omega^{0}{}_{0}=0$.
+依照从方程(\ref{2.2.24})导\marginpar[\flushright{\small[235]\hspace*{5mm}}]{{\small\hspace*{5mm}[235]}}出方程(\ref{2.2.26})的方法, 得出
+\begin{equation}
+D\Bigl(L(p)\Bigr)=\exp(-\mi\hat{\bp}\cdot\hKKK\theta)\:.
+\label{5.7.10}%
+\end{equation}
+这是齐次\,Lorentz\,群的任意表示;对于不可约$(A,B)$表示, 方程(\ref{5.6.7})和(\ref{5.6.8})给出
+\begin{equation}
+\mi\hKKK=\hAAA-\hBBB \label{5.7.11}%
+\end{equation}
+因为$\hAAA$和$\hBBB$是对易矩阵
+\begin{equation}
+D\Big(L(p)\Big)=\exp(-\hat{\bp}\cdot\hAAA\theta)\exp
+(+\hat{\bp}\cdot\hBBB\theta) \label{5.7.12}%
+\end{equation}
+更详细一点, 利用方程(\ref{5.6.14}%
+)和(\ref{5.6.15})%
+\begin{equation}
+D\Bigl(L(p)\Bigr)_{a^{\prime}b^{\prime},ab}=\left(\exp(-\hat{\bp}%
+\cdot\bJ^{(A)}\theta)\right)_{a^{\prime}a}\left(  \exp(+\hat{\bp}\cdot\bJ^{(B)}\theta)\right)  _{b^{\prime}b}\:.
+\label{5.7.13}%
+\end{equation}
+于是, 方程(\ref{5.7.4})和(\ref{5.7.6}%
+)给出了有限动量的系数函数\begin{align}
+u_{ab}(\bp,\sigma)  &  =\frac{1}{\sqrt{2p^{0}}}\sum_{a^{\prime
+}b^{\prime}}\left(  \exp(-\hat{\bp}\cdot\bJ^{(A)}\theta)\right)
+_{aa^{\prime}}\left(  \exp(+\hat{\bp}\cdot\bJ^{(B)}%
+\theta)\right)  _{bb^{\prime}}\nonumber\\
+&  \quad\times C_{AB}(j\sigma;a^{\prime}b^{\prime}) \label{5.7.14}%
+\end{align}
+以及\begin{equation}
+v_{ab}(\bp,\sigma)=(-1)^{j+\sigma}u_{ab}(\bp,-\sigma)\:.
+\label{5.7.15}%
+\end{equation}
+这些结果显式地给出了变换类型为$(A,B)$的场, 所以, 除了对常数因子$\kappa$和$\lambda$的选择外, 这类场(\ref{5.1.31})是唯一的.
+
+在这个形式体系下构造\,Lorentz\,标量相互作用密度是很容易的. 齐次\,Lorentz\,群的$(A,B)$表示就是$(A,0)$表示和$(0,B)$表示的直积, 所以一般的\,Lorentz\,变换规则(\ref{5.1.6})和(\ref{5.1.7})在这里就是
+\begin{equation}
+U_{0}(\Lambda)\psi_{ab}(x)U_{0}^{-1}(\Lambda)=
+\sum_{a^{\prime}b^{\prime}}D_{a,a^{\prime}}^{A0}(\Lambda^{-1})D_{b,b^{\prime}}^{0B}(\Lambda^{-1}%
+)\psi_{a^{\prime}b^{\prime}}(\Lambda x)\:. \label{5.7.16}%
+\end{equation}
+更进一步, 方程(\ref{5.6.14})和(\ref{5.6.15})表明$(A,0)$表示和$(0,B)$表示的矩阵生成元恰好分别是自旋$A$和%
+自旋$B$的自旋矩阵. 因此我们可以构造如下形式的标量
+\begin{equation}
+\sum_{a_{1}a_{2}\cdots a_{n}}\sum_{b_{1}b_{2}\cdots b_{n}}g_{a_{1}a_{2}\cdots
+a_{n};b_{1}b_{2}\cdots b_{n}}\psi_{a_{1}b_{1}}^{(1)}(x)\,\psi_{a_{2}b_{2}%
+}^{(2)}(x)\cdots\psi_{a_{n}b_{n}}^{(n)}(x) \label{5.7.17}%
+\end{equation}
+其中$g_{a_{1}a_{2}\cdots a_{n};b_{1}b_{2}\cdots b_{n}}$是将自旋$A_{1},A_{2},\cdots A_{n}$
+耦合成标量的系数与将自旋$B_{1},B_{2},\cdots B_{n}$耦合成标量的系数的乘积. (尽管我们没有明显地考虑包含导数的相互作用, 但以这种方式, 我们将获得包含$n$ 个场的最一般相互作用, 这是因为$(A,B)$场\marginpar[\flushright{\small[236]\hspace*{5mm}}]{{\small\hspace*{5mm}[236]}}的导数总能分解成没有导数的其他类型的场.) 例如, 由三个变换类型$(A_{1},B_{1}),(A_{2},B_{2}),(A_{3},B_{3})$ 场的乘积构成的最一般的\,Lorentz\,标量是
+\begin{equation}
+g\sum_{a_{1}a_{2}a_{3}}\sum_{b_{1}b_{2}b_{3}}\left(
+\begin{array}
+[c]{ccccc}%
+A_{1} &\hspace*{2mm}& A_{2} &\hspace*{2mm}& A_{3}\\
+a_{1} &\hspace*{2mm}& a_{2} &\hspace*{2mm}& a_{3}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{ccccc}%
+B_{1} &\hspace*{2mm}& B_{2} &\hspace*{2mm}& B_{3}\\
+b_{1} &\hspace*{2mm}& b_{2} &\hspace*{2mm}& b_{3}%
+\end{array}
+\right)  \psi_{a_{1}b_{1}}^{(1)}\psi_{a_{2}b_{2}}^{(2)}\psi_{a_{3}b_{3}}^{(3)}
+\label{5.7.18}%
+\end{equation}
+其中$g$是自由参量. 这是最一般的\,3\,-场相互作用. ((\ref{5.7.18})中的括号代表\,Wigner\,``3-$j$''\,符号:\textsuperscript{\cite{10}}
+\[
+\left(
+\begin{array}
+[c]{ccccc}%
+j_{1} &\hspace*{2mm}& j_{2} &\hspace*{2mm}& j_{3}\\
+m_{1} &\hspace*{2mm}& m_{2} &\hspace*{2mm}& m_{3}%
+\end{array}
+\right)  \equiv\sum_{m_{3}^{\prime}}C_{j_{1}j_{2}}(j_{3}m_{3}^{\prime}%
+,m_{1}m_{2})C_{j_{3}j_{3}}(00,m_{3}^{\prime}m_{3})
+\]
+它描述了如何耦合三个自旋以构造一个旋转不变标量.)
+
+对于\,Lorentz\,不变的$S$-矩阵, 相互作用密度$\mathscr{H}(x)$只是像(\ref{5.7.18})这样的标量是不够的; 还必须要求$\mathscr{H}(x)$与$\mathscr{H}(y)$ 在类空间隔$x-y$上对易. 为了看到这个条件如何满足, 考虑同种粒子的两个场的对易子或反对易子, 其中一个是$(A,B)$类场$\psi$, 另一个是$(\tilde{A},\tilde{B})$ 类场$\tilde{\psi}$的伴随场$\tilde{\psi}^{\dag}$. 我们发现
+\begin{align}
+\Bigl[\psi_{ab}(x),\tilde{\psi}_{\tilde{a}\tilde{b}}^{\dag}(y)\Bigr]_{\mp}
+&=(2\uppi)^{-3}\int \dif^{3}p\:(2p^{0})^{-1}\pi_{ab,\tilde{a}\tilde{b}}(\bp)\nonumber\\
+&  \quad\times\Bigl[\kappa\tilde{\kappa}^{\ast}\me^{\mi p\cdot(x-y)}\mp
+\lambda\tilde{\lambda}^{\ast}\me^{-\mi p\cdot(x-y)}\Bigr]  \:,
+\label{5.7.19}%
+\end{align}
+其中$\pi(\bp)$是自旋和
+\begin{equation}
+(2p^{0})^{-1}\pi_{ab,\tilde{a}\tilde{b}}(\bp)\equiv\sum_{\sigma}%
+u_{ab}(\bp,\sigma)\tilde{u}_{\tilde{a}\tilde{b}}^{\ast}(\bp,\sigma)
+=\sum_{\sigma}v_{ab}(\bp,\sigma)\tilde{v}_{\tilde{a}\tilde{b}}^{\ast}(\bp,\sigma) \label{5.7.20}%
+\end{equation}
+并且, 像往常一样, 上面和下面的符号分别对应玻色子和费米子. (我们这里允许场$\tilde{\psi}$中的系数$\tilde{\kappa}$和$\tilde{\lambda}$不同.) 更详细些
+\begin{align}
+\pi_{ab,\tilde{a}\tilde{b}}(\bp)  & = \sum_{a^{\prime}b^{\prime}}%
+\sum_{\tilde{a}^{\prime}\tilde{b}^{\prime}}\sum_{\sigma}
+C_{AB}\Bigl(j\sigma;a^{\prime}b^{\prime}\Bigr)\,
+C_{\tilde{A}\tilde{B}}\Bigl(j\sigma;\tilde{a}^{\prime}\tilde{b}^{\prime}\Bigr)\nonumber\\
+&\quad\times\Bigl(\exp\Bigl(-\hat{\bp}\cdot\bJ^{(A)}\theta\Bigr)\Bigr)_{aa^{\prime}}
+\Bigl(\exp\Bigl(\hat{\bp}\cdot\bJ^{(B)}\theta\Bigr)\Bigr)_{bb^{\prime}}\nonumber\\
+&\quad\times\Bigl(\exp\Bigl(-\hat{\bp}\cdot\bJ^{(A)}\theta\Bigr)\Bigr) _{\tilde{a}\tilde{a}^{\prime}}^{\ast}
+\Bigl(\exp\Bigl(\hat{\bp}\cdot\bJ^{(B)}\theta\Bigr)\Bigr)
+_{\tilde{b}\tilde{b}^{\prime}}^{\ast}\:. \label{5.7.21}%
+\end{align}
+
+
+函数$\pi(\bp)$已经被显式地算出了.\textsuperscript{\cite{11}} 引起我们关注的结果是, 它是$\bp$和$p^{0}$的{\KAI{多项式}}函数$P$在质量壳上的值:
+\begin{equation}
+\pi_{ab,\tilde{a}\tilde{b}}(\bp)=P_{ab,\tilde{a}\tilde{b}}
+\Bigl(\bp,\sqrt{\bp^{2}+m^{2}}\Bigr)  \label{5.7.22}%
+\end{equation}
+并且根据$2A+2\tilde{B}$是偶数还是奇数, $P$分别是偶函数和奇函数\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[237]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[237]}}}
+\begin{equation}
+P(-\bp,-p^{0})=(-)^{2A+2\tilde{B}}\,P(\bp,p^{0}) \:. \label{5.7.23}%
+\end{equation}
+我们在这里仅对$\bp$的一个特定方向给一个验证. 将$\bp$取在\,3\,-方向上, (\ref{5.7.21})给出
+\[
+\pi_{ab,\tilde{a}\tilde{b}}(\bp)=\sum_{\sigma}C_{AB}(j\sigma;ab)\,
+C_{\tilde{A}\tilde{B}}(j\sigma;\tilde{a}\tilde{b})\exp\Bigl([-a+b-\tilde{a}+\tilde{b}]\theta\Bigr)
+\]
+除非$\sigma=a+b$且$\sigma=\tilde{a}+\tilde{b}$, 否则\,Clebsch-Gordon\,系数为零, 所以我们可以做替换
+\[
+-a+b-\tilde{a}+\tilde{b}=-2a+\sigma+2\tilde{b}-\sigma=2\tilde{b}-2a\:.%
+\]
+我们可以将$\exp(\pm\theta)$写成$(p^{0}\pm p^{3})/m$, 所以这里
+\begin{align*}
+\pi_{ab,\tilde{a}\tilde{b}}(\bp)  &  =\sum_{\sigma}C_{AB}%
+(j\sigma;ab)C_{\tilde{A}\tilde{B}}(j\sigma;\tilde{a}\tilde{b})\\
+&  \quad\times\left\{
+\begin{array}
+[c]{c}%
+\Big[(p^{0}+p^{3})/m\Big]^{2\tilde{b}-2a}\text{ \ \ \ \ \ }(\tilde{b}\geq a)\\
+\Big[(p^{0}-p^{3})/m\Big]^{2a-2\tilde{b}}\text{ \ \ \ \ \ }(a\geq\tilde{b}),
+\end{array}
+\right.
+\end{align*}
+其中$p^{0}\equiv\sqrt{\bp^{2}+m^{2}}$, 我们看到$\pi(\bp)$确实能写成多项式$P(\bp,p^{0})$的质量壳值. 另外, $2\tilde{b}-2a$ 等于$2\tilde{B}+2A$减去一个偶数, 所以该多项式满足反射条件(\ref{5.7.23}).
+
+$\bp$和$\sqrt{\bp^{2}+m^{2}}$的任何多项式都可写成对%
+$\sqrt{\bp^{2}+m^{2}}${\KAI{线性}}的形式(用$\bp$表示$\sqrt{\bp^{2}+m^{2}}$%
+的偶次幂), 所以$\pi(\bp)$可以写成
+\begin{equation}
+\pi_{ab,\tilde{a}\tilde{b}}(\bp)=P_{ab,\tilde{a}\tilde{b}}(\bp)
++2\sqrt{\bp^{2}+m^{2}}Q_{ab,\tilde{a}\tilde{b}}(\bp)\:, \label{5.7.24}%
+\end{equation}
+其中的$P$和$Q$现在只是$\bp$的多项式, 并有
+\begin{align}
+P(-\bp) &=  (-)^{2A+2\tilde{B}}P(\bp)    \label{5.7.25}\\
+Q(-\bp) &= -(-)^{2A+2\tilde{B}}Q(\bp)\:. \label{5.7.26}%
+\end{align}
+对于类空的$x-y$, 我们可以采用$x^{0}=y^{0}$的\,Lorentz\,参考系, 并将方程(\ref{5.7.19})写成{}$^\zb$\footnote{$^\zb${}原书下式有笔误. \ezx 译者注}
+\begin{align*}
+[\psi_{ab}(x),\tilde{\psi}_{\tilde{a}\tilde{b}}^{\dag}(y)]_{\mp}
+&=[\kappa\tilde{\kappa}^{\ast}\mp(-)^{2A+2\tilde{B}}\lambda\tilde{\lambda
+}^{\ast}]P_{ab,\tilde{a}\tilde{b}}(-\mi \bm{\nabla})\Delta_{+}(\bx-\by,0)\\
+&  \quad+[\kappa\tilde{\kappa}^{\ast}\pm(-)^{2A+2\tilde{B}}\lambda
+\tilde{\lambda}^{\ast}]Q_{ab,\tilde{a}\tilde{b}}(-\mi\bm{\nabla})\updelta^{3}(\bx-\by)\:.%
+\end{align*}
+为使其在$\bx\neq\by$时为零, 必须有
+\begin{equation}
+\kappa\tilde{\kappa}^{\ast}=\pm(-)^{2A+2\tilde{B}}\lambda\tilde{\lambda}^{\ast}\:. \label{5.7.27}%
+\end{equation}
+
+
+现在\marginpar[\flushright{\small[238]\hspace*{5mm}}]{{\small\hspace*{5mm}[238]}}我们考察$\psi$和$\tilde{\psi}$相同的特殊情况, 此时有$A=\tilde{A}$和$B=\tilde{B}$. (这种对易子或反对易子不可避免地出现在$[\mathscr{H}(x),\mathscr{H}(y)]$中, 这是因为哈密顿量的厄米性要求, 如果$\mathscr{H}(x)$包含$\psi$, 那么它也得包含$\psi^{\dag}$.) 在这种情况下, 方程(\ref{5.7.27})给出
+\[
+\lvert \kappa \rvert ^{2}=\pm(-)^{2A+2B} \lvert \lambda\rvert^{2}\:.%
+\]
+当且仅当
+\begin{equation}
+{\pm}(-1)^{2A+2B}=+1, \label{5.7.28}%
+\end{equation}
+以及
+\begin{equation}
+\lvert \kappa \rvert ^{2} = \lvert \lambda \rvert ^{2}\:, \label{5.7.29}%
+\end{equation}
+这才是可能的. 显然, $2A+2B$与$2j$相差的是一个{\KAI{偶数}}, 所以方程(\ref{5.7.28})说明{\KAI{我们的粒子是玻色子还是费米子取决于$2j$是偶还是奇}}. 这是自旋与统计之间的普遍关系,\textsuperscript{\cite{12}} 我们已经看到了它的几个特殊情况\ezx 标量场, 矢量场和\,Dirac\,场所描述的粒子.
+
+现在回到一般情况, 即场$\psi$和$\tilde{\psi}$可以不相同. 利用方程(\ref{5.7.27}), 两边同时除以$\lvert\tilde{\kappa}\rvert^{2}=\lvert\tilde{\lambda}\rvert^{2}$, 我们有
+\[
+\frac{\kappa}{\tilde{\kappa}}=(-1)^{2B+2\tilde{B}}\,\frac{\lambda}{\tilde{\lambda}}\:.%
+\]
+由此得出, 对于任意场
+\begin{equation}
+\lambda=(-)^{2B}c\:\kappa\:, \label{5.7.30}%
+\end{equation}
+其中$c$是对给定粒子的所有场都相同的因子. 进一步, 方程(\ref{5.7.29})表明$c$就是一个相位, $\lvert c\rvert =1$. 因此通过对算符$a(\bp,\sigma)$ 和$a^{\text{c}\dag}(\bp,\sigma)$的相对相位的重新定义, 我们可以使$c=1$, 从而$\lambda=(-)^{2B}\kappa$, 这可以消掉所有场的$c$. 同样, 通过对场的整体标度的重新定义, 对每一种类型的场, 因子$\kappa$都可以被消掉. 对于给定粒子的$(A,B)$场, 我们通过所有这些重定义得出一个式子, 除了一个总标度外, 这个式子是唯一的
+\begin{align}
+\psi_{ab}(x) &=(2\uppi)^{-3/2}\sum_{\sigma}\int\dif^{3}p\:
+\Bigl[u_{ab}(\bp,\sigma)a(\bp,\sigma)\me^{\mi p\cdot x}\nonumber\\
+&  \quad+(-)^{2B}v_{ab}(\bp,\sigma)a^{\text{c}\dag}(\bp,\sigma)\me^{-\mi p\cdot x}\Bigr]\:. \label{5.7.31}%
+\end{align}
+
+
+给定粒子的不同场并不真地表示它们在物理上有可区分的可能. 例如, 可以有$j=0$的场是那些$(A,A)$类的(因为三角不等式$\lvert A-B \rvert \leq j\leq A+B$, 所以这里要求$A=B$). 从$(0,0)$标量场$\phi$出发, 我们能够轻松地用$2A$阶导数构造这些$(A,A)$场\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[239]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[239]}}}
+\begin{equation}
+\{\partial_{\mu_{1}}\cdots\partial_{\mu_{2A}}\}\phi\:,
+\label{5.7.32}%
+\end{equation}
+其中$\{\}$在这里代表无迹部分; 例如
+\[
+\{\partial_{\mu}\partial_{\nu}\}\equiv\frac{\partial^{2}}{\partial x^{\mu}\partial x^{\nu}}-\frac{1}{4}\eta_{\mu\nu}\,\square\:.%
+\]
+(回忆按照$(N/2,N/2)$表示变换的$N$秩无迹对称张量.) 但是对于自旋为$j$的给定粒子, 方程(\ref{5.7.31})代表{\KAI{唯一}}的因果$(A,B)$场, 所以$j=0$ 的$(A,A)$场(\ref{5.7.31})只能是标量场的$2A$阶导数(\ref{5.7.32})的线性组合.
+
+更普遍地, 对于自旋$j$的给定粒子, 它的{\KAI{任意}}场$(A,B)$可以表示为作用在$(j,0)$类场\textsuperscript{\cite{13}} $\varphi_{\sigma}(x)$上的$2B$秩微分算符%
+(或者作用在$(0,j)$类场上的$2A$秩微分算符). 为了看到这点, 考察场
+\begin{equation}
+\{\partial_{\mu_{1}}\cdots\partial_{\mu_{2B}}\}\,\varphi_{\sigma}\:.
+\label{5.7.33}%
+\end{equation}
+它按照表示$(B,B)$与表示$(j,0)$%
+的直积变换, 因此通过通常的矢量加法规则, 它可以分解成全部按照不可约表示$(A,B)$%
+变换的场, 其中$\lvert j-B\rvert\leq A\leq j+B$, 或等价地$\lvert A-B\rvert \leq j\leq A+B$. 既然方程(\ref{5.7.31})代表自旋$j$的给定粒子的唯\linebreak
+\pagebreak
+
+\noindent
+一$(A,B)$ 类场, 它只能{}$^*$\footnote{$^*${}这个讨论中唯一可能的缺陷是, 以这种方式得到的一些$(A,B)$场可能实际上为零. 但是在这种情况下, $(j,0)$场$\varphi_{\sigma}$将满足场方程$\sum_{\sigma}M_{\sigma}(\partial/\partial x)\varphi_{\sigma}(x)=0$, 因而对于{\KAI{每个}}$\bar{\sigma}$, $\sum_{\sigma}M_{\sigma}(\mi p)u_{\sigma}(\bp,\bar{\sigma})=0$. 对于$(j,\sigma)$表示, Clebsch-Gordon\,系数$C_{j0}(j\bar{\sigma};\sigma0)$ 就是克罗内克符号$\updelta_{\bar{\sigma}\sigma}$, 所以这将要求$\sum_{\sigma}M_{\sigma}(\mi p)D_{\sigma\sigma^{\prime}}(L(p))=0$, 又因为$D(\Lambda)$有逆$D(\Lambda^{-1})$, 所以除非所有$M_{\sigma}(\mi p)$为零, 否则这不可能. $(j,0)$场$\varphi_{\sigma}(x)$因此不会满足\,Klein-Gordon\,方程$(\square-m^{2})\varphi_{\sigma}(x)=0$%
+以外的任何场方程, 因而从(\ref{5.7.33})得到的$(A,B)$场不会为零.}%
+通过导数(\ref{5.7.33})得到.
+
+现在考察这些场在反演下的性质, 先从空间反演开始. 利用\,\ref{sec:4.2}\,节的结果, 粒子湮没算符和反粒子产生算符的空间反演性质是:
+\begin{align}
+\mathsf{P}a(\bp,\sigma)\mathsf{P}^{-1} &= \eta^{\ast}a(-\bp,\sigma)\:,\label{5.7.34}\\
+\mathsf{P}a^{\text{c}\dag}(\bp,\sigma)\mathsf{P}^{-1}
+&=\eta^{\text{c}}a^{\text{c}\dag}(-\bp,\sigma)\:, \label{5.7.35}%
+\end{align}
+其中$\eta$和$\eta^{\text{c}}$分别是粒子和反粒子的内禀宇称. 因此, 一般因果$(A,B)$场(\ref{5.7.31})在宇称算符$\mathsf{P}$
+下\marginpar[\flushright{\small[240]\hspace*{5mm}}]{{\small\hspace*{5mm}[240]}}变换成
+\begin{align}
+\mathsf{P}\psi_{ab}^{AB}(x)\mathsf{P}^{-1}  &= (2\uppi)^{-3/2}\sum_{\sigma}\int\dif^{3}p\:
+\Bigl[\eta^{\ast}a(-\bp,\sigma)\me^{\mi p\cdot x}\,u_{ab}^{AB}(\bp,\sigma)\nonumber\\
+&\quad+\eta^{\text{c}}(-)^{2B}a^{\text{c}\dag}(-\bp,\sigma)
+\me^{-\mi p\cdot x}\,v_{ab}^{AB}(\bp,\sigma)\Bigr]\:. \label{5.7.36}%
+\end{align}
+我们希望将积分变量$\bp$变成$-\bp$, 为此, 我们需要计算$u_{ab}(-\bp,\sigma)$和$v_{ab}(-\bp,\sigma)$. 为了做到这点, 我们仅需回头看一下(\ref{5.7.14})和(\ref{5.7.15}), 并利用\,Clebsch-Gordon\,系数的对称性质\textsuperscript{\cite{14}}%
+\begin{equation}
+C_{AB}(j\sigma;ab)=(-)^{A+B-j}C_{BA}(j\sigma;ba)\:. \label{5.7.37}%
+\end{equation}
+这给出\begin{align}
+u_{ab}^{AB}(-\bp,\sigma) &= (-)^{A+B-j}\,u_{ba}^{BA}(\bp,\sigma)\:,\label{5.7.38}\\
+v_{ab}^{AB}(-\bp,\sigma) &= (-)^{A+B-j}\,v_{ba}^{BA}(\bp,\sigma)\:, \label{5.7.39}%
+\end{align}
+所以\begin{align}
+& \mathsf{P}\psi_{ab}^{AB}(x)\mathsf{P}^{-1}=(2\uppi)^{-3/2}\sum_{\sigma}
+\int\dif^{3}p\:(-1)^{A+B-j}\nonumber\\
+& \times\Big[\eta^{\ast}a(\bp,\sigma)\me^{\mi p\cdot\mathscr{P}x}%
+u_{ba}^{BA}(\bp,\sigma)+\eta^{\text{c}}(-)^{2B}a^{\text{c}\dag
+}(\bp,\sigma)\me^{-\mi p\cdot\mathscr{P}x}v_{ba}^{BA}(\bp,\sigma)\Big]\:, \label{5.7.40}%
+\end{align}
+其中, 像以前一样, $\mathscr{P}x=(-\bx,x^{0})$.   除了湮没项和产生项的系数与方程(\ref{5.7.31})中要求的系数不同, 这就是$\mathscr{P}x$处的因果场$\psi_{ba}^{BA}$. 但是这些系数{\KAI{必须}}与方程(\ref{5.7.31})中的系数仅相差一个总的常数因子, 这是因为除了标度以外, 方程(\ref{5.7.31})对于每一类因果场都是唯一的. 因此方程(\ref{5.7.40})中两项系数的比值必须与方程(\ref{5.7.31})中的相同(但由于这是一个$(B,A)$场, 所以$B$被替换为$A$):
+\begin{equation}
+\eta^{\text{c}}(-)^{2B}/\eta^{\ast}=(-)^{2A}\:. \label{5.7.41}%
+\end{equation}
+但是$(A-B)$与自旋$j$仅相差一个整数, 于是给出
+\begin{equation}
+\eta^{\text{c}}=\eta^{\ast}(-)^{2j}\:. \label{5.7.42}%
+\end{equation}
+我们在\,\ref{sec:5.2}\,节, \ref{sec:5.3}\,节和\,\ref{sec:5.5}\,节分别看到$j=0$, $j=1$和$j=\frac{1}{2}$这几个特殊情况的结果. 我们现在看到这一结果是普遍的; {\KAI{粒子\lzx 反粒子对的内禀宇称}}%
+$\eta^{\text{c}}\eta${\KAI{对玻色子是$+1$, 对费米子是$-1$.}} %
+在方程(\ref{5.7.40})中使用方程(\ref{5.7.42}), 空间反演的最终结果就是
+\begin{equation}
+\mathsf{P}\psi_{ab}^{AB}(x)\mathsf{P}^{-1}=\eta^{\ast}(-)^{A+B-j}\psi_{ba}^{BA}(-\bx,x^{0})\:. \label{5.7.43}%
+\end{equation}
+
+
+我们来看一下这些是如何应用于\,Dirac\,场的. 对于\,Dirac\,场的上$(\frac{1}{2},0)$分量和下$(0,\frac{1}{2})$%
+分量, 符号$(-1)^{A+B-j}$就是$+1$, 所\marginpar[\flushright{\small[241]\hspace*{5mm}}]{{\small\hspace*{5mm}[241]}}以宇称算符就是将$\bx$变成$-\bx$; 调换上下分量; 并用$\eta^{\ast}$乘以场. Dirac\,场的上分量和下分量的交换是由(\ref{5.5.41})中的矩阵$\beta$完成的.
+
+现在来考察荷共轭. 它在粒子湮没算符和反粒子产生算符上的作用效果是
+\begin{align}
+\mathsf{C}a(\bp,\sigma)\mathsf{C}^{-1}  &= \xi^{\ast}a^{\text{c}}(\bp,\sigma)\:,\label{5.7.44}\\
+\mathsf{C}a^{\text{c}\dag}(\bp,\sigma)\mathsf{C}^{-1}  &
+=\xi^{\text{c}}a^{\dag}(\bp,\sigma)\:, \label{5.7.45}%
+\end{align}
+其中$\xi$和$\xi^{\text{c}}$分别是粒子和反粒子的荷共轭宇称. 将这个变换应用于场(\ref{5.7.31}), 我们发现
+\begin{align}
+\mathsf{C}\psi_{ab}^{AB}(x)\mathsf{C}^{-1} &= (2\uppi)^{-3/2}\sum_{\sigma}\int
+\dif^{3}p\:u_{ab}^{AB}(\bp,\sigma)\nonumber\\
+&  \quad\times\Bigl[\xi^{\ast}a^{\text{c}}(\bp,\sigma)\me^{\mi p\cdot x}+\xi^{\text{c}}(-)^{2B}a^{\dag}(\bp,-\sigma)(-)^{j-\sigma}\me^{-\mi p\cdot x}\Bigr]  \:. \label{5.7.46}%
+\end{align}
+将$(A,B)$%
+场的这个荷共轭公式与同一粒子的$(B,A)$场的伴随场比较一下是有意义的:
+\begin{align}
+\psi_{ba}^{BA\dag}(x) &= (2\uppi)^{-3/2}\sum_{\sigma}\int \dif^{3}p\:
+u_{ba}^{BA\ast}(\bp,\sigma)\nonumber\\
+& \quad\times \Bigl[(-1)^{2A}(-1)^{j-\sigma}a^{\text{c}}(\bp%
+,-\sigma)\me^{\mi p\cdot x}+a^{\dag}(\bp,\sigma)\me^{-\mi p\cdot x}\Bigr]
+\:. \label{5.7.47}%
+\end{align}
+为了计算$u^{\ast}$, 我们利用以前的结果
+\[
+\bJ^{(j)\ast}=-\mathscr{C}\bJ^{(j)}\mathscr{C}^{-1}\:, \qquad\qquad
+\mathscr{C}_{\bar{\sigma}\sigma}\propto(-1)^{j-\sigma}\updelta_{\bar{\sigma},-\sigma}\:.%
+\]
+方程(\ref{5.7.14})中的\,Clebsch-Gordon\,系数是实的, 所以
+\begin{align*}
+u_{ba}^{BA}(\bp,\sigma)^{\ast} &= \frac{1}{\sqrt{2p^{0}}}%
+\sum_{a^{\prime}b^{\prime}}\Bigl(\exp(-\hat{\bp}\cdot \bJ^{(A)}\theta)\Bigr)_{-a,-a^{\prime}}
+\Bigl(\exp(\hat{\bp}\cdot \bJ^{(B)}\theta)\Bigr)_{-b,-b^{\prime}}\\
+& \quad\times(-)^{a^{\prime}-a}(-)^{b^{\prime}-b}C_{BA}(j\sigma;b^{\prime}a^{\prime})\:.%
+\end{align*}
+利用\,Clebsch-Gordon\,系数的反射性质\textsuperscript{\cite{14}}
+\begin{equation}
+C_{BA}(j,-\sigma;-b^{\prime},-a^{\prime})=C_{AB}(j\sigma;a^{\prime}b^{\prime}) \label{5.7.48}%
+\end{equation}
+再加上除非$a^{\prime}+b^{\prime}=\sigma$, 否则这些系数为零的性质, 得出
+\begin{equation}
+u_{-b,-a}^{BA}(\bp,-\sigma)^{\ast}=(-)^{a+b-\sigma}\,u_{ab}^{AB}(\bp,\sigma)\:. \label{5.7.49}%
+\end{equation}
+那么场的伴随场(\ref{5.7.47})是(做替换$a\to-a,b\to-b,\sigma\to-\sigma$)
+\begin{align*}
+\psi_{-b,-a}^{BA\dag}(x) &= (2\uppi)^{-3/2} \sum_{\sigma}\int \dif^{3}p\:
+(-)^{a+b-\sigma}u_{ab}^{AB}(\bp,\sigma)\\
+& \quad\times\Bigl[(-)^{2A}(-)^{j+\sigma}a^{\text{c}}(\bp,\sigma)\me^{\mi p\cdot x}
++a^{\dag}(\bp,\sigma)\me^{-\mi p\cdot x}\Bigr]  \:.%
+\end{align*}
+利用符号\marginpar[\flushright{\small[242]\hspace*{5mm}}]{{\small\hspace*{5mm}[242]}}关系$(-)^{-2A-j}=(-)^{2B+j}$, 这是
+\begin{align}
+(-)^{-2A-a-b-j}\,\psi_{-b,-a}^{BA\dag}(x) &= (2\uppi)^{-3/2}\sum_{\sigma}\int\dif^{3}p\:
+u_{ab}^{AB}(\bp,\sigma)\nonumber\\
+&\times\Bigl[a^{\text{c}}(\bp,\sigma)\me^{\mi p\cdot x}+(-)^{j-\sigma
++2B}a^{\dag}(\bp,-\sigma)\me^{-\mi p\cdot x}\Bigr]  \:. \label{5.7.50}%
+\end{align}
+为了使$\mathsf{C}\psi_{ab}^{AB}(x)\mathsf{C}^{-1}$与所有普通场在类空间隔上对易或反对易, 它必须正比于$\psi_{-b,-a}^{BA\dag}(x)$, 这是因为它是变换类$(B,A)$的唯一因果场的伴随场. 将方程(\ref{5.7.50})与方程(\ref{5.7.46})比较, 我们看到只有荷共轭宇称满足关系
+\begin{equation}
+\xi^{\ast}=\xi^{\text{c}} \label{5.7.51}%
+\end{equation}
+这才是可能的, 在这种情况下
+\begin{equation}
+\mathsf{C}\psi_{ab}^{AB}(x)\mathsf{C}^{-1}=\xi^{\ast}(-)^{-2A-a-b-j}\,\psi_{-b,-a}^{BA\dag}(x)\:.
+\label{5.7.52}%
+\end{equation}
+我们在\,\ref{sec:5.2}\,节, \ref{sec:5.3}\,节和\,\ref{sec:5.5}\,节已经遇到了关系(\ref{5.7.51})在自旋\,0, %
+自旋\,1\,和自旋$\frac{1}{2}$下的情况, 并在\,\ref{sec:5.5}\,节看到了它在电子\lzx 正电子和夸克\lzx 反夸克态上的意义.
+
+特别地, 对于反粒子是其本身的粒子, 方程(\ref{5.7.52})在左边没有任何荷共轭算符或右边没有相位$\xi^{\ast}$时也是满足的:
+\begin{equation}
+\psi_{ab}^{AB}(x)=(-)^{-2A-a-b-j}\,\psi_{-b,-a}^{BA\dag}(x)\:.
+\label{5.7.53}%
+\end{equation}
+在\,\ref{sec:5.5}\,节中, 对\,Majorana\,自旋$\frac{1}{2}$粒子, 我们已经看到这类实条件的一个例子.
+
+最后我们来看时间反演. 作用在粒子湮没算符和反粒子产生算符上, 这给出
+\begin{align}
+\mathsf{T}a(\bp,\sigma)\mathsf{T}^{-1} &= \zeta^{\ast}(-1)^{j-\sigma}a(-\bp,-\sigma)\:,\label{5.7.54}\\
+\mathsf{T}a^{\text{c}\dag}(\bp,\sigma)\mathsf{T}^{-1}  &
+=\zeta^{\text{c}}(-1)^{j-\sigma}a^{\text{c}\dag}(-\bp,-\sigma)\:, \label{5.7.55}%
+\end{align}
+因此不可约场(\ref{5.7.31}%
+)有变换性质\begin{align}
+\mathsf{T}\psi_{ab}^{AB}(x)\mathsf{T}^{-1}  &= (2\uppi)^{-3/2}\sum_{\sigma}\int\dif^{3}p\:
+u_{ab}^{AB\ast}(\bp,\sigma)(-1)^{j-\sigma}\nonumber\\
+&  \quad\times\Bigl[  \zeta^{\ast}a(-\bp,-\sigma)\me^{-\mi p\cdot x}%
++\zeta^{\text{c}}(-1)^{2B}a^{\text{c}\dag}(-\bp,-\sigma)\me^{\mi p\cdot x}\Bigr]  \:. \label{5.7.56}%
+\end{align}
+为了计算系数函数的复共轭, 我们利用方程(\ref{5.7.14}%
+)和标准公式\textsuperscript{\cite{14}}%
+\begin{equation}
+C_{AB}(j,\sigma;a,b)=(-)^{A+B-j}C_{AB}(j,-\sigma;-a,-b) \label{5.7.57}%
+\end{equation}
+发现:\marginpar[\flushright{\small[243]\hspace*{5mm}}]{{\small\hspace*{5mm}[243]}}
+\begin{equation}
+u_{ab}^{AB\ast}(-\bp,-\sigma)=(-)^{a+b+\sigma+A+B-j}u_{-a,-b}^{AB}(\bp,\sigma)\:. \label{5.7.58}%
+\end{equation}
+将方程(\ref{5.7.56})中的积分变量和求和变量变为$-\bp$和$-\sigma$, 我们发现为了使$(A,B)$场在时间反演变换后正比于另一$(A,B)$场, 必须有
+\begin{equation}
+\zeta^{\text{c}}=\zeta^{\ast}\:, \label{5.7.59}%
+\end{equation}
+在这种情况下
+\begin{equation}
+\mathsf{T}\psi_{ab}^{AB}(x)\mathsf{T}^{-1}=(-)^{a+b+A+B-2j}\zeta^{\ast}\,
+\psi_{-a,-b}^{AB}(\bx,-x^{0})\:. \label{5.7.60}%
+\end{equation}
+
+
+\subsection*{* * *}
+
+应该提一下, 在自旋$j\geq3/2$粒子的场论中, 会时不时地出现各种困难.\textsuperscript{\cite{15}} 一般地, 在存在\,c\,-数外场的情况下研究高自旋场的传播时会遇到这些问题. 取决于不同的具体理论, 这些问题包括非因果性, 不相容性, 非物理质量态, 以及幺正性破坏. 我在这里不讨论这些问题的细节, 因为在我看来, 它们似乎与本章所描述的计算方案无关, 理由如下:
+
+\noindent(1) 场$\psi_{ab}(x)$是用物质粒子的产生算符和湮没算符直接构造的, 所以不可能有不相容性或非物理质量态的问题. 它们是自由场, 但是通过在相互作用绘景下将它们纳入相互作用哈密顿量密度中, 我们可以用微扰论计算出自动满足集团分解原理的$S$-矩阵元. 只要相互作用哈密顿量是厄米的, 在幺正性上就不会存在困难. 只要我们在哈密顿密度中加入合适的定域不协变项, Lorentz\,不变性在微扰论中是会被保证的; 尽管缺乏一个严格的证明, 但没有理由怀疑这总是可能的. 因此, 高自旋的任何问题仅在我们尝试超出微扰论时才会出现.
+
+\noindent(2) 我们会在\,\ref{sec:13.6}\,节讨论, 在有\,c\,-数背景场时(这时, 高自旋的所有问题都会出现), 场方程的解确实超出了微扰论, 因为其结果涉及对微扰展开中一个无限子集的求和. 即使对于非常弱的外场, 这个部分和也可以存在, 只要场的变化足够缓慢, 使得小的能量分母抵消场的微弱. 然而, 以这种方式得到的结果依赖于高自旋粒子与外场相互作用的全部细节: 不\marginpar[\flushright{\small[244]\hspace*{5mm}}]{{\small\hspace*{5mm}[244]}}仅是粒子的多极矩, 还包括外场中可能的非线性相互作用项. 只是当高自旋粒子与外场的相互作用被假定得非常简单, 才会遇到上述高自旋所遇到的问题.\textsuperscript{\cite{15}} 没有人证明这些问题对任意的相互作用依然存在, 并且, 我们会在第12章看到, 可以预期高自旋粒子有对称性所允许的所有可能类型的相互作用.
+
+\noindent(3) 事实上, 有一个很好的理由相信, 如果与外场的相互作用足够复杂, 伴随高自旋的问题会消失. 首先, 高自旋{\KAI{粒子}}的存在是毋庸置疑的, 包括各种稳定核子和强子共振态. 如果高自旋情况存在任何问题, 它可能仅是针对``点''粒子的, 即, 它与外场的相互作用特别简单. 应当记住的是: 简单性的要求依赖于我们选择的用以表示高自旋粒子的场. 回顾一下, 我们知道, 对于一个给定的粒子, 它的任何自由场类型都可以用一个导数算子作用在任意一个其他场类型上来表示, 所以在相互作用绘景中, 任何与外场的相互作用都可以用任何我们想要的场类型来表示, 然而, 在一种场类型下形式简单的相互作用在另一场类型下形式可能非常复杂. 所以简单性的要求似乎没有任何实质性的内容.
+
+\noindent(4) 另外, 高维``Kaluza-Klein''理论和弦论均为自旋\,2\,的有质量带电粒子与电磁背景场相互作用的相容理论提供了例子.\textsuperscript{\cite{16}}  (我们发现理论的相容性依赖于真实外场满足场方程这一假定, 这一点在早期工作中通常被忽视了.) 在相互作用绘景中再次表述这个工作, 自旋\,2\,粒子被$(1,1)$自由场表示, 但正如前面提到的, 只要$(A,B)$类场包含旋转群的$j=2$表示, 在相互作用绘景中, 相互作用就可以用任何这样的$(A,B)$场重新表示.
+
+\newpage
+
+\ \vspace{-5mm}
+
+\section{\textsf{CPT}\,定理}  \label{sec:5.8}
+\setcounter{equation}{0}
+
+我们已经看到, 想要将相对论与量子力学结合起来就要求存在反粒子. 不仅每个粒子必须都有反粒子(纯中性粒子的反粒子是其本身); 并且粒子性质和反粒子性质之间还存在一个精确关系, 这个关系可以总结为如下表述: {\KAI{选\marginpar[\flushright{\small[245]\hspace*{5mm}}]{{\small\hspace*{5mm}[245]}}择合适的反演相位后, 所有反演的乘积$\mathsf{CPT}$是守恒的}}. %
+这就是著名的$\mathsf{CPT}$定理.{}$^*$\footnote{$^*${}这个定理的原始证明是\,L\"{u}ders\,和\,Pauli\,给出的.\textsuperscript{\cite{17}} 在公理化场论中被严格地证明了,\textsuperscript{\cite{18}} 证明方法是使用交换性假定, 将理论的\,Lorentz\,不变性扩张到复\,Lorentz\,群, 然后利用复\,Lorentz\,变换来证明场乘积的真空期望值的反演性质, 然后再利用这个反演性质推出存在一个反幺正算符, 这个算符诱导出场上的$\mathsf{CPT}$变换.}
+
+作为证明的第一步, 我们先算出$\mathsf{CPT}$乘积在各种类型的自由场上的作用结果. 对标量场, 矢量场和\,Dirac\,场, %
+\ref{sec:5.2}\,节, \ref{sec:5.3}\,节和\,\ref{sec:5.5}\,节的结果给出
+\begin{equation}
+\mathsf{CPT}\,\phi(x)\,[\mathsf{CPT}]^{-1}=\zeta^{\ast}\xi^{\ast}\eta^{\ast}\phi^{\dag}(-x)\:, \label{5.8.1}%
+\end{equation}%
+\begin{equation}
+\mathsf{CPT}\,\phi_{\mu}(x)\,[\mathsf{CPT}]^{-1}=-\zeta^{\ast}\xi^{\ast}\eta^{\ast}\phi_{\mu}^{\dag}(-x)\:, \label{5.8.2}%
+\end{equation}%
+\begin{equation}
+\mathsf{CPT}\,\psi(x)\,[\mathsf{CPT}]^{-1}=-\zeta^{\ast}\xi^{\ast}\eta^{\ast}\gamma_{5}\psi^{\ast}(-x)\:. \label{5.8.3}%
+\end{equation}
+(当然, 相位$\zeta,\xi,\eta$依赖于每个场所描述的粒子种类.) 我们将选择相位, 使得对于所有粒子有
+\begin{equation}
+\zeta\,\xi\,\eta=1\:. \label{5.8.4}%
+\end{equation}
+那么, 对于任意一组标量场, 矢量场以及它们的导数组成的任意张量$\phi_{\mu_{1}\ldots\mu_{n}}$, 它的变换是
+\begin{equation}
+\mathsf{CPT}\,\phi_{\mu_{1}\ldots\mu_{n}}(x)\,[\mathsf{CPT}]^{-1}=(-)^{n}%
+\phi_{\mu_{1}\ldots\mu_{n}}^{\dag}(-x)\:. \label{5.8.5}%
+\end{equation}
+(由于$\mathsf{CPT}$是反幺正的, 这些张量中的任何复系数会变换成它的复共轭.) 容易看到, 对于\,Dirac\,场的双线性型组合构成的张量, 这个变换规则同样适用. 将方程(\ref{5.8.3})应用到这样的双线性型上给出
+\begin{align}
+\mathsf{CPT}[\bar{\psi}_{1}(x)M\psi_{2}(x)][\mathsf{CPT}]^{-1}  &  =\psi
+_{1}^{\text{T}}(-x)\gamma_{5}\beta M^{\ast}\gamma_{5}\psi_{2}^{\ast
+}(-x)\nonumber\\
+&  =[\bar{\psi}_{1}(-x)\gamma_{5}M\gamma_{5}\psi_{2}(-x)]^{\dag}\:.
+\label{5.8.6}%
+\end{align}
+($\beta$和$\gamma_{5}$反对易产生的负号与费米算符反对易产生的负号抵消了.) 如果这个双线性型是$n$秩张量, 那么$M$是$n$模\,2\,个\,Dirac\, 矩阵的乘积, 所以$\gamma_{5}M\gamma_{5}=(-1)^{n}M$, 因而这个双线性型满足方程(\ref{5.8.5}).
+
+厄米的标量相互作用密度$\mathscr{H}(x)$一定是由时空指标总数为{\KAI{偶数}}的张量构成, 因此\vspace{-.1mm}
+\begin{equation}
+\mathsf{CPT}\,\mathscr{H}(x)\,[\mathsf{CPT}]^{-1}=\mathscr{H}(-x).
+\label{5.8.7}%
+\end{equation}
+更一般地(而且也更简单些), 我们可以看到\marginpar[\flushright
+{\raisebox{6ex}[0pt]{{\small[246]\hspace*{5mm}}}}]{{\raisebox{6ex}[0pt]{\small\hspace*{5mm}[246]}}}, 对于构成厄米标量的场$\psi_{ab}^{AB}(x)$, 如果它属于齐次\,Lorentz\,群的一个或多个一般不可约表示, 那么把前面章节中这些场在反演下的结果放在一起, 我们发现
+\begin{equation}
+\mathsf{CPT}\,\psi_{ab}^{AB}(x)\,[\mathsf{CPT}]^{-1}=(-1)^{2B}\psi
+_{ab}^{AB\dag}(-x)\:. \label{5.8.8}%
+\end{equation}
+(对于\,Dirac\,场, 因子$(-1)^{2B}$由方程(\ref{5.8.3})中的矩阵$\gamma_{5}$提供.) 为了将乘积$\psi_{a_{1}b_{1}}^{A_{1}B_{1}}(x)\psi_{a_{2}b_{2}}^{A_{2}B_{2}}(x)\cdots$合成标量%
+$\mathscr{H}(x)$, 必须要求$A_{1}+A_{2}+\cdots$和$B_{1}+B_{2}+\cdots$都是整数, 所以$(-1)^{2B_{1}+2B_{2}+\cdots}=1$, 因而厄米标量$\mathscr{H}(x)$ 会自动满足方程(\ref{5.8.7}).
+
+从方程(\ref{5.8.7})可以立刻得出$\mathsf{CPT}$与相互作用$V\equiv\int \dif^{3}x\,\mathscr{H}(\cvec{x},0)$对易:
+\begin{equation}
+\mathsf{CPT}\:V\:[\mathsf{CPT}]^{-1}=V\:. \label{5.8.9}%
+\end{equation}
+同样, 在所有理论中, $\mathsf{CPT}$与自由粒子哈密顿量$H_{0}$对易. 因此算符$\mathsf{CPT}$在这里通过它在自由粒子算符上的作用来定义, 以\,\ref{sec:3.3}\,节所描述的方式作用在``入''态和``出''态上. %
+我们在\,\ref{sec:3.3}\,节和\,\ref{sec:3.6}\,节中已经讨论了这个对称性原理的物理结果.
+
+\section{无质量粒子场} \label{sec:5.9}
+\setcounter{equation}{0}
+
+至此, 我们只处理了有质量粒子的场. 对于其中的一些场, 诸如\,\ref{sec:5.2}\,节和\,\ref{sec:5.5}\,节中讨论的标量场和\,Dirac\,场, 在过渡到无质量极限时没有出现特别的问题. 另一方面, 我们在\,\ref{sec:5.3}\,节看到, 对于自旋\,1\,粒子, 在取矢量场的无质量极限时{\KAI{出现}}了一个困难: 至少有一个极化矢量在这个极限下变得无限大. 事实上, 我们将在本节看到, 对于自旋$j\geq1$的无质量物理粒子, 它的产生算符和湮没算符不能构造出在有限质量情况下构造的全部不可约$(A,B)$场. 场类型的这个特别的局限性会自然地导致规范不变性的引入.
+
+就像我们对有质量粒子做的那样, 对于一般的无质量粒子, 我们尝试用动量为$\bp$螺旋度为$\sigma$的粒子%
+湮没算符$a(\bp,\sigma)$与相对应的反粒子产生算符$a^{\text{c}\dag}(\bp,\sigma)$%
+的\marginpar[\flushright{\small[247]\hspace*{5mm}}]{{\small\hspace*{5mm}[247]}}线性组合来构造它的自由场:{}$^*$\footnote{$^*${}我们在这里仅处理单个种类的粒子, 并扔掉种类指标$n$. 另外, $\kappa$和$\lambda$是由因果性要求以及系数函数$u_{\ell}$ 和$v_{\ell}$%
+的某些出于方便考虑的归一化的选择所决定的常数.}%
+\begin{align}
+\psi_{\ell}(x) &= (2\uppi)^{-3/2}\int \dif^{3}p\, \sum_{\sigma}\Big[\kappa
+\,a(\bp,\sigma)u_{\ell}(\bp,\sigma)\,\me^{\mi p\cdot x}\nonumber\\
+&  \quad+\lambda\,a^{\text{c}\dag}(\bp,\sigma)v_{\ell}(\bp%
+,\sigma)\,\me^{-\mi p\cdot x}\Big] \label{5.9.1}%
+\end{align}
+现在其中的$p^{0}\equiv\lvert\bp\rvert$. 产生算符就像方程(\ref{2.5.42})中的单粒子态那样变换
+\begin{equation}
+U(\Lambda)a^{\dag}(\bp,\sigma)U^{-1}(\Lambda)=\sqrt{\frac{(\Lambda p)^{0}}{p^{0}}}\,
+\exp\Bigl(\mi\sigma\theta(p,\Lambda)\Bigr)a^{\dag}(\bp_{\Lambda},\sigma)\:, \label{5.9.2}%
+\end{equation}%
+\begin{equation}
+U(\Lambda)a^{\text{c}\dag}(\bp,\sigma)U^{-1}(\Lambda)=\sqrt{\frac{(\Lambda p)^{0}}{p^{0}}}\,
+\exp\Bigl(\mi\sigma\theta(p,\Lambda)\Bigr)a^{\text{c}\dag}(\bp_{\Lambda},\sigma)\:, \label{5.9.3}%
+\end{equation}
+因而
+\begin{equation}
+U(\Lambda)a(\bp,\sigma)U^{-1}(\Lambda)=\sqrt{\frac{(\Lambda p)^{0}}{p^{0}}}\,
+\exp\Bigl(-\mi\sigma\theta(p,\Lambda)\Bigr)a(\bp_{\Lambda},\sigma)\:, \label{5.9.4}%
+\end{equation}
+其中$p_{\Lambda}\equiv\Lambda p$, $\theta$是方程(\ref{2.5.43})定义的角度. 因此, 如果我们希望场按照齐次\,Lorentz\,群的某个表示$D(\Lambda)$变换
+\begin{equation}
+U(\Lambda)\psi_{\ell}(x)U^{-1}(\Lambda)=\sum_{\bar{\ell}}D_{\ell\bar{\ell}%
+}(\Lambda^{-1})\psi_{\bar{\ell}}(\Lambda x)\:, \label{5.9.5}%
+\end{equation}
+那么我们必须让系数函数$u$和$v$满足关系
+\begin{equation}
+u_{\bar{\ell}}(\bp_{\Lambda},\sigma)\:\exp\Bigl(\mi\sigma\theta(p,\Lambda)\Bigr)
+=\sqrt{\frac{p^{0}}{(\Lambda p)^{0}}}\sum_{\ell}D_{\bar{\ell}\ell}(\Lambda)u_{\ell}(\bp,\sigma)\:, \label{5.9.6}%
+\end{equation}%
+\begin{equation}
+v_{\bar{\ell}}(\bp_{\Lambda},\sigma)\:\exp\Bigl(-\mi\sigma\theta(p,\Lambda)\Bigr)
+=\sqrt{\frac{p^{0}}{(\Lambda p)^{0}}}\sum_{\ell}D_{\bar{\ell}\ell}(\Lambda)v_{\ell}(\bp,\sigma) \label{5.9.7}%
+\end{equation}
+而不是方程(\ref{5.1.19})和(\ref{5.1.20}). (再次, $p_{\Lambda}\equiv\Lambda p$.) 同有质量粒子的情况一样, 通过令\marginpar[\flushright
+{\raisebox{-5ex}[0pt]{{\small[248]\hspace*{5mm}}}}]{{\raisebox{-5ex}[0pt]{\small\hspace*{5mm}[248]}}}
+\begin{equation}
+u_{\bar{\ell}}(\bp,\sigma)=\sqrt{\frac{\left\vert \bk\right\vert
+}{p^{0}}}\sum_{\ell}D_{\bar{\ell}\ell}(\mathscr{L}(p))u_{\ell}(\bk%
+,\sigma)\:, \label{5.9.8}%
+\end{equation}%
+\begin{equation}
+v_{\bar{\ell}}(\bp,\sigma)=\sqrt{\frac{\left\vert \bk\right\vert
+}{p^{0}}}\sum_{\ell}D_{\bar{\ell}\ell}(\mathscr{L}(p))v_{\ell}(\bk%
+,\sigma) \label{5.9.9}%
+\end{equation}
+(而不是方程(\ref{5.1.21})和(\ref{5.1.22})), 我们就可以满足这些要求, 其中$\bk$是标准动量, 例如$(0,0,k)$, 而$\mathscr{L}(p)$是将无质量粒子的动量从$\bk$变为$\bp$的%
+标准\,Lorentz\,变换. 同样, 取代方程(\ref{5.1.23})和(\ref{5.1.24}), 标准动量的系数函数必须满足
+\begin{equation}
+u_{\bar{\ell}}(\bk,\sigma)\:\exp\Bigl(\mi\sigma\theta(k,W)\Bigr)=\sum_{\ell
+}D_{\bar{\ell}\ell}(W)u_{\ell}(\bk,\sigma) \label{5.9.10}%
+\end{equation}%
+\begin{equation}
+v_{\bar{\ell}}(\bk,\sigma)\:\exp\Bigl(-\mi\sigma\theta(k,W)\Bigr)=\sum
+_{\ell}D_{\bar{\ell}\ell}(W)v_{\ell}(\bk,\sigma), \label{5.9.11}%
+\end{equation}
+其中$W^{\mu}{}_{\!\nu}$是\,4\,-动量$k=(\bk,\lvert\bk\rvert)$的``小群''群元, 即, 保持\,4\,-动量不变的任意\,Lorentz\,变换.
+
+通过分别考察方程(\ref{2.5.28})中的两类小群群元, 我们可以看出方程(\ref{5.9.10})和(\ref{5.9.11})的含义. 对于绕$z$-轴角度为$\theta$的旋转$R(\theta)$, 它由方程(\ref{2.5.27})给出
+\[
+R^{\mu}{}_{\!\nu}(\theta)=\left[
+\begin{array}
+[c]{ccccccc}%
+\cos\theta &\hspace*{3mm}& \sin\theta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+-\sin\theta &\hspace*{3mm}& \cos\theta &\hspace*{3mm}& 0 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1 &\hspace*{3mm}& 0\\
+0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 0 &\hspace*{3mm}& 1
+\end{array}
+\right]  \:,%
+\]
+我们从方程(\ref{5.9.10})和(\ref{5.9.11})中发现
+\begin{equation}
+u_{\bar{\ell}}(\bk,\sigma)\me^{\mi\sigma\theta}=\sum_{\ell}D_{\bar{\ell
+}\ell}\Bigl(R(\theta)\Bigr)u_{\ell}(\bk,\sigma) \label{5.9.12}%
+\end{equation}%
+\begin{equation}
+v_{\bar{\ell}}(\bk,\sigma)\me^{-\mi\sigma\theta}=\sum_{\ell}D_{\bar{\ell
+}\ell}\Big(R(\theta)\Big)v_{\ell}(\bk,\sigma)\:. \label{5.9.13}%
+\end{equation}
+对于$x$-$y$平面中旋转和增速的组合$S(\alpha,\beta)$, 由方程(\ref{2.5.26})给出,
+\begin{align*}
+&  S^{\mu}{}_{\!\nu}(\alpha,\beta)=\left[
+\begin{array}
+[c]{ccccccc}%
+1 &\hspace*{3mm}& 0 &\hspace*{3mm}& -\alpha &\hspace*{3mm}& \alpha\\
+0 &\hspace*{3mm}& 1 &\hspace*{3mm}& -\beta &\hspace*{3mm}& \beta\\
+\alpha &\hspace*{3mm}& \beta &\hspace*{3mm}& 1-\gamma &\hspace*{3mm}& \gamma\\
+\alpha &\hspace*{3mm}& \beta &\hspace*{3mm}& -\gamma &\hspace*{3mm}& 1+\gamma
+\end{array}
+\right]  \:,\\
+&  \gamma\equiv(\alpha^{2}+\beta^{2})/2\:,%
+\end{align*}
+方程(\ref{5.9.10})和(\ref{5.9.11})给出\marginpar[\flushright{\small[249]\hspace*{5mm}}]{{\small\hspace*{5mm}[249]}}
+\begin{equation}
+u_{\bar{\ell}}(\bk,\sigma)=\sum_{\ell}D_{\bar{\ell}\ell}\Big(S(\alpha
+,\beta)\Big)u_{\ell}(\bk,\sigma)\:, \label{5.9.14}%
+\end{equation}%
+\begin{equation}
+v_{\bar{\ell}}(\bk,\sigma)=\sum_{\ell}D_{\bar{\ell}\ell}\Big(S(\alpha
+,\beta)\Big)v_{\ell}(\bk,\sigma)\:. \label{5.9.15}%
+\end{equation}
+方程(\ref{5.9.12})\yzx (\ref{5.9.15})是决定标准动量$\bk$处系数函数$u$和$v$的条件; 方程(\ref{5.9.8})和(\ref{5.9.9})则给出任意动量处的系数函数. $v$的方程与$u$的方程互为复共轭, 所以在对常数$\kappa$和$\lambda$进行恰当的调整后, 我们可以对系数函数归一化, 使得
+\begin{equation}
+v_{\ell}(\bp,\sigma)=u_{\ell}(\bp,\sigma)^{\ast}\:. \label{5.9.16}%
+\end{equation}
+问题是, 对于齐次\,Lorentz\,群的一般表示, 即使那些表示在$m\neq0$的情况下能够构造出螺旋度给定的粒子的场, 我们都找不到满足方程(\ref{5.9.14})的$u_{\ell}$.
+
+为了看出哪里出了问题, 我们先尝试构造螺旋度为$\pm1$的无质量粒子的\,4\,-矢$[(\frac{1}{2},\frac{1}{2})]$场. 在\,4\,-矢表示中, 我们有
+\[
+D^{\mu}{}_{\!\nu}(\Lambda)=\Lambda^{\mu}{}_{\!\nu}\:.%
+\]
+在这里将系数函数$u_{\mu}$写成``极化矢量''$e_{\mu}$将是方便的:
+\begin{equation}
+u_{\mu}(\bp,\sigma)\equiv(2p^{0})^{-1/2}\,e_{\mu}(\bp,\sigma)\:, \label{5.9.17}%
+\end{equation}
+从而方程(\ref{5.9.8})给出
+\begin{equation}
+e^{\mu}(\bp,\sigma)=\mathscr{L}(\bp)^{\mu}{}_{\!\nu}\,e^{\nu}(\bk,\sigma)\:.
+\label{5.9.18}%
+\end{equation}
+另外, 方程(\ref{5.9.12})和(\ref{5.9.14})在这里变成
+\begin{equation}
+e^{\mu}(\bk,\sigma)\,\me^{\mi\sigma\theta}=R(\theta)^{\mu}{}_{\!\nu}\,e^{\nu}(\bk,\sigma)\:, \label{5.9.19}%
+\end{equation}%
+\begin{equation}
+e^{\mu}(\bk,\sigma)=S(\alpha,\beta)^{\mu}{}_{\!\nu}\,e^{\nu}(\bk,\sigma)\:. \label{5.9.20}%
+\end{equation}
+方程(\ref{5.9.19})要求(可以相差一个被吸收进系数$\kappa$和$\lambda$的常数),
+\begin{equation}
+e^{\mu}(\bk,\pm1)=(1,\pm \mi,0,0)/\sqrt{2}\:. \label{5.9.21}%
+\end{equation}
+但是方程(\ref{5.9.20})同时会要求$\alpha \pm \mi\beta=0$, 对于一般的实$\alpha,\beta$, 这是不可能的. 因此, 我们无法满足基本要求(\ref{5.9.14})
+\marginpar[\flushright{\small[250]\hspace*{5mm}}]{{\small\hspace*{5mm}[250]}}或(\ref{5.9.10}); 取而代之, 我们这里有
+\begin{align}
+D^{\mu}{}_{\!\nu}\Bigl(W(\theta,\alpha,\beta)\Bigr)e^{\nu}(\bk,\pm1)
+&= S^{\mu}{}_{\!\lambda}(\alpha,\beta)R^{\lambda}{}_{\!\nu}(\theta)e^{\nu}(\bk,\pm1)\nonumber\\
+&= \exp(\pm \mi\theta)\left\{ e^{\mu}(\bk,\pm1)+\frac{(\alpha\pm\mi\beta)}
+{\sqrt{2}\lvert\bk\rvert}k^{\mu}\right\}  \:. \label{5.9.22}%
+\end{align}
+由此我们得到结论, 4\,-矢场无法用螺旋度$\pm1$的零质量粒子的产生算符和湮没算符构造.
+
+我们暂时先假装没看到这个困难, 继续往前走, 用方程(\ref{5.9.18}%
+)和(\ref{5.9.21}%
+)定义任意动量的极化矢量, 并取这个场为
+\begin{align}
+a_{\mu}(x) &= \int \dif^{3}p\:(2\uppi)^{-3/2}(2p^{0})^{-1/2}\nonumber\\
+& \quad\times\sum_{\sigma=\pm1}\Bigl[ e_{\mu}(\bp,\sigma)\me^{\mi p\cdot x}a(\bp,\sigma)
++e_{\mu}(\bp,\sigma)^{\ast}\me^{-\mi p\cdot x}a^{\text{c}\dag}(\bp,\sigma)\Bigr] \:.\label{5.9.23}%
+\end{align}
+我们稍后将回来继续考虑这样的场是怎样成为物理理论中的一个要素.
+
+场(\ref{5.9.23})当然满足\begin{equation}
+\square a^{\mu}(x)=0\:. \label{5.9.24}%
+\end{equation}
+场的其他性质源于极化矢量的性质. (后面处理量子电动力学时, 我们会需要极化矢量的这些性质.) 注意, 使无质量粒子动量由$\bk$变为$\bp$ 的\,Lorentz\,变换$\mathscr{L}(p)$可以写成沿%
+$z$-轴的``增速''$\mathscr{B}(\lvert\bp\rvert)$加上标准旋转$R(\hat{\bp})$,  这个增速变换使粒子能量从$\lvert\bk\rvert$ 变为$\lvert \bp\rvert$, 旋转使$z$-轴转向$\bp$方向. 既然$e^{\nu}(\bk,\pm1)$是只有$x$分量和$y$分量的纯空间矢量, 沿$z$-轴的增速不会影响它, 所以
+\begin{equation}
+e^{\mu}(\bp,\pm1)=R(\hat{\bp})^{\mu}{}_{\!\nu}\,e^{\nu}(\bk,\pm1)\:. \label{5.9.25}%
+\end{equation}
+特别地, $e^{0}(\bk,\pm1)=0$且$\bk\cdot\be(\bk,\pm1)=0$, 所以
+\begin{equation}
+e^{0}(\bp,\pm1)=0 \label{5.9.26}%
+\end{equation}
+以及
+\begin{equation}
+\bp\cdot\be(\bp,\pm1)=0\:. \label{5.9.27}%
+\end{equation}
+由此得出
+\begin{equation}
+a^{0}(x)=0 \label{5.9.28}%
+\end{equation}
+和
+\begin{equation}
+\bm{\nabla }\cdot\ba(x)=0\:. \label{5.9.29}%
+\end{equation}
+我们\marginpar[\flushright{\small[251]\hspace*{5mm}}]{{\small\hspace*{5mm}[251]}}将会在第9章看到, 这些是电动力学的真空矢势在所谓\,Coulomb\,规范或辐射规范下满足的条件.
+
+$a^{0}$在所有\,Lorentz\,参考系下为零, 这一事实明确地指出$a^{\mu}$不可能是一个\,4\,-矢. 相反, 方程(\ref{5.9.22})证明了, 对于一般动量$\bp$ 和一般\,Lorentz\,变换$\Lambda$, 取代方程(\ref{5.9.6}), 我们有
+\begin{equation}
+e^{\mu}(\bp_{\Lambda},\pm1)\exp(\pm\mi\theta(\bp,\Lambda))
+=D^{\mu}{}_{\!\nu}(\Lambda)e^{\nu}(\bp,\pm1)+p^{\mu}\Omega_{\pm}(\bp,\Lambda)\:, \label{5.9.30}%
+\end{equation}
+这使得在一般的\,Lorentz\,变换下
+\begin{equation}
+U(\Lambda)a_{\mu}(x)U^{-1}(\Lambda)=\Lambda^{\nu}{}_{\!\mu}a_{\nu}(\Lambda x)
++\partial_{\mu}\Omega(x,\Lambda)\:, \label{5.9.31}%
+\end{equation}
+其中$\Omega(x,\Lambda)$是产生算符和湮没算符的线性组合, 我们这里并不关心它的精确形式. 我们会在第8章中更清楚地看到, 如果$a^{\mu}(x)$ 的耦合不仅形式上是\,Lorentz\,不变的(即, 在形式\,Lorentz\,变换$a^{\mu}\to\Lambda^{\mu}{}_{\!\nu}a^{\nu}$下不变), 而且在``规范''变换$a_{\mu}\to a_{\mu}+\partial_{\mu}\Omega$下不变, 那么我们可以将$a^{\mu}(x)$这样的场用作\,Lorentz\,不变物理理论中的一个元素. 这一点是通过将$a_{\mu}$的耦合取为$a_{\mu}j^{\mu}$的形式实现的, 其中$j^{\mu}$是满足$\partial_{\mu}j^{\mu}=0$的\,4\,-矢流.
+
+对于螺旋度为$\pm1$的无质量粒子, 尽管不存在普通的\,4\,-矢场, 但完全可以为这种粒子构造一个反对称张量场. 由方程(\ref{5.9.22})以及$k^{\mu}$在小群下不变, 我们立刻看出
+\begin{align}
+&  D^{\mu}{}_{\!\rho}\Bigl(W(\theta,\alpha,\beta)\Bigr)
+D^{\nu}{}_{\!\sigma}\Bigl(W(\theta,\alpha,\beta)\Bigr)
+\Bigl(k^{\rho}e^{\sigma}(\bk,\pm1)-k^{\sigma}e^{\rho}(\bk,\pm1)\Bigr)\nonumber\\
+&\quad=\me^{\pm \mi\theta}\Bigl(k^{\mu}e^{\nu}(\bk,\pm1)-k^{\nu}e^{\mu}(\bk,\pm1)\Bigr)\:. \label{5.9.32}%
+\end{align}
+这表明, 对于齐次\,Lorentz\,群的反对称张量表示, 满足方程(\ref{5.9.6})的系数函数是(选择合适的归一化)
+\begin{equation}
+u^{\mu\nu}(\bp,\pm1)=\mi(2\uppi)^{-3/2}(2p^{0})^{-3/2}\,
+[p^{\mu}e^{\nu}(\bp,\pm1)-p^{\nu}e^{\mu}(\bp,\pm1)]\:,  \label{5.9.33}%
+\end{equation}
+其中$e^{\mu}(\bp,\pm1)$由方程(\ref{5.9.25})给出. 结合方程(\ref{5.9.23}), 对于螺旋度为$\pm1$的无质量粒子, 这个结果给出了它的一般反对称张量场
+\begin{equation}
+f_{\mu\nu}=\partial_{\mu}a_{\nu}-\partial_{\nu}a_{\mu}\:. \label{5.9.34}%
+\end{equation}
+注意, 即使$a^{\mu}$不是\,4\,-矢, 这也是一个张量, 这是因为方程(\ref{5.9.31})中额外的项在方程(\ref{5.9.34})中被抵消了. 同时注意到, 方程(\ref{5.9.34}), (\ref{5.9.24}), (\ref{5.9.28})和(\ref{5.9.29})表明$f^{\mu\nu}$满足真空\,Maxwell\,方程组:\marginpar[\flushright
+{\raisebox{-6ex}[0pt]{{\small[252]\hspace*{5mm}}}}]{{\raisebox{-6ex}[0pt]{\small\hspace*{5mm}[252]}}}
+\begin{equation}
+\partial_{\mu}f^{\mu\nu}=0\:, \label{5.9.35}%
+\end{equation}%
+\begin{equation}
+\epsilon^{\rho\sigma\mu\nu}\partial_{\sigma}f_{\mu\nu}=0\:.  \label{5.9.36}%
+\end{equation}
+
+
+为了计算张量场的对易关系, 我们需要对双线性积$e^{\mu}e^{\nu\ast}$的螺旋度求和. 显式表达式(\ref{5.9.21})给出
+\[
+\sum_{\sigma=\pm1}e^{i}(\bk,\sigma)e^{j}(\bk,\sigma)^{\ast}
+=\updelta_{ij}-\frac{k^{i}k^{j}}{\lvert\bk\rvert^{2}}%
+\]
+因而, 利用方程(\ref{5.9.25})%
+\begin{equation}
+\sum_{\sigma=\pm1}e^{i}(\bp,\sigma)e^{j}(\bp,\sigma)^{\ast}
+=\updelta_{ij}-\frac{p^{i}p^{j}}{\lvert\bp\rvert^{2}}\:. \label{5.9.37}%
+\end{equation}
+那么直接的计算就给出
+\begin{align}
+[f_{\mu\nu}(x),f_{\rho\sigma}(y)^{\dag}] &= (2\uppi)^{-3}
+\bigl[ -\eta_{\mu\rho}\partial_{\nu}\partial_{\sigma}+\eta_{\nu\rho}\partial_{\mu
+}\partial_{\sigma}+\eta_{\mu\sigma}\partial_{\nu}\partial_{\rho}-\eta
+_{\nu\sigma}\partial_{\mu}\partial_{\rho}\bigr] \nonumber\\
+& \quad\times\int \dif^{3}p\:(2p^{0})^{-1}\Bigl[\lvert \kappa\rvert^{2}\me^{\mi p\cdot(x-y)}
+-\lvert \lambda\rvert ^{2}\me^{-\mi p\cdot(x-y)}\Bigr]  \:. \label{5.9.38}%
+\end{align}
+显然, 当且仅当\begin{equation}
+\lvert \kappa\rvert ^{2} = \lvert \lambda\rvert^{2}  \label{5.9.39}%
+\end{equation}
+这个对易子在$x^{0}=y^{0}$处才为零, 在这种情况下, 因为$f_{\mu\nu}$是张量, 对易子对于所有的类空间隔都为零. 方程(\ref{5.9.39})也暗示了$a^{\mu}$ 的等时对易子为零, 并且我们会在第8章看到, 这足以产生一个\,Lorentz\,不变$S$-矩阵. 产生算符和湮没算符的相对相位可以调整, 使得$\kappa=\lambda$; 这样一来, 如果粒子是它们本身的荷共轭, 这个场就厄米, 光子就是这样的情况.
+
+在构造自旋\,1\,无质量粒子的理论时, 为什么我们要使用$a^{\mu}(x)$这样的场, 而不是满足于$f^{\mu\nu}$这样具有简单\,Lorentz\,变换性质的场? 方程(\ref{5.9.34})中出现导数意味着, 对于能量和动量比较小的无质量粒子, 与矢量场$a_{\mu}$构造的相互作用密度相比,  仅由$f_{\mu\nu}$和它的导数构造的相互作用密度会有更快趋于零的矩阵元. 这种理论中的相互作用在长程时会快速衰减, 而这个衰减要比平常的平方反比律快得多. 这样的构造是完全可能的, 但是对于自旋\,1\, 的无质量粒子, 使用矢量场的规范不变理论代表了一类更普遍的理论, 这其中包括那些在自然中真实存在的理论.
+
+相同\marginpar[\flushright{\small[253]\hspace*{5mm}}]{{\small\hspace*{5mm}[253]}}的讨论同样适用于引力子, 即螺旋度为$\pm2$的无质量粒子. 从这种粒子的产生算符和湮没算符出发, 我们可以构造出一个张量$R_{\mu\nu\rho\sigma}$, 它的代数性质与\,Riemann-Christoffel\,曲率张量相同: 在$\mu,\nu$和$\rho,\sigma$之间分别反对称, 而在这两对之间对称. 为了纳入通常的平方反比引力相互作用, 我们需要引入按照对称张量变换的场$h_{\mu\nu}$,  它可以确定到只差一个规范变换, 而与这个规范变换相联系的就是广义相对论中的广义坐标变换. 因此, 为了使得为螺旋度$\pm2$的无质量粒子构造的理论能够包含长程相互作用, 它必须有类似广义协变的对称性. 就像电磁规范不变的情况, 通过用守恒``流''$\theta^{\mu\nu}$ 与场耦合可以实现它, 不过这个``流''现在有两个时空指标, 并满足$\partial_{\mu}\theta^{\mu\nu}=0$. 这类守恒张量只能是能动量张量和可能的全导数项, 而全导数项并不影响生成的力的长程行为.{}$^*$\footnote{$^*${}如果$\theta^{\mu_{1}\cdots\mu_{N}}$是满足%
+$\partial_{\mu_{1}}\theta^{\mu_{1}\cdots\mu_{N}}=0$的张量流, 那么$\int \dif^{3}x\:\theta^{0\mu_{2}\cdots\mu_{N}}$就是按照$N-1$秩张量变换的守恒量. 这样的守恒量只能是各种连续对称性附带的标量``荷'', 以及能动量\,4\,-矢. 任何其他\,4\,-矢或高秩任意张量的守恒会禁止前向碰撞以外的所有碰撞.} %
+与自旋$j\geq3$的无质量粒子的场耦合的守恒张量, 它的时空指标不能少于三个, 但除了全导数外并不存在这样的张量, 所以{\KAI{高自旋无质量粒子无法产生长程力}}.
+
+\subsection*{* * *}
+
+我们在构造螺旋度$\pm1$的\,4\,-矢场或螺旋度$\pm2$的对称张量场时所遇到的问题, 只是一个更一般限制的特殊情况. 为了看清这点, 对属于齐次\,Lorentz\, 群任意表示的无质量粒子, 我们来考察如何构造它的场. 我们在\,\ref{sec:5.6}\,节看到, 齐次\,Lorentz\,群的任何表示$D(\Lambda)$都可以分解成$(2A+1)(2B+1)$-维表示$(A,B)$, 对于这样的表示, 齐次\,Lorentz\,群的生成元表示成
+\begin{align*}
+(\mathscr{J}_{ij})_{a^{\prime}b^{\prime},ab} &=
+\epsilon_{ijk}\Bigl[  (J_{k}^{(A)})_{a^{\prime}a}\updelta_{b^{\prime}b}
++(J_{k}^{(B)})_{b^{\prime}b}\updelta_{a^{\prime}a}\Bigr]  \:,\\
+(\mathscr{J}_{k0})_{a^{\prime}b^{\prime},ab} &=-\mi\Bigl[
+(J_{k}^{(A)})_{a^{\prime}a}\updelta_{b^{\prime}b}-(J_{k}^{(B)})_{b^{\prime}%
+b}\updelta_{a^{\prime}a}\Bigr]  \:,%
+\end{align*}
+其中$\bJ^{(j)}$是自旋$j$的角动量矩阵. 当$\theta$无限小时, $D(R(\theta))=1+\mi\mathscr{J}_{12}\theta$\marginpar[\flushright{\small[254]\hspace*{5mm}}]{{\small\hspace*{5mm}[254]}}, 所以方程(\ref{5.9.12})和(\ref{5.9.13})给出
+\[
+\sigma u_{ab}(\bk,\sigma)=(a+b)u_{ab}(\bk,\sigma)\:,%
+\]%
+\[
+-\sigma v_{ab}(\bk,\sigma)=(a+b)v_{ab}(\bk,\sigma)\:,%
+\]
+因此, $u_{ab}(\bk,\sigma)$和$v_{ab}(\bk,\sigma)$分别仅在$\sigma=a+b$%
+和$\sigma=-a-b$时不为零. 另外, 在方程(\ref{5.9.14})中令$\theta$无限小, 这给出
+\begin{align*}
+0 &= (\mathscr{J}_{31}+\mathscr{J}_{01})_{ab,a^{\prime}b^{\prime}}\,
+u_{a^{\prime}b^{\prime}}(\bk,\sigma)\\
+&= (J_{2}^{(A)}+\mi J_{1}^{(A)})_{aa^{\prime}}u_{a^{\prime}b}(\bk,\sigma)
++(J_{2}^{(B)}-\mi J_{1}^{(B)})_{bb^{\prime}}u_{ab^{\prime}}(\bk,\sigma)\:,\\
+0 &= (\mathscr{J}_{32}+\mathscr{J}_{02})_{ab,a^{\prime}b^{\prime}}\,
+u_{a^{\prime}b^{\prime}}(\bk,\sigma)\\
+&= (-J_{1}^{(A)}+\mi J_{2}^{(A)})_{aa^{\prime}}u_{a^{\prime}b}(\bk,\sigma)
++(-J_{1}^{(B)}-\mi J_{2}^{(B)})_{bb^{\prime}}u_{ab^{\prime}}(\bk,\sigma)\:,%
+\end{align*}
+或者更简洁的
+\begin{align*}
+\Bigl(J_{1}^{(A)}-\mi J_{2}^{(A)}\Bigr)_{aa^{\prime}}u_{a^{\prime}b}(\bk,\sigma) &= 0 \:,\\
+\Bigl(J_{1}^{(B)}+\mi J_{2}^{(B)}\Bigr)_{bb^{\prime}}u_{ab^{\prime}}(\bk,\sigma) &= 0 \:.%
+\end{align*}
+这要求, 仅当
+\begin{equation}
+a=-A \:, \qquad \qquad b=+B \:,\label{5.9.40}%
+\end{equation}
+$u_{ab}(\bk,\sigma)$才不为零, 并且这对$v_{ab}(\bk,\sigma)$显然也是正确的. 综合以上结果, 我们看到一个$(A,B)$类场仅能从螺旋度为$\sigma$的无质量粒子的湮没算符和螺旋度为$-\sigma$%
+的反粒子的产生算符构造出来, 其中
+\begin{equation}
+\sigma=B-A\:. \label{5.9.41}%
+\end{equation}
+例如, 对于无质量粒子的\,Dirac\,场, 它的$(\frac{1}{2},0)$部分和$(0,\frac{1}{2})$部分只能分别湮没螺旋度为$-\frac
+{1}{2}$和螺旋度为$+\frac{1}{2}$的粒子, 分别产生螺旋度为$+\frac{1}{2}$和$-\frac{1}{2}$的反粒子. 在中微子的``二分量''理论中, 仅存在$(\frac{1}{2},0)$ 场和它的伴随场, 所以在这个理论中, 中微子的螺旋度为$-\frac{1}{2}$而反中微子的螺旋度为$+\frac{1}{2}$.
+
+利用\,\ref{sec:5.7}\,节中的方法, 对于自旋$j$(即螺旋度$\mp j$)的无质量粒子, 可以证明, 如果方程(\ref{5.9.1})中产生项和湮没项的系数满足方程(\ref{5.9.39}), 那么$(j,0)$场与$(0,j)$场在类空间隔上彼此对易且与它们的伴随场对易. 这样, 就可以对产生算符和湮没算符的相对相位进行调整, 使得这些系数相等. 容易看出自旋$j$无质量粒子的$(A,A+j)$类场或$(B+j,B)$类场正好分别是$(0,j)$类场的$2A$ 阶导数%
+或$(j,0)$类场的$2B$阶导数, 所以这里不需要另外考虑那些更普遍的场.
+
+现在我们就能明白为什么不可能为螺旋度$\pm1$的无质量粒子构造矢量场.
+按照$(\frac{1}{2},\frac{1}{2})$表\marginpar[\flushright{\small[255]\hspace*{5mm}}]{{\small\hspace*{5mm}[255]}}示变换的矢量场, 根据方程(\ref{5.9.41}), 它只能描述零螺旋度. (构造零螺旋度的矢量场当然{\KAI{是}}可能的\ezx 取无质量标量场$\phi$的导数$\partial_{\mu}\phi$即可.) 螺旋度为$\pm\,1$的最简单无质量矢量场具有\,Lorentz\,变换类型$(1,0)\oplus(0,1)$; 即, 它是反对称张量$f_{\mu\nu}$. 类似地, 螺旋度为$\pm2$的最简单协变无质量场具有\,Lorentz\, 变换%
+类型$(2,0)\oplus(0,2)$: 它是一个四秩张量, 同\,Riemann-Christoffel\,曲率张量一样, 它在每对指标之内反对称而在两对指标之间对称.
+
+在经过显然的修正后, 前面章节给出的$\mathsf{P},\mathsf{C},\mathsf{T}$讨论可以移植到无质量的情况.
+
+
+\subsection*{\bf 习\qquad 题}
+
+ \addcontentsline{toc}{section}{习题}
+
+\markright{习\qquad 题}    %单眉
+
+
+\begin{KAI}
+
+1. 证明, 如果零动量系数函数满足条件(\ref{5.1.23})和(\ref{5.1.24}), %
+则任意动量的系数函数(\ref{5.1.21})和(\ref{5.1.22})满足确定条件(\ref{5.1.19})和(\ref{5.1.20}).
+
+
+2. 考虑自由场$\psi_{\ell}^{\mu}(x)$, 它湮没和产生一个自旋$\frac{3}{2}$的电荷自共轭粒子, %
+粒子质量$m\neq 0$. 说明如何计算系数函数$u_{\ell}^{\mu}(\bp,\sigma)$, %
+它乘在场的湮没算符$a(\bp,\sigma)$上, %
+使场在\,Lorentz\,变换下像一个带有额外\,4\,-矢指标$\mu$的\,Dirac\,场$\psi_{\ell}$那样变换. %
+这个场满足的场方程、代数条件和实条件分别是什么? 计算矩阵$P^{\mu\nu}(p)$, 它定义(对于$p^{2}=-m^{2}$)为
+\[
+\sum_{\sigma}u_{\ell}^{\mu}(\bp,\sigma)u_{m}^{\nu\ast}(\bp,\sigma)
+\equiv (2p^{0})^{-1}\, P_{\ell m}^{\mu\nu}(p) \:.
+\]
+这个场的对易关系是什么? 它在$\mathsf{P},\mathsf{C},\mathsf{T}$反演下如何变换?
+
+
+3. 考虑满足$h^{\mu\nu}(x)=h^{\nu\mu}(x)$以及$h^{\mu}{}_{\mu}=0$的自由场$h^{\mu\nu}(x)$, %
+它湮没和产生的是自旋为\,2\,且质量$m\neq0$的粒子. %
+说明如何计算系数函数$u^{\mu\nu}(\bp,\sigma)$, 它乘在场的湮没算符$a(\bp,\sigma)$上, %
+使场在\,Lorentz\,变换下像张量那样变换. 这个场满足的场方程是什么? 计算函数$P^{\mu\nu,\kappa\lambda}(p)$, %
+它定义为
+\[
+\sum_{\sigma} u^{\mu\nu}(\bp,\sigma)u^{\kappa\lambda\ast}(\bp,\sigma)
+\equiv (2p^{0})^{-1}\,P^{\mu\nu,\kappa\lambda}(p) \:.
+\]
+这个场的对易关系是什么? 这个场在$\mathsf{P},\mathsf{C},\mathsf{T}$反演下如何变换?
+
+
+4. 证明\marginpar[\flushright{\small[256]\hspace*{5mm}}]{{\small\hspace*{5mm}[256]}}, 自旋$j$的无质量粒子的$(A,A+j)$场或$(B+j,B)$场分别是$(0,j)$场的$2A$ 阶导数%
+或$(j,0)$场的$2B$阶导数.
+
+5. 对螺旋度为$\pm j$的无质量粒子, 计算$(j,0)+(0,j)$场在%
+$\mathsf{P},\mathsf{C},\mathsf{T}$反演下的变换性质.
+
+6. 考虑按照齐次\,Lorentz\,群的$(j,0)+(0,j)$表示变换的一般\,Dirac\,场. %
+列出可以用$\psi$和$\psi^{\dag}$的分量的乘积构造出的张量. %
+检验你的结果与我们得到的$j=\frac{1}{2}$的结果是否一致.
+
+
+7. 考虑一个一般的场$\psi_{ab}$, 它描述自旋为$j$且质量$m\neq 0$的粒子, %
+按照齐次\,Lorentz\,群的$(A,B)$表示变换. 假设它有如下形式的相互作用哈密顿量
+\[
+V=\int\dif^{3}x\: [\psi_{ab}(x)J^{ab}(x)+ J^{ab\dag}(x)\psi_{ab}^{\dag}(x)] \:,
+\]
+其中$J^{ab}$是\,c\,-数外流. 当这些粒子的能量$E\gg m$且拥有确定的螺旋度时, %
+发射这些粒子的矩阵元的渐近行为是什么? %
+(对于不同的$a,b$, 假定流的\,Fourier\,变换在量级上相同, 并且对$E$的依赖性不强.)
+
+ \end{KAI}
+ \markboth{第5章\quad 量子场与反粒子}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+\begin{thebibliography}{99}                                                                                               %
+
+
+\bibitem {1}%
+本章所采用的观点出现在一系列的论文中: S. Weinberg, {\textit{Phys. Rev.}} \textbf{{133}}, B1318 (1964);
+\textbf{{134}}, B882 (1964); \textbf{{138}}, B988 (1965); \textbf{{181}},
+1893, (1969). 类似的方法也可以在\,E. Wichmann\,未发表的讲义中找到.
+     \addcontentsline{toc}{section}{参考文献}
+ \markboth{第5章\quad 量子场与反粒子}{参~\,考~\,文~\,献}      %%前双后单书眉
+
+
+\bibitem {2}N. Bohr and L. Rosenfeld, {\textit{Kgl. Danske Vidensk. Selskab
+Mat.-Fys. Medd.,}} No. 12 (1933)(英译在\,{\textit{Selected
+Papers of Leon Rosenfeld,}} R. S. Cohen and J. Stachel\,编辑 (Reidel,
+Dordrecht, 1979)); {\textit{Phys. Rev.}} \textbf{{78}}, 794 (1950).
+
+\bibitem {3}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} (London) \textbf{{A117}%
+}, 610 (1928).
+
+\bibitem {4}E. Cartan, {\textit{Bull. Soc. Math. France}} \textbf{{41}}, 53 (1913).
+
+\bibitem {5}可参\marginpar[\flushright{\small[257]\hspace*{5mm}}]{{\small\hspace*{5mm}[257]}}看\,J. M. Jauch and F. Rohrlich, {\textit{The Theory
+of Photons and Electrons}} (Addison-Wesley, Cambridge, MA 1955): Appendix A2;
+H. Georgi, {\textit{Lie Algebras in Particle Physics}} (Benjamin-Cummings,
+Reading, MA, 1982): pp. 15, 198. 原始文献是\,I. Schur, {\textit{Sitz. Preuss. Akad}}., p. 406 (1905).
+
+\bibitem {6}可参看\,H. Georgi, {\textit{Lie Algebras in Particle
+Physics}} (Benjamin/Cummings, Reading, MA, 1982):pp. 15, 198.
+原始文献是\,I. Schur, {\textit{Sitz. Preuss. Akad}}., p. 406(1905).
+
+\bibitem {7}T. D. Lee and C. N. Yang, {\textit{Phys. Rev.}} \textbf{{104}}, 254 (1956).
+
+\bibitem {8}可参看\,B. L. van der Waerden, {\textit{Die
+    gruppentheoretische Methode in der Quantenmechanik}} (Spinger Verlag, Berlin, 1932); G. Ya. Lyubarski, {\textit{The Applications of Group Theory in Physics}}, S. Dedijer\,译\,(Pergamon Press, New York, 1960).
+
+\bibitem {9}W. Rarita and J. Schwinger, {\textit{Phys. Rev.}} \textbf{{60}},
+61 (1941).
+
+\bibitem {10}可参看\,A. R. Edmonds, {\textit{Angular Momentum in
+Quantum Mechanics,}} (Princeton University Press, Princeton, 1957): Chapter 3.
+
+\bibitem {11}S. Weinberg, {\textit{Phys. Rev.}} \textbf{{181}}, 1893 (1969),
+Section V.
+
+\bibitem {12}M. Fierz, {\textit{Helv. Phys. Acta}} \textbf{{12}}, 3 (1939); W.
+Pauli, {\textit{Phys. Rev.}} \textbf{{58}}, 716 (1940). 公理化场论中的非微扰证明出自\, G. L\"{u}ders and B. Zumino, {\textit{Phys. Rev.}} \textbf{{110}}, 1450 (1958) and N. Burgoyne, {\textit{Nuovo Cimento}} \textbf{{8}}, 807 (1958).
+另见\,R. F. Streater and A. S. Wightman, {\textit{PCT, Spin \& Statistics, and All That}} (Benjamin, New York, 1968).
+
+\bibitem {13}$(j,0)+(0,j)$表示下的场由\,H. Joos, {\textit{Fortschr. Phys.}} \textbf{{10}}, 65 (1962); S. Weinberg,
+{\textit{Phys. Rev.}} \textbf{{133}}, B1318 (1964)\,引入 .
+
+\bibitem {14}A. R. Edmonds, 文献[10], or M. E. Rose, {\textit{Elementary Theory
+of Angular Momentum}} (John Wilety \& Sons, New York, 1957): Chapter I\!I\!I.
+
+\bibitem {15}G. Velo and D. Zwanziger, {\textit{Phys. Rev.}} \textbf{{186}}.
+1337 (1969); \textbf{{188}}, 2218 (1969); A. S. Wightma, in
+{\textit{Proceedings of the Fifth Coral Gables Conference on Symmetry
+Principles at High Energy}}, T. Gudehus, G. Kaiser, and A. Perlmutter\,编辑\,
+(Gordon and Breach, New York, 1969); B. Schroer, R. Seiler, and J. A. Swieca,
+{\textit{Phys. Rev.}} D \textbf{{2}}, 2927 (1970); 以及其中引用的其他文献.
+
+\bibitem {16}C. R. Nappi and L. Witten, {\textit{Phys. Rev.}} D \textbf{{40}},
+1095 (1989); P. C. Argyres and C. R. Nappi, {\textit{Phys. Lett.}}
+\textbf{{B224}}, 89 (1989). 由\,Kaluza-Klein\,理论中导出外场中$j=3/2$粒子的一个相容性理论参看\,S. D. Rindani and M. Sivakumar, {\textit{J. Phys. G: Nucl. Phys.}} \textbf{{12}} 1335 (1986); {\textit{J. Phys. C: Particles \& Fields}}
+\textbf{{49}}, 601 (1991).
+
+\bibitem {17}G. L\"{u}ders\marginpar[\flushright{\small[258]\hspace*{5mm}}]{{\small\hspace*{5mm}[258]}}. {\textit{Dansk. Vid. Selskab, Mat.-Fys. Medd.}}
+\textbf{{28}}, 5 (1954); {\textit{Ann. Phys.}} \textbf{{2}}, 1 (1957); W.
+Pauli, {\textit{Nuovo Cimento}} \textbf{{6}}, 204 (1957). 当\,L\"{u}ders\,首次考察各种反演之间如何相互关联时, %
+$\mathsf{P}$守恒被认为是理所当然的, 所以他的定理陈述为$\mathsf{C}$不变等价于$\mathsf{T}$不变.
+
+\bibitem {18}R. Jost, {\textit{Helv. Phys. Acta}} \textbf{{30}}, 409 (1957);
+F. J. Dysons, {\textit{Phys. Rev.}} \textbf{{110}}, 579 (1958). 另见\,Streater and Wightman, 文献[12].
+\end{thebibliography}

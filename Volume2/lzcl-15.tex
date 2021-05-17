@@ -1,0 +1,488 @@
+\setcounter{chapter}{14}
+
+\chapter{非阿贝尔规范场论} \label{cha:15}\thispagestyle{empty}
+\marginpar[\flushright
+{\raisebox{17ex}[0pt]{{\small[1]\hspace*{5mm}}}}]{{\raisebox{17ex}[0pt]{\small\hspace*{5mm}[1]}}}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+ \markboth{第15章\quad 非阿贝尔规范场论}{第15章\quad 非阿贝尔规范场论}
+
+
+被证实了的成功描述真实世界的量子场论都是非阿贝尔规范理论, 这些理论所基于的规范不变性原理要比量子电动力学的$U(1)$规范不变性更加普遍. 
+对电动力学, 我们在8.1节的末尾概述了如何从定域变换下的不变性原理出发得到规范场的存在性以及它的一些性质, 
+而非阿贝尔规范理论同样具有这一迷人的特征. 
+在电动力学中, 电荷为$e_{n}$的场$\psi _{n}(x)$进行了$\Lambda(x)$为任意函数的规范变换
+$\psi _{n}(x)\to \exp(\mi e_{n}\Lambda (x))\psi _{n}(x)$. 
+由于$\partial _{\mu }\psi _{n}(x)$并不像$\psi_{n}(x)$那样变换, 
+我们必须要引入具有规范变换性质$A_{\mu }(x)\to A_{\mu}(x)+\partial_{\mu}\Lambda(x)$的场$A_{\mu}(x)$, 
+用它来构建规范协变导数$\partial_{\mu}\psi_{n}(x)-\mi e_{n}A_{\mu}(x)\psi_{n}(x)$, 
+这一协变导数像$\psi _{n}(x)$那样变换, 因而可以用它和$\psi_{n}(x)$构造规范不变的拉格朗日量. 
+用类似的方法, 广义相对论中的引力场$g_{\mu \nu }(x)$的存在性以及一些性质源于广义坐标变换下的对称性原理.\footnote{当然, 
+定域规范不变性与广义协变性都可以以一种平庸的方式实现, 即把$A_{\mu }(x)$
+和$g_{\mu \nu }(x)$分别取作用以确定相位和坐标系选取的非动力学c-数函数. 
+当我们将$A_{\mu }(x)$和$g_{\mu \nu }(x)$处理成在计算$S$-矩阵元时要对其积分的动力学场时, 
+这些对称性在物理上就变得重要了.} 有了这些著名的先例后, 将定域规范不变性推广到定域非阿贝尔规范变换下的不变性就很自然了.
+
+
+在杨振宁和Mills 1954年的原始工作中,\cite{1} 非阿贝尔规范群被取成了同位旋转动的$SU(2)$群, 
+而类似于光子场的矢量场则解释成强相互作用的单位同位旋矢量介子场. 这一设想立刻就遇到了障碍: 
+就像光子那样, 这些矢量玻色子的质量必须为零, 而任何这样的粒子如果存在, 那它们似乎早就该被探测到了. 
+另一问题是, 像当时所有的强相互作用理论一样, 没有什么方法可以处理它; 
+理论中的大耦合常数似乎妨碍了任何微扰论的应用.
+
+规范理论不久就被推广至任意的非阿贝尔规范群,\cite{2} 并且继续在数学上研究它们的量子化, 
+尤其是Feynman,\cite{3} Faddeev和Popov,\cite{4} 以及De Wittt,\cite{5} 部分的出发点是作为更困难的量子化广义相对论问题的热身. 
+他们证明了那些通过简单观察拉格朗日量得到的朴素的Feynman规则需要补上额外的``鬼''圈. 
+然而, 直到20世纪60年代后期, 这些理论在物理上的联系才开始被理解. 
+最后发现, {\kai{所有}}观测到的基本粒子间的相互作用都是由伴随定域规范对称性的矢量粒子生成的; 
+相应的自旋1粒子要么非常重, 这是规范对称性自发破缺的结果, 要么被``禁闭''了, 这是耦合常数在远距离处变大的结果. 
+这些内容将分别是第21章和第18章的课题. 在本章, 我们将探讨非阿贝尔规范理论的表述, 以及如何推导它们的Feynman规则.
+
+\section{规范不变性}
+
+\setcounter{footnote}{1}
+
+我们假定理论的拉格朗日量在物质场$\psi _{\ell }(x)$的一组无限小变换
+\begin{equation}
+\delta \psi _{\ell }(x)=\mi\,\epsilon ^{\alpha }(x)(t_{\alpha })_{\ell }{}^{m}\psi _{m}(x)  \label{15.1.1}
+\end{equation}%
+下不变, 其中$t_{\alpha }$为某组独立的常数矩阵\footnote{%
+在本书中, 我们一般将用字母$\alpha ,\beta $等来标记对称性的生成元, 这些字母取自希腊字母表的开头, 
+以区别于取自希腊字母表中间的用来标记时空坐标的$\mu ,\nu $等字母. 在后面处理破缺对称性时, 
+我们通常用取自拉丁字母表开头的字母$a,b$等来标记自发破缺对称性的生成元, 而用取自拉丁字母表中%
+间的字母$i,j$等来标记未破缺的对称性的生成元.}, 
+$\epsilon ^{\alpha}(x)$是实无限小参量, 该参量(像电动力学中的规范变换那样)被允许依赖时空中的位置. 
+我们假定这些对称变换是某个Lie群的无限小部分; 正如2.2节中所证明的, 这要求$t_{\alpha}$服从对易关系
+\begin{equation}
+[ t_{\alpha },t_{\beta }]=\mi\, C^{\gamma}{}_{\alpha \beta }t_{\gamma}\:,  \label{15.1.2}
+\end{equation}%
+其中$C_{\phantom{\gamma}\alpha \beta }^{\gamma }$是一组实常数, 称为群的结构常数. 
+由对易子的反对称性立刻就可以知道, 结构常数同样是反对称的:%
+\begin{equation}
+C^{\gamma}{}_{\alpha\beta}=-C^{\gamma}{}_{\beta\alpha} \:. \label{15.1.3}
+\end{equation}%
+另外, 由Jacobi恒等式
+\begin{equation}
+0=\Bigl[ [t_{\alpha},t_{\beta}],t_{\gamma}\Bigr] + \Bigl[ [t_{\beta},t_{\gamma }],t_{\alpha }\Bigr] 
++\Bigl[ [t_{\gamma },t_{\alpha }],t_{\beta}\Bigr]  \label{15.1.4}
+\end{equation}%
+我们看到这些$C$满足进一步的约束
+\begin{equation}
+0=C^{\delta }{}_{\alpha \beta }C^{\epsilon}{}_{\delta\gamma}
++C^{\delta}{}_{\gamma \alpha}C^{\epsilon}{}_{\delta \beta }
++C^{\delta }_{\beta \gamma}C^{\epsilon }{}_{\delta \alpha}  \text{ .}
+\label{15.1.5}
+\end{equation}%
+任何一组满足方程(\ref{15.1.3}%
+)和(\ref{15.1.5})的常数$C_{\phantom{\gamma}\alpha
+\beta }^{\gamma }$至少定义了一组矩阵$t_{\phantom{\text{A}}\alpha }^{\text{A}}$:%
+\begin{equation}
+(t_{\phantom{\text{A}}\alpha }^{\text{A}})_{\phantom{\beta}\gamma }^{\beta
+}\equiv -iC_{\phantom{\gamma}\gamma \alpha }^{\beta }\text{ ,}
+\label{15.1.6}
+\end{equation}%
+它们满足含有结构常数$C_{\phantom{\gamma}\alpha \beta }^{\gamma }$的对易关系(\ref{15.1.2}):%
+\begin{equation}
+\lbrack t_{\phantom{\text{A}}\alpha }^{\text{A}},t_{\phantom{\text{A}}\beta
+}^{\text{A}}]=iC_{\phantom{\gamma}\alpha \beta }^{\gamma }t_{%
+\phantom{\text{A}}\gamma }^{\text{A}}\text{ .}  \label{15.1.7}
+\end{equation}%
+这称为结构常数为$C_{%
+\phantom{\gamma}\beta \gamma }^{\alpha }$的Lie群的\textquotedblleft 伴随\textquotedblright (或%
+\textquotedblleft 正则\textquotedblright )表示.
+
+例如, 在原始的Yang-Mills理论中, 物质场是由质子场$%
+\psi _{p}$和中子$\psi _{n}$组成的二重态\[
+\psi =\left( 
+\begin{array}{c}
+\psi _{p} \\ 
+\psi _{n}%
+\end{array}%
+\right) 
+\]%
+而$t_{\alpha }$, 其中$\alpha =1,2,3$, 是同位旋矩阵\[
+t_{1}=\frac{1}{2}\left( 
+\begin{array}{cc}
+0 & 1 \\ 
+1 & 0%
+\end{array}%
+\right) \text{ , \ \ \ \ \ }t_{2}=\frac{1}{2}\left( 
+\begin{array}{cc}
+0 & -i \\ 
+i & 0%
+\end{array}%
+\right) \text{ , \ \ \ \ \ }t_{3}=\frac{1}{2}\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & -1%
+\end{array}%
+\right) \text{ .} 
+\]%
+它们满足\[
+C_{\phantom{\gamma}\alpha \beta }^{\gamma }=\epsilon _{\gamma \alpha \beta } 
+\]%
+的对易关系, 其中, 同往常一样, 如果$\gamma ,\alpha ,\beta $是1,2,3的偶置换或奇置换, 
+则$\epsilon _{\gamma \alpha \beta }$分别是$+1$%
+或$-1$, 如果是其它情况, 
+则$\epsilon _{\gamma \alpha \beta }$为零. 我们发现这与3维旋转群的Lie%
+代数(2.4.18)相同; 这里的矩阵构建了我们所认为的该Lie代数的自旋1/2表示. 伴随表示的矩阵(\ref%
+{15.1.6})在这里是(处在行和列标记为1,2,3的基下):%
+\[
+t_{1}^{\text{A}}=\left[ 
+\begin{array}{ccc}
+0 & 0 & 0 \\ 
+0 & 0 & -i \\ 
+0 & i & 0%
+\end{array}%
+\right] \text{ , \ \ \ \ \ }t_{2}^{\text{A}}=\left[ 
+\begin{array}{ccc}
+0 & 0 & i \\ 
+0 & 0 & 0 \\ 
+-i & 0 & 0%
+\end{array}%
+\right] \text{ , \ \ \ \ \ }t_{3}^{\text{A}}=\left[ 
+\begin{array}{ccc}
+0 & -i & 0 \\ 
+i & 0 & 0 \\ 
+0 & 0 & 0%
+\end{array}%
+\right] \text{ .} 
+\]%
+这是旋转群Lie代数的自旋1表示.
+
+我们现在来考察构建在变换(\ref{15.1.1})下不变的拉格朗日量需要什么. 
+如果不存在作用在场上的导数项, 这个任务将是非常简单的------物质场的任何函数, 只要它在$\epsilon ^{\alpha }$为常数的变%
+换(\ref{15.1.1})下是不变的, 那么它在$\epsilon ^{\alpha }$为时空坐标的任意实函数的变换(\ref{15.1.1})下也将是不变%
+的. 如果拉格朗日量包含场的导数项(正如它所必须的), 就不会是这种情况, 这是因为有了位置相关函数$\epsilon ^{\alpha }(x)$. 
+物质场的导数就不会像场本身那样进行变换. 对方程(\ref{15.1.1})取微分给出\begin{equation}
+\delta \left( \partial _{\mu }\psi _{\ell }(x)\right) =i\epsilon ^{\alpha
+}(x)(t_{\alpha })_{\ell }^{\phantom{\ell}m}\left( \partial _{\mu }\psi
+_{m}(x)\right) +i\left( \partial _{\mu }\epsilon ^{\alpha }(x)\right)
+(t_{\alpha })_{\ell }^{\phantom{\ell}m}\psi _{m}(x)\text{ .}  \label{15.1.8}
+\end{equation}%
+为了使拉格朗日量不变, 我们需要一个场$A_{%
+\phantom{\alpha}\mu }^{\alpha }$, 它的变换规则中包含一项$\partial _{\mu }\epsilon
+^{\alpha }$, 这一项可以用来抵消方程(\ref{15.1.8})中的第二项. 既然这个场携带一个$\alpha $指标, 我们希望它%
+也经历一个类似方程(\ref%
+{15.1.1})的矩阵变换, 只不过将$t_{\alpha }$替换成伴随矩阵表示(\ref{15.1.6}). 因此, 我们先试验性地取新\textquotedblleft 规%
+范\textquotedblright 场的变换关系为\[
+\delta A_{\phantom{\beta}\mu }^{\beta }=\partial _{\mu }\epsilon ^{\beta
+}+i\epsilon ^{\alpha }(t_{\phantom{\text{A}}\alpha }^{\text{A}})_{%
+\phantom{\beta}\gamma }^{\beta }A_{\phantom{\gamma}\mu }^{\gamma } 
+\]%
+或者, 利用方程(\ref{15.1.6}),%
+\begin{equation}
+\delta A_{\phantom{\beta}\mu }^{\beta }=\partial _{\mu }\epsilon ^{\beta
+}+\epsilon ^{\alpha }C_{\phantom{\beta}\gamma \alpha }^{\beta }A_{%
+\phantom{\gamma}\mu }^{\gamma }\text{ .}  \label{15.1.9}
+\end{equation}%
+这使得我们可以构建\textquotedblleft 协变导数\textquotedblright :%
+\footnote{正如将要在下一节所讨论的, 在写下方程(%
+\ref{15.1.10})的同时, 我们心照不宣地假定任何像电荷这样的耦合常数因子都被吸收进$t_{\beta }$中, 
+因而也被吸收进结构常数中.}%
+\begin{equation}
+(D_{\mu }\psi (x))_{\ell }=\partial _{\mu }\psi _{\ell }(x)-iA_{%
+\phantom{\beta}\mu }^{\beta }(x)(t_{\beta })_{\ell }^{\phantom{\ell}m}\psi
+_{m}(x)\text{ .}  \label{15.1.10}
+\end{equation}%
+按计划, 方程(\ref{15.1.10})第二项中的$A_{\phantom{\beta}\mu }^{\beta }$, 它的变换中的$\partial _{\mu }\epsilon ^{\beta }$项%
+抵消了第一项变换中正比于$\partial _{\mu }\epsilon ^{\beta }$的那一项, 给我们留下\begin{eqnarray*}
+\delta (D_{\mu }\psi )_{\ell } &=&i\epsilon ^{\alpha }(t_{\alpha })_{\ell }^{%
+\phantom{\ell}m}\partial _{\mu }\psi _{m}-iC_{\phantom{\beta}\gamma \alpha
+}^{\beta }\epsilon ^{\alpha }A_{\phantom{\gamma}\mu }^{\gamma }(t_{\beta
+})_{\ell }^{\phantom{\ell}m}\psi _{m} \\
+&&+A_{\phantom{\gamma}\mu }^{\gamma }(t_{\gamma })_{\ell }^{\phantom{\ell}%
+m}(t_{\alpha })_{m}^{\phantom{m}n}\psi _{n}
+\end{eqnarray*}%
+或者, 使用方程(\ref{15.1.2})%
+\begin{equation}
+\delta (D_{\mu }\psi )_{\ell }=i\epsilon ^{\alpha }(t_{\alpha })_{\ell }^{%
+\phantom{\ell}m}(D_{\mu }\psi )_{m}\text{ ,}  \label{15.1.11}
+\end{equation}%
+使得$D_{\mu }\psi $像$\psi $本身那样变换.
+
+我们也需要关心一下规范场的导数. 为了消除$\partial _{\nu }A_{\phantom{\beta}\mu }^{\beta }$的变%
+换中的$\partial _{\nu }\partial _{\mu }\epsilon ^{\beta }$%
+项, 我们就像在电动力学中那样对$\mu $和$\nu $做反对称化处理. 然而, 在$%
+\partial _{\nu }A_{\phantom{\beta}\mu }^{\beta }-\partial _{\mu }A_{%
+\phantom{\beta}\nu }^{\beta }$的变换中, 我们仍然有正比于$\epsilon (x)$%
+的一阶导数的项, 这些项产生于方程(\ref{15.1.9})中的第二项. \textquotedblleft 协变旋度\textquotedblright , 即$F_{\phantom{\gamma}\nu \mu }^{\gamma }$%
+, 在它的变换规则中所有这样的$\epsilon (x)$导数都互相抵消掉了, 构建它的最简单方法就是考察作用在物质场$\psi $上的两个协变导数的对%
+易子:%
+\begin{equation}
+\left( \lbrack D_{\nu },D_{\mu }]\psi \right) _{\ell }=-i(t_{\gamma })_{\ell
+}^{\phantom{\ell}m}F_{\phantom{\gamma}\nu \mu }^{\gamma }\psi _{m}\text{ ,}
+\label{15.1.12}
+\end{equation}%
+其中\begin{equation}
+F_{\phantom{\gamma}\nu \mu }^{\gamma }\equiv \partial _{\nu }A_{%
+\phantom{\gamma}\mu }^{\gamma }-\partial _{\mu }A_{\phantom{\gamma}\nu
+}^{\gamma }+C_{\phantom{\gamma}\alpha \beta }^{\gamma }A_{\phantom{\alpha}%
+\nu }^{\alpha }A_{\phantom{\beta}\mu }^{\beta }\text{ .}  \label{15.1.13}
+\end{equation}%
+方程(\ref{15.1.12})使得$F_{\phantom{\gamma}\nu \mu
+}^{\gamma }$必须像属于伴随表示下的物质场那样进行变换:%
+\begin{equation}
+\delta F_{\phantom{\beta}\nu \mu }^{\beta }\equiv i\epsilon ^{\alpha }(t_{%
+\phantom{\text{A}}\alpha }^{\text{A}})_{\phantom{\beta}\gamma }^{\beta }F_{%
+\phantom{\gamma}\nu \mu }^{\gamma }=\epsilon ^{\alpha }C_{\phantom{\beta}%
+\gamma \alpha }^{\beta }F_{\phantom{\gamma}\nu \mu }^{\gamma }\text{ .}
+\label{15.1.14}
+\end{equation}%
+读者可以通过直接计算(利用关系(\ref{15.1.5}))验证(\ref%
+{15.1.13})中所定义的量$F_{%
+\phantom{\alpha}\nu \mu }^{\alpha }$确实有简单的变换规则(\ref{15.1.14}).
+
+由于某些原因, 知道这些无限小规范变换可以被提升为有限的变换是有用的. 群元可以被一组实函数$\Lambda ^{\alpha }(x)$%
+参数化, 进而使得它通过如下的矩阵变换作用在一个一般的物质场上\begin{equation}
+\psi _{\ell }(x)\rightarrow \psi _{\ell \Lambda }(x)=\left[ \exp \left(
+it_{\alpha }\Lambda ^{\alpha }(x)\right) \right] _{\ell }^{\phantom{\ell}%
+m}\psi _{m}(x)\text{ .}  \label{15.1.15}
+\end{equation}%
+我们希望协变导数以相同的方式进行变换:%
+\begin{equation}
+(\partial _{\mu }-it_{\alpha }{A^{\alpha }}_{\mu \Lambda})\psi _{\Lambda
+}=\exp (i t_{\alpha }\Lambda ^{\alpha })(\partial _{\mu }-i t_{\alpha }{%
+A^{\alpha }}_{\mu })\psi \text{ ,}  \label{15.1.16}
+\end{equation}%
+所以我们必须给${A^{\alpha }}_{\mu
+} $强加变换规则${A^{\alpha }}_{\mu
+}\rightarrow {A^{\alpha }}_{\mu \Lambda}$, 使得
+\[
+\partial _{\mu }\exp (it_{\beta }\Lambda ^{\beta })-it_{\beta }\exp
+(i t_{\alpha }\Lambda ^{\alpha }){A^{\beta }}_{\mu \Lambda}=-i\exp (it_{\alpha
+}\Lambda ^{\alpha })t_{\beta }{A^{\beta }}_{\mu } 
+\]%
+或者, 以另一种形式\begin{equation}
+t_{\alpha }{A^{\alpha }}_{\mu \Lambda}=\exp (it_{\beta }\Lambda ^{\beta
+})t_{\alpha }{A^{\alpha }}_{\mu }\exp (-it_{\beta }\Lambda ^{\beta })-i\left[
+\partial _{\mu }\exp (it_{\beta }\Lambda ^{\beta })\right] \exp (-it_{\beta
+}\Lambda ^{\beta })\text{ .}  \label{15.1.17}
+\end{equation}%
+在$\Lambda ^{\alpha }(x)$是一个无限小$\epsilon ^{\alpha }(x)$的极限下, 方程(\ref{15.1.15})和(\ref{15.1.17})退化成%
+之前的变换规则(\ref{15.1.1})%
+和(\ref{15.1.9}).
+
+从方程(\ref{15.1.17})中, 我们可以看到, 通过对$\Lambda ^{\beta }(x)$%
+的合适选择, 总可以使${%
+A^{\alpha }}_{\mu \Lambda}(x)$在任意{\kai{一个}}点处为零, 记该点$x=z$. (简单地令$\Lambda ^{\alpha }(z)$为零, 并在$%
+x=z $处令$\partial \Lambda ^{\alpha }(x)/\partial x^{\mu }=-{%
+A^{\alpha }}_{\mu }(x)$.) 另外, 总可以对$%
+\Lambda ^{\beta }(x)$进行选择, 使得${%
+A^{\alpha }}_{\mu \Lambda}(x)$的任意{\kai{一个}}时空分量对于所有的$\alpha $%
+至少在任意一个给定点邻近的有限区域内处处为零. 例如, 为了使$%
+{A^{\alpha }}_{3\Lambda}(x)$为零, 我们必须解参量$\Lambda ^{\beta }(x)$的如下一阶{\kai{常}}微分方程组:%
+\begin{equation}
+\partial _{3}\exp (it_{\beta }\Lambda ^{\beta })=-i\exp (it_{\beta }\Lambda
+^{\beta })t_{\alpha }{A^{\alpha }}_{3}\text{ ,}  \label{15.1.18}
+\end{equation}%
+该方程组至少在任意一个给定点邻近的有限区域内有一个解.
+
+然而, 一般而言, 不可能通过选择$\Lambda ^{\alpha }(x)$使得${%
+A^{\alpha }}_{\mu \Lambda }(x)$的4个分量在一个有限区域内都为零. 由于这个原因, 我们将不得不止步于{\kai{偏}}%
+微分方程组\begin{equation}
+\partial _{\mu }\exp (it_{\beta }\Lambda ^{\beta })=-i\exp (it_{\beta
+}\Lambda ^{\beta })t_{\alpha }{A^{\alpha }}_{\mu }\text{ ,}  \label{15.1.19}
+\end{equation}%
+除非满足一定的可积性条件, 否则这个方程组是解不出来的. 特别地, 如果${A^{\alpha }}_{\mu \Lambda }$处处为零, 那么${F^{\alpha }}_{\mu \nu \Lambda }$也%
+将是如此, 但是, 由于场强的变换是齐次的, 仅当${F^{\alpha }}_{\mu \nu }$为零时, ${F^{\alpha }}%
+_{\mu \nu \Lambda }$才能等于零. 如果存在一个规范变换使得${A^{\alpha }}_{\mu }$处处为零, 
+则称该规范场为\textquotedblleft 
+纯规范\textquotedblright 场. 不难证明, ${F^{\alpha }}_{\mu \nu }$处处为零是$%
+{A^{\alpha }}_{\mu }(x)$在任意单连通区域可作为纯规范场进行表述的充分必要条件.\cite{6}
+
+\subsection*{* * *}
+
+在这里构造在规范变换下简单变换的客体, 
+与在广义相对论中构造广义坐标变换下协变的客体, 在这两种构造之间存在着深刻的类比. 正如我们使用规范场构造物质场的协变导数$D_{\mu }\psi _{\ell }$, 它有着%
+与物质场本身相同的规范变换性质, 我们使用仿射联络${\Gamma }{^{\mu }}_{\nu \lambda }(x)
+$来构造张量${T^{\rho \sigma \cdots }}_{\kappa
+\lambda \cdots }$的协变导数:%
+\[
+\]%
+其本身也是张量. 另外, 
+从规范场的导数中, 我们构造出了场强${F^{\alpha }}_{\mu
+\nu }$, 它的变换性质与属于规范群伴随表示的物质场的变换性质相同; 相应地, 从仿射联络的导数中, 我们可以构造一个量:%
+\[
+R{^{\lambda }}_{\mu \nu \kappa }=\frac{\partial {\Gamma }{^{\lambda }}_{\mu
+\nu }}{\partial x^{\kappa }}-\frac{\partial {\Gamma }{^{\lambda }}_{\mu
+\kappa }}{\partial x^{\nu }}+{\Gamma }{^{\eta }}_{\mu \nu }{\Gamma }{%
+^{\lambda }}_{\kappa \eta }-{\Gamma }{^{\eta }}_{\mu \kappa }{\Gamma }{%
+^{\lambda }}_{\nu \eta }\text{ ,}
+\]%
+这个量作为一个张量变换, 即Riemann-Christoffel曲率张量. 两个规范协变导数$D_{\mu }$%
+和$D_{\nu }$, 它们的对易子可以表示成场强张量${F^{\alpha }%
+}_{\mu \nu }$的形式; 类似地, 相对于$x^{\nu }$和$x^{\kappa }$的两个协变导数, 它们的对易子也可以表示成曲率%
+张量的形式:%
+\[
+{T^{\lambda \cdots }}_{\mu \cdots ;\nu ;\kappa }-{T^{\lambda \cdots }}_{\mu
+\cdots ;\kappa ;\nu }=R{^{\lambda }}_{\sigma \nu \kappa }{T^{\sigma \cdots }}%
+_{\mu \cdots }+\cdots -R{^{\sigma }}_{\mu \nu \kappa }{T^{\lambda \cdots }}%
+_{\mu \cdots }-\cdots \text{ .}
+\]%
+存在一个规范, 使得该规范下的规范场在一个有限单连通区域内为零, 该规范存在的充要条件是场强张量为零, 而存在一个坐标系使得仿射联络在一个%
+有限单连通区域内为零的充要条件是, Riemann-Christoffel%
+曲率张量为零. 这个类比在一个重要方面上失效了: 在广义相对论中, 仿射联络本身是用度规张量的一阶导数构建的, 而在规范理论中, 规范场无法表示成%
+更基本的场.
+
+\section*{参考书目}
+\marginpar[\flushright{\raisebox{5.5ex}[0pt]{{\small[39]\hspace*{5mm}}}}]{{\raisebox{5.5ex}[0pt]{\small\hspace*{5mm}[39]}}}
+ \addcontentsline{toc}{section}{参考书目}
+ \markboth{参考书目}{参考书目}      %%前双后单书眉
+
+%\begin{small}
+\begin{OExercises}
+  \item[$\square$] S. Aramaki, `Development of the Renormalization Theory in Quantum Electrodynamics,' {\textit{Historia Scientiarum}} {\bf{36}}, 97 (1989); {\textit{ibid}}. {\bf{37}}, 91 (1989). [Section 1.3.]
+  \item[$\square$] R. T. Beyer\,编辑, {\textit{Foundations of Nuclear Physics}} (Dover Publications, Inc., New York, 1949). [Section 1.2.]
+  \item[$\square$] L. Brown, `Yukawa's Prediction of the Meson,' {\textit{Centauros}} {\bf{25}}, 71 (1981). [Section 1.2.]
+  \item[$\square$] L. M. Brown and L. Hoddeson\,编辑, {\textit{The Birth of Particle Physics}} (Cambridge University Press, Cambridge, 1983). [Sections 1.1, 1.2, 1.3.]
+  \item[$\square$] T. Y. Cao and S. S. Schweber, `The Conceptual Foundations and the Philosophical Aspects of Renormalization Theory,' {\textit{Synth\`{e}se}} {\bf{97}}, 33 (1993). [Section 1.3.]
+  \item[$\square$] P. A. M. Dirac, {\textit{The Development of Quantum Theory}} (Gordon and Breach Science Publishers, New York, 1971). [Section 1.1.]
+  \item[$\square$] E. Fermi, `Quantum Theory of Radiation,' {\textit{Rev. Mod. Phys.}} {\bf{4}}, 87 (1932). [Sections 1.2 and 1.3.]
+  \item[$\square$] G. Gamow, {\textit{Thirty Years that Shook Physics}} (Doubleday and Co., Garden City, New York, 1966). [Section 1.1.]
+  \item[$\square$] M. Jammer, {\textit{The Conceptual Development of Quantum Mechanics}} (McGraw-Hill Book Co., New York, 1966). [Section 1.1.]
+  \item[$\square$] J. Mehra, `The Golden Age of Theoretical Physics: P. A. M. Dirac's Scientific Work from 1924 to 1933,' 收录于 {\textit{Aspects of Quantum Theory}}, A. Salam and E. P. Wigner\,编辑, (Cambridge University Press, Cambridge, 1972). [Section 1.1.]
+\item[$\square$] A. I. Miller, {\textit{Early Quantum Electrodynamics \bzx A Source Book}} (Cambridge University Press, Cambridge, UK, 1994). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] A. Pais, {\textit{Inward Bound}} (Clarendon Press, Oxford, 1986). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] S. S. Schweber, `Feynman and the Visualization of Space-Time Processes,' {\textit{Rev. Mod. Phys.}} {\bf{58}}, 449 (1986). [Section 1.3.]
+\item[$\square$] S. S. Schweber, `Some Chapters for a History of Quantum Field Theory: 1938\bzx1952,' 收录于 {\textit{Relativity, Groups, and Topology II}}, B. S. De Witt and R. Stora\,编辑 (North-Holland, Amsterdam, 1984). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] S. S. Schweber, `A Short\marginpar[\flushright{\small[40]\hspace*{5mm}}]{{\small\hspace*{5mm}[40]}} History of Shelter Island I,' 收录于 {\textit{Shelter Island II}}, R. Jackiw, S. Weinberg, and E. Witten\,编辑 (MIT Press, Cambridge, MA, 1985). [Section 1.3.]
+\item[$\square$] S. S. Schweber, {\textit{QED and the Men Who Made It: Dyson, Feynman, Schwinger, and Tomonaga}} (Princeton University Press, Princeton, 1994). [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] J. Schwinger\,编辑, {\textit{Selected Papers in Quantum Electrodynamics}} (Dover Publications Inc., New York, 1958). [Sections 1.2 and 1.3.]
+\item[$\square$] S.-I. Tomonaga, 收录于 {\textit{The Physicist's Conception of Nature}} (Reidel, Dordrecht, 1973). [Sections 1.2 and 1.3.]
+\item[$\square$] S. Weinberg, `The Search for Unity: Notes for a History of Quantum Field Theory,' {\textit{Daedalus}}, Fall 1977. [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] V. F. Weisskopf, `Growing Up with Field Theory: The Development of Quantum Electrodynamics in Half a Century,' 1979 Bernard Gregory Lecture at CERN, published in L. Brown and L. Hoddeson, {\textit{op. cit.}}. [Sections 1.1, 1.2, 1.3.]
+\item[$\square$] G. Wentzel, `Quantum Theory of Fields (Until 1947),' 收录于 {\textit{Theoretical Physics in the Twentieth Century}}, M. Fierz and V. F. Weisskopf\,编辑 (Interscience Publishers Inc., New York, 1960). [Sections 1.2 and 1.3.]
+\item[$\square$] E. Whittaker, {\textit{A History of the Theories of Aether and Electricity}} (Humanities Press, New York, 1973). [Section 1.1.]
+\end{OExercises}
+
+
+
+\begin{thebibliography}{99}
+\bibitem {1} L. de Broglie, {\textit{Comptes Rendus}} {\bf{177}}, 507, 548, 630 (1923); {\textit{Nature}} {\bf{112}}, 540 (1923); Th\`{e}se de doctorat (Masson et Cie, Paris, 1924); {\textit{Annales de Physique}} {\bf{3}}, 22 (1925) [英语的重印版为{\textit{Wave Mechanics}}, G. Ludwig 编辑, (Pergamon Press, New York, 1968)];{\textit{Phil. Mag.}} {\bf{47}}, 446 (1924).
+     \addcontentsline{toc}{section}{参考文献}
+\bibitem {2} W. Elsasser, {\textit{Naturwiss.}} {\bf{13}}, 711 (1925).
+\bibitem {3}C. J. Davisson and L. H. Germer, {\textit{Phys. Rev.}} {\bf{30}}, 705 (1927).
+\bibitem {4}W. Heisenberg, {\textit{A. Phys. }}{\bf{33}}, 879 (1925); M. Born and P. Jordan, {\textit{Z. f. Phys. }}{\bf{34}}, 858 (1925); P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A109}}, 642 (1925); M. Born, W. Heisenberg, and P. Jordan, {\textit{Z. f. Phys. }}{\bf{35}}, 557 (1926); W. Pauli, {\textit{Z. f. Phys. }}{\bf{36}}, 336 (1926). 这些文献被重印于\,{\textit{Sources of Quantum Mechanics}}, B. L. van der Waerden\,编辑 (Dover Publications, Inc., New York, 1968).
+\bibitem {5}E. Schr\"{o}dinger\marginpar[\flushright{\small[41]\hspace*{5mm}}]{{\small\hspace*{5mm}[41]}}, {\textit{Ann. Phys. }}{\bf{79}}, 361, 489; {\bf{80}}, 437; {\bf{81}}, 109 (1926). %
+这些论文的英语重印版在\,{\textit{Wave Mechanics}}\,中, 不过有部分删节, 文献[1]. 另见\,{\textit{Collected Papers on Wave Mechanics}}, J. F. Schearer and W. M. Deans\,译 (Blackie and Son, London, 1928).
+\bibitem {6}例如参看\,P. A. M. Dirac, {\textit{The Development of Quantum Theory}} (Gordon and Breach, New York, 1971). %
+另见\,Dirac\,为\,Schr\"{o}dinger\,所写的讣告, {\textit{Nature}} {\bf{189}}, 355 (1961), %
+以及他的文章 {\textit{Scientific American}} {\bf{208}}, 45 (1963).
+\bibitem {7}O. Klein, {\textit{Z. f. Phys. }}{\bf{37}}, 895 (1926). 另见V. Fock, {\textit{Z. f. Phys. }}{\bf{38}}, 242 (1926); {\textit{ibid,}} {\bf{39}}, 226 (1926).
+\bibitem {8}W. Gordon, {\textit{Z. f. Phys. }}{\bf{40}}, 117 (1926).
+\bibitem {9}计算细节参看\,L. I. Schiff, {\textit{Quantum Mechanics}}, 3rd edn, (McGraw-Hill, Inc. New York, 1968): Section 51.
+\bibitem {10}F. Paschen, {\textit{Ann. Phys.}} {\bf{50}}, 901 (1916). 这些实验实际上是用\,He$^{+}$实现的, %
+因为它的精细结构分裂比氢原子的大\,16\,倍,谱线的精细结构是\,A. A. Michelson\,首次通过干涉方法发现的, {\textit{Phil. Mag.}} {\bf{31}}, 338 (1891); {\textit{ibid}}., {\bf{34}}, 280 (1892).
+\bibitem [10a]{10a}A. Sommerfeld, {\textit{M\"{u}nchner Berichte}} 1915, pp. 425, 429; {\textit{Ann. Phys.}} {\bf{51}}, 1, 125 (1916). 另见W. Wilson, {\textit{Phil. Mag.}} {\bf{29}}, 795 (1915).
+\bibitem {11} G. E. Uhlenbeck and S. Goudsmit, {\textit{Naturwiss.}} {\bf{13}}, 953 (1925); {\textit{Nature}} {\bf{117}}, 264 (1926). 电子自旋由于其他原因由\,A. H. Compton\,更早地提出, {\textit{J. Frank. Inst.}} {\bf{192}}, 145 (1921).
+\bibitem {12}单电子原子\,Zeeman\,分裂的一般公式是\,A. Land\'{e}\,的经验公式, {\textit{Z. f. Phys.}} {\bf{5}}, 231 (1921); {\textit{ibid}}., {\bf{7}}, 398 (1921); {\textit{ibid}}., {\bf{15}}, 189 (1923);  {\textit{ibid}}., {\bf{19}}, 112 (1923). 当时, 这个公式中出现的额外的非轨道角动量被认为是原子``核心''的角动量; A. Sommerfeld, {\textit{Ann. Phys.}} {\bf{63}}, 221 (1920); {\textit{ibid}}., {\bf{70}}, 32 (1923). 稍后不久就意识到了额外的角动量, 像文献[11]中说的那样, %
+    是源于电子自旋.
+\bibitem {13}W. Heisenberg and P. Jordan, {\textit{Z. f. Phys.}} {\bf{37}}, 263 (1926); C. G. Darwin, {\textit{Proc. Roy. Soc.}} {\bf{A116}}, 227 (1927). Darwin\,说当时有几位学者几乎同时做出了这个工作, 而\,Dirac\,只引用了\,Darwin\,的工作.
+\bibitem {14}L. H. Thomas\marginpar[\flushright{\small[42]\hspace*{5mm}}]{{\small\hspace*{5mm}[42]}}, {\textit{Nature}} {\bf{117}}, 514 (1926). 另见\,S. Weinberg, {\textit{Gravitation and Cosmology}}, (Wiley, New York, 1972): Section 5.1.
+\bibitem {15}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A117}}, 610 (1928). %
+    该理论在计算\,Zeeman\,效应、Paschen-Back\,效应以及精细结构中多重谱线间的相对强度中的应用可参看\:Dirac, {\textit{ibid}}., {\bf{A118}}, 351 (1928).
+\bibitem {16}非相对论量子力学的概率解释, 参看 M. Born, {\textit{Z. f. Phys.}} {\bf{37}}, 863 (1926); {\textit{ibid}}., {\bf{38}}, 803 (1926) (有删节的英语重印版见 {\textit{Wave Mechanics}}, 文献[1]); G. Wentzel, {\textit{Z. f. Phys.}} {\bf{40}}, 590 (1926); W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{43}}, 172 (1927). N. Bohr, {\textit{Nature}} {\bf{121}}, 580 (1928); Naturwissenchaften {\bf{17}}, 483 (1929); {\textit{Electrons et Photons - Rapports et Discussion du $V^{e}$ Conseil de Physique Solvay}} (Gauthier-Villars, Paris, 1928).
+\bibitem {17}1969\,年\,3\,月\,28\,日, Dirac\,与\,J. Mehra\,的对话, 被\,Mehra\,引用在 {\textit{Aspects of Quantum Theory}}, A. Salam and E. P. Wigner\,编辑(Cambridge University Press, Cambridge, 1972).
+\bibitem {18}G. Gamow, {\textit{Thirty Years that Shook Physics}}, (Doubleday and Co., Garden City, NY, 1966): p.125.
+\bibitem {19}W. Pauli, {\textit{Z. f. Phys.}} {\bf{37}}, 263 (1926); {\bf{43}}, 601 (1927).
+\bibitem {20}C. G. Darwin, {\textit{Proc. Roy. Soc.}} {\bf{A118}}, 654 (1928); {\textit{ibid}}., {\bf{A120}}, 621 (1928).
+\bibitem {21}W. Gordon, {\textit{Z. f. Phys.}} {\bf{48}}, 11 (1928).
+\bibitem {22}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A126}}, 360 (1930); 另见文献[47].
+\bibitem {23}E. C. Stoner, {\textit{Phil. Mag.}} {\bf{48}}, 719 (1924).
+\bibitem {24}W. Pauli, {\textit{Z. f. Phys.}} {\bf{31}}, 765 (1925).
+\bibitem {25}W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{38}}, 411 (1926); {\textit{ibid.}}, {\bf{39}}, 499 (1926); P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A112}}, 661 (1926); W. Pauli, {\textit{Z. f. Phys.}} {\bf{41}}, 81 (1927); J. C. Slater, {\textit{Phys. Rev.}} {\bf{34}}, 1293 (1929).
+\bibitem {26}E. Fermi, {\textit{Z. f. Phys.}} {\bf{36}}, 902 (1926); {\textit{Rend. Accad. Lincei}} {\bf{3}}, 145 (1926).
+\bibitem {27}P. A. M. Dirac, 文献[25].
+\bibitem [27a]{27a}P. A. M. Dirac, 密歇根大学的第一次\,W. R. Crane\,讲座, 1978\,年\,4\,月\,17\,日, 未发表.
+\bibitem {28}H. Weyl\marginpar[\flushright{\small[43]\hspace*{5mm}}]{{\small\hspace*{5mm}[43]}}, {\textit{The Theory of Groups and Quantum Mechanics,}} H. P. Robertson\,译自德文第二版 (Dover Publications, Inc., New York): Chapter IV, Section 12. 另见\,P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A133}}, 61 (1931).
+\bibitem {29}J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{35}}, 562 (1930); I. Tamm, {\textit{Z. f. Phys.}} {\bf{62}}, 545 (1930).
+\bibitem [29a]{29a}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{133}}, 60 (1931).
+\bibitem {30}C. D. Anderson, {\textit{Science}} {\bf{76}}, 238 (1932); {\textit{Phys. Rev.}} {\bf{43}}, 491 (1933). 后一篇文章重印于\,{\textit{Foundations of Nuclear Physics}}, R. T. Beyer\,编辑(Dover Publications, Inc., New York, 1949).
+\bibitem [30a]{30a}J. Schwinger, 'A Report on Quantum Electrodynamics,' 收录于 {\textit{The Physicist's Conception of Nature}} (Reidel, Dordrecht, 1973): p.415.
+\bibitem {31}W. Pauli, {\textit{Handbuch der Physik}} (Julius Springer, Berlin, 1932-1933); {\textit{Rev. Mod. Phys.}} {\bf{13}}, 203 (1941).
+\bibitem {32}Born, Heisenberg, and Jordan, 文献[4], Section 3.
+\bibitem [32a]{32a}P. Ehrenfest, {\textit{Phys. Z.}} {\bf{7}}, 528 (1906).
+\bibitem {33}Born and Jordan, 文献[4]. 可惜这个论文的相关部分没有包含在文献[4]引用的重选集\,{\textit{Sources of Quantum Mechanics}}\,中.
+\bibitem {34}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A112}}, 661 (1926): Section 5. %
+    一个更容易理解的推导可参看\,L. I. Schiff, {\textit{Quantum Mechanics,}} 3rd edn. (McGraw-Hill Book Company, New York, 1968): Section 44.
+\bibitem [34a]{34a}A. Einstein, {\textit{Phys. Z.}} {\bf{18}}, 121 (1917); 英文重印版在文献[4]\,van der Waerden.
+\bibitem {35}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A114}}, 243 (1927); 重印于\,{\textit{Quantum Electrodynamics}}, J. Schwinger\,编辑 (Dover Publications, Inc., New York, 1958).
+\bibitem {36}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A114}}, 710 (1927).
+\bibitem [36a]{36a}V. F. Weisskopf and E. Wigner, {\textit{Z. f. Phys.}} {\bf{63}}, 54 (1930).
+\bibitem [36b]{36b}E. Fermi, {\textit{Lincei Rend.}} {\bf{9}}, 881 (1929); {\bf{12}}, 431 (1930); {\textit{Rev. Mod. Phys.}} {\bf{4}}, 87 (1932).
+\bibitem {37}P. Jordan and W. Pauli, {\textit{Z. f. Phys.}} {\bf{47}}, 151 (1928).
+\bibitem {38}N. Bohr and\marginpar[\flushright{\small[44]\hspace*{5mm}}]{{\small\hspace*{5mm}[44]}} L. Rosenfeld, {\textit{Kon. dansk. vid. Selsk., Mat.-Fys. Medd.}} {\bf{XII}}, No. 8 (1933) (译文见%
+    \,{\textit{Selected Papers of Leon Rosenfeld,}} R. S. Cohen and J. Stachel\,编辑 (Reidel, Dordrecht, 1979)); {\textit{Phys. Rev.}} {\bf{78}}, 794 (1950).
+\bibitem {39}P. Jordan, {\textit{Z. f. Phys.}} {\bf{44}}, 473 (1927). 另见\,P. Jordan and O. Klein, {\textit{Z. f. Phys.}} {\bf{45}}, 751 (1929); P. Jordan, {\textit{Phys. Zeit.}} {\bf{30}}, 700 (1929).
+\bibitem {40}P. Jordan and E. Wigner, {\textit{Z. f. Phys.}} {\bf{47}}, 631 (1928). 这个文章重印于\,{\textit{Quantum Electrodynamics,}} 文献[35].
+\bibitem [40a]{40a}M. Fierz, {\textit{Helv. Phys. Acta}} {\bf{12}}, (1939); W. Pauli, {\textit{Phys. Rev.}} {\bf{58}}, 716 (1940); W. Pauli and F. J. Belinfante, {\textit{Physica}} {\bf{7}}, 177 (1940).
+\bibitem {41}W. Heisenberg and W. Pauli, {\textit{Z. f. Phys.}} {\bf{56}}, 1 (1929); {\textit{ibid}}., {\bf{59}}, 168 (1930).
+\bibitem {42}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A136}}, 453 (1932); P. A. M. Dirac, V. A. Fock, and B. Podolsky, {\textit{Phys. Zeit. der Sowjetunion}} {\bf{2}}, 468 (1932);P. A. M. Dirac,{\textit{Phys. Zeit. der Sowjetunion}} {\bf{3}}, 64 (1933). 后两篇文献重印于\,{\textit{Quantum Electrodynamics,}} 文献[35], pp. 29 and 312. 另见L. Rosenfeld, {\textit{Z. f. Phys.}} {\bf{76}}, 729 (1932).
+\bibitem [42a]{42a}P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} London {\bf{A136}}, 453 (1932).
+\bibitem {43}E. Fermi, {\textit{Z. f. Phys.}} {\bf{88}}, 161 (1934). Fermi\,引用了\,Pauli\,未发表的工作\ezx %
+    在$\beta$-衰变中伴随着电子还发射出一个没有观测到的中性粒子. 为了与当时发现不久的中子(neutron)区分, 这个粒子称为中微子(neutrino).
+\bibitem [43a]{43a}V. Fock, {\textit{C. R. Leningrad}} 1933, p. 267.
+\bibitem {44}W. H. Furry and J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{45}}, 245 (1934). 这篇论文采用了\,P. A. M. Dirac, Proc. Camb. {\textit{Phil. Soc.}} {\bf{30}}, 150 (1934)\,中所发展的密度矩阵体系. 另见\,R. E. Peierls, {\textit{Proc. Roy. Soc.}} {\bf{146}}, 420 (1934); W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{90}}, 209 (1934); L. Rosenfeld, \textit{Z. f. Phys.} {\bf{76}}, 729 (1932).
+\bibitem {45}W. Pauli and V. Weisskopf, {\textit{Helv, Phys. Acta}} {bf{7}}, 709 (1934), 重印成英语, A. I. Miller翻译, {\textit{Early Quantum Electrodynamics}} (Cambridge University Press, Cambridge, 1994). 另见W. Pauli, {\textit{Ann. Inst. Henri Poincar\'{e}}} {\bf{6}}, 137 (1936).
+    \bibitem{46} O. Klein and Y. Nishina, {\textit{Z. f. Phys.}} {\bf{52}}, 853 (1929); Y. Nishina, {\textit{ibid.,}} 869 (1929); 另见\,I. Tamn, {\textit{Z. f. Phys.}} {\bf{62}}, 545 (1930).
+    \bibitem{47} P. A. M. Dirac, {\textit{Proc. Camb. Phil. Soc.}} {\bf{26}}, 361 (1930).
+    \bibitem{48} C. M{\o}ller\marginpar[\flushright{\small[45]\hspace*{5mm}}]{{\small\hspace*{5mm}[45]}}, {\textit{Ann. d. Phys.}} {\bf{14}}, 531, 568 (1932).
+    \bibitem{49} H. Bethe and W. Heitler, {\textit{Proc. Roy. Soc.}} {\bf{A146}}, 83 (1934); 另见, G. Racah, {\textit{Nuovo Cimento}} {\bf{11}}, No. 7 (1934); {\textit{ibid.}}, {\bf{13}}, 69 (1936).
+    \bibitem{50} H. J. Bhabha, {\textit{Proc. Roy. Soc.}} {\bf{A154}}, 195 (1936).
+    \bibitem[50a]{50a} J. F. Carlson and J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{51}}, 220 (1937).
+    \bibitem{51} P. Ehrenfest and J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{37}}, 333 (1931).
+    \bibitem{52} W. Heitler and G. Herzberg, {\textit{Naturwiss.}} {\bf{17}}, 673 (1929); F. Rasetti, {\textit{Z. f. Phys.}} {\bf{61}}, 598 (1930).
+    \bibitem{53} J. Chadwick, {\textit{Proc. Roy. Soc.}} {\bf{A136}}, 692 (1932). 这篇文章重印于\,\textit{The Foundations of Nuclear Physics}, 文献[30].
+    \bibitem{54} W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{77}}, 1 (1932); 另见\,I. Curie-Joliot and F. Joliot, {\textit{Compt. Rend.}} {\bf{194}}, 273 (1932).
+    \bibitem[54a]{54a} 文献参看\,L. M. Brown and H. Rechenberg, {\textit{Hist. Stud. in Phys. and Bio. Science}}, {\bf{25}}, 1 (1994).
+    \bibitem{55} H. Yukawa, {\textit{Porc. Phys.-Math. Soc. (Japan)}} (3) {\bf{17}}, 48 (1935). 这篇文章重印于\,{\textit{The Foundations of Nuclear Physics,}} 文献[30].
+    \bibitem{56} S. H. Neddermeyer and C. D. Anderson, {\textit{Phys. Rev.}} {\bf{51}}, 884 (1937); J. C. Street and E. C. Stevenson, {\textit{Phys. Rev.}} {\bf{52}}, 1003 (1937).
+    \bibitem[56a]{56a} L. Nordheim and N. Webb, {\textit{Phys. Rev.}} {\bf{56}}, 494 (1939).
+    \bibitem{57} M. Conversi, E. Pancini, and O. Piccioni, {\textit{Phys. Rev.}} {\bf{71}}, 209L (1947).
+    \bibitem{58} S. Sakata and T. Inoue, {\textit{Prog. Theor. Phys.}} {\bf{1}}, 143 (1946); R. E. Marshak and H. A. Bethe, {\textit{Phys. Rev.}} {\bf{77}}, 506 (1947).
+    \bibitem{59} C. M. G. Lattes, G. P. S. Occhialini, and C. F. Powell, {\textit{Nature}} {\bf{160}}, 453, 486 (1947).
+    \bibitem{60} G. D. Rochester and C. C. Butler, {\textit{Nature}} {\bf{160}}, 855 (1947).
+    \bibitem{61} J. R. Oppenheimer, {\textit{Phys. Rev.}} {\bf{35}}, 461 (1930).
+    \bibitem{62} I. Waller, {\textit{Z. f. Phys.}} {\bf{59}}, 168 (1930); {\textit{ibid.,}} {\bf{61}}, 721, 837 (1930); {\textit{ibid.,}} {\bf{62}}, 673 (1930).
+    \bibitem{63} V. F. Weisskopf\marginpar[\flushright{\small[46]\hspace*{5mm}}]{{\small\hspace*{5mm}[46]}}, {\textit{Z. f. Phys.}} {\bf{89}}, 27 (1934), 英译重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45]; {\textit{ibid.}}, {\bf{90}}, 817 (1934). 在这些文献中, %
+        电磁自能的计算只到$\alpha$的最低阶; Weisskopf\,证明了在微扰论所有阶中的发散只是对数发散; {\textit{Phys. Rev.}} {\bf{56}}, 72 (1939). (最后一篇文章重印于\,{\textit{Quantum Electrodynamics,}}  文献[35]).
+    \bibitem{64} P. A. M. Dirac, XVII Conseil Solvay de Physique, p. 203 (1933), 重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45]. 后来的依赖假定更少的计算, 参看\,W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{90}}, 209 (1934); {\textit{Sachs. Akad. Wiss.}} {\bf{86}}, 317 (1934); R. Serber, {\textit{Phys. Rev.}} {\bf{43}}, 49 (1935); E. A. Uehling, {\textit{Phys. Rev.}} {\bf{48}}, 55  (1935); W. Pauli and M. Rose, {\textit{Phys. Rev.}} {\bf{49}}, 462 (1936). 另见\,Furry and Oppenheimer, 文献[44]; Peierls, 文献[44]; Weisskopf, 文献[63].
+    \bibitem{65} H. Euler and B. Kockel, {\textit{Naturwiss.}} {\bf{23}}, 246 (1935); W. Heisenberg and H. Euler, {\textit{Z. f. Phys.}} {\bf{98}}, 714 (1936).
+    \bibitem{66} P. A. M. Dirac, {\textit{Proc. Camb. Phil. Soc.}} {\bf{30}}, 150 (1934).
+    \bibitem{67} W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{90}}, 209 (1934).
+    \bibitem{68} N. Kemmer and V. F. Weisskopf, {\textit{Nature}} {\bf{137}}, 659 (1936).
+    \bibitem[68a]{68a} F. Bloch and A. Nordsieck, {\textit{Phys. Rev.}} {\bf{52}}, 54 (1937). 另见\,W. Pauli and M. Fierz, {\textit{Nuovo Cimento}} {\bf{15}}, 167 (1938), 英译重印于\,{\textit{Early Quantum Electrodynamics,}} %
+        文献[45].
+    \bibitem{69} S. M. Dancoff, {\textit{Phys. Rev.}} {\bf{55}}, 959 (1939).
+    \bibitem[69a]{69a} H. W. Lewis, {\textit{Phys. Rev.}} {\bf{73}}, 173 (1948); S. Epstein, {\textit{Phys. Rev.}} {\bf{73}}, 177 (1948). 另见\,J. Schwinger, 文献[84]; Z. Koba and S. Tomonaga, {\textit{Prog. Theor. Phys.}} {\bf{3}}/3, 290 (1948).
+    \bibitem[69b]{69b} J. Schwinger, 收录于 {\textit{The Birth of Particle Physics}}, L. Brown and L. Hoddeson\,编辑\,(Cambridge University Press, Cambridge, 1983): p. 336.
+    \bibitem{70} W. Heisenberg, {\textit{Ann. d. Phys.}} {\bf{32}}, 20 (1938), 英译重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45].
+    \bibitem[70a]{70a} G. Wentzel, {\textit{Z. f. Phys.}} {\bf{86}}, 479, 635 (1933); {\textit{Z. f. Phys.}} {\bf{87}}, 726 (1034); M. Born and L. Infeld, {\textit{Proc. Roy. Soc.}} {\bf{A150}}, 141 (1935); W. Pauli, {\textit{Ann. Inst. Henri Poincar\'{e}}} {\bf{6}}, 137 (1936).
+    \bibitem{71} J. A. Wheeler, {\textit{Phys. Rev.}} {\bf{52}}, 1107 (1937).
+    \bibitem{72} W. Heisenberg, {\textit{Z. f. Phys.}} {\bf{120}}, 513, 673 (1943); {\textit{Z. Naturforsch.}} {\bf{1}}, 608 (1946). 另见\,C. M{\o}ller, {\textit{Kon. Dansk. Vid. Sels. Mat.-Fys. Medd.}} {\bf{23}}, No. 1 (1945); {\textit{ibid.}} {\bf{23}}, No. 19, (1946).
+    \bibitem{73} 可参看\,G\marginpar[\flushright{\small[47]\hspace*{5mm}}]{{\small\hspace*{5mm}[47]}}. Chew, {\textit{The S-Matrix Theory of Strong Interactions}} (W. A. Benjamin, Inc. New York, 1961).
+    \bibitem{74} J. A. Wheeler and R. P. Feynman, {\textit{Rev. Mod. Phys.}} {\bf{17}}, 157 (1945), {\textit{ibid.}}, {\bf{21}}, 425 (1949). 更深入的参考文献以及对超距作用在宇宙学中的应用的讨论, 参看\,S. Weinberg {\textit{Gravitation and Cosmology}}, (Wiley, 1972): Section 16.3.
+    \bibitem{75} P. A. M. Dirac, {\textit{Proc. Roy. Soc.}} {\bf{A180}}, 1 (1942). 对此的评判参看\,W. Pauli, {\textit{Rev. Mod. Phys.}} {\bf{15}}, 175 (1943). 关于这类经典理论的综述, 以及其他解决无穷大问题的尝试, 参看\,R. E. Peierls in {\textit{Rapports du $8^{m}$e Conseil de Physique Solvay 1948}} (R. Stoops, Brussels, 1950): p. 241.
+    \bibitem{76} V. F. Weisskopf, {\textit{Kon. Dan. Vid. Sel., Mat.-fys. Medd.}} {\bf{XIV}}, No. 6 (1936), especially p. 34 and pp. 5\bzx6. 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35], 英译重印于\,{\textit{Early Quantum Electrodynamics,}} 文献[45]. 另见\,W. Pauli and M. Fierz, 文献[68a]; H. A. Kramers, 文献[79a].
+    \bibitem{77} S. Pasternack, {\textit{Phys. Rev.}} {\bf{54}}, 1113 (1938). 这个建议基于\,W. V. Houston\,的实验, {\textit{Phys. Rev.}} {\bf{51}}, 446 (1937); R. C. Williams, {\textit{Phys. Rev.}} {\bf{54}}, 558 (1938). %
+        与此相反的数据报告, 参看\,J. W. Drinkwater, O. Richardson, and W. E. Williams, {\textit{Proc. Roy. Soc.}} {\bf{174}}, 164 (1940).
+    \bibitem{78} E. A. Uehling, 文献[64].
+    \bibitem{79} W. E. Lamb, Jr and R. C. Retherford, {\textit{Phys. Rev.}} {\bf{72}}, 241 (1947). 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem[79a]{79a} H. A. Kramers, {\textit{Nuovo Cimento}} {\bf{15}}, 108 (1938), 英译重印于\,{\textit{Early Quantum Electrodynamics}}, 文献[45]; {\textit{Ned. T. Natwink.}} {\bf{11}}, 134 (1944); {\textit{Rapports du 8$^{m}$e Conseil de Physique Solvay 1948}} (R. Stoops, Brussels, 1950).
+    \bibitem{80} H. A. Bethe, {\textit{Phys. Rev.}} {\bf{72}}, 339 (1947). 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{81} J. B. French and V. F. Weisskopf, {\textit{Phys. Rev.}} {\bf{75}}, 1240 (1949); N. M. Kroll and W. E. Lamb, {\textit{ibid.}}, {\bf{75}}, 388 (1949); J. Schwinger, {\textit{Phys. Rev.}} {\bf{75}}, 898 (1949); R. P. Feynman, {\textit{Rev. Mod. Phys.}} {\bf{20}}, 367 (1948); {\textit{Phys. Rev.}} {\bf{74}}, 939, 1430 (1948); {\bf{76}}, 749, 769 (1949); {\bf{80}}, 440 (1950); H. Fukuda, Y. Miyamoto, and S. Tomonaga, {\textit{Prog. Theor. Phys. Rev. Mod. Phys.}} {\bf{4}}, 47, 121 (1948). Kroll\,和\,Lamb\,的文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{82} J. E. Nafe\marginpar[\flushright{\small[48]\hspace*{5mm}}]{{\small\hspace*{5mm}[48]}}, E. B. Nelson, and I. I. Rabi, {\textit{Phys. Rev.}} {\bf{71}}, 914 (1947); D. E. Nagel, R. S. Julian, and J. R. Zacharias, {\textit{Phys. Rev.}} {\bf{72}}, 973 (1947).
+    \bibitem{83} P. Kusch and H. M. Foley, {\textit{Phys. Rev.}} {\bf{72}}, 1256 (1947).
+    \bibitem[83a]{83a} G. Breit, {\textit{Phys. Rev.}} {\bf{71}}, 984 (1947). 在文献[84]中, %
+    Schwinger\,给出了对\,Breit\,结果的一个修正版本.
+    \bibitem{84} J. Schwinger, {\textit{Phys. Rev.}} {\bf{73}}, 416 (1948). 这篇文章重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{85} J. Schwinger, {\textit{Phys. Rev.}}  {\bf{74}}, 1439 (1948); {\textit{ibid.}}, {\bf{75}}, 651 (1949); {\textit{ibid.}}, {\bf{76}}, 790 (1949); {\textit{ibid.}}, {\bf{82}}, 664, 914 (1951); {\textit{ibid.}}, {\bf{91}}, 713 (1953); {\textit{Proc. Nat. Acad. Sci.}} {\bf{37}}, 452 (1951). 除了前两篇文章外, 其他文章均重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{86} S. Tomonaga, {\textit{Prog. Theor. Phys. Rev. Mod. Phys.}} {\bf{1}}, 27 (1946). Z. Koba, T. Tati, and S. Tomonaga, {\textit{ibid.}}, {\bf{2}}, 101 (1947); S. Kanesawa and S. Tomonaga, {\textit{ibid.}}, {\bf{3}}, 1, 101 (1948); S. Tomonaga, {\textit{Phys. Rev.}} {\bf{74}}, 224 (1948); D. Ito, Z. Koba, and S. Tomonaga, {\textit{Prog. Theor. Phys.}} {\bf{3}}, 276 (1948); D. Ito, Z. Koba, and S. Tomonaga, {\textit{ibid.}}, {\bf{3}}, 290 (1948). 其中第一篇文章和第四篇文章重印于\,{\textit{Quantum Electrodynamics}}, 参考文献[35].
+    \bibitem{87} R. P. Feynman, {\textit{Rev. Mod. Phys.}} {\bf{20}}, 367 (1948); {\textit{Phys. Rev.}} {\bf{74}}, 939, 1430 (1948); {\textit{ibid.,}} {\bf{76}}, 749, 769 (1949); {\textit{ibid.}}, {\bf{80}}, 440 (1950). 除了第二篇和第三篇外, 其他文章均重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem{88} F. J. Dyson, {\textit{Phys. Rev.}} {\bf{75}}, 486, 1736 (1949). 重印于\,{\textit{Quantum Electrodynamics}}, 文献[35].
+    \bibitem[88a]{88a} H. Fr\"{o}hlich, W. Heitler, and B. Kahn, {\textit{Proc. Roy. Soc.}} {\bf{A171}}, 269 (1939); {\textit{Phys. Rev.}} {\bf{56}}, 961 (1939).
+    \bibitem[88b]{88b} W. E. Lamb, Jr, {\textit{Phys. Rev.}} {\bf{56}}, 384 (1939); {\textit{Phys. Rev.}} {\bf{57}}, 458 (1940).
+    \bibitem{89} 引用自\,R. Serber, 收录于 {\textit{The Birth of Particle Physics}}, 文献[69b], p. 270.
+\end{thebibliography}
+%\end{small}

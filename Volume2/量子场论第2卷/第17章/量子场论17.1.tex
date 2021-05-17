@@ -1,0 +1,139 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, May 22, 2016 10:27:50}
+%TCIDATA{LastRevised=Tuesday, May 24, 2016 16:10:02}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{Zinn-Justin方程}
+
+在本节, 我们将用15.7节所描述的BRST对称性来例证量子有效作用量的一个泛函性质, 这一性质是由Zinn-Justin首先导出的.%
+\cite{1} 根据16.4节中所概述的一般规则, 作用量$I[\chi ]$的BRST不变性给有效作用量附加了条件\begin{equation}
+\int \dif^{4}x\langle \Delta ^{n}(x)\rangle _{J_{\chi }}\frac{\delta
+_{L}\Gamma \lbrack \chi ]}{\delta \chi ^{n}(x)}=0\text{ ,}  \label{17.1.1}
+\end{equation}%
+其中, $\chi ^{n}(x)$在BRST变换下的改变是\begin{equation}
+\delta _{\theta }\chi ^{n}(x)=\theta \Delta ^{n}(x)\text{ ,}  \label{17.1.2}
+\end{equation}%
+这里的$\theta $是无限小费米参量, $\langle \cdots \rangle $是有流$%
+J_{\chi }$时的真空期望值, 而流$J_{\chi }$使得算符场$X^{n}(x)$的真空期望值等于c-数函数$\chi ^{n}(x)$. 隐含地对$n$求和%
+取遍BRST形式理论中的所有场; 即, 对$\omega _{\alpha }$, $\omega _{\alpha
+}^{\ast }$和$h_{\alpha }$以及我们统称为$\phi ^{r}$的物质场和规范场求和. 当$\chi ^{n}$是规范%
+场或物质场或$\omega _{\alpha }$, 由于这时$\Delta ^{n}(x)$是场的二次型, 方程(\ref{17.1.1})一般{\kai{不会}}%
+告诉我们有效作用量就像作用量本身那样在同一BRST变换下是不变的.
+
+为了处理这一困难, 我们采用一个技巧, 这一技巧已被证明在处理任何一种幂零对称变换时都是有用的. 首先, 
+我们引入一组c-数外场$%
+K_{n}(x)$, 并定义一个新的有效作用量\begin{equation}
+\Gamma \lbrack \chi ,K]\equiv W[J_{\chi ,K},K]-\int \dif^{4}x\chi
+^{n}(x)J_{\chi ,Kn}(x)\text{ ,}  \label{17.1.3}
+\end{equation}%
+其中连通真空持续振幅$W$在这里要用规范固定作用量\footnote{这里的$I$是15.7节所描述的修正作用量$I_{NEW}$, 它依赖于鬼场和%
+反鬼场$\omega _{\alpha }$和$\omega _{\alpha }^{\ast }
+$以及辅助场$h_{\alpha }$, 从现在起省略下标"NEW".}$I+\int \dif%
+^{4}x\Delta ^{n}K_{n}$计算:%
+\begin{equation}
+\me^{\mi W[J,K]}\equiv \int \left[ \prod_{n,x}\dif\chi ^{n}(x)\right] \exp
+\left( \mi I+\mi\int \dif^{4}x\Delta ^{n}K_{n}+\mi\int \dif^{4}x\chi
+^{n}J_{n}\right)   \label{17.1.4}
+\end{equation}%
+而流$J_{\chi ,K}$要求在有外场$K$时赋予场期望值$\chi $:%
+\begin{equation}
+\left. \frac{\delta _{R}W[J,K]}{\delta J_{n}(x)}\right\vert _{J=J_{\chi
+,K}}\equiv \chi ^{n}(x)\text{ .}  \label{17.1.5}
+\end{equation}%
+($K_{n}$必须有与$\Delta ^{n}$相同的费米统计或玻色统计, 
+而这正好与$\chi ^{n}$的统计是相反的.) 既然BRST变换是幂零的, $\Delta ^{n}(x)$是BRST-不变的, 所以我们用16.4节%
+的方法可以证明新的有效作用量满足BRST-不变条件:%
+\begin{equation}
+\int \dif^{4}x\langle \Delta ^{n}(x)\rangle _{J_{\chi ,K},K}\frac{\delta
+_{L}\Gamma \lbrack \chi ]}{\delta \chi ^{n}(x)}=0\text{ ,}  \label{17.1.6}
+\end{equation}%
+其中$\langle \cdots \rangle _{J,K}$是指真空期望值是在有流$J$和外场$K$的情况下计算的:%
+\begin{equation}
+\langle \mathcal{O}[\chi ]\rangle _{J,K}=\frac{\int \left[ \prod_{n,x}\dif%
+\chi ^{n}(x)\right] \mathcal{O}[\chi ]\exp \left( \mi I+\mi\int \dif%
+^{4}x\Delta ^{n}K_{n}+\mi\int \dif^{4}x\chi ^{n}J_{n}\right) }{\int \left[
+\prod_{n,x}\dif\chi ^{n}(x)\right] \exp \left( \mi I+\mi\int \dif^{4}x\Delta
+^{n}K_{n}+\mi\int \dif^{4}x\chi ^{n}J_{n}\right) }\text{ .}  \label{17.1.7}
+\end{equation}
+
+将$\Delta ^{n}$的期望值表示成有效作用量的变分导数是方便的. 取方程(\ref%
+{17.1.3})对$K$右变分导数, 这给出\begin{eqnarray*}
+\frac{\delta _{R}\Gamma \lbrack \chi ,K]}{\delta K_{n}(x)} &=&\left. \frac{%
+\delta _{R}W[J,K]}{\delta K_{n}(x)}\right\vert _{J=J_{\chi ,K}}+\int \dif%
+^{4}y\left. \frac{\delta _{R}W[J,K]}{\delta J_{m}(y)}\right\vert _{J=J_{\chi
+,K}}\frac{\delta _{R}J_{\chi ,Km}(y)}{\delta K_{n}(x)} \\
+&&-\int \dif^{4}y\chi ^{m}(y)\frac{\delta _{R}J_{\chi ,Km}(y)}{\delta
+K_{n}(x)}\text{ .}
+\end{eqnarray*}%
+利用方程(\ref{17.1.5}), 我们看到后两项抵消, 然后再使用定义(\ref{17.1.4})和(\ref{17.1.7})就给出了我们希望的结%
+果:%
+\begin{equation}
+\frac{\delta _{R}\Gamma \lbrack \chi ,K]}{\delta K_{n}(x)}=\left. \frac{%
+\delta _{R}W[J,K]}{\delta K_{n}(x)}\right\vert _{J=J_{\chi ,K}}=\langle
+\Delta ^{n}(x)\rangle _{J_{\chi ,K},K}\text{ .}  \label{17.1.8}
+\end{equation}%
+BRST对称变换(\ref{17.1.6})现在可以写成仅包含有效作用量的简单条件, \textit{Zinn-Justin%
+}{\kai{方程}}:%
+\begin{equation}
+\int \dif^{4}x\frac{\delta _{R}\Gamma \lbrack \chi ,K]}{\delta K_{n}(x)}%
+\frac{\delta _{L}\Gamma \lbrack \chi ,K]}{\delta \chi ^{n}(x)}=0\text{ .}
+\label{17.1.9}
+\end{equation}%
+根据方程(\ref{15.9.3})后面的评述, 场和反场的交换(%
+或者这一情况下$\chi ^{n}$和$%
+K_{n}$)的结果就是方程(\ref{17.1.9})%
+的左边和右边有一个符号变化, 所以这可以写成\begin{equation}
+(\Gamma ,\Gamma )=0\text{ ,}  \label{17.1.10}
+\end{equation}%
+其中, 在计算这里的反括号时用$K_{n}$替换了$\chi ^{n}$%
+的反场:%
+\begin{equation}
+(F,G)\equiv \int \dif^{4}x\frac{\delta _{R}F[\chi ,K]}{\delta \chi ^{n}(x)}%
+\frac{\delta _{L}G[\chi ,K]}{\delta K_{n}(x)}-\int \dif^{4}x\frac{\delta
+_{R}F[\chi ,K]}{\delta K_{n}(x)}\frac{\delta _{L}G[\chi ,K]}{\delta \chi
+^{n}(x)}\text{ .}  \label{17.1.11}
+\end{equation}%
+这在形式上与15.9节讨论的Batalin-Vilkovisky\textquotedblleft 主方程\textquotedblright 相同, 但在这里它%
+是作为对量子有效作用量而非基础作用量$%
+S[\chi ,\chi ^{\ddag }]$的约束出现的. 
+在接下来的两节中, Zinn-Justin%
+方程(\ref{17.1.10})将用来说明如何重整化规范理论, 
+并在22.6节中用来研究这里理论中的反常.
+
+\end{document}

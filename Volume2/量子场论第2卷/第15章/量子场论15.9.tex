@@ -1,0 +1,393 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Friday, April 15, 2016 16:49:45}
+%TCIDATA{LastRevised=Friday, April 22, 2016 23:33:30}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+这一节将会描述一个强有力的形式理论, 它被大家称为Batalin-Vilkovisky\cite{19}方法. 它是拉格朗日框架下发展起来的, 但是它%
+根植于更早的Batalin-Fradkin-Vilkovisky%
+形式理论,\cite{20} 而这一形式理论是在哈密顿框架下导出的. (在微扰论的意义下, 已经证明这两种方案是等价的.) 我们会在17.1节看到, 为了%
+处理规范理论的重整化, Zinn-Justin\cite{22}甚至在此之前就发展了同样的形式机制. 至少有如下三个方面证明这一形式理论的价值是无可估%
+量的:
+
+直到现在, 我们所考察的仅是不可约系统, 并且它的代数在方程(\ref%
+{15.8.10})的意义下封闭. 在某些理论中, 例如超引力(%
+没有辅助场)\cite{23}, 代数是开的: 仅当场方程成立时, 代数才是封闭的, 这使得方程(\ref{15.8.10})中会出现正比于$\delta I/\delta \chi ^{n}$的项. 
+这样, 在相容性条件(\ref%
+{15.8.12})中也会出现类似的项. 那么, 方程(\ref{15.8.11})就会指出$s^{2}$在这样的理论中并不为零, 而是等于%
+导数$\delta I/\delta \chi ^{n}$的线性组合. 我们会在这一节看到, Batalin-Vilkovisky方法使得我们%
+能够处理非常宽泛的规范理论, 这些理论中包含那些有着开规范对称代数或者可约规范对称代数的理论.
+
+就像上面所提及的,
+Batalin-Vilkovisky形式理论的重要性质就在于它原本是Zinn-Justin为证明规范理论的可重整性而发展的. 关键点是, 尽管背景场中%
+所有单粒子不可约图的和不服从原始作用量的BRST对称性, 但是它共享了作用量的关键性质之一, 即称为主方程的性质, 我们将在17.1%
+节进行阐述.
+
+Batalin-Vilkovisky方法提供了一个方便的技巧用以分析量子效应所造成的作用量对称性可能破坏. 
+由于这个原因, 它将用于22.6节.
+
+Batalin-Vilkovisky形式理论的出发点是对于理论中的每个场引入所谓的\textquotedblleft 
+反场\textquotedblright , 我们令$\chi ^{n}$%
+取遍所有的场$\phi ^{r}$, $\omega ^{A}$, $%
+\omega ^{\ast A}$和$h^{A}$, 并对每一个$%
+\chi ^{n}$, 我们引入外反场\footnote{在这里使用符号$\ddag $%
+而不是最通常的$\ast $, 是为了强调它与复共轭或电荷共轭完全无关. 
+特别地, 反鬼场$\omega ^{\ast A}$与鬼场$\omega ^{A}$的反场$\omega _{A}^{\ddag }$%
+并{\kai{不}}相同.}$\chi _{n}^{\ddag }$, 它与BRST-变换后的场$s\chi ^{n}$有着相同的玻色统计或费%
+米统计, 但鬼数相反. 即, $\chi _{n}^{\ddag }$与$\chi ^{n}$有着相反的统计, 但它的鬼数等于$-gh(\chi ^{n})-1$, 其中$gh(\chi ^{n})$是$\chi
+^{n} $的鬼数. 在最简单的情况下, 包括Yang-Mills理论和量子引力, 要给原始规范不变作用量$I[\phi ]$添加反场$\chi _{n}^{\ddag }$与$s\chi ^{n}$相耦%
+合的一项, 这给出了作用量.%
+\[
+\]%
+它满足所谓的{\kai{主}(\textit{master})%
+方程}%
+\[
+\]%
+其中\textquotedblleft $R$\textquotedblright 和\textquotedblleft $L$\textquotedblright 在这里代%
+表右微分和左微分. 为了验证它, 注意到方程(%
+\ref{15.9.2})中反场的零阶项正好给出规范不变性条件\begin{equation}
+0=\left( s\phi ^{r}\right) \frac{\delta _{L}I}{\delta \phi ^{r}}=\omega
+^{A}\delta _{A}I[\phi ]\text{ ,}  \label{15.9.3}
+\end{equation}%
+而反场$\phi _{n}^{\ddag }$的线性项提供了幂零条件:%
+\begin{equation}
+0=\left( s\chi ^{m}\right) \frac{\delta _{L}(s\chi ^{n})}{\delta \chi ^{m}}%
+=s^{2}\chi ^{n}\text{ .}  \label{15.9.4}
+\end{equation}%
+$\chi _{n}^{\ddag }$是外场, 在用$S[\chi ,\chi
+^{\ddag }]$计算$S$-矩阵之前, 我们必须要赋予它合适的值. 由于这个原因, 我们引入一个任意的费米泛函$\Psi \lbrack \chi ]$, 它的鬼%
+数为$-1$, 并令\footnote{在这里没有必要区分左微分和右微分, 这是因为$\chi ^{n}$%
+或$\delta \Psi /\delta \chi ^{n}$中有一个必然是玻色的.}%
+\begin{equation}
+\chi _{n}^{\ddag }=\frac{\delta \Psi \lbrack \chi ]}{\delta \chi ^{n}}\text{
+.}  \label{15.9.5}
+\end{equation}%
+这样, 方程(\ref{15.9.1})就变成\begin{equation}
+s[\phi ,\delta \Psi /\delta \chi ]=I[\phi ]+(s\chi ^{n})\delta \Psi \left[
+\chi \right] /\delta \chi ^{n}=I[\phi ]+s\Psi \lbrack \chi ]\text{ .}
+\label{15.9.6}
+\end{equation}%
+与方程(\ref{15.8.14})相比较表明它与规范固定泛函$I_{%
+\mathrm{NEW}}[\chi ]$是相同的. 因此, 
+利用与上一节相同的讨论可以得出这样的结论: 物理矩阵元不被$%
+\Psi $的微小变化所影响.
+Faddee-Popov-De Witt方法构建的作用量对应于选择$\Psi =-\omega ^{\ast
+A}f_{A} $, 这意味着$\phi _{r}^{\ddag }=\omega ^{\ast
+A}\delta f_{A}/\delta \phi ^{r}$, $\omega _{C}^{\ddag }=0$, 以及$%
+\omega _{A}^{\ast \ddag }=-f_{A}$.
+
+迄今为止, 并没有建立任何新的东西. 第一个新观点是, 通过令$S[\chi ,\chi
+^{\ddag }]$是反场$\chi _{n}^{\ddag }$的非线性泛函, 主方程(\ref{15.9.2})%
+可以用于更广泛的理论. (对于可约理论, 就想上一节所讨论的那样, 
+对于$\chi ^{n}$中的鬼场, 我们要引入鬼场的鬼场, 以及相应的反场.) 像之前一样, 我们取$\chi _{n}^{\ddag }$的%
+统计为与$\chi ^{n}$相反的统计, 并令它的鬼数等于$%
+-gh(\chi ^{n})-1$, 并且我们要求$S[\chi
+,\chi ^{\ddag }]$是鬼数为零的玻色算符. 因为$\omega ^{\ast A}$和$h_{A}$%
+有着{\kai{线性}}BRST变换, 所以影响其它$\chi ^{n}$的复杂性不会影响$\omega ^{\ast A}$和$h_{A}$(在这%
+一点上, 可参看16.4节), 所以它们和它们的反场进入作用量$S[\chi ,\chi ^{\ddag }]$的方式与它们进入方程(\ref%
+{15.9.1})的方式相同. 即,%
+\begin{equation}
+S=S_{\min }[\phi ,\omega ,\phi ^{\ddag },\omega ^{\ddag }]-h^{A}\omega
+_{A}^{\ast \ddag }\text{ ,}  \label{15.9.7}
+\end{equation}%
+其中$\phi _{r}^{\ddag }$, $\omega _{A}^{\ddag }$和$\omega
+_{A}^{\ast \ddag }$是$\phi ^{r}$, $\omega ^{A}$和$\omega ^{\ast
+A}$的反场, 它们的鬼数分别是$-1$, $-2$和$0$. (\ref{15.9.7})中的最后一项对主方程没有任何影响, 所以$S_{\min }$凭借%
+自身满足主方程.\footnote{场$%
+\phi ^{r}$, $\omega ^{A}$, $\phi _{r}^{\ddag }$, $\omega _{A}^{\ddag }$%
+有时被称为{\kai{最小变量}}(\textit{minimal
+variables}), 而像$\omega ^{\ast A}$和$h_{A}$这样的场, 它们和它们的反场以双线性型的方式进入作用量, 就像方%
+程(\ref{15.9.7})中那样, 它们被称为{\kai{平庸对}}(\textit{trivial pairs}).}
+
+因为$S_{\min }$的鬼数为零, 它的反场级数展开必须采取如下的形式\begin{eqnarray}
+S_{\min } &=&I[\phi ]+\omega ^{A}f_{A}^{r}[\phi ]\phi _{r}^{\ddag }+\frac{1}{%
+2}\omega ^{A}\omega ^{B}f^{C}{}_{AB}[\phi ]\omega _{C}^{\ddag }  \nonumber \\
+&&+\frac{1}{2}\omega ^{A}\omega ^{B}f^{rs}{}_{AB}[\phi ]\phi _{r}^{\ddag
+}\phi _{s}^{\ddag }+\omega ^{A}\omega ^{B}\omega ^{C}f^{rD}{}_{ABC}[\phi
+]\phi _{r}^{\ddag }\omega _{D}^{\ddag }  \nonumber \\
+&&+\frac{1}{2}\omega ^{A}\omega ^{B}\omega ^{C}\omega
+^{D}f^{EF}{}_{ABCD}[\phi ]\omega _{E}^{\ddag }\omega _{F}^{\ddag }+\cdots 
+\text{ .}  \label{15.9.8}
+\end{eqnarray}%
+主方程(\ref{15.9.2})中反场的零阶项(因而也就是$\omega
+^{A} $的一阶项)给出\begin{equation}
+0=f_{A}^{r}[\phi ]\frac{\delta I[\phi ]}{\delta \phi ^{r}}\text{ ,}
+\label{15.9.9}
+\end{equation}%
+这正是说$I[\phi ]$在如下变换下不变\begin{equation}
+\phi ^{r}\rightarrow \phi ^{r}+\epsilon ^{A}f_{A}^{r}[\phi ]\text{ ,}
+\label{15.9.10}
+\end{equation}%
+其中$\epsilon ^{A}$是任意的无限小量. 主方程中右正比于$\phi _{s}^{\ddag }$并左正比于$%
+\omega ^{A}\omega ^{B}$的项给出\begin{eqnarray}
+0 &=&f_{A}^{r}[\phi ]\frac{\delta f_{B}^{s}[\phi ]}{\delta \phi ^{r}}%
+-f_{B}^{r}[\phi ]\frac{\delta f_{A}^{s}[\phi ]}{\delta \phi ^{r}}%
++f^{C}{}_{AB}[\phi ]f_{C}^{s}[\phi ]  \nonumber \\
+&&+\frac{\delta I[\phi ]}{\delta \phi ^{r}}f_{AB}^{rs}[\phi ]\text{ ,}
+\label{15.9.11}
+\end{eqnarray}%
+当场方程$\delta I/\delta \phi =0$被满足时, 这变成了变换(\ref%
+{15.9.10})的对易关系(结构常数为$f^{C}{}_{AB}[\phi ]$). 主方程中反场的其它线性项左正比于$\omega ^{A}\omega ^{B}\omega ^{C}$右正%
+比于$\omega _{D}^{\ddag }$, 它给出\begin{equation}
+0=f_{[A}^{r}[\phi ]\frac{\delta f^{D}{}_{BC]}[\phi ]}{\delta \phi ^{r}}%
+-f^{E}{}_{[AB}[\phi ]f^{D}{}_{C]E}[\phi ]+f^{rD}{}_{ABC}[\phi ]\frac{\delta
+I[\phi ]}{\delta \phi ^{r}}\text{ ,}  \label{15.9.12}
+\end{equation}%
+其中方括号代表对括号内的指标$A$, $B$和$C$做反对称化. 当场方程成立时, 这变成广义Jacobi等式(\ref%
+{15.8.12}). 对于对称条件(\ref{15.9.9})(%
+假定$f_{A}^{r}$规范对称性的完备基)的相容性, 方程(%
+\ref{15.9.11})是必须的, 而为了对易关系(\ref{15.9.11})的相容性, 方程(\ref{15.9.12})是必须的. 
+注意到方程(\ref{15.9.11})和(\ref{15.9.12}%
+)中正比于$\delta I[\phi ]/\delta \chi $的那些项, 它们来源于$S_{\min }$%
+中反场的二次项, 由于它们正比于$\delta I[\phi ]/\delta \chi $, 
+所以当场方程成立时, 
+它们为零, 并且在这一意义下, 它们是开对称性代数的特征. 主方程中反场的二阶项或更高阶项包含了$S_{\min }$中反场的三阶项和/或更高%
+阶项, 这提供了方程(\ref%
+{15.9.11})和(\ref{15.9.12})的相容性条件, 相容性条件的相容性条件, 等等. Batalin-Vilkovisky形%
+式理论的优点之一正是所有这些相容性条件全部并入一个主方程中.
+
+主方程可以重新解释为$S$在广义BRST变换下不变的陈述. 为了看到这一点, 并为了将来做准备, 引入一种称为{\kai{反括号}}%
+(antibracket)的形式工具将是非常有帮助的. 现在回到我们上一节的记号, 两个一般泛函$F[\chi ,\chi ^{\ddag }]$和$%
+G[\chi ,\chi ^{\ddag }]$的反括号定义为\begin{equation}
+(F,G)\equiv \frac{\delta _{R}F}{\delta \chi ^{n}}\frac{\delta _{L}G}{\delta
+\chi _{n}^{\ddag }}-\frac{\delta _{R}F}{\delta \chi _{n}^{\ddag }}\frac{%
+\delta _{L}G}{\delta \chi ^{n}}\text{ .}  \label{15.9.13}
+\end{equation}%
+注意到, 像$S$这样的玻色泛函, 它对玻色变量或费米变量的右泛函导数和左泛函导数分别等于彼此或等于彼此的倒数. 既然$\chi _{n}^{\ddag }$和$\chi
+^{n}$总是一个玻色的而另一个是费米的, 由此得出, 对于反括号$(S,S)$, 如果我们逆转左微分和右微分, 方程(\ref{15.9.13})右边第%
+二项会改变符号\[
+\frac{\delta _{R}S}{\delta \chi _{n}^{\ddag }}\frac{\delta _{L}S}{\delta
+\chi ^{n}}=-\frac{\delta _{L}S}{\delta \chi _{n}^{\ddag }}\frac{\delta _{R}S%
+}{\delta \chi ^{n}}=-\frac{\delta _{R}S}{\delta \chi ^{n}}\frac{\delta _{L}}{%
+\delta \chi _{n}^{\ddag }}\text{ .} 
+\]%
+(最后一步之所以成立是因为, 这里有一个因子是玻色的, 进而它们的次序是无关紧要的.) 
+我们看到, 对于$(S,S)$, 方程(%
+\ref{15.9.13})右边第二项是第一项的倒数. 因此, 主方程可以写成$S$与其自身的反括号为零的要求:%
+\begin{equation}
+(S,S)=0\text{ .}  \label{15.9.14}
+\end{equation}%
+这是不平庸的要求, 因为反括号有一般的对称性质\begin{equation}
+(F,G)=\pm (G,F)\text{ ,}  \label{15.9.15}
+\end{equation}%
+其中, 当$F$和$G$都是玻色时, 符号取$+1$, 否则取$-1$. 
+特别地, 如果$F$是费米的, $(F,F)$自动为零, 但如果$F$%
+是玻色的, 就不会这样.
+
+广义BRST变换定义为\begin{equation}
+\hat{\delta}_{\theta }\chi ^{n}=\theta \frac{\delta _{R}S}{\delta \chi
+_{n}^{\ddag }}=-\theta (S,\chi ^{n})\text{ ,}  \label{15.9.16}
+\end{equation}%
+\begin{equation}
+\hat{\delta}_{\theta }\chi _{n}^{\ddag }=-\theta \frac{\delta _{R}S}{\delta
+\chi ^{n}}=-\theta (S,\chi _{n}^{\ddag })\text{ .}  \label{15.9.17}
+\end{equation}%
+其中$\theta $是无限小的费米参量. (当$S$的形式为(\ref%
+{15.9.1})时, $\chi $的变换与原始BRST变换$\hat{\delta}_{\theta }\chi ^{n}=\theta s\chi ^{n}$%
+相同.) 为了计算这一变换在一般泛函上的效果, 我们注意到反括号像导数一样作用, 也就是说\begin{equation}
+(F,GH)=(F,G)H\pm G(F,H)\text{ ,}  \label{15.9.18}
+\end{equation}%
+其中, 如果$G$是费米的而$F$是玻色的, 那么符号取$-1$, 否则取$+1$. 如果$G$和$H$是$%
+\chi $和$\chi ^{\ddag }$的任意泛函并满足$\hat{\delta}_{\theta }G=-\theta (S,G)$和$\hat{%
+\delta}_{\theta }H=-\theta (S,H)$, 那么\[
+\hat{\delta}_{\theta }(GH)=-\theta (S,G)H-G\theta (S,H)=-\theta \lbrack
+(S,G)H\pm G(S,H)]\text{ ,} 
+\]%
+其中, 根据$G$是玻色的或费米的, 符号分别取$+$或$-$. 令方程(\ref{15.9.18})中的$F$等于玻色泛函$S$, 那么我们%
+就看到\[
+\hat{\delta}_{\theta }(GH)=-\theta (S,GH)\text{ .} 
+\]%
+再加上方程(\ref{15.9.16})和(\ref{15.9.17}%
+), 这表明, 对于任意的泛函$F$, 如果它能变形成场与反场的乘积之和, 那么\begin{equation}
+\hat{\delta}_{\theta }F=-\theta (S,F)\text{ .}  \label{15.9.19}
+\end{equation}%
+主方程(\ref{15.9.14})可以解释为如下的陈述, 这些广义BRST变换使得$S$不变\begin{equation}
+\hat{\delta}_{\theta }S=-\theta (S,S)=0\text{ .}  \label{15.9.20}
+\end{equation}%
+就像原始的BRST变换, 这一对称变换是幂零的. 
+为了看到这一点, 我们使用反括号的Jacobi恒等式\begin{equation}
+\pm (F,(G,H))+\text{轮换}=0\text{ ,}  \label{15.9.21}
+\end{equation}%
+其中, 如果$F$和$H$是玻色的, 第一项的符号为$-$, 
+否则为$+$, 对其它两个$F,$ $G$%
+和$H$的轮换取相应的符号. 取$F=G=S$, 方程(\ref{15.9.21})变成\[
+0=\mp (S,(S,H))\mp (H,(S,S))-(S,(H,S))=\mp 2(S,(S,H))\mp (H,S,S)\text{ ,} 
+\]%
+其中, 如果$H$是玻色的, 
+符号取$-$, 如果$H$是费米的, 符号取$+$. 这样, 主方程(\ref{15.9.14})就给出了幂零条件\begin{equation}
+(S,(S,H))=0\text{ .}  \label{15.9.22}
+\end{equation}
+
+由于这一对称性, 主方程的解是不唯一的. 例如, 方程(\ref{15.9.22})表明对于任何给定的解$S$, 我们能够发现另一解, 该解由%
+如下的无限小变换给出\begin{equation}
+S^{\prime }=S+(\delta F,S)\text{ ,}  \label{15.9.23}
+\end{equation}%
+其中$\delta F$是$\chi $和$\chi ^{\ddag }$的无限小泛函, 为了使$S^{\prime
+}$是玻色的且鬼数为零, $%
+\delta F$必须是费米的且鬼数为$-1$, 除这些要求外, 
+它是任意的. 特别地, 取$%
+\delta F$为费米泛函$\epsilon \Psi $, 使它仅是$\chi ^{n}$的泛函, 这样就给出\begin{equation}
+S^{\prime }[\chi ,\chi ^{\ddag }]=S[\chi ,\chi ^{\ddag }]+\epsilon \frac{%
+\delta \Psi \lbrack \chi ]}{\delta \chi ^{n}}\frac{\delta _{R}S}{\delta \chi
+_{n}^{\ddag }}=S\left[ \chi ,\chi ^{\ddag }+\epsilon \frac{\delta \Psi }{%
+\delta \chi }\right] \text{ .}  \label{15.9.24}
+\end{equation}%
+这些无限小变换可以被平庸地积掉, 进而表明, 如果我们将反场偏移至新的变量$\chi _{n}^{\ddag \prime
+}\equiv \chi _{n}^{\ddag }-\delta \Psi /\delta \chi ^{n}$, 主方程依旧是满足的.
+
+变换(\ref{15.9.23})是通常所说的正则变换的一个特殊情况, 在这里为了与第7章的正则变换相区分, 称其为\textquotedblleft 反正则%
+变换\textquotedblright . 反正则变换是场和反场的任意变换, 它可以是有限小或无限小的, 但它保持如下的基本反括号关系不变:%
+\begin{equation}
+(\chi ^{n},\chi _{m}^{\ddag })=\delta _{m}^{n}\text{ , \ \ \ \ \ \ \ \ }%
+(\chi ^{n},\chi ^{m})=(\chi _{n}^{\ddag },\chi _{m}^{\ddag })=0\text{ .}
+\label{15.9.25}
+\end{equation}%
+例如, 考察由无限小费米算符$\delta F$生成的无限小反正则变换, 在该变换下, 任何的玻色泛函或费米泛函$G$变换到\begin{equation}
+G\rightarrow G^{\prime }=G+(\delta F,G)\text{ .}  \label{15.9.26}
+\end{equation}%
+可以很容易证明这确实不改变基本反括号(\ref%
+{15.9.25}). 由于这一原因, 注意到两个泛函$G$和$H$的反括号变换到$(G^{\prime },H^{\prime })$, 
+它到一阶无限小是\[
+(G^{\prime },H^{\prime })=(G,H)+((\delta F,G),H)+(G,(\delta F,H))\text{ .} 
+\]%
+利用Jacobi恒等式(\ref{15.9.21}), 这变成\begin{equation}
+(G^{\prime },H^{\prime })=(G,H)\pm (\delta F,(G,H))\text{ ,}  \label{15.9.27}
+\end{equation}%
+其中, 如果$G$和$H$都是玻色的, 符号取$+$, 否则取$-$. 
+特别地, 如果$(G,H)$是c-数, 那么它在反正则变换下不变. (这是证明变换(\ref%
+{15.9.23})保持主方程不变的另一方法.) 场和反场的反括号(\ref{15.9.25})是c-数, 所以对于变换后的场和反场, 它们的反括号必须%
+与之前有同样的c-数.
+
+为了计算$S$-矩阵, 我们必须要赋予反场确定的值. 正如闭规范代数的简单情况, 在那里$S$是; 即, 我们利用\textquotedblleft 规%
+范固定\textquotedblright 作用量\begin{equation}
+I_{\Psi }[\chi ]=S\left[ \chi ,\frac{\delta \Psi \lbrack \chi ]}{\delta \chi 
+}\right]  \label{15.9.28}
+\end{equation}%
+计算$S$-矩阵, 其中$\Psi \lbrack \chi ]$%
+是鬼数为$-1$的费米泛函. 根据方程(\ref{15.9.24})后面的评述, 这相当于取正则变换后的反场$\chi ^{\ddag ^{\prime }}$%
+为零.
+
+当BRST变换仅作用在场$\chi
+^{n}$上时:%
+\begin{equation}
+\delta _{\theta }\chi ^{n}=\theta s\chi _{n}\text{ , \ \ \  其中
+\ \ \ }s\chi ^{n}=\left( \frac{\delta _{R}S[\chi ,\chi ^{\ddag }]}{\delta
+\chi _{n}^{\ddag }}\right) _{\chi ^{\ddag }=\delta \Psi /\delta \chi }\text{
+,}  \label{15.9.29}
+\end{equation}%
+在这一变换下, 规范固定作用量不变. 为了验证这点, 注意到\begin{eqnarray*}
+sI_{\Psi }[\chi ] &=&\left( \frac{\delta _{R}S[\chi ,\chi ^{\ddag }]}{\delta
+\chi _{n}^{\ddag }}\frac{\delta _{L}S[\chi ,\chi ^{\ddag }]}{\delta \chi ^{n}%
+}\right) _{\chi ^{\ddag }=\delta \Psi /\delta \chi } \\
+&&+\left( \frac{\delta _{R}S[\chi ,\chi ^{\ddag }]}{\delta \chi _{m}^{\ddag }%
+}\frac{\delta _{L}^{2}\Psi \lbrack \chi ]}{\delta \chi ^{m}\delta \chi ^{n}}%
+\frac{\delta _{L}S[\chi ,\chi ^{\ddag }]}{\delta \chi _{n}^{\ddag }}\right)
+_{\chi ^{\ddag }=\delta \Psi /\delta \chi }\text{ .}
+\end{eqnarray*}%
+右边的第一项是主方程的结果, 因而为零, 而第二项由于被加数关于$m$和$n$是反对称\footnote{若$%
+\chi ^{n}$和$\chi ^{m}$都是玻色的, 
+这是因为$\delta S/\delta \chi ^{n}$和$\delta
+S/\delta \chi ^{m}$反对易. 若$\chi ^{n}$和$%
+\chi ^{m}$中一个是玻色的而另一个是费米的, 这是因为$S$对费米的$\chi $的右导数和左导数符号相反. 若$\chi ^{n}$和$\chi ^{m}$都是费%
+米的, 由于对于这些项, $%
+\delta _{L}^{2}\Psi /\delta \chi ^{m}\delta \chi ^{n}$是反对称的, 所以该项是反对称的.}的, 所以为零.
+
+对于闭代数且形式为(\ref%
+{15.9.1})的$S$, 变换(\ref{15.9.29})是原始的BRST变换$\delta _{\theta }\chi ^{n}=\theta s\chi ^{n}$. 
+但对于一般的开代数, 
+变换(\ref{15.9.29})并不与原始BRST%
+变换相同, 并且, 一般而言, 除非场方程被满足, 
+它甚至不是幂零的. 诚然, 从主方程中偏移场$%
+\chi _{n}^{\ddag ^{\prime }}=\chi _{n}^{\ddag }-\delta \Psi \lbrack \chi
+]/\delta \chi ^{n}$的一阶项中, 我们发现 
+\begin{equation}
+s^{2}\chi ^{m}=\mp \left( \frac{\delta _{L}}{\delta \chi _{m}^{\ddag }}\frac{%
+\delta _{R}}{\delta \chi _{n}^{\ddag }}I[\chi ,\chi ^{\ddag }]\right) _{\chi
+^{\ddag }=\delta \Psi /\delta \chi }\frac{\delta I_{\Psi }[\chi ]}{\delta
+\chi ^{n}}\text{ ,}  \label{15.9.30}
+\end{equation}%
+其中, 根据$\chi ^{m}$是玻色的还是费米的, 符号反别是$-$和$+$. 再一次, 我们看到开代数对场方程特征的相关性与$S$中反场%
+的二次项相联系.
+
+直到现在, 我们所考察的仅是基于开规范代数或闭规范代数的经典理论的公式化. 现在, 
+我们必须考虑如何在这种理论中做量子力学计算. 物理矩阵元可以通过含有权重为$\exp (\mi %
+I_{\Psi }[\chi ])$的泛函积分算出, 
+其中, 就像前面所解释的那样, $I_{\Psi }[\chi ]$是通过令$%
+\chi _{n}^{\ddag }=\delta \Psi \lbrack \chi ]/\delta \chi ^{n}$从$%
+S[\chi ,\chi ^{\ddag }]$中获得的, 换句话说, 是通过令$\chi _{n}^{\ddag ^{\prime
+}}=0$获得的. 我们希望计算$\Psi \lbrack \chi ]$的变化在这些矩阵元上的效应. 首先考察真空-真空期望值\begin{equation}
+Z_{\Psi }=\int \left[ \prod \dif\chi \right] \exp (\mi I_{\Psi }[\chi ])%
+\text{ .}  \label{15.9.31}
+\end{equation}%
+在$\Psi \lbrack \chi ]$的偏移$\delta \Psi \lbrack
+\chi ]$下, 它的变化是\begin{equation}
+\delta Z=\mi\int \left[ \prod \dif\chi \right] \exp (\mi I_{\Psi }[\chi
+])\left( \frac{\delta _{R}S[\chi ,\chi ^{\ddag }]}{\delta \chi _{n}^{\ddag }}%
+\right) _{\chi ^{\ddag }=\delta \Psi /\delta \chi }\left( \frac{\delta
+(\delta \Psi \lbrack \chi ])}{\delta \chi ^{n}}\right) \text{ .}
+\label{15.9.32}
+\end{equation}%
+在场空间中分部积分, 
+这变成\begin{eqnarray}
+\delta Z &=&\int \left[ \prod \dif\chi \right] \exp (\mi I_{\Psi }[\chi ]) 
+\nonumber \\
+&&\times \left\{ \frac{\delta _{R}S[\chi ,\chi ^{\ddag }]}{\delta \chi
+_{n}^{\ddag }}\frac{\delta _{L}I_{\Psi }[\chi ]}{\delta \chi ^{n}}-\mi\Delta
+S[\chi ,\chi ^{\ddag }]\right\} _{\chi ^{\ddag }=\delta \Psi /\delta \chi
+}\delta \Psi \lbrack \chi ]\text{ ,}  \label{15.9.33}
+\end{eqnarray}%
+其中\begin{equation}
+\Delta \equiv \frac{\delta _{R}}{\delta \chi _{n}^{\ddag }}\frac{\delta _{L}%
+}{\delta \chi ^{n}}\text{ .}  \label{15.9.34}
+\end{equation}
+
+假定量子主方程(\ref{15.9.35})%
+是满足的, $\Psi $的变化$\delta
+\Psi $所引起的算符$\mathcal{O}[\chi ]$%
+的真空期望值的变化是\begin{equation}
+\delta \langle \mathcal{O}\rangle =\frac{-\mi}{Z_{\Psi }}\int \left[ \prod %
+\dif\chi \right] \exp \left( \mi I_{\Psi }[\chi ]\right) \frac{\delta _{R}%
+\mathcal{O}}{\delta \chi ^{n}}\left( \frac{\delta _{R}S[\chi ,\chi ^{\ddag }]%
+}{\delta \chi _{n}^{\ddag }}\right) _{\chi _{n}^{\ddag }=\delta \Psi /\delta
+\chi }\delta \Psi \lbrack \chi ]\text{ .}  \label{15.9.36}
+\end{equation}%
+在方程(\ref{15.9.36})的被积函数中, 指数的系数正是$s%
+\mathcal{O[\chi ]}$. 我们看到, 对于在广义BRST变换(\ref{15.9.16})---(\ref{15.9.17})%
+下不变的算符, 它们的真空期望值不被规范固定泛函$\Psi $的变化所影响. 对于两个或多个算符的真空期望值, 相对应的结果同样成立. 
+
+\end{document}

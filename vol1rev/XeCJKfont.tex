@@ -1,0 +1,118 @@
+% !TeX root = Main.tex
+% !TeX encoding = utf-8
+% !TEX spellcheck = en-us
+% !TeX program = xelatex
+
+
+%%%%%%%%%% 中文字体与字号
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage[boldfont,slantfont,CJKchecksingle,
+CJKglue = {\hskip .8pt plus 0.08\baselineskip}]{xeCJK}
+
+\usepackage{xcolor}
+\punctstyle{quanjiao}
+\defaultfontfeatures{Mapping=tex-text,Ligatures = TeX}
+
+\setCJKmainfont[BoldFont={方正黑体_GBK},ItalicFont={方正楷体_GBK}]{方正书宋_GBK}
+\setCJKsansfont{方正细黑一_GBK}
+\setCJKfamilyfont{fzsong}{方正书宋_GBK}
+\setCJKfamilyfont{fzsongi}{[FZSYK.TTF]}
+\setCJKfamilyfont{fzhei}{方正黑体_GBK}
+\setCJKfamilyfont{fzkai}{方正楷体_GBK}
+\setCJKfamilyfont{fzfs}{方正仿宋_GBK}
+\setCJKfamilyfont{fzli}{[FZLSK.ttf]}
+\setCJKfamilyfont{fzyou}{[FZY1K.TTF]}
+\setCJKfamilyfont{fzdbs}{[FZDBSK.ttf]}
+\setCJKfamilyfont{fzxh1}{[FZXH1K.TTF]}
+\setCJKfamilyfont{fzxbs}{[FZXBSK.TTF]}
+\setCJKfamilyfont{fzzdx}{[FZZDX.TTF]}
+\setCJKfamilyfont{fztimes}{[cmunrm.otf]}
+
+\newcommand*{\SONG}{\CJKfamily{fzsong}}     % 宋体
+\newcommand*{\SONGI}{\CJKfamily{fzsongi}}   % 宋一
+\newcommand*{\HEI}{\CJKfamily{fzhei}}       % 黑体
+\newcommand*{\KAI}{\CJKfamily{fzkai}}       % 楷书
+\newcommand*{\FS}{\CJKfamily{fzfs}}         % 仿宋
+\newcommand*{\LISHU}{\CJKfamily{fzli}}      % 隶书
+\newcommand*{\YOU}{\CJKfamily{fzyou}}       % 细圆
+\newcommand*{\DBS}{\CJKfamily{fzdbs}}       % 大标宋
+\newcommand*{\XHI}{\CJKfamily{fzxh1}}       % 细黑
+\newcommand*{\XBS}{\CJKfamily{fzxbs}}       % 小标宋
+%\newcommand*{\ZDX}{\CJKfamily{fzzdx}}       % 中等线
+\newcommand*{\FZTIMES}{\CJKfamily{fztimes}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setCJKfamilyfont{caiyun}{STCaiyun}
+\newcommand*{\caiyun}{\CJKfamily{caiyun}}  %华文彩云
+\setCJKfamilyfont{hupo}{STHupo}
+\newcommand*{\hupo}{\CJKfamily{hupo}}      %华文琥珀
+\setCJKfamilyfont{you}{YouYuan}
+\newcommand*{\you}{\CJKfamily{you}} %幼圆
+\setCJKfamilyfont{ximing}{PMingLiU}
+\newcommand*{\ximing}{\CJKfamily{ximing}}  %新細明
+\setCJKfamilyfont{xinwei}{STXinwei}
+\newcommand*{\xinwei}{\CJKfamily{xinwei}}  %华文新魏
+\setCJKfamilyfont{xingkai}{STXingkai}
+\newcommand*{\xingkai}{\CJKfamily{xingkai}}  %华文行楷
+\setCJKfamilyfont{zhongsong}{STZhongsong}
+\newcommand*{\zhongsong}{\CJKfamily{zhongsong}}  %华文中宋
+\setCJKfamilyfont{song}{NSimSun}
+\newcommand*{\song}{\CJKfamily{song}}  %宋体
+\setCJKfamilyfont{hei}{SimHei}
+\newcommand*{\hei}{\CJKfamily{hei}}  %黑体
+\setCJKfamilyfont{li}{LiSu}
+\newcommand*{\li}{\CJKfamily{li}}  %隶书
+\setCJKfamilyfont{kai}{楷体}
+\newcommand*{\kai}{\CJKfamily{kai}}  %楷体_GB2312
+\setCJKfamilyfont{fs}{仿宋}
+\newcommand*{\fs}{\CJKfamily{fs}}  %仿宋x_GB2312
+\setCJKfamilyfont{liuti}{HAKUYOLiuTi3500}
+\newcommand*{\liuti}{\CJKfamily{liuti}}  %柳体
+\setCJKfamilyfont{outi}{HAKUYOOTi3500}
+\newcommand*{\outi}{\CJKfamily{outi}}  %欧体
+\setCJKfamilyfont{xingshu}{hakuyoxingshu7000}
+\newcommand*{\xingshu}{\CJKfamily{outi}}  %博洋行书
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \setCJKfamilyfont{zhuan}{FZzhuan}
+ \newcommand*{\zhuan}{\CJKfamily{zhuan}}  %小篆
+  \setCJKfamilyfont{jinglei}{FZjinglei}
+ \newcommand*{\jinglei}{\CJKfamily{jinglei}}  %徐静蕾体
+  \setCJKfamilyfont{yanti}{STFyanti}
+ \newcommand*{\yanti}{\CJKfamily{yanti}}  %颜体
+  \setCJKfamilyfont{tiejin}{FZtiejin}
+ \newcommand*{\tiejin}{\CJKfamily{tiejin}}  %铁筋隶书
+  \setCJKfamilyfont{shoujin}{FZshoujin}
+ \newcommand*{\shoujin}{\CJKfamily{shoujin}}  %瘦金体
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \setCJKfamilyfont{HYzhuan}{HYZhuan}
+ \newcommand*{\HYzhuan}{\CJKfamily{HYzhuan}}  %汉仪粗篆
+ \setCJKfamilyfont{qigong}{QiGong}
+ \newcommand*{\qigong}{\CJKfamily{qigong}}  %启功字体
+ \setCJKfamilyfont{yueheixi}{YueHeiXi}
+ \newcommand*{\yueheixi}{\CJKfamily{yueheixi}}  %悦黑细
+
+%-------- 中文字号 （3个带*号的命名不统一）
+\newcommand{\HZdatehao}{\fontsize{63bp}{\baselineskip}\selectfont}    %大特 = 五号的六倍
+\newcommand{\HZzhongtehao}{\fontsize{56bp}{\baselineskip}\selectfont} %中特 = 四号的四倍
+\newcommand{\HZtehao}{\fontsize{48bp}{\baselineskip}\selectfont}      %特号 = 小四的四倍*
+\newcommand{\HZxiaotehao}{\fontsize{45bp}{\baselineskip}\selectfont}  %小特 = 小五的五倍*
+\newcommand{\HZchuhao}{\fontsize{42bp}{\baselineskip}\selectfont}     %初号 = 五号的四倍
+\newcommand{\HZxiaochuhao}{\fontsize{36bp}{\baselineskip}\selectfont} %小初 = 小五的四倍
+\newcommand{\HZdayihao}{\fontsize{30bp}{\baselineskip}\selectfont}    %大一 = 七号的五倍*
+\newcommand{\HZyihao}{\fontsize{28bp}{\baselineskip}\selectfont}      %一号 = 四号的二倍
+\newcommand{\HZxiaoyihao}{\fontsize{24bp}{\baselineskip}\selectfont}  %小一 = 小四的二倍
+\newcommand{\HZerhao}{\fontsize{21bp}{\baselineskip}\selectfont}      %二号 = 五号的二倍
+\newcommand{\HZxiaoerhao}{\fontsize{18bp}{\baselineskip}\selectfont}  %小二 = 小五的二倍
+\newcommand{\HZsanhao}{\fontsize{15.75bp}{\baselineskip}\selectfont}  %三号 = 六号的二倍
+\newcommand{\HZsihao}{\fontsize{14bp}{\baselineskip}\selectfont}      %四号
+\newcommand{\HZxiaosihao}{\fontsize{12bp}{\baselineskip}\selectfont}  %小四 = 七号的二倍
+\newcommand{\HZwuhao}{\fontsize{10.5bp}{\baselineskip}\selectfont}    %五号
+\newcommand{\HZzihao}{\fontsize{10bp}{\baselineskip}\selectfont}      %10磅
+\newcommand{\HZxiaowuhao}{\fontsize{9bp}{\baselineskip}\selectfont}   %小五
+\newcommand{\HZliuhao}{\fontsize{7.875bp}{\baselineskip}\selectfont}  %六号
+\newcommand{\HZqihao}{\fontsize{6bp}{\baselineskip}\selectfont}       %七号
+
+
+
+\XeTeXlinebreaklocale "zh"             %這兩行一定要加, 中文才能自動換行
+\XeTeXlinebreakskip = 0pt plus 1pt     %這兩行一定要加, 中文才能自動換行

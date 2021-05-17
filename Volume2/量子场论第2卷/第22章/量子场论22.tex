@@ -1,0 +1,284 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Wednesday, January 04, 2017 20:28:44}
+%TCIDATA{LastRevised=Tuesday, March 28, 2017 21:14:16}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{ComputeDefs=
+%$c_{00}(s)=\frac{1}{2\pi ^{2}}\left\{ C_{1}\left[ \frac{1}{12}-\frac{1}{%
+%s(s-1)}-\frac{1}{(s+1)(s)}\right] \right\} $
+%$\psi $
+%}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{22.3}
+
+\begin{equation}
+\chi \equiv \left[ 
+\begin{array}{c}
+\frac{1}{2}(1+\gamma _{5})\psi  \\ 
+\frac{1}{2}[\beta \mathscr{C}(1-\gamma _{5})\psi ]^{\ast }%
+\end{array}%
+\right] =\left[ 
+\begin{array}{c}
+\frac{1}{2}(1+\gamma _{5})\psi  \\ 
+\frac{1}{2}(1+\gamma _{5})\beta \mathscr{C}\psi ^{\ast }%
+\end{array}%
+\right] \text{ ,}  \label{22.3.1}
+\end{equation}%
+\[
+\mathscr{C}\gamma _{\mu }^{\text{T}}\mathscr{C}^{-1}=-\gamma _{\mu }\text{ ,}
+\]%
+\begin{equation}
+\delta \psi =i\theta _{\alpha }\left[ \frac{1}{2}(1+\gamma _{5})t_{\alpha
+}^{L}+\frac{1}{2}(1-\gamma _{5})t_{\alpha }^{R}\right] \psi   \label{22.3.2}
+\end{equation}%
+\begin{equation}
+\delta \chi =i\epsilon _{\alpha }T_{\alpha }\chi \text{ ,}  \label{22.3.3}
+\end{equation}%
+其中\begin{equation}
+T_{\alpha }=\left[ 
+\begin{array}{cc}
+t_{\alpha }^{L} & 0 \\ 
+0 & -t_{\alpha }^{R\ast }%
+\end{array}%
+\right] =\left[ 
+\begin{array}{cc}
+t_{\alpha }^{L} & 0 \\ 
+0 & (t_{\alpha }^{R})^{\text{T}}%
+\end{array}%
+\right] \text{ .}  \label{22.3.4}
+\end{equation}%
+\begin{equation}
+\Gamma _{\alpha \beta \gamma }^{\mu \nu \rho }(x,y,z)\equiv \langle
+T\{j_{\alpha }^{\mu }(x),j_{\beta }^{\nu }(y),j_{\gamma }^{\rho
+}(x)\}\rangle _{\text{VAC}}\text{ ,}  \label{22.3.5}
+\end{equation}%
+\begin{equation}
+j_{\alpha }^{\mu }=-i\bar{\chi}T_{\alpha }\gamma ^{\mu }\chi \text{ .}
+\label{22.3.6}
+\end{equation}%
+\begin{eqnarray}
+\Gamma _{\alpha \beta \gamma }^{\mu \nu \rho }(x,y,z) &=&-iTr\left[
+S(x-y)T_{\beta }\gamma ^{\nu }P_{L}S(y-z)T_{\gamma }\gamma ^{\rho
+}P_{L}S(z-x)T_{\alpha }\gamma ^{\mu }P_{L}\right]   \nonumber \\
+&&-iTr\left[ S(x-z)T_{\gamma }\gamma ^{\rho }P_{L}S(z-y)T_{\beta }\gamma
+^{\nu }P_{L}S(y-x)T_{\alpha }\gamma ^{\mu }P_{L}\right] \text{ ,}
+\label{22.3.7}
+\end{eqnarray}%
+\begin{equation}
+P_{L}=\left( \frac{1+\gamma _{5}}{2}\right)   \label{22.3.8}
+\end{equation}%
+\begin{equation}
+S(x)=\frac{-i}{2\pi ^{4}}\int d^{4}p\left( \frac{-ip}{p^{2}-i\epsilon }%
+\right) e^{ip\cdot x}\text{ .}  \label{22.3.9}
+\end{equation}%
+\begin{eqnarray}
+\Gamma _{\alpha \beta \gamma }^{\mu \nu \rho }(x,y,z) &=&\frac{i}{(2\pi
+)^{12}}\int d^{4}k_{1}d^{4}k_{2}e^{-i(k_{1}+k_{2})\cdot x}e^{ik_{1}\cdot
+y}e^{ik_{2}\cdot z}\int d^{4}p  \nonumber \\
+&&\times \{tr\left[ \frac{\slashed{p}-\slashed{k}_{1}+\slashed{a}}{%
+(p-k_{1}+a)^{2}-i\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{a}}{%
+(p+a)^{2}-i\epsilon }\gamma ^{\rho }\frac{\slashed{p}+\slashed{k}_{2}+%
+\slashed{a}}{(p+k_{2}+a)^{2}-i\epsilon }\gamma ^{\mu }\frac{1+\gamma _{5}}{2}%
+\right]   \nonumber \\
+&&\times tr\left[ T_{\beta }T_{\gamma }T_{\alpha }\right]   \nonumber \\
+&&+tr\left[ \frac{\slashed{p}-\slashed{k}_{2}+\slashed{b}}{%
+(p-k_{2}+b)^{2}-i\epsilon }\gamma ^{\rho }\frac{\slashed{p}+\slashed{b}}{%
+(p+b)^{2}-i\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{k}_{1}+%
+\slashed{b}}{(p+k_{1}+b)^{2}-i\epsilon }\gamma ^{\mu }\frac{1+\gamma _{5}}{2}%
+\right]   \nonumber \\
+&&\times tr[T_{\gamma }T_{\beta }T_{\alpha }]\}\text{ ,}  \label{22.3.10}
+\end{eqnarray}%
+\[
+\slashed{k}_{1}+\slashed{k}_{2}=(\slashed{p}+\slashed{k}_{2}+\slashed{a})-(%
+\slashed{p}+\slashed{k}_{1}+\slashed{a})=(\slashed{p}-\slashed{k}_{1}+%
+\slashed{b})-(\slashed{p}-\slashed{k}_{2}+\slashed{b})
+\]%
+\begin{eqnarray}
+\frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma }^{\mu \nu
+\rho }(x,y,z) &=&\frac{1}{(2\pi )^{12}}\int
+d^{4}k_{1}d^{4}k_{2}e^{-i(k_{1}+k_{2})\cdot x}e^{ik_{1}\cdot
+y}e^{ik_{2}\cdot z}\int d^{4}p  \nonumber \\
+&&\times \{tr\left[ T_{\beta }T_{\gamma }T_{\alpha }\right] tr\left[ \frac{%
+\slashed{p}-\slashed{k}_{1}+\slashed{a}}{(p-k_{1}+a)^{2}-i\epsilon }\gamma
+^{\nu }\frac{\slashed{p}+\slashed{a}}{(p+a)^{2}-i\epsilon }\gamma ^{\rho }%
+\frac{1+\gamma _{5}}{2}\right]   \nonumber \\
+&&-tr\left[ T_{\beta }T_{\gamma }T_{\alpha }\right] tr\left[ \frac{%
+\slashed{p}+\slashed{a}}{(p+a)^{2}-i\epsilon }\gamma ^{\rho }\frac{%
+\slashed{p}+\slashed{k}_{2}+\slashed{a}}{(p+k_{2}+a)^{2}-i\epsilon }\gamma
+^{\nu }\frac{1+\gamma _{5}}{2}\right]   \nonumber \\
+&&+tr[T_{\gamma }T_{\beta }T_{\alpha }]tr\left[ \frac{\slashed{p}-\slashed{k}%
+_{2}+\slashed{b}}{(p-k_{2}+b)^{2}-i\epsilon }\gamma ^{\rho }\frac{\slashed{p}%
++\slashed{b}}{(p+b)^{2}-i\epsilon }\gamma ^{\nu }\frac{1+\gamma _{5}}{2}%
+\right]   \nonumber \\
+&&-tr[T_{\gamma }T_{\beta }T_{\alpha }]\left[ \frac{\slashed{p}+\slashed{b}}{%
+(p+b)^{2}-i\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{k}_{1}+%
+\slashed{b}}{(p+k_{1}+b)^{2}-i\epsilon }\gamma ^{\rho }\frac{1+\gamma _{5}}{2%
+}\right] \}  \label{22.3.11}
+\end{eqnarray}%
+\[
+tr\left[ T_{\beta }T_{\gamma }T_{\alpha }\right] =D_{\alpha \beta \gamma }+%
+\frac{1}{2}iNC_{\alpha \beta \gamma }
+\]%
+以及\[
+tr[T_{\gamma }T_{\beta }T_{\alpha }]=D_{\alpha \beta \gamma }-\frac{1}{2}%
+iNC_{\alpha \beta \gamma }\text{ ,}
+\]%
+\begin{equation}
+D_{\alpha \beta \gamma }=\frac{1}{2}tr[\{T_{\alpha },T_{\beta }\}T_{\gamma }]
+\label{22.3.12}
+\end{equation}%
+\[
+tr[T_{\alpha }T_{\beta }]=N\delta _{\alpha \beta }\text{ .}
+\]%
+\begin{eqnarray}
+\left[ \frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma
+}^{\mu \nu \rho }(x,y,z)\right] _{\text{anom}} &=&\frac{1}{(2\pi )^{12}}%
+D_{\alpha \beta \gamma }\int d^{4}k_{1}d^{4}k_{2}e^{-i(k_{1}+k_{2})\cdot
+x}e^{ik_{1}\cdot y}e^{ik_{2}\cdot z}  \nonumber \\
+&&\times \int d^{4}p\{tr\left[ \frac{\slashed{p}-\slashed{k}_{1}+\slashed{a}%
+}{(p-k_{1}+a)^{2}-i\epsilon }\gamma ^{\nu }\frac{\slashed{p}+\slashed{a}}{%
+(p+a)^{2}-i\epsilon }\gamma ^{\rho }\frac{1+\gamma _{5}}{2}\right]  
+\nonumber \\
+&&-tr\left[ \frac{\slashed{p}+\slashed{a}}{(p+a)^{2}-i\epsilon }\gamma
+^{\rho }\frac{\slashed{p}+\slashed{k}_{2}+\slashed{a}}{(p+k_{2}+a)^{2}-i%
+\epsilon }\gamma ^{\nu }\frac{1+\gamma _{5}}{2}\right]   \nonumber \\
+&&+tr\left[ \frac{\slashed{p}-\slashed{k}_{2}+\slashed{b}}{%
+(p-k_{2}+b)^{2}-i\epsilon }\gamma ^{\rho }\frac{\slashed{p}+\slashed{b}}{%
+(p+b)^{2}-i\epsilon }\gamma ^{\nu }\frac{1+\gamma _{5}}{2}\right]   \nonumber
+\\
+&&-tr\left[ \frac{\slashed{p}+\slashed{b}}{(p+b)^{2}-i\epsilon }\gamma ^{\nu
+}\frac{\slashed{p}+\slashed{k}_{1}+\slashed{b}}{(p+k_{1}+b)^{2}-i\epsilon }%
+\gamma ^{\rho }\frac{1+\gamma _{5}}{2}\right] \}\text{ .}  \label{22.3.14}
+\end{eqnarray}%
+\begin{eqnarray}
+\left[ \frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma
+}^{\mu \nu \rho }(x,y,z)\right] _{\text{anom}} &=&\frac{1}{(2\pi )^{12}}%
+D_{\alpha \beta \gamma }\int d^{4}k_{1}d^{4}k_{2}e^{-i(k_{1}+k_{2})\cdot
+x}e^{ik_{1}\cdot y}e^{ik_{2}\cdot z}  \nonumber \\
+&&\times \{tr\left[ \gamma ^{\kappa }\gamma ^{\nu }\gamma ^{\lambda }\gamma
+^{\rho }\frac{1+\gamma _{5}}{2}\right] I_{\kappa \lambda
+}(a-b-k_{1},b,b+k_{1})  \nonumber \\
+&&+tr\left[ \gamma ^{\kappa }\gamma ^{\rho }\gamma ^{\lambda }\gamma ^{\nu }%
+\frac{1+\gamma _{5}}{2}\right] I_{\kappa \lambda }(b-a-k_{2},a,a+k_{2})\}%
+\text{ ,}  \label{22.3.15}
+\end{eqnarray}%
+其中\begin{eqnarray}
+I_{\kappa \lambda }(k,c,d) &\equiv &\int d^{4}p\left[ f_{\kappa \lambda
+}(p+k,c,d)-f_{\kappa \lambda }(p,c,d)\right]   \label{22.3.16} \\
+f_{\kappa \lambda }(p,c,d) &\equiv &\frac{(p+c)_{\kappa }(p+d)_{\lambda }}{%
+[(p+c)^{2}-i\epsilon ][(p+d)^{2}-i\epsilon ]}\text{ .}  \label{22.3.17}
+\end{eqnarray}%
+\[
+f_{\kappa \lambda }(p+k,c,d)=\sum_{n=0}^{\infty }\frac{1}{n!}k^{\mu
+_{1}}\cdots k^{\mu _{n}}\frac{\partial ^{n}f_{\kappa \lambda }(p,c,d)}{%
+\partial p^{\mu _{1}}\cdots \partial p^{\mu _{n}}}\text{ .}
+\]%
+\begin{equation}
+I_{\kappa \lambda }(k,c,d)=k^{\mu }\int d^{4}p\frac{\partial f_{\kappa
+\lambda }(p,c,d)}{\partial p^{\mu }}+\frac{1}{2}k^{\mu }k^{\nu }\int d^{4}p%
+\frac{\partial ^{2}f_{\kappa \lambda }(p,c,d)}{\partial p^{\mu }\partial
+p^{\nu }}\text{ .}  \label{22.3.18}
+\end{equation}%
+\begin{equation}
+I_{\kappa \lambda }(k,c,d)=\frac{1}{6}i\pi ^{2}\left[ 2k_{\lambda }c_{\kappa
+}+2k_{\kappa }d_{\lambda }-k_{\lambda }d_{\kappa }-k_{\kappa }c_{\lambda
+}-\eta _{\kappa \lambda }k\cdot (k+c+d)\right] \text{ .}  \label{22.3.19}
+\end{equation}%
+\begin{eqnarray*}
+&&I_{\kappa \lambda }(a-b-k_{1},b,b+k_{1})+I_{\lambda \kappa
+}(a-b-k_{1},b,b+k_{1}) \\
+&&+I_{\kappa \lambda }(b-a-k_{2},a,a+k_{2})+I_{\lambda \kappa
+}(b-a-k_{2},a,a+k_{2})
+\end{eqnarray*}%
+\begin{equation}
+a=-b\text{ .}  \label{22.3.20}
+\end{equation}%
+\begin{equation}
+tr\left[ \gamma ^{\kappa }\gamma ^{\nu }\gamma ^{\lambda }\gamma ^{\rho
+}\gamma _{5}\right] =-4i\epsilon ^{\kappa \nu \lambda \rho }\text{ ,}
+\label{22.3.21}
+\end{equation}%
+\begin{eqnarray}
+\left[ \frac{\partial }{\partial x^{\mu }}\Gamma _{\alpha \beta \gamma
+}^{\mu \nu \rho }(x,y,z)\right] _{\text{anom}} &=&\frac{2}{(2\pi )^{12}}%
+D_{\alpha \beta \gamma }\int d^{4}k_{1}d^{4}k_{2}e^{-i(k_{1}+k_{2})\cdot x} 
+\nonumber \\
+&&\times e^{ik_{1}\cdot y}e^{ik_{2}\cdot z}\pi ^{2}\epsilon ^{\mu \nu
+\lambda \rho }a_{\kappa }(k_{1}+k_{2})_{\lambda }\text{ .}  \label{22.3.22}
+\end{eqnarray}%
+\[
+(k_{1}+k_{2})_{\mu }\left[ \Gamma _{\alpha \beta \gamma }^{\mu \nu \rho
+}(k_{1},k_{2})\right] _{\text{anom}}=\frac{i}{4\pi ^{2}}D_{\alpha \beta
+\gamma }\epsilon ^{\kappa \nu \lambda \rho }k_{1\kappa }k_{2\lambda }
+\]%
+所以\[
+A_{\alpha \beta \gamma }-B_{\alpha \beta \gamma }=\frac{i}{4\pi ^{2}}%
+D_{\alpha \beta \gamma }\text{ .}
+\]%
+\[
+A_{\alpha \beta \gamma }k_{1\sigma }+B_{\alpha \beta \gamma }k_{2\sigma
+}=-A_{\alpha \gamma \beta }k_{2\sigma }-B_{\alpha \gamma \beta }k_{1\sigma
+}=-A_{\gamma \alpha \beta }(-k_{1\sigma }-k_{2\sigma })-B_{\gamma \alpha
+\beta }k_{2\sigma }
+\]%
+\[
+A_{\alpha \beta \gamma }=-B_{\alpha \gamma \beta }=A_{\gamma \alpha \beta }%
+\text{ , \ \ }B_{\alpha \beta \gamma }=-A_{\alpha \gamma \beta }=A_{\gamma
+\alpha \beta }-B_{\gamma \alpha \beta }\text{ .}
+\]%
+\[
+A_{\alpha \beta \gamma }-B_{\alpha \beta \gamma }=A_{\alpha \gamma \beta
+}-B_{\alpha \gamma \beta }=B_{\gamma \alpha \beta }\text{ .}
+\]
+
+\section{22.7}
+
+\begin{eqnarray}
+\mathscr{T}\lbrack \eta ]G_{b}[y;A_{-t\xi }] &=&\int d^{4}x[\eta _{-t\xi
+}(x)]_{\gamma }\left( \mathscr{T}_{\gamma }^{A}(x)G_{b}[y;A]\right)
+_{A\rightarrow A_{-t\xi }}  \nonumber \\
+&=&\int d^{4}x[\eta _{-t\xi }(x)]_{a}\left( \mathscr{T}_{b}^{A}(y)G_{a}[x;A]%
+\right) _{A\rightarrow A_{-t\xi }}  \nonumber \\
+&&+iC_{\gamma ba}[\eta _{-t\xi }(y)]_{\gamma }G_{a}[y;A_{-t\xi }]\text{ .}
+\label{22.7.13}
+\end{eqnarray}
+
+\end{document}

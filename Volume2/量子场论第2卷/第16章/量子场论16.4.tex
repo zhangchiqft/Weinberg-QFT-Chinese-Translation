@@ -1,0 +1,189 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 936
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=936}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, May 17, 2016 20:24:23}
+%TCIDATA{LastRevised=Saturday, May 21, 2016 23:29:30}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\begin{document}
+
+
+\section{有效作用量的对称性}
+
+虽然不总是这样, 但在某些情况下, 作用量$I[\phi ]$%
+的对称性自动地也是有效作用量的$\Gamma \lbrack \phi ]$%
+的对称性. 例如, 在16.2节的例子中, 作用量(\ref{16.2.1})%
+在离散变换$\phi \rightarrow -\phi $下有一对称性. 因此, 从$Z[J]$%
+和$W[J]$的定义中可以知道, 它们在相对应的反射$J\rightarrow -J$下是偶的. 这样, 
+方程(\ref{16.1.5})表明$\phi _{-J}=-\phi _{J}$, 
+因此$J_{-\phi }=-J_{\phi }$, 所以方程(%
+\ref{16.1.6})表明$\Gamma \lbrack \phi ]$在$\phi
+\rightarrow -\phi $下是偶的. 这一结果被单圈结果(\ref{16.2.15})所证实. 对于(\ref{16.2.16})中的费%
+米圈贡献, 在$M(0)=0$的特殊情况下, 这一贡献也呈现出在$\phi \rightarrow -\phi $下的对称性, 这是因为, 在这一%
+情况下, 作用量在$\phi \rightarrow
+-\phi $和$\psi \rightarrow \gamma _{5}\psi $的组合变换下不变.
+
+除非我们能够证明附加于作用量的对称性也适用于有效作用量, 
+否则我们在建立理论的可重整性时会遇到问题. 例如, 在上面的例子中, 如果假定$I[\phi ]$对$\phi $%
+是偶的, 但$\Gamma \lbrack \phi ]$却不是, 那么$\Gamma $中正比于$\int \dif%
+^{4}x\phi $项和$\int \dif^{4}x\phi ^{3}$项的系数将会发散, 但作用量的对称性将不允许我们引入吸收这些无限%
+大的抵消项.
+
+在这一动机下, 我们现在转向一类重要的对称性, 这类对称性由如下的无限小变换生成\begin{equation}
+\chi ^{n}(x)\rightarrow \chi ^{n}(x)+\epsilon F^{n}[x;\chi ]\text{ ,}
+\label{16.4.1}
+\end{equation}%
+其中$F^{n}$是$x^{\mu }$的函数但以泛函的形式依赖于$%
+\chi ^{n}$. (例如, $F^{n}[x;\chi ]$可以是$\chi
+^{n}$以及$\chi ^{n}$在点$x$处导数的函数.) 我们现在使用符号$\chi ^{n}$而非$\phi ^{r}$来标记不同类型的场, 是为%
+了强调它们不仅包含普通的规范场和物质场(它们在下一章会被记为$\phi ^{r}(x)$), 而且包含出现在规范固定作用量中的所有其它场, 包括%
+鬼场. 我们再次指出: $\chi
+^{n}(x)$不一定是标量, 它可以是任意类型的场.
+
+我们假定作用量和测度均在对称变换(\ref{16.4.1})%
+下不变:%
+\begin{eqnarray}
+I[\chi +\epsilon F] &=&I[\chi ]\text{ ,}  \label{16.4.2} \\
+\prod_{n,x}\dif\left( \chi ^{n}(x)+\epsilon F[x;\chi ]\right) &=&\prod_{n,x}%
+\dif\chi ^{n}(x)\text{ .}  \label{16.4.3}
+\end{eqnarray}%
+(实际上, 仅乘积$(\prod_{n,x})\dif\chi
+^{n}(x)\exp (\mi I)$不变就足够了, 
+但这时方程(\ref{16.4.2})和(\ref{16.4.3})%
+往往都是成立的.) 用$\chi
+^{n}(x)+\epsilon F^{n}[x;\chi ]$替换方程(\ref{16.1.1}%
+)中的积分变量, 这样我们就有\begin{eqnarray*}
+Z[J] &=&\int \left[ \prod_{n,x}\dif\left( \chi ^{n}(x)+\epsilon F^{n}[x;\chi
+]\right) \right] \\
+&&\times \exp \left\{ \mi I[\chi +\epsilon F]+\mi\int \dif^{4}x\left( \chi
+^{n}(x)+\epsilon F^{n}[x;\chi ]\right) J_{n}(x)\right\} \\
+&=&\int \left[ \prod_{n,x}\dif\chi ^{n}(x)\right] \exp \left\{ \mi I[\chi ]+%
+\mi\int \dif^{4}x\left( \chi ^{n}(x)+\epsilon F^{n}[x;\chi ]\right)
+J_{n}(x)\right\} \\
+&=&Z[J]+\mi\epsilon \int \left( \prod_{n,x}\dif\chi ^{n}(x)\right) \int
+F^{n}(y;\chi )J_{n}(y)\dif^{4}y \\
+&&\times \exp \left\{ \mi I[\chi ]+\mi\int \dif^{4}x\chi
+^{n}(x)J_{n}(x)\right\}
+\end{eqnarray*}%
+因而\begin{equation}
+\int \dif^{4}y\langle F^{n}(y)\rangle _{J}J_{n}(y)=0\text{ ,}  \label{16.4.4}
+\end{equation}%
+其中$\langle \quad \rangle _{J}$代表有流$%
+J_{n}(x)$时的量子平均,%
+\begin{eqnarray}
+Z[J]\langle F^{n}(y)\rangle _{J} &\equiv &\int \left( \prod_{n,x}\dif\chi
+^{n}(x)\right) \int F^{n}(y;\chi )  \nonumber \\
+&&\times \exp \left\{ \mi I[\chi ]+\mi\int \dif^{4}x\chi
+^{n}(x)J_{n}(x)\right\} \text{ ,}  \label{16.4.5}
+\end{eqnarray}%
+归一化使得$\langle 1\rangle _{J}=1$. 但回忆起$J_{n}(y)$是以有效作用量$\Gamma \lbrack \chi ]$通过方程(\ref%
+{16.1.7})给定的\[
+J_{n,\chi }(y)=-\frac{\delta \Gamma \lbrack \chi ]}{\delta \chi ^{n}(y)}%
+\text{ .} 
+\]%
+因此, 方程(\ref{16.4.4})可以写成\begin{equation}
+0=\int \dif^{4}y\langle F^{n}(y)\rangle _{J_{\chi }}\frac{\delta \Gamma
+\lbrack \chi ]}{\delta \chi ^{n}(y)}\text{ .}  \label{16.4.6}
+\end{equation}%
+换句话说, $\Gamma \lbrack \chi ]$在无限小变换\[
+\chi ^{n}(y)\rightarrow \chi ^{n}(y)+\epsilon \langle F^{n}(y)\rangle
+_{J_{\chi }} 
+\]%
+下不变. 这样的对称性条件被称为\textit{Slavnov-Taylor}{\kai{恒等式}}%
+.\cite{7}
+
+这一对称变换是否是我们所出发的对称变换呢? 对于一类非常重要的无限小对称变换确实是这样, 即那些{\kai{线性}%
+}的变换. 对于这样的对称性, $F$是\begin{equation}
+F^{n}[x;\chi ]=s^{n}(x)+\int t^{n}{}_{m}(x,y)\chi ^{m}(y)\dif^{4}y\text{ .}
+\label{16.4.8}
+\end{equation}%
+(在最通常的情况下, $s^{n}(x)$%
+为零而$t^{n}{}_{m}(x,y)$是常数矩阵与$\delta ^{4}(x-y)$之积.) 对于任何线性的$F$, 我们有\[
+\langle F^{n}(y)\rangle _{J}=s^{n}(x)+\int t^{n}{}_{m}(x,y)\langle \chi
+^{m}(y)\rangle _{J}\dif^{4}y\text{ .} 
+\]%
+但对于任何固定的$\chi $, $%
+J_{\chi }$定义为使得$\langle \chi
+^{m}(y)\rangle _{J}$等于$\chi ^{m}(y)$的流$J$的值, 所以\begin{equation}
+\langle F^{n}(y)\rangle _{J_{\chi }}=s^{n}(x)+\int t^{n}{}_{m}(x,y)\chi
+^{m}(y)\dif^{4}y=F^{n}[x;\chi ]\text{ .}  \label{16.4.9}
+\end{equation}%
+因此, 对于所有的泛函线性变换$\chi ^{n}\rightarrow \chi ^{n}+\epsilon F$, 
+若该变换保持$I[\chi ]$和测度不变, 那么方程(\ref{16.4.6})%
+会要求$\Gamma \lbrack \chi ]$在这样的变换下不变.
+
+我们有时还要处理非线性的对称变换. 15.7节所讨论的BRST变换就提供了一个重要例子. 对于非线性的变换, 使得有限作用量不变的对称变换(\ref{16.4.7})一般与保持%
+原作用量不变的假设对称变换(\ref{16.4.1}){\kai{不}}相同, 这是因为场的非线性泛函的均值一般不等于平均场的泛函. 的确如此, $\langle F^{n}\rangle _{J_{\chi }}$作为%
+$\chi $的泛函, 它的形式一般会依赖于系统的动力学, 并且通常是非定域. 这一复杂性将在下一章利用反括号的方法进行处理.
+
+\subsection{* * *}
+
+直到现在, 我们默认假定场$\chi ^{n}$和相对应的变换函数$F^{n}$以及流$J_{n}$都是玻色的. 当其中的一些量是费米量时, 特别%
+地, 就像超对称变换或BRST变换, 在那里$\epsilon $是常数而$\chi ^{n}$和$F^{n}$有相反的统计, 这时我们将需要%
+注意到可能出现的符号因子. 当流像方程(\ref%
+{16.1.1})和(\ref{16.1.5})中那样插入在场的右边时, 方程(\ref%
+{16.1.5})和(\ref{16.1.7})会变成如下的形式\begin{equation}
+\frac{\delta _{R}W[J]}{\delta J_{m}(y)}=\chi _{J}^{m}(y)\text{ ,}
+\label{16.4.10}
+\end{equation}%
+\begin{equation}
+\frac{\delta _{L}\Gamma \lbrack \chi ]}{\delta \chi ^{m}(y)}=-J_{\chi ,m}(y)%
+\text{ ,}  \label{16.4.11}
+\end{equation}%
+其中下标$R$和$L$指代导数是从右边和左边作用的. 因此, Slavnov-Taylor恒等式(%
+\ref{16.4.6})应该写成\begin{equation}
+0=\int \dif^{4}y\langle F^{n}(y)\rangle _{J_{\chi }}\frac{\delta _{L}\Gamma
+\lbrack \chi ]}{\delta \chi ^{n}(y)}\text{ .}  \label{16.4.12}
+\end{equation}
+
+\section{习题}
+
+1. 考察实赝标量$\phi (x)$与复Dirac场$\psi (x)$的理论, 它们的质量分别是$M$和$m$, 相互作用为$g\bar{\psi}\gamma _{5}\psi \phi $. 计算$%
+\phi =$常数, $\psi =0$时的有效势, 
+并计算至一圈阶.
+
+2. 导出$\delta ^{3}W[J]/\delta J_{n}(x)\delta J_{m}(y)\delta
+J_{\ell }(z)$和$\delta ^{4}W[J]/\delta J_{n}(x)\delta J_{m}(y)\delta
+J_{\ell }(z)\delta J_{k}(w)$的一般公式, 
+将其写成$\Gamma \lbrack \phi ]$对$\phi $%
+的变分导数的形式. 指出这些公式中的每一项分别对应那些Feynman图.
+
+3. 对于六维中相互作用拉格朗日密度为$g\phi ^{3}/6$%
+的中性标量场$\phi $的理论, 计算有效势至一圈阶.
+
+4. 假定作用量$I[\phi ]$在{\kai{有限大}}矩阵变换$\phi
+_{n}(x)\rightarrow \sum_{m}M_{nm}\phi _{m}(x)$下不变. 
+那么在流的何种变换下$W[J]$不变? 利用这一结果导出$\Gamma \lbrack \phi ]$的对称性质
+
+\end{document}
