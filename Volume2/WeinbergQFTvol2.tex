@@ -10,6 +10,10 @@
 \usepackage{multicol}                 % 分栏宏包
 \usepackage{slashed}
 \usepackage{cite}     %修改参考文献引用样式
+\usepackage{manyfoot,perpage}  % 加入译者注(footnoteB)
+\DeclareNewFootnote{B}[alph]
+
+
 %\usepackage{cancel}
 %\usepackage{color}
 %\usepackage{multirow}
@@ -31,6 +35,7 @@
 %\input command
 %\renewcommand{\labelenumi}{{\bf{\arabic{enumi}}}}   %控制enumerate环境的计数器
 
+\numberwithin{equation}{section} %公式计数器从属于节计数器
 \renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}   % 定义方程编号
 \renewcommand{\thechapter}{\arabic{chapter}}   % 定义方程编号
 % \definecolor{historyboxcolor}{gray}{0.8}
